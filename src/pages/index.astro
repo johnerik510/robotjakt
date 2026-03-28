@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+
+const products = [
+  {
+    rank: 1,
+    name: 'Dreame X40 Ultra',
+    price: 'ca 9 990 kr',
+    rating: 4.8,
+    badge: 'Bast i test 2026',
+    pros: ['Extremt stark sugkraft (12 000 Pa)', 'Sjalvtommande och sjalvtvattande', 'Utfallbar mopp for hornen'],
+    cons: ['Hog prisklass', 'Stor dockningsstation'],
+    ctaText: 'Se pris',
+    ctaUrl: '#',
+  },
+  {
+    rank: 2,
+    name: 'Roborock S8 MaxV Ultra',
+    price: 'ca 11 990 kr',
+    rating: 4.7,
+    badge: 'Premium',
+    pros: ['Branschledande navigering', 'Dubbla gummirullar', 'Lysande moppfunktion'],
+    cons: ['Dyrast i testet', 'App kan vara overvaldi-gande'],
+    ctaText: 'Se pris',
+    ctaUrl: '#',
+  },
+  {
+    rank: 3,
+    name: 'Roborock Qrevo Master',
+    price: 'ca 7 490 kr',
+    rating: 4.6,
+    badge: 'Basta varde',
+    pros: ['Premiumfunktioner till lagre pris', 'FlexiArm moppsystem', 'Stark sugkraft (10 000 Pa)'],
+    cons: ['Nagot hogre ljudniva', 'Enklare kamera an S8 MaxV'],
+    ctaText: 'Se pris',
+    ctaUrl: '#',
+  },
+  {
+    rank: 4,
+    name: 'Ecovacs Deebot X5 Omni',
+    price: 'ca 8 990 kr',
+    rating: 4.5,
+    badge: 'Innovativt',
+    pros: ['Fyrkantig design nar hornen', 'Kraftfull moppning', 'Bra app med AI-funktioner'],
+    cons: ['Nyare pa marknaden', 'Tillbehor kan vara dyra'],
+    ctaText: 'Se pris',
+    ctaUrl: '#',
+  },
+  {
+    rank: 5,
+    name: 'Dreame L20 Ultra',
+    price: 'ca 5 990 kr',
+    rating: 4.4,
+    pros: ['Bra prestanda for priset', 'Sjalvtommande station', 'Moppfunktion med varmvatten'],
+    cons: ['Inte lika stark som X40', 'Enklare hinderdetektion'],
+    ctaText: 'Se pris',
+    ctaUrl: '#',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Vilken robotdammsugare ar bast i test 2026?',
+    answer: 'Dreame X40 Ultra ar var testvinnare 2026 tack vare sin extrema sugkraft, sjalvtommande station och utfallbara mopp som nar in i hornen. Roborock S8 MaxV Ultra ar bast for den som vill ha allra basta navigeringen.',
+  },
+  {
+    question: 'Ar det vart att kopa en robotdammsugare med moppfunktion?',
+    answer: 'Ja, moderna robotdammsugare med mopp gor ett overraskande bra jobb pa hardgolv. Modeller som Dreame X40 Ultra och Roborock S8 MaxV Ultra kan till och med torka bort intorkade flackar. For heltackningsmattor ar moppfunktionen mindre relevant.',
+  },
+  {
+    question: 'Vilken robotdammsugare ar bast for husdjur?',
+    answer: 'For djuragare rekommenderar vi modeller med stark sugkraft (minst 8 000 Pa) och gummirullar som inte trasslars av palsar. Roborock S8 MaxV Ultra och Dreame X40 Ultra klarar djurhar utmarkt.',
+  },
+  {
+    question: 'Hur ofta behover man tomma en robotdammsugare?',
+    answer: 'Med en sjalvtommande station behover du bara tomma posen var 30-60 dag beroende pa storlek pa hemmet och mangden smuts. Utan station bor du tomma behallaren efter varje stadning.',
+  },
+  {
+    question: 'Kan en robotdammsugare ersatta en vanlig dammsugare?',
+    answer: 'For daglig underhallsstadning ja. En robotdammsugare haller golven rena mellan grundligare stadningar. For djuprengoring av soffor, trappor och svaragkomliga stallen behover du fortfarande en vanlig dammsugare eller sladdlos modell.',
+  },
+];
+---
+
+<BaseLayout
+  title="Basta robotdammsugare 2026 — Test, jamforelse & pris | Robotjakt"
+  description="Vi testar och jamfor arets basta robotdammsugare. Se var topplista med priser, for- och nackdelar. Uppdaterad mars 2026."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <AffiliateDisclaimer />
+    <p class="text-xs text-text-lighter mb-2">Senast uppdaterad: 2026-03-28</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3">
+      Basta robotdammsugare 2026
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Vi har testat {products.length} robotdammsugare och rankat dem efter sugkraft, navigering, moppfunktion och prisv&auml;rde. H&auml;r &auml;r v&aring;ra toppval.
+    </p>
+
+    <!-- Topplista -->
+    <div class="space-y-5 mb-12">
+      {products.map((p) => (
+        <ProductCard {...p} />
+      ))}
+    </div>
+
+    <!-- Kopguide -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Kopguide: Hur valjer man robotdammsugare?</h2>
+      <div class="prose prose-slate max-w-none text-text-light text-sm leading-relaxed space-y-4">
+        <h3 class="font-heading text-lg font-bold text-text">Sugkraft (Pa)</h3>
+        <p>Sugkraften mats i Pascal (Pa). For normala golv racker 5 000 Pa. Har du husdjur eller mattor behover du minst 8 000 Pa. Premiummodeller erbjuder 10 000-12 000 Pa.</p>
+
+        <h3 class="font-heading text-lg font-bold text-text">Navigering</h3>
+        <p>LiDAR-navigering ar snabbast och mest exakt. Kamerabaserade system ar bra pa att undvika hinder (skor, kablar). De basta modellerna kombinerar bada teknikerna.</p>
+
+        <h3 class="font-heading text-lg font-bold text-text">Moppfunktion</h3>
+        <p>Roterande moppar gor rent battre an vibrerande. Modeller med automatisk mopplyftn-ing ar ett maste om du har bade mattor och hardgolv — roboten lyfter moppen nar den kor over mattor.</p>
+
+        <h3 class="font-heading text-lg font-bold text-text">Sjalvtommande station</h3>
+        <p>En sjalvtommande dockningsstation innebar att roboten tommar sin dammbehallare automatiskt. Du behover bara byta pose var 30-60 dag. Nast-an alla premiummodeller 2026 har detta.</p>
+
+        <h3 class="font-heading text-lg font-bold text-text">Pris</h3>
+        <p>Budget (under 4 000 kr): Grundlaggande stadning utan mopp. Mellanpris (4 000-8 000 kr): Bra prestanda med mopp och sjalvtomning. Premium (over 8 000 kr): Topprestanda med alla funktioner.</p>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Basta robotdammsugare 2026",
+    "description": "Topplista over de basta robotdammsugarna 2026, rankade efter test.",
+    "numberOfItems": products.length,
+    "itemListElement": products.map((p, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": p.name,
+    })),
+  })} />
+</BaseLayout>

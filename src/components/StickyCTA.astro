@@ -1,0 +1,31 @@
+---
+interface Props {
+  text: string;
+  url: string;
+  productName?: string;
+}
+
+const { text, url, productName } = Astro.props;
+---
+
+<div id="sticky-cta" class="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-border shadow-lg py-3 px-4 md:hidden translate-y-full transition-transform duration-300" data-product={productName}>
+  <a href={url} rel="sponsored nofollow noopener" target="_blank" class="flex items-center justify-center w-full px-6 py-3 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors text-sm min-h-[44px]">
+    {text}
+    <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+  </a>
+</div>
+
+<script>
+  const stickyCta = document.getElementById('sticky-cta');
+  let lastScroll = 0;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+    if (currentScroll > 400) {
+      stickyCta?.classList.remove('translate-y-full');
+    } else {
+      stickyCta?.classList.add('translate-y-full');
+    }
+    lastScroll = currentScroll;
+  }, { passive: true });
+</script>

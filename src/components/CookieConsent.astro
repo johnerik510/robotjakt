@@ -1,0 +1,46 @@
+<div id="cookie-consent" class="fixed bottom-0 left-0 right-0 z-[100] bg-white border-t border-border shadow-lg transform translate-y-full transition-transform duration-300" role="dialog" aria-label="Cookieinformation">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+      <p class="text-sm text-text-light flex-1">
+        Vi anv&#228;nder cookies f&#246;r att analysera trafik och f&#246;rb&#228;ttra din upplevelse. Genom att forts&#228;tta anv&#228;nda sidan godk&#228;nner du v&#229;r <a href="/integritetspolicy/" class="text-accent underline hover:no-underline">integritetspolicy</a>.
+      </p>
+      <div class="flex gap-3 flex-shrink-0">
+        <button id="cookie-decline" class="px-5 py-2.5 text-sm font-medium text-text border border-border rounded-lg hover:bg-gray-50 transition-colors min-h-[44px]">
+          Avvisa
+        </button>
+        <button id="cookie-accept" class="px-5 py-2.5 text-sm font-medium text-white bg-accent rounded-lg hover:bg-accent/90 transition-colors min-h-[44px]">
+          Godk&#228;nn
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const banner = document.getElementById('cookie-consent');
+  const acceptBtn = document.getElementById('cookie-accept');
+  const declineBtn = document.getElementById('cookie-decline');
+
+  function hideBanner() {
+    banner?.classList.add('translate-y-full');
+    setTimeout(() => { banner?.remove(); }, 300);
+  }
+
+  if (!localStorage.getItem('cookie-consent')) {
+    requestAnimationFrame(() => {
+      banner?.classList.remove('translate-y-full');
+    });
+  } else {
+    banner?.remove();
+  }
+
+  acceptBtn?.addEventListener('click', () => {
+    localStorage.setItem('cookie-consent', 'accepted');
+    hideBanner();
+  });
+
+  declineBtn?.addEventListener('click', () => {
+    localStorage.setItem('cookie-consent', 'declined');
+    hideBanner();
+  });
+</script>

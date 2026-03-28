@@ -1,0 +1,29 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  breadcrumbs: { label: string; href?: string }[];
+  ogImage?: string;
+  lastUpdated?: string;
+  showDisclaimer?: boolean;
+}
+
+const { title, description, breadcrumbs, ogImage, lastUpdated, showDisclaimer = true } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} ogImage={ogImage}>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    {showDisclaimer && <AffiliateDisclaimer />}
+    {lastUpdated && (
+      <p class="text-xs text-text-lighter mb-3">
+        Senast uppdaterad: <time datetime={lastUpdated}>{lastUpdated}</time>
+      </p>
+    )}
+    <slot />
+  </div>
+</BaseLayout>

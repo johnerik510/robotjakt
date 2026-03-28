@@ -1,0 +1,75 @@
+---
+const bastITest = [
+  { label: 'Robotdammsugare', href: '/bast-i-test/' },
+  { label: 'Med mopp', href: '/bast-i-test/mopp/' },
+  { label: 'For djuragare', href: '/bast-i-test/djurhaar/' },
+  { label: 'Budget', href: '/bast-i-test/budget/' },
+  { label: 'Stora hem', href: '/bast-i-test/stora-hem/' },
+];
+
+const categories = [
+  { label: 'Recensioner', href: '/recension/' },
+  { label: 'Jamforelser', href: '/jamfor/' },
+  { label: 'Guider', href: '/guide/' },
+];
+
+const legal = [
+  { label: 'Om oss', href: '/om-oss/' },
+  { label: 'Kontakt', href: '/kontakt/' },
+  { label: 'Integritetspolicy', href: '/integritetspolicy/' },
+  { label: 'Affiliate-disclaimer', href: '/affiliate-disclaimer/' },
+];
+---
+
+<footer class="bg-primary text-gray-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div>
+        <h3 class="font-heading text-white text-lg font-bold mb-4">Robotjakt</h3>
+        <p class="text-sm leading-relaxed">
+          Vi testar och jamfor robotdammsugare for den svenska marknaden. Oberoende recensioner, raka rekommendationer och alltid uppdaterade priser.
+        </p>
+      </div>
+      <div>
+        <h4 class="font-heading text-white text-sm font-bold uppercase tracking-wider mb-4">Bast i test</h4>
+        <ul class="space-y-2">
+          {bastITest.map((item) => (
+            <li>
+              <a href={item.href} class="text-sm hover:text-white transition-colors">{item.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-heading text-white text-sm font-bold uppercase tracking-wider mb-4">Kategorier</h4>
+        <ul class="space-y-2">
+          {categories.map((item) => (
+            <li>
+              <a href={item.href} class="text-sm hover:text-white transition-colors">{item.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-heading text-white text-sm font-bold uppercase tracking-wider mb-4">Information</h4>
+        <ul class="space-y-2">
+          {legal.map((item) => (
+            <li>
+              <a href={item.href} class="text-sm hover:text-white transition-colors">{item.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+    <div class="mt-12 pt-8 border-t border-primary-light">
+      <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <p class="text-sm">
+          &copy; 2026 Robotjakt.se. Alla rattigheter forbehallna.
+        </p>
+        <p class="text-xs text-text-lighter">
+          Robotjakt.se innehaller affiliatelankar. Vi kan fa provision nar du handlar via vara lankar, utan extra kostnad for dig.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

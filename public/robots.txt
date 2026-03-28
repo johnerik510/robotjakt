@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://robotjakt.se/sitemap-index.xml

@@ -1,0 +1,28 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+---
+
+<ArticleLayout
+  title="Kontakt | Robotjakt"
+  description="Kontakta Robotjakt for fragor, feedback eller samarbeten."
+  breadcrumbs={[{ label: 'Kontakt' }]}
+  showDisclaimer={false}
+>
+  <h1 class="font-heading text-3xl font-bold text-text mb-4">Kontakta oss</h1>
+
+  <div class="prose prose-slate max-w-none text-text-light text-sm leading-relaxed space-y-4">
+    <p>
+      Har du fragor om vara tester, vill rapportera ett fel eller ar intresserad av samarbete? Hor av dig sa svarar vi sa snart vi kan.
+    </p>
+
+    <div class="bg-white rounded-lg border border-border p-6 not-prose">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Kontaktuppgifter</h2>
+      <ul class="space-y-2 text-sm text-text-light">
+        <li><strong class="text-text">E-post:</strong> <a href="mailto:vpniskguiden@proton.me" class="text-accent hover:underline">vpniskguiden@proton.me</a></li>
+        <li><strong class="text-text">Grundare:</strong> John Erik Johansson</li>
+      </ul>
+    </div>
+
+    <p>Vi svarar normalt inom 1-2 arbetsdagar.</p>
+  </div>
+</ArticleLayout>

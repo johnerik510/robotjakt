@@ -1,0 +1,57 @@
+---
+const navItems = [
+  { label: 'Bast i test', href: '/bast-i-test/' },
+  { label: 'Recensioner', href: '/recension/' },
+  { label: 'Jamforelser', href: '/jamfor/' },
+  { label: 'Guider', href: '/guide/' },
+];
+---
+
+<header class="bg-primary text-white sticky top-0 z-50 shadow-lg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="/" class="flex items-center gap-2.5 font-heading text-xl font-bold tracking-tight hover:text-accent-light transition-colors group">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-7 h-7 flex-shrink-0 group-hover:scale-105 transition-transform" aria-hidden="true">
+          <circle cx="16" cy="16" r="14" fill="white" opacity="0.1"/>
+          <circle cx="16" cy="14" r="8" fill="#3b82f6"/>
+          <rect x="10" y="22" width="12" height="3" rx="1.5" fill="white" opacity="0.3"/>
+          <circle cx="12" cy="12" r="1.5" fill="white"/>
+          <circle cx="20" cy="12" r="1.5" fill="white"/>
+          <path d="M12 16 Q16 19 20 16" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        </svg>
+        Robotjakt
+      </a>
+      <nav class="hidden md:flex items-center space-x-6" aria-label="Huvudnavigering">
+        {navItems.map((item) => (
+          <a href={item.href} class="text-sm font-medium text-gray-200 hover:text-white transition-colors">
+            {item.label}
+          </a>
+        ))}
+      </nav>
+      <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-md hover:bg-primary-light transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Oppna meny" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <nav id="mobile-menu" class="hidden md:hidden bg-primary-dark border-t border-primary-light" aria-label="Mobilnavigering">
+    <div class="px-4 py-3 space-y-2">
+      {navItems.map((item) => (
+        <a href={item.href} class="block py-2 text-sm text-gray-200 hover:text-white transition-colors">
+          {item.label}
+        </a>
+      ))}
+    </div>
+  </nav>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+  });
+</script>
