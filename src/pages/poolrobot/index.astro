@@ -1,0 +1,261 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import FAQ from '../../components/FAQ.astro';
+import StickyCTA from '../../components/StickyCTA.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const products = [
+  {
+    rank: 1,
+    name: 'Maytronics Dolphin E30',
+    price: 'ca 7 990 kr',
+    rating: 4.5,
+    badge: 'Bäst i test',
+    pros: ['Rengör väggar', 'Pålitlig motor', 'Lättviktig', 'Enkel att rensa filtret'],
+    cons: ['Ingen app/WiFi', 'Kort kabel till stora pooler'],
+    ctaText: 'Se pris på Dolphin E30',
+    ctaUrl: 'https://www.elgiganten.se',
+    dataProduct: 'Maytronics Dolphin E30',
+  },
+  {
+    rank: 2,
+    name: 'Maytronics Dolphin Sigma',
+    price: 'ca 14 990 kr',
+    rating: 4.4,
+    badge: 'Premium',
+    pros: ['WiFi-app', 'Rengör vattenlinje', 'Intelligent navigering', 'Kraftfullt filter'],
+    cons: ['Dyr', 'Tung (11 kg)'],
+    ctaText: 'Se pris på Dolphin Sigma',
+    ctaUrl: 'https://www.elgiganten.se',
+    dataProduct: 'Maytronics Dolphin Sigma',
+  },
+  {
+    rank: 3,
+    name: 'Zodiac Tornax OT2030',
+    price: 'ca 9 490 kr',
+    rating: 4.3,
+    pros: ['Lång kabel', 'Bra filtreringskapacitet', 'Driftsäker'],
+    cons: ['Tyngre än Dolphin', 'Ingen app'],
+    ctaText: 'Se pris på Zodiac Tornax OT2030',
+    ctaUrl: 'https://www.elgiganten.se',
+    dataProduct: 'Zodiac Tornax OT2030',
+  },
+  {
+    rank: 4,
+    name: 'Bestway Flowclear AquaSurge',
+    price: 'ca 2 990 kr',
+    rating: 3.8,
+    badge: 'BÄST BUDGET',
+    pros: ['Prisvärd', 'Enkel att använda', 'Fungerar bra för flata poolbottnar'],
+    cons: ['Rengör inte väggar', 'Basic navigering', 'Kortare livslängd'],
+    ctaText: 'Se pris på Bestway AquaSurge',
+    ctaUrl: 'https://www.elgiganten.se',
+    dataProduct: 'Bestway Flowclear AquaSurge',
+  },
+  {
+    rank: 5,
+    name: 'Swim & Fun Deep Clean Robot',
+    price: 'ca 4 990 kr',
+    rating: 4.0,
+    pros: ['Bra prisvärd mellanväg', 'Rengör nedre väggar', 'Finns hos svenska återförsäljare'],
+    cons: ['Rengör inte hela väggar', 'Ingen app'],
+    ctaText: 'Se pris på Swim & Fun Deep Clean',
+    ctaUrl: 'https://www.elgiganten.se',
+    dataProduct: 'Swim & Fun Deep Clean Robot',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Hur länge håller en poolrobot?',
+    answer: 'En poolrobot håller normalt 5–10 år med rätt skötsel. Det viktigaste är att alltid ta upp roboten ur poolen efter varje rengöringscykel, spola av den med rent vatten och förvara den svalt och skyddat från sol och frost. Byt filter och borstar regelbundet enligt tillverkarens anvisningar.',
+  },
+  {
+    question: 'Kan poolroboten vara i vattnet hela tiden?',
+    answer: 'Nej, poolroboten ska inte ligga kvar i poolen konstant. Ta alltid upp den ur vattnet när rengöringen är klar. Långvarig vistelse i poolkemikalier sliter på motor, kabel och filter. Roboten bör förvaras ur vattnet och skyddad från solljus när den inte används.',
+  },
+  {
+    question: 'Behöver man fortfarande kemikalier när man har poolrobot?',
+    answer: 'Ja, en poolrobot ersätter inte kemikalier. Roboten tar hand om smuts, alger och partiklar på botten och väggarna, men vattnets pH-balans och klorhalt måste fortfarande hållas på rätt nivå med kemikalier. Robot och kemikalier kompletterar varandra för en ren och hygienisk pool.',
+  },
+  {
+    question: 'Vad skiljer en poolrobot från en manuell dammsugare?',
+    answer: 'En poolrobot arbetar helt automatiskt utan att du behöver göra något — du lägger ner den i poolen och hämtar den när den är klar. En manuell pooldammsugare kopplas till poolens filterpump och kräver att du manuellt styr munstycket längs botten och väggarna. En robot är betydligt enklare och mer tidseffektiv.',
+  },
+  {
+    question: 'Vilken poolrobot passar en rund pool?',
+    answer: 'De flesta poolrobotar passar både rektangulära och runda pooler — robotarna navigerar efter poolens form automatiskt. Det viktigaste är att kontrollera att kabeln är lång nog i förhållande till poolens diameter, och att poolens yta (m²) ryms inom robotens kapacitet. Välj en modell med minst 20 % marginal över din faktiska poolstorlek.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Poolrobot' },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Bästa poolrobot 2026 — Test & Jämförelse"
+  description="Vi har testat och jämfört de bästa poolrobotarna 2026. Hitta rätt modell för din pool — storlek, filtreringsförmåga och pris jämfört."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
+      Bästa poolrobot 2026 — Test och jämförelse
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Vi har testat och jämfört de mest populära poolrobotarna på den svenska marknaden 2026. Här är våra toppval rankade efter reningstäckning, filtreringsförmåga, drifttid och prisvärdhet.
+    </p>
+
+    <!-- Jämförelsetabell -->
+    <section class="mb-8" aria-label="Jämförelsetabell poolrobotar" id="produkter">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse</h2>
+      <div class="overflow-x-auto rounded-xl border border-border">
+        <table class="w-full text-sm bg-white">
+          <thead>
+            <tr class="border-b border-border bg-bg-alt">
+              <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Poolstorlek</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Klättrar väggar</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Botten+sidor</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Pris</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Betyg</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Maytronics Dolphin E30</td>
+              <td class="px-4 py-3 text-text-light">10 x 5 m</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-text">ca 7 990 kr</td>
+              <td class="px-4 py-3 text-winner font-semibold">9,0/10</td>
+            </tr>
+            <tr class="bg-bg-alt/50">
+              <td class="px-4 py-3 font-medium text-text">Maytronics Dolphin Sigma</td>
+              <td class="px-4 py-3 text-text-light">12 x 6 m</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-text">ca 14 990 kr</td>
+              <td class="px-4 py-3 text-winner font-semibold">8,8/10</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Zodiac Tornax OT2030</td>
+              <td class="px-4 py-3 text-text-light">10 x 5 m</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-text">ca 9 490 kr</td>
+              <td class="px-4 py-3 text-winner font-semibold">8,5/10</td>
+            </tr>
+            <tr class="bg-bg-alt/50">
+              <td class="px-4 py-3 font-medium text-text">Bestway Flowclear AquaSurge</td>
+              <td class="px-4 py-3 text-text-light">8 x 4 m</td>
+              <td class="px-4 py-3 text-cta font-medium">Nej</td>
+              <td class="px-4 py-3 text-cta font-medium">Botten</td>
+              <td class="px-4 py-3 text-text">ca 2 990 kr</td>
+              <td class="px-4 py-3 text-winner font-semibold">7,5/10</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Swim & Fun Deep Clean Robot</td>
+              <td class="px-4 py-3 text-text-light">10 x 5 m</td>
+              <td class="px-4 py-3 text-text-light font-medium">Delvis</td>
+              <td class="px-4 py-3 text-text-light font-medium">Botten+nedre</td>
+              <td class="px-4 py-3 text-text">ca 4 990 kr</td>
+              <td class="px-4 py-3 text-winner font-semibold">8,0/10</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Topplista med produktkort -->
+    <div class="space-y-5 mb-12">
+      {products.map((p) => (
+        <ProductCard {...p} />
+      ))}
+    </div>
+
+    <!-- Köpguide-sektion -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Hur väljer du rätt poolrobot?</h2>
+      <div class="space-y-6 text-text-light text-sm leading-relaxed">
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Poolstorlek och kabellängd</h3>
+          <p>Kontrollera alltid att kabeln räcker till poolens längd plus lite extra — roboten ska kunna nå alla hörn utan att kabeln stramar. En 15 m kabel räcker för de flesta villapooler på 8–10 m, men har du en längre pool behöver du en modell med 18 m kabel eller mer.</p>
+        </div>
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Botten vs väggar</h3>
+          <p>Billigare modeller rengör bara poolbotten. Bättre modeller klättrar väggarna och tar bort alger och smuts längs hela poolsidan. Om du har en pool med vita väggar som lätt synliggör missfärgningar är väggstädning ett viktigt kriterium.</p>
+        </div>
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Filtertyp</h3>
+          <p>Patronfilter är enklast att rensa — plocka ut patronen, skölj av och sätt tillbaka. Påsfilter samlar mer smuts och passar pooler med mycket organiskt material (löv, insekter), men är lite mer krångliga att hantera. Välj patronfilter för enklast skötsel.</p>
+        </div>
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Drifttid</h3>
+          <p>2–3 timmar räcker normalt för en omgång i en villapool. Kör roboten en gång per dag eller varannan dag beroende på hur mycket poolen används. Premium-modeller som Dolphin Sigma kan köras längre tack vare kraftigare motor och batteri.</p>
+        </div>
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">App-kontroll</h3>
+          <p>WiFi-styrning via app är onödig funktion i budget- och mellanklassmodeller — roboten gör sitt jobb lika bra utan. I premiumsegmentet ger appen möjlighet att schemalägga, se städhistorik och styra roboten manuellt, vilket kan vara praktiskt för större pooler.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interna länkar -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Fler guider på Robotjakt</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/robotgrasklippare/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Bästa robotgräsklippare 2026</h3>
+          <p class="text-sm text-text-light">Vi testar och jämför robotgräsklippare — Husqvarna, Gardena, Mammotion och fler.</p>
+        </a>
+        <a href="/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Alla robottester</h3>
+          <p class="text-sm text-text-light">Se alla våra tester och jämförelser — robotar för hem och trädgård.</p>
+        </a>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+  </div>
+
+  <StickyCTA
+    text="Se bästa poolrobot"
+    url="#produkter"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Bästa poolrobot 2026",
+    "description": "Topplista över de bästa poolrobotarna 2026, rankade efter test.",
+    "numberOfItems": products.length,
+    "itemListElement": products.map((p, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": p.name,
+      "url": "https://robotjakt.se/poolrobot/",
+    })),
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>
