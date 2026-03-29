@@ -1,0 +1,313 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Husqvarna vs Gardena' },
+];
+
+const faqItems = [
+  {
+    question: 'Är Husqvarna och Gardena samma företag?',
+    answer: 'Ja — Gardena ägs av Husqvarna AB och är ett helägt dotterbolag sedan 2007. De delar teknikplattform och produktion, men vänder sig till olika prissegment: Gardena SILENO riktar sig till normalstora trädgårdar till lägre pris, medan Husqvarna Automower är premiumalternativet med fler modeller och högre kapacitet. Att jämföra dem är i praktiken att jämföra Husqvarnas budget- och premiumsegment.',
+  },
+  {
+    question: 'Vilken klarar en lutning bättre — Husqvarna eller Gardena?',
+    answer: 'Husqvarna Automower klarar generellt brantare lutningar — premiummodellerna hanterar upp till 35-45% lutning. Gardena SILENO Life 750 klarar upp till 35% lutning, medan City 500 är begränsad till 25%. Om du har en kuperad tomt med branta backar är Husqvarna det säkrare valet med fler modeller anpassade för höga lutningsvärden.',
+  },
+  {
+    question: 'Behöver man professionell installation för Husqvarna eller Gardena?',
+    answer: 'Båda kräver en gränskabel som läggs runt tomten och grävs ned. Installation kan göras av den klipska husägaren, men professionell installation rekommenderas för komplexa tomter med många hinder, trånga passager eller branta lutningar. Husqvarna har ett bredare återförsäljarnätverk med certifierade installatörer i Sverige. Gardena säljs via trädgårdsbutiker och stora kedjor (Bauhaus, Hornbach) men har färre dedikerade servicecenter.',
+  },
+  {
+    question: 'Vilken är billigast i drift — Husqvarna eller Gardena?',
+    answer: 'Driftkostnaderna är likartade eftersom de delar teknikplattform. Knivar behöver bytas var 1-3 månader (100-200 kr), och strömförbrukningen är ca 10-20 kr per månad. Skillnaden är inköpspriset: Gardena SILENO City 500 kostar ca 3 990 kr mot Husqvarna Automower 105 på ca 5 990 kr — ungefär 2 000 kr skillnad i initialinvestering. Totalt över 5 år är skillnaden marginell eftersom driftkostnaderna är identiska.',
+  },
+  {
+    question: 'Kan jag byta från Gardena till Husqvarna utan att lägga ny kabel?',
+    answer: 'I teorin ja — de delar kabelstandard och många installationer är kompatibla. Men kontrollera alltid med återförsäljaren före köp. Kabeln och laddstationen är märkesspecifika (Gardena och Husqvarna använder olika laddkontakter) så laddstationen behöver bytas ut, men den befintliga gränskabeln kan ofta återanvändas.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Husqvarna vs Gardena robotgräsklippare 2026 – jämförelse | Robotjakt"
+  description="Vi jämför Husqvarna Automower och Gardena SILENO 2026. Premiummärke mot budgetalternativet — men de ägs av samma företag. Vilket passar din trädgård?"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-30">2026-03-30</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Husqvarna vs Gardena robotgräsklippare 2026 — vilket väljer du?
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Husqvarna Automower och Gardena SILENO är de två dominerande märkena för robotgräsklippare i Sverige. Det finns dock en hemlighet: de ägs av samma företag. Vi reder ut skillnaderna — kategori för kategori — och ger dig ett tydligt svar på vilket märke som passar din trädgård och budget.
+    </p>
+
+    <!-- The big reveal -->
+    <section class="mb-8 bg-amber-50 border border-amber-200 rounded-xl p-5">
+      <h2 class="font-heading text-lg font-bold text-text mb-2">Det du behöver veta innan du jämför</h2>
+      <p class="text-text-light text-sm leading-relaxed">
+        Gardena ägs av Husqvarna AB sedan 2007. De delar teknikplattform, produktion och i många fall identiska komponenter. Att välja mellan dem handlar egentligen om att välja <strong class="text-text">prissegment och trädgårdsstorlek</strong> — inte om att välja mellan teknologier. Gardena riktar sig till normalstora trädgårdar (upp till 750 m²) till lägre pris. Husqvarna täcker hela spektret — från 150 m² till 5000+ m² — med premiumfunktioner.
+      </p>
+    </section>
+
+    <!-- Brand overview -->
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Bakgrund — systervarumärken med olika positionering</h2>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div class="bg-bg-alt rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Husqvarna Automower</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            Grundat 1689 i Sverige. Automower lanserades 1995 och är världens första kommersiella robotgräsklippare. Premiumsegmentet med modeller för alla trädgårdsstorlekar — från kompakta 105 (150 m²) till kraftfulla 450X (5 000 m²). Starkast i teknik, kapacitet, lutningsförmåga och servicenätverk.
+          </p>
+        </div>
+        <div class="bg-bg-alt rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Gardena SILENO</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            Grundat 1961 i Augsburg, Tyskland. Förvärvades av Husqvarna AB 2007. SILENO-serien lanserades för att nå priskänsliga konsumenter med trädgårdar upp till 750 m². Säljs via Bauhaus, Hornbach och trädgårdsbutiker. Starkast i pris/prestanda för normaltomter och enkel installation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flagship specs comparison table -->
+    <section class="mb-10" aria-label="Jämförelsetabell Husqvarna Automower 315 vs Gardena SILENO Life 750">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Modell mot modell — Automower 315 vs SILENO Life 750</h2>
+      <div class="overflow-x-auto rounded-xl border border-border">
+        <table class="w-full text-sm bg-white">
+          <thead>
+            <tr class="border-b border-border bg-bg-alt">
+              <th class="text-left px-4 py-3 font-semibold text-text">Egenskap</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Husqvarna Automower 315</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Gardena SILENO Life 750</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Pris ca</td>
+              <td class="px-4 py-3 text-text-light">7 990 kr</td>
+              <td class="px-4 py-3 text-winner font-semibold">5 490 kr</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">Max area</td>
+              <td class="px-4 py-3 text-winner font-semibold">1 500 m²</td>
+              <td class="px-4 py-3 text-text-light">750 m²</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Max lutning</td>
+              <td class="px-4 py-3 text-winner font-semibold">40%</td>
+              <td class="px-4 py-3 text-text-light">35%</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">GPS-spårning</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-text-light">Nej</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">App-styrning</td>
+              <td class="px-4 py-3 text-text-light">Automower Connect</td>
+              <td class="px-4 py-3 text-text-light">GARDENA smart app</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">Klipphöjd</td>
+              <td class="px-4 py-3 text-text-light">2–5 cm</td>
+              <td class="px-4 py-3 text-text-light">2–5 cm</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Batteri</td>
+              <td class="px-4 py-3 text-text-light">Li-Ion, 45 min / cykel</td>
+              <td class="px-4 py-3 text-text-light">Li-Ion, 65 min / cykel</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">Stöldskydd</td>
+              <td class="px-4 py-3 text-winner font-semibold">GPS + PIN-kod + larm</td>
+              <td class="px-4 py-3 text-text-light">PIN-kod + larm (ingen GPS)</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Garanti</td>
+              <td class="px-4 py-3 text-text-light">2 år</td>
+              <td class="px-4 py-3 text-text-light">2 år</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Category by category comparison -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-6">Kategori för kategori</h2>
+      <div class="space-y-5">
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Pris och prisvärdhet</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-winner/10 text-winner">Gardena vinner</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Gardena SILENO City 500 börjar på ca 3 990 kr — en av marknadens mest prisvärda robotgräsklippare för trädgårdar upp till 500 m². Husqvarnas billigaste modell (Automower 105) kostar ca 5 990 kr för 150 m². För en normalträdgård på 400–700 m² kan du klara dig utmärkt med Gardena SILENO Life 750 till ca 5 490 kr, och spara 2 000–5 000 kr jämfört med ett Husqvarna-alternativ med samma kapacitet.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Kapacitet och trädgårdsstorlek</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-accent/10 text-accent">Husqvarna vinner</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Husqvarna har ett komplett modellutbud från 150 m² till över 5 000 m². Gardena SILENO täcker bara upp till 750 m² — har du en stor tomt är Husqvarna ditt enda alternativ. För trädgårdar under 750 m² klarar båda märkena uppgiften lika bra i praktiken. Husqvarna 430X Nera klarar till och med extremt stora arealer upp till 3 200 m² med avancerade GPS-funktioner.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Stöldskydd</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-accent/10 text-accent">Husqvarna vinner</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Husqvarna Automower 315 och uppåt har inbyggd GPS-spårning — om roboten stjäls kan du se var den befinner sig i realtid via Automower Connect-appen. Gardena SILENO saknar GPS och har bara PIN-kod och larm. För trädgårdar utan staket eller på landsbygd är GPS-stöldskydd ett starkt argument för Husqvarna.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Service och support</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-accent/10 text-accent">Husqvarna vinner</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Husqvarna har ett av de tätaste återförsäljarnätverken i Sverige med dedikerade servicecenter, certifierade installatörer och specialutbildad servicepersonal. Gardena säljs via trädgårdsbutiker och stormarknader med allmänt servicekunnande. För komplexa installationer eller felsökning är Husqvarnas serviceorganisation klart överlägsen.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Klippprestanda och gräskvalitet</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-bg-alt text-text-light">Oavgjort</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Eftersom de delar teknikplattform är den faktiska klippprestandan mycket likartad. Båda klipper kontinuerligt i slumpmässiga mönster och mulchar gräsklippet fint. Gräskvaliteten är identisk om man jämför modeller med liknande knivsystem. Skillnaden i klippprestanda finns i knivcykeltid och antal knivar — kontrollera specifikationerna per modell snarare än per märke.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Recommendation sections -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vem ska välja vad?</h2>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div class="bg-bg-alt rounded-xl border border-border p-5">
+          <h3 class="font-heading font-bold text-text mb-3">Välj Husqvarna Automower om du...</h3>
+          <ul class="space-y-2">
+            {[
+              'Har en tomt större än 750 m²',
+              'Vill ha GPS-stöldskydd',
+              'Har kuperad terräng med lutning >35%',
+              'Vill ha fullständig service via certifierade installatörer',
+              'Har komplex trädgård med många hinder eller trånga passager',
+            ].map(item => (
+              <li class="flex items-start gap-2 text-sm text-text-light">
+                <span class="text-accent font-bold flex-shrink-0 mt-0.5">+</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <div class="mt-4">
+            <a
+              href="https://www.husqvarna.com/se/produkter/robotgrasklippare/"
+              rel="sponsored nofollow noopener"
+              target="_blank"
+              class="inline-flex items-center justify-center w-full bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+            >
+              Se Husqvarna Automower
+              <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
+          </div>
+        </div>
+        <div class="bg-bg-alt rounded-xl border border-border p-5">
+          <h3 class="font-heading font-bold text-text mb-3">Välj Gardena SILENO om du...</h3>
+          <ul class="space-y-2">
+            {[
+              'Har en tomt under 750 m²',
+              'Vill ha lägsta möjliga inköpspris',
+              'Har en relativt flack och enkel trädgård',
+              'Köper via Bauhaus eller Hornbach',
+              'Inte prioriterar GPS-stöldskydd',
+            ].map(item => (
+              <li class="flex items-start gap-2 text-sm text-text-light">
+                <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <div class="mt-4">
+            <a
+              href="https://www.gardena.com/se/produkter/robotgrasklippare/"
+              rel="sponsored nofollow noopener"
+              target="_blank"
+              class="inline-flex items-center justify-center w-full bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+            >
+              Se Gardena SILENO
+              <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Verdict -->
+    <section class="mb-10 bg-winner/5 border border-winner/20 rounded-xl p-6">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Redaktionens slutsats</h2>
+      <p class="text-text-light leading-relaxed mb-3">
+        Valet är enklare än det verkar — de ägs av samma bolag och delar teknik. Välj baserat på tre faktorer: trädgårdsstorlek, budget och om du vill ha GPS-stöldskydd.
+      </p>
+      <p class="text-text-light leading-relaxed mb-3">
+        <strong class="text-text">Tomt under 750 m² och prisvärdshet viktigast:</strong> Gardena SILENO Life 750 till ca 5 490 kr levererar samma kärnfunktion som Husqvarna fast 2 000+ kr billigare.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        <strong class="text-text">Stor tomt, GPS-stöldskydd eller komplex terräng:</strong> Husqvarna Automower utan tvekan. Servicenätverket, GPS och modellutbudet gör det till det enda alternativet för krävande krav.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/husqvarna-robotgrasklippare/" class="text-accent hover:underline text-sm">Husqvarna Automower guide 2026 — alla modeller jämförda</a></li>
+        <li><a href="/gardena-sileno-city-500/" class="text-accent hover:underline text-sm">Gardena SILENO City 500 recension 2026</a></li>
+        <li><a href="/gardena-sileno-life-750/" class="text-accent hover:underline text-sm">Gardena SILENO Life 750 recension 2026</a></li>
+        <li><a href="/husqvarna-vs-mammotion/" class="text-accent hover:underline text-sm">Husqvarna vs Mammotion 2026 — kabel vs GPS utan kabel</a></li>
+        <li><a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare 2026 — alla märken jämförda</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se Husqvarna Automower 315"
+    url="https://www.husqvarna.com/se/produkter/robotgrasklippare/"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>
