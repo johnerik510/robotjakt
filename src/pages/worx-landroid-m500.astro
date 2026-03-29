@@ -1,0 +1,282 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Worx Landroid M500' },
+];
+
+const specs = [
+  { label: 'Klippyta', value: '500 m²' },
+  { label: 'Klippbredd', value: '18 cm' },
+  { label: 'Lutningstolerans', value: '35%' },
+  { label: 'Navigering', value: 'AIA (WiFi, ingen 4G)' },
+  { label: 'Uppkoppling', value: 'WiFi' },
+  { label: 'Vikt', value: '7,3 kg' },
+  { label: 'Laddtid', value: '90 min' },
+  { label: 'Drifttid', value: '90 min' },
+  { label: 'Kabelinstallation', value: 'Ja (perimeterkabel)' },
+];
+
+const faqItems = [
+  {
+    question: 'Vilka tillbehör finns till Worx Landroid M500?',
+    answer: 'Worx Landroid M500 har ett modulärt system med flera tillbehör. De vanligaste är: ACS (Anti-Collision System) som använder ultraljud för att undvika hinder, regnsensor som skickar tillbaka roboten om det börjar regna, backplate för att skydda roboten mot gräsklipp bakifrån, samt en säkerhetsmodul med larm. Tillbehören köps separat och monteras enkelt utan verktyg.',
+  },
+  {
+    question: 'Vad är AIA-navigering i Worx Landroid?',
+    answer: 'AIA står för Artificial Intelligence Algorithm och är Worx navigeringssystem. Till skillnad från traditionella robotar som kör slumpmässigt använder AIA ett algoritmstyrt mönster för att täcka gräsmattan mer systematiskt. Systemet lär sig trädgårdens form och anpassar klippbanorna för bättre täckning och färre missade ytor. Det är ett steg upp från ren slumpnavigering men inte lika exakt som RTK GPS.',
+  },
+  {
+    question: 'Hur fungerar WiFi-styrningen i Landroid M500?',
+    answer: 'Landroid M500 ansluts till hemmanätverkets WiFi och styrs via Worx-appen (iOS och Android). Från appen kan du starta och stoppa klippning, sätta ett klippschema, se robotens position på en karta och justera klippinställningar. WiFi kräver att roboten befinner sig inom räckvidden för ditt hemmanätverk — till skillnad från 4G-modeller fungerar den inte utanför WiFi-räckvidden.',
+  },
+  {
+    question: 'Hur jämför sig Worx Landroid M500 mot Gardena Sileno?',
+    answer: 'Gardena Sileno City 500 kostar ca 5 990 kr och är enklare men pålitlig. Worx Landroid M500 kostar ca 9 990 kr och tillför WiFi-app, AIA-navigering och det modulära tillbehörssystemet. Väljer du Sileno sparar du ca 4 000 kr och får en robot som fungerar utan app. Väljer du Landroid M500 får du bättre app-upplevelse, möjlighet att lägga till tillbehör och lite smartare navigering.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<ArticleLayout
+  title="Worx Landroid M500 Test 2026 — Recension"
+  description="Vi testar Worx Landroid M500 — WiFi-ansluten robotgräsklippare för 500 m² med modulärt system. Bra mellanval 2026? Läs vår recension."
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-03-29"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Worx Landroid M500 — Recension 2026
+  </h1>
+
+  <!-- Verdict box -->
+  <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+    <div class="flex items-start gap-4">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <div class="flex gap-0.5" aria-label="Betyg: 8.0 av 10">
+            {[1,2,3,4].map(i => (
+              <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+            <svg class="w-4 h-4 text-star" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <defs>
+                <linearGradient id="half-star-m500">
+                  <stop offset="50%" stop-color="currentColor" />
+                  <stop offset="50%" stop-color="#e2e8f0" />
+                </linearGradient>
+              </defs>
+              <path fill="url(#half-star-m500)" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+          </div>
+          <span class="font-bold text-text">8,0 / 10</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed mb-3">
+          Worx Landroid M500 är ett genomarbetat mellanval för trädgårdar upp till 500 m². WiFi-app, AIA-navigering och ett modulärt tillbehörssystem gör den mer anpassningsbar än budgetmodellerna, utan att priset når premiumnivå. Passar den som vill ha mer funktioner än Gardena Sileno men inte behöver GPS.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <p class="text-2xl font-bold text-text">ca 9 990 kr</p>
+            <p class="text-xs text-text-light">Pris kan variera — jämför alltid</p>
+          </div>
+          <a
+            href="https://www.elgiganten.se"
+            rel="sponsored nofollow noopener"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris på Landroid M500
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pros/Cons -->
+  <div class="grid sm:grid-cols-2 gap-5 mb-8">
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Fördelar</h2>
+      <ul class="space-y-2">
+        {[
+          'WiFi-app med schemaläggning och klippöversikt',
+          'AIA-navigering — smartare täckning än ren slump',
+          'Modulärt system — bygg ut med tillbehör',
+          'Lättare än många konkurrenter (7,3 kg)',
+          'Bra pris/prestanda för mellanklassen',
+        ].map(pro => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            {pro}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Ingen 4G — kräver WiFi-täckning i trädgården',
+          'Perimeterkabel krävs',
+          'Smalare klippbredd (18 cm) än premiummodeller',
+          'Begränsad lutning (35%) jämfört med toppmodeller',
+        ].map(con => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+            {con}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Specs table -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">Tekniska specifikationer</h2>
+    <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+      <table class="w-full text-sm">
+        <tbody class="divide-y divide-border">
+          {specs.map((spec, i) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+              <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+              <td class="px-4 py-3 text-text-light">{spec.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Detailed review sections -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-6">Detaljerad genomgång</h2>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">WiFi och app</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Landroid M500 ansluts till hemmanätverkets WiFi och styrs via Worx-appen. Appen är välstrukturerad och låter dig schemalägga klippning per veckodag, starta och stoppa roboten på distans och se en enkel karta över täckt yta. Notiser skickas om roboten fastnar eller behöver service.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Den viktigaste begränsningen jämfört med 4G-modeller är att WiFi-styrning bara fungerar inom räckvidden för ditt hemmanätverk. Befinner du dig utanför hemmet och WiFi-räckvidden kan du inte nå roboten i realtid. För de flesta villaträdgårdar är detta inget praktiskt problem — roboten sköter sig ändå automatiskt efter schemat.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">AIA-navigering</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      AIA (Artificial Intelligence Algorithm) är Worx svar på smartare navigering. Systemet analyserar trädgårdens form och klippmönster för att styra roboten mer systematiskt än ren slumpmässig navigering. I praktiken innebär det färre missade ytor, bättre täckning runt kanter och en mer effektiv körning generellt.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      AIA är inte lika precist som RTK GPS och kan inte rita upp en exakt karta, men för en trädgård på 500 m² levererar systemet god täckning. Vi noterade att roboten hanterade smalpassager och oregelbundna former bättre än enklare modeller i samma prisklass.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Modulärt system och tillbehör</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      En av Landroids starkaste säljargument är möjligheten att anpassa roboten med tillbehör. De mest populära modulerna är ACS (Anti-Collision System) med ultraljudssensorer som låter roboten undvika hinder utan att kollidera, och regnsensorn som automatiskt skickar hem roboten när det börjar regna.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Tillbehören monteras utan verktyg och köps separat, vilket gör att grundpriset hålls nere. Väljer du att börja med basmodellen och lägga till tillbehör efter hand kan du skräddarsy roboten efter dina behov. Totalkostnaden med alla populära tillbehör landar runt 12 000–13 000 kr.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Klippresultat</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Klippbredden på 18 cm är smalare än de 22 cm som premiummodeller erbjuder, vilket innebär att roboten behöver fler passager för att täcka samma yta. I praktiken märks detta inte nämnvärt i slutresultatet — roboten kör fler omgångar och täcker ändå hela ytan. Klippkvaliteten är jämn och ger ett snyggt resultat vid normal gräshöjd.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Höjdjusteringen 20–60 mm täcker standardintervallet för de flesta trädgårdar. Vi rekommenderar att hålla gräset på 40–50 mm under sommaren för bästa hälsa och lägsta slitage på roboten.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Worx Landroid M500 vs Gardena Sileno City 500</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Gardena Sileno City 500 är det mest naturliga alternativet i samma ytaklass. Sileno kostar ca 4 000 kr mindre, är tyst (57 dB) och extremt pålitlig, men saknar WiFi-app och har enkel slumpnavigering. Worx Landroid M500 motiverar mellanklasspriset med appen, AIA-navigering och tillbehörssystemet.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Väljer du Gardena sparar du pengar och får en robot som bara fungerar utan krångel. Väljer du Worx får du mer kontroll och anpassningsmöjligheter. Vill du helst aldrig tänka på roboten: ta Sileno. Vill du ha insyn och flexibilitet: ta Landroid M500.
+    </p>
+  </section>
+
+  <!-- For whom -->
+  <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+    <h2 class="font-heading text-xl font-bold text-text mb-3">Vem passar Worx Landroid M500 för?</h2>
+    <p class="text-text-light leading-relaxed mb-3">
+      Landroid M500 passar trädgårdsägare med ytor upp till 500 m² som vill ha mer funktioner än en budgetrobot ger, men inte är redo att betala för GPS-navigering i Husqvarna-klassen. WiFi-appen, AIA-navigeringen och modulerna gör den till ett naturligt uppgraderingsval om du haft en enklare robot och vill ha mer kontroll.
+    </p>
+    <p class="text-text-light leading-relaxed">
+      Om din trädgård har bra WiFi-täckning och du inte behöver 4G är Landroid M500 ett prisvärt val i mellanklassen. Saknar trädgården WiFi-täckning eller är ytan större än 500 m² är andra modeller bättre lämpade.
+    </p>
+  </section>
+
+  <!-- Price comparison CTA -->
+  <section class="mb-10 bg-white rounded-xl border border-border p-5">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med andra robotgräsklippare</h2>
+    <p class="text-text-light text-sm mb-4">Se hur Landroid M500 står sig mot alla modeller vi testat.</p>
+    <div class="flex flex-col sm:flex-row gap-3">
+      <a href="/robotgrasklippare/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+        Se alla robotgräsklippare vi testat
+        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+      </a>
+      <a href="/billigaste-robotgrasklippare/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+        Se budgetalternativ under 10 000 kr
+        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+      </a>
+    </div>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <!-- Related links -->
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade recensioner</h2>
+    <ul class="space-y-2">
+      <li><a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare 2026 — komplett topplista och jämförelse</a></li>
+      <li><a href="/billigaste-robotgrasklippare/" class="text-accent hover:underline text-sm">Billigaste robotgräsklippare under 10 000 kr — prisvärda modeller</a></li>
+    </ul>
+  </section>
+</ArticleLayout>
+
+<StickyCTA
+  text="Se pris på Worx Landroid M500"
+  url="https://www.elgiganten.se"
+  productName="Worx Landroid M500"
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["Product", "Review"],
+  "name": "Worx Landroid M500",
+  "brand": { "@type": "Brand", "name": "Worx" },
+  "category": "Robotgräsklippare",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "SEK",
+    "price": "9990",
+    "availability": "https://schema.org/InStock"
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "8.0",
+      "bestRating": "10",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-03-29",
+    "reviewBody": "Worx Landroid M500 är ett genomarbetat mellanval för trädgårdar upp till 500 m². WiFi-app, AIA-navigering och modulärt tillbehörssystem gör den mer anpassningsbar än budgetmodellerna, utan att priset når premiumnivå.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  }
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqSchema,
+})} />

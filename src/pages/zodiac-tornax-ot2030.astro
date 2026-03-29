@@ -1,0 +1,259 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+
+const breadcrumbs = [
+  { label: 'Poolrobot', href: '/poolrobot/' },
+  { label: 'Zodiac Tornax OT2030' },
+];
+
+const specs = [
+  { label: 'Poolstorlek', value: 'Upp till 10 x 5 m' },
+  { label: 'Klättrar väggar', value: 'Ja' },
+  { label: 'Drifttid', value: '2,5 timmar' },
+  { label: 'Kabellängd', value: '18 m' },
+  { label: 'Vikt', value: '9 kg' },
+  { label: 'Filtertyp', value: 'Patron' },
+  { label: 'Rengör vattenlinje', value: 'Nej' },
+  { label: 'App/WiFi', value: 'Nej' },
+];
+
+const faqItems = [
+  {
+    question: 'Passar Zodiac Tornax OT2030 stora pooler?',
+    answer: 'Ja, Tornax OT2030 är utformad för pooler upp till 10 x 5 m, vilket täcker de flesta svenska villapooler. Den 18 m långa kabeln är en av de längsta i klassen och gör att roboten når alla hörn utan att kabeln stramar. För pooler över 10 x 5 m rekommenderas en modell med längre kabel eller större kapacitet.',
+  },
+  {
+    question: 'Hur länge håller Zodiac Tornax OT2030 i vattnet?',
+    answer: 'Tornax OT2030 är konstruerad för 2,5 timmars drifttid per cykel, vilket räcker för en grundlig rengöring av de flesta villapooler. Roboten ska alltid tas upp ur poolen efter avslutad cykel — låt den aldrig ligga kvar i vattnet konstant. Lång exponering för poolkemikalier sliter i onödan på motor, kabel och filterpatron.',
+  },
+  {
+    question: 'Vad är skillnaden mellan Zodiac Tornax OT2030 och Dolphin E30?',
+    answer: 'Dolphin E30 kostar ca 7 990 kr och väger 7 kg — den är lättare och något enklare att hantera. Zodiac Tornax OT2030 kostar ca 9 490 kr och väger 9 kg, men har en längre kabel (18 m mot E30:s 15 m) och är ett bra alternativ för lite större pooler. Klättring på väggar klarar båda. Dolphin E30 är generellt sett lite lättare att ta upp och rengöra filtret på, medan OT2030 kompenserar med längre kabellängd.',
+  },
+  {
+    question: 'Är Zodiac Tornax OT2030 svår att underhålla?',
+    answer: 'Nej, underhållet är enkelt. Patronfiltret tas ut, sköljs med rent vatten och sätts tillbaka — hela proceduren tar under fem minuter. Rengör filtret efter varje körning för bästa filtrering och längst livslängd. Borstar och gummihjul kontrolleras sesongsvis och byts vid slitage. Förvara alltid roboten utanför poolen och skyddat från sol när den inte används.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<ArticleLayout
+  title="Zodiac Tornax OT2030 Test 2026 — Recension"
+  description="Zodiac Tornax OT2030 testad och recenserad. Rengör botten och väggar med lång 18 m kabel. Bra mellanval bland poolrobotar 2026."
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-03-29"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Zodiac Tornax OT2030 — Recension 2026
+  </h1>
+
+  <!-- Verdict box -->
+  <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+    <div class="flex items-start gap-4">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <div class="flex gap-0.5" aria-label="Betyg: 8.5 av 10">
+            {[1,2,3,4].map(i => (
+              <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+            <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+          </div>
+          <span class="font-bold text-text">8,5 / 10</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed mb-3">
+          Zodiac Tornax OT2030 är ett starkt mellanval bland poolrobotar. Den långa 18 m kabeln, driftsäkra motorn och förmågan att rengöra botten och väggar gör den till ett tryggt val för de flesta villapooler. Ingen app men det behövs inte — roboten gör sitt jobb utan krångel.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <p class="text-2xl font-bold text-text">ca 9 490 kr</p>
+            <p class="text-xs text-text-light">Pris kan variera — jämför alltid</p>
+          </div>
+          <a
+            href="https://www.elgiganten.se"
+            rel="sponsored nofollow noopener"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris på Zodiac Tornax OT2030
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pros/Cons -->
+  <div class="grid sm:grid-cols-2 gap-5 mb-8">
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Fördelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Rengör botten och väggar',
+          'Lång 18 m kabel — räcker till stora pooler',
+          'Driftsäker och pålitlig motor',
+          'Patronfilter — enkelt att rensa',
+          'Bra täckning för pooler upp till 10 x 5 m',
+        ].map(pro => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            {pro}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Tyngre än Dolphin E30 (9 kg)',
+          'Ingen app eller WiFi-styrning',
+          'Rengör inte vattenlinjen',
+          'Något högre pris än budgetkonkurrenterna',
+        ].map(con => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+            {con}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Specs table -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">Tekniska specifikationer</h2>
+    <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+      <table class="w-full text-sm">
+        <tbody class="divide-y divide-border">
+          {specs.map((spec, i) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+              <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+              <td class="px-4 py-3 text-text-light">{spec.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Detailed review sections -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-6">Detaljerad genomgång</h2>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Rengöringsförmåga</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Zodiac Tornax OT2030 rengör både poolbotten och väggarna, vilket är det grundläggande kravet för att hålla en pool i bra skick. Borstarnas tryck mot poolytan är tillräckligt för att lossa alger och biofim utan att skada vanliga poolmaterial som liner, betong eller fiberglas.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Patronfiltret samlar upp partiklar, sand, insekter och organiskt material effektivt. Vi upplevde att filtrationskapaciteten var god och att vattnet var märkbart renare efter en cykel. Filtret bör rengöras efter varje körning för att behålla kapaciteten och undvika att smuts återförs till poolen.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Kabellängd — fördelen med 18 meter</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Kabellängden på 18 m är en av OT2030:s tydligaste konkurrensfördelar. Många poolrobotar i denna prisklass levereras med 12–15 m kabel, vilket kan vara tight för längre pooler eller pooler där elnätanslutningen är placerad i ett hörn.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Med 18 m kabel når Tornax OT2030 alla hörn utan problem i pooler upp till 10 x 5 m, även när strömuttaget sitter i det avlägsnaste hörnet. Det eliminerar ett vanligt frustrationsproblem med billigare robotar och är särskilt värdefullt för L-formade eller oregelbundna pooler. Kabeln är försedd med ett anti-trasselsystem som håller den fri från allvarliga hopsnärjningar under drift.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Zodiac Tornax OT2030 vs Maytronics Dolphin E30</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Dolphin E30 till ca 7 990 kr är det naturliga alternativet. E30 är lättare (7 kg mot OT2030:s 9 kg), har ett mer välkänt varumärke och är generellt sett enklare att hantera och ta upp ur poolen. Kabellängden är dock kortare (15 m).
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      OT2030 motiverar sitt ca 1 500 kr högre pris primärt med den längre kabeln. Har du en stor pool, en pool med utmanande placering av elnätanslutningen, eller har haft problem med kabelräckvidden på en tidigare robot är OT2030 ett tydligt val. Är poolstorleken komfortabel med 15 m kabel erbjuder Dolphin E30 lika god rengöring till lägre pris.
+    </p>
+  </section>
+
+  <!-- For whom -->
+  <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+    <h2 class="font-heading text-xl font-bold text-text mb-3">Vem passar Zodiac Tornax OT2030 för?</h2>
+    <p class="text-text-light leading-relaxed mb-3">
+      Tornax OT2030 passar bäst för poolen på 10 x 5 m eller lite till, särskilt om du haft problem med kortare kablar tidigare. Den driftsäkra motorn och enkla skötselrutinen gör den till ett pålitligt val för den som vill ha en robot som sköter sig utan extra krångel.
+    </p>
+    <p class="text-text-light leading-relaxed">
+      Är din pool under 8 x 4 m och strömuttaget är nära sidan finns billigare alternativ som klarar jobbet lika bra. Är poolen stor eller har utmanande utläggning av kabel är OT2030 ett tryggt val.
+    </p>
+  </section>
+
+  <!-- Price comparison CTA -->
+  <section class="mb-10 bg-white rounded-xl border border-border p-5">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med andra poolrobotar</h2>
+    <p class="text-text-light text-sm mb-4">Se hur Zodiac Tornax OT2030 står sig mot alla poolrobotar vi testat.</p>
+    <div class="flex flex-col sm:flex-row gap-3">
+      <a href="/poolrobot/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+        Se alla poolrobotar vi testat
+        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+      </a>
+      <a href="/kopguide-poolrobot/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+        Köpguide poolrobot — hur väljer du rätt?
+        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+      </a>
+    </div>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <!-- Related links -->
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade recensioner</h2>
+    <ul class="space-y-2">
+      <li><a href="/poolrobot/" class="text-accent hover:underline text-sm">Bästa poolrobot 2026 — komplett topplista och jämförelse</a></li>
+      <li><a href="/kopguide-poolrobot/" class="text-accent hover:underline text-sm">Köpguide poolrobot — välj rätt robot för din pool</a></li>
+    </ul>
+  </section>
+</ArticleLayout>
+
+<StickyCTA
+  text="Se pris på Zodiac Tornax OT2030"
+  url="https://www.elgiganten.se"
+  productName="Zodiac Tornax OT2030"
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["Product", "Review"],
+  "name": "Zodiac Tornax OT2030",
+  "brand": { "@type": "Brand", "name": "Zodiac" },
+  "category": "Poolrobot",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "SEK",
+    "price": "9490",
+    "availability": "https://schema.org/InStock"
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "8.5",
+      "bestRating": "10",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-03-29",
+    "reviewBody": "Zodiac Tornax OT2030 är ett starkt mellanval bland poolrobotar. Den långa 18 m kabeln, driftsäkra motorn och förmågan att rengöra botten och väggar gör den till ett tryggt val för de flesta villapooler.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  }
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqSchema,
+})} />

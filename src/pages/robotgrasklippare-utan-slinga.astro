@@ -108,7 +108,16 @@ const breadcrumbs = [
 
     <!-- Topplista -->
     <div class="space-y-5 mb-10">
-      {products.map(p => <ProductCard {...p} />)}
+      {products.map(p => (
+        <div>
+          <ProductCard {...p} />
+          {p.name === 'Segway Navimow H500E' && (
+            <div class="mt-2 px-1">
+              <a href="/segway-navimow-h500e/" class="text-accent hover:underline text-sm font-medium">Läs vår fullständiga recension av Segway Navimow H500E</a>
+            </div>
+          )}
+        </div>
+      ))}
     </div>
 
     <!-- Husqvarna-not -->
