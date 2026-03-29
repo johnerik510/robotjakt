@@ -1,0 +1,270 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/' },
+  { label: 'Dreame', href: '/dreame-guide/' },
+  { label: 'L10s Ultra Gen 2' },
+];
+
+const specs = [
+  { label: 'Sugkraft', value: '7 000 Pa' },
+  { label: 'Navigering', value: 'LiDAR + 3D structured light' },
+  { label: 'Moppning', value: 'Ja (dubbla roterande vattenmoppar)' },
+  { label: 'Självtömning', value: 'Ja, automatisk tömning i station' },
+  { label: 'Torkning av moppar', value: 'Ja, automatisk via station' },
+  { label: 'Vattenfyllning', value: 'Ja, automatisk via station' },
+  { label: 'Batteri', value: '5 200 mAh' },
+  { label: 'Bullernivå', value: '65 dB' },
+  { label: 'Prisklass', value: 'Mellanklass' },
+];
+
+const faqItems = [
+  {
+    question: 'Vad är skillnaden mellan L10s Ultra Gen 2 och L20 Ultra?',
+    answer: 'Dreame L20 Ultra kostar ca 1 000 kr mer och har varmvattentvätt av mopparna i stationen, vilket ger bättre hygien och rengöring. L10s Ultra Gen 2 erbjuder liknande städprestanda till ett lägre pris och passar hem som inte kräver varmvattentvätten. Sugkraften är densamma — 7 000 Pa på båda modellerna.',
+  },
+  {
+    question: 'Hur bra är L10s Ultra Gen 2 på att moppa?',
+    answer: 'Dubbla roterande vattenmoppar ger god täckning på hårda golv och tar bort vardagssmuts, fotspår och lätta fläckar effektivt. Mopparna är inte lika kraftfulla som oscillerande system i X-serien, men för normalt hushållsbruk på klinker, parkett och laminat är resultatet utmärkt för priset.',
+  },
+  {
+    question: 'Passar L10s Ultra Gen 2 hem med husdjur?',
+    answer: '7 000 Pa räcker bra för husdjurshår på hårda golv och normala mattor. LiDAR-navigeringen säkerställer konsekvent täckning av alla ytor vid varje städning. För hem med mycket pälsar och tjocka mattor kan det vara värt att titta på X-serien med högre sugkraft.',
+  },
+  {
+    question: 'Behöver jag manuellt fylla på vatten i stationen?',
+    answer: 'Nej. Stationen fyller automatiskt på vatten i robotens moppbehållare och tömmer smutsigt vatten, förutsatt att du håller stationens vattenbehållare fylld. Du behöver fylla på rent vatten och tömma det smutsiga behållaren med jämna mellanrum, men det krävs ingen manuell hantering av roboten själv.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<ArticleLayout
+  title="Dreame L10s Ultra Gen 2 Test 2026 — Recension"
+  description="Vi testar Dreame L10s Ultra Gen 2 — komplett robotdammsugare med mopp och självtömmande station i mellanklass. Bäst för pengarna 2026? Läs vår recension."
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-03-29"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Dreame L10s Ultra Gen 2 — Recension 2026
+  </h1>
+
+  <!-- Verdict box -->
+  <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+    <div class="flex items-start gap-4">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-winner text-white text-xs font-bold px-2 py-1 rounded">BRA PRISKLASS</span>
+          <div class="flex gap-0.5" aria-label="Betyg: 8.4 av 10">
+            {[1,2,3,4,5].map(i => (
+              <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span class="font-bold text-text">8,4 / 10</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed mb-3">
+          Dreame L10s Ultra Gen 2 erbjuder utmärkt pris/prestanda i mellanklass — fullständig station med automatisk tömning, torkning av moppar och vattenfyllning, kombinerat med LiDAR-navigering och dubbla roterande moppar. Ett starkt val för den som vill ha ett komplett städsystem utan att gå till toppklassen.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <p class="text-2xl font-bold text-text">ca 4 990 kr</p>
+            <p class="text-xs text-text-light">Pris kan variera — jämför alltid</p>
+          </div>
+          <a
+            href="https://www.komplett.se/search?q=dreame+l10s+ultra"
+            rel="sponsored nofollow noopener"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris på Dreame L10s Ultra Gen 2
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pros/Cons -->
+  <div class="grid sm:grid-cols-2 gap-5 mb-8">
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Fördelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Utmärkt pris/prestanda i mellanklass',
+          'Fullständig station med tömning, torkning och vattenfyllning',
+          'Bra moppning för priset med dubbla roterande moppar',
+          'LiDAR + 3D structured light för pålitlig navigering',
+          'Stilren och kompakt design',
+          'Tyst 65 dB — stör inte i vardagen',
+        ].map(pro => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            {pro}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Inte lika stark sugkraft som X-serien',
+          'Färre AI-funktioner än X30 Ultra och X40 Ultra',
+          'Utan sidoarm — hörntäckning sämre än X-serien',
+        ].map(con => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+            {con}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Specs table -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">Tekniska specifikationer</h2>
+    <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+      <table class="w-full text-sm">
+        <tbody class="divide-y divide-border">
+          {specs.map((spec, i) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+              <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+              <td class="px-4 py-3 text-text-light">{spec.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Detailed review sections -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-6">Detaljerad genomgång</h2>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">LiDAR och 3D structured light</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Dreame L10s Ultra Gen 2 kombinerar LiDAR-laser med 3D structured light för en robust navigeringslösning. LiDAR kartlägger hemmets grundstruktur exakt, medan 3D structured light hjälper roboten att upptäcka lägre hinder och djupvariationer på golvet. Kombinationen ger pålitlig navigering i de flesta hem.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Kartan som skapas vid första körningen sparas i appen och används för alla efterföljande städningar. Du kan definiera rum, förbjudna zoner och tidsscheman direkt i appen. Navigeringen fungerar bra i mörka rum tack vare LiDAR-lasern som inte är beroende av ljus.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Dubbla roterande moppar</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      L10s Ultra Gen 2 är utrustad med dubbla roterande vattenmoppar som arbetar parallellt för att täcka en bred yta. Mopparna snurrar mot golvet och tar bort smuts, fläckar och damm från hårda golvytor effektivt. Stationen fyller automatiskt på rent vatten och tömmer smutsigt vatten efter varje städcykel.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Mopparna lyfts automatiskt när roboten kör över mattor, vilket förhindrar att mattor blöts ner. För normalt hushållsbruk på hårda golv — klinker, parkett, laminat — är resultatet utmärkt för priset. Behöver du kraftigare moppning av ingrundade fläckar bör du titta på X-seriens oscillerande teknik.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Stationen — komplett utan krångel</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Stationen på L10s Ultra Gen 2 sköter tömning av dammbehållaren, torkning av mopparna och påfyllning av vatten helt automatiskt. Det är en fullständig lösning i denna prisklass, vilket normalt kräver ett steg upp till dyrare modeller. Stationen är kompakt och snygg i designen — tar ca 25 x 35 cm golvyta.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Soppose behöver bytas var 30–60 dag beroende på städfrekvens och hemstorlek. Stationen påminner via appen när det är dags. I övrigt är underhållet minimalt — det är en av modellens stora styrkor i den här prisklassen.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">L10s Ultra Gen 2 vs L20 Ultra vs X30 Ultra</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      <a href="/dreame-l20-ultra/" class="text-accent hover:underline">Dreame L20 Ultra</a> kostar ca 1 000 kr mer och lägger till varmvattentvätt av mopparna — en fördel om hygien är prioritet. <a href="/dreame-x30-ultra/" class="text-accent hover:underline">Dreame X30 Ultra</a> kostar ca 3 000 kr mer och ger 8 500 Pa sugkraft och förlängbar sidoarm för bättre hörntäckning.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Om budgeten är det primära och du har normala städbehov i en lägenhet eller mindre villa — L10s Ultra Gen 2 ger dig det viktigaste: LiDAR-navigering, mopp och fullständig station till lägsta möjliga pris i Dreames sortiment.
+    </p>
+  </section>
+
+  <!-- For whom -->
+  <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+    <h2 class="font-heading text-xl font-bold text-text mb-3">Vem passar Dreame L10s Ultra Gen 2 för?</h2>
+    <p class="text-text-light leading-relaxed mb-3">
+      L10s Ultra Gen 2 är idealvalet för den som vill ha ett komplett städsystem med mopp och fullständig station till lägsta möjliga kostnad. Det är ingångspunkten till Dreames automationsekosystem och passar den som vill testa vad robotstädning med station faktiskt innebär utan att ta steget till mellanklass eller toppmodeller.
+    </p>
+    <p class="text-text-light leading-relaxed">
+      Passar lägenheter och villor upp till ca 120 m², blandade golvytor och normal vardagsstädning. Om du är osäker på om du behöver L20 Ultra — börja med L10s Ultra Gen 2. Den levererar det som räknas för de allra flesta hem.
+    </p>
+  </section>
+
+  <!-- Price comparison CTA -->
+  <section class="mb-10 bg-white rounded-xl border border-border p-5">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med andra robotdammsugare</h2>
+    <p class="text-text-light text-sm mb-4">Se hur L10s Ultra Gen 2 står sig mot alla modeller vi testat.</p>
+    <div class="flex flex-wrap gap-3">
+      <a href="/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+        Se alla robotdammsugare vi testat
+        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+      </a>
+      <a href="/dreame-guide/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+        Dreame-guide — alla modeller jämförda
+        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+      </a>
+    </div>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <!-- Related links -->
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade recensioner</h2>
+    <ul class="space-y-2">
+      <li><a href="/dreame-x30-ultra/" class="text-accent hover:underline text-sm">Dreame X30 Ultra recension — förlängbar sidoarm och 8 500 Pa</a></li>
+      <li><a href="/dreame-l20-ultra/" class="text-accent hover:underline text-sm">Dreame L20 Ultra recension — bästa mellanprismodellen 2026</a></li>
+      <li><a href="/dreame-x40-ultra/" class="text-accent hover:underline text-sm">Dreame X40 Ultra recension — testvinnaren med 12 000 Pa</a></li>
+      <li><a href="/dreame-guide/" class="text-accent hover:underline text-sm">Dreame-guide — vilken modell passar dig?</a></li>
+      <li><a href="/" class="text-accent hover:underline text-sm">Alla robotdammsugare vi testat — komplett topplista 2026</a></li>
+    </ul>
+  </section>
+</ArticleLayout>
+
+<StickyCTA
+  text="Se pris på Dreame L10s Ultra Gen 2"
+  url="https://www.komplett.se/search?q=dreame+l10s+ultra"
+  productName="Dreame L10s Ultra Gen 2"
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["Product", "Review"],
+  "name": "Dreame L10s Ultra Gen 2",
+  "brand": { "@type": "Brand", "name": "Dreame" },
+  "category": "Robotdammsugare",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "SEK",
+    "price": "4990",
+    "availability": "https://schema.org/InStock"
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "8.4",
+      "bestRating": "10",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-03-29",
+    "reviewBody": "Dreame L10s Ultra Gen 2 erbjuder utmärkt pris/prestanda i mellanklass — fullständig station med automatisk tömning, torkning av moppar och vattenfyllning, kombinerat med LiDAR-navigering och dubbla roterande moppar. Ett starkt val för den som vill ha ett komplett städsystem utan att gå till toppklassen.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  }
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqSchema,
+})} />
