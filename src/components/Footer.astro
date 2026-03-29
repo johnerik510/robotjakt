@@ -1,5 +1,5 @@
 ---
-const bastITest = [
+const robotdammsugare = [
   { label: 'Bästa robotdammsugare', href: '/' },
   { label: 'Med moppfunktion', href: '/robotdammsugare-med-mopp/' },
   { label: 'For husdjur', href: '/robotdammsugare-husdjur/' },
@@ -7,7 +7,14 @@ const bastITest = [
   { label: 'Köpguide', href: '/kopguide-robotdammsugare/' },
 ];
 
-const categories = [
+const robotgrasklippare = [
+  { label: 'Bästa robotgräsklippare 2026', href: '/robotgrasklippare/' },
+  { label: 'Köpguide', href: '/kopguide-robotgrasklippare/' },
+  { label: 'Utan slinga', href: '/robotgrasklippare-utan-slinga/' },
+  { label: 'Budgetmodeller', href: '/billigaste-robotgrasklippare/' },
+];
+
+const recensioner = [
   { label: 'Dreame X40 Ultra recension', href: '/dreame-x40-ultra/' },
   { label: 'Roborock S8 MaxV Ultra recension', href: '/roborock-s8-maxv-ultra/' },
   { label: 'Roborock Qrevo Master recension', href: '/roborock-qrevo-master/' },
@@ -23,17 +30,27 @@ const legal = [
 
 <footer class="bg-primary text-gray-300">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+      <div class="lg:col-span-1">
         <h3 class="font-heading text-white text-lg font-bold mb-4">Robotjakt</h3>
         <p class="text-sm leading-relaxed">
-          Vi testar och jämför robotdammsugare för den svenska marknaden. Oberoende recensioner, raka rekommendationer och alltid uppdaterade priser.
+          Vi testar och jämför konsumentrobotar for den svenska marknaden. Oberoende recensioner av robotdammsugare, robotgräsklippare och poolrobotar.
         </p>
       </div>
       <div>
-        <h4 class="font-heading text-white text-sm font-bold uppercase tracking-wider mb-4">Bäst i test</h4>
+        <h4 class="font-heading text-white text-sm font-bold uppercase tracking-wider mb-4">Robotdammsugare</h4>
         <ul class="space-y-2">
-          {bastITest.map((item) => (
+          {robotdammsugare.map((item) => (
+            <li>
+              <a href={item.href} class="text-sm hover:text-white transition-colors">{item.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-heading text-white text-sm font-bold uppercase tracking-wider mb-4">Robotgrasklippare</h4>
+        <ul class="space-y-2">
+          {robotgrasklippare.map((item) => (
             <li>
               <a href={item.href} class="text-sm hover:text-white transition-colors">{item.label}</a>
             </li>
@@ -43,7 +60,7 @@ const legal = [
       <div>
         <h4 class="font-heading text-white text-sm font-bold uppercase tracking-wider mb-4">Recensioner</h4>
         <ul class="space-y-2">
-          {categories.map((item) => (
+          {recensioner.map((item) => (
             <li>
               <a href={item.href} class="text-sm hover:text-white transition-colors">{item.label}</a>
             </li>
@@ -67,7 +84,7 @@ const legal = [
           &copy; 2026 Robotjakt.se. Alla rättigheter förbehållna.
         </p>
         <p class="text-xs text-text-lighter">
-          Robotjakt.se innehåller affiliatelänkar. Vi kan få provision när du handlar via våra länkar, utan extra kostnad för dig.
+          Robotjakt.se innehåller affiliatelänkar. Vi kan få provision när du handlar via våra länkar, utan extra kostnad for dig.
         </p>
       </div>
     </div>

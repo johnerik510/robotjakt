@@ -1,10 +1,17 @@
 ---
-const navItems = [
+const dammsugareItems = [
   { label: 'Topplista', href: '/' },
   { label: 'Köpguide', href: '/kopguide-robotdammsugare/' },
   { label: 'Med mopp', href: '/robotdammsugare-med-mopp/' },
   { label: 'Husdjur', href: '/robotdammsugare-husdjur/' },
   { label: 'Budget', href: '/billigaste-robotdammsugare/' },
+];
+
+const grasklippareItems = [
+  { label: 'Topplista', href: '/robotgrasklippare/' },
+  { label: 'Köpguide', href: '/kopguide-robotgrasklippare/' },
+  { label: 'Utan slinga', href: '/robotgrasklippare-utan-slinga/' },
+  { label: 'Budget', href: '/billigaste-robotgrasklippare/' },
 ];
 ---
 
@@ -22,14 +29,53 @@ const navItems = [
         </svg>
         Robotjakt
       </a>
-      <nav class="hidden md:flex items-center space-x-6" aria-label="Huvudnavigering">
-        {navItems.map((item) => (
-          <a href={item.href} class="text-sm font-medium text-gray-200 hover:text-white transition-colors">
-            {item.label}
-          </a>
-        ))}
+      <nav class="hidden md:flex items-center space-x-2" aria-label="Huvudnavigering">
+        <!-- Robotdammsugare dropdown -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light" aria-haspopup="true">
+            Robotdammsugare
+            <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="absolute left-0 top-full pt-1 hidden group-hover:block z-50 min-w-[180px]">
+            <div class="bg-white rounded-lg shadow-lg border border-gray-100 py-1">
+              {dammsugareItems.map((item) => (
+                <a href={item.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+        <!-- Robotgrasklippare dropdown -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light" aria-haspopup="true">
+            Robotgrasklippare
+            <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="absolute left-0 top-full pt-1 hidden group-hover:block z-50 min-w-[180px]">
+            <div class="bg-white rounded-lg shadow-lg border border-gray-100 py-1">
+              {grasklippareItems.map((item) => (
+                <a href={item.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+        <!-- Poolrobot -->
+        <a href="/poolrobot/" class="text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light">
+          Poolrobot
+        </a>
+        <!-- Alla robotar -->
+        <a href="/" class="text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light">
+          Alla robotar
+        </a>
       </nav>
-      <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-md hover:bg-primary-light transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Öppna meny" aria-expanded="false" aria-controls="mobile-menu">
+      <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-md hover:bg-primary-light transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Oppna meny" aria-expanded="false" aria-controls="mobile-menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
@@ -37,12 +83,22 @@ const navItems = [
     </div>
   </div>
   <nav id="mobile-menu" class="hidden md:hidden bg-primary-dark border-t border-primary-light" aria-label="Mobilnavigering">
-    <div class="px-4 py-3 space-y-2">
-      {navItems.map((item) => (
-        <a href={item.href} class="block py-2 text-sm text-gray-200 hover:text-white transition-colors">
+    <div class="px-4 py-3 space-y-1">
+      <p class="text-xs font-bold uppercase tracking-wider text-gray-400 px-2 pt-2 pb-1">Robotdammsugare</p>
+      {dammsugareItems.map((item) => (
+        <a href={item.href} class="block px-2 py-2 text-sm text-gray-200 hover:text-white transition-colors rounded-md hover:bg-primary-light">
           {item.label}
         </a>
       ))}
+      <p class="text-xs font-bold uppercase tracking-wider text-gray-400 px-2 pt-3 pb-1">Robotgrasklippare</p>
+      {grasklippareItems.map((item) => (
+        <a href={item.href} class="block px-2 py-2 text-sm text-gray-200 hover:text-white transition-colors rounded-md hover:bg-primary-light">
+          {item.label}
+        </a>
+      ))}
+      <p class="text-xs font-bold uppercase tracking-wider text-gray-400 px-2 pt-3 pb-1">Ovriga kategorier</p>
+      <a href="/poolrobot/" class="block px-2 py-2 text-sm text-gray-200 hover:text-white transition-colors rounded-md hover:bg-primary-light">Poolrobot</a>
+      <a href="/" class="block px-2 py-2 text-sm text-gray-200 hover:text-white transition-colors rounded-md hover:bg-primary-light">Alla robotar</a>
     </div>
   </nav>
 </header>
