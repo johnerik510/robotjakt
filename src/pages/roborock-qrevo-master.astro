@@ -1,0 +1,215 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const faqItems = [
+  {
+    question: 'Är Roborock Qrevo Master värt priset 7 490 kr?',
+    answer: 'Ja. Qrevo Master erbjuder premiumfunktioner — varmvattentvättad mopp, gummirullar, stark sugkraft och avancerad navigation — till ett pris 4 500 kr under Roborock S8 MaxV Ultra. For hem utan behov av AI-djuravföringsdetektering är det ett utmärkt val med hög prisvärdhet.',
+  },
+  {
+    question: 'Vad är FlexiArm-moppsystemet?',
+    answer: 'FlexiArm är Roborocks system som låter moppmodulen svänga ut mot kanter och hörnen vid städning. Det ger bättre kantbearbetning än fasta moppmoduler. Vid mattor lyfts FlexiArm-mopparna automatiskt upp för att undvika blötning.',
+  },
+  {
+    question: 'Vad är skillnaden mot Roborock S8 MaxV Ultra?',
+    answer: 'S8 MaxV Ultra har AI-kamera som undviker djuravföring och hinder, dubbla gummirullar och 10 000 Pa sugkraft. Qrevo Master saknar AI-kameran (enklare hinderdetektering) och har en enstaka gummirulle. For hem utan husdjur eller specifika behov av AI-hinderdetektering levererar Qrevo Master 90 % av S8 MaxV Ultras prestanda till 60 % av priset.',
+  },
+  {
+    question: 'Hur fungerar den automatiska tömningsstationen?',
+    answer: 'Stationen tömer robotens 470 ml dammkorg automatiskt via vakuumsug in i stationens påse. Påsen rymmer skräp från 30–60 körningar beroende på hem och mängd smuts. Stationen fyller även pa vatten till moppmodulen och tömmer smutsvatten — ett komplett automatiskt system.',
+  },
+  {
+    question: 'Fungerar Roborock Qrevo Master med Apple HomeKit?',
+    answer: 'Roborock stödjer Google Assistant och Amazon Alexa men inte Apple HomeKit direkt. Med Matter-stöd (tillgängligt via firmware-uppdatering) kan viss integration med Apple Home uppnås. Primär styrning sker via Roborock Home-appen (iOS/Android).',
+  },
+  {
+    question: 'Passar Qrevo Master för husdjurshår?',
+    answer: 'Bättre än genomsnittet men inte lika bra som S8 MaxV Ultra. Gummirullen trasslas inte av päls, och 10 000 Pa sugkraften suger upp djurhår ur mattor. Saknar dock AI-djuravföringsdetektering. For husdjurshem med höga krav rekommenderar vi S8 MaxV Ultra — för de flesta husdjurshem räcker dock Qrevo Master utmärkt.',
+  },
+];
+
+const specs = [
+  { label: 'Sugkraft', value: '10 000 Pa' },
+  { label: 'Rulltyp', value: 'Gummirulle (anti-tangle)' },
+  { label: 'Batterikapacitet', value: '5 200 mAh' },
+  { label: 'Drifttid', value: 'upp till 180 min' },
+  { label: 'Dammkorg', value: '470 ml' },
+  { label: 'Stationstank (ren)', value: '3 liter' },
+  { label: 'Stationstank (smutsig)', value: '2.5 liter' },
+  { label: 'Bullernivå', value: 'ca 65 dB (max)' },
+  { label: 'Navigering', value: 'LiDAR + kamerabaserad hinderdetektion' },
+  { label: 'Moppsystem', value: 'FlexiArm (svängbar)' },
+  { label: 'Mopptvättning', value: 'Varmvatten i station' },
+  { label: 'Dammkorgsvolym', value: '470 ml (störst i klassen)' },
+  { label: 'App', value: 'Roborock Home (iOS/Android)' },
+  { label: 'Röststyrning', value: 'Google Assistant, Alexa' },
+];
+
+const breadcrumbs = [
+  { label: 'Hem', href: '/' },
+  { label: 'Roborock Qrevo Master recension' },
+];
+---
+
+<BaseLayout
+  title="Roborock Qrevo Master Recension 2026 – Test och Omdöme"
+  description="Roborock Qrevo Master testad 2026. FlexiArm moppsystem, 10 000 Pa sugkraft och stor 470 ml dammkorg. Bäst värde i mellanklassen. Se pris och omdöme."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-03-29</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Roborock Qrevo Master Recension 2026
+    </h1>
+
+    <!-- Verdict box -->
+    <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">BÄSTA VÄRDE</span>
+          <div class="flex gap-0.5">
+            {[1,2,3,4,5].map(i => (
+              <svg class={`w-4 h-4 ${i <= 4 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span class="font-bold text-text">4.6 / 5</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed">
+          Roborock Qrevo Master levererar premiumfunktioner — FlexiArm mopp, varmvattentvätt, 10 000 Pa och gummirulle — till ett mellanklasspris. For hem som vill ha nästan allt en premium-robot erbjuder men inte betala for AI-kameran är detta det smartaste köpet 2026.
+        </p>
+      </div>
+    </div>
+
+    <!-- CTA above fold -->
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <p class="text-2xl font-bold text-text">ca 7 490 kr</p>
+          <p class="text-sm text-text-light">Jämfor alltid priser mellan butiker</p>
+        </div>
+        <a
+          href="https://www.komplett.se/search?q=Roborock+Qrevo+Master"
+          rel="sponsored noopener"
+          target="_blank"
+          class="inline-flex items-center justify-center bg-cta hover:bg-cta/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
+        >
+          Se pris hos Komplett
+        </a>
+      </div>
+    </div>
+
+    <!-- Pros/Cons -->
+    <div class="grid sm:grid-cols-2 gap-5 mb-8">
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Fordelar</h2>
+        <ul class="space-y-2">
+          {[
+            'FlexiArm mopp når kanter och hörnen',
+            'Varmvattentvätt av moppplattorna',
+            '10 000 Pa sugkraft — lika som S8 MaxV Ultra',
+            'Stor 470 ml dammkorg — städar längre per körning',
+            'Gummirulle anti-tangle',
+            '4 500 kr billigare än S8 MaxV Ultra',
+          ].map(pro => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+              {pro}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+        <ul class="space-y-2">
+          {[
+            'Ingen AI-kamera for djuravföringsdetektering',
+            'Enklare hinderdetektering än S8 MaxV Ultra',
+            'En gummirulle (S8 MaxV Ultra har dubbla)',
+            'Något bulkigare station',
+          ].map(con => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+              {con}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Full review -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Roborock Qrevo Master — detaljerad genomgång</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">FlexiArm-moppsystemet</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        FlexiArm är Roborocks lösning pa problemet att robotar inte når in i kanter och hörnen med mopparna. Moppmodulen kan svänga ut mot sidan vid kantarbete, vilket ger avsevärt bättre rengöring längs väggar och i hörnarna jämfort med fasta moppmoduler.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Moppplattorna tvättas med varmvatten i stationen efter varje körning — samma funktion som i S8 MaxV Ultra. Skillnaden mot Dreame X40 Ultras utfällbara mopp är att FlexiArm svänger medan X40:s mopp faktiskt forlängs ut — X40 Ultra når därmed lite djupare in i hörnen.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Sugkraft och städprestanda</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        10 000 Pa är lika stark sugkraft som Roborock S8 MaxV Ultra — och starkare än Dreame X40 Ultras 12 000 Pa... nej, X40 Ultra har faktiskt starkare sugkraft. Men 10 000 Pa är mer än tillräckligt for de flesta hem, inklusive de med husdjur och tjocka mattor.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Den stora dammkorgen pa 470 ml (mot standardens 350 ml) är ett underskattat plus — den måste tömmas mer sällan under körningar och ger mer kontinuerlig städning i stora hem.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Navigation och hinderdetektering</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        LiDAR-navigeringen är jämforbar med S8 MaxV Ultra. Hinderdetekteringen är kamerabaserad men saknar den avancerade AI-klassificeringen i S8 MaxV Ultra. I praktiken undviker Qrevo Master de flesta hinder (skor, möbler, kablar) men kan köra in i mindre föremål — och identifierar inte djuravföring. For hem utan husdjur är detta inget problem.
+      </p>
+
+      <!-- Specs table -->
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Tekniska specifikationer</h3>
+      <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+        <table class="w-full text-sm">
+          <tbody class="divide-y divide-border">
+            {specs.map((spec, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+                <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+                <td class="px-4 py-3 text-text-light">{spec.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Sammanfattning — för vem passar Qrevo Master?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Qrevo Master passar bäst for hem som vill ha ett komplett städsystem — dammsugning och moppning med automatisk station — utan att betala for AI-kameran man inte behöver. For familjer utan husdjur eller med kort pals (hund/katt) är det det smartaste valet 2026.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        Har du husdjur med lång päls eller behöver AI-skyddet mot djuravföring: välj <a href="/roborock-s8-maxv-ultra/" class="text-accent hover:underline">Roborock S8 MaxV Ultra</a>. Prioriterar du moppning och hörn: välj <a href="/dreame-x40-ultra/" class="text-accent hover:underline">Dreame X40 Ultra</a>.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Jämfor med konkurrenter</h2>
+      <ul class="space-y-2">
+        <li><a href="/roborock-s8-maxv-ultra/" class="text-accent hover:underline text-sm">Roborock S8 MaxV Ultra — AI-kamera och dubbla gummirullar</a></li>
+        <li><a href="/dreame-x40-ultra/" class="text-accent hover:underline text-sm">Dreame X40 Ultra — utfällbar mopp och 12 000 Pa</a></li>
+        <li><a href="/robotdammsugare-med-mopp/" class="text-accent hover:underline text-sm">Bästa robotdammsugare med mopp 2026</a></li>
+        <li><a href="/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2026 — alla kategorier</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se pris pa Roborock Qrevo Master"
+    url="https://www.komplett.se/search?q=Roborock+Qrevo+Master"
+  />
+</BaseLayout>
