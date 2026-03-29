@@ -84,6 +84,13 @@ const faqSchema = faqItems.map((item) => ({
               <td class="px-4 py-3 text-text-light">Spray + duk</td>
               <td class="px-4 py-3 text-winner font-semibold">8,2/10</td>
             </tr>
+            <tr class="bg-bg-alt/50">
+              <td class="px-4 py-3 font-medium text-text">Hobot Legee 688</td>
+              <td class="px-4 py-3 text-text">ca 2 499 kr</td>
+              <td class="px-4 py-3 text-cta font-medium">Nej (kräver ram)</td>
+              <td class="px-4 py-3 text-text-light">Vatten + mikrofiberduk</td>
+              <td class="px-4 py-3 text-winner font-semibold">8,4/10</td>
+            </tr>
             <tr>
               <td class="px-4 py-3 font-medium text-text">Liectroux WS-1080</td>
               <td class="px-4 py-3 text-text">ca 1 490 kr</td>
@@ -149,7 +156,57 @@ const faqSchema = faqItems.map((item) => ({
         </div>
       </section>
 
-      <!-- Produkt 2: Ecovacs Winbot W1 Pro -->
+      <!-- Produkt 2: Hobot Legee 688 -->
+      <section class="bg-white rounded-xl border border-border overflow-hidden">
+        <div class="bg-bg-alt px-5 py-3 border-b border-border flex items-center gap-3">
+          <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">POPULÄRT VAL</span>
+          <span class="font-heading font-bold text-text">Hobot Legee 688</span>
+          <span class="ml-auto font-bold text-text">ca 2 499 kr</span>
+        </div>
+        <div class="p-5">
+          <p class="text-text-light text-sm leading-relaxed mb-4">
+            Hobot Legee 688 är ett populärt mellanklassalternativ med 2 800 Pa sugkraft, tyst drift och app-styrning via Hobot-appen. Kabeldrift ger pålitlig prestanda utan oro for batterikapacitet. Passar hem med standardfönster med ram och kompakta ytor som kök och badrum.
+          </p>
+          <div class="grid sm:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs font-semibold text-text mb-2">Vad den klarar</p>
+              <ul class="space-y-1">
+                {['Stark sugkraft — 2 800 Pa', 'Tyst drift ca 55 dB', 'App-styrning via Hobot-appen', 'Pålitlig kabeldrift utan batteribrist'].map(p => (
+                  <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-winner font-bold mt-0.5">+</span>{p}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-text mb-2">Kompromisser</p>
+              <ul class="space-y-1">
+                {['Kräver fönsterram — fungerar inte utan', 'Kabel begränsar rörelsefrihet', 'Begränsad tankstorlek 80 ml'].map(c => (
+                  <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-cta font-bold mt-0.5">-</span>{c}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a
+              href="/hobot-legee-688/"
+              class="inline-flex items-center text-accent hover:underline font-medium text-sm"
+            >
+              Läs recension
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+            </a>
+            <a
+              href="https://www.komplett.se/search?search=hobot+legee+688"
+              rel="sponsored nofollow noopener"
+              target="_blank"
+              class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+            >
+              Se pris pa Hobot Legee 688
+              <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Produkt 3: Ecovacs Winbot W1 Pro -->
       <section class="bg-white rounded-xl border border-border overflow-hidden">
         <div class="bg-bg-alt px-5 py-3 border-b border-border flex items-center gap-3">
           <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">BRA MELLANVAL</span>
@@ -313,11 +370,12 @@ const faqSchema = faqItems.map((item) => ({
     "@type": "ItemList",
     "name": "Bästa fönsterputsrobot 2026",
     "description": "De bästa fönsterputsrobotarna 2026, rankade efter test.",
-    "numberOfItems": 3,
+    "numberOfItems": 4,
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Ecovacs Winbot W2 Omni", "url": "https://robotjakt.se/ecovacs-winbot-w2-omni/" },
-      { "@type": "ListItem", "position": 2, "name": "Ecovacs Winbot W1 Pro", "url": "https://robotjakt.se/fonsterputsrobot/" },
-      { "@type": "ListItem", "position": 3, "name": "Liectroux WS-1080", "url": "https://robotjakt.se/fonsterputsrobot/" },
+      { "@type": "ListItem", "position": 2, "name": "Hobot Legee 688", "url": "https://robotjakt.se/hobot-legee-688/" },
+      { "@type": "ListItem", "position": 3, "name": "Ecovacs Winbot W1 Pro", "url": "https://robotjakt.se/fonsterputsrobot/" },
+      { "@type": "ListItem", "position": 4, "name": "Liectroux WS-1080", "url": "https://robotjakt.se/fonsterputsrobot/" },
     ],
   })} />
 

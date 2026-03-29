@@ -1,0 +1,269 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Husqvarna Automower' },
+];
+
+const models = [
+  {
+    name: 'Husqvarna Automower 315X',
+    badge: 'KOMPAKT & PRISVÄRD',
+    badgeColor: 'bg-accent',
+    price: 'ca 14 990 kr',
+    area: 'upp till 1 600 m²',
+    features: ['GPS-assisterad navigering', 'App-styrning via Automower Connect', 'Kollisionssensor', 'Arbete i regn', 'Säkerhets-PIN-kod'],
+    cta: 'https://www.komplett.se/search?search=husqvarna+automower+315x',
+    ctaText: 'Se pris pa Automower 315X',
+    reviewUrl: '/husqvarna-automower-315x/',
+    description: 'Automower 315X är ingångspunkten till Husqvarnas X-serie med GPS-assistans och app-styrning. Passar trädgårdar upp till 1 600 m² med enklare former. Bra val for den som vill ha en pålitlig och kostnadseffektiv Husqvarna-modell.',
+  },
+  {
+    name: 'Husqvarna Automower 430X Nera',
+    badge: 'BÄST I TEST 2026',
+    badgeColor: 'bg-winner',
+    price: 'ca 24 990 kr',
+    area: 'upp till 3 200 m²',
+    features: ['EPOS GPS utan slingkabel (tillval)', 'Terängkörning upp till 50% lutning', 'App-styrning + Google/Alexa', 'Ultraljudssensorer', 'Automatisk uppdatering'],
+    cta: 'https://www.komplett.se/search?search=husqvarna+automower+430x+nera',
+    ctaText: 'Se pris pa Automower 430X Nera',
+    reviewUrl: '/husqvarna-automower-430x-nera/',
+    description: '430X Nera är Husqvarnas premiummodell for stora trädgårdar upp till 3 200 m². EPOS-tekniken (GPS utan slingkabel som tillval) eliminerar behovet av kabelinstallation. Klarar branta sluttningar upp till 50% och fungerar i alla väderförhållanden.',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Hur länge har Husqvarna tillverkat robotgräsklippare?',
+    answer: 'Husqvarna lanserade den forsta Automower 1995 — det var världens forsta kommersiella robotgräsklippare. Sedan dess har de sålt mer an 1 miljon enheter globalt. Husqvarna är fortfarande marknadsledare i Europa med störst installerad bas och mest mogen teknik.',
+  },
+  {
+    question: 'Behöver jag installera slingkabel med Husqvarna Automower?',
+    answer: 'De flesta Automower-modeller kräver en perimeterkabel som grävs ned längs trädgårdens gränser — det tar typiskt 2–4 timmar vid installation. Automower 430X Nera med EPOS-tillbehör kan däremot köras utan kabel med GPS-positionering. EPOS eliminerar installationsarbetet men kostar mer. For de flesta hem är standardinstallation med kabel det mest kostnadseffektiva alternativet.',
+  },
+  {
+    question: 'Vilken Automower-modell passar for en trädgård pa 1 000 m²?',
+    answer: 'For en trädgård pa 1 000 m² rekommenderar vi Automower 315X som klarar upp till 1 600 m². Den har tillräcklig kapacitet med marginal, GPS-assistans och app-styrning. 315X är Husqvarnas mest kostnadseffektiva alternativ med X-seriens funktioner. Om trädgården har komplicerad form med passeringar eller branta sluttningar kan det vara värt att overväga en modell med mer kraft.',
+  },
+  {
+    question: 'Fungerar Husqvarna Automower i regn?',
+    answer: 'Ja, alla Automower-modeller är byggda for att klippa i regn — det är en medveten designval. Att klippa i regnväder ger ett bättre resultat pa fuktigt gräs an att vänta tills det torkat och klippa en stor mängd gräs pa en gång. Robotgräsklippare arbetar bäst med principen "klipp lite men ofta" och regn ska inte stoppa dem.',
+  },
+  {
+    question: 'Hur säker är Husqvarna Automower mot stöld?',
+    answer: 'Alla Automower-modeller har PIN-kodskydd — utan rätt PIN-kod fungerar inte roboten. Om roboten lyfts fran marken larmar den och skickar en notis till appen. Modeller med GPS (X-serien) har inbyggd GPS-spaning som kan visas i Automower Connect-appen. Husqvarna erbjuder också separata stöldförsäkringar via auktoriserade återförsäljare.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Husqvarna Automower 2026 – guide & test | Robotjakt"
+  description="Komplett guide till Husqvarnas Automower-serie 2026. Vi jämför 315X, 430X Nera och fler modeller — hitta rätt för din trädgård."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Husqvarna Automower 2026 — alla modeller recenserade
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Husqvarna är marknadsledaren inom robotgräsklippare och grundade kategorin 1995. Vi guidar dig genom 2026 ars modellutbud — fran kompakta 315X till EPOS-utrustade 430X Nera — och hjälper dig hitta rätt Automower for din trädgård.
+    </p>
+
+    <!-- Brand overview -->
+    <section class="mb-8 bg-bg-alt rounded-xl border border-border p-6">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Husqvarna — pionjären sedan 1995</h2>
+      <p class="text-text-light leading-relaxed mb-3">
+        Husqvarna lanserade den forsta Automower 1995 — världens forsta kommersiella robotgräsklippare. Den svenska maskintillverkaren med rötter i Huskvarna har sedan dess sålt mer än 1 miljon robotgräsklippare globalt och är marknadsledare i Europa.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        Automower-serien bygger pa tre principer: klipp lite men ofta (mulching), robust bygge for alla väderförhållanden och pålitlig navigering. Den senaste EPOS-tekniken (Exact Positioning Operating System) erbjuder GPS-positionering utan slingkabel — en stor framsteg mot enklare installation.
+      </p>
+    </section>
+
+    <!-- Comparison table -->
+    <section class="mb-10" aria-label="Jämforelsetabell Husqvarna Automower">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämforelse — Husqvarna-modeller 2026</h2>
+      <div class="overflow-x-auto rounded-xl border border-border">
+        <table class="w-full text-sm bg-white">
+          <thead>
+            <tr class="border-b border-border bg-bg-alt">
+              <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Area</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Pris ca</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">GPS/EPOS</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Lutning max</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Automower 315X</td>
+              <td class="px-4 py-3 text-text-light">1 600 m²</td>
+              <td class="px-4 py-3 font-semibold text-text">14 990 kr</td>
+              <td class="px-4 py-3 text-text-light">GPS-assistans</td>
+              <td class="px-4 py-3 text-text-light">40%</td>
+            </tr>
+            <tr class="bg-winner/5">
+              <td class="px-4 py-3 font-medium text-text">Automower 430X Nera</td>
+              <td class="px-4 py-3 text-text-light">3 200 m²</td>
+              <td class="px-4 py-3 font-semibold text-text">24 990 kr</td>
+              <td class="px-4 py-3 text-winner font-semibold">EPOS (tillval)</td>
+              <td class="px-4 py-3 text-text-light">50%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Models -->
+    <div class="space-y-8 mb-12" id="modeller">
+      {models.map((model) => (
+        <section class="bg-white rounded-xl border border-border overflow-hidden">
+          <div class="bg-bg-alt px-5 py-3 border-b border-border flex items-center gap-3 flex-wrap">
+            <span class={`${model.badgeColor} text-white text-xs font-bold px-2 py-1 rounded`}>{model.badge}</span>
+            <span class="font-heading font-bold text-text">{model.name}</span>
+            <span class="ml-auto font-bold text-text">{model.price}</span>
+          </div>
+          <div class="p-5">
+            <p class="text-text-light text-sm leading-relaxed mb-4">{model.description}</p>
+            <div class="grid sm:grid-cols-2 gap-4 mb-4">
+              <div>
+                <p class="text-xs font-semibold text-text mb-2">Funktioner</p>
+                <ul class="space-y-1">
+                  {model.features.map(f => (
+                    <li class="flex items-start gap-1.5 text-xs text-text-light">
+                      <span class="text-winner font-bold mt-0.5">+</span>{f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-text mb-2">Areal</p>
+                <p class="text-sm font-semibold text-text">{model.area}</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a
+                href={model.reviewUrl}
+                class="inline-flex items-center text-accent hover:underline font-medium text-sm"
+              >
+                Läs recension
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+              </a>
+              <a
+                href={model.cta}
+                rel="sponsored nofollow noopener"
+                target="_blank"
+                class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+              >
+                {model.ctaText}
+                <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              </a>
+            </div>
+          </div>
+        </section>
+      ))}
+    </div>
+
+    <!-- EPOS section -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Husqvarna EPOS — GPS utan slingkabel</h2>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <p class="text-text-light leading-relaxed mb-4">
+          Husqvarnas EPOS-teknik (Exact Positioning Operating System) är ett banbrytande system som låter Automower navigera med GPS-precision utan att du behöver gräva ner en perimeterkabel. Istället for kabel använder systemet satellitpositionering (GPS + GLONASS) och en referensstation som monteras pa huset.
+        </p>
+        <p class="text-text-light leading-relaxed mb-4">
+          Installationen tar typiskt 30–60 minuter — en bråkdel av den tid som krävs for kabelinstallation. Du markerar trädgårdens gränser digitalt i Automower Connect-appen. EPOS-tekniken är tillgänglig pa 430X Nera som ett tillval.
+        </p>
+        <p class="text-text-light leading-relaxed">
+          EPOS är idealisk for: trädgårdar med komplex form, hus med mycket hårdgörning runt gräsmattan (stenkanter, plattor) och den som vill undvika kabelinstallation. Kostnaden for EPOS-tillbehöret är ca 3 000–4 000 kr utover modellpriset.
+        </p>
+      </div>
+    </section>
+
+    <!-- Buying guide by garden size -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vilken Husqvarna-modell passar din trädgård?</h2>
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Trädgård upp till 1 000 m²</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">Automower 315X är det naturliga valet. Den klarar 1 600 m² med god marginal och har GPS-assistans och app-styrning. Prisvärd ingangspunkt till X-serien.</p>
+          <a
+            href="https://www.komplett.se/search?search=husqvarna+automower+315x"
+            rel="sponsored nofollow noopener"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris pa Automower 315X
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Trädgård 1 000–3 000 m²</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">Automower 430X Nera är bäst for stora trädgårdar med komplexa former eller branta sluttningar. EPOS-tillvalet eliminerar kabelinstallation om din trädgård har komplicerade gränser.</p>
+          <a
+            href="https://www.komplett.se/search?search=husqvarna+automower+430x+nera"
+            rel="sponsored nofollow noopener"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris pa Automower 430X Nera
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare 2026 — alla märken jämförda</a></li>
+        <li><a href="/husqvarna-automower-430x-nera/" class="text-accent hover:underline text-sm">Husqvarna Automower 430X Nera recension 2026</a></li>
+        <li><a href="/husqvarna-automower-315x/" class="text-accent hover:underline text-sm">Husqvarna Automower 315X recension 2026</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se bästa Husqvarna Automower 2026"
+    url="#modeller"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Husqvarna Automower modeller 2026",
+    "description": "Husqvarna Automower-modeller rankade och recenserade 2026.",
+    "numberOfItems": 2,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Husqvarna Automower 430X Nera", "url": "https://robotjakt.se/husqvarna-automower-430x-nera/" },
+      { "@type": "ListItem", "position": 2, "name": "Husqvarna Automower 315X", "url": "https://robotjakt.se/husqvarna-automower-315x/" },
+    ],
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>
