@@ -14,10 +14,12 @@ const robotgrasklippare = [
   { label: 'Budgetmodeller', href: '/billigaste-robotgrasklippare/' },
 ];
 
-const recensioner = [
-  { label: 'Dreame X40 Ultra recension', href: '/dreame-x40-ultra/' },
-  { label: 'Roborock S8 MaxV Ultra recension', href: '/roborock-s8-maxv-ultra/' },
-  { label: 'Roborock Qrevo Master recension', href: '/roborock-qrevo-master/' },
+const ovriga = [
+  { label: 'Poolrobot', href: '/poolrobot/' },
+  { label: 'Poolrobot köpguide', href: '/kopguide-poolrobot/' },
+  { label: 'Fönsterputsrobot', href: '/fonsterputsrobot/' },
+  { label: 'Husqvarna Automower 430X', href: '/husqvarna-automower-430x-nera/' },
+  { label: 'Dolphin E30 recension', href: '/dolphin-e30/' },
 ];
 
 const legal = [
@@ -58,9 +60,9 @@ const legal = [
         </ul>
       </div>
       <div>
-        <h4 class="font-heading text-white text-sm font-bold uppercase tracking-wider mb-4">Recensioner</h4>
+        <h4 class="font-heading text-white text-sm font-bold uppercase tracking-wider mb-4">Pool & Fönster</h4>
         <ul class="space-y-2">
-          {recensioner.map((item) => (
+          {ovriga.map((item) => (
             <li>
               <a href={item.href} class="text-sm hover:text-white transition-colors">{item.label}</a>
             </li>
