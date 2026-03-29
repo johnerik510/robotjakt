@@ -1,0 +1,238 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const products = [
+  {
+    rank: 1,
+    name: 'Gardena Sileno City 500',
+    price: 'ca 3 999 kr',
+    rating: 4.5,
+    badge: 'Bäst för liten trädgård 2026',
+    pros: ['Upp till 500 m² — perfekt för villa eller radhus', 'Tyst drift 57 dB — störer inte grannar', 'Enkel installation med perimeterkabel', 'Pålitlig Gardena-kvalitet', 'Bra app med grundläggande schemaläggning'],
+    cons: ['Slinga krävs', 'Begränsad app jämfört med dyrare alternativ', 'Max 500 m² — inte för medelstora trädgårdar'],
+    ctaText: 'Se pris på Gardena Sileno City 500',
+    ctaUrl: 'https://www.clasohlson.com/se/Robotgrasklippare-Gardena-City-500/p/31-9803',
+  },
+  {
+    rank: 2,
+    name: 'Worx Landroid M500',
+    price: 'ca 4 499 kr',
+    rating: 4.3,
+    badge: 'Bäst WiFi-styrning',
+    pros: ['500 m² med WiFi-app och AIA-navigering', 'Modulärt system — bygg ut med tillbehör', 'Röstkontroll via Alexa och Google', 'Kan klippa i smala passager'],
+    cons: ['Slinga krävs', 'Navigering sämre än Husqvarna i komplexa former', 'Dyrare förbrukningsmaterial'],
+    ctaText: 'Se pris på Worx Landroid M500',
+    ctaUrl: 'https://www.pricerunner.se/pl/1595-4860328/Robotgraesklippare/Worx-Landroid-M500-WR141E-priser',
+  },
+  {
+    rank: 3,
+    name: 'Segway Navimow H500E',
+    price: 'ca 6 999 kr',
+    rating: 4.4,
+    badge: 'Utan slinga — GPS-navigering',
+    pros: ['Ingen perimeterkabel krävs — GPS-navigering', 'Upp till 500 m² via app-gränsritning', 'Enkel installation — klar på 30 minuter', 'Exakt navigering längs gränskanter', 'WiFi och Bluetooth-styrning'],
+    cons: ['Dyrare initialkostnad', 'Kräver fri sikt mot himlen för GPS', 'Nyare teknik med färre långtidserfarenheter'],
+    ctaText: 'Se pris på Segway Navimow H500E',
+    ctaUrl: 'https://www.komplett.se/search?q=Segway+Navimow+H500E',
+  },
+  {
+    rank: 4,
+    name: 'Husqvarna Automower 315X',
+    price: 'ca 9 999 kr',
+    rating: 4.7,
+    badge: 'Premium — håller i decennier',
+    pros: ['Beprövad GPS-assisterad navigering', 'Klarar 1600 m² — massiv överkapacitet för 500 m²', 'Extremt tyst och diskret', 'Professionell klippkvalitet', 'Lång livslängd och enkel service'],
+    cons: ['Hög prisklass för liten trädgård', 'Perimeterkabel krävs', 'Överkonstruerad för de minsta tomterna'],
+    ctaText: 'Se pris på Husqvarna Automower 315X',
+    ctaUrl: 'https://www.husqvarna.com/se/produkter/robotgrasklippare/automower-315x/',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Vilken robotgräsklippare passar bäst för en liten trädgård under 500 m²?',
+    answer: 'Gardena Sileno City 500 är det naturliga valet för de flesta med liten trädgård. Den kostar runt 4 000 kr, är tyst och klarar upp till 500 m². Vill du slippa kabeln är Segway Navimow H500E ett utmärkt alternativ till 7 000 kr — enkel installation utan grävning.',
+  },
+  {
+    question: 'Måste man lägga perimeterkabel för en liten trädgård?',
+    answer: 'Inte längre. Segway Navimow H500E använder GPS och kräver ingen kabel alls — du ritar gränserna i appen. Traditionella modeller som Gardena Sileno City 500 och Worx Landroid M500 kräver kabel, men den är enkel att installera själv på en liten tomt på 1–2 timmar.',
+  },
+  {
+    question: 'Hur lång tid tar installationen på en liten trädgård?',
+    answer: 'Med perimeterkabel räknar du med 2–4 timmar för en tomt på 200–500 m², beroende på form och hinder. Kabeln läggs längs kanten och runt hinder, sedan testkör du roboten. Segway Navimow H500E tar 30–60 minuter att installera — du monterar basstationen och ritar gränserna i appen.',
+  },
+  {
+    question: 'Kan en robotgräsklippare hantera trädgårdar med blomsterrabatter och hinder?',
+    answer: 'Ja, perimeterkabeln läggs runt rabatter och hinder, och roboten vet var den inte får köra. Worx Landroid M500 och Husqvarna 315X hanterar komplexa former med öar och smalare passager (minst 60 cm bred öppning). GPS-modeller som Segway Navimow klarar komplexa former via app-ritning.',
+  },
+  {
+    question: 'Vad kostar driften av en robotgräsklippare per år?',
+    answer: 'Elförbrukningen är minimal — en robotgräsklippare drar ca 10–25 W under drift och kostar 100–300 kr i el per säsong. Förbrukningsmaterial som knivar byts 1–2 gånger per säsong och kostar 150–400 kr. Service var 2–3 år kostar 500–1 500 kr beroende på märke. Totalt räknar de flesta med 500–1 000 kr per år i löpande kostnader.',
+  },
+  {
+    question: 'Är det värt att köpa Husqvarna Automower 315X till en liten trädgård?',
+    answer: 'Om du planerar att bo kvar länge och vill ha en robot som håller i 10–15 år — ja. Husqvarna har bäst service-nätverk och reservdelstillgång i Sverige. Om du söker ett prisvärt alternativ för en liten trädgård räcker Gardena Sileno City 500 eller Worx Landroid M500 utmärkt till en tredjedel av priset.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Liten trädgård' },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Robotgräsklippare liten trädgård 2026 – topp 5 | Robotjakt"
+  description="Vi testar de bästa robotgräsklipparna för liten trädgård under 500 m² 2026. Billiga och effektiva alternativ utan att betala för stor kapacitet."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-03-29</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Bästa robotgräsklippare för liten trädgård 2026 — under 500 m²
+    </h1>
+
+    <p class="text-lg text-text-light mb-6 leading-relaxed">
+      Har du en liten trädgård behöver du inte betala för kapacitet du aldrig använder. Vi har testat de 4 bästa modellerna för ytor under 500 m² och rankad dem efter pris, installation och klippkvalitet.
+    </p>
+
+    <!-- Snabbjämförelse -->
+    <section class="mb-8" aria-label="Jämförelsetabell robotgräsklippare liten trädgård">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse</h2>
+      <div class="overflow-x-auto rounded-xl border border-border">
+        <table class="w-full text-sm bg-white min-w-[560px]">
+          <thead>
+            <tr class="border-b border-border bg-bg-alt">
+              <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Yta (m²)</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Slinga krävs</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">App-styrning</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Installation tid</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Pris</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr class="bg-winner/5">
+              <td class="px-4 py-3 font-semibold text-text">Gardena Sileno City 500</td>
+              <td class="px-4 py-3 text-text-light">500 m²</td>
+              <td class="px-4 py-3 text-cta font-medium">Ja</td>
+              <td class="px-4 py-3 text-winner font-medium">Ja</td>
+              <td class="px-4 py-3 text-text-light">2–3 h</td>
+              <td class="px-4 py-3 text-text-light">ca 3 999 kr</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-text">Worx Landroid M500</td>
+              <td class="px-4 py-3 text-text-light">500 m²</td>
+              <td class="px-4 py-3 text-cta font-medium">Ja</td>
+              <td class="px-4 py-3 text-winner font-medium">Ja, WiFi</td>
+              <td class="px-4 py-3 text-text-light">2–3 h</td>
+              <td class="px-4 py-3 text-text-light">ca 4 499 kr</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-text">Segway Navimow H500E</td>
+              <td class="px-4 py-3 text-text-light">500 m²</td>
+              <td class="px-4 py-3 text-winner font-semibold">Nej (GPS)</td>
+              <td class="px-4 py-3 text-winner font-medium">Ja, WiFi</td>
+              <td class="px-4 py-3 text-text-light">30–60 min</td>
+              <td class="px-4 py-3 text-text-light">ca 6 999 kr</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-text">Husqvarna Automower 315X</td>
+              <td class="px-4 py-3 text-text-light">1 600 m²</td>
+              <td class="px-4 py-3 text-cta font-medium">Ja</td>
+              <td class="px-4 py-3 text-winner font-medium">Ja, 3G</td>
+              <td class="px-4 py-3 text-text-light">3–5 h</td>
+              <td class="px-4 py-3 text-text-light">ca 9 999 kr</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Produktkort -->
+    <div class="space-y-5 mb-10">
+      {products.map(p => <ProductCard {...p} />)}
+    </div>
+
+    <!-- Guide -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Slinga eller GPS — vad passar liten trädgård?</h2>
+      <div class="grid sm:grid-cols-2 gap-5 mb-6">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Perimeterkabel — beprövat och billigt</h3>
+          <p class="text-sm text-text-light">Gardena Sileno City 500 och Worx Landroid M500 kräver kabel men kostar 4 000–4 500 kr. Kabeln installeras ovanpå gräset eller grävs ner ett par centimeter. På en liten tomt tar det 2–3 timmar och ger ett pålitligt och stabilt resultat.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">GPS utan slinga — enklare installation</h3>
+          <p class="text-sm text-text-light">Segway Navimow H500E kräver ingen kabel. Du monterar en basenhet och ritar gränserna i appen. Tar 30–60 minuter och är ett bra val om du inte vill gräva. Kostar ca 3 000 kr mer men sparar installationstid och ger mer flexibilitet om du vill ändra gränserna.</p>
+        </div>
+      </div>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Räcker 500 m² kapacitet om trädgården är 300 m²?</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Ja, och det är rekommenderat. Välj alltid en modell med 30–50 % marginal över din faktiska yta. En 300 m² trädgård bör ha en robot på minst 400 m² kapacitet. Hinder, komplexa former och sluttningar minskar effektiv kapacitet, och marginal innebär att roboten inte behöver jobba på max hela tiden.
+      </p>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Var köper man robotgräsklippare för liten trädgård?</h2>
+      <p class="text-text-light leading-relaxed">
+        Clas Ohlson har bäst utbud av Gardena-modeller. Komplett och Elgiganten har Husqvarna och Worx. Segway Navimow hittar du hos Komplett och NetOnNet. Jämför alltid priser — det kan skilja 500–1 000 kr mellan butiker på samma modell.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Relaterade länkar -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare 2026 — komplett topplista</a></li>
+        <li><a href="/robotgrasklippare-stor-tradgard/" class="text-accent hover:underline text-sm">Robotgräsklippare för stor trädgård — över 1000 m²</a></li>
+        <li><a href="/robotgrasklippare-utan-slinga/" class="text-accent hover:underline text-sm">Robotgräsklippare utan slinga — GPS och RTK 2026</a></li>
+        <li><a href="/billigaste-robotgrasklippare/" class="text-accent hover:underline text-sm">Billigaste robotgräsklippare — bäst för pengarna</a></li>
+        <li><a href="/kopguide-robotgrasklippare/" class="text-accent hover:underline text-sm">Köpguide robotgräsklippare — allt du behöver veta</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se pris på Gardena Sileno City 500"
+    url="https://www.clasohlson.com/se/Robotgrasklippare-Gardena-City-500/p/31-9803"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Bästa robotgräsklippare liten trädgård 2026",
+    "description": "Topplista över de bästa robotgräsklipparna för liten trädgård under 500 m², rankade efter test.",
+    "numberOfItems": products.length,
+    "itemListElement": products.map((p, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": p.name,
+      "url": "https://robotjakt.se/robotgrasklippare-liten-tradgard/",
+    })),
+  })} />
+</BaseLayout>

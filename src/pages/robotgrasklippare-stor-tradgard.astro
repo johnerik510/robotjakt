@@ -1,0 +1,246 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const products = [
+  {
+    rank: 1,
+    name: 'Husqvarna Automower 430X Nera',
+    price: 'ca 19 999 kr',
+    rating: 4.8,
+    badge: 'Bäst för stor trädgård 2026',
+    pros: ['3 200 m² — klarar de största villaträdgårdar', 'GPS + 4G-navigering med exakt precision', 'Solinladdning kompatibel', 'Tyst 58 dB — störer inte', 'Bäst servicenätverk i Sverige'],
+    cons: ['Hög prisklass', 'Perimeterkabel krävs vid installation', 'Professionell installation rekommenderas'],
+    ctaText: 'Se pris på Husqvarna 430X Nera',
+    ctaUrl: 'https://www.bygghemma.se/tradgard-och-utemiljo/tradgardsmaskiner/robotgrasklippare/robotgrasklippare-husqvarna-automower-430x-nera/p-1838454',
+  },
+  {
+    rank: 2,
+    name: 'Mammotion LUBA AWO 3000',
+    price: 'ca 14 999 kr',
+    rating: 4.5,
+    badge: 'Utan slinga — bästa GPS-alternativet',
+    pros: ['3 000 m² utan perimeterkabel — RTK GPS', '4G och kamerasystem för hinderundvikning', 'Kan klippa komplexa former via app-ritning', '26 cm klippbredd för effektiv täckning', 'Enklare installation än kabelbaserade modeller'],
+    cons: ['RTK-antenn krävs (ingår)', 'Kräver fri sikt mot himlen för GPS', 'Färre oberoende långtidstester'],
+    ctaText: 'Se pris på Mammotion LUBA AWO 3000',
+    ctaUrl: 'https://www.maskinklippet.se/tradgard/robotgrasklippare-och-tillbehor/robotgrasklippare/mammotion-luba-2-awd-3000x-robotgrasklippare',
+  },
+  {
+    rank: 3,
+    name: 'Husqvarna Automower 315X',
+    price: 'ca 9 999 kr',
+    rating: 4.5,
+    badge: 'Prisvärd för upp till 1600 m²',
+    pros: ['1 600 m² med beprövad GPS-navigering', 'Bra app med 3G-uppkoppling', 'Robust och driftsäker i alla väder', 'Enkel service och reservdelstillgång', 'Tyst och diskret drift'],
+    cons: ['Räcker inte för riktigt stora tomter', 'Perimeterkabel krävs', 'Ingen 4G (bara 3G)'],
+    ctaText: 'Se pris på Husqvarna Automower 315X',
+    ctaUrl: 'https://www.husqvarna.com/se/produkter/robotgrasklippare/automower-315x/',
+  },
+  {
+    rank: 4,
+    name: 'Segway Navimow H500E',
+    price: 'ca 6 999 kr',
+    rating: 4.3,
+    badge: 'Prisvärd GPS-modell utan slinga',
+    pros: ['Upp till 1 500 m² utan perimeterkabel', 'GPS-navigering med exakta gränslinjer', 'Snabb installation — klar på 30–60 minuter', 'WiFi och Bluetooth-styrning via app', 'Prisvärt alternativ utan kabelbehov'],
+    cons: ['Lägre max-yta än premiumalternativ', 'Kräver fri sikt för GPS', 'Enklare navigeringslogik än Husqvarna'],
+    ctaText: 'Se pris på Segway Navimow H500E',
+    ctaUrl: 'https://www.komplett.se/search?q=Segway+Navimow+H500E',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Vilken robotgräsklippare klarar störst yta?',
+    answer: 'Husqvarna Automower 430X Nera klarar upp till 3 200 m², vilket är störst bland de vi testat. Mammotion LUBA AWO 3000 klarar 3 000 m² utan perimeterkabel. Båda räcker för de flesta stora villatomter och lantgårdar. Välj Husqvarna för beprövad pålitlighet, Mammotion om du vill slippa kabel.',
+  },
+  {
+    question: 'Hur länge tar det att installera robotgräsklippare på en stor tomt?',
+    answer: 'Med perimeterkabel på en tomt runt 2 000 m² räknar du med 6–10 timmar DIY-installation eller 4–6 timmar med proffs. Husqvarna rekommenderar auktoriserade installatörer för tomter över 1 500 m² för att säkerställa rätt kabeldragning. Mammotion LUBA AWO 3000 utan kabel tar 1–2 timmar att installera oavsett tomtstorlek.',
+  },
+  {
+    question: 'Kan en robotgräsklippare hantera branta sluttningar?',
+    answer: 'Husqvarna Automower 430X Nera klarar upp till 45 % lutning — bland de bästa i klassen. Mammotion LUBA AWO 3000 klarar 75 % lutning (38 grader) tack vare AWD-driften (fyrhjulsdrift). Segway Navimow H500E klarar 35 % lutning. För branta slänter är Mammotion det starkaste valet.',
+  },
+  {
+    question: 'Vilken är skillnaden mellan Husqvarna 430X och 315X?',
+    answer: 'Husqvarna 430X Nera klarar 3 200 m² mot 315X:s 1 600 m². 430X har 4G mot 315X:s 3G, solinladdningsstöd och avancerade GPS-funktioner. Välj 315X om din tomt är under 1 000 m² — den ger bättre prisvärdhet. Välj 430X för tomter över 1 500 m² eller om du vill ha maximala funktioner.',
+  },
+  {
+    question: 'Hur ofta behöver man ladda robotgräsklippare på stor tomt?',
+    answer: 'Moderna robotgräsklippare hanterar laddningen automatiskt. Roboten går hem och laddar när batteriet börjar ta slut, sedan fortsätter den klippningen där den slutade. En Husqvarna 430X Nera klipper ca 60–90 min per cykel och kör 3–5 cykler per dag beroende på tomtstorlek. Du behöver inte göra något.',
+  },
+  {
+    question: 'Är Mammotion LUBA AWO 3000 lika pålitlig som Husqvarna?',
+    answer: 'Mammotion är ett yngre märke med färre oberoende långtidstester. Tekniken är imponerande och RTK GPS-navigeringen är precis, men Husqvarna har ett etablerat servicenätverk med auktoriserade verkstäder i hela Sverige och decennier av beprövad pålitlighet. För en stor investering och långsiktig drift väger servicenätverket tungt.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Stor trädgård' },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Robotgräsklippare stor trädgård 2026 – topp 4 | Robotjakt"
+  description="Vi rekommenderar de bästa robotgräsklipparna för stora trädgårdar över 1000 m² 2026. Kraft, kapacitet och lång drifttid."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-03-29</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Bästa robotgräsklippare för stor trädgård 2026 — över 1000 m²
+    </h1>
+
+    <p class="text-lg text-text-light mb-6 leading-relaxed">
+      En stor trädgård kräver kapacitet, uthållighet och pålitlig navigering. Vi har testat och rankad de 4 bästa modellerna för tomter över 1 000 m² — från 10 000 kr till nästan 20 000 kr.
+    </p>
+
+    <!-- Snabbjämförelse -->
+    <section class="mb-8" aria-label="Jämförelsetabell robotgräsklippare stor trädgård">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse</h2>
+      <div class="overflow-x-auto rounded-xl border border-border">
+        <table class="w-full text-sm bg-white min-w-[560px]">
+          <thead>
+            <tr class="border-b border-border bg-bg-alt">
+              <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Maxyta (m²)</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Slinga krävs</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">GPS-navigering</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Lutning (%)</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Pris</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr class="bg-winner/5">
+              <td class="px-4 py-3 font-semibold text-text">Husqvarna Automower 430X Nera</td>
+              <td class="px-4 py-3 text-winner font-semibold">3 200 m²</td>
+              <td class="px-4 py-3 text-cta font-medium">Ja</td>
+              <td class="px-4 py-3 text-winner font-medium">GPS + 4G</td>
+              <td class="px-4 py-3 text-text-light">45 %</td>
+              <td class="px-4 py-3 text-text-light">ca 19 999 kr</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-text">Mammotion LUBA AWO 3000</td>
+              <td class="px-4 py-3 text-winner font-semibold">3 000 m²</td>
+              <td class="px-4 py-3 text-winner font-semibold">Nej (RTK GPS)</td>
+              <td class="px-4 py-3 text-winner font-medium">RTK GPS</td>
+              <td class="px-4 py-3 text-text-light">75 %</td>
+              <td class="px-4 py-3 text-text-light">ca 14 999 kr</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-text">Husqvarna Automower 315X</td>
+              <td class="px-4 py-3 text-text-light">1 600 m²</td>
+              <td class="px-4 py-3 text-cta font-medium">Ja</td>
+              <td class="px-4 py-3 text-winner font-medium">GPS + 3G</td>
+              <td class="px-4 py-3 text-text-light">40 %</td>
+              <td class="px-4 py-3 text-text-light">ca 9 999 kr</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-text">Segway Navimow H500E</td>
+              <td class="px-4 py-3 text-text-light">1 500 m²</td>
+              <td class="px-4 py-3 text-winner font-semibold">Nej (GPS)</td>
+              <td class="px-4 py-3 text-winner font-medium">GPS</td>
+              <td class="px-4 py-3 text-text-light">35 %</td>
+              <td class="px-4 py-3 text-text-light">ca 6 999 kr</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Produktkort -->
+    <div class="space-y-5 mb-10">
+      {products.map(p => <ProductCard {...p} />)}
+    </div>
+
+    <!-- Guide -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vad är viktigast vid val för stor trädgård?</h2>
+
+      <div class="grid sm:grid-cols-2 gap-5 mb-6">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Välj kapacitet med marginal</h3>
+          <p class="text-sm text-text-light">Tillverkarnas angivna maxyta gäller under idealförhållanden. Välj en modell med 30–50 % mer kapacitet än din faktiska yta. Hinder, komplexa former och sluttningar minskar effektiv kapacitet.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Lutningsförmåga</h3>
+          <p class="text-sm text-text-light">Har du en tomt med branta slänter är Mammotion LUBA AWO 3000 med sin AWD-drift överlägsen. Den klarar upp till 75 % lutning — ingen annan modell i klassen kommer i närheten.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Servicenätverk</h3>
+          <p class="text-sm text-text-light">För en stor investering väger servicetillgång tungt. Husqvarna har auktoriserade verkstäder i hela Sverige. Mammotion är nyare och servicenätverket är inte lika etablerat — väg in detta vid köp.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Installationskostnad</h3>
+          <p class="text-sm text-text-light">Kabelinstallation på en stor tomt kan kosta 3 000–6 000 kr om du anlitar proffs. Mammotion och Segway Navimow utan kabel sparar installationskostnaden och ger mer flexibilitet om du vill ändra gränserna.</p>
+        </div>
+      </div>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Kabel eller GPS för stor trädgård?</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        För riktigt stora tomter (2 000 m²+) är GPS-modeller som Mammotion LUBA AWO 3000 ett attraktivt alternativ. Kabeldragning på en stor tomt är tidskrävande och kostsam, medan RTK GPS-installation tar 1–2 timmar oavsett tomtstorlek.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Husqvarnas kabelbaserade system är dock mer beprövat och pålitligt i komplexa former med hinder och öar i gräsmattan. Om trädgården har oregelbundna former, träd och rabatter mitt på gräset är kabel ofta säkrare navigering.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Relaterade länkar -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider och recensioner</h2>
+      <ul class="space-y-2">
+        <li><a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare 2026 — komplett topplista</a></li>
+        <li><a href="/robotgrasklippare-liten-tradgard/" class="text-accent hover:underline text-sm">Robotgräsklippare för liten trädgård — under 500 m²</a></li>
+        <li><a href="/robotgrasklippare-utan-slinga/" class="text-accent hover:underline text-sm">Robotgräsklippare utan slinga — GPS och RTK 2026</a></li>
+        <li><a href="/husqvarna-automower-430x-nera/" class="text-accent hover:underline text-sm">Husqvarna Automower 430X Nera recension</a></li>
+        <li><a href="/mammotion-luba-awo-3000/" class="text-accent hover:underline text-sm">Mammotion LUBA AWO 3000 recension</a></li>
+        <li><a href="/kopguide-robotgrasklippare/" class="text-accent hover:underline text-sm">Köpguide robotgräsklippare — allt du behöver veta</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se pris på Husqvarna Automower 430X Nera"
+    url="https://www.bygghemma.se/tradgard-och-utemiljo/tradgardsmaskiner/robotgrasklippare/robotgrasklippare-husqvarna-automower-430x-nera/p-1838454"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Bästa robotgräsklippare stor trädgård 2026",
+    "description": "Topplista över de bästa robotgräsklipparna för stora trädgårdar över 1000 m², rankade efter test.",
+    "numberOfItems": products.length,
+    "itemListElement": products.map((p, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": p.name,
+      "url": "https://robotjakt.se/robotgrasklippare-stor-tradgard/",
+    })),
+  })} />
+</BaseLayout>

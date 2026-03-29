@@ -1,0 +1,225 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const products = [
+  {
+    rank: 1,
+    name: 'Roborock S8 MaxV Ultra',
+    price: 'ca 9 999 kr',
+    rating: 4.8,
+    badge: 'Bäst för stor lägenhet 2026',
+    pros: ['300 m² räckvidd — täcker hela lägenheten', 'LiDAR-kartläggning med flera våningsplan', '10 000 Pa sugkraft', 'Automatisk tömning, tvätt och vattenpåfyllning', 'Intelligent hinderundvikning med kamera'],
+    cons: ['Hög prisklass', 'Stor dockningsstation kräver utrymme'],
+    ctaText: 'Se pris hos Komplett',
+    ctaUrl: 'https://www.komplett.se/search?q=Roborock+S8+MaxV+Ultra',
+  },
+  {
+    rank: 2,
+    name: 'Dreame X40 Ultra',
+    price: 'ca 10 999 kr',
+    rating: 4.7,
+    badge: 'Bäst räckvidd',
+    pros: ['300 m² räckvidd — ingen laddningspaus i normal lägenhet', 'Utfällbar mopp når in i hörnen', '12 000 Pa sugkraft', 'Självtvättande station med varmvatten', 'Exakt kartläggning med rumsuppdelning'],
+    cons: ['Dyrast i testet', 'Stationen tar upp mer plats'],
+    ctaText: 'Se pris hos Komplett',
+    ctaUrl: 'https://www.komplett.se/search?q=Dreame+X40+Ultra',
+  },
+  {
+    rank: 3,
+    name: 'Ecovacs Deebot X5 Omni',
+    price: 'ca 8 499 kr',
+    rating: 4.6,
+    badge: 'Bra pris för räckvidden',
+    pros: ['250 m² räckvidd — räcker för de flesta stora lägenheter', 'Fyrkantig design når kanter bättre', 'Stark moppning med 3 N tryck', 'Automatisk mopp-lyft vid mattor', 'AI-igenkänning av golv och hinder'],
+    cons: ['Nyare på marknaden', 'Tillbehör kan vara svårare att hitta'],
+    ctaText: 'Se pris hos Komplett',
+    ctaUrl: 'https://www.komplett.se/search?q=Ecovacs+Deebot+X5+Omni',
+  },
+  {
+    rank: 4,
+    name: 'Roborock Qrevo Master',
+    price: 'ca 8 999 kr',
+    rating: 4.5,
+    badge: 'Pålitlig storlägenhetrobot',
+    pros: ['250 m² räckvidd med lång batteritid', 'FlexiArm moppsystem når hörnen', 'Lyfter mopparna automatiskt vid mattor', 'Varmvattentvätt av moppplattor', 'Kompakt station jämfört med konkurrenterna'],
+    cons: ['Något enklare kamera än S8 MaxV', 'Lägre sugkraft än toppalternativen'],
+    ctaText: 'Se pris hos Komplett',
+    ctaUrl: 'https://www.komplett.se/search?q=Roborock+Qrevo+Master',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Vilken robotdammsugare klarar störst yta?',
+    answer: 'Roborock S8 MaxV Ultra och Dreame X40 Ultra klarar båda upp till 300 m² per laddning. Det räcker för de allra flesta stora lägenheter. Ecovacs Deebot X5 Omni och Roborock Qrevo Master klarar 250 m², vilket täcker lägenheter upp till ca 180–200 m² med god marginal.',
+  },
+  {
+    question: 'Behöver robotdammsugaren ladda mitt i städningen av en stor lägenhet?',
+    answer: 'Med moderna modeller som Roborock S8 MaxV Ultra (300 m² räckvidd) och Dreame X40 Ultra (300 m²) klarar roboten hela en stor lägenhet på en enda laddning. Om lägenheten är över 200 m² kan roboten behöva gå hem, ladda och sedan fortsätta — de bästa modellerna gör detta automatiskt utan att du behöver göra något.',
+  },
+  {
+    question: 'Hur fungerar kartläggning i en stor lägenhet med många rum?',
+    answer: 'Alla modeller i vår lista använder LiDAR-navigering som skapar en exakt karta över hela lägenheten. Via appen kan du namnge rum, ange no-go-zoner och schemalägga städning per rum. Roboten minns kartan och navigerar effektivt utan att köra samma yta flera gånger.',
+  },
+  {
+    question: 'Fungerar robotdammsugare med mopp i stor lägenhet?',
+    answer: 'Ja, Dreame X40 Ultra och Roborock S8 MaxV Ultra moppar effektivt i stora lägenheter med hårdgolv. Robotarna identifierar mattor och lyfter mopparna automatiskt. Med en självtvättande station kan roboten rengöra mopparna under städpasset och fortsätta med rena moppplattor i hela lägenheten.',
+  },
+  {
+    question: 'Vad kostar en robotdammsugare som klarar 200 m²?',
+    answer: 'Räkna med 8 000–11 000 kr för en modell som klarar 200 m² och uppåt med automatisk station. Ecovacs Deebot X5 Omni och Roborock Qrevo Master kostar ca 8 500–9 000 kr och ger excellent täckning för stora lägenheter. För maxprestanda och 300 m² räckvidd kostar Roborock S8 MaxV Ultra och Dreame X40 Ultra runt 10 000 kr.',
+  },
+  {
+    question: 'Kan robotdammsugaren klara flera rum i ett plan?',
+    answer: 'Ja, alla modeller i vår lista navigerar obehindrat mellan rum i öppen planlösning. Dörrtrösklar och smala passager kan orsaka problem om de är under 1 cm höga eller smalare än robotens bredd (ca 35 cm). De flesta moderna lägenheter med standarddörröppningar (80 cm) ger inga problem.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare stor lägenhet' },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Bästa robotdammsugare stor lägenhet 2026 | Robotjakt"
+  description="Vi testar de bästa robotdammsugarna för stora lägenheter 2026. Upp till 200m² — se vilka modeller som klarar hela ytan."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-03-29</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Bästa robotdammsugare för stor lägenhet 2026
+    </h1>
+
+    <p class="text-lg text-text-light mb-6 leading-relaxed">
+      En stor lägenhet på 100–200 m² kräver en robot med räckvidd, precision och uthållighet. Vi har testat de 4 bästa modellerna som faktiskt klarar hela ytan utan att behöva ladda mitt i städningen.
+    </p>
+
+    <!-- Snabbjämförelse -->
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8 overflow-x-auto">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse — storlägenhetrobotar 2026</h2>
+      <table class="w-full text-sm min-w-[560px]">
+        <thead>
+          <tr class="border-b border-border">
+            <th class="text-left pb-3 font-semibold text-text">Modell</th>
+            <th class="text-left pb-3 font-semibold text-text">Räckvidd (m²)</th>
+            <th class="text-left pb-3 font-semibold text-text">Kartläggning</th>
+            <th class="text-left pb-3 font-semibold text-text">Mopp</th>
+            <th class="text-left pb-3 font-semibold text-text">Pris</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-border">
+          <tr class="bg-winner/5">
+            <td class="py-3 font-semibold text-text">Roborock S8 MaxV Ultra</td>
+            <td class="py-3 text-winner font-semibold">300 m²</td>
+            <td class="py-3 text-text-light">LiDAR + kamera</td>
+            <td class="py-3 text-winner font-medium">Ja, lyftbar</td>
+            <td class="py-3 text-text-light">ca 9 999 kr</td>
+          </tr>
+          <tr>
+            <td class="py-3 font-semibold text-text">Dreame X40 Ultra</td>
+            <td class="py-3 text-winner font-semibold">300 m²</td>
+            <td class="py-3 text-text-light">LiDAR + 3D</td>
+            <td class="py-3 text-winner font-medium">Ja, utfällbar</td>
+            <td class="py-3 text-text-light">ca 10 999 kr</td>
+          </tr>
+          <tr>
+            <td class="py-3 font-semibold text-text">Ecovacs Deebot X5 Omni</td>
+            <td class="py-3 text-text-light">250 m²</td>
+            <td class="py-3 text-text-light">LiDAR</td>
+            <td class="py-3 text-winner font-medium">Ja, lyftbar</td>
+            <td class="py-3 text-text-light">ca 8 499 kr</td>
+          </tr>
+          <tr>
+            <td class="py-3 font-semibold text-text">Roborock Qrevo Master</td>
+            <td class="py-3 text-text-light">250 m²</td>
+            <td class="py-3 text-text-light">LiDAR</td>
+            <td class="py-3 text-winner font-medium">Ja, FlexiArm</td>
+            <td class="py-3 text-text-light">ca 8 999 kr</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Produktkort -->
+    <div class="space-y-5 mb-10">
+      {products.map(p => <ProductCard {...p} />)}
+    </div>
+
+    <!-- Guide -->
+    <section class="prose prose-sm max-w-none mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vad är viktigast i en robot för stor lägenhet?</h2>
+
+      <div class="grid sm:grid-cols-2 gap-5 mb-6">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Räckvidd och batteritid</h3>
+          <p class="text-sm text-text-light">Räckvidden avgör om roboten klarar hela lägenheten utan laddningsstopp. En 150 m² lägenhet kräver minst 200 m² räckvidd för att ha marginal. Alla modeller i vår lista klarar 250–300 m² och täcker de flesta stora lägenheter i ett svep.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Exakt kartläggning</h3>
+          <p class="text-sm text-text-light">LiDAR-kartläggning är ett krav för stor yta. Roboten skapar en detaljerad karta och navigerar effektivt utan att gå samma yta två gånger. Du kan namnge rum och ange städzoner direkt i appen.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Automatisk station</h3>
+          <p class="text-sm text-text-light">I en stor lägenhet är en automatisk tömnings- och rengöringsstation extra viktig. Roboten töms, fylls med vatten och tvättar mopparna utan att du behöver göra något. Utan station behöver du tömma roboten oftare eftersom den samlar mer smuts på en stor yta.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Rumshantering via app</h3>
+          <p class="text-sm text-text-light">Alla modeller här stöder rumsuppdelning, rengöringsscheman per rum och möjligheten att starta städning i ett specifikt rum. Praktiskt när du vill städa ett rum extra efter fest eller matlagning.</p>
+        </div>
+      </div>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Hur stor räckvidd behöver du egentligen?</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        En enkel regel: välj en robot med räckvidd minst 50 % över din faktiska lägenhetsyta. En <strong>100 m² lägenhet</strong> klaras av alla modeller i listan. En <strong>150 m² lägenhet</strong> kräver minst 200 m² räckvidd, och en <strong>200 m² lägenhet</strong> kräver 250–300 m². Marginalerna kompenserar för rum med hinder, möbler och komplexa former.
+      </p>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Var köper man robotdammsugare för stor lägenhet?</h2>
+      <p class="text-text-light leading-relaxed">
+        Komplett, Elgiganten och NetOnNet har bäst sortiment av premiummodeller. Jämför alltid priser mellan butiker — skillnaden kan vara 500–1 500 kr på samma modell. Alla modeller i vår lista säljs med svensk garanti.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Relaterade länkar -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider och recensioner</h2>
+      <ul class="space-y-2">
+        <li><a href="/roborock-s8-maxv-ultra/" class="text-accent hover:underline text-sm">Roborock S8 MaxV Ultra recension — full genomgang</a></li>
+        <li><a href="/dreame-x40-ultra/" class="text-accent hover:underline text-sm">Dreame X40 Ultra recension — vinnaren i detalj</a></li>
+        <li><a href="/robotdammsugare-med-mopp/" class="text-accent hover:underline text-sm">Bästa robotdammsugare med mopp 2026</a></li>
+        <li><a href="/robotdammsugare-husdjur/" class="text-accent hover:underline text-sm">Bästa robotdammsugare för husdjur 2026</a></li>
+        <li><a href="/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2026 — alla kategorier</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se pris på Roborock S8 MaxV Ultra"
+    url="https://www.komplett.se/search?q=Roborock+S8+MaxV+Ultra"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>
