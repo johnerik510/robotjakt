@@ -30,6 +30,7 @@ const products = [
       'LiDAR + AI-kamera-navigering',
     ],
     cta: 'https://www.komplett.se/search?search=roborock+s8+maxv+ultra',
+    amazon: 'https://www.amazon.se/s?k=roborock+s8+maxv+ultra&tag=johnerik510-20',
     ctaText: 'Se pris på S8 MaxV Ultra',
     reviewUrl: '/roborock-s8-maxv-ultra/',
     description: 'Roborock S8 MaxV Ultra är det mest kompletta valet för den som vill ha en självgående robotdammsugare. Stationen tömmer dammkorgen, tvättar mopparna och fyller på vatten automatiskt. Unikt är ReactiveAI 3.0 som skyddar mot djuravförings-incidenter.',
@@ -53,6 +54,7 @@ const products = [
       'LiDAR + AI-kamera-navigering',
     ],
     cta: 'https://www.komplett.se/search?search=dreame+x40+ultra',
+    amazon: 'https://www.amazon.se/s?k=dreame+x40+ultra&tag=johnerik510-20',
     ctaText: 'Se pris på X40 Ultra',
     reviewUrl: '/dreame-x40-ultra/',
     description: 'Dreame X40 Ultra imponerar med sin utfällbara moppmodul som når in i hörnen och stationens varmvattentvätt på 70 grader. Starkast sugkraft i klassen och en av de mest hygieniska moppfunktionerna på marknaden 2026.',
@@ -76,6 +78,7 @@ const products = [
       'TrueMapping 2.0 LiDAR-navigering',
     ],
     cta: 'https://www.komplett.se/search?search=ecovacs+deebot+x5+omni',
+    amazon: 'https://www.amazon.se/s?k=ecovacs+deebot+x5+omni&tag=johnerik510-20',
     ctaText: 'Se pris på X5 Omni',
     reviewUrl: '/ecovacs-deebot-x5-omni/',
     description: 'Ecovacs Deebot X5 Omni med OMNI-station erbjuder hela paketet — auto-tömning, varmvattenmopptvätt, torkning och automatisk påfyllning — till ett lägre pris än konkurrenterna. Bäst värde i klassen för den som vill ha full automatik utan att betala toppris.',
@@ -99,6 +102,7 @@ const products = [
       'LiDAR-navigering med rumsplanering',
     ],
     cta: 'https://www.amazon.se/s?k=dreame+l20+ultra',
+    amazon: 'https://www.amazon.se/s?k=dreame+l20+ultra&tag=johnerik510-20',
     ctaText: 'Se pris på L20 Ultra',
     reviewUrl: '/dreame-l20-ultra/',
     description: 'Dreame L20 Ultra kombinerar avancerad stationsteknik med en kompaktare stationsdesign. Varmvattenmopptvätt och auto-tömning i ett paket som tar upp mindre golvyta. Bäst för den som vill ha ultra-stationens fördelar men har begränsat utrymme.',
@@ -238,6 +242,15 @@ function boolClass(val: boolean) {
                 class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
               >
                 {product.ctaText}
+                <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              </a>
+              <a
+                href={product.amazon}
+                rel="sponsored nofollow noopener"
+                target="_blank"
+                class="inline-flex items-center justify-center border-2 border-cta text-cta hover:bg-cta hover:text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+              >
+                Amazon
                 <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
               </a>
             </div>

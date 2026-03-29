@@ -25,6 +25,7 @@ const models = [
       'TrueMapping 2.0 LiDAR-navigering',
     ],
     cta: 'https://www.komplett.se/search?search=ecovacs+deebot+x5+omni',
+    amazon: 'https://www.amazon.se/s?k=ecovacs+deebot+x5+omni&tag=johnerik510-20',
     ctaText: 'Se pris på X5 Omni',
     reviewUrl: '/ecovacs-deebot-x5-omni/',
     description: 'Ecovacs Deebot X5 Omni är märkets toppmodell 2026 och ett av de mest kompletta alternativen på marknaden. OMNI-stationen hanterar allt automatiskt — tömmning, mopptvätt och vattenpåfyllning. Bäst för hem som vill ha en riktig allt-i-ett-lösning utan daglig skötsel.',
@@ -43,6 +44,7 @@ const models = [
       'Schemaläggning och rumsdelning i app',
     ],
     cta: 'https://www.komplett.se/search?search=ecovacs+deebot+t20+omni',
+    amazon: 'https://www.amazon.se/s?k=ecovacs+deebot+t20+omni&tag=johnerik510-20',
     ctaText: 'Se pris på T20 Omni',
     reviewUrl: '/ecovacs-deebot-t20-omni/',
     description: 'Deebot T20 Omni är steget under X5 Omni med något lägre sugkraft men samma OMNI-stationskoncept. En välbalanserad modell för den som vill ha OMNI-komfort utan att betala toppris. Passar hem med mixade golv och normalt städbehov.',
@@ -61,6 +63,7 @@ const models = [
       'Ingångspunkt till OMNI-serien',
     ],
     cta: 'https://www.amazon.se/s?k=ecovacs+deebot+t10+omni&tag=johnerik510-20',
+    amazon: 'https://www.amazon.se/s?k=ecovacs+deebot+t10+omni&tag=johnerik510-20',
     ctaText: 'Se pris på T10 Omni',
     reviewUrl: '/ecovacs-deebot-t10-omni/',
     description: 'Deebot T10 Omni är det prisvärdaste alternativet i OMNI-serien. Du får OMNI-stationens auto-funktioner till ett lägre pris, men med lägre sugkraft och äldre AI. Bäst för den som vill testa Ecovacs OMNI-koncept utan att lägga ut topppengar.',
@@ -211,6 +214,15 @@ const faqSchema = faqItems.map((item) => ({
                 class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
               >
                 {model.ctaText}
+                <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              </a>
+              <a
+                href={model.amazon}
+                rel="sponsored nofollow noopener"
+                target="_blank"
+                class="inline-flex items-center justify-center border-2 border-cta text-cta hover:bg-cta hover:text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+              >
+                Amazon
                 <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
               </a>
             </div>

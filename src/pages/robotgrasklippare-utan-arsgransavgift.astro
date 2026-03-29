@@ -28,6 +28,7 @@ const products = [
       'App-styrning utan löpande kostnader',
     ],
     cta: 'https://www.amazon.se/s?k=mammotion+luba+awo+3000',
+    amazon: 'https://www.amazon.se/s?k=mammotion+luba+awo+3000&tag=johnerik510-20',
     ctaText: 'Se pris på LUBA AWO 3000',
     description: 'Mammotion LUBA AWO 3000 är det starkaste argumentet mot Husqvarnas EPOS-prenumeration. Du får GPS-navigering utan kabel och utan obligatorisk årsavgift. Betala en gång — klipp trädgården för alltid. Klarar trädgårdar upp till 3 000 m² och lutningar upp till 75%. Markering av klippzoner sker via appen utan kabel i marken.',
   },
@@ -48,6 +49,7 @@ const products = [
       'Stöldskydd via PIN-kod',
     ],
     cta: 'https://www.komplett.se/search?search=worx+landroid+m500',
+    amazon: 'https://www.amazon.se/s?k=worx+landroid+m500&tag=johnerik510-20',
     ctaText: 'Se pris på Landroid M500',
     description: 'Worx Landroid M500 är en solid kabelbaserad robotgräsklippare utan prenumerationsavgift. WiFi-appen och alla smarta funktioner ingår i köpet — inga extra kostnader varje år. Passar trädgårdar upp till 500 m² och fungerar bra i trädgårdar med smalare passager tack vare AI Corridor Cutting.',
   },
@@ -68,6 +70,7 @@ const products = [
       'Pålitlig och underhållsvänlig',
     ],
     cta: 'https://www.komplett.se/search?search=gardena+sileno+city+500',
+    amazon: 'https://www.amazon.se/s?k=gardena+sileno+city+500&tag=johnerik510-20',
     ctaText: 'Se pris på Sileno City 500',
     description: 'Gardena Sileno City 500 är ett tyskt alternativ känt för pålitlighet och tysthet. 57 dB gör den till en av de tystaste på marknaden — kör den nattetid utan att störa grannar. Inga prenumerationsavgifter, inga dolda kostnader. Passar trädgårdar upp till 500 m².',
   },
@@ -88,6 +91,7 @@ const products = [
       'Tyst 58 dB-drift',
     ],
     cta: 'https://www.komplett.se/search?search=husqvarna+automower+315x',
+    amazon: 'https://www.amazon.se/s?k=husqvarna+automower+315x&tag=johnerik510-20',
     ctaText: 'Se pris på Automower 315X',
     description: 'Husqvarna Automower 315X är Husqvarnas kabelbaserade modell utan GPS och utan EPOS-prenumeration. Du får Husqvarnas välkände tillförlitlighet till ett rimligare pris och utan löpande kostnader. Appen ingår och kräver ingen årsavgift. Passar trädgårdar upp till 1 600 m² med en kabelinstallation.',
   },
@@ -242,6 +246,15 @@ const faqSchema = faqItems.map((item) => ({
               {product.ctaText}
               <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
             </a>
+              <a
+                href={product.amazon}
+                rel="sponsored nofollow noopener"
+                target="_blank"
+                class="inline-flex items-center justify-center border-2 border-cta text-cta hover:bg-cta hover:text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+              >
+                Amazon
+                <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              </a>
           </div>
         </section>
       ))}
