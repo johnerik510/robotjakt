@@ -18,12 +18,12 @@ const { title, description, breadcrumbs, ogImage, lastUpdated, showDisclaimer = 
 <BaseLayout title={title} description={description} ogImage={ogImage}>
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-    {showDisclaimer && <AffiliateDisclaimer />}
     {lastUpdated && (
       <p class="text-xs text-text-lighter mb-3">
         Senast uppdaterad: <time datetime={lastUpdated}>{lastUpdated}</time>
       </p>
     )}
+    {showDisclaimer && <AffiliateDisclaimer />}
     <slot />
   </div>
 </BaseLayout>
