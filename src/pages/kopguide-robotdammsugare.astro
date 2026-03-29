@@ -1,0 +1,248 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const faqItems = [
+  {
+    question: 'Vilken robotdammsugare ska man välja 2026?',
+    answer: 'Det beror på ditt hem och behov. For moppning: Dreame X40 Ultra. For husdjur: Roborock S8 MaxV Ultra. For bäst värde: Roborock Qrevo Master. For budget: Roborock Q5 Pro. Se vår topplista för en fullständig jämförelse.',
+  },
+  {
+    question: 'Vad är LiDAR och behöver man det?',
+    answer: 'LiDAR (Light Detection and Ranging) är ett laser-baserat navigationssystem som kartlägger hemmet i 3D. Robotar med LiDAR planerar effektiva städrutter, undviker möbler precist och kartlägger hela hemmet. Utan LiDAR (enklare sensormodeller) studsar roboten runt slumpmässigt och missar ytor. Vi rekommenderar alltid LiDAR 2026 — prisskillnaden är minimal.',
+  },
+  {
+    question: 'Hur lång tid tar det att städa ett hem med robotdammsugare?',
+    answer: 'En genomsnittlig lägenhet pa 60–80 kvm tar 45–60 minuter for en bra robotdammsugare. Villor pa 150 kvm+ kan ta 90–180 minuter. Roboten lär sig hemmet snabbare over tid och optimerar rutter. Schemalägg körningarna pa tider du inte är hemma — det är bekvämligheten.',
+  },
+  {
+    question: 'Kan robotdammsugare köra på mattor?',
+    answer: 'Ja, de flesta modern robotdammsugare hanterar mattor upp till 2 cm höjd automatiskt. Vid moppläge lyfts mopparna automatiskt vid mattdetektering (på premiummodeller). Tjocka luddar pa 3 cm+ kan orsaka problem for budget-modeller men hanteras av premiummodeller med hög sugkraft.',
+  },
+  {
+    question: 'Hur länge håller batteriet?',
+    answer: 'Moderna premiummodeller (Dreame X40 Ultra, Roborock S8 MaxV Ultra, Qrevo Master) ger 150–180 minuters drift pa en laddning — tillräckligt for hem upp till 200 kvm. Budget-modeller ger 90–120 minuter. Om batteriet tar slut under städning returnerar roboten automatiskt, laddar och fortsätter där den slutade.',
+  },
+  {
+    question: 'Vad händer om roboten fastnar?',
+    answer: 'Moderna robotar med LiDAR-navigering fastnar sällan — de kartlägger hinder och planerar ruter for att undvika dem. Om en robot ändå fastnar skickar den en app-notis och väntar pa hjälp. Vid frekventa problem: kontrollera att inga lösa mattor eller kablar sticker up pa golvet.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Hem', href: '/' },
+  { label: 'Köpguide robotdammsugare' },
+];
+---
+
+<BaseLayout
+  title="Köpguide Robotdammsugare 2026 – Så väljer du rätt"
+  description="Komplett köpguide for robotdammsugare 2026. Vi förklarar LiDAR, sugkraft, moppfunktion och självtömning. Hitta rätt modell for ditt hem och budget."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-03-29</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Köpguide: Hur väljer man robotdammsugare 2026?
+    </h1>
+
+    <p class="text-lg text-text-light mb-8 leading-relaxed">
+      Marknaden for robotdammsugare har exploderat — hundratals modeller i alla prisklasser. Denna guide hjälper dig att förstå vad som faktiskt spelar roll och vilken typ av robot som passar ditt hem.
+    </p>
+
+    <!-- Decision guide -->
+    <div class="bg-accent/5 border border-accent/20 rounded-xl p-5 mb-10">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Hitta rätt robot direkt</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/robotdammsugare-husdjur/" class="bg-white rounded-xl border border-border p-4 hover:border-accent transition-colors group">
+          <p class="font-semibold text-text group-hover:text-accent mb-1">Har du husdjur?</p>
+          <p class="text-sm text-text-light">Se vår guide over robotdammsugare for husdjur — anti-tangle rullar och stark sugkraft.</p>
+        </a>
+        <a href="/robotdammsugare-med-mopp/" class="bg-white rounded-xl border border-border p-4 hover:border-accent transition-colors group">
+          <p class="font-semibold text-text group-hover:text-accent mb-1">Vill du ha moppfunktion?</p>
+          <p class="text-sm text-text-light">Se vår guide over bästa robotdammsugare med mopp — dammar och moppar i ett svep.</p>
+        </a>
+        <a href="/billigaste-robotdammsugare/" class="bg-white rounded-xl border border-border p-4 hover:border-accent transition-colors group">
+          <p class="font-semibold text-text group-hover:text-accent mb-1">Budget under 4 000 kr?</p>
+          <p class="text-sm text-text-light">Se vår lista over billigaste robotdammsugare som faktiskt fungerar.</p>
+        </a>
+        <a href="/" class="bg-white rounded-xl border border-border p-4 hover:border-accent transition-colors group">
+          <p class="font-semibold text-text group-hover:text-accent mb-1">Vill du ha det absolut bästa?</p>
+          <p class="text-sm text-text-light">Se vår fullständiga topplista over bästa robotdammsugare 2026.</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- Guide sections -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-6">De viktigaste egenskaperna förklarade</h2>
+
+      <div class="space-y-8">
+
+        <!-- Sugkraft -->
+        <div>
+          <h3 class="font-heading text-xl font-semibold text-text mb-3">1. Sugkraft (Pascal)</h3>
+          <p class="text-text-light leading-relaxed mb-3">
+            Sugkraften mäts i Pascal (Pa) och anger hur starkt roboten suger. Mer Pa innebär bättre upptagning av djurhår, smuts i mattor och finkornat damm.
+          </p>
+          <div class="bg-bg-alt rounded-xl border border-border overflow-hidden">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-border">
+                  <th class="text-left px-4 py-3 font-semibold text-text">Sugkraft</th>
+                  <th class="text-left px-4 py-3 font-semibold text-text">Passar for</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-border">
+                <tr>
+                  <td class="px-4 py-3 text-text">Under 3 000 Pa</td>
+                  <td class="px-4 py-3 text-text-light">Bara hårdgolv, lite smuts — inte rekommenderat</td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="px-4 py-3 text-text">3 000–5 000 Pa</td>
+                  <td class="px-4 py-3 text-text-light">Hårdgolv och tunna mattor, inga husdjur</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 text-text">5 000–8 000 Pa</td>
+                  <td class="px-4 py-3 text-text-light">Blandade golv, lätt husdjurshår</td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="px-4 py-3 font-semibold text-text">8 000–12 000 Pa</td>
+                  <td class="px-4 py-3 text-text-light font-medium">Husdjur, tjocka mattor, kraftig smuts — rekommenderat</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div>
+          <h3 class="font-heading text-xl font-semibold text-text mb-3">2. Navigation — LiDAR vs kamera</h3>
+          <div class="grid sm:grid-cols-2 gap-4 mb-3">
+            <div class="bg-white rounded-xl border border-border p-4">
+              <p class="font-semibold text-text mb-2">LiDAR (laser)</p>
+              <p class="text-sm text-text-light mb-2">Kartlägger hemmet med laser. Snabb, exakt och fungerar i mörker. Standard i alla bra modeller 2026.</p>
+              <p class="text-xs text-winner font-medium">Rekommenderas alltid</p>
+            </div>
+            <div class="bg-white rounded-xl border border-border p-4">
+              <p class="font-semibold text-text mb-2">AI-kamera</p>
+              <p class="text-sm text-text-light mb-2">Identifierar hinder i realtid (skor, kablar, djuravföring). Kräver belysning. Komplement till LiDAR, inte ersättning.</p>
+              <p class="text-xs text-accent font-medium">Plus i premiummodeller</p>
+            </div>
+          </div>
+          <p class="text-sm text-text-light">Budget-modeller under 2 000 kr använder enkel sensornavigering (studsar runt) — undvik dessa 2026, prisskillnaden mot LiDAR-modeller är liten.</p>
+        </div>
+
+        <!-- Moppfunktion -->
+        <div>
+          <h3 class="font-heading text-xl font-semibold text-text mb-3">3. Moppfunktion — vad ska man titta på?</h3>
+          <p class="text-text-light leading-relaxed mb-3">
+            Alla robotar med mopp är inte skapade lika. Skillnaden är stor mellan enkla vibrerande moppar och avancerade roterande system med varmvattentvätt.
+          </p>
+          <ul class="space-y-2 mb-3">
+            {[
+              'Roterande moppplattor > vibrerande — bättre rengöring mot fläckar',
+              'Automatisk mopplyftning vid mattor — absolut krav om du har mattor',
+              'Varmvattentvätt i station — hygienisk och praktisk, eliminerar lukt',
+              'Utfällbar mopp (Dreame X40 Ultra) — når hörnen bättre',
+              'Utan automatisk station: tvätta mopparna manuellt var 2–3 körning',
+            ].map(tip => (
+              <li class="flex items-start gap-2 text-sm text-text-light">
+                <span class="text-accent font-bold flex-shrink-0 mt-0.5">•</span>
+                {tip}
+              </li>
+            ))}
+          </ul>
+          <p class="text-sm text-text-light">Se vår guide: <a href="/robotdammsugare-med-mopp/" class="text-accent hover:underline">Bästa robotdammsugare med mopp 2026</a></p>
+        </div>
+
+        <!-- Stationer -->
+        <div>
+          <h3 class="font-heading text-xl font-semibold text-text mb-3">4. Tömningsstation — behöver man det?</h3>
+          <div class="grid sm:grid-cols-3 gap-4 mb-3">
+            <div class="bg-white rounded-xl border border-border p-4">
+              <p class="font-semibold text-text mb-2">Ingen station</p>
+              <p class="text-sm text-text-light">Töm dammkorgen manuellt efter 2–3 körningar. Billigast men kräver mer insats.</p>
+            </div>
+            <div class="bg-white rounded-xl border border-border p-4">
+              <p class="font-semibold text-text mb-2">Tömningsstation</p>
+              <p class="text-sm text-text-light">Töms automatiskt i påse — byt påse var 30–60 dagar. Hands-free men tar plats.</p>
+            </div>
+            <div class="bg-white rounded-xl border border-border p-4">
+              <p class="font-semibold text-text mb-2">Ultra-station</p>
+              <p class="text-sm text-text-light">Tömning + vattenpåfyllning + mopptvätt automatiskt. Komplett hands-free i veckor.</p>
+            </div>
+          </div>
+          <p class="text-sm text-text-light">For riktig hands-free drift: välj en Ultra-modell med komplett station. Det är prisskillnaden värd om du inte vill röra enheten i veckor.</p>
+        </div>
+
+        <!-- Husdjur -->
+        <div>
+          <h3 class="font-heading text-xl font-semibold text-text mb-3">5. Robotdammsugare for husdjur — vad är viktigt?</h3>
+          <p class="text-text-light leading-relaxed mb-3">
+            Husdjurshår ställer specifika krav som vanliga robotar inte alltid möter:
+          </p>
+          <ul class="space-y-2 mb-3">
+            {[
+              'Gummirullar (anti-tangle) — trasslas inte av päls, borstar gör det',
+              'Minst 8 000 Pa sugkraft — suger djurhår ur mattor',
+              'AI-djuravföringsdetektering — bara Roborock S8 MaxV Ultra och Ecovacs X5 Omni',
+              'Stor dammkorg eller automatisk tömning — husdjurshår fyller korgen snabbare',
+              'Dagliga körningar under pälsbytessäsongen (vår och höst)',
+            ].map(tip => (
+              <li class="flex items-start gap-2 text-sm text-text-light">
+                <span class="text-accent font-bold flex-shrink-0 mt-0.5">•</span>
+                {tip}
+              </li>
+            ))}
+          </ul>
+          <p class="text-sm text-text-light">Se vår guide: <a href="/robotdammsugare-husdjur/" class="text-accent hover:underline">Bästa robotdammsugare for husdjur 2026</a></p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Rekommendationer -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Våra rekommendationer per situation</h2>
+      <div class="space-y-3">
+        {[
+          { situation: 'Liten lägenhet (under 50 kvm), inga husdjur, budget', rec: 'Roborock Q5 Pro eller Xiaomi Robot Vacuum S10 — ca 2 500–3 000 kr', link: '/billigaste-robotdammsugare/' },
+          { situation: 'Mellanstor bostad, blandade golv, moppning önskas', rec: 'Dreame L20 Ultra eller Roborock Qrevo Master — 5 990–7 490 kr', link: '/robotdammsugare-med-mopp/' },
+          { situation: 'Husdjur (katt eller hund)', rec: 'Roborock S8 MaxV Ultra — AI undviker djuravföring, dubbla gummirullar', link: '/roborock-s8-maxv-ultra/' },
+          { situation: 'Stor bostad, vill ha bäst moppning', rec: 'Dreame X40 Ultra — utfällbar mopp, 12 000 Pa, varmvattentvätt', link: '/dreame-x40-ultra/' },
+          { situation: 'Premiumfunktioner till rimligt pris', rec: 'Roborock Qrevo Master — 90 % av S8 MaxV Ultra till 60 % av priset', link: '/roborock-qrevo-master/' },
+        ].map(item => (
+          <a href={item.link} class="flex items-start gap-3 bg-white rounded-xl border border-border p-4 hover:border-accent transition-colors group">
+            <span class="text-accent font-bold flex-shrink-0 mt-0.5">→</span>
+            <div>
+              <p class="text-sm font-semibold text-text group-hover:text-accent transition-colors">{item.situation}</p>
+              <p class="text-sm text-text-light">{item.rec}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Alla guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2026 — topplista</a></li>
+        <li><a href="/robotdammsugare-med-mopp/" class="text-accent hover:underline text-sm">Bästa robotdammsugare med mopp</a></li>
+        <li><a href="/robotdammsugare-husdjur/" class="text-accent hover:underline text-sm">Bästa robotdammsugare for husdjur</a></li>
+        <li><a href="/billigaste-robotdammsugare/" class="text-accent hover:underline text-sm">Billigaste robotdammsugare</a></li>
+        <li><a href="/dreame-x40-ultra/" class="text-accent hover:underline text-sm">Dreame X40 Ultra recension</a></li>
+        <li><a href="/roborock-s8-maxv-ultra/" class="text-accent hover:underline text-sm">Roborock S8 MaxV Ultra recension</a></li>
+        <li><a href="/roborock-qrevo-master/" class="text-accent hover:underline text-sm">Roborock Qrevo Master recension</a></li>
+      </ul>
+    </section>
+  </div>
+</BaseLayout>
