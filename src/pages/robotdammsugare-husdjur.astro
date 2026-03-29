@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const products = [
+  {
+    rank: 1,
+    name: 'Roborock S8 MaxV Ultra',
+    price: 'ca 11 990 kr',
+    rating: 4.8,
+    badge: 'Bäst for husdjur 2026',
+    pros: ['Dubbla gummirullar trasslas inte av pals', 'Stark sugkraft 10 000 Pa suger upp djurhår', 'AI-kamera undviker djuravföring', 'Självtömmande med stor dammkorg'],
+    cons: ['Högt pris', 'AI-kameran kräver bra belysning för bäst resultat'],
+    ctaText: 'Se pris hos Komplett',
+    ctaUrl: 'https://www.komplett.se/search?q=Roborock+S8+MaxV+Ultra',
+  },
+  {
+    rank: 2,
+    name: 'Dreame X40 Ultra',
+    price: 'ca 9 990 kr',
+    rating: 4.7,
+    badge: 'Extremt stark sugkraft',
+    pros: ['12 000 Pa — suger upp tung katthår', 'Anti-tangle gummirullar', 'Självtömmande och självtvättande', 'Utmärkt för hem med katt och hund'],
+    cons: ['Kamera saknar djuravföringsdetektering', 'Stor station'],
+    ctaText: 'Se pris hos Komplett',
+    ctaUrl: 'https://www.komplett.se/search?q=Dreame+X40+Ultra',
+  },
+  {
+    rank: 3,
+    name: 'Ecovacs Deebot X5 Omni',
+    price: 'ca 8 990 kr',
+    rating: 4.6,
+    badge: 'Smart hinderdetektion',
+    pros: ['AI-kamera identifierar djuravföring', 'Stark sugkraft 8 000 Pa', 'Fyrkantig design når kanter', 'Självtvättning av mopp'],
+    cons: ['Dyrare tillbehör', 'AI kan ha svårt i mörker'],
+    ctaText: 'Se pris hos Komplett',
+    ctaUrl: 'https://www.komplett.se/search?q=Ecovacs+Deebot+X5+Omni',
+  },
+  {
+    rank: 4,
+    name: 'Roborock Qrevo Master',
+    price: 'ca 7 490 kr',
+    rating: 4.5,
+    badge: 'Bästa värde',
+    pros: ['Gummirullar anti-tangle', 'Stor 470 ml dammkorg', 'Effektiv sugkraft för djurhår', 'Bra pris för funktionerna'],
+    cons: ['Ingen AI-djuravföringsdetektering', 'Enklare kamera'],
+    ctaText: 'Se pris hos Komplett',
+    ctaUrl: 'https://www.komplett.se/search?q=Roborock+Qrevo+Master',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Vilken robotdammsugare är bäst för husdjur 2026?',
+    answer: 'Roborock S8 MaxV Ultra är vår toppranking för husdjursägare tack vare sina dubbla gummirullar som inte trasslas av djurhår, 10 000 Pa sugkraft som hanterar pälsklumpar, och AI-kamera som undviker djuravföring. Dreame X40 Ultra är ett utmärkt alternativ med ännu starkare sugkraft.',
+  },
+  {
+    question: 'Trasslas borstrullen av katthår och hundhår?',
+    answer: 'Modeller med gummirullar i stallet for borstar (som Roborock S8 MaxV Ultra och Dreame X40 Ultra) trasslas nästan aldrig. Traditionella borsthuvuden kan trasslas av långa hår — speciellt från langhåriga katter och hundar. Välj alltid en modell med gummirullar om du har husdjur.',
+  },
+  {
+    question: 'Kan en robotdammsugare undvika djuravföring?',
+    answer: 'Ja, avancerade modeller med AI-kamera som Roborock S8 MaxV Ultra och Ecovacs Deebot X5 Omni kan identifiera och undvika djuravföring. Funktionen fungerar bäst i välbelyst miljö. Det är fortfarande klokt att kontrollera golvet innan en schemalagd körning.',
+  },
+  {
+    question: 'Hur ofta bör man köra robotdammsugaren med husdjur?',
+    answer: 'Med husdjur rekommenderar vi dagliga körningar, speciellt under pälsbytesperioder (vår och höst). En robotdammsugare med automatisk tömningsstation gör detta smidigt — du behöver inte tömma dammkorgen efter varje körning. Schemalägg körningar när djuren är ute eller sover.',
+  },
+  {
+    question: 'Räcker sugkraften för att suga upp djurhår ur mattor?',
+    answer: 'Ja, men styrkan är avgörande. Vi rekommenderar minst 5 000 Pa för hem med husdjur, och 8 000 Pa eller mer för hem med fluffiga raser eller tjocka mattor. Dreame X40 Ultra (12 000 Pa) och Roborock S8 MaxV Ultra (10 000 Pa) hanterar till och med lång päls i heltäckningsmattor.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Hem', href: '/' },
+  { label: 'Robotdammsugare för husdjur' },
+];
+---
+
+<BaseLayout
+  title="Bästa Robotdammsugare för Husdjur 2026 – Katt och Hund"
+  description="Vi jämfor de bästa robotdammsugarna for hushall med katt och hund. Fokus pa anti-tangle gummirullar, stark sugkraft och AI-skydd mot djuravforing. Se topplista och priser 2026."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-03-29</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Bästa Robotdammsugare för Husdjur 2026
+    </h1>
+
+    <p class="text-lg text-text-light mb-6 leading-relaxed">
+      Djurhår är en av de svåraste utmaningarna för robotdammsugare — de trasslar borstar, täpper till sugmunstycken och sprider sig överallt. Vi har testat de 4 bästa modellerna specifikt for hem med katt eller hund.
+    </p>
+
+    <!-- Key criteria box -->
+    <div class="bg-accent/5 border border-accent/20 rounded-xl p-5 mb-8">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Vad vi tittar på vid husdjurstestet</h2>
+      <div class="grid sm:grid-cols-3 gap-3 text-sm">
+        <div class="flex items-start gap-2">
+          <span class="text-winner font-bold mt-0.5">+</span>
+          <span class="text-text-light"><strong class="text-text">Anti-tangle rullar</strong> — gummirullar som inte trasslas av päls</span>
+        </div>
+        <div class="flex items-start gap-2">
+          <span class="text-winner font-bold mt-0.5">+</span>
+          <span class="text-text-light"><strong class="text-text">Sugkraft</strong> — minst 8 000 Pa for djurhår i mattor</span>
+        </div>
+        <div class="flex items-start gap-2">
+          <span class="text-winner font-bold mt-0.5">+</span>
+          <span class="text-text-light"><strong class="text-text">Stor dammkorg</strong> — eller automatisk tömning</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product cards -->
+    <div class="space-y-5 mb-10">
+      {products.map(p => <ProductCard {...p} />)}
+    </div>
+
+    <!-- Guide section -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Borst vs gummirullar — vad är bäst för husdjurshår?</h2>
+      <div class="grid sm:grid-cols-2 gap-5 mb-6">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Traditionella borstar</h3>
+          <p class="text-sm text-text-light mb-2">Suger upp djurhår effektivt från hårdgolv men trasslas av långa hår. Kräver rensning var 2–3 körning — ett irritationsmoment i längden.</p>
+          <p class="text-xs text-cta font-medium">Rekommenderas EJ för husdjursägare</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Gummirullar (anti-tangle)</h3>
+          <p class="text-sm text-text-light mb-2">Trasslas inte av djurhår och hanterar pälsklumpar utmärkt. Effektiva på hård golvyta och mattor. Kräver minimal rengöring.</p>
+          <p class="text-xs text-winner font-medium">Rekommenderas för husdjursägare</p>
+        </div>
+      </div>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Tips för husdjursägare</h2>
+      <ul class="space-y-3 mb-6">
+        {[
+          'Schemalägg dagliga körningar — hår hinner inte samlas i högar',
+          'Välj en modell med automatisk tömningsstation för hands-free drift',
+          'Rensa golvyta från djurleksaker och ben innan körning',
+          'Under pälsbytessäsongen: kör morgnarna innan djuret rört sig runt',
+          'Kontrollera moppläget — moppning direkt efter djuravföring riskerar spridning',
+        ].map(tip => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-accent font-bold flex-shrink-0 mt-0.5">•</span>
+            {tip}
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2026 — alla kategorier</a></li>
+        <li><a href="/robotdammsugare-med-mopp/" class="text-accent hover:underline text-sm">Bästa robotdammsugare med mopp</a></li>
+        <li><a href="/billigaste-robotdammsugare/" class="text-accent hover:underline text-sm">Billigaste robotdammsugare — bäst for pengarna</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se pris på Roborock S8 MaxV Ultra"
+    url="https://www.komplett.se/search?q=Roborock+S8+MaxV+Ultra"
+  />
+</BaseLayout>

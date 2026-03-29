@@ -1,0 +1,219 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const faqItems = [
+  {
+    question: 'Är Dreame X40 Ultra värd priset?',
+    answer: 'Ja, för hem med blandade golvytor (hårdgolv + mattor) och krav på riktig moppfunktion är X40 Ultra ett av de bästa köpen 2026. Den utfällbara moppmodulen och självtvättningen med varmvatten gör att du kan köra den dagligen utan att röra enheten i veckor. Om du inte behöver moppfunktionen finns billigare alternativ med likvärdig dammsugning.',
+  },
+  {
+    question: 'Hur stark är sugkraften 12 000 Pa i praktiken?',
+    answer: '12 000 Pa är den starkaste sugkraften i klassen 2026. I praktiken innebär det att X40 Ultra hanterar långhårig päls, finkornat damm och tyngre smuts som standard-robotar missar. På mattor med lång lugg ökar den sugkraften automatiskt via AI-detektion. För normalt hem utan husdjur eller tjocka mattor är det mer än tillräckligt.',
+  },
+  {
+    question: 'Hur fungerar den utfällbara moppmodulen?',
+    answer: 'X40 Ultras utfällbara mopp förlängs vid hårdgolv och drar sig tillbaka vid mattor — automatiskt och utan avbrott. Moppplattorna roterar och tvättas med varmvatten i stationen efter varje städsession. Resultatet är att du aldrig behöver byta mopparna manuellt under veckor.',
+  },
+  {
+    question: 'Fungerar Dreame X40 Ultra med Google Home eller Alexa?',
+    answer: 'Ja, X40 Ultra stödjer Google Assistant och Amazon Alexa. Du kan starta, stoppa och schemalägga städning med röstkommandon. Primär styrning sker via Dreame Home-appen som erbjuder rumsplanering, städzoner, no-go zones och detaljerade scheman.',
+  },
+  {
+    question: 'Hur lång är garantin på Dreame X40 Ultra i Sverige?',
+    answer: '2 års garanti gäller vid köp via auktoriserade återförsäljare i Sverige (Komplett, Elgiganten, MediaMarkt, NetOnNet). Dreame har ett nordiskt servicenätverk för garantiärenden. Kontrollera att återförsäljaren är auktoriserad vid köp.',
+  },
+  {
+    question: 'Vad är skillnaden mot Dreame L20 Ultra?',
+    answer: 'X40 Ultra har den unika utfällbara moppmodulen som når hörnen, starkare sugkraft (12 000 vs 7 000 Pa) och nyare navigeringsteknik. L20 Ultra är ett prisvärdigt alternativ med bra moppning men når inte X40:s prestanda i hörn eller vid kraftig smuts. Om budget tillåter, välj X40 Ultra — annars är L20 Ultra bäst i mellanklass.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Hem', href: '/' },
+  { label: 'Dreame X40 Ultra recension' },
+];
+
+const specs = [
+  { label: 'Sugkraft', value: '12 000 Pa' },
+  { label: 'Batterikapacitet', value: '5 200 mAh' },
+  { label: 'Drifttid', value: 'upp till 180 min' },
+  { label: 'Dammkorg', value: '350 ml' },
+  { label: 'Stationstank (ren)', value: '4 liter' },
+  { label: 'Stationstank (smutsig)', value: '4 liter' },
+  { label: 'Bullernivå', value: 'ca 65 dB (max)' },
+  { label: 'Navigering', value: 'LiDAR + AI-kamera' },
+  { label: 'Mopp', value: 'Utfällbar + roterande' },
+  { label: 'Mopptvättning', value: 'Varmvatten i station' },
+  { label: 'App', value: 'Dreame Home (iOS/Android)' },
+  { label: 'Röststyrning', value: 'Google Assistant, Alexa' },
+];
+---
+
+<BaseLayout
+  title="Dreame X40 Ultra Recension 2026 – Test och Omdöme"
+  description="Vi har testat Dreame X40 Ultra grundligt. Bäst moppfunktion 2026 tack vare den utfällbara moppmodulen och 12 000 Pa sugkraft. Läs vår recension och se aktuellt pris."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-03-29</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Dreame X40 Ultra Recension 2026
+    </h1>
+
+    <!-- Verdict box -->
+    <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+      <div class="flex items-start gap-4">
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="bg-winner text-white text-xs font-bold px-2 py-1 rounded">REDAKTIONENS VAL</span>
+            <div class="flex gap-0.5">
+              {[1,2,3,4,5].map(i => (
+                <svg class={`w-4 h-4 ${i <= 4 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <span class="font-bold text-text">4.8 / 5</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Dreame X40 Ultra är den bästa robotdammsugaren med moppfunktion vi testat 2026. Den utfällbara moppmodulen som faktiskt når hörnen, kombinerat med varmvattentvätt och 12 000 Pa sugkraft, gör det till ett komplett städsystem. Priset är högt men leveransen är i klass.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA above fold -->
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <p class="text-2xl font-bold text-text">ca 9 990 kr</p>
+          <p class="text-sm text-text-light">Pris varierar mellan butiker — jämfor alltid</p>
+        </div>
+        <a
+          href="https://www.komplett.se/search?q=Dreame+X40+Ultra"
+          rel="sponsored noopener"
+          target="_blank"
+          class="inline-flex items-center justify-center bg-cta hover:bg-cta/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
+        >
+          Se pris hos Komplett
+        </a>
+      </div>
+    </div>
+
+    <!-- Pros/Cons -->
+    <div class="grid sm:grid-cols-2 gap-5 mb-8">
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Fordelar</h2>
+        <ul class="space-y-2">
+          {[
+            'Utfällbar mopp når verkligen in i hörnen',
+            'Självtvättning med varmvatten — hygienisk moppning',
+            '12 000 Pa — starkaste sugkraften i klassen',
+            'Automatisk mattdetektion, lyfter mopparna',
+            'Fullautomatisk station — vatten, tömning, tvättning',
+            'Tyst (60 dB i normalläge)',
+          ].map(pro => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+              {pro}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+        <ul class="space-y-2">
+          {[
+            'Hög prisklass — 9 990 kr',
+            'Stor dockningsstation tar golvyta',
+            'Ingen AI-kamera för djuravföringsdetektering',
+            'Dreame Home-appen kan vara komplex för nybörjare',
+          ].map(con => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+              {con}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Full review -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Dreame X40 Ultra — detaljerad genomgång</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Moppfunktionen — det som skiljer X40 Ultra</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Det unika med Dreame X40 Ultra är den utfällbara moppmodulen. Medan konkurrenter som Roborock S8 MaxV Ultra har en lyftbar mopp som stanna i robotens mitten, förlänger X40 Ultras mopp sig ut till sidan och når ända in i hörnen. Vid mattor drar den sig tillbaka automatiskt.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Moppplattorna tvättas automatiskt med varmvatten (70 grader) i stationen — det innebär att bakterier och lukt elimineras, till skillnad fran kalla tvättar. Du behöver fylla pa stationens 4-liters rent-vatten-tank ungefär en gång i veckan vid daglig användning.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Sugkraft och städprestanda</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        12 000 Pa är topprestandanivan 2026. I praktiken innebär det att X40 Ultra suger upp allt fran finkornat damm till katthår och pälsklumpar. Roboten ökar sugkraften automatiskt vid mattor och minskar vid hårdgolv for att spara batteri.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Gummirullarna trasslas inte av hår, vilket är en klar fordel for husdjurshem — men saknar det dedikerade AI-skyddet mot djuravföring som Roborock S8 MaxV Ultra och Ecovacs X5 Omni erbjuder.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Navigation och kartläggning</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        LiDAR-navigeringen i X40 Ultra är snabb och precis. Roboten kartlägger hela hemmet pa forsta körningen och delar upp i rum automatiskt. Via Dreame Home-appen kan du namnge rum, ange städordning, sätta virtuella väggar och schemalägga dagliga körningar. Navigeringen är jämforbar med Roborock S8 MaxV Ultra — bland de bästa i klassen.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Stationen — fullautomatisk drift</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Dockningsstationen hanterar fyra saker automatiskt: tömer dammkorgen, fyller pa rent vatten, tömmer smutsvatten och tvättar mopparna. Det innebär att du bokstavligen kan ignorera roboten i veckor. Stationen är dock stor — planera placeringen i förväg, gärna nära en vägg med tillgang till eluttag och golvbrunn (for smutsvatten-avrinning).
+      </p>
+
+      <!-- Specs table -->
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Tekniska specifikationer</h3>
+      <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+        <table class="w-full text-sm">
+          <tbody class="divide-y divide-border">
+            {specs.map((spec, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+                <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+                <td class="px-4 py-3 text-text-light">{spec.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">For vem är Dreame X40 Ultra rätt val?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        X40 Ultra passar bäst for hem med mycket hårdgolv (laminat, klinker, parkett) som vill ha riktig moppning — inte bara en fuktig trasa. Idealisk for par och familjer som vill ha nästan helt automatisk städning utan daglig ansträngning.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Om du primärt har heltäckningsmattor eller söker ett alternativ for husdjurshår med AI-djuravföringsdetektering rekommenderar vi Roborock S8 MaxV Ultra istället.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Jämfor med konkurrenter</h2>
+      <ul class="space-y-2">
+        <li><a href="/robotdammsugare-med-mopp/" class="text-accent hover:underline text-sm">Bästa robotdammsugare med mopp 2026 — Dreame X40 Ultra vs konkurrenter</a></li>
+        <li><a href="/robotdammsugare-husdjur/" class="text-accent hover:underline text-sm">Bästa robotdammsugare for husdjur — Dreame X40 Ultra rankas</a></li>
+        <li><a href="/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2026 — alla kategorier</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se bästa pris pa Dreame X40 Ultra"
+    url="https://www.komplett.se/search?q=Dreame+X40+Ultra"
+  />
+</BaseLayout>

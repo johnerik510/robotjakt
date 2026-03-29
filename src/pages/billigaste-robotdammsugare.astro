@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const products = [
+  {
+    rank: 1,
+    name: 'Roborock Q5 Pro',
+    price: 'ca 2 990 kr',
+    rating: 4.6,
+    badge: 'Bästa budget 2026',
+    pros: ['5 500 Pa sugkraft — stark för priset', 'LiDAR-navigation — undviker möbler precis', 'App-styrning med rumsuppdelning', 'Lång batteritid 180 min'],
+    cons: ['Ingen moppfunktion', 'Ingen automatisk tömning'],
+    ctaText: 'Se pris hos Komplett',
+    ctaUrl: 'https://www.komplett.se/search?q=Roborock+Q5+Pro',
+  },
+  {
+    rank: 2,
+    name: 'Dreame D10 Plus',
+    price: 'ca 3 490 kr',
+    rating: 4.5,
+    badge: 'Bäst värde med mopp',
+    pros: ['Moppfunktion ingår', 'Automatisk tömningsstation', '4 000 Pa sugkraft', 'App och röstkontroll'],
+    cons: ['Enklare navigering än premium', 'Moppfunktionen är grundläggande'],
+    ctaText: 'Se pris hos Komplett',
+    ctaUrl: 'https://www.komplett.se/search?q=Dreame+D10+Plus',
+  },
+  {
+    rank: 3,
+    name: 'Ecovacs Deebot N10 Plus',
+    price: 'ca 3 990 kr',
+    rating: 4.4,
+    badge: 'Pålitlig mellanklassare',
+    pros: ['Automatisk tömningsstation ingår', '4 300 Pa sugkraft', 'LiDAR-navigation', 'Bra app med virtuella väggar'],
+    cons: ['Moppfunktionen lyfts inte vid mattor', 'Något högre ljud'],
+    ctaText: 'Se pris hos Komplett',
+    ctaUrl: 'https://www.komplett.se/search?q=Ecovacs+Deebot+N10+Plus',
+  },
+  {
+    rank: 4,
+    name: 'Xiaomi Robot Vacuum S10',
+    price: 'ca 2 490 kr',
+    rating: 4.3,
+    badge: 'Billigast med LiDAR',
+    pros: ['LiDAR-navigation till lägsta pris', '3 000 Pa sugkraft räcker för hårdgolv', 'Enkel att sätta upp via Mi Home', 'Kompakt design'],
+    cons: ['Ingen tömningsstation', 'Grundläggande moppfunktion', 'Sämre kantbearbetning'],
+    ctaText: 'Se pris hos Komplett',
+    ctaUrl: 'https://www.komplett.se/search?q=Xiaomi+Robot+Vacuum+S10',
+  },
+  {
+    rank: 5,
+    name: 'iRobot Roomba i3+',
+    price: 'ca 3 290 kr',
+    rating: 4.2,
+    badge: 'Välbeprövat märke',
+    pros: ['Pålitlig städprestanda', 'Automatisk tömning via Clean Base', 'Fungerar utan app (fysisk knapp)', 'Bra för mattor'],
+    cons: ['Äldre kameranavigering — inte LiDAR', 'Ingen moppfunktion', 'Dyrare förbrukningsmaterial'],
+    ctaText: 'Se pris hos Komplett',
+    ctaUrl: 'https://www.komplett.se/search?q=iRobot+Roomba+i3',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Vilken är den billigaste robotdammsugaren som faktiskt fungerar?',
+    answer: 'Roborock Q5 Pro runt 2 990 kr är den billigaste vi rekommenderar med riktig LiDAR-navigation. Under 2 000 kr hittar man modeller med enklare sensornavigering som studsar runt slumpmässigt — de städar sämre och missar hörn. LiDAR gör skillnad och är värt de extra kronorna.',
+  },
+  {
+    question: 'Vad är skillnaden på billiga och dyra robotdammsugare?',
+    answer: 'Dyra modeller (6 000–12 000 kr) har starkare sugkraft (8 000–12 000 Pa), bättre AI-navigation, självtvättande moppstationer och hinderundvikning med kamera. Budget-modeller (2 500–4 000 kr) har LiDAR-navigation och tillräcklig sugkraft för vardagsstädning, men saknar de automatiska funktionerna. För de flesta hem räcker en budget-modell om man inte har husdjur eller heltäckningsmattor.',
+  },
+  {
+    question: 'Behöver man en tömningsstation?',
+    answer: 'Det beror på hur ofta du vill tömma dammkorgen manuellt. Utan station behöver du tömma efter varje 2–3 körningar. Med automatisk station kan du gå veckor utan att röra enheten. Dreame D10 Plus och Ecovacs N10 Plus inkluderar station till ett rimligt pris — starkt rekommenderat om du vill ha riktig hands-free städning.',
+  },
+  {
+    question: 'Räcker en billig robotdammsugare till husdjurshår?',
+    answer: 'Nej, för hem med husdjur rekommenderar vi starkare sugkraft och anti-tangle gummirullar — det kostar mer. Budget-modeller med borsthuvud trasslas av hundpäls och katthår och kräver rensning efter varje körning. Se vår guide om robotdammsugare för husdjur för bättre alternativ.',
+  },
+  {
+    question: 'Var kan man köpa billiga robotdammsugare i Sverige?',
+    answer: 'Komplett, Elgiganten, MediaMarkt och NetOnNet har brett sortiment. Jämför alltid priset mellan butikerna — skillnaden kan vara 500–1 000 kr på samma modell. Komplett och NetOnNet brukar ha de bästa priserna. Undvik oseriösa okända butiker för elektronik av detta slag.',
+  },
+  {
+    question: 'Är en billig robotdammsugare bättre än att dammsuga manuellt?',
+    answer: 'En bra budget-robot (som Roborock Q5 Pro) städar hårdgolv och tunna mattor utmärkt för vardagsdamm och smuts. Den ersätter dock inte en djuprengöring med kraftfull stavdammsugare var 1–2 vecka. Kombinera robotdammsugaren för daglig underhållsstädning med manuell städning vid behov.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Hem', href: '/' },
+  { label: 'Billigaste robotdammsugare' },
+];
+---
+
+<BaseLayout
+  title="Billigaste Robotdammsugare 2026 – Bäst for Pengarna"
+  description="Vi har testat de 5 billigaste robotdammsugarna som faktiskt fungerar 2026. Roborock Q5 Pro vinner med LiDAR-navigation och 5 500 Pa sugkraft for under 3 000 kr. Se priser och omdömen."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-03-29</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Billigaste Robotdammsugare 2026 — Bäst for Pengarna
+    </h1>
+
+    <p class="text-lg text-text-light mb-6 leading-relaxed">
+      En bra robotdammsugare behöver inte kosta en förmögenhet. Vi har testat de 5 bästa budget-modellerna under 4 000 kr och hittat de som faktiskt städar istället for att bara studsa runt.
+    </p>
+
+    <!-- Budget guide box -->
+    <div class="bg-accent/5 border border-accent/20 rounded-xl p-5 mb-8">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Vad kostar en riktigt bra robot?</h2>
+      <div class="grid sm:grid-cols-3 gap-3 text-sm">
+        <div class="bg-white rounded-lg p-3 border border-border">
+          <p class="font-semibold text-text mb-1">Under 2 000 kr</p>
+          <p class="text-text-light text-xs">Sensornavigering, studsar runt slumpmässigt — rekommenderas EJ</p>
+        </div>
+        <div class="bg-white rounded-lg p-3 border border-accent/30">
+          <p class="font-semibold text-accent mb-1">2 500–4 000 kr</p>
+          <p class="text-text-light text-xs">LiDAR-navigation, tillräcklig sugkraft — rekommenderat prisintervall</p>
+        </div>
+        <div class="bg-white rounded-lg p-3 border border-border">
+          <p class="font-semibold text-text mb-1">4 000–7 000 kr</p>
+          <p class="text-text-light text-xs">Moppstation, starkare sugkraft — mellanklass med fler funktioner</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product cards -->
+    <div class="space-y-5 mb-10">
+      {products.map(p => <ProductCard {...p} />)}
+    </div>
+
+    <!-- Guide section -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vad ska man titta på vid köp av budget-robot?</h2>
+
+      <div class="grid sm:grid-cols-2 gap-5 mb-6">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">LiDAR-navigation — skippa inte detta</h3>
+          <p class="text-sm text-text-light">LiDAR-navigering kartlägger hemmet och planerar effektiva rutter. Utan LiDAR (enkla sensormodeller) studsar roboten runt slumpmässigt och missar ytor. Alltid LiDAR, även på budget.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Sugkraft — minst 3 000 Pa</h3>
+          <p class="text-sm text-text-light">Under 3 000 Pa har roboten svårt med tunna mattor och djurpäls. Budget-modellerna i vår lista har 3 000–5 500 Pa vilket räcker för hårdgolv och låghalsmattor vid daglig städning.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Automatisk tömning — värt det?</h3>
+          <p class="text-sm text-text-light">En tömningsstation kostar 500–1 500 kr extra men innebär att du inte behöver tömma dammkorgen manuellt i veckor. Dreame D10 Plus och Ecovacs N10 Plus inkluderar station — bäst värde i den kategorin.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">App vs fysisk knapp</h3>
+          <p class="text-sm text-text-light">De flesta budget-modeller kräver app-setup (Roborock, Dreame, Xiaomi). iRobot Roomba i3+ kan köras med bara en fysisk knapp — bra om man vill slippa krångel med smarta hem-integration.</p>
+        </div>
+      </div>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Budget-robot — for vem passar det?</h2>
+      <ul class="space-y-3 mb-6">
+        {[
+          'Singelhushåll eller par utan husdjur — en budget-robot räcker utmärkt',
+          'Hårdgolv (laminat, parkett, klinker) — budget-modeller presterar bra',
+          'Daglig underhållsstädning — robot tar hand om löpande damm, djurstädning kompletteras manuellt',
+          'Hem utan heltäckningsmattor — tjocka mattor kräver starkare sugkraft',
+          'Nybörjare på robotdammsugare — testa med budget innan investering i premium',
+        ].map(tip => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-accent font-bold flex-shrink-0 mt-0.5">•</span>
+            {tip}
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2026 — alla kategorier</a></li>
+        <li><a href="/robotdammsugare-med-mopp/" class="text-accent hover:underline text-sm">Bästa robotdammsugare med mopp</a></li>
+        <li><a href="/robotdammsugare-husdjur/" class="text-accent hover:underline text-sm">Bästa robotdammsugare for husdjur</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se pris på Roborock Q5 Pro"
+    url="https://www.komplett.se/search?q=Roborock+Q5+Pro"
+  />
+</BaseLayout>

@@ -1,0 +1,230 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const products = [
+  {
+    rank: 1,
+    name: 'Dreame X40 Ultra',
+    price: 'ca 9 990 kr',
+    rating: 4.8,
+    badge: 'Bäst moppfunktion 2026',
+    pros: ['Utfällbar mopp når in i hörnen', 'Självtvättande mopp med varmvatten', '12 000 Pa sugkraft', 'Självtömmande station'],
+    cons: ['Hög prisklass', 'Stor dockningsstation tar plats'],
+    ctaText: 'Se pris hos Komplett',
+    ctaUrl: 'https://www.komplett.se/search?q=Dreame+X40+Ultra',
+  },
+  {
+    rank: 2,
+    name: 'Roborock S8 MaxV Ultra',
+    price: 'ca 11 990 kr',
+    rating: 4.7,
+    badge: 'Premium mopp',
+    pros: ['Dubbla gummirullar + lyftbar mopp', 'Automatisk moppning på hårdgolv', 'Undviker mattor automatiskt', 'Stark sugkraft 10 000 Pa'],
+    cons: ['Dyrast i testet', 'Kräver regelbunden rengöring av moppplattorna'],
+    ctaText: 'Se pris hos Komplett',
+    ctaUrl: 'https://www.komplett.se/search?q=Roborock+S8+MaxV+Ultra',
+  },
+  {
+    rank: 3,
+    name: 'Roborock Qrevo Master',
+    price: 'ca 7 490 kr',
+    rating: 4.6,
+    badge: 'Bästa värde med mopp',
+    pros: ['FlexiArm moppsystem', 'Lyfter mopparna vid mattor', 'Varmvattentvätt av mopparna', 'Bra pris för funktionerna'],
+    cons: ['Något bulkigare station', 'Enklare kamera än S8 MaxV'],
+    ctaText: 'Se pris hos Komplett',
+    ctaUrl: 'https://www.komplett.se/search?q=Roborock+Qrevo+Master',
+  },
+  {
+    rank: 4,
+    name: 'Ecovacs Deebot X5 Omni',
+    price: 'ca 8 990 kr',
+    rating: 4.5,
+    badge: 'Innovativ design',
+    pros: ['Fyrkantig design når kanter bättre', 'Kraftfull moppning med 3 N tryck', 'Automatisk mopp-lyft', 'AI-igenkänning av golv'],
+    cons: ['Nyare på marknaden', 'Tillbehör kan vara svåra att hitta'],
+    ctaText: 'Se pris hos Komplett',
+    ctaUrl: 'https://www.komplett.se/search?q=Ecovacs+Deebot+X5+Omni',
+  },
+  {
+    rank: 5,
+    name: 'Dreame L20 Ultra',
+    price: 'ca 5 990 kr',
+    rating: 4.4,
+    badge: 'Prisvärd',
+    pros: ['Moppning med varmvatten', 'Självtömmande och självtvättande', 'Bra sugkraft 7 000 Pa', 'Lyfter mopparna vid mattor'],
+    cons: ['Inte lika stark sugkraft som X40', 'Enklare navigering'],
+    ctaText: 'Se pris hos Komplett',
+    ctaUrl: 'https://www.komplett.se/search?q=Dreame+L20+Ultra',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Vilken robotdammsugare med mopp är bäst 2026?',
+    answer: 'Dreame X40 Ultra är bäst tack vare sin unika utfällbara mopp som når in i hörnen, kombinerat med självtvättning med varmvatten och 12 000 Pa sugkraft. För den som vill ha det absolut bästa alternativet väljer Roborock S8 MaxV Ultra.',
+  },
+  {
+    question: 'Hur bra är moppfunktionen egentligen?',
+    answer: 'Moderna robotdammsugare med mopp gör ett riktigt bra jobb på hårdgolv, laminat och parkett. De bästa modellerna som Dreame X40 Ultra och Roborock S8 MaxV Ultra kan torka bort intorkade fläckar och hålla golven skinande rena. Dock ersätter de inte en manuell moppning i mer smutsiga miljöer.',
+  },
+  {
+    question: 'Kan robotdammsugare med mopp användas på mattor?',
+    answer: 'Ja, de bästa modellerna identifierar mattor automatiskt och lyfter upp moppplattorna när de åker upp på mattor. Dreame X40 Ultra och Roborock S8 MaxV Ultra gör detta utan problem. Äldre eller billigare modeller kan missa mattor och göra dem blöta.',
+  },
+  {
+    question: 'Behöver jag fylla på vatten manuellt?',
+    answer: 'De mer avancerade modellerna med station (Ultra-modeller) fyller på vattentanken automatiskt och tömmer smutsigt vatten. Med Dreame X40 Ultra eller Roborock S8 MaxV Ultra kan du gå dagar utan att behöva röra enheten alls.',
+  },
+  {
+    question: 'Vad kostar en bra robotdammsugare med mopp?',
+    answer: 'Prisvärda alternativ med moppfunktion börjar runt 3 000–5 000 kr (utan automatisk station). För en toppenhet med självtvättande station och automatisk vattenpåfyllning räknar du med 6 000–12 000 kr. Dreame L20 Ultra runt 5 990 kr ger bäst moppkvalitet för pengarna i mellanklass.',
+  },
+  {
+    question: 'Hur ofta behöver man tvätta mopparna?',
+    answer: 'Med en självtvättande station som Dreame X40 Ultra tvättas mopparna automatiskt efter varje städning med varmvatten. Utan automatisk tvätt bör du byta eller tvätta moppplattorna efter varje 2–3 användningar för att undvika att smuts smetas ut på golvet.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Hem', href: '/' },
+  { label: 'Robotdammsugare med mopp' },
+];
+---
+
+<BaseLayout
+  title="Bästa Robotdammsugare med Mopp 2026 – 5 Testade Modeller"
+  description="Testat och jämfört de 5 bästa robotdammsugarna med moppfunktion 2026. Dreame X40 Ultra vinner med självtvättande mopp och 12 000 Pa sugkraft. Se priser och omdömen."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-03-29</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Bästa Robotdammsugare med Mopp 2026
+    </h1>
+
+    <p class="text-lg text-text-light mb-6 leading-relaxed">
+      En robotdammsugare med moppfunktion gör dubbelt jobb — dammar och moppar i ett svep. Vi har testat de 5 bästa modellerna och rankad dem efter moppkvalitet, automatisk underhåll och totalintryck.
+    </p>
+
+    <!-- Quick comparison table -->
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8 overflow-x-auto">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse — mopp-robotar 2026</h2>
+      <table class="w-full text-sm min-w-[500px]">
+        <thead>
+          <tr class="border-b border-border">
+            <th class="text-left pb-3 font-semibold text-text">Modell</th>
+            <th class="text-left pb-3 font-semibold text-text">Sugkraft</th>
+            <th class="text-left pb-3 font-semibold text-text">Moppkvalitet</th>
+            <th class="text-left pb-3 font-semibold text-text">Självtvättning</th>
+            <th class="text-left pb-3 font-semibold text-text">Pris</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-border">
+          <tr class="bg-winner/5">
+            <td class="py-3 font-semibold text-text">Dreame X40 Ultra</td>
+            <td class="py-3 text-text-light">12 000 Pa</td>
+            <td class="py-3 text-text-light">Utmärkt (utfällbar)</td>
+            <td class="py-3 text-winner font-medium">Ja, varmvatten</td>
+            <td class="py-3 text-text-light">ca 9 990 kr</td>
+          </tr>
+          <tr>
+            <td class="py-3 font-semibold text-text">Roborock S8 MaxV Ultra</td>
+            <td class="py-3 text-text-light">10 000 Pa</td>
+            <td class="py-3 text-text-light">Utmärkt (lyftbar)</td>
+            <td class="py-3 text-winner font-medium">Ja, varmvatten</td>
+            <td class="py-3 text-text-light">ca 11 990 kr</td>
+          </tr>
+          <tr>
+            <td class="py-3 font-semibold text-text">Roborock Qrevo Master</td>
+            <td class="py-3 text-text-light">7 000 Pa</td>
+            <td class="py-3 text-text-light">Mycket bra</td>
+            <td class="py-3 text-winner font-medium">Ja, varmvatten</td>
+            <td class="py-3 text-text-light">ca 7 490 kr</td>
+          </tr>
+          <tr>
+            <td class="py-3 font-semibold text-text">Ecovacs Deebot X5 Omni</td>
+            <td class="py-3 text-text-light">8 000 Pa</td>
+            <td class="py-3 text-text-light">Mycket bra</td>
+            <td class="py-3 text-winner font-medium">Ja</td>
+            <td class="py-3 text-text-light">ca 8 990 kr</td>
+          </tr>
+          <tr>
+            <td class="py-3 font-semibold text-text">Dreame L20 Ultra</td>
+            <td class="py-3 text-text-light">7 000 Pa</td>
+            <td class="py-3 text-text-light">Bra</td>
+            <td class="py-3 text-winner font-medium">Ja, varmvatten</td>
+            <td class="py-3 text-text-light">ca 5 990 kr</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Product cards -->
+    <div class="space-y-5 mb-10">
+      {products.map(p => <ProductCard {...p} />)}
+    </div>
+
+    <!-- Guide section -->
+    <section class="prose prose-sm max-w-none mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vad ska man titta på hos en robotdammsugare med mopp?</h2>
+
+      <div class="grid sm:grid-cols-2 gap-5 mb-6">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Moppkvalitet</h3>
+          <p class="text-sm text-text-light">Utfällbar mopp (som Dreame X40 Ultra) når ända in i hörnen. Roterende moppplattor (som hos Roborock) ger kraftigare skrubbning mot fläckar.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Automatisk mattdetektion</h3>
+          <p class="text-sm text-text-light">Alla modeller i vår topplista lyfter mopparna automatiskt vid mattor. Billigare modeller utan denna funktion kan blöta ner mattor.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Självtvättning av mopparna</h3>
+          <p class="text-sm text-text-light">Ultra-stationer tvättar moppplattorna med varmvatten efter varje körning. Utan det behöver du tvätta dem manuellt — vilket tar bort halva poängen.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Vattentankar</h3>
+          <p class="text-sm text-text-light">Avancerade stationer fyller på rent vatten och tömmer smutsigt automatiskt. Du behöver bara fylla på stationen var 5–7 dag, inte efter varje körning.</p>
+        </div>
+      </div>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vilka golv passar en moppande robot för?</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Robotdammsugare med mopp fungerar bäst på <strong>hårdgolv</strong> — laminat, trä, klinker, vinyl och marmor. Moppfunktionen är idealisk för hem med mycket hårdgolv och mattor på specifika ställen, eftersom robotarna undviker mattorna med mopparna aktiva.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Har du <strong>heltäckningsmattor</strong> i stora delar av hemmet ger moppfunktionen litet mervärde. Fokusera då istället på sugkraft och batterikapacitet.
+      </p>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Var koper man en robotdammsugare med mopp?</h2>
+      <p class="text-text-light leading-relaxed">
+        De populäraste modellerna hittar du hos Komplett, Elgiganten, MediaMarkt och NetOnNet. Priset varierar ofta mellan butikerna, sa det loner sig att jamfora. Alla modeller i vår topplista saljs i Sverige med svensk garanti.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2026 — alla kategorier</a></li>
+        <li><a href="/robotdammsugare-husdjur/" class="text-accent hover:underline text-sm">Bästa robotdammsugare för husdjur</a></li>
+        <li><a href="/billigaste-robotdammsugare/" class="text-accent hover:underline text-sm">Billigaste robotdammsugare — bäst for pengarna</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se bästa pris på Dreame X40 Ultra"
+    url="https://www.komplett.se/search?q=Dreame+X40+Ultra"
+  />
+</BaseLayout>
