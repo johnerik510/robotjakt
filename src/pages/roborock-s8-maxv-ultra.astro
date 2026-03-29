@@ -1,0 +1,220 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const faqItems = [
+  {
+    question: 'Är Roborock S8 MaxV Ultra värd 11 990 kr?',
+    answer: 'Ja, om du vill ha det absolut bästa 2026. S8 MaxV Ultra kombinerar AI-kamera som undviker djuravföring, 10 000 Pa sugkraft, dubbla gummirullar mot trassling och fullautomatisk station. Inget annat i klassen erbjuder AI-djuravföringsskydd plus premium-allt. För de flesta hem utan husdjur kan Dreame X40 Ultra (9 990 kr) ge jämförbar upplevelse till lägre pris.',
+  },
+  {
+    question: 'Hur fungerar AI-kameran som undviker djuravföring?',
+    answer: 'S8 MaxV Ultras AI-kamera känner igen djuravföring, skor, kablar och annat hinder i realtid. När kameran identifierar djuravföring avviker roboten och fortsätter resten av städningen. Funktionen fungerar bäst i välbelyst rum — i mörker är kamerans effektivitet begränsad. Det är klokt att kontrollera golvet vid kvällsstädning.',
+  },
+  {
+    question: 'Trasslas borstrullarna av katt- eller hundhår?',
+    answer: 'Nej, S8 MaxV Ultra har dubbla gummirullar som är specifikt designade för att inte trasslas av djurhår — inte borstar. Gummirullarna stöter bort hår istället för att linda in det. Du behöver i princip aldrig rensa rullarna manuellt, till skillnad från modeller med traditionella borsthuvuden.',
+  },
+  {
+    question: 'Vad är skillnaden mot Dreame X40 Ultra?',
+    answer: 'S8 MaxV Ultra har AI-kamera som undviker djuravföring och hinder — det saknar X40 Ultra. Rullarna på S8 MaxV Ultra är dubbla gummirullar, vilket ger bättre djurhårshantering. X40 Ultra vinner på moppfunktionen tack vare sin utfällbara mopp som når hörnen. Välj S8 MaxV Ultra om husdjur är prioritet, X40 Ultra om moppning är prioritet.',
+  },
+  {
+    question: 'Hur lång drifttid har Roborock S8 MaxV Ultra?',
+    answer: 'Upp till 180 minuter på en laddning, vilket räcker för de flesta hem upp till 200 kvm. Roboten returnerar automatiskt till stationen för laddning om batteriet tar slut och fortsätter sedan städningen. Fulladdning tar ungefär 4 timmar.',
+  },
+  {
+    question: 'Stöder S8 MaxV Ultra svenska röstkommandon?',
+    answer: 'Ja, via Google Assistant och Amazon Alexa kan du ge röstkommandon på svenska. Den primära appen är Roborock Home som erbjuder detaljerad kartläggning, rumsuppdelning, schemaläggning och statistik. Appen stödjer svenska språk.',
+  },
+];
+
+const specs = [
+  { label: 'Sugkraft', value: '10 000 Pa' },
+  { label: 'Rulltyp', value: 'Dubbla gummirullar' },
+  { label: 'Batterikapacitet', value: '5 200 mAh' },
+  { label: 'Drifttid', value: 'upp till 180 min' },
+  { label: 'Dammkorg', value: '350 ml' },
+  { label: 'Stationstank (ren)', value: '3 liter' },
+  { label: 'Stationstank (smutsig)', value: '2.5 liter' },
+  { label: 'Bullernivå', value: 'ca 66 dB (max)' },
+  { label: 'Navigering', value: 'LiDAR + AI-kamera' },
+  { label: 'Hinderdetektering', value: 'AI-kamera (djuravföring, kablar, skor)' },
+  { label: 'Mopp', value: 'Lyftbar dubbel mopp' },
+  { label: 'Mopptvättning', value: 'Varmvatten i station' },
+  { label: 'App', value: 'Roborock Home (iOS/Android)' },
+  { label: 'Röststyrning', value: 'Google Assistant, Alexa' },
+];
+
+const breadcrumbs = [
+  { label: 'Hem', href: '/' },
+  { label: 'Roborock S8 MaxV Ultra recension' },
+];
+---
+
+<BaseLayout
+  title="Roborock S8 MaxV Ultra Recension 2026 – Test och Omdöme"
+  description="Vi har testat Roborock S8 MaxV Ultra grundligt. Bäst for husdjurshem 2026 — AI-kamera undviker djuravföring, dubbla gummirullar och 10 000 Pa sugkraft. Läs vår recension."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-03-29</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Roborock S8 MaxV Ultra Recension 2026
+    </h1>
+
+    <!-- Verdict box -->
+    <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-winner text-white text-xs font-bold px-2 py-1 rounded">BÄST FOR HUSDJUR</span>
+          <div class="flex gap-0.5">
+            {[1,2,3,4,5].map(i => (
+              <svg class={`w-4 h-4 ${i <= 4 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span class="font-bold text-text">4.8 / 5</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed">
+          Roborock S8 MaxV Ultra är det självklara valet for husdjurshem 2026. AI-kameran som identifierar och undviker djuravföring, kombinerat med dubbla gummirullar som aldrig trasslas av päls, gör att du kan lita på roboten även utan att kontrollera golvet fore varje körning.
+        </p>
+      </div>
+    </div>
+
+    <!-- CTA above fold -->
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <p class="text-2xl font-bold text-text">ca 11 990 kr</p>
+          <p class="text-sm text-text-light">Jämfor alltid priser mellan butiker</p>
+        </div>
+        <a
+          href="https://www.komplett.se/search?q=Roborock+S8+MaxV+Ultra"
+          rel="sponsored noopener"
+          target="_blank"
+          class="inline-flex items-center justify-center bg-cta hover:bg-cta/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
+        >
+          Se pris hos Komplett
+        </a>
+      </div>
+    </div>
+
+    <!-- Pros/Cons -->
+    <div class="grid sm:grid-cols-2 gap-5 mb-8">
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Fordelar</h2>
+        <ul class="space-y-2">
+          {[
+            'AI-kamera undviker djuravföring och hinder',
+            'Dubbla gummirullar — trasslas aldrig av päls',
+            '10 000 Pa — suger djurhår ur mattor',
+            'Lyftbar mopp vid mattor — inget blottande',
+            'Fullautomatisk station med varmvattentvätt',
+            'Bäst i klassen for husdjurshem',
+          ].map(pro => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+              {pro}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+        <ul class="space-y-2">
+          {[
+            'Dyrast i testet — 11 990 kr',
+            'AI-kameran kräver bra belysning',
+            'Moppmodulen är lyftbar men inte utfällbar (når ej hörnen lika bra som X40 Ultra)',
+            'Roborock Home-appen kan ta tid att lära sig',
+          ].map(con => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+              {con}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Full review -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Roborock S8 MaxV Ultra — detaljerad genomgång</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">AI-kameran — det som verkligen skiljer</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        ReactiveAI 2.0-systemet i S8 MaxV Ultra är det enda i klassen som pålitligt identifierar och undviker djuravföring i realtid. Kameran känner igen over 70 objektkategorier — skor, kablar, djurleksaker, strumpor och naturligtvis djuravföring. Roboten undviker dem och markerar deras position i appen.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Funktionen fungerar bäst i rum med naturligt ljus eller normal belysning. I mörka rum är kameran mer begränsad. Vill du köra nattliga scheman rekommenderar vi att aktivera robotens egna LED-ljus i appen.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Dubbla gummirullar for husdjurshår</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        S8 MaxV Ultra är en av få modeller med dubbla gummirullar — det vill säga två rullar som arbetar i tandem. Kombinationen ger starkare uppmattning och innebär att ingen av rullarna trasslas, även med lång katt- eller hundpäls. Detta är en kritisk skillnad mot traditionella borsthuvuden.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Med 10 000 Pa sugkraft och dubbla gummirullar klarar S8 MaxV Ultra heltäckningsmattor och tjocka luddar som budget-robotar inte ens når. Under pälsbytessäsonger (vår och höst) rekommenderar vi dagliga körningar.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Navigation och kartläggning</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        PreciSense LiDAR-navigeringen i S8 MaxV Ultra räknas bland de snabbaste och mest precisa 2026. Roboten kartlägger hemmet pa forsta körningen, delar upp i rum och skapar en detaljerad karta i Roborock Home-appen. Du kan namnge rum, ange förbjudna zoner, sätta virtuella väggar och skapa städscheman per rum. Kameran kompletterar LiDAR:n for realtids-hinderdetektering.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Moppfunktionen</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        S8 MaxV Ultras mopp lyfts automatiskt vid mattor och tvättas med varmvatten i stationen. De dubbla roterande moppplattorna ger bra rengöring pa hårdgolv. Moppmodulen är lyftbar men inte utfällbar som hos Dreame X40 Ultra — den når darf or inte lika bra ner i hörnen. For husdjurshem är detta en acceptabel kompromiss for allt man far av AI-kameran.
+      </p>
+
+      <!-- Specs table -->
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Tekniska specifikationer</h3>
+      <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+        <table class="w-full text-sm">
+          <tbody class="divide-y divide-border">
+            {specs.map((spec, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+                <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+                <td class="px-4 py-3 text-text-light">{spec.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">For vem är Roborock S8 MaxV Ultra rätt val?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        S8 MaxV Ultra är det självklara valet om du har husdjur och prioriterar att aldrig riskera att roboten spretar djuravföring over golvet. Även for hem med blandade golvytor och höga krav pa moppning är det ett utmärkt val.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Om du inte har husdjur och prioriterar moppning rekommenderar vi Dreame X40 Ultra som ger bättre hörnprestanda till 2 000 kr lägre pris. For budget-segmentet, se vår guide over <a href="/billigaste-robotdammsugare/" class="text-accent hover:underline">billigaste robotdammsugare</a>.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Jämfor med konkurrenter</h2>
+      <ul class="space-y-2">
+        <li><a href="/robotdammsugare-husdjur/" class="text-accent hover:underline text-sm">Bästa robotdammsugare for husdjur — S8 MaxV Ultra är #1</a></li>
+        <li><a href="/dreame-x40-ultra/" class="text-accent hover:underline text-sm">Dreame X40 Ultra recension — bäst pa moppning</a></li>
+        <li><a href="/robotdammsugare-med-mopp/" class="text-accent hover:underline text-sm">Bästa robotdammsugare med mopp 2026</a></li>
+        <li><a href="/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2026 — alla kategorier</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se pris pa Roborock S8 MaxV Ultra"
+    url="https://www.komplett.se/search?q=Roborock+S8+MaxV+Ultra"
+  />
+</BaseLayout>
