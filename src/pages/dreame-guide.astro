@@ -1,0 +1,306 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/' },
+  { label: 'Dreame guide' },
+];
+
+const models = [
+  {
+    name: 'Dreame X40 Ultra',
+    badge: 'BÄST I TEST 2026',
+    badgeColor: 'bg-winner',
+    price: 'ca 9 990 kr',
+    rating: '4.8 / 5',
+    features: [
+      '12 000 Pa — starkaste sugkraften i klassen',
+      'Utfällbar mopp som når hörnen',
+      'Varmvattentvätt av moppar i station',
+      'Automatisk mattdetektion med mopp-lyft',
+      'Fullautomatisk station — vatten, tömning, tvättning',
+    ],
+    cta: 'https://www.komplett.se/product/1307950',
+    ctaText: 'Se pris på X40 Ultra',
+    reviewUrl: '/dreame-x40-ultra/',
+    description: 'Dreame X40 Ultra är toppmodellen med den unika utfällbara moppmodulen som faktiskt når in i hörnen, kombinerat med 12 000 Pa sugkraft och fullautomatisk station med varmvattentvätt. Det bästa valet för hem med mycket hårdgolv som kräver riktig moppning.',
+  },
+  {
+    name: 'Dreame L20 Ultra',
+    badge: 'MELLANKLASS',
+    badgeColor: 'bg-accent',
+    price: 'ca 6 990 kr',
+    rating: '4.5 / 5',
+    features: [
+      '7 000 Pa sugkraft',
+      'Dubbla roterande moppar',
+      'Automatisk station med vattenpåfyllning',
+      'LiDAR-navigering med AI-hinder-detektion',
+      'Bra pris/prestanda i mellansegmentet',
+    ],
+    cta: 'https://www.komplett.se/search?search=dreame+l20+ultra',
+    ctaText: 'Se pris på L20 Ultra',
+    reviewUrl: '/dreame-l20-ultra/',
+    description: 'Dreame L20 Ultra är ett prisvärt alternativ i mellansegmentet med dubbla roterande moppar och automatisk station. Den ger mycket städprestanda för pengarna och passar hem som vill ha bra moppning utan toppprislappen.',
+  },
+  {
+    name: 'Dreame W10 Pro',
+    badge: 'PRISVÄRD',
+    badgeColor: 'bg-text-lighter',
+    price: 'ca 4 490 kr',
+    rating: '4.2 / 5',
+    features: [
+      '4 000 Pa sugkraft',
+      'Roterande moppar med självtvättning',
+      'Automatisk mattdetektion',
+      'LiDAR-navigering',
+      'Kompakt station utan auto-tömning',
+    ],
+    cta: 'https://www.komplett.se/search?search=dreame+w10+pro',
+    ctaText: 'Se pris på W10 Pro',
+    reviewUrl: '/dreame-w10-pro/',
+    description: 'Dreame W10 Pro ger dig LiDAR-navigering och roterande moppar till ett överkomligt pris. Dammkorgen töms manuellt men städprestandan är imponerande i prisklassen. Idealisk för den som vill ha en pålitlig Dreame utan att betala toppris.',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Är Dreame ett pålitligt märke?',
+    answer: 'Ja, Dreame är ett av de snabbast växande premium-märkena inom robotdammsugare. Grundat 2017 i Kina och numera ett av få märken som utmanar Roborock i toppklassen. Dreame har egna ingenjörsteam och patent på nyckelteknologier som den utfällbara moppmodulen i X40 Ultra. I Sverige säljs Dreame via Komplett, Elgiganten och MediaMarkt med 2 års garanti.',
+  },
+  {
+    question: 'Vilken Dreame-modell är bäst för husdjurspäls?',
+    answer: 'Dreame X40 Ultra med 12 000 Pa sugkraft är det bästa valet för husdjurspäls. Gummirullarna trasslas inte av hår och den höga sugkraften hanterar kraftiga päls-ansamlingar. Observera att X40 Ultra saknar AI-djuravföringsdetektering — om det är ett krav rekommenderas Roborock S8 MaxV Ultra istället.',
+  },
+  {
+    question: 'Vad skiljer Dreame X40 Ultra från L20 Ultra?',
+    answer: 'X40 Ultra har den unika utfällbara moppmodulen som når hörnen, starkare sugkraft (12 000 vs 7 000 Pa) och nyare navigeringsteknik med varmvattentvätt (70 grader). L20 Ultra är ett prisvärdigt alternativ med bra moppning men utan fördelen av att nå hörnen och med lägre sugkraft. Om budget tillåter är X40 Ultra klart överlägsen.',
+  },
+  {
+    question: 'Fungerar Dreame-appen på svenska?',
+    answer: 'Dreame Home-appen är primärt på engelska — ett fullständigt svenskt gränssnitt saknas. Grundfunktionerna (start, stopp, schemaläggning, rumsplanering, no-go zones) är enkla att använda utan svenska menyer. Röststyrning via Google Assistant och Alexa fungerar med svenska kommandon.',
+  },
+  {
+    question: 'Vilken Dreame passar bäst för en stor bostad?',
+    answer: 'Dreame X40 Ultra med 180 minuters drifttid och automatisk laddning/återupptagnig klarar stora bostäder utan problem. Roboten återvänder automatiskt till stationen vid lågt batteri och fortsätter städningen därifrån. För bostäder över 200 m² med mycket hårdgolv är X40 Ultra det enda valet i Dreames sortiment.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Dreame robotdammsugare 2026 – guide & jämförelse | Robotjakt"
+  description="Komplett guide till Dreames modellserie 2026. X40 Ultra, W10 Pro, D10 Plus — vi hjälper dig välja rätt Dreame för ditt hem."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Dreame robotdammsugare 2026 — alla modeller jämförda
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Dreame klättrar snabbt i premiumsegmentet och utmanar nu Roborock om tätplatsen. Vi guidar dig genom 2026 ars modellserie — X40 Ultra, L20 Ultra och W10 Pro — och hjälper dig välja rätt modell för ditt hem.
+    </p>
+
+    <!-- Brand overview -->
+    <section class="mb-8 bg-bg-alt rounded-xl border border-border p-6">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Dreame — kinesisk utmanare i premiumklassen</h2>
+      <p class="text-text-light leading-relaxed mb-3">
+        Dreame grundades 2017 i Suzhou, Kina, och har på rekordtid positionerat sig som ett av marknadens starkaste premium-märken för robotdammsugare. Företaget är känt för att introducera ny teknik snabbt — den utfällbara moppmodulen i X40 Ultra är ett tydligt exempel på Dreames ingenjörsledarskap i kategorin.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        I Sverige säljs Dreame via Komplett, Elgiganten, MediaMarkt och NetOnNet. Alla modeller i denna guide säljs med 2 års garanti via auktoriserade svenska återförsäljare. Dreame Home-appen stödjer iOS och Android och erbjuder LiDAR-kartläggning, rumsplanering och avancerade städscheman.
+      </p>
+    </section>
+
+    <!-- Comparison table -->
+    <section class="mb-10" aria-label="Jämförelsetabell Dreame-modeller">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse — Dreame-modeller 2026</h2>
+      <div class="overflow-x-auto rounded-xl border border-border">
+        <table class="w-full text-sm bg-white">
+          <thead>
+            <tr class="border-b border-border bg-bg-alt">
+              <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Sugkraft</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Mopp</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Station</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Pris ca</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr class="bg-winner/5">
+              <td class="px-4 py-3 font-medium text-text">X40 Ultra</td>
+              <td class="px-4 py-3 text-winner font-semibold">12 000 Pa</td>
+              <td class="px-4 py-3 text-text-light">Utfällbar + roterande</td>
+              <td class="px-4 py-3 text-text-light">Fullautomatisk</td>
+              <td class="px-4 py-3 font-semibold text-text">9 990 kr</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">L20 Ultra</td>
+              <td class="px-4 py-3 text-text-light">7 000 Pa</td>
+              <td class="px-4 py-3 text-text-light">Dubbel roterande</td>
+              <td class="px-4 py-3 text-text-light">Automatisk</td>
+              <td class="px-4 py-3 font-semibold text-text">6 990 kr</td>
+            </tr>
+            <tr class="bg-bg-alt/50">
+              <td class="px-4 py-3 font-medium text-text">W10 Pro</td>
+              <td class="px-4 py-3 text-text-light">4 000 Pa</td>
+              <td class="px-4 py-3 text-text-light">Roterande</td>
+              <td class="px-4 py-3 text-text-light">Kompakt</td>
+              <td class="px-4 py-3 font-semibold text-text">4 490 kr</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Models -->
+    <div class="space-y-8 mb-12" id="modeller">
+      {models.map((model) => (
+        <section class="bg-white rounded-xl border border-border overflow-hidden">
+          <div class="bg-bg-alt px-5 py-3 border-b border-border flex items-center gap-3 flex-wrap">
+            <span class={`${model.badgeColor} text-white text-xs font-bold px-2 py-1 rounded`}>{model.badge}</span>
+            <span class="font-heading font-bold text-text">{model.name}</span>
+            <span class="ml-auto font-bold text-text">{model.price}</span>
+          </div>
+          <div class="p-5">
+            <p class="text-text-light text-sm leading-relaxed mb-4">{model.description}</p>
+            <div class="grid sm:grid-cols-2 gap-4 mb-4">
+              <div>
+                <p class="text-xs font-semibold text-text mb-2">Nyckelfunktioner</p>
+                <ul class="space-y-1">
+                  {model.features.map(f => (
+                    <li class="flex items-start gap-1.5 text-xs text-text-light">
+                      <span class="text-winner font-bold mt-0.5">+</span>{f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-text mb-2">Betyg</p>
+                <p class="text-lg font-bold text-text">{model.rating}</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a
+                href={model.reviewUrl}
+                class="inline-flex items-center text-accent hover:underline font-medium text-sm"
+              >
+                Läs recension
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+              </a>
+              <a
+                href={model.cta}
+                rel="sponsored nofollow noopener"
+                target="_blank"
+                class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+              >
+                {model.ctaText}
+                <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              </a>
+            </div>
+          </div>
+        </section>
+      ))}
+    </div>
+
+    <!-- Buying guide by need -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vilken Dreame passar ditt behov?</h2>
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Stor bostad med mycket hårdgolv</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            Dreame X40 Ultra är det självklara valet. Den utfällbara moppmodulen når hörnen och varmvattentvätten gör att du kan köra den dagligen utan att byta mopparna manuellt på veckor. Med 180 minuters drifttid och automatisk återupptagning efter laddning klarar den stora planytor utan problem.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Husdjurspäls och kraftig smuts</h3>
+          <p class="text-text-light leading-relaxed text-sm">
+            X40 Ultra med 12 000 Pa och gummihjul som inte trasslas av hår är det bästa Dreame-valet för husdjurspäls. Saknar dock AI-djuravföringsdetektering — om det är ett hårt krav rekommenderas Roborock S8 MaxV Ultra med ReactiveAI 3.0.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Blandade golvytor — hårdgolv och mattor</h3>
+          <p class="text-text-light leading-relaxed text-sm">
+            Dreame L20 Ultra med automatisk mattdetektion och mopp-lyft är ett utmärkt mellanalternativ. Roboten hanterar övergången mellan hårdgolv och mattor sömlöst och ger bra moppresultat till ett lägre pris än X40 Ultra.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Budget — pröva Dreame utan toppris</h3>
+          <p class="text-text-light leading-relaxed text-sm">
+            Dreame W10 Pro till ca 4 490 kr ger dig LiDAR-navigering och roterande moppfunktion till ett konkurrenskraftigt pris. Dammkorgen töms manuellt men städprestandan är imponerande i prisklassen.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dreame vs Roborock -->
+    <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Dreame vs Roborock — hur jämför de sig?</h2>
+      <p class="text-text-light leading-relaxed mb-3">
+        Dreame och Roborock är 2026 ars två starkaste premium-märken och utmanar varandra direkt i toppklassen. Dreame leder med mopptekniken — den utfällbara modulen i X40 Ultra har ingen direkt konkurrent. Roborock leder med AI-säkerhet — ReactiveAI 3.0 i S8 MaxV Ultra är fortfarande det bästa skyddet mot djuravförings-incidenter.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Prisnivåerna är jämförbara och båda märkena erbjuder utmärkt LiDAR-navigering, automatiska stationer och välbyggda appar. Valet handlar i slutändan om prioritet: moppkvalitet (Dreame) eller AI-säkerhet (Roborock).
+      </p>
+      <a href="/roborock-vs-dreame/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+        Läs vår fullständiga Roborock vs Dreame-jämförelse
+        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+      </a>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/dreame-x40-ultra/" class="text-accent hover:underline text-sm">Dreame X40 Ultra recension 2026 — toppmodellen testad</a></li>
+        <li><a href="/dreame-l20-ultra/" class="text-accent hover:underline text-sm">Dreame L20 Ultra recension 2026 — bäst i mellanklass</a></li>
+        <li><a href="/dreame-w10-pro/" class="text-accent hover:underline text-sm">Dreame W10 Pro recension 2026</a></li>
+        <li><a href="/roborock-vs-dreame/" class="text-accent hover:underline text-sm">Roborock vs Dreame 2026 — vilket märke är bäst?</a></li>
+        <li><a href="/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2026 — alla märken jämförda</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se bästa Dreame 2026"
+    url="#modeller"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Dreame robotdammsugare 2026",
+    "description": "Dreame-modeller rankade och recenserade 2026.",
+    "numberOfItems": 3,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Dreame X40 Ultra", "url": "https://robotjakt.se/dreame-x40-ultra/" },
+      { "@type": "ListItem", "position": 2, "name": "Dreame L20 Ultra", "url": "https://robotjakt.se/dreame-l20-ultra/" },
+      { "@type": "ListItem", "position": 3, "name": "Dreame W10 Pro", "url": "https://robotjakt.se/dreame-w10-pro/" },
+    ],
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>

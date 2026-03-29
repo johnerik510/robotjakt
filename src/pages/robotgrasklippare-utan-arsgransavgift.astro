@@ -1,0 +1,331 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Utan årsgränsavgift' },
+];
+
+const products = [
+  {
+    name: 'Mammotion LUBA AWO 3000',
+    badge: 'BÄST UTAN PRENUMERATION',
+    badgeColor: 'bg-winner',
+    price: 'ca 14 999 kr',
+    rating: '4.7 / 5',
+    area: '3 000 m²',
+    nav: 'GPS + RTK (kabelfritttt)',
+    subscription: 'Ingen — aldrig',
+    features: [
+      'GPS + RTK — ingen perimeterkabel behövs',
+      'Kabelfri installation, markering via app',
+      'Klarar upp till 75% lutning',
+      'Ingen prenumerationsavgift — köp en gång',
+      'App-styrning utan löpande kostnader',
+    ],
+    cta: 'https://www.amazon.se/s?k=mammotion+luba+awo+3000',
+    ctaText: 'Se pris på LUBA AWO 3000',
+    description: 'Mammotion LUBA AWO 3000 är det starkaste argumentet mot Husqvarnas EPOS-prenumeration. Du får GPS-navigering utan kabel och utan obligatorisk årsavgift. Betala en gång — klipp trädgården för alltid. Klarar trädgårdar upp till 3 000 m² och lutningar upp till 75%. Markering av klippzoner sker via appen utan kabel i marken.',
+  },
+  {
+    name: 'Worx Landroid M500',
+    badge: 'PRISVÄRD',
+    badgeColor: 'bg-accent',
+    price: 'ca 4 499 kr',
+    area: '500 m²',
+    nav: 'Perimeterkabel',
+    subscription: 'Ingen',
+    rating: '4.3 / 5',
+    features: [
+      'WiFi och Worx-app utan prenumerationsavgift',
+      'AI Corridor Cutting — smala passager hanteras automatiskt',
+      'Modulärt system — kan byggas ut med tillbehör',
+      'Bluetooth + WiFi-anslutning utan löpande kostnad',
+      'Stöldskydd via PIN-kod',
+    ],
+    cta: 'https://www.komplett.se/search?search=worx+landroid+m500',
+    ctaText: 'Se pris på Landroid M500',
+    description: 'Worx Landroid M500 är en solid kabelbaserad robotgräsklippare utan prenumerationsavgift. WiFi-appen och alla smarta funktioner ingår i köpet — inga extra kostnader varje år. Passar trädgårdar upp till 500 m² och fungerar bra i trädgårdar med smalare passager tack vare AI Corridor Cutting.',
+  },
+  {
+    name: 'Gardena Sileno City 500',
+    badge: 'TYST & PÅLITLIG',
+    badgeColor: 'bg-text-lighter',
+    price: 'ca 3 999 kr',
+    area: '500 m²',
+    nav: 'Perimeterkabel',
+    subscription: 'Ingen',
+    rating: '4.2 / 5',
+    features: [
+      'Extremt tyst — 57 dB',
+      'Bluetooth-app utan prenumerationsavgift',
+      'Automatisk regnkänslighet',
+      'Enkel installation med Gardenas kabelkit',
+      'Pålitlig och underhållsvänlig',
+    ],
+    cta: 'https://www.komplett.se/search?search=gardena+sileno+city+500',
+    ctaText: 'Se pris på Sileno City 500',
+    description: 'Gardena Sileno City 500 är ett tyskt alternativ känt för pålitlighet och tysthet. 57 dB gör den till en av de tystaste på marknaden — kör den nattetid utan att störa grannar. Inga prenumerationsavgifter, inga dolda kostnader. Passar trädgårdar upp till 500 m².',
+  },
+  {
+    name: 'Husqvarna Automower 315X',
+    badge: 'KABELMODELL UTAN GPS-AVGIFT',
+    badgeColor: 'bg-bg-alt text-text',
+    price: 'ca 9 999 kr',
+    area: '1 600 m²',
+    nav: 'Perimeterkabel (ingen GPS)',
+    subscription: 'Ingen — kabelmodell kräver ingen EPOS-prenumeration',
+    rating: '4.4 / 5',
+    features: [
+      'Husqvarna-kvalitet utan EPOS-prenumeration',
+      'Kabelbaserad — GPS krävs inte',
+      'Automower Connect-app utan årsavgift',
+      'Klarar 40% lutning',
+      'Tyst 58 dB-drift',
+    ],
+    cta: 'https://www.komplett.se/search?search=husqvarna+automower+315x',
+    ctaText: 'Se pris på Automower 315X',
+    description: 'Husqvarna Automower 315X är Husqvarnas kabelbaserade modell utan GPS och utan EPOS-prenumeration. Du får Husqvarnas välkände tillförlitlighet till ett rimligare pris och utan löpande kostnader. Appen ingår och kräver ingen årsavgift. Passar trädgårdar upp till 1 600 m² med en kabelinstallation.',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Vilka robotgräsklippare tar ut en årsgränsavgift?',
+    answer: 'Husqvarna tar ut en EPOS-prenumerationsavgift på ca 999 kr per år för sina GPS-baserade modeller (430X Nera, 450X Nera, 405X m.fl.) som använder EPOS-navigationssystemet. Segway Navimow har ett prenumerationsupplägg för sina karttjänster — första året är ofta kostnadsfritt men kostnader kan tillkomma. Kontrollera alltid aktuella villkor direkt hos tillverkaren, då prenumerationssystem kan förändras.',
+  },
+  {
+    question: 'Kan jag använda Husqvarna Automower utan att betala EPOS-avgiften?',
+    answer: 'Det beror på modellen. EPOS-avgiften krävs specifikt för de GPS-baserade EPOS-modellerna för full funktionalitet. Kabelbaserade Husqvarna-modeller som 315X och 310 kräver inte EPOS och har inga prenumerationsavgifter. Om du vill ha Husqvarna-kvalitet utan prenumeration — välj en kabelbaserad modell.',
+  },
+  {
+    question: 'Är GPS-baserade klippare utan kabel bättre än kabelbaserade?',
+    answer: 'GPS-modeller utan kabel (som Mammotion LUBA) eliminerar arbetet med att gräva ner perimeterkabel och ger mer flexibilitet att ändra klippzoner. Kabelbaserade modeller är ofta mer pålitliga i områden med dålig GPS-täckning och har lägre initialkostnad. Varken tekniken är överlägsen den andra — det handlar om din trädgård och dina prioriteringar.',
+  },
+  {
+    question: 'Vad ingår i Husqvarnas EPOS-prenumeration?',
+    answer: 'EPOS-prenumerationen (ca 999 kr/år) täcker tillgång till Husqvarnas GPS-tjänster och 4G-uppkopplingen som krävs för EPOS-navigationssystemet. Utan aktiv prenumeration tappar EPOS-modellerna sin exakta GPS-navigering. Automower Connect-appen för grundfunktioner kan fortsatt fungera via WiFi, men de avancerade GPS-funktionerna kräver aktiv prenumeration.',
+  },
+  {
+    question: 'Hur mycket sparar jag totalt genom att välja en modell utan prenumeration?',
+    answer: 'Husqvarnas EPOS-avgift på 999 kr/år innebär att du på 5 år betalar ca 5 000 kr extra utöver grundpriset. På 10 år är det ca 10 000 kr. En Mammotion LUBA AWO 3000 utan prenumeration till 14 999 kr kan totalt sett bli billigare än en Husqvarna EPOS-modell med löpande avgifter — beroende på hur länge du äger klipparen.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Robotgräsklippare utan årsgränsavgift 2026 | Robotjakt"
+  description="Vi listar robotgräsklippare utan obligatorisk prenumeration eller årsgränsavgift 2026. Betala en gång — klipp för alltid."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Robotgräsklippare utan årsgränsavgift 2026 — inga dolda kostnader
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Vissa robotgräsklippare kostar inte bara vid köpet — de tar ut en löpande prenumerationsavgift för GPS-tjänster och app-funktioner. Här listar vi modeller utan obligatoriska årsavgifter, så att du vet exakt vad du betalar.
+    </p>
+
+    <!-- Warning box about subscriptions -->
+    <section class="mb-8 bg-cta/5 border border-cta/20 rounded-xl p-5">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Dolda kostnader — vad du behöver veta</h2>
+      <p class="text-text-light text-sm leading-relaxed mb-3">
+        Husqvarna Automower-modeller med EPOS-navigationssystem (430X Nera, 450X Nera, 405X m.fl.) kräver en aktiv EPOS-prenumeration för full funktionalitet. Avgiften är ca <strong class="text-text">999 kr per år</strong>. Det är inget Husqvarna skyltar med i butikens prislapp.
+      </p>
+      <p class="text-text-light text-sm leading-relaxed">
+        Segway Navimow-modeller har haft liknande upplägg för karttjänster — kontrollera aktuella villkor vid köp. Modellerna nedan har vi verifierat saknar obligatoriska prenumerationsavgifter vid publicering av denna guide.
+      </p>
+    </section>
+
+    <!-- Comparison table -->
+    <section class="mb-10" aria-label="Jämförelsetabell robotgräsklippare utan prenumeration">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse — utan prenumeration 2026</h2>
+      <div class="overflow-x-auto rounded-xl border border-border">
+        <table class="w-full text-sm bg-white">
+          <thead>
+            <tr class="border-b border-border bg-bg-alt">
+              <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Klippyta</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Navigering</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Prenumeration</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Pris ca</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr class="bg-winner/5">
+              <td class="px-4 py-3 font-medium text-text">Mammotion LUBA AWO 3000</td>
+              <td class="px-4 py-3 text-text-light">3 000 m²</td>
+              <td class="px-4 py-3 text-text-light">GPS + RTK, kabelfritttt</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ingen</td>
+              <td class="px-4 py-3 font-semibold text-text">14 999 kr</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Worx Landroid M500</td>
+              <td class="px-4 py-3 text-text-light">500 m²</td>
+              <td class="px-4 py-3 text-text-light">Perimeterkabel</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ingen</td>
+              <td class="px-4 py-3 font-semibold text-text">4 499 kr</td>
+            </tr>
+            <tr class="bg-bg-alt/50">
+              <td class="px-4 py-3 font-medium text-text">Gardena Sileno City 500</td>
+              <td class="px-4 py-3 text-text-light">500 m²</td>
+              <td class="px-4 py-3 text-text-light">Perimeterkabel</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ingen</td>
+              <td class="px-4 py-3 font-semibold text-text">3 999 kr</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Husqvarna Automower 315X</td>
+              <td class="px-4 py-3 text-text-light">1 600 m²</td>
+              <td class="px-4 py-3 text-text-light">Perimeterkabel</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ingen (kabelmodell)</td>
+              <td class="px-4 py-3 font-semibold text-text">9 999 kr</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <div class="space-y-8 mb-12" id="produkter">
+      {products.map((product) => (
+        <section class="bg-white rounded-xl border border-border overflow-hidden">
+          <div class="bg-bg-alt px-5 py-3 border-b border-border flex items-center gap-3 flex-wrap">
+            <span class={`${product.badgeColor} text-white text-xs font-bold px-2 py-1 rounded`}>{product.badge}</span>
+            <span class="font-heading font-bold text-text">{product.name}</span>
+            <span class="ml-auto font-bold text-text">{product.price}</span>
+          </div>
+          <div class="p-5">
+            <p class="text-text-light text-sm leading-relaxed mb-4">{product.description}</p>
+            <div class="grid sm:grid-cols-2 gap-4 mb-4">
+              <div>
+                <p class="text-xs font-semibold text-text mb-2">Nyckelfunktioner</p>
+                <ul class="space-y-1">
+                  {product.features.map(f => (
+                    <li class="flex items-start gap-1.5 text-xs text-text-light">
+                      <span class="text-winner font-bold mt-0.5">+</span>{f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-text mb-1">Betyg</p>
+                <p class="text-lg font-bold text-text mb-2">{product.rating}</p>
+                <p class="text-xs font-semibold text-text mb-1">Klippyta</p>
+                <p class="text-sm text-text-light mb-2">{product.area}</p>
+                <p class="text-xs font-semibold text-text mb-1">Prenumeration</p>
+                <p class="text-sm text-winner font-semibold">{product.subscription}</p>
+              </div>
+            </div>
+            <a
+              href={product.cta}
+              rel="sponsored nofollow noopener"
+              target="_blank"
+              class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+            >
+              {product.ctaText}
+              <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
+          </div>
+        </section>
+      ))}
+    </div>
+
+    <!-- Märken som tar ut avgift -->
+    <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Märken som tar ut prenumerationsavgift — var försiktig</h2>
+      <div class="space-y-4">
+        <div class="bg-white rounded-lg border border-border p-4">
+          <h3 class="font-semibold text-text mb-2">Husqvarna EPOS-modeller</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            Husqvarna 430X Nera, 450X Nera, 405X och liknande GPS-modeller med EPOS-navigationssystemet kräver en aktiv prenumeration på <strong class="text-text">ca 999 kr per år</strong> för full funktionalitet. Utan prenumeration förlorar roboten sin exakta GPS-positionering. Kabelbaserade Husqvarna-modeller (315X, 310) påverkas inte.
+          </p>
+        </div>
+        <div class="bg-white rounded-lg border border-border p-4">
+          <h3 class="font-semibold text-text mb-2">Segway Navimow</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            Segway Navimow har haft prenumerationsupplägg för sina GPS-kartfunktioner. Villkoren kan variera och förändras — kontrollera alltid aktuell information på Segways webbplats och hos återförsäljaren innan köp.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buying guide -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Så väljer du rätt modell</h2>
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Stor trädgård utan kabel — Mammotion LUBA</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            Om du vill ha en kabelfritttt GPS-modell utan prenumeration och din trädgård är upp till 3 000 m² är Mammotion LUBA AWO 3000 det enda realistiska alternativet 2026. Betala en gång, markera klippzoner via appen och kör — inga grävarbeten, inga årsavgifter.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Liten till medelstor trädgård — Worx eller Gardena</h3>
+          <p class="text-text-light leading-relaxed text-sm">
+            För trädgårdar upp till 500 m² ger Worx Landroid M500 och Gardena Sileno City 500 utmärkt kapacitet utan prenumerationsavgifter. Kabelinstallation krävs men är en engångskostnad. Gardena är det tystare valet, Worx har mer avancerade smarta funktioner.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Husqvarna utan avgift — välj 315X</h3>
+          <p class="text-text-light leading-relaxed text-sm">
+            Vill du ha Husqvarnas välkände kvalitet och service-nätverk men utan löpande kostnader — välj Automower 315X eller en annan kabelbaserad modell. Du får Automower Connect-appen utan årsavgift och Husqvarnas tillförlitliga klippresultat för trädgårdar upp till 1 600 m².
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare 2026 — komplett topplista och jämförelse</a></li>
+        <li><a href="/robotgrasklippare-utan-slinga/" class="text-accent hover:underline text-sm">Robotgräsklippare utan slinga 2026 — GPS-modeller utan perimeterkabel</a></li>
+        <li><a href="/husqvarna-automower-430x-nera/" class="text-accent hover:underline text-sm">Husqvarna Automower 430X Nera recension — EPOS-modellen testad</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se modeller utan prenumeration"
+    url="#produkter"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Robotgräsklippare utan prenumerationsavgift 2026",
+    "description": "Robotgräsklippare utan obligatorisk årsavgift eller prenumeration.",
+    "numberOfItems": 4,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Mammotion LUBA AWO 3000", "url": "https://robotjakt.se/robotgrasklippare-utan-arsgransavgift/" },
+      { "@type": "ListItem", "position": 2, "name": "Worx Landroid M500", "url": "https://robotjakt.se/robotgrasklippare-utan-arsgransavgift/" },
+      { "@type": "ListItem", "position": 3, "name": "Gardena Sileno City 500", "url": "https://robotjakt.se/robotgrasklippare-utan-arsgransavgift/" },
+      { "@type": "ListItem", "position": 4, "name": "Husqvarna Automower 315X", "url": "https://robotjakt.se/robotgrasklippare-utan-arsgransavgift/" },
+    ],
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>
