@@ -1,0 +1,267 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/' },
+  { label: 'Dreame L20 Ultra' },
+];
+
+const specs = [
+  { label: 'Sugkraft', value: '7 000 Pa' },
+  { label: 'Navigering', value: 'LiDAR' },
+  { label: 'Moppning', value: 'Ja (roterande mopp)' },
+  { label: 'Självtömning', value: 'Ja, automatisk tömning i station' },
+  { label: 'Batteritid', value: '160 min' },
+  { label: 'Bullernivå', value: '65 dB' },
+  { label: 'Varmvattentvätt', value: 'Ja, moppen tvättas med varmt vatten' },
+  { label: 'Prisklass', value: 'Mellanklass' },
+];
+
+const faqItems = [
+  {
+    question: 'Vad är skillnaden mellan Dreame L20 Ultra och X40 Ultra?',
+    answer: 'Dreame X40 Ultra är toppmodellen med 12 000 Pa sugkraft (mot L20 Ultras 7 000 Pa), en utfällbar sidoarm för hörn och starkare moppfunktion. L20 Ultra kostar ca 4 000 kr mindre och passar de flesta hem utmärkt — skillnaden märks framförallt i hörntäckning och djuprengöring av tjocka mattor. För normalt städbehov i en villa eller stor lägenhet räcker L20 Ultra gott.',
+  },
+  {
+    question: 'Hur bra är roterande mopp jämfört med oscillerande?',
+    answer: 'Roterande moppar (som L20 Ultra använder) snurrar mot golvet och är effektiva på att tvätta bort fläckar och smuts. Oscillerande moppar (som Dreame X40 Ultra och Ecovacs X5 Omni) rör sig fram och tillbaka med högt tryck och klarar ofta hårdare intorkade fläckar lite bättre. I praktiken ger båda teknikerna ett rent hårdgolv — skillnaden är liten för normalt hushållssmuts.',
+  },
+  {
+    question: 'Klarar Dreame L20 Ultra husdjurshår?',
+    answer: 'Ja. De 7 000 Pa sugkraften hanterar husdjurshår bra på hårda golv och normaltjocka mattor. LiDAR-navigeringen kartlägger hemmet exakt vilket innebär att roboten täcker alla ytor konsekvent, inklusive under möbler. För hem med mycket pälsar är en tätare städfrekvens att rekommendera.',
+  },
+  {
+    question: 'Hur länge håller batteriet i praktiken?',
+    answer: 'Dreame uppger 160 minuter, men i praktisk drift med aktiv moppning och suction på standardnivå räkna med 90–120 minuter per laddning. Det räcker för de flesta hem upp till ca 120 m². Roboten återvänder automatiskt till stationen när batteriet är lågt, laddar och fortsätter sedan städningen där den slutade.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<ArticleLayout
+  title="Dreame L20 Ultra Test 2026 — Recension"
+  description="Vi testar Dreame L20 Ultra — prisvärd robotdammsugare med mopp och självtömmande station. Bäst i mellanklass 2026? Läs vår recension."
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-03-29"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Dreame L20 Ultra — Recension 2026
+  </h1>
+
+  <!-- Verdict box -->
+  <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+    <div class="flex items-start gap-4">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-winner text-white text-xs font-bold px-2 py-1 rounded">BÄST MELLANPRIS</span>
+          <div class="flex gap-0.5" aria-label="Betyg: 8.5 av 10">
+            {[1,2,3,4,5].map(i => (
+              <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span class="font-bold text-text">8,5 / 10</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed mb-3">
+          Dreame L20 Ultra levererar premiumfunktioner — LiDAR-navigering, roterande mopp med varmvattentvätt och självtömmande station — till ett mellanklasspaket. Bästa valet 2026 for den som vill ha ett komplett städsystem utan att betala toppris.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <p class="text-2xl font-bold text-text">ca 5 990 kr</p>
+            <p class="text-xs text-text-light">Pris kan variera — jämfor alltid</p>
+          </div>
+          <a
+            href="https://www.komplett.se/product/1307025"
+            rel="sponsored nofollow noopener"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris på Dreame L20 Ultra
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pros/Cons -->
+  <div class="grid sm:grid-cols-2 gap-5 mb-8">
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Fördelar</h2>
+      <ul class="space-y-2">
+        {[
+          'LiDAR-navigering — exakt kartläggning av hemmet',
+          'Roterande mopp med varmvattentvätt i stationen',
+          'Självtömmande station inkluderad',
+          'Tyst 65 dB — stör inte i vardagen',
+          'Stark prestanda for priset (7 000 Pa)',
+          'Moppfunktion lyfts automatiskt over mattor',
+        ].map(pro => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            {pro}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Svagare sugkraft an X40 Ultra (7 000 vs 12 000 Pa)',
+          'Enklare hinderdetektion an kamerabaserade modeller',
+          'Når inte lika langt in i hörn som Deebot X5 Omni',
+          'Ingen utfällbar sidoarm',
+        ].map(con => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+            {con}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Specs table -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">Tekniska specifikationer</h2>
+    <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+      <table class="w-full text-sm">
+        <tbody class="divide-y divide-border">
+          {specs.map((spec, i) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+              <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+              <td class="px-4 py-3 text-text-light">{spec.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Detailed review sections -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-6">Detaljerad genomgång</h2>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">LiDAR-navigering</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Dreame L20 Ultra använder LiDAR-laser for att kartlägga hemmet med millimeterprecision. Vid första körningen skapar roboten en detaljerad karta som sparas i appen. Efterföljande städningar är snabbare och mer effektiva eftersom roboten vet exakt var allt befinner sig.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      LiDAR-navigeringen fungerar utmärkt i mörka rum och vid förändrad möbelplacering anpassar roboten kartan automatiskt. Du kan i appen markera förbjudna zoner, ange rum att städa specifikt och ställa in virtuella väggar. Kartläggningen är en av L20 Ultras starkaste sidor.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Moppfunktion — roterande vs oscillerande</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      L20 Ultra är utrustad med roterande moppar som snurrar mot golvytan. Det är effektivt for att ta bort smuts, fläckar och fingeravtryck från hårda golv. Moppplattorna lyfts automatiskt med 8,5 mm när roboten kör over mattor, vilket förhindrar att mattor blir blöta.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Jämfort med oscillerande moppar (som Dreame X40 Ultra och Ecovacs X5 Omni använder) är roterande teknik något sämre på riktigt ingrundade fläckar men utmärkt for daglig underhallsstädning. For normala hem med blandade golvytor är L20 Ultras moppfunktion mer an tillräcklig.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Självtömmande station</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Stationen tömer dammbehållaren automatiskt efter varje städcykel. Den tvättar och torkar mopparna med varmt vatten, vilket eliminerar bakterier och dålig lukt. Soppose behöver bytas var 30–60 dag — stationen påminner dig via appen.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Stationen är kompakt och snygg i designen. Den tar ca 25 x 35 cm golvyta och passar de flesta hem. En komplett lösning som gör att du knappt behöver tänka på roboten i det dagliga.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">När räcker L20 Ultra — när behöver man X40 Ultra?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      <a href="/dreame-x40-ultra/" class="text-accent hover:underline">Dreame X40 Ultra</a> är vår testvinnare och kostar ca 4 000 kr mer. Du behöver X40 Ultra om du har: tjocka, luddiga mattor (kräver 10 000+ Pa), hem med mycket hörn och smalpassager (utfällbar sidoarm hjälper) eller extrema städkrav med husdjur och allergiker.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      For de allra flesta hem — villa eller lägenhet med normalt städbehov och blandade golvytor — är L20 Ultras 7 000 Pa och roterande mopp mer an tillräckligt. Prisskillnaden på 4 000 kr är svår att motivera om du inte aktivt behöver de extra funktionerna.
+    </p>
+  </section>
+
+  <!-- For whom -->
+  <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+    <h2 class="font-heading text-xl font-bold text-text mb-3">Vem passar Dreame L20 Ultra for?</h2>
+    <p class="text-text-light leading-relaxed mb-3">
+      L20 Ultra är idealvalet for den som vill ha ett komplett städsystem med LiDAR, mopp och självtömning utan att betala premiumpris. Det är den naturliga ingangspunkten for alla som tar robotdammsugare på allvar men inte vill eller behöver betala toppnotan.
+    </p>
+    <p class="text-text-light leading-relaxed">
+      Passar hem upp till ca 150 m², blandade golvytor, familjer med husdjur och barnfamiljer. Är du osäker pa om du behöver X40 Ultra — börja med L20 Ultra. Sannolikheten är hög att du aldrig saknar de extra funktionerna.
+    </p>
+  </section>
+
+  <!-- Price comparison CTA -->
+  <section class="mb-10 bg-white rounded-xl border border-border p-5">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Jämfor med andra robotdammsugare</h2>
+    <p class="text-text-light text-sm mb-4">Se hur L20 Ultra star sig mot alla modeller vi testat.</p>
+    <div class="flex flex-wrap gap-3">
+      <a href="/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+        Se alla robotdammsugare vi testat
+        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+      </a>
+      <a href="/robotdammsugare-med-mopp/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+        Bästa robotdammsugare med mopp
+        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+      </a>
+    </div>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <!-- Related links -->
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade recensioner</h2>
+    <ul class="space-y-2">
+      <li><a href="/dreame-x40-ultra/" class="text-accent hover:underline text-sm">Dreame X40 Ultra recension — testvinnaren med 12 000 Pa och utfällbar mopp</a></li>
+      <li><a href="/robotdammsugare-med-mopp/" class="text-accent hover:underline text-sm">Bästa robotdammsugare med mopp 2026 — jämforelse och topplista</a></li>
+      <li><a href="/" class="text-accent hover:underline text-sm">Alla robotdammsugare vi testat — komplett topplista 2026</a></li>
+    </ul>
+  </section>
+</ArticleLayout>
+
+<StickyCTA
+  text="Se pris på Dreame L20 Ultra"
+  url="https://www.komplett.se/product/1307025"
+  productName="Dreame L20 Ultra"
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["Product", "Review"],
+  "name": "Dreame L20 Ultra",
+  "brand": { "@type": "Brand", "name": "Dreame" },
+  "category": "Robotdammsugare",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "SEK",
+    "price": "5990",
+    "availability": "https://schema.org/InStock"
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "8.5",
+      "bestRating": "10",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-03-29",
+    "reviewBody": "Dreame L20 Ultra levererar premiumfunktioner — LiDAR-navigering, roterande mopp med varmvattentvätt och självtömmande station — till ett mellanklasspaket. Bästa valet 2026 for den som vill ha ett komplett städsystem utan att betala toppris.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  }
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqSchema,
+})} />

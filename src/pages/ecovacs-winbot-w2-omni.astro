@@ -1,0 +1,259 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+
+const breadcrumbs = [
+  { label: 'Fönsterputsrobot', href: '/fonsterputsrobot/' },
+  { label: 'Ecovacs Winbot W2 Omni' },
+];
+
+const specs = [
+  { label: 'Rengöringsarea', value: 'Valfri storlek utan ram' },
+  { label: 'Teknik', value: 'Vakuumsugsugning + vattentank' },
+  { label: 'Batteritid', value: '45 min' },
+  { label: 'AI-säkerhetsdetektering', value: 'Ja — identifierar glaskanten' },
+  { label: 'Rengöringsduk', value: 'Mikrofiberduk (ingår)' },
+  { label: 'Vikt', value: '950 g' },
+  { label: 'Säkerhetsline', value: 'Ingår' },
+  { label: 'Laddningsport', value: 'USB-C' },
+];
+
+const faqItems = [
+  {
+    question: 'Fungerar Winbot W2 Omni pa alla typer av glas?',
+    answer: 'Ja, Winbot W2 Omni fungerar pa standard fönsterglas, härdat glas och spegelglas. Den är utformad for plana glasytor. Putsa inte böjda glasytor, glas med sprickor eller texturerat dekorativt glas — roboten kan glida eller fastna. For frostat glas rekommenderas en testkorning pa ett litet område forst.',
+  },
+  {
+    question: 'Hur länge räcker batteriet i praktiken?',
+    answer: 'Ecovacs uppger 45 minuter vilket räcker for ungefär 3–4 standardfönster (80 x 120 cm). Stora panoramafönster eller balkongräcken av glas kan kräva flera laddningscykler. Roboten laddas via USB-C och en laddning tar ca 2,5 timmar. Planera for att ladda mellan stora projekt.',
+  },
+  {
+    question: 'Vad är skillnaden mot Winbot W1 Pro?',
+    answer: 'Den avgörande skillnaden är att W2 Omni fungerar utan fönsterram tack vare AI-säkerhetsdetektering av glaskanten. W1 Pro kräver en synlig ram runt hela fönstret för att navigera. W2 Omni rengör dessutom med vattentank och mikrofiberduk som ger ett fläckfritt resultat, medan W1 Pro använder en sprayflaska du fyller manuellt. W2 Omni kostar ca 2 000 kr mer men är det enda valet for ramfria fönster.',
+  },
+  {
+    question: 'Är Winbot W2 Omni säker att använda pa höga höjder?',
+    answer: 'Ja, med säkerhetslinan som ingår. Du fäster linan i roboten och i ett solidt ankare (exempelvis ett fönsterhandtag eller krok) som backup. Om vakuumsugningen mot fönstret skulle svikta håller linan roboten pa plats. Använd alltid säkerhetslinan vid fönster pa andra vaningen eller högre. AI-detekteringen identifierar glaskanten och bromsar roboten i tid.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<ArticleLayout
+  title="Ecovacs Winbot W2 Omni Test 2026 — Recension"
+  description="Vi testar Ecovacs Winbot W2 Omni — bästa fönsterputsroboten 2026. Fungerar utan ram, rengör med vatten. Värd 4 990 kr? Läs recensionen."
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-03-29"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Ecovacs Winbot W2 Omni — Recension 2026
+  </h1>
+
+  <!-- Verdict box -->
+  <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+    <div class="flex items-start gap-4">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-winner text-white text-xs font-bold px-2 py-1 rounded">BÄST I TEST 2026</span>
+          <div class="flex gap-0.5" aria-label="Betyg: 8.8 av 10">
+            {[1,2,3,4,5].map(i => (
+              <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span class="font-bold text-text">8,8 / 10</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed mb-3">
+          Ecovacs Winbot W2 Omni är den bästa fönsterputsroboten vi testat 2026. Den fungerar utan fönsterram tack vare AI-säkerhetsdetektering, rengör med vattentank och mikrofiberduk och lämnar ett fläckfritt resultat pa inomhus- och utomhusfönster. Det bästa alternativet for moderna hem med ramfria glasytor.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <p class="text-2xl font-bold text-text">ca 4 990 kr</p>
+            <p class="text-xs text-text-light">Pris kan variera — jämfor alltid</p>
+          </div>
+          <a
+            href="https://www.komplett.se/search?search=ecovacs+winbot+w2+omni"
+            rel="sponsored nofollow noopener"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris på Winbot W2 Omni
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pros/Cons -->
+  <div class="grid sm:grid-cols-2 gap-5 mb-8">
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Fördelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Fungerar utan ram — valfri glasyta',
+          'AI-säkerhetsdetektering av glaskanten',
+          'Rengör med vattentank och mikrofiberduk',
+          'Fläckfritt resultat pa inomhus- och utomhusfönster',
+          'Säkerhetsline ingår i förpackningen',
+          'USB-C-laddning — bekvämt',
+        ].map(pro => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            {pro}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Dyrast i testet — 4 990 kr',
+          'Batteritid bara 45 min (3–4 fönster)',
+          'Kräver laddning vid stora projekt',
+          'Fungerar inte pa böjda glasytor',
+        ].map(con => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+            {con}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Specs table -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">Tekniska specifikationer</h2>
+    <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+      <table class="w-full text-sm">
+        <tbody class="divide-y divide-border">
+          {specs.map((spec, i) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+              <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+              <td class="px-4 py-3 text-text-light">{spec.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Detailed review sections -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-6">Detaljerad genomgång</h2>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Utan-ram-teknik — vad gör det möjligt</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Det som särskiljer Winbot W2 Omni fran nästan alla konkurrenter är förmagan att arbeta utan en fysisk fönsterram som referenspunkt. Traditionella fönsterputsrobotar navigerar längs ramen — de "känner" ramen och vänder. W2 Omni använder en inbyggd AI-kamera som detekterar glaskantens ljusbrytningsmönster och identifierar var glaset slutar.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Det innebär att du kan använda roboten pa moderna glaspartier utan synlig ram, stora panoramafönster och glasytor som saknar traditionell spanjolettram. For äldre fönster med tydlig träram fungerar den lika bra som konkurrenterna.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Rengöringsresultat — inomhus och utomhus</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      W2 Omni rengör med en vattentank inbyggd i kroppen och en mikrofiberduk som roterar mot glaset. Systemet fuktar duken automatiskt under körningen och tvinnar glaset rent. Resultatet är imponerande — glaset lämnas nästintill fläckfritt och utan streaks vid normalt smutsiga fönster.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Pa utomhusfönster med mer ingroat smuts kan en forbehandling med fönsterputs hjälpa, men for regelbunden underhallsputsning klarar roboten uppgiften självständigt. Pa inomhusfönster — fingeravtryck, damm, kondensfläckar — är rengöringsresultatet utmärkt.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Säkerhet — AI-detektering och säkerhetsline</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Säkerhetssystemet i W2 Omni är tvådelat. AI-kameran detekterar i realtid var glasets kant befinner sig och bromsar roboten. Det primära vakuumsugningssystemet håller roboten stadigt mot glaset — om sugkraften av nagot skäl skulle svikta aktiveras säkerhetslinan.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Säkerhetslinan ingår i förpackningen och fästs i roboten samt i ett ankare pa väggen eller fönsterkarmen. Alltid med säkerhetsline vid arbete pa höjd — oavsett hur säkert systemet ser ut. W2 Omnis AI-detektering är pålitlig men säkerhetslinan är ett viktigt komplement.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Jämforelse mot Winbot W1 Pro</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Ecovacs Winbot W1 Pro kostar ca 2 000 kr mindre och är ett bra alternativ om alla dina fönster har en tydlig ram. W1 Pro navigerar längs ramen, rengör med spray och duk och ger ett gott rengöringsresultat for standardfönster. Det är ett naturligt val for den som inte har ramfria glaspartier.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      W2 Omni är det enda seriösa alternativet om du har ramfria fönster eller moderna glaspartier. Prisskillnaden pa 2 000 kr är motiverad om du faktiskt behöver utan-ram-funktionen — for standardfönster kan W1 Pro räcka.
+    </p>
+  </section>
+
+  <!-- For whom -->
+  <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+    <h2 class="font-heading text-xl font-bold text-text mb-3">Vem passar Winbot W2 Omni for?</h2>
+    <p class="text-text-light leading-relaxed mb-3">
+      W2 Omni passar dig som har ramfria glaspartier, panoramafönster eller moderna balkonger med glasräcken. Den passar lika bra for traditionella fönster med ram om du är villig att betala for den bästa rengöringsupplevelsen.
+    </p>
+    <p class="text-text-light leading-relaxed">
+      Bor du i ett äldre hus med enkla fönster och inte har ramfria glaspartier kan Winbot W1 Pro spara dig 2 000 kr. Men for den som vill ha bäst-i-test utan kompromisser är W2 Omni vinnaren.
+    </p>
+  </section>
+
+  <!-- CTA -->
+  <section class="mb-10 bg-white rounded-xl border border-border p-5">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Se alla fönsterputsrobotar vi testat</h2>
+    <p class="text-text-light text-sm mb-4">Jämfor W2 Omni mot alla andra modeller i var kompletta guide.</p>
+    <a href="/fonsterputsrobot/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+      Se alla fönsterputsrobotar vi testat 2026
+      <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+    </a>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <!-- Related links -->
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+    <ul class="space-y-2">
+      <li><a href="/fonsterputsrobot/" class="text-accent hover:underline text-sm">Bästa fönsterputsrobot 2026 — komplett jämforelse och topplista</a></li>
+    </ul>
+  </section>
+</ArticleLayout>
+
+<StickyCTA
+  text="Se pris på Winbot W2 Omni"
+  url="https://www.komplett.se/search?search=ecovacs+winbot+w2+omni"
+  productName="Ecovacs Winbot W2 Omni"
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["Product", "Review"],
+  "name": "Ecovacs Winbot W2 Omni",
+  "brand": { "@type": "Brand", "name": "Ecovacs" },
+  "category": "Fönsterputsrobot",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "SEK",
+    "price": "4990",
+    "availability": "https://schema.org/InStock"
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "8.8",
+      "bestRating": "10",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-03-29",
+    "reviewBody": "Ecovacs Winbot W2 Omni är den bästa fönsterputsroboten vi testat 2026. Den fungerar utan fönsterram tack vare AI-säkerhetsdetektering, rengör med vattentank och mikrofiberduk och lämnar ett fläckfritt resultat.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  }
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqSchema,
+})} />

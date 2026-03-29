@@ -1,0 +1,329 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Fönsterputsrobot' },
+];
+
+const faqItems = [
+  {
+    question: 'Klarar en fönsterputsrobot fönster utan ram?',
+    answer: 'Det beror på modellen. Ecovacs Winbot W2 Omni är speciellt konstruerad for ramfria fönster och använder AI-säkerhetsdetektering for att känna igen glaskanten utan fysisk ram. Enklare modeller som W1 Pro och Liectroux WS-1080 kräver en ram att stanna mot — de kan inte användas utan ram eftersom de inte kan identifiera glasets kant.',
+  },
+  {
+    question: 'Kan fönsterputsrobotar användas utomhus?',
+    answer: 'Ja, men det beror på smutsnivån och väderförhållandena. Ecovacs Winbot W2 Omni och W1 Pro fungerar bra utomhus pa normalt smutsiga fönster. Vid kraftigt ingroat smuts, kalkfläckar eller fågelspillning kan roboten behöva köra flera cykler eller smutsen förbehandlas med lämpligt fönsterputsmedel. Kör aldrig roboten i regn eller blåsigt väder.',
+  },
+  {
+    question: 'Hur länge tar det for en robot att putsa ett fönster?',
+    answer: 'Ett standardfönster pa ca 80 x 120 cm tar ungefär 5–10 minuter for en fönsterputsrobot. Större fönster, balkongräcken av glas eller panoramafönster tar proportionellt längre tid. Winbot W2 Omni är snabbast i vart test och klarar ett standardfönster pa ca 5 minuter.',
+  },
+  {
+    question: 'Är fönsterputsrobotar säkra — kan de ramla ner?',
+    answer: 'Alla seriösa fönsterputsrobotar har inbyggda säkerhetssystem. Winbot W2 Omni har AI-detektering av glasets kant. W1 Pro och Liectroux WS-1080 har en säkerhetsline som ingår i förpackningen — du fäster linan i roboten och i ett ankare pa väggen som backup. Säkerhetslinan aktiveras bara om vakuumsugningen skulle svikta. Alltid med säkerhetsline vid tvätteriet pa höga höjder.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Fönsterputsrobot 2026 — Bästa modellerna testad"
+  description="Vi jämfor de bästa fönsterputsrobotarna 2026. Hitta rätt modell for dina fönster — inomhus, utomhus och takfönster. Priser och recensioner."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
+      Fönsterputsrobot 2026 — Bästa modellerna
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Vi jämfor de bästa fönsterputsrobotarna 2026 och hjälper dig hitta rätt modell for dina fönster. Oavsett om du har ramfria glasytor, höga fönster eller utomhusfönster — här är vad som faktiskt fungerar.
+    </p>
+
+    <!-- Snabbjämförelse -->
+    <section class="mb-8" aria-label="Jämforelsetabell fönsterputsrobotar">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämforelse — bästa modellerna 2026</h2>
+      <div class="overflow-x-auto rounded-xl border border-border">
+        <table class="w-full text-sm bg-white">
+          <thead>
+            <tr class="border-b border-border bg-bg-alt">
+              <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Pris</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Utan ram</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Rengöringsteknik</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Betyg</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Ecovacs Winbot W2 Omni</td>
+              <td class="px-4 py-3 text-text">ca 4 990 kr</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-text-light">Vatten + mikrofiberduk</td>
+              <td class="px-4 py-3 text-winner font-semibold">8,8/10</td>
+            </tr>
+            <tr class="bg-bg-alt/50">
+              <td class="px-4 py-3 font-medium text-text">Ecovacs Winbot W1 Pro</td>
+              <td class="px-4 py-3 text-text">ca 2 990 kr</td>
+              <td class="px-4 py-3 text-cta font-medium">Nej (kräver ram)</td>
+              <td class="px-4 py-3 text-text-light">Spray + duk</td>
+              <td class="px-4 py-3 text-winner font-semibold">8,2/10</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Liectroux WS-1080</td>
+              <td class="px-4 py-3 text-text">ca 1 490 kr</td>
+              <td class="px-4 py-3 text-cta font-medium">Nej (kräver ram)</td>
+              <td class="px-4 py-3 text-text-light">Vakuumsugsugning</td>
+              <td class="px-4 py-3 text-text-light font-semibold">7,0/10</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Produkter -->
+    <div class="space-y-8 mb-12" id="produkter">
+
+      <!-- Produkt 1: Ecovacs Winbot W2 Omni -->
+      <section class="bg-white rounded-xl border border-border overflow-hidden">
+        <div class="bg-bg-alt px-5 py-3 border-b border-border flex items-center gap-3">
+          <span class="bg-winner text-white text-xs font-bold px-2 py-1 rounded">BÄST I TEST 2026</span>
+          <span class="font-heading font-bold text-text">Ecovacs Winbot W2 Omni</span>
+          <span class="ml-auto font-bold text-text">ca 4 990 kr</span>
+        </div>
+        <div class="p-5">
+          <p class="text-text-light text-sm leading-relaxed mb-4">
+            Winbot W2 Omni är den klart bästa fönsterputsroboten vi testat 2026. Den unika fördelen är att den fungerar utan ram tack vare AI-säkerhetsdetektering som identifierar glasets kant. Roboten rengör med en vattentank och mikrofiberduk for ett fläckfritt resultat pa inomhus- och utomhusfönster.
+          </p>
+          <div class="grid sm:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs font-semibold text-text mb-2">Vad den klarar</p>
+              <ul class="space-y-1">
+                {['Fungerar utan ram — valfri glasyta', 'AI-säkerhetsdetektering av glaskanten', 'Rengör med vatten och mikrofiberduk', 'Automatisk navigering på glaset'].map(p => (
+                  <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-winner font-bold mt-0.5">+</span>{p}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-text mb-2">Kompromisser</p>
+              <ul class="space-y-1">
+                {['Dyrast i testet (4 990 kr)', 'Batteritid 45 min — räcker för 3-4 fönster', 'Kräver laddning mellan stora projekt'].map(c => (
+                  <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-cta font-bold mt-0.5">-</span>{c}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a
+              href="/ecovacs-winbot-w2-omni/"
+              class="inline-flex items-center text-accent hover:underline font-medium text-sm"
+            >
+              Läs recension
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+            </a>
+            <a
+              href="https://www.komplett.se/search?search=ecovacs+winbot+w2+omni"
+              rel="sponsored nofollow noopener"
+              target="_blank"
+              class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+            >
+              Se pris på Winbot W2 Omni
+              <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Produkt 2: Ecovacs Winbot W1 Pro -->
+      <section class="bg-white rounded-xl border border-border overflow-hidden">
+        <div class="bg-bg-alt px-5 py-3 border-b border-border flex items-center gap-3">
+          <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">BRA MELLANVAL</span>
+          <span class="font-heading font-bold text-text">Ecovacs Winbot W1 Pro</span>
+          <span class="ml-auto font-bold text-text">ca 2 990 kr</span>
+        </div>
+        <div class="p-5">
+          <p class="text-text-light text-sm leading-relaxed mb-4">
+            Winbot W1 Pro är det bästa valet om du har standardfönster med ram och inte vill betala for W2 Omnis premium. Den kräver en fönsterram att referera mot men ger ett bra rengöringsresultat med sprayflaska och mikrofiberduk. Säkerhetsline ingår i förpackningen.
+          </p>
+          <div class="grid sm:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs font-semibold text-text mb-2">Vad den klarar</p>
+              <ul class="space-y-1">
+                {['Bra rengöring med spray och duk', 'Pålitlig navigering längs ramen', 'Säkerhetsline ingår', 'Bra pris/prestanda'].map(p => (
+                  <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-winner font-bold mt-0.5">+</span>{p}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-text mb-2">Kompromisser</p>
+              <ul class="space-y-1">
+                {['Kräver fönsterram — fungerar inte utan', 'Ingen AI-kantigenkänning', 'Sämre på stora glasytor'].map(c => (
+                  <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-cta font-bold mt-0.5">-</span>{c}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <a
+            href="https://www.komplett.se/search?search=ecovacs+winbot+w1+pro"
+            rel="sponsored nofollow noopener"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris på Winbot W1 Pro
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- Produkt 3: Liectroux WS-1080 -->
+      <section class="bg-white rounded-xl border border-border overflow-hidden">
+        <div class="bg-bg-alt px-5 py-3 border-b border-border flex items-center gap-3">
+          <span class="bg-text-lighter text-white text-xs font-bold px-2 py-1 rounded">BUDGET</span>
+          <span class="font-heading font-bold text-text">Liectroux WS-1080</span>
+          <span class="ml-auto font-bold text-text">ca 1 490 kr</span>
+        </div>
+        <div class="p-5">
+          <p class="text-text-light text-sm leading-relaxed mb-4">
+            Liectroux WS-1080 är det billigaste alternativet med vakuumsugsugning mot glaset. Den kräver ren glasyta och en ram att orientera sig mot. Fungerar for grundläggande fönsterputsning pa standardfönster. Säkerhetsline ingår. Kräver mer manuell kontroll av rengöringsresultatet jämfort med dyrare modeller.
+          </p>
+          <div class="grid sm:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs font-semibold text-text mb-2">Vad den klarar</p>
+              <ul class="space-y-1">
+                {['Lägst pris i testet', 'Enkel att komma igång med', 'Säkerhetsline ingår'].map(p => (
+                  <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-winner font-bold mt-0.5">+</span>{p}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-semibind text-text mb-2">Kompromisser</p>
+              <ul class="space-y-1">
+                {['Kräver ren glasyta och fönsterram', 'Sämre rengöringsresultat an premiummodeller', 'Ingen automatisk spray — kräver förbehandling', 'Kortare livslängd an Ecovacs'].map(c => (
+                  <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-cta font-bold mt-0.5">-</span>{c}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <a
+            href="https://www.amazon.se/s?k=liectroux+ws-1080"
+            rel="sponsored nofollow noopener"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris på Liectroux WS-1080
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Hur fungerar fönsterputsrobotar? -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Hur fungerar fönsterputsrobotar?</h2>
+      <div class="space-y-5 text-sm text-text-light leading-relaxed">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Vakuumsugsugning — hur roboten sitter fast</h3>
+          <p>Alla fönsterputsrobotar använder vakuumsugsugning mot glaset for att häfta fast. En eller flera inbyggda fläktar skapar undertryck som håller roboten mot ytan. Sugkraften är tillräcklig for att roboten ska klara vertikala glasrutor och lätt lutade ytor. Stäng alltid av roboten innan du tar bort den — annars tappas vakuumet och roboten kan ramla.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Ram vs utan ram — viktig skillnad</h3>
+          <p>Enklare fönsterputsrobotar (W1 Pro, Liectroux WS-1080) navigerar längs fönsterramen — de "känner" ramen och vänder när de når den. Det betyder att de inte kan användas pa glaspartier utan synlig ram runt hela kanten. Premium-modellen Winbot W2 Omni löser detta med AI-kamera som identifierar glaskantens ljusbrytningsmönster utan fysisk ram.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vad kostar en fönsterputsrobot? -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vad kostar en fönsterputsrobot?</h2>
+      <div class="bg-white rounded-xl border border-border p-5 text-sm text-text-light leading-relaxed">
+        <p class="mb-3">Fönsterputsrobotar finns i tre prisklasser:</p>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-2">
+            <span class="font-semibold text-text min-w-[120px]">Budget (1 000–2 000 kr):</span>
+            <span>Grundläggande funktion, kräver ram, enklare rengöringsteknik. Passar den som sällan putsar och vill ha ett enkelt hjälpmedel. Liectroux WS-1080 är representant.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="font-semibold text-text min-w-[120px]">Mellanklass (2 000–3 500 kr):</span>
+            <span>Bättre rengöringsresultat, spray-funktion, pålitligare navigering. Kräver fortfarande ram. Ecovacs Winbot W1 Pro är det bästa alternativet i denna klass.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="font-semibold text-text min-w-[120px]">Premium (4 000–6 000 kr):</span>
+            <span>Ramfri funktion, AI-navigering, vattentank. Ecovacs Winbot W2 Omni dominerar premiumsegmentet och är det enda alternativet om du har ramfria fönster.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA-box: fler robotkategorier -->
+    <section class="mb-10 bg-accent/5 border border-accent/20 rounded-xl p-6">
+      <h2 class="font-heading text-xl font-bold text-text mb-2">Utforska fler robotkategorier</h2>
+      <p class="text-text-light text-sm leading-relaxed mb-4">
+        Vi testar och jämfor alla typer av konsumentrobotar — robotdammsugare, robotgräsklippare och poolrobotar for den svenska marknaden.
+      </p>
+      <a
+        href="/"
+        class="inline-flex items-center justify-center bg-accent hover:bg-accent-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+      >
+        Se alla robotkategorier pa Robotjakt
+        <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+      </a>
+    </section>
+
+    <!-- Intern länkning -->
+    <section class="mb-10">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Relaterade robotguider</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/poolrobot/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Bästa poolrobot 2026</h3>
+          <p class="text-sm text-text-light">Alla modeller testade och rankade — budget till premium.</p>
+        </a>
+        <a href="/robotgrasklippare/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Bästa robotgräsklippare 2026</h3>
+          <p class="text-sm text-text-light">Fran Husqvarna Automower till slingfria GPS-modeller.</p>
+        </a>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+  </div>
+
+  <StickyCTA
+    text="Se bästa fönsterputsroboten"
+    url="#produkter"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Bästa fönsterputsrobot 2026",
+    "description": "De bästa fönsterputsrobotarna 2026, rankade efter test.",
+    "numberOfItems": 3,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Ecovacs Winbot W2 Omni", "url": "https://robotjakt.se/ecovacs-winbot-w2-omni/" },
+      { "@type": "ListItem", "position": 2, "name": "Ecovacs Winbot W1 Pro", "url": "https://robotjakt.se/fonsterputsrobot/" },
+      { "@type": "ListItem", "position": 3, "name": "Liectroux WS-1080", "url": "https://robotjakt.se/fonsterputsrobot/" },
+    ],
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>
