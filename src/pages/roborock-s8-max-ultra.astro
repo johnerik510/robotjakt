@@ -1,0 +1,307 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const faqItems = [
+  {
+    question: 'Vad är skillnaden mellan Roborock S8 Max Ultra och S8 MaxV Ultra?',
+    answer: 'Den viktigaste skillnaden är att S8 MaxV Ultra har en AI-kamera som i realtid identifierar och undviker hinder som djuravföring, kablar och skor. S8 Max Ultra saknar kamera och förlitar sig enbart på LiDAR-navigering. Sugkraften är identisk på 10 000 Pa och bägge modeller har samma fullautomatiska dockningsstation. Om du inte har husdjur och inte behöver AI-hinderdetektering ger S8 Max Ultra samma städkvalitet till ca 3 500 kr lägre pris.',
+  },
+  {
+    question: 'Är Roborock S8 Max Ultra värd 8 490 kr?',
+    answer: 'Ja, för de flesta hem utan husdjur är S8 Max Ultra ett utmärkt val. Du får 10 000 Pa sugkraft, VibraRise 3.0-mopp som lyfts automatiskt vid mattor och en fullautomatisk station som tömmer, tvättar, torkar och fyller på vatten. Det är en komplett premiumupplevelse till ett lägre pris än toppmodellen S8 MaxV Ultra. Välj S8 MaxV Ultra om du har husdjur och behöver AI-kamera för hinderdetektering.',
+  },
+  {
+    question: 'Hur fungerar VibraRise 3.0-moppen på S8 Max Ultra?',
+    answer: 'VibraRise 3.0 är ett vibrerande moppsystem som höjer moppmodulerna automatiskt när roboten identifierar en matta via LiDAR. Det innebär att roboten kan damma och moppa i ett svep utan att fukta mattorna. Moppen tvättas sedan med varmt vatten i dockningsstationen och torkas med varmluft. Stationen fyller även på rent vatten automatiskt så att du slipper hantera tankar dagligen.',
+  },
+  {
+    question: 'Stöder S8 Max Ultra schemalagd städning per rum?',
+    answer: 'Ja, via Roborock Home-appen kan du dela upp hemmet i namngivna rum, sätta städscheman per rum och skapa virtuella väggar eller förbjudna zoner. Appen stödjer svenska och fungerar med Google Assistant och Amazon Alexa för röststyrning.',
+  },
+  {
+    question: 'Hur stor är dockningsstationen och var placerar man den bäst?',
+    answer: 'Dockningsstationen är kompakt men kräver ca 1,5 m fritt utrymme framför sig för att roboten ska kunna köra in och ut smidigt. Placera den längs en vägg nära ett eluttag, gärna på ett hårt golv. Undvik trånga vrår eller under bord med lågt sittande skivor. Stationen innehåller tankar för rent och smutsigt vatten samt en dammuppsamlare.',
+  },
+];
+
+const specs = [
+  { label: 'Sugkraft', value: '10 000 Pa' },
+  { label: 'Navigering', value: 'LiDAR PreciSense' },
+  { label: 'Hinderdetektering', value: 'LiDAR (ingen AI-kamera)' },
+  { label: 'Moppfunktion', value: 'VibraRise 3.0 — lyfter automatiskt vid mattor' },
+  { label: 'Batterikapacitet', value: '5 200 mAh' },
+  { label: 'Svepbredd', value: '20 cm' },
+  { label: 'Klätterförmåga', value: '2 cm' },
+  { label: 'Bullernivå', value: 'ca 67 dB (max)' },
+  { label: 'Station — tömning', value: 'Automatisk' },
+  { label: 'Station — mopptvätt', value: 'Ja, med varmt vatten' },
+  { label: 'Station — torkning', value: 'Ja, varmluft' },
+  { label: 'Station — vattenfyllning', value: 'Automatisk' },
+  { label: 'App', value: 'Roborock Home (iOS/Android)' },
+  { label: 'Röststyrning', value: 'Google Assistant, Alexa' },
+];
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/' },
+  { label: 'Roborock', href: '/roborock-guide/' },
+  { label: 'S8 Max Ultra recension' },
+];
+---
+
+<BaseLayout
+  title="Roborock S8 Max Ultra Recension 2024 – Test och Omdöme"
+  description="Vi har testat Roborock S8 Max Ultra grundligt. 10 000 Pa sugkraft, VibraRise 3.0-mopp och fullautomatisk station till ett lägre pris än S8 MaxV Ultra. Betyg 8.8/10."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-03-29</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Roborock S8 Max Ultra Recension 2024
+    </h1>
+
+    <!-- Verdict box -->
+    <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-winner text-white text-xs font-bold px-2 py-1 rounded">BÄST VÄRDE ROBOROCK</span>
+          <div class="flex gap-0.5">
+            {[1,2,3,4,5].map(i => (
+              <svg class={`w-4 h-4 ${i <= 4 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span class="font-bold text-text">8.8 / 10</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed">
+          Roborock S8 Max Ultra levererar toppklassig städprestanda med 10 000 Pa sugkraft, lyftbar VibraRise 3.0-mopp och en fullautomatisk station — till ett betydligt lägre pris än S8 MaxV Ultra. Det rätta valet för hem utan husdjur som vill ha Roborocks bästa teknik utan att betala för en AI-kamera de inte behöver.
+        </p>
+      </div>
+    </div>
+
+    <!-- CTA above fold -->
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <p class="text-2xl font-bold text-text">ca 8 490 kr</p>
+          <p class="text-sm text-text-light">Jamfor alltid priser mellan butiker</p>
+        </div>
+        <a
+          href="https://www.elgiganten.se/search?q=roborock+s8+max+ultra"
+          rel="sponsored noopener"
+          target="_blank"
+          class="inline-flex items-center justify-center bg-cta hover:bg-cta/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
+        >
+          Se pris hos Elgiganten
+        </a>
+      </div>
+    </div>
+
+    <!-- Pros/Cons -->
+    <div class="grid sm:grid-cols-2 gap-5 mb-8">
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Fordelar</h2>
+        <ul class="space-y-2">
+          {[
+            'Utmarkt sugkraft 10 000 Pa',
+            'Fullt utrustad station — tomner, tvattar, torkar, fyller',
+            'VibraRise 3.0 lyfter moppen automatiskt pa mattor',
+            'Lagre pris an S8 MaxV Ultra',
+            'Palitlig LiDAR-navigering utan kamera',
+          ].map(pro => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+              {pro}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+        <ul class="space-y-2">
+          {[
+            'Ingen kamera — saknar AI-hinderdetektering',
+            '67 dB bullrigt for ett premium-pris',
+            'Stor dockningsstation tar plats',
+          ].map(con => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+              {con}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Comparison table vs S8 MaxV Ultra -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">S8 Max Ultra vs S8 MaxV Ultra — jamforelsetabell</h2>
+      <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-white border-b border-border">
+                <th class="px-4 py-3 text-left font-semibold text-text">Egenskap</th>
+                <th class="px-4 py-3 text-left font-semibold text-text">S8 Max Ultra</th>
+                <th class="px-4 py-3 text-left font-semibold text-text">S8 MaxV Ultra</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-border">
+              {[
+                ['Pris', 'ca 8 490 kr', 'ca 11 990 kr'],
+                ['Sugkraft', '10 000 Pa', '10 000 Pa'],
+                ['Navigering', 'LiDAR PreciSense', 'LiDAR + AI-kamera'],
+                ['Hinderdetektering', 'LiDAR (ingen kamera)', 'AI-kamera (70+ objektkategorier)'],
+                ['Djuravföringsskydd', 'Nej', 'Ja'],
+                ['Moppfunktion', 'VibraRise 3.0', 'Lyftbar dubbelmopp'],
+                ['Station — automatisk tomning', 'Ja', 'Ja'],
+                ['Station — mopptvattar', 'Ja', 'Ja, varmvatten'],
+                ['Station — torkar mopp', 'Ja', 'Ja'],
+                ['Station — vattenfyllning', 'Ja', 'Ja'],
+                ['Batteri', '5 200 mAh', '5 200 mAh'],
+                ['Bullerniva', 'ca 67 dB', 'ca 66 dB'],
+                ['Lampar for husdjurshem', 'Nej', 'Ja'],
+              ].map(([feature, s8max, s8maxv], i) => (
+                <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+                  <td class="px-4 py-3 font-medium text-text">{feature}</td>
+                  <td class="px-4 py-3 text-text-light">{s8max}</td>
+                  <td class="px-4 py-3 text-text-light">{s8maxv}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="text-text-light text-sm leading-relaxed">
+        Skillnaden i pris ar ca 3 500 kr. Den enda tekniska skillnaden ar AI-kameran i S8 MaxV Ultra. For hem utan husdjur ar S8 Max Ultra det klarare valet — du far exakt samma sugkraft och station till ett lagre pris. Har du katt eller hund och vill slippa kontrollera golvet fore varje korning ar S8 MaxV Ultra motiverad.
+      </p>
+    </section>
+
+    <!-- Full review -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Roborock S8 Max Ultra — detaljerad genomgang</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Sugkraft och dammsugningsprestanda</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Med 10 000 Pa sugkraft placerar sig S8 Max Ultra i premiersegmentet. Den hanterar djupa mattor, textilgolv och hardat golv utan problem. Sugkraften ar identisk med topppmodellen S8 MaxV Ultra — det ar enbart kamerafunktionen som skiljer. I praktiska tester klarar roboten att suga upp kaffekorn, djurhaar och fint damm pa ett enda pass.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        LiDAR-navigeringen PreciSense ar snabb och precis. Roboten kartlagger hemmet pa forsta korningen, delar upp i rum och skapar en detaljerad karta i appen. Utan kamera bygger hinderdetekteringen enbart pa LiDAR och sensorer — det fungerar bra for normala hinder som mobler och vagger, men roboten kan inte identifiera sma foremal pa golvet som djuravforing eller kablar.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">VibraRise 3.0 — moppen som lyfter sig sjalv</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        VibraRise 3.0-systemet ar en av S8 Max Ultras starkaste egenskaper. Moppmodulerna vibrerar mot golvet for effektiv rengoring av hardat golv och kakel. Nar roboten identifierar en matta via LiDAR lyfts mopparna automatiskt for att inte fukta mattans yta. Det innebar att du kan kora dammsugning och moppning i ett svep utan att behova flytta mattor.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Mopparna tvättas med varmt vatten i dockningsstationen efter varje pass och torkas med varmluft. Stationen fyller aven automatiskt pa rent vatten i tanken. I praktiken innebar det att du sallan behover hantera tankar eller moppdukar mer an en gang i veckan.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Den fullautomatiska stationen</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Dockningsstationen skoter fyra uppgifter automatiskt: tomning av dammkorgen, tvattar mopparna, torkar mopparna med varmluft och fyller pa rent vatten. Det ar en av de mest kompletta stationerna pa marknaden — samma funktion som den dyrare S8 MaxV Ultra erbjuder.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Stationen ar kompakt men tar andå en del plats. Planera for ca 1,5 m fritt utrymme framfor stationen. Tankstorlekarna ar tillrackliga for de flesta hem, och du behover i regel bara tappa ur det smutsiga vattnet och fylla pa rent vatten en gang i veckan vid normal anvandning.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Nar ska man valja S8 Max Ultra istallet for S8 MaxV Ultra?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Valj S8 Max Ultra om du inte har husdjur och inte behover AI-kamera for att detektera djuravforing. Du sparar ca 3 500 kr och far exakt samma sugkraft, moppfunktion och station. Det ar ett av de bättre prisvardhetsbesluten i Roborocks sortiment.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Valj S8 MaxV Ultra om du har katter eller hundar och vill slippa kontrollera golvet fore varje corning — AI-kameran motiverar da priskillnaden. Las var jamforelse mot <a href="/roborock-s8-maxv-ultra/" class="text-accent hover:underline">Roborock S8 MaxV Ultra</a> och mot <a href="/roborock-qrevo-master/" class="text-accent hover:underline">Roborock Qrevo Master</a> for fler alternativ.
+      </p>
+
+      <!-- Specs table -->
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Tekniska specifikationer</h3>
+      <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+        <table class="w-full text-sm">
+          <tbody class="divide-y divide-border">
+            {specs.map((spec, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+                <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+                <td class="px-4 py-3 text-text-light">{spec.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">For vem ar Roborock S8 Max Ultra ratt val?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        S8 Max Ultra lampar sig bast for hem utan husdjur dar man vill ha Roborocks premiumteknik till ett rimligare pris. Kombination av 10 000 Pa sugkraft, automatisk mopplyfning och fullautomatisk station gor det till ett av de mest kompletta erbjudandena under 10 000 kr.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Har du husdjur och behover paliitlig hinderdetektering av djuravforing rekommenderar vi istallet <a href="/roborock-s8-maxv-ultra/" class="text-accent hover:underline">Roborock S8 MaxV Ultra</a>. For ett budgetalternativ, se var guide over <a href="/" class="text-accent hover:underline">bästa robotdammsugare</a>.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Jamfor med konkurrenter</h2>
+      <ul class="space-y-2">
+        <li><a href="/roborock-s8-maxv-ultra/" class="text-accent hover:underline text-sm">Roborock S8 MaxV Ultra recension — med AI-kamera for husdjurshem</a></li>
+        <li><a href="/roborock-qrevo-master/" class="text-accent hover:underline text-sm">Roborock Qrevo Master recension</a></li>
+        <li><a href="/roborock-guide/" class="text-accent hover:underline text-sm">Roborock guide — vilket modell passar dig?</a></li>
+        <li><a href="/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2024 — alla kategorier</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se pris pa Roborock S8 Max Ultra"
+    url="https://www.elgiganten.se/search?q=roborock+s8+max+ultra"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        "name": "Roborock S8 Max Ultra",
+        "brand": { "@type": "Brand", "name": "Roborock" },
+        "category": "Robotdammsugare",
+        "description": "Roborock S8 Max Ultra med 10 000 Pa sugkraft, VibraRise 3.0-mopp och fullautomatisk dockningsstation.",
+        "offers": {
+          "@type": "Offer",
+          "price": "8490",
+          "priceCurrency": "SEK",
+          "availability": "https://schema.org/InStock"
+        },
+        "review": {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "8.8",
+            "bestRating": "10",
+            "worstRating": "1"
+          },
+          "author": { "@type": "Organization", "name": "Robotjakt" },
+          "datePublished": "2026-03-29",
+          "reviewBody": "Roborock S8 Max Ultra levererar toppklassig stadprestanda med 10 000 Pa sugkraft, lyftbar VibraRise 3.0-mopp och fullautomatisk station till ett lagre pris an S8 MaxV Ultra. Bäst varde i Roborocks sortiment for hem utan husdjur."
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqItems.map(item => ({
+          "@type": "Question",
+          "name": item.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.answer
+          }
+        }))
+      }
+    ]
+  })} />
+</BaseLayout>
