@@ -1,0 +1,334 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import FAQ from '../../components/FAQ.astro';
+import StickyCTA from '../../components/StickyCTA.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/' },
+  { label: 'Jämförelser', href: '/jamfor/' },
+  { label: 'Ecovacs X5 Omni vs Dreame X40 Ultra' },
+];
+
+const faqItems = [
+  {
+    question: 'Vilken är bäst — Ecovacs Deebot X5 Omni eller Dreame X40 Ultra?',
+    answer: 'Det beror på vad du prioriterar. Dreame X40 Ultra vinner på ren sugkraft (12 000 Pa mot 8 000 Pa) och moppning längs väggar tack vare den utfällbara sidoarmen. Ecovacs X5 Omni är billigare (8 990 kr mot 9 990 kr), har längre batteritid och en fyrkantig kropp som naturligt täcker hörn bättre än runda robotar. För de flesta hem är X5 Omni ett starkare värdeerbjudande, men X40 Ultra är det bättre valet om du har tjocka mattor eller prioriterar väggtäckning vid moppning.',
+  },
+  {
+    question: 'Vad är den fyrkantiga designens fördel hos Ecovacs X5 Omni?',
+    answer: 'Ecovacs fyrkantig kropp täcker hörn 33% bättre än runda robotar vid dammsugspasset. Roboten kan skjuta in sin kant rakt i ett hörn istället för att cirkulera runt det. Dreame X40 Ultra kompenserar med en utfällbar sidoarm för moppningen, men vid torrdammsugnig har X5 Omni en konstruktionsmässig fördel vid väggar och hörn.',
+  },
+  {
+    question: 'Hur skiljer sig mopptekniken åt?',
+    answer: 'Båda har oscillerande moppar som gnuggar fram och tillbaka — överlägsen roterande teknik. Skillnaden är att Dreame X40 Ultras moppmodul har en utfällbar sidoarm som fälls ut mot väggen och moppar längs hela kanten. Ecovacs X5 Omni saknar denna arm men kompenserar delvis med den fyrkantiga kroppen som placerar mopparna närmre kanten. X40 Ultra är bättre vid väggtäckning under moppning; X5 Omni är bättre i trånga utrymmen.',
+  },
+  {
+    question: 'Vilken har längre batteritid?',
+    answer: 'Ecovacs X5 Omni uppger 180 minuters batteritid, vilket i praktiken landar på 120–150 minuter med aktiv moppning. Dreame X40 Ultra har ett 6 400 mAh-batteri utan specificerad körtid — i praktiken likvärdig eller marginellt kortare. Båda klarar hem upp till 150 m² med automatisk återladdning och fortsättning.',
+  },
+  {
+    question: 'Är Ecovacs eller Dreame ett bättre märke för service och reservdelar i Sverige?',
+    answer: 'Båda märkena är väletablerade på den svenska marknaden med reservdelar tillgängliga via svenska återförsäljare. Dreame finns hos Komplett, Elgiganten och MediaMarkt. Ecovacs säljs primärt via Elgiganten och Amazon SE. Båda erbjuder 2 års garanti. Dreames svenska support är något snabbare baserat på användarerfarenheter på svenska forum.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Ecovacs Deebot X5 Omni vs Dreame X40 Ultra 2026 — jämförelse | Robotjakt"
+  description="Ecovacs X5 Omni till 8 990 kr eller Dreame X40 Ultra till 9 990 kr? Vi jämför sugkraft, moppning, hörntäckning och design. Se vilken som passar ditt hem."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Ecovacs Deebot X5 Omni vs Dreame X40 Ultra 2026 — vilken ska du välja?
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Ecovacs X5 Omni till ca 8 990 kr eller Dreame X40 Ultra till ca 9 990 kr? Båda är flaggskeppsrobotar med oscillerande mopp, självtömmande station och AI-navigering — men de löser problemet med hörn och väggar på helt olika sätt. Vi jämför dem kategori för kategori.
+    </p>
+
+    <!-- Quick verdict -->
+    <section class="mb-8 bg-winner/5 border border-winner/20 rounded-xl p-5">
+      <h2 class="font-heading text-lg font-bold text-text mb-2">Snabbsvar — för dig som vill ha svaret direkt</h2>
+      <p class="text-text-light text-sm leading-relaxed mb-2">
+        <strong class="text-text">Ecovacs X5 Omni för värde och batteritid:</strong> Fyrkantig kropp täcker hörn bättre vid dammsugning, 180 min batteritid, AIVI 3D-navigering och oscillerande mopp — 1 000 kr billigare än X40 Ultra.
+      </p>
+      <p class="text-text-light text-sm leading-relaxed">
+        <strong class="text-text">Dreame X40 Ultra om du kräver mer sugkraft:</strong> 12 000 Pa mot 8 000 Pa, utfällbar sidoarm som moppar längs hela väggen och marginalövertag på tjocka mattor. Det dyrare men tekniskt starkare valet.
+      </p>
+    </section>
+
+    <!-- Specs comparison table -->
+    <section class="mb-10" aria-label="Jämförelsetabell Ecovacs X5 Omni vs Dreame X40 Ultra">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Specifikationer jämfört</h2>
+      <div class="overflow-x-auto rounded-xl border border-border">
+        <table class="w-full text-sm bg-white">
+          <thead>
+            <tr class="border-b border-border bg-bg-alt">
+              <th class="text-left px-4 py-3 font-semibold text-text">Egenskap</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Ecovacs X5 Omni</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Dreame X40 Ultra</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Pris ca</td>
+              <td class="px-4 py-3 text-winner font-semibold">8 990 kr</td>
+              <td class="px-4 py-3 text-text-light">9 990 kr</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">Sugkraft</td>
+              <td class="px-4 py-3 text-text-light">8 000 Pa</td>
+              <td class="px-4 py-3 text-winner font-semibold">12 000 Pa</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Design</td>
+              <td class="px-4 py-3 text-winner font-semibold">Fyrkantig — bättre hörntäckning</td>
+              <td class="px-4 py-3 text-text-light">Rund</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">Moppmodul</td>
+              <td class="px-4 py-3 text-text-light">Oscillerande mopp</td>
+              <td class="px-4 py-3 text-winner font-semibold">Oscillerande + utfällbar sidoarm</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Väggtäckning (mopp)</td>
+              <td class="px-4 py-3 text-text-light">God</td>
+              <td class="px-4 py-3 text-winner font-semibold">Utmärkt — sidoarm når hela vägen</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">Mopptvätt</td>
+              <td class="px-4 py-3 text-text-light">Varmt vatten i station</td>
+              <td class="px-4 py-3 text-winner font-semibold">Varmt vatten 70°C i station</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Batteritid</td>
+              <td class="px-4 py-3 text-winner font-semibold">180 min (uppgivet)</td>
+              <td class="px-4 py-3 text-text-light">6 400 mAh</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">Navigering</td>
+              <td class="px-4 py-3 text-text-light">AIVI 3D (AI-kamera)</td>
+              <td class="px-4 py-3 text-text-light">LiDAR + AI-kamera</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Bullernivå</td>
+              <td class="px-4 py-3 text-text-light">68 dB</td>
+              <td class="px-4 py-3 text-text-light">68 dB</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">Vikt</td>
+              <td class="px-4 py-3 text-winner font-semibold">4,8 kg</td>
+              <td class="px-4 py-3 text-text-light">5,2 kg</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">AI-djurskydd</td>
+              <td class="px-4 py-3 text-text-light">Nej</td>
+              <td class="px-4 py-3 text-text-light">Nej</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">Garanti</td>
+              <td class="px-4 py-3 text-text-light">2 år</td>
+              <td class="px-4 py-3 text-text-light">2 år</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Category by category -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-6">Kategori för kategori</h2>
+      <div class="space-y-5">
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Sugkraft</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-winner/10 text-winner">X40 Ultra vinner</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Dreame X40 Ultra har 12 000 Pa mot Ecovacs X5 Omnis 8 000 Pa — 50 procent starkare. På hårda golv och kortluggade mattor är skillnaden knappt märkbar, men på tjocka mattor med lång lugg och vid djuprengöring av ingrävt husdjurspäls ger de extra 4 000 Pa ett mätbart resultat. X5 Omnis 8 000 Pa är fortfarande starkt och räcker för de flesta hem, men X40 Ultra vinner tydligt i denna kategori.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Hörntäckning vid dammsugning</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-winner/10 text-winner">X5 Omni vinner</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Ecovacs fyrkantiga kropp är en konstruktionsmässig fördel som ofta underskattas. En fyrkantig robot kan skjuta sin kant rakt in i ett hörn och täcker upp till 33% mer hörnareal än en rund robot. Dreame X40 Ultra är rund och missar alltid de yttersta hörnen med dammsugaren, oavsett sidoarm. Vid torrdammsugning är X5 Omni bättre på hörnen — sidoarmen på X40 Ultra hjälper bara under moppningen.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Moppning längs väggar</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-winner/10 text-winner">X40 Ultra vinner</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Dreame X40 Ultras utfällbara sidoarm fälls ut mot väggen under mopppasset och moppar faktiskt längs hela kanten och in i kanter. Ecovacs X5 Omnis oscillerande mopp är bra, men utan arm stannar moppningen några centimeter från väggen. Om du har långa korridorer och köksytor längs väggar där du vill ha rena golv hela vägen ut — X40 Ultra levererar bättre.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Batteritid och räckvidd</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-winner/10 text-winner">X5 Omni vinner</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Ecovacs X5 Omni uppger 180 minuters batteritid, vilket i praktiken landar på 120–150 minuter med aktiv moppning. Dreame X40 Ultra uppger ingen specifik körtid utan anger 6 400 mAh batteristorlek — troligtvis likvärdig räckvidd. Baserat på specifikationer har X5 Omni en liten fördel i batterikategorin. Båda klarar hem upp till 150 m² utan problem.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Pris och värde</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-winner/10 text-winner">X5 Omni vinner</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Ecovacs X5 Omni kostar ca 8 990 kr mot Dreame X40 Ultras 9 990 kr — 1 000 kr skillnad. X5 Omni erbjuder fyrkantig design, AIVI 3D, oscillerande mopp och 180 min batteritid för det lägre priset. Värdekvoten är stark. X40 Ultras merpris är motiverat om du specifikt behöver 12 000 Pa eller väggtäckning vid moppning. Annars vinner X5 Omni i ren värdeanalys.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Navigering</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-bg-alt text-text-light">Oavgjort</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Dreame X40 Ultra använder LiDAR kombinerat med AI-kamera för exakt kartläggning och hinderdetektion. Ecovacs AIVI 3D använder enbart kamerabaserad AI utan LiDAR-sensor. I praktiken ger LiDAR-navigering ett försprång i mörka miljöer och vid exakt avståndsmätning. I välbelyst miljö är AIVI 3D kompetent. Inga avgörande skillnader i appupplevelse eller rumsplanering.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Who should choose what -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vem ska välja vad?</h2>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div class="bg-bg-alt rounded-xl border border-border p-5">
+          <h3 class="font-heading font-bold text-text mb-3">Välj Ecovacs X5 Omni om du...</h3>
+          <ul class="space-y-2">
+            {[
+              'Vill ha bättre hörntäckning vid dammsugning',
+              'Prioriterar värde — 1 000 kr billigare',
+              'Har ett hem med normalt städbehov (hårda golv, kortluggade mattor)',
+              'Vill ha 180 min batteritid för stora hem',
+              'Föredrar lättare robot (4,8 kg vs 5,2 kg)',
+              'Köper hos Elgiganten och vill ha enkel returhantering',
+            ].map(item => (
+              <li class="flex items-start gap-2 text-sm text-text-light">
+                <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <div class="mt-4">
+            <a
+              href="https://www.elgiganten.se/product/robotdammsugare/ecovacs-deebot-x5-omni-robotdammsugare-ddx19-svart/788934"
+              rel="sponsored nofollow noopener"
+              target="_blank"
+              class="inline-flex items-center justify-center w-full bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+            >
+              Se pris på Ecovacs X5 Omni
+              <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
+          </div>
+        </div>
+        <div class="bg-bg-alt rounded-xl border border-border p-5">
+          <h3 class="font-heading font-bold text-text mb-3">Välj Dreame X40 Ultra om du...</h3>
+          <ul class="space-y-2">
+            {[
+              'Har tjocka mattor med lång lugg (kräver 10 000+ Pa)',
+              'Kräver moppning längs hela väggen utan luckor',
+              'Prioriterar starkast möjliga sugkraft på marknaden',
+              'Föredrar LiDAR-navigering för mörka miljöer',
+              'Ser roboten som en långsiktig investering utan kompromiss',
+            ].map(item => (
+              <li class="flex items-start gap-2 text-sm text-text-light">
+                <span class="text-accent font-bold flex-shrink-0 mt-0.5">+</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <div class="mt-4">
+            <a
+              href="https://www.komplett.se/product/1307950"
+              rel="sponsored nofollow noopener"
+              target="_blank"
+              class="inline-flex items-center justify-center w-full bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+            >
+              Se pris på Dreame X40 Ultra
+              <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Verdict -->
+    <section class="mb-10 bg-winner/5 border border-winner/20 rounded-xl p-6">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Redaktionens slutsats</h2>
+      <p class="text-text-light leading-relaxed mb-3">
+        Ecovacs Deebot X5 Omni är det rationella valet för de flesta hushåll. Den fyrkantiga designen täcker hörn bättre vid dammsugning, batteritiden är imponerande och priset är 1 000 kr lägre än X40 Ultra. AIVI 3D fungerar väl i normala ljusförhållanden och oscillerande moppning håller hög standard.
+      </p>
+      <p class="text-text-light leading-relaxed mb-3">
+        <strong class="text-text">Välj X40 Ultra om:</strong> Du har tjocka mattor, kräver moppning helt längs väggar och kanter, eller vill ha 12 000 Pa som framtidssäkring för kommande år. Det är en teknisk uppgradering — fråga dig om du verkligen behöver den.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        <strong class="text-text">Sammanfattning:</strong> X5 Omni för värde, hörntäckning och batteritid. X40 Ultra för maximal sugkraft och väggtäckning vid moppning.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/dreame-x40-ultra/" class="text-accent hover:underline text-sm">Dreame X40 Ultra recension 2026</a></li>
+        <li><a href="/jamfor/dreame-l20-ultra-vs-dreame-x40-ultra/" class="text-accent hover:underline text-sm">Dreame L20 Ultra vs X40 Ultra 2026</a></li>
+        <li><a href="/jamfor/roborock-qrevo-master-vs-dreame-x40-ultra/" class="text-accent hover:underline text-sm">Roborock Qrevo Master vs Dreame X40 Ultra 2026</a></li>
+        <li><a href="/dreame-x40-ultra-vs-roborock-s8-maxv-ultra/" class="text-accent hover:underline text-sm">Dreame X40 Ultra vs Roborock S8 MaxV Ultra 2026</a></li>
+        <li><a href="/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2026 — alla märken jämförda</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se bästa pris — Ecovacs X5 Omni"
+    url="https://www.elgiganten.se/product/robotdammsugare/ecovacs-deebot-x5-omni-robotdammsugare-ddx19-svart/788934"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Robotdammsugare", "item": "https://robotjakt.se/" },
+      { "@type": "ListItem", "position": 2, "name": "Jämförelser", "item": "https://robotjakt.se/jamfor/" },
+      { "@type": "ListItem", "position": 3, "name": "Ecovacs X5 Omni vs Dreame X40 Ultra", "item": "https://robotjakt.se/jamfor/ecovacs-deebot-x5-omni-vs-dreame-x40-ultra/" },
+    ],
+  })} />
+</BaseLayout>
