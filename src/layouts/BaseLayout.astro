@@ -59,14 +59,8 @@ const canonicalUrl = canonical || Astro.url.href;
   <!-- GSC verification placeholder -->
   <!-- <meta name="google-site-verification" content="VERIFICATION_CODE" /> -->
 
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G2V09YKFPS"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-G2V09YKFPS');
-  </script>
+  <!-- Addrevenue Easylinks – auto-converts direct links to affiliate tracking -->
+  <script async src="https://addrevenue.io/easylinks.min.js?c=3467197" is:inline></script>
 </head>
 <body class="bg-bg text-text font-sans antialiased">
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[200] focus:bg-accent focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-semibold">Hoppa till innehåll</a>
@@ -76,6 +70,30 @@ const canonicalUrl = canonical || Astro.url.href;
   </main>
   <Footer />
   <CookieConsent />
+
+  <!-- Deferred: GA4 + Clarity -->
+  <script>
+    function loadDeferredScripts() {
+      // GA4
+      var gs = document.createElement('script');
+      gs.src = 'https://www.googletagmanager.com/gtag/js?id=G-G2V09YKFPS';
+      gs.async = true;
+      document.head.appendChild(gs);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'G-G2V09YKFPS');
+
+      // Microsoft Clarity
+      (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","s2r9tpq83x");
+    }
+    if (document.readyState === 'complete') {
+      loadDeferredScripts();
+    } else {
+      window.addEventListener('load', loadDeferredScripts);
+    }
+  </script>
 
   <!-- Affiliate click tracking -->
   <script>
