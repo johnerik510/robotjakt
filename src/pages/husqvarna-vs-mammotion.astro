@@ -1,0 +1,316 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Husqvarna vs Mammotion' },
+];
+
+const faqItems = [
+  {
+    question: 'Behöver Mammotion LUBA verkligen ingen kabel?',
+    answer: 'Korrekt — Mammotion LUBA AWO 3000 kräver ingen gränskabel alls. Navigeringen baseras på RTK GPS-teknik (Real-Time Kinematic) som ger centimeterprecis positionering via en basstation du placerar i trädgården. Du definierar gränserna direkt i appen med hjälp av GPS-koordinater. Det innebär att installation inte kräver grävning eller kabeldragning, och du kan justera gränserna när som helst direkt i appen utan fysiskt arbete.',
+  },
+  {
+    question: 'Är Husqvarna Automower mer pålitlig än GPS-modeller?',
+    answer: 'Kabelbaserade modeller som Husqvarna Automower 430X Nera har en längre beprövad historia och är väl etablerade på marknaden. GPS-navigering utan kabel är nyare teknik och har kommit långt — Mammotion LUBA AWO 3000 har goda recensioner internationellt. Husqvarna anses generellt ha ett försprång i serviceorganisation och återförsäljarnätverk i Sverige. Båda teknologierna fungerar pålitligt i dag, men kabel är mer förlåtande i extrema väderförhållanden och täta områden med GPS-störning.',
+  },
+  {
+    question: 'Hur lång tid tar installationen?',
+    answer: 'Husqvarna Automower 430X Nera med gränskabel tar 2-4 timmar för en normalträdgård — du behöver lägga kabeln runt hela tomten, runt hinder och kabeln grävs ned några centimeter. Professionell installation rekommenderas för komplexa tomter. Mammotion LUBA AWO 3000 tar 20-30 minuter — du placerar RTK-basstationen, kopplar upp via appen och ritar ut gränserna i appen på telefonen utan att röra trädgården. Installationstiden är en av Mammotions starkaste fördelar.',
+  },
+  {
+    question: 'Kostar det något extra att använda Mammotion LUBA?',
+    answer: 'Mammotion erbjuder molntjänster via prenumeration för vissa avancerade funktioner (detaljerad rapportering, fjärrhantering). Grundläggande funktion — klippa gräs enligt schema — fungerar utan prenumeration. Husqvarna Automower kräver ingen prenumeration för grundfunktioner, men Husqvarna Connect-appen med avancerade funktioner kan kräva abonnemang beroende på modell. Kontrollera aktuella villkor hos respektive tillverkare innan köp.',
+  },
+  {
+    question: 'Vilken passar bäst för en komplex trädgård med öar och trånga passager?',
+    answer: 'Mammotion LUBA AWO 3000 hanterar komplexa trädgårdar bättre. Utan kabel kan du enkelt definiera flera separata zoner, öar, blomrabatter och trånga passager direkt i appen. Med Husqvarna behöver du lägga kabel runt varje hinder och ö, vilket kan bli komplicerat och kostsamt. För trädgårdar med många hinder, oregelbundna former eller flera separata gräsytor är GPS-navigering klart överlägset.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Husqvarna vs Mammotion 2026 – jämförelse | Robotjakt"
+  description="Vi jämför Husqvarna Automower och Mammotion LUBA 2026. Traditionell kabelmodell mot GPS-navigering utan kabel — vilket passar din trädgård?"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Husqvarna Automower vs Mammotion LUBA 2026 — kabel eller GPS?
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Den viktigaste frågan när du väljer robotgräsklippare 2026: vill du lägga en gränskabel runt hela tomten eller sätta upp GPS-navigering utan kabel? Vi jämför Husqvarna Automower 430X Nera mot Mammotion LUBA AWO 3000 kategori för kategori.
+    </p>
+
+    <!-- Key question -->
+    <section class="mb-8 bg-bg-alt rounded-xl border border-border p-6">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Kärnskillnaden — kabel eller GPS</h2>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <h3 class="font-semibold text-text mb-2">Husqvarna Automower — gränskabel</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            Husqvarna Automower 430X Nera är en beprövad kabelbaserad robotgräsklippare. Du lägger en tunn kabel runt hela tomten och runt hinder — kabeln fungerar som en osynlig staket som roboten aldrig passerar. Teknologin är etablerad sedan decennier och fungerar extremt pålitligt. Nackdelen: installation tar tid och grävarbete krävs.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-text mb-2">Mammotion LUBA — RTK GPS utan kabel</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            Mammotion LUBA AWO 3000 använder RTK GPS (Real-Time Kinematic) för centimeterprecis positionering utan en enda meter kabel. Du definierar gränser direkt i appen via GPS-koordinater. Installation tar 30 minuter. Teknologin är nyare men har mognat avsevärt och ger stor flexibilitet för komplexa trädgårdar.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specs comparison table -->
+    <section class="mb-10" aria-label="Jämförelsetabell Husqvarna Automower 430X Nera vs Mammotion LUBA AWO 3000">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Specifikationer — 430X Nera vs LUBA AWO 3000</h2>
+      <div class="overflow-x-auto rounded-xl border border-border">
+        <table class="w-full text-sm bg-white">
+          <thead>
+            <tr class="border-b border-border bg-bg-alt">
+              <th class="text-left px-4 py-3 font-semibold text-text">Egenskap</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Husqvarna Automower 430X Nera</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Mammotion LUBA AWO 3000</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Pris ca</td>
+              <td class="px-4 py-3 text-text-light">14 990 kr</td>
+              <td class="px-4 py-3 text-winner font-semibold">9 999 kr</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">Max yta</td>
+              <td class="px-4 py-3 text-winner font-semibold">3 200 m²</td>
+              <td class="px-4 py-3 text-text-light">3 000 m²</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Gränskabel krävs</td>
+              <td class="px-4 py-3 text-text-light">Ja — obligatorisk</td>
+              <td class="px-4 py-3 text-winner font-semibold">Nej — GPS-navigering</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">Navigeringsteknik</td>
+              <td class="px-4 py-3 text-text-light">GPS + gränskabel</td>
+              <td class="px-4 py-3 text-winner font-semibold">RTK GPS (centimeterprecis)</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Installationstid</td>
+              <td class="px-4 py-3 text-text-light">2-4 timmar (kabel)</td>
+              <td class="px-4 py-3 text-winner font-semibold">20-30 minuter (app)</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">Lutning max</td>
+              <td class="px-4 py-3 text-winner font-semibold">45 %</td>
+              <td class="px-4 py-3 text-text-light">38 %</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Klipphöjd</td>
+              <td class="px-4 py-3 text-text-light">20-60 mm</td>
+              <td class="px-4 py-3 text-text-light">30-85 mm</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">Bullernivå</td>
+              <td class="px-4 py-3 text-winner font-semibold">58 dB(A)</td>
+              <td class="px-4 py-3 text-text-light">63 dB(A)</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Anslutning</td>
+              <td class="px-4 py-3 text-text-light">Bluetooth + WiFi</td>
+              <td class="px-4 py-3 text-text-light">WiFi + 4G</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">App</td>
+              <td class="px-4 py-3 text-text-light">Husqvarna Connect</td>
+              <td class="px-4 py-3 text-text-light">Mammotion App</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Garanti</td>
+              <td class="px-4 py-3 text-winner font-semibold">5 år (registrering krävs)</td>
+              <td class="px-4 py-3 text-text-light">2 år</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Category by category comparison -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-6">Kategori för kategori</h2>
+      <div class="space-y-5">
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Installation</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-winner/10 text-winner">Mammotion vinner</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Mammotion LUBA AWO 3000 installeras på 20-30 minuter: placera RTK-basstationen, öppna appen och rita in gränserna med GPS. Inget grävande, ingen kabel, inga verktyg. Husqvarna Automower 430X Nera kräver 2-4 timmar för en normalträdgård — du behöver lägga kabel längs hela gränslinjen, runt blomrabatter och hinder, och kabeln grävs ned för att inte skadas av gräsklipparen. För komplexa trädgårdar rekommenderas professionell installation vilket tillkommer i kostnad.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Precision och klippresultat</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-accent/10 text-accent">Husqvarna vinner marginellt</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Husqvarna Automower 430X Nera med gränskabel ger ett exakt klippresultat ända till kanten — kabeln definierar exakt var roboten klippper och stannar. Mammotion LUBA AWO 3000 med RTK GPS är centimeterprecis men kan variera något längs gränsen beroende på GPS-signalkvalitet. I praktiken är skillnaden liten för de flesta trädgårdar. Husqvarna klarar också brantare lutningar upp till 45 % mot Mammotions 38 %.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Flexibilitet för komplexa trädgårdar</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-winner/10 text-winner">Mammotion vinner</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Mammotion LUBA AWO 3000 är överlägsen vid komplexa trädgårdar med flera separata ytor, öar, blomrabatter och trånga passager. Du justerar gränser direkt i appen utan att gräva om kablar. Husqvarna kräver fysisk omlayout av kabeln om du ändrar trädgården — det är tidskrävande och praktiskt begränsande. Har du en trädgård med oregelbunden form eller många hinder är GPS-navigering klart bättre.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Kostnad totalt</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-winner/10 text-winner">Mammotion vinner</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Husqvarna Automower 430X Nera kostar ca 14 990 kr och kan tillkomma med professionell installation (2 000-5 000 kr beroende på tomtens komplexitet). Mammotion LUBA AWO 3000 kostar ca 9 999 kr och installeras gratis av dig själv på 30 minuter. Total kostnadsskillnad kan bli 5 000-10 000 kr till Mammotions fördel. Husqvarna har dock 5 års garanti mot Mammotions 2 år, vilket kan väga upp en del av prisskillnaden långsiktigt.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Pålitlighet och service</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-accent/10 text-accent">Husqvarna vinner</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Husqvarna är ett hundraårigt svenskt varumärke med ett etablerat servicenätverk och auktoriserade verkstäder över hela Sverige. 5 års garanti (vid registrering) är branschledande. Mammotion är ett nyare kinesiskt bolag grundat 2020 med snabb tillväxt men kortare servicehistorik i Sverige. För den som prioriterar trygghet och lokal service är Husqvarna det säkrare valet.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Who should choose what -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vem ska välja vad?</h2>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div class="bg-bg-alt rounded-xl border border-border p-5">
+          <h3 class="font-heading font-bold text-text mb-3">Välj Husqvarna Automower 430X Nera om du...</h3>
+          <ul class="space-y-2">
+            {[
+              'Har en öppen, regelbunden tomt utan många hinder',
+              'Prioriterar pålitlighet och beprövad teknik',
+              'Vill ha lokal service och lång garanti (5 år)',
+              'Har branta sluttningar (upp till 45%)',
+              'Vill ha den tystaste modellen i klassen (58 dB)',
+            ].map(item => (
+              <li class="flex items-start gap-2 text-sm text-text-light">
+                <span class="text-accent font-bold flex-shrink-0 mt-0.5">+</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <div class="mt-4">
+            <a
+              href="https://www.husqvarna.com/se/robotgrasklippare/automower-430x-nera/"
+              rel="sponsored nofollow noopener"
+              target="_blank"
+              class="inline-flex items-center justify-center w-full bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+            >
+              Se pris på Automower 430X Nera
+              <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
+          </div>
+        </div>
+        <div class="bg-bg-alt rounded-xl border border-border p-5">
+          <h3 class="font-heading font-bold text-text mb-3">Välj Mammotion LUBA AWO 3000 om du...</h3>
+          <ul class="space-y-2">
+            {[
+              'Vill ha enkel installation utan grävning (30 min)',
+              'Har en komplex trädgård med hinder och öar',
+              'Vill kunna justera gränser enkelt i appen',
+              'Prioriterar ett lägre totalpris',
+              'Vill slippa kablar som kan skadas eller behöva läggas om',
+            ].map(item => (
+              <li class="flex items-start gap-2 text-sm text-text-light">
+                <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <div class="mt-4">
+            <a
+              href="https://www.amazon.se/s?k=mammotion+luba+awo+3000"
+              rel="sponsored nofollow noopener"
+              target="_blank"
+              class="inline-flex items-center justify-center w-full bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+            >
+              Se pris på LUBA AWO 3000
+              <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Verdict -->
+    <section class="mb-10 bg-winner/5 border border-winner/20 rounded-xl p-6">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Redaktionens slutsats</h2>
+      <p class="text-text-light leading-relaxed mb-3">
+        Det finns inget universalt svar — valet beror helt på din trädgård och dina prioriteringar.
+      </p>
+      <p class="text-text-light leading-relaxed mb-3">
+        <strong class="text-text">Enkel, öppen tomt med branta lutningar:</strong> Husqvarna Automower 430X Nera. Beprövad teknik, tyst drift, 5 års garanti och branschens bästa service i Sverige.
+      </p>
+      <p class="text-text-light leading-relaxed mb-3">
+        <strong class="text-text">Komplex trädgård eller begränsad budget:</strong> Mammotion LUBA AWO 3000. Snabb installation utan kabel, flexibel app-styrning och 5 000 kr lägre totalkostnad.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        GPS-tekniken har mognat — Mammotion LUBA AWO 3000 är inte längre ett experimentellt alternativ utan ett seriöst konkurrenskraftigt val 2026 för de flesta svenska trädgårdar.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/husqvarna-automower-430x-nera/" class="text-accent hover:underline text-sm">Husqvarna Automower 430X Nera recension 2026</a></li>
+        <li><a href="/mammotion-luba-awo-3000/" class="text-accent hover:underline text-sm">Mammotion LUBA AWO 3000 recension 2026</a></li>
+        <li><a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare 2026 — alla modeller jämförda</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se pris — LUBA AWO 3000"
+    url="https://www.amazon.se/s?k=mammotion+luba+awo+3000"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>

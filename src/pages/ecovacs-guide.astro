@@ -1,0 +1,317 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/' },
+  { label: 'Ecovacs guide' },
+];
+
+const models = [
+  {
+    name: 'Ecovacs Deebot X5 Omni',
+    badge: 'BÄST I TEST 2026',
+    badgeColor: 'bg-winner',
+    price: 'ca 8 499 kr',
+    rating: '4.7 / 5',
+    features: [
+      '8 000 Pa sugkraft',
+      'OMNI-station — auto-tömning, mopptvätt, påfyllning',
+      'Dubbla roterande moppar med lyftfunktion',
+      'AI-hinderdetektion med kamera',
+      'TrueMapping 2.0 LiDAR-navigering',
+    ],
+    cta: 'https://www.komplett.se/search?search=ecovacs+deebot+x5+omni',
+    ctaText: 'Se pris på X5 Omni',
+    reviewUrl: '/ecovacs-deebot-x5-omni/',
+    description: 'Ecovacs Deebot X5 Omni är märkets toppmodell 2026 och ett av de mest kompletta alternativen på marknaden. OMNI-stationen hanterar allt automatiskt — tömmning, mopptvätt och vattenpåfyllning. Bäst för hem som vill ha en riktig allt-i-ett-lösning utan daglig skötsel.',
+  },
+  {
+    name: 'Ecovacs Deebot T20 Omni',
+    badge: 'MELLANKLASS OMNI',
+    badgeColor: 'bg-accent',
+    price: 'ca 6 999 kr',
+    rating: '4.5 / 5',
+    features: [
+      '6 000 Pa sugkraft',
+      'OMNI-station med varm mopptvätt',
+      'Lyftbar moppmodul vid mattor',
+      'AIVI 3D hinderdetektion',
+      'Schemaläggning och rumsdelning i app',
+    ],
+    cta: 'https://www.komplett.se/search?search=ecovacs+deebot+t20+omni',
+    ctaText: 'Se pris på T20 Omni',
+    reviewUrl: '/ecovacs-deebot-t20-omni/',
+    description: 'Deebot T20 Omni är steget under X5 Omni med något lägre sugkraft men samma OMNI-stationskoncept. En välbalanserad modell för den som vill ha OMNI-komfort utan att betala toppris. Passar hem med mixade golv och normalt städbehov.',
+  },
+  {
+    name: 'Ecovacs Deebot T10 Omni',
+    badge: 'PRISVÄRD OMNI',
+    badgeColor: 'bg-text-lighter',
+    price: 'ca 5 499 kr',
+    rating: '4.2 / 5',
+    features: [
+      '5 000 Pa sugkraft',
+      'OMNI-station med grundläggande auto-funktioner',
+      'Sonic vibration-mopp',
+      'AIVI 2.0 hinderdetektion',
+      'Ingångspunkt till OMNI-serien',
+    ],
+    cta: 'https://www.amazon.se/s?k=ecovacs+deebot+t10+omni',
+    ctaText: 'Se pris på T10 Omni',
+    reviewUrl: '/ecovacs-deebot-t10-omni/',
+    description: 'Deebot T10 Omni är det prisvärdaste alternativet i OMNI-serien. Du får OMNI-stationens auto-funktioner till ett lägre pris, men med lägre sugkraft och äldre AI. Bäst för den som vill testa Ecovacs OMNI-koncept utan att lägga ut topppengar.',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Vad betyder "OMNI" hos Ecovacs?',
+    answer: 'OMNI är Ecovacs varumärke för deras allt-i-ett-stationskoncept. En OMNI-station hanterar automatiskt: tömmning av dammkorgen, rengöring av moppar (med varmt vatten på de nyare modellerna), påfyllning av vattentanken och torkning av mopparna. Det innebär att du i princip bara behöver byta dammkorgspåsen var 60-90 dag och köpa vatten till tanken — allt annat sköter stationen.',
+  },
+  {
+    question: 'Är Ecovacs ett pålitligt märke?',
+    answer: 'Ja, Ecovacs (ECOVACS Robotics) är ett välestablerat kinesiskt bolag grundat 1998 och börsnoterat sedan 2016. De har en lång historia på robotdammsugare och säljer i över 50 länder. I Sverige säljs Ecovacs via Komplett, Elgiganten och MediaMarkt med 2 års garanti. Kundtjänst och reservdelar finns tillgängliga via officiella återförsäljare.',
+  },
+  {
+    question: 'Vilken Ecovacs ska jag välja?',
+    answer: 'Välj X5 Omni om du vill ha bästa möjliga städresultat och mest automatik — det är toppmodellen. Välj T20 Omni om du vill ha OMNI-komfort till ett rimligare pris och inte behöver maximal sugkraft. Välj T10 Omni om du har en begränsad budget men ändå vill ha auto-station. Alla tre har OMNI-station, men X5 Omni ger mest för pengarna i termer av prestanda.',
+  },
+  {
+    question: 'Fungerar Ecovacs-appen på svenska?',
+    answer: 'Ecovacs Home-appen finns inte på svenska — gränssnittet är primärt på engelska. Grundfunktioner som start, stopp, schemaläggning och rumsplanering är enkla att använda ändå. Appen stödjer Google Assistant och Alexa med svenska röstkommandon. Ecovacs har gjort gränssnittet mer intuitivt i senare versioner och de flesta svenska användare anpassar sig snabbt.',
+  },
+  {
+    question: 'Hur jämför sig Ecovacs mot Roborock?',
+    answer: 'Ecovacs och Roborock är de två starkaste alternativen i premium-segmentet 2026. Ecovacs OMNI-station är marknadsledande inom allt-i-ett-automatik och en av de mest kompletta lösningarna. Roborock är starkare på AI-djuravföringsdetektion (ReactiveAI 3.0) och har en mer polerad app-upplevelse. Välj Ecovacs X5 Omni om allt-i-ett-stationen är prioritet — välj Roborock S8 MaxV Ultra om du har husdjur och vill ha AI-säkerhet.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Ecovacs Deebot 2026 – guide & jämförelse | Robotjakt"
+  description="Komplett guide till Ecovacs Deebot-serie 2026. X5 Omni, T20 Omni — vi hjälper dig välja rätt Ecovacs för ditt hem."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Ecovacs robotdammsugare 2026 — Deebot-serien jämförd
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Ecovacs Deebot är kända för sina OMNI-stationer — marknadens mest kompletta allt-i-ett-lösningar. Vi guidar dig genom X5 Omni, T20 Omni och T10 Omni och hjälper dig välja rätt modell för ditt hem och din budget.
+    </p>
+
+    <!-- Brand overview -->
+    <section class="mb-8 bg-bg-alt rounded-xl border border-border p-6">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Ecovacs — pionjärer inom robotstädning</h2>
+      <p class="text-text-light leading-relaxed mb-3">
+        Ecovacs Robotics grundades 1998 i Suzhou, Kina — ett av de äldsta bolagen i kategorin för robotdammsugare. Märket är känt för att ha lanserat OMNI-stationskonceptet i stor skala: en basstation som automatiskt tömmer dammkorgen, tvättar mopparna med varmt vatten, fyller på vattentanken och torkar mopparna klara för nästa städning.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        I Sverige säljs Ecovacs via Komplett, Elgiganten och MediaMarkt. Alla modeller i denna guide levereras med 2 års garanti och full support via svenska auktoriserade återförsäljare. Ecovacs Home-appen stödjer iOS och Android och erbjuder kartskapning, rumsdelning och städscheman.
+      </p>
+    </section>
+
+    <!-- Comparison table -->
+    <section class="mb-10" aria-label="Jämförelsetabell Ecovacs Deebot-modeller">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse — Ecovacs Deebot 2026</h2>
+      <div class="overflow-x-auto rounded-xl border border-border">
+        <table class="w-full text-sm bg-white">
+          <thead>
+            <tr class="border-b border-border bg-bg-alt">
+              <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Sugkraft</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Mopp</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">OMNI-station</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Pris ca</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr class="bg-winner/5">
+              <td class="px-4 py-3 font-medium text-text">X5 Omni</td>
+              <td class="px-4 py-3 text-winner font-semibold">8 000 Pa</td>
+              <td class="px-4 py-3 text-text-light">Dubbel roterande + lyftbar</td>
+              <td class="px-4 py-3 text-winner font-semibold">Full OMNI</td>
+              <td class="px-4 py-3 font-semibold text-text">8 499 kr</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">T20 Omni</td>
+              <td class="px-4 py-3 text-text-light">6 000 Pa</td>
+              <td class="px-4 py-3 text-text-light">Lyftbar mopp</td>
+              <td class="px-4 py-3 text-text-light">Full OMNI</td>
+              <td class="px-4 py-3 font-semibold text-text">6 999 kr</td>
+            </tr>
+            <tr class="bg-bg-alt/50">
+              <td class="px-4 py-3 font-medium text-text">T10 Omni</td>
+              <td class="px-4 py-3 text-text-light">5 000 Pa</td>
+              <td class="px-4 py-3 text-text-light">Sonic vibration</td>
+              <td class="px-4 py-3 text-text-light">Grundläggande OMNI</td>
+              <td class="px-4 py-3 font-semibold text-text">5 499 kr</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Models -->
+    <div class="space-y-8 mb-12" id="modeller">
+      {models.map((model) => (
+        <section class="bg-white rounded-xl border border-border overflow-hidden">
+          <div class="bg-bg-alt px-5 py-3 border-b border-border flex items-center gap-3 flex-wrap">
+            <span class={`${model.badgeColor} text-white text-xs font-bold px-2 py-1 rounded`}>{model.badge}</span>
+            <span class="font-heading font-bold text-text">{model.name}</span>
+            <span class="ml-auto font-bold text-text">{model.price}</span>
+          </div>
+          <div class="p-5">
+            <p class="text-text-light text-sm leading-relaxed mb-4">{model.description}</p>
+            <div class="grid sm:grid-cols-2 gap-4 mb-4">
+              <div>
+                <p class="text-xs font-semibold text-text mb-2">Nyckelfunktioner</p>
+                <ul class="space-y-1">
+                  {model.features.map(f => (
+                    <li class="flex items-start gap-1.5 text-xs text-text-light">
+                      <span class="text-winner font-bold mt-0.5">+</span>{f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-text mb-2">Betyg</p>
+                <p class="text-lg font-bold text-text">{model.rating}</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a
+                href={model.reviewUrl}
+                class="inline-flex items-center text-accent hover:underline font-medium text-sm"
+              >
+                Läs recension
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+              </a>
+              <a
+                href={model.cta}
+                rel="sponsored nofollow noopener"
+                target="_blank"
+                class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+              >
+                {model.ctaText}
+                <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              </a>
+            </div>
+          </div>
+        </section>
+      ))}
+    </div>
+
+    <!-- Buying guide by need -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vilken Ecovacs passar ditt behov?</h2>
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Maximal automatik — minsta möjliga skötsel</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            X5 Omni är det självklara valet. Full OMNI-station, dubbla roterande moppar och 8 000 Pa sugkraft gör den till en av marknadens mest handsfree-lösningar. Du fyller på vatten och byter påse var tredje månad — resten sköter stationen.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">OMNI-komfort med lägre budget</h3>
+          <p class="text-text-light leading-relaxed text-sm">
+            T20 Omni ger dig hela OMNI-stationens komfort till ca 1 500 kr lägre pris än X5 Omni. Sugkraften är lägre (6 000 Pa mot 8 000 Pa) men är fullt tillräcklig för de flesta hem. Bäst för normalstora hem utan extremt städbehov.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Testa OMNI-konceptet — lägsta ingångspris</h3>
+          <p class="text-text-light leading-relaxed text-sm">
+            T10 Omni till ca 5 499 kr är det billigaste sättet att komma in i OMNI-ekosystemet. Grundläggande auto-station och sonic moppfunktion. Räcker väl för mindre hem och lägenheter med begränsat städbehov.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ecovacs vs Roborock -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Ecovacs vs Roborock — de viktigaste skillnaderna</h2>
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Basstation och automatik</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-winner/10 text-winner">Ecovacs vinner</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Ecovacs OMNI-station är det mest kompletta allt-i-ett-konceptet på marknaden 2026. Varmvattentvätt av moppar, automatisk påfyllning och torkning ingår redan i standardpaketet. Roborock erbjuder liknande funktioner i sin Ultra-station men OMNI-konceptet upplevs som mer genomtänkt och komplett.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">AI-djuravföringsdetektion</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-accent/10 text-accent">Roborock vinner</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Roborock S8 MaxV Ultra med ReactiveAI 3.0 är överlägsen på att identifiera och undvika djuravföringar. Ecovacs AI-system är bra på hinder generellt men saknar samma dedikerade djuravföringsdetektion. Har du katter eller hundar med olycksrisk är Roborock det tryggare valet.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Pris och värde</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-winner/10 text-winner">Ecovacs vinner marginellt</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Ecovacs X5 Omni till ca 8 499 kr mot Roborock S8 MaxV Ultra till ca 10 990 kr — Ecovacs ger mycket för pengarna. För den som prioriterar OMNI-stationens automatik framför AI-djurskydd är Ecovacs klart prisvärdare. Roborock motiverar merpriset enbart om AI-säkerhetsfunktionen är avgörande.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/ecovacs-deebot-x5-omni/" class="text-accent hover:underline text-sm">Ecovacs Deebot X5 Omni recension 2026 — toppmodellen testad</a></li>
+        <li><a href="/roborock-guide/" class="text-accent hover:underline text-sm">Roborock guide 2026 — alla modeller jämförda</a></li>
+        <li><a href="/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2026 — alla märken jämförda</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se bästa Ecovacs 2026"
+    url="#modeller"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Ecovacs Deebot robotdammsugare 2026",
+    "description": "Ecovacs Deebot-modeller rankade och recenserade 2026.",
+    "numberOfItems": 3,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Ecovacs Deebot X5 Omni", "url": "https://robotjakt.se/ecovacs-deebot-x5-omni/" },
+      { "@type": "ListItem", "position": 2, "name": "Ecovacs Deebot T20 Omni", "url": "https://robotjakt.se/ecovacs-deebot-t20-omni/" },
+      { "@type": "ListItem", "position": 3, "name": "Ecovacs Deebot T10 Omni", "url": "https://robotjakt.se/ecovacs-deebot-t10-omni/" },
+    ],
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>
