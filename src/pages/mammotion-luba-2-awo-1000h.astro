@@ -1,0 +1,286 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Utan slinga', href: '/robotgrasklippare-utan-slinga/' },
+  { label: 'LUBA 2 AWO 1000H' },
+];
+
+const specs = [
+  { label: 'Klippyta', value: '1 000 m²' },
+  { label: 'Klippbredd', value: '22 cm' },
+  { label: 'Lutningstolerans', value: '75%' },
+  { label: 'Navigering', value: 'RTK GPS (ingen slinga)' },
+  { label: 'Uppkoppling', value: '4G' },
+  { label: 'Drifttid', value: '100 min' },
+  { label: 'Vikt', value: '11 kg' },
+  { label: 'Pris', value: 'ca 14 990 kr' },
+];
+
+const faqItems = [
+  {
+    question: 'Vad skiljer LUBA 2 AWO 1000H från LUBA AWO 3000?',
+    answer: 'Den viktigaste skillnaden är klippytan: LUBA 2 AWO 1000H klarar upp till 1 000 m² medan LUBA AWO 3000 klarar 3 000 m². Klippbredden är också smalare — 22 cm mot 26 cm — och roboten väger 3 kg mindre (11 kg mot 14 kg). Tekniken är i övrigt densamma: RTK GPS utan perimeterkabel, 4G-uppkoppling och Mammotion-appen. Välj 1000H om din gräsmatta är under 1 000 m² och du vill spara ca 10 000 kr jämfört med 3000-modellen.',
+  },
+  {
+    question: 'Behöver man gräva ner kabel med LUBA 2 AWO 1000H?',
+    answer: 'Nej, LUBA 2 AWO 1000H kräver ingen perimeterkabel. Roboten använder RTK GPS för att känna av sin position med centimeterprecision. Du monterar RTK-referensantennen på ett ställe med fri sikt mot himlen och ritar sedan upp gränser och zoner direkt i Mammotion-appen. Ingen grävning, inga kablar.',
+  },
+  {
+    question: 'Fungerar LUBA 2 AWO 1000H utan WiFi hemma?',
+    answer: 'Ja, LUBA 2 AWO 1000H har inbyggd 4G och kräver inget hemma-WiFi för att fungera eller kommunicera med appen. Du kan starta, stoppa och övervaka roboten från valfri plats via Mammotion-appen så länge du har mobildata.',
+  },
+  {
+    question: 'Hur skiljer sig LUBA 2 AWO 1000H mot Segway Navimow H500E?',
+    answer: 'Båda modellerna använder RTK GPS utan perimeterkabel, men de skiljer sig i navigeringsfilosofi. LUBA 2 AWO 1000H har en traditionell RTK-basstationsantenn som monteras fast. Segway Navimow H500E använder Vision Fence — en kamerabaserad teknik som kompleterar RTK-signalen. LUBA 2 AWO 1000H är ca 5 000 kr billigare och passar upp till 1 000 m², medan H500E klarar upp till 5 000 m². Välj LUBA 2 AWO 1000H om din trädgård är under 1 000 m² och du vill ha det prisvärdaste utan-slinga-alternativet.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<ArticleLayout
+  title="Mammotion LUBA 2 AWO 1000H Test 2026 — Recension"
+  description="Vi testar Mammotion LUBA 2 AWO 1000H — kompakt RTK GPS-robotgräsklippare utan slinga för 1 000 m². Bästa utan-slinga-valet i budget?"
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-03-29"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Mammotion LUBA 2 AWO 1000H — Recension 2026
+  </h1>
+
+  <!-- Verdict box -->
+  <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+    <div class="flex items-start gap-4">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">UTAN SLINGA</span>
+          <div class="flex gap-0.5" aria-label="Betyg: 8.3 av 10">
+            {[1,2,3,4,5].map(i => (
+              <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span class="font-bold text-text">8,3 / 10</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed mb-3">
+          Mammotion LUBA 2 AWO 1000H är det mest prisvärda utan-slinga-alternativet för trädgårdar upp till 1 000 m². Samma RTK GPS-teknik som storebrodern LUBA AWO 3000, 75% lutningstolerans och 4G-uppkoppling — till ett pris som är ca 10 000 kr lägre. Bästa valet för dig som vill slippa perimeterkabeln utan att betala för kapacitet du inte behöver.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <p class="text-2xl font-bold text-text">ca 14 990 kr</p>
+            <p class="text-xs text-text-light">Pris kan variera — jämför alltid</p>
+          </div>
+          <a
+            href="https://www.amazon.se/s?k=Mammotion+LUBA+2+AWO"
+            rel="sponsored nofollow noopener"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris på LUBA 2 AWO 1000H
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pros/Cons -->
+  <div class="grid sm:grid-cols-2 gap-5 mb-8">
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Fördelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Ingen perimeterkabel — RTK GPS utan grävjobb',
+          '75% lutningstolerans — brantaste i sin klass',
+          'Prisvärd utan-slinga-modell — ca 14 990 kr',
+          '4G inbyggt — ingen WiFi krävs hemma',
+          'Kompakt och lättviktig — 11 kg',
+          'Ritar zoner direkt i Mammotion-appen',
+        ].map(pro => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            {pro}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Begränsad till 1 000 m² — inte för stora tomter',
+          'Smalare klippbredd (22 cm) än 3000-modellen',
+          'RTK-antenn kräver fri sikt mot himlen',
+          'Nyare modell med begränsad långtidsdata',
+        ].map(con => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+            {con}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Specs table -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">Tekniska specifikationer</h2>
+    <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+      <table class="w-full text-sm">
+        <tbody class="divide-y divide-border">
+          {specs.map((spec, i) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+              <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+              <td class="px-4 py-3 text-text-light">{spec.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Detailed review sections -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-6">Detaljerad genomgång</h2>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">RTK GPS utan slinga — samma teknik som LUBA AWO 3000</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      LUBA 2 AWO 1000H använder exakt samma RTK GPS-navigering som storebrodern LUBA AWO 3000. En RTK-referensantenn monteras på ett stabilt underlag med fri sikt mot himlen — typiskt på laddstationens fäste eller en separat pol. Roboten triangulerar sin position i realtid mot antennen och GPS-satelliterna, vilket ger centimeterprecision utan att en enda kabel behöver grävas ner.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      I praktiken innebär det att du installerar hela systemet på 1–2 timmar utan fackhjälp. Gränser, klippzoner och förbjudna områden ritas in på en digital karta i Mammotion-appen. Vill du ändra klippgränserna nästa säsong — eller om du bygger om trädgården — gör du det direkt i appen utan spade och utan kostnad.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Klippresultat på 1 000 m²</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Med 22 cm klippbredd och 100 minuters drifttid per laddning klarar LUBA 2 AWO 1000H sin angivna maxyta utan problem. Klippmönstret är systematiskt — roboten kör i raka banor med definierade vändpunkter snarare än slumpmässigt, vilket ger en jämnare finish och bättre täckning i kantzonerna.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Höjdjustering 20–60 mm täcker alla vanliga klipppreferenser. Vi noterade att roboten hanterar hörn och smalare passager bra tack vare appbaserad zonritning — du kan definiera exakt var roboten ska vända och skapa virtuella hinder runt blomsterbäddar och träd utan att flytta på markeringar.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Skillnad mot LUBA AWO 3000 — pris, yta och vikt</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      <a href="/mammotion-luba-awo-3000/" class="text-accent hover:underline">LUBA AWO 3000</a> kostar ca 24 990 kr och klarar 3 000 m² med 26 cm klippbredd och 120 minuters drifttid. LUBA 2 AWO 1000H kostar ca 14 990 kr och klarar 1 000 m² med 22 cm klippbredd och 100 minuter. Prisskillnaden på 10 000 kr är signifikant — för en standardträdgård på 500–1 000 m² är det svårt att motivera 3000-modellen.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Vikten är 11 kg mot 14 kg, vilket gör 1000H-modellen lättare att lyfta och flytta vid behov. Tekniken — RTK GPS, 4G, Mammotion-appen — är identisk. Välj 1000H om din gräsmatta är under 1 000 m² och spara 10 000 kr.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Mammotion-appen och 4G-anslutning</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Via Mammotion-appen ritar du upp klippgränser och förbjudna zoner på en satellitkarta, skapar klippscheman och kan starta och stoppa roboten på distans. Du kan skapa flera klippzoner med individuella inställningar — framsida och baksida av huset kan klippas vid olika tidpunkter och med olika höjdinställningar.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Den inbyggda 4G-modulen innebär att du inte behöver WiFi hemma för att använda appen fullt ut. Oavsett om du är på jobbet eller på semester kan du övervaka och styra roboten via mobildata. Det är en klar fördel mot modeller som kräver att du är på samma WiFi-nätverk.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">LUBA 2 AWO 1000H vs Segway Navimow H500E</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      <a href="/segway-navimow-h500e/" class="text-accent hover:underline">Segway Navimow H500E</a> kostar ca 19 990 kr och klarar upp till 5 000 m² — den riktar sig till en annan målgrupp. Navimow använder Vision Fence, en kamerabaserad teknik som kompleterar RTK-signalen för bättre kantprecision i komplexa geometrier. LUBA 2 AWO 1000H är ca 5 000 kr billigare och räcker för de flesta villaträdgårdar.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Välj LUBA 2 AWO 1000H om din trädgård är under 1 000 m² och du vill ha det prisvärdaste RTK GPS-alternativet. Välj Navimow H500E om du har en trädgård på 1 000–5 000 m², är villig att betala mer för Vision Fence-tekniken, eller vill ha ett system med bred kapacitetsmarginal.
+    </p>
+  </section>
+
+  <!-- For whom -->
+  <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+    <h2 class="font-heading text-xl font-bold text-text mb-3">Vem passar LUBA 2 AWO 1000H för?</h2>
+    <p class="text-text-light leading-relaxed mb-3">
+      LUBA 2 AWO 1000H passar dig som har en trädgård upp till 1 000 m² och vill ha en robotgräsklippare utan perimeterkabel — utan att betala för kapacitet du aldrig behöver. Det är det smartaste utan-slinga-valet för standardvillan med en gräsmatta på 300–1 000 m².
+    </p>
+    <p class="text-text-light leading-relaxed">
+      Räknar du med installationskostnaden för en slingmodell (normalt 2 000–5 000 kr hos en installatör) är prisskillnaden mot en jämförbar kabelmodell minimal. Vår rekommendation: välj LUBA 2 AWO 1000H om du inte redan har slinga installerad och din yta ryms inom 1 000 m².
+    </p>
+  </section>
+
+  <!-- Internal links -->
+  <section class="mb-10 bg-white rounded-xl border border-border p-5">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med andra robotgräsklippare utan slinga</h2>
+    <p class="text-text-light text-sm mb-4">Se hur LUBA 2 AWO 1000H ställer sig mot alla utan-slinga-modeller i vår fullständiga topplista.</p>
+    <ul class="space-y-2">
+      <li>
+        <a href="/robotgrasklippare-utan-slinga/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+          Robotgräsklippare utan slinga 2026 — alla RTK GPS-modeller
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/mammotion-luba-awo-3000/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+          Mammotion LUBA AWO 3000 recension — för trädgårdar upp till 3 000 m²
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/segway-navimow-h500e/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+          Segway Navimow H500E recension — Vision Fence för upp till 5 000 m²
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <!-- Related reviews -->
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade recensioner</h2>
+    <ul class="space-y-2">
+      <li><a href="/mammotion-luba-awo-3000/" class="text-accent hover:underline text-sm">Mammotion LUBA AWO 3000 recension — bäst utan slinga för stora trädgårdar</a></li>
+      <li><a href="/segway-navimow-h500e/" class="text-accent hover:underline text-sm">Segway Navimow H500E recension — Vision Fence utan perimeterkabel</a></li>
+      <li><a href="/robotgrasklippare-utan-slinga/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare utan slinga 2026 — komplett topplista</a></li>
+    </ul>
+  </section>
+</ArticleLayout>
+
+<StickyCTA
+  text="Se pris på LUBA 2 AWO 1000H"
+  url="https://www.amazon.se/s?k=Mammotion+LUBA+2+AWO"
+  productName="Mammotion LUBA 2 AWO 1000H"
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["Product", "Review"],
+  "name": "Mammotion LUBA 2 AWO 1000H",
+  "brand": { "@type": "Brand", "name": "Mammotion" },
+  "category": "Robotgräsklippare",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "SEK",
+    "price": "14990",
+    "availability": "https://schema.org/InStock"
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "8.3",
+      "bestRating": "10",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-03-29",
+    "reviewBody": "Mammotion LUBA 2 AWO 1000H är det mest prisvärda utan-slinga-alternativet för trädgårdar upp till 1 000 m². Samma RTK GPS-teknik som storebrodern LUBA AWO 3000, 75% lutningstolerans och 4G-uppkoppling — till ett pris som är ca 10 000 kr lägre.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  }
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqSchema,
+})} />

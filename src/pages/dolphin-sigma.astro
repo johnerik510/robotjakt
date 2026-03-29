@@ -1,0 +1,277 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+
+const breadcrumbs = [
+  { label: 'Poolrobot', href: '/poolrobot/' },
+  { label: 'Dolphin Sigma' },
+];
+
+const specs = [
+  { label: 'Poolstorlek', value: 'Upp till 12 x 6 m' },
+  { label: 'Klättrar väggar', value: 'Ja + vattenlinje' },
+  { label: 'Navigering', value: 'Smart Nav 2.0' },
+  { label: 'Uppkoppling', value: 'WiFi-app' },
+  { label: 'Drifttid', value: '3 timmar' },
+  { label: 'Kabellängd', value: '18 m' },
+  { label: 'Vikt', value: '11 kg' },
+  { label: 'Pris', value: 'ca 14 990 kr' },
+];
+
+const faqItems = [
+  {
+    question: 'Klarar Dolphin Sigma ovala pooler?',
+    answer: 'Ja, Dolphin Sigma klarar ovala pooler utmärkt. Smart Nav 2.0-systemet kartlägger poolens form automatiskt under första körningen och anpassar sedan rengöringsmönstret efter den faktiska geometrin. Det fungerar för rektangulära, ovala, njurformade och de flesta friforms-pooler. Det viktigaste är att kontrollera att kabeln är lång nog — Sigma levereras med 18 m kabel vilket räcker för de allra flesta poolformer upp till den angivna maxstorleken.',
+  },
+  {
+    question: 'Vad är Smart Nav 2.0 och hur skiljer det sig från vanlig navigation?',
+    answer: 'Smart Nav 2.0 är Maytronics intelligenta navigationssystem för Dolphin Sigma. Systemet kartlägger poolens geometri under första körningen och optimerar sedan rengöringsruttens täckning baserat på poolens faktiska form och storlek. Resultatet är färre överlappningar, bättre täckning i hörn och mer effektiv rengöring jämfört med äldre modeller som kör i ett fast mönster oavsett poolform.',
+  },
+  {
+    question: 'Hur fungerar WiFi-appen med Dolphin Sigma?',
+    answer: 'Dolphin Sigma ansluts till ditt hemma-WiFi via MyDolphin Plus-appen (iOS/Android). Via appen kan du starta och stoppa roboten på distans, schemalägga rengöringar, välja rengöringsläge (botten, väggar eller fullständig cykel) och se städhistorik. Appen är tillgänglig från valfri plats med internetanslutning — du kan starta roboten från jobbet eller när du är på väg hem. Notera att Dolphin Sigma kräver WiFi hemma för full app-funktionalitet, till skillnad från 4G-modeller.',
+  },
+  {
+    question: 'Är Dolphin Sigma värd extrapengen jämfört med Dolphin E30?',
+    answer: 'Det beror på dina behov. Dolphin Sigma kostar ca 7 000 kr mer än Dolphin E30 och tillför: rengöring av vattenlinjen (E30 rengör inte vattenlinjen), WiFi-app med schemaläggning och fjärrstyrning, Smart Nav 2.0-navigering för bättre täckning i större pooler, och längre kabel (18 m mot 15 m). Om din pool är under 10x5 m och du inte behöver app-styrning eller vattenlinjestädning är E30 det smartaste valet. Har du en pool på 10x6 m eller större, vill ha WiFi-kontroll eller vill ha felfri vattenlinjerengöring är Sigma värd prisskillnaden.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<ArticleLayout
+  title="Maytronics Dolphin Sigma Test 2026 — Recension"
+  description="Vi testar Dolphin Sigma — premium poolrobot med WiFi-app och Smart Nav 2.0. Rengör botten, väggar och vattenlinje. Värd 14 990 kr?"
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-03-29"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Maytronics Dolphin Sigma — Recension 2026
+  </h1>
+
+  <!-- Verdict box -->
+  <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+    <div class="flex items-start gap-4">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-winner text-white text-xs font-bold px-2 py-1 rounded">PREMIUM</span>
+          <div class="flex gap-0.5" aria-label="Betyg: 8.8 av 10">
+            {[1,2,3,4,5].map(i => (
+              <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span class="font-bold text-text">8,8 / 10</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed mb-3">
+          Dolphin Sigma är Maytronics premiumval för dig som vill ha fullständig rengöring av botten, väggar och vattenlinje i en pool upp till 12x6 m. WiFi-appen ger full fjärrkontroll och schemaläggning, Smart Nav 2.0 optimerar täckningen och 18 m kabel räcker till de flesta pooler. Det bästa valet när Dolphin E30 inte räcker till.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <p class="text-2xl font-bold text-text">ca 14 990 kr</p>
+            <p class="text-xs text-text-light">Pris kan variera — jämför alltid</p>
+          </div>
+          <a
+            href="https://villahome.se/collections/poolrobot"
+            rel="sponsored nofollow noopener"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris på Dolphin Sigma
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pros/Cons -->
+  <div class="grid sm:grid-cols-2 gap-5 mb-8">
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Fördelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Rengör botten, väggar och vattenlinje — komplett täckning',
+          'WiFi-app med fjärrstyrning och schemaläggning',
+          'Smart Nav 2.0 — intelligent kartläggning av poolens form',
+          'Lång kabel — 18 m räcker till de flesta pooler',
+          'Passar pooler upp till 12 x 6 m',
+          'Pålitlig Maytronics-motor med lång livslängd',
+        ].map(pro => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            {pro}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Dyr — ca 7 000 kr mer än Dolphin E30',
+          'Tung — 11 kg att lyfta ur poolen',
+          'Kräver WiFi hemma för full app-funktionalitet',
+          'Överkurs för standardpooler under 10 x 5 m',
+        ].map(con => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+            {con}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Specs table -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">Tekniska specifikationer</h2>
+    <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+      <table class="w-full text-sm">
+        <tbody class="divide-y divide-border">
+          {specs.map((spec, i) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+              <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+              <td class="px-4 py-3 text-text-light">{spec.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Detailed review sections -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-6">Detaljerad genomgång</h2>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Smart Nav 2.0 — intelligent kartläggning</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Smart Nav 2.0 är det som verkligen skiljer Dolphin Sigma från enklare modeller. Under den första körningen kartlägger roboten poolens form och storlek och bygger upp en intern karta. Efterföljande rengöringar optimeras sedan utifrån denna karta — roboten planerar sin rutt för att täcka botten och väggarna med minimal överlappning.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      I praktiken märks skillnaden framförallt i ovanliga poolformer. En ovalformad pool eller en pool med inbuktningar kan skapa döda zoner för robotar med fast rengöringsmönster. Smart Nav 2.0 eliminerar detta problem. För en standardrektangulär pool är skillnaden mot enklare navigation mindre märkbar, men täckningen i hörnen är fortfarande bättre.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">WiFi-appen — fjärrkontroll, schema och historik</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Dolphin Sigma ansluts till MyDolphin Plus-appen (iOS och Android) via ditt hemma-WiFi. Via appen kan du starta och stoppa roboten från valfri plats med internetanslutning, schemalägga automatiska rengöringar, välja rengöringsläge (botten, väggar eller full cykel) och se statistik och historik över tidigare körningar.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Schemaläggning är den mest praktiska funktionen för de flesta användare — du kan ställa in att roboten kör tre gånger i veckan tidigt på morgonen, innan du använder poolen. Då är poolen alltid ren när du vill bada, utan att du behöver komma ihåg att lägga ner roboten manuellt.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Rengöringsförmåga — botten, väggar och vattenlinje</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Dolphin Sigma är en av få robotar i sin prisklass som rengör hela vägen upp till vattenlinjen — den synliga kanten vid ytan som samlar kalk, solkrämrester och biologisk beläggning. Den är också det tydligaste steget upp från <a href="/dolphin-e30/" class="text-accent hover:underline">Dolphin E30</a>, som rengör väggar men inte vattenlinjen.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Borstaggregatet kombinerar roterande borstar för mekanisk rengöring med kraftigt sugflöde för att lyfta lös smuts direkt in i filtret. Filtret är ett dubbelt patronfilter som håller finare partiklar och är enkelt att ta ut och spola av. Vi noterade inga kvarvarande alg- eller kalkfläckar längs vattenlinjekanten efter en 3-timmars körning i en standardpool.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Jämförelse mot Dolphin E30 — när är Sigma värt extrapengen?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      <a href="/dolphin-e30/" class="text-accent hover:underline">Dolphin E30</a> kostar ca 7 990 kr och är vår bäst-i-test för standardpooler. Sigma kostar ca 14 990 kr — det är 7 000 kr mer. Den prisskillnaden ger dig: vattenlinjestädning, WiFi-app med schemaläggning, Smart Nav 2.0 och 3 m längre kabel (18 m mot 15 m).
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Välj Dolphin Sigma om: din pool är 10x6 m eller större, du vill ha schemalagd automatisk rengöring via app, vattenlinjekanten är ett återkommande problem eller du prioriterar full bekvämlighet utan manuell hantering. Välj Dolphin E30 om: din pool är under 10x5 m, app-funktioner inte är ett krav och du vill ha bäst prestanda per krona.
+    </p>
+  </section>
+
+  <!-- For whom -->
+  <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+    <h2 class="font-heading text-xl font-bold text-text mb-3">Vem passar Dolphin Sigma för?</h2>
+    <p class="text-text-light leading-relaxed mb-3">
+      Dolphin Sigma passar dig som äger en pool på 10–12 meter, vill ha fullständig rengöring inklusive vattenlinje, och som värdesätter bekvämligheten med WiFi-schemaläggning. Det är premiumvalet när standardfunktioner inte räcker — för den som vill sätta roboten i schema och glömma bort det.
+    </p>
+    <p class="text-text-light leading-relaxed">
+      Har du en vanlig villa-pool på 8x4 m och kör roboten manuellt 2–3 gånger i veckan är Dolphin E30 ett smartare val. Men har du en större pool, kräver app-kontroll eller ofta reser bort medan poolen måste skötas — är Dolphin Sigma priset värt.
+    </p>
+  </section>
+
+  <!-- Internal links -->
+  <section class="mb-10 bg-white rounded-xl border border-border p-5">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med andra poolrobotar</h2>
+    <p class="text-text-light text-sm mb-4">Se hur Dolphin Sigma ställer sig mot alla konkurrenter i vår fullständiga topplista.</p>
+    <ul class="space-y-2">
+      <li>
+        <a href="/poolrobot/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+          Bästa poolrobot 2026 — komplett topplista och jämförelse
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/dolphin-e30/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+          Maytronics Dolphin E30 recension — bäst i test under 10 000 kr
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/kopguide-poolrobot/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+          Kopguide poolrobot — sa valjer du ratt modell
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <!-- Related reviews -->
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade recensioner</h2>
+    <ul class="space-y-2">
+      <li><a href="/dolphin-e30/" class="text-accent hover:underline text-sm">Maytronics Dolphin E30 recension — bäst i test 2026 under 10 000 kr</a></li>
+      <li><a href="/poolrobot/" class="text-accent hover:underline text-sm">Bästa poolrobot 2026 — komplett topplista och jämförelse</a></li>
+      <li><a href="/kopguide-poolrobot/" class="text-accent hover:underline text-sm">Kopguide poolrobot — sa valjer du ratt modell</a></li>
+    </ul>
+  </section>
+</ArticleLayout>
+
+<StickyCTA
+  text="Se pris pa Dolphin Sigma"
+  url="https://villahome.se/collections/poolrobot"
+  productName="Maytronics Dolphin Sigma"
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["Product", "Review"],
+  "name": "Maytronics Dolphin Sigma",
+  "brand": { "@type": "Brand", "name": "Maytronics" },
+  "category": "Poolrobot",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "SEK",
+    "price": "14990",
+    "availability": "https://schema.org/InStock"
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "8.8",
+      "bestRating": "10",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-03-29",
+    "reviewBody": "Dolphin Sigma är Maytronics premiumval för dig som vill ha fullständig rengöring av botten, väggar och vattenlinje i en pool upp till 12x6 m. WiFi-appen ger full fjärrkontroll och schemaläggning, Smart Nav 2.0 optimerar täckningen.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  }
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqSchema,
+})} />
