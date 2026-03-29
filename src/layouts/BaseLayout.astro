@@ -56,6 +56,15 @@ const canonicalUrl = canonical || Astro.url.href;
 
   <!-- GSC verification placeholder -->
   <!-- <meta name="google-site-verification" content="VERIFICATION_CODE" /> -->
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G2V09YKFPS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G2V09YKFPS');
+  </script>
 </head>
 <body class="bg-bg text-text font-sans antialiased">
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[200] focus:bg-accent focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-semibold">Hoppa till innehåll</a>
