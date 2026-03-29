@@ -1,0 +1,341 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Budget', href: '/billigaste-robotgrasklippare/' },
+  { label: 'McCulloch ROB R600' },
+];
+
+const specs = [
+  { label: 'Klippyta', value: '600 m²' },
+  { label: 'Klippbredd', value: '18 cm' },
+  { label: 'Lutningstolerans', value: '25%' },
+  { label: 'Bullernivå', value: '65 dB' },
+  { label: 'Navigering', value: 'Slinga (perimeterkabel)' },
+  { label: 'Laddtid', value: '90 min' },
+  { label: 'Drifttid', value: '60 min' },
+  { label: 'Vikt', value: '7,2 kg' },
+  { label: 'IP-klass', value: 'IPX4' },
+  { label: 'Pris', value: 'ca 6 490 kr' },
+];
+
+const faqItems = [
+  {
+    question: 'Vad skiljer McCulloch ROB R600 från Husqvarna Automower 105?',
+    answer: 'McCulloch ROB R600 kostar ca 6 490 kr mot Husqvarna Automower 105 till ca 7 990 kr. Husqvarna erbjuder 40% lutningstolerans mot McCullochs 25%, och har ett betydligt bättre servicenätverk i Sverige. McCulloch passar bättre för plana tomter med enkel form och en strikt budget. Väljer du Husqvarna får du bättre kvalitet, mer backkraft och lättare tillgång till reservdelar och service.',
+  },
+  {
+    question: 'Behövs det någon app till McCulloch ROB R600?',
+    answer: 'Nej, McCulloch ROB R600 har ingen app och inget WiFi. Allt styrs direkt via knapparna och displayen på roboten. Du ställer in klippschema och klipphöjd direkt på enheten. Det gör den enkel att komma igång med, men innebär att du inte kan fjärrstyra den eller kontrollera status från mobilen.',
+  },
+  {
+    question: 'Hur bra är McCulloch ROB R600 på lutningar?',
+    answer: 'McCulloch ROB R600 klarar lutningar upp till 25%, vilket är lägre än exempelvis Husqvarna Automower 105 (40%) och Gardena Sileno City 500 (35%). Det innebär att den är bäst lämpad för plana till lätt kuperade trädgårdar. Har du tydliga sluttningar på tomten rekommenderas en modell med högre lutningstolerans.',
+  },
+  {
+    question: 'Hur lång tid tar installationen?',
+    answer: 'Installationen av McCulloch ROB R600 följer standard för perimeterkabel-robotar: ca 2–4 timmar för en enkel tomt på 300–600 m². Du drar kabeln runt gräsytans kant och fäster med markspikar, kopplar till laddstationen och ställer in schema. Det medföljer installations-kit med kabel, spikar och guide.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<ArticleLayout
+  title="McCulloch ROB R600 Recension 2026 — Billigast för 600 m²"
+  description="Vi testar McCulloch ROB R600 — robotgräsklipparen för 600 m² till ca 6 490 kr. Billigaste alternativet i klassen. Vad får du för priset? Läs vår recension."
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-03-29"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    McCulloch ROB R600 — Recension 2026
+  </h1>
+
+  <!-- Verdict box -->
+  <div class="bg-bg-alt border border-border rounded-xl p-5 mb-8">
+    <div class="flex items-start gap-4">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-bg-alt text-text-light text-xs font-bold px-2 py-1 rounded border border-border">LÄGST PRIS 600 M²</span>
+          <div class="flex gap-0.5" aria-label="Betyg: 7.5 av 10">
+            {[1,2,3].map(i => (
+              <svg class="w-4 h-4 text-star" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+            <svg class="w-4 h-4 text-star" fill="currentColor" viewBox="0 0 20 20" style="clip-path: inset(0 50% 0 0)">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg class="w-4 h-4 text-border" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+          </div>
+          <span class="font-bold text-text">7,5 / 10</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed mb-3">
+          McCulloch ROB R600 är ett av de billigaste alternativen på marknaden för en 600 m²-trädgård. Till ca 6 490 kr får du en funktionell robotgräsklippare utan app eller GPS. Den passar plana tomter med enkel form — men om du bor i Sverige och vill ha service och support är Husqvarna Automower 105 till ca 7 990 kr ett bättre köp för de flesta.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <p class="text-2xl font-bold text-text">ca 6 490 kr</p>
+            <p class="text-xs text-text-light">Pris kan variera — jämför alltid</p>
+          </div>
+          <a
+            href="https://www.pricerunner.se/cat/1595/robotgrasklippare"
+            rel="sponsored nofollow noopener"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Jämför pris på McCulloch ROB R600
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pros/Cons -->
+  <div class="grid sm:grid-cols-2 gap-5 mb-8">
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Fördelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Lägst pris för 600 m² — ca 6 490 kr',
+          'Enkel att installera och använda',
+          'Kompakt och lättviktig (7,2 kg)',
+          'Ingen app-krångel — allt styrs på enheten',
+          'IPX4-väderskydd',
+        ].map(pro => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            {pro}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Begränsat servicenätverk i Sverige',
+          'Lutningstolerans bara 25% — sämst i klassen',
+          'Ingen app eller WiFi',
+          'Bullrigare än konkurrenter (65 dB)',
+          'Kortare drifttid — 60 min per laddcykel',
+        ].map(con => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+            {con}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Specs table -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">Tekniska specifikationer</h2>
+    <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+      <table class="w-full text-sm">
+        <tbody class="divide-y divide-border">
+          {specs.map((spec, i) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+              <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+              <td class="px-4 py-3 text-text-light">{spec.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Detailed review sections -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-6">Detaljerad genomgång</h2>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad du får för 6 490 kr</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      McCulloch ROB R600 är en av de billigaste robotgräsklipparna för 600 m² på den svenska marknaden. Varumärket McCulloch ägs av Husqvarna Group och tillverkar utrustning i lägre prisklass — roboten är därmed inte en okänd billigvariant, utan del av en etablerad produktportfölj. Skillnaden mot Husqvarna-modellerna är tydlig: enklare komponenter, sämre lutningstolerans och ett mer begränsat servicenätverk.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Roboten styrs helt utan app eller mobilkontroll. Klippschema, klipphöjd och PIN-kod ställs in via displayen på enheten. Det är en simpel och robust lösning som passar den som vill ha ett verktyg som "bara fungerar" utan teknikstrul.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Klippresultat och navigering</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      ROB R600 rör sig i slumpmässiga banor inom perimeterkabeln och klipper med 18 cm klippbredd. Klipphöjden är justerbar i steg från 20 till 50 mm. Resultatet är acceptabelt för en budgetmodell — gräset hålls jämnt och tätt vid regelbunden körning, men navigeringen är inte lika effektiv som hos modeller med GPS eller mer avancerade sensorer.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Bullernivån på 65 dB är tydligt högre än konkurrenterna Gardena (57 dB) och Husqvarna (58 dB). Det märks vid körning i trädgårdar där grannarna bor nära, och begränsar hur tidiga klippstarter på morgonen är lämpliga.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Lutningstolerans — den svaga punkten</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      25% lutningstolerans är det svagaste i sin prisklass. Gardena Sileno City 500 (35%) och Husqvarna Automower 105 (40%) klarar klart brantare sluttningar till jämförbart pris. För en plan tomt utan backar spelar detta ingen praktisk roll — ROB R600 hanterar en normal villa-trädgård utan problem. Men har du nivåskillnader på tomten är McCulloch fel val.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Service och support i Sverige</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      McCulloch är som nämnt del av Husqvarna Group, men servicenätverket för McCulloch-modeller är inte lika utbyggt som för Husqvarna-märket i Sverige. Auktoriserade verkstäder finns, men är färre och reservdelstillgången är inte lika säkrad på lång sikt. Det är en viktig faktor för en produkt som ska hålla i 5–10 år.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      För den som inte vill riskera onödiga problem rekommenderar vi att betala de extra 1 500 kr för Husqvarna Automower 105 och få hela Husqvarnas servicenätverk i ryggen.
+    </p>
+  </section>
+
+  <!-- Comparison -->
+  <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+    <h2 class="font-heading text-xl font-bold text-text mb-3">McCulloch ROB R600 vs Husqvarna Automower 105</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-border">
+            <th class="text-left py-2 pr-4 font-semibold text-text">Egenskap</th>
+            <th class="text-left py-2 pr-4 font-semibold text-text">McCulloch ROB R600</th>
+            <th class="text-left py-2 font-semibold text-text">Husqvarna 105</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-border text-text-light">
+          <tr>
+            <td class="py-2 pr-4 font-medium text-text">Pris</td>
+            <td class="py-2 pr-4 text-winner font-semibold">ca 6 490 kr</td>
+            <td class="py-2">ca 7 990 kr</td>
+          </tr>
+          <tr>
+            <td class="py-2 pr-4 font-medium text-text">Max yta</td>
+            <td class="py-2 pr-4">600 m²</td>
+            <td class="py-2">600 m²</td>
+          </tr>
+          <tr>
+            <td class="py-2 pr-4 font-medium text-text">Lutningstolerans</td>
+            <td class="py-2 pr-4 text-cta">25%</td>
+            <td class="py-2 text-winner font-semibold">40%</td>
+          </tr>
+          <tr>
+            <td class="py-2 pr-4 font-medium text-text">Bullernivå</td>
+            <td class="py-2 pr-4">65 dB</td>
+            <td class="py-2 text-winner font-semibold">58 dB</td>
+          </tr>
+          <tr>
+            <td class="py-2 pr-4 font-medium text-text">Drifttid</td>
+            <td class="py-2 pr-4">60 min</td>
+            <td class="py-2 text-winner font-semibold">70 min</td>
+          </tr>
+          <tr>
+            <td class="py-2 pr-4 font-medium text-text">Service Sverige</td>
+            <td class="py-2 pr-4">Begränsat</td>
+            <td class="py-2 text-winner font-semibold">Landsomfattande</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-text-light text-sm mt-4">
+      Välj McCulloch om budgeten är absolut hårdast och trädgården är plan och enkel. Välj Husqvarna 105 om du vill ha bättre backkraft, tystare drift och ett pålitligare servicenätverk — skillnaden i pris är ca 1 500 kr.
+    </p>
+    <p class="text-sm mt-3">
+      <a href="/husqvarna-automower-105/" class="text-accent hover:underline font-medium">Läs vår recension av Husqvarna Automower 105</a>
+    </p>
+  </section>
+
+  <!-- For whom -->
+  <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+    <h2 class="font-heading text-xl font-bold text-text mb-3">Vem passar McCulloch ROB R600 för?</h2>
+    <p class="text-text-light leading-relaxed mb-3">
+      McCulloch ROB R600 passar den som har en absolut budgetgräns och en plan, enkel trädgård upp till 600 m². Om priset är avgörande och du inte har backar på tomten är det ett fungerande alternativ.
+    </p>
+    <p class="text-text-light leading-relaxed">
+      Vi rekommenderar dock att de flesta tittar minst ett steg upp — Gardena Sileno City 500 till ca 5 990 kr har 35% lutningstolerans och är tystare, och Husqvarna Automower 105 till ca 7 990 kr erbjuder 40% lutning och ett markant bättre servicenätverk. För de extra kronorna får du en robot som håller längre och är lättare att få hjälp med.
+    </p>
+  </section>
+
+  <!-- Internal links -->
+  <section class="mb-10 bg-white rounded-xl border border-border p-5">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+    <ul class="space-y-2">
+      <li>
+        <a href="/billigaste-robotgrasklippare/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+          Billigaste robotgräsklippare 2026 — bästa modeller under 10 000 kr
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/husqvarna-automower-105/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+          Husqvarna Automower 105 — bästa budgetvalet med servicenätverk
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/gardena-sileno-city-500/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+          Gardena Sileno City 500 — tystast och billigast för 500 m²
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/robotgrasklippare/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+          Bästa robotgräsklippare 2026 — komplett topplista
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade recensioner</h2>
+    <ul class="space-y-2">
+      <li><a href="/husqvarna-automower-105/" class="text-accent hover:underline text-sm">Husqvarna Automower 105 — bästa budget-Husqvarna för 7 990 kr</a></li>
+      <li><a href="/gardena-sileno-city-500/" class="text-accent hover:underline text-sm">Gardena Sileno City 500 — tystast och mest prisvärd för 500 m²</a></li>
+      <li><a href="/worx-landroid-m500/" class="text-accent hover:underline text-sm">Worx Landroid M500 — WiFi och app för 9 990 kr</a></li>
+    </ul>
+  </section>
+</ArticleLayout>
+
+<StickyCTA
+  text="Jämför pris på McCulloch ROB R600"
+  url="https://www.pricerunner.se/cat/1595/robotgrasklippare"
+  productName="McCulloch ROB R600"
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["Product", "Review"],
+  "name": "McCulloch ROB R600",
+  "brand": { "@type": "Brand", "name": "McCulloch" },
+  "category": "Robotgräsklippare",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "SEK",
+    "price": "6490",
+    "availability": "https://schema.org/InStock"
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "7.5",
+      "bestRating": "10",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-03-29",
+    "reviewBody": "McCulloch ROB R600 är ett av de billigaste alternativen för 600 m² till ca 6 490 kr. Fungerande men begränsad — 25% lutningstolerans och 65 dB är svagast i klassen. Passar plana tomter med absolut budgetgräns.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  }
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqSchema,
+})} />
