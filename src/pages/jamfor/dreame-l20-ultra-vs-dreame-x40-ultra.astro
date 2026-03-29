@@ -1,0 +1,319 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import FAQ from '../../components/FAQ.astro';
+import StickyCTA from '../../components/StickyCTA.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/' },
+  { label: 'Jämförelser', href: '/jamfor/' },
+  { label: 'Dreame L20 Ultra vs X40 Ultra' },
+];
+
+const faqItems = [
+  {
+    question: 'Vilken är bäst — Dreame L20 Ultra eller X40 Ultra?',
+    answer: 'Det beror på ditt hem och din budget. Dreame X40 Ultra är den klara tekniska vinnaren med 12 000 Pa sugkraft, utfällbar sidoarm och oscillerande mopp — men den kostar ca 4 000 kr mer. Dreame L20 Ultra är "bäst för pengarna" och räcker gott för de flesta hem med normalt städbehov. Om du inte har extremt tjocka mattor eller skyhöga hörn på din krävarlista är L20 Ultra det rationella valet.',
+  },
+  {
+    question: 'Vad är skillnaden på moppfunktionen?',
+    answer: 'L20 Ultra har roterande moppar som snurrar mot golvet. X40 Ultra har oscillerande moppar som gnuggar fram och tillbaka med tryck — effektivare på ingrundad smuts. Viktigare: X40 Ultra har en utfällbar sidoarm som moppar ända in i hörnen och längs väggar, något L20 Ultra inte klarar. Båda stationerna tvättar mopparna med varmt vatten.',
+  },
+  {
+    question: 'Är X40 Ultra värd de extra 4 000 kronorna?',
+    answer: 'Om du har: tjocka mattor med lång lugg, ett hem med många hörn och smalpassager, eller höga krav på moppresultat i hörnen — ja, X40 Ultra är värd priset. För ett genomsnittshushåll med blandade golvytor och normalt städbehov ger L20 Ultra 90 procent av resultatet till 60 procent av priset. Det är en stark affär.',
+  },
+  {
+    question: 'Klarar L20 Ultra husdjurshår lika bra som X40 Ultra?',
+    answer: 'L20 Ultra hanterar husdjurshår bra tack vare sina 7 000 Pa. Skillnaden mot X40 Ultras 12 000 Pa märks framförallt på tjocka mattor med lång lugg där mer sugkraft gör det enklare att dra upp ingrävt päls. På hårda golv och kortluggade mattor är praktikskillnaden minimal. Ingen av modellerna har AI-djuravföringsdetektion.',
+  },
+  {
+    question: 'Vilket är bättre för stora hem — L20 Ultra eller X40 Ultra?',
+    answer: 'X40 Ultra har ett batteri på 6 400 mAh, L20 Ultra uppger 160 minuters batteritid. I praktiken klarar båda hem upp till ca 150 m² med laddningsstopp och fortsättning. För hem över 200 m² är X40 Ultras batterifördel märkbar — roboten behöver avbryta städningen mer sällan.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Dreame L20 Ultra vs X40 Ultra 2026 — jämförelse | Robotjakt"
+  description="Vi jämför Dreame L20 Ultra och X40 Ultra 2026. Sugkraft, moppning, hörntäckning och pris — se vilken Dreame som passar ditt hem och din budget."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Dreame L20 Ultra vs X40 Ultra 2026 — vilken ska du välja?
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Dreame L20 Ultra till ca 5 990 kr eller Dreame X40 Ultra till ca 9 990 kr? Båda är starka robotdammsugare med mopp och självtömmande station — men de vänder sig till olika behov. Vi jämför dem kategori för kategori och ger dig ett tydligt svar.
+    </p>
+
+    <!-- Quick verdict -->
+    <section class="mb-8 bg-winner/5 border border-winner/20 rounded-xl p-5">
+      <h2 class="font-heading text-lg font-bold text-text mb-2">Snabbsvar — för dig som vill ha svaret direkt</h2>
+      <p class="text-text-light text-sm leading-relaxed mb-2">
+        <strong class="text-text">Dreame L20 Ultra för de flesta:</strong> 7 000 Pa, LiDAR, roterande mopp med varmvattentvätt och självtömning — allt till 5 990 kr. Räcker utmärkt för normalt städbehov i villa eller lägenhet.
+      </p>
+      <p class="text-text-light text-sm leading-relaxed">
+        <strong class="text-text">Dreame X40 Ultra om du kräver mer:</strong> 12 000 Pa, utfällbar sidoarm för hörnen, oscillerande mopp och längre batteri — 4 000 kr mer men ett mätbart steg upp.
+      </p>
+    </section>
+
+    <!-- Specs comparison table -->
+    <section class="mb-10" aria-label="Jämförelsetabell Dreame L20 Ultra vs X40 Ultra">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Specifikationer jämfört</h2>
+      <div class="overflow-x-auto rounded-xl border border-border">
+        <table class="w-full text-sm bg-white">
+          <thead>
+            <tr class="border-b border-border bg-bg-alt">
+              <th class="text-left px-4 py-3 font-semibold text-text">Egenskap</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Dreame L20 Ultra</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Dreame X40 Ultra</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Pris ca</td>
+              <td class="px-4 py-3 text-winner font-semibold">5 990 kr</td>
+              <td class="px-4 py-3 text-text-light">9 990 kr</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">Sugkraft</td>
+              <td class="px-4 py-3 text-text-light">7 000 Pa</td>
+              <td class="px-4 py-3 text-winner font-semibold">12 000 Pa</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Moppmodul</td>
+              <td class="px-4 py-3 text-text-light">Roterande mopp</td>
+              <td class="px-4 py-3 text-winner font-semibold">Oscillerande + utfällbar sidoarm</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">Hörntäckning</td>
+              <td class="px-4 py-3 text-text-light">Standard</td>
+              <td class="px-4 py-3 text-winner font-semibold">Utmärkt — sidoarm når hela vägen</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Mopptvätt</td>
+              <td class="px-4 py-3 text-text-light">Varmvatten i station</td>
+              <td class="px-4 py-3 text-winner font-semibold">Varmvatten 70°C i station</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">Batteritid</td>
+              <td class="px-4 py-3 text-text-light">160 min (uppgivet)</td>
+              <td class="px-4 py-3 text-winner font-semibold">6 400 mAh (längre räckvidd)</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Navigering</td>
+              <td class="px-4 py-3 text-text-light">LiDAR</td>
+              <td class="px-4 py-3 text-text-light">LiDAR + AI-kamera</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">Bullernivå</td>
+              <td class="px-4 py-3 text-winner font-semibold">65 dB</td>
+              <td class="px-4 py-3 text-text-light">68 dB</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Station</td>
+              <td class="px-4 py-3 text-text-light">Fullautomatisk</td>
+              <td class="px-4 py-3 text-text-light">Fullautomatisk</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">AI-djurskydd</td>
+              <td class="px-4 py-3 text-text-light">Nej</td>
+              <td class="px-4 py-3 text-text-light">Nej</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Garanti</td>
+              <td class="px-4 py-3 text-text-light">2 år</td>
+              <td class="px-4 py-3 text-text-light">2 år</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Category by category -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-6">Kategori för kategori</h2>
+      <div class="space-y-5">
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Sugkraft</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-winner/10 text-winner">X40 Ultra vinner</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Dreame X40 Ultra har 12 000 Pa mot L20 Ultras 7 000 Pa — 70 procent starkare. I praktiken märks skillnaden tydligast på tjocka mattor med lång lugg och vid djuprengöring av ingrävt husdjurspäls. På hårda golv och kortluggade mattor är båda mer än tillräckliga. L20 Ultras 7 000 Pa är ingenting att snåla med — det är premiumklass 2022 i ett 2026-paket till mellanklassers pris.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Moppning och hörntäckning</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-winner/10 text-winner">X40 Ultra vinner</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            X40 Ultras utfällbara sidoarm är den viktigaste tekniska skillnaden i moppkategorin. Armen fälls ut mot väggen när roboten kör längs en kant och moppar faktiskt hörnet hela vägen in. L20 Ultras moppar sitter centralt och missar de sista centimetrarna vid väggar och hörn. X40 Ultra använder dessutom oscillerande teknik — mopparna gnuggar fram och tillbaka med tryck, vilket är effektivare på ingrundad smuts än L20 Ultras roterande moppar. Båda stationerna tvättar med varmt vatten.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Pris och värde</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-winner/10 text-winner">L20 Ultra vinner</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            L20 Ultra kostar ca 5 990 kr mot X40 Ultras 9 990 kr — 4 000 kr skillnad. För den summan får du LiDAR-navigering, mopp med varmvattentvätt, självtömmande station och 7 000 Pa. Det är ett komplett städsystem till ett pris som var ovanligt tre år sedan. X40 Ultras merpris är motiverat om du aktivt behöver starkare sugkraft eller bättre hörntäckning. Annars är L20 Ultra det rationella valet.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Batteritid och räckvidd</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-winner/10 text-winner">X40 Ultra vinner</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            X40 Ultra har ett batteri på 6 400 mAh som ger längre räckvidd per laddning. L20 Ultra uppger 160 minuter, vilket i praktiken landar på 90–120 minuter med aktiv moppning. Båda klarar hem upp till 120–150 m² med automatisk återladdning och fortsättning. För hem över 200 m² är X40 Ultras batterifördel märkbar. L20 Ultras 65 dB bullernivå är marginellt tystare än X40 Ultras.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Navigering och app</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-bg-alt text-text-light">Oavgjort</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Båda använder LiDAR för exakt kartläggning. X40 Ultra tillägger AI-kamera för bättre hinderdetektion, men den saknar djuravföringsskydd till skillnad från Roborock S8 MaxV Ultra. Dreame Home-appen fungerar identiskt för båda modellerna — schemaläggning, rumsuppdelning, förbjudna zoner och städhistorik. Inga upplevda skillnader i appupplevelse mellan modellerna.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Who should choose what -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vem ska välja vad?</h2>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div class="bg-bg-alt rounded-xl border border-border p-5">
+          <h3 class="font-heading font-bold text-text mb-3">Välj Dreame L20 Ultra om du...</h3>
+          <ul class="space-y-2">
+            {[
+              'Vill ha bästa värde för pengarna i premiumklassen',
+              'Har normalt städbehov i villa eller lägenhet',
+              'Har hårda golv och kortluggade mattor',
+              'Vill ha LiDAR, mopp och självtömning utan toppnota',
+              'Inte kräver perfekt hörntäckning',
+              'Hem upp till 120–150 m²',
+            ].map(item => (
+              <li class="flex items-start gap-2 text-sm text-text-light">
+                <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <div class="mt-4">
+            <a
+              href="https://www.komplett.se/product/1307025"
+              rel="sponsored nofollow noopener"
+              target="_blank"
+              class="inline-flex items-center justify-center w-full bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+            >
+              Se pris på Dreame L20 Ultra
+              <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
+          </div>
+        </div>
+        <div class="bg-bg-alt rounded-xl border border-border p-5">
+          <h3 class="font-heading font-bold text-text mb-3">Välj Dreame X40 Ultra om du...</h3>
+          <ul class="space-y-2">
+            {[
+              'Har tjocka mattor med lång lugg (kräver 10 000+ Pa)',
+              'Kräver moppning ända in i hörnen',
+              'Har ett hem med många smalpassager och vinklar',
+              'Vill ha maximalt batteri för stora hem (200+ m²)',
+              'Ser robotdammsugaren som en långsiktig investering',
+            ].map(item => (
+              <li class="flex items-start gap-2 text-sm text-text-light">
+                <span class="text-accent font-bold flex-shrink-0 mt-0.5">+</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <div class="mt-4">
+            <a
+              href="https://www.komplett.se/product/1307950"
+              rel="sponsored nofollow noopener"
+              target="_blank"
+              class="inline-flex items-center justify-center w-full bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+            >
+              Se pris på Dreame X40 Ultra
+              <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Verdict -->
+    <section class="mb-10 bg-winner/5 border border-winner/20 rounded-xl p-6">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Redaktionens slutsats</h2>
+      <p class="text-text-light leading-relaxed mb-3">
+        Dreame L20 Ultra är vinnaren för de flesta hushåll 2026. Den levererar allt du faktiskt behöver — LiDAR, mopp med varmvattentvätt, självtömning och 7 000 Pa — för 5 990 kr. Det är ett komplett städsystem till ett pris som är svårt att slå i klassen.
+      </p>
+      <p class="text-text-light leading-relaxed mb-3">
+        <strong class="text-text">Välj X40 Ultra om:</strong> Du har tjocka mattor, kräver moppning i hörnen, eller har ett hem där de extra 12 000 Pa och den utfällbara sidoarmen faktiskt används. Det är ett steg upp — men fråga dig om du verkligen behöver det steget.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        <strong class="text-text">Sammanfattning:</strong> L20 Ultra för värdesökaren. X40 Ultra för den som kräver det bästa utan kompromiss.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/dreame-l20-ultra/" class="text-accent hover:underline text-sm">Dreame L20 Ultra recension 2026</a></li>
+        <li><a href="/dreame-x40-ultra/" class="text-accent hover:underline text-sm">Dreame X40 Ultra recension 2026</a></li>
+        <li><a href="/dreame-guide/" class="text-accent hover:underline text-sm">Dreame guide 2026 — alla modeller jämförda</a></li>
+        <li><a href="/dreame-x40-ultra-vs-roborock-s8-maxv-ultra/" class="text-accent hover:underline text-sm">Dreame X40 Ultra vs Roborock S8 MaxV Ultra 2026</a></li>
+        <li><a href="/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2026 — alla märken jämförda</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se bästa pris — Dreame L20 Ultra"
+    url="https://www.komplett.se/product/1307025"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Robotdammsugare", "item": "https://robotjakt.se/" },
+      { "@type": "ListItem", "position": 2, "name": "Jämförelser", "item": "https://robotjakt.se/jamfor/" },
+      { "@type": "ListItem", "position": 3, "name": "Dreame L20 Ultra vs X40 Ultra", "item": "https://robotjakt.se/jamfor/dreame-l20-ultra-vs-dreame-x40-ultra/" },
+    ],
+  })} />
+</BaseLayout>
