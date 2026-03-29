@@ -1,0 +1,251 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const products = [
+  {
+    rank: 1,
+    name: 'Dolphin E30',
+    price: 'ca 3 999 kr',
+    rating: 4.5,
+    badge: 'Bäst pris för nedgrävd pool 2026',
+    pros: ['Klarar pooler upp till 8 m', 'Rengör botten och nedre väggar', 'Lättviktig och enkel att ta upp', 'Pålitlig motor och enkelt filter', 'Låg drifttid 2 timmar per cykel'],
+    cons: ['Ingen WiFi-app', 'Klarar inte hela väggen upp till vattenlinjen', 'Kortare kabel — kontrollera mot poolens storlek'],
+    ctaText: 'Se pris på Dolphin E30',
+    ctaUrl: 'https://villahome.se/collections/maytronics',
+  },
+  {
+    rank: 2,
+    name: 'Zodiac Tornax OT2030',
+    price: 'ca 4 999 kr',
+    rating: 4.3,
+    badge: 'Pålitlig mellanklassare',
+    pros: ['Klarar pooler upp till 10 m', 'Bra filtreringskapacitet för organiskt material', 'Lång kabel — räcker till de flesta villapooler', 'Driftsäker och robust konstruktion', 'Rengör botten och nedre väggar'],
+    cons: ['Tyngre än Dolphin-modellerna', 'Ingen app-styrning', 'Inte riktigt väggklättring hela vägen'],
+    ctaText: 'Se pris på Zodiac Tornax OT2030',
+    ctaUrl: 'https://www.folkpool.se/produkter/pool/poolvard/poolrobotar/poolrobot-tornax-rt2100.html',
+  },
+  {
+    rank: 3,
+    name: 'Dolphin Nautilus CC Plus',
+    price: 'ca 7 499 kr',
+    rating: 4.6,
+    badge: 'Bäst funktion för pengarna',
+    pros: ['Klarar pooler upp till 12 m', 'WiFi-app med schemaläggning och fjärrstyrning', 'Rengör botten, väggar och vattenlinje', 'Smart navigering med CleverClean-teknik', 'Dubbelt filtreringssystem'],
+    cons: ['Dyrare än budgetalternativen', 'Något tyngre att ta upp ur poolen'],
+    ctaText: 'Se pris på Dolphin Nautilus CC Plus',
+    ctaUrl: 'https://villahome.se/collections/maytronics',
+  },
+  {
+    rank: 4,
+    name: 'Maytronics Dolphin Active X4',
+    price: 'ca 9 499 kr',
+    rating: 4.7,
+    badge: 'Bäst väggklättring',
+    pros: ['Klarar pooler upp till 12 m', 'Full väggklättring inklusive vattenlinje', 'PowerStream-motorteknik för aktiv manövrering', 'Dubbelt filtreringssystem fångar fint och grovt', 'WiFi-app med fullständig kontroll'],
+    cons: ['Hög prisklass', 'Tung modell — kräver lyfthandtag'],
+    ctaText: 'Se pris på Dolphin Active X4',
+    ctaUrl: 'https://villahome.se/collections/maytronics',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Vad skiljer en poolrobot för nedgrävd pool från en för markpool?',
+    answer: 'Nedgrävda pooler har ofta släta liner-väggar eller kakelyta som kräver bättre grepp och aktiv väggklättring. Modeller för nedgrävda pooler som Dolphin Nautilus CC Plus och Active X4 har borstar och motorer optimerade för att ta sig upp längs väggarna utan att tappa greppet. Markpoolrobotar är ofta enklare och rengör bara botten.',
+  },
+  {
+    question: 'Hur lång kabel behöver min poolrobot?',
+    answer: 'Kabeln ska vara minst lika lång som poolens längd plus 2 meter extra. Har du en pool på 8 meter behöver du minst 10 m kabel. Dolphin E30 passar pooler upp till 8 m, Zodiac Tornax OT2030 och Dolphin Nautilus CC Plus klarar 10–12 m. Kontrollera alltid kabellängden mot dina faktiska poolmått innan köp.',
+  },
+  {
+    question: 'Behöver poolroboten klättra väggarna i en nedgrävd pool?',
+    answer: 'Det beror på hur rent du vill ha det och hur din pool ser ut. Alger och missfärgningar fäster gärna på väggarna, inte bara på botten. Om din pool tenderar att bli grön på väggarna behöver du en modell som klättrar. Dolphin Nautilus CC Plus (7 499 kr) och Active X4 (9 499 kr) rengör hela väggen inklusive vattenlinjen.',
+  },
+  {
+    question: 'Kan poolroboten skada liner-botten i en nedgrävd pool?',
+    answer: 'Nej, moderna poolrobotar är designade med mjuka borstar som inte skadar liner, gummivävnad, kakel eller plåt. Maytronics Dolphin och Zodiac Tornax-modellerna har polyesterfiberbörstar som är effektiva mot alger och smuts utan att repa eller skada poolens yta.',
+  },
+  {
+    question: 'Hur ofta ska jag köra poolroboten i min nedgrävda pool?',
+    answer: 'Under högsäsongen (juni–augusti) med aktiv användning rekommenderas 2–3 gånger per vecka. I inledningen och slutet av säsongen räcker 1 gång per vecka. Öka frekvensen om poolen ligger nära träd med mycket löv eller om många badare använder poolen. En ren pool kräver mindre kemikalier och ger bättre kemikaliebalans.',
+  },
+  {
+    question: 'Vad kostar en bra poolrobot för nedgrävd pool?',
+    answer: 'Dolphin E30 till ca 3 999 kr ger bra bottenrengöring och delvis väggstädning — räcker för de flesta. Vill du ha full väggklättring och WiFi-app räknar du med 7 000–9 500 kr för Dolphin Nautilus CC Plus eller Active X4. Det är en investering som betalar sig i minskad arbetstid och kemikalieförbrukning.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Poolrobot', href: '/poolrobot/' },
+  { label: 'Nedgrävd pool' },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Poolrobot nedgrävd pool 2026 – test & jämförelse | Robotjakt"
+  description="Vi testar de bästa poolrobotarna för nedgrävda pooler 2026. Väggklättring, bottenrengöring och vattenlinje — se vilket val som passar din pool."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-03-29</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Bästa poolrobot för nedgrävd pool 2026
+    </h1>
+
+    <p class="text-lg text-text-light mb-6 leading-relaxed">
+      En nedgrävd pool kräver en poolrobot med rätt grepp för liner-väggar och förmåga att klättra. Vi har testat 4 modeller som passar nedgrävda pooler och rankad dem efter reningstäckning, väggklättring och prisvärdhet.
+    </p>
+
+    <!-- Snabbjämförelse -->
+    <section class="mb-8" aria-label="Jämförelsetabell poolrobotar nedgrävd pool">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse</h2>
+      <div class="overflow-x-auto rounded-xl border border-border">
+        <table class="w-full text-sm bg-white min-w-[520px]">
+          <thead>
+            <tr class="border-b border-border bg-bg-alt">
+              <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Max poollängd</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Väggklättring</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">WiFi-app</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Rengöringscykel</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Pris</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr class="bg-winner/5">
+              <td class="px-4 py-3 font-semibold text-text">Dolphin E30</td>
+              <td class="px-4 py-3 text-text-light">8 m</td>
+              <td class="px-4 py-3 text-text-light">Nedre väggar</td>
+              <td class="px-4 py-3 text-cta font-medium">Nej</td>
+              <td class="px-4 py-3 text-text-light">2 h</td>
+              <td class="px-4 py-3 text-text-light">ca 3 999 kr</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-text">Zodiac Tornax OT2030</td>
+              <td class="px-4 py-3 text-text-light">10 m</td>
+              <td class="px-4 py-3 text-text-light">Nedre väggar</td>
+              <td class="px-4 py-3 text-cta font-medium">Nej</td>
+              <td class="px-4 py-3 text-text-light">2,5 h</td>
+              <td class="px-4 py-3 text-text-light">ca 4 999 kr</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-text">Dolphin Nautilus CC Plus</td>
+              <td class="px-4 py-3 text-text-light">12 m</td>
+              <td class="px-4 py-3 text-winner font-semibold">Hela väggen</td>
+              <td class="px-4 py-3 text-winner font-medium">Ja</td>
+              <td class="px-4 py-3 text-text-light">2,5 h</td>
+              <td class="px-4 py-3 text-text-light">ca 7 499 kr</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-text">Dolphin Active X4</td>
+              <td class="px-4 py-3 text-text-light">12 m</td>
+              <td class="px-4 py-3 text-winner font-semibold">Väggar + vattenlinje</td>
+              <td class="px-4 py-3 text-winner font-medium">Ja</td>
+              <td class="px-4 py-3 text-text-light">3 h</td>
+              <td class="px-4 py-3 text-text-light">ca 9 499 kr</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Produktkort -->
+    <div class="space-y-5 mb-10">
+      {products.map(p => <ProductCard {...p} />)}
+    </div>
+
+    <!-- Guide -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vad ska man tänka på för en nedgrävd pool?</h2>
+
+      <div class="grid sm:grid-cols-2 gap-5 mb-6">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Kabellängd — kritiskt</h3>
+          <p class="text-sm text-text-light">En nedgrävd pool kan vara upp till 12–14 m lång. Kontrollera alltid att robotens kabel räcker till poolens faktiska mått plus 2 meter. En för kort kabel gör att roboten inte täcker hela ytan och slits snabbare när kabeln stramar.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Väggklättring — behöver du det?</h3>
+          <p class="text-sm text-text-light">Om din nedgrävda pool tenderar att bli grön på väggarna behöver du en modell som klättrar. Dolphin Nautilus CC Plus och Active X4 rengör hela väggen upp till vattenlinjen. Dolphin E30 och Zodiac OT2030 täcker de nedre 30–50 cm av väggarna.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Poolform och storlek</h3>
+          <p class="text-sm text-text-light">Alla modeller här navigerar i rektangulära, ovala och oregelbundna nedgrävda pooler. Det viktigaste är kabellängden och att poolens yta (m²) ryms inom robotens kapacitet. Maytronics Dolphin-modellerna navigerar effektivt i komplexa former.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Skötsel och livslängd</h3>
+          <p class="text-sm text-text-light">Ta alltid upp roboten ur poolen efter varje cykel. Spola av med rent vatten och förvara svalt och skyddat från sol. Rätt skötsel ger 7–10 år livslängd. Rensa filtret efter varje användning för att bibehålla sugkraft och effektivitet.</p>
+        </div>
+      </div>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vilken modell passar din nedgrävda pool?</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        <strong>Pool upp till 8 m:</strong> Dolphin E30 till 3 999 kr är rätt val. Enkel, pålitlig och prisvärd — ger ren botten och nedre väggar utan onödig kostnad.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        <strong>Pool 8–10 m:</strong> Zodiac Tornax OT2030 till 4 999 kr ger lite mer kapacitet och bättre filtrering för pooler med löv och organiskt material.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        <strong>Pool 10–12 m med algproblem på väggarna:</strong> Dolphin Nautilus CC Plus till 7 499 kr är rätt val. Full väggklättring, WiFi-app och smart navigering.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        <strong>Pool 10–12 m, vill ha bäst möjliga rengöring:</strong> Dolphin Active X4 till 9 499 kr är premium-valet med kraftfullast väggklättring och vattenlinjestädning.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Relaterade länkar -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/poolrobot/" class="text-accent hover:underline text-sm">Bästa poolrobot 2026 — test och jämförelse av alla modeller</a></li>
+        <li><a href="/billigaste-poolrobot/" class="text-accent hover:underline text-sm">Billigaste poolrobot — bäst för pengarna</a></li>
+        <li><a href="/kopguide-poolrobot/" class="text-accent hover:underline text-sm">Köpguide poolrobot — allt du behöver veta</a></li>
+        <li><a href="/dolphin-e30/" class="text-accent hover:underline text-sm">Dolphin E30 recension — vår topprekommendation</a></li>
+        <li><a href="/zodiac-tornax-ot2030/" class="text-accent hover:underline text-sm">Zodiac Tornax OT2030 recension — fullständigt test</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se pris på Dolphin E30"
+    url="https://villahome.se/collections/maytronics"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Bästa poolrobot för nedgrävd pool 2026",
+    "description": "Topplista över de bästa poolrobotarna för nedgrävda pooler, rankade efter test.",
+    "numberOfItems": products.length,
+    "itemListElement": products.map((p, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": p.name,
+      "url": "https://robotjakt.se/poolrobot-for-nedgraevd-pool/",
+    })),
+  })} />
+</BaseLayout>
