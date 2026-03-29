@@ -13,6 +13,19 @@ const grasklippareItems = [
   { label: 'Utan slinga', href: '/robotgrasklippare-utan-slinga/' },
   { label: 'Budget', href: '/billigaste-robotgrasklippare/' },
 ];
+
+const reservdelarItems = [
+  { label: 'Alla reservdelar', href: '/reservdelar/' },
+  { label: 'Dammsugare reservdelar', href: '/reservdelar/robotdammsugare/' },
+  { label: 'Filter', href: '/reservdelar/filter/' },
+  { label: 'Borstar', href: '/reservdelar/borstar/' },
+  { label: 'Roborock', href: '/reservdelar/roborock/' },
+  { label: 'Dreame', href: '/reservdelar/dreame/' },
+  { label: 'Ecovacs', href: '/reservdelar/ecovacs/' },
+  { label: 'Gräsklippare reservdelar', href: '/reservdelar/robotgrasklippare/' },
+  { label: 'Knivar', href: '/reservdelar/knivar/' },
+  { label: 'Husqvarna Automower', href: '/reservdelar/husqvarna/' },
+];
 ---
 
 <header class="bg-primary text-white sticky top-0 z-50 shadow-lg">
@@ -66,6 +79,24 @@ const grasklippareItems = [
             </div>
           </div>
         </div>
+        <!-- Reservdelar dropdown -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light" aria-haspopup="true">
+            Reservdelar
+            <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="absolute left-0 top-full pt-1 hidden group-hover:block z-50 min-w-[220px]">
+            <div class="bg-white rounded-lg shadow-lg border border-gray-100 py-1">
+              {reservdelarItems.map((item) => (
+                <a href={item.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
         <!-- Poolrobot -->
         <a href="/poolrobot/" class="text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light">
           Poolrobot
@@ -96,6 +127,12 @@ const grasklippareItems = [
       ))}
       <p class="text-xs font-bold uppercase tracking-wider text-gray-400 px-2 pt-3 pb-1">Robotgrasklippare</p>
       {grasklippareItems.map((item) => (
+        <a href={item.href} class="block px-2 py-2 text-sm text-gray-200 hover:text-white transition-colors rounded-md hover:bg-primary-light">
+          {item.label}
+        </a>
+      ))}
+      <p class="text-xs font-bold uppercase tracking-wider text-gray-400 px-2 pt-3 pb-1">Reservdelar</p>
+      {reservdelarItems.map((item) => (
         <a href={item.href} class="block px-2 py-2 text-sm text-gray-200 hover:text-white transition-colors rounded-md hover:bg-primary-light">
           {item.label}
         </a>

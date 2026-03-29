@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const breadcrumbs = [{ label: 'Reservdelar & tillbehör' }];
+
+const categories = [
+  {
+    title: 'Robotdammsugare reservdelar',
+    description: 'Filter, borstar, moppkuddar och tillbehör till alla stora märken.',
+    href: '/reservdelar/robotdammsugare/',
+    icon: 'vacuum',
+    items: ['HEPA-filter', 'Sidoborstar', 'Huvudborste', 'Moppkuddar', 'Dammposar'],
+  },
+  {
+    title: 'Robotgräsklippare reservdelar',
+    description: 'Knivar, laddningsstationer, begränsningskablar och mer.',
+    href: '/reservdelar/robotgrasklippare/',
+    icon: 'mower',
+    items: ['Knivar', 'Begränsningskabel', 'Laddningsstation', 'Spiraler', 'Hjul'],
+  },
+];
+
+const brands = [
+  { name: 'Roborock', href: '/reservdelar/roborock/', desc: 'S8-, Q- och Qrevo-serien' },
+  { name: 'Dreame', href: '/reservdelar/dreame/', desc: 'L10, L20, X30, X40-serien' },
+  { name: 'Ecovacs', href: '/reservdelar/ecovacs/', desc: 'Deebot X5, T20, N8-serien' },
+  { name: 'Husqvarna', href: '/reservdelar/husqvarna/', desc: 'Automower 105, 315X, 430X' },
+];
+
+const partTypes = [
+  { name: 'Filter', href: '/reservdelar/filter/', desc: 'HEPA och washable filter' },
+  { name: 'Borstar', href: '/reservdelar/borstar/', desc: 'Sido- och huvudborstar' },
+  { name: 'Knivar', href: '/reservdelar/knivar/', desc: 'Till robotgräsklippare' },
+];
+---
+
+<BaseLayout
+  title="Reservdelar till robotar — Filter, borstar, knivar | Robotjakt"
+  description="Hitta rätt reservdelar och tillbehör till din robot. HEPA-filter, borstar och knivar till Roborock, Dreame, Ecovacs och Husqvarna Automower. Köp via Amazon."
+>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <section class="bg-primary text-white py-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Reservdelar &amp; tillbehör till robotar</h1>
+      <p class="text-gray-200 text-lg max-w-2xl">Filter, borstar, knivar och tillbehör till robotdammsugare och robotgräsklippare — hitta rätt del till din modell.</p>
+    </div>
+  </section>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <AffiliateDisclaimer />
+
+    <!-- Kategorier -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-5">Välj robottyp</h2>
+      <div class="grid sm:grid-cols-2 gap-5">
+        {categories.map(cat => (
+          <a href={cat.href} class="block bg-white rounded-xl border border-border p-6 hover:shadow-md hover:border-accent transition-all group">
+            <h3 class="font-heading text-lg font-bold text-text group-hover:text-accent mb-2">{cat.title}</h3>
+            <p class="text-text-light text-sm mb-4">{cat.description}</p>
+            <ul class="flex flex-wrap gap-2">
+              {cat.items.map(item => (
+                <li class="text-xs bg-bg-alt text-text-light px-2 py-1 rounded-full">{item}</li>
+              ))}
+            </ul>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Per märke -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-5">Reservdelar per märke</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {brands.map(brand => (
+          <a href={brand.href} class="flex items-center justify-between bg-white rounded-xl border border-border px-5 py-4 hover:shadow-md hover:border-accent transition-all group">
+            <div>
+              <span class="font-heading font-bold text-text group-hover:text-accent">{brand.name}</span>
+              <p class="text-xs text-text-light mt-0.5">{brand.desc}</p>
+            </div>
+            <svg class="w-5 h-5 text-text-lighter group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Per typ -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-5">Reservdelar per typ</h2>
+      <div class="grid grid-cols-3 gap-4">
+        {partTypes.map(pt => (
+          <a href={pt.href} class="block bg-white rounded-xl border border-border px-4 py-5 text-center hover:shadow-md hover:border-accent transition-all group">
+            <span class="font-heading font-bold text-text group-hover:text-accent block mb-1">{pt.name}</span>
+            <p class="text-xs text-text-light">{pt.desc}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Why replace -->
+    <section class="bg-bg-alt rounded-xl p-6 mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Varför byta reservdelar regelbundet?</h2>
+      <div class="grid sm:grid-cols-2 gap-4 text-sm text-text-light">
+        <div>
+          <p class="font-semibold text-text mb-1">Filter — byt var 2–3 månad</p>
+          <p>Ett igensatt filter minskar sugkraften med upp till 40 %. HEPA-filter håller allergener borta — men bara om de byts regelbundet.</p>
+        </div>
+        <div>
+          <p class="font-semibold text-text mb-1">Borstar — byt var 6–12 månad</p>
+          <p>Slitna sidoborstar borstar inte längre längs kanter och väggar. Huvud­borsten samlar djurhår och behöver rengöras eller bytas.</p>
+        </div>
+        <div>
+          <p class="font-semibold text-text mb-1">Knivar (robotgräsklippare) — byt varje säsong</p>
+          <p>Trubbiga knivar drar och sliter på gräset istället för att klippa rent. Resultatet är gulnat gräs och ökad belastning på motorn.</p>
+        </div>
+        <div>
+          <p class="font-semibold text-text mb-1">Moppkuddar — byt var 3 månad</p>
+          <p>Slitna moppkuddar sprider smuts istället för att torka upp den. Byt mot originalkuddar för bästa moppresultat.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

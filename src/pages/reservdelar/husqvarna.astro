@@ -1,0 +1,171 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import FAQ from '../../components/FAQ.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const AMZN_TAG = 'robotjakt-21';
+
+const parts = [
+  {
+    section: 'Knivar',
+    items: [
+      {
+        name: 'Husqvarna Automower knivar — 9-pack (standard)',
+        compat: 'Passar: Automower 105, 115H, 310, 315, 315X, 320, 330X, 430X, 450X',
+        price: 'ca 89–139 kr',
+        badge: 'Populärast',
+        ctaUrl: `https://www.amazon.se/s?k=husqvarna+automower+knivar+9-pack+original&tag=${AMZN_TAG}`,
+      },
+      {
+        name: 'Husqvarna Automower knivar — 24-pack (premium)',
+        compat: 'Passar: Automower 430X, 450X, 520, 550',
+        price: 'ca 199–279 kr',
+        badge: 'Bästa värde',
+        ctaUrl: `https://www.amazon.se/s?k=husqvarna+automower+knivar+24-pack&tag=${AMZN_TAG}`,
+      },
+    ],
+  },
+  {
+    section: 'Kabel & installation',
+    items: [
+      {
+        name: 'Husqvarna begränsningskabel — 100 m',
+        compat: 'Passar: Alla Husqvarna Automower med trådsystem (ej NERA/EPOS)',
+        price: 'ca 149–199 kr',
+        badge: null,
+        ctaUrl: `https://www.amazon.se/s?k=husqvarna+automower+begransningskabel+100m&tag=${AMZN_TAG}`,
+      },
+      {
+        name: 'Husqvarna begränsningskabel — 150 m',
+        compat: 'Passar: Alla Husqvarna Automower med trådsystem',
+        price: 'ca 199–269 kr',
+        badge: null,
+        ctaUrl: `https://www.amazon.se/s?k=husqvarna+automower+begransningskabel+150m&tag=${AMZN_TAG}`,
+      },
+      {
+        name: 'Husqvarna spiraler / spikar — 200-pack',
+        compat: 'Passar: Alla Automower-installationer',
+        price: 'ca 99–149 kr',
+        badge: null,
+        ctaUrl: `https://www.amazon.se/s?k=husqvarna+automower+spiraler+spikar+200&tag=${AMZN_TAG}`,
+      },
+      {
+        name: 'Kabelskarvsats (reparera kabeln utan att gräva)',
+        compat: 'Universell för trådsystem',
+        price: 'ca 49–79 kr',
+        badge: null,
+        ctaUrl: `https://www.amazon.se/s?k=husqvarna+automower+kabelskarv+kabelskarvning&tag=${AMZN_TAG}`,
+      },
+    ],
+  },
+  {
+    section: 'Skötsel & tillbehör',
+    items: [
+      {
+        name: 'Husqvarna Automower skyddsgarage / huv',
+        compat: 'Passar: Automower 105, 115H, 310, 315, 315X',
+        price: 'ca 399–549 kr',
+        badge: null,
+        ctaUrl: `https://www.amazon.se/s?k=husqvarna+automower+skyddsgarage+huv&tag=${AMZN_TAG}`,
+      },
+      {
+        name: 'Rengöringskit (borste + rengöringsmedel)',
+        compat: 'Universell',
+        price: 'ca 69–99 kr',
+        badge: null,
+        ctaUrl: `https://www.amazon.se/s?k=husqvarna+automower+rengoring+kit&tag=${AMZN_TAG}`,
+      },
+    ],
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Hur byter man knivar på Husqvarna Automower?',
+    answer: 'Stäng av Automowern och välj säkerhetsläge (PIN). Vänd roboten upp och ner på en mjuk yta. Lossa varje kniv med medföljande skruv (bruksanvisningen anger moment). Montera nya knivar och dra åt med rätt moment — lösa knivar är en säkerhetsrisk. Knivar ska alltid monteras i samma riktning som de gamla.',
+  },
+  {
+    question: 'Hur hittar man ett kabelbrott på Automower?',
+    answer: 'Husqvarna Automower Connect-appen kan ibland visa var signalen försvinner. Annars: en kabelsökarapp (Loop Tester) hjälper dig att lokalisera brottet utan att behöva gräva upp hela kabeln. Kabelskarvsatser finns för enkel reparation på platsen.',
+  },
+  {
+    question: 'Behöver man original Husqvarna-knivar eller går eftermarknadsalternativ?',
+    answer: 'Kompatibla eftermarknads-knivar av god kvalitet är lika effektiva och kostar 20–40 % mindre. Se till att knivarna har rätt dimensioner och skruvhål-diameter för din Automower-modell. Undvik extremt billiga knivar av okänt ursprung.',
+  },
+  {
+    question: 'Hur länge håller begränsningskabeln på Husqvarna Automower?',
+    answer: 'Med korrekt installation håller kabeln 5–10 år. Kabelbrott uppstår vanligast pga grävarbeten, kraftig frost, maskinell gräsklippning på området, eller vid trädgårdsarbete. Kabeln ska ligga 1–3 cm under markytan för bästa skydd.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Reservdelar', href: '/reservdelar/' },
+  { label: 'Robotgräsklippare', href: '/reservdelar/robotgrasklippare/' },
+  { label: 'Husqvarna Automower' },
+];
+---
+
+<BaseLayout
+  title="Husqvarna Automower reservdelar — Knivar, kabel, spiraler | Robotjakt"
+  description="Reservdelar till Husqvarna Automower. Knivar 9-pack, begränsningskabel 100–150 m, spiraler och tillbehör till 105, 315X, 430X och fler modeller. Köp via Amazon."
+>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <section class="bg-primary text-white py-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Husqvarna Automower reservdelar</h1>
+      <p class="text-gray-200 max-w-2xl">Knivar, begränsningskabel, spiraler och tillbehör till Husqvarna Automower 105, 315X, 430X och fler modeller.</p>
+    </div>
+  </section>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <AffiliateDisclaimer />
+    <p class="text-sm text-text-light mb-6">Senast uppdaterad: mars 2026</p>
+
+    {parts.map(section => (
+      <section class="mb-10">
+        <h2 class="font-heading text-2xl font-bold text-text mb-5">{section.section}</h2>
+        <div class="space-y-4">
+          {section.items.map(item => (
+            <article class="bg-white rounded-xl border border-border shadow-sm p-5">
+              <div class="flex flex-col gap-3">
+                <div>
+                  <div class="flex flex-wrap items-start gap-2 mb-1">
+                    <h3 class="font-heading font-bold text-text text-base">{item.name}</h3>
+                    {item.badge && <span class="text-xs font-semibold bg-winner/10 text-winner px-2 py-0.5 rounded-full">{item.badge}</span>}
+                  </div>
+                  <p class="text-xs text-accent font-medium">{item.compat}</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-3">
+                  <span class="text-lg font-bold text-text">{item.price}</span>
+                  <a
+                    href={item.ctaUrl}
+                    rel="sponsored nofollow noopener"
+                    target="_blank"
+                    class="inline-flex items-center gap-1.5 px-5 py-2.5 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors text-sm min-h-[44px]"
+                  >
+                    Köp på Amazon
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Husqvarna Automower — modeller</h2>
+      <div class="grid sm:grid-cols-2 gap-3">
+        <a href="/husqvarna-automower-430x-nera/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Automower 430X Nera recension</a>
+        <a href="/husqvarna-automower-315x/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Automower 315X recension</a>
+        <a href="/husqvarna-automower-105/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Automower 105 recension</a>
+        <a href="/reservdelar/knivar/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Knivar till alla märken</a>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+  </main>
+</BaseLayout>

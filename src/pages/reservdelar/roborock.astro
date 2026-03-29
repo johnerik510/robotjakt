@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import FAQ from '../../components/FAQ.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const AMZN_TAG = 'robotjakt-21';
+
+const parts = [
+  {
+    section: 'Roborock S8-serien',
+    models: 'S8, S8+, S8 Pro Ultra, S8 Max Ultra, S8 MaxV Ultra',
+    items: [
+      { name: 'HEPA-filter 3-pack', price: 'ca 119–179 kr', ctaUrl: `https://www.amazon.se/s?k=roborock+s8+hepa+filter&tag=${AMZN_TAG}` },
+      { name: 'Gummi-borsthuvud (anti-tangle)', price: 'ca 199–279 kr', ctaUrl: `https://www.amazon.se/s?k=roborock+s8+gummi+borsthuvud+roller&tag=${AMZN_TAG}` },
+      { name: 'Sidoborstar 6-pack', price: 'ca 79–119 kr', ctaUrl: `https://www.amazon.se/s?k=roborock+s8+sidoborstar&tag=${AMZN_TAG}` },
+      { name: 'Moppkuddar tvättbara 2-pack', price: 'ca 99–149 kr', ctaUrl: `https://www.amazon.se/s?k=roborock+s8+moppkuddar+tvattbara&tag=${AMZN_TAG}` },
+      { name: 'Komplett tillbehörskit (filter + borstar + mopp)', price: 'ca 249–349 kr', ctaUrl: `https://www.amazon.se/s?k=roborock+s8+komplett+tillbehor+kit&tag=${AMZN_TAG}` },
+    ],
+  },
+  {
+    section: 'Roborock Qrevo-serien',
+    models: 'Qrevo Master, Qrevo MaxV, Qrevo Pro, Qrevo Curv',
+    items: [
+      { name: 'HEPA-filter 4-pack', price: 'ca 99–149 kr', ctaUrl: `https://www.amazon.se/s?k=roborock+qrevo+hepa+filter&tag=${AMZN_TAG}` },
+      { name: 'Gummi-borsthuvud', price: 'ca 189–259 kr', ctaUrl: `https://www.amazon.se/s?k=roborock+qrevo+borsthuvud+roller&tag=${AMZN_TAG}` },
+      { name: 'Sidoborstar 6-pack', price: 'ca 69–109 kr', ctaUrl: `https://www.amazon.se/s?k=roborock+qrevo+sidoborstar&tag=${AMZN_TAG}` },
+      { name: 'Moppkuddar 4-pack', price: 'ca 119–169 kr', ctaUrl: `https://www.amazon.se/s?k=roborock+qrevo+moppkuddar&tag=${AMZN_TAG}` },
+    ],
+  },
+  {
+    section: 'Roborock Q-serien',
+    models: 'Q5+, Q7+, Q7 Max+, Q8 Max+',
+    items: [
+      { name: 'HEPA-filter 4-pack', price: 'ca 89–129 kr', ctaUrl: `https://www.amazon.se/s?k=roborock+q7+q5+hepa+filter&tag=${AMZN_TAG}` },
+      { name: 'Borsthuvud med borst-fibrer', price: 'ca 149–199 kr', ctaUrl: `https://www.amazon.se/s?k=roborock+q7+q5+borsthuvud&tag=${AMZN_TAG}` },
+      { name: 'Sidoborstar 6-pack', price: 'ca 69–99 kr', ctaUrl: `https://www.amazon.se/s?k=roborock+q7+sidoborstar&tag=${AMZN_TAG}` },
+    ],
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Hur ofta bör jag byta reservdelar på min Roborock?',
+    answer: 'HEPA-filter: var 2–3 månad. Sidoborstar: var 6–9 månad. Borsthuvud: ca 12 månader. Moppkuddar: var 3 månad. Roborock-appen ger underhållspåminnelser baserade på faktisk körtid — aktivera dem under Inställningar > Underhåll.',
+  },
+  {
+    question: 'Var köper man originaldelar till Roborock i Sverige?',
+    answer: 'Amazon.se är det bekvämaste alternativet med snabb leverans. Roborocks egna webbshop (roborock.com) har också officiella delar men längre leveranstid till Sverige. Komplett och Elgiganten har ett begränsat urval.',
+  },
+  {
+    question: 'Fungerar delar till S8 Max Ultra i S8 MaxV Ultra?',
+    answer: 'Många delar är korskompatibla inom S8-familjen, men inte alla. Kontrollera alltid att produktbeskrivningen på Amazon listar din exakta modell. Filter och sidoborstar är ofta kompatibla — borsthuvud och moppkuddar kan variera.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Reservdelar', href: '/reservdelar/' },
+  { label: 'Roborock' },
+];
+---
+
+<BaseLayout
+  title="Roborock reservdelar — Filter, borstar, moppkuddar S8 & Qrevo | Robotjakt"
+  description="Reservdelar till Roborock robotdammsugare. HEPA-filter, gummi-borsthuvud, sidoborstar och moppkuddar till S8-, Qrevo- och Q-serien. Köp via Amazon."
+>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <section class="bg-primary text-white py-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Roborock reservdelar</h1>
+      <p class="text-gray-200 max-w-2xl">Filter, borstar och moppkuddar till Roborock S8, Qrevo och Q-serien — håll din Roborock i toppskick.</p>
+    </div>
+  </section>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <AffiliateDisclaimer />
+    <p class="text-sm text-text-light mb-6">Senast uppdaterad: mars 2026</p>
+
+    {parts.map(section => (
+      <section class="mb-10">
+        <div class="mb-4">
+          <h2 class="font-heading text-2xl font-bold text-text">{section.section}</h2>
+          <p class="text-sm text-text-light mt-1">Passar: {section.models}</p>
+        </div>
+        <div class="space-y-3">
+          {section.items.map(item => (
+            <div class="bg-white rounded-xl border border-border p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div>
+                <span class="font-semibold text-text text-sm">{item.name}</span>
+              </div>
+              <div class="flex items-center gap-3 sm:flex-shrink-0">
+                <span class="font-bold text-text whitespace-nowrap">{item.price}</span>
+                <a
+                  href={item.ctaUrl}
+                  rel="sponsored nofollow noopener"
+                  target="_blank"
+                  class="inline-flex items-center gap-1.5 px-4 py-2 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors text-sm min-h-[44px] whitespace-nowrap"
+                >
+                  Köp på Amazon
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Läs mer om Roborock</h2>
+      <div class="grid sm:grid-cols-2 gap-3">
+        <a href="/roborock-guide/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Roborock — alla modeller</a>
+        <a href="/roborock-s8-maxv-ultra/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Roborock S8 MaxV Ultra recension</a>
+        <a href="/roborock-qrevo-master/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Roborock Qrevo Master recension</a>
+        <a href="/reservdelar/filter/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Alla ersättningsfilter</a>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+  </main>
+</BaseLayout>

@@ -55,6 +55,17 @@ const ovriga = [
   { label: 'Ecovacs Winbot W2 Omni', href: '/ecovacs-winbot-w2-omni/' },
 ];
 
+const reservdelar = [
+  { label: 'Alla reservdelar', href: '/reservdelar/' },
+  { label: 'Filter', href: '/reservdelar/filter/' },
+  { label: 'Borstar', href: '/reservdelar/borstar/' },
+  { label: 'Roborock reservdelar', href: '/reservdelar/roborock/' },
+  { label: 'Dreame reservdelar', href: '/reservdelar/dreame/' },
+  { label: 'Ecovacs reservdelar', href: '/reservdelar/ecovacs/' },
+  { label: 'Knivar gräsklippare', href: '/reservdelar/knivar/' },
+  { label: 'Husqvarna reservdelar', href: '/reservdelar/husqvarna/' },
+];
+
 const legal = [
   { label: 'Om oss', href: '/om-oss/' },
   { label: 'Kontakt', href: '/kontakt/' },
@@ -65,7 +76,7 @@ const legal = [
 
 <footer class="bg-primary text-gray-300">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-8">
       <div class="col-span-2 md:col-span-3 lg:col-span-1">
         <h3 class="font-heading text-white text-lg font-bold mb-4">Robotjakt</h3>
         <p class="text-sm leading-relaxed">
@@ -96,6 +107,16 @@ const legal = [
         <h4 class="font-heading text-white text-sm font-bold uppercase tracking-wider mb-4">Robotgräsklippare</h4>
         <ul class="space-y-2">
           {robotgrasklippare.map((item) => (
+            <li>
+              <a href={item.href} class="text-sm hover:text-white transition-colors">{item.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-heading text-white text-sm font-bold uppercase tracking-wider mb-4">Reservdelar</h4>
+        <ul class="space-y-2">
+          {reservdelar.map((item) => (
             <li>
               <a href={item.href} class="text-sm hover:text-white transition-colors">{item.label}</a>
             </li>

@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import FAQ from '../../components/FAQ.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const AMZN_TAG = 'robotjakt-21';
+
+const brushes = [
+  {
+    name: 'Roborock S8-serien — gummi-huvudborste (anti-tangle)',
+    compat: 'Passar: S8, S8+, S8 Pro Ultra, S8 Max Ultra, S8 MaxV Ultra',
+    type: 'Huvudborste — gummirulle',
+    interval: 'Byt vid slitage, ca 12 månader',
+    badge: 'Anti-tangle',
+    price: 'ca 199–279 kr',
+    ctaUrl: `https://www.amazon.se/s?k=roborock+s8+gummi+huvudborste+roller&tag=${AMZN_TAG}`,
+  },
+  {
+    name: 'Roborock S8 / Qrevo — sidoborstar 6-pack',
+    compat: 'Passar: S8-serien, Qrevo Master, Qrevo MaxV, Q7 Max+',
+    type: 'Sidoborste',
+    interval: 'Byt var 6 månad',
+    badge: null,
+    price: 'ca 79–119 kr',
+    ctaUrl: `https://www.amazon.se/s?k=roborock+sidoborstar+6+pack+reservdelar&tag=${AMZN_TAG}`,
+  },
+  {
+    name: 'Dreame L20 Ultra / X40 Ultra — gummi-borsthuvud',
+    compat: 'Passar: L20 Ultra, X30 Ultra, X40 Ultra',
+    type: 'Huvudborste — gummirulle',
+    interval: 'Byt vid slitage, ca 12 månader',
+    badge: null,
+    price: 'ca 189–259 kr',
+    ctaUrl: `https://www.amazon.se/s?k=dreame+l20+x40+gummi+borsthuvud&tag=${AMZN_TAG}`,
+  },
+  {
+    name: 'Dreame — sidoborstar 8-pack',
+    compat: 'Passar: D9, L10 Pro, L20 Ultra, X30, X40-serien',
+    type: 'Sidoborste',
+    interval: 'Byt var 6 månad',
+    badge: 'Bra pris',
+    price: 'ca 69–99 kr',
+    ctaUrl: `https://www.amazon.se/s?k=dreame+sidoborstar+reservdelar+8+pack&tag=${AMZN_TAG}`,
+  },
+  {
+    name: 'Ecovacs Deebot T20 / X5 Omni — borsthuvud + sidoborstar',
+    compat: 'Passar: Deebot X5 Omni, T20 Omni, X1 Omni',
+    type: 'Huvudborste + sidoborstar',
+    interval: 'Byt vid slitage',
+    badge: null,
+    price: 'ca 149–199 kr',
+    ctaUrl: `https://www.amazon.se/s?k=ecovacs+deebot+t20+x5+borstar+reservdelar&tag=${AMZN_TAG}`,
+  },
+  {
+    name: 'Universella sidoborstar — 3-arms (10-pack)',
+    compat: 'Passar de flesta robotdammsugare med 3-arms sidoborste, inkl. iRobot Roomba',
+    type: 'Sidoborste universell',
+    interval: 'Byt var 6 månad',
+    badge: 'Universell',
+    price: 'ca 59–89 kr',
+    ctaUrl: `https://www.amazon.se/s?k=robotdammsugare+sidoborstar+universell+3+arm&tag=${AMZN_TAG}`,
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Hur vet jag när det är dags att byta borstar?',
+    answer: 'Byt sidoborstar när borsttipparna är böjda eller kortare än 2 cm — de kanter och hörn som borsten är till för nås inte längre. Byt huvudborsten när gummidelarna eller borst-fibern är synligt slitna, eller om roboten lämnar smutsiga spår på golvet trots rengöring.',
+  },
+  {
+    question: 'Vad är skillnaden mellan gummirulle och traditionell borste?',
+    answer: 'Gummirulle (anti-tangle) är smidigare med hår och päls — de trasslas inte lika lätt. Traditionella borsthuvuden är bättre på att lyfta smuts ur djupa mattor. De flesta moderna premiumrobotar (Roborock S8, Dreame X40) levereras med gummirullar.',
+  },
+  {
+    question: 'Kan jag använda tredjepartsborstar på min Roborock eller Dreame?',
+    answer: 'Ja. Kompatibla borstar av god kvalitet håller samma standard som original och kostar 30–60 % mindre. Se till att köpa från säljare med tydlig modellkompatibilitetslista och välj borstar med rätt antal armar (3 eller 4) för din modell.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Reservdelar', href: '/reservdelar/' },
+  { label: 'Borstar' },
+];
+---
+
+<BaseLayout
+  title="Ersättningsborstar till robotdammsugare — Sidoborstar & huvudborste | Robotjakt"
+  description="Köp rätt ersättningsborstar till din robotdammsugare. Sidoborstar och gummi-huvudborste till Roborock, Dreame och Ecovacs. Köp via Amazon."
+>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <section class="bg-primary text-white py-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Ersättningsborstar till robotdammsugare</h1>
+      <p class="text-gray-200 max-w-2xl">Sidoborstar och gummi-borsthuvuden till Roborock, Dreame och Ecovacs — slitna borstar halverar städresultatet.</p>
+    </div>
+  </section>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <AffiliateDisclaimer />
+    <p class="text-sm text-text-light mb-6">Senast uppdaterad: mars 2026 &mdash; {brushes.length} borstar jämförda</p>
+
+    <div class="space-y-4 mb-10">
+      {brushes.map((b, i) => (
+        <article class="bg-white rounded-xl border border-border shadow-sm p-5">
+          <div class="flex flex-col sm:flex-row sm:items-start gap-4">
+            <div class="flex-shrink-0 hidden sm:flex items-center justify-center w-10 h-10 rounded-full bg-bg-alt text-text-light font-bold text-sm">
+              {i + 1}
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-start gap-2 mb-1">
+                <h2 class="font-heading font-bold text-text text-base">{b.name}</h2>
+                {b.badge && <span class="text-xs font-semibold bg-accent/10 text-accent px-2 py-0.5 rounded-full">{b.badge}</span>}
+              </div>
+              <p class="text-xs text-accent font-medium mb-1">{b.compat}</p>
+              <div class="flex flex-wrap gap-3 text-xs text-text-light mb-3">
+                <span>Typ: <strong class="text-text">{b.type}</strong></span>
+                <span>{b.interval}</span>
+              </div>
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="text-lg font-bold text-text">{b.price}</span>
+                <a
+                  href={b.ctaUrl}
+                  rel="sponsored nofollow noopener"
+                  target="_blank"
+                  class="inline-flex items-center gap-1.5 px-5 py-2.5 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors text-sm min-h-[44px]"
+                >
+                  Köp på Amazon
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Se fler reservdelar</h2>
+      <div class="grid sm:grid-cols-2 gap-3">
+        <a href="/reservdelar/filter/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Filter till robotdammsugare</a>
+        <a href="/reservdelar/robotdammsugare/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Alla dammsugare reservdelar</a>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+  </main>
+</BaseLayout>

@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import FAQ from '../../components/FAQ.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const AMZN_TAG = 'robotjakt-21';
+
+const parts = [
+  {
+    section: 'Dreame X-serien (flagship)',
+    models: 'X30 Ultra, X40 Ultra, X50 Ultra',
+    items: [
+      { name: 'HEPA-filter 4-pack', price: 'ca 139–189 kr', ctaUrl: `https://www.amazon.se/s?k=dreame+x30+x40+ultra+hepa+filter&tag=${AMZN_TAG}` },
+      { name: 'Gummi-borsthuvud (anti-tangle)', price: 'ca 199–269 kr', ctaUrl: `https://www.amazon.se/s?k=dreame+x40+ultra+gummi+borsthuvud&tag=${AMZN_TAG}` },
+      { name: 'Sidoborstar 8-pack', price: 'ca 79–119 kr', ctaUrl: `https://www.amazon.se/s?k=dreame+x40+ultra+sidoborstar&tag=${AMZN_TAG}` },
+      { name: 'Moppkuddar 4-pack', price: 'ca 129–179 kr', ctaUrl: `https://www.amazon.se/s?k=dreame+x40+moppkuddar+reservdelar&tag=${AMZN_TAG}` },
+      { name: 'Komplett underhållskit', price: 'ca 279–369 kr', ctaUrl: `https://www.amazon.se/s?k=dreame+x40+ultra+komplett+kit+reservdelar&tag=${AMZN_TAG}` },
+    ],
+  },
+  {
+    section: 'Dreame L-serien',
+    models: 'L10 Pro, L10s Ultra Gen2, L20 Ultra, L30 Ultra',
+    items: [
+      { name: 'HEPA-filter 4-pack', price: 'ca 99–149 kr', ctaUrl: `https://www.amazon.se/s?k=dreame+l20+ultra+l10+hepa+filter&tag=${AMZN_TAG}` },
+      { name: 'Gummi-borsthuvud', price: 'ca 179–249 kr', ctaUrl: `https://www.amazon.se/s?k=dreame+l20+ultra+borsthuvud+roller&tag=${AMZN_TAG}` },
+      { name: 'Sidoborstar 8-pack', price: 'ca 69–109 kr', ctaUrl: `https://www.amazon.se/s?k=dreame+l20+l10+sidoborstar+reservdelar&tag=${AMZN_TAG}` },
+      { name: 'Moppkuddar 4-pack', price: 'ca 109–159 kr', ctaUrl: `https://www.amazon.se/s?k=dreame+l20+moppkuddar&tag=${AMZN_TAG}` },
+    ],
+  },
+  {
+    section: 'Dreame W-serien (tvättsystem)',
+    models: 'W10 Pro, W10 Ultra',
+    items: [
+      { name: 'Filter + borstar kit', price: 'ca 119–169 kr', ctaUrl: `https://www.amazon.se/s?k=dreame+w10+pro+filter+borstar&tag=${AMZN_TAG}` },
+      { name: 'Moppkuddar 4-pack', price: 'ca 99–139 kr', ctaUrl: `https://www.amazon.se/s?k=dreame+w10+pro+moppkuddar&tag=${AMZN_TAG}` },
+    ],
+  },
+  {
+    section: 'Dreame D-serien',
+    models: 'D9, D9 Max, D10 Plus',
+    items: [
+      { name: 'HEPA-filter 4-pack', price: 'ca 79–119 kr', ctaUrl: `https://www.amazon.se/s?k=dreame+d9+d10+hepa+filter&tag=${AMZN_TAG}` },
+      { name: 'Sidoborstar + borsthuvud kit', price: 'ca 99–149 kr', ctaUrl: `https://www.amazon.se/s?k=dreame+d9+borsthuvud+sidoborstar+kit&tag=${AMZN_TAG}` },
+    ],
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Hur får jag underhållspåminnelser på min Dreame-robot?',
+    answer: 'Öppna Dreame Home-appen, välj din robot och gå till Inställningar > Underhållsplan. Appen visar rekommenderade bytesintervall baserade på körtid för filter, borstar och moppkuddar.',
+  },
+  {
+    question: 'Är reservdelarna till Dreame X40 Ultra kompatibla med X30 Ultra?',
+    answer: 'Många delar är korskompatibla mellan X30 och X40 Ultra, men inte alla — särskilt inte borsthuvudet som skiljer sig konstruktionsmässigt. Kontrollera alltid att din modell listas i produktbeskrivningen på Amazon.',
+  },
+  {
+    question: 'Var köper man Dreame-reservdelar i Sverige?',
+    answer: 'Amazon.se har det bredaste urvalet av kompatibla Dreame-reservdelar med snabb leverans till Sverige. Dreames officiella webbshop (dreametech.com) och Komplett/Elgiganten har ett mer begränsat sortiment.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Reservdelar', href: '/reservdelar/' },
+  { label: 'Dreame' },
+];
+---
+
+<BaseLayout
+  title="Dreame reservdelar — Filter, borstar, moppkuddar L20 Ultra & X40 Ultra | Robotjakt"
+  description="Reservdelar till Dreame robotdammsugare. HEPA-filter, gummi-borsthuvud, sidoborstar och moppkuddar till X40 Ultra, L20 Ultra och fler modeller. Köp via Amazon."
+>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <section class="bg-primary text-white py-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Dreame reservdelar</h1>
+      <p class="text-gray-200 max-w-2xl">Filter, borstar och moppkuddar till Dreame X40 Ultra, L20 Ultra, D9 och fler modeller.</p>
+    </div>
+  </section>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <AffiliateDisclaimer />
+    <p class="text-sm text-text-light mb-6">Senast uppdaterad: mars 2026</p>
+
+    {parts.map(section => (
+      <section class="mb-10">
+        <div class="mb-4">
+          <h2 class="font-heading text-2xl font-bold text-text">{section.section}</h2>
+          <p class="text-sm text-text-light mt-1">Passar: {section.models}</p>
+        </div>
+        <div class="space-y-3">
+          {section.items.map(item => (
+            <div class="bg-white rounded-xl border border-border p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <span class="font-semibold text-text text-sm">{item.name}</span>
+              <div class="flex items-center gap-3 sm:flex-shrink-0">
+                <span class="font-bold text-text whitespace-nowrap">{item.price}</span>
+                <a
+                  href={item.ctaUrl}
+                  rel="sponsored nofollow noopener"
+                  target="_blank"
+                  class="inline-flex items-center gap-1.5 px-4 py-2 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors text-sm min-h-[44px] whitespace-nowrap"
+                >
+                  Köp på Amazon
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Läs mer om Dreame</h2>
+      <div class="grid sm:grid-cols-2 gap-3">
+        <a href="/dreame-guide/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Dreame — alla modeller</a>
+        <a href="/dreame-x40-ultra/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Dreame X40 Ultra recension</a>
+        <a href="/dreame-l20-ultra/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Dreame L20 Ultra recension</a>
+        <a href="/reservdelar/filter/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Alla ersättningsfilter</a>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+  </main>
+</BaseLayout>

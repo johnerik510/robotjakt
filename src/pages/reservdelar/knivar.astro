@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import FAQ from '../../components/FAQ.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const AMZN_TAG = 'robotjakt-21';
+
+const blades = [
+  {
+    name: 'Husqvarna Automower knivar — 9-pack',
+    compat: 'Passar: Automower 105, 115H, 310, 315, 315X, 320, 330X, 430X, 450X',
+    qty: '9 knivar (3 ×3)',
+    interval: 'Byt varje säsong eller vid slitage',
+    price: 'ca 89–139 kr',
+    badge: 'Bäst säljare',
+    ctaUrl: `https://www.amazon.se/s?k=husqvarna+automower+knivar+9-pack&tag=${AMZN_TAG}`,
+  },
+  {
+    name: 'Husqvarna Automower knivar — 24-pack',
+    compat: 'Passar: Automower 430X, 450X, 520, 550',
+    qty: '24 knivar (8 ×3)',
+    interval: 'Säsongsförråd för 2–3 år',
+    price: 'ca 199–279 kr',
+    badge: 'Bästa värde',
+    ctaUrl: `https://www.amazon.se/s?k=husqvarna+automower+knivar+24-pack&tag=${AMZN_TAG}`,
+  },
+  {
+    name: 'Gardena Sileno knivar — 9-pack',
+    compat: 'Passar: Gardena Sileno City 250/500/750, Sileno Life 750, Minimo',
+    qty: '9 knivar',
+    interval: 'Byt varje säsong',
+    price: 'ca 89–129 kr',
+    badge: null,
+    ctaUrl: `https://www.amazon.se/s?k=gardena+sileno+knivar+blades+reservdelar&tag=${AMZN_TAG}`,
+  },
+  {
+    name: 'Worx Landroid knivar — 9-pack',
+    compat: 'Passar: Worx Landroid S300, M500, L1500',
+    qty: '9 knivar',
+    interval: 'Byt varje säsong',
+    price: 'ca 79–119 kr',
+    badge: null,
+    ctaUrl: `https://www.amazon.se/s?k=worx+landroid+knivar+blades&tag=${AMZN_TAG}`,
+  },
+  {
+    name: 'Segway Navimow knivar',
+    compat: 'Passar: Segway Navimow H500E, i105E, i108E',
+    qty: '9 knivar',
+    interval: 'Byt varje säsong',
+    price: 'ca 99–149 kr',
+    badge: null,
+    ctaUrl: `https://www.amazon.se/s?k=segway+navimow+knivar+blades&tag=${AMZN_TAG}`,
+  },
+  {
+    name: 'Mammotion LUBA knivar',
+    compat: 'Passar: Mammotion LUBA 2 AWO 1000H, LUBA AWO 3000',
+    qty: '9 knivar',
+    interval: 'Byt varje säsong',
+    price: 'ca 149–199 kr',
+    badge: null,
+    ctaUrl: `https://www.amazon.se/s?k=mammotion+luba+knivar+blades+reservdelar&tag=${AMZN_TAG}`,
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Hur vet man när det är dags att byta knivar?',
+    answer: 'Byt knivar när gräset ser fransigt eller ojämnt klippt ut. Slitna knivar "river" snarare än klipper, vilket ger gulaktiga grästoppar och ökar risken för svampangrepp. En enkel kontroll: lägg en ny kniv bredvid den gamla och jämför längd och skärpekant.',
+  },
+  {
+    question: 'Är det farligt att byta knivar på robotgräsklipparen?',
+    answer: 'Knivbytet är enkelt men kräver att roboten är helt avstängd. Välj alltid säkerhets- eller transportläge (om modellen har det). Vänd roboten upp och ner på en mjuk yta. Håll aldrig i knivar utan handskar — de är vassa. Dra åt skruvar med rätt moment enligt manualen.',
+  },
+  {
+    question: 'Kan man använda tredjepartsknivar på Husqvarna Automower?',
+    answer: 'Ja, kompatibla tredjepartsknivar håller ofta god kvalitet och kostar 20–40 % mindre än original. Kontrollera att knivarna har rätt dimensioner (längd och skruvhål) för din modell. Husqvarnas standard-knivar används dessutom i många OEM-varianter.',
+  },
+  {
+    question: 'Hur många knivar behöver en robotgräsklippare?',
+    answer: 'Standard är 3 knivar monterade simultant — ett 9-pack ger dig 3 fullständiga byten, vilket räcker minst en hel säsong. Passar du en maskin med 4 knivfästen (t.ex. vissa 450X-modeller) köp 12- eller 24-pack.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Reservdelar', href: '/reservdelar/' },
+  { label: 'Robotgräsklippare', href: '/reservdelar/robotgrasklippare/' },
+  { label: 'Knivar' },
+];
+---
+
+<BaseLayout
+  title="Knivar till robotgräsklippare — Husqvarna, Gardena, Worx & Mammotion | Robotjakt"
+  description="Byt knivar på din robotgräsklippare inför säsongen. Knivar till Husqvarna Automower, Gardena Sileno, Worx Landroid, Segway Navimow och Mammotion LUBA."
+>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <section class="bg-primary text-white py-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Knivar till robotgräsklippare</h1>
+      <p class="text-gray-200 max-w-2xl">Ersättningsknivar till Husqvarna Automower, Gardena Sileno, Worx Landroid, Segway Navimow och Mammotion LUBA — byt knivar varje säsong.</p>
+    </div>
+  </section>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <AffiliateDisclaimer />
+    <p class="text-sm text-text-light mb-6">Senast uppdaterad: mars 2026 &mdash; {blades.length} knivpaket jämförda</p>
+
+    <div class="bg-yellow-50 border border-yellow-200 rounded-xl px-5 py-4 mb-8 text-sm text-yellow-900">
+      <strong>Säkerhet:</strong> Stäng alltid av roboten och aktivera transportläge innan du byter knivar. Bär alltid skyddshandskar.
+    </div>
+
+    <div class="space-y-4 mb-10">
+      {blades.map((b, i) => (
+        <article class="bg-white rounded-xl border border-border shadow-sm p-5">
+          <div class="flex flex-col sm:flex-row sm:items-start gap-4">
+            <div class="flex-shrink-0 hidden sm:flex items-center justify-center w-10 h-10 rounded-full bg-bg-alt text-text-light font-bold text-sm">
+              {i + 1}
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-start gap-2 mb-1">
+                <h2 class="font-heading font-bold text-text text-base">{b.name}</h2>
+                {b.badge && <span class="text-xs font-semibold bg-winner/10 text-winner px-2 py-0.5 rounded-full">{b.badge}</span>}
+              </div>
+              <p class="text-xs text-accent font-medium mb-1">{b.compat}</p>
+              <div class="flex flex-wrap gap-3 text-xs text-text-light mb-3">
+                <span>Antal: <strong class="text-text">{b.qty}</strong></span>
+                <span>{b.interval}</span>
+              </div>
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="text-lg font-bold text-text">{b.price}</span>
+                <a
+                  href={b.ctaUrl}
+                  rel="sponsored nofollow noopener"
+                  target="_blank"
+                  class="inline-flex items-center gap-1.5 px-5 py-2.5 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors text-sm min-h-[44px]"
+                >
+                  Köp på Amazon
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Se fler reservdelar</h2>
+      <div class="grid sm:grid-cols-2 gap-3">
+        <a href="/reservdelar/husqvarna/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Husqvarna Automower reservdelar</a>
+        <a href="/reservdelar/robotgrasklippare/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Alla gräsklippare reservdelar</a>
+        <a href="/robotgrasklippare/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Bästa robotgräsklippare 2026</a>
+        <a href="/kopguide-robotgrasklippare/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Köpguide robotgräsklippare</a>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+  </main>
+</BaseLayout>
