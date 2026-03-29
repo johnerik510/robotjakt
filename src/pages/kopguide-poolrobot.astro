@@ -1,0 +1,256 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+
+const breadcrumbs = [
+  { label: 'Poolrobot', href: '/poolrobot/' },
+  { label: 'Köpguide' },
+];
+
+const faqItems = [
+  {
+    question: 'Hur lång kabel behöver en poolrobot?',
+    answer: 'Kabeln ska vara minst lika lång som poolens längd plus 2 meter extra marginal. En 15 m kabel räcker för de flesta pooler upp till 10–12 meter långa. Har du en pool på 12 meter bör du välja en modell med minst 17–18 m kabel. Kontrollera alltid kabellängden mot poolens faktiska mått innan köp.',
+  },
+  {
+    question: 'Vad kostar en bra poolrobot?',
+    answer: 'En budgetrobot som bara rengör botten kostar 2 000–4 000 kr. Mellanklass med botten och delvis väggstädning kostar 4 000–12 000 kr. Premiummodeller som rengör botten, väggar och vattenlinje kostar 12 000 kr och uppåt. För de flesta villapooler ger mellanklass bäst balans mellan prestanda och pris.',
+  },
+  {
+    question: 'Kan en poolrobot klara ovalformade pooler?',
+    answer: 'Ja, de flesta moderna poolrobotar klarar ovala, runda och oregelbundna poolformer utan problem. Roboten navigerar längs poolens ytor oavsett form. Det viktigaste är att kontrollera att kabeln räcker till poolens längsta mått, och att poolens yta i m² ryms inom robotens kapacitet.',
+  },
+  {
+    question: 'Behöver man ta upp poolroboten efter varje rengöring?',
+    answer: 'Ja, poolroboten ska alltid tas upp ur vattnet när rengöringscykeln är klar. Att låta roboten ligga kvar i poolkemikalierna sliter på motor, kabel och filter. Spola av roboten med rent vatten och förvara den svalt och skyddat från direkt solljus mellan användningarna. Rätt skötsel fördubblar livslängden.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<ArticleLayout
+  title="Köpguide poolrobot 2026 — Så väljer du rätt"
+  description="Komplett köpguide för poolrobotar 2026. Vi förklarar vad du ska tänka på — poolstorlek, kabellängd, filtertyp och om du behöver en som klättrar väggar."
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-03-29"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Köpguide poolrobot 2026 — Så väljer du rätt
+  </h1>
+
+  <p class="text-text-light mb-8 max-w-2xl leading-relaxed">
+    En poolrobot är en av de smartaste investeringarna du kan göra för din pool — men det finns stora skillnader i vad olika modeller klarar. Den här guiden hjälper dig att hitta rätt modell för just din pool och dina behov.
+  </p>
+
+  <!-- Section 1: Poolstorlek och kabellängd -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">1. Poolstorlek och kabellängd</h2>
+    <p class="text-text-light leading-relaxed mb-4">
+      Det första du behöver kontrollera är att kabeln räcker till din pool. Regeln är enkel: kabellängden ska vara minst lika lång som poolens längsta mått, plus 2 meter extra för att roboten ska kunna nå alla hörn och väggar utan att kabeln stramar.
+    </p>
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-4">
+      <p class="font-semibold text-text mb-2">Tumregel:</p>
+      <p class="text-text-light text-sm">Pool 8 m lång → behöver minst 10 m kabel<br />Pool 12 m lång → behöver minst 14 m kabel</p>
+    </div>
+    <p class="text-text-light leading-relaxed">
+      Kontrollera alltid kabellängden i produktspecifikationerna innan köp. En kabel som stramar vid poolens ändar gör att roboten inte täcker hela ytan och kan snabbare få slitage på kabeln. Bättre med för lång kabel än för kort.
+    </p>
+  </section>
+
+  <!-- Section 2: Botten vs väggar -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">2. Botten vs väggar — ett viktigt val</h2>
+    <p class="text-text-light leading-relaxed mb-4">
+      Det här är den enskilt viktigaste funktionsskillnaden mellan poolrobotar i olika prisklasser. Budgetmodeller rengör bara poolbotten — de kör längs botten och suger upp sand, löv och smuts som sjunkit ner. Det räcker för många, men inte alla.
+    </p>
+    <p class="text-text-light leading-relaxed mb-4">
+      Om din pool tenderar att få alger eller missfärgningar på väggarna behöver du en modell som klättrar väggarna. Alger fäster lika gärna på väggarna som på botten, och en robot som bara rengör botten löser inte det problemet.
+    </p>
+    <div class="bg-white rounded-xl border border-border overflow-hidden mb-4">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-border bg-bg-alt">
+            <th class="text-left px-4 py-3 font-semibold text-text">Täckning</th>
+            <th class="text-left px-4 py-3 font-semibold text-text">Passar för</th>
+            <th class="text-left px-4 py-3 font-semibold text-text">Prisklass</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-border">
+          <tr>
+            <td class="px-4 py-3 text-text font-medium">Botten</td>
+            <td class="px-4 py-3 text-text-light">Pooler med lite alger, sand i botten</td>
+            <td class="px-4 py-3 text-text-light">Under 4 000 kr</td>
+          </tr>
+          <tr class="bg-bg-alt/50">
+            <td class="px-4 py-3 text-text font-medium">Botten + nedre väggar</td>
+            <td class="px-4 py-3 text-text-light">De flesta villapooler</td>
+            <td class="px-4 py-3 text-text-light">4 000–9 000 kr</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 text-text font-medium">Botten + hela väggar</td>
+            <td class="px-4 py-3 text-text-light">Pooler med algproblem, vattenlinje</td>
+            <td class="px-4 py-3 text-text-light">9 000 kr+</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 3: Filtertyp -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">3. Filtertyp — patron eller påse</h2>
+    <p class="text-text-light leading-relaxed mb-4">
+      Poolrobotar kommer med två typer av filter: patronfilter eller påsfilter. Valet påverkar hur enkelt det är att sköta roboten.
+    </p>
+    <div class="grid sm:grid-cols-2 gap-4 mb-4">
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h3 class="font-semibold text-text mb-2">Patronfilter</h3>
+        <ul class="space-y-1 text-sm text-text-light">
+          <li class="flex items-start gap-2"><span class="text-winner font-bold flex-shrink-0">+</span> Enklast att rensa — plocka ut och skölj</li>
+          <li class="flex items-start gap-2"><span class="text-winner font-bold flex-shrink-0">+</span> Rekommenderas för de flesta</li>
+          <li class="flex items-start gap-2"><span class="text-cta font-bold flex-shrink-0">-</span> Något lägre kapacitet per tömning</li>
+        </ul>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h3 class="font-semibold text-text mb-2">Påsfilter</h3>
+        <ul class="space-y-1 text-sm text-text-light">
+          <li class="flex items-start gap-2"><span class="text-winner font-bold flex-shrink-0">+</span> Större kapacitet — samlar mer smuts</li>
+          <li class="flex items-start gap-2"><span class="text-winner font-bold flex-shrink-0">+</span> Passar pooler med mycket löv</li>
+          <li class="flex items-start gap-2"><span class="text-cta font-bold flex-shrink-0">-</span> Krångligare att rensa och tömma</li>
+        </ul>
+      </div>
+    </div>
+    <p class="text-text-light leading-relaxed">
+      För de flesta villapooler rekommenderar vi patronfilter — enklare skötsel betyder att du faktiskt rensar filtret regelbundet, vilket är avgörande för att roboten ska prestera optimalt.
+    </p>
+  </section>
+
+  <!-- Section 4: Drifttid -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">4. Drifttid och cykler</h2>
+    <p class="text-text-light leading-relaxed mb-4">
+      De flesta poolrobotar har en cykeltid på 2–3 timmar per körning. Under en cykel täcker roboten hela poolens botten och, beroende på modell, väggarna. En vanlig villapool på 8x4 meter rengörs grundligt på en cykel.
+    </p>
+    <p class="text-text-light leading-relaxed mb-4">
+      Hur ofta du behöver köra roboten beror på poolanvändningen, mängden löv och organiskt material, och hur kemikalierna hålls i balans. De flesta poolägare kör roboten 1–2 gånger per vecka under högsäsongen.
+    </p>
+    <div class="bg-bg-alt rounded-xl border border-border p-5">
+      <p class="font-semibold text-text mb-2">Rekommendation:</p>
+      <p class="text-text-light text-sm">Kör roboten 2 gånger per vecka vid aktiv poolanvändning, 1 gång per vecka i inledningen och slutet av säsongen. Öka frekvensen om poolen är nära träd eller används av många badande.</p>
+    </div>
+  </section>
+
+  <!-- Section 5: App och timer -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">5. App och timer — nödvändigt eller lyxfunktion?</h2>
+    <p class="text-text-light leading-relaxed mb-4">
+      WiFi-uppkoppling och app-styrning är vanligare i premiummodeller och erbjuder möjligheten att schemalägga rengöring, starta roboten på distans och se städhistorik. I praktiken är det en bekvämlighetsfeature — roboten gör ett lika bra jobb utan.
+    </p>
+    <p class="text-text-light leading-relaxed">
+      Budget- och mellanklassmodeller utan app fungerar precis lika bra för rengöringen. Du startar roboten manuellt, den gör sitt jobb och du tar upp den när den är klar. Välj app-funktion om du verkligen vill schemalägga, annars är det pengar bättre spenderade på bättre rengöringsprestanda.
+    </p>
+  </section>
+
+  <!-- Section 6: Prisklasser -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">6. Prisklasser — vad får du för pengarna</h2>
+    <div class="space-y-4">
+      <div class="bg-white rounded-xl border border-border p-5">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-bg-alt text-text-light text-xs font-bold px-2 py-1 rounded">BUDGET</span>
+          <span class="font-bold text-text">Under 4 000 kr</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed">Rengör poolbotten. Enkel navigering, grundläggande filtrering. Passar mindre pooler med litet algproblem och begränsad budget. Kortare livslängd — räkna med 3–5 år med rätt skötsel. Exempel: Bestway Flowclear AquaSurge.</p>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-accent/10 text-accent text-xs font-bold px-2 py-1 rounded">MELLANKLASS</span>
+          <span class="font-bold text-text">4 000–12 000 kr</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed">Rengör botten och nedre väggar. Bättre navigering och filtrering. Passar de flesta villapooler upp till 50 m². Räkna med 5–8 år med rätt skötsel. Det här segmentet ger bäst prisvärdhet för en normalstor villapool. Exempel: Maytronics Dolphin E30.</p>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-winner/10 text-winner text-xs font-bold px-2 py-1 rounded">PREMIUM</span>
+          <span class="font-bold text-text">12 000 kr+</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed">Rengör botten, hela väggar och vattenlinje. Intelligent navigering, WiFi-app, kraftfullt filter. Passar stora pooler och dem som vill ha minimal skötsel. Livslängd 7–10 år med rätt underhåll. Exempel: Maytronics Dolphin Sigma.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA box to topplistan -->
+  <section class="mb-10 bg-winner/5 border border-winner/20 rounded-xl p-6">
+    <h2 class="font-heading text-xl font-bold text-text mb-2">Redo att välja?</h2>
+    <p class="text-text-light text-sm mb-4">
+      Se vår kompletta topplista med testade poolrobotar rankade efter prestanda, prisvärdhet och rengöringstäckning.
+    </p>
+    <a
+      href="/poolrobot/"
+      class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+    >
+      Se bästa poolrobot 2026 — topplista
+      <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+    </a>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <!-- Related links -->
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Fler guider</h2>
+    <ul class="space-y-2">
+      <li><a href="/poolrobot/" class="text-accent hover:underline text-sm">Bästa poolrobot 2026 — test och jämförelse av 5 modeller</a></li>
+      <li><a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare 2026 — komplett topplista</a></li>
+    </ul>
+  </section>
+</ArticleLayout>
+
+<StickyCTA
+  text="Se bästa poolrobot 2026"
+  url="/poolrobot/"
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqSchema,
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Så väljer du rätt poolrobot",
+  "description": "Guide för att välja poolrobot baserat på poolstorlek, kabellängd, filtertyp och budget.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Mät poolens kabelbehov",
+      "text": "Kontrollera att robotens kabellängd är minst lika lång som poolens längsta mått plus 2 meter extra."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Bestäm rengöringstäckning",
+      "text": "Välj om du behöver en robot som bara rengör botten eller en som även klättrar väggarna."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Välj filtertyp",
+      "text": "Patronfilter är enklast att underhålla. Påsfilter har mer kapacitet för pooler med mycket löv."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Välj prisklass",
+      "text": "Budget under 4 000 kr för botten, mellanklass 4 000–12 000 kr för bra täckning, premium 12 000+ kr för full täckning med väggar och app."
+    }
+  ]
+})} />

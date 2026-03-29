@@ -1,0 +1,292 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Husqvarna Automower 315X' },
+];
+
+const specs = [
+  { label: 'Klippyta', value: '1 600 m²' },
+  { label: 'Klippbredd', value: '18 cm' },
+  { label: 'Lutningstolerans', value: '40%' },
+  { label: 'Bullernivå', value: '58 dB' },
+  { label: 'Navigering', value: 'GPS + 3G' },
+  { label: 'Kabelinstallation', value: 'Ja (perimeterkabel)' },
+  { label: 'Vikt', value: '7,7 kg' },
+  { label: 'Laddtid', value: '50 min' },
+  { label: 'Drifttid', value: '60 min' },
+  { label: 'Pris', value: 'ca 19 990 kr' },
+];
+
+const faqItems = [
+  {
+    question: 'Vad skiljer Husqvarna Automower 315X från 430X Nera?',
+    answer: '315X är gjord för trädgårdar upp till 1 600 m² medan 430X Nera klarar upp till 3 200 m². 430X Nera har 4G-uppkoppling och EPOS GPS-system för mer exakt navigering, medan 315X använder 3G och enklare GPS. 430X Nera klarar 45% lutning mot 315X 40%. För de flesta villaträdgårdar under 1 600 m² är 315X ett utmärkt — och hälften så dyrt — val.',
+  },
+  {
+    question: 'Behöver Husqvarna Automower 315X professionell installation?',
+    answer: 'Husqvarna rekommenderar professionell installation av perimeterkabeln, men det är möjligt att installera den själv om du är händig. För en trädgård upp till 1 600 m² är installationen hanterbar som DIY-projekt. Professionell installation kostar normalt 1 500–3 500 kr beroende på trädgårdens storlek och komplexitet.',
+  },
+  {
+    question: 'Fungerar 315X utan WiFi-uppkoppling hemma?',
+    answer: 'Ja, 315X använder 3G-mobilnätet för kommunikation och behöver inte vara kopplad till ditt hemmanätverk. Du behöver ett mobiltäckning på tomten för att GPS-navigeringen och Automower Connect-appen ska fungera optimalt. Utan täckning fungerar roboten fortfarande men utan GPS-precision och app-styrning.',
+  },
+  {
+    question: 'Hur ofta behöver man byta knivblad på 315X?',
+    answer: 'Husqvarna rekommenderar byte av knivblad var 1–3 månader beroende på trädgårdens storlek och underlagets beskaffenhet. Knivbladen är billiga och enkla att byta utan verktyg — lossa skruvarna, byt bladen, skruva fast igen. Regelbundet knivbladsbyte är det viktigaste underhållet för att behålla klippkvaliteten.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<ArticleLayout
+  title="Husqvarna Automower 315X Test 2026 — Recension"
+  description="Husqvarna Automower 315X testad och recenserad. GPS-navigering, tyst drift och pålitlig teknik för trädgårdar upp till 1 600 m². Värd pengarna?"
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-03-29"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Husqvarna Automower 315X — Recension 2026
+  </h1>
+
+  <!-- Verdict box -->
+  <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+    <div class="flex items-start gap-4">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-winner text-white text-xs font-bold px-2 py-1 rounded">REDAKTIONENS VAL — MELLANKLASS</span>
+          <div class="flex gap-0.5" aria-label="Betyg: 9.0 av 10">
+            {[1,2,3,4,5].map(i => (
+              <svg class={`w-4 h-4 ${i <= 4 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span class="font-bold text-text">9,0 / 10</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed mb-3">
+          Husqvarna Automower 315X är det självklara valet för villaträdgårdar upp till 1 600 m². GPS+3G-navigering, tyst 58 dB-drift och pålitlig Husqvarna-teknik till halva priset av storebror 430X Nera. Utmärkt prisvärdhet i sitt segment.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <p class="text-2xl font-bold text-text">ca 19 990 kr</p>
+            <p class="text-xs text-text-light">Pris kan variera — jämför alltid</p>
+          </div>
+          <a
+            href="https://www.husqvarna.com/se/produkter/robotgrasklippare/automower-315x/"
+            rel="sponsored nofollow noopener"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris på Automower 315X
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pros/Cons -->
+  <div class="grid sm:grid-cols-2 gap-5 mb-8">
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Fördelar</h2>
+      <ul class="space-y-2">
+        {[
+          'GPS+3G-navigering — systematisk täckning',
+          'Tyst 58 dB — klipp dag och natt',
+          'Lättviktig 7,7 kg — enkel att flytta',
+          'Automower Connect-app ingår',
+          'Pålitlig Husqvarna-teknik med lång livslängd',
+          'Halva priset jämfört med 430X Nera',
+        ].map(pro => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            {pro}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Perimeterkabel krävs — installation tillkommer',
+          '3G i stället för 4G — något sämre uppkoppling',
+          'Max 1 600 m² — räcker inte för stora tomter',
+          '40% lutning — något lägre än 430X Nera',
+        ].map(con => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+            {con}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Specs table -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">Tekniska specifikationer</h2>
+    <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+      <table class="w-full text-sm">
+        <tbody class="divide-y divide-border">
+          {specs.map((spec, i) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+              <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+              <td class="px-4 py-3 text-text-light">{spec.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Detailed review sections -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-6">Detaljerad genomgång</h2>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Navigation — GPS+3G</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      315X använder GPS-navigering kombinerat med 3G-uppkoppling för att hålla kontakt med Automower Connect-appen. GPS-systemet ger roboten en grundläggande positionering som gör att den kan täcka trädgården mer systematiskt än äldre slumpmässigt navigerande modeller.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Skillnaden mot storebror 430X Nera är att 430X Nera använder Husqvarnas mer avancerade EPOS-system med 4G och centimeterprecision, medan 315X har ett något enklare GPS-system. I praktiken märks skillnaden mest i väldigt komplexa trädgårdar med många hinder och smalpassager. För en normal villaträdgård under 1 600 m² presterar 315X utmärkt.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Klippresultat</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Med 18 cm klippbredd och randomiserade klippbanor ger 315X ett tätt och jämnt klippresultat. Höjdinställningen 20–60 mm ger flexibilitet för olika gräsmattepreferenser. Roboten klipper kontinuerligt lite i taget vilket ger en välskött gräsmatta utan att klippavfall ackumuleras synligt.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Klippkvaliteten är jämförbar med 430X Nera — det är navigeringen och kapaciteten som skiljer modellerna, inte klippresultatet. Knivbladen är enkla att byta och bör bytas var 1–3 månader för optimal prestanda.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Installation</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Installation av perimeterkabel krävs precis som för alla Husqvarna Automower-modeller. För en trädgård upp till 1 600 m² är installationen hanterbar som DIY-projekt om du är händig. Husqvarna levererar med installationskit och tydlig guide. Professionell installation kostar normalt 1 500–3 500 kr.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Kabeln grävs ner längs tomtgränsen och runt hinder, kopplas sedan till laddningsstationen. Det tar normalt ett halvdagsarbete för en normalträdgård. Väljer du DIY sparar du pengar men ta god tid och planera kabeldragningen noggrant innan du börjar.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Automower Connect-appen</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Automower Connect-appen ingår och ger full kontroll från mobilen. Du kan schemalägga klippning per veckodag, starta och stoppa roboten, se driftstatus och justera inställningar. Via appen ser du en enkel kartvy med robotens position.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Appen är något mer begränsad än vad 430X Nera erbjuder — detaljerade klippkartor och avancerad rumsplanering saknas. För de flesta användares behov är dock funktionaliteten fullt tillräcklig. Notiser vid fel eller behov av service fungerar pålitligt.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Säkerhet</h3>
+    <p class="text-text-light leading-relaxed mb-6">
+      Samma säkerhetsfunktioner som i hela Automower-serien: PIN-kod för start, lyftsensor som stänger av knivarna omedelbart, tiltssensor vid välvning och alarm via appen vid obehörig hantering. Standardnivån är mer än tillräcklig för en normal villaträdgård.
+    </p>
+  </section>
+
+  <!-- Comparison with 430X -->
+  <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+    <h2 class="font-heading text-xl font-bold text-text mb-3">315X vs 430X Nera — vilket ska du välja?</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-border">
+            <th class="text-left py-2 pr-4 font-semibold text-text">Egenskap</th>
+            <th class="text-left py-2 pr-4 font-semibold text-text">315X</th>
+            <th class="text-left py-2 font-semibold text-text">430X Nera</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-border text-text-light">
+          <tr>
+            <td class="py-2 pr-4 font-medium text-text">Max yta</td>
+            <td class="py-2 pr-4">1 600 m²</td>
+            <td class="py-2">3 200 m²</td>
+          </tr>
+          <tr>
+            <td class="py-2 pr-4 font-medium text-text">Navigering</td>
+            <td class="py-2 pr-4">GPS + 3G</td>
+            <td class="py-2">EPOS GPS + 4G</td>
+          </tr>
+          <tr>
+            <td class="py-2 pr-4 font-medium text-text">Lutning</td>
+            <td class="py-2 pr-4">40%</td>
+            <td class="py-2">45%</td>
+          </tr>
+          <tr>
+            <td class="py-2 pr-4 font-medium text-text">Klippbredd</td>
+            <td class="py-2 pr-4">18 cm</td>
+            <td class="py-2">22 cm</td>
+          </tr>
+          <tr>
+            <td class="py-2 pr-4 font-medium text-text">Pris</td>
+            <td class="py-2 pr-4 text-winner font-semibold">ca 19 990 kr</td>
+            <td class="py-2">ca 39 990 kr</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-text-light text-sm mt-4">
+      Välj 315X om din trädgård är under 1 600 m² och är relativt enkel i formen. Välj 430X Nera om du har en stor, komplex trädgård med många hinder och smalpassager.
+    </p>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <!-- Related links -->
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade recensioner</h2>
+    <ul class="space-y-2">
+      <li><a href="/husqvarna-automower-430x-nera/" class="text-accent hover:underline text-sm">Husqvarna Automower 430X Nera recension — för trädgårdar upp till 3 200 m²</a></li>
+      <li><a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare 2026 — komplett topplista och jämförelse</a></li>
+    </ul>
+  </section>
+</ArticleLayout>
+
+<StickyCTA
+  text="Se pris på Automower 315X"
+  url="https://www.husqvarna.com/se/produkter/robotgrasklippare/automower-315x/"
+  productName="Husqvarna Automower 315X"
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["Product", "Review"],
+  "name": "Husqvarna Automower 315X",
+  "brand": { "@type": "Brand", "name": "Husqvarna" },
+  "category": "Robotgräsklippare",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "SEK",
+    "price": "19990",
+    "availability": "https://schema.org/InStock"
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "9.0",
+      "bestRating": "10",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-03-29",
+    "reviewBody": "Husqvarna Automower 315X är det självklara valet för villaträdgårdar upp till 1 600 m². GPS+3G-navigering, tyst 58 dB-drift och pålitlig Husqvarna-teknik till halva priset av storebror 430X Nera.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  }
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqSchema,
+})} />

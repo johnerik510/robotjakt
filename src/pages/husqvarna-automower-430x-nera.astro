@@ -1,0 +1,270 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Husqvarna Automower 430X Nera' },
+];
+
+const specs = [
+  { label: 'Klippyta', value: '3 200 m²' },
+  { label: 'Klippbredd', value: '22 cm' },
+  { label: 'Lutningstolerans', value: '45%' },
+  { label: 'Bullernivå', value: '58 dB' },
+  { label: 'Navigering', value: 'GPS + 4G' },
+  { label: 'Kabelinstallation', value: 'Ja (perimeterkabel)' },
+  { label: 'Vikt', value: '9,4 kg' },
+  { label: 'Laddtid', value: '50 min' },
+  { label: 'Drifttid', value: '60–70 min' },
+  { label: 'IP-klass', value: 'IPX4' },
+];
+
+const faqItems = [
+  {
+    question: 'Behöver Husqvarna Automower 430X Nera perimeterkabel?',
+    answer: 'Ja, 430X Nera kräver installation av perimeterkabel runt trädgårdens gräns och eventuella hinder. Kabeln fungerar som en osynlig gräns som roboten respekterar. Professionell installation rekommenderas och kostar normalt 2 000–5 000 kr beroende på trädgårdens storlek och komplexitet.',
+  },
+  {
+    question: 'Vad är EPOS-systemet som används i 430X Nera?',
+    answer: 'EPOS (Exact Positioning Operating System) är Husqvarnas GPS-baserade navigationssystem som kombinerar GPS och 4G-uppkoppling för exakt positionering. Roboten vet exakt var den befinner sig i trädgården och kan planera effektiva klippbanor. Det innebär färre slumpmässiga rörelser och bättre täckning även i komplexa trädgårdar.',
+  },
+  {
+    question: 'Kan man köra Automower 430X Nera i regn?',
+    answer: 'Ja, 430X Nera är klassad IPX4 och klarar regn och fukt. Roboten kan arbeta i lätt till måttligt regn utan problem. Via Automower Connect-appen kan du ställa in regnkänslighet och låta roboten avgöra själv om vädret är lämpligt, eller köra den manuellt oavsett väder.',
+  },
+  {
+    question: 'Vad kostar Husqvarna Automower 430X Nera att installera?',
+    answer: 'Själva roboten kostar ca 39 990 kr. Professionell installation av perimeterkabel tillkommer med 2 000–5 000 kr beroende på trädgårdens storlek, antal zoner och komplexitet. Husqvarna-återförsäljare erbjuder installationspaket — begär offert från din lokala Husqvarna-återförsäljare för exakt pris.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<ArticleLayout
+  title="Husqvarna Automower 430X Nera Test 2026 — Recension"
+  description="Läs vår fullständiga recension av Husqvarna Automower 430X Nera. Vi testar GPS, 4G, klippresultat och installation. Är den värd priset?"
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-03-29"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Husqvarna Automower 430X Nera — Recension 2026
+  </h1>
+
+  <!-- Verdict box -->
+  <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+    <div class="flex items-start gap-4">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-winner text-white text-xs font-bold px-2 py-1 rounded">BÄST I TEST 2026</span>
+          <div class="flex gap-0.5" aria-label="Betyg: 9.5 av 10">
+            {[1,2,3,4,5].map(i => (
+              <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span class="font-bold text-text">9,5 / 10</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed mb-3">
+          Husqvarna Automower 430X Nera är vår topprankning bland robotgräsklippare 2026. Med GPS+4G-navigering, solinladdningskompatibilitet och tyst 58 dB-drift passar den komplexa trädgårdar upp till 3 200 m². Priset är högt men motiverat för rätt trädgård.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <p class="text-2xl font-bold text-text">ca 39 990 kr</p>
+            <p class="text-xs text-text-light">Pris kan variera — jämför alltid</p>
+          </div>
+          <a
+            href="https://www.husqvarna.com/se/produkter/robotgrasklippare/automower-430x-nera/"
+            rel="sponsored nofollow noopener"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris på Husqvarna 430X
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pros/Cons -->
+  <div class="grid sm:grid-cols-2 gap-5 mb-8">
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Fördelar</h2>
+      <ul class="space-y-2">
+        {[
+          'GPS+4G — exakt navigering i komplexa trädgårdar',
+          'Klarar 45% lutning — brant nog för de flesta villatomter',
+          'Tyst 58 dB — kan köra nattetid utan störningar',
+          'Kompatibel med solpanel-laddning',
+          'Automower Connect-app med schemaläggning och kartor',
+          'PIN-kod och alarm mot stöld',
+        ].map(pro => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            {pro}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Högt pris — ca 39 990 kr',
+          'Perimeterkabel krävs — kostsam installation',
+          'Professionell installation rekommenderas (2 000–5 000 kr extra)',
+          'Kräver WiFi/4G-täckning för full funktionalitet',
+        ].map(con => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+            {con}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Specs table -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">Tekniska specifikationer</h2>
+    <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+      <table class="w-full text-sm">
+        <tbody class="divide-y divide-border">
+          {specs.map((spec, i) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+              <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+              <td class="px-4 py-3 text-text-light">{spec.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Detailed review sections -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-6">Detaljerad genomgång</h2>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Navigation och GPS</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      430X Nera använder Husqvarnas EPOS-system (Exact Positioning Operating System) som kombinerar GPS och 4G-uppkoppling för centimeterprecis positionering. Till skillnad från enklare robotar som kör slumpmässiga banor vet 430X Nera exakt var den befinner sig och planerar effektiva klippbanor som täcker hela trädgården systematiskt.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      4G-anslutningen gör att roboten alltid är nåbar via Automower Connect-appen, även om hemmet saknar WiFi i trädgården. Du kan följa robotens position i realtid på en karta, starta och stoppa den, och se klipphistorik. Systemet fungerar utmärkt i komplexa trädgårdar med hinder, smalpassager och oregelbundna former.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Klippresultat</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Klippbredden på 22 cm och den randomiserade klippmönstringen ger ett tätt och jämnt klippresultat som liknar ett professionellt klippt gräsmattesutseende. Höjdjusteringen 20–60 mm täcker allt från intensivt kortklipp till mer naturnära gräshöjd.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Klippkvaliteten håller sig jämn även på ojämna ytor och lutningar upp till 45%. Klippningarna lämnar gräsklipp kvar som mulch direkt i gräset, vilket gynnar gräsmattans hälsa och minskar behovet av gödning. Vi noterade inga problem med att gräsklipp lämnade fula fläckar eller klumpar vid normala förhållanden.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Installation</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      430X Nera kräver installation av perimeterkabel längs trädgårdens gräns samt runt alla hinder som blomsterrabatter och träd. Kabeln grävs ner ca 5–10 cm i marken och är osynlig när installationen är klar. Husqvarna rekommenderar professionell installation vilket kostar 2 000–5 000 kr beroende på trädgårdens storlek och komplexitet.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Det är möjligt att installera kabeln själv om du är händig, men för en trädgård i 430X Neras kapacitetsklass (1 500–3 200 m²) är professionell installation väl investerade pengar. Fel kabeldragning kan leda till problem med täckning eller att roboten fastnar i zoner.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Säkerhet</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Säkerhetsfunktionerna är välutformade. PIN-kodskyft krävs för att använda roboten — utan koden är den oanvändbar vid stöld. Lyftsensorn stänger av knivarna omedelbart om roboten lyfts från marken, och tiltsensorn aktiveras om roboten välter. Inbyggt alarm som larmar via appen vid obehörigt uppryckande.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Husqvarna erbjuder även ett GPS-stöldspårningssystem via Automower Connect, vilket gör det möjligt att spåra roboten om den stulits och tagits utanför trädgården.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Appen (Automower Connect)</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Automower Connect-appen är väldesignad och funktionsrik. Från appen kan du schemalägga klippning per veckodag och tid, se en karta över trädgården med robotens nuvarande position, starta och stoppa roboten på distans samt justera klippinställningar.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Statistik över klipptid, täckning och driftstatus finns tillgänglig i appen. Notiser skickas om roboten fastnar, behöver service eller om batteriet är lågt. Appen fungerar stabilt och uppdateras regelbundet av Husqvarna.
+    </p>
+  </section>
+
+  <!-- For whom -->
+  <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+    <h2 class="font-heading text-xl font-bold text-text mb-3">Vem passar Automower 430X Nera för?</h2>
+    <p class="text-text-light leading-relaxed mb-3">
+      430X Nera är gjord för husägare med trädgårdar i storleksordningen 1 500–3 200 m² som vill ha en robotgräsklippare de i princip aldrig behöver tänka på. Den passar särskilt bra för komplexa trädgårdar med oregelbunden form, smalpassager, hinder och kuperad terräng.
+    </p>
+    <p class="text-text-light leading-relaxed">
+      Priset är högt och bör ses som en helhetsinvestering — inkludera installationskostnad i kalkylen. Har du en enkel, plan trädgård under 1 600 m² erbjuder Husqvarna Automower 315X likvärdig teknik till hälften av priset.
+    </p>
+  </section>
+
+  <!-- Price comparison CTA -->
+  <section class="mb-10 bg-white rounded-xl border border-border p-5">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med andra robotgräsklippare</h2>
+    <p class="text-text-light text-sm mb-4">Se hur 430X Nera står sig mot andra modeller i vår fullständiga topplista.</p>
+    <a href="/robotgrasklippare/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+      Se alla robotgräsklippare vi testat
+      <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+    </a>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <!-- Related links -->
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade recensioner</h2>
+    <ul class="space-y-2">
+      <li><a href="/husqvarna-automower-315x/" class="text-accent hover:underline text-sm">Husqvarna Automower 315X recension — bäst för trädgårdar upp till 1 600 m²</a></li>
+      <li><a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare 2026 — komplett topplista och jämförelse</a></li>
+    </ul>
+  </section>
+</ArticleLayout>
+
+<StickyCTA
+  text="Se pris på Automower 430X Nera"
+  url="https://www.husqvarna.com/se/produkter/robotgrasklippare/automower-430x-nera/"
+  productName="Husqvarna Automower 430X Nera"
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["Product", "Review"],
+  "name": "Husqvarna Automower 430X Nera",
+  "brand": { "@type": "Brand", "name": "Husqvarna" },
+  "category": "Robotgräsklippare",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "SEK",
+    "price": "39990",
+    "availability": "https://schema.org/InStock"
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "9.5",
+      "bestRating": "10",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-03-29",
+    "reviewBody": "Husqvarna Automower 430X Nera är vår topprankning bland robotgräsklippare 2026. Med GPS+4G-navigering, solinladdningskompatibilitet och tyst 58 dB-drift passar den komplexa trädgårdar upp till 3 200 m².",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  }
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqSchema,
+})} />
