@@ -1,0 +1,330 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Budget', href: '/billigaste-robotgrasklippare/' },
+  { label: 'Husqvarna Automower 105' },
+];
+
+const specs = [
+  { label: 'Klippyta', value: '600 m²' },
+  { label: 'Klippbredd', value: '18 cm' },
+  { label: 'Lutningstolerans', value: '40%' },
+  { label: 'Bullernivå', value: '58 dB' },
+  { label: 'Navigering', value: 'Slinga (perimeterkabel)' },
+  { label: 'Laddtid', value: '50 min' },
+  { label: 'Drifttid', value: '70 min' },
+  { label: 'Vikt', value: '7,7 kg' },
+  { label: 'Pris', value: 'ca 7 990 kr' },
+];
+
+const faqItems = [
+  {
+    question: 'Kan Husqvarna Automower 105 användas utan app?',
+    answer: 'Ja, Husqvarna Automower 105 har ingen app och inget WiFi — allt sköts direkt på roboten via knapparna och displayen. Du ställer in klippschema, klipphöjd och starttider direkt på enheten. Det är faktiskt en fördel för den som vill ha enkelhet: ingen gateway, ingen registrering, inget krångel med nätverk. Installera, ställ in schema — sen sköter den sig.',
+  },
+  {
+    question: 'Hur bra är 40% lutningstolerans i praktiken?',
+    answer: 'Husqvarna Automower 105:s 40%-lutningstolerans är bättre än de flesta budgetkonkurrenter som stannar på 25–35%. Det innebär att roboten klarar relativt branta sluttningar utan att tappa grepp eller tippa. 40% lutning motsvarar ungefär 22 graders lutning, vilket täcker de flesta normala villaträdgårdar. Har du en extremt brant backe kan du behöva 430X Nera (45%), men för en normal tomt räcker 105an.',
+  },
+  {
+    question: 'Hur lång tid tar installationen av Automower 105?',
+    answer: 'För en trädgård på 300–600 m² tar installationen normalt 3–5 timmar som DIY-projekt. Du drar perimeterkabeln runt gräsytans kant och fäster den med markspikar. Kabeln kan läggas ovanpå gräset — den sjunker ner av sig självt efter några veckor, eller grävs ner 2–3 cm om du föredrar det. Husqvarna levererar med allt material och tydliga instruktioner. Mer komplex trädgård med ön och smalpassager tar längre tid.',
+  },
+  {
+    question: 'Vad är skillnaden mellan Husqvarna Automower 105 och 315X?',
+    answer: 'Automower 105 är Husqvarnas budgetmodell utan GPS, app eller avancerad navigering. Den klarar upp till 600 m² och kostar ca 7 990 kr. Automower 315X är mellanklassmodellen med GPS+3G, Automower Connect-appen, klarar 1 600 m² och kostar ca 19 990 kr. Välj 105an om du har en enkel trädgård under 600 m² och inte behöver fjärrstyrning. Välj 315X om du vill ha app-kontroll, GPS-navigering och kapacitet för en större tomt.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<ArticleLayout
+  title="Husqvarna Automower 105 Test 2026 — Recension"
+  description="Vi testar Husqvarna Automower 105 — den prisvärdaste Husqvarna-modellen för trädgårdar upp till 600 m². Bäst i budget 2026? Läs recensionen."
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-03-29"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Husqvarna Automower 105 — Recension 2026
+  </h1>
+
+  <!-- Verdict box -->
+  <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+    <div class="flex items-start gap-4">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-winner text-white text-xs font-bold px-2 py-1 rounded">BÄST BUDGET HUSQVARNA</span>
+          <div class="flex gap-0.5" aria-label="Betyg: 8.0 av 10">
+            {[1,2,3,4].map(i => (
+              <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+            <svg class="w-4 h-4 text-border" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+          </div>
+          <span class="font-bold text-text">8,0 / 10</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed mb-3">
+          Husqvarna Automower 105 är den enklaste och billigaste modellen i Husqvarnas sortiment — och den levererar Husqvarnas välkända tillförlitlighet till ca 7 990 kr. Ingen app, ingen GPS, men 40% lutningstolerans, 600 m² kapacitet och Husqvarnas servicenätverk i ryggen.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <p class="text-2xl font-bold text-text">ca 7 990 kr</p>
+            <p class="text-xs text-text-light">Pris kan variera — jämför alltid</p>
+          </div>
+          <a
+            href="https://www.husqvarna.com/se/produkter/robotgrasklippare/automower-105/"
+            rel="sponsored nofollow noopener"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris på Automower 105
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pros/Cons -->
+  <div class="grid sm:grid-cols-2 gap-5 mb-8">
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Fördelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Husqvarnas tillförlitlighet till budgetpris',
+          '40% lutningstolerans — bäst i klassen',
+          '600 m² — mer yta än Gardena Sileno City 500',
+          '70 min drifttid per laddning',
+          'Bra servicenätverk i Sverige',
+          'Enkel utan krångel — ingen app att konfigurera',
+        ].map(pro => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            {pro}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Ingen app eller WiFi-kontroll',
+          'Ingen GPS-navigering',
+          'Perimeterkabel krävs',
+          'Dyrare än Gardena Sileno City 500',
+        ].map(con => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+            {con}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Specs table -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">Tekniska specifikationer</h2>
+    <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+      <table class="w-full text-sm">
+        <tbody class="divide-y divide-border">
+          {specs.map((spec, i) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+              <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+              <td class="px-4 py-3 text-text-light">{spec.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Detailed review sections -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-6">Detaljerad genomgång</h2>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Enklaste Husqvarna-modellen — vad du får och vad som saknas</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Husqvarna Automower 105 är avskalad på ett genomtänkt sätt. Det finns ingen app, ingen WiFi-koppling och ingen GPS. Allt styrs via enhetens knappar och display. Du ställer in klippschema (dag och tid), klipphöjd och eventuella PIN-kodskrav direkt på roboten. Det är allt som krävs — sedan sköter den sig.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Vad du får i stället är Husqvarnas byggkvalitet, ett robust nav- och hjulsystem och tillgång till Husqvarnas servicenätverk i hela Sverige. Reservdelar finns i lager, auktoriserade verkstäder finns i varje större stad och produkten är byggd för att hålla i många säsonger. Det är ett tydligt värdeerbjudande mot billigare märkeslösa alternativ.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Klippresultat — 40% lutning är bättre än konkurrenterna</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Automower 105 klipper med 18 cm bredd i slumpmässiga mönster och täcker ytor upp till 600 m². Klipphöjden ställs in i intervall från 20 till 50 mm. Resultatet är ett tätt och jämnt gräs — samma princip som i resten av Automower-serien.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Lutningstoleransens 40% sticker ut i budgetklassen. Gardena Sileno City 500 och de flesta konkurrenter stannar på 35%. Det innebär att Automower 105 klarar brantare sluttningar utan att stanna eller tappa grepp — en konkret fördel för tomter med nivåskillnader. För en plan trädgård spelar detta ingen roll, men har du en backe är det ett starkt argument för 105an.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Installation — standard perimeterkabel</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Installationen följer Husqvarnas standard: perimeterkabel dras längs gräsytans kant och fästs med medföljande markspikar. Kabeln ansluts till laddstationen som placeras vid ett fast underlag med tillgång till eluttag. Husqvarna levererar med installations-kit och tydlig steg-för-steg-guide.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      För en trädgård på 300–600 m² tar installationen 3–5 timmar som DIY-projekt. Har du en mer komplex trädgård med ön, blomrabatter och smalpassager räkna med mer tid. Professionell installation via Husqvarnas auktoriserade återförsäljare kostar normalt 1 500–3 000 kr och är ett alternativ om du vill ha det gjort snabbt och korrekt.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Säkerhet — PIN-kod, lyftsensor och tippsensor</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Automower 105 inkluderar Husqvarnas kompletta säkerhetspaket: PIN-kod krävs för att starta roboten, lyftsensor stänger av knivarna omedelbart om enheten lyfts, och tippsensorn stannar roboten vid välvning. Dessa funktioner är branschstandard för Husqvarna och finns i hela Automower-serien.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Utan app finns inget stöldlarm via mobilnotis — ett medvetet avkall för den enkla prisklassen. För de flesta hem räcker PIN-koden som tillräckligt avskräckande skydd. Husqvarnas stöldregistreringssystem täcker inte 105an på samma sätt som GPS-modellerna, vilket är värt att känna till om stöldskydd är en prioritet.
+    </p>
+  </section>
+
+  <!-- Comparison with 315X -->
+  <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+    <h2 class="font-heading text-xl font-bold text-text mb-3">Jämförelse mot Husqvarna 315X — när räcker 105an?</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-border">
+            <th class="text-left py-2 pr-4 font-semibold text-text">Egenskap</th>
+            <th class="text-left py-2 pr-4 font-semibold text-text">Automower 105</th>
+            <th class="text-left py-2 font-semibold text-text">Automower 315X</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-border text-text-light">
+          <tr>
+            <td class="py-2 pr-4 font-medium text-text">Max yta</td>
+            <td class="py-2 pr-4">600 m²</td>
+            <td class="py-2">1 600 m²</td>
+          </tr>
+          <tr>
+            <td class="py-2 pr-4 font-medium text-text">Navigering</td>
+            <td class="py-2 pr-4">Slinga</td>
+            <td class="py-2">GPS + 3G</td>
+          </tr>
+          <tr>
+            <td class="py-2 pr-4 font-medium text-text">App</td>
+            <td class="py-2 pr-4">Nej</td>
+            <td class="py-2">Automower Connect</td>
+          </tr>
+          <tr>
+            <td class="py-2 pr-4 font-medium text-text">Lutning</td>
+            <td class="py-2 pr-4">40%</td>
+            <td class="py-2">40%</td>
+          </tr>
+          <tr>
+            <td class="py-2 pr-4 font-medium text-text">Pris</td>
+            <td class="py-2 pr-4 text-winner font-semibold">ca 7 990 kr</td>
+            <td class="py-2">ca 19 990 kr</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-text-light text-sm mt-4">
+      Välj 105an om din trädgård är under 600 m² och du inte behöver app-kontroll eller GPS. Välj 315X om du vill ha fjärrstyrning, GPS-navigering eller en trädgård på 600–1 600 m². Lutningstoleransens är identisk — det är yta, app och pris som skiljer.
+    </p>
+    <p class="text-sm mt-3">
+      <a href="/husqvarna-automower-315x/" class="text-accent hover:underline font-medium">Läs vår recension av Husqvarna Automower 315X</a>
+    </p>
+  </section>
+
+  <!-- For whom -->
+  <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+    <h2 class="font-heading text-xl font-bold text-text mb-3">Vem passar Husqvarna Automower 105 för?</h2>
+    <p class="text-text-light leading-relaxed mb-3">
+      Automower 105 passar dig som vill ha ett pålitligt och välbyggt märke utan att betala för GPS och app-funktioner. Det är rätt val för en villa- eller radhustomt upp till 600 m² med enkel till måttlig form, och där du inte har behov av att styra roboten från mobilen.
+    </p>
+    <p class="text-text-light leading-relaxed">
+      Har du en brant tomt är 40%-lutningen ett starkt argument. Vill du ha den trygghet som Husqvarnas servicenät ger — och föredrar att betala lite mer för ett etablerat märke framför en okänd budgetmodell — är Automower 105 det naturliga valet i sin prisklass.
+    </p>
+  </section>
+
+  <!-- Internal links -->
+  <section class="mb-10 bg-white rounded-xl border border-border p-5">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+    <ul class="space-y-2">
+      <li>
+        <a href="/billigaste-robotgrasklippare/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+          Billigaste robotgräsklippare 2026 — bästa modeller under 10 000 kr
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/robotgrasklippare/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+          Bästa robotgräsklippare 2026 — komplett topplista
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/husqvarna-automower-315x/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+          Husqvarna Automower 315X recension — nästa steg upp
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <!-- Related reviews -->
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade recensioner</h2>
+    <ul class="space-y-2">
+      <li><a href="/husqvarna-automower-315x/" class="text-accent hover:underline text-sm">Husqvarna Automower 315X recension — GPS och app för 19 990 kr</a></li>
+      <li><a href="/gardena-sileno-city-500/" class="text-accent hover:underline text-sm">Gardena Sileno City 500 recension — budgetvinnare för 5 990 kr</a></li>
+      <li><a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare 2026 — komplett topplista och jämförelse</a></li>
+    </ul>
+  </section>
+</ArticleLayout>
+
+<StickyCTA
+  text="Se pris på Automower 105"
+  url="https://www.husqvarna.com/se/produkter/robotgrasklippare/automower-105/"
+  productName="Husqvarna Automower 105"
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["Product", "Review"],
+  "name": "Husqvarna Automower 105",
+  "brand": { "@type": "Brand", "name": "Husqvarna" },
+  "category": "Robotgräsklippare",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "SEK",
+    "price": "7990",
+    "availability": "https://schema.org/InStock"
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "8.0",
+      "bestRating": "10",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-03-29",
+    "reviewBody": "Husqvarna Automower 105 är den enklaste och billigaste modellen i Husqvarnas sortiment — och den levererar Husqvarnas välkända tillförlitlighet till ca 7 990 kr. Ingen app, ingen GPS, men 40% lutningstolerans och 600 m² kapacitet.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  }
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqSchema,
+})} />
