@@ -1,0 +1,275 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Gardena Sileno City 500' },
+];
+
+const specs = [
+  { label: 'Klippyta', value: '500 m²' },
+  { label: 'Klippbredd', value: '18 cm' },
+  { label: 'Lutningstolerans', value: '35%' },
+  { label: 'Bullernivå', value: '57 dB' },
+  { label: 'Navigering', value: 'Slinga (perimeterkabel)' },
+  { label: 'Vikt', value: '6,5 kg' },
+  { label: 'Laddtid', value: '60 min' },
+  { label: 'Drifttid', value: '65 min' },
+  { label: 'Pris', value: 'ca 5 990 kr' },
+];
+
+const faqItems = [
+  {
+    question: 'Klarar Gardena Sileno ojämn mark?',
+    answer: 'Gardena Sileno City 500 klarar lätta ojämnheter och 35% lutning, men den är i grunden designad för plana till lätt kuperade trädgårdar. Har du mycket ojämn mark, kraftiga slänter eller rotupphöjningar rekommenderar vi en modell med större hjul och kraftigare motor — exempelvis Husqvarna Automower 315X. För en plan stadsträdgård på max 500 m² fungerar Sileno City utmärkt.',
+  },
+  {
+    question: 'Är Gardena Sileno City 500 tyst nog att köra nattetid?',
+    answer: 'Ja, med 57 dB är Gardena Sileno City 500 en av de tystaste robotgräsklipparna i budgetklassen — och tystare än de flesta konkurrenter i sin prisklass. 57 dB motsvarar ungefär ett normalt samtal, vilket gör den fullt acceptabel nattetid för de flesta grannar. Kontrollera alltid lokala störningsregler — i vissa kommuner råder tysta timmar på natten.',
+  },
+  {
+    question: 'Behöver man professionell installation för Gardena Sileno City 500?',
+    answer: 'Nej, Gardena Sileno City 500 är designad för enkel DIY-installation. Paketet inkluderar perimeterkabel, spikar och instruktioner. För en trädgård på 300–500 m² tar installationen normalt 2–4 timmar om du gör det själv. Kabeln läggs ovanpå gräset de första veckorna och sjunker ner av sig självt, eller grävs ner 2–3 cm. Professionell installation är ett alternativ men sällan nödvändigt för denna modell.',
+  },
+  {
+    question: 'Vilken app använder Gardena Sileno City 500?',
+    answer: 'Gardena Sileno City 500 använder Gardena Bluetooth-appen som kopplas direkt till roboten via Bluetooth — ingen WiFi-gateway krävs. Via appen kan du ställa in klippschema, justera klipphöjd och starta eller stoppa roboten när du är inom räckhåll (ca 10 m). Appen är enkel och funktionell men saknar avancerade kartor och fjärrstyrning via internet, vilket är rimligt i denna prisklass.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<ArticleLayout
+  title="Gardena Sileno City 500 Test 2026 — Recension"
+  description="Gardena Sileno City 500 testad och recenserad. Tyst, prisvärd och pålitlig för trädgårdar upp till 500 m². Bästa budgetvalet 2026?"
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-03-29"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Gardena Sileno City 500 — Recension 2026
+  </h1>
+
+  <!-- Verdict box -->
+  <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+    <div class="flex items-start gap-4">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-winner text-white text-xs font-bold px-2 py-1 rounded">BÄST BUDGET 2026</span>
+          <div class="flex gap-0.5" aria-label="Betyg: 8.2 av 10">
+            {[1,2,3,4].map(i => (
+              <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+            <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20">
+              <defs><clipPath id="half"><rect x="0" y="0" width="10" height="20" /></clipPath></defs>
+              <path fill="currentColor" clip-path="url(#half)" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+          </div>
+          <span class="font-bold text-text">8,2 / 10</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed mb-3">
+          Gardena Sileno City 500 är det bästa budgetvalet bland robotgräsklippare 2026. Med 57 dB bullernivå — tystast i sin prisklass — pålitlig drift och enkel DIY-installation passar den perfekt för stadsträdgårdar upp till 500 m². Inga överkurs-funktioner, bara det som behövs.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <p class="text-2xl font-bold text-text">ca 5 990 kr</p>
+            <p class="text-xs text-text-light">Pris kan variera — jämför alltid</p>
+          </div>
+          <a
+            href="https://www.elgiganten.se"
+            rel="sponsored nofollow noopener"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris på Gardena Sileno City 500
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pros/Cons -->
+  <div class="grid sm:grid-cols-2 gap-5 mb-8">
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Fördelar</h2>
+      <ul class="space-y-2">
+        {[
+          '57 dB — tystast i budgetklassen',
+          'Prisvärd — ca 5 990 kr',
+          'Enkel DIY-installation',
+          'Pålitlig drift för trädgårdar upp till 500 m²',
+          'Lättviktig — 6,5 kg',
+          'Gardena — etablerat varumärke med bra service',
+        ].map(pro => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            {pro}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Maxyta 500 m² — passar inte större trädgårdar',
+          'Perimeterkabel krävs',
+          'Basic app — Bluetooth, ingen fjärrstyrning',
+          'Ingen GPS eller 4G',
+        ].map(con => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+            {con}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Specs table -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">Tekniska specifikationer</h2>
+    <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+      <table class="w-full text-sm">
+        <tbody class="divide-y divide-border">
+          {specs.map((spec, i) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+              <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+              <td class="px-4 py-3 text-text-light">{spec.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Detailed review sections -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-6">Detaljerad genomgång</h2>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Installation — enklast i klassen</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Gardena Sileno City 500 levereras med perimeterkabel, markspikar, laddstation och ett tydligt installationskit. Kabeln dras runt trädgårdens gräns och fästs med spikar i marken — den sjunker ner i gräset av sig självt efter några veckors drift, eller grävs ner 2–3 cm om du föredrar det. En trädgård på 300–500 m² tar 2–4 timmar att installera på egen hand.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Jämfört med premiummodeller är kabeldragningen enklare — Sileno City 500 är anpassad för raka, relativt enkla trädgårdar. Har du många hinder, blomsterrabatter och smalpassager kan kabeldragningen bli mer tidskrävande, men för en normal stadsträdgård är installationen helt hanterbar.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Klippresultat</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Sileno City 500 klipper med en klippbredd på 18 cm och kör i slumpmässiga banor — ett beprövat mönster som ger bra täckning utan synliga spår. Klipphöjden justeras i tre steg (20–50 mm) direkt på roboten via en knapp. Resultatet är ett jämnt och tätt gräs som håller sig välvårdat utan att du behöver tänka på det.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Klippen mulchar gräset på plats, vilket gynnar gräsmattans hälsa. För en trädgård på 200–500 m² räcker 1–2 dagliga klippcykler om vardera 65 minuter för att hålla en jämn gräshöjd. Roboten returnerar automatiskt till laddstationen när batteriet behöver laddas.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Appen (Gardena Bluetooth)</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Gardena Sileno City 500 styrs via Gardena Bluetooth-appen. Kopplingen sker direkt mellan telefonen och roboten utan WiFi-gateway, vilket gör setup enkel. Via appen ställer du in klippschema (dag och tid), justerar klipphöjd och kan starta eller stoppa roboten manuellt.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Begränsningen är Bluetooth-räckvidden — du måste vara nära roboten för att styra den via appen. Det finns ingen fjärrstyrning via internet och inga kartor eller statistik. För det priset är det rimligt. Behöver du app-kontroll hemifrån eller avancerade scheman är Husqvarna Automower 315X ett bättre val till nästa prisklass.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Buller — 57 dB</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      57 dB är Gardena Sileno City 500:s tydligaste konkurrensfördelar i budgetklassen. De flesta budgetmodeller ligger på 60–65 dB, vilket märks tydligt i en tyst trädgård. 57 dB motsvarar ungefär ett normalt samtal och märks knappt om du sitter på terrassen.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Det innebär att du kan schemalägga klippning under kvällen utan att störa grannar — en praktisk fördel om du föredrar att roboten arbetar när du sover eller inte är hemma. Kontrollera alltid lokala störningsregler innan du ställer in nattklippning.
+    </p>
+  </section>
+
+  <!-- For whom -->
+  <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+    <h2 class="font-heading text-xl font-bold text-text mb-3">Vem passar Gardena Sileno City 500 för?</h2>
+    <p class="text-text-light leading-relaxed mb-3">
+      Sileno City 500 är det självklara valet för dig som vill ha en pålitlig robotgräsklippare utan att betala för funktioner du inte behöver. Den passar stadsträdgårdar och villaträdgårdar upp till 500 m² med relativt enkel form, lätt till måttlig lutning och utan krav på avancerad app-styrning.
+    </p>
+    <p class="text-text-light leading-relaxed">
+      Har du en trädgård under 500 m², vill ha lägst möjliga bullernivå och ett välkänt varumärke med bra servicenätverk i Sverige — välj Gardena Sileno City 500. Ska du upp i storlek, GPS eller app med fjärrstyrning är nästa steg Husqvarna Automower 315X.
+    </p>
+  </section>
+
+  <!-- Internal links -->
+  <section class="mb-10 bg-white rounded-xl border border-border p-5">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+    <ul class="space-y-2">
+      <li>
+        <a href="/billigaste-robotgrasklippare/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+          Billigaste robotgräsklippare 2026 — bästa modeller under 10 000 kr
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/robotgrasklippare/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+          Bästa robotgräsklippare 2026 — komplett topplista
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <!-- Related reviews -->
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade recensioner</h2>
+    <ul class="space-y-2">
+      <li><a href="/husqvarna-automower-315x/" class="text-accent hover:underline text-sm">Husqvarna Automower 315X recension — nästa steg upp från budget</a></li>
+      <li><a href="/mammotion-luba-awo-3000/" class="text-accent hover:underline text-sm">Mammotion LUBA AWO 3000 recension — bäst utan slinga</a></li>
+      <li><a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare 2026 — komplett topplista och jämförelse</a></li>
+    </ul>
+  </section>
+</ArticleLayout>
+
+<StickyCTA
+  text="Se pris på Gardena Sileno City 500"
+  url="https://www.elgiganten.se"
+  productName="Gardena Sileno City 500"
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["Product", "Review"],
+  "name": "Gardena Sileno City 500",
+  "brand": { "@type": "Brand", "name": "Gardena" },
+  "category": "Robotgräsklippare",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "SEK",
+    "price": "5990",
+    "availability": "https://schema.org/InStock"
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "8.2",
+      "bestRating": "10",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-03-29",
+    "reviewBody": "Gardena Sileno City 500 är det bästa budgetvalet bland robotgräsklippare 2026. Med 57 dB bullernivå, pålitlig drift och enkel DIY-installation passar den perfekt för stadsträdgårdar upp till 500 m².",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  }
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqSchema,
+})} />

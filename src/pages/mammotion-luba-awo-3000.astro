@@ -1,0 +1,281 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Utan slinga', href: '/robotgrasklippare-utan-slinga/' },
+  { label: 'Mammotion LUBA AWO 3000' },
+];
+
+const specs = [
+  { label: 'Klippyta', value: '3 000 m²' },
+  { label: 'Klippbredd', value: '26 cm' },
+  { label: 'Lutningstolerans', value: '75%' },
+  { label: 'Navigering', value: 'RTK GPS (ingen slinga)' },
+  { label: 'Uppkoppling', value: '4G' },
+  { label: 'Vikt', value: '14 kg' },
+  { label: 'Drifttid', value: '120 min' },
+  { label: 'Laddtid', value: '90 min' },
+  { label: 'Pris', value: 'ca 24 990 kr' },
+];
+
+const faqItems = [
+  {
+    question: 'Behöver man WiFi för Mammotion LUBA AWO 3000?',
+    answer: 'Nej, LUBA AWO 3000 har inbyggd 4G och kräver inget hemma-WiFi för att fungera eller kommunicera med appen. Du kan styra och övervaka roboten var du än befinner dig via Mammotion-appen så länge du har mobildata. WiFi-anslutning hemma kan ändå användas om du föredrar det, men är inget krav.',
+  },
+  {
+    question: 'Behöver man gräva ner perimeterkabel med LUBA AWO 3000?',
+    answer: 'Nej, LUBA AWO 3000 kräver ingen perimeterkabel. Roboten använder RTK GPS för att känna till sin position med centimeterprecision. Gränser och zoner ritas direkt i Mammotion-appen via en interaktiv karta. Det enda som behöver monteras är RTK-referensantennen, som placeras med fri sikt mot himlen.',
+  },
+  {
+    question: 'Hur lång tid tar installationen av LUBA AWO 3000?',
+    answer: 'Installationen tar normalt 1–2 timmar och görs av dig själv utan fackkunskap. Du monterar RTK-antennen på ett lämpligt ställe med fri himmelssikt, kopplar till laddstationen och ritar sedan upp gränserna i appen. Inga verktyg, inga kablar att gräva ner — en avsevärd tidsbesparing jämfört med slingmodeller.',
+  },
+  {
+    question: 'Klarar LUBA AWO 3000 branta sluttningar?',
+    answer: 'Ja, LUBA AWO 3000 klarar upp till 75% lutning — det är en av de brantaste toleranserna på marknaden. För jämförelse klarar Husqvarna Automower 430X Nera 45% och de flesta budgetmodeller 35%. Den höga lutningstoleransens beror på det kraftfulla hjulupphänget och greppdäcken. Välj alltid LUBA framför slingmodeller om brant terräng är ett krav.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<ArticleLayout
+  title="Mammotion LUBA AWO 3000 Test 2026 — Recension"
+  description="Vi testar Mammotion LUBA AWO 3000 — robotgräsklippare utan perimeterkabel. RTK GPS, 3000 m² och 4G. Värd priset jämfört med Husqvarna?"
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-03-29"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Mammotion LUBA AWO 3000 — Recension 2026
+  </h1>
+
+  <!-- Verdict box -->
+  <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+    <div class="flex items-start gap-4">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">UTAN SLINGA</span>
+          <div class="flex gap-0.5" aria-label="Betyg: 9.0 av 10">
+            {[1,2,3,4,5].map(i => (
+              <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span class="font-bold text-text">9,0 / 10</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed mb-3">
+          Mammotion LUBA AWO 3000 är det bästa valet om du vill slippa perimeterkabeln helt. RTK GPS ger centimeterprecision utan slinga, 4G-uppkoppling fungerar var du än befinner dig och 75% lutningstolerans slår Husqvarna med god marginal. Det bästa utan-slinga-alternativet på marknaden 2026.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <p class="text-2xl font-bold text-text">ca 24 990 kr</p>
+            <p class="text-xs text-text-light">Pris kan variera — jämför alltid</p>
+          </div>
+          <a
+            href="https://www.elgiganten.se"
+            rel="sponsored nofollow noopener"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris på LUBA AWO 3000
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pros/Cons -->
+  <div class="grid sm:grid-cols-2 gap-5 mb-8">
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Fördelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Ingen perimeterkabel — inga grävjobb',
+          '75% lutningstolerans — brantaste i sin klass',
+          'RTK GPS med centimeterprecision',
+          '4G inbyggt — ingen WiFi krävs hemma',
+          '26 cm klippbredd — bred och effektiv',
+          'Ritar zoner direkt i appen',
+        ].map(pro => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            {pro}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+      <ul class="space-y-2">
+        {[
+          'RTK-antenn kräver fri sikt mot himlen',
+          'Tyngre än slingmodeller — 14 kg',
+          'Nyare teknik med färre långtidstester',
+          'Dyrare än jämförbara slingmodeller',
+        ].map(con => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+            {con}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Specs table -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">Tekniska specifikationer</h2>
+    <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+      <table class="w-full text-sm">
+        <tbody class="divide-y divide-border">
+          {specs.map((spec, i) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+              <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+              <td class="px-4 py-3 text-text-light">{spec.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Detailed review sections -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-6">Detaljerad genomgång</h2>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">RTK GPS — hur det fungerar</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Traditionella robotgräsklippare navigerar innanför en nedgrävd perimeterkabel. LUBA AWO 3000 ersätter kabeln med RTK GPS (Real-Time Kinematic), en positioneringsteknik som ger centimeterprecision. En RTK-referensantenn monteras på ett fast ställe i trädgården med fri sikt mot himlen, och roboten triangulerar sin position i realtid mot antennen och GPS-satelliterna.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Resultatet är att roboten vet exakt var den befinner sig, alltid, utan att behöva en fysisk kabel att följa. Gränser, zoner och förbjudna områden ritas in på en digital karta i Mammotion-appen. Det tar 1–2 timmar att sätta upp systemet första gången — sedan behöver du aldrig gräva, flytta eller laga kablar.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Klippresultat</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Med 26 cm klippbredd — jämfört med Husqvarnas 22 cm — täcker LUBA AWO 3000 en given yta snabbare per cykel. Klippmönstret är systematiskt snarare än slumpmässigt, vilket ger jämnare streck i gräset och bättre täckning i kantzonerna. Höjdjusteringen 20–60 mm täcker alla vanliga klipppreferenser.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      I praktiken är klippkvaliteten likvärdig med Husqvarna 430X Nera. Skillnaden märks framförallt i kanter och hörn — LUBA hanterar komplexa geometrier bättre tack vare appbaserad zonritning, medan Husqvarna förlitar sig på att kabeln är korrekt dragen runt varje hinder.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Installation — enklare än slingmodeller</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Installationen av LUBA AWO 3000 tar 1–2 timmar och kräver inga specialverktyg. Du monterar RTK-antennen på laddstationen eller ett separat fäste med fri sikt mot himlen — typiskt på ett hustak, en pol eller en hög stolpe. Antennen ska placeras stabilt och ostört, utan tak eller lövverk i vägen.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Jämfört med en slinginstallation (som normalt kostar 2 000–5 000 kr hos en fackman) är LUBA ett klart enklare val. Inga kablar att gräva ner, inga skarvar att svetsa och inga zoner som kräver extra ledningsdragning. Det enda kravet är ett ställe med fri himmelssikt — för de flesta trädgårdar är det inget problem.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Mammotion-appen</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Mammotion-appen är central för LUBA-upplevelsen. Via appen ritar du upp klippgränser och förbjudna zoner, skapar klippscheman och kan starta och stoppa roboten på distans. Kartritningen sker via satellitkarta med touchgränssnitt — du pinchar och drar för att markera din gräsmatta.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Appen stöder flera zoner med individuella inställningar: du kan klippa framsidan och baksidan av huset vid olika tidpunkter, ställa in olika klippfrekvenser per zon och sätta upp virtuella hinder utan att flytta på kablar. Funktionaliteten är överlägsen det Husqvarna Connect erbjuder för slingbaserade modeller.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">LUBA AWO 3000 vs Husqvarna 430X Nera</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Välj LUBA om du vill slippa kabeldragning, har komplex trädgårdsform, brant terräng eller en ny trädgård där du inte vill låsa fast kablar. LUBA vinner klart på installation (tid och kostnad), lutningstolerans (75% mot 45%) och flexibilitet via appen.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Välj Husqvarna 430X Nera om du redan har perimeterkabel installerad, vill ha ett system med längre trackrecord, eller om fri sikt mot himlen är svårt att uppnå i din trädgård (tät trädgård, hög häck runt om). Husqvarna har också ett mer etablerat servicenätverk i Sverige.
+    </p>
+  </section>
+
+  <!-- For whom -->
+  <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+    <h2 class="font-heading text-xl font-bold text-text mb-3">Vem passar LUBA AWO 3000 för?</h2>
+    <p class="text-text-light leading-relaxed mb-3">
+      LUBA AWO 3000 passar dig som vill ha en robotgräsklippare utan perimeterkabel för trädgårdar upp till 3 000 m². Perfekt för nybyggda fastigheter där du inte vill gräva ner kabel, för kuperade tomter med lutningar som slingmodeller inte klarar, och för komplexa trädgårdsformer med många hinder.
+    </p>
+    <p class="text-text-light leading-relaxed">
+      Priset är ca 15 000 kr lägre än Husqvarna 430X Nera. Räknar du med installationskostnaden för sling (2 000–5 000 kr) är prisskillnaden ännu större till LUBAs fördel. Vår rekommendation: välj LUBA AWO 3000 om du inte redan har slinga installerad.
+    </p>
+  </section>
+
+  <!-- Internal links -->
+  <section class="mb-10 bg-white rounded-xl border border-border p-5">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med andra robotgräsklippare</h2>
+    <p class="text-text-light text-sm mb-4">Se hur LUBA AWO 3000 ställer sig mot konkurrenterna i vår kompletta topplista.</p>
+    <ul class="space-y-2">
+      <li>
+        <a href="/robotgrasklippare/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+          Bästa robotgräsklippare 2026 — komplett topplista
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/robotgrasklippare-utan-slinga/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+          Robotgräsklippare utan slinga 2026 — alla RTK GPS-modeller
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <!-- Related reviews -->
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade recensioner</h2>
+    <ul class="space-y-2">
+      <li><a href="/husqvarna-automower-430x-nera/" class="text-accent hover:underline text-sm">Husqvarna Automower 430X Nera recension — bäst i test för stora trädgårdar</a></li>
+      <li><a href="/husqvarna-automower-315x/" class="text-accent hover:underline text-sm">Husqvarna Automower 315X recension — bäst för trädgårdar upp till 1 600 m²</a></li>
+      <li><a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare 2026 — komplett topplista och jämförelse</a></li>
+    </ul>
+  </section>
+</ArticleLayout>
+
+<StickyCTA
+  text="Se pris på Mammotion LUBA AWO 3000"
+  url="https://www.elgiganten.se"
+  productName="Mammotion LUBA AWO 3000"
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["Product", "Review"],
+  "name": "Mammotion LUBA AWO 3000",
+  "brand": { "@type": "Brand", "name": "Mammotion" },
+  "category": "Robotgräsklippare",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "SEK",
+    "price": "24990",
+    "availability": "https://schema.org/InStock"
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "9.0",
+      "bestRating": "10",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-03-29",
+    "reviewBody": "Mammotion LUBA AWO 3000 är det bästa valet om du vill slippa perimeterkabeln helt. RTK GPS ger centimeterprecision utan slinga, 4G-uppkoppling fungerar var du än befinner dig och 75% lutningstolerans slår Husqvarna med god marginal.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  }
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqSchema,
+})} />

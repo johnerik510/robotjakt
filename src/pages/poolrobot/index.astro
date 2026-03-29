@@ -185,7 +185,14 @@ const faqSchema = faqItems.map((item) => ({
     <!-- Topplista med produktkort -->
     <div class="space-y-5 mb-12">
       {products.map((p) => (
-        <ProductCard {...p} />
+        <div>
+          <ProductCard {...p} />
+          {p.name === 'Maytronics Dolphin E30' && (
+            <div class="mt-2 px-1">
+              <a href="/dolphin-e30/" class="text-accent hover:underline text-sm font-medium">Läs vår recension av Dolphin E30</a>
+            </div>
+          )}
+        </div>
       ))}
     </div>
 

@@ -177,7 +177,29 @@ const breadcrumbs = [
     <!-- Topplista med produktkort -->
     <div class="space-y-5 mb-12">
       {products.map((p) => (
-        <ProductCard {...p} />
+        <div>
+          <ProductCard {...p} />
+          {p.name === 'Husqvarna Automower 430X Nera' && (
+            <div class="mt-2 px-1">
+              <a href="/husqvarna-automower-430x-nera/" class="text-accent hover:underline text-sm font-medium">Läs vår fullständiga recension av Husqvarna Automower 430X Nera</a>
+            </div>
+          )}
+          {p.name === 'Husqvarna Automower 315X' && (
+            <div class="mt-2 px-1">
+              <a href="/husqvarna-automower-315x/" class="text-accent hover:underline text-sm font-medium">Läs vår fullständiga recension av Husqvarna Automower 315X</a>
+            </div>
+          )}
+          {p.name === 'Mammotion LUBA AWO 3000' && (
+            <div class="mt-2 px-1">
+              <a href="/mammotion-luba-awo-3000/" class="text-accent hover:underline text-sm font-medium">Läs vår fullständiga recension av Mammotion LUBA AWO 3000</a>
+            </div>
+          )}
+          {p.name === 'Gardena Sileno City 500' && (
+            <div class="mt-2 px-1">
+              <a href="/gardena-sileno-city-500/" class="text-accent hover:underline text-sm font-medium">Läs vår fullständiga recension av Gardena Sileno City 500</a>
+            </div>
+          )}
+        </div>
       ))}
     </div>
 
