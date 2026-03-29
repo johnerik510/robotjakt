@@ -1,0 +1,203 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import FAQ from '../../components/FAQ.astro';
+import StickyCTA from '../../components/StickyCTA.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/' },
+  { label: 'Jämförelser', href: '/jamfor/' },
+  { label: 'Roborock Qrevo Master vs S8 MaxV Ultra' },
+];
+
+const faqItems = [
+  {
+    question: 'Vilken är bäst — Roborock Qrevo Master eller S8 MaxV Ultra?',
+    answer: 'S8 MaxV Ultra vinner på teknik: AI djuravföringsdetektion, starkare mopp (180 RPM vs 200 RPM) och mer avancerad kameranavigering. Qrevo Master är 3 000–4 000 kr billigare och levererar 85% av S8 MaxV Ultras prestanda. För hem utan husdjur och krav på AI-kameradetektion är Qrevo Master bättre värde för pengarna.',
+  },
+  {
+    question: 'Vad är skillnaden i sugkraft mellan Qrevo Master och S8 MaxV Ultra?',
+    answer: 'Roborock Qrevo Master har 10 000 Pa och Roborock S8 MaxV Ultra har 10 000 Pa — de är identiska i sugkraft. Skillnaden ligger i navigering (AI-kamera i S8 MaxV Ultra), moppfunktion och hinderundvikning, inte sugkraft.',
+  },
+  {
+    question: 'Har Roborock Qrevo Master AI-djuravföringsdetektion som S8 MaxV Ultra?',
+    answer: 'Nej. Djuravföringsdetektion (ReactiveAI 3.0 med dedikerad strukturljuskamera) finns bara i S8 MaxV Ultra. Qrevo Master har kamerabaserad navigering men utan AI-djuravföringsdetektion. Har du hundar eller katter med lösa avföringar är S8 MaxV Ultra det enda valet i Roborock-serien.',
+  },
+  {
+    question: 'Vilken stationskapacitet har Qrevo Master vs S8 MaxV Ultra?',
+    answer: 'Båda har AutoEmpty-station med dammuppsamling, självtvätt av mopp med varmt vatten och automatisk påfyllning av rengöringsvätska. S8 MaxV Ultras station är något mer kompakt trots fler funktioner. Stationsstorlekarna är liknande — båda passar i ett litet skåputrymme.',
+  },
+  {
+    question: 'Fungerar Roborock Qrevo Master med Roborock-appen?',
+    answer: 'Ja, båda använder Roborock-appen med identiska basegenskaper: schemaläggning, rum-kartläggning, no-go-zoner och städhistorik. S8 MaxV Ultra har ytterligare AI-kamerafunktioner i appen (live-kamerabild, djuravföringsloggar). Appen är i övrigt identisk.',
+  },
+  {
+    question: 'Är Roborock Qrevo Master värd 3 000 kr mer än Dreame L20 Ultra?',
+    answer: 'Qrevo Master (7 490 kr) vs Dreame L20 Ultra (5 990 kr) är en annan jämförelse — Qrevo Master vinner på FlexiArm-kantbearbetning och Roborock-ekosystem. Men om budgeten är stram är L20 Ultra imponerande. Se vår jämförelse Dreame L20 Ultra vs Qrevo Master för fullständig analys.',
+  },
+];
+---
+
+<BaseLayout
+  title="Roborock Qrevo Master vs S8 MaxV Ultra 2026 — vilken ska du välja?"
+  description="Vi jämför Roborock Qrevo Master (7 490 kr) och S8 MaxV Ultra (10 990 kr). Samma sugkraft men vinner S8 MaxV Ultra på AI och djuravföringsdetektion?"
+>
+  <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={breadcrumbs} />
+      <h1 class="font-heading text-2xl sm:text-3xl font-bold mb-2">Roborock Qrevo Master vs S8 MaxV Ultra 2026</h1>
+      <p class="text-gray-300 text-sm max-w-2xl">Samma sugkraft, tre tusen kronors skillnad — vad köper du egentligen med de extra pengarna?</p>
+    </div>
+  </section>
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <AffiliateDisclaimer />
+
+    <p class="text-text-light mb-4 text-base">
+      Roborock Qrevo Master och S8 MaxV Ultra har identisk sugkraft — 10 000 Pa. Ändå kostar S8 MaxV Ultra 3 000–4 000 kr mer. Vad motiverar den skillnaden, och vilket val är rätt för ditt hem?
+    </p>
+    <p class="text-text-light mb-6 text-base">
+      Vi har analyserat båda modellerna i detalj. Svaret är tydligare än du kanske tror.
+    </p>
+
+    <h2 class="font-heading text-xl font-bold mt-6 mb-4">Snabbjämförelse</h2>
+    <div class="overflow-x-auto mb-8">
+      <table class="w-full text-sm border-collapse">
+        <thead>
+          <tr class="bg-primary text-white">
+            <th class="p-3 text-left font-semibold">Egenskap</th>
+            <th class="p-3 text-left font-semibold">Qrevo Master</th>
+            <th class="p-3 text-left font-semibold">S8 MaxV Ultra</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">Pris</td>
+            <td class="p-3 text-green-700 font-semibold">7 490 kr</td>
+            <td class="p-3 text-text-light">10 990 kr</td>
+          </tr>
+          <tr class="bg-bg-alt/50 border-b border-border">
+            <td class="p-3 font-medium text-text">Sugkraft</td>
+            <td class="p-3 text-text-light">10 000 Pa</td>
+            <td class="p-3 text-text-light">10 000 Pa</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">AI djuravföringsdetektion</td>
+            <td class="p-3 text-red-600 font-semibold">Nej</td>
+            <td class="p-3 text-green-700 font-semibold">Ja (ReactiveAI 3.0)</td>
+          </tr>
+          <tr class="bg-bg-alt/50 border-b border-border">
+            <td class="p-3 font-medium text-text">Kameranavigering</td>
+            <td class="p-3 text-text-light">Strukturljus + LIDAR</td>
+            <td class="p-3 text-green-700 font-semibold">RGB-kamera + LIDAR</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">FlexiArm kantmopp</td>
+            <td class="p-3 text-green-700 font-semibold">Ja</td>
+            <td class="p-3 text-text-light">Nej</td>
+          </tr>
+          <tr class="bg-bg-alt/50 border-b border-border">
+            <td class="p-3 font-medium text-text">MoppRotation</td>
+            <td class="p-3 text-text-light">180 RPM</td>
+            <td class="p-3 text-green-700 font-semibold">200 RPM</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">Automatisk mopp-lyft</td>
+            <td class="p-3 text-green-700 font-semibold">Ja</td>
+            <td class="p-3 text-green-700 font-semibold">Ja</td>
+          </tr>
+          <tr class="bg-bg-alt/50 border-b border-border">
+            <td class="p-3 font-medium text-text">Gummirulle</td>
+            <td class="p-3 text-green-700 font-semibold">Ja (anti-tangle)</td>
+            <td class="p-3 text-green-700 font-semibold">Ja (dubbel gummi)</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">Stationstyp</td>
+            <td class="p-3 text-text-light">AutoEmpty, mopp-tvätt</td>
+            <td class="p-3 text-text-light">AutoEmpty, mopp-tvätt</td>
+          </tr>
+          <tr class="bg-bg-alt/50">
+            <td class="p-3 font-medium text-text">Vinner för</td>
+            <td class="p-3 text-green-700 font-semibold">Hem utan husdjur, bäst pris</td>
+            <td class="p-3 text-text-light">Husdjursägare, AI-entusiaster</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="font-heading text-xl font-bold mt-8 mb-3">Vår bedömning: Qrevo Master är bäst för de flesta</h2>
+    <p class="text-text-light mb-4">
+      Roborock Qrevo Master och S8 MaxV Ultra delar sugkraft, stationstyp, mopptorkning och grundläggande navigering. Tre tusen kronors extra för S8 MaxV Ultra köper dig primärt en sak: <strong class="text-text">AI-djuravföringsdetektion och RGB-kameranavigering</strong>.
+    </p>
+    <p class="text-text-light mb-6">
+      Om du inte har husdjur med lösa avföringar — och det är den absolut vanligaste anledningen att köpa S8 MaxV Ultra — är Qrevo Master ett bättre köp. Du förlorar inget i daglig städprestanda men sparar 3 000–4 000 kr.
+    </p>
+
+    <h2 class="font-heading text-xl font-bold mt-8 mb-3">Sugkraft: lika — 10 000 Pa på båda</h2>
+    <p class="text-text-light mb-6">
+      Båda modellerna har 10 000 Pa. Det är tillräckligt för alla hemmiljöer inklusive långhåriga mattor. Det är faktiskt mer sugkraft än Dreame X40 Ultras 12 000 Pa för de flesta praktiska hemscenarier — skillnaden märks bara i extremt tjocka mattor.
+    </p>
+
+    <h2 class="font-heading text-xl font-bold mt-8 mb-3">AI-navigering: S8 MaxV Ultra vinner klart</h2>
+    <p class="text-text-light mb-4">
+      S8 MaxV Ultra har ReactiveAI 3.0 med en dedikerad RGB-kamera som identifierar 128 typer av hinder — inklusive djuravföring. Den undviker automatiskt hundhögar och katthögtar och loggar dem i appen med bild.
+    </p>
+    <p class="text-text-light mb-6">
+      Qrevo Master har strukturljus + LIDAR som ger utmärkt kartläggning men ingen AI-hinderidentifiering. Den undviker stora hinder men identifierar dem inte och loggar dem inte. Har du hundar eller katter med avföringsproblem — välj S8 MaxV Ultra. Annars spelar det ingen roll.
+    </p>
+
+    <h2 class="font-heading text-xl font-bold mt-8 mb-3">Kantbearbetning: Qrevo Master vinner</h2>
+    <p class="text-text-light mb-4">
+      Roborock Qrevo Master har FlexiArm — en sidoarm med moppmodul som svänger ut mot kanter längs väggar. S8 MaxV Ultra har ingen likvärdig kantlösning. Det gör faktiskt Qrevo Master bättre på längs-vägg-moppning än S8 MaxV Ultra trots det lägre priset.
+    </p>
+    <p class="text-text-light mb-6">
+      Om du har mycket väggkanter och parkettgolv som behöver mopping längs baslisterna: Qrevo Master är faktiskt bättre valet.
+    </p>
+
+    <h2 class="font-heading text-xl font-bold mt-8 mb-3">Pris och värde</h2>
+    <p class="text-text-light mb-4">
+      Qrevo Master: 7 490 kr. S8 MaxV Ultra: 10 990 kr. Skillnaden på 3 500 kr är en månads gymkort i fem år — eller en riktig motivering.
+    </p>
+    <p class="text-text-light mb-6">
+      Vår värdering: S8 MaxV Ultra är värd merkostnaden om du har husdjur som riskerar avföringsolyckor. Annars är Qrevo Master ett objektivt bättre köp.
+    </p>
+
+    <h2 class="font-heading text-xl font-bold mt-8 mb-3">Välj rätt modell</h2>
+    <ul class="list-disc pl-6 space-y-2 text-text-light mb-8">
+      <li><strong class="text-text">Välj Roborock Qrevo Master</strong> om du inte har husdjur med avföringsproblem, vill ha bäst kant-moppning (FlexiArm) och vill spara 3 500 kr.</li>
+      <li><strong class="text-text">Välj Roborock S8 MaxV Ultra</strong> om du har hundar eller katter, vill ha AI-djuravföringsdetektion och den tryggaste hinderundvikning på marknaden.</li>
+    </ul>
+
+    <div class="grid sm:grid-cols-2 gap-6 mb-8">
+      <a href="/roborock-qrevo-master/" class="block bg-white rounded-xl border border-border p-5 hover:border-accent hover:shadow-md transition-all group">
+        <span class="text-xs font-semibold text-green-700 bg-green-50 px-2 py-0.5 rounded mb-2 inline-block">Bäst för de flesta</span>
+        <h3 class="font-heading text-lg font-bold text-text group-hover:text-accent mb-1">Roborock Qrevo Master</h3>
+        <p class="text-2xl font-bold text-cta mb-2">7 490 kr</p>
+        <p class="text-sm text-text-light">10 000 Pa, FlexiArm kantmopp, gummirulle, AutoEmpty. Bäst värde utan husdjur.</p>
+        <span class="inline-block mt-3 text-sm font-semibold text-accent">Läs recension →</span>
+      </a>
+      <a href="/roborock-s8-maxv-ultra/" class="block bg-white rounded-xl border border-border p-5 hover:border-accent hover:shadow-md transition-all group">
+        <span class="text-xs font-semibold text-accent bg-accent/10 px-2 py-0.5 rounded mb-2 inline-block">Bäst för husdjursägare</span>
+        <h3 class="font-heading text-lg font-bold text-text group-hover:text-accent mb-1">Roborock S8 MaxV Ultra</h3>
+        <p class="text-2xl font-bold text-cta mb-2">10 990 kr</p>
+        <p class="text-sm text-text-light">10 000 Pa, ReactiveAI 3.0, AI djuravföringsdetektion, dubbla gummirullar.</p>
+        <span class="inline-block mt-3 text-sm font-semibold text-accent">Läs recension →</span>
+      </a>
+    </div>
+
+    <div class="mt-8 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade jämförelser</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/jamfor/roborock-qrevo-master-vs-dreame-x40-ultra/" class="text-accent hover:underline">Roborock Qrevo Master vs Dreame X40 Ultra</a></li>
+        <li><a href="/jamfor/dreame-l20-ultra-vs-dreame-x40-ultra/" class="text-accent hover:underline">Dreame L20 Ultra vs X40 Ultra</a></li>
+        <li><a href="/roborock-vs-dreame/" class="text-accent hover:underline">Roborock vs Dreame — märkesjämförelse</a></li>
+        <li><a href="/roborock-guide/" class="text-accent hover:underline">Roborock guide 2026 — alla modeller jämförda</a></li>
+      </ul>
+    </div>
+
+    <FAQ items={faqItems} />
+  </div>
+
+  <StickyCTA url="https://www.komplett.se/search?q=Roborock+Qrevo+Master" text="Se pris — Roborock Qrevo Master" />
+</BaseLayout>
