@@ -4,179 +4,177 @@ import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 
-const AMZN_TAG = 'johnerik510-20';
+const TAG = 'johnerik510-20';
 
-const parts = [
+const products = [
   {
-    category: 'Knivar',
-    desc: 'Byt knivar varje säsong eller vid synlig slitage — trubbiga knivar drar och sliter på gräset.',
-    products: [
-      {
-        name: 'Husqvarna Automower knivar — 9-pack (standard)',
-        compat: 'Passar: Husqvarna Automower 105, 115H, 310, 315, 315X, 320, 330X, 430X',
-        price: 'ca 89–129 kr',
-        badge: 'Populärast',
-        ctaUrl: `https://www.amazon.se/s?k=husqvarna+automower+knivar+9+pack&tag=${AMZN_TAG}`,
-      },
-      {
-        name: 'Gardena Sileno knivar — 9-pack',
-        compat: 'Passar: Gardena Sileno City 250, 500, 750, Life 750, Minimo',
-        price: 'ca 89–129 kr',
-        badge: null,
-        ctaUrl: `https://www.amazon.se/s?k=gardena+sileno+knivar+reservdelar&tag=${AMZN_TAG}`,
-      },
-      {
-        name: 'Worx Landroid knivar — 9-pack',
-        compat: 'Passar: Worx Landroid M500, L1500, S300',
-        price: 'ca 79–119 kr',
-        badge: null,
-        ctaUrl: `https://www.amazon.se/s?k=worx+landroid+knivar+reservdelar&tag=${AMZN_TAG}`,
-      },
-      {
-        name: 'Mammotion LUBA knivar',
-        compat: 'Passar: Mammotion LUBA 2 AWO 1000H, LUBA AWO 3000',
-        price: 'ca 149–199 kr',
-        badge: null,
-        ctaUrl: `https://www.amazon.se/s?k=mammotion+luba+knivar+blades&tag=${AMZN_TAG}`,
-      },
-    ],
+    asin: 'B0C9C5VNM1',
+    img: 'https://m.media-amazon.com/images/I/71a08+dXLNL._AC_UL320_.jpg',
+    name: '45-pack universalblad — Husqvarna, Gardena, Yardforce',
+    compat: 'Passar: Husqvarna Automower 105, 115H, 310, 315, 315X, 430X, 450X, Gardena Sileno, Yardforce',
+    includes: '45 ersättningsblad + skruvar',
+    price: '138 kr',
+    badge: 'Bäst i test',
+    type: 'Knivar',
   },
   {
-    category: 'Begränsningskabel & spiraler',
-    desc: 'Kabel och spiraler för perimeter-baserade robotgräsklippare.',
-    products: [
-      {
-        name: 'Husqvarna Automower begränsningskabel — 150 m',
-        compat: 'Passar: Alla Husqvarna Automower med trådsystem',
-        price: 'ca 199–279 kr',
-        badge: null,
-        ctaUrl: `https://www.amazon.se/s?k=husqvarna+automower+begransningskabel+150m&tag=${AMZN_TAG}`,
-      },
-      {
-        name: 'Husqvarna Automower spiraler — 200-pack',
-        compat: 'Passar: Alla Husqvarna Automower med trådsystem',
-        price: 'ca 99–149 kr',
-        badge: null,
-        ctaUrl: `https://www.amazon.se/s?k=husqvarna+automower+spiraler+spikar&tag=${AMZN_TAG}`,
-      },
-      {
-        name: 'Gardena begränsningskabel & spiraler-kit',
-        compat: 'Passar: Gardena Sileno-serien',
-        price: 'ca 179–249 kr',
-        badge: null,
-        ctaUrl: `https://www.amazon.se/s?k=gardena+sileno+begransningskabel+spiraler&tag=${AMZN_TAG}`,
-      },
-    ],
+    asin: 'B07WMTTSS4',
+    img: 'https://m.media-amazon.com/images/I/71p5BKVk-PL._AC_UL320_.jpg',
+    name: 'Domar 30-pack förstärkta robotgräsklipparblad',
+    compat: 'Passar: Husqvarna Automower, Gardena Sileno, Yard Force',
+    includes: '30 förstärkta blad + skruvar',
+    price: '170 kr',
+    badge: null,
+    type: 'Knivar',
   },
   {
-    category: 'Rengöring & skötsel',
-    desc: 'Håll sensorer och chassi i trim för bästa navigering och livslängd.',
-    products: [
-      {
-        name: 'Rengöringsborste för sensorer & hjul',
-        compat: 'Universell — passar alla robotgräsklippare',
-        price: 'ca 49–89 kr',
-        badge: null,
-        ctaUrl: `https://www.amazon.se/s?k=robotgrasklippare+rengöring+borste&tag=${AMZN_TAG}`,
-      },
-      {
-        name: 'Knivbytesverktyg (säkert byte utan verktyg)',
-        compat: 'Universell',
-        price: 'ca 39–69 kr',
-        badge: null,
-        ctaUrl: `https://www.amazon.se/s?k=robotgrasklippare+knivbyte+verktyg&tag=${AMZN_TAG}`,
-      },
-    ],
+    asin: 'B083SKXKR7',
+    img: 'https://m.media-amazon.com/images/I/71rMqY7lkOL._AC_UL320_.jpg',
+    name: 'Willingood 30-pack titanblad — universalpassning',
+    compat: 'Passar: Husqvarna Automower, Gardena, McCulloch, Segway Navimow',
+    includes: '30 titanblad + 30 skruvar',
+    price: '179 kr',
+    badge: 'Titanstål',
+    type: 'Knivar',
+  },
+  {
+    asin: 'B0DRHWXPHC',
+    img: 'https://m.media-amazon.com/images/I/718unjy3QCL._AC_UL320_.jpg',
+    name: 'Forever Speed — begränsningskabel 100 m (2,7 mm)',
+    compat: 'Passar: Husqvarna Automower, Gardena Sileno, Worx Landroid, McCulloch',
+    includes: '100 m kabel, diameter 2,7 mm',
+    price: '156 kr',
+    badge: null,
+    type: 'Kabel',
+  },
+  {
+    asin: 'B0DRHXG9WX',
+    img: 'https://m.media-amazon.com/images/I/71MpaaSSn9L._AC_UL320_.jpg',
+    name: 'Forever Speed — begränsningskabel 150 m (2,7 mm)',
+    compat: 'Passar: Husqvarna Automower, Gardena Sileno, Worx Landroid, McCulloch',
+    includes: '150 m kabel, diameter 2,7 mm',
+    price: '252 kr',
+    badge: 'Stor tomt',
+    type: 'Kabel',
+  },
+  {
+    asin: 'B0D9QB7H3S',
+    img: 'https://m.media-amazon.com/images/I/71vVje1ld8L._AC_UL320_.jpg',
+    name: '20-pack kabelklämmor — reparerar begränsningskabel',
+    compat: 'Passar: Gardena, Husqvarna och alla kabeldrivna robotgräsklippare',
+    includes: '20 anslutningsklämmor, passar kabel 2,7–3,4 mm',
+    price: '120 kr',
+    badge: null,
+    type: 'Kabel',
   },
 ];
 
 const faqItems = [
   {
-    question: 'Hur ofta bör man byta knivar på robotgräsklipparen?',
-    answer: 'Byt knivar minst en gång per säsong — helst vid säsongsstart. Med mycket grus eller sten i gräset kan knivarna slöas snabbare och behöva bytas mitt i säsongen. Ett tecken på slitna knivar är ojämnt klippt gräs med fransiga strån.',
+    question: 'Hur ofta ska jag byta knivar på robotgräsklipparen?',
+    answer: 'Byt knivar varje säsong — helst på våren innan du startar klippningen. Med stenig eller hård mark slits knivarna fortare och kan behöva bytas mitt i säsongen.',
   },
   {
-    question: 'Kan man slipa knivarna istället för att byta dem?',
-    answer: 'Robotgräsklipparens knivar är designade för att bytas ut, inte slipas. De kostar runt 10–15 kr styck i ett 9-pack — det är billigare och säkrare att köpa nya. Försök aldrig att slipa knivar utan att ta bort dem från maskinen.',
+    question: 'Fungerar universalblad i alla robotgräsklippare?',
+    answer: 'Universalblad fungerar i de flesta modeller från Husqvarna, Gardena, Worx och McCulloch som använder ett standardhållarsystem. Kontrollera alltid kompatibilitetslistan i produktbeskrivningen.',
   },
   {
-    question: 'Vad händer om man kör med trasig begränsningskabel?',
-    answer: 'En trasig begränsningskabel kan göra att robotgräsklipparen inte startar alls, kör fel, eller stängs av mitt i klippningen med ett felmeddelande. Du kan hitta kabelbrottet med en kabelsökare eller systematiskt kontrollera längs hela perimetern.',
-  },
-  {
-    question: 'Vilka knivar passar Husqvarna Automower 430X Nera?',
-    answer: 'Husqvarna Automower 430X Nera använder standard Husqvarna Automower-knivar (artikelnummer 591 34 04-01) i ett 9-pack. Dessa passar de flesta Automower-modeller. Kontrollera att paketet anger 430X-kompatibilitet vid köp.',
+    question: 'Min begränsningskabel är trasig — behöver jag byta hela kabeln?',
+    answer: 'Nej. Använd kabelklämmor för att skärva ihop kabeln vid brottstället. Det tar 5 minuter och kostar under 10 kr per skärv.',
   },
 ];
 
 const breadcrumbs = [
   { label: 'Reservdelar', href: '/reservdelar/' },
-  { label: 'Robotgräsklippare reservdelar' },
+  { label: 'Robotgräsklippare' },
 ];
 ---
 
 <BaseLayout
-  title="Reservdelar till robotgräsklippare — Knivar, kabel & spiraler | Robotjakt"
-  description="Reservdelar till robotgräsklippare. Knivar till Husqvarna Automower, Gardena Sileno och Worx Landroid. Begränsningskabel, spiraler och mer via Amazon."
+  title="Robotgräsklippare reservdelar 2026 — knivar, kabel och klämmor"
+  description="Ersättningsknivar, begränsningskabel och kabelklämmor till robotgräsklippare. Passar Husqvarna Automower, Gardena Sileno och Worx Landroid — köp på Amazon."
 >
   <Breadcrumbs items={breadcrumbs} />
 
   <section class="bg-primary text-white py-8">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Reservdelar till robotgräsklippare</h1>
-      <p class="text-gray-200 max-w-2xl">Knivar, begränsningskabel, spiraler och skötselkit till Husqvarna Automower, Gardena Sileno, Worx Landroid och Mammotion LUBA.</p>
+      <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Robotgräsklippare reservdelar</h1>
+      <p class="text-gray-200 max-w-2xl">Ersättningsknivar, begränsningskabel och kabelklämmor till Husqvarna Automower, Gardena Sileno, Worx Landroid och Segway Navimow.</p>
     </div>
   </section>
 
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <AffiliateDisclaimer />
-    <p class="text-sm text-text-light mb-6">Senast uppdaterad: mars 2026</p>
+    <p class="text-sm text-text-light mb-2">Senast uppdaterad: mars 2026 &mdash; {products.length} produkter</p>
 
     <div class="bg-accent/5 border border-accent/20 rounded-xl px-5 py-4 mb-8 text-sm text-text">
-      <strong>Säsongsstart-tips:</strong> Byt knivar, kontrollera kabel och spiraler, rengör sensorer och laddningsplatta — gör robotgräsklipparen redo inför säsongen.
+      <strong>Säsongsstart-tips:</strong> Byt knivar och kontrollera begränsningskabeln varje vår innan du startar robotgräsklipparen. Det tar 15 minuter och förebygger driftstopp under säsongen.
     </div>
 
-    {parts.map(section => (
-      <section class="mb-10">
-        <h2 class="font-heading text-2xl font-bold text-text mb-1">{section.category}</h2>
-        <p class="text-sm text-text-light mb-5">{section.desc}</p>
-        <div class="space-y-4">
-          {section.products.map(p => (
-            <article class="bg-white rounded-xl border border-border shadow-sm p-5">
-              <div class="flex flex-col sm:flex-row sm:items-start gap-4">
-                <div class="flex-1">
-                  <div class="flex flex-wrap items-start gap-2 mb-1">
-                    <h3 class="font-heading font-bold text-text text-base">{p.name}</h3>
-                    {p.badge && <span class="text-xs font-semibold bg-winner/10 text-winner px-2 py-0.5 rounded-full">{p.badge}</span>}
-                  </div>
-                  <p class="text-xs text-accent font-medium mb-3">{p.compat}</p>
-                  <div class="flex flex-wrap items-center gap-3">
-                    <span class="text-lg font-bold text-text">{p.price}</span>
-                    <a
-                      href={p.ctaUrl}
-                      rel="sponsored nofollow noopener"
-                      target="_blank"
-                      class="inline-flex items-center gap-1.5 px-5 py-2.5 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors text-sm min-h-[44px]"
-                    >
-                      Köp på Amazon
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-                    </a>
-                  </div>
-                </div>
+    <h2 class="font-heading text-xl font-bold text-text mb-4">Knivar och blad</h2>
+    <div class="space-y-4 mb-10">
+      {products.filter(p => p.type === 'Knivar').map((p, i) => (
+        <article class="bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow p-5">
+          <div class="flex flex-col sm:flex-row gap-4">
+            <div class="flex-shrink-0 flex flex-col items-center gap-2">
+              {i === 0 && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-winner/10 text-winner">{p.badge}</span>}
+              {i > 0 && p.badge && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-bg-alt text-text-light">{p.badge}</span>}
+              <div class="w-32 h-32 bg-gray-50 rounded-xl p-2 flex items-center justify-center border border-border">
+                <img src={p.img} alt={p.name} class="w-full h-full object-contain" loading="lazy" />
               </div>
-            </article>
-          ))}
-        </div>
-      </section>
-    ))}
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-heading font-bold text-text text-base mb-1">{p.name}</h3>
+              <p class="text-xs text-accent font-medium mb-2">{p.compat}</p>
+              <p class="text-xs text-text-light mb-4"><strong class="text-text">Innehåller:</strong> {p.includes}</p>
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="text-xl font-bold text-text">{p.price}</span>
+                <a href={`https://www.amazon.se/dp/${p.asin}?tag=${TAG}`} rel="sponsored nofollow noopener" target="_blank" class="inline-flex items-center gap-1.5 px-5 py-2.5 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors text-sm min-h-[44px]">
+                  Köp på Amazon
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <h2 class="font-heading text-xl font-bold text-text mb-4">Begränsningskabel och klämmor</h2>
+    <div class="space-y-4 mb-10">
+      {products.filter(p => p.type === 'Kabel').map((p) => (
+        <article class="bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow p-5">
+          <div class="flex flex-col sm:flex-row gap-4">
+            <div class="flex-shrink-0 flex flex-col items-center gap-2">
+              {p.badge && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-bg-alt text-text-light">{p.badge}</span>}
+              <div class="w-32 h-32 bg-gray-50 rounded-xl p-2 flex items-center justify-center border border-border">
+                <img src={p.img} alt={p.name} class="w-full h-full object-contain" loading="lazy" />
+              </div>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-heading font-bold text-text text-base mb-1">{p.name}</h3>
+              <p class="text-xs text-accent font-medium mb-2">{p.compat}</p>
+              <p class="text-xs text-text-light mb-4"><strong class="text-text">Innehåller:</strong> {p.includes}</p>
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="text-xl font-bold text-text">{p.price}</span>
+                <a href={`https://www.amazon.se/dp/${p.asin}?tag=${TAG}`} rel="sponsored nofollow noopener" target="_blank" class="inline-flex items-center gap-1.5 px-5 py-2.5 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors text-sm min-h-[44px]">
+                  Köp på Amazon
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
 
     <section class="mb-8">
-      <h2 class="font-heading text-xl font-bold text-text mb-4">Se fler reservdelar</h2>
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Fler reservdelar</h2>
       <div class="grid sm:grid-cols-2 gap-3">
         <a href="/reservdelar/husqvarna/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Husqvarna Automower reservdelar</a>
-        <a href="/reservdelar/knivar/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Knivar — alla märken</a>
-        <a href="/robotgrasklippare/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Bästa robotgräsklippare 2026</a>
-        <a href="/kopguide-robotgrasklippare/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Köpguide robotgräsklippare</a>
+        <a href="/reservdelar/knivar/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Alla knivar och kabel</a>
+        <a href="/reservdelar/robotdammsugare/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Robotdammsugare reservdelar</a>
+        <a href="/reservdelar/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Alla reservdelar</a>
       </div>
     </section>
 

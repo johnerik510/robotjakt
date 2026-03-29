@@ -4,60 +4,83 @@ import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 
-const AMZN_TAG = 'johnerik510-20';
+const TAG = 'johnerik510-20';
 
-const parts = [
+const products = [
   {
-    section: 'Dreame X-serien (flagship)',
-    models: 'X30 Ultra, X40 Ultra, X50 Ultra',
-    items: [
-      { name: 'HEPA-filter 4-pack', price: 'ca 139–189 kr', ctaUrl: `https://www.amazon.se/s?k=dreame+x30+x40+ultra+hepa+filter&tag=${AMZN_TAG}` },
-      { name: 'Gummi-borsthuvud (anti-tangle)', price: 'ca 199–269 kr', ctaUrl: `https://www.amazon.se/s?k=dreame+x40+ultra+gummi+borsthuvud&tag=${AMZN_TAG}` },
-      { name: 'Sidoborstar 8-pack', price: 'ca 79–119 kr', ctaUrl: `https://www.amazon.se/s?k=dreame+x40+ultra+sidoborstar&tag=${AMZN_TAG}` },
-      { name: 'Moppkuddar 4-pack', price: 'ca 129–179 kr', ctaUrl: `https://www.amazon.se/s?k=dreame+x40+moppkuddar+reservdelar&tag=${AMZN_TAG}` },
-      { name: 'Komplett underhållskit', price: 'ca 279–369 kr', ctaUrl: `https://www.amazon.se/s?k=dreame+x40+ultra+komplett+kit+reservdelar&tag=${AMZN_TAG}` },
-    ],
+    asin: 'B0DFBMQ64P',
+    img: 'https://m.media-amazon.com/images/I/71pTtn+ZUlL._AC_UL320_.jpg',
+    name: 'Dreame X40 Ultra / X30 Ultra / L20 Ultra — 18-delars komplett kit',
+    compat: 'Passar: X40 Ultra, X40 Ultra Complete, X30 Ultra, L20 Ultra',
+    includes: '1 huvudborste, 4 sidoborstar, 4 HEPA-filter, 4 moppkuddar, 4 dammpåsar',
+    price: '256 kr',
+    badge: 'Bästsäljare',
+    series: 'X/L-serien',
   },
   {
-    section: 'Dreame L-serien',
-    models: 'L10 Pro, L10s Ultra Gen2, L20 Ultra, L30 Ultra',
-    items: [
-      { name: 'HEPA-filter 4-pack', price: 'ca 99–149 kr', ctaUrl: `https://www.amazon.se/s?k=dreame+l20+ultra+l10+hepa+filter&tag=${AMZN_TAG}` },
-      { name: 'Gummi-borsthuvud', price: 'ca 179–249 kr', ctaUrl: `https://www.amazon.se/s?k=dreame+l20+ultra+borsthuvud+roller&tag=${AMZN_TAG}` },
-      { name: 'Sidoborstar 8-pack', price: 'ca 69–109 kr', ctaUrl: `https://www.amazon.se/s?k=dreame+l20+l10+sidoborstar+reservdelar&tag=${AMZN_TAG}` },
-      { name: 'Moppkuddar 4-pack', price: 'ca 109–159 kr', ctaUrl: `https://www.amazon.se/s?k=dreame+l20+moppkuddar&tag=${AMZN_TAG}` },
-    ],
+    asin: 'B0GTLGXJTS',
+    img: 'https://m.media-amazon.com/images/I/71bM9+I4mgL._AC_UL320_.jpg',
+    name: 'Dreame L40 Ultra / X40 Ultra / Mova P50 Pro — komplett kit',
+    compat: 'Passar: L40 Ultra, X40 Ultra, X40 Ultra Complete, Mova P50 Pro Ultra',
+    includes: 'Huvudborste, sidoborstar, filter, mopptorkdukar',
+    price: '329 kr',
+    badge: 'Mest komplett',
+    series: 'X/L-serien',
   },
   {
-    section: 'Dreame W-serien (tvättsystem)',
-    models: 'W10 Pro, W10 Ultra',
-    items: [
-      { name: 'Filter + borstar kit', price: 'ca 119–169 kr', ctaUrl: `https://www.amazon.se/s?k=dreame+w10+pro+filter+borstar&tag=${AMZN_TAG}` },
-      { name: 'Moppkuddar 4-pack', price: 'ca 99–139 kr', ctaUrl: `https://www.amazon.se/s?k=dreame+w10+pro+moppkuddar&tag=${AMZN_TAG}` },
-    ],
+    asin: 'B0DTTPX9DW',
+    img: 'https://m.media-amazon.com/images/I/71c1xsc2N+L._AC_UL320_.jpg',
+    name: 'Dreame X40 Ultra / L10s Pro Ultra Heat / X30 Pro — 4-pack filter',
+    compat: 'Passar: X40 Ultra Complete, X40 Master, L10s Pro Ultra Heat, X30 Pro Plus',
+    includes: '4 HEPA E12-filter',
+    price: '125 kr',
+    badge: 'Bästa pris',
+    series: 'X/L-serien',
   },
   {
-    section: 'Dreame D-serien',
-    models: 'D9, D9 Max, D10 Plus',
-    items: [
-      { name: 'HEPA-filter 4-pack', price: 'ca 79–119 kr', ctaUrl: `https://www.amazon.se/s?k=dreame+d9+d10+hepa+filter&tag=${AMZN_TAG}` },
-      { name: 'Sidoborstar + borsthuvud kit', price: 'ca 99–149 kr', ctaUrl: `https://www.amazon.se/s?k=dreame+d9+borsthuvud+sidoborstar+kit&tag=${AMZN_TAG}` },
-    ],
+    asin: 'B0DRK62DKH',
+    img: 'https://m.media-amazon.com/images/I/71hBkMqpgPL._AC_UL320_.jpg',
+    name: 'Dreame X40 Ultra / X30 Ultra / L20 Ultra / L10s Gen2 — huvudborstar',
+    compat: 'Passar: X40 Ultra, X30 Ultra, L20 Ultra, L10s Ultra Gen2, L10s Pro Gen2',
+    includes: '1 par gummiborstar (huvudborste) + skyddslock',
+    price: '123 kr',
+    badge: null,
+    series: 'X/L-serien',
+  },
+  {
+    asin: 'B0GQSJCLY4',
+    img: 'https://m.media-amazon.com/images/I/71R1DqiXgcL._AC_UL320_.jpg',
+    name: 'Dreame X40 Ultra / L40 Ultra / D20 Pro Plus — sidoborstar',
+    compat: 'Passar: X40 Ultra, X40 Ultra Complete, L40 Ultra, D20 Pro Plus',
+    includes: '6 sidoborstar (3-armade)',
+    price: '141 kr',
+    badge: null,
+    series: 'X/L-serien',
+  },
+  {
+    asin: 'B0D7M7HBVD',
+    img: 'https://m.media-amazon.com/images/I/71bM9+I4mgL._AC_UL320_.jpg',
+    name: 'Dreame X40 Ultra / L40 Ultra / Mova P50 Pro Ultra — tillbehörskit',
+    compat: 'Passar: X40 Ultra Complete, X40 Master, L40 Ultra, Mova P50 Pro Ultra',
+    includes: '1 huvudborste, 2 filter, 4 sidoborstar, 4 mopptorkdukar, 6 dammpåsar',
+    price: '299 kr',
+    badge: null,
+    series: 'X/L-serien',
   },
 ];
 
 const faqItems = [
   {
-    question: 'Hur får jag underhållspåminnelser på min Dreame-robot?',
-    answer: 'Öppna Dreame Home-appen, välj din robot och gå till Inställningar > Underhållsplan. Appen visar rekommenderade bytesintervall baserade på körtid för filter, borstar och moppkuddar.',
+    question: 'Vilket kit passar Dreame X40 Ultra?',
+    answer: 'Dreame X40 Ultra delar reservdelssystem med X40 Ultra Complete, X40 Master och L40 Ultra. Kontrollera alltid att produktbeskrivningen anger X40 Ultra som kompatibel modell.',
   },
   {
-    question: 'Är reservdelarna till Dreame X40 Ultra kompatibla med X30 Ultra?',
-    answer: 'Många delar är korskompatibla mellan X30 och X40 Ultra, men inte alla — särskilt inte borsthuvudet som skiljer sig konstruktionsmässigt. Kontrollera alltid att din modell listas i produktbeskrivningen på Amazon.',
+    question: 'Hur ofta byter jag reservdelar på Dreame L20 Ultra?',
+    answer: 'HEPA-filter: var 2–3 månad. Sidoborstar: var 6–12 månad. Huvudborste: var 12 månad. Moppkuddar: tvätta varje städning, byt när de är slitna. Appen påminner dig när det är dags.',
   },
   {
-    question: 'Var köper man Dreame-reservdelar i Sverige?',
-    answer: 'Amazon.se har det bredaste urvalet av kompatibla Dreame-reservdelar med snabb leverans till Sverige. Dreames officiella webbshop (dreametech.com) och Komplett/Elgiganten har ett mer begränsat sortiment.',
+    question: 'Är Dreame X40 och L20 reservdelar utbytbara?',
+    answer: 'Delvis. X40 Ultra och L20 Ultra delar huvudborstar och sidoborstar men kan ha olika filter och moppkuddar. Köp alltid ett kit som explicit anger din modell för att vara säker.',
   },
 ];
 
@@ -68,57 +91,57 @@ const breadcrumbs = [
 ---
 
 <BaseLayout
-  title="Dreame reservdelar — Filter, borstar, moppkuddar L20 Ultra & X40 Ultra | Robotjakt"
-  description="Reservdelar till Dreame robotdammsugare. HEPA-filter, gummi-borsthuvud, sidoborstar och moppkuddar till X40 Ultra, L20 Ultra och fler modeller. Köp via Amazon."
+  title="Dreame reservdelar 2026 — filter och borstar till X40 Ultra, L20 Ultra"
+  description="Reservdelar till Dreame X40 Ultra, X30 Ultra, L20 Ultra och L40 Ultra. Kompletta kit med filter, borstar och moppkuddar — köp direkt på Amazon."
 >
   <Breadcrumbs items={breadcrumbs} />
 
   <section class="bg-primary text-white py-8">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Dreame reservdelar</h1>
-      <p class="text-gray-200 max-w-2xl">Filter, borstar och moppkuddar till Dreame X40 Ultra, L20 Ultra, D9 och fler modeller.</p>
+      <p class="text-gray-200 max-w-2xl">Filter, borstar och tillbehörskit till Dreame X40 Ultra, X30 Ultra, L20 Ultra och L40 Ultra — håll roboten i toppskick.</p>
     </div>
   </section>
 
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <AffiliateDisclaimer />
-    <p class="text-sm text-text-light mb-6">Senast uppdaterad: mars 2026</p>
+    <p class="text-sm text-text-light mb-6">Senast uppdaterad: mars 2026 &mdash; {products.length} produkter</p>
 
-    {parts.map(section => (
-      <section class="mb-10">
-        <div class="mb-4">
-          <h2 class="font-heading text-2xl font-bold text-text">{section.section}</h2>
-          <p class="text-sm text-text-light mt-1">Passar: {section.models}</p>
-        </div>
-        <div class="space-y-3">
-          {section.items.map(item => (
-            <div class="bg-white rounded-xl border border-border p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <span class="font-semibold text-text text-sm">{item.name}</span>
-              <div class="flex items-center gap-3 sm:flex-shrink-0">
-                <span class="font-bold text-text whitespace-nowrap">{item.price}</span>
-                <a
-                  href={item.ctaUrl}
-                  rel="sponsored nofollow noopener"
-                  target="_blank"
-                  class="inline-flex items-center gap-1.5 px-4 py-2 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors text-sm min-h-[44px] whitespace-nowrap"
-                >
+    <div class="space-y-4 mb-10">
+      {products.map((p, i) => (
+        <article class="bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow p-5">
+          <div class="flex flex-col sm:flex-row gap-4">
+            <div class="flex-shrink-0 flex flex-col items-center gap-2">
+              {i === 0 && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-winner/10 text-winner">{p.badge}</span>}
+              {i > 0 && p.badge && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-bg-alt text-text-light">{p.badge}</span>}
+              <div class="w-32 h-32 bg-gray-50 rounded-xl p-2 flex items-center justify-center border border-border">
+                <img src={p.img} alt={p.name} class="w-full h-full object-contain" loading="lazy" />
+              </div>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h2 class="font-heading font-bold text-text text-base mb-1">{p.name}</h2>
+              <p class="text-xs text-accent font-medium mb-2">{p.compat}</p>
+              <p class="text-xs text-text-light mb-4"><strong class="text-text">Innehåller:</strong> {p.includes}</p>
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="text-xl font-bold text-text">{p.price}</span>
+                <a href={`https://www.amazon.se/dp/${p.asin}?tag=${TAG}`} rel="sponsored nofollow noopener" target="_blank" class="inline-flex items-center gap-1.5 px-5 py-2.5 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors text-sm min-h-[44px]">
                   Köp på Amazon
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                 </a>
               </div>
             </div>
-          ))}
-        </div>
-      </section>
-    ))}
+          </div>
+        </article>
+      ))}
+    </div>
 
     <section class="mb-8">
-      <h2 class="font-heading text-xl font-bold text-text mb-4">Läs mer om Dreame</h2>
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Fler reservdelar</h2>
       <div class="grid sm:grid-cols-2 gap-3">
-        <a href="/dreame-guide/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Dreame — alla modeller</a>
-        <a href="/dreame-x40-ultra/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Dreame X40 Ultra recension</a>
-        <a href="/dreame-l20-ultra/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Dreame L20 Ultra recension</a>
-        <a href="/reservdelar/filter/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Alla ersättningsfilter</a>
+        <a href="/reservdelar/roborock/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Roborock reservdelar</a>
+        <a href="/reservdelar/ecovacs/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Ecovacs reservdelar</a>
+        <a href="/reservdelar/filter/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Filter till robotdammsugare</a>
+        <a href="/reservdelar/borstar/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Borstar till robotdammsugare</a>
       </div>
     </section>
 

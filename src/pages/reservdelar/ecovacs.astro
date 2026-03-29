@@ -4,52 +4,59 @@ import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 
-const AMZN_TAG = 'johnerik510-20';
+const TAG = 'johnerik510-20';
 
-const parts = [
+const products = [
   {
-    section: 'Ecovacs Deebot X-serien',
-    models: 'X5 Omni, X1 Omni, X2 Omni',
-    items: [
-      { name: 'HEPA-filter 4-pack', price: 'ca 129–179 kr', ctaUrl: `https://www.amazon.se/s?k=ecovacs+deebot+x5+x1+omni+hepa+filter&tag=${AMZN_TAG}` },
-      { name: 'Borsthuvud (gummi/fiber)', price: 'ca 179–249 kr', ctaUrl: `https://www.amazon.se/s?k=ecovacs+deebot+x5+x1+borsthuvud&tag=${AMZN_TAG}` },
-      { name: 'Sidoborstar 6-pack', price: 'ca 79–119 kr', ctaUrl: `https://www.amazon.se/s?k=ecovacs+deebot+x5+sidoborstar&tag=${AMZN_TAG}` },
-      { name: 'Moppkuddar 4-pack', price: 'ca 119–169 kr', ctaUrl: `https://www.amazon.se/s?k=ecovacs+deebot+x5+omni+moppkuddar&tag=${AMZN_TAG}` },
-      { name: 'Komplett tillbehörskit', price: 'ca 249–329 kr', ctaUrl: `https://www.amazon.se/s?k=ecovacs+deebot+x5+komplett+reservdelar+kit&tag=${AMZN_TAG}` },
-    ],
+    asin: 'B0DQ84RLZ7',
+    img: 'https://m.media-amazon.com/images/I/81z6rTFxA2L._AC_UL320_.jpg',
+    name: 'Ecovacs Deebot X5 Omni / X5 Pro — 20-delars komplett kit',
+    compat: 'Passar: Deebot X5 Omni, X5 Pro',
+    includes: '1 rullborste, 4 sidoborstar, 4 HEPA-filter, 6 dammpåsar, 4 mopptorkdukar, rengöringsborste',
+    price: '226 kr',
+    badge: 'Bästsäljare',
   },
   {
-    section: 'Ecovacs Deebot T-serien',
-    models: 'T20 Omni, T10 Omni, T9 AIVI',
-    items: [
-      { name: 'HEPA-filter 4-pack', price: 'ca 99–149 kr', ctaUrl: `https://www.amazon.se/s?k=ecovacs+deebot+t20+t10+hepa+filter&tag=${AMZN_TAG}` },
-      { name: 'Borsthuvud', price: 'ca 149–219 kr', ctaUrl: `https://www.amazon.se/s?k=ecovacs+deebot+t20+omni+borsthuvud&tag=${AMZN_TAG}` },
-      { name: 'Sidoborstar 8-pack', price: 'ca 69–99 kr', ctaUrl: `https://www.amazon.se/s?k=ecovacs+deebot+t20+sidoborstar&tag=${AMZN_TAG}` },
-      { name: 'Moppkuddar', price: 'ca 99–149 kr', ctaUrl: `https://www.amazon.se/s?k=ecovacs+deebot+t20+moppkuddar&tag=${AMZN_TAG}` },
-    ],
+    asin: 'B0D7D1V4BP',
+    img: 'https://m.media-amazon.com/images/I/81EbX62JM5L._AC_UL320_.jpg',
+    name: 'Ecovacs Deebot X5 Omni / X5 Pro — komplett tillbehörskit',
+    compat: 'Passar: Deebot X5 Omni, X5 Pro',
+    includes: '1 rullborste, 4 sidoborstar, 3 HEPA-filter, 3 dammpåsar, 4 mopptorkdukar',
+    price: '373 kr',
+    badge: 'Premium',
   },
   {
-    section: 'Ecovacs Deebot N-serien',
-    models: 'N8 Pro, N8+, N10 Plus',
-    items: [
-      { name: 'HEPA-filter 4-pack', price: 'ca 79–119 kr', ctaUrl: `https://www.amazon.se/s?k=ecovacs+deebot+n8+n10+hepa+filter&tag=${AMZN_TAG}` },
-      { name: 'Sidoborstar + borsthuvud kit', price: 'ca 99–149 kr', ctaUrl: `https://www.amazon.se/s?k=ecovacs+deebot+n8+borstar+kit&tag=${AMZN_TAG}` },
-    ],
+    asin: 'B0DF8695XP',
+    img: 'https://m.media-amazon.com/images/I/611+p5Cey7L._AC_UL320_.jpg',
+    name: 'Ecovacs Deebot X5 Omni / X5 Pro — borstar + filter + mopp',
+    compat: 'Passar: Deebot X5 Omni, X5 Pro',
+    includes: '1 huvudborste, 4 sidoborstar, 3 HEPA-filter, 3 dammpåsar, 4 mopptorkdukar',
+    price: '231 kr',
+    badge: null,
+  },
+  {
+    asin: 'B0DY1DF8HQ',
+    img: 'https://m.media-amazon.com/images/I/71DKRo3NCWL._AC_UL320_.jpg',
+    name: 'HIYOUNG — Ecovacs Deebot X5 / X5 Pro Omni — 20-delars kit',
+    compat: 'Passar: Deebot X5 Omni, X5 Pro',
+    includes: '2 huvudborstar, 4 sidoborstar, 4 HEPA-filter, 6 mopptorkdukar, 4 dammpåsar',
+    price: '350 kr',
+    badge: null,
   },
 ];
 
 const faqItems = [
   {
-    question: 'Hur vet jag vilket reservdelskit som passar min Ecovacs Deebot?',
-    answer: 'Kontrollera modellnamnet på undersidan av roboten eller i Ecovacs Home-appen (Inställningar > Om enheten). Sök sedan på Amazon med exakt modellnamn + "reservdelar" eller "filter" för att hitta kompatibla kit.',
+    question: 'Passar alla Deebot X5-kit varandra?',
+    answer: 'Deebot X5 Omni och X5 Pro delar samma reservdelssystem. Kontrollera att kittet du köper anger X5 Omni eller X5 Pro som kompatibel modell — inte bara "X5".',
   },
   {
-    question: 'Var hittar man underhållspåminnelser i Ecovacs Home-appen?',
-    answer: 'Öppna Ecovacs Home-appen > välj din robot > Inställningar > Underhåll. Appen visar aktuell status för filter, borsthuvud och sidoborstar baserat på körtid.',
+    question: 'Hur ofta byter jag dammpåsar i Ecovacs dockningsstation?',
+    answer: 'Byt dammpåsar när de är fyllda till 70–80 % eller var 4–6 vecka vid daglig städning. Appen meddelar dig när påsen behöver bytas.',
   },
   {
-    question: 'Är X5 Omni och X1 Omni reservdelar kompatibla?',
-    answer: 'Sidoborstar och filter är ofta kompatibla inom Deebot X-serien. Moppkuddar och borsthuvud kan skilja sig åt. Kontrollera alltid att produktbeskrivningen på Amazon anger din specifika modell.',
+    question: 'Kan jag tvätta moppkuddarna i maskin?',
+    answer: 'Ja, de flesta Ecovacs-moppkuddar är tvättbara i 40 grader. Låt dem lufttorka helt innan du sätter tillbaka dem — fuktig moppkudda kan skapa mögel och dålig lukt.',
   },
 ];
 
@@ -60,57 +67,57 @@ const breadcrumbs = [
 ---
 
 <BaseLayout
-  title="Ecovacs Deebot reservdelar — Filter, borstar, moppkuddar | Robotjakt"
-  description="Reservdelar till Ecovacs Deebot robotdammsugare. HEPA-filter, borsthuvud, sidoborstar och moppkuddar till X5 Omni, T20 Omni och N8-serien. Köp via Amazon."
+  title="Ecovacs Deebot reservdelar 2026 — filter och borstar till X5 Omni"
+  description="Reservdelar till Ecovacs Deebot X5 Omni och X5 Pro. Kompletta kit med filter, borstar, moppkuddar och dammpåsar — köp direkt på Amazon."
 >
   <Breadcrumbs items={breadcrumbs} />
 
   <section class="bg-primary text-white py-8">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Ecovacs Deebot reservdelar</h1>
-      <p class="text-gray-200 max-w-2xl">Filter, borstar och moppkuddar till Ecovacs Deebot X5 Omni, T20 Omni och fler modeller.</p>
+      <p class="text-gray-200 max-w-2xl">Tillbehörskit, filter, borstar och moppkuddar till Ecovacs Deebot X5 Omni och X5 Pro — håll roboten i toppskick.</p>
     </div>
   </section>
 
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <AffiliateDisclaimer />
-    <p class="text-sm text-text-light mb-6">Senast uppdaterad: mars 2026</p>
+    <p class="text-sm text-text-light mb-6">Senast uppdaterad: mars 2026 &mdash; {products.length} produkter</p>
 
-    {parts.map(section => (
-      <section class="mb-10">
-        <div class="mb-4">
-          <h2 class="font-heading text-2xl font-bold text-text">{section.section}</h2>
-          <p class="text-sm text-text-light mt-1">Passar: {section.models}</p>
-        </div>
-        <div class="space-y-3">
-          {section.items.map(item => (
-            <div class="bg-white rounded-xl border border-border p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <span class="font-semibold text-text text-sm">{item.name}</span>
-              <div class="flex items-center gap-3 sm:flex-shrink-0">
-                <span class="font-bold text-text whitespace-nowrap">{item.price}</span>
-                <a
-                  href={item.ctaUrl}
-                  rel="sponsored nofollow noopener"
-                  target="_blank"
-                  class="inline-flex items-center gap-1.5 px-4 py-2 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors text-sm min-h-[44px] whitespace-nowrap"
-                >
+    <div class="space-y-4 mb-10">
+      {products.map((p, i) => (
+        <article class="bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow p-5">
+          <div class="flex flex-col sm:flex-row gap-4">
+            <div class="flex-shrink-0 flex flex-col items-center gap-2">
+              {i === 0 && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-winner/10 text-winner">{p.badge}</span>}
+              {i > 0 && p.badge && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-bg-alt text-text-light">{p.badge}</span>}
+              <div class="w-32 h-32 bg-gray-50 rounded-xl p-2 flex items-center justify-center border border-border">
+                <img src={p.img} alt={p.name} class="w-full h-full object-contain" loading="lazy" />
+              </div>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h2 class="font-heading font-bold text-text text-base mb-1">{p.name}</h2>
+              <p class="text-xs text-accent font-medium mb-2">{p.compat}</p>
+              <p class="text-xs text-text-light mb-4"><strong class="text-text">Innehåller:</strong> {p.includes}</p>
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="text-xl font-bold text-text">{p.price}</span>
+                <a href={`https://www.amazon.se/dp/${p.asin}?tag=${TAG}`} rel="sponsored nofollow noopener" target="_blank" class="inline-flex items-center gap-1.5 px-5 py-2.5 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors text-sm min-h-[44px]">
                   Köp på Amazon
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                 </a>
               </div>
             </div>
-          ))}
-        </div>
-      </section>
-    ))}
+          </div>
+        </article>
+      ))}
+    </div>
 
     <section class="mb-8">
-      <h2 class="font-heading text-xl font-bold text-text mb-4">Läs mer om Ecovacs</h2>
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Fler reservdelar</h2>
       <div class="grid sm:grid-cols-2 gap-3">
-        <a href="/ecovacs-guide/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Ecovacs — alla modeller</a>
-        <a href="/ecovacs-deebot-x5-omni/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Ecovacs Deebot X5 Omni recension</a>
-        <a href="/reservdelar/filter/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Alla ersättningsfilter</a>
-        <a href="/reservdelar/borstar/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Alla ersättningsborstar</a>
+        <a href="/reservdelar/roborock/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Roborock reservdelar</a>
+        <a href="/reservdelar/dreame/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Dreame reservdelar</a>
+        <a href="/reservdelar/filter/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Filter till robotdammsugare</a>
+        <a href="/reservdelar/borstar/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Borstar till robotdammsugare</a>
       </div>
     </section>
 

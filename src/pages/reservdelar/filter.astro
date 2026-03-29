@@ -4,81 +4,97 @@ import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 
-const AMZN_TAG = 'johnerik510-20';
+const TAG = 'johnerik510-20';
 
-const filters = [
+const products = [
   {
-    name: 'Roborock S8 / S8 Pro / S8 Max Ultra — HEPA-filter 3-pack',
+    asin: 'B0CG4RR3W5',
+    img: 'https://m.media-amazon.com/images/I/71iWCGSELCL._AC_UL320_.jpg',
+    name: 'Roborock S8 / S8+ / S8 Pro Ultra — komplett tillbehörskit',
     compat: 'Passar: S8, S8+, S8 Pro Ultra, S8 Max Ultra, S8 MaxV Ultra',
-    type: 'HEPA E11',
-    interval: 'Byt var 2 månad',
-    price: 'ca 119–179 kr',
-    badge: 'Populärast',
-    ctaUrl: `https://www.amazon.se/s?k=roborock+s8+hepa+filter+3+pack&tag=${AMZN_TAG}`,
+    includes: '2 HEPA-filter, 2 huvudborstar, 4 sidoborstar, 4 moppdukar',
+    price: '252 kr',
+    badge: 'Bästsäljare',
+    interval: 'Byt filter var 2–3 mån',
   },
   {
-    name: 'Roborock Q-serien / Qrevo — HEPA-filter 4-pack',
-    compat: 'Passar: Q5+, Q7+, Q7 Max+, Qrevo Master, Qrevo MaxV',
-    type: 'HEPA E11',
-    interval: 'Byt var 2 månad',
-    price: 'ca 99–149 kr',
+    asin: 'B0D6RFC7Q5',
+    img: 'https://m.media-amazon.com/images/I/61yKYuMFi6L._AC_UL320_.jpg',
+    name: 'Roborock S8 / S8+ / S8 Pro Ultra — filter + gummiborstar',
+    compat: 'Passar: S8, S8+, S8 Pro Ultra',
+    includes: '4 HEPA-filter, 2 gummiborstar, 6 sidoborstar',
+    price: '195 kr',
+    badge: 'Bästa pris',
+    interval: 'Byt filter var 2 mån',
+  },
+  {
+    asin: 'B0CY5CWRXQ',
+    img: 'https://m.media-amazon.com/images/I/71gGUWkjcFL._AC_UL320_.jpg',
+    name: 'Roborock Qrevo S / Qrevo Pro / Qrevo MaxV — 20-delars kit',
+    compat: 'Passar: Qrevo S, Qrevo Pro, Qrevo MaxV, Qrevo Plus',
+    includes: '4 HEPA-filter, 1 huvudborste, 4 moppkuddar, 6 sidoborstar, 4 dammpåsar',
+    price: '220 kr',
     badge: null,
-    ctaUrl: `https://www.amazon.se/s?k=roborock+qrevo+q7+hepa+filter+reservdelar&tag=${AMZN_TAG}`,
+    interval: 'Byt filter var 2–3 mån',
   },
   {
-    name: 'Dreame L20 Ultra / X40 Ultra — filter + borstar kit',
-    compat: 'Passar: L20 Ultra, X30 Ultra, X40 Ultra, L10s Ultra Gen2',
-    type: 'HEPA E12',
-    interval: 'Byt var 2–3 månad',
-    price: 'ca 149–199 kr',
+    asin: 'B0DFBMQ64P',
+    img: 'https://m.media-amazon.com/images/I/71pTtn+ZUlL._AC_UL320_.jpg',
+    name: 'Dreame X40 Ultra / X30 Ultra / L20 Ultra — 18-delars tillbehörskit',
+    compat: 'Passar: X40 Ultra, X30 Ultra, L20 Ultra, L10s Ultra Gen2',
+    includes: '4 HEPA-filter, 1 huvudborste, 4 moppkuddar, 4 sidoborstar, 4 dammpåsar',
+    price: '256 kr',
+    badge: 'Populärt val',
+    interval: 'Byt filter var 2–3 mån',
+  },
+  {
+    asin: 'B0DTTPX9DW',
+    img: 'https://m.media-amazon.com/images/I/71c1xsc2N+L._AC_UL320_.jpg',
+    name: 'Dreame X40 Ultra / L10s Pro Ultra Heat / X30 Pro — 4-pack filter',
+    compat: 'Passar: X40 Ultra Complete, X40 Master, L10s Pro Ultra Heat, X30 Pro Plus',
+    includes: '4 HEPA E12-filter',
+    price: '125 kr',
+    badge: 'Bästa pris',
+    interval: 'Byt var 2 mån',
+  },
+  {
+    asin: 'B0DQ84RLZ7',
+    img: 'https://m.media-amazon.com/images/I/81z6rTFxA2L._AC_UL320_.jpg',
+    name: 'Ecovacs Deebot X5 Omni / X5 Pro — 20-delars komplett kit',
+    compat: 'Passar: Deebot X5 Omni, X5 Pro',
+    includes: '4 HEPA-filter, 1 rullborste, 4 sidoborstar, 6 dammpåsar, 4 mopptorkdukar',
+    price: '226 kr',
     badge: null,
-    ctaUrl: `https://www.amazon.se/s?k=dreame+l20+ultra+hepa+filter+kit&tag=${AMZN_TAG}`,
+    interval: 'Byt filter var 2 mån',
   },
   {
-    name: 'Dreame D9 / L10 Pro — HEPA-filter 4-pack',
-    compat: 'Passar: D9, D9 Max, L10 Pro, L10s Pro',
-    type: 'HEPA',
-    interval: 'Byt var 2 månad',
-    price: 'ca 89–129 kr',
-    badge: 'Bra pris',
-    ctaUrl: `https://www.amazon.se/s?k=dreame+d9+l10+pro+hepa+filter&tag=${AMZN_TAG}`,
-  },
-  {
-    name: 'Ecovacs Deebot X5 / T20 Omni — filter + moppkit',
-    compat: 'Passar: Deebot X5 Omni, T20 Omni, X1 Omni',
-    type: 'HEPA E11',
-    interval: 'Byt var 2 månad',
-    price: 'ca 149–219 kr',
+    asin: 'B0DF8695XP',
+    img: 'https://m.media-amazon.com/images/I/611+p5Cey7L._AC_UL320_.jpg',
+    name: 'Ecovacs Deebot X5 Omni / X5 Pro — filter + borstar + mopp',
+    compat: 'Passar: Deebot X5 Omni, X5 Pro',
+    includes: '3 HEPA-filter, 1 huvudborste, 4 sidoborstar, 3 dammpåsar, 4 mopptorkdukar',
+    price: '231 kr',
     badge: null,
-    ctaUrl: `https://www.amazon.se/s?k=ecovacs+deebot+x5+t20+hepa+filter&tag=${AMZN_TAG}`,
-  },
-  {
-    name: 'Ecovacs Deebot N8 / T8 — HEPA-filter 4-pack',
-    compat: 'Passar: Deebot N8 Pro, T8 AIVI, N9+',
-    type: 'HEPA',
-    interval: 'Byt var 2 månad',
-    price: 'ca 99–149 kr',
-    badge: null,
-    ctaUrl: `https://www.amazon.se/s?k=ecovacs+deebot+n8+t8+hepa+filter&tag=${AMZN_TAG}`,
+    interval: 'Byt filter var 2 mån',
   },
 ];
 
 const faqItems = [
   {
-    question: 'Hur vet jag vilket filter som passar min robotdammsugare?',
-    answer: 'Kontrollera modellnamnet på undersidan av roboten eller i appen. Sök sedan på Amazon med modellnamnet + "filter" för att hitta rätt kit. De flesta tillverkarspecifika kit anger exakt vilka modeller de är kompatibla med.',
+    question: 'Hur ofta ska jag byta filter på min robotdammsugare?',
+    answer: 'Byt HEPA-filter var 2–3 månad vid normalt bruk. Har du husdjur eller allergiker hemma bör du byta var 4–6 vecka. Många modellers appar skickar påminnelse när det är dags.',
   },
   {
     question: 'Vad är skillnaden mellan HEPA E11 och E12?',
-    answer: 'HEPA E11 filtrerar bort 95 % av partiklar ner till 0,3 mikron. HEPA E12 filtrerar 99,5 %. För hem med allergiker eller astmatiker rekommenderar vi E12 eller bättre. Kontrollera att filtret är äkta HEPA och inte bara "HEPA-liknande".',
+    answer: 'HEPA E11 filtrerar 95 % av partiklar ner till 0,3 mikron. HEPA E12 filtrerar 99,5 %. För allergiker eller husdjursägare rekommenderas E12. Kontrollera att filtret är äkta HEPA — inte bara "HEPA-liknande".',
   },
   {
-    question: 'Kan man tvätta filtret istället för att byta det?',
-    answer: 'Vissa filter är tvättbara (washable) och kan sköljas av med kallt vatten och torkas i minst 24 timmar. HEPA-filter är dock i de flesta fall inte tvättbara — vatten förstör filtermaterialet och minskar filtrationsförmågan avsevärt. Kontrollera din modells manual.',
+    question: 'Fungerar tredjepartsfilter från Amazon lika bra som original?',
+    answer: 'Kvaliteten varierar. Välkända märken med tydlig kompatibilitetsinfo håller generellt god kvalitet. Undvik extremt billiga okända filter utan specifikationer — de kan ha sämre filtrationsförmåga.',
   },
   {
-    question: 'Fungerar tredjepartsfilter lika bra som original?',
-    answer: 'Kvaliteten varierar. Välkända märkeskompatibla filter på Amazon håller generellt god kvalitet och är certifierade av tillverkaren. Undvik extremt billiga okända filter som saknar specifikationer — de kan ha sämre filtrationsförmåga och kortare livslängd.',
+    question: 'Kan jag tvätta filtret istället för att byta?',
+    answer: 'Vissa filter är tvättbara — skölj med kallt vatten och torka i 24 timmar. HEPA-filter i de flesta modeller är inte tvättbara: vatten förstör filtermaterialet. Kontrollera din modells manual.',
   },
 ];
 
@@ -89,47 +105,46 @@ const breadcrumbs = [
 ---
 
 <BaseLayout
-  title="Ersättningsfilter till robotdammsugare — HEPA-filter Roborock, Dreame, Ecovacs | Robotjakt"
-  description="Köp rätt HEPA-filter till din robotdammsugare. Filter till Roborock S8, Dreame L20 Ultra, Ecovacs Deebot och fler modeller. Via Amazon med snabb leverans."
+  title="Ersättningsfilter till robotdammsugare 2026 — HEPA Roborock, Dreame, Ecovacs"
+  description="Köp rätt HEPA-filter till din robotdammsugare. Kompletta kit till Roborock S8, Dreame X40 Ultra, Ecovacs Deebot X5 — direktlänk till Amazon med snabb leverans."
 >
   <Breadcrumbs items={breadcrumbs} />
 
   <section class="bg-primary text-white py-8">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Ersättningsfilter till robotdammsugare</h1>
-      <p class="text-gray-200 max-w-2xl">HEPA-filter till Roborock, Dreame och Ecovacs — byt filter regelbundet för maximal sugkraft och ren luft i hemmet.</p>
+      <p class="text-gray-200 max-w-2xl">HEPA-filter och tillbehörskit till Roborock, Dreame och Ecovacs — byt filter regelbundet för maximal sugkraft och ren inomhusluft.</p>
     </div>
   </section>
 
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <AffiliateDisclaimer />
-    <p class="text-sm text-text-light mb-6">Senast uppdaterad: mars 2026 &mdash; {filters.length} filterkit jämförda</p>
+    <p class="text-sm text-text-light mb-2">Senast uppdaterad: mars 2026 &mdash; {products.length} filterkit</p>
 
     <div class="bg-accent/5 border border-accent/20 rounded-xl px-5 py-4 mb-8 text-sm text-text">
-      <strong>Rekommendation:</strong> Byt HEPA-filter var 2–3 månad vid normalt bruk. Med husdjur eller allergiker i hushållet — byt var 4–6 vecka.
+      <strong>Tips:</strong> Köp ett komplett kit (filter + borstar) istället för filter separat — du får fler delar till bättre pris och slipper beställa igen när borsten är sliten.
     </div>
 
     <div class="space-y-4 mb-10">
-      {filters.map((f, i) => (
-        <article class="bg-white rounded-xl border border-border shadow-sm p-5">
-          <div class="flex flex-col sm:flex-row sm:items-start gap-4">
-            <div class="flex-shrink-0 hidden sm:flex items-center justify-center w-10 h-10 rounded-full bg-bg-alt text-text-light font-bold text-sm">
-              {i + 1}
+      {products.map((p, i) => (
+        <article class="bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow p-5">
+          <div class="flex flex-col sm:flex-row gap-4">
+            <div class="flex-shrink-0 flex flex-col items-center gap-2">
+              {i === 0 && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-winner/10 text-winner">Bästsäljare</span>}
+              {i > 0 && p.badge && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-bg-alt text-text-light">{p.badge}</span>}
+              <div class="w-32 h-32 bg-gray-50 rounded-xl p-2 flex items-center justify-center border border-border">
+                <img src={p.img} alt={p.name} class="w-full h-full object-contain" loading="lazy" />
+              </div>
             </div>
-            <div class="flex-1">
-              <div class="flex flex-wrap items-start gap-2 mb-1">
-                <h2 class="font-heading font-bold text-text text-base">{f.name}</h2>
-                {f.badge && <span class="text-xs font-semibold bg-winner/10 text-winner px-2 py-0.5 rounded-full">{f.badge}</span>}
-              </div>
-              <p class="text-xs text-accent font-medium mb-1">{f.compat}</p>
-              <div class="flex flex-wrap gap-3 text-xs text-text-light mb-3">
-                <span>Filtertyp: <strong class="text-text">{f.type}</strong></span>
-                <span>{f.interval}</span>
-              </div>
+            <div class="flex-1 min-w-0">
+              <h2 class="font-heading font-bold text-text text-base mb-1">{p.name}</h2>
+              <p class="text-xs text-accent font-medium mb-2">{p.compat}</p>
+              <p class="text-xs text-text-light mb-1"><strong class="text-text">Innehåller:</strong> {p.includes}</p>
+              <p class="text-xs text-text-light mb-4"><strong class="text-text">Byta:</strong> {p.interval}</p>
               <div class="flex flex-wrap items-center gap-3">
-                <span class="text-lg font-bold text-text">{f.price}</span>
+                <span class="text-xl font-bold text-text">{p.price}</span>
                 <a
-                  href={f.ctaUrl}
+                  href={`https://www.amazon.se/dp/${p.asin}?tag=${TAG}`}
                   rel="sponsored nofollow noopener"
                   target="_blank"
                   class="inline-flex items-center gap-1.5 px-5 py-2.5 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors text-sm min-h-[44px]"
@@ -144,8 +159,37 @@ const breadcrumbs = [
       ))}
     </div>
 
+    <section class="mb-10">
+      <h2 class="font-heading text-xl font-bold text-text mb-2">Byt-intervall per modell</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-bg-alt">
+              <th class="text-left px-4 py-3 font-semibold text-text rounded-tl-lg">Modell</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Filtertyp</th>
+              <th class="text-left px-4 py-3 font-semibold text-text rounded-tr-lg">Byt-intervall</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { model: 'Roborock S8 / S8+ / S8 Pro Ultra', type: 'HEPA E11', interval: 'Var 2 månad' },
+              { model: 'Roborock Qrevo Pro / Qrevo MaxV', type: 'HEPA E11', interval: 'Var 2 månad' },
+              { model: 'Dreame X40 Ultra / L20 Ultra', type: 'HEPA E12', interval: 'Var 2–3 månad' },
+              { model: 'Ecovacs Deebot X5 Omni / T20 Omni', type: 'HEPA E11', interval: 'Var 2 månad' },
+            ].map((row, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : 'bg-bg-alt/50'}>
+                <td class="px-4 py-3 font-medium text-text border-t border-border">{row.model}</td>
+                <td class="px-4 py-3 text-text-light border-t border-border">{row.type}</td>
+                <td class="px-4 py-3 text-text-light border-t border-border">{row.interval}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
     <section class="mb-8">
-      <h2 class="font-heading text-xl font-bold text-text mb-4">Se fler reservdelar</h2>
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Fler reservdelar</h2>
       <div class="grid sm:grid-cols-2 gap-3">
         <a href="/reservdelar/borstar/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Borstar till robotdammsugare</a>
         <a href="/reservdelar/roborock/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Alla Roborock reservdelar</a>

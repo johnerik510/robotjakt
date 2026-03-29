@@ -4,178 +4,147 @@ import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 
-// Amazon affiliate tag — ersätt DITT-TAG med ditt faktiska Amazon Associates-tag
-const AMZN_TAG = 'johnerik510-20';
+const TAG = 'johnerik510-20';
 
-const parts = [
+const products = [
   {
-    category: 'Filter',
-    products: [
-      {
-        name: 'Roborock S8-serien HEPA-filter + sidoborstar (3-pack)',
-        compat: 'Passar: S8, S8 Pro Ultra, S8 Max Ultra, S8 MaxV Ultra',
-        includes: 'HEPA-filter ×3, sidoborstar ×6, rengöringsverktyg',
-        price: 'ca 149–229 kr',
-        ctaUrl: `https://www.amazon.se/s?k=roborock+s8+hepa+filter+reservdelar&tag=${AMZN_TAG}`,
-        badge: 'Bäst säljare',
-      },
-      {
-        name: 'Dreame L20 Ultra / X30 Ultra filter + borstar',
-        compat: 'Passar: L20 Ultra, X30 Ultra, X40 Ultra, L10s Ultra Gen2',
-        includes: 'HEPA-filter ×4, sidoborstar ×8, primärborsthuvud ×1',
-        price: 'ca 179–249 kr',
-        ctaUrl: `https://www.amazon.se/s?k=dreame+l20+ultra+filter+borstar+reservdelar&tag=${AMZN_TAG}`,
-        badge: null,
-      },
-      {
-        name: 'Ecovacs Deebot T20/X5 Omni tillbehörskit',
-        compat: 'Passar: Deebot X5 Omni, T20 Omni, N8 Pro',
-        includes: 'HEPA-filter ×4, sidoborstar ×8, moppkuddar ×2',
-        price: 'ca 159–219 kr',
-        ctaUrl: `https://www.amazon.se/s?k=ecovacs+deebot+filter+reservdelar+tillbehor&tag=${AMZN_TAG}`,
-        badge: null,
-      },
-    ],
+    asin: 'B0CG4RR3W5',
+    img: 'https://m.media-amazon.com/images/I/71iWCGSELCL._AC_UL320_.jpg',
+    name: 'Roborock S8 / S8+ / S8 Pro Ultra — komplett tillbehörskit',
+    compat: 'Passar: S8, S8+, S8 Pro Ultra, S8 Max Ultra, S8 MaxV Ultra',
+    includes: '2 HEPA-filter, 2 huvudborstar, 4 sidoborstar, 4 moppdukar',
+    price: '252 kr',
+    badge: 'Populärast',
+    brand: 'Roborock',
   },
   {
-    category: 'Borstar',
-    products: [
-      {
-        name: 'Universell sidoborste-kit (6-pack)',
-        compat: 'Passar de flesta robotdammsugare med 3-arms sidoborste',
-        includes: 'Sidoborstar ×6 (3 par)',
-        price: 'ca 69–99 kr',
-        ctaUrl: `https://www.amazon.se/s?k=robotdammsugare+sidoborstar+reservdelar&tag=${AMZN_TAG}`,
-        badge: 'Bra pris',
-      },
-      {
-        name: 'Roborock gummi-huvudborste (anti-tangle)',
-        compat: 'Passar: Roborock S8-serien, Qrevo-serien, Q-serien',
-        includes: 'Gummiborsthuvud ×1',
-        price: 'ca 199–299 kr',
-        ctaUrl: `https://www.amazon.se/s?k=roborock+gummi+borsthuvud+roller&tag=${AMZN_TAG}`,
-        badge: null,
-      },
-    ],
+    asin: 'B0CY5CWRXQ',
+    img: 'https://m.media-amazon.com/images/I/71gGUWkjcFL._AC_UL320_.jpg',
+    name: 'Roborock Qrevo S / Qrevo Pro / Qrevo MaxV — 20-delars kit',
+    compat: 'Passar: Qrevo S, Qrevo Pro, Qrevo MaxV, Qrevo Plus',
+    includes: '1 huvudborste, 6 sidoborstar, 4 HEPA-filter, 4 moppkuddar, 4 dammpåsar',
+    price: '220 kr',
+    badge: null,
+    brand: 'Roborock',
   },
   {
-    category: 'Moppkuddar',
-    products: [
-      {
-        name: 'Roborock moppkuddar (waschable, 2-pack)',
-        compat: 'Passar: S7-, S8- och Qrevo-serien med moppfunktion',
-        includes: 'Tvättbara moppkuddar ×2',
-        price: 'ca 99–149 kr',
-        ctaUrl: `https://www.amazon.se/s?k=roborock+moppkuddar+tvattbara&tag=${AMZN_TAG}`,
-        badge: null,
-      },
-      {
-        name: 'Dreame moppkuddar (4-pack)',
-        compat: 'Passar: L20 Ultra, X30 Ultra, X40 Ultra, W10 Pro',
-        includes: 'Moppkuddar ×4',
-        price: 'ca 129–179 kr',
-        ctaUrl: `https://www.amazon.se/s?k=dreame+moppkuddar+reservdelar&tag=${AMZN_TAG}`,
-        badge: null,
-      },
-    ],
+    asin: 'B0DFBMQ64P',
+    img: 'https://m.media-amazon.com/images/I/71pTtn+ZUlL._AC_UL320_.jpg',
+    name: 'Dreame X40 Ultra / X30 Ultra / L20 Ultra — 18-delars kit',
+    compat: 'Passar: X40 Ultra, X30 Ultra, L20 Ultra',
+    includes: '1 huvudborste, 4 sidoborstar, 4 HEPA-filter, 4 moppkuddar, 4 dammpåsar',
+    price: '256 kr',
+    badge: null,
+    brand: 'Dreame',
+  },
+  {
+    asin: 'B0DTTPX9DW',
+    img: 'https://m.media-amazon.com/images/I/71c1xsc2N+L._AC_UL320_.jpg',
+    name: 'Dreame X40 Ultra / L10s Pro Ultra Heat — 4-pack filter',
+    compat: 'Passar: X40 Ultra Complete, X40 Master, L10s Pro Ultra Heat, X30 Pro Plus',
+    includes: '4 HEPA E12-filter',
+    price: '125 kr',
+    badge: 'Bästa pris',
+    brand: 'Dreame',
+  },
+  {
+    asin: 'B0DQ84RLZ7',
+    img: 'https://m.media-amazon.com/images/I/81z6rTFxA2L._AC_UL320_.jpg',
+    name: 'Ecovacs Deebot X5 Omni / X5 Pro — 20-delars kit',
+    compat: 'Passar: Deebot X5 Omni, X5 Pro',
+    includes: '1 rullborste, 4 sidoborstar, 4 HEPA-filter, 6 dammpåsar, 4 mopptorkdukar',
+    price: '226 kr',
+    badge: null,
+    brand: 'Ecovacs',
+  },
+  {
+    asin: 'B0DF8695XP',
+    img: 'https://m.media-amazon.com/images/I/611+p5Cey7L._AC_UL320_.jpg',
+    name: 'Ecovacs Deebot X5 Omni / X5 Pro — borstar + filter + mopp',
+    compat: 'Passar: Deebot X5 Omni, X5 Pro',
+    includes: '1 huvudborste, 4 sidoborstar, 3 HEPA-filter, 3 dammpåsar, 4 mopptorkdukar',
+    price: '231 kr',
+    badge: null,
+    brand: 'Ecovacs',
   },
 ];
 
+const brands = ['Roborock', 'Dreame', 'Ecovacs'];
+
 const faqItems = [
   {
-    question: 'Hur ofta bör man byta filter på sin robotdammsugare?',
-    answer: 'HEPA-filter bör bytas var 2–3 månad vid normalt bruk, eller oftare om du har husdjur eller allergiker i hushållet. Tvättbara filter sköljs av var 2–4 vecka. Fabrikantens rekommendation gäller alltid — kontrollera appen eller manualen för din modell.',
+    question: 'Vilka reservdelar behöver man byta regelbundet?',
+    answer: 'HEPA-filter (var 2–3 mån), sidoborstar (var 6–12 mån), huvudborste (var 12 mån) och moppkuddar (tvätta veckovis, byt vid slitage). Dammpåsar vid behov.',
   },
   {
-    question: 'Kan man använda eftermarknadsdelar istället för original?',
-    answer: 'Ja, i de flesta fall fungerar kompatibla tredjepartsdelar lika bra och kostar 30–60 % mindre. Filter och borstar är de vanligaste reservdelarna och kvaliteten från välkända Amazon-leverantörer är generellt sett god. Garantin på roboten påverkas normalt inte av att du använder kompatibla filter och borstar.',
+    question: 'Kostar det mycket att underhålla en robotdammsugare?',
+    answer: 'Nej. Kompletta kit kostar 200–350 kr och räcker 6–12 månader. Det är billigare än service och håller roboten i toppskick hela året.',
   },
   {
-    question: 'Vilka reservdelar ingår normalt i ett tillbehörskit?',
-    answer: 'Ett standardkit brukar innehålla 3–4 HEPA-filter, 6–8 sidoborstar (3–4 par), ibland ett borsthuvud och ett rengöringsverktyg. Kontrollera alltid att kitet är kompatibelt med din exakta modell innan du köper.',
-  },
-  {
-    question: 'Måste jag köpa originaldelar från Roborock, Dreame eller Ecovacs?',
-    answer: 'Nej, det är inte nödvändigt. Kompatibla reservdelar från tredje part håller ofta god kvalitet och kostar avsevärt mindre. Säkerhetskritiska delar (batteri) bör däremot alltid köpas från märkesleverantören eller en auktoriserad återförsäljare.',
+    question: 'Kan jag köpa originaldelar eller räcker tredjepartskits?',
+    answer: 'Tredjepartskits fungerar utmärkt för förbrukningsartiklar som filter och borstar. Välj kit med tydlig kompatibilitetsinfo och goda recensioner.',
   },
 ];
 
 const breadcrumbs = [
   { label: 'Reservdelar', href: '/reservdelar/' },
-  { label: 'Robotdammsugare reservdelar' },
+  { label: 'Robotdammsugare' },
 ];
 ---
 
 <BaseLayout
-  title="Reservdelar till robotdammsugare — Filter, borstar, moppkuddar | Robotjakt"
-  description="Byt filter, borstar och moppkuddar på din robotdammsugare. Reservdelar till Roborock, Dreame och Ecovacs — köp via Amazon till bra pris."
+  title="Robotdammsugare reservdelar 2026 — filter, borstar, kit till alla märken"
+  description="Reservdelar till robotdammsugare — filter, borstar och kompletta kit till Roborock, Dreame och Ecovacs. Köp direkt på Amazon med snabb leverans till Sverige."
 >
   <Breadcrumbs items={breadcrumbs} />
 
   <section class="bg-primary text-white py-8">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Reservdelar till robotdammsugare</h1>
-      <p class="text-gray-200 max-w-2xl">Filter, borstar och moppkuddar till Roborock, Dreame och Ecovacs — håll roboten i toppskick med rätt reservdelar.</p>
+      <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Robotdammsugare reservdelar</h1>
+      <p class="text-gray-200 max-w-2xl">Kompletta tillbehörskit till Roborock, Dreame och Ecovacs. Filter, borstar och moppkuddar — allt på ett ställe.</p>
     </div>
   </section>
 
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <AffiliateDisclaimer />
+    <p class="text-sm text-text-light mb-6">Senast uppdaterad: mars 2026 &mdash; {products.length} produkter</p>
 
-    <p class="text-sm text-text-light mb-8">Senast uppdaterad: mars 2026 &mdash; 12 reservdelar granskade</p>
+    <div class="flex flex-wrap gap-2 mb-8">
+      {brands.map(b => (
+        <a href={`/reservdelar/${b.toLowerCase()}/`} class="bg-white border border-border rounded-full px-4 py-2 text-sm font-semibold text-text hover:border-accent hover:text-accent transition-colors">{b}</a>
+      ))}
+      <a href="/reservdelar/filter/" class="bg-white border border-border rounded-full px-4 py-2 text-sm font-semibold text-text hover:border-accent hover:text-accent transition-colors">Bara filter</a>
+      <a href="/reservdelar/borstar/" class="bg-white border border-border rounded-full px-4 py-2 text-sm font-semibold text-text hover:border-accent hover:text-accent transition-colors">Bara borstar</a>
+    </div>
 
-    {parts.map(section => (
-      <section class="mb-10">
-        <h2 class="font-heading text-2xl font-bold text-text mb-5">{section.category}</h2>
-        <div class="space-y-4">
-          {section.products.map(p => (
-            <article class="bg-white rounded-xl border border-border shadow-sm p-5">
-              <div class="flex flex-col sm:flex-row sm:items-start gap-4">
-                <div class="flex-1">
-                  <div class="flex flex-wrap items-start gap-2 mb-1">
-                    <h3 class="font-heading font-bold text-text text-base">{p.name}</h3>
-                    {p.badge && <span class="text-xs font-semibold bg-winner/10 text-winner px-2 py-0.5 rounded-full">{p.badge}</span>}
-                  </div>
-                  <p class="text-xs text-accent font-medium mb-1">{p.compat}</p>
-                  <p class="text-sm text-text-light mb-3">Innehåll: {p.includes}</p>
-                  <div class="flex flex-wrap items-center gap-3">
-                    <span class="text-lg font-bold text-text">{p.price}</span>
-                    <a
-                      href={p.ctaUrl}
-                      rel="sponsored nofollow noopener"
-                      target="_blank"
-                      class="inline-flex items-center gap-1.5 px-5 py-2.5 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors text-sm min-h-[44px]"
-                    >
-                      Köp på Amazon
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-                    </a>
-                  </div>
-                </div>
+    <div class="space-y-4 mb-10">
+      {products.map((p, i) => (
+        <article class="bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow p-5">
+          <div class="flex flex-col sm:flex-row gap-4">
+            <div class="flex-shrink-0 flex flex-col items-center gap-2">
+              {i === 0 && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-winner/10 text-winner">{p.badge}</span>}
+              {i > 0 && p.badge && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-bg-alt text-text-light">{p.badge}</span>}
+              <div class="w-32 h-32 bg-gray-50 rounded-xl p-2 flex items-center justify-center border border-border">
+                <img src={p.img} alt={p.name} class="w-full h-full object-contain" loading="lazy" />
               </div>
-            </article>
-          ))}
-        </div>
-      </section>
-    ))}
-
-    <!-- Navigera vidare -->
-    <section class="mb-10">
-      <h2 class="font-heading text-xl font-bold text-text mb-4">Reservdelar per märke</h2>
-      <div class="grid sm:grid-cols-3 gap-3">
-        <a href="/reservdelar/roborock/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Roborock reservdelar</a>
-        <a href="/reservdelar/dreame/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Dreame reservdelar</a>
-        <a href="/reservdelar/ecovacs/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Ecovacs reservdelar</a>
-      </div>
-    </section>
-
-    <!-- Per typ -->
-    <section class="mb-10">
-      <h2 class="font-heading text-xl font-bold text-text mb-4">Bläddra per typ</h2>
-      <div class="grid sm:grid-cols-2 gap-3">
-        <a href="/reservdelar/filter/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Alla ersättningsfilter</a>
-        <a href="/reservdelar/borstar/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Alla ersättningsborstar</a>
-      </div>
-    </section>
+              <span class="text-xs text-text-lighter font-medium">{p.brand}</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h2 class="font-heading font-bold text-text text-base mb-1">{p.name}</h2>
+              <p class="text-xs text-accent font-medium mb-2">{p.compat}</p>
+              <p class="text-xs text-text-light mb-4"><strong class="text-text">Innehåller:</strong> {p.includes}</p>
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="text-xl font-bold text-text">{p.price}</span>
+                <a href={`https://www.amazon.se/dp/${p.asin}?tag=${TAG}`} rel="sponsored nofollow noopener" target="_blank" class="inline-flex items-center gap-1.5 px-5 py-2.5 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors text-sm min-h-[44px]">
+                  Köp på Amazon
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
 
     <FAQ items={faqItems} />
   </main>

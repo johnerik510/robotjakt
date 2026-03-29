@@ -4,53 +4,83 @@ import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 
-const AMZN_TAG = 'johnerik510-20';
+const TAG = 'johnerik510-20';
 
-const parts = [
+const products = [
   {
-    section: 'Roborock S8-serien',
-    models: 'S8, S8+, S8 Pro Ultra, S8 Max Ultra, S8 MaxV Ultra',
-    items: [
-      { name: 'HEPA-filter 3-pack', price: 'ca 119–179 kr', ctaUrl: `https://www.amazon.se/s?k=roborock+s8+hepa+filter&tag=${AMZN_TAG}` },
-      { name: 'Gummi-borsthuvud (anti-tangle)', price: 'ca 199–279 kr', ctaUrl: `https://www.amazon.se/s?k=roborock+s8+gummi+borsthuvud+roller&tag=${AMZN_TAG}` },
-      { name: 'Sidoborstar 6-pack', price: 'ca 79–119 kr', ctaUrl: `https://www.amazon.se/s?k=roborock+s8+sidoborstar&tag=${AMZN_TAG}` },
-      { name: 'Moppkuddar tvättbara 2-pack', price: 'ca 99–149 kr', ctaUrl: `https://www.amazon.se/s?k=roborock+s8+moppkuddar+tvattbara&tag=${AMZN_TAG}` },
-      { name: 'Komplett tillbehörskit (filter + borstar + mopp)', price: 'ca 249–349 kr', ctaUrl: `https://www.amazon.se/s?k=roborock+s8+komplett+tillbehor+kit&tag=${AMZN_TAG}` },
-    ],
+    asin: 'B0CG4RR3W5',
+    img: 'https://m.media-amazon.com/images/I/71iWCGSELCL._AC_UL320_.jpg',
+    name: 'Roborock S8 / S8+ / S8 Pro Ultra — komplett tillbehörskit',
+    compat: 'Passar: S8, S8+, S8 Pro Ultra, S8 Max Ultra, S8 MaxV Ultra',
+    includes: '2 HEPA-filter, 2 huvudborstar, 4 sidoborstar, 4 moppdukar, skruvmejsel',
+    price: '252 kr',
+    badge: 'Bästsäljare',
+    series: 'S8-serien',
   },
   {
-    section: 'Roborock Qrevo-serien',
-    models: 'Qrevo Master, Qrevo MaxV, Qrevo Pro, Qrevo Curv',
-    items: [
-      { name: 'HEPA-filter 4-pack', price: 'ca 99–149 kr', ctaUrl: `https://www.amazon.se/s?k=roborock+qrevo+hepa+filter&tag=${AMZN_TAG}` },
-      { name: 'Gummi-borsthuvud', price: 'ca 189–259 kr', ctaUrl: `https://www.amazon.se/s?k=roborock+qrevo+borsthuvud+roller&tag=${AMZN_TAG}` },
-      { name: 'Sidoborstar 6-pack', price: 'ca 69–109 kr', ctaUrl: `https://www.amazon.se/s?k=roborock+qrevo+sidoborstar&tag=${AMZN_TAG}` },
-      { name: 'Moppkuddar 4-pack', price: 'ca 119–169 kr', ctaUrl: `https://www.amazon.se/s?k=roborock+qrevo+moppkuddar&tag=${AMZN_TAG}` },
-    ],
+    asin: 'B0CQHPR8TR',
+    img: 'https://m.media-amazon.com/images/I/81N9r9RRXpL._AC_UL320_.jpg',
+    name: 'Roborock S8+ / S8 Pro Ultra — komplett kit med dammpåsar',
+    compat: 'Passar: S8+, S8 Pro Ultra, S8 Max Ultra',
+    includes: '2 HEPA-filter, 2 huvudborstar, 4 sidoborstar, 4 dammpåsar, 4 moppdukar',
+    price: '287 kr',
+    badge: 'Mest komplett',
+    series: 'S8-serien',
   },
   {
-    section: 'Roborock Q-serien',
-    models: 'Q5+, Q7+, Q7 Max+, Q8 Max+',
-    items: [
-      { name: 'HEPA-filter 4-pack', price: 'ca 89–129 kr', ctaUrl: `https://www.amazon.se/s?k=roborock+q7+q5+hepa+filter&tag=${AMZN_TAG}` },
-      { name: 'Borsthuvud med borst-fibrer', price: 'ca 149–199 kr', ctaUrl: `https://www.amazon.se/s?k=roborock+q7+q5+borsthuvud&tag=${AMZN_TAG}` },
-      { name: 'Sidoborstar 6-pack', price: 'ca 69–99 kr', ctaUrl: `https://www.amazon.se/s?k=roborock+q7+sidoborstar&tag=${AMZN_TAG}` },
-    ],
+    asin: 'B0D6RFC7Q5',
+    img: 'https://m.media-amazon.com/images/I/61yKYuMFi6L._AC_UL320_.jpg',
+    name: 'Roborock S8 / S8+ / S8 Pro Ultra — gummiborstar + filter',
+    compat: 'Passar: S8, S8+, S8 Pro Ultra',
+    includes: '2 gummiborstar, 6 sidoborstar, 4 HEPA-filter',
+    price: '195 kr',
+    badge: 'Bästa pris',
+    series: 'S8-serien',
+  },
+  {
+    asin: 'B0CY5CWRXQ',
+    img: 'https://m.media-amazon.com/images/I/71gGUWkjcFL._AC_UL320_.jpg',
+    name: 'Roborock Qrevo S / Qrevo Pro / Qrevo MaxV — 20-delars kit',
+    compat: 'Passar: Qrevo S, Qrevo Pro, Qrevo MaxV, Qrevo Plus',
+    includes: '1 huvudborste, 6 sidoborstar, 4 HEPA-filter, 4 moppkuddar, 4 dammpåsar',
+    price: '220 kr',
+    badge: null,
+    series: 'Qrevo-serien',
+  },
+  {
+    asin: 'B0DG5J1QK7',
+    img: 'https://m.media-amazon.com/images/I/71kSq4YDKLL._AC_UL320_.jpg',
+    name: 'Roborock Qrevo Pro / Qrevo S / Qrevo MaxV — 22-delars kit',
+    compat: 'Passar: Qrevo Pro, Qrevo S, Qrevo MaxV',
+    includes: '2 huvudborstar, 6 sidoborstar, 4 HEPA-filter, 4 dammpåsar, 4 mopptorkdukar',
+    price: '303 kr',
+    badge: null,
+    series: 'Qrevo-serien',
+  },
+  {
+    asin: 'B0DG5H9HLH',
+    img: 'https://m.media-amazon.com/images/I/71rDhFxM6RL._AC_UL320_.jpg',
+    name: 'Roborock Qrevo S / Qrevo Pro / Qrevo MaxV — 21-delars kit',
+    compat: 'Passar: Qrevo S, Qrevo Pro, Qrevo MaxV',
+    includes: '1 huvudborste, 4 sidoborstar, 4 HEPA-filter, 4 mopptorkdukar, 6 dammpåsar',
+    price: '212 kr',
+    badge: 'Bästa pris Qrevo',
+    series: 'Qrevo-serien',
   },
 ];
 
 const faqItems = [
   {
-    question: 'Hur ofta bör jag byta reservdelar på min Roborock?',
-    answer: 'HEPA-filter: var 2–3 månad. Sidoborstar: var 6–9 månad. Borsthuvud: ca 12 månader. Moppkuddar: var 3 månad. Roborock-appen ger underhållspåminnelser baserade på faktisk körtid — aktivera dem under Inställningar > Underhåll.',
+    question: 'Vilket reservdelskit passar min Roborock-modell?',
+    answer: 'S8, S8+, S8 Pro Ultra, S8 Max Ultra och S8 MaxV Ultra delar alla samma reservdelssystem. Qrevo-serien (Qrevo S, Qrevo Pro, Qrevo MaxV) har ett eget separat system. Kontrollera alltid att kittet du köper anger din exakta modell.',
   },
   {
-    question: 'Var köper man originaldelar till Roborock i Sverige?',
-    answer: 'Amazon.se är det bekvämaste alternativet med snabb leverans. Roborocks egna webbshop (roborock.com) har också officiella delar men längre leveranstid till Sverige. Komplett och Elgiganten har ett begränsat urval.',
+    question: 'Hur ofta ska jag byta reservdelar på Roborock S8?',
+    answer: 'HEPA-filter: var 2 månad. Sidoborstar: var 6–12 månad. Huvudborste (gummiborstar): var 12–18 månad. Moppkuddar: tvätta varje vecka, byt när de är slitna. Dammpåsar: när fyllda eller var 4–6 vecka.',
   },
   {
-    question: 'Fungerar delar till S8 Max Ultra i S8 MaxV Ultra?',
-    answer: 'Många delar är korskompatibla inom S8-familjen, men inte alla. Kontrollera alltid att produktbeskrivningen på Amazon listar din exakta modell. Filter och sidoborstar är ofta kompatibla — borsthuvud och moppkuddar kan variera.',
+    question: 'Fungerar tredjepartskits i Roborock utan att ogiltigförklara garantin?',
+    answer: 'I Sverige gäller att använda tredjepartsförbrukningsartiklar (filter, borstar) normalt inte ogiltigförklarar garantin på roboten. Kontakta Roborock kundtjänst om du är osäker.',
   },
 ];
 
@@ -61,59 +91,95 @@ const breadcrumbs = [
 ---
 
 <BaseLayout
-  title="Roborock reservdelar — Filter, borstar, moppkuddar S8 & Qrevo | Robotjakt"
-  description="Reservdelar till Roborock robotdammsugare. HEPA-filter, gummi-borsthuvud, sidoborstar och moppkuddar till S8-, Qrevo- och Q-serien. Köp via Amazon."
+  title="Roborock reservdelar 2026 — filter, borstar och kit till S8 och Qrevo"
+  description="Reservdelar till Roborock S8, S8 Pro Ultra, Qrevo Pro och Qrevo MaxV. Kompletta kit med filter, borstar och moppkuddar — direkt på Amazon med snabb leverans."
 >
   <Breadcrumbs items={breadcrumbs} />
 
   <section class="bg-primary text-white py-8">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Roborock reservdelar</h1>
-      <p class="text-gray-200 max-w-2xl">Filter, borstar och moppkuddar till Roborock S8, Qrevo och Q-serien — håll din Roborock i toppskick.</p>
+      <p class="text-gray-200 max-w-2xl">Kompletta tillbehörskit till Roborock S8-serien och Qrevo-serien. Filter, borstar, moppkuddar och dammpåsar — allt du behöver för att hålla roboten i toppskick.</p>
     </div>
   </section>
 
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <AffiliateDisclaimer />
-    <p class="text-sm text-text-light mb-6">Senast uppdaterad: mars 2026</p>
+    <p class="text-sm text-text-light mb-6">Senast uppdaterad: mars 2026 &mdash; {products.length} tillbehörskit</p>
 
-    {parts.map(section => (
-      <section class="mb-10">
-        <div class="mb-4">
-          <h2 class="font-heading text-2xl font-bold text-text">{section.section}</h2>
-          <p class="text-sm text-text-light mt-1">Passar: {section.models}</p>
-        </div>
-        <div class="space-y-3">
-          {section.items.map(item => (
-            <div class="bg-white rounded-xl border border-border p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <div>
-                <span class="font-semibold text-text text-sm">{item.name}</span>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+      {['S8-serien', 'Qrevo-serien'].map(series => (
+        <a href={`#${series.toLowerCase().replace('-', '')}`} class="bg-white border border-border rounded-lg px-4 py-3 text-center hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">{series}</a>
+      ))}
+      <a href="/reservdelar/filter/" class="bg-white border border-border rounded-lg px-4 py-3 text-center hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Bara filter</a>
+      <a href="/reservdelar/borstar/" class="bg-white border border-border rounded-lg px-4 py-3 text-center hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Bara borstar</a>
+    </div>
+
+    <h2 id="s8serien" class="font-heading text-xl font-bold text-text mb-4">S8-serien</h2>
+    <div class="space-y-4 mb-10">
+      {products.filter(p => p.series === 'S8-serien').map((p, i) => (
+        <article class="bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow p-5">
+          <div class="flex flex-col sm:flex-row gap-4">
+            <div class="flex-shrink-0 flex flex-col items-center gap-2">
+              {i === 0 && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-winner/10 text-winner">{p.badge}</span>}
+              {i > 0 && p.badge && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-bg-alt text-text-light">{p.badge}</span>}
+              <div class="w-32 h-32 bg-gray-50 rounded-xl p-2 flex items-center justify-center border border-border">
+                <img src={p.img} alt={p.name} class="w-full h-full object-contain" loading="lazy" />
               </div>
-              <div class="flex items-center gap-3 sm:flex-shrink-0">
-                <span class="font-bold text-text whitespace-nowrap">{item.price}</span>
-                <a
-                  href={item.ctaUrl}
-                  rel="sponsored nofollow noopener"
-                  target="_blank"
-                  class="inline-flex items-center gap-1.5 px-4 py-2 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors text-sm min-h-[44px] whitespace-nowrap"
-                >
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-heading font-bold text-text text-base mb-1">{p.name}</h3>
+              <p class="text-xs text-accent font-medium mb-2">{p.compat}</p>
+              <p class="text-xs text-text-light mb-4"><strong class="text-text">Innehåller:</strong> {p.includes}</p>
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="text-xl font-bold text-text">{p.price}</span>
+                <a href={`https://www.amazon.se/dp/${p.asin}?tag=${TAG}`} rel="sponsored nofollow noopener" target="_blank" class="inline-flex items-center gap-1.5 px-5 py-2.5 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors text-sm min-h-[44px]">
                   Köp på Amazon
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                 </a>
               </div>
             </div>
-          ))}
-        </div>
-      </section>
-    ))}
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <h2 id="qrevoserien" class="font-heading text-xl font-bold text-text mb-4">Qrevo-serien</h2>
+    <div class="space-y-4 mb-10">
+      {products.filter(p => p.series === 'Qrevo-serien').map((p, i) => (
+        <article class="bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow p-5">
+          <div class="flex flex-col sm:flex-row gap-4">
+            <div class="flex-shrink-0 flex flex-col items-center gap-2">
+              {i === 0 && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-bg-alt text-text-light">{p.badge || 'Populärt'}</span>}
+              {i > 0 && p.badge && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-winner/10 text-winner">{p.badge}</span>}
+              <div class="w-32 h-32 bg-gray-50 rounded-xl p-2 flex items-center justify-center border border-border">
+                <img src={p.img} alt={p.name} class="w-full h-full object-contain" loading="lazy" />
+              </div>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-heading font-bold text-text text-base mb-1">{p.name}</h3>
+              <p class="text-xs text-accent font-medium mb-2">{p.compat}</p>
+              <p class="text-xs text-text-light mb-4"><strong class="text-text">Innehåller:</strong> {p.includes}</p>
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="text-xl font-bold text-text">{p.price}</span>
+                <a href={`https://www.amazon.se/dp/${p.asin}?tag=${TAG}`} rel="sponsored nofollow noopener" target="_blank" class="inline-flex items-center gap-1.5 px-5 py-2.5 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors text-sm min-h-[44px]">
+                  Köp på Amazon
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
 
     <section class="mb-8">
-      <h2 class="font-heading text-xl font-bold text-text mb-4">Läs mer om Roborock</h2>
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Fler reservdelar</h2>
       <div class="grid sm:grid-cols-2 gap-3">
-        <a href="/roborock-guide/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Roborock — alla modeller</a>
-        <a href="/roborock-s8-maxv-ultra/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Roborock S8 MaxV Ultra recension</a>
-        <a href="/roborock-qrevo-master/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Roborock Qrevo Master recension</a>
-        <a href="/reservdelar/filter/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Alla ersättningsfilter</a>
+        <a href="/reservdelar/dreame/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Dreame reservdelar</a>
+        <a href="/reservdelar/ecovacs/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Ecovacs reservdelar</a>
+        <a href="/reservdelar/filter/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Filter till robotdammsugare</a>
+        <a href="/reservdelar/borstar/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Borstar till robotdammsugare</a>
       </div>
     </section>
 
