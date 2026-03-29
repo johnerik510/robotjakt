@@ -1,0 +1,355 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Fönsterputsrobot', href: '/fonsterputsrobot/' },
+  { label: 'Billigaste fönsterputsrobot' },
+];
+
+const faqItems = [
+  {
+    question: 'Fungerar billiga fönsterputsrobotar under 2 000 kr verkligen?',
+    answer: 'Ja, men med begränsningar. Budget-modeller under 2 000 kr utför grundläggande fönsterputsning på standardfönster med ram. De saknar AI-navigering och automatisk spray som premiummoteller har, men klarar rutinmässig puts om du har tålamod att komplettera med manuell kontroll i kanterna. Gladoxt W66 och EziBot Window Robot är representativa för vad du kan förvänta dig i det lägsta prissegmentet.',
+  },
+  {
+    question: 'Vilken billig fönsterputsrobot är säkrast — ramlar de inte?',
+    answer: 'Cleano Window Robot är det säkraste budgetalternativet tack vare inbyggd reservbatteri som aktiveras vid strömavbrott. Roboten sitter kvar på glaset i upp till 30 minuter utan ström. Gladoxt W66 och EziBot är kabeldrivna vilket i sig ger säkerhet, men saknar reservbatteri. Ha alltid säkerhetslinan fastsatt när du putsar fönster på hög höjd, oavsett modell.',
+  },
+  {
+    question: 'Kräver billiga fönsterputsrobotar fönsterram?',
+    answer: 'Ja, alla budget-modeller under 2 000 kr kräver en synlig fönsterram att navigera mot. De kan inte användas på ramfria glaspartier, stora panoramafönster utan ram eller glasräcken. För ramfria fönster krävs Ecovacs Winbot W2 Omni (ca 4 990 kr) med AI-kantigenkänning. Om dina fönster har ram är budget-modellerna ett rimligt val.',
+  },
+  {
+    question: 'Hur mycket täcker en billig fönsterputsrobot per timme?',
+    answer: 'Budget-modeller täcker ungefär 15–20 m² per timme på fönsterglas, beroende på smutsnivå och navigeringseffektivitet. Det är lägre än premiummodeller (25–30 m²/h) men tillräckligt för en villa med normalt antal fönster om du har tid. Räkna med ca 5–8 minuter per standardfönster (80 x 120 cm) för en budget-modell.',
+  },
+  {
+    question: 'Är det värt att köpa billigaste fönsterputsrobot eller ska man spara ihop till en bättre?',
+    answer: 'Det beror på hur ofta du putsar fönster. Putsar du 1–2 gånger per år och har standardfönster med ram räcker en budget-modell utmärkt. Har du många fönster, höga fönster, ramfria glaspartier eller vill ha bästa möjliga resultat — spara ihop till Hobot Legee 688 (ca 1 299 kr) som är klart bäst i budgetsegmentet, eller gå direkt till Ecovacs Winbot W1 Pro (ca 2 990 kr) för ett stort kliv i kvalitet.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Billigaste fönsterputsrobot 2026 – under 2 000 kr | Robotjakt"
+  description="Vi testar de billigaste fönsterputsrobotarna 2026. Fungerar de? Se vilka under 2 000 kr som faktiskt levererar rent glas."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
+      Billigaste fönsterputsrobot 2026 — under 2 000 kr
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Vi testar de billigaste fönsterputsrobotarna på marknaden 2026. Fungerar de? Vi tar reda på vilka under 2 000 kr som faktiskt levererar rent glas — och vilka som inte håller vad de lovar.
+    </p>
+
+    <!-- Jämförelsetabell -->
+    <section class="mb-8" aria-label="Jämförelsetabell billigaste fönsterputsrobotar">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse — billigaste fönsterputsrobotar 2026</h2>
+      <div class="overflow-x-auto rounded-xl border border-border">
+        <table class="w-full text-sm bg-white">
+          <thead>
+            <tr class="border-b border-border bg-bg-alt">
+              <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Säkerhet vid strömavbrott</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Kabel/Batteri</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Täckning (m²/h)</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Garanti</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Pris ca</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Hobot Legee 688</td>
+              <td class="px-4 py-3 text-text-light">Kabel — ingen risk</td>
+              <td class="px-4 py-3 text-text-light">Kabel</td>
+              <td class="px-4 py-3 text-winner font-semibold">20 m²/h</td>
+              <td class="px-4 py-3 text-text-light">1 år</td>
+              <td class="px-4 py-3 font-semibold text-text">1 299 kr</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">Cleano Window Robot</td>
+              <td class="px-4 py-3 text-winner font-semibold">Reservbatteri 30 min</td>
+              <td class="px-4 py-3 text-text-light">Kabel + batteri</td>
+              <td class="px-4 py-3 text-text-light">17 m²/h</td>
+              <td class="px-4 py-3 text-text-light">1 år</td>
+              <td class="px-4 py-3 font-semibold text-text">1 499 kr</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">EziBot Window Robot</td>
+              <td class="px-4 py-3 text-text-light">Kabel — ingen risk</td>
+              <td class="px-4 py-3 text-text-light">Kabel</td>
+              <td class="px-4 py-3 text-text-light">15 m²/h</td>
+              <td class="px-4 py-3 text-text-light">1 år</td>
+              <td class="px-4 py-3 font-semibold text-text">999 kr</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">Gladoxt W66</td>
+              <td class="px-4 py-3 text-text-light">Kabel — ingen risk</td>
+              <td class="px-4 py-3 text-text-light">Kabel</td>
+              <td class="px-4 py-3 text-text-light">15 m²/h</td>
+              <td class="px-4 py-3 text-text-light">1 år</td>
+              <td class="px-4 py-3 font-semibold text-text">799 kr</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Produkter -->
+    <div class="space-y-8 mb-12" id="produkter">
+
+      <!-- Produkt 1: Hobot Legee 688 -->
+      <section class="bg-white rounded-xl border border-border overflow-hidden">
+        <div class="bg-bg-alt px-5 py-3 border-b border-border flex items-center gap-3">
+          <span class="bg-winner text-white text-xs font-bold px-2 py-1 rounded">BÄST I BUDGET 2026</span>
+          <span class="font-heading font-bold text-text">Hobot Legee 688</span>
+          <span class="ml-auto font-bold text-text">ca 1 299 kr</span>
+        </div>
+        <div class="p-5">
+          <p class="text-text-light text-sm leading-relaxed mb-4">
+            Hobot Legee 688 är det klart bästa valet i budgetsegmentet under 2 000 kr. Kabeldrift ger pålitlig prestanda utan batteristress, 2 800 Pa sugkraft håller roboten stadigt mot glaset och 20 m²/h är den bästa täckningstakten i klassen. App-styrning via Hobot-appen fungerar stabilt. Kräver fönsterram.
+          </p>
+          <div class="grid sm:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs font-semibold text-text mb-2">Vad den klarar</p>
+              <ul class="space-y-1">
+                {['2 800 Pa sugkraft — stark för priset', 'App-styrning via Hobot-appen', 'Kabeldrift — aldrig batteribekymmer', 'Bästa täckningsgrad i budgetsegmentet — 20 m²/h'].map(p => (
+                  <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-winner font-bold mt-0.5">+</span>{p}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-text mb-2">Kompromisser</p>
+              <ul class="space-y-1">
+                {['Kräver fönsterram — inte för ramfria ytor', 'Kabel begränsar rörelsefrihet', 'Vattentank 80 ml — räcker ca 2–3 fönster'].map(c => (
+                  <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-cta font-bold mt-0.5">-</span>{c}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a
+              href="/hobot-legee-688/"
+              class="inline-flex items-center text-accent hover:underline font-medium text-sm"
+            >
+              Läs recension
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+            </a>
+            <a
+              href="https://www.amazon.se/s?k=hobot+legee+688"
+              rel="sponsored nofollow noopener"
+              target="_blank"
+              class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+            >
+              Se pris på Hobot Legee 688
+              <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Produkt 2: Cleano Window Robot -->
+      <section class="bg-white rounded-xl border border-border overflow-hidden">
+        <div class="bg-bg-alt px-5 py-3 border-b border-border flex items-center gap-3">
+          <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">SÄKRASTE BUDGETVALET</span>
+          <span class="font-heading font-bold text-text">Cleano Window Robot</span>
+          <span class="ml-auto font-bold text-text">ca 1 499 kr</span>
+        </div>
+        <div class="p-5">
+          <p class="text-text-light text-sm leading-relaxed mb-4">
+            Cleano Window Robot är det säkraste budgetalternativet. Det inbyggda reservbatteriet håller roboten fast på glaset i upp till 30 minuter vid strömavbrott — ingen annan budgetmodell erbjuder detta. Passar den som putsar fönster på hög höjd och vill ha extra trygghet. Rengöringsresultatet är godkänt för grundläggande puts.
+          </p>
+          <div class="grid sm:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs font-semibold text-text mb-2">Vad den klarar</p>
+              <ul class="space-y-1">
+                {['Reservbatteri — sitter kvar 30 min vid strömavbrott', 'Säkraste budgetvalet för höga fönster', 'Enkel att komma igång med', 'Säkerhetsline ingår i förpackningen'].map(p => (
+                  <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-winner font-bold mt-0.5">+</span>{p}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-text mb-2">Kompromisser</p>
+              <ul class="space-y-1">
+                {['Lägre täckningsgrad än Hobot Legee 688', 'Kräver fönsterram', 'Ingen app-styrning — manuell knapp', 'Grundläggande rengöringsresultat'].map(c => (
+                  <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-cta font-bold mt-0.5">-</span>{c}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <a
+            href="https://www.amazon.se/s?k=cleano+window+robot"
+            rel="sponsored nofollow noopener"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris på Cleano Window Robot
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- Produkt 3: EziBot Window Robot -->
+      <section class="bg-white rounded-xl border border-border overflow-hidden">
+        <div class="bg-bg-alt px-5 py-3 border-b border-border flex items-center gap-3">
+          <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">BRA INGÅNGSPRIS</span>
+          <span class="font-heading font-bold text-text">EziBot Window Robot</span>
+          <span class="ml-auto font-bold text-text">ca 999 kr</span>
+        </div>
+        <div class="p-5">
+          <p class="text-text-light text-sm leading-relaxed mb-4">
+            EziBot Window Robot är ett prisvärt ingångsalternativ för den som vill testa fönsterputsrobotar utan stor investering. Kabeldrift, enkel hantering och godkänt rengöringsresultat på standardfönster med ram. Inget app-stöd — styrning via fysisk knapp. Lägre täckning än Hobot Legee 688 men halvpriset.
+          </p>
+          <div class="grid sm:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs font-semibold text-text mb-2">Vad den klarar</p>
+              <ul class="space-y-1">
+                {['Lägst pris med godkänd funktion', 'Enkel att sätta upp och använda', 'Kabeldrift — trygg på höga höjder', 'Säkerhetsline ingår'].map(p => (
+                  <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-winner font-bold mt-0.5">+</span>{p}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-text mb-2">Kompromisser</p>
+              <ul class="space-y-1">
+                {['Ingen app-styrning', 'Lägre täckning — 15 m²/h', 'Kräver fönsterram', 'Grundläggande rengöringsresultat utan spray'].map(c => (
+                  <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-cta font-bold mt-0.5">-</span>{c}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <a
+            href="https://www.amazon.se/s?k=ezibot+window+robot"
+            rel="sponsored nofollow noopener"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris på EziBot Window Robot
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- Produkt 4: Gladoxt W66 -->
+      <section class="bg-white rounded-xl border border-border overflow-hidden">
+        <div class="bg-bg-alt px-5 py-3 border-b border-border flex items-center gap-3">
+          <span class="bg-text-lighter text-white text-xs font-bold px-2 py-1 rounded">ABSOLUT BILLIGAST</span>
+          <span class="font-heading font-bold text-text">Gladoxt W66</span>
+          <span class="ml-auto font-bold text-text">ca 799 kr</span>
+        </div>
+        <div class="p-5">
+          <p class="text-text-light text-sm leading-relaxed mb-4">
+            Gladoxt W66 är det absolut billigaste alternativet i segmentet — en enkel kabeldriven fönsterputsrobot för standardfönster med ram. Ingen app, ingen spray, inga extrafunktioner. Rengör med mikrofiberduk och vakuumsugsugning mot glaset. Passar den som vill testa konceptet till minimalt pris.
+          </p>
+          <div class="grid sm:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs font-semibold text-text mb-2">Vad den klarar</p>
+              <ul class="space-y-1">
+                {['Absolut lägst pris — 799 kr', 'Enkel och driftsäker kabeldrift', 'Grundläggande fönsterputsning på standardfönster'].map(p => (
+                  <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-winner font-bold mt-0.5">+</span>{p}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-text mb-2">Kompromisser</p>
+              <ul class="space-y-1">
+                {['Ingen app-styrning', 'Ingen inbyggd sprayflaska', 'Kräver fönsterram', 'Lägst täckning — 15 m²/h', 'Sämre rengöringsresultat vid kraftig smuts'].map(c => (
+                  <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-cta font-bold mt-0.5">-</span>{c}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <a
+            href="https://www.amazon.se/s?k=gladoxt+w66+window+robot"
+            rel="sponsored nofollow noopener"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris på Gladoxt W66
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Köpguide -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vad ska man tänka på vid köp av billig fönsterputsrobot?</h2>
+
+      <div class="grid sm:grid-cols-2 gap-5 mb-6">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Kabeldriven vs batteridrift</h3>
+          <p class="text-sm text-text-light">Alla budget-modeller under 2 000 kr är kabeldrivna — det är faktiskt en fördel. Du slipper tänka på batteritid och roboten håller alltid stabil sugkraft mot glaset. Kabeln begränsar visserligen rörelsefriheten men är inget problem för standardstorlekar.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Säkerhetsline — alltid obligatorisk</h3>
+          <p class="text-sm text-text-light">Alla modeller i listan levereras med säkerhetsline. Fäst alltid linan i ett ankare på väggen bredvid fönstret. Om vakuumsugningen mot förmodan sviktar är linan backup som hindrar roboten från att falla. Aldrig kompromissa på detta, oavsett höjd.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Kräver fönsterram — kontrollera innan köp</h3>
+          <p class="text-sm text-text-light">Alla budgetmodeller kräver en synlig fönsterram. Har du ramfria panoramafönster, glasräcken eller takfönster utan ram passar inte dessa modeller. Kontrollera dina fönstertyper innan du beställer.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Förbehandling förbättrar resultatet</h3>
+          <p class="text-sm text-text-light">Budget-modeller saknar kraftfulla spraysystem. Sprayta fönstret med vanligt fönsterputs före robotkörning för bästa resultat. De flesta i listan levereras med mikrofiberduk — byt eller tvätta duken regelbundet för att undvika att smuts sprids.</p>
+        </div>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Relaterade sidor -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider och recensioner</h2>
+      <ul class="space-y-2">
+        <li><a href="/fonsterputsrobot/" class="text-accent hover:underline text-sm">Bästa fönsterputsrobot 2026 — alla modeller jämförda</a></li>
+        <li><a href="/hobot-legee-688/" class="text-accent hover:underline text-sm">Hobot Legee 688 recension — bästa budgetvalet</a></li>
+        <li><a href="/ecovacs-winbot-w2-omni/" class="text-accent hover:underline text-sm">Ecovacs Winbot W2 Omni — bäst i test, ramfri funktion</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se pris på Hobot Legee 688"
+    url="https://www.amazon.se/s?k=hobot+legee+688"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Billigaste fönsterputsrobot 2026",
+    "description": "De billigaste fönsterputsrobotarna under 2 000 kr, rankade efter test.",
+    "numberOfItems": 4,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Hobot Legee 688", "url": "https://robotjakt.se/hobot-legee-688/" },
+      { "@type": "ListItem", "position": 2, "name": "Cleano Window Robot", "url": "https://robotjakt.se/billigaste-fonsterputsrobot/" },
+      { "@type": "ListItem", "position": 3, "name": "EziBot Window Robot", "url": "https://robotjakt.se/billigaste-fonsterputsrobot/" },
+      { "@type": "ListItem", "position": 4, "name": "Gladoxt W66", "url": "https://robotjakt.se/billigaste-fonsterputsrobot/" },
+    ],
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>
