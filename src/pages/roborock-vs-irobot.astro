@@ -1,0 +1,287 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/' },
+  { label: 'Roborock vs iRobot' },
+];
+
+const faqItems = [
+  {
+    question: 'Är Roborock eller iRobot bäst 2026?',
+    answer: 'Roborock vinner på pris, sugkraft och moppfunktion. iRobot Roomba j9+ vinner på AI-navigering och är historiskt sett det mest pålitliga märket i kategorin. För de flesta hem med husdjur eller hårdgolv: Roborock S8 MaxV Ultra (ca 10 990 kr) ger mer för pengarna. Prioriterar du ett etablerat märke med lång servicehistorik: iRobot.',
+  },
+  {
+    question: 'Varför kostar Roborock mindre än iRobot Roomba i samma prisklass?',
+    answer: 'Roborock och iRobot konkurrerar i liknande prissegment men med olika strategi. Roborock fokuserar på råa specifikationer — hög sugkraft, avancerade moppfunktioner — och håller priserna konkurrenskraftiga. iRobot investerar mer i mjukvara, AI-lärande och ett ekosystem (Alexa, Google Home, SmartHome) som är mer polerat. Du betalar delvis för mjukvarumognaden.',
+  },
+  {
+    question: 'Vilken är bäst för husdjurshår?',
+    answer: 'Båda fungerar bra för husdjurshår, men med olika styrkor. Roborock S8 MaxV Ultra med ReactiveAI 3.0 är bäst på att undvika hinder (inklusive djuravföringar) och har hög sugkraft för inbäddade päls. iRobot Roomba j9+ har bra AI-mappning och håller rent med färre tanglements tack vare sin gummi-borste (ingen traditionell borste som fastnar lika lätt).',
+  },
+  {
+    question: 'Hur länge håller en Roborock vs iRobot Roomba?',
+    answer: 'iRobot Roomba har 20+ år på marknaden och är kända för lång livslängd med utmärkt reservdelstillgång. Roborock är yngre (grundat 2014) men bygger på Xiaomis produktionsbas. I Sverige gäller 3 år konsumentköplag på nya produkter oavsett märke. iRobot:s servicehistorik och reservdelstillgång är bättre dokumenterad i Sverige.',
+  },
+  {
+    question: 'Har Roborock och iRobot app på svenska?',
+    answer: 'Varken Roborock Home-appen eller iRobot Home-appen är tillgängliga på svenska. Båda apparna är på engelska. Roborock-appen anses av många som mer funktionsrik och lättnavigerad. iRobot:s app är mer inriktad på schemaläggning och enkel styrning. Båda fungerar med Alexa och Google Assistant.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Roborock vs iRobot Roomba 2026 – jämförelse | Robotjakt"
+  description="Vi jämför Roborock S8 MaxV Ultra och iRobot Roomba j9+. Sugkraft, moppning, AI-navigering och pris — vilket märke vinner 2026?"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqSchema,
+    })} />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-30">2026-03-30</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Roborock vs iRobot Roomba 2026 — vilken robotdammsugare vinner?
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      iRobot Roomba uppfann robotdammsugaren. Roborock tog kategorin till nästa nivå med hög sugkraft och avancerade moppfunktioner. Vi ställer de bästa modellerna — S8 MaxV Ultra och Roomba j9+ — mot varandra för att ge dig ett tydligt svar.
+    </p>
+
+    <!-- Brand overview -->
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Två generationer av robotdammsugning</h2>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div class="bg-bg-alt rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Roborock</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            Grundat 2014 i Beijing, ursprungligen som ODM-tillverkare för Xiaomi. Idag ett självständigt premiummärke börsnoterat 2023. Känt för ReactiveAI-tekniken, hög sugkraft (10 000+ Pa) och ett komplett självskötande ekosystem. Starkast i pris/prestanda, sugkraft och moppkvalitet.
+          </p>
+        </div>
+        <div class="bg-bg-alt rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">iRobot</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            Grundat 1990 av MIT-forskare. Lanserade Roomba 2002 och definierade kategorin. Förvärvades av Amazon 2023. Känt för mjukvarumognad, AI-lärande, djupintegrerat Alexa-ekosystem och dokumenterad långtidshållbarhet. Starkast i navigation, ekosystem och servicehistorik.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick comparison table -->
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse — Roborock S8 MaxV Ultra vs iRobot Roomba j9+</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="bg-primary text-white">
+              <th class="text-left p-3 font-semibold">Egenskap</th>
+              <th class="text-center p-3 font-semibold">Roborock S8 MaxV Ultra</th>
+              <th class="text-center p-3 font-semibold">iRobot Roomba j9+</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-border">
+              <td class="p-3 font-medium text-text">Pris (ca)</td>
+              <td class="p-3 text-center text-text-light">10 990 kr</td>
+              <td class="p-3 text-center text-text-light">9 990 kr</td>
+            </tr>
+            <tr class="border-b border-border bg-bg-alt/50">
+              <td class="p-3 font-medium text-text">Sugkraft</td>
+              <td class="p-3 text-center font-semibold text-green-700">10 000 Pa</td>
+              <td class="p-3 text-center text-text-light">Ej publicerad (gäller ej Pa-standard)</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="p-3 font-medium text-text">Moppfunktion</td>
+              <td class="p-3 text-center font-semibold text-green-700">Oscillerande mopp + självtvätt</td>
+              <td class="p-3 text-center text-text-light">Ingen moppfunktion</td>
+            </tr>
+            <tr class="border-b border-border bg-bg-alt/50">
+              <td class="p-3 font-medium text-text">Navigering</td>
+              <td class="p-3 text-center text-text-light">LiDAR + ReactiveAI 3.0</td>
+              <td class="p-3 text-center font-semibold text-green-700">PrecisionVision + AI lärande</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="p-3 font-medium text-text">Basstation</td>
+              <td class="p-3 text-center font-semibold text-green-700">Töm, tvätta mopp, påfyll vatten</td>
+              <td class="p-3 text-center text-text-light">Töm dammkorg</td>
+            </tr>
+            <tr class="border-b border-border bg-bg-alt/50">
+              <td class="p-3 font-medium text-text">Djuravföringsskydd</td>
+              <td class="p-3 text-center font-semibold text-green-700">ReactiveAI 3.0 — marknadsledande</td>
+              <td class="p-3 text-center text-text-light">PrecisionVision — bra</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="p-3 font-medium text-text">Batteritid</td>
+              <td class="p-3 text-center text-text-light">180 min</td>
+              <td class="p-3 text-center text-text-light">120 min</td>
+            </tr>
+            <tr class="border-b border-border bg-bg-alt/50">
+              <td class="p-3 font-medium text-text">App-integration</td>
+              <td class="p-3 text-center text-text-light">Roborock Home (eng)</td>
+              <td class="p-3 text-center font-semibold text-green-700">iRobot Home + djup Alexa</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="p-3 font-medium text-text">Märkeshistorik Sverige</td>
+              <td class="p-3 text-center text-text-light">Tillgänglig via Komplett, Elgiganten</td>
+              <td class="p-3 text-center font-semibold text-green-700">20+ år på marknaden</td>
+            </tr>
+            <tr class="bg-bg-alt/50">
+              <td class="p-3 font-medium text-text">Bäst för</td>
+              <td class="p-3 text-center font-semibold text-green-700">Husdjur, mopp + dammsug, pris</td>
+              <td class="p-3 text-center text-text-light">Ekosystem, mjukvara, hållbarhet</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Suction power section -->
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Sugkraft: Roborock vinner klart</h2>
+      <p class="text-text-light mb-3 leading-relaxed">
+        Roborock S8 MaxV Ultra presterar 10 000 Pa sugkraft — ett av de högsta på marknaden. iRobot marknadsför Roomba j9+ utan ett Pa-värde och använder istället ett eget "5× Power Boost"-system som inte är direkt jämförbart. I oberoende tester presterar Roomba j9+ lägre sugkraft än Roborock på heltäckta mattor.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        För djuphårig matta, inbäddad smuts eller hem med husdjur är Roborocks sugkraftsfördel märkbar i vardagen. iRobot Roomba räcker utmärkt för normalt underhåll på hårdgolv och korta mattor.
+      </p>
+    </section>
+
+    <!-- Mopping section -->
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Moppning: Roborock vinner — iRobot saknar funktionen helt</h2>
+      <p class="text-text-light mb-3 leading-relaxed">
+        Roborock S8 MaxV Ultra kombinerar dammsugning och moppning i en enhet med en oscillerande mopp som utför 4 000 vibrationer/minut. Basstationen tvättar och torkar mopparna automatiskt. Resultatet är rena hårda golv utan manuell insats.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        iRobot Roomba j9+ saknar moppfunktion helt — det är en ren robotdammsugare. iRobot säljer Braava Jet m6 som separat moppningsrobot. Det kombinerade systemet kostar ca 16 000 kr och kräver två enheter som du koordinerar. Roborocks allt-i-ett-lösning är mer praktisk för de flesta hem.
+      </p>
+    </section>
+
+    <!-- Navigation -->
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Navigering: jämnt — iRobot mognare mjukvara</h2>
+      <p class="text-text-light mb-3 leading-relaxed">
+        Roborock S8 MaxV Ultra använder LiDAR för exakt kartläggning kombinerat med ReactiveAI 3.0 för realtidshinderdetektion. ReactiveAI 3.0 är idag marknadsledande för djuravföringsskydd — den identifierar och undviker tillförlitligt hinder som Roomba missar.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        iRobot Roomba j9+ använder PrecisionVision Navigation med kamerabaserad AI som lär sig ditt hem över tid. iRobot:s mjukvara är mer mogen efter 20 år av iteration — appen är polerad, routinehantering är enkel och Alexa-integrationen är djupare. Väljer du för ekosystem och lättanvänd app: iRobot.
+      </p>
+    </section>
+
+    <!-- Price analysis -->
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Pris och värde: Roborock mer per krona</h2>
+      <p class="text-text-light mb-3 leading-relaxed">
+        Roborock S8 MaxV Ultra kostar ca 10 990 kr och inkluderar en fullutrustad basstation som tömmer dammkorg, tvättar mopp och påfyller vatten. iRobot Roomba j9+ kostar ca 9 990 kr med en enklare basstation (tömmer dammkorg).
+      </p>
+      <p class="text-text-light leading-relaxed">
+        Räknar du in att iRobot saknar moppfunktion och att tillhörande Braava Jet m6 kostar ca 6 000 kr extra, blir det totala paketet dyrare. Roborock erbjuder mer funktionalitet per krona för den som vill ha ett helautomatiskt hem.
+      </p>
+    </section>
+
+    <!-- Product links -->
+    <section class="mb-8">
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div class="bg-bg-alt rounded-xl border border-border p-5">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="inline-block bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded-full mb-2">Bäst pris/prestanda</span>
+              <h3 class="font-heading font-bold text-text">Roborock S8 MaxV Ultra</h3>
+            </div>
+            <span class="text-lg font-bold text-text">10 990 kr</span>
+          </div>
+          <ul class="text-sm text-text-light space-y-1 mb-4">
+            <li>+ 10 000 Pa sugkraft</li>
+            <li>+ Mopp + dammsug i en enhet</li>
+            <li>+ Självtvättande basstation</li>
+            <li>+ ReactiveAI 3.0 djuravföringsskydd</li>
+          </ul>
+          <a href="https://www.komplett.se/search?q=roborock+s8+maxv+ultra" class="block text-center bg-primary text-white font-semibold py-2.5 px-4 rounded-lg hover:bg-primary/90 transition-colors text-sm">
+            Se pris hos Komplett
+          </a>
+        </div>
+        <div class="bg-bg-alt rounded-xl border border-border p-5">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="inline-block bg-gray-100 text-gray-600 text-xs font-bold px-2 py-1 rounded-full mb-2">Bäst ekosystem</span>
+              <h3 class="font-heading font-bold text-text">iRobot Roomba j9+</h3>
+            </div>
+            <span class="text-lg font-bold text-text">9 990 kr</span>
+          </div>
+          <ul class="text-sm text-text-light space-y-1 mb-4">
+            <li>+ 20+ år av mjukvarumognad</li>
+            <li>+ Djup Alexa-integration</li>
+            <li>+ AI lär sig ditt hem</li>
+            <li>+ Dokumenterad lång hållbarhet</li>
+          </ul>
+          <a href="https://www.elgiganten.se/search?query=roomba+j9" class="block text-center bg-gray-700 text-white font-semibold py-2.5 px-4 rounded-lg hover:bg-gray-800 transition-colors text-sm">
+            Se pris hos Elgiganten
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who should choose which -->
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Vem ska välja vad?</h2>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div class="bg-bg-alt rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-3">Välj Roborock S8 MaxV Ultra om du...</h3>
+          <ul class="text-sm text-text-light space-y-2">
+            <li>+ Vill ha mopp + dammsugning i en enhet</li>
+            <li>+ Har husdjur med olycksrisk</li>
+            <li>+ Prioriterar maximal sugkraft</li>
+            <li>+ Vill ha mest funktionalitet per krona</li>
+            <li>+ Har mycket hårdgolv hemma</li>
+          </ul>
+        </div>
+        <div class="bg-bg-alt rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-3">Välj iRobot Roomba j9+ om du...</h3>
+          <ul class="text-sm text-text-light space-y-2">
+            <li>+ Värdesätter ett etablerat märke med servicehistorik</li>
+            <li>+ Är djupt inbäddad i Alexa-ekosystemet</li>
+            <li>+ Inte behöver moppfunktion</li>
+            <li>+ Prioriterar mjukvarumognad och enkel app</li>
+            <li>+ Vill ha en renodlad dammsugare utan komplexitet</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related guides -->
+    <div class="mt-8 p-5 bg-bg-alt rounded-xl border border-border mb-8">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/roborock-vs-ecovacs/" class="text-accent hover:underline">Roborock vs Ecovacs 2026 — S8 MaxV Ultra vs Deebot X5 Omni</a></li>
+        <li><a href="/roborock-vs-dreame/" class="text-accent hover:underline">Roborock vs Dreame 2026 — direkt jämförelse</a></li>
+        <li><a href="/dreame-vs-ecovacs/" class="text-accent hover:underline">Dreame vs Ecovacs 2026 — X40 Ultra vs Deebot X5 Omni</a></li>
+        <li><a href="/kopguide-robotdammsugare/" class="text-accent hover:underline">Köpguide robotdammsugare 2026</a></li>
+      </ul>
+    </div>
+
+    <FAQ items={faqItems} />
+
+    <StickyCTA
+      url="https://www.komplett.se/search?q=roborock+s8+maxv+ultra"
+      text="Se Roborock S8 MaxV Ultra hos Komplett"
+    />
+  </div>
+</BaseLayout>
