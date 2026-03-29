@@ -1,0 +1,314 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/' },
+  { label: 'Dreame X40 Ultra vs Roborock S8 MaxV Ultra' },
+];
+
+const faqItems = [
+  {
+    question: 'Vilken är bäst — Dreame X40 Ultra eller Roborock S8 MaxV Ultra?',
+    answer: 'Dreame X40 Ultra är det bästa valet för de flesta. Den har starkare sugkraft (12 000 Pa mot 10 000 Pa), bättre moppning i hörnen tack vare den utfällbara sidoarmen, hygienisk 70-graders mopptvätt och ett större batteri — allt till 2 000 kr lägre pris. Roborock S8 MaxV Ultra är dock det klara valet om du har husdjur och behöver skydd mot djuravföring på golvet.',
+  },
+  {
+    question: 'Klarar Dreame X40 Ultra av hem med husdjur?',
+    answer: 'Dreame X40 Ultra hanterar husdjurspäls utmärkt med sina 12 000 Pa sugkraft. Däremot saknar den AI-djuravföringsdetektion. Om du har katter eller hundar och riskerar att de gör sina behov på golvet är Roborock S8 MaxV Ultra med ReactiveAI 3.0 det enda säkra valet — det är den enda modellen i klassen som identifierar och undviker djuravföringar.',
+  },
+  {
+    question: 'Vad är skillnaden på moppfunktionen mellan de två modellerna?',
+    answer: 'Dreame X40 Ultra har en utfällbar sidoarm på moppmodulen som gör att den når in i hörnen och längs väggar — något Roborock S8 MaxV Ultra inte klarar eftersom dess moppmodul sitter i mitten av roboten. Dreame tvättar dessutom mopparna med 70-graders varmvatten i stationen, medan Roborock använder kallvatten. Dreame vinner moppkategorin klart.',
+  },
+  {
+    question: 'Är 2 000 kr mer för Roborock S8 MaxV Ultra motiverat?',
+    answer: 'Endast om du har husdjur och vill ha AI-djuravföringsskydd. ReactiveAI 3.0 i Roborock S8 MaxV Ultra är en funktion som inte finns i Dreame X40 Ultra och som kan vara avgörande för husdjurshem. För alla andra är Dreame X40 Ultra det bättre köpet — den erbjuder mer för pengarna med starkare sugkraft, bättre moppning och ett större batteri på 6 400 mAh mot Roborocks 5 200 mAh.',
+  },
+  {
+    question: 'Hur länge räcker batteriet på Dreame X40 Ultra jämfört med Roborock S8 MaxV Ultra?',
+    answer: 'Dreame X40 Ultra har ett batteri på 6 400 mAh jämfört med Roborock S8 MaxV Ultras 5 200 mAh. Det ger Dreame längre autonomt arbete utan mellanladdning, vilket spelar roll i hem över 100 kvadratmeter. Båda modellerna har automatisk laddning och återvänder för att fortsätta när batteriet är påfyllt, men Dreame behöver pausa mer sällan i stora hem.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Dreame X40 Ultra vs Roborock S8 MaxV Ultra 2026 — jämförelse | Robotjakt"
+  description="Vi jämför Dreame X40 Ultra och Roborock S8 MaxV Ultra 2026. Sugkraft, moppning, AI-djurskydd och pris — se vilket flaggskepp som passar ditt hem bäst."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Dreame X40 Ultra vs Roborock S8 MaxV Ultra 2026 — vilken ska du välja?
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Dreame X40 Ultra till 9 990 kr eller Roborock S8 MaxV Ultra till 11 990 kr? Vi jämför de två starkaste flaggskeppsmodellerna på marknaden 2026 — kategori för kategori — och ger dig ett tydligt svar baserat på ditt hem och dina behov.
+    </p>
+
+    <!-- Quick verdict -->
+    <section class="mb-8 bg-winner/5 border border-winner/20 rounded-xl p-5">
+      <h2 class="font-heading text-lg font-bold text-text mb-2">Snabbsvar — för dig som vill ha svaret direkt</h2>
+      <p class="text-text-light text-sm leading-relaxed mb-2">
+        <strong class="text-text">Dreame X40 Ultra vinner för de flesta:</strong> Starkare sugkraft, bättre moppning i hörnen, större batteri och 2 000 kr billigare.
+      </p>
+      <p class="text-text-light text-sm leading-relaxed">
+        <strong class="text-text">Välj Roborock S8 MaxV Ultra om:</strong> Du har husdjur och behöver skydd mot djuravföring på golvet — ReactiveAI 3.0 är den enda funktionen i klassen som identifierar detta.
+      </p>
+    </section>
+
+    <!-- Specs comparison table -->
+    <section class="mb-10" aria-label="Jämförelsetabell Dreame X40 Ultra vs Roborock S8 MaxV Ultra">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Specifikationer jämfört</h2>
+      <div class="overflow-x-auto rounded-xl border border-border">
+        <table class="w-full text-sm bg-white">
+          <thead>
+            <tr class="border-b border-border bg-bg-alt">
+              <th class="text-left px-4 py-3 font-semibold text-text">Egenskap</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Dreame X40 Ultra</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Roborock S8 MaxV Ultra</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Pris ca</td>
+              <td class="px-4 py-3 text-winner font-semibold">9 990 kr</td>
+              <td class="px-4 py-3 text-text-light">11 990 kr</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">Sugkraft</td>
+              <td class="px-4 py-3 text-winner font-semibold">12 000 Pa</td>
+              <td class="px-4 py-3 text-text-light">10 000 Pa</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Moppmodul</td>
+              <td class="px-4 py-3 text-winner font-semibold">Utfällbar sidoarm — når hörnen</td>
+              <td class="px-4 py-3 text-text-light">Roterande + lyftbar (mitten)</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">Mopptvätt</td>
+              <td class="px-4 py-3 text-winner font-semibold">Varmvatten 70°C i station</td>
+              <td class="px-4 py-3 text-text-light">Kallvatten i station</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">AI-djuravföring</td>
+              <td class="px-4 py-3 text-text-light">Nej</td>
+              <td class="px-4 py-3 text-accent font-semibold">Ja — ReactiveAI 3.0</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">Batteri</td>
+              <td class="px-4 py-3 text-winner font-semibold">6 400 mAh</td>
+              <td class="px-4 py-3 text-text-light">5 200 mAh</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Navigering</td>
+              <td class="px-4 py-3 text-text-light">LiDAR + AI-kamera</td>
+              <td class="px-4 py-3 text-text-light">LiDAR + AI-kamera</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">Station</td>
+              <td class="px-4 py-3 text-text-light">Fullautomatisk</td>
+              <td class="px-4 py-3 text-text-light">Fullautomatisk</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">App</td>
+              <td class="px-4 py-3 text-text-light">Dreame Home</td>
+              <td class="px-4 py-3 text-text-light">Roborock Home</td>
+            </tr>
+            <tr class="bg-bg-alt/30">
+              <td class="px-4 py-3 font-medium text-text">Garanti</td>
+              <td class="px-4 py-3 text-text-light">2 år</td>
+              <td class="px-4 py-3 text-text-light">2 år</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Category by category -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-6">Kategori för kategori</h2>
+      <div class="space-y-5">
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Sugkraft</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-winner/10 text-winner">Dreame vinner</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Dreame X40 Ultra har 12 000 Pa mot Roborock S8 MaxV Ultras 10 000 Pa — 20 procent starkare sugkraft. I vardagsstädning är skillnaden liten, men på tjocka mattor med lång lugg och vid uppstädning av husdjurspäls gör de extra Pa:en en märkbar skillnad. Båda modellerna hanterar finkornigt damm, sand och smuts på hårda golv utan problem. Dreame tar hem denna kategori på pappret och i praktiken på krävande ytor.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Moppning i hörnen</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-winner/10 text-winner">Dreame vinner</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Den utfällbara sidoarmen på Dreame X40 Ultra löser ett gammalt problem med robotdammsugare: hörnen förblir orena. Dreames moppmodul fälls ut mot väggen när roboten kör längs en kant och moppar faktiskt hörnet hela vägen in. Roborock S8 MaxV Ultras moppmodul sitter i mitten av roboten och når aldrig fullt ut mot väggarna. För hem med mycket hårda golv och krav på rena hörn är Dreame det klara valet. Dreame tvättar dessutom mopparna med 70-graders varmvatten — Roborock använder kallvatten.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">AI-djurskydd</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-accent/10 text-accent">Roborock vinner</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Roborock S8 MaxV Ultra är den enda modellen i klassen med ReactiveAI 3.0 — ett kamerasystem som i realtid identifierar djuravföringar, kablar, leksaker och andra hinder och navigerar runt dem. För husdjurshem är detta en kritisk funktion. Dreame X40 Ultra saknar djuravföringsdetektion helt — utan den riskerar roboten att köra över en olycka och sprida den över ett större område. Om du har katter eller hundar är Roborock det enda säkra valet i denna jämförelse.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Batteri och räckvidd</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-winner/10 text-winner">Dreame vinner</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Dreame X40 Ultra har ett batteri på 6 400 mAh mot Roborock S8 MaxV Ultras 5 200 mAh. Det ger Dreame längre autonomt arbete utan mellanladdning, vilket spelar roll i hem över 100 kvadratmeter. Båda modellerna klarar automatisk laddning och återvänder för att fortsätta när batteriet är påfyllt, men Dreame behöver avbryta mer sällan. För stora hem är detta en klar fördel.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Pris och värde</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-winner/10 text-winner">Dreame vinner</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Dreame X40 Ultra kostar ca 9 990 kr mot Roborock S8 MaxV Ultras 11 990 kr — 2 000 kr skillnad. Dreame erbjuder starkare sugkraft, bättre moppresultat och större batteri till lägre pris. Roborocks merpris är motiverat enbart om ReactiveAI 3.0-djurskyddet är ett krav. För alla andra hem är Dreame det överlägsna värdet.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <h3 class="font-semibold text-text">Navigering och app</h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-bg-alt text-text-light">Oavgjort</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Båda modellerna använder LiDAR i kombination med AI-kamera för kartläggning och hinderdetektion. Kartorna är detaljerade och rumsuppdelningen fungerar bra i båda fallen. Roborock Home-appen är något mer polerad och har ett större användarsamhälle med mer dokumentation på nätet. Dreame Home-appen är fullt funktionell men upplevs stundvis mer komplex att konfigurera. Ingen av apparna erbjuder svenskt gränssnitt.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Who should choose what -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vem ska välja vad?</h2>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div class="bg-bg-alt rounded-xl border border-border p-5">
+          <h3 class="font-heading font-bold text-text mb-3">Välj Dreame X40 Ultra om du...</h3>
+          <ul class="space-y-2">
+            {[
+              'Vill ha starkast sugkraft i klassen (12 000 Pa)',
+              'Har mycket hårdgolv och vill ha rena hörn',
+              'Prioriterar hygienisk mopptvätt med 70 grader',
+              'Inte har husdjur med olycksrisk',
+              'Vill spara 2 000 kr jämfört med Roborock',
+              'Har stort hem och behöver långt batteri (6 400 mAh)',
+            ].map(item => (
+              <li class="flex items-start gap-2 text-sm text-text-light">
+                <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <div class="mt-4">
+            <a
+              href="https://www.komplett.se/product/1307950"
+              rel="sponsored nofollow noopener"
+              target="_blank"
+              class="inline-flex items-center justify-center w-full bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+            >
+              Se pris på Dreame X40 Ultra
+              <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
+          </div>
+        </div>
+        <div class="bg-bg-alt rounded-xl border border-border p-5">
+          <h3 class="font-heading font-bold text-text mb-3">Välj Roborock S8 MaxV Ultra om du...</h3>
+          <ul class="space-y-2">
+            {[
+              'Har katter eller hundar med olycksrisk på golvet',
+              'Måste ha AI-djuravföringsdetektion (ReactiveAI 3.0)',
+              'Vill ha den mest beprövade appen (Roborock Home)',
+              'Prioriterar hinderdetektion framför moppkvalitet',
+              'Har blandat hårdgolv och mattor',
+            ].map(item => (
+              <li class="flex items-start gap-2 text-sm text-text-light">
+                <span class="text-accent font-bold flex-shrink-0 mt-0.5">+</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <div class="mt-4">
+            <a
+              href="https://www.komplett.se/search?search=roborock+s8+maxv+ultra"
+              rel="sponsored nofollow noopener"
+              target="_blank"
+              class="inline-flex items-center justify-center w-full bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+            >
+              Se pris på S8 MaxV Ultra
+              <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Verdict -->
+    <section class="mb-10 bg-winner/5 border border-winner/20 rounded-xl p-6">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Redaktionens slutsats</h2>
+      <p class="text-text-light leading-relaxed mb-3">
+        Dreame X40 Ultra är slutvinnaren för de allra flesta hem 2026. Den vinner på sugkraft, moppkvalitet, batteri och pris — fyra av fem kategorier. Till 2 000 kr lägre pris än Roborock S8 MaxV Ultra är det svårt att motivera att betala mer.
+      </p>
+      <p class="text-text-light leading-relaxed mb-3">
+        <strong class="text-text">Undantaget är husdjurshem:</strong> Om du har katter eller hundar och behöver trygghet mot djuravföringsincidenter på golvet är Roborock S8 MaxV Ultra med ReactiveAI 3.0 det enda säkra valet. Ingen annan modell i klassen erbjuder denna funktion.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        <strong class="text-text">Sammanfattning:</strong> Dreame X40 Ultra för de flesta. Roborock S8 MaxV Ultra för husdjurshem där djuravföringsskydd är ett krav.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/dreame-x40-ultra/" class="text-accent hover:underline text-sm">Dreame X40 Ultra recension 2026</a></li>
+        <li><a href="/roborock-s8-maxv-ultra/" class="text-accent hover:underline text-sm">Roborock S8 MaxV Ultra recension 2026</a></li>
+        <li><a href="/roborock-vs-dreame/" class="text-accent hover:underline text-sm">Roborock vs Dreame 2026 — märkesjämförelse</a></li>
+        <li><a href="/dreame-guide/" class="text-accent hover:underline text-sm">Dreame guide 2026 — alla modeller jämförda</a></li>
+        <li><a href="/roborock-guide/" class="text-accent hover:underline text-sm">Roborock guide 2026 — alla modeller jämförda</a></li>
+        <li><a href="/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2026 — alla märken jämförda</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se bästa pris — Dreame X40 Ultra"
+    url="https://www.komplett.se/product/1307950"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>
