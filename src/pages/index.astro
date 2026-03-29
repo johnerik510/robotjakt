@@ -11,21 +11,25 @@ const products = [
     price: 'ca 9 990 kr',
     rating: 4.8,
     badge: 'Bäst i test 2026',
-    pros: ['Extremt stark sugkraft (12 000 Pa)', 'Självtömmande och självtvättande', 'Utfällbar mopp för hörnen'],
+    pros: ['Extremt stark sugkraft (12 000 Pa)', 'Självtömmande och självtvättande station', 'Utfällbar sidoarm når hörnen', 'AI-hinderdetektion med kamera'],
     cons: ['Hög prisklass', 'Stor dockningsstation'],
-    ctaText: 'Se pris hos Komplett',
+    ctaText: 'Se pris på Komplett',
     ctaUrl: 'https://www.komplett.se/product/1307950',
+    dataProduct: 'Dreame X40 Ultra',
+    reviewUrl: '/dreame-x40-ultra/',
   },
   {
     rank: 2,
     name: 'Roborock S8 MaxV Ultra',
     price: 'ca 11 990 kr',
     rating: 4.7,
-    badge: 'Premium',
-    pros: ['Branschledande navigering', 'Dubbla gummirullar', 'Lysande moppfunktion'],
-    cons: ['Dyrast i testet', 'App kan vara överväldigande'],
-    ctaText: 'Se pris hos Elgiganten',
+    badge: 'Bäst navigering',
+    pros: ['Branschledande LiDAR-navigering', 'AI-kamera undviker djuravföring', 'Dubbla gummirullar', 'Komplett självtömmande station'],
+    cons: ['Dyrast i testet', 'App kan kännas komplex'],
+    ctaText: 'Se pris på Elgiganten',
     ctaUrl: 'https://www.elgiganten.se/product/hem-hushall-tradgard/dammsugare-rengoring/robotdammsugare/roborock-s8-maxv-ultra-robotdammsugare-rr0758-vit/773480',
+    dataProduct: 'Roborock S8 MaxV Ultra',
+    reviewUrl: '/roborock-s8-maxv-ultra/',
   },
   {
     rank: 3,
@@ -33,10 +37,12 @@ const products = [
     price: 'ca 7 490 kr',
     rating: 4.6,
     badge: 'Bästa värde',
-    pros: ['Premiumfunktioner till lägre pris', 'FlexiArm moppsystem', 'Stark sugkraft (10 000 Pa)'],
-    cons: ['Något högre ljudnivå', 'Enklare kamera än S8 MaxV'],
-    ctaText: 'Se pris hos Amazon',
+    pros: ['Premiumfunktioner till lägre pris', 'FlexiArm moppsystem når hörnen', 'Stark sugkraft (10 000 Pa)', 'Komplett station'],
+    cons: ['Något högre ljudnivå', 'Enklare kamera än S8 MaxV Ultra'],
+    ctaText: 'Se pris på Amazon',
     ctaUrl: 'https://www.amazon.se/roborock-Qrevo-Master-Robotdammsugare-hinderundvikande/dp/B0D2D5VTZF',
+    dataProduct: 'Roborock Qrevo Master',
+    reviewUrl: '/roborock-qrevo-master/',
   },
   {
     rank: 4,
@@ -44,87 +50,69 @@ const products = [
     price: 'ca 8 990 kr',
     rating: 4.5,
     badge: 'Innovativt',
-    pros: ['Fyrkantig design når hörnen', 'Kraftfull moppning', 'Bra app med AI-funktioner'],
+    pros: ['Fyrkantig design når hörnen direkt', 'Kraftfull moppning med varmvatten', 'AIVI 3D AI-kamera'],
     cons: ['Nyare på marknaden', 'Tillbehör kan vara dyra'],
-    ctaText: 'Se pris hos Elgiganten',
+    ctaText: 'Se pris på Elgiganten',
     ctaUrl: 'https://www.elgiganten.se/product/hem-hushall-tradgard/dammsugare-rengoring/robotdammsugare/ecovacs-deebot-x5-omni-robotdammsugare-ddx19-svart/788934',
+    dataProduct: 'Ecovacs Deebot X5 Omni',
+    reviewUrl: '/ecovacs-deebot-x5-omni/',
   },
   {
     rank: 5,
     name: 'Dreame L20 Ultra',
     price: 'ca 5 990 kr',
     rating: 4.4,
-    pros: ['Bra prestanda för priset', 'Självtömmande station', 'Moppfunktion med varmvatten'],
-    cons: ['Inte lika stark som X40', 'Enklare hinderdetektion'],
-    ctaText: 'Se pris hos Komplett',
+    badge: 'Bäst mellanpris',
+    pros: ['Utmärkt pris/prestanda', 'Självtömmande station ingår', 'Moppfunktion med varmvatten', 'LiDAR-navigering'],
+    cons: ['Inte lika stark sugkraft som X40 Ultra', 'Enklare hinderdetektion'],
+    ctaText: 'Se pris på Komplett',
     ctaUrl: 'https://www.komplett.se/product/1307025',
+    dataProduct: 'Dreame L20 Ultra',
+    reviewUrl: '/dreame-l20-ultra/',
   },
 ];
 
 const faqItems = [
   {
     question: 'Vilken robotdammsugare är bäst i test 2026?',
-    answer: 'Dreame X40 Ultra är var testvinnare 2026 tack vare sin extrema sugkraft, självtömmande station och utfällbara mopp som når in i hörnen. Roborock S8 MaxV Ultra är bäst for den som vill ha allra bästa navigeringen.',
+    answer: 'Dreame X40 Ultra är vår testvinnare 2026 tack vare sin extrema sugkraft (12 000 Pa), självtömmande och självtvättande station samt utfällbar sidoarm som når in i hörnen. Roborock S8 MaxV Ultra är bäst för den som prioriterar navigering och AI-kamera som undviker djuravföring.',
   },
   {
     question: 'Är det värt att köpa en robotdammsugare med moppfunktion?',
-    answer: 'Ja, moderna robotdammsugare med mopp gör ett överraskande bra jobb pa hardgolv. Modeller som Dreame X40 Ultra och Roborock S8 MaxV Ultra kan till och med torka bort intorkade fläckar. For heltäckningsmattor är moppfunktionen mindre relevant.',
+    answer: 'Ja, moderna robotdammsugare med mopp gör ett överraskande bra jobb på hårdgolv. Modeller som Dreame X40 Ultra och Roborock S8 MaxV Ultra kan torka bort intorkade fläckar. För heltäckningsmattor är moppfunktionen mindre relevant — välj en modell med automatisk mopplyftning om du har både mattor och hårdgolv.',
   },
   {
-    question: 'Vilken robotdammsugare är bäst for husdjur?',
-    answer: 'For djurägare rekommenderar vi modeller med stark sugkraft (minst 8 000 Pa) och gummirullar som inte trasslas av pälsar. Roborock S8 MaxV Ultra och Dreame X40 Ultra klarar djurhar utmärkt.',
+    question: 'Vilken robotdammsugare är bäst för husdjur?',
+    answer: 'För djurägare rekommenderar vi modeller med stark sugkraft (minst 8 000 Pa) och gummirullar som inte trasslas av päls. Roborock S8 MaxV Ultra har en AI-kamera som identifierar och undviker djuravföring — ett unikt skydd. Dreame X40 Ultra och Roborock Qrevo Master klarar djurhår utmärkt.',
   },
   {
     question: 'Hur ofta behöver man tömma en robotdammsugare?',
-    answer: 'Med en självtömmande station behöver du bara tömma pâsen var 30–60 dag beroende pa storlek pa hemmet och mängden smuts. Utan station bör du tömma behallaren efter varje städning.',
+    answer: 'Med en självtömmande station behöver du bara tömma påsen var 30–60 dag beroende på hemstorlek och smutsbelastning. Utan station bör du tömma behållaren efter varje städning. Nästan alla premiummodeller 2026 inkluderar självtömmande station.',
   },
   {
     question: 'Kan en robotdammsugare ersätta en vanlig dammsugare?',
-    answer: 'For daglig underhallsstädning ja. En robotdammsugare haller golven rena mellan grundligare städningar. For djuprengöring av soffor, trappor och svaraatkomliga ställen behöver du fortfarande en vanlig dammsugare eller sladdlös modell.',
+    answer: 'För daglig underhållsstädning ja. En robotdammsugare håller golven rena mellan mer grundliga städningar. För djuprengöring av soffor, trappor och svåråtkomliga ställen behöver du fortfarande en vanlig eller sladdlös dammsugare.',
   },
 ];
 ---
 
 <BaseLayout
-  title="Robotjakt &mdash; Sveriges guide for robotdammsugare, robotgräsklippare och poolrobotar 2026"
-  description="Vi testar och jämför konsumentrobotar for den svenska marknaden. Bästa robotdammsugare, robotgräsklippare och poolrobotar 2026 &mdash; oberoende recensioner och uppdaterade priser."
+  title="Bästa Robotdammsugare 2026 — Dreame och Roborock testade | Robotjakt"
+  description="Vi testar och jämför de bästa robotdammsugarna 2026 för den svenska marknaden. Dreame X40 Ultra är vår testvinnare. Se priser, recensioner och jämförelser."
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <AffiliateDisclaimer />
     <p class="text-xs text-text-lighter mb-2">Senast uppdaterad: 2026-03-29</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3">
-      Sveriges guide for konsumentrobotar 2026
+      Bästa robotdammsugare 2026 — Dreame och Roborock testad
     </h1>
     <p class="text-text-light mb-6 max-w-2xl">
-      Robotjakt testar och jämfor robotdammsugare, robotgräsklippare och poolrobotar for den svenska marknaden. Oberoende recensioner, raka rekommendationer och alltid uppdaterade priser.
+      Vi har testat de populäraste robotdammsugarna på den svenska marknaden. Dreame och Roborock dominerar 2026 — här är vår rangordning med fullständiga recensioner.
     </p>
 
-    <!-- Kategorisektionen -->
-    <section class="mb-10">
-      <h2 class="font-heading text-2xl font-bold text-text mb-4">Utforska alla robotar</h2>
-      <div class="grid sm:grid-cols-3 gap-4">
-        <a href="/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
-          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Robotdammsugare</h3>
-          <p class="text-sm text-text-light">Vi har testat {products.length} modeller. Dreame X40 Ultra är var testvinnare 2026.</p>
-        </a>
-        <a href="/robotgrasklippare/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
-          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Robotgräsklippare</h3>
-          <p class="text-sm text-text-light">Fran Husqvarna Automower till slingfria GPS-modeller — hitta rätt klippare for din trädgard.</p>
-        </a>
-        <a href="/poolrobot/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
-          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Poolrobot</h3>
-          <p class="text-sm text-text-light">Vi har testat och jämfört de bästa poolrobotarna 2026. Dolphin, Zodiac och mer.</p>
-        </a>
-        <a href="/fonsterputsrobot/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
-          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Fönsterputsrobot</h3>
-          <p class="text-sm text-text-light">Slipp putsning för alltid — vi jämför de bästa fönsterputsrobotarna 2026.</p>
-        </a>
-      </div>
-    </section>
-
     <!-- Topplista robotdammsugare -->
-    <h2 class="font-heading text-2xl font-bold text-text mb-4">Bästa robotdammsugare 2026</h2>
+    <h2 class="font-heading text-2xl font-bold text-text mb-2">Bästa robotdammsugare 2026 — topplista</h2>
     <p class="text-text-light mb-5 text-sm">Vi har testat {products.length} robotdammsugare och rankat dem efter sugkraft, navigering, moppfunktion och prisvärdhet.</p>
     <div class="space-y-5 mb-12">
       {products.map((p) => (
@@ -132,70 +120,142 @@ const faqItems = [
       ))}
     </div>
 
-    <!-- Köpguide -->
-    <section class="mb-12">
-      <h2 class="font-heading text-2xl font-bold text-text mb-4">Köpguide: Hur väljer man robotdammsugare?</h2>
-      <div class="prose prose-slate max-w-none text-text-light text-sm leading-relaxed space-y-4">
-        <h3 class="font-heading text-lg font-bold text-text">Sugkraft (Pa)</h3>
-        <p>Sugkraften mäts i Pascal (Pa). For normala golv räcker 5 000 Pa. Har du husdjur eller mattor behöver du minst 8 000 Pa. Premiummodeller erbjuder 10 000–12 000 Pa.</p>
-
-        <h3 class="font-heading text-lg font-bold text-text">Navigering</h3>
-        <p>LiDAR-navigering är snabbast och mest exakt. Kamerabaserade system är bra pa att undvika hinder (skor, kablar). De bästa modellerna kombinerar bada teknikerna.</p>
-
-        <h3 class="font-heading text-lg font-bold text-text">Moppfunktion</h3>
-        <p>Roterande moppar gör rent bättre än vibrerande. Modeller med automatisk mopplyftning är ett maste om du har bade mattor och hardgolv — roboten lyfter moppen när den kör over mattor.</p>
-
-        <h3 class="font-heading text-lg font-bold text-text">Självtömmande station</h3>
-        <p>En självtömmande dockningsstation innebär att roboten tömmer sin dammbehallare automatiskt. Du behöver bara byta pase var 30–60 dag. Nästan alla premiummodeller 2026 har detta.</p>
-
-        <h3 class="font-heading text-lg font-bold text-text">Pris</h3>
-        <p>Budget (under 4 000 kr): Grundläggande städning utan mopp. Mellanpris (4 000–8 000 kr): Bra prestanda med mopp och självtömning. Premium (over 8 000 kr): Toppprestanda med alla funktioner.</p>
+    <!-- Märkesguider -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Märkesguider — Dreame och Roborock</h2>
+      <div class="grid sm:grid-cols-2 gap-4 mb-6">
+        <a href="/dreame-guide/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Dreame — alla modeller 2026</h3>
+          <p class="text-sm text-text-light">X40 Ultra, X30 Ultra, L20 Ultra, L10s Ultra — komplett guide till hela Dreames sortiment.</p>
+        </a>
+        <a href="/roborock-guide/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Roborock — alla modeller 2026</h3>
+          <p class="text-sm text-text-light">S8 MaxV Ultra, Qrevo Master, S8 Max Ultra — komplett guide till hela Roborocks sortiment.</p>
+        </a>
       </div>
     </section>
 
-    <!-- Category guides -->
+    <!-- Kategorisektionen -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Fler robotkategorier</h2>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <a href="/robotgrasklippare/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Robotgräsklippare</h3>
+          <p class="text-sm text-text-light">Husqvarna Automower, Mammotion LUBA och Segway Navimow — för varje trädgård och budget.</p>
+        </a>
+        <a href="/poolrobot/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Poolrobot</h3>
+          <p class="text-sm text-text-light">Vi har testat och jämfört de bästa poolrobotarna 2026. Dolphin, Zodiac och mer.</p>
+        </a>
+        <a href="/fonsterputsrobot/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Fönsterputsrobot</h3>
+          <p class="text-sm text-text-light">Slipp putsning — vi jämför de bästa fönsterputsrobotarna 2026.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Guider per användningsfall -->
     <section class="mb-12">
-      <h2 class="font-heading text-2xl font-bold text-text mb-4">Guider per kategori</h2>
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Guider efter behov</h2>
       <div class="grid sm:grid-cols-3 gap-4 mb-6">
         <a href="/robotdammsugare-med-mopp/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Robotdammsugare med mopp</h3>
-          <p class="text-sm text-text-light">5 testade modeller — Dreame X40 Ultra vinner med utfällbar mopp och varmvattentvätt.</p>
+          <p class="text-sm text-text-light">Dreame X40 Ultra vinner med utfällbar mopp och varmvattentvätt.</p>
         </a>
         <a href="/robotdammsugare-husdjur/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
-          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Robotdammsugare for husdjur</h3>
-          <p class="text-sm text-text-light">Anti-tangle gummirullar och stark sugkraft for hem med katt och hund.</p>
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Robotdammsugare för husdjur</h3>
+          <p class="text-sm text-text-light">Anti-tangelgummirullar och stark sugkraft för hem med katt och hund.</p>
         </a>
         <a href="/billigaste-robotdammsugare/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Billigaste robotdammsugare</h3>
-          <p class="text-sm text-text-light">Bäst for pengarna under 4 000 kr — med riktig LiDAR-navigation.</p>
+          <p class="text-sm text-text-light">Bäst för pengarna under 4 000 kr — med riktig LiDAR-navigering.</p>
         </a>
-      </div>
-      <h2 class="font-heading text-2xl font-bold text-text mb-4">Produktrecensioner</h2>
-      <div class="grid sm:grid-cols-2 gap-4">
-        <a href="/dreame-x40-ultra/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
-          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Dreame X40 Ultra recension</h3>
-          <p class="text-sm text-text-light">Var testvinnare med utfällbar mopp och 12 000 Pa. Bäst for moppning 2026.</p>
+        <a href="/robotdammsugare-med-bassation/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Robotdammsugare med basstation</h3>
+          <p class="text-sm text-text-light">Självtömmande station — töm påsen bara var 30–60 dag.</p>
         </a>
-        <a href="/roborock-s8-maxv-ultra/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
-          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Roborock S8 MaxV Ultra recension</h3>
-          <p class="text-sm text-text-light">AI-kamera undviker djuravföring. Bäst for husdjurshem 2026.</p>
-        </a>
-        <a href="/roborock-qrevo-master/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
-          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Roborock Qrevo Master recension</h3>
-          <p class="text-sm text-text-light">FlexiArm mopp och 10 000 Pa till bästa värdepriset i mellanklass.</p>
-        </a>
-        <a href="/ecovacs-deebot-x5-omni/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
-          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Ecovacs Deebot X5 Omni recension</h3>
-          <p class="text-sm text-text-light">Fyrkantig design når hörnen bättre an runda modeller. AIVI 3D AI-kamera.</p>
-        </a>
-        <a href="/dreame-l20-ultra/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
-          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Dreame L20 Ultra recension</h3>
-          <p class="text-sm text-text-light">Bäst mellanpris 2026 — LiDAR, mopp och självtömning for ca 5 990 kr.</p>
+        <a href="/robotdammsugare-storlagenhet/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Robotdammsugare stor lägenhet</h3>
+          <p class="text-sm text-text-light">Modeller som klarar 150+ m² utan att ladda flera gånger.</p>
         </a>
         <a href="/kopguide-robotdammsugare/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Köpguide robotdammsugare</h3>
-          <p class="text-sm text-text-light">Forstå LiDAR, sugkraft, moppfunktion och stationer — hitta rätt modell for ditt hem.</p>
+          <p class="text-sm text-text-light">Förstå LiDAR, sugkraft och stationer — hitta rätt modell för ditt hem.</p>
         </a>
+      </div>
+    </section>
+
+    <!-- Produktrecensioner -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Alla produktrecensioner</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/dreame-x40-ultra/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-1">Dreame X40 Ultra</h3>
+          <p class="text-xs text-text-lighter mb-2">9,8/10 — Testvinnare 2026</p>
+          <p class="text-sm text-text-light">12 000 Pa, utfällbar sidoarm, varmvattenstvätt. Bäst för moppning.</p>
+        </a>
+        <a href="/roborock-s8-maxv-ultra/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-1">Roborock S8 MaxV Ultra</h3>
+          <p class="text-xs text-text-lighter mb-2">9,4/10 — Bäst navigering</p>
+          <p class="text-sm text-text-light">AI-kamera undviker djuravföring. Bäst för husdjurshem.</p>
+        </a>
+        <a href="/roborock-qrevo-master/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-1">Roborock Qrevo Master</h3>
+          <p class="text-xs text-text-lighter mb-2">9,2/10 — Bästa värde</p>
+          <p class="text-sm text-text-light">FlexiArm och 10 000 Pa. Premiumfunktioner till bättre pris.</p>
+        </a>
+        <a href="/ecovacs-deebot-x5-omni/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-1">Ecovacs Deebot X5 Omni</h3>
+          <p class="text-xs text-text-lighter mb-2">9,0/10 — Innovativ design</p>
+          <p class="text-sm text-text-light">Fyrkantig form når hörnen direkt. AIVI 3D AI-kamera.</p>
+        </a>
+        <a href="/dreame-l20-ultra/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-1">Dreame L20 Ultra</h3>
+          <p class="text-xs text-text-lighter mb-2">8,8/10 — Bäst mellanpris</p>
+          <p class="text-sm text-text-light">LiDAR, mopp och station för ca 5 990 kr. Utmärkt pris/prestanda.</p>
+        </a>
+        <a href="/dreame-w10-pro/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-1">Dreame W10 Pro</h3>
+          <p class="text-xs text-text-lighter mb-2">Recension</p>
+          <p class="text-sm text-text-light">Dreames kombinerade dammsugare och moppmaskin med varmvattentvätt.</p>
+        </a>
+        <a href="/roborock-vs-dreame/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-1">Roborock vs Dreame — vilket märke är bäst?</h3>
+          <p class="text-xs text-text-lighter mb-2">Jämförelse</p>
+          <p class="text-sm text-text-light">Vi jämför de två dominerande märkena modell för modell.</p>
+        </a>
+        <a href="/ecovacs-guide/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-1">Ecovacs — guide till alla modeller</h3>
+          <p class="text-xs text-text-lighter mb-2">Märkesguide</p>
+          <p class="text-sm text-text-light">Deebot T-serien, X-serien och Ozmo — vilken Ecovacs passar dig?</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Köpguide -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Köpguide: Hur väljer man robotdammsugare?</h2>
+      <div class="space-y-4 text-text-light text-sm leading-relaxed">
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Sugkraft (Pa)</h3>
+          <p>Sugkraften mäts i Pascal (Pa). För normala golv räcker 5 000 Pa. Har du husdjur eller mattor behöver du minst 8 000 Pa. Premiummodeller erbjuder 10 000–12 000 Pa — Dreame X40 Ultra toppar med 12 000 Pa.</p>
+        </div>
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Navigering</h3>
+          <p>LiDAR-navigering är snabbast och mest exakt — standard i alla modeller över 4 000 kr 2026. Kamerabaserade system är bra på att undvika hinder (skor, kablar, husdjuret). De bästa modellerna kombinerar båda teknikerna.</p>
+        </div>
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Moppfunktion</h3>
+          <p>Roterande moppar gör rent bättre än vibrerande. Modeller med automatisk mopplyftning är ett måste om du har både mattor och hårdgolv — roboten lyfter moppen när den kör över mattor.</p>
+        </div>
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Självtömmande station</h3>
+          <p>En självtömmande station innebär att roboten tömmer sin dammbehållare automatiskt. Du behöver bara byta påse var 30–60 dag. De bästa stationerna tvättar och torkar även mopparna automatiskt — Dreame X40 Ultra och Roborock S8 MaxV Ultra inkluderar detta.</p>
+        </div>
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Pris</h3>
+          <p>Budget (under 4 000 kr): Grundläggande städning utan mopp. Mellanpris (4 000–8 000 kr): Bra prestanda med mopp och självtömning — Dreame L20 Ultra är bäst här. Premium (över 8 000 kr): Topprestanda med alla funktioner — Dreame X40 Ultra och Roborock S8 MaxV Ultra.</p>
+        </div>
       </div>
     </section>
 
@@ -206,7 +266,7 @@ const faqItems = [
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": "Bästa robotdammsugare 2026",
-    "description": "Topplista over de bästa robotdammsugarna 2026, rankade efter test.",
+    "description": "Topplista över de bästa robotdammsugarna 2026, rankade efter test.",
     "numberOfItems": products.length,
     "itemListElement": products.map((p, i) => ({
       "@type": "ListItem",
