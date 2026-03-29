@@ -212,4 +212,25 @@ const breadcrumbs = [
     text="Se pris pa Roborock Qrevo Master"
     url="https://www.komplett.se/search?q=Roborock+Qrevo+Master"
   />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "Product",
+      "name": "Roborock Qrevo Master",
+      "brand": { "@type": "Brand", "name": "Roborock" },
+      "category": "Robotdammsugare"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.6",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-03-29",
+    "reviewBody": "Roborock Qrevo Master levererar premiumfunktioner — FlexiArm mopp, varmvattentvätt, 10 000 Pa och gummirulle — till ett mellanklasspris. For hem som vill ha nästan allt en premium-robot erbjuder men inte betala for AI-kameran är detta det smartaste köpet 2026.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  })} />
 </BaseLayout>

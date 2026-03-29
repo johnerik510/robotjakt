@@ -216,4 +216,25 @@ const specs = [
     text="Se bästa pris pa Dreame X40 Ultra"
     url="https://www.komplett.se/search?q=Dreame+X40+Ultra"
   />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "Product",
+      "name": "Dreame X40 Ultra",
+      "brand": { "@type": "Brand", "name": "Dreame" },
+      "category": "Robotdammsugare"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.8",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-03-29",
+    "reviewBody": "Dreame X40 Ultra är den bästa robotdammsugaren med moppfunktion vi testat 2026. Den utfällbara moppmodulen som faktiskt når hörnen, kombinerat med varmvattentvätt och 12 000 Pa sugkraft, gör det till ett komplett städsystem.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  })} />
 </BaseLayout>

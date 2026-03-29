@@ -217,4 +217,25 @@ const breadcrumbs = [
     text="Se pris pa Roborock S8 MaxV Ultra"
     url="https://www.komplett.se/search?q=Roborock+S8+MaxV+Ultra"
   />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "Product",
+      "name": "Roborock S8 MaxV Ultra",
+      "brand": { "@type": "Brand", "name": "Roborock" },
+      "category": "Robotdammsugare"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.8",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-03-29",
+    "reviewBody": "Roborock S8 MaxV Ultra är det självklara valet for husdjurshem 2026. AI-kameran som identifierar och undviker djuravföring, kombinerat med dubbla gummirullar som aldrig trasslas av päls, gör att du kan lita pa roboten även utan att kontrollera golvet fore varje körning.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  })} />
 </BaseLayout>
