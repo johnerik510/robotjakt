@@ -1,0 +1,190 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const products = [
+  {
+    rank: 1,
+    name: 'Mammotion LUBA AWO 3000',
+    price: 'ca 24 990 kr',
+    rating: 4.5,
+    badge: 'Bäst utan slinga 2026',
+    pros: ['Ingen perimeterkabel — RTK GPS', '4G-uppkoppling och kamerasystem', 'Upp till 3000 m² utan kabel', 'Gränser ritas i appen — enkelt att ändra', '26 cm klippbredd'],
+    cons: ['RTK-antenn krävs (medföljer)', 'Kräver fri sikt till himlen för GPS', 'Nyare teknik med färre oberoende tester'],
+    ctaText: 'Se pris på LUBA AWO 3000',
+    ctaUrl: 'https://www.elgiganten.se',
+    dataProduct: 'Mammotion LUBA AWO 3000',
+  },
+  {
+    rank: 2,
+    name: 'Segway Navimow H500E',
+    price: 'ca 19 990 kr',
+    rating: 4.3,
+    badge: 'UTAN SLINGA',
+    pros: ['RTK GPS utan perimeterkabel', 'Upp till 5000 m²', 'Tyst och energieffektiv', 'Bra pris för kapaciteten'],
+    cons: ['Kräver fri sikt till himlen', 'App inte lika mogen som Husqvarnas', 'Färre servicepunkter i Sverige'],
+    ctaText: 'Se pris på Navimow H500E',
+    ctaUrl: 'https://www.elgiganten.se',
+    dataProduct: 'Segway Navimow H500E',
+  },
+  {
+    rank: 3,
+    name: 'Mammotion LUBA 2 AWO 1000H',
+    price: 'ca 14 990 kr',
+    rating: 4.2,
+    badge: 'UTAN SLINGA',
+    pros: ['Utan slinga till lägre pris', 'RTK GPS — upp till 1000 m²', 'Kompakt och lätt att installera'],
+    cons: ['Begränsad till 1000 m²', 'Kräver basstationsantenn', 'Nyare modell — begränsad testdata'],
+    ctaText: 'Se pris på LUBA 2 AWO 1000H',
+    ctaUrl: 'https://www.elgiganten.se',
+    dataProduct: 'Mammotion LUBA 2 AWO 1000H',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Vad betyder "utan slinga" för robotgräsklippare?',
+    answer: 'Traditionella robotgräsklippare använder en perimeterkabel (slinga) som grävs ner eller läggs längs gräskanten — roboten känner av kabeln och stannar inom dess gränser. Modeller "utan slinga" använder istället RTK GPS (Real-Time Kinematic GPS) för att känna av sin position med centimeterprecision. Gränserna definieras i appen och kan ändras utan att röra marken.',
+  },
+  {
+    question: 'Hur exakt är RTK GPS jämfört med perimeterkabel?',
+    answer: 'RTK GPS ger en positionsnoggrannhet på 1–3 centimeter — jämförbart med en perimeterkabel. I praktiken håller roboten sig lika bra inom gränserna. Nackdelen är att RTK-systemet kräver fri sikt till himlen och kan påverkas av täta träd eller byggnader som blockerar satellitsignalen.',
+  },
+  {
+    question: 'Fungerar GPS-robotgräsklippare i alla trädgårdar?',
+    answer: 'De fungerar utmärkt i de flesta trädgårdar men kräver att basstationsantennen har god sikt mot himlen. Under täta träd, nära höga byggnader eller i djupa dalar kan GPS-signalen försvagas. Har du en trädgård med mycket lövverk eller skuggiga partier kan en traditionell perimeterkabelmodell vara säkrare. Kontrollera alltid tillverkarens rekommendationer för ditt specifika fall.',
+  },
+  {
+    question: 'Vad kostar installationen av en GPS-robotgräsklippare?',
+    answer: 'Utan-slinga-modeller installeras typiskt på 1–2 timmar av de flesta husägare. Du monterar en basstationsantenn på ett stadigt underlag med fri sikt mot himlen, ansluter strömkabeln och ritar upp gränserna i appen med mobilen. Ingen grävning, inga verktyg och ingen kabeldragning krävs.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Hem', href: '/' },
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Utan slinga' },
+];
+---
+
+<BaseLayout
+  title="Robotgräsklippare utan slinga 2026 — GPS och RTK-modeller | Robotjakt"
+  description="De bästa robotgräsklipparna utan perimeterkabel 2026. Vi testar RTK GPS-modeller från Mammotion LUBA och Segway Navimow. Ingen grävning — gränser via app. Se priser och jämförelse."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
+      Robotgräsklippare utan slinga 2026 — GPS och RTK-modeller
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Slipp kabelinstallationen helt. Vi testar och jämför de bästa robotgräsklipparna med RTK GPS som inte kräver perimeterkabel — gränser definieras via appen.
+    </p>
+
+    <!-- Förklaring av tekniken -->
+    <div class="bg-accent/5 border border-accent/20 rounded-xl p-5 mb-8">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Vad är RTK GPS utan slinga?</h2>
+      <div class="grid sm:grid-cols-3 gap-3 text-sm">
+        <div class="flex items-start gap-2">
+          <span class="text-winner font-bold mt-0.5">+</span>
+          <span class="text-text-light"><strong class="text-text">Ingen grävning</strong> — installera på 1–2 timmar utan verktyg</span>
+        </div>
+        <div class="flex items-start gap-2">
+          <span class="text-winner font-bold mt-0.5">+</span>
+          <span class="text-text-light"><strong class="text-text">Flexibla gränser</strong> — ändra klippzoner när som helst i appen</span>
+        </div>
+        <div class="flex items-start gap-2">
+          <span class="text-winner font-bold mt-0.5">+</span>
+          <span class="text-text-light"><strong class="text-text">Centimeterprecision</strong> — RTK GPS är lika exakt som perimeterkabel</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Topplista -->
+    <div class="space-y-5 mb-10">
+      {products.map(p => <ProductCard {...p} />)}
+    </div>
+
+    <!-- Husqvarna-not -->
+    <div class="bg-bg-alt border border-border rounded-xl p-5 mb-10">
+      <h2 class="font-heading text-lg font-bold text-text mb-2">Husqvarna Automower 430X Nera — GPS men med slinga</h2>
+      <p class="text-sm text-text-light mb-3">
+        Husqvarna Automower 430X Nera har avancerad GPS+4G-navigering men kräver ändå en perimeterkabel för gränssättning. GPS används för effektivare navigering inom den kabel-definierade ytan — inte för att ersätta kabeln. Vill du ha Husqvarnas tillförlitlighet utan kabel finns ännu inget alternativ i den klassen, men Mammotion LUBA AWO 3000 är ett starkt alternativ.
+      </p>
+      <a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Se alla robotgräsklippare inkl. kabellösningar</a>
+    </div>
+
+    <!-- Jämförelse slinga vs utan slinga -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Slinga eller utan slinga — vad väljer man?</h2>
+      <div class="grid sm:grid-cols-2 gap-5 mb-6">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-3">Välj perimeterkabel om du...</h3>
+          <ul class="space-y-2 text-sm text-text-light">
+            {[
+              'Vill ha beprövad, tillförlitlig teknik',
+              'Har täta träd eller skugga som kan störa GPS',
+              'Budgeten är begränsad',
+              'Väljer Husqvarna (marknadsledare)',
+              'Inte planerar att flytta roboten',
+            ].map(p => (
+              <li class="flex items-start gap-1.5"><span class="text-winner mt-0.5">+</span> {p}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-3">Välj utan slinga (GPS/RTK) om du...</h3>
+          <ul class="space-y-2 text-sm text-text-light">
+            {[
+              'Vill slippa kabelinstallation',
+              'Vill kunna ändra klippzoner flexibelt',
+              'Har öppen trädgård med god sikt till himlen',
+              'Planerar att flytta roboten säsongsvis',
+              'Budgeten är tillräcklig',
+            ].map(p => (
+              <li class="flex items-start gap-1.5"><span class="text-winner mt-0.5">+</span> {p}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Intern länkning -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare 2026 — alla modeller</a></li>
+        <li><a href="/kopguide-robotgrasklippare/" class="text-accent hover:underline text-sm">Köpguide robotgräsklippare — så väljer du rätt</a></li>
+        <li><a href="/billigaste-robotgrasklippare/" class="text-accent hover:underline text-sm">Billigaste robotgräsklippare under 10 000 kr</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se pris på Mammotion LUBA AWO 3000"
+    url="https://www.elgiganten.se"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Robotgräsklippare utan slinga 2026",
+    "description": "De bästa robotgräsklipparna utan perimeterkabel 2026 — RTK GPS-modeller från Mammotion och Segway.",
+    "numberOfItems": products.length,
+    "itemListElement": products.map((p, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": p.name,
+      "url": "https://robotjakt.se/robotgrasklippare-utan-slinga/",
+    })),
+  })} />
+</BaseLayout>

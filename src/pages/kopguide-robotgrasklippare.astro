@@ -1,0 +1,273 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const faqItems = [
+  {
+    question: 'Vilken robotgräsklippare ska man välja 2026?',
+    answer: 'Det beror på trädgårdens storlek och dina krav. För ytor upp till 500 m² och liten budget: Gardena Sileno City 500. För en typisk villaträdgård: Husqvarna Automower 315X. Vill du slippa kabelinstallation: Mammotion LUBA AWO 3000. Maxprestanda: Husqvarna Automower 430X Nera. Se vår topplista för fullständig jämförelse.',
+  },
+  {
+    question: 'Hur lång tid tar det att installera en robotgräsklippare?',
+    answer: 'En enkel perimeterkabelinstallation tar 2–5 timmar beroende på trädgårdens storlek och form. Kabeln läggs längs gräskanten och kring hinder. För komplexa trädgårdar med många hinder rekommenderas professionell installation. GPS/RTK-modeller utan kabel installeras på 1–2 timmar — du monterar en basstationsantenn och ritar upp gränserna i appen.',
+  },
+  {
+    question: 'Hur tyst är en robotgräsklippare?',
+    answer: 'Moderna robotgräsklippare är mycket tysta jämfört med bensinmotordrivna alternativ. De flesta modeller arbetar på 55–62 dB(A) — ungefär som ett normalt samtal. Husqvarna Automower 430X Nera och Gardena Sileno City 500 arbetar på 57–58 dB och kan köras tidigt på morgonen utan att störa grannar.',
+  },
+  {
+    question: 'Behöver man klippa gräset på ett speciellt sätt för att robotgräsklipparen ska fungera?',
+    answer: 'Nej — roboten sköter sig själv. Faktum är att robotgräsklippare klipper lite och ofta (multi-mulching), vilket är optimalt för gräsets hälsa. Det korta grässnöret mulchas tillbaka i gräsmattan som näring. Du behöver inte hantera gräsklipp alls.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Hem', href: '/' },
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Köpguide robotgräsklippare' },
+];
+---
+
+<BaseLayout
+  title="Köpguide robotgräsklippare 2026 — Så väljer du rätt | Robotjakt"
+  description="Komplett köpguide för robotgräsklippare 2026. Vi förklarar skillnaden mellan slinga och GPS, prisklasser, installation och vilka märken som är bäst. Hitta rätt modell för din trädgård."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Köpguide robotgräsklippare 2026 — Så väljer du rätt
+    </h1>
+
+    <p class="text-lg text-text-light mb-8 leading-relaxed">
+      Robotgräsklippare finns i alla prisklasser och med helt olika tekniker. Den här guiden hjälper dig förstå vad som skiljer modellerna åt, vad du bör prioritera för din trädgård och hur du undviker vanliga köpmisstag. Vi täcker yta, slinga vs GPS, kostnader, installation och vilka märken som levererar bäst.
+    </p>
+
+    <!-- Snabbnavigering -->
+    <div class="bg-accent/5 border border-accent/20 rounded-xl p-5 mb-10">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Hitta rätt modell direkt</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/robotgrasklippare/" class="bg-white rounded-xl border border-border p-4 hover:border-accent transition-colors group">
+          <p class="font-semibold text-text group-hover:text-accent mb-1">Se topplista 2026</p>
+          <p class="text-sm text-text-light">Alla 5 modeller testade och rankade — med priser och specs.</p>
+        </a>
+        <a href="/robotgrasklippare-utan-slinga/" class="bg-white rounded-xl border border-border p-4 hover:border-accent transition-colors group">
+          <p class="font-semibold text-text group-hover:text-accent mb-1">Utan perimeterkabel?</p>
+          <p class="text-sm text-text-light">GPS/RTK-modeller som inte kräver kabelinstallation.</p>
+        </a>
+        <a href="/billigaste-robotgrasklippare/" class="bg-white rounded-xl border border-border p-4 hover:border-accent transition-colors group">
+          <p class="font-semibold text-text group-hover:text-accent mb-1">Budget under 10 000 kr?</p>
+          <p class="text-sm text-text-light">Bästa billiga robotgräsklipparna som faktiskt fungerar.</p>
+        </a>
+        <a href="/robotgrasklippare/" class="bg-white rounded-xl border border-border p-4 hover:border-accent transition-colors group">
+          <p class="font-semibold text-text group-hover:text-accent mb-1">Vill du ha det bästa?</p>
+          <p class="text-sm text-text-light">Husqvarna Automower 430X Nera är vår testvinnare 2026.</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- Guide-sektioner -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-6">De viktigaste faktorerna förklarade</h2>
+      <div class="space-y-10">
+
+        <!-- Yta -->
+        <div>
+          <h3 class="font-heading text-xl font-semibold text-text mb-3">1. Hur stort område klarar robotgräsklipparen?</h3>
+          <p class="text-text-light leading-relaxed mb-4">
+            Tillverkarnas angivna maxyta är under idealförhållanden — plan gräsmatta utan hinder. I verkligheten minskar kapaciteten av sluttningar, hinder, komplexa former och växtperiod. Välj alltid en modell med 20–30 % marginal.
+          </p>
+          <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-4">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-border">
+                  <th class="text-left px-4 py-3 font-semibold text-text">Trädgårdsyta</th>
+                  <th class="text-left px-4 py-3 font-semibold text-text">Rekommenderad modell</th>
+                  <th class="text-left px-4 py-3 font-semibold text-text">Prisklass</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-border">
+                <tr class="bg-white">
+                  <td class="px-4 py-3 text-text">Upp till 500 m²</td>
+                  <td class="px-4 py-3 text-text-light">Gardena Sileno City 500, Husqvarna 105</td>
+                  <td class="px-4 py-3 text-text-light">6 000–8 000 kr</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 text-text">500–1 600 m²</td>
+                  <td class="px-4 py-3 text-text-light">Husqvarna Automower 315X, Worx Landroid M500</td>
+                  <td class="px-4 py-3 text-text-light">10 000–20 000 kr</td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="px-4 py-3 text-text">1 600–3 200 m²</td>
+                  <td class="px-4 py-3 text-text-light">Husqvarna Automower 430X Nera, LUBA AWO 3000</td>
+                  <td class="px-4 py-3 text-text-light">25 000–40 000 kr</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 text-text">Över 3 200 m²</td>
+                  <td class="px-4 py-3 text-text-light">Husqvarna Automower 450X, LUBA AWO 5000</td>
+                  <td class="px-4 py-3 text-text-light">40 000 kr+</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Slinga vs GPS -->
+        <div>
+          <h3 class="font-heading text-xl font-semibold text-text mb-3">2. Slinga eller utan slinga (GPS/RTK)?</h3>
+          <p class="text-text-light leading-relaxed mb-4">
+            Det är den viktigaste tekniska skillnaden 2026. Perimeterkabel är beprövad teknik — GPS/RTK är nyare men eliminerar kabelinstallationen helt.
+          </p>
+          <div class="grid sm:grid-cols-2 gap-4 mb-4">
+            <div class="bg-white rounded-xl border border-border p-5">
+              <h4 class="font-semibold text-text mb-2">Med perimeterkabel (traditionell)</h4>
+              <ul class="space-y-1 text-sm text-text-light mb-3">
+                <li class="flex items-start gap-1.5"><span class="text-winner mt-0.5">+</span> Beprövad och tillförlitlig teknik</li>
+                <li class="flex items-start gap-1.5"><span class="text-winner mt-0.5">+</span> Lägre inköpspris</li>
+                <li class="flex items-start gap-1.5"><span class="text-winner mt-0.5">+</span> Fungerar i alla väderförhållanden</li>
+                <li class="flex items-start gap-1.5"><span class="text-cta mt-0.5">-</span> Kabelinstallation tar tid (2–5 timmar)</li>
+                <li class="flex items-start gap-1.5"><span class="text-cta mt-0.5">-</span> Svårare att ändra gränser i efterhand</li>
+                <li class="flex items-start gap-1.5"><span class="text-cta mt-0.5">-</span> Kabeln kan skadas vid grävarbeten</li>
+              </ul>
+              <p class="text-xs text-text-lighter">Exempel: Husqvarna 430X Nera, 315X, Gardena Sileno City</p>
+            </div>
+            <div class="bg-white rounded-xl border border-border p-5">
+              <h4 class="font-semibold text-text mb-2">Utan kabel — GPS/RTK</h4>
+              <ul class="space-y-1 text-sm text-text-light mb-3">
+                <li class="flex items-start gap-1.5"><span class="text-winner mt-0.5">+</span> Ingen grävning eller kabelarbete</li>
+                <li class="flex items-start gap-1.5"><span class="text-winner mt-0.5">+</span> Gränser ändras enkelt i appen</li>
+                <li class="flex items-start gap-1.5"><span class="text-winner mt-0.5">+</span> Kan hantera komplexa former</li>
+                <li class="flex items-start gap-1.5"><span class="text-cta mt-0.5">-</span> Högre inköpspris</li>
+                <li class="flex items-start gap-1.5"><span class="text-cta mt-0.5">-</span> Kräver fri sikt till himlen för GPS</li>
+                <li class="flex items-start gap-1.5"><span class="text-cta mt-0.5">-</span> Nyare teknik — färre oberoende tester</li>
+              </ul>
+              <p class="text-xs text-text-lighter">Exempel: Mammotion LUBA AWO, Segway Navimow</p>
+            </div>
+          </div>
+          <p class="text-sm text-text-light">Se vår fullständiga guide: <a href="/robotgrasklippare-utan-slinga/" class="text-accent hover:underline">Robotgräsklippare utan slinga 2026</a></p>
+        </div>
+
+        <!-- Prisklasser -->
+        <div>
+          <h3 class="font-heading text-xl font-semibold text-text mb-3">3. Vad kostar en robotgräsklippare?</h3>
+          <p class="text-text-light leading-relaxed mb-4">
+            Prisklasserna speglar täckningsyta, navigeringsteknik och funktioner. Budgeten räcker långt för en liten trädgård.
+          </p>
+          <div class="space-y-3">
+            {[
+              { klass: 'Budget — under 8 000 kr', beskrivning: 'Täcker 500–750 m². Enkel app, ingen GPS, kabel krävs. Passar liten stuga eller radhustomt. Gardena Sileno City 500 och Husqvarna Automower 105 är bra val.' },
+              { klass: 'Mellanklass — 8 000–25 000 kr', beskrivning: 'Täcker 500–2 000 m². GPS-assisterad navigering, bättre app, 3G/4G. Passar de flesta villaträdgårdar. Husqvarna Automower 315X och Worx Landroid är ledande.' },
+              { klass: 'Premium — 25 000 kr+', beskrivning: 'Täcker 2 000–5 000 m²+. GPS+4G, solinladdning, kompatibel med komplexa trädgårdar. För den som vill ha maxprestanda eller stor tomt. Husqvarna 430X Nera och Mammotion LUBA AWO 3000.' },
+            ].map(item => (
+              <div class="bg-white rounded-xl border border-border p-4">
+                <p class="font-semibold text-text mb-1">{item.klass}</p>
+                <p class="text-sm text-text-light">{item.beskrivning}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Viktiga funktioner -->
+        <div>
+          <h3 class="font-heading text-xl font-semibold text-text mb-3">4. Viktiga funktioner att titta på</h3>
+          <ul class="space-y-3">
+            {[
+              { funktion: 'GPS och app-kontroll', beskrivning: 'GPS-assisterad navigering ger mer effektiv klippning och möjlighet att styra via app. 4G-uppkoppling möjliggör kontroll var du än befinner dig.' },
+              { funktion: 'Tyst drift (dB-nivå)', beskrivning: 'Moderna robotgräsklippare arbetar på 55–62 dB — tystare än ett samtal. Lägre dB-värde = mer grannsämja. Husqvarna och Gardena är ledande på tyst drift.' },
+              { funktion: 'Säkerhetsfunktioner', beskrivning: 'Lyftsensor (stänger av klippbladen direkt), PIN-kod, alarm och GPS-stöldskydd. Premiummodeller har allt detta. Kontrollera alltid att lyftsensorn finns.' },
+              { funktion: 'Klippbredd och klipphöjd', beskrivning: 'Klippbredd 18–26 cm. Bredare = färre körningar behövs. Klipphöjd justeras typiskt 20–60 mm. Välj modell med inställningsbar höjd för bäst gräskvalitet.' },
+              { funktion: 'Lutningskapacitet', beskrivning: 'De flesta klarar 35–45 % lutning. Om trädgården har branta slänter — kontrollera specifikationen noggrant. Husqvarna 430X Nera klarar 45 %.' },
+            ].map(item => (
+              <li class="flex items-start gap-3 bg-white rounded-xl border border-border p-4">
+                <span class="text-accent font-bold flex-shrink-0 mt-0.5">+</span>
+                <div>
+                  <p class="font-semibold text-text">{item.funktion}</p>
+                  <p class="text-sm text-text-light">{item.beskrivning}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Installation -->
+        <div>
+          <h3 class="font-heading text-xl font-semibold text-text mb-3">5. Installation — gör det själv eller anlita proffs?</h3>
+          <div class="grid sm:grid-cols-2 gap-4 mb-4">
+            <div class="bg-white rounded-xl border border-border p-5">
+              <h4 class="font-semibold text-text mb-2">DIY-installation</h4>
+              <p class="text-sm text-text-light mb-3">Perimeterkabel medföljer de flesta modeller. Du lägger kabeln längs gräskanten med medfölljande pinnar och kopplar till laddstationen. Enkel trädgård: 2–3 timmar. Komplex trädgård: 4–6 timmar.</p>
+              <p class="text-xs text-winner font-medium">Gratis — bara din tid</p>
+            </div>
+            <div class="bg-white rounded-xl border border-border p-5">
+              <h4 class="font-semibold text-text mb-2">Professionell installation</h4>
+              <p class="text-sm text-text-light mb-3">En certifierad Husqvarna- eller Gardena-installatör installerar kabeln och programmerar roboten korrekt. Rekommenderas vid komplexa trädgårdar med många hinder och öar.</p>
+              <p class="text-xs text-warning font-medium">Kostnad: 2 000–5 000 kr</p>
+            </div>
+          </div>
+          <p class="text-sm text-text-light">GPS/RTK-modeller (utan slinga) installeras på 1–2 timmar av de flesta — du monterar en basstationsantenn och ritar upp gränser i appen utan verktyg.</p>
+        </div>
+
+        <!-- Märken -->
+        <div>
+          <h3 class="font-heading text-xl font-semibold text-text mb-3">6. Vilka märken är bäst?</h3>
+          <div class="space-y-3">
+            {[
+              { marke: 'Husqvarna Automower', beskrivning: 'Marknadsledaren med störst utbud och beprövad teknik. Bäst tillförlitlighet och servicenätverk i Sverige. Vår rekommendation för de flesta.' },
+              { marke: 'Gardena Sileno', beskrivning: 'Bäst i budgetsegmentet. Tyst, pålitlig och enkel att installera. Bra för ytor upp till 750 m². Ägs av Husqvarna-koncernen.' },
+              { marke: 'Mammotion LUBA', beskrivning: 'Ledande inom GPS/RTK utan slinga. Imponerande teknisk prestanda men nyare på marknaden. Välj om du vill slippa kabelarbete.' },
+              { marke: 'Segway Navimow', beskrivning: 'Stark konkurrent i utan-slinga-segmentet. RTK GPS, tyst och bra app. Prismässigt konkurrenskraftigt mot Mammotion.' },
+              { marke: 'Worx Landroid', beskrivning: 'Bra pris/prestanda i mellanklass. Modulärt system där du kan lägga till funktioner. Navigeringen är inte lika sofistikerad som Husqvarna.' },
+            ].map(item => (
+              <div class="bg-white rounded-xl border border-border p-4">
+                <p class="font-semibold text-text mb-1">{item.marke}</p>
+                <p class="text-sm text-text-light">{item.beskrivning}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA-box -->
+    <div class="bg-accent/5 border border-accent/20 rounded-xl p-6 mb-10 text-center">
+      <h2 class="font-heading text-xl font-bold text-text mb-2">Redo att välja robotgräsklippare?</h2>
+      <p class="text-text-light mb-4 text-sm">Se vår uppdaterade topplista med priser, specs och detaljerade betyg för 2026.</p>
+      <a href="/robotgrasklippare/" class="inline-flex items-center justify-center px-6 py-3 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors min-h-[44px]">
+        Se topplistan — bästa robotgräsklippare 2026
+        <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+      </a>
+    </div>
+
+    <FAQ items={faqItems} />
+
+    <!-- Intern länkning -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare 2026 — topplista med priser</a></li>
+        <li><a href="/robotgrasklippare-utan-slinga/" class="text-accent hover:underline text-sm">Robotgräsklippare utan slinga — GPS och RTK-modeller</a></li>
+        <li><a href="/billigaste-robotgrasklippare/" class="text-accent hover:underline text-sm">Billigaste robotgräsklippare — bäst under 10 000 kr</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Köpguide robotgräsklippare 2026 — Så väljer du rätt",
+    "description": "Komplett köpguide för robotgräsklippare 2026. Vi förklarar skillnaden mellan slinga och GPS, prisklasser och installation.",
+    "dateModified": "2026-03-29",
+    "inLanguage": "sv-SE",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Robotjakt",
+      "url": "https://robotjakt.se"
+    }
+  })} />
+</BaseLayout>

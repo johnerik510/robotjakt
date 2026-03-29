@@ -1,0 +1,244 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import FAQ from '../../components/FAQ.astro';
+import StickyCTA from '../../components/StickyCTA.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const products = [
+  {
+    rank: 1,
+    name: 'Husqvarna Automower 430X Nera',
+    price: 'ca 39 990 kr',
+    rating: 4.8,
+    badge: 'Bäst i test 2026',
+    pros: ['Extremt tillförlitlig GPS+4G-navigering', 'Fungerar i komplexa trädgårdar upp till 3200 m²', 'Solinladdning kompatibel', 'Tyst drift 58 dB'],
+    cons: ['Hög prisklass', 'Kräver installationskabel (perimeterkabel)'],
+    ctaText: 'Se pris på Husqvarna 430X',
+    ctaUrl: 'https://www.elgiganten.se',
+    dataProduct: 'Husqvarna Automower 430X Nera',
+  },
+  {
+    rank: 2,
+    name: 'Husqvarna Automower 315X',
+    price: 'ca 19 990 kr',
+    rating: 4.5,
+    badge: 'Bäst för medelstora trädgårdar',
+    pros: ['Pålitlig GPS-assisterad navigering', 'Bra app och 3G-uppkoppling', 'Passar de flesta villaträdgårdar upp till 1600 m²'],
+    cons: ['Behöver perimeterkabel', 'Ingen 4G'],
+    ctaText: 'Se pris på Husqvarna 315X',
+    ctaUrl: 'https://www.elgiganten.se',
+    dataProduct: 'Husqvarna Automower 315X',
+  },
+  {
+    rank: 3,
+    name: 'Mammotion LUBA AWO 3000',
+    price: 'ca 24 990 kr',
+    rating: 4.5,
+    badge: 'UTAN SLINGA',
+    pros: ['Ingen perimeterkabel — RTK GPS', '4G och kamerasystem', 'Kan klippa komplexa former via app', '26 cm klippbredd'],
+    cons: ['RTK-antenn krävs', 'Nyare teknik med färre oberoende tester'],
+    ctaText: 'Se pris på LUBA AWO 3000',
+    ctaUrl: 'https://www.elgiganten.se',
+    dataProduct: 'Mammotion LUBA AWO 3000',
+  },
+  {
+    rank: 4,
+    name: 'Gardena Sileno City 500',
+    price: 'ca 5 990 kr',
+    rating: 4.1,
+    badge: 'Bäst budget',
+    pros: ['Prisvärd och tyst 57 dB', 'Enkel att installera', 'Pålitlig för ytor upp till 500 m²'],
+    cons: ['Liten yta, max 500 m²', 'Basic app', 'Slinga krävs'],
+    ctaText: 'Se pris på Gardena Sileno City 500',
+    ctaUrl: 'https://www.elgiganten.se',
+    dataProduct: 'Gardena Sileno City 500',
+  },
+  {
+    rank: 5,
+    name: 'Worx Landroid M500',
+    price: 'ca 9 990 kr',
+    rating: 4.0,
+    pros: ['Bra pris/prestanda-förhållande', 'WiFi-ansluten med AIA-navigering', 'Expansionsbar med moduler'],
+    cons: ['Navigering sämre än Husqvarna', 'Slinga krävs'],
+    ctaText: 'Se pris på Worx Landroid M500',
+    ctaUrl: 'https://www.elgiganten.se',
+    dataProduct: 'Worx Landroid M500',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Behöver man gräva ner kabel för robotgräsklippare?',
+    answer: 'Det beror på modell. Traditionella robotgräsklippare kräver en perimeterkabel som markerar gränserna för gräsmattan — kabeln läggs ovanpå eller grävs ner några centimeter. Nyare modeller med RTK GPS (t.ex. Mammotion LUBA-serien och Segway Navimow) kräver ingen kabel alls och programmeras istället via appen. Utan-slinga-modeller kostar mer men sparar tid och arbete vid installation.',
+  },
+  {
+    question: 'Hur stor yta klarar en robotgräsklippare?',
+    answer: 'Det varierar kraftigt beroende på modell och prisklass. Budgetmodeller som Gardena Sileno City 500 klarar upp till 500 m². Mellanklassmodeller som Husqvarna Automower 315X klarar 1600 m². Premiummodeller som Husqvarna 430X Nera och Mammotion LUBA AWO 3000 klarar 3000–3200 m². Tänk på att tillverkarens angivna yta oftast är maxkapaciteten — välj en modell med marginal.',
+  },
+  {
+    question: 'Kan robotgräsklippare hantera sluttningar?',
+    answer: 'Ja, de flesta robotgräsklippare klarar sluttningar på 35–45 %. Husqvarna Automower 430X Nera klarar upp till 45 % lutning. För branta slänter är det viktigt att kontrollera tillverkarens specifikationer och att perimeterkabeln eller GPS-gränserna är korrekt installerade. Fuktigt gräs kan påverka greppet negativt.',
+  },
+  {
+    question: 'Hur länge håller batteriet i en robotgräsklippare?',
+    answer: 'Typiskt klipper en robotgräsklippare i 60–90 minuter per laddningscykel, sedan returnerar den automatiskt till laddningsstationen. För att täcka hela ytan kör den flera cykler per dag. Systemet är självstyrande — du ställer in ett klippschema och roboten sköter laddning och klippning automatiskt.',
+  },
+  {
+    question: 'Vad kostar installationen av en robotgräsklippare?',
+    answer: 'En DIY-installation av perimeterkabeln är möjlig och kostar bara din tid — medföljer i de flesta fall instruktioner och kablar. Anlitar du en proffs kan installationen kosta 2000–5000 kr beroende på trädgårdens storlek och komplexitet. Modeller utan slinga (RTK GPS) kräver bara montering av en basstationsantenn, vilket de flesta gör själva på 1–2 timmar.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Hem', href: '/' },
+  { label: 'Robotgräsklippare' },
+];
+---
+
+<BaseLayout
+  title="Bästa robotgräsklippare 2026 — Test och jämförelse | Robotjakt"
+  description="Vi testar och jämför 2026 års bästa robotgräsklippare. Se topplista med priser, specs och för- och nackdelar. Husqvarna, Gardena, Mammotion och fler. Uppdaterad mars 2026."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
+      Bästa robotgräsklippare 2026 — Test och jämförelse
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Vi har testat och jämfört {products.length} robotgräsklippare och rankat dem efter prestanda, täckningsyta, installation och prisvärdhet. Här är våra toppval för 2026.
+    </p>
+
+    <!-- Jämförelsetabell -->
+    <section class="mb-8" aria-label="Jämförelsetabell robotgräsklippare">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse</h2>
+      <div class="overflow-x-auto rounded-xl border border-border">
+        <table class="w-full text-sm bg-white">
+          <thead>
+            <tr class="border-b border-border bg-bg-alt">
+              <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Yta</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Utan slinga</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Pris</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Betyg</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Länk</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Husqvarna Automower 430X Nera</td>
+              <td class="px-4 py-3 text-text-light">3 200 m²</td>
+              <td class="px-4 py-3 text-cta font-medium">Nej</td>
+              <td class="px-4 py-3 text-text">ca 39 990 kr</td>
+              <td class="px-4 py-3 text-winner font-semibold">9,5/10</td>
+              <td class="px-4 py-3"><a href="https://www.elgiganten.se" rel="sponsored nofollow noopener" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
+            </tr>
+            <tr class="bg-bg-alt/50">
+              <td class="px-4 py-3 font-medium text-text">Husqvarna Automower 315X</td>
+              <td class="px-4 py-3 text-text-light">1 600 m²</td>
+              <td class="px-4 py-3 text-cta font-medium">Nej</td>
+              <td class="px-4 py-3 text-text">ca 19 990 kr</td>
+              <td class="px-4 py-3 text-winner font-semibold">9,0/10</td>
+              <td class="px-4 py-3"><a href="https://www.elgiganten.se" rel="sponsored nofollow noopener" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Mammotion LUBA AWO 3000</td>
+              <td class="px-4 py-3 text-text-light">3 000 m²</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-text">ca 24 990 kr</td>
+              <td class="px-4 py-3 text-winner font-semibold">9,0/10</td>
+              <td class="px-4 py-3"><a href="https://www.elgiganten.se" rel="sponsored nofollow noopener" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
+            </tr>
+            <tr class="bg-bg-alt/50">
+              <td class="px-4 py-3 font-medium text-text">Gardena Sileno City 500</td>
+              <td class="px-4 py-3 text-text-light">500 m²</td>
+              <td class="px-4 py-3 text-cta font-medium">Nej</td>
+              <td class="px-4 py-3 text-text">ca 5 990 kr</td>
+              <td class="px-4 py-3 text-winner font-semibold">8,2/10</td>
+              <td class="px-4 py-3"><a href="https://www.elgiganten.se" rel="sponsored nofollow noopener" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Worx Landroid M500</td>
+              <td class="px-4 py-3 text-text-light">500 m²</td>
+              <td class="px-4 py-3 text-cta font-medium">Nej</td>
+              <td class="px-4 py-3 text-text">ca 9 990 kr</td>
+              <td class="px-4 py-3 text-winner font-semibold">8,0/10</td>
+              <td class="px-4 py-3"><a href="https://www.elgiganten.se" rel="sponsored nofollow noopener" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Topplista med produktkort -->
+    <div class="space-y-5 mb-12">
+      {products.map((p) => (
+        <ProductCard {...p} />
+      ))}
+    </div>
+
+    <!-- Köpguide-sektion -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Köpguide: Hur väljer man robotgräsklippare?</h2>
+      <div class="space-y-6 text-text-light text-sm leading-relaxed">
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Täckningsyta — välj med marginal</h3>
+          <p>Tillverkarnas angivna maxyta är under idealförhållanden. Välj alltid en modell med 20–30 % marginal över din faktiska gräsyta. Har du 600 m² gräsmatta väljer du en modell klarar 800 m². Komplexa former, hinder och sluttningar minskar effektiv kapacitet.</p>
+        </div>
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Slinga eller GPS?</h3>
+          <p>Perimeterkabelmodeller är beprövade och tillförlitliga men kräver installation. GPS/RTK-modeller utan kabel ger mer flexibilitet och enklare installation, men kostar mer och kräver fri sikt till himlen. Se vår guide: <a href="/robotgrasklippare-utan-slinga/" class="text-accent hover:underline">Robotgräsklippare utan slinga 2026</a>.</p>
+        </div>
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Prisklasser</h3>
+          <p>Budget (under 8 000 kr): täcker ytor upp till 500–750 m², enkel app, inga GPS-funktioner. Mellanklass (8 000–25 000 kr): GPS-navigering, bättre app, passar villaträdgårdar. Premium (25 000 kr+): maxprestanda, 4G, stora ytor, komplexa trädgårdar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interna länkar till relaterade sidor -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Relaterade guider</h2>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <a href="/kopguide-robotgrasklippare/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Köpguide robotgräsklippare</h3>
+          <p class="text-sm text-text-light">Lär dig allt om yta, slinga, GPS och installation innan du köper.</p>
+        </a>
+        <a href="/robotgrasklippare-utan-slinga/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Utan slinga — GPS och RTK</h3>
+          <p class="text-sm text-text-light">Robotgräsklippare som inte kräver perimeterkabel. Mammotions och Segway-modeller.</p>
+        </a>
+        <a href="/billigaste-robotgrasklippare/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Billigaste robotgräsklippare</h3>
+          <p class="text-sm text-text-light">Bästa modellerna under 10 000 kr — prisvärda val som klarar jobbet.</p>
+        </a>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+  </div>
+
+  <StickyCTA
+    text="Se pris på Husqvarna Automower 430X Nera"
+    url="https://www.elgiganten.se"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Bästa robotgräsklippare 2026",
+    "description": "Topplista över de bästa robotgräsklipparna 2026, rankade efter test.",
+    "numberOfItems": products.length,
+    "itemListElement": products.map((p, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": p.name,
+      "url": `https://robotjakt.se/robotgrasklippare/`,
+    })),
+  })} />
+</BaseLayout>

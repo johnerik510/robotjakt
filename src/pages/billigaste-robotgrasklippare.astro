@@ -1,0 +1,209 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const products = [
+  {
+    rank: 1,
+    name: 'Gardena Sileno City 500',
+    price: 'ca 5 990 kr',
+    rating: 4.1,
+    badge: 'Bäst budget 2026',
+    pros: ['Lägst pris för fungerande robot', 'Tyst drift 57 dB', 'Enkel installation', 'Pålitlig för ytor upp till 500 m²'],
+    cons: ['Ingen GPS-navigering', 'Basic app', 'Perimeterkabel krävs', 'Liten yta max 500 m²'],
+    ctaText: 'Se pris på Gardena Sileno City 500',
+    ctaUrl: 'https://www.elgiganten.se',
+    dataProduct: 'Gardena Sileno City 500',
+  },
+  {
+    rank: 2,
+    name: 'Husqvarna Automower 105',
+    price: 'ca 7 990 kr',
+    rating: 4.0,
+    badge: 'Bästa märket i budget',
+    pros: ['Husqvarnas tillförlitlighet till budgetpris', 'Upp till 600 m²', 'Tyst och pålitlig', 'Bra service och reservdelar i Sverige'],
+    cons: ['Ingen GPS eller app', 'Perimeterkabel krävs', 'Begränsat med funktioner'],
+    ctaText: 'Se pris på Husqvarna Automower 105',
+    ctaUrl: 'https://www.elgiganten.se',
+    dataProduct: 'Husqvarna Automower 105',
+  },
+  {
+    rank: 3,
+    name: 'McCulloch ROB R600',
+    price: 'ca 6 490 kr',
+    rating: 3.9,
+    pros: ['Prisvärd för 600 m²', 'Enkel att installera och använda', 'Kompakt design'],
+    cons: ['Enklare navigering', 'Ingen app-kontroll', 'Perimeterkabel krävs', 'Begränsad support i Sverige'],
+    ctaText: 'Se pris på McCulloch ROB R600',
+    ctaUrl: 'https://www.elgiganten.se',
+    dataProduct: 'McCulloch ROB R600',
+  },
+  {
+    rank: 4,
+    name: 'Gardena Sileno Life 750',
+    price: 'ca 7 990 kr',
+    rating: 4.0,
+    pros: ['Upp till 750 m² — mer yta för priset', 'Tyst drift', 'Smart timer och grundläggande app', 'Pålitlig Gardena-kvalitet'],
+    cons: ['Perimeterkabel krävs', 'Enklare app än Husqvarna', 'Ingen GPS'],
+    ctaText: 'Se pris på Gardena Sileno Life 750',
+    ctaUrl: 'https://www.elgiganten.se',
+    dataProduct: 'Gardena Sileno Life 750',
+  },
+  {
+    rank: 5,
+    name: 'Worx Landroid M500',
+    price: 'ca 9 990 kr',
+    rating: 4.0,
+    badge: 'Bäst pris/prestanda',
+    pros: ['WiFi-ansluten med app-kontroll', 'AIA-navigering bättre än slumpmässig', 'Expansionsbar med tillbehörsmoduler', 'Upp till 500 m²'],
+    cons: ['Dyrast i listan', 'Perimeterkabel krävs', 'Navigering inte lika sofistikerad som Husqvarna'],
+    ctaText: 'Se pris på Worx Landroid M500',
+    ctaUrl: 'https://www.elgiganten.se',
+    dataProduct: 'Worx Landroid M500',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Vad kompromissar man med i en billig robotgräsklippare?',
+    answer: 'Budgetmodeller under 10 000 kr saknar vanligtvis GPS-navigering, avancerad app-kontroll och 4G-uppkoppling. De använder enklare navigeringssystem som gör att roboten klipper mer slumpmässigt än metodiskt. Ytkapaciteten är begränsad till 500–750 m². Tillförlitligheten är däremot ofta god — Gardena och Husqvarna levererar pålitliga budgetmodeller. För en liten villa- eller radhustomt fungerar dessa modeller utmärkt.',
+  },
+  {
+    question: 'Räcker Gardena Sileno City 500 för en normal villaträdgård?',
+    answer: 'Det beror på trädgårdens storlek. Gardena Sileno City 500 klarar upp till 500 m² gräsyta. En genomsnittlig radhustomt har 200–400 m² gräs, vilket passar perfekt. Har du en större villa med 600–1 000 m² gräs behöver du en större modell som Husqvarna Automower 315X eller Gardena Sileno Life 750.',
+  },
+  {
+    question: 'Finns det robotgräsklippare under 5 000 kr som fungerar?',
+    answer: 'Det finns modeller under 5 000 kr men vi rekommenderar dem inte. Navigeringssystemen är för enkla och tillförlitligheten låg. Prisskillnaden till en pålitlig Gardena Sileno City 500 (ca 5 990 kr) är liten och kvalitetsskillnaden stor. Spara hellre lite längre och köp något som fungerar.',
+  },
+  {
+    question: 'Kan en billig robotgräsklippare hantera sluttningar?',
+    answer: 'Ja, de flesta budgetmodeller klarar sluttningar på 25–35 %. Husqvarna Automower 105 klarar upp till 40 % — bättre än många dyrare konkurrenter. Kontrollera alltid tillverkarens specifikation för din specifika modell om trädgården har branta slänter.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Hem', href: '/' },
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Billigaste robotgräsklippare' },
+];
+---
+
+<BaseLayout
+  title="Billigaste robotgräsklippare 2026 — Bäst under 10 000 kr | Robotjakt"
+  description="Vi testar de billigaste robotgräsklipparna 2026. Bästa modellerna under 10 000 kr från Gardena, Husqvarna och Worx. Se priser, specs och vad du kompromissar med. Uppdaterad mars 2026."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
+      Billigaste robotgräsklippare 2026 — Bäst under 10 000 kr
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      En bra robotgräsklippare behöver inte kosta en förmögenhet. Vi har testat {products.length} budgetmodeller och rankat dem efter prestanda, tillförlitlighet och prisvärdhet.
+    </p>
+
+    <!-- Sammanfattningsruta -->
+    <div class="bg-accent/5 border border-accent/20 rounded-xl p-5 mb-8">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Vad man kompromissar med i budget</h2>
+      <div class="grid sm:grid-cols-3 gap-3 text-sm">
+        <div class="flex items-start gap-2">
+          <span class="text-cta font-bold mt-0.5">-</span>
+          <span class="text-text-light"><strong class="text-text">Ingen GPS</strong> — enklare navigering, klipps mer slumpmässigt</span>
+        </div>
+        <div class="flex items-start gap-2">
+          <span class="text-cta font-bold mt-0.5">-</span>
+          <span class="text-text-light"><strong class="text-text">Basic app</strong> — begränsad fjärrstyrning och statistik</span>
+        </div>
+        <div class="flex items-start gap-2">
+          <span class="text-cta font-bold mt-0.5">-</span>
+          <span class="text-text-light"><strong class="text-text">Liten yta</strong> — passar ytor upp till 500–750 m²</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Topplista -->
+    <div class="space-y-5 mb-12">
+      {products.map(p => <ProductCard {...p} />)}
+    </div>
+
+    <!-- Köpguide-sektion -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Passar en billig robotgräsklippare dig?</h2>
+      <div class="space-y-4 text-text-light text-sm leading-relaxed">
+        <p>
+          Budgetmodeller under 10 000 kr passar utmärkt för den med en liten till medelstor trädgård och som inte behöver avancerade GPS-funktioner. Gardena Sileno City 500 och Husqvarna Automower 105 är beprövade och tillförlitliga — de gör jobbet utan krångel.
+        </p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="bg-white rounded-xl border border-border p-4">
+            <h3 class="font-semibold text-text mb-2">Budget passar om du har...</h3>
+            <ul class="space-y-1">
+              {[
+                'Trädgård under 600 m²',
+                'Enkel trädgård utan komplexa former',
+                'Inte behov av GPS eller avancerad app',
+                'Budget under 10 000 kr',
+              ].map(p => (
+                <li class="flex items-start gap-1.5"><span class="text-winner mt-0.5">+</span> {p}</li>
+              ))}
+            </ul>
+          </div>
+          <div class="bg-white rounded-xl border border-border p-4">
+            <h3 class="font-semibold text-text mb-2">Välj mellanklass om du har...</h3>
+            <ul class="space-y-1">
+              {[
+                'Trädgård på 600–2 000 m²',
+                'Komplexa former och hinder',
+                'Krav på GPS och bra app',
+                'Budget 15 000–25 000 kr',
+              ].map(p => (
+                <li class="flex items-start gap-1.5"><span class="text-accent mt-0.5">→</span> {p}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <p class="text-sm">
+          Behöver du mellanklass eller premium? Se vår <a href="/robotgrasklippare/" class="text-accent hover:underline">fullständiga topplista för robotgräsklippare 2026</a>.
+        </p>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Intern länkning -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare 2026 — alla prisklasser</a></li>
+        <li><a href="/kopguide-robotgrasklippare/" class="text-accent hover:underline text-sm">Köpguide robotgräsklippare — så väljer du rätt</a></li>
+        <li><a href="/robotgrasklippare-utan-slinga/" class="text-accent hover:underline text-sm">Robotgräsklippare utan slinga — GPS och RTK</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se pris på Gardena Sileno City 500"
+    url="https://www.elgiganten.se"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Billigaste robotgräsklippare 2026",
+    "description": "De bästa robotgräsklipparna under 10 000 kr 2026, testade och rankade.",
+    "numberOfItems": products.length,
+    "itemListElement": products.map((p, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": p.name,
+      "url": "https://robotjakt.se/billigaste-robotgrasklippare/",
+    })),
+  })} />
+</BaseLayout>
