@@ -1,0 +1,307 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/' },
+  { label: 'Dreame', href: '/dreame-guide/' },
+  { label: 'X30 Ultra' },
+];
+
+const specs = [
+  { label: 'Sugkraft', value: '8 500 Pa' },
+  { label: 'Navigering', value: '3D structured light + AI-hinderdetektion' },
+  { label: 'Moppning', value: 'Ja (förlängbar sidoarm + roterande moppar)' },
+  { label: 'Självtömning', value: 'Ja, automatisk tömning i station' },
+  { label: 'Vattenfyllning', value: 'Ja, automatisk via station' },
+  { label: 'Batteri', value: '5 000 mAh' },
+  { label: 'Klätterförmåga', value: '1,5 cm' },
+  { label: 'Bullernivå', value: '65 dB' },
+  { label: 'Prisklass', value: 'Övre mellanklass' },
+];
+
+const faqItems = [
+  {
+    question: 'Vad är skillnaden mellan Dreame X30 Ultra och X40 Ultra?',
+    answer: 'Dreame X40 Ultra är toppmodellen med 12 000 Pa sugkraft mot X30 Ultras 8 500 Pa, och X40 Ultra har oscillerande moppar med högre tryck. X30 Ultra kostar ca 2 000 kr mindre och är fortfarande ett starkt val med förlängbar sidoarm och pålitlig AI-hinderdetektion. För de flesta hem räcker X30 Ultras 8 500 Pa utmärkt — skillnaden märks framförallt på tjocka luddiga mattor.',
+  },
+  {
+    question: 'Hur fungerar den förlängbara sidoarmen på X30 Ultra?',
+    answer: 'X30 Ultras sidoarm fälls ut längs husets kanter och hörn för att nå smuts som annars är svår att komma åt. Armen drar in automatiskt när roboten rör sig på öppen golvyta och fälls ut igen vid väggar och hörn. Det ger märkbart bättre hörntäckning jämfört med modeller utan sidoarm.',
+  },
+  {
+    question: 'Klarar Dreame X30 Ultra husdjurshår?',
+    answer: 'Ja. Med 8 500 Pa sugkraft hanterar X30 Ultra husdjurshår bra på både hårda golv och normala mattor. AI-hinderdetektionen identifierar och undviker lösa föremål på golvet, vilket minskar risken att hår och snören fastnar i borsten. För hem med mycket husdjurshår rekommenderas tätare städfrekvens.',
+  },
+  {
+    question: 'Lyfts mopparna automatiskt på mattor?',
+    answer: 'Ja. Dreame X30 Ultra lyfter mopparna automatiskt när den kör över en matta, vilket förhindrar att mattor blir blöta. Roboten identifierar mattytor via sensorer och justerar mopphöjden i realtid.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<ArticleLayout
+  title="Dreame X30 Ultra Test 2026 — Recension"
+  description="Vi testar Dreame X30 Ultra — kraftfull robotdammsugare med förlängbar sidoarm, AI-hinderdetektion och komplett station. Bäst i övre mellanklass 2026? Läs vår recension."
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-03-29"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Dreame X30 Ultra — Recension 2026
+  </h1>
+
+  <!-- Verdict box -->
+  <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+    <div class="flex items-start gap-4">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-winner text-white text-xs font-bold px-2 py-1 rounded">POPULÄR 2024/2025</span>
+          <div class="flex gap-0.5" aria-label="Betyg: 8.7 av 10">
+            {[1,2,3,4,5].map(i => (
+              <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span class="font-bold text-text">8,7 / 10</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed mb-3">
+          Dreame X30 Ultra kombinerar kraftfull 8 500 Pa sugkraft med en förlängbar sidoarm som når in i hörn, pålitlig AI-hinderdetektion och en komplett station med automatisk tömning, tvätt och vattenfyllning. Ett av de bästa valen i övre mellanklass 2026 — och fortfarande starkt konkurrenskraftig mot nyare modeller.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <p class="text-2xl font-bold text-text">ca 7 990 kr</p>
+            <p class="text-xs text-text-light">Pris kan variera — jämför alltid</p>
+          </div>
+          <a
+            href="https://www.komplett.se/search?q=dreame+x30+ultra"
+            rel="sponsored nofollow noopener"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris på Dreame X30 Ultra
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pros/Cons -->
+  <div class="grid sm:grid-cols-2 gap-5 mb-8">
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Fördelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Förlängbar sidoarm når hörnen ordentligt',
+          'Pålitlig AI-hinderdetektion undviker hinder',
+          'Bra pris för funktionerna i klassen',
+          'Komplett station med tömning, tvätt och vattenfyllning',
+          'Lyfter moppar automatiskt på mattor',
+          'Tyst 65 dB — stör inte i vardagen',
+        ].map(pro => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            {pro}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Inte lika stark sugkraft som X40 Ultra (8 500 vs 12 000 Pa)',
+          'Äldre modell — X40 Ultra har uppgraderad moppteknik',
+          'Stor station kräver utrymme',
+        ].map(con => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+            {con}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Specs table -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">Tekniska specifikationer</h2>
+    <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+      <table class="w-full text-sm">
+        <tbody class="divide-y divide-border">
+          {specs.map((spec, i) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+              <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+              <td class="px-4 py-3 text-text-light">{spec.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Detailed review sections -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-6">Detaljerad genomgång</h2>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">3D structured light och AI-hinderdetektion</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Dreame X30 Ultra använder 3D structured light för att skanna hemmets layout i tre dimensioner. Det innebär att roboten inte bara ser ytan rakt fram utan även uppfattar djup och höjd på hinder. AI-hinderdetektionen identifierar vanliga föremål som sladdar, skor och leksaker och manövrerar runt dem utan att fastna eller behöva hjälp.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      I praktiken fungerar navigeringen pålitligt i välbelysta och mörka rum. Kartan som skapas vid första körningen sparas i appen och uppdateras automatiskt om möbler flyttas. Du kan i appen definiera förbjudna zoner, specificera rum att städa och ange när städning ska ske.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Förlängbar sidoarm — hörntäckning i praktiken</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Sidoarmen på X30 Ultra är en av modellens starkaste konkurrensfördelar. Den fälls ut längs väggar och i hörn för att sopa smuts mot robotens dammsugare, vilket ger märkbart renare hörn jämfört med modeller utan sidoarm. Armen drar in automatiskt på öppen golvyta och aktiveras igen vid kanter.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Jämfört med <a href="/dreame-l20-ultra/" class="text-accent hover:underline">Dreame L20 Ultra</a> som saknar sidoarm är X30 Ultra klart överlägsen i hörntäckning. Det syns tydligt om man inspekterar hörnen efter städning — X30 Ultra lämnar sällan smuts kvar där L20 Ultra ofta missar något.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Moppfunktion och stationen</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Mopparna på X30 Ultra är roterande och monterade så att de kombineras med sidoarmen för effektiv kantmoppning. Moppplattorna lyfts automatiskt på mattor för att undvika att blöta ner dem. Stationen sköter tömning av dammbehållaren, tvätt av mopparna och påfyllning av vatten — allt helt automatiskt.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Stationen är mer komplex än hos enklare modeller vilket innebär att den kräver mer utrymme. Räkna med ca 35 x 40 cm golvyta. I gengäld behöver du sällan tänka på roboten i det dagliga — stationen sköter underhållet och påminner via appen när soppose behöver bytas.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">X30 Ultra vs X40 Ultra — när är prisskillnaden värd det?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      <a href="/dreame-x40-ultra/" class="text-accent hover:underline">Dreame X40 Ultra</a> kostar ca 2 000 kr mer och erbjuder 12 000 Pa sugkraft och oscillerande moppar med högre tryck mot golvet. Du behöver X40 Ultra om du har tjocka luddiga mattor som kräver maximal sugkraft eller extremt smutsiga golv som behöver djupmoppning.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      För de flesta hem med normala mattor, hårda golv och blandade ytor levererar X30 Ultras 8 500 Pa mer än tillräcklig kraft. Prisskillnaden på 2 000 kr är svår att motivera om du inte aktivt behöver de extra funktionerna i X40 Ultra.
+    </p>
+  </section>
+
+  <!-- For whom -->
+  <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+    <h2 class="font-heading text-xl font-bold text-text mb-3">Vem passar Dreame X30 Ultra för?</h2>
+    <p class="text-text-light leading-relaxed mb-3">
+      X30 Ultra är ett utmärkt val för den som vill ha komplett städsystem med sidoarm, stark sugkraft och automatisk station — men inte vill betala för X40 Ultras toppspecar. Det är ett naturligt val för hem med hörn och kanter som kräver ordentlig täckning.
+    </p>
+    <p class="text-text-light leading-relaxed">
+      Passar hem upp till ca 200 m², blandade golvytor och rum med mycket möbler. Om hörntäckning är viktig och L20 Ultras pris känns för lågt för att ge det du behöver — X30 Ultra är steget upp som faktiskt märks i vardagen.
+    </p>
+  </section>
+
+  <!-- Price comparison CTA -->
+  <section class="mb-10 bg-white rounded-xl border border-border p-5">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med andra robotdammsugare</h2>
+    <p class="text-text-light text-sm mb-4">Se hur X30 Ultra står sig mot alla modeller vi testat.</p>
+    <div class="flex flex-wrap gap-3">
+      <a href="/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+        Se alla robotdammsugare vi testat
+        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+      </a>
+      <a href="/dreame-guide/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+        Dreame-guide — alla modeller jämförda
+        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Comparison table X30 vs X40 -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">X30 Ultra vs X40 Ultra — snabbjämförelse</h2>
+    <div class="bg-bg-alt rounded-xl border border-border overflow-hidden">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-white border-b border-border">
+            <th class="px-4 py-3 text-left font-semibold text-text"></th>
+            <th class="px-4 py-3 text-left font-semibold text-text">X30 Ultra</th>
+            <th class="px-4 py-3 text-left font-semibold text-text">X40 Ultra</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-border">
+          <tr class="bg-white">
+            <td class="px-4 py-3 font-medium text-text">Sugkraft</td>
+            <td class="px-4 py-3 text-text-light">8 500 Pa</td>
+            <td class="px-4 py-3 text-text-light">12 000 Pa</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-medium text-text">Mopptek</td>
+            <td class="px-4 py-3 text-text-light">Roterande</td>
+            <td class="px-4 py-3 text-text-light">Oscillerande</td>
+          </tr>
+          <tr class="bg-white">
+            <td class="px-4 py-3 font-medium text-text">Sidoarm</td>
+            <td class="px-4 py-3 text-text-light">Ja</td>
+            <td class="px-4 py-3 text-text-light">Ja</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-medium text-text">Pris ca</td>
+            <td class="px-4 py-3 text-text-light font-semibold text-text">7 990 kr</td>
+            <td class="px-4 py-3 text-text-light font-semibold text-text">9 990 kr</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <!-- Related links -->
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade recensioner</h2>
+    <ul class="space-y-2">
+      <li><a href="/dreame-x40-ultra/" class="text-accent hover:underline text-sm">Dreame X40 Ultra recension — testvinnaren med 12 000 Pa och oscillerande mopp</a></li>
+      <li><a href="/dreame-l20-ultra/" class="text-accent hover:underline text-sm">Dreame L20 Ultra recension — bästa mellanprismodellen 2026</a></li>
+      <li><a href="/dreame-guide/" class="text-accent hover:underline text-sm">Dreame-guide — vilken modell passar dig?</a></li>
+      <li><a href="/" class="text-accent hover:underline text-sm">Alla robotdammsugare vi testat — komplett topplista 2026</a></li>
+    </ul>
+  </section>
+</ArticleLayout>
+
+<StickyCTA
+  text="Se pris på Dreame X30 Ultra"
+  url="https://www.komplett.se/search?q=dreame+x30+ultra"
+  productName="Dreame X30 Ultra"
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["Product", "Review"],
+  "name": "Dreame X30 Ultra",
+  "brand": { "@type": "Brand", "name": "Dreame" },
+  "category": "Robotdammsugare",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "SEK",
+    "price": "7990",
+    "availability": "https://schema.org/InStock"
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "8.7",
+      "bestRating": "10",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-03-29",
+    "reviewBody": "Dreame X30 Ultra kombinerar kraftfull 8 500 Pa sugkraft med en förlängbar sidoarm som når in i hörn, pålitlig AI-hinderdetektion och en komplett station med automatisk tömning, tvätt och vattenfyllning. Ett av de bästa valen i övre mellanklass 2026.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  }
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqSchema,
+})} />
