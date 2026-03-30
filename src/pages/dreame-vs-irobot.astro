@@ -1,0 +1,195 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/' },
+  { label: 'Dreame vs iRobot' },
+];
+
+const faqItems = [
+  {
+    question: 'Vilken är bäst — Dreame eller iRobot Roomba?',
+    answer: 'Dreame X40 Ultra vinner på tekniska specifikationer: 12 000 Pa sugkraft, utfällbar moppmodul och mer avancerad AI-hinderdetektion till lägre pris. iRobot Roomba j9+ vinner på stabilitet, lång beprövad erfarenhet och Genius 4.0-mjukvaran med smart zonhantering. Dreame är bättre teknisk produkt för pengarna. iRobot är tryggare val för den som prioriterar tillförlitlighet och stöd.',
+  },
+  {
+    question: 'Varför är iRobot Roomba dyrare än Dreame?',
+    answer: 'iRobot är ett amerikanskt varumärke med lång historia (grundat 1990) och en etablerad serviceinfrastruktur. Priset speglar varumärkesvärde och lång erfarenhet snarare än bara specifikationer. Dreame är ett nyare kinesiskt märke som levererar bättre specifikationer per krona men med kortare meritlista och sämre servicenätverk i Sverige.',
+  },
+  {
+    question: 'Har Dreame eller iRobot bättre moppfunktion?',
+    answer: 'Dreame X40 Ultra vinner klart på moppfunktion med sin unika utfällbara moppmodul. iRobot Roomba Combo j9+ har integrerad moppfunktion men den är inte lika avancerad som Dreames lösning. För hem med många hårda golv med krav på ordentlig moppning: Dreame.',
+  },
+  {
+    question: 'Vilket märke är bäst för husdjurshem?',
+    answer: 'iRobot Roomba j9+ är specifikt konstruerad för husdjurshem med Dirt Detect-sensor och kraftfullt dammsugande. Dreame X40 Ultra har AI-hinderdetektion men är inte lika specialiserat på husdjursanvändning. iRobot har mer beprövad historia för katt- och hundägare. Har du husdjur och prioriterar tillförlitlighet: iRobot.',
+  },
+  {
+    question: 'Är Dreame tillförlitligt som märke?',
+    answer: 'Dreame grundades 2015 och är en del av Xiaomi-ekosystemet. De har snabbt blivit ett välrenommerat märke med starka recensioner. Tillförlitligheten är god och servicehantering i Sverige sker via importör. iRobot (numera ägt av Amazon) har längre historik och bredare servicenätverk. Dreame är tillförlitligt men iRobot har mer dokumenterad driftsäkerhet.',
+  },
+  {
+    question: 'Vad kostar Dreame X40 Ultra och iRobot Roomba j9+?',
+    answer: 'Dreame X40 Ultra kostar ca 9 990 kr och iRobot Roomba j9+ Combo kostar ca 11 990 kr. Dreame är alltså ca 2 000 kr billigare och erbjuder fler tekniska funktioner. Om du enbart tittar på specifikationer per krona är Dreame den klara vinnaren.',
+  },
+];
+---
+
+<BaseLayout
+  title="Dreame vs iRobot Roomba 2026 — vilket märke vinner? | Robotjakt"
+  description="Vi jämför Dreame X40 Ultra och iRobot Roomba j9+ Combo. Sugkraft, moppfunktion, navigering och pris — kinesisk teknologi mot amerikansk klassiker 2026."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-30">2026-03-30</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Dreame vs iRobot Roomba 2026 — kinesisk teknologi mot amerikansk klassiker
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Dreame levererar fler specifikationer per krona. iRobot är den beprövade klassikern med längst historia. Vilket märke ger bäst valuta för pengarna 2026?
+    </p>
+
+    <h2 class="font-heading text-xl font-bold mt-6 mb-4">Snabbjämförelse</h2>
+    <div class="overflow-x-auto mb-8">
+      <table class="w-full text-sm border-collapse">
+        <thead>
+          <tr class="bg-primary text-white">
+            <th class="p-3 text-left font-semibold">Egenskap</th>
+            <th class="p-3 text-left font-semibold">Dreame X40 Ultra</th>
+            <th class="p-3 text-left font-semibold">iRobot Roomba j9+ Combo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">Pris</td>
+            <td class="p-3 text-green-700 font-semibold">ca 9 990 kr</td>
+            <td class="p-3 text-text-light">ca 11 990 kr</td>
+          </tr>
+          <tr class="bg-bg-alt/50 border-b border-border">
+            <td class="p-3 font-medium text-text">Sugkraft</td>
+            <td class="p-3 text-green-700 font-semibold">12 000 Pa</td>
+            <td class="p-3 text-text-light">Ca 3 000 Pa (+ Dirt Detect)</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">Moppfunktion</td>
+            <td class="p-3 text-green-700 font-semibold">Utfällbar moppmodul</td>
+            <td class="p-3 text-text-light">Integrerad (RetractSwift)</td>
+          </tr>
+          <tr class="bg-bg-alt/50 border-b border-border">
+            <td class="p-3 font-medium text-text">Navigering</td>
+            <td class="p-3 text-text-light">LiDAR + AI-kamera (3.0)</td>
+            <td class="p-3 text-text-light">PrecisionVision (kamera)</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">Bassstation</td>
+            <td class="p-3 text-green-700 font-semibold">Full (tömning + tvätt + torkning)</td>
+            <td class="p-3 text-text-light">Clean Base (tömning)</td>
+          </tr>
+          <tr class="bg-bg-alt/50 border-b border-border">
+            <td class="p-3 font-medium text-text">Driftsäkerhet / historia</td>
+            <td class="p-3 text-text-light">Ny (2015–)</td>
+            <td class="p-3 text-green-700 font-semibold">Beprövad (1990–, 40+ år)</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">Husdjursoptimering</td>
+            <td class="p-3 text-text-light">AI-hinderdetektion</td>
+            <td class="p-3 text-green-700 font-semibold">Dirt Detect + beprövat</td>
+          </tr>
+          <tr class="bg-bg-alt/50 border-b border-border">
+            <td class="p-3 font-medium text-text">Servicenätverk (Sverige)</td>
+            <td class="p-3 text-text-light">Via importör</td>
+            <td class="p-3 text-green-700 font-semibold">Bredare distribution</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">Ursprung</td>
+            <td class="p-3 text-text-light">Kina (Xiaomi-ekosystem)</td>
+            <td class="p-3 text-text-light">USA (ägt av Amazon)</td>
+          </tr>
+          <tr class="bg-bg-alt/50">
+            <td class="p-3 font-medium text-text">Bäst för</td>
+            <td class="p-3 text-green-700 font-semibold">Specifikationer per krona, moppning</td>
+            <td class="p-3 text-text-light">Beprövad driftsäkerhet, husdjur</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="bg-accent/10 border border-accent/30 rounded-xl p-4 mb-8">
+      <p class="text-sm font-semibold text-accent-dark mb-1">Vår dom 2026</p>
+      <p class="text-sm text-text-light"><strong>Dreame X40 Ultra</strong> ger mer för pengarna: starkare motor, bättre moppmodul och lägre pris (9 990 kr). <strong>iRobot Roomba j9+ Combo</strong> vinner på beprövad tillförlitlighet, husdjursoptimering och bredare servicenätverk — men till ett pris som inte motiveras av specifikationerna.</p>
+    </div>
+
+    <h2 class="font-heading text-xl font-bold mt-8 mb-4">Sugkraft och städprestanda</h2>
+    <p class="text-text-light mb-4">
+      Dreame X40 Ultra har 12 000 Pa sugkraft — en av de starkaste på marknaden. iRobot Roomba j9+ Combo har lägre raw suction (ca 3 000 Pa) men kompenserar med Dirt Detect-sensorn som identifierar extra smutsiga zoner och intensifierar städningen. I praktiken städar iRobot effektivt trots sämre pappersspecifikationer.
+    </p>
+    <p class="text-text-light mb-6">
+      För mattor med djupare lugg och grov smuts är Dreames 12 000 Pa märkbart bättre. På glatta golv med normalt damm presterar båda likvärdigt.
+    </p>
+
+    <h2 class="font-heading text-xl font-bold mt-8 mb-4">Moppfunktion: Dreame vinner</h2>
+    <p class="text-text-light mb-4">
+      Dreame X40 Ultras utfällbara moppmodul är en av de mest avancerade lösningarna på marknaden — den kan fällas upp 12 mm för att undvika mattor och har oscillerande rörelse för djupmoppning. iRobot Roomba Combo j9+ har den praktiska RetractSwift-tekniken som automatiskt reser moppmodulens dyna vid mattpassage.
+    </p>
+    <p class="text-text-light mb-6">
+      Dreame moppar mer effektivt med utfällbar arm som når kanter. iRobot är mer bekvämt för hem med mixed golv och mattor.
+    </p>
+
+    <h2 class="font-heading text-xl font-bold mt-8 mb-4">Tillförlitlighet och service</h2>
+    <p class="text-text-light mb-4">
+      iRobot grundades 1990 och har över 30 år av robotstädningserfarenhet. Roomba-serien är beprövad och har en bred användarbas som genererar mycket feedback för kontinuerliga förbättringar. Servicenätverket i Sverige är etablerat och reservdelar finns lätt tillgängliga.
+    </p>
+    <p class="text-text-light mb-6">
+      Dreame grundades 2015 och är relativt nytt men har vuxit snabbt med stark produktkvalitet. Servicehantering i Sverige sker via importör — fungerar men är inte lika etablerat som iRobots nätverk. Dreame är pålitligt men saknar den decennieslånga meritlistan.
+    </p>
+
+    <h2 class="font-heading text-xl font-bold mt-8 mb-4">Vem bör välja vad?</h2>
+    <div class="grid sm:grid-cols-2 gap-4 mb-8">
+      <div class="bg-bg-alt rounded-xl border border-border p-5">
+        <h3 class="font-heading font-bold text-text mb-3">Välj Dreame X40 Ultra om du...</h3>
+        <ul class="space-y-2 text-sm text-text-light">
+          <li>+ Vill ha bäst specifikationer per krona (9 990 kr)</li>
+          <li>+ Har många hårda golv med krav på ordentlig moppning</li>
+          <li>+ Prioriterar sugkraft och tekniska funktioner</li>
+          <li>+ Är teknikintresserad och vill ha det senaste</li>
+          <li>+ Inte har specifika husdjursbehov</li>
+        </ul>
+      </div>
+      <div class="bg-bg-alt rounded-xl border border-border p-5">
+        <h3 class="font-heading font-bold text-text mb-3">Välj iRobot Roomba j9+ om du...</h3>
+        <ul class="space-y-2 text-sm text-text-light">
+          <li>+ Prioriterar beprövad driftsäkerhet och lång historia</li>
+          <li>+ Har husdjur och vill ha Dirt Detect-funktionen</li>
+          <li>+ Värdesätter bredare servicenätverk i Sverige</li>
+          <li>+ Har blandade golv och mattor (RetractSwift)</li>
+          <li>+ Är mer trygghetsorienterad som konsument</li>
+        </ul>
+      </div>
+    </div>
+
+    <FAQ items={faqItems} />
+
+    <div class="mt-8 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold mb-3">Fler jämförelser</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/dreame-vs-ecovacs/" class="text-accent hover:underline">Dreame vs Ecovacs 2026 — X40 Ultra vs Deebot X5 Omni</a></li>
+        <li><a href="/roborock-vs-irobot/" class="text-accent hover:underline">Roborock vs iRobot Roomba 2026</a></li>
+        <li><a href="/roborock-vs-dreame/" class="text-accent hover:underline">Roborock vs Dreame 2026</a></li>
+        <li><a href="/ecovacs-vs-irobot/" class="text-accent hover:underline">Ecovacs vs iRobot Roomba 2026</a></li>
+        <li><a href="/dreame-x40-ultra/" class="text-accent hover:underline">Dreame X40 Ultra — fullständig recension</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <StickyCTA
+    href="https://www.komplett.se/dreame-x40-ultra"
+    text="Se bästa pris — Dreame X40 Ultra"
+    productName="Bäst specifikationer per krona 2026"
+  />
+</BaseLayout>
