@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Gardena vs Segway Navimow' },
+];
+
+const faqItems = [
+  {
+    question: 'Är Gardena eller Segway Navimow bäst?',
+    answer: 'Det beror på om du vill ha perimeterkabel eller inte. Gardena SILENO (med kabel) kostar ca 5 990–8 990 kr och ger pålitlig klippning nära kanten med beprövad teknologi. Segway Navimow H500E (kabelbaserad navigation) kostar ca 12 990 kr — trådlös installation men 7 000 kr dyrare. Vill du ha lägst installationskostnad och beprövad teknik: Gardena. Vill du slippa kabelinstallation: Segway.',
+  },
+  {
+    question: 'Behöver Segway Navimow kabel?',
+    answer: 'Segway Navimow H500E är slingFRI — den använder en kombination av EFLS (Exact Fusion Locating System, en visuell positionering) och GPS/GNSS för att navigera utan perimeterkabel. Däremot behöver du placera ut ett antal ankarsensorer. Gardena SILENO kräver klassisk perimeterkabel (kantledning) som grävs ned eller läggs på ytan.',
+  },
+  {
+    question: 'Klipps kanten lika bra utan kabel?',
+    answer: 'Nej — traditionella kabelbaserade robotar (Gardena, Husqvarna) klipps exakt vid kabelns yttre gräns, vilket ger snygg kant om kabeln lagts rätt. Segway Navimow slutar klippa ca 5–15 cm från hinder och kanter (säkerhetsbuffert). Det ger bättre frihet men du kan behöva kanttrimma kantzonerna manuellt. Det är en vanlig trade-off med slingfria robotar.',
+  },
+  {
+    question: 'Hur bra är Segway Navimow vs Gardena i regn?',
+    answer: 'Båda fungerar i lätt regn och har regnssensor som pausar klippningen. Gardena SILENO har IP44-skydd (stänkskydd). Segway Navimow H500E är IPX5-klassad (skyddad mot vattenjetstrålar). Segway är tekniskt sett bättre väderbeständig. Ingen av dem bör köras i kraftigt oväder — gräset bör inte klippas vått.',
+  },
+  {
+    question: 'Kan Segway Navimow hantera kuperad terräng?',
+    answer: 'Segway Navimow H500E klarar lutningar upp till 35%. Gardena SILENO City 500 klarar 25% och Life 750 klarar 35%. För kuperad terräng med branta backar: Gardena Life 750 eller Husqvarna Automower är bättre val. Mammotion LUBA med 4-hjulsdrift är det bästa alternativet för riktigt kuperad terräng.',
+  },
+  {
+    question: 'Är Segway Navimow värt det dubbla priset jämfört med Gardena?',
+    answer: 'Slingfri installation sparar tid och slippar kabelprojektet (ca 2–4 timmar arbete). Segway kostar ca 7 000 kr mer men du slipper kabelinstallation, kabelproblem (fågelattacker, tjälskjutning) och har mer flexibilitet att ändra klippzoner via appen. Om du värderar installationskomfort högt — ja. Om budget är primärt: Gardena ger 80% av bekvämligheten för hälften av priset.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Gardena vs Segway Navimow 2026 – kabel vs kabelläst GPS | Robotjakt"
+  description="Vi jämför Gardena SILENO och Segway Navimow H500E 2026. Perimeterkabel mot slingfri GPS-navigation — pris, installation, kantklippning och vem som vinner."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-30">2026-03-30</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Gardena vs Segway Navimow 2026 — perimeterkabel eller kabelläst GPS?
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Gardena SILENO (ca 5 990 kr) kräver perimeterkabel — beprövad teknologi, lägre pris, exakt kantklippning. Segway Navimow H500E (ca 12 990 kr) är slingfri — ingen kabelinstallation, flexibel navigation via app, men dyrare och sämre kantklippning. Vilket passar din trädgård och budget?
+    </p>
+
+    <!-- Quick verdict -->
+    <div class="grid sm:grid-cols-2 gap-4 mb-10">
+      <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+        <p class="text-xs font-semibold text-green-700 uppercase mb-1">Bäst pris och beprövad teknik</p>
+        <h2 class="font-heading text-xl font-bold text-text mb-2">Gardena SILENO City 500</h2>
+        <p class="text-text-light text-sm mb-4">ca 5 990 kr — kabelbaserad, pålitlig, exakt kantklippning. Bäst för budget-medvetna med plan trädgård.</p>
+        <a
+          href="https://www.gardena.com/se/produkter/robotgrasklippare/"
+          rel="sponsored nofollow noopener"
+          target="_blank"
+          class="block w-full text-center bg-green-700 hover:bg-green-800 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm"
+        >
+          Se Gardena SILENO — ca 5 990 kr
+        </a>
+      </div>
+      <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+        <p class="text-xs font-semibold text-blue-700 uppercase mb-1">Bäst för kabelbaserad installation</p>
+        <h2 class="font-heading text-xl font-bold text-text mb-2">Segway Navimow H500E</h2>
+        <p class="text-text-light text-sm mb-4">ca 12 990 kr — slingfri GPS-navigation, flexibel konfiguration via app. Bäst för den som vill slippa kabelinstallation.</p>
+        <a
+          href="/segway-navimow-h500e/"
+          class="block w-full text-center bg-blue-700 hover:bg-blue-800 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm"
+        >
+          Läs recension — Segway Navimow H500E
+        </a>
+      </div>
+    </div>
+
+    <!-- Comparison table -->
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">Jämförelsetabell</h2>
+    <div class="overflow-x-auto mb-10">
+      <table class="w-full text-sm border-collapse border border-border rounded-xl overflow-hidden">
+        <thead>
+          <tr class="bg-gray-50 border-b border-border">
+            <th class="text-left p-4 font-semibold text-text">Egenskap</th>
+            <th class="text-center p-4 font-semibold text-green-700">Gardena SILENO City 500</th>
+            <th class="text-center p-4 font-semibold text-blue-700">Segway Navimow H500E</th>
+          </tr>
+        </thead>
+        <tbody>
+          {[
+            { label: 'Pris', gardena: 'ca 5 990 kr', segway: 'ca 12 990 kr', winner: 'gardena' },
+            { label: 'Navigationstyp', gardena: 'Perimeterkabel (sling)', segway: 'Slingfri — GPS/EFLS', winner: 'segway' },
+            { label: 'Installation', gardena: 'Kabelgrävning 2–4h', segway: 'Ankarsensorer — enklare', winner: 'segway' },
+            { label: 'Max yta', gardena: '500 m²', segway: '500 m²', winner: 'draw' },
+            { label: 'Max lutning', gardena: '25%', segway: '35%', winner: 'segway' },
+            { label: 'Kantklippning', gardena: 'Utmärkt — kabeln styr', segway: '5–15 cm buffert', winner: 'gardena' },
+            { label: 'Vädertäthet', gardena: 'IP44', segway: 'IPX5', winner: 'segway' },
+            { label: 'App-kontroll', gardena: 'Bluetooth (begränsat)', segway: 'WiFi — full fjärrkontroll', winner: 'segway' },
+            { label: 'Bullernivå', gardena: '57 dB — tyst', segway: 'Ca 60 dB', winner: 'gardena' },
+            { label: 'Flexibilitet', gardena: 'Begränsad (fast kabel)', segway: 'Hög — ändra via app', winner: 'segway' },
+          ].map(row => (
+            <tr class="border-b border-border hover:bg-gray-50">
+              <td class="p-4 font-semibold text-text">{row.label}</td>
+              <td class={`p-4 text-center ${row.winner === 'gardena' ? 'text-green-700 font-bold bg-green-50' : 'text-text-light'}`}>
+                {row.gardena}
+                {row.winner === 'gardena' && <span class="block text-xs font-normal text-green-400 mt-0.5">Vinnare</span>}
+              </td>
+              <td class={`p-4 text-center ${row.winner === 'segway' ? 'text-blue-700 font-bold bg-blue-50' : 'text-text-light'}`}>
+                {row.segway}
+                {row.winner === 'segway' && <span class="block text-xs font-normal text-blue-400 mt-0.5">Vinnare</span>}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Gardena section -->
+    <h2 class="font-heading text-2xl font-bold text-text mb-3">Gardena SILENO City 500 — beprövad och prisvärd</h2>
+    <p class="text-text-light mb-3">
+      Gardena SILENO är den prisvärdaste ingångspunkten till robotgräsklippare. Med ca 5 990 kr och traditionell kabelteknologi (Gardena ägs av Husqvarna AB) är det ett välbeprövat val. Perimeterkabeln styr roboten exakt och ger utmärkt kantklippning nära tomtgränsen. Bullernivån på 57 dB är bland de lägsta i budgetklassen.
+    </p>
+    <p class="text-text-light mb-6">
+      Nackdelen: kabelinstallationen tar 2–4 timmar och kräver planering (vart ska kabeln gå, hur hanteras blomrabatter och träd?). Bluetooth-appen ger begränsad kontroll — du måste vara i närheten. Flexibiliteten att ändra klippzoner är låg — du måste flytta kabeln fysiskt.
+    </p>
+
+    <!-- Segway section -->
+    <h2 class="font-heading text-2xl font-bold text-text mb-3">Segway Navimow H500E — slingfrihetens pris</h2>
+    <p class="text-text-light mb-3">
+      Segway Navimow H500E är slingfri — du placerar ut ett par ankarsensorer och roboten navigerar med EFLS (visuell + GPS/GNSS). Installation tar ca 1 timme utan grävning. Via WiFi-appen kan du styra klippschema, pausa, ändra klippzoner och följa robotens position i realtid från var som helst. Lutningskapaciteten (35%) är bättre än Gardena City 500.
+    </p>
+    <p class="text-text-light mb-6">
+      Priset är ca 12 990 kr — 7 000 kr mer än Gardena. Kantklippningen är sämre: roboten stannar 5–15 cm från hinder och kanter, vilket kan kräva kantklippning manuellt. För de flesta trädgårdar är detta acceptabelt men märkbart jämfört med kabelbaserade alternativ.
+    </p>
+
+    <!-- Who should choose what -->
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">Vem bör välja vad?</h2>
+    <div class="grid sm:grid-cols-2 gap-5 mb-8">
+      <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+        <h3 class="font-heading font-bold text-text mb-3">Välj Gardena SILENO om du...</h3>
+        <ul class="space-y-2 text-sm text-text-light">
+          <li>+ Prioriterar lägst pris (7 000 kr billigare)</li>
+          <li>+ Vill ha utmärkt kantklippning nära huset</li>
+          <li>+ Har plan trädgård utan komplexa hinder</li>
+          <li>+ Trivs med kabelinstallation som engångsprojekt</li>
+          <li>+ Har trädgård med tydliga yttre gränser</li>
+        </ul>
+      </div>
+      <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+        <h3 class="font-heading font-bold text-text mb-3">Välj Segway Navimow om du...</h3>
+        <ul class="space-y-2 text-sm text-text-light">
+          <li>+ Vill undvika kabelinstallation</li>
+          <li>+ Har komplex trädgård med många blomrabatter</li>
+          <li>+ Vill ha full fjärrkontroll via WiFi</li>
+          <li>+ Vill kunna ändra klippzoner utan att flytta kabel</li>
+          <li>+ Budget på ca 13 000 kr är okej</li>
+        </ul>
+      </div>
+    </div>
+
+    <FAQ items={faqItems} />
+
+    <div class="mt-8 p-5 bg-gray-50 rounded-xl border border-border">
+      <h3 class="font-heading font-semibold text-text mb-3">Relaterade guider</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/husqvarna-vs-gardena/" class="text-accent hover:underline">Husqvarna vs Gardena 2026 — premiumsegment jämfört</a></li>
+        <li><a href="/mammotion-vs-segway-navimow/" class="text-accent hover:underline">Mammotion vs Segway Navimow 2026</a></li>
+        <li><a href="/robotgrasklippare-utan-slinga/" class="text-accent hover:underline">Bästa robotgräsklippare utan slinga 2026</a></li>
+        <li><a href="/robotgrasklippare/" class="text-accent hover:underline">Bästa robotgräsklippare 2026 — alla märken jämförda</a></li>
+        <li><a href="/segway-navimow-h500e/" class="text-accent hover:underline">Segway Navimow H500E recension 2026</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <StickyCTA
+    text="Se Gardena SILENO City 500"
+    url="https://www.gardena.com/se/produkter/robotgrasklippare/"
+  />
+</BaseLayout>
