@@ -1,0 +1,224 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Mammotion vs Gardena' },
+];
+
+const faqItems = [
+  {
+    question: 'Är Mammotion LUBA bättre än Gardena SILENO?',
+    answer: 'Mammotion LUBA 2 AWO 1000H är tekniskt överlägsen: slingfri GPS, 4-hjulsdrift och AI-kamera till skillnad från Gardenass kabelberoende 2-hjulsdrivna system. Men Gardena SILENO Life 750 kostar ca 6 990 kr mot Mammotions 17 990 kr — en prisskillnad på 11 000 kr. För plana, enkla trädgårdar under 750 m² ger Gardena utmärkt resultat till ett bråk av priset. För kuperade eller komplexa trädgårdar motiverar Mammotion sin merkostnad.',
+  },
+  {
+    question: 'Behöver Mammotion LUBA en kabel i marken?',
+    answer: 'Nej — det är den stora skillnaden. Mammotion LUBA 2 AWO 1000H är helt slingfri och använder RTK-GPS för navigering. Gardena SILENO kräver en perimeterkabel som grävs ned runt trädgården (ingår men kräver ca 2–4 timmars installation). Om du vill undvika kabeldragning och grävning är Mammotion det självklara valet.',
+  },
+  {
+    question: 'Klarar Gardena SILENO backar och kuperad terräng?',
+    answer: 'Gardena SILENO Life 750 klarar lutningar upp till 35% och City 500 upp till 25%. Det räcker för de flesta svenska trädgårdar med normala sluttningar. Mammotion LUBA 2 AWO 1000H med sin 4-hjulsdrift klarar upp till 75% lutning. Har du branta backar, snöig eller fuktig mark — välj Mammotion. Har du en normal kuperingsgrad: Gardena räcker utmärkt.',
+  },
+  {
+    question: 'Vad kostar Mammotion LUBA vs Gardena SILENO?',
+    answer: 'Gardena SILENO City 500 kostar ca 3 990 kr och SILENO Life 750 ca 6 990 kr. Mammotion LUBA 2 AWO 1000H kostar ca 17 990 kr. Det är en prisskillnad på 11 000–14 000 kr. Gardena erbjuder robotgräsklippning till ett bråk av Mammotions pris — för enkla trädgårdar är det svårt att motivera skillnaden. Däremot har Mammotion noll kabelkostnader och noll kabelproblem över tid.',
+  },
+  {
+    question: 'Kan Mammotion LUBA och Gardena SILENO klippa i regn?',
+    answer: 'Gardena SILENO undviker regn automatiskt via regngivaren och återvänder till laddstationen. Mammotion LUBA 2 AWO 1000H fungerar i lätt regn tack vare sin robusta konstruktion och 4WD, men bör undvika klippning vid kraftigt regn för bästa klippresultat. Båda hanterar fuktigt gräs, men ingen av dem är konstruerade för klippning i ösregn.',
+  },
+  {
+    question: 'Är Gardena SILENO svårt att installera?',
+    answer: 'Gardena SILENO är relativt enkel att installera jämfört med mer avancerade robotar — men kräver att du lägger ner perimeterkabeln längs trädgårdens kanter och runt hinder. Räkna med 2–4 timmar för en normal trädgård. Mammotion LUBA kräver RTK-antennmontering och digital kartkonfiguration i appen — ungefär lika lång tid, men inget grävande.',
+  },
+];
+---
+
+<BaseLayout
+  title="Mammotion LUBA vs Gardena SILENO 2026 — slingfri mot traditionell | Robotjakt"
+  description="Vi jämför Mammotion LUBA 2 AWO 1000H och Gardena SILENO. Slingfri GPS-robot mot kabelbunden klassiker — 17 990 kr vs 6 990 kr. Vilket är rätt val 2026?"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-30">2026-03-30</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Mammotion LUBA vs Gardena SILENO 2026 — slingfri GPS mot kabelbunden klassiker
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Mammotion LUBA representerar den nya generationen slingfria GPS-robotar. Gardena SILENO är den prisvärdaste kabelbundna roboten på svenska marknaden. Prisskillnaden är 11 000 kr — men skillnaderna handlar om mer än pengar.
+    </p>
+
+    <h2 class="font-heading text-xl font-bold mt-6 mb-4">Snabbjämförelse</h2>
+    <div class="overflow-x-auto mb-8">
+      <table class="w-full text-sm border-collapse">
+        <thead>
+          <tr class="bg-primary text-white">
+            <th class="p-3 text-left font-semibold">Egenskap</th>
+            <th class="p-3 text-left font-semibold">Mammotion LUBA 2 AWO 1000H</th>
+            <th class="p-3 text-left font-semibold">Gardena SILENO Life 750</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">Pris</td>
+            <td class="p-3 text-text-light">ca 17 990 kr</td>
+            <td class="p-3 text-green-700 font-semibold">ca 6 990 kr</td>
+          </tr>
+          <tr class="bg-bg-alt/50 border-b border-border">
+            <td class="p-3 font-medium text-text">Slinga krävs</td>
+            <td class="p-3 text-green-700 font-semibold">Nej — GPS-baserad</td>
+            <td class="p-3 text-text-light">Ja — perimeterkabel</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">Navigeringsteknik</td>
+            <td class="p-3 text-green-700 font-semibold">RTK-GPS + AI-kamera</td>
+            <td class="p-3 text-text-light">Kabelbunden + slumpmässig</td>
+          </tr>
+          <tr class="bg-bg-alt/50 border-b border-border">
+            <td class="p-3 font-medium text-text">Drivning</td>
+            <td class="p-3 text-green-700 font-semibold">4-hjulsdrift (AWO)</td>
+            <td class="p-3 text-text-light">2-hjulsdrift</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">Max lutning</td>
+            <td class="p-3 text-green-700 font-semibold">75%</td>
+            <td class="p-3 text-text-light">35%</td>
+          </tr>
+          <tr class="bg-bg-alt/50 border-b border-border">
+            <td class="p-3 font-medium text-text">Area</td>
+            <td class="p-3 text-green-700 font-semibold">upp till 2 000 m²</td>
+            <td class="p-3 text-text-light">upp till 750 m²</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">AI-hinderdetektering</td>
+            <td class="p-3 text-green-700 font-semibold">Ja (kamera)</td>
+            <td class="p-3 text-text-light">Nej (kollisionssensorer)</td>
+          </tr>
+          <tr class="bg-bg-alt/50 border-b border-border">
+            <td class="p-3 font-medium text-text">Installation</td>
+            <td class="p-3 text-text-light">RTK-antenn + app-konfiguration</td>
+            <td class="p-3 text-text-light">Kabeldragning + grävning</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">Klippbredd</td>
+            <td class="p-3 text-green-700 font-semibold">26 cm</td>
+            <td class="p-3 text-text-light">18 cm</td>
+          </tr>
+          <tr class="bg-bg-alt/50">
+            <td class="p-3 font-medium text-text">Vinner för</td>
+            <td class="p-3 text-green-700 font-semibold">Kuperad terräng, stora ytor, ingen kabel</td>
+            <td class="p-3 text-text-light">Pris, enkelt, liten plan trädgård</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="font-heading text-xl font-bold mt-8 mb-3">Den avgörande skillnaden: kabel eller inte?</h2>
+    <p class="text-text-light mb-4">
+      Gardena SILENO fungerar med en perimeterkabel som markerar gräsmattans gränser. Kabeln grävs ned 5–10 cm i marken längs kanten på din tomt och runt eventuella hinder. Installation tar 2–4 timmar för en normal trädgård. Roboten orienterar sig inuti denna kabel och klipper slumpmässigt.
+    </p>
+    <p class="text-text-light mb-6">
+      Mammotion LUBA 2 AWO 1000H kräver ingen kabel. En RTK-antenn monteras på ett fast ställe (husvägg, stolpe) och roboten navigerar via centimeterprecis GPS. Du ritar upp zonerna i appen — inga spader, ingen kabel, ingen risk för att råka klippa av kabeln med gräsklipparen om några år.
+    </p>
+
+    <h2 class="font-heading text-xl font-bold mt-8 mb-3">Pris: Gardena är 11 000 kr billigare</h2>
+    <p class="text-text-light mb-4">
+      Gardena SILENO Life 750 kostar ca 6 990 kr och inkluderar kabeln. Mammotion LUBA 2 AWO 1000H kostar ca 17 990 kr. Det är en prisskillnad som är svår att ignorera. För en plan, enkel trädgård under 750 m² är Gardena utan tvekan det prisvärdaste valet.
+    </p>
+    <p class="text-text-light mb-6">
+      Men räkna även in de dolda kostnaderna: Gardena kan behöva professionell installation (2 000–4 000 kr) vid komplexa tomter, och om kabeln skadas eller en ny roterande zon behöver läggas till tillkommer tid och kostnad. Mammotion har inga sådana kostnader efter initial setup.
+    </p>
+
+    <h2 class="font-heading text-xl font-bold mt-8 mb-3">Terräng: Mammotion LUBA 2 AWO vinner klart</h2>
+    <p class="text-text-light mb-4">
+      Mammotion LUBAs "AWO" (All Wheel Operation) innebär att alla fyra hjul är drivande. Det ger överlägsen framkomlighet i kuperad terräng, blöt gräsmatta, kanterna vid stenblock och ojämna ytor. Maxlutning 75% är bäst i klassen bland slingfria robotar.
+    </p>
+    <p class="text-text-light mb-6">
+      Gardena SILENO Life 750 klarar 35% lutning — fullt tillräckligt för de flesta vanliga svenska villaträdgårdar. Men vid branta backar, lerig mark på hösten eller snö på våren är Gardenans 2-hjulsdrift tydligt underlägsna.
+    </p>
+
+    <h2 class="font-heading text-xl font-bold mt-8 mb-3">Klippkvalitet och yta</h2>
+    <p class="text-text-light mb-6">
+      Mammotion LUBA 2 AWO har 26 cm klippbredd mot Gardenans 18 cm — en skillnad som innebär att LUBA klipper en given yta snabbare. LUBA täcker dessutom upp till 2 000 m² mot Gardenans 750 m². För trädgårdar mellan 750–2 000 m² är Mammotion det enda alternativet av de två.
+    </p>
+
+    <div class="grid sm:grid-cols-2 gap-6 mb-8">
+      <a href="/mammotion-luba-2-awo-1000h/" class="block bg-white rounded-xl border border-border p-5 hover:border-accent hover:shadow-md transition-all group">
+        <span class="text-xs font-semibold text-green-700 bg-green-50 px-2 py-0.5 rounded mb-2 inline-block">Bäst utan kabel</span>
+        <h3 class="font-heading text-lg font-bold text-text group-hover:text-accent mb-1">Mammotion LUBA 2 AWO 1000H</h3>
+        <p class="text-2xl font-bold text-cta mb-2">ca 17 990 kr</p>
+        <p class="text-sm text-text-light">RTK-GPS, 4-hjulsdrift, 75% lutning, 2 000 m². Ingen kabel krävs.</p>
+        <span class="inline-block mt-3 text-sm font-semibold text-accent">Läs recension →</span>
+      </a>
+      <a href="/gardena-sileno-life-750/" class="block bg-white rounded-xl border border-border p-5 hover:border-accent hover:shadow-md transition-all group">
+        <span class="text-xs font-semibold text-accent bg-accent/10 px-2 py-0.5 rounded mb-2 inline-block">Bäst pris/prestanda</span>
+        <h3 class="font-heading text-lg font-bold text-text group-hover:text-accent mb-1">Gardena SILENO Life 750</h3>
+        <p class="text-2xl font-bold text-cta mb-2">ca 6 990 kr</p>
+        <p class="text-sm text-text-light">Kabelbunden, 750 m², 35% lutning. Bäst för plan trädgård med budget.</p>
+        <span class="inline-block mt-3 text-sm font-semibold text-accent">Läs recension →</span>
+      </a>
+    </div>
+
+    <h2 class="font-heading text-xl font-bold mt-8 mb-3">Vem bör välja vad?</h2>
+    <div class="grid sm:grid-cols-2 gap-4 mb-8">
+      <div class="bg-bg-alt rounded-xl border border-border p-5">
+        <h3 class="font-heading font-bold text-text mb-3">Välj Mammotion LUBA 2 AWO om du...</h3>
+        <ul class="space-y-2 text-sm text-text-light">
+          <li>+ Vill slippa gräva ned kabel i trädgården</li>
+          <li>+ Har kuperad terräng eller branta backar (över 35%)</li>
+          <li>+ Har en tomt mellan 750–2 000 m²</li>
+          <li>+ Har komplexa hinder eller trånga passager</li>
+          <li>+ Vill ha den senaste GPS-tekniken med AI-kamera</li>
+        </ul>
+      </div>
+      <div class="bg-bg-alt rounded-xl border border-border p-5">
+        <h3 class="font-heading font-bold text-text mb-3">Välj Gardena SILENO Life 750 om du...</h3>
+        <ul class="space-y-2 text-sm text-text-light">
+          <li>+ Har en plan, enkel trädgård under 750 m²</li>
+          <li>+ Vill ha en beprövad och prisvärd lösning</li>
+          <li>+ Budgeten är under 10 000 kr</li>
+          <li>+ Trädgårdsformen är enkel utan komplexa hinder</li>
+          <li>+ Är nöjd med kabeldragning en gång för alla</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-6 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/mammotion-vs-segway-navimow/" class="text-accent hover:underline">Mammotion LUBA vs Segway Navimow 2026 — slingfria GPS-robotar</a></li>
+        <li><a href="/husqvarna-vs-mammotion/" class="text-accent hover:underline">Husqvarna vs Mammotion 2026 — traditionell slinga mot GPS</a></li>
+        <li><a href="/husqvarna-vs-gardena/" class="text-accent hover:underline">Husqvarna vs Gardena — premium mot budget inom samma företag</a></li>
+        <li><a href="/robotgrasklippare-utan-slinga/" class="text-accent hover:underline">Bästa robotgräsklippare utan slinga 2026</a></li>
+        <li><a href="/robotgrasklippare/" class="text-accent hover:underline">Bästa robotgräsklippare 2026 — komplett topplista</a></li>
+      </ul>
+    </div>
+
+    <FAQ items={faqItems} />
+  </div>
+
+  <StickyCTA
+    url="/mammotion-luba-2-awo-1000h/"
+    text="Se pris på Mammotion LUBA 2 AWO 1000H"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer,
+      },
+    })),
+  })} />
+</BaseLayout>
