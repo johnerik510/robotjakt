@@ -1,0 +1,194 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/' },
+  { label: 'Eufy vs Ecovacs' },
+];
+
+const faqItems = [
+  {
+    question: 'Vilken är bäst — Eufy eller Ecovacs?',
+    answer: 'Eufy X10 Pro Omni och Ecovacs Deebot X5 Omni är båda utmärkta robotdammsugare i premiumsegmentet — men de passar olika behov. Ecovacs har starkare moppfunktion med OZMO Turbo och bättre hinderdetektering (AI-kamera i toppmodellerna). Eufy är billigare, enklare att använda och har starkare sug (8 000 Pa). Har du en mix av mattor och hårdgolv: Ecovacs. Prioriterar du sug och prisvärdhet: Eufy.',
+  },
+  {
+    question: 'Vilken har bättre moppfunktion — Eufy eller Ecovacs?',
+    answer: 'Ecovacs vinner på moppning. Deebot X5 Omni och X8 Pro Omni har OZMO Turbo-moppning med roterande moppskivor och automatisk mopplifting vid mattor. Eufy X10 Pro Omni har moppfunktion men saknar roterende moppskivor och automatisk lyftning är mer begränsad. För hem med blandat golv (mattor + parkettgolv): välj Ecovacs.',
+  },
+  {
+    question: 'Vilken har starkare sug — Eufy eller Ecovacs?',
+    answer: 'Eufy vinner på sugstyrka. Eufy X10 Pro Omni har 8 000 Pa sugstyrkia. Ecovacs Deebot X5 Omni har 8 000 Pa (likvärdigt) men äldre Ecovacs-modeller (T20 Omni) har 6 000 Pa. I praktiken är sugen i 8 000 Pa-klassen likvärdiga — skillnaden syns mer i djuppälsmoppar och tjocka mattor.',
+  },
+  {
+    question: 'Är Ecovacs bättre för husdjursägare?',
+    answer: 'Ecovacs Deebot T20 Omni och X8 Pro Omni har AI-hinderdetektering som identifierar och undviker husdjursavföring — viktigt för de med hundar. Eufy X10 Pro Omni saknar denna specifika funktion och kan köra in i avföring. Har du hund: välj Ecovacs för säkrare drift.',
+  },
+  {
+    question: 'Vad kostar Eufy vs Ecovacs?',
+    answer: 'Eufy X10 Pro Omni: ca 5 990–7 990 kr. Ecovacs Deebot T20 Omni: ca 5 990–6 990 kr. Ecovacs Deebot X5 Omni: ca 7 990–9 990 kr. Ecovacs X8 Pro Omni: ca 9 990–12 990 kr. Eufy är generellt billigare eller jämförbart med Ecovacs i de flesta segment.',
+  },
+  {
+    question: 'Har Eufy eller Ecovacs bättre navigering?',
+    answer: 'Ecovacs vinner på navigering i avancerade hem. Ecovacs-toppmodeller (X5 Omni, X8 Pro) kombinerar LiDAR med AI-kamera för bättre hinderdetektering och kartläggning. Eufy X10 Pro Omni använder LiDAR men har enklare hinderdetektering. I normala hem utan många lösa föremål: skillnaden är liten. I komplexa hem med trappor, möbler och husdjur: Ecovacs.',
+  },
+];
+---
+
+<BaseLayout
+  title="Eufy vs Ecovacs 2026 — vilket märke vinner? | Robotjakt"
+  description="Vi jämför Eufy och Ecovacs robotdammsugare 2026. Moppning, navigering, hinderdetektering och pris — komplett märkesjämförelse med modell-för-modell-genomgång."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-04-03">2026-04-03</time></p>
+
+    <header class="mb-8">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Eufy vs Ecovacs 2026</h1>
+      <p class="text-gray-600 text-lg max-w-2xl">
+        Eufy är budgetvänligare med stark sugstyrkia och enkelt gränssnitt. Ecovacs är mer avancerat med bättre moppning och husdjursdetektering. Vi jämför sida vid sida.
+      </p>
+    </header>
+
+    <!-- Quick verdict -->
+    <div class="grid sm:grid-cols-2 gap-4 mb-10">
+      <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+        <p class="text-xs font-semibold text-blue-700 uppercase mb-1">Bäst pris och enkelt bruk</p>
+        <h2 class="text-xl font-bold text-gray-900 mb-2">Eufy X10 Pro Omni</h2>
+        <p class="text-sm text-gray-600 mb-4">8 000 Pa, LiDAR, automatisk tömning, ca 5 990 kr. Enkelt, pålitligt och prisvärt. Bäst för hem utan husdjur.</p>
+        <a href="https://www.eufylife.com" target="_blank" rel="noopener noreferrer nofollow" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold py-2.5 px-4 rounded-lg text-center transition-colors">Se Eufy X10 Pro Omni</a>
+      </div>
+      <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+        <p class="text-xs font-semibold text-green-700 uppercase mb-1">Bäst moppning och husdjursskydd</p>
+        <h2 class="text-xl font-bold text-gray-900 mb-2">Ecovacs Deebot X5 Omni</h2>
+        <p class="text-sm text-gray-600 mb-4">OZMO Turbo-moppning, AI-hinderdetektering, automatisk lyftning vid mattor. Bäst för husdjursägare och hem med blandat golv.</p>
+        <a href="https://www.ecovacs.com" target="_blank" rel="noopener noreferrer nofollow" class="block w-full bg-green-600 hover:bg-green-700 text-white text-sm font-semibold py-2.5 px-4 rounded-lg text-center transition-colors">Se Ecovacs Deebot X5 Omni</a>
+      </div>
+    </div>
+
+    <!-- Comparison table -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold text-gray-900 mb-5">Jämförelsetabell</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full border border-gray-200 rounded-xl overflow-hidden text-sm">
+          <thead>
+            <tr class="bg-gray-50 border-b border-gray-200">
+              <th class="text-left p-4 font-semibold text-gray-700">Egenskap</th>
+              <th class="text-center p-4 font-semibold text-blue-700">Eufy X10 Pro Omni</th>
+              <th class="text-center p-4 font-semibold text-green-700">Ecovacs Deebot X5 Omni</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { label: 'Pris', eufy: 'ca 5 990–7 990 kr', ecovacs: 'ca 7 990–9 990 kr', winner: 'eufy' },
+              { label: 'Sugstyrka', eufy: '8 000 Pa', ecovacs: '8 000 Pa', winner: 'draw' },
+              { label: 'Navigering', eufy: 'LiDAR', ecovacs: 'LiDAR + AI-kamera', winner: 'ecovacs' },
+              { label: 'Moppfunktion', eufy: 'Standard', ecovacs: 'OZMO Turbo (roterande)', winner: 'ecovacs' },
+              { label: 'Mopplifting vid mattor', eufy: 'Begränsad', ecovacs: 'Automatisk lyftning', winner: 'ecovacs' },
+              { label: 'Husdjursdetektering', eufy: 'Nej', ecovacs: 'Ja (AI-kamera)', winner: 'ecovacs' },
+              { label: 'Basstation', eufy: 'Ja — tömning, påfyllning, tvättning', ecovacs: 'Ja — OMNI Station', winner: 'draw' },
+              { label: 'Bullernivå', eufy: 'ca 68 dB', ecovacs: 'ca 66 dB', winner: 'ecovacs' },
+              { label: 'Batteritid', eufy: 'ca 180 min', ecovacs: 'ca 180 min', winner: 'draw' },
+              { label: 'App', eufy: 'EufyHome', ecovacs: 'Ecovacs Home', winner: 'draw' },
+              { label: 'Bäst för', eufy: 'Enkla hem, hård prissättning', ecovacs: 'Husdjursägare, blandat golv', winner: 'draw' },
+            ].map((row, i) => (
+              <tr class={`border-b border-gray-100 ${i % 2 === 0 ? '' : 'bg-gray-50/50'}`}>
+                <td class="p-4 font-semibold text-gray-900">{row.label}</td>
+                <td class={`p-4 text-center ${row.winner === 'eufy' ? 'text-blue-700 font-bold bg-blue-50' : 'text-gray-600'}`}>
+                  {row.eufy}
+                  {row.winner === 'eufy' && <span class="block text-xs font-normal text-blue-400 mt-0.5">Vinnare</span>}
+                </td>
+                <td class={`p-4 text-center ${row.winner === 'ecovacs' ? 'text-green-700 font-bold bg-green-50' : 'text-gray-600'}`}>
+                  {row.ecovacs}
+                  {row.winner === 'ecovacs' && <span class="block text-xs font-normal text-green-400 mt-0.5">Vinnare</span>}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">Moppning: Ecovacs vinner tydligt</h2>
+      <p class="text-gray-600 mb-4">
+        Ecovacs OZMO Turbo-teknik med roterande moppskivor applicerar vatten med tryck mot golvet — en cirkulär mopprörelse som är effektivare mot intorkad smuts än Eufys standardmoppning. Deebot X5 Omni lyfter dessutom moppmodulen automatiskt när den detekterar mattor, vilket förhindrar att mattor blöts ned.
+      </p>
+      <p class="text-gray-600 mb-4">
+        Eufy X10 Pro Omni har moppfunktion men standardmoppning utan roterande moppskivor. Vid övergången matta/hårdgolv är lyfthöjden mer begränsad. Har du ett hem med en mix av mattor och parkett/klinker: Ecovacs är det klart bättre valet.
+      </p>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">Husdjursägare: Ecovacs med AI-kamera</h2>
+      <p class="text-gray-600 mb-4">
+        Ecovacs Deebot X5 Omni och X8 Pro Omni har AI-kameror som identifierar och undviker husdjursavföring, kablar, strumpor och andra hinder på golvet. Funktionen kallas AIVI 3D och är en av branschens bättre implementations av AI-hinderdetektering.
+      </p>
+      <p class="text-gray-600">
+        Eufy X10 Pro Omni saknar AI-hinderdetektering av den typen. Om du har hund är risken att Eufy kör in i avföring och sprider det i hemmet. Med Ecovacs är den risken drastiskt lägre. Husdjursägare: välj Ecovacs.
+      </p>
+    </section>
+
+    <!-- Who should choose -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold text-gray-900 mb-5">Vem bör välja vad?</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+          <h3 class="font-bold text-blue-800 mb-3">Välj Eufy om du...</h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Prioriterar pris och vill ha bra prestanda för pengarna</span></li>
+            <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Inte har husdjur och har enkla golvytor</span></li>
+            <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Vill ha en enkel, pålitlig robot utan för många avancerade inställningar</span></li>
+            <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Primärt dammsugning — moppning är sekundärt</span></li>
+          </ul>
+        </div>
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <h3 class="font-bold text-green-800 mb-3">Välj Ecovacs om du...</h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex gap-2"><span class="text-green-600 font-bold">+</span><span>Har hund eller katt och vill ha AI-husdjursdetektering</span></li>
+            <li class="flex gap-2"><span class="text-green-600 font-bold">+</span><span>Har ett hem med mix av mattor och hårdgolv som behöver moppas</span></li>
+            <li class="flex gap-2"><span class="text-green-600 font-bold">+</span><span>Vill ha bättre moppkvalitet med OZMO Turbo-roterande moppskivor</span></li>
+            <li class="flex gap-2"><span class="text-green-600 font-bold">+</span><span>Är beredd att betala mer för avancerade navigeringsfunktioner</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related guides -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold text-gray-900 mb-5">Relaterade guider</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/eufy-vs-roborock/" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+          <p class="font-bold text-gray-900">Eufy vs Roborock 2026</p>
+          <p class="text-sm text-gray-600">Eufy vs marknadsledarens robotar</p>
+        </a>
+        <a href="/dreame-vs-ecovacs/" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+          <p class="font-bold text-gray-900">Dreame vs Ecovacs 2026</p>
+          <p class="text-sm text-gray-600">Kinesiska utmanare jämförda</p>
+        </a>
+        <a href="/roborock-vs-ecovacs/" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+          <p class="font-bold text-gray-900">Roborock vs Ecovacs 2026</p>
+          <p class="text-sm text-gray-600">Marknadens två toppval</p>
+        </a>
+        <a href="/" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+          <p class="font-bold text-gray-900">Bästa robotdammsugare 2026</p>
+          <p class="text-sm text-gray-600">Komplett topplista</p>
+        </a>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+  </div>
+
+  <StickyCTA
+    product="Ecovacs Deebot X5 Omni"
+    store="Ecovacs"
+    price="ca 7 990 kr"
+    url="https://www.ecovacs.com"
+  />
+</BaseLayout>
