@@ -125,19 +125,40 @@ const faqItems = [
   title="Bästa Robotdammsugare 2026 — Dreame och Roborock testade | Robotjakt"
   description="Vi testar och jämför de bästa robotdammsugarna 2026 för den svenska marknaden. Dreame X40 Ultra är vår testvinnare. Se priser, recensioner och jämförelser."
 >
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-    <p class="text-xs text-text-lighter mb-2">Senast uppdaterad: 2026-03-29</p>
+  <!-- Hero -->
+  <section class="text-white relative overflow-hidden flex flex-col justify-center py-8 md:py-10">
+    <img
+      src="/images/hero-robotjakt.webp"
+      alt="Robotdammsugare — Dreame och Roborock"
+      class="absolute inset-0 w-full h-full object-cover -z-10"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-primary/85 to-primary/60 -z-10" aria-hidden="true"></div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full">
+      <p class="text-xs text-white/50 mb-2">Senast uppdaterad: 2026-03-29</p>
+      <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3 leading-tight">
+        Bästa robotdammsugare 2026 — Dreame och Roborock testade
+      </h1>
+      <p class="text-white/80 mb-5 max-w-2xl">
+        Vi har testat de populäraste robotdammsugarna på den svenska marknaden. Dreame och Roborock dominerar 2026 — här är vår rangordning med fullständiga recensioner.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="#topplista" class="inline-flex items-center justify-center bg-accent hover:bg-accent-dark text-white font-bold py-3 px-7 rounded-xl transition-colors text-base shadow-lg">
+          Se topplistan
+        </a>
+        <a href="/dreame-guide/" class="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 text-white font-semibold py-3 px-7 rounded-xl transition-colors text-base border border-white/20">
+          Märkesguider
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3">
-      Bästa robotdammsugare 2026 — Dreame och Roborock testad
-    </h1>
-    <p class="text-text-light mb-6 max-w-2xl">
-      Vi har testat de populäraste robotdammsugarna på den svenska marknaden. Dreame och Roborock dominerar 2026 — här är vår rangordning med fullständiga recensioner.
-    </p>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <AffiliateDisclaimer />
 
     <!-- Topplista robotdammsugare -->
-    <h2 class="font-heading text-2xl font-bold text-text mb-2">Bästa robotdammsugare 2026 — topplista</h2>
+    <h2 id="topplista" class="font-heading text-2xl font-bold text-text mb-2">Bästa robotdammsugare 2026 — topplista</h2>
     <p class="text-text-light mb-5 text-sm">Vi har testat {products.length} robotdammsugare och rankat dem efter sugkraft, navigering, moppfunktion och prisvärdhet.</p>
     <div class="space-y-5 mb-12">
       {products.map((p) => (
