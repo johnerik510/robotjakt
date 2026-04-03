@@ -1,0 +1,207 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/' },
+  { label: 'Eufy vs Roborock' },
+];
+
+const faqItems = [
+  {
+    question: 'Vilken är bäst — Eufy eller Roborock?',
+    answer: 'Roborock är överlag bättre i premiumsegmentet — bättre LiDAR-navigering, vassare moppfunktion och mer avancerade basstationer. Eufy är det bättre valet för budgetmedvetna som vill ha en pålitlig, enkel robotdammsugare utan att betala för avancerade funktioner de inte behöver. Eufy X10 Pro Omni och Roborock S8 är båda utmärkta i sitt prissegment (ca 5 990 kr) — Roborock vinner på navigering, Eufy på pris och enkelhet.',
+  },
+  {
+    question: 'Vilken har bättre navigering — Eufy eller Roborock?',
+    answer: 'Roborock vinner på navigering. Deras LiDAR-system med ReactiveAI-hinderdetektering är mer avancerat — särskilt Roborock S8 MaxV Ultra:s husdjursavföringsskydd är bäst i test. Eufy X10 Pro Omni använder LiDAR men har inte lika sofistikerat hinderundvikande. I rena hem utan djur eller mycket lösa föremål: skillnaden är liten. I komplexa hem: Roborock.',
+  },
+  {
+    question: 'Är Eufy eller Roborock bäst för moppning?',
+    answer: 'Roborock är bättre för moppning. Roborock S8 Pro Ultra och S8 MaxV Ultra har VibraRise-moppning som lyfter moppmodulen automatiskt vid mattor och Sonic-vibrerande moppteknik. Eufy X10 Pro Omni har moppfunktion men saknar VibraRise-lösningen. För hem med en mix av mattor och hårdgolv: Roborock.',
+  },
+  {
+    question: 'Behöver man en basstation med Eufy och Roborock?',
+    answer: 'Nej — men en basstation (All-in-One-station) gör underhållet nästan helt automatiskt. Den tömmer dammbehållaren, fyller på vatten, tvättar och torkar moppduken. Eufy X10 Pro Omni och Roborock S8 Pro Ultra levereras med dessa basstationer. Grundmodellerna (Eufy 25C, Roborock Q5) har enklare laddstationer utan dessa funktioner.',
+  },
+  {
+    question: 'Vilket märke har bäst app — Eufy eller Roborock?',
+    answer: 'Båda har väldesignade appar. Roborock-appen är något mer funktionsrik med bättre karthantering och zonstyrning. Eufy-appen (EufyHome) är mer lättanvänd men kan sakna avancerade inställningar. Varken Eufy eller Roborock har svenska appar — båda är på engelska. Roborock-appen är generellt mer polerad för avancerade användare.',
+  },
+  {
+    question: 'Vilken är billigast — Eufy eller Roborock?',
+    answer: 'Eufy börjar lägre i budgetsegmentet (från ca 1 990 kr för Eufy 25C). Roborock har modeller från ca 2 990 kr (Q5). I premiumsegmentet är de jämförbara: Eufy X10 Pro Omni (ca 5 990 kr) vs Roborock S8 (ca 5 990 kr). Roborock S8 Pro Ultra (ca 12 990 kr) är dyrare än Eufys dyraste modell.',
+  },
+];
+---
+
+<BaseLayout
+  title="Eufy vs Roborock 2026 — vilket märke vinner? | Robotjakt"
+  description="Vi jämför Eufy och Roborock robotdammsugare 2026. Navigering, moppning, pris och basstationer — fullständig märkesjämförelse med modell-för-modell-genomgång."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-04-03">2026-04-03</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Eufy vs Roborock 2026 — vilket märke vinner?
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Eufy (Anker) och Roborock är två av de mest sålda robotdammsugarmärkena i Sverige. Eufy lockar med prisvärde och enkelhet. Roborock imponerar med avancerad LiDAR-navigering och marknadens bästa moppfunktion. Här är hela jämförelsen.
+    </p>
+
+    <h2 class="font-heading text-xl font-bold mt-6 mb-4">Märkesöversikt — Eufy vs Roborock</h2>
+    <div class="grid sm:grid-cols-2 gap-4 mb-8">
+      <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+        <h3 class="font-heading font-bold text-blue-800 mb-2">Eufy (Anker)</h3>
+        <p class="text-sm text-text-light mb-3">Kinesiskt märke under Anker Innovations. Stark i budget- och mellanklass. Bäst för: enkelt underhåll, prisvärt, inga abonnemang.</p>
+        <ul class="text-sm text-text-light space-y-1">
+          <li>Bäst modell 2026: Eufy X10 Pro Omni (ca 5 990 kr)</li>
+          <li>Budget-val: Eufy G40+ (ca 2 490 kr)</li>
+          <li>Nyckelstyrkor: pris, enkelhet, tyst drift</li>
+        </ul>
+      </div>
+      <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+        <h3 class="font-heading font-bold text-green-800 mb-2">Roborock</h3>
+        <p class="text-sm text-text-light mb-3">Kinesiskt märke, grundat 2014. Premiumfokus med avancerad teknik. Bäst för: djup moppning, husdjurshem, komplexa hem.</p>
+        <ul class="text-sm text-text-light space-y-1">
+          <li>Bäst modell 2026: S8 MaxV Ultra (ca 12 990 kr)</li>
+          <li>Budget-val: Q5+ (ca 2 990 kr)</li>
+          <li>Nyckelstyrkor: navigering, moppning, app-funktion</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="font-heading text-xl font-bold mt-8 mb-4">Snabbjämförelse — flaggskeppsmodeller</h2>
+    <div class="overflow-x-auto mb-8">
+      <table class="w-full text-sm border-collapse">
+        <thead>
+          <tr class="bg-primary text-white">
+            <th class="p-3 text-left font-semibold">Egenskap</th>
+            <th class="p-3 text-left font-semibold">Eufy X10 Pro Omni</th>
+            <th class="p-3 text-left font-semibold">Roborock S8 Pro Ultra</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">Pris</td>
+            <td class="p-3 text-green-700 font-semibold">ca 5 990 kr</td>
+            <td class="p-3 text-text-light">ca 12 990 kr</td>
+          </tr>
+          <tr class="bg-bg-alt/50 border-b border-border">
+            <td class="p-3 font-medium text-text">Sugkraft</td>
+            <td class="p-3 text-text-light">8 000 Pa</td>
+            <td class="p-3 text-green-700 font-semibold">6 000 Pa (FlexiArm)</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">Navigering</td>
+            <td class="p-3 text-text-light">LiDAR</td>
+            <td class="p-3 text-green-700 font-semibold">LiDAR + ReactiveAI 2.0</td>
+          </tr>
+          <tr class="bg-bg-alt/50 border-b border-border">
+            <td class="p-3 font-medium text-text">Moppfunktion</td>
+            <td class="p-3 text-text-light">Roterande mopp</td>
+            <td class="p-3 text-green-700 font-semibold">VibraRise Sonic + lyftning</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">Moppytorkning</td>
+            <td class="p-3 text-text-light">Ja (standard)</td>
+            <td class="p-3 text-green-700 font-semibold">Ja — varmluftstorkning</td>
+          </tr>
+          <tr class="bg-bg-alt/50 border-b border-border">
+            <td class="p-3 font-medium text-text">Autotömning</td>
+            <td class="p-3 text-green-700 font-semibold">Ja (ingår)</td>
+            <td class="p-3 text-green-700 font-semibold">Ja (ingår)</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">Husdjursavföringsskydd</td>
+            <td class="p-3 text-text-light">Begränsat</td>
+            <td class="p-3 text-green-700 font-semibold">ReactiveAI — bäst i test</td>
+          </tr>
+          <tr class="bg-bg-alt/50 border-b border-border">
+            <td class="p-3 font-medium text-text">Batteritid</td>
+            <td class="p-3 text-green-700 font-semibold">ca 180 min</td>
+            <td class="p-3 text-text-light">ca 180 min</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">App</td>
+            <td class="p-3 text-text-light">EufyHome</td>
+            <td class="p-3 text-green-700 font-semibold">Roborock-appen (mer avancerad)</td>
+          </tr>
+          <tr class="bg-bg-alt/50">
+            <td class="p-3 font-medium text-text">Bäst för</td>
+            <td class="p-3 text-green-700 font-semibold">Pris, simplicitet</td>
+            <td class="p-3 text-text-light">Teknisk prestanda, djup moppning</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="font-heading text-xl font-bold mt-8 mb-3">Navigering: Roborock vinner</h2>
+    <p class="text-text-light mb-4">
+      Roborock har konsekvent bättre navigering än Eufy. Roborock S8 Pro Ultras ReactiveAI 2.0 identifierar hinder i realtid — kläder, sladdar och till och med husdjursavföring (en av de viktigaste funktionerna för hundägare). Eufy X10 Pro Omnis LiDAR är kompetent men saknar AI-hinderidentifiering på Roborocks nivå.
+    </p>
+    <p class="text-text-light mb-6">
+      I enklare hem utan lösa föremål är skillnaden minimal. I komplexa hem med barn, djur och många lösa saker på golvet: Roborock navigerar tydligt bättre och fastnar sällan.
+    </p>
+
+    <h2 class="font-heading text-xl font-bold mt-8 mb-3">Moppning: Roborock vinner klart</h2>
+    <p class="text-text-light mb-4">
+      Roborock är branschledande inom robotmoppning. VibraRise-teknologin vibrerar moppduken 3 000 gånger per minut för djupare rengöring av klibbiga fläckar — något Eufys roterande mopp inte matchar. FlexiArm-moppen på S8 Pro Ultra svänger ut och når längs väggar och under möbler.
+    </p>
+    <p class="text-text-light mb-6">
+      Ännu viktigare: Roborock lyfter automatiskt moppmodulen vid mattor med VibraRise — Eufy saknar denna funktion på de flesta modeller, vilket innebär att du riskerar att fukta mattor om du inte stänger av moppning manuellt.
+    </p>
+
+    <h2 class="font-heading text-xl font-bold mt-8 mb-3">Prisvärde: Eufy vinner i mellanklass</h2>
+    <p class="text-text-light mb-4">
+      Eufy X10 Pro Omni (ca 5 990 kr) erbjuder imponerande funktioner till halvpriset av Roborock S8 Pro Ultra. Du får LiDAR-navigering, 8 000 Pa sugkraft, All-in-One-basstation med autotömning och mopptvättning — det är mycket för pengarna.
+    </p>
+    <p class="text-text-light mb-6">
+      Om du inte aktivt behöver Roborocks VibraRise-moppning, ReactiveAI-hinderdetektering eller varmluftstorkning av moppar är Eufy X10 Pro Omni ett utmärkt köp. Du sparar 7 000 kr och får en robot som utför 80% av Roborock S8 Pro Ultras kapacitet.
+    </p>
+
+    <h2 class="font-heading text-xl font-bold mt-8 mb-3">Vem bör välja vad?</h2>
+    <div class="grid sm:grid-cols-2 gap-4 mb-8">
+      <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+        <h3 class="font-heading font-bold text-blue-800 mb-3">Välj Eufy om du...</h3>
+        <ul class="space-y-2 text-sm text-text-light">
+          <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Vill ha bäst pris/prestanda i mellanklass (ca 5 990 kr)</span></li>
+          <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Har enkelt hem utan djur eller komplexa hinder</span></li>
+          <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Prioriterar enkel setup och minimal inlärningskurva</span></li>
+          <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Mestadels dammsugning, moppning är sekundärt</span></li>
+        </ul>
+      </div>
+      <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+        <h3 class="font-heading font-bold text-green-800 mb-3">Välj Roborock om du...</h3>
+        <ul class="space-y-2 text-sm text-text-light">
+          <li class="flex gap-2"><span class="text-green-600 font-bold">+</span><span>Har husdjur — ReactiveAI-skydd mot djuravföring</span></li>
+          <li class="flex gap-2"><span class="text-green-600 font-bold">+</span><span>Blandat underlag (mattor + hårdgolv) med krav på VibraRise-moppning</span></li>
+          <li class="flex gap-2"><span class="text-green-600 font-bold">+</span><span>Vill ha bäst möjliga navigering och hinderundvikande</span></li>
+          <li class="flex gap-2"><span class="text-green-600 font-bold">+</span><span>Komplex hemmiljö med mycket lösa föremål</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="font-heading text-xl font-bold mt-8 mb-3">Relaterade guider</h2>
+    <ul class="space-y-2 text-sm mb-8">
+      <li><a href="/roborock-vs-dreame/" class="text-accent hover:underline">Roborock vs Dreame 2026 — vilket premiumalternativ vinner?</a></li>
+      <li><a href="/roborock-vs-ecovacs/" class="text-accent hover:underline">Roborock vs Ecovacs 2026 — flaggskeppsduell</a></li>
+      <li><a href="/dreame-vs-ecovacs/" class="text-accent hover:underline">Dreame vs Ecovacs 2026 — moppning och sugkraft jämfört</a></li>
+      <li><a href="/roborock-vs-irobot/" class="text-accent hover:underline">Roborock vs iRobot Roomba 2026 — kinesisk teknik mot klassikern</a></li>
+    </ul>
+
+    <FAQ items={faqItems} />
+  </div>
+
+  <StickyCTA
+    href="https://www.eufylife.com/se/products/variant/robovac-x10-pro-omni"
+    text="Se pris på Eufy X10 Pro Omni"
+    subtext="LiDAR-robot med All-in-One-basstation — ca 5 990 kr"
+  />
+</BaseLayout>
