@@ -1,0 +1,194 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/' },
+  { label: 'Eufy vs iRobot' },
+];
+
+const faqItems = [
+  {
+    question: 'Vilken är bäst — Eufy eller iRobot Roomba?',
+    answer: 'Eufy vinner på pris och sugstyrka. iRobot vinner på varumärkesrenommé, mjukvara (Home-appen), integration med smarta hem och tillgång till reservdelar. Eufy X10 Pro Omni (ca 5 990–7 990 kr) erbjuder mer för pengarna tekniskt sett 2026. Äldre Roomba-modeller (j7, j9) tappar mark prismässigt mot modern Eufy. Väljer du Eufy: bättre teknik för pengarna. Väljer du iRobot: bättre ekosystem och mjukvara.',
+  },
+  {
+    question: 'Är iRobot Roomba fortfarande värt pengarna 2026?',
+    answer: 'Ja för specifika behov — nej för råprestanda per krona. iRobot Roomba j9+ (ca 8 990–11 990 kr) är fortfarande ett premium-alternativ med utmärkt hinderdetektering (PrecisionVision), automatisk tömning och ett av marknadens bästa smarta hem-integrationer. Men för ren rengöringsprestanda per krona erbjuder Eufy, Dreame och Roborock mer 2026.',
+  },
+  {
+    question: 'Har Eufy eller iRobot bättre hinderdetektering?',
+    answer: 'iRobot j7+ och j9+ vinner på hinderdetektering. PrecisionVision Navigation i de nyare Roomba-modellerna är en av marknadens bästa och lär sig specifika hinder i ditt hem — inklusive husdjursavföring. Eufy X10 Pro Omni har LiDAR men enklare AI-hinderdetektering. För hem med husdjur, kablar och mycket hinder: iRobot j9+.',
+  },
+  {
+    question: 'Vilket märke har bäst batteri och täckning?',
+    answer: 'Jämförbart — ca 120–180 minuter per laddning för båda märkena. Eufy X10 Pro Omni täcker en lägenhet i genomsnitt utan att behöva ladda. iRobot j7+ och j9+ har automatisk returladdning och fortsätter där de slutade. Skillnaden är minimal för normala hem (under 100 kvm).',
+  },
+  {
+    question: 'Vad kostar service och reservdelar för Eufy vs iRobot?',
+    answer: 'iRobot har ett mer etablerat system för reservdelar och tillbehör — filter, sidborstar, gummiborstar och moppkuddar finns lätt tillgängligt på Amazon och hos iRobot direkt. Eufy är nyare på marknaden och reservdelar är mer tillgängliga nu än för 2–3 år sedan. Räkna med ca 200–400 kr/år för förbrukningsmaterial på båda.',
+  },
+  {
+    question: 'Fungerar iRobot Roomba med Google Home och Alexa?',
+    answer: 'Ja — iRobot Roomba integrerar med Google Home, Amazon Alexa och Apple HomeKit. Du kan starta, stoppa och skicka Roomba till specifika rum via röststyrning. Eufy EufyHome-appen integrerar med Google Assistant och Amazon Alexa men inte Apple HomeKit. För Apple-ekosystemet: iRobot vinner.',
+  },
+];
+---
+
+<BaseLayout
+  title="Eufy vs iRobot Roomba 2026 — vilket märke är bäst? | Robotjakt"
+  description="Vi jämför Eufy och iRobot Roomba 2026. Sugstyrka, hinderdetektering, smarta hem-integration och pris — prisvärd ny teknik mot etablerad marknadsledare."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-04-03">2026-04-03</time></p>
+
+    <header class="mb-8">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Eufy vs iRobot Roomba 2026</h1>
+      <p class="text-gray-600 text-lg max-w-2xl">
+        Eufy ger mer teknologi per krona med LiDAR, stark sugstyrka och automatisk tömning. iRobot Roomba erbjuder ett etablerat ekosystem, överlägsen mjukvara och branschens bästa smarta hem-integration. Vilket passar ditt hem?
+      </p>
+    </header>
+
+    <!-- Quick verdict -->
+    <div class="grid sm:grid-cols-2 gap-4 mb-10">
+      <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+        <p class="text-xs font-semibold text-blue-700 uppercase mb-1">Bäst teknik för pengarna</p>
+        <h2 class="text-xl font-bold text-gray-900 mb-2">Eufy X10 Pro Omni</h2>
+        <p class="text-sm text-gray-600 mb-4">8 000 Pa, LiDAR, automatisk tömning och påfyllning. ca 5 990–7 990 kr. Bäst ren prestanda per krona 2026.</p>
+        <a href="https://www.eufylife.com" target="_blank" rel="noopener noreferrer nofollow" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold py-2.5 px-4 rounded-lg text-center transition-colors">Se Eufy X10 Pro Omni</a>
+      </div>
+      <div class="bg-gray-50 border border-gray-300 rounded-xl p-5">
+        <p class="text-xs font-semibold text-gray-600 uppercase mb-1">Bäst ekosystem och hinderdetektering</p>
+        <h2 class="text-xl font-bold text-gray-900 mb-2">iRobot Roomba j9+</h2>
+        <p class="text-sm text-gray-600 mb-4">PrecisionVision Navigation, automatisk tömning, Google Home + Alexa + HomeKit. ca 8 990–11 990 kr. Bäst för Apple-ekosystemet och husdjursägare.</p>
+        <a href="https://www.irobot.se" target="_blank" rel="noopener noreferrer nofollow" class="block w-full bg-gray-800 hover:bg-gray-900 text-white text-sm font-semibold py-2.5 px-4 rounded-lg text-center transition-colors">Se iRobot Roomba j9+</a>
+      </div>
+    </div>
+
+    <!-- Comparison table -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold text-gray-900 mb-5">Jämförelsetabell</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full border border-gray-200 rounded-xl overflow-hidden text-sm">
+          <thead>
+            <tr class="bg-gray-50 border-b border-gray-200">
+              <th class="text-left p-4 font-semibold text-gray-700">Egenskap</th>
+              <th class="text-center p-4 font-semibold text-blue-700">Eufy X10 Pro Omni</th>
+              <th class="text-center p-4 font-semibold text-gray-700">iRobot Roomba j9+</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { label: 'Pris', eufy: 'ca 5 990–7 990 kr', irobot: 'ca 8 990–11 990 kr', winner: 'eufy' },
+              { label: 'Sugstyrka', eufy: '8 000 Pa', irobot: 'ca 2 500 Pa (iRobot-mätning)', winner: 'eufy' },
+              { label: 'Navigering', eufy: 'LiDAR', irobot: 'PrecisionVision + kamera', winner: 'draw' },
+              { label: 'Hinderdetektering', eufy: 'LiDAR (enklare AI)', irobot: 'PrecisionVision (lärande)', winner: 'irobot' },
+              { label: 'Moppfunktion', eufy: 'Standard', irobot: 'Begränsad', winner: 'eufy' },
+              { label: 'Automatisk tömning', eufy: 'Ja', irobot: 'Ja (j9+)', winner: 'draw' },
+              { label: 'Google Home / Alexa', eufy: 'Ja', irobot: 'Ja', winner: 'draw' },
+              { label: 'Apple HomeKit', eufy: 'Nej', irobot: 'Ja', winner: 'irobot' },
+              { label: 'Husdjursavföringsdetektering', eufy: 'Nej', irobot: 'Ja (j7+/j9+)', winner: 'irobot' },
+              { label: 'Reservdelar tillgängliga', eufy: 'Bra', irobot: 'Utmärkt (etablerat)', winner: 'irobot' },
+              { label: 'Batteritid', eufy: 'ca 180 min', irobot: 'ca 120 min', winner: 'eufy' },
+            ].map((row, i) => (
+              <tr class={`border-b border-gray-100 ${i % 2 === 0 ? '' : 'bg-gray-50/50'}`}>
+                <td class="p-4 font-semibold text-gray-900">{row.label}</td>
+                <td class={`p-4 text-center ${row.winner === 'eufy' ? 'text-blue-700 font-bold bg-blue-50' : 'text-gray-600'}`}>
+                  {row.eufy}
+                  {row.winner === 'eufy' && <span class="block text-xs font-normal text-blue-400 mt-0.5">Vinnare</span>}
+                </td>
+                <td class={`p-4 text-center ${row.winner === 'irobot' ? 'text-gray-900 font-bold bg-gray-100' : 'text-gray-600'}`}>
+                  {row.irobot}
+                  {row.winner === 'irobot' && <span class="block text-xs font-normal text-gray-500 mt-0.5">Vinnare</span>}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">Sugstyrka: Eufy vinner på siffror — men jämförelsen är svår</h2>
+      <p class="text-gray-600 mb-4">
+        Eufy X10 Pro Omni har 8 000 Pa sugstyrka — ett imponerande tal. iRobot anger inte Pa-värden på samma sätt och mäter prestanda på andra sätt. iRobots Roomba j9+ presterar utmärkt i praktiska tester trots lägre Pa-siffror, tack vare en väloptimerad borst- och luftströmdesign.
+      </p>
+      <p class="text-gray-600">
+        I praktiken: Eufy presterar starkare på djuppälsmattor. iRobot presterar jämbördigt på hårdgolv och standardmattor. Pa-siffror är inte alltid direkt jämförbara mellan märken.
+      </p>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">Smarta hem och ekosystem: iRobot vinner</h2>
+      <p class="text-gray-600 mb-4">
+        iRobot är det enda märket med Apple HomeKit-stöd bland robotdammsugare — viktigt för Apple-användare. Kombinationen med Google Home, Amazon Alexa och HomeKit gör Roomba till det mest universella alternativet för röststyrning och hemautomation.
+      </p>
+      <p class="text-gray-600">
+        iRobots app har dessutom en av marknadens bästa kartfunktioner: selektiva rum, schemasättning per rum, smart recharge och återupptagning. Eufys EufyHome-app är bra men inte lika mogen som iRobots.
+      </p>
+    </section>
+
+    <!-- Who should choose -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold text-gray-900 mb-5">Vem bör välja vad?</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+          <h3 class="font-bold text-blue-800 mb-3">Välj Eufy om du...</h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Vill ha bäst teknik per krona — LiDAR + 8 000 Pa + automatisk tömning</span></li>
+            <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Inte använder Apple HomeKit</span></li>
+            <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Vill ha bättre moppfunktion och längre batteritid</span></li>
+            <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Sparar 3 000–4 000 kr jämfört med iRobot j9+</span></li>
+          </ul>
+        </div>
+        <div class="bg-gray-50 border border-gray-300 rounded-xl p-5">
+          <h3 class="font-bold text-gray-700 mb-3">Välj iRobot Roomba om du...</h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex gap-2"><span class="text-gray-600 font-bold">+</span><span>Använder Apple HomeKit och vill ha sömlös integration</span></li>
+            <li class="flex gap-2"><span class="text-gray-600 font-bold">+</span><span>Har husdjur och vill ha PrecisionVision-hinderdetektering för avföring</span></li>
+            <li class="flex gap-2"><span class="text-gray-600 font-bold">+</span><span>Värdesätter ett etablerat märke med lång service-historik</span></li>
+            <li class="flex gap-2"><span class="text-gray-600 font-bold">+</span><span>Vill ha den bästa appen och de mest avancerade kartfunktionerna</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related guides -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold text-gray-900 mb-5">Relaterade guider</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="/eufy-vs-roborock/" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+          <p class="font-bold text-gray-900">Eufy vs Roborock 2026</p>
+          <p class="text-sm text-gray-600">Eufy mot marknadsledarens robotar</p>
+        </a>
+        <a href="/eufy-vs-dreame/" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+          <p class="font-bold text-gray-900">Eufy vs Dreame 2026</p>
+          <p class="text-sm text-gray-600">Eufy mot moppspecialisten</p>
+        </a>
+        <a href="/dreame-vs-irobot/" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+          <p class="font-bold text-gray-900">Dreame vs iRobot 2026</p>
+          <p class="text-sm text-gray-600">Kinesisk utmanare mot klassikern</p>
+        </a>
+        <a href="/" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+          <p class="font-bold text-gray-900">Bästa robotdammsugare 2026</p>
+          <p class="text-sm text-gray-600">Komplett topplista</p>
+        </a>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+  </div>
+
+  <StickyCTA
+    product="Eufy X10 Pro Omni"
+    store="Eufy"
+    price="ca 5 990 kr"
+    url="https://www.eufylife.com"
+  />
+</BaseLayout>
