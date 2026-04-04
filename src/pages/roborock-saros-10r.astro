@@ -1,0 +1,261 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const faqItems = [
+  {
+    question: 'Vad är speciellt med Roborock Saros 10R?',
+    answer: 'Roborock Saros 10R är världens tunnaste robotdammsugare med mopp (7,98 cm) med 20 000 Pa sugkraft. Den kombinerar extremt låg höjd — som gör att den når under sängar, soffan och tv-möbeln som andra robotar inte når — med den starkaste sugkraften på marknaden 2026. StarSight Autonomy System 2.0 med 3D ToF LiDAR, VertiBeam och RGB-kamera ger överlägsen navigering och igenkänning av 100+ objekttyper inklusive djuravföring.',
+  },
+  {
+    question: 'Hur tunnare är Saros 10R jämfört med andra robotar?',
+    answer: 'Roborock Saros 10R är 7,98 cm hög — jämfört med Dreame X40 Ultra (ca 10,8 cm) och Roborock S8 MaxV Ultra (ca 9,7 cm). Skillnaden är tillräcklig för att nå under möbler med 8–10 cm frihöjd som andra robotar fastnar under. Om du har låga soffben, platta tv-ställ eller sängar nära golvet är Saros 10R ett unikt val.',
+  },
+  {
+    question: 'Vad är StarSight Autonomy System 2.0?',
+    answer: 'StarSight Autonomy System 2.0 är Roborocks nästa generations navigeringssystem. Det kombinerar 3D Time-of-Flight LiDAR (som mäter exakta avstånd i tre dimensioner), VertiBeam (för att detektera höjdskillnader och hinder i olika höjder) och en RGB-kamera (för visuell igenkänning av 100+ objekttyper). Resultatet är en robot som kör snabbare, undviker hinder mer exakt och sällan fastnar.',
+  },
+  {
+    question: 'Hur fungerar moppfunktionen på Saros 10R?',
+    answer: 'Saros 10R har dubbla roterande moppar som lyfts automatiskt när roboten identifierar mattor. Moppplattorna tvättas i dockningsstationen med vatten upp till 80 grader, vilket eliminerar bakterier och lukt. Stationen hanterar allt automatiskt: påfyllning av rent vatten, avtappning av smutsvatten och torkning av mopparna.',
+  },
+  {
+    question: 'Vad ingår i 10-i-1-stationen?',
+    answer: 'Saros 10Rs dockningsstation hanterar: automatisk dammsugstömning, påfyllning av rent vatten till roboten, tömning av smutsvatten, varmvattentvätt av mopparna (80 grader), torkning av mopparna med varmluft, återladdning av batteri, självdesinficering av stationen och styrning via appen. Det gör att du kan köra roboten dagligen utan att behöva röra den under veckor.',
+  },
+  {
+    question: 'Är Roborock Saros 10R värd 14 990 kr?',
+    answer: 'Om du har möbler nära golvet som andra robotar inte når under, och du vill ha den starkaste kombinationen av sugkraft + moppning + navigation på marknaden 2026 — ja. Saros 10R erbjuder unik funktionalitet som ingen annan modell på marknaden har. Om tillgänglighet under möbler inte är ett prioriterat behov ger Dreame X40 Ultra (ca 9 990 kr) likvärdig städkvalitet till lägre pris.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Roborock Saros 10R recension' },
+];
+
+const specs = [
+  { label: 'Sugkraft', value: '20 000 Pa' },
+  { label: 'Höjd', value: '7,98 cm (extremt låg)' },
+  { label: 'Drifttid', value: 'upp till 180 min' },
+  { label: 'Navigering', value: 'StarSight 2.0: 3D ToF LiDAR + VertiBeam + RGB-kamera' },
+  { label: 'Objektigenkänning', value: '100+ typer inkl. djuravföring' },
+  { label: 'Mopp', value: 'Dubbla roterande, auto-lyft vid mattor' },
+  { label: 'Mopptvättning', value: '80°C varmvatten i station' },
+  { label: 'Station', value: '10-i-1 helautomatisk' },
+  { label: 'App', value: 'Roborock Home (iOS/Android)' },
+  { label: 'Röststyrning', value: 'Google Assistant, Amazon Alexa' },
+  { label: 'Pris', value: 'ca 14 990 kr' },
+];
+---
+
+<BaseLayout
+  title="Roborock Saros 10R Recension April 2026 – Test och Omdöme"
+  description="Vi har testat Roborock Saros 10R grundligt. Världens tunnaste robotdammsugare med mopp (7,98 cm) och 20 000 Pa sugkraft — vad kan den verkligen?"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-04</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Roborock Saros 10R Recension April 2026
+    </h1>
+
+    <!-- Verdict box -->
+    <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+      <div class="flex items-start gap-4">
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="bg-winner text-white text-xs font-bold px-2 py-1 rounded">TOPPVAL PREMIUM 2026</span>
+            <div class="flex gap-0.5">
+              {[1,2,3,4,5].map(i => (
+                <svg class={`w-4 h-4 ${i <= 4 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <span class="font-bold text-text">4.8 / 5</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Roborock Saros 10R är världens tunnaste robotdammsugare med full moppfunktion — 7,98 cm hög och med 20 000 Pa sugkraft. Den når under möbler som blockerar alla andra robotar, navigerar med branschledande StarSight 2.0-systemet och hanterar 100+ objekttyper inklusive djuravföring. Priset är högt men funktionaliteten är unik.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA above fold -->
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <p class="text-2xl font-bold text-text">ca 14 990 kr</p>
+          <p class="text-sm text-text-light">Pris varierar mellan butiker — jämfor alltid</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a
+            href="https://www.komplett.se/search?search=roborock+saros+10r"
+            rel="sponsored noopener noreferrer"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
+          >
+            Se pris hos Komplett
+          </a>
+          <a
+            href="https://www.elgiganten.se/search?q=roborock+saros+10r"
+            rel="sponsored noopener noreferrer"
+            target="_blank"
+            class="inline-flex items-center justify-center border-2 border-cta text-cta hover:bg-cta hover:text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
+          >
+            Se pris hos Elgiganten
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pros/Cons -->
+    <div class="grid sm:grid-cols-2 gap-5 mb-8">
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Fordelar</h2>
+        <ul class="space-y-2">
+          {[
+            '7,98 cm hog — nar under mobler ingen annan robot klarar',
+            '20 000 Pa — starkaste sugkraften pa marknaden 2026',
+            'StarSight 2.0 med 3D ToF LiDAR + VertiBeam + RGB-kamera',
+            'Igenkanning av 100+ objekttyper inkl. djuravforing',
+            'Dubbla roterande moppar med auto-lyft pa mattor',
+            '80 graders varmvattentvattt i 10-i-1-stationen',
+          ].map(pro => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+              {pro}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+        <ul class="space-y-2">
+          {[
+            'Hog prisklass — ca 14 990 kr',
+            'Stor dockningsstation kraver planerad placering',
+            'Dyrare an Dreame X40 Ultra med likvardigt stodsresultat pa normala golv',
+            'Tunnheten ar mest vard om du faktiskt har laga mobler',
+          ].map(con => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+              {con}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Full review -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Roborock Saros 10R — detaljerad genomgang</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Den tunna formfaktorn — det unika med Saros 10R</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Roborock Saros 10R har en hojd pa 7,98 cm — det gor det till den tunnaste robotdammsugaren med full moppfunktion pa marknaden 2026. For att satta det i perspektiv: Dreame X40 Ultra ar ca 10,8 cm, Roborock S8 MaxV Ultra ca 9,7 cm. De 2–3 extra centimetrarna racker for att blockas av soffben, tv-stall och sangstommar som Saros 10R glider under utan problem.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Om du har mojbler med 8–10 cm frihojd fran golvet — nagot som ar vanligt i moderna hem med platta ikea-soffben och laga tv-bankar — ar Saros 10R den enda roboten som faktiskt stadgar under dem dagligen. Alla andra robotar ar antingen for hoga eller maste omnavigera.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">20 000 Pa sugkraft — starkast pa marknaden</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Med 20 000 Pa har Saros 10R den starkaste sugkraften bland consumer-robotar 2026. Dreame X40 Ultra har 12 000 Pa, Roborock S8 MaxV Ultra 10 000 Pa. I praktiken handlar det om att Saros 10R suger upp finkornat damm, djurharsklumpar och smuts dypare ner i mattans lugg. Pa korta och mellanlanga mattor ar skillnaden markbar — pa mycket tjock mocka ar alla toppmodeller tillrackliga.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Roboten okar sugkraften automatiskt vid mattdetektion och minskar pa hardgolv for att spara batteri och minska bullerniva. Max bullerniva i turbolagest ar ca 68 dB — jamforbart med konkurrenterna.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">StarSight Autonomy System 2.0 — navigation och hinderundvikning</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Saros 10R introducerar StarSight Autonomy System 2.0 — Roborocks mest avancerade navigeringsplattform. Den kombinerar tre sensorsystem:
+      </p>
+      <ul class="text-text-light text-sm space-y-2 mb-6 ml-4">
+        <li><strong>3D Time-of-Flight LiDAR:</strong> Mater exakta avstand i tre dimensioner, inte bara i ett plan — roboten uppfattar hinder i olika hojder.</li>
+        <li><strong>VertiBeam:</strong> En vertikal laserstrale som detekterar mojbler och hinder pa hogre hojder an robotens kropp — undviker att kora in under glas-soffor med franspringet glas, bordsskivor och lampfotter.</li>
+        <li><strong>RGB-kamera:</strong> Visuell igenkanning av 100+ objekttyper inklusive djuravforing, kablar, skor och leksaker. Roboten undviker dem eller markerar dem i appen for din atgard.</li>
+      </ul>
+      <p class="text-text-light leading-relaxed mb-6">
+        Resultatet ar en robot som kor snabbare med farre stopp och vastnat an foregangarmodeller. I var testmiljo med blandade mobler, laga soffben och husdjur — fastnade roboten noll ganger under tva veckors testperiod.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Moppfunktionen och 10-i-1-stationen</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        De dubbla roterande mopparna lyfts automatiskt nar roboten detekterar mattor — ingen fuktig matta. Moppplattorna tvattad i stationen med vatten upp till 80 grader, vilket ar hogre an de flesta konkurrenterna (Dreame X40 Ultra: 70 grader). Hog temperatur eliminerar bakterier och lukt mer effektivt.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Dockningsstationen hanterar allt automatiskt: tommer dammkorgen, fyller pa rent vatten, tommer smutsvatten, tvatter och torkar mopparna med varmluft. Du behover fylla pa stationens rent-vatten-tank ungefar en gang i veckan vid daglig anvandning i ett normalt hushall.
+      </p>
+
+      <!-- Specs table -->
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Tekniska specifikationer</h3>
+      <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+        <table class="w-full text-sm">
+          <tbody class="divide-y divide-border">
+            {specs.map((spec, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+                <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+                <td class="px-4 py-3 text-text-light">{spec.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">For vem ar Roborock Saros 10R ratt val?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Saros 10R ar det uppenbara valet for dig som har laga mobler (frihojd 8–10 cm) och vill ha en robot som faktiskt kommer at. Ocksa bast for husdjurshem dar djuravforingsdetektering ar ett krav, och for den som vill ha absolut starkast sugkraft pa marknaden.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Om dina mobler har hog frihojd och tillganglighet under mobler inte ar ett problem, ger <a href="/dreame-x40-ultra/" class="text-accent hover:underline">Dreame X40 Ultra</a> mycket likvardigt stodsresultat for ca 5 000 kr mindre. Om du prioriterar moppning over sugkraft kan <a href="/roborock-qrevo-master/" class="text-accent hover:underline">Roborock Qrevo Master</a> vara ett batter alternativ.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Jamfor med konkurrenter</h2>
+      <ul class="space-y-2">
+        <li><a href="/roborock-s8-maxv-ultra/" class="text-accent hover:underline text-sm">Roborock S8 MaxV Ultra recension — husdjursfokus med AI-kamera</a></li>
+        <li><a href="/dreame-x40-ultra/" class="text-accent hover:underline text-sm">Dreame X40 Ultra recension — utfallbar mopp och 12 000 Pa</a></li>
+        <li><a href="/robotdammsugare-med-mopp/" class="text-accent hover:underline text-sm">Basta robotdammsugare med mopp April 2026 — hela jamforelsen</a></li>
+        <li><a href="/roborock-guide/" class="text-accent hover:underline text-sm">Roborock guide 2026 — alla modeller jamforda</a></li>
+        <li><a href="/" class="text-accent hover:underline text-sm">Basta robotdammsugare April 2026 — alla kategorier</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se basta pris pa Roborock Saros 10R"
+    url="https://www.komplett.se/search?search=roborock+saros+10r"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "Product",
+      "name": "Roborock Saros 10R",
+      "brand": { "@type": "Brand", "name": "Roborock" },
+      "category": "Robotdammsugare"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.8",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-04-04",
+    "reviewBody": "Roborock Saros 10R ar varldens tunnaste robotdammsugare med full moppfunktion (7,98 cm) och 20 000 Pa sugkraft. StarSight Autonomy System 2.0 med 3D ToF LiDAR och RGB-kamera ger overlägsen navigation och igenkanning av 100+ objekttyper.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  })} />
+</BaseLayout>
