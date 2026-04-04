@@ -1,0 +1,211 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/' },
+  { label: 'Narwal Freo X Ultra vs Dreame X40 Ultra' },
+];
+
+const faqItems = [
+  {
+    question: 'Vilken är bäst — Narwal Freo X Ultra eller Dreame X40 Ultra?',
+    answer: 'Dreame X40 Ultra är den mer kompletta robotdammsugaren med starkare sugkraft (12 000 Pa mot 8 200 Pa) och en utfällbar mopparm som når ända in i hörnen. Narwal Freo X Ultra vinner på moppkvaliteten tack vare sin varmluftsfunktion (40°C) som torkar mopparna i stationen — en funktion Dreame saknar. Välj Dreame om du prioriterar sugkraft och hörntäckning. Välj Narwal om mopplukt är ett problem och du prioriterar hygienisk torkning.',
+  },
+  {
+    question: 'Varför är Narwals mopptorkning unik?',
+    answer: 'Narwal Freo X Ultras dockningsstation blåser 40-gradig varmluft genom moppplattorna i ca 2,5 timmar efter varje städning. Det innebär att mopparna är helt torra och luktfria nästa gång roboten startar. Dreame X40 Ultras station tvättar mopparna med 70-graders varmvatten — bra hygien under tvätten — men torkar inte lika effektivt efteråt. Fuktiga moppplattor kan ge mögeldoft hos Dreame vid intensiv daglig användning.',
+  },
+  {
+    question: 'Klarar Dreame X40 Ultra av hem med husdjur bättre?',
+    answer: 'Dreames starkare sugkraft (12 000 Pa mot 8 200 Pa) ger ett försprång vid päls och smuts på tjocka mattor. Varken Narwal eller Dreame X40 Ultra har AI-djuravföringsdetektion — för det krävs Roborock S8 MaxV Ultra. For normala mängder husdjurspäls klarar båda uppdraget, men Dreames extra sugkraft gör skillnad i mer belastade hem.',
+  },
+  {
+    question: 'Är Narwal Freo X Ultra tystare än Dreame X40 Ultra?',
+    answer: 'Båda modellerna är relativt tysta i normalläge. Dreame X40 Ultra uppges ligga på ca 60–65 dB, Narwal Freo X Ultra på liknande nivåer. Torkfunktionen hos Narwal tar 2,5 timmar men kan schemaläggas till natten. Ingen av dem är utpräglade bullerstörare i normalt städläge.',
+  },
+  {
+    question: 'Vilken har bäst navigation?',
+    answer: 'Båda använder LiDAR-navigering med AI-kamera för hinderdetektering. Dreame X40 Ultra har en AI-kamera med djurigenkänning för att undvika hinder. Narwal Freo X Ultras AI-kamera är kompetent men generellt sett inte lika avancerad som Dreames på detektering av ovanliga hinder. I praktiken städar båda systematiskt och pålitligt i normala hem.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+
+const specs = [
+  { label: 'Sugkraft', narwal: '8 200 Pa', dreame: '12 000 Pa', winner: 'dreame' },
+  { label: 'Batteri', narwal: '5 200 mAh', dreame: '6 400 mAh', winner: 'dreame' },
+  { label: 'Drifttid', narwal: 'upp till 150 min', dreame: 'upp till 180 min', winner: 'dreame' },
+  { label: 'Mopp', narwal: 'Dubbla roterande plattor', dreame: 'Utfällbar sidoarm + roterande', winner: 'dreame' },
+  { label: 'Mopptorkning', narwal: 'Varmluft 40°C (unik)', dreame: 'Ej aktiv torkning', winner: 'narwal' },
+  { label: 'Mopptvätt', narwal: 'Vatten i station', dreame: 'Varmvatten 70°C i station', winner: 'dreame' },
+  { label: 'Mopplyfthöjd', narwal: '15 mm', dreame: 'Automatisk lyftning', winner: 'draw' },
+  { label: 'AI-kamera', narwal: 'Ja', dreame: 'Ja', winner: 'draw' },
+  { label: 'Navigering', narwal: 'LiDAR', dreame: 'LiDAR + AI', winner: 'dreame' },
+  { label: 'Dammkorg', narwal: '400 ml', dreame: '350 ml', winner: 'narwal' },
+  { label: 'Pris (ca)', narwal: '8 990 kr', dreame: '9 990 kr', winner: 'narwal' },
+];
+---
+
+<BaseLayout
+  title="Narwal Freo X Ultra vs Dreame X40 Ultra April 2026 — vilket väljer du?"
+  description="Vi jämför Narwal Freo X Ultra och Dreame X40 Ultra. Varmluftsfunktion mot 12 000 Pa sugkraft — se vilket premiumalternativ som passar ditt hem bäst."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-04-04">2026-04-04</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Narwal Freo X Ultra vs Dreame X40 Ultra April 2026 — vilken ska du välja?
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Narwal Freo X Ultra till ca 8 990 kr eller Dreame X40 Ultra till ca 9 990 kr? Bada är toppmodeller med fullautomatisk station och avancerad moppning — men de prioriterar olika saker. Vi jämfori dem kategori for kategori.
+    </p>
+
+    <!-- Quick verdict -->
+    <section class="mb-8 bg-winner/5 border border-winner/20 rounded-xl p-5">
+      <h2 class="font-heading text-lg font-bold text-text mb-2">Snabbsvar — for dig som vill ha svaret direkt</h2>
+      <p class="text-text-light text-sm leading-relaxed mb-2">
+        <strong class="text-text">Dreame X40 Ultra vinner for de flesta:</strong> Starkare sugkraft (12 000 Pa), utfällbar mopparm som når hörnen, varmvattentvätt och längre drifttid.
+      </p>
+      <p class="text-text-light text-sm leading-relaxed">
+        <strong class="text-text">Välj Narwal Freo X Ultra om:</strong> Du städar dagligen och är känslig for mögeldoft — varmluftsfunktionen (40°C) torkar mopparna ordentligt och ingen annan modell i klassen gör det lika bra.
+      </p>
+    </section>
+
+    <!-- Specs comparison table -->
+    <section class="mb-10" aria-label="Jämförelsetabell Narwal Freo X Ultra vs Dreame X40 Ultra">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Specifikationer jämfört</h2>
+      <div class="rounded-xl border border-border overflow-hidden">
+        <table class="w-full text-sm bg-white">
+          <thead>
+            <tr class="border-b border-border bg-bg-alt">
+              <th class="px-4 py-3 text-left font-semibold text-text">Egenskap</th>
+              <th class="px-4 py-3 text-left font-semibold text-text">Narwal Freo X Ultra</th>
+              <th class="px-4 py-3 text-left font-semibold text-text">Dreame X40 Ultra</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            {specs.map((row, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : 'bg-bg-alt/30'}>
+                <td class="px-4 py-3 font-medium text-text">{row.label}</td>
+                <td class={`px-4 py-3 ${row.winner === 'narwal' ? 'font-semibold text-winner' : 'text-text-light'}`}>
+                  {row.winner === 'narwal' && <span class="inline-block w-2 h-2 rounded-full bg-winner mr-1.5 align-middle" />}
+                  {row.narwal}
+                </td>
+                <td class={`px-4 py-3 ${row.winner === 'dreame' ? 'font-semibold text-accent' : 'text-text-light'}`}>
+                  {row.winner === 'dreame' && <span class="inline-block w-2 h-2 rounded-full bg-accent mr-1.5 align-middle" />}
+                  {row.dreame}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Deep comparison -->
+    <section class="mb-10 space-y-8">
+      <h2 class="font-heading text-2xl font-bold text-text mb-2">Djupanalys — kategori for kategori</h2>
+
+      <div>
+        <h3 class="font-heading text-xl font-semibold text-text mb-3">Sugkraft — Dreame vinner tydligt</h3>
+        <p class="text-text-light leading-relaxed mb-4">
+          Dreame X40 Ultras 12 000 Pa är den starkaste sugkraften i klassen 2026. Narwal Freo X Ultra erbjuder 8 200 Pa — fortfarande starkt for normalt hem, men tydligt lägre. Skillnaden märks vid långhårig husdjurspäls, tjocka mattor och grovt smuts. For hem med kort heltäckningsmatta eller mest hårdgolv är skillnaden mindre kännbar i det dagliga.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-heading text-xl font-semibold text-text mb-3">Moppning — Narwals varmluft vs Dreames utfällning</h3>
+        <p class="text-text-light leading-relaxed mb-4">
+          Dreame X40 Ultras utfällbara sidoarm är unik — moppmodulen forlänger sig ut till sidan och når in i hörnen, en funktion Narwal saknar. Dreame tvättar mopparna med 70-graders varmvatten, vilket ger hygienisk rengöring under tvätten. Narwals varmluftsfunktion (40°C) torkar däremot mopparna grundligare efter tvätten. Resultatet: Dreame städar hörnen bättre och tvättar varmare, men Narwal säkerställer att mopparna är torra och luktfria for nästa körning.
+        </p>
+        <p class="text-text-light leading-relaxed">
+          For daglig intensiv moppning (daglig körning, fuktigt klimat i hemmet) ger Narwals torkning ett märkbart mervärde. For veckolig städning är Dreames kombination lika bra eller bättre tack vare hörntäckningen.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-heading text-xl font-semibold text-text mb-3">Pris och värde</h3>
+        <p class="text-text-light leading-relaxed">
+          Narwal Freo X Ultra (ca 8 990 kr) är ca 1 000 kr billigare än Dreame X40 Ultra (ca 9 990 kr). For den lägre prislappen får du dock lägre sugkraft och sämre moppning i hörnen. Räknar du pris per funktionalitet: Dreame erbjuder mer for pengarna i de flesta scenarion. Narwal motiverar prisskillnaden enbart med sin torkteknik — som är värdefull men nischad.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA section -->
+    <section class="mb-10 grid sm:grid-cols-2 gap-4">
+      <div class="bg-bg-alt rounded-xl border border-border p-5">
+        <p class="font-bold text-text mb-1">Narwal Freo X Ultra</p>
+        <p class="text-2xl font-bold text-text mb-1">ca 8 990 kr</p>
+        <p class="text-sm text-text-light mb-4">Bäst på mopptorkning — unik varmluftsfunktion</p>
+        <a
+          href="https://www.komplett.se/search?query=narwal+freo+x+ultra"
+          rel="sponsored noopener noreferrer"
+          target="_blank"
+          class="inline-flex items-center justify-center w-full bg-cta hover:bg-cta/90 text-white font-semibold px-4 py-2.5 rounded-lg transition-colors text-sm"
+        >
+          Se pris hos Komplett
+        </a>
+      </div>
+      <div class="bg-bg-alt rounded-xl border border-border p-5">
+        <p class="font-bold text-text mb-1">Dreame X40 Ultra</p>
+        <p class="text-2xl font-bold text-text mb-1">ca 9 990 kr</p>
+        <p class="text-sm text-text-light mb-4">Bäst overall — starkaste sugkraften i klassen</p>
+        <a
+          href="https://www.komplett.se/product/1307950"
+          rel="sponsored noopener noreferrer"
+          target="_blank"
+          class="inline-flex items-center justify-center w-full bg-cta hover:bg-cta/90 text-white font-semibold px-4 py-2.5 rounded-lg transition-colors text-sm"
+        >
+          Se pris hos Komplett
+        </a>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Fler jämförelser och recensioner</h2>
+      <ul class="space-y-2">
+        <li><a href="/narwal-freo-x-ultra/" class="text-accent hover:underline text-sm">Narwal Freo X Ultra recension — fullständigt test</a></li>
+        <li><a href="/dreame-x40-ultra/" class="text-accent hover:underline text-sm">Dreame X40 Ultra recension — fullständigt test</a></li>
+        <li><a href="/dreame-x40-ultra-vs-roborock-s8-maxv-ultra/" class="text-accent hover:underline text-sm">Dreame X40 Ultra vs Roborock S8 MaxV Ultra</a></li>
+        <li><a href="/robotdammsugare-med-mopp/" class="text-accent hover:underline text-sm">Bästa robotdammsugare med mopp 2026</a></li>
+        <li><a href="/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2026 — alla kategorier</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se pris på Dreame X40 Ultra"
+    url="https://www.komplett.se/product/1307950"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Narwal Freo X Ultra vs Dreame X40 Ultra April 2026",
+    "datePublished": "2026-04-04",
+    "dateModified": "2026-04-04",
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" },
+    "mainEntity": {
+      "@type": "FAQPage",
+      "mainEntity": faqSchema,
+    }
+  })} />
+</BaseLayout>
