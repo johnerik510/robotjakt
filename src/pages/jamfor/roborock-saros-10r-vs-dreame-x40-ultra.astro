@@ -1,0 +1,226 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import FAQ from '../../components/FAQ.astro';
+import StickyCTA from '../../components/StickyCTA.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/' },
+  { label: 'Jämförelser', href: '/jamfor/' },
+  { label: 'Roborock Saros 10R vs Dreame X40 Ultra' },
+];
+
+const faqItems = [
+  {
+    question: 'Vilken är bäst — Roborock Saros 10R eller Dreame X40 Ultra?',
+    answer: 'Det beror på ditt hem och budget. Roborock Saros 10R (14 990 kr) är det rätta valet om du har möbler med låg frihöjd (8–10 cm) eller vill ha absolut starkaste sugkraften (20 000 Pa). Dreame X40 Ultra (9 990 kr) levererar likvärdig städkvalitet i de flesta hem till 5 000 kr lägre pris — den utfällbara moppmodulen som når hörnen är svårslaget på marknaden. Om tillgänglighet under möbler inte är ett problem är Dreame X40 Ultra ett bättre värde.',
+  },
+  {
+    question: 'Är det värt 5 000 kr extra för Roborock Saros 10R?',
+    answer: 'Om du har låga soffben, platta tv-bänkar eller sängar med liten frihöjd — ja, det är värt det. Saros 10R når ytor som Dreame X40 Ultra fysiskt inte kan komma åt. Om dina möbler har normal frihöjd (12 cm+) märks ingen städskillnad och Dreame X40 Ultra är ett klart bättre köp för 5 000 kr mindre.',
+  },
+  {
+    question: 'Vilken har bäst moppfunktion?',
+    answer: 'De är jämbördiga på platta hårdgolvsytor. Dreame X40 Ultras utfällbara sidoarm når faktiskt längre in i hörnen — en konstruktionsmässig fördel som Saros 10R inte matchar. Saros 10R kompenserar med 80 graders moppvattentvätt (Dreame: 70 grader) men i praktiken ger båda ett rent golv. Fördel: Dreame X40 Ultra för hörntäckning, Saros 10R för renhetsgrad på tvättvatten.',
+  },
+  {
+    question: 'Vilken navigerar bäst?',
+    answer: 'Roborock Saros 10R är marginellt överlägsen med StarSight Autonomy System 2.0 (3D ToF LiDAR + VertiBeam + RGB-kamera) och igenkänning av 100+ objekttyper. Dreame X40 Ultras LiDAR-navigering är i toppklass men igenkänner färre objekttyper. Skillnaden märks vid hinderundvikning i rörigt hem — Saros 10R fastnar sällan.',
+  },
+  {
+    question: 'Vilken är bättre för husdjur?',
+    answer: 'Roborock Saros 10R identifierar djuravföring via RGB-kameran och undviker det. Dreame X40 Ultra saknar lika avancerad djuravföringsdetektering. För husdjurshem med hund eller katt är Saros 10R det tryggare valet för ouppsiktad städning.',
+  },
+  {
+    question: 'Vilken är tystare?',
+    answer: 'Båda robotarna ligger på liknande bullernivåer — ca 65–68 dB i normalläge. Dreame X40 Ultra uppges vara något tystare (ca 60 dB) i det tystaste läget. I praktiken är skillnaden minimal och båda är acceptable för städning under dagen utan att störa sömn eller videomöten.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Roborock Saros 10R vs Dreame X40 Ultra April 2026"
+  description="Roborock Saros 10R (14 990 kr) eller Dreame X40 Ultra (9 990 kr)? Vi jämför sugkraft, tunnhet, moppning och navigering. Vilken är värd prisskillnaden på 5 000 kr?"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-04-04">2026-04-04</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Roborock Saros 10R vs Dreame X40 Ultra April 2026 — vilken ska du välja?
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Roborock Saros 10R kostar ca 14 990 kr. Dreame X40 Ultra ca 9 990 kr. Båda är flaggskeppsrobotar med fullautomatisk station och avancerad moppfunktion — men Saros 10R är 7,98 cm tunn och har 20 000 Pa sugkraft. Är 5 000 kr extra värt det?
+    </p>
+
+    <!-- Quick verdict -->
+    <section class="mb-8 bg-winner/5 border border-winner/20 rounded-xl p-5">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Snabbsvar — välj rätt direkt</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div>
+          <p class="text-sm font-bold text-text mb-1">Välj Roborock Saros 10R om du:</p>
+          <ul class="text-text-light text-sm space-y-1">
+            <li>+ Har möbler med 8–10 cm frihöjd</li>
+            <li>+ Har husdjur och behöver djuravföringsdetektering</li>
+            <li>+ Vill ha absolut starkaste sugkraften (20 000 Pa)</li>
+            <li>+ Budget tillåter 14 990 kr</li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-bold text-text mb-1">Välj Dreame X40 Ultra om du:</p>
+          <ul class="text-text-light text-sm space-y-1">
+            <li>+ Har normala möbler med god frihöjd</li>
+            <li>+ Vill ha bäst moppning i hörnen (utfällbar arm)</li>
+            <li>+ Vill spara 5 000 kr utan att kompromissa märkbart</li>
+            <li>+ Söker bäst värde i toppklassen</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specs comparison table -->
+    <section class="mb-10" aria-label="Jämförelsetabell Roborock Saros 10R vs Dreame X40 Ultra">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Specifikationer jämfört</h2>
+      <div class="rounded-xl border border-border overflow-hidden">
+        <table class="w-full text-sm bg-white">
+          <thead>
+            <tr class="bg-bg-alt">
+              <th class="px-4 py-3 text-left font-semibold text-text">Specifikation</th>
+              <th class="px-4 py-3 text-left font-semibold text-text">Roborock Saros 10R</th>
+              <th class="px-4 py-3 text-left font-semibold text-text">Dreame X40 Ultra</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            {[
+              ['Pris', 'ca 14 990 kr', 'ca 9 990 kr'],
+              ['Höjd', '7,98 cm', 'ca 10,8 cm'],
+              ['Sugkraft', '20 000 Pa', '12 000 Pa'],
+              ['Navigering', 'StarSight 2.0: 3D ToF LiDAR + VertiBeam + RGB', 'LiDAR + AI-kamera'],
+              ['Objektigenkänning', '100+ typer inkl. djuravföring', 'Begränsad — inte djuravföring'],
+              ['Moppmodul', 'Dubbla roterande, auto-lyft', 'Utfällbar + roterande, auto-lyft'],
+              ['Hörntäckning mopp', 'Standard', 'Utmärkt — sidoarm når hörnen'],
+              ['Mopptvättning', '80°C varmvatten', '70°C varmvatten'],
+              ['Station', '10-i-1 helautomatisk', '9-i-1 helautomatisk'],
+              ['Drifttid', 'upp till 180 min', 'upp till 180 min'],
+              ['App', 'Roborock Home', 'Dreame Home'],
+            ].map(([spec, saros, dreame], i) => (
+              <tr class={i % 2 === 0 ? '' : 'bg-bg-alt/40'}>
+                <td class="px-4 py-3 font-medium text-text">{spec}</td>
+                <td class="px-4 py-3 text-text-light">{saros}</td>
+                <td class="px-4 py-3 text-text-light">{dreame}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- CTA buttons -->
+    <div class="grid sm:grid-cols-2 gap-4 mb-10">
+      <div class="bg-bg-alt rounded-xl border border-border p-5">
+        <p class="font-bold text-text mb-1">Roborock Saros 10R</p>
+        <p class="text-2xl font-bold text-text mb-3">ca 14 990 kr</p>
+        <a href="https://www.komplett.se/search?search=roborock+saros+10r" rel="sponsored noopener noreferrer" target="_blank"
+           class="block text-center bg-cta hover:bg-cta/90 text-white font-semibold px-5 py-3 rounded-lg transition-colors text-sm">
+          Se pris hos Komplett
+        </a>
+      </div>
+      <div class="bg-bg-alt rounded-xl border border-border p-5">
+        <p class="font-bold text-text mb-1">Dreame X40 Ultra</p>
+        <p class="text-2xl font-bold text-text mb-3">ca 9 990 kr</p>
+        <a href="https://www.komplett.se/product/1307950" rel="sponsored noopener noreferrer" target="_blank"
+           class="block text-center bg-cta hover:bg-cta/90 text-white font-semibold px-5 py-3 rounded-lg transition-colors text-sm">
+          Se pris hos Komplett
+        </a>
+      </div>
+    </div>
+
+    <!-- Category comparisons -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-6">Kategori för kategori — djupjämförelse</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Tunnhet och tillgänglighet under möbler</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Den mest konkreta skillnaden: Roborock Saros 10R är 7,98 cm hög. Dreame X40 Ultra är ca 10,8 cm. De 2,8 centimetrarna avgör om roboten kan städa under din soffa, tv-bänk och säng.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Moderna IKEA-soffben (t.ex. Kivik, Söderhamn) har 8–13 cm frihöjd. Platta tv-möbler (Besta, Billy) kan ha ännu lägre. Om du har möbler i detta spann kan Saros 10R städa dagligen under dem — Dreame X40 Ultra kan inte.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        <strong>Vinnare: Roborock Saros 10R</strong> — om du har låga möbler. Annars spelar det ingen roll.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Sugkraft — 20 000 Pa vs 12 000 Pa</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Saros 10R har 20 000 Pa mot Dreame X40 Ultras 12 000 Pa. I praktiken: på kortkorta mattor och hårdgolv märks skillnaden inte av en genomsnittlig användare. På mellanlånga mattor (flockade, polyester) suger Saros 10R djupare och får upp mer inbäddat damm och husdjurshår.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        <strong>Vinnare: Roborock Saros 10R</strong> — särskilt för hem med tjocka mattor eller husdjur.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Moppfunktion och hörntäckning</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Dreame X40 Ultra har en utfällbar moppmodul som förlängs ut mot väggen och hörnen — ett unikt konstruktionsdrag som Saros 10R saknar. På raka väggar och i hörn moppar X40 Ultra fullständigt; Saros 10R lämnar en liten kant omoppat längs väggen.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Saros 10Rs fördel: 80 graders varmvattentvätt av mopparna (Dreame: 70 grader). Det är en hygienisk fördel men märks inte visuellt på golvet.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        <strong>Vinnare: Dreame X40 Ultra</strong> — för hörntäckning vid moppning.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Navigation och hinderundvikning</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Saros 10R har StarSight Autonomy System 2.0 med 3D ToF LiDAR, VertiBeam och RGB-kamera — och igenkänning av 100+ objekttyper inklusive djuravföring, kablar och skor. Dreame X40 Ultra har LiDAR och en AI-kamera men igenkänner färre objekttyper.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        <strong>Vinnare: Roborock Saros 10R</strong> — bättre hinderundvikning och djuravföringsdetektering.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Pris och värde</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Dreame X40 Ultra är 5 000 kr billigare och levererar 90% av Saros 10Rs prestanda i ett genomsnittligt hem. De 10% extra du betalar för Saros 10R är specifika funktioner (tunnhet, extra sugkraft, djuravföring) som inte alla behöver.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        <strong>Vinnare: Dreame X40 Ultra</strong> — klart bättre pris/prestanda för de flesta hem.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Läs mer</h2>
+      <ul class="space-y-2">
+        <li><a href="/roborock-saros-10r/" class="text-accent hover:underline text-sm">Roborock Saros 10R fullständig recension</a></li>
+        <li><a href="/dreame-x40-ultra/" class="text-accent hover:underline text-sm">Dreame X40 Ultra fullständig recension</a></li>
+        <li><a href="/robotdammsugare-med-mopp/" class="text-accent hover:underline text-sm">Bästa robotdammsugare med mopp April 2026 — alla modeller</a></li>
+        <li><a href="/jamfor/" class="text-accent hover:underline text-sm">Fler jämförelser — robotdammsugare mot robotdammsugare</a></li>
+        <li><a href="/" class="text-accent hover:underline text-sm">Bästa robotdammsugare April 2026</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se pris på Roborock Saros 10R"
+    url="https://www.komplett.se/search?search=roborock+saros+10r"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>
