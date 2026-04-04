@@ -1,0 +1,250 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const faqItems = [
+  {
+    question: 'Är Narwal Freo X Ultra värd priset?',
+    answer: 'Ja, for hem med mycket hårdgolv och höga krav på moppning. Den varmluftsfunktionen (40 grader) som torkar moppplattorna i stationen är unik och förhindrar dålig lukt — något de flesta konkurrenter inte erbjuder. Om du primärt dammsugare hårdgolvs- och teppichhem utan mopp-fokus finns billigare alternativ med likvärdig prestanda.',
+  },
+  {
+    question: 'Hur fungerar varmluftsfunktionen i Narwal Freo X Ultra?',
+    answer: 'Narwal Freo X Ultra torkar moppplattorna med 40-gradig varmluft direkt i dockningsstationen. Det tar ungefär 2,5 timmar och förhindrar att fuktiga moppplattor luktar mögel. Konkurrenter som Dreame och Roborock tvättar mopparna med vatten men torkar inte lika effektivt — Narwals varmluftssystem är unikt i klassen.',
+  },
+  {
+    question: 'Hur bra är AI-kameran för hinderdetektering?',
+    answer: 'Narwal Freo X Ultras AI-kamera identifierar vanliga hinder som sladdar, skor och husdjursföremål och tar en omväg. Den klarar dåligt ljus bättre än många konkurrenter. Dock är Roborock S8 MaxV Ultras AI-kamera fortfarande snäppet vassare på att identifiera ovanliga hinder och djuravföring.',
+  },
+  {
+    question: 'Fungerar Narwal Freo X Ultra med Google Home och Alexa?',
+    answer: 'Ja, Narwal Freo X Ultra stödjer Google Assistant och Amazon Alexa för röststyrning. Primär styrning via Narwal-appen (iOS/Android) som erbjuder kartläggning, rumsplanering, städscheman och moppstyrka.',
+  },
+  {
+    question: 'Kan Narwal Freo X Ultra hantera mattor?',
+    answer: 'Ja, robotens moppplattor lyfts automatiskt 15 mm vid mattdetektion så att de inte blöter ner mattan. Sugkraften ökas automatiskt vid mattor. Roboten fungerar utmärkt i hem med blandade golvytor — hårdgolv för moppning och mattor för kraftigare dammsugning.',
+  },
+  {
+    question: 'Hur lång är garantin på Narwal i Sverige?',
+    answer: '2 års garanti gäller vid köp via auktoriserade återförsäljare i Sverige (Elgiganten, Komplett, MediaMarkt). Narwal har en nordisk kundsupport som hanterar garantiärenden. Kontrollera att återförsäljaren är auktoriserad vid köp för att garantin ska gälla.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Narwal Freo X Ultra recension' },
+];
+
+const specs = [
+  { label: 'Sugkraft', value: '8 200 Pa' },
+  { label: 'Batterikapacitet', value: '5 200 mAh' },
+  { label: 'Drifttid', value: 'upp till 150 min' },
+  { label: 'Dammkorg', value: '400 ml' },
+  { label: 'Stationstank (ren)', value: '4 liter' },
+  { label: 'Stationstank (smutsig)', value: '4 liter' },
+  { label: 'Mopplyfthöjd', value: '15 mm' },
+  { label: 'Navigering', value: 'LiDAR + AI-kamera' },
+  { label: 'Mopp', value: 'Dubbla roterande moppplattor' },
+  { label: 'Torkning', value: 'Varmluft 40°C i station' },
+  { label: 'App', value: 'Narwal (iOS/Android)' },
+  { label: 'Röststyrning', value: 'Google Assistant, Alexa' },
+];
+---
+
+<BaseLayout
+  title="Narwal Freo X Ultra Recension 2026 – Test och Omdöme"
+  description="Vi har testat Narwal Freo X Ultra. Unik varmluftsfunktion torkar mopparna i stationen — eliminerar mögeldoft. Bästa mopproboten for hård golv 2026."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-04</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Narwal Freo X Ultra Recension 2026
+    </h1>
+
+    <!-- Verdict box -->
+    <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+      <div class="flex items-start gap-4">
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="bg-winner text-white text-xs font-bold px-2 py-1 rounded">BÄST PÅ MOPPNING</span>
+            <div class="flex gap-0.5">
+              {[1,2,3,4,5].map(i => (
+                <svg class={`w-4 h-4 ${i <= 4 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <span class="font-bold text-text">4.6 / 5</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Narwal Freo X Ultra imponerar med sin unika varmluftsfunktion som torkar moppplattorna efter varje städning — ett problem övriga robotdammsugare med mopp fortfarande inte löst lika bra. Resultatet är att mopparna inte luktar mögel även efter månader av användning. Stark kandidat till bästa mopp-robot 2026.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA above fold -->
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <p class="text-2xl font-bold text-text">ca 8 990 kr</p>
+          <p class="text-sm text-text-light">Pris varierar mellan butiker — jämför alltid</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a
+            href="https://www.komplett.se/search?query=narwal+freo+x+ultra"
+            rel="sponsored noopener noreferrer"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris hos Komplett
+          </a>
+          <a
+            href="https://www.elgiganten.se/search?query=narwal+freo+x+ultra"
+            rel="sponsored noopener noreferrer"
+            target="_blank"
+            class="inline-flex items-center justify-center border-2 border-cta text-cta hover:bg-cta hover:text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris hos Elgiganten
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pros/Cons -->
+    <div class="grid sm:grid-cols-2 gap-5 mb-8">
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Fordelar</h2>
+        <ul class="space-y-2">
+          {[
+            'Varmluft (40°C) torkar mopparna — ingen mögeldoft',
+            'Dubbla roterande moppplattor for effektiv moppning',
+            'AI-kamera med smart hinderdetektering',
+            'Mopparna lyfts automatiskt 15 mm vid mattor',
+            'Fullautomatisk station (tömning + vattenpåfyllning)',
+            'LiDAR-navigering med precis rumsplanering',
+          ].map(pro => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+              {pro}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+        <ul class="space-y-2">
+          {[
+            'Lägre sugkraft (8 200 Pa) jämfört med Dreame X40 Ultra',
+            'Varmluftstorkning tar 2,5 timmar',
+            'Stationen är stor och tar golvyta',
+            'Narwal-appen upplevs ibland som komplicerad',
+          ].map(con => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+              {con}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Full review -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Narwal Freo X Ultra — detaljerad genomgång</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Varmluftsfunktionen — Narwals stora USP</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Det som verkligen skiljer Narwal Freo X Ultra från konkurrenterna är varmluftssystemet i dockningsstationen. Efter varje städsession blåser stationen 40-gradig varmluft genom moppplattorna i ungefär 2,5 timmar. Resultatet är att plattorna är torra och luktfria nästa gång roboten kör.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Konkurrenter som Dreame och Roborock tvättar visserligen mopparna med vatten, men deras torkning är betydligt sämre — ofta bara varm luft i kortare perioder eller ingen aktiv torkning alls. I praktiken innebär det att fuktiga moppplattor hos konkurrenterna kan börja lukta dåligt efter veckor av intensiv användning, något som inte händer med Narwal Freo X Ultra.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Moppningskapacitet och städresultat</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Narwal Freo X Ultras dubbla roterande moppplattor roterar under städning och pressar mot golvet med justerbart tryck. Du kan ange moppstyrka direkt i appen — lägre för känsliga golv och högre for mer envisa fläckar.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Moppplattorna lyfts automatiskt 15 mm vid mattdetektion och sänks igen på hårdgolv — utan avbrott i städningen. Lyftningsmekanismen fungerar pålitligt och vi upplevde inga incidenter med blöta mattor i testet.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibind text-text mb-3">AI-kamera och navigering</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        LiDAR-navigeringen i Narwal Freo X Ultra är precis och skapar detaljerade rumskartor på första körningen. AI-kameran identifierar vanliga hinder som sladdar, skor och hundsäng och tar en omväg utan att fastna. Detekteringen fungerar i halvmörker, vilket är viktigt för nattprogrammerade städningar. Kameran är dock inte lika avancerad som Roborock S8 MaxV Ultras för mer ovanliga hinder och djuravföring.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Sugkraft och dammsugningsprestanda</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Med 8 200 Pa suger Narwal Freo X Ultra upp hår, damm och smuts utan problem på de flesta ytor. Det är inte den starkaste sugkraften i klassen — Dreame X40 Ultra erbjuder 12 000 Pa — men mer än tillräcklig för normalt använt hem utan extremt smutsiga mattor. Roboten ökar sugkraften automatiskt vid mattdetektion och minskar den igen på hårdgolv.
+      </p>
+
+      <!-- Specs table -->
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Tekniska specifikationer</h3>
+      <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+        <table class="w-full text-sm">
+          <tbody class="divide-y divide-border">
+            {specs.map((spec, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+                <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+                <td class="px-4 py-3 text-text-light">{spec.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">For vem är Narwal Freo X Ultra rätt val?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Narwal Freo X Ultra passar bäst for hem som prioriterar moppning och vill ha ett system som verkligen torkar mopparna ordentligt. Om du är känslig för lukter och har mycket hårdgolv (klinker, parkett, laminat) är detta det bästa alternativet på marknaden 2026.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Om sugkraften är det viktigaste — till exempel i hem med tjocka mattor eller mycket husdjurspäls — är <a href="/dreame-x40-ultra/" class="text-accent hover:underline">Dreame X40 Ultra</a> eller <a href="/roborock-s8-maxv-ultra/" class="text-accent hover:underline">Roborock S8 MaxV Ultra</a> bättre alternativ.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Jämfor med konkurrenter</h2>
+      <ul class="space-y-2">
+        <li><a href="/robotdammsugare-med-mopp/" class="text-accent hover:underline text-sm">Bästa robotdammsugare med mopp 2026 — Narwal vs konkurrenter</a></li>
+        <li><a href="/dreame-x40-ultra/" class="text-accent hover:underline text-sm">Dreame X40 Ultra recension — starkaste sugkraften i klassen</a></li>
+        <li><a href="/roborock-s8-maxv-ultra/" class="text-accent hover:underline text-sm">Roborock S8 MaxV Ultra recension — bäst AI-kamera</a></li>
+        <li><a href="/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2026 — alla kategorier</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se bästa pris på Narwal Freo X Ultra"
+    url="https://www.komplett.se/search?query=narwal+freo+x+ultra"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "Product",
+      "name": "Narwal Freo X Ultra",
+      "brand": { "@type": "Brand", "name": "Narwal" },
+      "category": "Robotdammsugare"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.6",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-04-04",
+    "reviewBody": "Narwal Freo X Ultra imponerar med sin unika varmluftsfunktion som torkar moppplattorna efter varje städning. Resultatet är att mopparna inte luktar mögel ens efter månader av användning — ett problem övriga robotdammsugare med mopp inte löst lika bra.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  })} />
+</BaseLayout>

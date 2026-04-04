@@ -1,0 +1,235 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const faqItems = [
+  {
+    question: 'Är Neatsvor X700 Pro värd priset?',
+    answer: 'Ja, for priset (under 1 000 kr) är Neatsvor X700 Pro ett mycket bra val. Du får LiDAR-navigering, mopp-funktion och smart app-styrning till ett pris som de flesta robotar utan LiDAR kostar. Förvänta dig inte tyst drift, stationen-lösning eller avancerad AI-igenkänning — men grundfunktionerna är solida.',
+  },
+  {
+    question: 'Har Neatsvor X700 Pro en dockningsstation?',
+    answer: 'Nej, Neatsvor X700 Pro har ingen automatisk dockningsstation för tömning av dammkorgen. Roboten återvänder självständigt till laddningsstationen, men du behöver tömma dammkorgen manuellt. Det är den stora skillnaden mot premiummodeller som Dreame och Roborock.',
+  },
+  {
+    question: 'Hur bra är LiDAR-navigeringen i den här prisklassen?',
+    answer: 'Neatsvor X700 Pros LiDAR-navigering är förvånansvärt bra för priset. Roboten skapar en karta av hemmet och städar i systematiska banor — till skillnad från billigare infraröda modeller som rör sig slumpmässigt. Kartläggningen är inte lika detaljerad som Dreame eller Roborock, men fungerar bra i enklare hem.',
+  },
+  {
+    question: 'Fungerar moppfunktionen bra?',
+    answer: 'Moppfunktionen i Neatsvor X700 Pro är enkel — en fuktig duk som dras efter roboten. Det avlägsnar lätt smuts och ger golvet ett fräscht intryck, men det är ingen aktiv roterande mopp som i dyrare modeller. Förväntningarna ska sättas rätt: bra for underhållsmoppning, inte djuprengöring.',
+  },
+  {
+    question: 'Passar Neatsvor X700 Pro for hem med husdjur?',
+    answer: 'Neatsvor X700 Pro hanterar normala mängder päls bra, men är inte optimerad for husdjurshem med mycket lös päls. Borsten kan trassla sig med långt hår. Roboten saknar den höga sugkraften och djupgående moppsystemet som husdjurshem med stora mattor egentligen behöver. For husdjurshem rekommenderar vi istället att titta på <a href="/robotdammsugare-husdjur/">vår guide för husdjur</a>.',
+  },
+  {
+    question: 'Var köper man Neatsvor X700 Pro i Sverige?',
+    answer: 'Neatsvor X700 Pro säljs primärt via Amazon.se och utvalda nätbutiker. Kontrollera alltid att säljaren levererar till Sverige och att garantivillkoren gäller. Vid köp via Amazon: välj "Säljs av Amazon" for bäst kundskydd.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Neatsvor X700 Pro recension' },
+];
+
+const specs = [
+  { label: 'Sugkraft', value: '4 000 Pa' },
+  { label: 'Batterikapacitet', value: '2 600 mAh' },
+  { label: 'Drifttid', value: 'upp till 120 min' },
+  { label: 'Dammkorg', value: '600 ml' },
+  { label: 'Vattentank', value: '300 ml' },
+  { label: 'Navigering', value: 'LiDAR' },
+  { label: 'Mopp', value: 'Enkel moppplatta (drag)' },
+  { label: 'Station', value: 'Laddstation (ej tömning)' },
+  { label: 'App', value: 'Tuya/Smart Life (iOS/Android)' },
+  { label: 'Röststyrning', value: 'Google Assistant, Alexa' },
+  { label: 'Bullernivå', value: 'ca 68 dB (max)' },
+];
+---
+
+<BaseLayout
+  title="Neatsvor X700 Pro Recension 2026 – Bäst i Budget?"
+  description="Neatsvor X700 Pro testad — LiDAR-navigering och moppfunktion under 1000 kr. Bästa budgetroboten 2026? Läs vår recension."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-04</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Neatsvor X700 Pro Recension 2026
+    </h1>
+
+    <!-- Verdict box -->
+    <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+      <div class="flex items-start gap-4">
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="bg-winner text-white text-xs font-bold px-2 py-1 rounded">BÄST I BUDGET</span>
+            <div class="flex gap-0.5">
+              {[1,2,3,4,5].map(i => (
+                <svg class={`w-4 h-4 ${i <= 3 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <span class="font-bold text-text">3.8 / 5</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Neatsvor X700 Pro levererar LiDAR-navigering och moppfunktion till ett pris som är svårslaget i sin klass. Perfekt for budget-medvetna konsumenter som vill ha smart städning utan premiumprislappen. Förvänta dig inte fullautomatisk station eller avancerad AI — men grundfunktionerna är solida for pengarna.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA above fold -->
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <p class="text-2xl font-bold text-text">ca 699–999 kr</p>
+          <p class="text-sm text-text-light">Pris varierar — jämfor alltid fore köp</p>
+        </div>
+        <a
+          href="https://www.amazon.se/s?k=neatsvor+x700+pro"
+          rel="sponsored noopener noreferrer"
+          target="_blank"
+          class="inline-flex items-center justify-center bg-cta hover:bg-cta/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+        >
+          Se pris på Amazon
+          <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Pros/Cons -->
+    <div class="grid sm:grid-cols-2 gap-5 mb-8">
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Fordelar</h2>
+        <ul class="space-y-2">
+          {[
+            'LiDAR-navigering till budgetpris',
+            'Moppfunktion inkluderad',
+            'Systematisk städning (ej slumpmässig)',
+            'Smart app-styrning (Tuya/Smart Life)',
+            'Google Assistant och Alexa-stöd',
+            'Stor dammkorg (600 ml)',
+          ].map(pro => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+              {pro}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+        <ul class="space-y-2">
+          {[
+            'Ingen automatisk tömningsstation',
+            'Relativt låg sugkraft (4 000 Pa)',
+            'Enkel drag-mopp — ej roterande',
+            'Högre bullernivå i maxläge',
+            'Begränsad kundservice i Sverige',
+          ].map(con => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+              {con}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Full review -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Neatsvor X700 Pro — detaljerad genomgång</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">LiDAR-navigering till budgetpris — imponerande</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Det mest imponerande med Neatsvor X700 Pro är att den inkluderar LiDAR-navigering i budgetklassen. LiDAR är den teknik som premiummodeller som Dreame och Roborock använder for att kartlägga hemmet och städa i systematiska banor — tidigare var det omöjligt att hitta i denna prisklass.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Roboten skapar en karta vid forsta körningen och delar automatiskt upp hemmet i rum. Via Tuya-appen kan du namnge rum, sätta no-go zones och schemalägga städning. Kartläggningens precision är inte i paritet med flaggskeppen, men för ett normalt hem med öppna ytor fungerar det utmärkt.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Dammsugning och sugkraft</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        4 000 Pa är lägre än premiummodeller men tillräckligt for daglig underhållsstädning i hem utan tjocka mattor eller mycket husdjurspäls. Roboten ökar sugkraften automatiskt när den detekterar mattor. Den stora 600 ml dammkorgen innebär att du behöver tömma den mer sällan — praktiskt när du inte har automatisk station.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Moppfunktionen — enkel men funktionell</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Neatsvor X700 Pro inkluderar en enkel moppmodule med 300 ml vattentank. Roboten drar moppduken längs efter sig och fuktar golvet — det avlägsnar lätt smuts och fotspår effektivt. Förvänta dig inte den roterande mopptekniken som Narwal Freo X Ultra eller Dreame X40 Ultra erbjuder. For underhållsmoppning mellan storstädningar är det ett praktiskt inslag till priset.
+      </p>
+
+      <!-- Specs table -->
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Tekniska specifikationer</h3>
+      <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+        <table class="w-full text-sm">
+          <tbody class="divide-y divide-border">
+            {specs.map((spec, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+                <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+                <td class="px-4 py-3 text-text-light">{spec.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">For vem är Neatsvor X700 Pro rätt val?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Neatsvor X700 Pro är rätt val for dig som vill ha din forsta robotdammsugare med smart navigering utan att betala premiumpris. Perfekt for enklare hem, lägenheter och studentboenden utan tjocka mattor eller mycket päls.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Om du har husdjur, tjocka mattor eller vill ha automatisk tömning av dammkorgen bör du titta på mellanklass-alternativ som <a href="/roborock-q-revo/" class="text-accent hover:underline">Roborock Q Revo</a> eller se vår <a href="/billigaste-robotdammsugare/" class="text-accent hover:underline">guide till billigaste robotdammsugare</a>.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Fler alternativ att jämfora</h2>
+      <ul class="space-y-2">
+        <li><a href="/billigaste-robotdammsugare/" class="text-accent hover:underline text-sm">Billigaste robotdammsugare 2026 — bäst i budget</a></li>
+        <li><a href="/roborock-q-revo/" class="text-accent hover:underline text-sm">Roborock Q Revo recension — bästa mellanklass</a></li>
+        <li><a href="/kopguide-robotdammsugare/" class="text-accent hover:underline text-sm">Köpguide: Hur väljer man rätt robotdammsugare?</a></li>
+        <li><a href="/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2026 — alla kategorier</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se pris på Neatsvor X700 Pro"
+    url="https://www.amazon.se/s?k=neatsvor+x700+pro"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "Product",
+      "name": "Neatsvor X700 Pro",
+      "brand": { "@type": "Brand", "name": "Neatsvor" },
+      "category": "Robotdammsugare"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "3.8",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-04-04",
+    "reviewBody": "Neatsvor X700 Pro levererar LiDAR-navigering och moppfunktion till ett pris som är svårslaget i sin klass. Perfekt for budget-medvetna konsumenter som vill ha smart städning utan premiumprislappen.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  })} />
+</BaseLayout>
