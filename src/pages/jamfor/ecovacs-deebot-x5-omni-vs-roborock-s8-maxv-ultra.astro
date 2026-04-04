@@ -1,0 +1,247 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import FAQ from '../../components/FAQ.astro';
+import StickyCTA from '../../components/StickyCTA.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/' },
+  { label: 'Jämförelser', href: '/jamfor/' },
+  { label: 'Ecovacs Deebot X5 Omni vs Roborock S8 MaxV Ultra' },
+];
+
+const faqItems = [
+  {
+    question: 'Vilken är bäst — Ecovacs Deebot X5 Omni eller Roborock S8 MaxV Ultra?',
+    answer: 'Det beror på vad du prioriterar. Roborock S8 MaxV Ultra (ca 9 990 kr) har starkare sugkraft (10 000 Pa vs 8 000 Pa) och mer etablerad navigering med LiDAR. Ecovacs Deebot X5 Omni (ca 8 990 kr) har en unik fyrkantig design som städar hörn bättre och AI-kameranavigering (AIVI 3D) med utmärkt hinderdetektion. För normalhem: båda är utmärkta val. S8 MaxV Ultra för den som vill ha starkare sugkraft. X5 Omni för den som vill ha bättre hörntäckning till 1 000 kr lägre pris.',
+  },
+  {
+    question: 'Varför är Ecovacs X5 Omni fyrkantig?',
+    answer: 'Ecovacs fyrkantiga design (ett unikt format i robotdammsugar-världen) låter roboten komma närmre in i 90-gradershörn och längs väggar. Enligt Ecovacs egna tester ger det upp till 33% bättre täckning i hörnen jämfört med runda robotar. I praktiken märker du skillnaden längs socklar och i fyrkantiga rum. Nackdelen: lite svårare att navigera smala passager.',
+  },
+  {
+    question: 'Vad är skillnaden mellan AIVI 3D och LiDAR-navigering?',
+    answer: 'AIVI 3D (Ecovacs) använder en AI-driven kamera för att identifiera och undvika hinder i realtid — kan skilja på skor, kablar och husdjursavföring. LiDAR (Roborock) skapar en laserkarta och navigerar exakt baserat på rumsgeometri, men "ser" inte föremål på samma intelligenta sätt. AIVI 3D är starkare på hinderdetektion i realtid; LiDAR är bättre på strukturerad rumskartläggning och precision. S8 MaxV Ultra kombinerar LiDAR med stereokamera för bäst av båda världar.',
+  },
+  {
+    question: 'Hur stor är prisskillnaden mellan X5 Omni och S8 MaxV Ultra?',
+    answer: 'Ecovacs Deebot X5 Omni kostar ca 8 990 kr, Roborock S8 MaxV Ultra ca 9 990 kr — en skillnad på ca 1 000 kr. Det gör X5 Omni till ett attraktivt alternativ om du inte behöver S8 MaxV Ultras extra sugkraft eller föredrar den fyrkantiga designens hörntäckning. Priserna varierar med kampanjer — håll koll på båda.',
+  },
+  {
+    question: 'Klarar Ecovacs X5 Omni husdjurshår?',
+    answer: 'Ja — X5 Omnis 8 000 Pa sugkraft och AIVI 3D-kameran hanterar husdjurshår bra. AIVI 3D kan identifiera husdjursavföring och undvika den — en kritisk funktion för husdjursägare. S8 MaxV Ultra har starkare sugkraft men identifierar inte husdjursavföring. Om du har husdjur med risk för avföring på golvet: X5 Omni är faktiskt det säkrare valet trots lägre sugkraft.',
+  },
+  {
+    question: 'Vilken har bättre moppfunktion?',
+    answer: 'Båda har dubbla roterande moppar med automatisk lyftfunktion vid mattor. Roborock S8 MaxV Ultra tvättar mopparna med 65°C varmvatten; Ecovacs X5 Omni använder en kombinerad tvätt-och-torksystem. Moppkvaliteten är likvärdig för daglig städning. Ingen av dem har den utfällbara mopparm som Dreame X40 Ultra erbjuder — om hörntäckning med mopp är prioritet, välj Dreame.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Ecovacs Deebot X5 Omni vs Roborock S8 MaxV Ultra April 2026"
+  description="Ecovacs X5 Omni (8 990 kr) eller Roborock S8 MaxV Ultra (9 990 kr)? Vi jämför fyrkantig design vs rund, AIVI 3D vs LiDAR och sugkraft. Vilken vinner 2026?"
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-04-04">2026-04-04</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Ecovacs Deebot X5 Omni vs Roborock S8 MaxV Ultra April 2026 — fyrkantig design vs LiDAR-flaggskepp
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Ecovacs Deebot X5 Omni (ca 8 990 kr) är unik med sin fyrkantiga design och AIVI 3D-kameranavigering. Roborock S8 MaxV Ultra (ca 9 990 kr) är ett beprövat flaggskepp med 3D LiDAR och 10 000 Pa sugkraft. Båda kostar under 10 000 kr — men de är fundamentalt olika robotar.
+    </p>
+
+    <!-- Quick verdict -->
+    <section class="mb-8 bg-winner/5 border border-winner/20 rounded-xl p-5">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Snabbsvar — välj rätt direkt</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div>
+          <p class="text-sm font-bold text-text mb-1">Välj Ecovacs Deebot X5 Omni om du:</p>
+          <ul class="text-text-light text-sm space-y-1">
+            <li>+ Vill ha bättre hörntäckning (fyrkantig design)</li>
+            <li>+ Har husdjur och vill ha avföringsdetektering (AIVI 3D)</li>
+            <li>+ Vill spara ca 1 000 kr jämfört med S8 MaxV Ultra</li>
+            <li>+ Prioriterar AI-kamera-hinderdetektion</li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-bold text-text mb-1">Välj Roborock S8 MaxV Ultra om du:</p>
+          <ul class="text-text-light text-sm space-y-1">
+            <li>+ Vill ha starkare sugkraft (10 000 Pa vs 8 000 Pa)</li>
+            <li>+ Föredrar beprövad LiDAR-navigering med stor användarbas</li>
+            <li>+ Har tjocka mattor som kräver extra kraft</li>
+            <li>+ Vill ha Roborock-ekosystemets app och integration</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specs comparison table -->
+    <section class="mb-10" aria-label="Jämförelsetabell Ecovacs X5 Omni vs Roborock S8 MaxV Ultra">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Specifikationer jämfört</h2>
+      <div class="rounded-xl border border-border overflow-hidden">
+        <table class="w-full text-sm bg-white">
+          <thead>
+            <tr class="bg-bg-alt">
+              <th class="px-4 py-3 text-left font-semibold text-text">Specifikation</th>
+              <th class="px-4 py-3 text-left font-semibold text-text">Ecovacs Deebot X5 Omni</th>
+              <th class="px-4 py-3 text-left font-semibold text-text">Roborock S8 MaxV Ultra</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            {[
+              ['Pris', 'ca 8 990 kr', 'ca 9 990 kr'],
+              ['Form', 'Fyrkantig kropp (unik design)', 'Rund kropp (standard)'],
+              ['Sugkraft', '8 000 Pa', '10 000 Pa'],
+              ['Navigering', 'AIVI 3D (AI-kamera + sensorer)', '3D LiDAR + stereokamera (PreciSense)'],
+              ['Hinderdetektion', 'AI-igenkänning inkl. avföring', 'Bra — ej avföringsdetektering'],
+              ['Batteritid', '180 min', '180 min'],
+              ['Moppmodul', 'Dubbla roterande, auto-lyft', 'Dubbla roterande, auto-lyft'],
+              ['Station', 'Helautomatisk (tömning, mopptvätt, -torkning)', 'Helautomatisk (tömning, mopptvätt 65°C, -torkning)'],
+              ['Bullernivå', '68 dB', 'ca 65 dB (tystaste läge)'],
+              ['App', 'Ecovacs Home', 'Roborock Home'],
+              ['Lansering', '2025', '2024'],
+            ].map(([spec, ecovacs, roborock], i) => (
+              <tr class={i % 2 === 0 ? '' : 'bg-bg-alt/40'}>
+                <td class="px-4 py-3 font-medium text-text">{spec}</td>
+                <td class="px-4 py-3 text-text-light">{ecovacs}</td>
+                <td class="px-4 py-3 text-text-light">{roborock}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- CTA buttons -->
+    <div class="grid sm:grid-cols-2 gap-4 mb-10">
+      <div class="bg-bg-alt rounded-xl border border-border p-5">
+        <p class="font-bold text-text mb-1">Ecovacs Deebot X5 Omni</p>
+        <p class="text-2xl font-bold text-text mb-3">ca 8 990 kr</p>
+        <a href="https://www.elgiganten.se/search?q=ecovacs+deebot+x5+omni" rel="sponsored noopener noreferrer" target="_blank"
+           class="block text-center bg-cta hover:bg-cta/90 text-white font-semibold px-5 py-3 rounded-lg transition-colors text-sm">
+          Se pris hos Elgiganten
+        </a>
+      </div>
+      <div class="bg-bg-alt rounded-xl border border-border p-5">
+        <p class="font-bold text-text mb-1">Roborock S8 MaxV Ultra</p>
+        <p class="text-2xl font-bold text-text mb-3">ca 9 990 kr</p>
+        <a href="https://www.elgiganten.se/search?q=roborock+s8+maxv+ultra" rel="sponsored noopener noreferrer" target="_blank"
+           class="block text-center bg-cta hover:bg-cta/90 text-white font-semibold px-5 py-3 rounded-lg transition-colors text-sm">
+          Se pris hos Elgiganten
+        </a>
+      </div>
+    </div>
+
+    <!-- Category comparisons -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-6">Kategori för kategori — djupjämförelse</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Design — fyrkantig vs rund</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Den fyrkantiga designen är Ecovacs X5 Omnis viktigaste differentiator. Runda robotdammsugare lämnar alltid en triangulär zon med damm i 90-gradershörn och längs socklar — det är en fysisk begränsning som inte kan lösas med mjukvara. X5 Omnis fyrkantiga form eliminerar detta problem och når längre in i hörn och längs väggar.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Roborock S8 MaxV Ultra är rund som alla andra Roborock-modeller. Den kompenserar med en biborstvals som sticker ut lite extra på sidan — men det är inte samma sak som en fyrkantig kropp. Om hörntäckning är din prioritet är X5 Omni det klara valet.
+        <strong class="block mt-2">Vinnare: Ecovacs Deebot X5 Omni</strong>
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Sugkraft — 8 000 Pa vs 10 000 Pa</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Roborock S8 MaxV Ultra har 25% starkare sugkraft: 10 000 Pa mot X5 Omnis 8 000 Pa. För hårdgolv och tunna mattor är skillnaden liten — båda rengör effektivt. Skillnaden märks på:
+      </p>
+      <ul class="list-disc pl-6 text-text-light space-y-1 mb-4">
+        <li>Tjocka mattor med lång lugg (shaggy, persiska mattor) — S8 MaxV Ultra suger djupare</li>
+        <li>Inbäddat husdjurshår i mattor — S8 MaxV Ultra plockar upp mer</li>
+        <li>Grovt damm och sandkorn — S8 MaxV Ultra klarar det bättre</li>
+      </ul>
+      <p class="text-text-light leading-relaxed mb-6">
+        X5 Omnis 8 000 Pa är tillräckligt för de flesta hem med hårdgolv och tunnare mattor. Har du djupluggade mattor: välj S8 MaxV Ultra.
+        <strong class="block mt-2">Vinnare: Roborock S8 MaxV Ultra</strong>
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Navigering och hinderdetektion</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Ecovacs AIVI 3D kombinerar kamera med AI-igenkänning för att identifiera och undvika föremål i realtid — inklusive husdjursavföring. Det är en kritisk funktion för husdjursägare. X5 Omnis navigering är effektiv men kan ibland vara något långsammare på rumsplanering jämfört med LiDAR.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Roborock S8 MaxV Ultra kombinerar 3D LiDAR (exakt rumskartläggning) med PreciSense stereokamera (hinderdetektering). Resultatet är snabb, precis navigering med bra hinderundvikning — men utan avföringsdetektering.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        <strong>Vinnare: Delad seger.</strong> X5 Omni vinner för husdjursägare (avföringsdetektering). S8 MaxV Ultra vinner för rumsplanering och precision.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Moppfunktion</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Båda robotarna har dubbla roterande moppar med automatisk lyftfunktion när de kör över mattor. Roborock S8 MaxV Ultra tvättar mopparna med 65°C varmvatten. Ecovacs X5 Omni har ett integrerat system för mopptvätt och -torkning. I praktiken är moppkvaliteten likvärdig för vardaglig städning på hårdgolv.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Ingen av dem har Dreame X40 Ultras utfällbara mopparm som når hörnen — om du vill ha mopp även i hörnen, välj Dreame.
+        <strong class="block mt-2">Vinnare: Ungefär lika</strong>
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Pris och värde</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Ecovacs Deebot X5 Omni kostar ca 1 000 kr mindre än Roborock S8 MaxV Ultra. För den som vill ha hörntäckning och husdjursdetektering är X5 Omni faktiskt det bättre köpet till lägre pris. S8 MaxV Ultra motiverar sin prislapp med starkare sugkraft och Roborock-ekosystemets välkända pålitlighet.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        <strong>Vinnare: Ecovacs Deebot X5 Omni</strong> — bäst värde per krona, särskilt för husdjursägare och hem med hörn att städa.
+      </p>
+    </section>
+
+    <!-- Verdict -->
+    <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Vår slutsats</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        <strong>Ecovacs Deebot X5 Omni är det smartare valet för de flesta hem</strong> — fyrkantig design för bättre hörntäckning, AIVI 3D med avföringsdetektering för husdjursägare, och ca 1 000 kr lägre pris. 8 000 Pa sugkraft är tillräckligt för hårdgolv och tunnare mattor.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        <strong>Roborock S8 MaxV Ultra</strong> är rätt val om du har tjocka mattor (kräver 10 000 Pa), föredrar beprövad LiDAR-navigering, eller redan är inne i Roborock-ekosystemet. Den är ett exceptionellt välbalanserat flaggskepp till ett rimligt pris — men X5 Omnis unika designfördelar är svåra att ignorera.
+      </p>
+      <div class="grid sm:grid-cols-2 gap-4 mt-6">
+        <a href="/ecovacs-deebot-x5-omni/" class="block text-center bg-bg border border-border text-text font-semibold px-5 py-3 rounded-lg hover:bg-bg-alt transition-colors text-sm">
+          Läs fullständig recension: X5 Omni
+        </a>
+        <a href="/roborock-s8-maxv-ultra/" class="block text-center bg-bg border border-border text-text font-semibold px-5 py-3 rounded-lg hover:bg-bg-alt transition-colors text-sm">
+          Läs fullständig recension: S8 MaxV Ultra
+        </a>
+      </div>
+    </section>
+
+    <!-- Related comparisons -->
+    <section class="mb-10">
+      <h2 class="font-heading text-lg font-bold text-text mb-4">Relaterade jämförelser</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/jamfor/ecovacs-deebot-x5-omni-vs-dreame-x40-ultra/" class="text-cta hover:underline">Ecovacs X5 Omni vs Dreame X40 Ultra — fyrkantig design vs utfällbar mopp</a></li>
+        <li><a href="/jamfor/roborock-saros-10r-vs-roborock-s8-maxv-ultra/" class="text-cta hover:underline">Roborock Saros 10R vs S8 MaxV Ultra — ny toppmodell vs flaggskepp</a></li>
+        <li><a href="/jamfor/roborock-qrevo-master-vs-dreame-x40-ultra/" class="text-cta hover:underline">Roborock Qrevo Master vs Dreame X40 Ultra — intern märkesjämförelse</a></li>
+        <li><a href="/robotdammsugare-med-mopp/" class="text-cta hover:underline">Bästa robotdammsugare med mopp 2026 — fullständig lista</a></li>
+        <li><a href="/ecovacs-guide/" class="text-cta hover:underline">Ecovacs guide — alla modeller och hur du väljer rätt</a></li>
+      </ul>
+    </section>
+
+    <FAQ items={faqItems} />
+  </div>
+
+  <StickyCTA href="https://www.elgiganten.se/search?q=ecovacs+deebot+x5+omni" text="Ecovacs X5 Omni — bäst pris ca 8 990 kr" />
+</BaseLayout>
