@@ -1,0 +1,362 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/' },
+  { label: 'iRobot Roomba-guide' },
+];
+
+const models = [
+  {
+    name: 'Roomba Combo i8+',
+    badge: 'BÄST ALLT-I-ETT',
+    badgeColor: 'bg-winner',
+    price: '8 500–9 500 kr',
+    navigation: 'Imprint Smart Mapping',
+    emptying: 'Auto-töm (Clean Base)',
+    mop: 'Ja (avlyftsbar)',
+    bestFor: 'Helomhäckning, hund/katt',
+  },
+  {
+    name: 'Roomba j7+',
+    badge: 'BÄST HINDERDETEKTION',
+    badgeColor: 'bg-accent',
+    price: '7 500–8 500 kr',
+    navigation: 'PrecisionVision',
+    emptying: 'Auto-töm',
+    mop: 'Nej',
+    bestFor: 'Hinder-igenkänning (hundskit!)',
+  },
+  {
+    name: 'Roomba i7+',
+    badge: 'BÄST VÄRDE',
+    badgeColor: 'bg-text-light',
+    price: '5 500–7 000 kr',
+    navigation: 'Imprint Smart Mapping',
+    emptying: 'Auto-töm',
+    mop: 'Nej',
+    bestFor: 'Bra pris/prestanda',
+  },
+  {
+    name: 'Roomba i3',
+    badge: 'BUDGET',
+    badgeColor: 'bg-text-lighter',
+    price: '2 000–3 500 kr',
+    navigation: 'iAdapt 3.0',
+    emptying: 'Manuell',
+    mop: 'Nej',
+    bestFor: 'Enkel hemmet, budget',
+  },
+  {
+    name: 'Roomba Vibe',
+    badge: 'MOPP + DAMMSUG',
+    badgeColor: 'bg-text-light',
+    price: '3 500–4 500 kr',
+    navigation: 'iAdapt 3.0',
+    emptying: 'Manuell',
+    mop: 'Ja',
+    bestFor: 'Vill ha mopp + dammsug',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Är iRobot ett pålitligt märke?',
+    answer: 'Ja. iRobot grundades 1990 och lanserade Roomba 2002 — de är bokstavligen pionjärerna som uppfann kategorin robotdammsugare. Märket förvärvades av Amazon 2022 för 1,7 miljarder dollar, vilket stärker den långsiktiga produktutvecklingen. iRobot säljs i Sverige via Elgiganten, MediaMarkt och välsorterade nätbutiker med garanti och service.',
+  },
+  {
+    question: 'Vad är PrecisionVision Obstacle Avoidance och varför är det viktigt?',
+    answer: 'PrecisionVision är iRobots kamerabaserade AI-system för hinderdetektering. Det identifierar och undviker specifika föremål på golvet — inklusive hundavföring, kablar och strumpor. Roomba j7+ är modellen som populariserade tekniken med garantin "P.O.O.P." (Pet Owner Official Promise) — om roboten kör in i en bajshög ersätter iRobot enheten. Det är ett unikt löfte på marknaden.',
+  },
+  {
+    question: 'Vad är Clean Base och hur fungerar det?',
+    answer: 'Clean Base är iRobots automatiska tömningsstation. När Roomba återvänder till basen sugs dammkorgen automatiskt in i en påse i stationen. Påsen rymmer ungefär 60 dagars smuts och är förseglad — du tömer den utan att komma i kontakt med dammet. Clean Base ingår i +-modellerna (i7+, j7+, Combo i8+).',
+  },
+  {
+    question: 'Vilken Roomba passar bäst för husdjur?',
+    answer: 'Roomba j7+ är det bästa valet för husdjurshem som vill ha skydd mot djuravföring — PrecisionVision undviker bajshögar med garanterad precision. Roomba Combo i8+ är bäst om du också vill ha moppfunktion i kombination med husdjursstädning. Båda modellerna har gummirullar som inte trasslas lika lätt av päls som borstar.',
+  },
+  {
+    question: 'Varför saknar de flesta Roomba-modeller moppfunktion?',
+    answer: 'iRobots historiska designfilosofi har prioriterat specialisering — en robot som dammsugare, en annan som moppmaskin (Braava-serien). Roomba Combo i8+ och Roomba Vibe är undantagen med inbyggd moppfunktion. Kombinationsmodeller från Dreame och Roborock erbjuder mer avancerad moppning om det är ett huvudkrav.',
+  },
+  {
+    question: 'Fungerar Roomba med Google Home och Amazon Alexa?',
+    answer: 'Ja, alla moderna Roomba-modeller stödjer röststyrning via Google Assistant och Amazon Alexa. Det är naturligt med tanke på att iRobot ägs av Amazon. Du kan starta, stoppa och schemalägga städning med röstkommandon. Styrning och detaljerade inställningar sköts via iRobot Home-appen på iOS och Android.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="iRobot Roomba-guide 2026 – Alla modeller jämförda"
+  description="iRobot är pionjären inom robotdammsugare. Guide till alla Roomba-serier: i-serien, j-serien, Combo-serien och Roomba Vibe. Vilken modell passar dig?"
+  canonical="https://robotjakt.se/irobot-guide/"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-04-04">2026-04-04</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      iRobot Roomba-guide 2026 — alla modeller jämförda
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      iRobot uppfann robotdammsugaren. Sedan 2002 har Roomba satt standarden — och idag erbjuder märket allt från budgetmodeller till avancerade kombosystem med automatisk tömning och moppfunktion. Här är guiden till alla modeller 2026.
+    </p>
+
+    <!-- Brand overview -->
+    <section class="mb-8 bg-bg-alt rounded-xl border border-border p-6">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">iRobot — pionjären som uppfann kategorin</h2>
+      <p class="text-text-light leading-relaxed mb-3">
+        iRobot grundades 1990 av MIT-ingenjörer med fokus på militär- och rymdrobotik. År 2002 lanserade de Roomba — den första kommersiellt framgångsrika robotdammsugaren. Mer än 40 miljoner Roomba-enheter har sålts globalt sedan dess. År 2022 förvärvades iRobot av Amazon för 1,7 miljarder dollar.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        I Sverige säljs Roomba via Elgiganten, MediaMarkt och auktoriserade näthandlare. Alla modeller levereras med 2 års garanti. iRobot Home-appen stödjer iOS och Android med kartfunktioner, rumsplanering och städscheman.
+      </p>
+    </section>
+
+    <!-- Comparison table -->
+    <section class="mb-10" aria-label="Jämförelsetabell Roomba-modeller">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse — Roomba-modeller 2026</h2>
+      <div class="hidden sm:block rounded-xl border border-border overflow-hidden">
+        <table class="w-full text-sm bg-white">
+          <thead>
+            <tr class="border-b border-border bg-bg-alt">
+              <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Navigering</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Tömning</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Moppfunktion</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Ca-pris</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Bäst för</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr class="bg-winner/5">
+              <td class="px-4 py-3 font-medium text-text">Roomba Combo i8+</td>
+              <td class="px-4 py-3 text-text-light">Imprint Smart Mapping</td>
+              <td class="px-4 py-3 text-text-light">Auto-töm (Clean Base)</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja (avlyftsbar)</td>
+              <td class="px-4 py-3 font-semibold text-text">8 500–9 500 kr</td>
+              <td class="px-4 py-3 text-text-light">Helomhäckning, hund/katt</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Roomba j7+</td>
+              <td class="px-4 py-3 text-text-light">PrecisionVision</td>
+              <td class="px-4 py-3 text-text-light">Auto-töm</td>
+              <td class="px-4 py-3 text-text-light">Nej</td>
+              <td class="px-4 py-3 font-semibold text-text">7 500–8 500 kr</td>
+              <td class="px-4 py-3 text-text-light">Hinder-igenkänning (hundskit!)</td>
+            </tr>
+            <tr class="bg-bg-alt/50">
+              <td class="px-4 py-3 font-medium text-text">Roomba i7+</td>
+              <td class="px-4 py-3 text-text-light">Imprint Smart Mapping</td>
+              <td class="px-4 py-3 text-text-light">Auto-töm</td>
+              <td class="px-4 py-3 text-text-light">Nej</td>
+              <td class="px-4 py-3 font-semibold text-text">5 500–7 000 kr</td>
+              <td class="px-4 py-3 text-text-light">Bra pris/prestanda</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Roomba i3</td>
+              <td class="px-4 py-3 text-text-light">iAdapt 3.0</td>
+              <td class="px-4 py-3 text-text-light">Manuell</td>
+              <td class="px-4 py-3 text-text-light">Nej</td>
+              <td class="px-4 py-3 font-semibold text-text">2 000–3 500 kr</td>
+              <td class="px-4 py-3 text-text-light">Enkel hemmet, budget</td>
+            </tr>
+            <tr class="bg-bg-alt/50">
+              <td class="px-4 py-3 font-medium text-text">Roomba Vibe</td>
+              <td class="px-4 py-3 text-text-light">iAdapt 3.0</td>
+              <td class="px-4 py-3 text-text-light">Manuell</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 font-semibold text-text">3 500–4 500 kr</td>
+              <td class="px-4 py-3 text-text-light">Vill ha mopp + dammsug</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Mobile cards -->
+      <div class="sm:hidden space-y-3">
+        {models.map((model) => (
+          <div class="bg-white rounded-xl border border-border p-4">
+            <div class="flex items-center gap-2 mb-3">
+              <span class={`${model.badgeColor} text-white text-xs font-bold px-2 py-1 rounded`}>{model.badge}</span>
+              <span class="font-semibold text-text text-sm">{model.name}</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2 text-sm">
+              <div><span class="text-text-lighter text-xs">Navigering</span><p class="text-text-light">{model.navigation}</p></div>
+              <div><span class="text-text-lighter text-xs">Tömning</span><p class="text-text-light">{model.emptying}</p></div>
+              <div><span class="text-text-lighter text-xs">Mopp</span><p class="text-text-light">{model.mop}</p></div>
+              <div><span class="text-text-lighter text-xs">Pris ca</span><p class="font-semibold text-text">{model.price}</p></div>
+            </div>
+            <p class="text-xs text-text-lighter mt-2">Bäst for: {model.bestFor}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Strengths -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Styrkor med iRobot Roomba</h2>
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">PrecisionVision Obstacle Avoidance</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            iRobots AI-kamera identifierar och undviker specifika föremål på golvet — hundavföring, kablar, strumpor och leksaker. Roomba j7+ levererar detta med en unik produktgaranti: om roboten kör in i en bajshög ersätter iRobot enheten. Det är ett löfte ingen konkurrent matchar.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Clean Base — automatisk tömning</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            Clean Base-stationen suger automatiskt dammkorgen tom och lagrar smutsen i en förseglad engångspåse. Påsen rymmer upp till 60 dagars smuts och byts utan kontakt med dammet. Ingår i alla +-modeller (i7+, j7+, Combo i8+).
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Smart Home-integration</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            Med Amazon som ägare är Roomba djupt integrerat i Alexa-ekosystemet. Alla moderna modeller stödjer också Google Assistant. Röststyrning, schemaläggning och städzoner hanteras sömlöst via iRobot Home-appen.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Beprövad teknik och stort servicenätverk</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            Över 30 ars produktutveckling och 40 miljoner sålda enheter globalt. Reservdelar, filter och borstar är lättillgängliga. iRobot har ett etablerat servicenätverk i Sverige via auktoriserade återförsäljare.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Weaknesses -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Svagheter med iRobot Roomba</h2>
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Dyrt underhall</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            Clean Base kräver egna engangspåsar som kostar ungefär 250–350 kr per 3-pack. Filter och borstar bör bytas var 2–3 manad. Over tid kan underhallskostnaden bli hogre an hos konkurrenter med tvattbara filterlosningar.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Begransad moppfunktion pa de flesta modeller</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            Majoriteten av Roomba-modellerna saknar moppfunktion helt. Combo i8+ och Vibe är undantagen, men deras moppning nar inte nivan av Dreame X40 Ultras roterande varmvattensystem. For den som prioriterar moppning finns starkare alternativ pa marknaden.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Lagre sugkraft an premiumkonkurrenter</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            iRobots topmodeller uppnar inte 10 000–12 000 Pa som Roborock och Dreame erbjuder. For normalstadning i ett genomsnittligt hem ar skillnaden marginell, men for husdjurshem med tjocka mattor kan sugkraften vara en begransande faktor.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- iRobot vs konkurrenter -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">iRobot vs Roborock vs Dreame</h2>
+      <div class="bg-bg-alt rounded-xl border border-border p-6">
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            <span><strong class="text-text">iRobot vinner pa hinderdetektion:</strong> PrecisionVision med djuravforingsgaranti ar unikt. Inget annat marke erbjuder samma niva av AI-baserad objektigenkanning kombinerat med en produktgaranti. For husdjursagare som korr roboten utan uppsikt ar detta avgörande.</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            <span><strong class="text-text">Roborock och Dreame vinner pa moppning och sugkraft:</strong> Om moppfunktion ar ett krav är Dreame X40 Ultra eller Roborock Qrevo Master starkare alternativ. Bada marken erbjuder roterande moppar med varmvattentvattsstation och hogre sugkraft an Roombas toppmodeller.</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            <span><strong class="text-text">iRobot vinner pa ekosystem och tillgänglighet:</strong> Med Amazon i ryggen och over 30 ars marknadsnaravaro ar det enkelt att hitta reservdelar, support och tillbehor for Roomba i Sverige. Roborock och Dreame ar nyare pa den svenska marknaden.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Buying guide -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vilken Roomba passar ditt behov?</h2>
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Husdjur med risk for avforing pa golvet</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            Roomba j7+ ar det enda valet. PrecisionVision-garantin ger ett unikt skydd — om roboten missar en bajshogg ersatter iRobot enheten. Ingen annan tillverkare erbjuder en sadan garanti.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Vill ha bade dammsugning och moppning</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            Roomba Combo i8+ ger den basta kombination iRobot erbjuder med avlyftsbar moppmodul och automatisk tömning. Vill du ha starkare moppning — overväg Dreame X40 Ultra eller Roborock Qrevo Master istallet.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Budget — forsta robotdammsugaren</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            Roomba i3 till ca 2 000–3 500 kr ger dig ett pålitligt marke med beprövad teknik till ett lågt instegsrpis. Du tömmer manuellt men far en robot fran ett marke med over 30 ars erfarenhet och brett servicenätverk.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider och jämförelser</h2>
+      <ul class="space-y-2">
+        <li><a href="/eufy-vs-irobot/" class="text-accent hover:underline text-sm">eufy vs iRobot 2026 — prisvärd eller beprövad?</a></li>
+        <li><a href="/roborock-vs-irobot/" class="text-accent hover:underline text-sm">Roborock vs iRobot 2026 — vilket märke är bäst?</a></li>
+        <li><a href="/dreame-vs-irobot/" class="text-accent hover:underline text-sm">Dreame vs iRobot 2026 — moppning eller hinderdetektion?</a></li>
+        <li><a href="/roborock-guide/" class="text-accent hover:underline text-sm">Roborock-guide 2026 — alla modeller jämförda</a></li>
+        <li><a href="/dreame-guide/" class="text-accent hover:underline text-sm">Dreame-guide 2026 — alla modeller jämförda</a></li>
+        <li><a href="/eufy-guide/" class="text-accent hover:underline text-sm">eufy-guide 2026 — alla modeller jämförda</a></li>
+        <li><a href="/robotdammsugare-husdjur/" class="text-accent hover:underline text-sm">Bästa robotdammsugare för husdjur 2026</a></li>
+        <li><a href="/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2026 — alla märken jämförda</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se bästa Roomba 2026"
+    url="#"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "iRobot Roomba-guide 2026 – Alla modeller jämförda",
+    "description": "iRobot är pionjären inom robotdammsugare. Guide till alla Roomba-serier: i-serien, j-serien, Combo-serien och Roomba Vibe.",
+    "datePublished": "2026-04-04",
+    "dateModified": "2026-04-04",
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" },
+    "url": "https://robotjakt.se/irobot-guide/",
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Robotdammsugare", "item": "https://robotjakt.se/" },
+      { "@type": "ListItem", "position": 2, "name": "iRobot Roomba-guide", "item": "https://robotjakt.se/irobot-guide/" },
+    ],
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>

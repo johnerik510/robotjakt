@@ -1,0 +1,345 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/' },
+  { label: 'eufy-guide' },
+];
+
+const models = [
+  {
+    name: 'eufy X10 Pro Omni',
+    badge: 'BÄST I TEST',
+    badgeColor: 'bg-winner',
+    price: '8 000–9 000 kr',
+    navigation: 'AI Map',
+    emptying: 'Auto-töm + auto-fyll mopp',
+    mop: 'Ja (självtvätt)',
+    bestFor: 'Premium allt-i-ett',
+  },
+  {
+    name: 'eufy X9 Pro',
+    badge: 'BÄST VÄRDE',
+    badgeColor: 'bg-accent',
+    price: '6 500–7 500 kr',
+    navigation: 'AI Map',
+    emptying: 'Auto-töm',
+    mop: 'Ja (självtvätt)',
+    bestFor: 'Bra kombination',
+  },
+  {
+    name: 'eufy L70 Hybrid',
+    badge: 'BUDGET KOMBOMOPPARE',
+    badgeColor: 'bg-text-light',
+    price: '3 500–4 500 kr',
+    navigation: 'Smart Dynamic Map',
+    emptying: 'Manuell',
+    mop: 'Ja (enkel)',
+    bestFor: 'Budget kombomoppare',
+  },
+  {
+    name: 'eufy RoboVac G30',
+    badge: 'ENKLAST',
+    badgeColor: 'bg-text-lighter',
+    price: '1 500–2 500 kr',
+    navigation: 'SmartTrack Fusion',
+    emptying: 'Manuell',
+    mop: 'Nej',
+    bestFor: 'Enkel dagsstädning, budget',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Vad är eufy och vem tillverkar dem?',
+    answer: 'eufy är ett konsumentelektronikmärke under Anker Innovations — ett kinesiskt teknikföretag grundat 2011, känt globalt för bärbara batterier och Qi-laddare. eufy-linjen lanserades 2016 med fokus på smarthemsprodukter inklusive robotdammsugare, övervakningskameror och dörrklockor. Anker/eufy säljer i Sverige via Amazon, Elgiganten och auktoriserade näthandlare.',
+  },
+  {
+    question: 'Är eufy robotdammsugare bra eller en kompromiss?',
+    answer: 'eufy X10 Pro Omni och X9 Pro är genuina premiumalternativ som konkurrerar direkt med Roborock och Dreame i samma prisklass. Tyst drift (55 dB), lång batteritid och AI Map-navigering ger ett konkurrenskraftigt paket. Kompromissen är framst kundtjänst i Sverige och en mer begransad produktportfolio jamfort med Roborock och Dreame.',
+  },
+  {
+    question: 'Hur bra är AI Map-navigeringen på eufy X10 Pro Omni?',
+    answer: 'AI Map kombinerar LiDAR och kamerabaserad AI for att kartlagga hemmet och identifiera rum automatiskt. Precision och snabbhet ar jamforbar med Roborock och Dreame i samma prisklass. Funktioner som no-go zones, städzoner och rumsnamn hanteras via eufy Home-appen. Kartläggningskvaliteten ar ett av eufys starkaste säljargument.',
+  },
+  {
+    question: 'Hur tyst är eufy robotdammsugare?',
+    answer: 'eufy marknadsför sina modeller som bland de tystaste pa marknaden — X10 Pro Omni uppger 55 dB i normalläge. Till jamforelse ligger de flesta konkurrenter pa 60–65 dB. For hemmakontor, sovrum och hem med ljudkansliga husdjur kan skillnaden vara märkbar i praktiken.',
+  },
+  {
+    question: 'Hur länge räcker batteriet på eufy robotdammsugare?',
+    answer: 'eufy X10 Pro Omni och X9 Pro uppger upp till 180–260 minuter drifttid beroende pa sugstyrka. Det räcker for 150–250 m² pa en laddning. RoboVac G30 klarar ca 100 minuter, lampligt for lagenheter upp till ca 100 m².',
+  },
+  {
+    question: 'Var kan jag köpa eufy robotdammsugare i Sverige?',
+    answer: 'eufy säljs via Amazon.se, Elgiganten och utvalda nätbutiker. Tillgängligheten i fysiska butiker ar mer begransad jämfort med Roborock och Dreame. Amazon erbjuder ofta de bästa priserna med snabb leverans och enkel returhantering.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="eufy robotdammsugare-guide 2026 – Alla modeller jämförda"
+  description="eufy (Anker) erbjuder prisvärd kvalitet i robotdammsugare. Guide till eufy RoboVac och X-serien: vilken modell passar för ditt hem?"
+  canonical="https://robotjakt.se/eufy-guide/"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-04-04">2026-04-04</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      eufy robotdammsugare-guide 2026 — alla modeller jämförda
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      eufy under Anker Innovations har byggt ett rykte för prisvärd kvalitetselektronik — och deras robotdammsugare lever upp till det. Från budgetvänliga RoboVac till premium X10 Pro Omni med självtvätt och automatisk tömning. Här är guiden till alla modeller 2026.
+    </p>
+
+    <!-- Brand overview -->
+    <section class="mb-8 bg-bg-alt rounded-xl border border-border p-6">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">eufy — prisvärd premiumkvalitet från Anker</h2>
+      <p class="text-text-light leading-relaxed mb-3">
+        eufy är ett varumärke under Anker Innovations, ett kinesiskt teknikföretag grundat 2011 med huvudkontor i Shenzhen. Anker är globalt känt för bärbara laddare och Qi-tillbehör. eufy-produktlinjen lanserades 2016 och täcker robotdammsugare, säkerhetskameror och smarthemsprodukter.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        eufy robotdammsugare säljs i Sverige via Amazon.se och Elgiganten. Märket erbjuder 12–24 månaders garanti beroende pa modell och återförsäljare. eufy Home-appen finns för iOS och Android med kartfunktioner, schemaläggning och röststyrning via Google Assistant och Amazon Alexa.
+      </p>
+    </section>
+
+    <!-- Comparison table -->
+    <section class="mb-10" aria-label="Jämförelsetabell eufy-modeller">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse — eufy-modeller 2026</h2>
+      <div class="hidden sm:block rounded-xl border border-border overflow-hidden">
+        <table class="w-full text-sm bg-white">
+          <thead>
+            <tr class="border-b border-border bg-bg-alt">
+              <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Navigering</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Tömning</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Moppfunktion</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Ca-pris</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Bäst för</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr class="bg-winner/5">
+              <td class="px-4 py-3 font-medium text-text">eufy X10 Pro Omni</td>
+              <td class="px-4 py-3 text-text-light">AI Map</td>
+              <td class="px-4 py-3 text-text-light">Auto-töm + auto-fyll mopp</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja (självtvätt)</td>
+              <td class="px-4 py-3 font-semibold text-text">8 000–9 000 kr</td>
+              <td class="px-4 py-3 text-text-light">Premium allt-i-ett</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">eufy X9 Pro</td>
+              <td class="px-4 py-3 text-text-light">AI Map</td>
+              <td class="px-4 py-3 text-text-light">Auto-töm</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja (självtvätt)</td>
+              <td class="px-4 py-3 font-semibold text-text">6 500–7 500 kr</td>
+              <td class="px-4 py-3 text-text-light">Bra kombination</td>
+            </tr>
+            <tr class="bg-bg-alt/50">
+              <td class="px-4 py-3 font-medium text-text">eufy L70 Hybrid</td>
+              <td class="px-4 py-3 text-text-light">Smart Dynamic Map</td>
+              <td class="px-4 py-3 text-text-light">Manuell</td>
+              <td class="px-4 py-3 text-text-light">Ja (enkel)</td>
+              <td class="px-4 py-3 font-semibold text-text">3 500–4 500 kr</td>
+              <td class="px-4 py-3 text-text-light">Budget kombomoppare</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">eufy RoboVac G30</td>
+              <td class="px-4 py-3 text-text-light">SmartTrack Fusion</td>
+              <td class="px-4 py-3 text-text-light">Manuell</td>
+              <td class="px-4 py-3 text-text-light">Nej</td>
+              <td class="px-4 py-3 font-semibold text-text">1 500–2 500 kr</td>
+              <td class="px-4 py-3 text-text-light">Enkel dagsstädning, budget</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Mobile cards -->
+      <div class="sm:hidden space-y-3">
+        {models.map((model) => (
+          <div class="bg-white rounded-xl border border-border p-4">
+            <div class="flex items-center gap-2 mb-3">
+              <span class={`${model.badgeColor} text-white text-xs font-bold px-2 py-1 rounded`}>{model.badge}</span>
+              <span class="font-semibold text-text text-sm">{model.name}</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2 text-sm">
+              <div><span class="text-text-lighter text-xs">Navigering</span><p class="text-text-light">{model.navigation}</p></div>
+              <div><span class="text-text-lighter text-xs">Tömning</span><p class="text-text-light">{model.emptying}</p></div>
+              <div><span class="text-text-lighter text-xs">Mopp</span><p class="text-text-light">{model.mop}</p></div>
+              <div><span class="text-text-lighter text-xs">Pris ca</span><p class="font-semibold text-text">{model.price}</p></div>
+            </div>
+            <p class="text-xs text-text-lighter mt-2">Bäst för: {model.bestFor}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Strengths -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Styrkor med eufy robotdammsugare</h2>
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Bästa pris/prestanda i klassen</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            eufy X10 Pro Omni och X9 Pro levererar premiumfunktioner — AI Map-navigering, självtvätt och automatisk tömning — till priser som underskrider Roborock och Dreame i samma klass. For den som vill ha toppprestanda utan att betala marknadsledarens prispremie ar eufy ett starkt alternativ.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Tyst drift — 55 dB</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            eufy uppger en bullerniva pa 55 dB i normalläge pa sina X-seriemodeller — ett av de lägsta i klassen. For hemmakontor, lägenheter med tunna väggar och hem med ljudkänsliga djur ar den tysta driften ett konkret fördelsvärde.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Lång batteritid</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            eufy X10 Pro Omni uppger upp till 260 minuters drifttid — tillräckligt for storre lägenheter och hus pa 200+ m² utan att behöva ladda mitt i städningen. Automatisk återladdning och fortsatt städning hanteras av roboten utan ingrepp.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Bra app och Amazon/Google-integration</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            eufy Home-appen erbjuder detaljerade kartor, rumsplanering, städzoner och scheman. Röststyrning via Amazon Alexa och Google Assistant fungerar smidigt. Med Anker som moderbolag ar ekosystemintegrationen genomtänkt.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Weaknesses -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Svagheter med eufy robotdammsugare</h2>
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Svagare kundtjänst i Sverige</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            eufy saknar ett dedikerat nordiskt servicenätverk. Support hanteras via global kundtjänst pa engelska. Vid garantiärenden kan processen vara längre an hos Roborock och Dreame som har fler auktoriserade servicepartners i Sverige.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Begränsad kartläggning jämfort med Roborock och Dreame</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            AI Map är bra men nar inte riktigt nivan av Roborocks PreciSense LiDAR-system i de absolut noggrannaste kartläggningssituationerna — som komplexa planlösningar med manga rum och korridorer. For genomsnittliga hem ar skillnaden minimal.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Uppdateras mer sallan</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            eufy lanserar färre nya modeller per ar jämfort med Roborock och Dreame som uppdaterar sina sortiment aggressivt. Det innebär att eufy-modeller kan bli utdaterade snabbare om konkurrenterna satsar pa ny teknik.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- eufy vs konkurrenter -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">eufy vs Roborock vs Dreame</h2>
+      <div class="bg-bg-alt rounded-xl border border-border p-6">
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            <span><strong class="text-text">eufy vinner pa pris/prestanda:</strong> For samma funktioner som Roborock S8 Max Ultra eller Dreame L20 Ultra betalar du typiskt 500–1 500 kr mindre med eufy X9 Pro. For den prisorienterade kunden med premium-ambitioner ar eufy det starka alternativet.</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            <span><strong class="text-text">Roborock och Dreame vinner pa navigering och moppkvalitet:</strong> Roborocks ReactiveAI och Dreames utfällbara moppmodul (X40 Ultra) erbjuder teknik eufy ännu inte matchat. For husdjurshem och hem med intensiv moppning ar Roborock eller Dreame starkare val.</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            <span><strong class="text-text">eufy vinner pa tysthet:</strong> 55 dB är märkbart tystare an de flesta konkurrenter. Viktigt om du kor roboten under arbetstid i hemmakontoret eller om du har husdjur som störs av högt ljud.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Buying guide -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vilken eufy passar ditt behov?</h2>
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Vill ha premium utan premiumprislapp</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            eufy X10 Pro Omni ar det starka valet — automatisk tömning, självtvättande moppar och AI Map-navigering till ett pris under de flesta konkurrenter pa samma funktionsniva. Bäst for hem med blandade golvytor.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Kombomoppning pa en lagre budget</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            eufy L70 Hybrid ger dig bade dammsugning och moppning for ca 3 500–4 500 kr med Smart Dynamic Map. En av fa modeller i den priskassen med kombinerad funktion och kartläggning.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Enkel dagsstädning till lägsta pris</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            eufy RoboVac G30 till ca 1 500–2 500 kr ar ett av de lägsta instegsalternativen med SmartTrack Fusion. Utan LiDAR men med systematisk städning — lampar sig for enkla lägenheter utan kartkrav.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider och jämförelser</h2>
+      <ul class="space-y-2">
+        <li><a href="/eufy-vs-irobot/" class="text-accent hover:underline text-sm">eufy vs iRobot 2026 — prisvärd eller beprövad?</a></li>
+        <li><a href="/eufy-vs-dreame/" class="text-accent hover:underline text-sm">eufy vs Dreame 2026 — vilket märke är bäst?</a></li>
+        <li><a href="/eufy-vs-roborock/" class="text-accent hover:underline text-sm">eufy vs Roborock 2026 — pris/prestanda jämfört</a></li>
+        <li><a href="/eufy-vs-ecovacs/" class="text-accent hover:underline text-sm">eufy vs Ecovacs 2026 — kinesiska premiumalternativ jämförda</a></li>
+        <li><a href="/roborock-guide/" class="text-accent hover:underline text-sm">Roborock-guide 2026 — alla modeller jämförda</a></li>
+        <li><a href="/dreame-guide/" class="text-accent hover:underline text-sm">Dreame-guide 2026 — alla modeller jämförda</a></li>
+        <li><a href="/irobot-guide/" class="text-accent hover:underline text-sm">iRobot Roomba-guide 2026 — alla modeller jämförda</a></li>
+        <li><a href="/billigaste-robotdammsugare/" class="text-accent hover:underline text-sm">Billigaste robotdammsugare 2026 — bäst under 4 000 kr</a></li>
+        <li><a href="/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2026 — alla märken jämförda</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se bästa eufy 2026"
+    url="#"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "eufy robotdammsugare-guide 2026 – Alla modeller jämförda",
+    "description": "eufy (Anker) erbjuder prisvärd kvalitet i robotdammsugare. Guide till eufy RoboVac och X-serien: vilken modell passar för ditt hem?",
+    "datePublished": "2026-04-04",
+    "dateModified": "2026-04-04",
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" },
+    "url": "https://robotjakt.se/eufy-guide/",
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Robotdammsugare", "item": "https://robotjakt.se/" },
+      { "@type": "ListItem", "position": 2, "name": "eufy-guide", "item": "https://robotjakt.se/eufy-guide/" },
+    ],
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>
