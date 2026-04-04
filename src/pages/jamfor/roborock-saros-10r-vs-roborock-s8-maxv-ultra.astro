@@ -1,0 +1,257 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import FAQ from '../../components/FAQ.astro';
+import StickyCTA from '../../components/StickyCTA.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/' },
+  { label: 'Jämförelser', href: '/jamfor/' },
+  { label: 'Roborock Saros 10R vs Roborock S8 MaxV Ultra' },
+];
+
+const faqItems = [
+  {
+    question: 'Vilken är bäst — Roborock Saros 10R eller Roborock S8 MaxV Ultra?',
+    answer: 'Det beror på ditt hem. Roborock Saros 10R (14 990 kr) vinner på tunnhet (7,98 cm vs 9,65 cm) och sugkraft (20 000 Pa vs 10 000 Pa). S8 MaxV Ultra (9 990–10 990 kr) ger nästan lika bra städresultat i normalhem till 4 000–5 000 kr lägre pris. Har du låga möbler eller tjocka mattor — välj Saros 10R. Har du normala möbler och vill spara pengar — välj S8 MaxV Ultra.',
+  },
+  {
+    question: 'Är Roborock Saros 10R värd det dubbla priset jämfört med S8 MaxV Ultra?',
+    answer: 'Inte för de flesta hem. Preskillnaden är ca 4 000–5 000 kr. Det som du faktiskt betalar extra för är: 2 cm lägre profil (kan städa under fler möbler), 10 000 Pa mer sugkraft (märks på tjocka mattor och husdjurshår), och VertiBeam-sensorn för djupartikeldetektering. Om du har inga låga möbler och inga husdjur är S8 MaxV Ultra ett exceptionellt bra köp.',
+  },
+  {
+    question: 'Vilken navigerar bäst?',
+    answer: 'Roborock Saros 10R är klart överlägsen med StarSight Autonomy System 2.0 — kombinationen av 3D ToF LiDAR, VertiBeam och RGB-kamera möjliggör igenkänning av 100+ objekttyper inklusive djuravföring. S8 MaxV Ultra använder 3D LiDAR och stereokamera med PreciSense-teknologi, som är utmärkt men inte lika komplett. I rörigt hem med många föremål på golvet presterar Saros 10R bättre.',
+  },
+  {
+    question: 'Vilken mopp är bättre?',
+    answer: 'Saros 10R och S8 MaxV Ultra har båda dubbla roterande moppar med automatisk lyftfunktion vid mattor. S8 MaxV Ultra tvätten mopparna med 65°C varmt vatten; Saros 10R med 80°C. Saros 10R är marginellt bättre på hygienisk moptvätt. Ingen av dem har utfällbar mopp som når hörnen — om det är viktigt, välj Dreame X40 Ultra istället.',
+  },
+  {
+    question: 'Vilken är bättre för husdjurshår?',
+    answer: 'Roborock Saros 10R har klar fördel: identifierar djuravföring och undviker den, har kraftigare sugkraft för inbäddat husdjurshår i mattor, och anti-tangle systemet hanterar lång päls bättre. S8 MaxV Ultra är också bra för husdjur men saknar djuravföringsigenkänning — oönskat möte med djuravföring kan spridas över golvet.',
+  },
+  {
+    question: 'Vilken är tystare?',
+    answer: 'Båda är ungefär lika tysta i normalläge (ca 65–68 dB). S8 MaxV Ultra uppges vara något tystare i sitt tystaste läge (ca 61 dB). Skillnaden är minimal i vardagsanvändning. Båda är klart tystare än äldre modeller och störer inte normalt samtal eller TV-tittande.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Roborock Saros 10R vs Roborock S8 MaxV Ultra April 2026"
+  description="Roborock Saros 10R (14 990 kr) eller S8 MaxV Ultra (9 990 kr)? Vi jämför tunnhet, sugkraft, navigering och moppning. Vilken Roborock ska du välja 2026?"
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-04-04">2026-04-04</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Roborock Saros 10R vs S8 MaxV Ultra April 2026 — ny toppmodell vs beprövad flaggskepp
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Roborock Saros 10R (ca 14 990 kr) är världens tunnaste robotdammsugare med mopp — 7,98 cm hög med 20 000 Pa sugkraft. Roborock S8 MaxV Ultra (ca 9 990 kr) är det beprövade flaggskeppet med 3D LiDAR och helautomatisk station. Är 5 000 kr extra värt det?
+    </p>
+
+    <!-- Quick verdict -->
+    <section class="mb-8 bg-winner/5 border border-winner/20 rounded-xl p-5">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Snabbsvar — välj rätt direkt</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div>
+          <p class="text-sm font-bold text-text mb-1">Välj Roborock Saros 10R om du:</p>
+          <ul class="text-text-light text-sm space-y-1">
+            <li>+ Har möbler med 8–10 cm frihöjd</li>
+            <li>+ Har husdjur och behöver djuravföringsdetektering</li>
+            <li>+ Har tjocka mattor som kräver extrakraft</li>
+            <li>+ Vill ha det absolut senaste Roborock har att erbjuda</li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-bold text-text mb-1">Välj Roborock S8 MaxV Ultra om du:</p>
+          <ul class="text-text-light text-sm space-y-1">
+            <li>+ Har normala möbler med god frihöjd (12+ cm)</li>
+            <li>+ Söker bäst pris/prestanda i Roborock-sortimentet</li>
+            <li>+ Vill spara 4 000–5 000 kr utan stor städskillnad</li>
+            <li>+ Värdesätter beprövad teknik med många användare</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specs comparison table -->
+    <section class="mb-10" aria-label="Jämförelsetabell Roborock Saros 10R vs S8 MaxV Ultra">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Specifikationer jämfört</h2>
+      <div class="rounded-xl border border-border overflow-hidden">
+        <table class="w-full text-sm bg-white">
+          <thead>
+            <tr class="bg-bg-alt">
+              <th class="px-4 py-3 text-left font-semibold text-text">Specifikation</th>
+              <th class="px-4 py-3 text-left font-semibold text-text">Roborock Saros 10R</th>
+              <th class="px-4 py-3 text-left font-semibold text-text">Roborock S8 MaxV Ultra</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            {[
+              ['Pris', 'ca 14 990 kr', 'ca 9 990 kr'],
+              ['Höjd', '7,98 cm', '9,65 cm'],
+              ['Sugkraft', '20 000 Pa', '10 000 Pa'],
+              ['Navigering', 'StarSight 2.0: 3D ToF LiDAR + VertiBeam + RGB', '3D LiDAR + stereokamera (PreciSense)'],
+              ['Objektigenkänning', '100+ typer inkl. djuravföring', 'Färre objekttyper, ej djuravföring'],
+              ['Moppmodul', 'Dubbla roterande, auto-lyft', 'Dubbla roterande, auto-lyft'],
+              ['Mopptvättning', '80°C varmvatten', '65°C varmvatten'],
+              ['Station', '10-i-1 helautomatisk', '9-i-1 helautomatisk'],
+              ['Drifttid', 'upp till 180 min', 'upp till 180 min'],
+              ['App', 'Roborock Home', 'Roborock Home'],
+              ['Lansering', '2025/2026', '2024'],
+            ].map(([spec, saros, s8], i) => (
+              <tr class={i % 2 === 0 ? '' : 'bg-bg-alt/40'}>
+                <td class="px-4 py-3 font-medium text-text">{spec}</td>
+                <td class="px-4 py-3 text-text-light">{saros}</td>
+                <td class="px-4 py-3 text-text-light">{s8}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- CTA buttons -->
+    <div class="grid sm:grid-cols-2 gap-4 mb-10">
+      <div class="bg-bg-alt rounded-xl border border-border p-5">
+        <p class="font-bold text-text mb-1">Roborock Saros 10R</p>
+        <p class="text-2xl font-bold text-text mb-3">ca 14 990 kr</p>
+        <a href="https://www.komplett.se/search?search=roborock+saros+10r" rel="sponsored noopener noreferrer" target="_blank"
+           class="block text-center bg-cta hover:bg-cta/90 text-white font-semibold px-5 py-3 rounded-lg transition-colors text-sm">
+          Se pris hos Komplett
+        </a>
+      </div>
+      <div class="bg-bg-alt rounded-xl border border-border p-5">
+        <p class="font-bold text-text mb-1">Roborock S8 MaxV Ultra</p>
+        <p class="text-2xl font-bold text-text mb-3">ca 9 990 kr</p>
+        <a href="https://www.elgiganten.se/search?q=roborock+s8+maxv+ultra" rel="sponsored noopener noreferrer" target="_blank"
+           class="block text-center bg-cta hover:bg-cta/90 text-white font-semibold px-5 py-3 rounded-lg transition-colors text-sm">
+          Se pris hos Elgiganten
+        </a>
+      </div>
+    </div>
+
+    <!-- Category comparisons -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-6">Kategori för kategori — djupjämförelse</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Tunnhet — 7,98 cm vs 9,65 cm</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Roborock Saros 10R är 7,98 cm hög — världens tunnaste robotdammsugare med mopp vid lansering. S8 MaxV Ultra är 9,65 cm. De 1,67 centimetrarna är den primära anledningen att välja Saros 10R framför S8 MaxV Ultra.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Vilken skillnad gör det i praktiken? Soffben på 9–10 cm (vanligt i IKEA-soffmodeller som Söderhamn, Kivik) är tillgängliga för Saros 10R men inte för S8 MaxV Ultra. Låga tv-bänkar, platta sängar och möbler med reducerad frihöjd är ytor Saros 10R når dagligen — medan S8 MaxV Ultra aldrig kan komma åt.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        <strong>Vinnare: Roborock Saros 10R</strong> — om tunnhet är ditt primära krav.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Sugkraft — 20 000 Pa vs 10 000 Pa</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Saros 10R har dubbla sugkraften: 20 000 Pa mot S8 MaxV Ultras 10 000 Pa. I daglig städning på hårdgolv och kortkorta mattor märker de flesta användare inte skillnaden. Båda rengör effektivt. Skillnaden märks på:
+      </p>
+      <ul class="list-disc pl-6 text-text-light space-y-1 mb-4">
+        <li>Tjocka mattor (shaggy, lång lugg) — Saros 10R suger djupare</li>
+        <li>Inbäddat husdjurshår i flockad matta — Saros 10R plockar upp mer</li>
+        <li>Grovt damm och skräp — Saros 10R klarar det bättre</li>
+      </ul>
+      <p class="text-text-light leading-relaxed mb-6">
+        <strong>Vinnare: Roborock Saros 10R</strong> — klart. Men S8 MaxV Ultras 10 000 Pa är tillräckligt för de flesta hem.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Navigering och objektigenkänning</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Saros 10R: StarSight Autonomy System 2.0 med 3D ToF LiDAR, VertiBeam (vertikala strålar som ser hinder underifrån för att inte fastna under möbler) och RGB-kamera. Kan identifiera 100+ objekttyper — inklusive djuravföring, sladdar, strumpor och leksaker.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        S8 MaxV Ultra: 3D LiDAR och PreciSense-stereokamera. Utmärkt navigering och hinderundvikning, men igenkänner färre objekttyper och kan inte identifiera djuravföring specifikt.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        <strong>Vinnare: Roborock Saros 10R</strong> — för de med husdjur eller rörigt hem.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Moppfunktion</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Båda robotarna har dubbla roterande moppar med automatisk lyftfunktion vid mattor. Huvudskillnaden är vattentemperaturen vid mopptvätt: Saros 10R tvättar med 80°C, S8 MaxV Ultra med 65°C. Saros 10R:s varmare vatten ger hygienisk fördel och tar bort fler bakterier.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Ingen av dem har den utfällbara mopparm som Dreame X40 Ultra har — hörntäckning är likvärdig (och inte optimal) på båda. Om perfekt hörntäckning är avgörande: välj Dreame X40 Ultra.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        <strong>Vinnare: Roborock Saros 10R</strong> (marginellt, pga varmare mopptvätt).
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Station och automatisering</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Saros 10R: 10-i-1 station med automatisk dammpåsestömning, mopptvätt och -torkning, vattenpåfyllning och tömning, och självunderhåll. S8 MaxV Ultra: 9-i-1 station med liknande funktioner. Skillnaden i antal "funktioner" är marginell i praktiken — båda är fullt automatiserade och kräver minimal användarinteraktion.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        <strong>Vinnare: Ungefär lika</strong> — Saros 10R marginellt bättre men inte avgörande.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Pris/prestanda-förhållande</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        S8 MaxV Ultra till ca 9 990 kr ger en enorm mängd prestanda för pengarna. Det är ett av de bästa pris/prestanda-förhållandena i premiumbåset. Saros 10R till 14 990 kr är motiverat om du verkligen behöver tunnheten eller den extra sugkraften — men om du inte har låga möbler betalar du 5 000 kr extra för egenskaper du aldrig använder.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        <strong>Vinnare: Roborock S8 MaxV Ultra</strong> — bäst värde per krona.
+      </p>
+    </section>
+
+    <!-- Verdict -->
+    <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Vår slutsats</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        <strong>Roborock S8 MaxV Ultra är den bästa robotdammsugaren för de flesta hem.</strong> Städkvaliteten är utmärkt, navigeringen är pålitlig, och 9 990 kr är ett rimligt pris för vad du får. Den enda anledningen att välja Saros 10R är om du har möbler med under 10 cm frihöjd, husdjur med risk för avföring på golvet, eller tjocka mattor som kräver 20 000 Pa.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        <strong>Roborock Saros 10R</strong> är det rätta valet om du befinner dig i edge-case-scenariot ovan och har budgeten. Det är en imponerande produkt som löser ett verkligt problem — men det problemet finns inte i alla hem.
+      </p>
+      <div class="grid sm:grid-cols-2 gap-4 mt-6">
+        <a href="/roborock-saros-10r/" class="block text-center bg-bg border border-border text-text font-semibold px-5 py-3 rounded-lg hover:bg-bg-alt transition-colors text-sm">
+          Läs fullständig recension: Saros 10R
+        </a>
+        <a href="/roborock-s8-maxv-ultra/" class="block text-center bg-bg border border-border text-text font-semibold px-5 py-3 rounded-lg hover:bg-bg-alt transition-colors text-sm">
+          Läs fullständig recension: S8 MaxV Ultra
+        </a>
+      </div>
+    </section>
+
+    <!-- Related comparisons -->
+    <section class="mb-10">
+      <h2 class="font-heading text-lg font-bold text-text mb-4">Relaterade jämförelser</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/jamfor/roborock-saros-10r-vs-dreame-x40-ultra/" class="text-cta hover:underline">Roborock Saros 10R vs Dreame X40 Ultra — tunnhet vs hörntäckning</a></li>
+        <li><a href="/jamfor/roborock-qrevo-master-vs-roborock-s8-maxv-ultra/" class="text-cta hover:underline">Roborock Qrevo Master vs S8 MaxV Ultra — intern Roborock-jämförelse</a></li>
+        <li><a href="/jamfor/dreame-x40-ultra-vs-roborock-s8-maxv-ultra/" class="text-cta hover:underline">Dreame X40 Ultra vs Roborock S8 MaxV Ultra — bäst i test 2026</a></li>
+        <li><a href="/robotdammsugare-med-mopp/" class="text-cta hover:underline">Bästa robotdammsugare med mopp 2026 — fullständig lista</a></li>
+      </ul>
+    </section>
+
+    <FAQ items={faqItems} />
+  </div>
+
+  <StickyCTA href="https://www.elgiganten.se/search?q=roborock+s8+maxv+ultra" text="S8 MaxV Ultra — bäst värde ca 9 990 kr" />
+</BaseLayout>
