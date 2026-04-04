@@ -1,0 +1,262 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+
+const breadcrumbs = [
+  { label: 'Poolrobot', href: '/poolrobot/' },
+  { label: 'Steinbach Poolrunner Battery Pro' },
+];
+
+const specs = [
+  { label: 'Poolstorlek', value: 'Upp till 8 x 4 m (max 80 m²)' },
+  { label: 'Klättrar väggar', value: 'Nej — enbart botten' },
+  { label: 'Drifttid', value: '90 minuter' },
+  { label: 'Kabellängd', value: 'Ingen — trådlös (batteri)' },
+  { label: 'Batteritid', value: 'ca 90 min per laddning' },
+  { label: 'Laddningstid', value: 'ca 4 timmar' },
+  { label: 'Vikt', value: '5 kg' },
+  { label: 'Filtertyp', value: 'Påsfilter' },
+  { label: 'Pris', value: 'ca 3 990 kr' },
+];
+
+const faqItems = [
+  {
+    question: 'Fungerar Steinbach Poolrunner Battery Pro i alla pooltyper?',
+    answer: 'Den fungerar i de flesta platta bottenpooler med linerfoder, glasfiber eller kakelyta. Dock fungerar den sämre i pooler med kraftig lutning, ojämn botten eller ovan-mark-pooler med upphöjda kanter. Kontrollera att din pool har en jämn botten utan hinder.',
+  },
+  {
+    question: 'Hur länge håller batteriet?',
+    answer: 'Batteriet håller i cirka 90 minuter på en full laddning, vilket räcker för en pool upp till 80 m². Laddningstiden är cirka 4 timmar. Batteriet är inbyggt och icke-utbytbart — livslängden är ca 300-500 laddcykler (3-5 säsonger vid normal användning).',
+  },
+  {
+    question: 'Rengör den verkligen bra utan att klättra väggar?',
+    answer: 'Den rengör enbart botten, inte väggar eller vattenlinje. För en less pool räcker det ofta att botten hålls ren, men alger och kalk på väggarna behöver fortfarande rengöras manuellt. Om du vill ha väggstädning behöver du en kabelansluten modell som Dolphin E30.',
+  },
+  {
+    question: 'Är den värd priset jämfört med Dolphin E30?',
+    answer: 'Steinbach Poolrunner Battery Pro kostar hälften av Dolphin E30 (ca 3 990 kr vs 7 990 kr) men rengör bara botten. Den är värt priset om du har en liten pool, vill ha trådfrihet och inte stör dig på att skrubba väggar manuellt. Annars är E30 ett bättre långsiktigt val.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<ArticleLayout
+  title="Steinbach Poolrunner Battery Pro Test April 2026 — Recension"
+  description="Recension av Steinbach Poolrunner Battery Pro — trådlös poolrobot med batteri för under 4 000 kr. Bäst i budgetklassen?"
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-04-04"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Steinbach Poolrunner Battery Pro — Recension 2026
+  </h1>
+
+  <!-- Verdict box -->
+  <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+    <div class="flex items-start gap-4">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-cta text-white text-xs font-bold px-2 py-1 rounded">BÄST BUDGET</span>
+          <div class="flex gap-0.5" aria-label="Betyg: 7.0 av 10">
+            {[1,2,3,4,5].map(i => (
+              <svg class={`w-4 h-4 ${i <= 3 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span class="font-bold text-text">7,0 / 10</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed mb-3">
+          Steinbach Poolrunner Battery Pro är det billigaste seriösa alternativet för automatisk poolrengöring. Trådfri design med batteri, enkel att använda och rengör botten effektivt. Rengör dock inte väggar eller vattenlinje. Bäst för mindre pooler och budgetmedvetna.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <p class="text-2xl font-bold text-text">ca 3 990 kr</p>
+            <p class="text-xs text-text-light">Pris kan variera — jämför alltid</p>
+          </div>
+          <a
+            href="https://www.swim-fun.se/poolrobotar/"
+            rel="sponsored nofollow noopener noreferrer"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris på Poolrunner Battery Pro
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pros/Cons -->
+  <div class="grid sm:grid-cols-2 gap-5 mb-8">
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Fördelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Trådlös — ingen kabel som trasslar',
+          'Lättviktig och enkel att hantera — 5 kg',
+          'Prisvärdig — under 4 000 kr',
+          'Enkel att starta — inga anslutningar',
+          'Rengör botten effektivt i små/medelstora pooler',
+          'Tyst drift — störr inte grannar',
+        ].map(pro => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            {pro}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Rengör INTE väggar eller vattenlinje',
+          'Begränsad batteritid — 90 minuter',
+          '4 timmars laddtid',
+          'Ej för pooler över 80 m²',
+          'Ickeutbytbart batteri — begränsad livslängd',
+          'Sämre i pooler med ojämn botten',
+        ].map(con => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+            {con}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Specs table -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">Tekniska specifikationer</h2>
+    <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+      <table class="w-full text-sm">
+        <tbody class="divide-y divide-border">
+          {specs.map((spec, i) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+              <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+              <td class="px-4 py-3 text-text-light">{spec.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Detailed review -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-6">Detaljerad genomgång</h2>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Trådfri frihet — batteridrift</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Den största fördelen med Steinbach Poolrunner Battery Pro är att den är helt trådfri. Ingen kabel, ingen transformator vid poolkanten, ingen risk för trassel. Du laddar batteriet, lägger ner roboten i vattnet och trycker på start. Enkelheten i sig är ett starkt argument.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Batteritiden på 90 minuter räcker för pooler upp till 80 m² (ungefär 8x4 m med marginal). Vid varje körning rör sig roboten slumpmässigt över botten och täcker det mesta av ytan. Navigation är inte systematisk som i Dolphin-modellerna, men för en mindre pool fungerar det tillräckligt bra.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Rengöringsförmåga — enbart botten</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Poolrunner Battery Pro rengör enbart poolbotten — den klättrar inte väggar och når inte vattenlinjen. Det är den tydligaste kompromissen med denna prisklass. I en pool med bra kemisk balans och regelbunden drift kan bottenrengöring räcka långt, men väggar och vattenlinje kräver manuell rengöring.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Sugkraften är tillräcklig för sand, löv, insekter och lättare algbeläggningar. Grövre smuts och fastsittande alger kräver förbehandling med poolborste. Påsfiltret är enkelt att tömma men har begränsad kapacitet vid kraftig nedsmutsning.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Jämförelse med Dolphin E30</h3>
+    <p class="text-text-light leading-relaxed mb-6">
+      Dolphin E30 kostar dubbelt så mycket (ca 7 990 kr) men ger avsevärt bättre rengöring: botten OCH väggar, systematisk navigation, 15 m kabel och patronfilter med bättre kapacitet. Om du har budget för E30 — välj den. Poolrunner Battery Pro är för dig som vill ha grundläggande automatisk bottenrengöring till halva priset och uppskattar trådfrihet. Läs vår <a href="/dolphin-e30/" class="text-accent hover:underline">fullständiga recension av Dolphin E30</a>.
+    </p>
+  </section>
+
+  <!-- For whom -->
+  <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+    <h2 class="font-heading text-xl font-bold text-text mb-3">Vem passar Poolrunner Battery Pro för?</h2>
+    <p class="text-text-light leading-relaxed mb-3">
+      Poolrunner Battery Pro passar dig med en mindre pool (upp till 8x4 m) som vill ha automatisk bottenrengöring utan att lägga 8 000+ kr. Den trådfria designen gör den idealisk om du inte vill hantera kablar eller behöver flytta roboten mellan pooler. Den fungerar även bra som komplement till en manuell poolskötsel-rutin.
+    </p>
+    <p class="text-text-light leading-relaxed">
+      Har du en pool större än 8x4 m, vill ha vägg- och vattenlinje-rengöring, eller söker en maskin som håller i 7-10 år — satsa istället på <a href="/dolphin-e30/" class="text-accent hover:underline">Dolphin E30</a> eller <a href="/dolphin-s200/" class="text-accent hover:underline">Dolphin S200</a>.
+    </p>
+  </section>
+
+  <!-- Internal links -->
+  <section class="mb-10 bg-white rounded-xl border border-border p-5">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med andra poolrobotar</h2>
+    <ul class="space-y-2">
+      <li>
+        <a href="/poolrobot/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+          Bästa poolrobot April 2026 — komplett topplista
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/billigaste-poolrobot/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+          Billigaste poolrobot — budgetalternativ
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/kopguide-poolrobot/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+          Kopguide poolrobot — sa valjer du ratt modell
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade recensioner</h2>
+    <ul class="space-y-2">
+      <li><a href="/dolphin-e30/" class="text-accent hover:underline text-sm">Dolphin E30 — Bäst i test 2026</a></li>
+      <li><a href="/dolphin-sigma/" class="text-accent hover:underline text-sm">Dolphin Sigma — Premium poolrobot</a></li>
+      <li><a href="/billigaste-poolrobot/" class="text-accent hover:underline text-sm">Billigaste poolrobot 2026</a></li>
+    </ul>
+  </section>
+</ArticleLayout>
+
+<StickyCTA
+  text="Se pris på Poolrunner Battery Pro"
+  url="https://www.swim-fun.se/poolrobotar/"
+  productName="Steinbach Poolrunner Battery Pro"
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["Product", "Review"],
+  "name": "Steinbach Poolrunner Battery Pro",
+  "brand": { "@type": "Brand", "name": "Steinbach" },
+  "category": "Poolrobot",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "SEK",
+    "price": "3990",
+    "availability": "https://schema.org/InStock",
+    "url": "https://www.swim-fun.se/poolrobotar/"
+  },
+  "review": {
+    "@type": "Review",
+    "author": { "@type": "Organization", "name": "Robotjakt.se" },
+    "reviewRating": { "@type": "Rating", "ratingValue": "7.0", "bestRating": "10" },
+    "datePublished": "2026-04-04",
+    "reviewBody": "Trådlös budgetpoolrobot som rengör botten effektivt. Bästa budget-alternativet för mindre pooler."
+  },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "7.0", "bestRating": "10", "ratingCount": "1" }
+})} />
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqSchema
+})} />

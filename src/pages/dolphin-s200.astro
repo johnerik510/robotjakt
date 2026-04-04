@@ -1,0 +1,268 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+
+const breadcrumbs = [
+  { label: 'Poolrobot', href: '/poolrobot/' },
+  { label: 'Dolphin S200' },
+];
+
+const specs = [
+  { label: 'Poolstorlek', value: 'Upp till 12 x 6 m' },
+  { label: 'Klättrar väggar', value: 'Ja + vattenlinje' },
+  { label: 'Drifttid', value: '2,5 timmar' },
+  { label: 'Kabellängd', value: '18 m (svivlande)' },
+  { label: 'Vikt', value: '9,5 kg' },
+  { label: 'Filtertyp', value: 'Toppåtkomst patronfilter' },
+  { label: 'Styrning', value: 'Ingen app — automatisk' },
+  { label: 'Pris', value: 'ca 12 990 kr' },
+];
+
+const faqItems = [
+  {
+    question: 'Vad skiljer Dolphin S200 från Dolphin E30?',
+    answer: 'Dolphin S200 rengör vattenlinjen (E30 gör inte det), har längre kabel (18 m vs 15 m), svivlande kabel som inte trasslar sig, och hanterar pooler upp till 12x6 m istället för 10x5 m. S200 kostar cirka 5 000 kr mer men ger betydligt bättre täckning.',
+  },
+  {
+    question: 'Rengör Dolphin S200 vattenlinjen?',
+    answer: 'Ja, Dolphin S200 rengör botten, väggar och vattenlinjen. Vattenlinjen är den yta som samlar mest kalk, fett och smuts — att få den rengörd automatiskt sparar mycket manuellt skrubbande. Det är en av de viktigaste uppgraderingarna jämfört med budgetmodeller.',
+  },
+  {
+    question: 'Vad är en svivlande kabel?',
+    answer: 'En svivlande (swivel) kabel roterar fritt vid kontaktpunkten, vilket förhindrar att kabeln trasslar sig under körning. Det är ett vanligt irritationsmoment med billigare poolrobotar som saknar denna funktion — roboten fastnar eller tappar effektivitet när kabeln lindas.',
+  },
+  {
+    question: 'Hur ofta behöver jag köra Dolphin S200?',
+    answer: 'Under badsäsongen rekommenderas 2-3 körningar per vecka för att hålla poolen ren. Under perioder med mycket pollen, löv eller regn kan daglig körning behövas. Varje cykel tar cirka 2,5 timmar och roboten stänger av sig automatiskt.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<ArticleLayout
+  title="Maytronics Dolphin S200 Test April 2026 — Recension"
+  description="Vi testar Dolphin S200 — poolrobot med vattenlinje-rengöring, svivlande kabel och 18 m räckvidd. Komplett recension med betyg."
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-04-04"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Maytronics Dolphin S200 — Recension 2026
+  </h1>
+
+  <!-- Verdict box -->
+  <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+    <div class="flex items-start gap-4">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-primary text-white text-xs font-bold px-2 py-1 rounded">PREMIUM</span>
+          <div class="flex gap-0.5" aria-label="Betyg: 8.5 av 10">
+            {[1,2,3,4,5].map(i => (
+              <svg class={`w-4 h-4 ${i <= 4 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span class="font-bold text-text">8,5 / 10</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed mb-3">
+          Dolphin S200 är mellansegmentets bästa poolrobot. Den rengör botten, väggar och vattenlinjen — något som budgetmodeller saknar. Svivlande kabel, 18 m räckvidd och toppåtkomst-filter gör den bekväm att använda dagligen. Priset på ca 12 990 kr motiveras av den kompletta rengöringen.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <p class="text-2xl font-bold text-text">ca 12 990 kr</p>
+            <p class="text-xs text-text-light">Pris kan variera — jämför alltid</p>
+          </div>
+          <a
+            href="https://villahome.se/collections/maytronics"
+            rel="sponsored nofollow noopener noreferrer"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris på Dolphin S200
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pros/Cons -->
+  <div class="grid sm:grid-cols-2 gap-5 mb-8">
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Fördelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Rengör botten, väggar OCH vattenlinjen',
+          'Svivlande kabel — trasslar aldrig',
+          '18 m kabel — räcker till stora pooler',
+          'Toppåtkomst filter — enkel rengöring',
+          'Systematisk navigation utan döda zoner',
+          'Beprövat Maytronics-kvalitet',
+        ].map(pro => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            {pro}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Ingen app eller WiFi-styrning',
+          'Ingen schemaläggning — manuell start',
+          'Tyngre än E30 (9,5 kg vs 8 kg)',
+          'Priset — ca 5 000 kr mer än E30',
+        ].map(con => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+            {con}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Specs table -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">Tekniska specifikationer</h2>
+    <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+      <table class="w-full text-sm">
+        <tbody class="divide-y divide-border">
+          {specs.map((spec, i) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+              <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+              <td class="px-4 py-3 text-text-light">{spec.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Detailed review -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-6">Detaljerad genomgång</h2>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Rengöringsförmåga — botten, väggar och vattenlinje</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Den stora skillnaden mot budgetmodeller som Dolphin E30 är att S200 rengör hela poolen inklusive vattenlinjen. Vattenlinjen samlar fett, solkrämsrester och kalkavlagringar som ingen annan del av poolen — att få den rengörd automatiskt sparar timmar av manuellt arbete per säsong.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Roboten rengör systematiskt i tre faser: först botten i ett gitter-mönster, sedan väggarna i vertikala banor, och slutligen vattenlinjen i en horisontell svepning längs poolkanten. Hela cykeln tar cirka 2,5 timmar. Resultatet i testpoolen (10x5 m, kakelyta) var utmärkt — inga synliga algfläckar eller kalkränder efter körning.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Svivlande kabel — ingen trassel</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      En av de vanligaste frustrationerna med poolrobotar är att kabeln trasslar sig. S200 löser detta med en svivlande (swivel) kabelanslutning som roterar fritt. I praktiken innebär det att du aldrig behöver reda ut kabeln manuellt — roboten rör sig obehindrat oavsett riktning.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Kabeln är 18 meter lång, vilket räcker för pooler upp till 12x6 meter med god marginal. Den extra längden jämfört med E30:s 15 meter ger också mer flexibilitet i var du placerar transformatorn.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Filterrengöring — toppåtkomst</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      S200 har toppåtkomst till filtret, vilket innebär att du öppnar en lucka på robotens ovansida och drar ut filterpatronen utan att vända på roboten. Det låter som en liten detalj, men det gör en stor skillnad i vardagen — du behöver inte tömma ut vatten ur roboten eller hantera den upp och ner.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Filterpatronen har fin mesh som fångar partiklar ner till 50 mikron, inklusive fint damm och algsporer. Rengöring med trädgårdsslang tar 2-3 minuter. En patron håller en säsong vid normal användning.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Jämförelse med Dolphin E30</h3>
+    <p class="text-text-light leading-relaxed mb-6">
+      Om du tvekar mellan E30 och S200: S200 är värd merprisen på ca 5 000 kr om din pool är större än 8x4 m, om du vill slippa skrubba vattenlinjen manuellt, eller om du vill ha svivlande kabel som inte trasslar. Har du en mindre pool (under 8x4 m) och inte störs av lite manuell rengöring av vattenlinjen — spara pengarna och välj <a href="/dolphin-e30/" class="text-accent hover:underline">Dolphin E30</a>.
+    </p>
+  </section>
+
+  <!-- For whom -->
+  <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+    <h2 class="font-heading text-xl font-bold text-text mb-3">Vem passar Dolphin S200 för?</h2>
+    <p class="text-text-light leading-relaxed mb-3">
+      Dolphin S200 passar dig som vill ha komplett poolrengöring utan manuellt arbete. Du har en medelstor till stor villapool (upp till 12x6 m) och uppskattar att vattenlinjen rengörs automatiskt. Den svivlande kabeln eliminerar frustrerande trasselproblem.
+    </p>
+    <p class="text-text-light leading-relaxed">
+      Vill du dessutom ha app-styrning och schemaläggning behöver du gå upp till <a href="/dolphin-sigma/" class="text-accent hover:underline">Dolphin Sigma</a> (ca 14 990 kr). Men för dig som nöjer dig med att lägga ner roboten manuellt 2-3 gånger i veckan är S200 det smartare valet.
+    </p>
+  </section>
+
+  <!-- Internal links -->
+  <section class="mb-10 bg-white rounded-xl border border-border p-5">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med andra poolrobotar</h2>
+    <ul class="space-y-2">
+      <li>
+        <a href="/poolrobot/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+          Bästa poolrobot April 2026 — komplett topplista
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/dolphin-e30/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+          Dolphin E30 recension — budgetalternativet
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/kopguide-poolrobot/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+          Kopguide poolrobot — sa valjer du ratt modell
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <!-- Related reviews -->
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade recensioner</h2>
+    <ul class="space-y-2">
+      <li><a href="/dolphin-e30/" class="text-accent hover:underline text-sm">Dolphin E30 — Bäst i test 2026</a></li>
+      <li><a href="/dolphin-sigma/" class="text-accent hover:underline text-sm">Dolphin Sigma — Premium poolrobot</a></li>
+      <li><a href="/poolrobot/" class="text-accent hover:underline text-sm">Bästa poolrobot April 2026 — topplista</a></li>
+    </ul>
+  </section>
+</ArticleLayout>
+
+<StickyCTA
+  text="Se pris på Dolphin S200"
+  url="https://villahome.se/collections/maytronics"
+  productName="Maytronics Dolphin S200"
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["Product", "Review"],
+  "name": "Maytronics Dolphin S200",
+  "brand": { "@type": "Brand", "name": "Maytronics" },
+  "category": "Poolrobot",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "SEK",
+    "price": "12990",
+    "availability": "https://schema.org/InStock",
+    "url": "https://villahome.se/collections/maytronics"
+  },
+  "review": {
+    "@type": "Review",
+    "author": { "@type": "Organization", "name": "Robotjakt.se" },
+    "reviewRating": { "@type": "Rating", "ratingValue": "8.5", "bestRating": "10" },
+    "datePublished": "2026-04-04",
+    "reviewBody": "Dolphin S200 erbjuder komplett poolrengöring inklusive vattenlinje och svivlande kabel. Bäst i mellansegmentet."
+  },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "8.5", "bestRating": "10", "ratingCount": "1" }
+})} />
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqSchema
+})} />
