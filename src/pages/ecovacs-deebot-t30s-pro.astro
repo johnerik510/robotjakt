@@ -1,0 +1,247 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const faqItems = [
+  {
+    question: 'Vad skiljer Ecovacs Deebot T30S Pro från T30 Omni?',
+    answer: 'T30S Pro är uppdateringen med starkare sugkraft (11 000 Pa mot 10 000 Pa), förbättrad OZMO Turbo 2.0 moppning och uppgraderad AI-hinderdetektion via TrueDetect 3D. Stationen är likvärdig. T30S Pro är ett bättre köp om du hittar det nära T30 Ombis pris.',
+  },
+  {
+    question: 'Hur fungerar OZMO Turbo 2.0 moppfunktionen?',
+    answer: 'OZMO Turbo 2.0 roterar moppplattorna med hög hastighet och tryck för att skrubba bort intorkat smuts. Det är en av de mer effektiva moppmodulerna i kategorin — jämförbar med Dreame X40 Ultras utfällbara mopp för ytrengöring, men når inte hörnen lika bra.',
+  },
+  {
+    question: 'Har Ecovacs T30S Pro AI-hinderdetektion?',
+    answer: 'Ja, TrueDetect 3D-systemet identifierar och undviker hinder som kablar, skor, strumpor och husdjur med strukturerat ljus. Djuravföringsdetektering ingår, om än inte lika mogen som iRobots system.',
+  },
+  {
+    question: 'Är Ecovacs ECOVACS Home-appen bra?',
+    answer: 'Appen är funktionell med rumsplanering, städzoner, no-go zones och schemaläggning. Den upplevs av vissa användare som något komplex att navigera jämfört med Roborock-appen. Grundfunktionerna fungerar utan problem.',
+  },
+  {
+    question: 'Hur länge håller stationens påse?',
+    answer: 'Stationens dammpose rymmer ca 3,2 liter och håller normalt 45–60 dagar vid daglig städning. Vattenttankarna (4 liter ren, 3,5 liter smutsig) räcker ca en vecka.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Ecovacs Deebot T30S Pro recension' },
+];
+
+const specs = [
+  { label: 'Sugkraft', value: '11 000 Pa' },
+  { label: 'Navigering', value: 'TrueMapping 2.0 (LiDAR + 3D)' },
+  { label: 'Hinderdetektion', value: 'TrueDetect 3D' },
+  { label: 'Mopp', value: 'OZMO Turbo 2.0 (roterande)' },
+  { label: 'Mopptvättning', value: 'Varmvatten i station' },
+  { label: 'Drifttid', value: 'upp till 200 min' },
+  { label: 'Stationstank (ren)', value: '4 liter' },
+  { label: 'Stationstank (smutsig)', value: '3,5 liter' },
+  { label: 'App', value: 'ECOVACS HOME (iOS/Android)' },
+  { label: 'Röststyrning', value: 'Google Assistant, Alexa' },
+  { label: 'Höjd', value: '10,3 cm' },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Ecovacs Deebot T30S Pro Test 2026 – Recension och Pris Sverige"
+  description="Ecovacs Deebot T30S Pro testad: 11 000 Pa, OZMO Turbo 2.0 moppning och TrueDetect 3D hinderdetektion. Se betyg, pris och jämförelse 2026."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-05</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Ecovacs Deebot T30S Pro Recension 2026
+    </h1>
+
+    <!-- Verdict box -->
+    <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+      <div class="flex items-start gap-4">
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">STARK MOPPNING</span>
+            <div class="flex gap-0.5">
+              {[1,2,3,4,5].map(i => (
+                <svg class={`w-4 h-4 ${i <= 4 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <span class="font-bold text-text">4.4 / 5</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Ecovacs Deebot T30S Pro imponerar med 11 000 Pa sugkraft och OZMO Turbo 2.0 som skrubbar hårt intorkat smuts effektivt. TrueDetect 3D-hinderdetektion och lång drifttid gör den till ett genomarbetat alternativ i premiumklassen.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA above fold -->
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <p class="text-2xl font-bold text-text">ca 6 990 kr</p>
+          <p class="text-sm text-text-light">Pris varierar — jämför alltid mellan butiker</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a
+            href="https://www.elgiganten.se/search/ecovacs+t30s+pro"
+            rel="sponsored noopener noreferrer"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris hos Elgiganten
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+          <a
+            href="https://www.amazon.se/s?k=ecovacs+deebot+t30s+pro&tag=johnerik510-20"
+            rel="sponsored nofollow noopener noreferrer"
+            target="_blank"
+            class="inline-flex items-center justify-center border-2 border-cta text-cta hover:bg-cta hover:text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Sök på Amazon
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pros/Cons -->
+    <div class="grid sm:grid-cols-2 gap-5 mb-8">
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Fördelar</h2>
+        <ul class="space-y-2">
+          {[
+            '11 000 Pa — stark sugkraft i premiumklass',
+            'OZMO Turbo 2.0 skrubbar intorkat smuts effektivt',
+            'TrueDetect 3D — undviker hinder och djuravföring',
+            'Lång drifttid upp till 200 min',
+            'Fullautomatisk station med varmvattenstvätt',
+            'LiDAR + 3D för noggrann navigering',
+          ].map(pro => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+              {pro}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+        <ul class="space-y-2">
+          {[
+            'Moppmodulen når inte hörnen lika bra som Dreame X40 Ultra',
+            'ECOVACS HOME-appen upplevs komplex av vissa',
+            'Något bullrigare än Dreame-modeller i max-läge',
+            'Stor station tar golvyta',
+          ].map(con => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+              {con}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Ecovacs Deebot T30S Pro — detaljerad genomgång</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">OZMO Turbo 2.0 — roterande moppning</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        OZMO Turbo 2.0 är Ecovacs svar på Dreames och Roborocks moppningssystem. De roterande moppplattorna applicerar tryck mot golvet och skrubbar loss intorkat smuts som enklare vibrerande system missar. I tester hanterar den kaffefläckar och torkade matfotsavtryck imponerande bra. Stationen tvättar mopparna med varmt vatten vilket håller dem hygieniska.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">TrueDetect 3D — AI-hinderdetektion</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Med strukturerat ljus skapar T30S Pro en 3D-karta av golvet framför sig och identifierar hinder i realtid. Kablar, skor, strumpor och djuravföring undviks tillförlitligt i de flesta scenarier. Systemet är ett steg framåt mot T30 Omni och presterar likvärdigt med Roborock S8 MaxV Ultras ReactiveAI.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Tekniska specifikationer</h3>
+      <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+        <table class="w-full text-sm">
+          <tbody class="divide-y divide-border">
+            {specs.map((spec, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+                <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+                <td class="px-4 py-3 text-text-light">{spec.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">För vem passar Ecovacs Deebot T30S Pro?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        T30S Pro passar hem med mycket hårdgolv som kräver effektiv moppning och vill ha djuravföringsdetektering. Sticker ut med lång drifttid och stark sugkraft. Välj Dreame X40 Ultra om hörntäckning vid moppning är viktigast.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med konkurrenter</h2>
+      <ul class="space-y-2">
+        <li><a href="/ecovacs-deebot-x5-omni/" class="text-accent hover:underline text-sm">Ecovacs Deebot X5 Omni — toppmodellen från Ecovacs</a></li>
+        <li><a href="/dreame-x40-ultra/" class="text-accent hover:underline text-sm">Dreame X40 Ultra — bäst i test med utfällbar mopp</a></li>
+        <li><a href="/robotdammsugare-med-mopp/" class="text-accent hover:underline text-sm">Bästa robotdammsugare med mopp 2026</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se bästa pris på Ecovacs Deebot T30S Pro"
+    url="https://www.elgiganten.se/search/ecovacs+t30s+pro"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "Product",
+      "name": "Ecovacs Deebot T30S Pro",
+      "image": "https://robotjakt.se/images/ecovacs-deebot-t30s-pro.jpg",
+      "brand": { "@type": "Brand", "name": "Ecovacs" },
+      "category": "Robotdammsugare",
+      "description": "Ecovacs Deebot T30S Pro med 11 000 Pa sugkraft, OZMO Turbo 2.0 moppning och TrueDetect 3D hinderdetektion.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "SEK",
+        "price": "6990",
+        "availability": "https://schema.org/InStock",
+      }
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.4",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-04-05",
+    "reviewBody": "Ecovacs Deebot T30S Pro imponerar med 11 000 Pa och OZMO Turbo 2.0. TrueDetect 3D och lång drifttid gör den till ett genomarbetat alternativ i premiumklassen.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>

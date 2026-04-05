@@ -1,0 +1,253 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const faqItems = [
+  {
+    question: 'Vad är skillnaden mellan Husqvarna Automower 450X och 430X Nera?',
+    answer: '450X klarar upp till 5 000 m² mot 430X Neras 3 200 m². 450X har starkare motor, GPS-assist och 4G-uppkoppling som standard, samt bättre klättring på sluttningar (50% lutning mot 45%). 430X Nera är billigare och räcker för de flesta villor. 450X väljs av den med stor tomt eller utmanande terräng.',
+  },
+  {
+    question: 'Behövs installationsgräns (slinga) till Automower 450X?',
+    answer: 'Ja, 450X kräver slingkabel som definierar klippytan. Det är ett installationsjobb på 2–4 timmar för en normalträdgård. Husqvarna erbjuder installationstjänst via auktoriserade återförsäljare. Alternativet utan slinga är Mammotion LUBA-serien eller Segway Navimow.',
+  },
+  {
+    question: 'Hur fungerar GPS-navigeringen i 450X?',
+    answer: '450X har GPS-assist som hjälper roboten att navigera mer effektivt i stora ytor och komplexa trädgårdar. Det är inte GPS-baserad positionering som ersätter slingan — utan ett komplement som förbättrar ruttkartläggning och täckning. För ren GPS-navigation utan slinga, se Mammotion LUBA 2 eller Segway Navimow H800E.',
+  },
+  {
+    question: 'Hur länge håller Automower 450X?',
+    answer: 'Husqvarna Automower är kända för lång livslängd — 10–15 år är vanligt med regelbundet underhåll. Knivar byts var 1–3 månader, batteri håller 5–7 år. Husqvarna har brett servicenätverk i Sverige för reservdelar och service.',
+  },
+  {
+    question: 'Vad ingår i leveransen av Husqvarna Automower 450X?',
+    answer: 'Leveransen inkluderar robotklipparen, laddningsstation, transformator, slingkabel (150 m), markspikar och kopplingsdon. Slingkabeln räcker typiskt för en trädgård upp till ca 1 000 m² — för större ytor behöver mer kabel köpas till.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Husqvarna Automower 450X recension' },
+];
+
+const specs = [
+  { label: 'Klippyta', value: 'upp till 5 000 m²' },
+  { label: 'Max lutning', value: '50%' },
+  { label: 'Klipphöjd', value: '20–60 mm' },
+  { label: 'Klippbredd', value: '24 cm' },
+  { label: 'Navigering', value: 'Slinga + GPS-assist + 4G' },
+  { label: 'Bullernivå', value: '58 dB(A)' },
+  { label: 'Batteri', value: 'Li-Ion' },
+  { label: 'Laddtid', value: '75 min' },
+  { label: 'Drifttid', value: '270 min' },
+  { label: 'App', value: 'Automower Connect' },
+  { label: 'GPS-stöldskydd', value: 'Ja' },
+  { label: 'PIN-lås', value: 'Ja' },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Husqvarna Automower 450X Test 2026 – Recension och Pris Sverige"
+  description="Husqvarna Automower 450X testad: klarar upp till 5 000 m², 50% lutning och GPS 4G. Perfekt för stora trädgårdar. Se betyg, pris och köpguide."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-05</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Husqvarna Automower 450X Recension 2026
+    </h1>
+
+    <!-- Verdict box -->
+    <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+      <div class="flex items-start gap-4">
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="bg-winner text-white text-xs font-bold px-2 py-1 rounded">BÄST FÖR STOR TOMT</span>
+            <div class="flex gap-0.5">
+              {[1,2,3,4,5].map(i => (
+                <svg class={`w-4 h-4 ${i <= 4 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <span class="font-bold text-text">4.7 / 5</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Husqvarna Automower 450X är det naturliga valet för villor med stora tomter upp till 5 000 m² och utmanande terräng med branta sluttningar. GPS-assist och 4G ger pålitlig drift och stöldskydd. Premium-priset är motiverat för den som kräver maximal kapacitet och Husqvarnas beprövade tillförlitlighet.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA above fold -->
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <p class="text-2xl font-bold text-text">ca 29 990 kr</p>
+          <p class="text-sm text-text-light">Pris varierar — jämför alltid mellan butiker</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a
+            href="https://www.husqvarna.com/se/robotics/automower/automower-450x/"
+            rel="sponsored noopener noreferrer"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris hos Husqvarna
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+          <a
+            href="https://www.bygghemma.se/utemiljo/tradgardsmaskiner/robotgrasklippare?q=husqvarna+automower+450x"
+            rel="sponsored noopener noreferrer"
+            target="_blank"
+            class="inline-flex items-center justify-center border-2 border-cta text-cta hover:bg-cta hover:text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris hos Bygghemma
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pros/Cons -->
+    <div class="grid sm:grid-cols-2 gap-5 mb-8">
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Fördelar</h2>
+        <ul class="space-y-2">
+          {[
+            'Klarar upp till 5 000 m² — störst i Husqvarna-serien',
+            '50% lutning — hanterar brant terräng utan problem',
+            'GPS-assist + 4G — effektiv drift och fjärrövervakning',
+            'GPS-stöldskydd med PIN-lås och larm',
+            'Beprövad kvalitet — Husqvarna har decennier av erfarenhet',
+            'Tyst (58 dB) — stör varken dig eller grannar',
+          ].map(pro => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+              {pro}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+        <ul class="space-y-2">
+          {[
+            'Kräver slingkabel — installation tar tid och kostar',
+            'Högt pris (ca 29 990 kr)',
+            'Inte lika enkel att installera som GPS-modeller utan slinga',
+            '4G-abonnemang kan tillkomma för full uppkoppling',
+          ].map(con => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+              {con}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Husqvarna Automower 450X — detaljerad genomgång</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Kapacitet och terränganpassning</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Med kapacitet för 5 000 m² är 450X Husqvarnas svar på de allra största villa-tomterna. Jämfört med 430X Nera (3 200 m²) är 450X mer kraftfull i motor och mer effektiv i täckning av stora ytor. 50% lutning innebär att roboten klarar även branta sluttningar som kan stoppa enklare modeller.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">GPS-assist och 4G</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        GPS-assist hjälper roboten navigera mer effektivt i stora trädgårdar med komplexa former. 4G-uppkoppling innebär att du kan övervaka, styra och få larm via Automower Connect-appen oavsett var du befinner dig. Om roboten lyfts utanför sin zon utlöses alarm och positionen kan spåras.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Installation och underhåll</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Slingkabel-installation tar 2–4 timmar för en normalträdgård. Husqvarna erbjuder professionell installation via auktoriserade återförsäljare. Underhållet är enkelt: knivbyte var 1–3 månader (enkelt med skruvar), rengöring av sensorer vid behov och batteribyte efter 5–7 år. Husqvarna har ett brett servicenätverk i Sverige.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Tekniska specifikationer</h3>
+      <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+        <table class="w-full text-sm">
+          <tbody class="divide-y divide-border">
+            {specs.map((spec, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+                <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+                <td class="px-4 py-3 text-text-light">{spec.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">För vem passar Husqvarna Automower 450X?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        450X passar villaägare med tomter mellan 3 200–5 000 m², brant terräng och/eller önskemål om maximal kapacitet och Husqvarnas premiumservice. Om din tomt är under 3 200 m² är 430X Nera mer kostnadseffektiv.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med liknande modeller</h2>
+      <ul class="space-y-2">
+        <li><a href="/husqvarna-automower-430x-nera/" class="text-accent hover:underline text-sm">Husqvarna Automower 430X Nera — bäst i test, upp till 3 200 m²</a></li>
+        <li><a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare 2026 — alla modeller</a></li>
+        <li><a href="/robotgrasklippare-stor-tradgard/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare för stor trädgård</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se pris på Husqvarna Automower 450X"
+    url="https://www.husqvarna.com/se/robotics/automower/automower-450x/"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "Product",
+      "name": "Husqvarna Automower 450X",
+      "image": "https://robotjakt.se/images/husqvarna-automower-450x.jpg",
+      "brand": { "@type": "Brand", "name": "Husqvarna" },
+      "category": "Robotgräsklippare",
+      "description": "Husqvarna Automower 450X robotgräsklippare för upp till 5 000 m² med GPS-assist, 4G och 50% lutningskapacitet.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "SEK",
+        "price": "29990",
+        "availability": "https://schema.org/InStock",
+      }
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.7",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-04-05",
+    "reviewBody": "Husqvarna Automower 450X är det självklara valet för stora tomter upp till 5 000 m² med brant terräng. GPS-assist, 4G och 50% lutningskapacitet gör den till marknadsledaren i sin kategori.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>

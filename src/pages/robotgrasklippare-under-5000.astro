@@ -1,0 +1,178 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const products = [
+  {
+    rank: 1,
+    name: 'Gardena Sileno City 500',
+    image: '/images/gardena-sileno-city-500.jpg',
+    price: '5 990 kr',
+    rating: 4.1,
+    badge: 'Bäst under 6 000 kr',
+    pros: ['Tyst (57 dB) — lämplig för radhus/villa', 'Enkel installation', 'Pålitlig Gardena-kvalitet', 'Upp till 500 m²'],
+    cons: ['Ingen app-styrning', 'Slinga krävs', 'Mindre kapacitet (500 m²)'],
+    ctaText: 'Se pris hos Clas Ohlson',
+    ctaUrl: 'https://www.clasohlson.com/se/Gardena-Sileno-City-500/p/36-7997',
+    reviewUrl: '/gardena-sileno-city-500/',
+  },
+  {
+    rank: 2,
+    name: 'Gardena Sileno Life 750',
+    image: '/images/gardena-sileno-life-750.jpg',
+    price: 'ca 7 990 kr',
+    rating: 4.2,
+    badge: 'App + Bluetooth',
+    pros: ['Bluetooth-styrning via app', '750 m² kapacitet', 'Tyst (57 dB)', 'Gardena Home-app integrerad'],
+    cons: ['Ingen WiFi — Bluetooth räcker ca 10 m', 'Prisklass aningens över 5 000 kr', 'Slinga krävs'],
+    ctaText: 'Se pris hos Clasohlson',
+    ctaUrl: 'https://www.clasohlson.com/se/Gardena-Sileno-Life-750/p/36-9024',
+    reviewUrl: '/gardena-sileno-life-750/',
+  },
+  {
+    rank: 3,
+    name: 'Worx Landroid M500',
+    image: '/images/worx-landroid-m500.jpg',
+    price: '9 990 kr',
+    rating: 4.0,
+    badge: 'WiFi + AI-planering',
+    pros: ['WiFi + app med AI-klippplanering', 'AIA-anti-collision', 'Off-limits zoner utan slinga', 'Upp till 500 m²'],
+    cons: ['Dyrast i budgetklassen', 'Slinga krävs för gränsyta', 'Klippkvalitet lägre än Husqvarna'],
+    ctaText: 'Se pris',
+    ctaUrl: 'https://www.pricerunner.se/search?q=worx+landroid+m500',
+    reviewUrl: '/worx-landroid-m500/',
+  },
+  {
+    rank: 4,
+    name: 'McCulloch ROB R600',
+    image: '/images/mcculloch-rob-r600.jpg',
+    price: 'ca 4 990 kr',
+    rating: 3.8,
+    badge: 'Lägst pris',
+    pros: ['Lägst inköpspris i kategorin', 'Enkel installation', 'Hanterar 25% lutning', 'Regnsensor ingår'],
+    cons: ['Ingen app', 'Begränsad kapacitet (600 m²)', 'Buller 63 dB — inte lika tyst som Gardena'],
+    ctaText: 'Se pris',
+    ctaUrl: 'https://www.pricerunner.se/search?q=mcculloch+rob+r600',
+    reviewUrl: '/mcculloch-rob-r600/',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Finns det bra robotgräsklippare under 5 000 kr?',
+    answer: 'Ja, men med kompromisser. McCulloch ROB R600 och liknande modeller under 5 000 kr saknar app-styrning och har lägre kapacitet. Gardena Sileno City 500 (ca 5 990 kr) är ett bättre köp med Gardena-kvalitet — lite över budget men värt prisskillnaden. Vi rekommenderar att ha en budget på minst 5 000–6 000 kr för ett pålitligt köp.',
+  },
+  {
+    question: 'Hur stor yta klarar robotgräsklippare i prisklassen under 5 000 kr?',
+    answer: 'Modeller under 5 000 kr klarar typiskt 400–600 m². Det passar radhustomter och mindre villaträdgårdar. Behöver du täcka 1 000 m²+ bör du titta på Husqvarna eller Mammotion i högre prisklass.',
+  },
+  {
+    question: 'Behövs WiFi på en budgetrobotkllippare?',
+    answer: 'Inte nödvändigtvis. Gardena Sileno City 500 fungerar utan WiFi med enkel timerprogrammering. Om du vill kunna styra och schemalägga på distans via mobil är Worx Landroid M500 (med WiFi) ett bättre val, om än till ett lite högre pris.',
+  },
+  {
+    question: 'Hur lång tid tar installation av slingkabel?',
+    answer: 'För en trädgård på 300–500 m² tar installation typiskt 2–4 timmar: lägg kabel runt gräsmattans gräns och runt hinder, fäst med markspikar och koppla till stationen. Husqvarna och Gardena har bra installationsguider. Alternativet är professionell installation via återförsäljare.',
+  },
+  {
+    question: 'Kan billiga robotgräsklippare hantera regn?',
+    answer: 'Ja, alla modeller på listan har regnsensor och kör tillbaka till stationen vid regn. De är också väderbeständiga och klarar normal exponering. Förvara stationen under ett tak eller skärmtak för längre livslängd.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare under 5 000 kr', href: '/robotgrasklippare-under-5000/' },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": { "@type": "Answer", "text": item.answer },
+}));
+---
+
+<BaseLayout
+  title="Bästa Robotgräsklippare under 5 000 kr 2026 – Budget Test"
+  description="Robotgräsklippare under 5 000 kr 2026: vi har testat de billigaste modellerna. Gardena, Worx och McCulloch jämförda. Se topplistan för budgetköp."
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
+      Bästa Robotgräsklippare under 5 000 kr 2026
+    </h1>
+    <p class="text-text-light text-lg mb-6 leading-relaxed">
+      4 modeller i budget-segmentet testade — för radhus och mindre villaträdgårdar.
+    </p>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8 text-sm text-amber-800">
+      <strong>Obs:</strong> De bästa köpen i budget-segmentet ligger faktiskt strax över 5 000 kr. Gardena Sileno City 500 (ca 5 990 kr) ger markant bättre kvalitet och tysthet. Se det som 5–6 000 kr-segmentet för bäst pris/prestanda.
+    </div>
+
+    <div class="space-y-6 mb-10">
+      {products.map(product => (
+        <ProductCard {...product} />
+      ))}
+    </div>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-5">Köpguide: Budget-robotgräsklippare</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad skiljer budget från premium?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Budget-robotgräsklippare under 5 000–6 000 kr kompromissar typiskt på: app-styrning (ingen WiFi), kapacitet (under 700 m²), lutningskapacitet (under 35%) och bullernivå (63–68 dB mot 57–58 dB för Husqvarna/Gardena). Klippkvaliteten är godkänd men inte i klass med Husqvarna Automower.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Räcker 500 m² kapacitet?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Mät din faktiska gräsyta — inte tomten. Bortse från uppfarten, rabatter och planteringar. En radhustomt på 300 m² gräs klaras enkelt av Gardena Sileno City 500. Villatomt 500–800 m² gräs kräver Gardena Sileno Life 750 eller en klass upp.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Total ägandekostnad</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Räkna med knivar (ca 100–200 kr/år), eventuell service och byte av batteri efter 3–5 år (500–1 500 kr). En billigare robot med lägre livslängd kan vara dyrare totalt än en Husqvarna Automower som håller 10–15 år.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare 2026 — alla kategorier</a></li>
+        <li><a href="/billigaste-robotgrasklippare/" class="text-accent hover:underline text-sm">Billigaste robotgräsklippare — testade modeller</a></li>
+        <li><a href="/robotgrasklippare-liten-tradgard/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare för liten trädgård</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Gardena Sileno City 500 — bäst under 6 000 kr"
+    url="https://www.clasohlson.com/se/Gardena-Sileno-City-500/p/36-7997"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Bästa robotgräsklippare under 5 000 kr 2026",
+    "description": "Topp 4 budget-robotgräsklippare för radhus och mindre villaträdgårdar.",
+    "numberOfItems": products.length,
+    "itemListElement": products.map((p, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": p.name,
+      "url": `https://robotjakt.se${p.reviewUrl}`,
+    })),
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>

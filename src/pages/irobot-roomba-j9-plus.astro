@@ -1,0 +1,255 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const faqItems = [
+  {
+    question: 'Är iRobot Roomba j9+ bättre än j7+?',
+    answer: 'Ja, j9+ är uppgraderad med starkare sugkraft, förbättrad Precision Vision Navigation och en kompaktare Clean Base. Djuravföringsdetekteringen är likvärdig men j9+ hanterar mattövergångar smidigare och har bättre prestanda på tjocka mattor. Om du hittar j7+ till väsentligt lägre pris är den fortfarande ett gott köp.',
+  },
+  {
+    question: 'Hur fungerar djuravföringsdetekteringen?',
+    answer: 'Roomba j9+ använder Precision Vision Navigation med kamera och AI för att identifiera och undvika djuravföring. I tester undviker den avföring tillförlitligt men bör inte ses som 100% felsäker. Systemet lär sig hemmet och förbättras över tid.',
+  },
+  {
+    question: 'Hur ofta töms Clean Base automatiskt?',
+    answer: 'Clean Base håller ca 60 dagars smuts i sin inbyggda påse vid normalt städande. iRobot säljer ersättningspåsar — räkna med 3–4 påsar per år. Påsarna är märkbart dyrare än att tömma dammkorg manuellt, men bekvämligheten motiverar det för de flesta.',
+  },
+  {
+    question: 'Fungerar Roomba j9+ utan WiFi?',
+    answer: 'Ja, j9+ fungerar utan WiFi för grundläggande städning via knappen på roboten. WiFi och iRobot Home-appen krävs för schemaläggning, kartläggning, rumsstädning och uppdateringar. Utan WiFi är funktionaliteten starkt begränsad.',
+  },
+  {
+    question: 'Hur ofta behöver man underhålla Roomba j9+?',
+    answer: 'Tömning av Clean Base-påsen var 60:e dag, rengöring av gummiborsterna var 1–2 månader, filterrengöring var 2–3 månader och byte av filter var 2–3 månader. iRobot Home-appen påminner om underhåll automatiskt.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'iRobot Roomba j9+ recension' },
+];
+
+const specs = [
+  { label: 'Sugkraft', value: 'Upp till 100% extra (AutoAdjust)' },
+  { label: 'Navigering', value: 'Precision Vision Navigation (kamera + AI)' },
+  { label: 'Djuravföring', value: 'Ja — kamera-baserad detektion' },
+  { label: 'Drifttid', value: 'upp till 90 min' },
+  { label: 'Dammkorg', value: '400 ml' },
+  { label: 'Clean Base', value: 'Automatisk tömning, 60 dagars kapacitet' },
+  { label: 'Mopp', value: 'Nej — ingen inbyggd moppfunktion' },
+  { label: 'Borstar', value: 'Dubbla gummi-extraktorer' },
+  { label: 'App', value: 'iRobot Home (iOS/Android)' },
+  { label: 'Röststyrning', value: 'Google Assistant, Alexa, Siri' },
+  { label: 'Höjd', value: '8,7 cm' },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="iRobot Roomba j9+ Test 2026 – Recension och Pris Sverige"
+  description="iRobot Roomba j9+ testad: Precision Vision Navigation, djuravföringsdetektering och 60-dagars Clean Base. Se betyg, pris och jämförelse 2026."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-05</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      iRobot Roomba j9+ Recension 2026
+    </h1>
+
+    <!-- Verdict box -->
+    <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+      <div class="flex items-start gap-4">
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">BÄST FÖR HUSDJUR</span>
+            <div class="flex gap-0.5">
+              {[1,2,3,4,5].map(i => (
+                <svg class={`w-4 h-4 ${i <= 4 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <span class="font-bold text-text">4.2 / 5</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            iRobot Roomba j9+ är det självklara valet för husdjursägare som prioriterar djuravföringsdetektering och bekvämligheten med 60-dagars Clean Base. Saknar moppfunktion — men för ren dammsugning i husdjurshem är det ett av de pålitligaste valen 2026.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA above fold -->
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <p class="text-2xl font-bold text-text">ca 5 990 kr</p>
+          <p class="text-sm text-text-light">Pris varierar — jämför alltid mellan butiker</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a
+            href="https://www.elgiganten.se/search/irobot+roomba+j9"
+            rel="sponsored noopener noreferrer"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris hos Elgiganten
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+          <a
+            href="https://www.amazon.se/dp/B0BZDQQ1SM?tag=johnerik510-20"
+            rel="sponsored nofollow noopener noreferrer"
+            target="_blank"
+            class="inline-flex items-center justify-center border-2 border-cta text-cta hover:bg-cta hover:text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Köp på Amazon
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pros/Cons -->
+    <div class="grid sm:grid-cols-2 gap-5 mb-8">
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Fördelar</h2>
+        <ul class="space-y-2">
+          {[
+            'Precision Vision AI — detekterar och undviker djuravföring',
+            'Clean Base tömmer automatiskt — 60 dagars kapacitet',
+            'Dubbla gummi-extraktorer trasslar inte av husdjurshår',
+            'AutoAdjust ökar sugkraften på mattor automatiskt',
+            'iRobot Home-app med rum-styrning och schemaläggning',
+            'Stöder Siri, Google Assistant och Alexa',
+          ].map(pro => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+              {pro}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+        <ul class="space-y-2">
+          {[
+            'Ingen moppfunktion',
+            'Kortare drifttid (90 min) än kinesiska konkurrenter',
+            'Clean Base-påsar kostar extra löpande',
+            'Lägre sugkraft i Pa-termer än Dreame och Roborock',
+          ].map(con => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+              {con}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">iRobot Roomba j9+ — detaljerad genomgång</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Precision Vision Navigation — det som gör j9+ unik</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        iRobots kamerabaserade AI-navigering identifierar och undviker hinder som sladdar, skor och — det viktigaste för husdjursägare — djuravföring. Systemet är moget och pålitligt. I standardscenarier missar den sällan avföring, även i svagt ljus.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Roborock S8 MaxV Ultra och Ecovacs Deebot X5 Omni erbjuder liknande funktion, men iRobot är pionjären och har mest träningsdata bakom sin AI. Det märks i tillförlitlighet i ovanliga situationer.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Clean Base — 60 dagars frihet</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Clean Base-stationen tömmer dammkorgen automatiskt efter varje städning och lagrar smutsen i en inbyggd påse med kapacitet för ca 60 städdagar. Påsarna är allergivänliga och håller dammet inneslutet vid tömning. Löpande kostnad för påsar är ca 100–150 kr per månad vid daglig städning — en avgift de flesta husdjursägare upplever som väl motiverad.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Städprestanda</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        De dubbla gummi-extraktorsborstarnas design är utmärkt för att suga upp päls utan att trassla. AutoAdjust höjer sugkraften automatiskt på mattor utan manuell inställning. Kortare drifttid (90 min) kompenseras av automatisk återgång till laddning och fortsatt städning efter laddning.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Tekniska specifikationer</h3>
+      <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+        <table class="w-full text-sm">
+          <tbody class="divide-y divide-border">
+            {specs.map((spec, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+                <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+                <td class="px-4 py-3 text-text-light">{spec.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">För vem passar iRobot Roomba j9+?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Roomba j9+ är gjord för husdjurshem där djuravföringsdetektering är ett krav. Sticker ut med 60-dagars Clean Base och mogen AI. Välj j9+ om du prioriterar pålitlighet och bekvämlighet framför moppning eller maximal sugkraft.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med konkurrenter</h2>
+      <ul class="space-y-2">
+        <li><a href="/robotdammsugare-husdjur/" class="text-accent hover:underline text-sm">Bästa robotdammsugare för husdjur 2026</a></li>
+        <li><a href="/roborock-s8-maxv-ultra/" class="text-accent hover:underline text-sm">Roborock S8 MaxV Ultra — alternativ med kamera och mopp</a></li>
+        <li><a href="/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2026 — alla kategorier</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se bästa pris på iRobot Roomba j9+"
+    url="https://www.elgiganten.se/search/irobot+roomba+j9"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "Product",
+      "name": "iRobot Roomba j9+",
+      "image": "https://robotjakt.se/images/irobot-roomba-j9-plus.jpg",
+      "brand": { "@type": "Brand", "name": "iRobot" },
+      "category": "Robotdammsugare",
+      "description": "iRobot Roomba j9+ med Precision Vision Navigation, djuravföringsdetektering och 60-dagars Clean Base.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "SEK",
+        "price": "5990",
+        "availability": "https://schema.org/InStock",
+      }
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.2",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-04-05",
+    "reviewBody": "iRobot Roomba j9+ är det självklara valet för husdjursägare med djuravföringsdetektering och 60-dagars Clean Base som viktigaste egenskaper.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>

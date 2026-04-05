@@ -1,0 +1,271 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const faqItems = [
+  {
+    question: 'Är eufy X10 Pro Omni värd priset?',
+    answer: 'Ja, för hem med blandade golvytor som vill ha automatisk moppning och självtömning till ett lägre pris än Dreame X40 Ultra. eufy X10 Pro Omni erbjuder liknande funktion för ca 3 000 kr mindre. Är budget inte ett hinder väljer du X40 Ultra — annars är X10 Pro Omni ett utmärkt andrahandsval.',
+  },
+  {
+    question: 'Hur fungerar MopExtend-funktionen?',
+    answer: 'MopExtend förlänger moppmodulen ut mot kanter och hörn vid städning. Den drar sig automatiskt tillbaka vid mattor. Systemet är liknande Dreame X40 Ultras utfällbara mopp men något mindre aggressivt i kantöverlapningen. Resultatet är ändå märkbart bättre hörntäckning än traditionella mopp-robotar.',
+  },
+  {
+    question: 'Hur stark är 8 000 Pa sugkraft i praktiken?',
+    answer: '8 000 Pa är stark nog för de flesta hem — husdjurshår, damm och smuts hanteras utan problem. På mattor ökar roboten sugkraften automatiskt. Dreame X40 Ultra har starkare 12 000 Pa, men 8 000 Pa märks inte som undermåligt i vardagen.',
+  },
+  {
+    question: 'Fungerar eufy X10 Pro Omni med Alexa och Google Home?',
+    answer: 'Ja, X10 Pro Omni stödjer både Amazon Alexa och Google Assistant via eufy Clean-appen. Du kan starta, stoppa och schemalägga städning med röstkommandon. Appen erbjuder kartläggning, städzoner och no-go zones.',
+  },
+  {
+    question: 'Hur tyst är eufy X10 Pro Omni?',
+    answer: 'I normalläge arbetar X10 Pro Omni på ca 65 dB — likvärdigt med Dreame X40 Ultra. BoostIQ-läget för mattor är något högre. För sovrum under städning är det acceptabelt men märkbart.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'eufy X10 Pro Omni recension' },
+];
+
+const specs = [
+  { label: 'Sugkraft', value: '8 000 Pa' },
+  { label: 'Batterikapacitet', value: '5 200 mAh' },
+  { label: 'Drifttid', value: 'upp till 150 min' },
+  { label: 'Dammkorg', value: '350 ml' },
+  { label: 'Navigering', value: 'iPath Laser Navigation (LiDAR)' },
+  { label: 'Mopp', value: 'MopExtend + roterande' },
+  { label: 'Mopptvättning', value: 'Varmt vatten i station' },
+  { label: 'Stationstank (ren)', value: '3,2 liter' },
+  { label: 'Stationstank (smutsig)', value: '3,2 liter' },
+  { label: 'App', value: 'eufy Clean (iOS/Android)' },
+  { label: 'Röststyrning', value: 'Google Assistant, Alexa' },
+  { label: 'Bullernivå', value: 'ca 65 dB (normalläge)' },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="eufy X10 Pro Omni Test 2026 – Recension och Pris Sverige"
+  description="eufy X10 Pro Omni testad: 8 000 Pa, MopExtend och självtömmande station. Prisvärt alternativ till Dreame X40 Ultra. Se betyg, pris och köpguide."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-05</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      eufy X10 Pro Omni Recension 2026
+    </h1>
+
+    <!-- Verdict box -->
+    <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+      <div class="flex items-start gap-4">
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">BÄST PRIS/PRESTANDA</span>
+            <div class="flex gap-0.5">
+              {[1,2,3,4,5].map(i => (
+                <svg class={`w-4 h-4 ${i <= 4 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <span class="font-bold text-text">4.4 / 5</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            eufy X10 Pro Omni levererar premium-funktion — MopExtend, självtömmande station och LiDAR-navigering — till ett pris som är märkbart lägre än toppklassen. Om du inte kräver Dreame X40 Ultras 12 000 Pa eller varmvattentvätt är X10 Pro Omni ett av de bästa köpen i mellanklass-premium 2026.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA above fold -->
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <p class="text-2xl font-bold text-text">ca 5 990 kr</p>
+          <p class="text-sm text-text-light">Pris varierar — jämför alltid mellan butiker</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a
+            href="https://www.elgiganten.se/product/vitvaror-och-hem/robotdammsugare/eufy-x10-pro-omni-robotdammsugare-svart/35226"
+            rel="sponsored noopener noreferrer"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris hos Elgiganten
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+          <a
+            href="https://www.amazon.se/dp/B0BZW85FR9?tag=johnerik510-20"
+            rel="sponsored nofollow noopener noreferrer"
+            target="_blank"
+            class="inline-flex items-center justify-center border-2 border-cta text-cta hover:bg-cta hover:text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Köp på Amazon
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pros/Cons -->
+    <div class="grid sm:grid-cols-2 gap-5 mb-8">
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Fördelar</h2>
+        <ul class="space-y-2">
+          {[
+            'MopExtend når kanter och hörn bättre än standard',
+            'Fullautomatisk station — tömning, vattenhantering, mopptvätt',
+            'LiDAR-navigering med noggrann kartläggning',
+            'Lyfter mopparna automatiskt vid mattor',
+            'Bättre pris/prestanda än konkurrenter i klassen',
+            'Stöder Google Assistant och Alexa',
+          ].map(pro => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+              {pro}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+        <ul class="space-y-2">
+          {[
+            'Lägre sugkraft (8 000 Pa) än toppmodellerna',
+            'Mopptvätten använder varmt men inte 70-gradigt vatten',
+            'eufy Clean-appen är något enklare än Dreame Home',
+            'Ingen AI-kamera för djuravföringsdetektering',
+          ].map(con => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+              {con}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Full review -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">eufy X10 Pro Omni — detaljerad genomgång</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">MopExtend — moppning som faktiskt täcker hörnen</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        eufy X10 Pro Omnis MopExtend-system förlänger moppmodulen ut mot kanter och hörn under städning. Systemet arbetar kontinuerligt och gör att roboten täcker mer av golvytan längs väggar jämfört med robotar med fast centrerad mopp.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Vid mattor detekterar roboten automatiskt och lyfter moppmodulen för att undvika att fukta tygytorna. Det fungerar pålitligt i tester — vi noterade inga missade mattor i standardhöjd. Tjocka mattor (3 cm+) kan i enstaka fall registreras sent.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Sugkraft och städprestanda</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        8 000 Pa räcker för det absoluta flertalet hem. Husdjurshår, damm och smuts sugs upp effektivt. BoostIQ-teknologin ökar sugkraften automatiskt på mattor och i rum med mer smuts, vilket gör att batteriet inte slits i onödan på rena hårda ytor.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Jämfört med Dreame X40 Ultras 12 000 Pa märks skillnaden i hem med tjocka langluddsmattor eller kraftigt husdjurshår — i dessa fall rekommenderar vi X40 Ultra. För standardhem är 8 000 Pa fullt tillräckligt.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Navigering och kartläggning</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        iPath Laser Navigation (LiDAR) kartlägger hemmet snabbt och precist. Rumsidentifiering sker automatiskt och appen låter dig namnge rum, sätta städzoner, no-go zones och schemalägga körningar. Navigeringen är jämförbar med Roborock och Dreame i samma prisklass — utan märkbara brister i tester.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Stationen — praktiskt och kompakt</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Den självtömmande stationen hanterar dammtömning, påfyllning av rent vatten, tömning av smutsvatten och mopptvätt automatiskt. 3,2-liters tankarna håller en vecka vid daglig användning i ett normalstort hem. Stationen är något kompaktare än Dreame X40 Ultras — ett plus om golvytan är begränsad.
+      </p>
+
+      <!-- Specs table -->
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Tekniska specifikationer</h3>
+      <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+        <table class="w-full text-sm">
+          <tbody class="divide-y divide-border">
+            {specs.map((spec, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+                <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+                <td class="px-4 py-3 text-text-light">{spec.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">För vem passar eufy X10 Pro Omni?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        eufy X10 Pro Omni passar hem som vill ha premium-funktion — MopExtend, automatisk station och LiDAR — men inte vill betala för toppklassens 12 000 Pa eller varmvattenstvätt. Utmärkt för lägenheter och hus med blandade golvytor utan tjocka mattor.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Har du många husdjur eller tjocka mattor rekommenderar vi Dreame X40 Ultra eller Roborock S8 MaxV Ultra istället.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med konkurrenter</h2>
+      <ul class="space-y-2">
+        <li><a href="/robotdammsugare-med-mopp/" class="text-accent hover:underline text-sm">Bästa robotdammsugare med mopp 2026</a></li>
+        <li><a href="/dreame-x40-ultra/" class="text-accent hover:underline text-sm">Dreame X40 Ultra — toppmodellen vi jämför mot</a></li>
+        <li><a href="/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2026 — alla kategorier</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se bästa pris på eufy X10 Pro Omni"
+    url="https://www.elgiganten.se/product/vitvaror-och-hem/robotdammsugare/eufy-x10-pro-omni-robotdammsugare-svart/35226"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "Product",
+      "name": "eufy X10 Pro Omni",
+      "image": "https://robotjakt.se/images/eufy-x10-pro-omni.jpg",
+      "brand": { "@type": "Brand", "name": "eufy" },
+      "category": "Robotdammsugare",
+      "description": "eufy X10 Pro Omni robotdammsugare med 8 000 Pa sugkraft, MopExtend-system och fullautomatisk station.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "SEK",
+        "price": "5990",
+        "availability": "https://schema.org/InStock",
+        "shippingDetails": {"@type":"OfferShippingDetails","shippingDestination":{"@type":"DefinedRegion","addressCountry":"SE"}},
+      }
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.4",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-04-05",
+    "reviewBody": "eufy X10 Pro Omni levererar premium-funktion till ett pris som är märkbart lägre än toppklassen. MopExtend, LiDAR och fullautomatisk station gör det till ett utmärkt val i mellanklass-premium.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>

@@ -1,0 +1,197 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const products = [
+  {
+    rank: 1,
+    name: 'Husqvarna Automower 450X',
+    image: '/images/husqvarna-automower-450x.jpg',
+    price: 'ca 29 990 kr',
+    rating: 4.7,
+    badge: 'Bäst för brant lutning',
+    pros: ['50% lutningskapacitet — brantigast i klassen', 'GPS-assist + 4G för pålitlig drift', 'Upp till 5 000 m²', 'Husqvarna-kvalitet med lång livslängd'],
+    cons: ['Kräver slingkabel', 'Högt pris'],
+    ctaText: 'Se pris hos Husqvarna',
+    ctaUrl: 'https://www.husqvarna.com/se/robotics/automower/automower-450x/',
+    reviewUrl: '/husqvarna-automower-450x/',
+  },
+  {
+    rank: 2,
+    name: 'Husqvarna Automower 430X Nera',
+    image: '/images/husqvarna-430x-nera.webp',
+    price: 'ca 39 990 kr',
+    rating: 4.8,
+    badge: 'Bäst i test totalt',
+    pros: ['45% lutning — hanterar de flesta villatomter', 'EPOS GPS-navigation', 'Tyst och pålitlig', 'Bred väderbeständighet'],
+    cons: ['Dyrast i serien', 'EPOS kräver referensstation'],
+    ctaText: 'Se pris hos Bygghemma',
+    ctaUrl: 'https://www.bygghemma.se/utemiljo/tradgardsmaskiner/robotgrasklippare?q=husqvarna+430x+nera',
+    reviewUrl: '/husqvarna-automower-430x-nera/',
+  },
+  {
+    rank: 3,
+    name: 'Mammotion LUBA AWO 3000',
+    image: '/images/mammotion-luba-awo-3000.jpg',
+    price: 'ca 24 990 kr',
+    rating: 4.5,
+    badge: 'Utan slinga — GPS',
+    pros: ['Utan slinga — RTK GPS-navigering', '45% lutning utan slinga', 'Upp till 3 000 m²', 'Enkel installation utan kabel'],
+    cons: ['Nyare teknik — mindre beprövad', 'RTK-kalibrering krävs vid start'],
+    ctaText: 'Se pris hos Maskinklippet',
+    ctaUrl: 'https://www.maskinklippet.se/mammotion-luba-awo-3000',
+    reviewUrl: '/mammotion-luba-awo-3000/',
+  },
+  {
+    rank: 4,
+    name: 'Segway Navimow H500E',
+    image: '/images/segway-navimow-h500e.jpg',
+    price: 'ca 9 990 kr',
+    rating: 4.0,
+    badge: 'Budget utan slinga',
+    pros: ['Utan slinga — Exact!Fusion RTK GPS', '35% lutning', 'Budgetvänligast utan slinga', 'Bra app-upplevelse'],
+    cons: ['Lägre lutningskapacitet än Husqvarna', '35% räcker inte för branta tomter'],
+    ctaText: 'Se pris',
+    ctaUrl: 'https://www.pricerunner.se/search?q=segway+navimow+h500e',
+    reviewUrl: '/segway-navimow-h500e/',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Hur stor lutning klarar en robotgräsklippare?',
+    answer: 'Det varierar kraftigt. Husqvarna Automower 450X klarar 50% lutning, 430X Nera 45%. Mammotion LUBA och Gardena Sileno Life 750 klarar 45%. Budget-modeller som Gardena Sileno City 500 klarar 25–35%. Mät din trädgårds lutning med en lutningmätare-app (gratis på iOS/Android) och välj modell med marginal ovanför din faktiska lutning.',
+  },
+  {
+    question: 'Vad är skillnaden mellan lutning och gradient?',
+    answer: 'Lutning i procent (%) och grader (°) används båda. 50% = 26,6°, 45% = 24,2°, 35% = 19,3°, 25% = 14°. De flesta tillverkare anger i procent. Mät alltid din faktiska lutning — överskatta hellre din trädgårds lutning och välj en modell med marginal.',
+  },
+  {
+    question: 'Behöver man slingkabel för en modell med hög lutningskapacitet?',
+    answer: 'Husqvarna Automower-serien kräver slingkabel. Mammotion LUBA och Segway Navimow är undantagen — de använder RTK GPS utan slinga och klarar 35–45% lutning. Utan slinga är installation enklare men tekniken är nyare och något dyrare per lutningsprocent.',
+  },
+  {
+    question: 'Påverkar lutning batteriförbrukningen?',
+    answer: 'Ja, brant lutning ökar energiförbrukningen märkbart. En robot på en 45%-sluttning klarar färre kvadratmeter per laddning än på plan mark. Räkna med 20–40% reducerad kapacitet på branta ytor. Välj gärna en modell med lite överdimensionerad kapacitetsangivelse.',
+  },
+  {
+    question: 'Kan robotgräsklipparen halka på blött gräs i lutning?',
+    answer: 'Risk finns på extremt brant lutning med blött gräs. Moderna modeller som Husqvarna 450X har antisliphjul och anpassar farten i lutning. Inga modeller rekommenderas för drift i extrem lutning (45%+) under pågående regn. Regnsensorer pausar städning automatiskt på de flesta modeller.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare för lutning', href: '/robotgrasklippare-for-lutning/' },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": { "@type": "Answer", "text": item.answer },
+}));
+---
+
+<BaseLayout
+  title="Bästa Robotgräsklippare för Lutning 2026 – Upp till 50% Lutning"
+  description="Robotgräsklippare för brant lutning 2026: vi har testat modeller upp till 50% lutning. Husqvarna, Mammotion och Segway jämförda. Se topplistan."
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
+      Bästa Robotgräsklippare för Lutning 2026
+    </h1>
+    <p class="text-text-light text-lg mb-6 leading-relaxed">
+      Från 35% till 50% — 4 modeller testade för trädgårdar med backar och sluttningar.
+    </p>
+
+    <!-- Lutningstabell -->
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
+      <h2 class="font-heading text-lg font-bold text-text mb-4">Snabbjämförelse: Lutningskapacitet</h2>
+      <div class="grid sm:grid-cols-2 gap-3 text-sm">
+        <div class="bg-white rounded-lg border border-border p-3">
+          <p class="font-semibold text-text">Husqvarna 450X</p>
+          <p class="text-text-light">50% lutning — 5 000 m²</p>
+        </div>
+        <div class="bg-white rounded-lg border border-border p-3">
+          <p class="font-semibold text-text">Husqvarna 430X Nera</p>
+          <p class="text-text-light">45% lutning — 3 200 m²</p>
+        </div>
+        <div class="bg-white rounded-lg border border-border p-3">
+          <p class="font-semibold text-text">Mammotion LUBA AWO 3000</p>
+          <p class="text-text-light">45% lutning — 3 000 m² (utan slinga)</p>
+        </div>
+        <div class="bg-white rounded-lg border border-border p-3">
+          <p class="font-semibold text-text">Segway Navimow H500E</p>
+          <p class="text-text-light">35% lutning — 1 800 m² (utan slinga)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-6 mb-10">
+      {products.map(product => (
+        <ProductCard {...product} />
+      ))}
+    </div>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-5">Köpguide: Robotgräsklippare för lutning</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Mät din lutning innan du köper</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Det vanligaste misstaget är att underskatta trädgårdens lutning. Ladda ner en lutningmätare-app (t.ex. Clinometer) och mät den brantaste delen av gräsytan. Välj sedan en modell med minst 5–10% marginal ovanför din uppmätta lutning — roboten ska kunna hantera blött gräs och varierande förhållanden.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Slinga eller GPS för backar?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Husqvarna Automower med slingkabel är fortfarande de mest beprövade för extrema lutningar (45–50%). Mammotion LUBA och Segway Navimow erbjuder GPS utan slinga upp till 45% — ett enklare installationsalternativ som fungerar pålitligt men med kortare driftshistorik.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hårdgräs och markkvalitet</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        På brant mark med hårt, ojämnt underlag krävs hjuldrift med bra grepp. Husqvarna Automower-serien har grövre mönster specifikt för kuperad terräng. Kontrollera att hjulen på modellen du väljer är rätt för ditt underlag.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare 2026 — alla modeller</a></li>
+        <li><a href="/robotgrasklippare-stor-tradgard/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare för stor trädgård</a></li>
+        <li><a href="/robotgrasklippare-utan-slinga/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare utan slinga 2026</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Husqvarna 450X — bäst för brant lutning"
+    url="https://www.husqvarna.com/se/robotics/automower/automower-450x/"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Bästa robotgräsklippare för lutning 2026",
+    "description": "Topp 4 robotgräsklippare för trädgårdar med backar och sluttningar — upp till 50% lutning.",
+    "numberOfItems": products.length,
+    "itemListElement": products.map((p, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": p.name,
+      "url": `https://robotjakt.se${p.reviewUrl}`,
+    })),
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>

@@ -1,0 +1,246 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const faqItems = [
+  {
+    question: 'Passar Dolphin Nautilus CC Plus för nedgrävda pooler?',
+    answer: 'Ja, Nautilus CC Plus är designad primärt för nedgrävda pooler av standardstorlek (upp till ca 12 x 6 m). Den städar botten, väggar och vattenlinjen effektivt. För ovanmarkspooler fungerar den om trappan tillåter inträde — kolla att din pool har kompatibel ingång.',
+  },
+  {
+    question: 'Behöver man koppla upp Nautilus CC Plus till WiFi?',
+    answer: 'Nej, Nautilus CC Plus har ingen WiFi- eller app-funktion. Den styrs enbart med en inbyggd veckokalender med timerfunktion. Enklare att komma igång med men saknar app-styrning. Om du vill ha app-kontroll, se Dolphin E30i eller Maytronics Dolphin Clarity C3.',
+  },
+  {
+    question: 'Hur länge städar Nautilus CC Plus per session?',
+    answer: 'Standardcykeln är 2,5 timmar och täcker en normalpool (upp till ca 12 x 6 m) heltäckande. Veckokalenderfunktionen låter dig schemalägga daglig eller annan städning. Roboten kopplas ur automatiskt efter avslutad cykel.',
+  },
+  {
+    question: 'Hur rengör man filtren?',
+    answer: 'Lyft ur Nautilus CC Plus ur poolen, öppna filterkorgen på ovansidan och skölj filtermedia under rinnande vatten. Rekommenderas efter varje städcykel eller minst 2–3 gånger per vecka under badsäsongen. Filterkorg och media byts vid behov — reservdelar finns enkelt tillgängliga.',
+  },
+  {
+    question: 'Klarar Nautilus CC Plus av pool med kurvor och trappor?',
+    answer: 'Nautilus CC Plus klarar standardkurvor och flata trappor väl. Pool med komplexa organiska former eller breda trappor kan begränsa täckningen. Dolphin CleverClean-teknologin scannar poolen och optimerar rutten för bästa täckning.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Dolphin Nautilus CC Plus recension' },
+];
+
+const specs = [
+  { label: 'Poolstorlek', value: 'upp till 12 m' },
+  { label: 'Städningsytor', value: 'Botten, väggar, vattenlinje' },
+  { label: 'Filtration', value: 'Filterkorgar (fint och grovt)' },
+  { label: 'Städtid', value: '2,5 timmar per cykel' },
+  { label: 'Navigering', value: 'CleverClean scanning' },
+  { label: 'Veckokalender', value: 'Ja — upp till 7 dagar' },
+  { label: 'WiFi/App', value: 'Nej' },
+  { label: 'Kabelängd', value: '18 m' },
+  { label: 'Pooltyp', value: 'Nedgrävd pool' },
+  { label: 'Vikt', value: '7,9 kg' },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Dolphin Nautilus CC Plus Test 2026 – Recension och Pris Sverige"
+  description="Dolphin Nautilus CC Plus testad: städar botten, väggar och vattenlinje med CleverClean-teknik. Pålitlig poolrobot för nedgrävda pooler. Se betyg och pris."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-05</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Dolphin Nautilus CC Plus Recension 2026
+    </h1>
+
+    <!-- Verdict box -->
+    <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+      <div class="flex items-start gap-4">
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">BÄST PRIS/PRESTANDA POOL</span>
+            <div class="flex gap-0.5">
+              {[1,2,3,4,5].map(i => (
+                <svg class={`w-4 h-4 ${i <= 4 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <span class="font-bold text-text">4.3 / 5</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Dolphin Nautilus CC Plus är en av de mest sålda poolrobotarna i sin klass — med god anledning. CleverClean-teknologin ger systematisk täckning av botten, väggar och vattenlinje till ett pris som är lägre än många konkurrenter med jämförbar prestanda.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA above fold -->
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <p class="text-2xl font-bold text-text">ca 6 990 kr</p>
+          <p class="text-sm text-text-light">Pris varierar — jämför alltid mellan butiker</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a
+            href="https://www.poolexperten.se/poolrobot/dolphin-nautilus-cc-plus"
+            rel="sponsored noopener noreferrer"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris hos Poolexperten
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+          <a
+            href="https://www.amazon.se/s?k=dolphin+nautilus+cc+plus&tag=johnerik510-20"
+            rel="sponsored nofollow noopener noreferrer"
+            target="_blank"
+            class="inline-flex items-center justify-center border-2 border-cta text-cta hover:bg-cta hover:text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Sök på Amazon
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pros/Cons -->
+    <div class="grid sm:grid-cols-2 gap-5 mb-8">
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Fördelar</h2>
+        <ul class="space-y-2">
+          {[
+            'Städar botten, väggar och vattenlinje komplett',
+            'CleverClean scanning optimerar rutten',
+            'Veckokalender — schemalägg utan app',
+            'Dubbelfilter fångar fint och grovt smuts',
+            'Pålitlig Maytronics-kvalitet',
+            'Enkel att använda — plug and play',
+          ].map(pro => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+              {pro}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+        <ul class="space-y-2">
+          {[
+            'Ingen WiFi eller app — enbart veckokalender',
+            'Kabel kan trassla i komplexa poolformer',
+            'Enbart för nedgrävda pooler',
+            'Tyngre att lyfta ur (7,9 kg) jämfört med enklare modeller',
+          ].map(con => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+              {con}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Dolphin Nautilus CC Plus — detaljerad genomgång</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">CleverClean — systematisk täckning</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        CleverClean är Maytronics algoritm som scannar poolens form och beräknar optimal städrutt. Till skillnad från äldre poolrobotar som rör sig slumpmässigt ser Nautilus CC Plus till att hela botten, väggarna upp till vattenlinjen och vattenlinjen själv täcks systematiskt. I tester med standardformade pooler är täckningen nära 100%.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Filtrering</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Dubbelfiltersystemet med grovt och fint filtermedia fångar allt från löv och insekter till fint sand och algsporer. Filterkorgarna är enkla att lyfta ur och skölja av — det tar 2–3 minuter. Rent filter ger bättre flöde och längre robotlivslängd.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Tekniska specifikationer</h3>
+      <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+        <table class="w-full text-sm">
+          <tbody class="divide-y divide-border">
+            {specs.map((spec, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+                <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+                <td class="px-4 py-3 text-text-light">{spec.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">För vem passar Dolphin Nautilus CC Plus?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Nautilus CC Plus passar nedgrävda pooler upp till 12 m som vill ha pålitlig helautomatisk poolstädning utan behov av app-styrning. Utmärkt för den som vill ha enkel, pålitlig drift och är nöjd med veckokalender-schemaläggning.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med andra poolrobotar</h2>
+      <ul class="space-y-2">
+        <li><a href="/dolphin-e30/" class="text-accent hover:underline text-sm">Dolphin E30 — ingångspunkten med WiFi</a></li>
+        <li><a href="/poolrobot/" class="text-accent hover:underline text-sm">Bästa poolrobot 2026 — alla modeller jämförda</a></li>
+        <li><a href="/billigaste-poolrobot/" class="text-accent hover:underline text-sm">Bästa billiga poolrobot 2026</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se bästa pris på Dolphin Nautilus CC Plus"
+    url="https://www.poolexperten.se/poolrobot/dolphin-nautilus-cc-plus"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "Product",
+      "name": "Dolphin Nautilus CC Plus",
+      "image": "https://robotjakt.se/images/dolphin-nautilus-cc-plus.jpg",
+      "brand": { "@type": "Brand", "name": "Dolphin" },
+      "category": "Poolrobot",
+      "description": "Dolphin Nautilus CC Plus poolrobot med CleverClean scanning, dubbelfilter och veckokalender för nedgrävda pooler.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "SEK",
+        "price": "6990",
+        "availability": "https://schema.org/InStock",
+      }
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.3",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-04-05",
+    "reviewBody": "Dolphin Nautilus CC Plus är en av de mest sålda poolrobotarna i sin klass med god anledning. CleverClean ger systematisk täckning och dubbelfilter fångar allt smuts effektivt.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>

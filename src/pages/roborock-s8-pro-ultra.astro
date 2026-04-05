@@ -1,0 +1,269 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const faqItems = [
+  {
+    question: 'Vad är skillnaden mellan Roborock S8 Pro Ultra och S8 MaxV Ultra?',
+    answer: 'S8 MaxV Ultra har AI-kamera med djuravföringsdetektering och starkare sugkraft (10 000 Pa mot S8 Pro Ultras 6 000 Pa). S8 Pro Ultra är äldre men fortfarande ett starkt val med FlexiArm sidborste och dubbla gummirullar. MaxV Ultra är bättre om du har husdjur — S8 Pro Ultra är prisvärdigt alternativ om du inte behöver kameran.',
+  },
+  {
+    question: 'Vad är FlexiArm sidborsten?',
+    answer: 'FlexiArm är Roborocks unika sidborste som förlänger sig ut för att nå längs väggar och in i hörn. Den drar sig tillbaka i normalläge för att undvika att svepa skräp utanför robotens sugväg. I praktiken innebär det bättre kantstädning utan att skräp sprids.',
+  },
+  {
+    question: 'Hur fungerar den automatiska stationen?',
+    answer: 'Stationen hanterar automatisk dammtömning, mopptvättning med varmt vatten och påfyllning av rent vatten. Du behöver tömma stationens påse var 7:e vecka ungefär, och fylla vattenttankarna (3 liter vardera) ca en gång i veckan vid daglig användning.',
+  },
+  {
+    question: 'Fungerar Roborock S8 Pro Ultra med Apple HomeKit?',
+    answer: 'S8 Pro Ultra stödjer inte Apple HomeKit direkt. Du kan använda Google Assistant och Amazon Alexa, samt schemalägga och styra via Roborock-appen. Apple-användare rekommenderas använda Roborock-appen som är välgjord för iOS.',
+  },
+  {
+    question: 'Är dubbla gummirullar bättre för husdjurshår?',
+    answer: 'Ja, de dubbla gummirullarna i S8 Pro Ultra trasslas inte av hår på samma sätt som borstar. De håller borta hår och päls på ett mer effektivt sätt. Dock saknar S8 Pro Ultra den dedikerade AI-kameran för att undvika djuravföring, vilket S8 MaxV Ultra har.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Roborock S8 Pro Ultra recension' },
+];
+
+const specs = [
+  { label: 'Sugkraft', value: '6 000 Pa' },
+  { label: 'Batterikapacitet', value: '5 200 mAh' },
+  { label: 'Drifttid', value: 'upp till 180 min' },
+  { label: 'Dammkorg', value: '350 ml' },
+  { label: 'Navigering', value: 'PreciSense LiDAR' },
+  { label: 'Mopp', value: 'Sonic moppning (3 000 stroke/min)' },
+  { label: 'Mopptvättning', value: 'Varmt vatten i station' },
+  { label: 'Sidborste', value: 'FlexiArm (utfällbar)' },
+  { label: 'Huvudborste', value: 'Dubbla gummirullar' },
+  { label: 'Stationstank (ren)', value: '3 liter' },
+  { label: 'App', value: 'Roborock (iOS/Android)' },
+  { label: 'Röststyrning', value: 'Google Assistant, Alexa' },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Roborock S8 Pro Ultra Test 2026 – Recension och Pris Sverige"
+  description="Roborock S8 Pro Ultra testad: FlexiArm sidborste, dubbla gummirullar och automatisk station. Se betyg, pris och jämförelse mot S8 MaxV Ultra."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-05</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Roborock S8 Pro Ultra Recension 2026
+    </h1>
+
+    <!-- Verdict box -->
+    <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+      <div class="flex items-start gap-4">
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">PRISVÄRT ALTERNATIV</span>
+            <div class="flex gap-0.5">
+              {[1,2,3,4,5].map(i => (
+                <svg class={`w-4 h-4 ${i <= 4 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <span class="font-bold text-text">4.3 / 5</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Roborock S8 Pro Ultra är en välbeprövad premiumrobot med FlexiArm sidborste och dubbla gummirullar som hanterar hår utan att trassla. Priset har sjunkit sedan lanseringen, vilket gör den till ett attraktivt val för den som vill ha Roborock-kvalitet utan att betala för S8 MaxV Ultras AI-kamera.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA above fold -->
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <p class="text-2xl font-bold text-text">ca 7 490 kr</p>
+          <p class="text-sm text-text-light">Pris varierar — jämför alltid mellan butiker</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a
+            href="https://www.komplett.se/search?search=roborock+s8+pro+ultra"
+            rel="sponsored noopener noreferrer"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris hos Komplett
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+          <a
+            href="https://www.amazon.se/dp/B0C3XNCHKG?tag=johnerik510-20"
+            rel="sponsored nofollow noopener noreferrer"
+            target="_blank"
+            class="inline-flex items-center justify-center border-2 border-cta text-cta hover:bg-cta hover:text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Köp på Amazon
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pros/Cons -->
+    <div class="grid sm:grid-cols-2 gap-5 mb-8">
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Fördelar</h2>
+        <ul class="space-y-2">
+          {[
+            'FlexiArm sidborste ger överlägsen kantstädning',
+            'Dubbla gummirullar trasslar inte av hår',
+            'Sonic moppning (3 000 stroke/min) ger djupare rengöring',
+            'Automatisk station — tömning, mopptvätt, vattenhantering',
+            'Prisvärt jämfört med S8 MaxV Ultra',
+            'PreciSense LiDAR — noggrann navigering',
+          ].map(pro => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+              {pro}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+        <ul class="space-y-2">
+          {[
+            'Lägre sugkraft (6 000 Pa) än nyare modeller',
+            'Ingen AI-kamera — detekterar inte djuravföring',
+            'Äldre modell — ersätts successivt av MaxV Ultra',
+            'Roborock-appen kräver inlärningskurva',
+          ].map(con => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+              {con}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Full review -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Roborock S8 Pro Ultra — detaljerad genomgång</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">FlexiArm — Roborocks unika sidborste</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        FlexiArm-sidborsten är det som skiljer S8 Pro Ultra från de flesta konkurrenter. Borsten förlänger sig aktivt mot väggar och hörn under städning och drar sig sedan tillbaka för att svepa smuts in under roboten snarare än ut från den. Resultatet i tester är märkbart renare vägglister och hörn.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Kombinationen med de dubbla gummirullarna gör att hår från husdjur och människor inte trasslar runt borsten på samma sätt som traditionella borstar. Underhållsbehovet är lägre — typiskt räcker en rengöring varannan vecka istället för varje vecka.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Sonic moppning</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        S8 Pro Ultras moppmodul vibrerar med 3 000 stroke per minut — Roborocks Sonic-teknik som löser upp intorkat smuts och kaffefläckar effektivare än passiv trasa. Mopparen lyfts automatiskt 5 mm vid mattor och tvättas med varmt vatten i stationen.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Jämfört med Dreame X40 Ultras utfällbara mopp täcker S8 Pro Ultras moppmodul inte hörnen lika bra — men Sonic-tekniken ger djupare rengöring på öppen golvyta. Det är en avvägning beroende på hemutformningen.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Navigering och kartläggning</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        PreciSense LiDAR är Roborocks navigeringssystem som ger noggrann rumskartläggning och konsekvent städning. Roboten lär sig hemmet snabbt och uppdaterar kartan kontinuerligt. Roborock-appen är en av de mest funktionsrika i kategorin — rum-namngivning, städzoner, no-go zones, schemaläggning och statistik ingår.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Automatisk station</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Stationen sköter dammtömning, mopptvätt och vattenhantering automatiskt. 3-liters tankarna räcker ca en vecka vid daglig användning. Stationen är kompakt nog för de flesta kök eller entréer.
+      </p>
+
+      <!-- Specs table -->
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Tekniska specifikationer</h3>
+      <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+        <table class="w-full text-sm">
+          <tbody class="divide-y divide-border">
+            {specs.map((spec, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+                <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+                <td class="px-4 py-3 text-text-light">{spec.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-heading text-xl font-semibond text-text mb-3">För vem passar Roborock S8 Pro Ultra?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        S8 Pro Ultra passar hem med blandade golvytor som vill ha Roborock-kvalitet med FlexiArm och dubbla gummirullar utan att betala för AI-kameran i MaxV Ultra. Utmärkt för hushåll med kort- till medellångt husdjurshår.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Har du lång päls eller kräver djuravföringsdetektering väljer du S8 MaxV Ultra. Prioriterar du moppfunktionen väljer du Dreame X40 Ultra.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med konkurrenter</h2>
+      <ul class="space-y-2">
+        <li><a href="/roborock-s8-maxv-ultra/" class="text-accent hover:underline text-sm">Roborock S8 MaxV Ultra — toppmodellen med AI-kamera</a></li>
+        <li><a href="/dreame-x40-ultra/" class="text-accent hover:underline text-sm">Dreame X40 Ultra — bäst i test med utfällbar mopp</a></li>
+        <li><a href="/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2026 — alla kategorier</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se bästa pris på Roborock S8 Pro Ultra"
+    url="https://www.komplett.se/search?search=roborock+s8+pro+ultra"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "Product",
+      "name": "Roborock S8 Pro Ultra",
+      "image": "https://robotjakt.se/images/roborock-s8-pro-ultra.jpg",
+      "brand": { "@type": "Brand", "name": "Roborock" },
+      "category": "Robotdammsugare",
+      "description": "Roborock S8 Pro Ultra med FlexiArm sidborste, dubbla gummirullar, Sonic moppning och fullautomatisk station.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "SEK",
+        "price": "7490",
+        "availability": "https://schema.org/InStock",
+      }
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.3",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-04-05",
+    "reviewBody": "Roborock S8 Pro Ultra är en välbeprövad premiumrobot med FlexiArm sidborste och dubbla gummirullar. Prisvärt alternativ till S8 MaxV Ultra för hem utan behov av AI-kamera.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>
