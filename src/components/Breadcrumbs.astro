@@ -6,24 +6,24 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<nav aria-label="Breadcrumbs" class="w-full bg-bg-alt border-b border-border">
+<nav aria-label="Breadcrumbs" class="w-full bg-primary-light border-b border-white/10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
-  <ol class="flex flex-wrap items-center gap-1.5 text-sm text-text-light" itemscope itemtype="https://schema.org/BreadcrumbList">
+  <ol class="flex flex-wrap items-center gap-1.5 text-sm text-white/60" itemscope itemtype="https://schema.org/BreadcrumbList">
     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-      <a href="/" itemprop="item" class="hover:text-accent transition-colors">
+      <a href="/" itemprop="item" class="hover:text-white transition-colors">
         <span itemprop="name">Hem</span>
       </a>
       <meta itemprop="position" content="1" />
     </li>
     {items.map((item, i) => (
       <li class="flex items-center gap-1.5" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span aria-hidden="true" class="text-text-lighter">/</span>
+        <span aria-hidden="true" class="text-white/30">/</span>
         {item.href ? (
-          <a href={item.href} itemprop="item" class="hover:text-accent transition-colors">
+          <a href={item.href} itemprop="item" class="hover:text-white transition-colors">
             <span itemprop="name">{item.label}</span>
           </a>
         ) : (
-          <span itemprop="name" class="text-text font-medium">{item.label}</span>
+          <span itemprop="name" class="text-white/90 font-medium">{item.label}</span>
         )}
         <meta itemprop="position" content={String(i + 2)} />
       </li>
