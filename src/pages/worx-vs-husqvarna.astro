@@ -1,0 +1,182 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Worx Landroid vs Husqvarna Automower' },
+];
+
+const faqItems = [
+  {
+    question: 'Är Worx Landroid eller Husqvarna Automower bäst?',
+    answer: 'Det beror på budget och krav. Husqvarna Automower är bättre i absoluta termer — det är ett mer etablerat system med bredare service och fler modeller. Men Worx Landroid erbjuder ett genuint konkurrenskraftigt alternativ till ett lägre pris, med WiFi-app, modulärt tillbehörssystem och AIA-navigering. För priskänsliga köpare med trädgårdar upp till 1 000 m² är Worx Landroid ett utmärkt val.',
+  },
+  {
+    question: 'Hur skiljer sig AIA-navigering från Husqvarnas navigering?',
+    answer: 'Husqvarna Automower 430X Nera använder GPS + kabel för exakt navigering och kan hantera komplexa trädgårdar med höga hinder. Worx Landroid M500 använder AIA (Artificial Intelligence Algorithm) — ett algoritmbaserat mönster som kör mer systematiskt än ren slumpkörning, men är inte lika exakt som GPS. För enklare rektangulära trädgårdar räcker AIA gott och väl.',
+  },
+  {
+    question: 'Vad kostar Worx Landroid vs Husqvarna Automower?',
+    answer: 'Worx Landroid M500 kostar ca 9 990 kr för 500 m². Husqvarna Automower 315X börjar på ca 12 990 kr och 430X Nera ligger på ca 24 990 kr. Husqvarna kostar alltså klart mer, men erbjuder mer avancerad navigering och ett bredare sortiment. Worx ger bäst pris/prestanda i mellansegmentet.',
+  },
+  {
+    question: 'Vilket märke har bäst app?',
+    answer: 'Worx-appen och Husqvarna Connect är båda välgjorda. Husqvarna Connect anses mer polerad och stabil, med bättre kartvisning och mer avancerade schemaläggningsfunktioner. Worx-appen är funktionsrik med dagliga klippscheman, notiser och tillbehörskontroll. Båda fungerar med iOS och Android.',
+  },
+  {
+    question: 'Behöver båda en gränskabel?',
+    answer: 'Ja, både Worx Landroid och Husqvarna Automower (de flesta modeller) kräver att du lägger en gränskabel runt tomten. Undantag: Husqvarna Automower 430X Nera och 315X Nera har EPOS GPS-teknik och klarar sig utan kabel. Vill du helt slippa kabel är Mammotion LUBA eller Segway Navimow bättre alternativ.',
+  },
+  {
+    question: 'Vilket märke har bättre service och reservdelar i Sverige?',
+    answer: 'Husqvarna är klart starkare på service — de har auktoriserade verkstäder i de flesta svenska städer och ett välutvecklat reservdelssystem. Husqvarna-robotar kan servas hos lokala trädgårdsbutiker. Worx service sker primärt via online-support och utbytesmodell. Behöver du snabb lokal service är Husqvarna det tryggare valet.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqSchema,
+};
+---
+
+<BaseLayout
+  title="Worx Landroid vs Husqvarna Automower 2026 — vilken robotgräsklippare är bäst?"
+  description="Worx Landroid vs Husqvarna Automower 2026: vi jämför pris, navigering, app, service och vilken som passar din trädgård bäst. Komplett guide april 2026."
+  jsonLd={jsonLd}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-04-05">2026-04-05</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Worx Landroid vs Husqvarna Automower 2026 — vilken passar din trädgård?
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Husqvarna är det etablerade premiummärket för robotgräsklippare i Sverige. Worx Landroid är utmanaren — lägre pris, WiFi-app och ett modulärt tillbehörssystem. Vi jämför dem rakt av så att du vet vilket som passar ditt hem och din budget.
+    </p>
+
+    <!-- Brand overview -->
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Två olika filosofier</h2>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div class="bg-bg-alt rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Worx Landroid</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            Amerikanskt varumärke med produktion i Kina. Prisvärda robotgräsklippare med WiFi-app från start. Unikt modulärt system — du kan lägga till tillbehör som kollisionsundvikare och regnsensor efteråt. AIA-algoritm för smartare klippning. Landroid M500 är populäraste modellen i Sverige.
+          </p>
+        </div>
+        <div class="bg-bg-alt rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Husqvarna Automower</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            Svensk industrijätte med 130 år i branschen. Robustare bygge, bredare modellportfölj (105 till 550 EPOS) och ett tätt servicenätverk i Sverige. Automower 430X Nera har EPOS GPS utan kabel. Premiumpris men dokumenterad driftsäkerhet och lokal service.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Snabbvinnare -->
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Jämförelse — Worx M500 vs Husqvarna 430X Nera</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-bg-alt">
+              <th class="text-left p-3 border border-border font-semibold">Kategori</th>
+              <th class="text-center p-3 border border-border font-semibold">Worx Landroid M500</th>
+              <th class="text-center p-3 border border-border font-semibold">Husqvarna 430X Nera</th>
+              <th class="text-left p-3 border border-border font-semibold">Vinnare</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { kat: 'Pris', worx: '~9 990 kr', husq: '~24 990 kr', vinnare: 'Worx (klart billigare)' },
+              { kat: 'Yta (max)', worx: '500 m²', husq: '3 200 m²', vinnare: 'Husqvarna' },
+              { kat: 'Navigering', worx: 'AIA-algoritm + kabel', husq: 'GPS utan kabel', vinnare: 'Husqvarna' },
+              { kat: 'Installation', worx: 'Kabel krävs', husq: 'Kabelsfri (EPOS)', vinnare: 'Husqvarna' },
+              { kat: 'App', worx: 'Worx-appen', husq: 'Husqvarna Connect', vinnare: 'Husqvarna (lite bättre)' },
+              { kat: 'Tillbehörssystem', worx: 'Modulärt — ACS, regnsensor', husq: 'Begränsade tillbehör', vinnare: 'Worx' },
+              { kat: 'Service i Sverige', worx: 'Online-support', husq: 'Auktoriserade verkstäder', vinnare: 'Husqvarna' },
+              { kat: 'Pris/prestanda (500 m²)', worx: 'Utmärkt', husq: 'Överkvalificerad', vinnare: 'Worx' },
+              { kat: 'Byggtålighet', worx: 'God', husq: 'Mycket god', vinnare: 'Husqvarna' },
+            ].map(row => (
+              <tr class="hover:bg-bg-alt">
+                <td class="p-3 border border-border font-medium">{row.kat}</td>
+                <td class="p-3 border border-border text-center">{row.worx}</td>
+                <td class="p-3 border border-border text-center">{row.husq}</td>
+                <td class="p-3 border border-border text-accent-dark font-semibold text-sm">{row.vinnare}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Rekommendation -->
+    <div class="bg-bg-alt border border-border rounded-xl p-5 mb-8">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Vem ska välja vad?</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="bg-surface rounded-lg p-4 border border-border">
+          <p class="font-semibold text-sm mb-2">Välj Worx Landroid om:</p>
+          <ul class="text-sm text-text-light space-y-1">
+            <li>— Budget är under 15 000 kr</li>
+            <li>— Din trädgård är under 500 m²</li>
+            <li>— Du vill ha modulärt system med tillbehör</li>
+            <li>— WiFi-app och schemaläggning är tillräckligt</li>
+          </ul>
+        </div>
+        <div class="bg-surface rounded-lg p-4 border border-border">
+          <p class="font-semibold text-sm mb-2">Välj Husqvarna Automower om:</p>
+          <ul class="text-sm text-text-light space-y-1">
+            <li>— Din trädgård är över 1 000 m²</li>
+            <li>— Du vill slippa gränskabel (430X Nera)</li>
+            <li>— Lokal service och reservdelar prioriteras</li>
+            <li>— Långsiktig driftsäkerhet väger tyngst</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="flex flex-col sm:flex-row gap-3 mb-10">
+      <a href="/worx-landroid-m500/" class="inline-flex items-center justify-center bg-accent text-white font-semibold px-5 py-3 rounded-xl hover:bg-accent/90 transition-colors text-sm">Se Worx Landroid M500</a>
+      <a href="/husqvarna-automower-430x-nera/" class="inline-flex items-center justify-center bg-bg-alt border border-border text-text font-semibold px-5 py-3 rounded-xl hover:bg-border transition-colors text-sm">Se Husqvarna 430X Nera</a>
+    </div>
+
+    <!-- Se även -->
+    <div class="border border-border rounded-xl p-5 mb-8">
+      <h2 class="font-heading text-base font-bold text-text mb-3">Fler robotgräsklippare-jämförelser</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/husqvarna-vs-gardena/" class="text-accent hover:underline">Husqvarna vs Gardena robotgräsklippare 2026</a></li>
+        <li><a href="/husqvarna-vs-mammotion/" class="text-accent hover:underline">Husqvarna vs Mammotion 2026 — kabel eller GPS?</a></li>
+        <li><a href="/husqvarna-vs-segway-navimow/" class="text-accent hover:underline">Husqvarna vs Segway Navimow 2026</a></li>
+        <li><a href="/kopguide-robotgrasklippare/" class="text-accent hover:underline">Köpguide: Bästa robotgräsklippare 2026</a></li>
+      </ul>
+    </div>
+
+    <FAQ items={faqItems} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </div>
+
+  <StickyCTA
+    href="/worx-landroid-m500/"
+    text="Se Worx Landroid M500 — bäst pris/prestanda"
+    productName="Worx vs Husqvarna"
+  />
+</BaseLayout>

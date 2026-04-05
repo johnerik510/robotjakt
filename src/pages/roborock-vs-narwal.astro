@@ -1,0 +1,217 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/' },
+  { label: 'Roborock vs Narwal' },
+];
+
+const faqItems = [
+  {
+    question: 'Är Roborock eller Narwal bäst för moppning?',
+    answer: 'Narwal tar hem moppkategorin. Narwal Freo X Ultra torkar moppplattorna med 40-gradig varmluft i stationen — en funktion som Roborock saknar. Roborock S8 MaxV Ultra tvättar mopparna med vatten men torkar inte aktivt, vilket kan ge dålig lukt. För hem med mycket hårdgolv där moppkvaliteten är avgörande är Narwal det bättre valet.',
+  },
+  {
+    question: 'Vilken är bäst för husdjur — Roborock eller Narwal?',
+    answer: 'Roborock S8 MaxV Ultra är klart bäst för husdjurshem tack vare ReactiveAI 3.0 som identifierar och undviker djuravföring. Narwal Freo X Ultras AI-kamera är duktig på vanliga hinder men inte lika specialiserad på djuravföringsskydd. Om du har hundar eller katter är Roborock det säkrare valet.',
+  },
+  {
+    question: 'Vad kostar Roborock S8 MaxV Ultra vs Narwal Freo X Ultra?',
+    answer: 'I Sverige 2026 kostar Roborock S8 MaxV Ultra ca 10 990 kr och Narwal Freo X Ultra ca 8 990–9 990 kr. Narwal är alltså något prisvärdare, särskilt med tanke på den överlägsna varmluftsfunktionen som motiverar priset väl.',
+  },
+  {
+    question: 'Vilken har bäst navigering och kartläggning?',
+    answer: 'Roborock och Narwal är i praktiken jämngoda på LiDAR-navigering och kartläggning. Båda skapar detaljerade flervåningskartor med rumsdelning. Roborock Home-appen anses generellt mer polerad och stabil, medan Narwal-appen är funktionsrik men kan upplevas mer komplex för nya användare.',
+  },
+  {
+    question: 'Kan jag ha Narwal Freo X Ultra på mattor?',
+    answer: 'Ja. Narwal Freo X Ultra lyfter automatiskt moppplattorna 15 mm vid mattdetektion och ökar sugkraften. Fungerar bra i hem med blandade golvytor. Roborock S8 MaxV Ultra gör detsamma och båda klarar höga mattor (upp till ca 2 cm) utan problem.',
+  },
+  {
+    question: 'Vilket varumärke har bättre service och garanti i Sverige?',
+    answer: 'Roborock är mer etablerat i Sverige med fler auktoriserade återförsäljare (Elgiganten, MediaMarkt, Komplett, NetOnNet) och ett bredare servicenätverk. Narwal finns också hos de stora kedjorna men har kortare historia på den svenska marknaden. Båda ger 2 års garanti via auktoriserade återförsäljare.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqSchema,
+};
+---
+
+<BaseLayout
+  title="Roborock vs Narwal April 2026 — vilken robotdammsugare är bäst?"
+  description="Roborock S8 MaxV Ultra vs Narwal Freo X Ultra 2026: vi jämför moppning, sugkraft, AI-navigering, pris och husdjursskydd. Se vilket märke som passar ditt hem."
+  jsonLd={jsonLd}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-04-05">2026-04-05</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Roborock vs Narwal 2026 — vilken är bäst?
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Roborock S8 MaxV Ultra och Narwal Freo X Ultra är två av de mest efterfrågade premium-robotarna 2026. Båda kombinerar kraftfull dammsugning med avancerad moppning och automatisk självtömning — men de prioriterar olika saker. Vi jämför dem rakt av.
+    </p>
+
+    <!-- Brand overview -->
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Roborock och Narwal — kort bakgrund</h2>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div class="bg-bg-alt rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Roborock</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            Grundat 2014 i Beijing. Marknadsledande i premiumsegmentet med en bred modellportfölj. Kända för ReactiveAI-djuravföringsdetektion, stabil LiDAR-navigering och en vältestad app. S8 MaxV Ultra är deras toppmodell 2026 med 10 000 Pa sugkraft och dubbelmoppning.
+          </p>
+        </div>
+        <div class="bg-bg-alt rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Narwal</h3>
+          <p class="text-text-light text-sm leading-relaxed">
+            Grundat 2016 i Shenzhen. Specialiserat på moppning — deras unika varmluftsfunktion som torkar moppplattorna i stationen är ett patent utan direktkonkurrent. Freo X Ultra är deras flaggskepp med 8 200 Pa sugkraft, roterande moppplattor och AI-hinderdetektering.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Snabbvinnare -->
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbvinnare per kategori</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-bg-alt">
+              <th class="text-left p-3 border border-border font-semibold">Kategori</th>
+              <th class="text-center p-3 border border-border font-semibold">Roborock S8 MaxV Ultra</th>
+              <th class="text-center p-3 border border-border font-semibold">Narwal Freo X Ultra</th>
+              <th class="text-left p-3 border border-border font-semibold">Vinnare</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { kat: 'Moppkvalitet', robo: '8/10', nar: '10/10', vinnare: 'Narwal (varmluft)' },
+              { kat: 'Sugkraft (Pa)', robo: '10 000 Pa', nar: '8 200 Pa', vinnare: 'Roborock' },
+              { kat: 'Husdjursskydd (AI)', robo: '10/10', nar: '8/10', vinnare: 'Roborock (ReactiveAI)' },
+              { kat: 'Navigering', robo: '9/10', nar: '9/10', vinnare: 'Lika bra' },
+              { kat: 'App-upplevelse', robo: '9/10', nar: '8/10', vinnare: 'Roborock' },
+              { kat: 'Pris (Sverige)', robo: '~10 990 kr', nar: '~8 990 kr', vinnare: 'Narwal' },
+              { kat: 'Moppplattetorkning', robo: 'Kallt vatten', nar: '40-gradig varmluft', vinnare: 'Narwal' },
+              { kat: 'Garantiservice SE', robo: 'Bredare nätverk', nar: 'God men yngre', vinnare: 'Roborock' },
+              { kat: 'Värde totalt', robo: '9/10', nar: '9/10', vinnare: 'Beror på behov' },
+            ].map(row => (
+              <tr class="hover:bg-bg-alt">
+                <td class="p-3 border border-border font-medium">{row.kat}</td>
+                <td class="p-3 border border-border text-center">{row.robo}</td>
+                <td class="p-3 border border-border text-center">{row.nar}</td>
+                <td class="p-3 border border-border text-accent-dark font-semibold text-sm">{row.vinnare}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Djupjämförelse -->
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Djupjämförelse</h2>
+
+      <div class="space-y-6">
+        <div>
+          <h3 class="font-semibold text-text mb-2">Moppning — Narwals absoluta styrka</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Narwal Freo X Ultra är världens enda robot som torkar sina moppplattor med varmluft (40°C) i dockningsstationen. Det tar ~2,5 timmar men innebär att mopparna aldrig är fuktiga och illaluktande. Roborock S8 MaxV Ultra tvättar mopparna med vatten och låter dem lufttorka — fungerar men ger ibland unken lukt om du inte torkar av stationen manuellt. Om ditt hem har mycket hårdgolv och du vill ha ren, luktfri moppning är Narwal det tydliga valet.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-text mb-2">Husdjursskydd — Roborocks unika fördel</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Roborock S8 MaxV Ultra har ReactiveAI 3.0 — ett kamerasystem tränat specifikt på att identifiera och undvika djuravföringar. Om du har hund är detta potentiellt den viktigaste funktionen som finns. Narwal Freo X Ultras AI-kamera undviker sladdar, skor och leksaker men är inte lika specialiserad på djuravföring. Har du husdjur — välj Roborock.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-text mb-2">Sugkraft och dammsugning</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Roborock S8 MaxV Ultra har 10 000 Pa sugkraft, Narwal Freo X Ultra har 8 200 Pa. I praktiken är båda kraftfulla nog för de flesta hem. Skillnaden märks primärt vid tjocka mattor eller hem med mycket husdjurspäls. Roborock har ett litet övertag i ren sugprestanda.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-text mb-2">Pris och värde</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Narwal Freo X Ultra kostar ca 8 990–9 990 kr, Roborock S8 MaxV Ultra ca 10 990 kr. Narwal ger faktiskt mer för pengarna om moppning är din prioritet — varmluftsfunktionen är en premium-feature till lägre pris. Roborocks merpris motiveras av djuravföringsskyddet och bredare service i Sverige.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rekommendation -->
+    <div class="bg-bg-alt border border-border rounded-xl p-5 mb-8">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Vem ska välja vad?</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="bg-surface rounded-lg p-4 border border-border">
+          <p class="font-semibold text-sm mb-2">Välj Roborock S8 MaxV Ultra om:</p>
+          <ul class="text-sm text-text-light space-y-1">
+            <li>— Du har hund eller katt (djuravföringsskydd)</li>
+            <li>— Dammsugningsstyrka prioriteras</li>
+            <li>— Du vill ha ett etablerat varumärke med brett servicenätverk</li>
+            <li>— Hem med mycket mattor</li>
+          </ul>
+        </div>
+        <div class="bg-surface rounded-lg p-4 border border-border">
+          <p class="font-semibold text-sm mb-2">Välj Narwal Freo X Ultra om:</p>
+          <ul class="text-sm text-text-light space-y-1">
+            <li>— Du har mycket hårdgolv och vill ha ren moppning</li>
+            <li>— Dålig lukt från blöta moppar stör dig</li>
+            <li>— Lägre pris vid likvärdig eller bättre moppkvalitet</li>
+            <li>— Inga husdjur</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA-knappar -->
+    <div class="flex flex-col sm:flex-row gap-3 mb-10">
+      <a href="/roborock-s8-maxv-ultra/" class="inline-flex items-center justify-center bg-accent text-white font-semibold px-5 py-3 rounded-xl hover:bg-accent/90 transition-colors text-sm">Se Roborock S8 MaxV Ultra</a>
+      <a href="/narwal-freo-x-ultra/" class="inline-flex items-center justify-center bg-bg-alt border border-border text-text font-semibold px-5 py-3 rounded-xl hover:bg-border transition-colors text-sm">Se Narwal Freo X Ultra</a>
+    </div>
+
+    <!-- Se även -->
+    <div class="border border-border rounded-xl p-5 mb-8">
+      <h2 class="font-heading text-base font-bold text-text mb-3">Fler jämförelser</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/roborock-vs-dreame/" class="text-accent hover:underline">Roborock vs Dreame 2026</a></li>
+        <li><a href="/narwal-freo-x-ultra-vs-dreame-x40-ultra/" class="text-accent hover:underline">Narwal Freo X Ultra vs Dreame X40 Ultra 2026</a></li>
+        <li><a href="/roborock-vs-ecovacs/" class="text-accent hover:underline">Roborock vs Ecovacs 2026</a></li>
+        <li><a href="/robotdammsugare-med-mopp/" class="text-accent hover:underline">Bästa robotdammsugare med mopp 2026</a></li>
+      </ul>
+    </div>
+
+    <FAQ items={faqItems} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </div>
+
+  <StickyCTA
+    href="/roborock-s8-maxv-ultra/"
+    text="Se Roborock S8 MaxV Ultra — bäst totalt"
+    productName="Roborock vs Narwal"
+  />
+</BaseLayout>
