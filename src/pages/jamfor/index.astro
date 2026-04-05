@@ -2,6 +2,45 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Roborock eller Dreame — vilket märke ska jag välja?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Roborock har generellt bättre app och navigering, medan Dreame ofta erbjuder mer sugkraft och lägre pris för samma prestanda. Roborock passar dig som vill ha pålitlig mjukvara, Dreame om du prioriterar råstyrka och pris/prestanda."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "Vad ska jag jämföra när jag väljer robotdammsugare?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "De viktigaste faktorerna är sugkraft (Pa), navigeringstyp (LiDAR vs kamera), hinderdetektering, tömningsstations-funktion, moppfunktion och pris. För hem med husdjur är hinderdetektering extra viktigt."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "Är det värt att betala mer för ett premiumrobot?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Ja i de flesta fall. Modeller över 6 000 kr erbjuder LiDAR-navigering, automatisk tömmning och bättre hinderdetektering som sparar tid. Budget-modeller under 3 000 kr saknar ofta dessa funktioner."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "Husqvarna eller Mammotion robotgräsklippare?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Husqvarna kräver perimeterkabel men är beprövad teknik. Mammotion använder GPS och kräver ingen kabel, vilket ger enklare installation. Mammotion passar bättre för de flesta moderna trädgårdar under 1 500 m²."
+      }
+    }
+  ]
+};
+
 const comparisons = [
   {
     title: 'Roborock Saros 10R vs Dreame X40 Ultra April 2026',
@@ -127,4 +166,21 @@ const comparisons = [
       ))}
     </div>
   </section>
+
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-6">Vanliga frågor om att jämföra robotar</h2>
+    <div class="space-y-4">
+      {faqSchema.mainEntity.map((item) => (
+        <details class="bg-white border border-border rounded-xl overflow-hidden group">
+          <summary class="flex items-center justify-between cursor-pointer px-5 py-4 font-semibold text-text hover:text-accent transition-colors list-none">
+            <span>{item.name}</span>
+            <svg class="w-5 h-5 text-text-light group-open:rotate-180 transition-transform flex-shrink-0 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-5 pb-4 text-text-light text-sm leading-relaxed">{item.acceptedAnswer.text}</div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </BaseLayout>
