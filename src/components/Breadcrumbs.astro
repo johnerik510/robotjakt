@@ -6,7 +6,8 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<nav aria-label="Breadcrumbs" class="mb-4">
+<nav aria-label="Breadcrumbs" class="w-full bg-bg-alt border-b border-border">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
   <ol class="flex flex-wrap items-center gap-1.5 text-sm text-text-light" itemscope itemtype="https://schema.org/BreadcrumbList">
     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
       <a href="/" itemprop="item" class="hover:text-accent transition-colors">
@@ -28,4 +29,5 @@ const { items } = Astro.props;
       </li>
     ))}
   </ol>
+  </div>
 </nav>
