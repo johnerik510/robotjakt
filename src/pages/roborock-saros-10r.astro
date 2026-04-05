@@ -49,6 +49,15 @@ const specs = [
   { label: 'Röststyrning', value: 'Google Assistant, Amazon Alexa' },
   { label: 'Pris', value: 'ca 14 990 kr' },
 ];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
 ---
 
 <BaseLayout
@@ -244,8 +253,18 @@ const specs = [
     "itemReviewed": {
       "@type": "Product",
       "name": "Roborock Saros 10R",
+  "image": "https://robotjakt.se/images/roborock-saros-10r.jpg",
       "brand": { "@type": "Brand", "name": "Roborock" },
-      "category": "Robotdammsugare"
+      "category": "Robotdammsugare",
+      "description": "Roborock Saros 10R - varldens tunnaste robotdammsugare (7,98 cm) med 20 000 Pa sugkraft och moppfunktion.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "SEK",
+        "price": "12990",
+        "availability": "https://schema.org/InStock",
+        "shippingDetails": {"@type":"OfferShippingDetails","shippingDestination":{"@type":"DefinedRegion","addressCountry":"SE"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":3,"unitCode":"d"},"transitTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":5,"unitCode":"d"}}},
+        "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","applicableCountry":"SE","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":14,"returnMethod":"https://schema.org/ReturnByMail","returnFees":"https://schema.org/ReturnShippingFees"}
+      }
     },
     "reviewRating": {
       "@type": "Rating",
@@ -257,5 +276,11 @@ const specs = [
     "datePublished": "2026-04-04",
     "reviewBody": "Roborock Saros 10R ar varldens tunnaste robotdammsugare med full moppfunktion (7,98 cm) och 20 000 Pa sugkraft. StarSight Autonomy System 2.0 med 3D ToF LiDAR och RGB-kamera ger overlägsen navigation och igenkanning av 100+ objekttyper.",
     "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
   })} />
 </BaseLayout>

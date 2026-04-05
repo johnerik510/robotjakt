@@ -52,6 +52,15 @@ const specs = [
 const breadcrumbs = [
   { label: 'Roborock Qrevo Master recension' },
 ];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
 ---
 
 <BaseLayout
@@ -220,8 +229,18 @@ const breadcrumbs = [
     "itemReviewed": {
       "@type": "Product",
       "name": "Roborock Qrevo Master",
+  "image": "https://robotjakt.se/images/roborock-qrevo-master.webp",
       "brand": { "@type": "Brand", "name": "Roborock" },
-      "category": "Robotdammsugare"
+      "category": "Robotdammsugare",
+      "description": "Roborock Qrevo Master robotdammsugare med FlexiArm moppsystem, 10 000 Pa sugkraft och komplett station.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "SEK",
+        "price": "7490",
+        "availability": "https://schema.org/InStock",
+        "shippingDetails": {"@type":"OfferShippingDetails","shippingDestination":{"@type":"DefinedRegion","addressCountry":"SE"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":3,"unitCode":"d"},"transitTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":5,"unitCode":"d"}}},
+        "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","applicableCountry":"SE","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":14,"returnMethod":"https://schema.org/ReturnByMail","returnFees":"https://schema.org/ReturnShippingFees"}
+      }
     },
     "reviewRating": {
       "@type": "Rating",
@@ -233,5 +252,11 @@ const breadcrumbs = [
     "datePublished": "2026-03-29",
     "reviewBody": "Roborock Qrevo Master levererar premiumfunktioner — FlexiArm mopp, varmvattentvätt, 10 000 Pa och gummirulle — till ett mellanklasspris. För hem som vill ha nästan allt en premium-robot erbjuder men inte betala för AI-kameran är detta det smartaste köpet 2026.",
     "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
   })} />
 </BaseLayout>

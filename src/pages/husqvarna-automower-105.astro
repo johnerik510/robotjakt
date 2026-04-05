@@ -302,13 +302,17 @@ const faqSchema = faqItems.map((item) => ({
   "@context": "https://schema.org",
   "@type": ["Product", "Review"],
   "name": "Husqvarna Automower 105",
+  "image": "https://robotjakt.se/images/husqvarna-automower-105.jpg",
   "brand": { "@type": "Brand", "name": "Husqvarna" },
+  "description": "Husqvarna Automower 105 instegmodell for tradgardar upp till 600 m2 med automatisk laddning.",
   "category": "Robotgräsklippare",
   "offers": {
     "@type": "Offer",
     "priceCurrency": "SEK",
     "price": "7990",
-    "availability": "https://schema.org/InStock"
+    "availability": "https://schema.org/InStock",
+  "shippingDetails": {"@type":"OfferShippingDetails","shippingDestination":{"@type":"DefinedRegion","addressCountry":"SE"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":3,"unitCode":"d"},"transitTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":5,"unitCode":"d"}}},
+  "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","applicableCountry":"SE","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":14,"returnMethod":"https://schema.org/ReturnByMail","returnFees":"https://schema.org/ReturnShippingFees"}
   },
   "review": {
     "@type": "Review",

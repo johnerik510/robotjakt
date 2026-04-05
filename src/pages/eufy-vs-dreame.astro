@@ -36,6 +36,15 @@ const faqItems = [
     answer: 'Tillbehörskostnader är jämförbara. Bägge märken säljer reservfilter, sidborstar och moppkuddar direkt via sina webbplatser. Dreames dubbla moppskivor slits snabbare och behöver bytas oftare än Eufys standardmoppmodul. Räkna med ca 200–400 kr per år för förbrukningsmaterial på båda märken.',
   },
 ];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
 ---
 
 <BaseLayout
@@ -204,4 +213,10 @@ const faqItems = [
     price="ca 7 990 kr"
     url="https://www.dreametech.com"
   />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
 </BaseLayout>

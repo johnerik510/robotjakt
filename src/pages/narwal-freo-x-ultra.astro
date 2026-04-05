@@ -50,6 +50,15 @@ const specs = [
   { label: 'App', value: 'Narwal (iOS/Android)' },
   { label: 'Röststyrning', value: 'Google Assistant, Alexa' },
 ];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
 ---
 
 <BaseLayout
@@ -234,8 +243,18 @@ const specs = [
     "itemReviewed": {
       "@type": "Product",
       "name": "Narwal Freo X Ultra",
+  "image": "https://robotjakt.se/og-default.jpg",
       "brand": { "@type": "Brand", "name": "Narwal" },
-      "category": "Robotdammsugare"
+      "category": "Robotdammsugare",
+      "description": "Narwal Freo X Ultra robotdammsugare med unik varmluftstorkning av moppar, sjalvrengoring och kraftfull sugkraft.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "SEK",
+        "price": "8990",
+        "availability": "https://schema.org/InStock",
+        "shippingDetails": {"@type":"OfferShippingDetails","shippingDestination":{"@type":"DefinedRegion","addressCountry":"SE"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":3,"unitCode":"d"},"transitTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":5,"unitCode":"d"}}},
+        "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","applicableCountry":"SE","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":14,"returnMethod":"https://schema.org/ReturnByMail","returnFees":"https://schema.org/ReturnShippingFees"}
+      }
     },
     "reviewRating": {
       "@type": "Rating",
@@ -247,5 +266,11 @@ const specs = [
     "datePublished": "2026-04-04",
     "reviewBody": "Narwal Freo X Ultra imponerar med sin unika varmluftsfunktion som torkar moppplattorna efter varje städning. Resultatet är att mopparna inte luktar mögel ens efter månader av användning — ett problem övriga robotdammsugare med mopp inte löst lika bra.",
     "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
   })} />
 </BaseLayout>

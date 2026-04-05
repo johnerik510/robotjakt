@@ -257,13 +257,17 @@ const faqSchema = faqItems.map((item) => ({
     "itemReviewed": {
       "@type": "Product",
       "name": "Dreame W10 Pro",
+  "image": "https://robotjakt.se/og-default.jpg",
       "brand": { "@type": "Brand", "name": "Dreame" },
       "category": "Robotdammsugare",
+      "description": "Dreame W10 Pro kombinerad robotdammsugare och moppmaskin med sjalvrengoring och varmvattenttvatt.",
       "offers": {
         "@type": "Offer",
         "priceCurrency": "SEK",
         "price": "6999",
-        "availability": "https://schema.org/InStock"
+        "availability": "https://schema.org/InStock",
+      "shippingDetails": {"@type":"OfferShippingDetails","shippingDestination":{"@type":"DefinedRegion","addressCountry":"SE"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":3,"unitCode":"d"},"transitTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":5,"unitCode":"d"}}},
+      "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","applicableCountry":"SE","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":14,"returnMethod":"https://schema.org/ReturnByMail","returnFees":"https://schema.org/ReturnShippingFees"}
       }
     },
     "reviewRating": {

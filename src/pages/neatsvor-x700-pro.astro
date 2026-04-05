@@ -49,6 +49,15 @@ const specs = [
   { label: 'Röststyrning', value: 'Google Assistant, Alexa' },
   { label: 'Bullernivå', value: 'ca 68 dB (max)' },
 ];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
 ---
 
 <BaseLayout
@@ -218,8 +227,18 @@ const specs = [
     "itemReviewed": {
       "@type": "Product",
       "name": "Neatsvor X700 Pro",
+  "image": "https://robotjakt.se/og-default.jpg",
       "brand": { "@type": "Brand", "name": "Neatsvor" },
-      "category": "Robotdammsugare"
+      "category": "Robotdammsugare",
+      "description": "Neatsvor X700 Pro budgetrobotdammsugare med LiDAR-navigering och moppfunktion till lagpris.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "SEK",
+        "price": "999",
+        "availability": "https://schema.org/InStock",
+        "shippingDetails": {"@type":"OfferShippingDetails","shippingDestination":{"@type":"DefinedRegion","addressCountry":"SE"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":3,"unitCode":"d"},"transitTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":5,"unitCode":"d"}}},
+        "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","applicableCountry":"SE","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":14,"returnMethod":"https://schema.org/ReturnByMail","returnFees":"https://schema.org/ReturnShippingFees"}
+      }
     },
     "reviewRating": {
       "@type": "Rating",
@@ -231,5 +250,11 @@ const specs = [
     "datePublished": "2026-04-04",
     "reviewBody": "Neatsvor X700 Pro levererar LiDAR-navigering och moppfunktion till ett pris som är svårslaget i sin klass. Perfekt for budget-medvetna konsumenter som vill ha smart städning utan premiumprislappen.",
     "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
   })} />
 </BaseLayout>

@@ -119,6 +119,15 @@ const faqItems = [
     answer: 'För daglig underhållsstädning ja. En robotdammsugare håller golven rena mellan mer grundliga städningar. För djuprengöring av soffor, trappor och svåråtkomliga ställen behöver du fortfarande en vanlig eller sladdlös dammsugare.',
   },
 ];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
 ---
 
 <BaseLayout
@@ -357,5 +366,11 @@ const faqItems = [
       "position": i + 1,
       "name": p.name,
     })),
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
   })} />
 </BaseLayout>

@@ -36,6 +36,15 @@ const faqItems = [
     answer: 'Eufy börjar lägre i budgetsegmentet (från ca 1 990 kr för Eufy 25C). Roborock har modeller från ca 2 990 kr (Q5). I premiumsegmentet är de jämförbara: Eufy X10 Pro Omni (ca 5 990 kr) vs Roborock S8 (ca 5 990 kr). Roborock S8 Pro Ultra (ca 12 990 kr) är dyrare än Eufys dyraste modell.',
   },
 ];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
 ---
 
 <BaseLayout
@@ -204,4 +213,10 @@ const faqItems = [
     text="Se pris på Eufy X10 Pro Omni"
     subtext="LiDAR-robot med All-in-One-basstation — ca 5 990 kr"
   />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
 </BaseLayout>

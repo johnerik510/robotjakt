@@ -252,13 +252,17 @@ const faqSchema = faqItems.map((item) => ({
   "@context": "https://schema.org",
   "@type": ["Product", "Review"],
   "name": "Segway Navimow H500E",
+  "image": "https://robotjakt.se/images/segway-navimow-h500e.jpg",
   "brand": { "@type": "Brand", "name": "Segway" },
+  "description": "Segway Navimow H500E robotgrasklippare utan slinga med RTK+VIO-navigering for tradgardar upp till 500 m2.",
   "category": "Robotgräsklippare",
   "offers": {
     "@type": "Offer",
     "priceCurrency": "SEK",
     "price": "19990",
-    "availability": "https://schema.org/InStock"
+    "availability": "https://schema.org/InStock",
+  "shippingDetails": {"@type":"OfferShippingDetails","shippingDestination":{"@type":"DefinedRegion","addressCountry":"SE"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":3,"unitCode":"d"},"transitTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":5,"unitCode":"d"}}},
+  "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","applicableCountry":"SE","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":14,"returnMethod":"https://schema.org/ReturnByMail","returnFees":"https://schema.org/ReturnShippingFees"}
   },
   "review": {
     "@type": "Review",

@@ -37,6 +37,15 @@ const faqItems = [
     answer: 'Qrevo Master (7 490 kr) vs Dreame L20 Ultra (5 990 kr) är en annan jämförelse — Qrevo Master vinner på FlexiArm-kantbearbetning och Roborock-ekosystem. Men om budgeten är stram är L20 Ultra imponerande. Se vår jämförelse Dreame L20 Ultra vs Qrevo Master för fullständig analys.',
   },
 ];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
 ---
 
 <BaseLayout
@@ -200,4 +209,10 @@ const faqItems = [
   </div>
 
   <StickyCTA url="https://www.komplett.se/search?q=Roborock+Qrevo+Master" text="Se pris — Roborock Qrevo Master" />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
 </BaseLayout>

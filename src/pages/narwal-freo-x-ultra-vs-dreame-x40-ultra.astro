@@ -203,9 +203,11 @@ const specs = [
     "dateModified": "2026-04-04",
     "author": { "@type": "Organization", "name": "Robotjakt" },
     "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" },
-    "mainEntity": {
-      "@type": "FAQPage",
-      "mainEntity": faqSchema,
-    }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
   })} />
 </BaseLayout>

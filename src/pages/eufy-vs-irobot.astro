@@ -36,6 +36,15 @@ const faqItems = [
     answer: 'Ja — iRobot Roomba integrerar med Google Home, Amazon Alexa och Apple HomeKit. Du kan starta, stoppa och skicka Roomba till specifika rum via röststyrning. Eufy EufyHome-appen integrerar med Google Assistant och Amazon Alexa men inte Apple HomeKit. För Apple-ekosystemet: iRobot vinner.',
   },
 ];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
 ---
 
 <BaseLayout
@@ -191,4 +200,10 @@ const faqItems = [
     price="ca 5 990 kr"
     url="https://www.eufylife.com"
   />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
 </BaseLayout>

@@ -104,6 +104,15 @@ const faqItems = [
 const breadcrumbs = [
   { label: 'Billigaste robotdammsugare' },
 ];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
 ---
 
 <BaseLayout
@@ -208,4 +217,10 @@ const breadcrumbs = [
     text="Se pris på Roborock Q5 Pro"
     url="https://www.komplett.se/search?q=Roborock+Q5+Pro"
   />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
 </BaseLayout>

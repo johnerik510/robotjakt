@@ -253,13 +253,17 @@ const faqSchema = faqItems.map((item) => ({
   "@context": "https://schema.org",
   "@type": ["Product", "Review"],
   "name": "Gardena Sileno City 500",
+  "image": "https://robotjakt.se/images/gardena-sileno-city-500.jpg",
   "brand": { "@type": "Brand", "name": "Gardena" },
+  "description": "Gardena Sileno City 500 robotgrasklippare for tradgardar upp till 500 m2, kompakt och tyst.",
   "category": "Robotgräsklippare",
   "offers": {
     "@type": "Offer",
     "priceCurrency": "SEK",
     "price": "5990",
-    "availability": "https://schema.org/InStock"
+    "availability": "https://schema.org/InStock",
+  "shippingDetails": {"@type":"OfferShippingDetails","shippingDestination":{"@type":"DefinedRegion","addressCountry":"SE"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":3,"unitCode":"d"},"transitTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":5,"unitCode":"d"}}},
+  "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","applicableCountry":"SE","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":14,"returnMethod":"https://schema.org/ReturnByMail","returnFees":"https://schema.org/ReturnShippingFees"}
   },
   "review": {
     "@type": "Review",

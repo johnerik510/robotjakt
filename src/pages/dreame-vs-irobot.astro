@@ -36,6 +36,15 @@ const faqItems = [
     answer: 'Dreame X40 Ultra kostar ca 9 990 kr och iRobot Roomba j9+ Combo kostar ca 11 990 kr. Dreame är alltså ca 2 000 kr billigare och erbjuder fler tekniska funktioner. Om du enbart tittar på specifikationer per krona är Dreame den klara vinnaren.',
   },
 ];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
 ---
 
 <BaseLayout
@@ -192,4 +201,10 @@ const faqItems = [
     text="Se bästa pris — Dreame X40 Ultra"
     productName="Bäst specifikationer per krona April 2026"
   />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
 </BaseLayout>

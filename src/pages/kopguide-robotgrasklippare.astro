@@ -27,6 +27,15 @@ const breadcrumbs = [
   { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
   { label: 'Köpguide robotgräsklippare' },
 ];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
 ---
 
 <BaseLayout
@@ -268,5 +277,11 @@ const breadcrumbs = [
       "name": "Robotjakt",
       "url": "https://robotjakt.se"
     }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
   })} />
 </BaseLayout>

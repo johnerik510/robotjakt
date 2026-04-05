@@ -241,13 +241,17 @@ const faqSchema = faqItems.map((item) => ({
   "@context": "https://schema.org",
   "@type": ["Product", "Review"],
   "name": "Dreame L10s Ultra Gen 2",
+  "image": "https://robotjakt.se/og-default.jpg",
   "brand": { "@type": "Brand", "name": "Dreame" },
+  "description": "Dreame L10s Ultra Gen 2 robotdammsugare med forbattrad navigation och komplett moppstation.",
   "category": "Robotdammsugare",
   "offers": {
     "@type": "Offer",
     "priceCurrency": "SEK",
     "price": "4990",
-    "availability": "https://schema.org/InStock"
+    "availability": "https://schema.org/InStock",
+  "shippingDetails": {"@type":"OfferShippingDetails","shippingDestination":{"@type":"DefinedRegion","addressCountry":"SE"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":3,"unitCode":"d"},"transitTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":5,"unitCode":"d"}}},
+  "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","applicableCountry":"SE","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":14,"returnMethod":"https://schema.org/ReturnByMail","returnFees":"https://schema.org/ReturnShippingFees"}
   },
   "review": {
     "@type": "Review",

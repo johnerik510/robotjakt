@@ -36,6 +36,15 @@ const faqItems = [
     answer: 'Segway Navimow H500E kostar ca 12 990 kr. Mammotion LUBA 2 AWO 1000H kostar ca 17 990 kr. Segway är 5 000 kr billigare. Men Mammotion LUBA 2 AWO har 4-hjulsdrift och bättre terränganpassning som motiverar prisskillnaden för kuperade trädgårdar.',
   },
 ];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
 ---
 
 <BaseLayout
@@ -190,4 +199,10 @@ const faqItems = [
   </div>
 
   <StickyCTA url="/robotgrasklippare-utan-slinga/" text="Se alla slingfria robotgräsklippare April 2026" />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
 </BaseLayout>

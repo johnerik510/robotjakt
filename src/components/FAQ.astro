@@ -8,17 +8,17 @@ const { items } = Astro.props;
 
 <section class="mt-12">
   <h2 class="font-heading text-2xl font-bold text-text mb-6">Vanliga frågor</h2>
-  <div class="space-y-3" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="space-y-3">
     {items.map((item) => (
-      <details class="group bg-white rounded-lg border border-border" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <details class="group bg-white rounded-lg border border-border">
         <summary class="flex items-center justify-between cursor-pointer px-5 py-4 font-medium text-text hover:text-accent transition-colors min-h-[44px] list-none">
-          <span itemprop="name">{item.question}</span>
+          <span>{item.question}</span>
           <svg class="w-5 h-5 text-text-light flex-shrink-0 ml-3 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </summary>
-        <div class="px-5 pb-4 text-sm text-text-light leading-relaxed" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">{item.answer}</p>
+        <div class="px-5 pb-4 text-sm text-text-light leading-relaxed">
+          <p>{item.answer}</p>
         </div>
       </details>
     ))}

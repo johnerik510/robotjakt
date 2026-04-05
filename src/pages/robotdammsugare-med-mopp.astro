@@ -128,6 +128,15 @@ const faqItems = [
 const breadcrumbs = [
   { label: 'Robotdammsugare med mopp' },
 ];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
 ---
 
 <BaseLayout
@@ -263,4 +272,10 @@ const breadcrumbs = [
     text="Se bästa pris på Dreame X40 Ultra"
     url="https://www.komplett.se/search?q=Dreame+X40+Ultra"
   />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
 </BaseLayout>

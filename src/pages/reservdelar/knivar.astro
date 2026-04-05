@@ -102,6 +102,15 @@ const breadcrumbs = [
   { label: 'Reservdelar', href: '/reservdelar/' },
   { label: 'Knivar & kabel' },
 ];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
 ---
 
 <BaseLayout
@@ -206,4 +215,10 @@ const breadcrumbs = [
 
     <FAQ items={faqItems} />
   </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
 </BaseLayout>

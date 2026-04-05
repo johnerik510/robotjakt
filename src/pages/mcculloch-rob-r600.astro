@@ -313,13 +313,17 @@ const faqSchema = faqItems.map((item) => ({
   "@context": "https://schema.org",
   "@type": ["Product", "Review"],
   "name": "McCulloch ROB R600",
+  "image": "https://robotjakt.se/images/mcculloch-rob-r600.jpg",
   "brand": { "@type": "Brand", "name": "McCulloch" },
+  "description": "McCulloch ROB R600 robotgrasklippare for tradgardar upp till 600 m2 med stoldskydd och regnsensor.",
   "category": "Robotgräsklippare",
   "offers": {
     "@type": "Offer",
     "priceCurrency": "SEK",
     "price": "6490",
-    "availability": "https://schema.org/InStock"
+    "availability": "https://schema.org/InStock",
+  "shippingDetails": {"@type":"OfferShippingDetails","shippingDestination":{"@type":"DefinedRegion","addressCountry":"SE"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":3,"unitCode":"d"},"transitTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":5,"unitCode":"d"}}},
+  "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","applicableCountry":"SE","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":14,"returnMethod":"https://schema.org/ReturnByMail","returnFees":"https://schema.org/ReturnShippingFees"}
   },
   "review": {
     "@type": "Review",

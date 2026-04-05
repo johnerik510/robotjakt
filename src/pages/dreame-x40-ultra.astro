@@ -50,6 +50,15 @@ const specs = [
   { label: 'App', value: 'Dreame Home (iOS/Android)' },
   { label: 'Röststyrning', value: 'Google Assistant, Alexa' },
 ];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
 ---
 
 <BaseLayout
@@ -223,8 +232,18 @@ const specs = [
     "itemReviewed": {
       "@type": "Product",
       "name": "Dreame X40 Ultra",
+  "image": "https://robotjakt.se/images/dreame-x40-ultra.jpg",
       "brand": { "@type": "Brand", "name": "Dreame" },
-      "category": "Robotdammsugare"
+      "category": "Robotdammsugare",
+      "description": "Dreame X40 Ultra robotdammsugare med 12 000 Pa sugkraft, utfallbar sidoarm, varmvattenttvatt och sjalvtommande station.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "SEK",
+        "price": "9990",
+        "availability": "https://schema.org/InStock",
+        "shippingDetails": {"@type":"OfferShippingDetails","shippingDestination":{"@type":"DefinedRegion","addressCountry":"SE"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":3,"unitCode":"d"},"transitTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":5,"unitCode":"d"}}},
+        "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","applicableCountry":"SE","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":14,"returnMethod":"https://schema.org/ReturnByMail","returnFees":"https://schema.org/ReturnShippingFees"}
+      }
     },
     "reviewRating": {
       "@type": "Rating",
@@ -236,5 +255,11 @@ const specs = [
     "datePublished": "2026-03-29",
     "reviewBody": "Dreame X40 Ultra är den bästa robotdammsugaren med moppfunktion vi testat 2026. Den utfällbara moppmodulen som faktiskt når hörnen, kombinerat med varmvattentvätt och 12 000 Pa sugkraft, gör det till ett komplett städsystem.",
     "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
   })} />
 </BaseLayout>
