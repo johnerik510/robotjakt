@@ -1,52 +1,86 @@
 ---
 import ArticleLayout from '../layouts/ArticleLayout.astro';
+
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Robotjakt.se',
+  url: 'https://robotjakt.se',
+  description: 'Sveriges mest palitliga guide for robotdammsugare, robotgrasklippare och poolrobotar. Oberoende tester och recensioner.',
+  foundingDate: '2025',
+  founder: {
+    '@type': 'Person',
+    name: 'John Erik Johansson',
+    url: 'https://robotjakt.se/om-redaktionen/',
+    image: 'https://robotjakt.se/images/john-erik-johansson.webp',
+    jobTitle: 'Grundare & robotexpert',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'vpniskguiden@proton.me',
+    contactType: 'editorial',
+  },
+  sameAs: [],
+};
 ---
 
 <ArticleLayout
   title="Om oss | Robotjakt"
-  description="Robotjakt är en oberoende svensk guide för konsumentrobotar. Vi testar, jämför och hjälper dig hitta rätt robotdammsugare, robotgräsklippare eller poolrobot."
+  description="Robotjakt ar en oberoende svensk guide for konsumentrobotar. Vi testar, jamfor och hjalper dig hitta ratt robotdammsugare, robotgrasklippare eller poolrobot."
   breadcrumbs={[{ label: 'Om oss' }]}
   showDisclaimer={false}
+  showAuthor={false}
 >
   <h1 class="font-heading text-3xl font-bold text-text mb-4">Om Robotjakt</h1>
 
   <div class="prose prose-slate max-w-none text-text-light text-sm leading-relaxed space-y-4">
     <p>
-      Robotjakt.se är en oberoende svensk guide som hjälper dig hitta rätt konsumentrobot. Vi testar, jämför och recenserar robotdammsugare, robotgräsklippare, poolrobotar och robotmoppar från alla stora tillverkare — med fokus på vad som faktiskt spelar roll för svenska hem och trädgårdar.
+      Robotjakt.se ar en oberoende svensk guide som hjalper dig hitta ratt konsumentrobot. Vi testar, jamfor och recenserar robotdammsugare, robotgrasklippare, poolrobotar och robotmoppar fran alla stora tillverkare -- med fokus pa vad som faktiskt spelar roll for svenska hem och tradgardar.
     </p>
 
-    <h2 class="font-heading text-xl font-bold text-text">Vad vi täcker</h2>
+    <h2 class="font-heading text-xl font-bold text-text">Vad vi tacker</h2>
     <p>
-      På Robotjakt hittar du oberoende guider och tester inom fyra huvudkategorier:
+      Pa Robotjakt hittar du oberoende guider och tester inom fyra huvudkategorier:
     </p>
     <ul>
-      <li><strong>Robotdammsugare</strong> — från budgetmodeller under 4 000 kr till premiumrobotar med avancerad mopp och AI-navigering.</li>
-      <li><strong>Robotgräsklippare</strong> — bade traditionella slingbaserade modeller och moderna GPS-styrda klippare utan slinga.</li>
-      <li><strong>Poolrobotar</strong> — automatiska poolrengörare för svenska poolägare.</li>
-      <li><strong>Robotmoppar</strong> — dedikerade moppningsrobotar för hardgolv.</li>
+      <li><strong>Robotdammsugare</strong> -- fran budgetmodeller under 4 000 kr till premiumrobotar med avancerad mopp och AI-navigering.</li>
+      <li><strong>Robotgrasklippare</strong> -- bade traditionella slingbaserade modeller och moderna GPS-styrda klippare utan slinga.</li>
+      <li><strong>Poolrobotar</strong> -- automatiska poolrengorare for svenska poolagare.</li>
+      <li><strong>Robotmoppar</strong> -- dedikerade moppningsrobotar for hardgolv.</li>
     </ul>
 
     <h2 class="font-heading text-xl font-bold text-text">Hur vi testar</h2>
     <p>
-      Vi utvärderar varje robot baserat på prestanda, navigering, funktioner, ljudniva, appfunktionalitet och prisvärde. För robotdammsugare kontrollerar vi sugkraft, moppning, hinderdetektion och hur väl de hanterar vanliga utmaningar i svenska hem: trösklar, mattor, husdjurshår och större ytor. För robotgräsklippare testar vi klippkvalitet, installationskomplexitet, hanttering av sluttningar och integration med mobilapp.
+      Vi utvardenar varje robot baserat pa prestanda, navigering, funktioner, ljudniva, appfunktionalitet och prisvarde. For robotdammsugare kontrollerar vi sugkraft, moppning, hinderdetektion och hur val de hanterar vanliga utmaningar i svenska hem: trosklar, mattor, husdjurshar och storre ytor. For robotgrasklippare testar vi klippkvalitet, installationskomplexitet, hantering av sluttningar och integration med mobilapp.
+    </p>
+    <p>
+      <a href="/sa-testar-vi/" class="text-accent hover:underline font-semibold">Las mer om var testmetod &rarr;</a>
     </p>
 
     <h2 class="font-heading text-xl font-bold text-text">Oberoende rekommendationer</h2>
     <p>
-      Vara rekommendationer bygger på vara egna tester och erfarenheter. Vi listar alltid for- och nackdelar — ingen modell är perfekt för alla. Vara topplistor uppdateras löpande när nya modeller släpps eller när priser och specifikationer ändras.
+      Vara rekommendationer bygger pa vara egna tester och erfarenheter. Vi listar alltid for- och nackdelar -- ingen modell ar perfekt for alla. Vara topplistor uppdateras lopande nar nya modeller slapps eller nar priser och specifikationer andras.
+    </p>
+    <p>
+      <a href="/redaktionell-policy/" class="text-accent hover:underline font-semibold">Las var redaktionella policy &rarr;</a>
     </p>
 
     <h2 class="font-heading text-xl font-bold text-text">Finansiering</h2>
     <p>
-      Robotjakt.se finansieras genom affiliatelänkar. När du klickar på en länk till en butik och gör ett köp kan vi fa en provision. Det kostar dig inget extra och paverkar inte vara recensioner eller rankningar.
+      Robotjakt.se finansieras genom affiliatelankar. Nar du klickar pa en lank till en butik och gor ett kop kan vi fa en provision. Det kostar dig inget extra och paverkar inte vara recensioner eller rankningar.
+    </p>
+
+    <h2 class="font-heading text-xl font-bold text-text">Redaktionen</h2>
+    <p>
+      <strong>Grundare:</strong> John Erik Johansson<br />
+      Las mer om var redaktion pa <a href="/om-redaktionen/" class="text-accent hover:underline">Om redaktionen</a>.
     </p>
 
     <h2 class="font-heading text-xl font-bold text-text">Kontakt</h2>
     <p>
-      Har du fragor eller feedback? Kontakta oss på <a href="mailto:vpniskguiden@proton.me" class="text-accent hover:underline">vpniskguiden@proton.me</a>.
-    </p>
-    <p>
-      <strong>Grundare:</strong> John Erik Johansson
+      Har du fragor eller feedback? Kontakta oss pa <a href="mailto:vpniskguiden@proton.me" class="text-accent hover:underline">vpniskguiden@proton.me</a>.
     </p>
   </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
 </ArticleLayout>

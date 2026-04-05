@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout
+  title="Sa testar vi | Robotjakt"
+  description="Las om hur vi testar robotdammsugare, robotgrasklippare och poolrobotar. Systematiska tester i verklig hemmiljo under minst 4 veckor per robot."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={[{ label: 'Sa testar vi' }]} />
+
+    <h1 class="font-heading text-3xl font-bold text-text mb-4">Sa testar vi</h1>
+    <p class="text-text-light text-sm leading-relaxed mb-8">
+      Alla tester pa Robotjakt genomfors i verklig miljo -- inte i ett labb. Varje robot testas i minst 4 veckor under normala forhallanden i svenska hem och tradgardar. Det ger resultat som speglar hur produkterna faktiskt presterar for dig som konsument.
+    </p>
+
+    <!-- Robotdammsugare -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Robotdammsugare -- testkriterier</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-heading font-bold text-text text-sm mb-2">Navigering & kartlaggning</h3>
+          <p class="text-xs text-text-light leading-relaxed">Hur effektivt ror sig roboten, hur snabbt den kartlagger hemmet, hur val den undviker hinder och hanterar mobler, sladdar och djur.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-heading font-bold text-text text-sm mb-2">Sugkraft & rengoringsresultat</h3>
+          <p class="text-xs text-text-light leading-relaxed">Prestanda pa hardgolv, mattor och i horn. Vi testar med vanliga smutstyper: damm, smulor, husdjurshar och grovt skrap.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-heading font-bold text-text text-sm mb-2">Moppfunktion</h3>
+          <p class="text-xs text-text-light leading-relaxed">For modeller med mopp: hur val torkar den, vattenfordelning, tryck mot golvet och automatisk mopphantering vid mattor.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-heading font-bold text-text text-sm mb-2">Batterilivslangd</h3>
+          <p class="text-xs text-text-light leading-relaxed">Korstid pa en laddning, laddningstid och hur val roboten hanterar atergang till laddstationen mitt i ett pass.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-heading font-bold text-text text-sm mb-2">App & smart hem</h3>
+          <p class="text-xs text-text-light leading-relaxed">Appens anvandbarhet, schemalaggning, zonhantering, integration med Google Home och Alexa.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-heading font-bold text-text text-sm mb-2">Buller & underhall</h3>
+          <p class="text-xs text-text-light leading-relaxed">Ljudniva vid normal drift, hur latt det ar att byta filter, borstar och andra forslitningsdelar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Robotgrasklippare -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Robotgrasklippare -- testkriterier</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-heading font-bold text-text text-sm mb-2">Klippresultat</h3>
+          <p class="text-xs text-text-light leading-relaxed">Jamnhet, kantklippning och hur graset ser ut efter en veckas anvandning.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-heading font-bold text-text text-sm mb-2">Grashantering</h3>
+          <p class="text-xs text-text-light leading-relaxed">Prestanda vid vatt gras, langre gras och tuffare grassorter som forekommmer i svenska tradgardar.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-heading font-bold text-text text-sm mb-2">Installation</h3>
+          <p class="text-xs text-text-light leading-relaxed">Hur lang tid tar installationen, behovs slinga eller GPS, och hur enkelt ar det for en vanlig husagare att komma igang.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-heading font-bold text-text text-sm mb-2">Zonhantering & sluttning</h3>
+          <p class="text-xs text-text-light leading-relaxed">Hur val klipparen hanterar olika zoner, smala passager och sluttningar -- vanligt i svenska tradgardar.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-heading font-bold text-text text-sm mb-2">Sakerhet & stoldskydd</h3>
+          <p class="text-xs text-text-light leading-relaxed">Bladavstangning vid lyft, PIN-kod, GPS-sparning och larmfunktioner.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-heading font-bold text-text text-sm mb-2">App & lopande kostnad</h3>
+          <p class="text-xs text-text-light leading-relaxed">Appfunktionalitet, behov av abonnemang, knivar, laddning och arlig underhallskostnad.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Poolrobotar -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Poolrobotar -- testkriterier</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-heading font-bold text-text text-sm mb-2">Rengoringseffektivitet</h3>
+          <p class="text-xs text-text-light leading-relaxed">Botten, vaggar och vattenlinje. Hur val hanterar roboten lov, sand, alger och fint skrap.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-heading font-bold text-text text-sm mb-2">Navigation & tackning</h3>
+          <p class="text-xs text-text-light leading-relaxed">Hur systematiskt ror sig roboten och hur val den tacker hela poolen inklusive horn och trappsteg.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-heading font-bold text-text text-sm mb-2">Filterkapacitet</h3>
+          <p class="text-xs text-text-light leading-relaxed">Filterstorlek, hur latt det ar att tomma och rengora, och hur lange filtret haller.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-heading font-bold text-text text-sm mb-2">Hantering & forvaring</h3>
+          <p class="text-xs text-text-light leading-relaxed">Vikt, kabellangd, hur latt det ar att satta i och ta upp, och forvaringsmojligheter.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testperiod & oberoende -->
+    <section class="bg-white rounded-2xl border border-border p-6 sm:p-8 mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Testperiod & oberoende</h2>
+      <ul class="space-y-3 text-sm text-text-light">
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          <span><strong>Minst 4 veckor per robot</strong> -- vi anvander varje produkt i vardagen innan vi publicerar en recension.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          <span><strong>Verklig hemmiljo</strong> -- inga labbforhallanden. Vi testar i hem med husdjur, barn, mattor och blandade golvytor.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          <span><strong>Inga betalda recensioner</strong> -- vi tar aldrig betalt for att rekommendera en produkt. Tillverkare har inget inflytande over vara betyg.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          <span><strong>Lopande uppdatering</strong> -- topplistor och recensioner uppdateras nar nya modeller slapper, priser andras eller vi hittar nya insikter.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          <span><strong>Affiliatelankar paverkar inte omdomen</strong> -- vi rekommenderar produkter vi tror pa, oavsett om vi tjanar provision eller inte.</span>
+        </li>
+      </ul>
+    </section>
+
+    <div class="text-sm text-text-lighter">
+      <p>Har du fragor om var testmetod? Kontakta oss pa <a href="mailto:vpniskguiden@proton.me" class="text-accent hover:underline">vpniskguiden@proton.me</a>.</p>
+    </div>
+  </div>
+</BaseLayout>

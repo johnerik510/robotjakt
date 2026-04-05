@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout
+  title="Redaktionell policy | Robotjakt"
+  description="Las om Robotjakts redaktionella policy. Hur vi sakerstaller oberoende och arliga recensioner av robotdammsugare, robotgrasklippare och poolrobotar."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={[{ label: 'Redaktionell policy' }]} />
+
+    <h1 class="font-heading text-3xl font-bold text-text mb-4">Redaktionell policy</h1>
+    <p class="text-text-light text-sm leading-relaxed mb-8">
+      Robotjakt.se ar en oberoende konsumentguide. Var redaktionella policy sakerstaller att vara recensioner, topplistor och rekommendationer alltid baseras pa egna tester och erfarenheter -- aldrig pa betalda samarbeten eller tillverkarpaverkan.
+    </p>
+
+    <div class="space-y-8">
+      <section class="bg-white rounded-2xl border border-border p-6 sm:p-8">
+        <h2 class="font-heading text-xl font-bold text-text mb-3">Oberoende rekommendationer</h2>
+        <p class="text-sm text-text-light leading-relaxed mb-3">
+          Alla produkter pa Robotjakt utvarderans utifrån vara egna tester i verklig hemmiljo. Tillverkare och butiker har ingen mojlighet att paverka vara betyg, rankningar eller rekommendationer.
+        </p>
+        <p class="text-sm text-text-light leading-relaxed">
+          Vi publicerar bade for- och nackdelar for varje produkt. Ingen robot ar perfekt for alla, och vara recensioner speglar det.
+        </p>
+      </section>
+
+      <section class="bg-white rounded-2xl border border-border p-6 sm:p-8">
+        <h2 class="font-heading text-xl font-bold text-text mb-3">Affiliatelankar & finansiering</h2>
+        <p class="text-sm text-text-light leading-relaxed mb-3">
+          Robotjakt finansieras genom affiliatelankar. Det innebar att vi kan fa en provision nar du klickar pa en lank och genomfor ett kop i en butik. Det kostar dig inget extra.
+        </p>
+        <p class="text-sm text-text-light leading-relaxed mb-3">
+          <strong>Viktigt:</strong> Affiliateersattning paverkar aldrig vilka produkter vi rekommenderar, vilken ranking de far, eller vilka for- och nackdelar vi listar. Vi rekommenderar produkter vi tror pa, oavsett om vi tjanar provision eller inte.
+        </p>
+        <p class="text-sm text-text-light leading-relaxed">
+          I de fall vi inte har en affiliatelank till en produkt vi rekommenderar lankar vi anda -- for att det ar ratt for lasaren.
+        </p>
+      </section>
+
+      <section class="bg-white rounded-2xl border border-border p-6 sm:p-8">
+        <h2 class="font-heading text-xl font-bold text-text mb-3">Faktakontroll & uppdatering</h2>
+        <p class="text-sm text-text-light leading-relaxed mb-3">
+          Priser, specifikationer och tillganglighet verifieras mot butikernas produktsidor innan publicering. Vi uppdaterar lopande nar priser andras, nya modeller slapper eller produkter utgar.
+        </p>
+        <p class="text-sm text-text-light leading-relaxed">
+          Datumet "Senast uppdaterad" pa varje sida ar alltid aktuellt -- vi andrar bara datumet nar innehallet faktiskt uppdaterats.
+        </p>
+      </section>
+
+      <section class="bg-white rounded-2xl border border-border p-6 sm:p-8">
+        <h2 class="font-heading text-xl font-bold text-text mb-3">Testmetod</h2>
+        <p class="text-sm text-text-light leading-relaxed mb-3">
+          Varje robot testas i minst 4 veckor i verklig hemmiljo. Vi anvander standardiserade kriterier anpassade for varje produktkategori. Las mer pa var sida <a href="/sa-testar-vi/" class="text-accent hover:underline">Sa testar vi</a>.
+        </p>
+      </section>
+
+      <section class="bg-white rounded-2xl border border-border p-6 sm:p-8">
+        <h2 class="font-heading text-xl font-bold text-text mb-3">Inga betalda recensioner</h2>
+        <p class="text-sm text-text-light leading-relaxed mb-3">
+          Vi tar aldrig betalt for att publicera en recension eller rekommendation. Tillverkare kan inte kopa sig en plats pa vara topplistor.
+        </p>
+        <p class="text-sm text-text-light leading-relaxed">
+          Om vi far en testprodukt fran en tillverkare uppger vi det i recensionen. Tillverkaren har aldrig ratt att granska eller godkanna texten innan publicering.
+        </p>
+      </section>
+
+      <section class="bg-white rounded-2xl border border-border p-6 sm:p-8">
+        <h2 class="font-heading text-xl font-bold text-text mb-3">Rattelser & feedback</h2>
+        <p class="text-sm text-text-light leading-relaxed mb-3">
+          Hittar du ett sakfel pa Robotjakt? Vi uppskattar att du hor av dig. Vi rattar alla verifierade sakfel och uppdaterar sidan med korrekt information.
+        </p>
+        <p class="text-sm text-text-light leading-relaxed">
+          Kontakta oss: <a href="mailto:vpniskguiden@proton.me" class="text-accent hover:underline">vpniskguiden@proton.me</a>
+        </p>
+      </section>
+    </div>
+  </div>
+</BaseLayout>

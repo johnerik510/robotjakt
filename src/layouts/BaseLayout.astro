@@ -57,6 +57,26 @@ const canonicalUrl = canonical || Astro.url.href;
     "inLanguage": "sv-SE"
   })} />
 
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Robotjakt.se",
+    "url": "https://robotjakt.se",
+    "description": "Sveriges mest pålitliga guide för robotdammsugare, robotgräsklippare och poolrobotar. Oberoende tester och recensioner.",
+    "foundingDate": "2025",
+    "founder": {
+      "@type": "Person",
+      "name": "John Erik Johansson",
+      "url": "https://robotjakt.se/om-redaktionen/",
+      "image": "https://robotjakt.se/images/john-erik-johansson.webp"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "vpniskguiden@proton.me",
+      "contactType": "editorial"
+    }
+  })} />
+
   <!-- GSC verification placeholder -->
   <!-- <meta name="google-site-verification" content="VERIFICATION_CODE" /> -->
 

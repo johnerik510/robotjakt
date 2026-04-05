@@ -2,6 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import AuthorByline from '../components/AuthorByline.astro';
 
 interface Props {
   title: string;
@@ -9,21 +10,61 @@ interface Props {
   breadcrumbs: { label: string; href?: string }[];
   ogImage?: string;
   lastUpdated?: string;
+  datePublished?: string;
   showDisclaimer?: boolean;
+  showAuthor?: boolean;
 }
 
-const { title, description, breadcrumbs, ogImage, lastUpdated, showDisclaimer = true } = Astro.props;
+const { title, description, breadcrumbs, ogImage, lastUpdated, datePublished, showDisclaimer = true, showAuthor = true } = Astro.props;
+
+const pageUrl = Astro.url.href;
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Hem', item: 'https://robotjakt.se/' },
+    ...breadcrumbs.map((b, i) => ({
+      '@type': 'ListItem',
+      position: i + 2,
+      name: b.label,
+      ...(b.href ? { item: `https://robotjakt.se${b.href}` } : {}),
+    })),
+  ],
+};
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title.split('|')[0]?.trim() || title,
+  url: pageUrl,
+  ...(lastUpdated ? { dateModified: lastUpdated } : {}),
+  ...(datePublished ? { datePublished } : {}),
+  author: {
+    '@type': 'Person',
+    name: 'John Erik Johansson',
+    url: 'https://robotjakt.se/om-redaktionen/',
+    image: 'https://robotjakt.se/images/john-erik-johansson.webp',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Robotjakt.se',
+    url: 'https://robotjakt.se',
+  },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
+};
 ---
 
 <BaseLayout title={title} description={description} ogImage={ogImage}>
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-    {lastUpdated && (
-      <p class="text-xs text-text-lighter mb-3">
-        Senast uppdaterad: <time datetime={lastUpdated}>{lastUpdated}</time>
-      </p>
-    )}
     {showDisclaimer && <AffiliateDisclaimer />}
+    {showAuthor && (
+      <AuthorByline datePublished={datePublished} dateModified={lastUpdated} />
+    )}
     <slot />
   </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 </BaseLayout>

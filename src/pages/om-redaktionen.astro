@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'John Erik Johansson',
+  url: 'https://robotjakt.se/om-redaktionen/',
+  image: 'https://robotjakt.se/images/john-erik-johansson.webp',
+  jobTitle: 'Grundare & robotexpert',
+  description: 'Teknikentusiast och robotexpert. Testat 50+ robotdammsugare, robotgrasklippare och poolrobotar i hemmet.',
+  knowsAbout: ['robotdammsugare', 'robotgrasklippare', 'poolrobotar', 'smart hem', 'Dreame', 'Roborock', 'Husqvarna', 'Ecovacs'],
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Robotjakt.se',
+    url: 'https://robotjakt.se',
+  },
+};
+---
+
+<BaseLayout
+  title="Om redaktionen | Robotjakt"
+  description="Moten bakom Robotjakt.se. John Erik Johansson testar robotdammsugare, robotgrasklippare och poolrobotar i verklig hemmiljo."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={[{ label: 'Om redaktionen' }]} />
+
+    <h1 class="font-heading text-3xl font-bold text-text mb-6">Om redaktionen</h1>
+
+    <div class="bg-white rounded-2xl border border-border p-6 sm:p-8 mb-8">
+      <div class="flex flex-col sm:flex-row items-start gap-6">
+        <img
+          src="/images/john-erik-johansson.webp"
+          alt="John Erik Johansson"
+          class="w-24 h-24 rounded-full object-cover flex-shrink-0"
+          width="96"
+          height="96"
+          loading="eager"
+        />
+        <div>
+          <h2 class="font-heading text-xl font-bold text-text mb-1">John Erik Johansson</h2>
+          <p class="text-sm text-accent font-semibold mb-3">Grundare & robotexpert</p>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Teknikentusiast med ett genuint intresse for smart hem-teknik och konsumentrobotar. Har testat over 50 robotdammsugare, robotgrasklippare och poolrobotar i verklig hemmiljo -- fran budgetmodeller till toppmodeller fran Dreame, Roborock, Ecovacs, Husqvarna och fler.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Robotjakt grundades med ett enda mal: att ge svenska konsumenter arliga, oberoende och databaserade rekommendationer. Alla tester genomfors i verklig miljo -- inte i ett labb. Det innebar att resultaten speglar hur robotarna faktiskt presterar i svenska hem och tradgardar.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Kontakt: <a href="mailto:vpniskguiden@proton.me" class="text-accent hover:underline">vpniskguiden@proton.me</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-6">
+      <div class="bg-white rounded-2xl border border-border p-6 sm:p-8">
+        <h2 class="font-heading text-xl font-bold text-text mb-3">Expertomraden</h2>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-text-light">
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Robotdammsugare & robotmoppar
+          </li>
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Robotgrasklippare
+          </li>
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Poolrobotar
+          </li>
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Fonsterputsrobotar
+          </li>
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Smart hem-integration
+          </li>
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Reservdelar & underhall
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-border p-6 sm:p-8">
+        <h2 class="font-heading text-xl font-bold text-text mb-3">Sa testar vi</h2>
+        <p class="text-sm text-text-light leading-relaxed mb-3">
+          Varje robot testas i minst 4 veckor i verklig hemmiljo. Vi utvardenar navigering, rengoringsresultat, batteritid, ljudniva, appfunktionalitet och prisvarde. Testkriterierna ar anpassade for svenska forhallanden -- tradgardar med nordsikt, hem med troskelramar och blandade golvytor.
+        </p>
+        <a href="/sa-testar-vi/" class="text-accent font-semibold text-sm hover:underline">Las mer om var testmetod &rarr;</a>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-border p-6 sm:p-8">
+        <h2 class="font-heading text-xl font-bold text-text mb-3">Redaktionell policy</h2>
+        <p class="text-sm text-text-light leading-relaxed mb-3">
+          Vi tar aldrig betalt for positiva recensioner. Alla rekommendationer baseras pa vara egna tester och erfarenheter. Affiliatelankar paverkar aldrig vilka produkter vi rekommenderar eller vilken ranking de far.
+        </p>
+        <a href="/redaktionell-policy/" class="text-accent font-semibold text-sm hover:underline">Las var redaktionella policy &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+</BaseLayout>
