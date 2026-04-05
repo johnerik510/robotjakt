@@ -88,6 +88,25 @@ const models = [
     description: 'Dreame L10s Ultra Gen 2 erbjuder utmärkt pris/prestanda med dubbla roterande moppar och automatisk station. Rätt val för den som vill ha en komplett Dreame till ett rimligare pris.',
   },
   {
+    name: 'Dreame L10s Pro Ultra Heat',
+    badge: 'VARMVATTEN 75°C',
+    badgeColor: 'bg-accent',
+    price: 'ca 6 990 kr',
+    rating: '4.4 / 5',
+    features: [
+      '7 000 Pa sugkraft',
+      '75°C varmvattenmoppning — desinficerar golvet',
+      'Helautomatisk station',
+      'Automatisk mattlyftning 4 mm',
+      'Bäst för familjer med barn och allergiker',
+    ],
+    cta: 'https://www.elgiganten.se/search?query=dreame+l10s+pro+ultra+heat',
+    amazon: 'https://www.amazon.se/s?k=dreame+l10s+pro+ultra+heat&tag=johnerik510-20',
+    ctaText: 'Se pris på L10s Pro Ultra Heat',
+    reviewUrl: '/dreame-l10s-pro-ultra-heat/',
+    description: 'Dreame L10s Pro Ultra Heat är unik med 75°C varmvattenmoppning som desinficerar hårda golv. Utan AI-kamera men med helautomatisk station — bäst för barnfamiljer och allergiker.',
+  },
+  {
     name: 'Dreame W10 Pro',
     badge: 'PRISVÄRD',
     badgeColor: 'bg-text-lighter',
@@ -101,10 +120,47 @@ const models = [
       'Kompakt station utan auto-tömning',
     ],
     cta: 'https://www.komplett.se/search?search=dreame+w10+pro',
-    
     ctaText: 'Se pris på W10 Pro',
     reviewUrl: '/dreame-w10-pro/',
     description: 'Dreame W10 Pro ger dig LiDAR-navigering och roterande moppar till ett överkomligt pris. Dammkorgen töms manuellt men städprestandan är imponerande i prisklassen. Idealisk för den som vill ha en pålitlig Dreame utan att betala toppris.',
+  },
+  {
+    name: 'Dreame Z10 Pro',
+    badge: 'BUDGET + AUTO-TOMNING',
+    badgeColor: 'bg-text-lighter',
+    price: 'ca 3 490 kr',
+    rating: '3.9 / 5',
+    features: [
+      '4 000 Pa sugkraft',
+      'Automatisk dammtömning — ovanligt i prisklassen',
+      'LiDAR-navigering med kartläggning',
+      'Enkel moppfunktion',
+      'App-styrning via Dreame Home',
+    ],
+    cta: 'https://www.komplett.se/search?q=dreame+z10+pro',
+    amazon: 'https://www.amazon.se/s?k=dreame+z10+pro&tag=johnerik510-20',
+    ctaText: 'Se pris på Z10 Pro',
+    reviewUrl: '/dreame-z10-pro/',
+    description: 'Dreame Z10 Pro erbjuder automatisk dammtömning i budgetsegmentet — en funktion som normalt bara finns i premium. LiDAR och app-styrning ingår till ett rimligt pris.',
+  },
+  {
+    name: 'Dreame D10s Pro',
+    badge: 'LÄGST PRIS DREAME',
+    badgeColor: 'bg-text-lighter',
+    price: 'ca 2 990 kr',
+    rating: '3.9 / 5',
+    features: [
+      '5 000 Pa sugkraft',
+      'LiDAR-navigering',
+      'Enkel moppfunktion',
+      'Manuell dammtömning',
+      'App-styrning ingår',
+    ],
+    cta: 'https://www.komplett.se/search?q=dreame+d10s+pro',
+    amazon: 'https://www.amazon.se/s?k=dreame+d10s+pro&tag=johnerik510-20',
+    ctaText: 'Se pris på D10s Pro',
+    reviewUrl: '/dreame-d10s-pro/',
+    description: 'Dreame D10s Pro är ingångsmodellen med LiDAR-navigering och moppfunktion till lägsta möjliga pris. Tömmer dammkorgen manuellt men ger Dreames tillförlitliga städkvalitet.',
   },
 ];
 
@@ -184,27 +240,14 @@ const faqSchema = faqItems.map((item) => ({
             </tr>
           </thead>
           <tbody class="divide-y divide-border">
-            <tr class="bg-winner/5">
-              <td class="px-4 py-3 font-medium text-text">X40 Ultra</td>
-              <td class="px-4 py-3 text-winner font-semibold">12 000 Pa</td>
-              <td class="px-4 py-3 text-text-light">Utfällbar + roterande</td>
-              <td class="px-4 py-3 text-text-light">Fullautomatisk</td>
-              <td class="px-4 py-3 font-semibold text-text">9 990 kr</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-medium text-text">L20 Ultra</td>
-              <td class="px-4 py-3 text-text-light">7 000 Pa</td>
-              <td class="px-4 py-3 text-text-light">Dubbel roterande</td>
-              <td class="px-4 py-3 text-text-light">Automatisk</td>
-              <td class="px-4 py-3 font-semibold text-text">6 990 kr</td>
-            </tr>
-            <tr class="bg-bg-alt/50">
-              <td class="px-4 py-3 font-medium text-text">W10 Pro</td>
-              <td class="px-4 py-3 text-text-light">4 000 Pa</td>
-              <td class="px-4 py-3 text-text-light">Roterande</td>
-              <td class="px-4 py-3 text-text-light">Kompakt</td>
-              <td class="px-4 py-3 font-semibold text-text">4 490 kr</td>
-            </tr>
+            <tr class="bg-winner/5"><td class="px-4 py-3 font-medium text-text">X40 Ultra</td><td class="px-4 py-3 text-winner font-semibold">12 000 Pa</td><td class="px-4 py-3 text-text-light">Utfällbar + roterande</td><td class="px-4 py-3 text-text-light">Fullautomatisk</td><td class="px-4 py-3 font-semibold text-text">9 990 kr</td></tr>
+            <tr><td class="px-4 py-3 font-medium text-text">X30 Ultra</td><td class="px-4 py-3 text-text-light">8 500 Pa</td><td class="px-4 py-3 text-text-light">Utfällbar + roterande</td><td class="px-4 py-3 text-text-light">Fullautomatisk</td><td class="px-4 py-3 font-semibold text-text">7 990 kr</td></tr>
+            <tr class="bg-bg-alt/50"><td class="px-4 py-3 font-medium text-text">L20 Ultra</td><td class="px-4 py-3 text-text-light">7 000 Pa</td><td class="px-4 py-3 text-text-light">Dubbel roterande</td><td class="px-4 py-3 text-text-light">Fullautomatisk</td><td class="px-4 py-3 font-semibold text-text">5 990 kr</td></tr>
+            <tr><td class="px-4 py-3 font-medium text-text">L10s Pro Ultra Heat</td><td class="px-4 py-3 text-text-light">7 000 Pa</td><td class="px-4 py-3 text-text-light">Roterande + 75°C vatten</td><td class="px-4 py-3 text-text-light">Fullautomatisk</td><td class="px-4 py-3 font-semibold text-text">6 990 kr</td></tr>
+            <tr class="bg-bg-alt/50"><td class="px-4 py-3 font-medium text-text">L10s Ultra Gen2</td><td class="px-4 py-3 text-text-light">7 000 Pa</td><td class="px-4 py-3 text-text-light">Dubbel roterande</td><td class="px-4 py-3 text-text-light">Automatisk</td><td class="px-4 py-3 font-semibold text-text">4 990 kr</td></tr>
+            <tr><td class="px-4 py-3 font-medium text-text">W10 Pro</td><td class="px-4 py-3 text-text-light">4 000 Pa</td><td class="px-4 py-3 text-text-light">Roterande</td><td class="px-4 py-3 text-text-light">Kompakt</td><td class="px-4 py-3 font-semibold text-text">4 490 kr</td></tr>
+            <tr class="bg-bg-alt/50"><td class="px-4 py-3 font-medium text-text">Z10 Pro</td><td class="px-4 py-3 text-text-light">4 000 Pa</td><td class="px-4 py-3 text-text-light">Passiv mopp</td><td class="px-4 py-3 text-text-light">Auto-tömning</td><td class="px-4 py-3 font-semibold text-text">3 490 kr</td></tr>
+            <tr><td class="px-4 py-3 font-medium text-text">D10s Pro</td><td class="px-4 py-3 text-text-light">5 000 Pa</td><td class="px-4 py-3 text-text-light">Passiv mopp</td><td class="px-4 py-3 text-text-light">Manuell</td><td class="px-4 py-3 font-semibold text-text">2 990 kr</td></tr>
           </tbody>
         </table>
       </div>

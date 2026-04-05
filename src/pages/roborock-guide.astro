@@ -57,10 +57,61 @@ const models = [
     rating: '4.4 / 5',
     features: ['10 000 Pa sugkraft', 'VibraRise 3.0 — lyfter moppar på mattor', 'Komplett station utan kamera', 'LiDAR PreciSense-navigering', 'Lägre pris än S8 MaxV Ultra'],
     cta: 'https://www.elgiganten.se/search?q=roborock+s8+max+ultra',
-    
     ctaText: 'Se pris på S8 Max Ultra',
     reviewUrl: '/roborock-s8-max-ultra/',
     description: 'Roborock S8 Max Ultra är ett utmärkt alternativ för den som vill ha Roborocks premiumstädning utan att betala för AI-kameran i S8 MaxV Ultra. 10 000 Pa, fullautomatisk station och pålitlig LiDAR-navigering till ca 8 490 kr.',
+  },
+  {
+    name: 'Roborock Qrevo MaxV Ultra',
+    badge: 'BÄST QREVO — HUSDJUR',
+    badgeColor: 'bg-accent',
+    price: 'ca 8 990 kr',
+    rating: '4.4 / 5',
+    features: ['10 000 Pa sugkraft', 'AI-kamera — undviker husdjursavföring', 'ReactiveAI 2.0 med 30+ hinderkategorier', 'Helautomatisk station med 55°C mopptvätt', '7 mm mattlyftning'],
+    cta: 'https://www.komplett.se/search?q=roborock+qrevo+maxv+ultra',
+    amazon: 'https://www.amazon.se/s?k=roborock+qrevo+maxv+ultra&tag=johnerik510-20',
+    ctaText: 'Se pris på Qrevo MaxV Ultra',
+    reviewUrl: '/roborock-qrevo-maxv-ultra/',
+    description: 'Roborock Qrevo MaxV Ultra kombinerar AI-kamera med 10 000 Pa sugkraft och helautomatisk station. Bästa Qrevo-valet för husdjurshem utan att behöva betala för S8 MaxV Ultra.',
+  },
+  {
+    name: 'Roborock Qrevo Pro',
+    badge: 'BÄST PRIS/PRESTANDA',
+    badgeColor: 'bg-text-light',
+    price: 'ca 6 490 kr',
+    rating: '4.3 / 5',
+    features: ['7 000 Pa sugkraft', 'Helautomatisk station — tömning + mopptvätt', 'LiDAR-navigering', 'Automatisk mattlyftning 5 mm', 'Utan AI-kamera — lägre pris'],
+    cta: 'https://www.komplett.se/search?q=roborock+qrevo+pro',
+    amazon: 'https://www.amazon.se/s?k=roborock+qrevo+pro&tag=johnerik510-20',
+    ctaText: 'Se pris på Qrevo Pro',
+    reviewUrl: '/roborock-qrevo-pro/',
+    description: 'Roborock Qrevo Pro ger helautomatisk städning med mopptvättning och dammtömning utan AI-kamera. Bästa pris/prestanda-valet för hem utan husdjur.',
+  },
+  {
+    name: 'Roborock S8 Pro Ultra',
+    badge: 'KLASSIKER',
+    badgeColor: 'bg-text-light',
+    price: 'ca 7 490 kr',
+    rating: '4.3 / 5',
+    features: ['6 000 Pa sugkraft', 'FlexiArm sidborste — når hörnen', 'Dubbla gummirullar (trasslas ej)', 'Helautomatisk station', 'Sonic moppning'],
+    cta: 'https://www.komplett.se/search?q=roborock+s8+pro+ultra',
+    amazon: 'https://www.amazon.se/s?k=roborock+s8+pro+ultra&tag=johnerik510-20',
+    ctaText: 'Se pris på S8 Pro Ultra',
+    reviewUrl: '/roborock-s8-pro-ultra/',
+    description: 'Roborock S8 Pro Ultra är ett beprövat flaggskepp med FlexiArm sidborste, dubbla gummirullar och helautomatisk station. Prisvärd klassiker för hem utan husdjur.',
+  },
+  {
+    name: 'Roborock Q Revo',
+    badge: 'INGÅNGSPRIS QREVO',
+    badgeColor: 'bg-text-light',
+    price: 'ca 4 990 kr',
+    rating: '4.1 / 5',
+    features: ['5 500 Pa sugkraft', 'Roterande moppar med mattlyftning', 'Automatisk dammtömning', 'LiDAR-navigering', 'Utan mopptvättning'],
+    cta: 'https://www.komplett.se/search?q=roborock+q+revo',
+    amazon: 'https://www.amazon.se/s?k=roborock+q+revo&tag=johnerik510-20',
+    ctaText: 'Se pris på Q Revo',
+    reviewUrl: '/roborock-q-revo/',
+    description: 'Roborock Q Revo ger Qrevo-seriens roterande moppar och automatisk dammtömning till ett lägre ingångspris. Utan mopptvättning i stationen men ett utmärkt val för prismedvetna.',
   },
 ];
 
@@ -140,27 +191,14 @@ const faqSchema = faqItems.map((item) => ({
             </tr>
           </thead>
           <tbody class="divide-y divide-border">
-            <tr class="bg-winner/5">
-              <td class="px-4 py-3 font-medium text-text">S8 MaxV Ultra</td>
-              <td class="px-4 py-3 text-winner font-semibold">10 000 Pa</td>
-              <td class="px-4 py-3 text-text-light">Roterande + lyftbar</td>
-              <td class="px-4 py-3 text-text-light">Fullautomatisk</td>
-              <td class="px-4 py-3 font-semibold text-text">10 990 kr</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-medium text-text">Qrevo Master</td>
-              <td class="px-4 py-3 text-text-light">8 000 Pa</td>
-              <td class="px-4 py-3 text-text-light">Dubbel roterande</td>
-              <td class="px-4 py-3 text-text-light">Fullautomatisk</td>
-              <td class="px-4 py-3 font-semibold text-text">9 490 kr</td>
-            </tr>
-            <tr class="bg-bg-alt/50">
-              <td class="px-4 py-3 font-medium text-text">S7</td>
-              <td class="px-4 py-3 text-text-light">2 500 Pa</td>
-              <td class="px-4 py-3 text-text-light">Sonic vibration</td>
-              <td class="px-4 py-3 text-text-light">Manuell tömning</td>
-              <td class="px-4 py-3 font-semibold text-text">4 490 kr</td>
-            </tr>
+            <tr><td class="px-4 py-3 font-medium text-text">Saros 10R</td><td class="px-4 py-3 text-winner font-semibold">20 000 Pa</td><td class="px-4 py-3 text-text-light">Roterande + lyftbar</td><td class="px-4 py-3 text-text-light">Fullautomatisk 10-i-1</td><td class="px-4 py-3 font-semibold text-text">14 990 kr</td></tr>
+            <tr class="bg-winner/5"><td class="px-4 py-3 font-medium text-text">S8 MaxV Ultra</td><td class="px-4 py-3 text-winner font-semibold">10 000 Pa</td><td class="px-4 py-3 text-text-light">Roterande + lyftbar</td><td class="px-4 py-3 text-text-light">Fullautomatisk + kamera</td><td class="px-4 py-3 font-semibold text-text">10 990 kr</td></tr>
+            <tr><td class="px-4 py-3 font-medium text-text">Qrevo Master</td><td class="px-4 py-3 text-text-light">13 000 Pa</td><td class="px-4 py-3 text-text-light">Dubbel roterande</td><td class="px-4 py-3 text-text-light">Fullautomatisk</td><td class="px-4 py-3 font-semibold text-text">9 490 kr</td></tr>
+            <tr class="bg-bg-alt/50"><td class="px-4 py-3 font-medium text-text">Qrevo MaxV Ultra</td><td class="px-4 py-3 text-text-light">10 000 Pa</td><td class="px-4 py-3 text-text-light">Roterande + lyftbar</td><td class="px-4 py-3 text-text-light">Fullautomatisk + kamera</td><td class="px-4 py-3 font-semibold text-text">8 990 kr</td></tr>
+            <tr><td class="px-4 py-3 font-medium text-text">S8 Max Ultra</td><td class="px-4 py-3 text-text-light">10 000 Pa</td><td class="px-4 py-3 text-text-light">Roterande + lyftbar</td><td class="px-4 py-3 text-text-light">Fullautomatisk</td><td class="px-4 py-3 font-semibold text-text">8 490 kr</td></tr>
+            <tr class="bg-bg-alt/50"><td class="px-4 py-3 font-medium text-text">S8 Pro Ultra</td><td class="px-4 py-3 text-text-light">6 000 Pa</td><td class="px-4 py-3 text-text-light">Sonic + FlexiArm</td><td class="px-4 py-3 text-text-light">Fullautomatisk</td><td class="px-4 py-3 font-semibold text-text">7 490 kr</td></tr>
+            <tr><td class="px-4 py-3 font-medium text-text">Qrevo Pro</td><td class="px-4 py-3 text-text-light">7 000 Pa</td><td class="px-4 py-3 text-text-light">Roterande + lyftbar</td><td class="px-4 py-3 text-text-light">Fullautomatisk</td><td class="px-4 py-3 font-semibold text-text">6 490 kr</td></tr>
+            <tr class="bg-bg-alt/50"><td class="px-4 py-3 font-medium text-text">Q Revo</td><td class="px-4 py-3 text-text-light">5 500 Pa</td><td class="px-4 py-3 text-text-light">Roterande + lyftbar</td><td class="px-4 py-3 text-text-light">Auto-tömning</td><td class="px-4 py-3 font-semibold text-text">4 990 kr</td></tr>
           </tbody>
         </table>
       </div>
@@ -264,8 +302,11 @@ const faqSchema = faqItems.map((item) => ({
         <li><a href="/dreame-x40-ultra-vs-roborock-s8-maxv-ultra/" class="text-accent hover:underline text-sm">Dreame X40 Ultra vs Roborock S8 MaxV Ultra — vilket är bäst?</a></li>
         <li><a href="/roborock-vs-ecovacs/" class="text-accent hover:underline text-sm">Roborock vs Ecovacs 2026 — vilket märke vinner?</a></li>
         <li><a href="/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2026 — alla märken jämförda</a></li>
-        <li><a href="/reservdelar/roborock/" class="text-accent hover:underline text-sm">Roborock reservdelar — filter, borstar och moppkuddar</a></li>
-        <li><a href="/reservdelar/filter/" class="text-accent hover:underline text-sm">Ersättningsfilter till robotdammsugare</a></li>
+        <li><a href="/roborock-qrevo-pro/" class="text-accent hover:underline text-sm">Roborock Qrevo Pro recension 2026</a></li>
+        <li><a href="/roborock-qrevo-maxv-ultra/" class="text-accent hover:underline text-sm">Roborock Qrevo MaxV Ultra recension 2026</a></li>
+        <li><a href="/reservdelar/roborock-s8-serien/" class="text-accent hover:underline text-sm">Roborock S8-serien reservdelar — filter och borstar</a></li>
+        <li><a href="/reservdelar/roborock-qrevo-serien/" class="text-accent hover:underline text-sm">Roborock Qrevo-serien reservdelar</a></li>
+        <li><a href="/reservdelar/roborock/" class="text-accent hover:underline text-sm">Alla Roborock reservdelar</a></li>
       </ul>
     </section>
   </div>

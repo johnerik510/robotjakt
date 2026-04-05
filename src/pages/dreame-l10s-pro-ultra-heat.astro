@@ -1,0 +1,226 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const faqItems = [
+  {
+    question: 'Vad är skillnaden mellan Dreame L10s Pro Ultra Heat och L20 Ultra?',
+    answer: 'L20 Ultra har starkare sugkraft (7 000 Pa mot 7 000 Pa — lika), men L10s Pro Ultra Heat tillför 75°C varmvattenmoppning som desinficerar golvet. L20 Ultra har AI-hinderdetektion med kamera. Heat-varianten är bättre för rena golv med barn eller allergiker — L20 Ultra är bättre om du behöver hinderavoidance.',
+  },
+  {
+    question: 'Vad innebär 75°C varmvattenmoppning?',
+    answer: 'Dreame L10s Pro Ultra Heat värmer moppvattnet till 75°C, vilket dödar de flesta bakterier och virus på hårda golv. Det är särskilt värdefullt i kök och badrum. Kombinationen av mekanisk skrubbning och hett vatten ger avsevärt renare golv jämfört med kall moppning.',
+  },
+  {
+    question: 'Kan Dreame L10s Pro Ultra Heat städa utan moppfunktionen aktiv?',
+    answer: 'Ja. Du kan välja att köra enbart dammsugning utan mopp i Dreame-appen. Roboten lyfter automatiskt mopparna på mattor (4 mm lyftning) och du kan markera zoner där moppning ska undvikas.',
+  },
+  {
+    question: 'Passar Dreame L10s Pro Ultra Heat för hem med husdjur?',
+    answer: 'Ja, med reservation. 7 000 Pa sugkraft hanterar husdjurshår effektivt och stationen tömmer dammkammaren automatiskt. Dock saknar L10s Pro Ultra Heat AI-kamera för att undvika husdjursavföring. Välj Dreame X30 Ultra eller X40 Ultra om det är ett krav.',
+  },
+  {
+    question: 'Hur länge håller batteriet?',
+    answer: 'Ca 180 minuter per laddning — tillräckligt för 200–300 m² i en körning. Roboten återvänder automatiskt till stationen för laddning om batteriet tar slut och fortsätter sedan städningen där den slutade.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Dreame L10s Pro Ultra Heat recension' },
+];
+
+const specs = [
+  { label: 'Sugkraft', value: '7 000 Pa' },
+  { label: 'Navigering', value: 'LiDAR + 3D VSLAM' },
+  { label: 'Moppfunktion', value: 'Ja — roterande mopp med varmvatten' },
+  { label: 'Varmvattenmoppning', value: '75°C' },
+  { label: 'Automatisk dammtömning', value: 'Ja' },
+  { label: 'Mopptvättning', value: 'Ja — varmt vatten' },
+  { label: 'Mopptorkning', value: 'Ja — varmluft' },
+  { label: 'Mattlyftning', value: 'Ja — 4 mm' },
+  { label: 'AI-kamera', value: 'Nej' },
+  { label: 'App', value: 'Dreame (iOS/Android)' },
+  { label: 'Röststyrning', value: 'Google Assistant, Alexa' },
+  { label: 'Batteri', value: 'ca 180 min drifttid' },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": { "@type": "Answer", "text": item.answer },
+}));
+---
+
+<BaseLayout
+  title="Dreame L10s Pro Ultra Heat Recension 2026 – Test och Pris"
+  description="Dreame L10s Pro Ultra Heat testad: 75°C varmvattenmoppning, 7 000 Pa och helautomatisk station. Se betyg, pris och jämförelse med L20 Ultra 2026."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-05</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Dreame L10s Pro Ultra Heat Recension 2026
+    </h1>
+
+    <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+      <div class="flex items-start gap-4">
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">VARMVATTENMOPPNING 75°C</span>
+            <div class="flex gap-0.5">
+              {[1,2,3,4,5].map(i => (
+                <svg class={`w-4 h-4 ${i <= 4 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <span class="font-bold text-text">4.4 / 5</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Dreame L10s Pro Ultra Heat är unik med 75°C varmvattenmoppning — varmt vatten kombineras med mekanisk skrubbning för ett desinficerat golv. Med 7 000 Pa sugkraft och helautomatisk station är det ett utmärkt val för familjer med barn och allergiker.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <p class="text-2xl font-bold text-text">ca 6 990 kr</p>
+          <p class="text-sm text-text-light">Pris varierar — jämför alltid mellan butiker</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a
+            href="https://www.elgiganten.se/search?query=dreame+l10s+pro+ultra+heat"
+            rel="sponsored noopener noreferrer"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris på Elgiganten
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+          <a
+            href="https://www.amazon.se/s?k=dreame+l10s+pro+ultra+heat&tag=johnerik510-20"
+            rel="sponsored nofollow noopener noreferrer"
+            target="_blank"
+            class="inline-flex items-center justify-center border-2 border-cta text-cta hover:bg-cta hover:text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Sök på Amazon
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-5 mb-8">
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Fördelar</h2>
+        <ul class="space-y-2">
+          {[
+            '75°C varmvattenmoppning — desinficerar golvet',
+            '7 000 Pa sugkraft',
+            'Helautomatisk station — dammtömning + mopptvättning',
+            'Automatisk mattlyftning (4 mm)',
+            'Bra för familjer med barn och allergiker',
+            'Lägre pris än X30 Ultra och X40 Ultra',
+          ].map(pro => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+              {pro}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+        <ul class="space-y-2">
+          {[
+            'Ingen AI-kamera — kan inte undvika husdjursavföring',
+            'Lägre mattlyftning än X-serien (4 vs 8–10 mm)',
+            'Saknar 3D-hinderdetektion med strukturerat ljus',
+          ].map(con => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+              {con}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Dreame L10s Pro Ultra Heat — detaljerad genomgång</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Varmvattenmoppning — vad det faktiskt innebär</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Traditionella robotmoppar använder rumstempererat vatten som skjuter runt smuts mer än det löser upp den. Dreame L10s Pro Ultra Heat värmer vattnet till 75°C och kombinerar med mekanisk rotation vid 200 rpm — det löser upp intorkat kaffe, matfläckar och fingeravtryck som kall moppning lämnar kvar. Golvet torkar snabbare tack vare det varma vattnet och risken för mögeltillväxt i mopparna minimeras.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Tekniska specifikationer</h3>
+      <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+        <table class="w-full text-sm">
+          <tbody class="divide-y divide-border">
+            {specs.map((spec, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+                <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+                <td class="px-4 py-3 text-text-light">{spec.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">För vem passar Dreame L10s Pro Ultra Heat?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        L10s Pro Ultra Heat är rätt val för familjer med barn som vill ha en hygienisk golvrengöring utan att betala för AI-kamera och avancerad hinderdetektion. Om husdjursavföring är ett bekymmer — välj Dreame X30 Ultra eller X40 Ultra istället. Behöver du bara ren golvrengöring utan husdjur — Heat-modellen ger mer per krona.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med liknande modeller</h2>
+      <ul class="space-y-2">
+        <li><a href="/dreame-l20-ultra/" class="text-accent hover:underline text-sm">Dreame L20 Ultra — AI-kamera och starkare sugkraft</a></li>
+        <li><a href="/dreame-x30-ultra/" class="text-accent hover:underline text-sm">Dreame X30 Ultra — premium med 3D-hinderdetektion</a></li>
+        <li><a href="/reservdelar/dreame/" class="text-accent hover:underline text-sm">Dreame reservdelar — filter, borstar och tillbehör</a></li>
+        <li><a href="/dreame-guide/" class="text-accent hover:underline text-sm">Dreame — alla modeller guide 2026</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se pris på Dreame L10s Pro Ultra Heat"
+    url="https://www.elgiganten.se/search?query=dreame+l10s+pro+ultra+heat"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "Product",
+      "name": "Dreame L10s Pro Ultra Heat",
+      "brand": { "@type": "Brand", "name": "Dreame" },
+      "category": "Robotdammsugare",
+      "description": "Dreame L10s Pro Ultra Heat med 75°C varmvattenmoppning, 7 000 Pa sugkraft och helautomatisk station.",
+      "offers": { "@type": "Offer", "priceCurrency": "SEK", "price": "6990", "availability": "https://schema.org/InStock" }
+    },
+    "reviewRating": { "@type": "Rating", "ratingValue": "4.4", "bestRating": "5", "worstRating": "1" },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-04-05",
+    "reviewBody": "Dreame L10s Pro Ultra Heat är bäst för familjer som vill ha desinficerande varmvattenmoppning utan att betala för AI-kamera.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>

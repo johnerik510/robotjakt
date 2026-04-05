@@ -1,0 +1,180 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import FAQ from '../../components/FAQ.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const TAG = 'johnerik510-20';
+
+const products = [
+  {
+    asin: 'B0CG4RR3W5',
+    name: 'Roborock S8 / S8+ / S8 Pro Ultra — komplett tillbehörskit 20-delar',
+    compat: 'Passar: S8, S8+, S8 Pro Ultra, S8 Max Ultra, S8 MaxV Ultra',
+    includes: '2 HEPA-filter, 2 gummiborstar, 4 sidoborstar, 4 moppdukar, skruvmejsel',
+    price: '252 kr',
+    badge: 'Bästsäljare',
+  },
+  {
+    asin: 'B0CQHPR8TR',
+    name: 'Roborock S8+ / S8 Pro Ultra / S8 Max Ultra — kit med dammpåsar',
+    compat: 'Passar: S8+, S8 Pro Ultra, S8 Max Ultra',
+    includes: '2 HEPA-filter, 2 gummiborstar, 4 sidoborstar, 4 dammpåsar, 4 moppdukar',
+    price: '287 kr',
+    badge: 'Mest komplett',
+  },
+  {
+    asin: 'B0D6RFC7Q5',
+    name: 'Roborock S8 / S8+ / S8 Pro Ultra — gummiborstar + HEPA-filter',
+    compat: 'Passar: S8, S8+, S8 Pro Ultra',
+    includes: '2 gummiborstar (dubbel gummirulle), 6 sidoborstar, 4 HEPA-filter',
+    price: '195 kr',
+    badge: 'Bästa pris',
+  },
+  {
+    asin: 'B0C7QQDVNL',
+    name: 'Roborock S8 MaxV Ultra / S8 Max Ultra — dammpåsar 5-pack',
+    compat: 'Passar: S8 MaxV Ultra, S8 Max Ultra, S8 Pro Ultra (med station)',
+    includes: '5 dammpåsar för automatisk tömningsstation',
+    price: '149 kr',
+    badge: null,
+  },
+  {
+    asin: 'B0BQJFBLX7',
+    name: 'Roborock S8 serien — moppkuddar 8-pack',
+    compat: 'Passar: S8, S8+, S8 Pro Ultra, S8 Max Ultra, S8 MaxV Ultra',
+    includes: '8 tvättbara moppkuddar i mikrofiber',
+    price: '119 kr',
+    badge: null,
+  },
+  {
+    asin: 'B0BF3HH5RC',
+    name: 'Roborock S8 / S8 Pro Ultra — HEPA-filter 4-pack',
+    compat: 'Passar: S8, S8+, S8 Pro Ultra, S8 Max Ultra, S8 MaxV Ultra',
+    includes: '4 HEPA E11-filter',
+    price: '99 kr',
+    badge: 'Bästa filterpris',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Vilket reservdelskit passar Roborock S8 Pro Ultra?',
+    answer: 'S8 Pro Ultra delar reservdelssystem med hela S8-serien: S8, S8+, S8 Max Ultra och S8 MaxV Ultra. Alla kit markerade "S8-serien" eller som uttryckligen anger S8 Pro Ultra är kompatibla. Kontrollera alltid kompatibilitetslistan i produktbeskrivningen.',
+  },
+  {
+    question: 'Hur ofta ska jag byta reservdelar på Roborock S8?',
+    answer: 'HEPA-filter: var 2 månad. Sidoborstar: var 6–12 månad. Gummiborstar (huvudrulle): var 12–18 månad. Moppkuddar: tvätta varje vecka, byt vid slitage. Dammpåsar (S8+/Pro Ultra/Max): när fyllda, ca var 4–6 vecka.',
+  },
+  {
+    question: 'Kan jag använda tredjepartsreservdelar i Roborock S8?',
+    answer: 'Ja, tredjepartsreservdelar fungerar och kostar ofta 50–70% mindre än originalen. Välj kit med HEPA E11-standard eller högre för filtren. Kontrollera att gummiborstarnas mått matchar S8-specifkationerna (185 mm x 56 mm). Tredjepartsdelar ogiltigförklarar inte garantin.',
+  },
+  {
+    question: 'Vad är dammpåsens kapacitet i Roborock S8 Pro Ultra?',
+    answer: 'Stationens dammpåse rymmer ca 2,5 liter och håller vanligtvis 4–7 veckor beroende på hur ofta du städar och hur dammigt hemmet är. En påse-indikator i appen meddelar när det är dags att byta.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Reservdelar', href: '/reservdelar/' },
+  { label: 'Roborock S8-serien reservdelar' },
+];
+
+const faqSchema = faqItems.map(item => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": { "@type": "Answer", "text": item.answer },
+}));
+---
+
+<BaseLayout
+  title="Roborock S8 Reservdelar 2026 — Filter, Borstar och Tillbehör"
+  description="Roborock S8 reservdelar: HEPA-filter, gummiborstar, sidoborstar och moppkuddar för S8, S8+, S8 Pro Ultra, S8 Max Ultra och S8 MaxV Ultra. Billiga kit på Amazon."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-05</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
+      Roborock S8-serien Reservdelar 2026
+    </h1>
+    <p class="text-text-light text-lg mb-6 leading-relaxed">
+      Filter, borstar, moppkuddar och dammpåsar för Roborock S8, S8+, S8 Pro Ultra, S8 Max Ultra och S8 MaxV Ultra.
+    </p>
+
+    <div class="space-y-4 mb-10">
+      {products.map(p => (
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex flex-col sm:flex-row sm:items-start gap-4">
+            <div class="flex-1">
+              <div class="flex items-start gap-3 mb-2">
+                {p.badge && (
+                  <span class="bg-accent text-white text-xs font-bold px-2 py-0.5 rounded flex-shrink-0">{p.badge}</span>
+                )}
+                <h2 class="font-semibold text-text text-sm leading-snug">{p.name}</h2>
+              </div>
+              <p class="text-xs text-text-lighter mb-1"><span class="font-medium">Passar:</span> {p.compat}</p>
+              <p class="text-xs text-text-light mb-3"><span class="font-medium">Innehaller:</span> {p.includes}</p>
+              <div class="flex items-center gap-4">
+                <span class="text-lg font-bold text-text">{p.price}</span>
+                <a
+                  href={`https://www.amazon.se/dp/${p.asin}?tag=${TAG}`}
+                  rel="sponsored nofollow noopener noreferrer"
+                  target="_blank"
+                  class="inline-flex items-center bg-cta hover:bg-cta/90 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors min-h-[36px]"
+                >
+                  Köp på Amazon
+                  <svg class="w-3.5 h-3.5 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Underhallsschema — Roborock S8-serien</h2>
+      <div class="bg-bg-alt rounded-xl border border-border overflow-hidden">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-primary text-white">
+              <th class="px-4 py-3 text-left font-semibold">Del</th>
+              <th class="px-4 py-3 text-left font-semibold">Bytesintervall</th>
+              <th class="px-4 py-3 text-left font-semibold">Tips</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr class="bg-white"><td class="px-4 py-3 font-medium">HEPA-filter</td><td class="px-4 py-3 text-text-light">Var 2 manad</td><td class="px-4 py-3 text-text-light">Knacka rent var 2:a vecka</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Sidoborstar</td><td class="px-4 py-3 text-text-light">Var 6–12 manad</td><td class="px-4 py-3 text-text-light">Byt vid bockning av borstar</td></tr>
+            <tr class="bg-white"><td class="px-4 py-3 font-medium">Gummiborstar</td><td class="px-4 py-3 text-text-light">Var 12–18 manad</td><td class="px-4 py-3 text-text-light">Rengör fran har regelbundet</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Moppkuddar</td><td class="px-4 py-3 text-text-light">Tvatta varje vecka</td><td class="px-4 py-3 text-text-light">Byt vid synligt slitage</td></tr>
+            <tr class="bg-white"><td class="px-4 py-3 font-medium">Dammpase (station)</td><td class="px-4 py-3 text-text-light">Nar full (4–6 veckor)</td><td class="px-4 py-3 text-text-light">App aviserar nar det ar dags</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade sidor</h2>
+      <ul class="space-y-2">
+        <li><a href="/reservdelar/roborock/" class="text-accent hover:underline text-sm">Alla Roborock reservdelar — S8 + Qrevo-serien</a></li>
+        <li><a href="/reservdelar/roborock-qrevo-serien/" class="text-accent hover:underline text-sm">Roborock Qrevo-serien reservdelar</a></li>
+        <li><a href="/roborock-s8-pro-ultra/" class="text-accent hover:underline text-sm">Roborock S8 Pro Ultra recension</a></li>
+        <li><a href="/roborock-s8-maxv-ultra/" class="text-accent hover:underline text-sm">Roborock S8 MaxV Ultra recension</a></li>
+        <li><a href="/roborock-guide/" class="text-accent hover:underline text-sm">Roborock — alla modeller guide 2026</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>

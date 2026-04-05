@@ -1,0 +1,172 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import FAQ from '../../components/FAQ.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const TAG = 'johnerik510-20';
+
+const products = [
+  {
+    asin: 'B0CY5CWRXQ',
+    name: 'Roborock Qrevo S / Qrevo Pro / Qrevo MaxV — 20-delars kit',
+    compat: 'Passar: Qrevo S, Qrevo Pro, Qrevo MaxV Ultra, Qrevo Plus',
+    includes: '1 gummiborste, 6 sidoborstar, 4 HEPA-filter, 4 moppkuddar, 4 dammpåsar',
+    price: '220 kr',
+    badge: 'Bästsäljare',
+  },
+  {
+    asin: 'B0DG5J1QK7',
+    name: 'Roborock Qrevo Pro / Qrevo S / Qrevo MaxV — 22-delars kit',
+    compat: 'Passar: Qrevo Pro, Qrevo S, Qrevo MaxV Ultra',
+    includes: '2 gummiborstar, 6 sidoborstar, 4 HEPA-filter, 4 dammpåsar, 4 mopptorkdukar',
+    price: '303 kr',
+    badge: 'Mest komplett',
+  },
+  {
+    asin: 'B0DG5H9HLH',
+    name: 'Roborock Qrevo S / Qrevo Pro / Qrevo MaxV — 21-delars kit',
+    compat: 'Passar: Qrevo S, Qrevo Pro, Qrevo MaxV Ultra',
+    includes: '1 gummiborste, 4 sidoborstar, 4 HEPA-filter, 4 mopptorkdukar, 6 dammpåsar',
+    price: '212 kr',
+    badge: 'Bästa pris',
+  },
+  {
+    asin: 'B0CNMFPF5K',
+    name: 'Roborock Qrevo Master — dammpåsar 5-pack',
+    compat: 'Passar: Qrevo Master, Qrevo MaxV Ultra (med automatisk station)',
+    includes: '5 dammpåsar för automatisk tömningsstation',
+    price: '149 kr',
+    badge: null,
+  },
+  {
+    asin: 'B0CG35BWMW',
+    name: 'Roborock Qrevo-serien — HEPA-filter 4-pack',
+    compat: 'Passar: Qrevo S, Qrevo Pro, Qrevo MaxV Ultra, Qrevo Master',
+    includes: '4 HEPA E11-filter',
+    price: '89 kr',
+    badge: 'Bästa filterpris',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Delar Qrevo Pro och Qrevo Master samma reservdelar?',
+    answer: 'Nej, Qrevo Master har ett eget reservdelssystem. Qrevo Pro, Qrevo S och Qrevo MaxV Ultra delar systemet. Kontrollera alltid att din exakta modell anges som kompatibel i produktbeskrivningen. Dammpåsarna är modellspecifika — blanda inte mellan Qrevo Master och Qrevo Pro.',
+  },
+  {
+    question: 'Hur ofta byter jag reservdelar på Roborock Qrevo Pro?',
+    answer: 'HEPA-filter: var 2 månad. Sidoborstar: var 6–12 månad. Gummiborste (huvudrulle): var 12 månad. Moppkuddar: tvätta efter varje städning med varm mopptvättning, byt vid slitage. Dammpåsar: när fyllda, ca var 4–6 vecka.',
+  },
+  {
+    question: 'Kan Qrevo-seriens moppkuddar tvättas i maskin?',
+    answer: 'Originalmoppkuddarna kan tvättas i maskin i 40°C. Stationens inbyggda mopptvättning med varmt vatten sköter den löpande rengöringen — maskintvätt rekommenderas var 2–4 vecka som komplettering.',
+  },
+  {
+    question: 'Var köper jag billigaste Qrevo-reservdelar?',
+    answer: 'Amazon erbjuder generellt de billigaste tredjepartsalternativen, ofta 50–70% billigare än originalen. Sök på din exakta modell (t.ex. "Roborock Qrevo Pro reservdelar") och välj kit med högt antal recensioner och god kompatibilitetsbekräftelse.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Reservdelar', href: '/reservdelar/' },
+  { label: 'Roborock Qrevo-serien reservdelar' },
+];
+
+const faqSchema = faqItems.map(item => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": { "@type": "Answer", "text": item.answer },
+}));
+---
+
+<BaseLayout
+  title="Roborock Qrevo Reservdelar 2026 — Filter, Borstar och Dammpåsar"
+  description="Roborock Qrevo reservdelar: HEPA-filter, gummiborstar, sidoborstar och dammpåsar för Qrevo S, Qrevo Pro, Qrevo MaxV Ultra och Qrevo Master. Billiga kit."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-05</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
+      Roborock Qrevo-serien Reservdelar 2026
+    </h1>
+    <p class="text-text-light text-lg mb-6 leading-relaxed">
+      Filter, borstar, moppkuddar och dammpåsar för Roborock Qrevo S, Qrevo Pro, Qrevo MaxV Ultra och Qrevo Master.
+    </p>
+
+    <div class="space-y-4 mb-10">
+      {products.map(p => (
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex flex-col sm:flex-row sm:items-start gap-4">
+            <div class="flex-1">
+              <div class="flex items-start gap-3 mb-2">
+                {p.badge && (
+                  <span class="bg-accent text-white text-xs font-bold px-2 py-0.5 rounded flex-shrink-0">{p.badge}</span>
+                )}
+                <h2 class="font-semibold text-text text-sm leading-snug">{p.name}</h2>
+              </div>
+              <p class="text-xs text-text-lighter mb-1"><span class="font-medium">Passar:</span> {p.compat}</p>
+              <p class="text-xs text-text-light mb-3"><span class="font-medium">Innehaller:</span> {p.includes}</p>
+              <div class="flex items-center gap-4">
+                <span class="text-lg font-bold text-text">{p.price}</span>
+                <a
+                  href={`https://www.amazon.se/dp/${p.asin}?tag=${TAG}`}
+                  rel="sponsored nofollow noopener noreferrer"
+                  target="_blank"
+                  class="inline-flex items-center bg-cta hover:bg-cta/90 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors min-h-[36px]"
+                >
+                  Köp på Amazon
+                  <svg class="w-3.5 h-3.5 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Underhallsschema — Roborock Qrevo-serien</h2>
+      <div class="bg-bg-alt rounded-xl border border-border overflow-hidden">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-primary text-white">
+              <th class="px-4 py-3 text-left font-semibold">Del</th>
+              <th class="px-4 py-3 text-left font-semibold">Bytesintervall</th>
+              <th class="px-4 py-3 text-left font-semibold">Tips</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr class="bg-white"><td class="px-4 py-3 font-medium">HEPA-filter</td><td class="px-4 py-3 text-text-light">Var 2 manad</td><td class="px-4 py-3 text-text-light">Knacka rent varje vecka</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Sidoborstar</td><td class="px-4 py-3 text-text-light">Var 6–12 manad</td><td class="px-4 py-3 text-text-light">Byt vid bockning</td></tr>
+            <tr class="bg-white"><td class="px-4 py-3 font-medium">Gummiborste</td><td class="px-4 py-3 text-text-light">Var 12 manad</td><td class="px-4 py-3 text-text-light">Rengör från har regelbundet</td></tr>
+            <tr><td class="px-4 py-3 font-medium">Moppkuddar</td><td class="px-4 py-3 text-text-light">Tvatta varje vecka</td><td class="px-4 py-3 text-text-light">Station sköter vardagstvätten</td></tr>
+            <tr class="bg-white"><td class="px-4 py-3 font-medium">Dammpase</td><td class="px-4 py-3 text-text-light">Nar full (4–6 veckor)</td><td class="px-4 py-3 text-text-light">App meddelar nar det ar dags</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade sidor</h2>
+      <ul class="space-y-2">
+        <li><a href="/reservdelar/roborock/" class="text-accent hover:underline text-sm">Alla Roborock reservdelar</a></li>
+        <li><a href="/reservdelar/roborock-s8-serien/" class="text-accent hover:underline text-sm">Roborock S8-serien reservdelar</a></li>
+        <li><a href="/roborock-qrevo-master/" class="text-accent hover:underline text-sm">Roborock Qrevo Master recension</a></li>
+        <li><a href="/roborock-qrevo-pro/" class="text-accent hover:underline text-sm">Roborock Qrevo Pro recension</a></li>
+        <li><a href="/roborock-guide/" class="text-accent hover:underline text-sm">Roborock — alla modeller guide 2026</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>

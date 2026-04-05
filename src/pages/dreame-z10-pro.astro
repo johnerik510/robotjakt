@@ -1,0 +1,224 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const faqItems = [
+  {
+    question: 'Vad är skillnaden mellan Dreame Z10 Pro och D10s Pro?',
+    answer: 'Z10 Pro och D10s Pro är båda budgetmodeller från Dreame. Z10 Pro har automatisk dammtömning via stationen — det är den avgörande skillnaden. D10s Pro saknar automatisk tömning men kostar ca 500–1 000 kr mindre. Välj Z10 Pro om bekvämlighet är viktig, D10s Pro om du vill minimera kostnaden.',
+  },
+  {
+    question: 'Har Dreame Z10 Pro moppfunktion?',
+    answer: 'Ja, Z10 Pro har en enkel moppfunktion med vibrerande mopp. Det är inte en roterande mopp som i L- och X-serien utan ett vattentank-system med passiv fuktig moppduk. Det ger grundläggande golvfuktning men inte djupgöring som L10s Pro Ultra Heat.',
+  },
+  {
+    question: 'Hur stor yta klarar Dreame Z10 Pro?',
+    answer: 'Z10 Pro klarar upp till 200–250 m² per batteriladdning. LiDAR-navigeringen skapar en karta och städar systematiskt rum för rum. Batteritiden är ca 120 minuter.',
+  },
+  {
+    question: 'Är Dreame Z10 Pro bra för husdjurshår?',
+    answer: 'Ja, Z10 Pro med 4 000 Pa sugkraft hanterar husdjurshår på hårda golv och kortfibriga mattor. Den automatiska dammtömningen innebär att du inte behöver tömma dammbehållaren för hand — en stor fördel om hundet fäller rikligt. Dock saknar den AI-kamera för hinderavoidance.',
+  },
+  {
+    question: 'Vilka reservdelar passar Dreame Z10 Pro?',
+    answer: 'Z10 Pro har ett separat reservdelssystem från L- och X-serien. Sök efter "Dreame Z10 Pro" på Amazon för kompatibla filter, sidoborstar och huvudborstar. Byt HEPA-filter var 2–3 månad och sidoborstar var 6 månad.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Dreame Z10 Pro recension' },
+];
+
+const specs = [
+  { label: 'Sugkraft', value: '4 000 Pa' },
+  { label: 'Navigering', value: 'LiDAR' },
+  { label: 'Moppfunktion', value: 'Ja — vibrerande mopp' },
+  { label: 'Automatisk dammtömning', value: 'Ja' },
+  { label: 'Mopptvättning', value: 'Nej' },
+  { label: 'AI-kamera', value: 'Nej' },
+  { label: 'Batteri', value: 'ca 120 min drifttid' },
+  { label: 'App', value: 'Dreame (iOS/Android)' },
+  { label: 'Röststyrning', value: 'Google Assistant, Alexa' },
+  { label: 'Max yta', value: 'ca 250 m²' },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": { "@type": "Answer", "text": item.answer },
+}));
+---
+
+<BaseLayout
+  title="Dreame Z10 Pro Recension 2026 – Budget med Automatisk Tömning"
+  description="Dreame Z10 Pro testad: LiDAR-navigering, 4 000 Pa och automatisk dammtömning till budgetpris. Se betyg, pris och jämförelse med D10s Pro 2026."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AffiliateDisclaimer />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-05</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Dreame Z10 Pro Recension 2026
+    </h1>
+
+    <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+      <div class="flex items-start gap-4">
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">BUDGET MED AUTOTOMNING</span>
+            <div class="flex gap-0.5">
+              {[1,2,3,4,5].map(i => (
+                <svg class={`w-4 h-4 ${i <= 4 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <span class="font-bold text-text">3.9 / 5</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Dreame Z10 Pro erbjuder det som saknas i de flesta budgetrobotar: automatisk dammtömning. Med LiDAR-navigering och enkel moppfunktion är det rätt val för den som vill ha en bekväm helautomatisk städlösning utan att investera i L- eller X-serien.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <p class="text-2xl font-bold text-text">ca 3 490 kr</p>
+          <p class="text-sm text-text-light">Pris varierar — jämför alltid mellan butiker</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a
+            href="https://www.komplett.se/search?q=dreame+z10+pro"
+            rel="sponsored noopener noreferrer"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris på Komplett
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+          <a
+            href="https://www.amazon.se/s?k=dreame+z10+pro&tag=johnerik510-20"
+            rel="sponsored nofollow noopener noreferrer"
+            target="_blank"
+            class="inline-flex items-center justify-center border-2 border-cta text-cta hover:bg-cta hover:text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Sök på Amazon
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-5 mb-8">
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Fördelar</h2>
+        <ul class="space-y-2">
+          {[
+            'Automatisk dammtömning — ovanligt i prisklassen',
+            'LiDAR-navigering med kartläggning',
+            'Enkel moppfunktion ingår',
+            'App-styrning med schemläggning',
+            'Lågt pris för funktionsnivån',
+          ].map(pro => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+              {pro}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+        <ul class="space-y-2">
+          {[
+            'Lägre sugkraft (4 000 Pa) — inte för djupstädning',
+            'Ingen mopptvättning — mopp rengörs manuellt',
+            'Ingen AI-kamera',
+            'Passiv mopp — inte roterande som L-serien',
+          ].map(con => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+              {con}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Dreame Z10 Pro — detaljerad genomgång</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Automatisk dammtömning — varför det är viktigt</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        De flesta budgetrobotar kräver att du tömmer dammbehållaren för hand efter varje städning — Z10 Pro:s station gör det automatiskt och samlar damm i en påse som håller 4–6 veckor. Det gör att roboten verkligen kan städa utan att du behöver göra något. Det är just denna funktion som motiverar priset jämfört med en ännu billigare robot utan station.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Tekniska specifikationer</h3>
+      <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+        <table class="w-full text-sm">
+          <tbody class="divide-y divide-border">
+            {specs.map((spec, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+                <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+                <td class="px-4 py-3 text-text-light">{spec.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Z10 Pro vs D10s Pro — vilket ska du välja?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        D10s Pro är ca 500 kr billigare men saknar automatisk dammtömning. Om du accepterar att tömma roboten för hand räcker D10s Pro utmärkt. Vill du ha minimal handpåläggning är Z10 Pro med automatisk tömning värt prisskillnaden. Ingen av dem ersätter ett helautomatiskt system som L10s Pro Ultra Heat — men de är ett stort steg upp från en enkel budget-robot.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med liknande modeller</h2>
+      <ul class="space-y-2">
+        <li><a href="/dreame-d10s-pro/" class="text-accent hover:underline text-sm">Dreame D10s Pro — ännu billigare utan automatisk tömning</a></li>
+        <li><a href="/dreame-l10s-ultra-gen2/" class="text-accent hover:underline text-sm">Dreame L10s Ultra Gen2 — nästa steg upp</a></li>
+        <li><a href="/reservdelar/dreame/" class="text-accent hover:underline text-sm">Dreame reservdelar — filter, borstar och tillbehör</a></li>
+        <li><a href="/dreame-guide/" class="text-accent hover:underline text-sm">Dreame — alla modeller guide 2026</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se pris på Dreame Z10 Pro"
+    url="https://www.komplett.se/search?q=dreame+z10+pro"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "Product",
+      "name": "Dreame Z10 Pro",
+      "brand": { "@type": "Brand", "name": "Dreame" },
+      "category": "Robotdammsugare",
+      "description": "Dreame Z10 Pro med LiDAR-navigering, 4 000 Pa sugkraft och automatisk dammtömning.",
+      "offers": { "@type": "Offer", "priceCurrency": "SEK", "price": "3490", "availability": "https://schema.org/InStock" }
+    },
+    "reviewRating": { "@type": "Rating", "ratingValue": "3.9", "bestRating": "5", "worstRating": "1" },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-04-05",
+    "reviewBody": "Dreame Z10 Pro erbjuder automatisk dammtömning i en prisklassen där det annars inte finns — ett smart val för den som vill ha låg handpåläggning utan att investera i premium.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>
