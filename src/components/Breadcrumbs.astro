@@ -1,29 +1,36 @@
 ---
 interface Props {
   items: { label: string; href?: string }[];
+  light?: boolean;
 }
 
-const { items } = Astro.props;
+const { items, light = false } = Astro.props;
+
+const linkClass = light
+  ? 'hover:text-white/80 transition-colors text-white/60'
+  : 'hover:text-accent transition-colors text-text-lighter';
+const separatorClass = light ? 'text-white/30' : 'text-text-lighter/50';
+const currentClass = light ? 'text-white/90 font-medium' : 'text-text-light font-medium';
 ---
 
 <nav aria-label="Breadcrumbs" class="w-full">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
-  <ol class="flex flex-wrap items-center gap-1.5 text-xs text-text-lighter" itemscope itemtype="https://schema.org/BreadcrumbList">
+  <ol class={`flex flex-wrap items-center gap-1.5 text-xs ${light ? 'text-white/60' : 'text-text-lighter'}`} itemscope itemtype="https://schema.org/BreadcrumbList">
     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-      <a href="/" itemprop="item" class="hover:text-accent transition-colors">
+      <a href="/" itemprop="item" class={linkClass}>
         <span itemprop="name">Hem</span>
       </a>
       <meta itemprop="position" content="1" />
     </li>
     {items.map((item, i) => (
       <li class="flex items-center gap-1.5" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span aria-hidden="true" class="text-text-lighter/50">/</span>
+        <span aria-hidden="true" class={separatorClass}>/</span>
         {item.href ? (
-          <a href={item.href} itemprop="item" class="hover:text-accent transition-colors">
+          <a href={item.href} itemprop="item" class={linkClass}>
             <span itemprop="name">{item.label}</span>
           </a>
         ) : (
-          <span itemprop="name" class="text-text-light font-medium">{item.label}</span>
+          <span itemprop="name" class={currentClass}>{item.label}</span>
         )}
         <meta itemprop="position" content={String(i + 2)} />
       </li>

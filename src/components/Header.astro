@@ -163,18 +163,18 @@ const reservdelarItems = [
     </div>
   </div>
   </div>
-  <nav id="mobile-menu" class="hidden md:hidden absolute left-0 right-0 z-40 bg-primary-dark border-t border-primary-light shadow-2xl overflow-y-auto max-h-[50vh]" aria-label="Mobilnavigering">
-    <div class="px-4 py-1 divide-y divide-primary-light/30">
+  <nav id="mobile-menu" class="hidden md:hidden absolute left-0 right-0 z-40 bg-primary-dark border-t border-primary-light shadow-2xl overflow-y-auto max-h-screen" aria-label="Mobilnavigering">
+    <div class="px-4 py-2 divide-y divide-primary-light/30">
 
       <!-- Drönare accordion -->
       <div>
-        <button class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-2.5 text-sm font-semibold text-gray-100 hover:text-white" aria-expanded="false">
+        <button class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-4 text-sm font-semibold text-gray-100 hover:text-white" aria-expanded="false">
           Drönare
           <svg class="accordion-icon w-4 h-4 opacity-60 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </button>
         <div class="mobile-accordion-content hidden pb-1 space-y-0.5">
           {dronareItems.map((item) => (
-            <a href={item.href} class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-primary-light rounded-md transition-colors">
+            <a href={item.href} class="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-primary-light rounded-md transition-colors">
               {item.label}
             </a>
           ))}
@@ -183,13 +183,13 @@ const reservdelarItems = [
 
       <!-- Robotdammsugare accordion -->
       <div>
-        <button class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-2.5 text-sm font-semibold text-gray-100 hover:text-white" aria-expanded="false">
+        <button class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-4 text-sm font-semibold text-gray-100 hover:text-white" aria-expanded="false">
           Robotdammsugare
           <svg class="accordion-icon w-4 h-4 opacity-60 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </button>
         <div class="mobile-accordion-content hidden pb-1 space-y-0.5">
           {dammsugareItems.map((item) => (
-            <a href={item.href} class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-primary-light rounded-md transition-colors">
+            <a href={item.href} class="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-primary-light rounded-md transition-colors">
               {item.label}
             </a>
           ))}
@@ -198,13 +198,13 @@ const reservdelarItems = [
 
       <!-- Robotgräsklippare accordion -->
       <div>
-        <button class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-2.5 text-sm font-semibold text-gray-100 hover:text-white" aria-expanded="false">
+        <button class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-4 text-sm font-semibold text-gray-100 hover:text-white" aria-expanded="false">
           Robotgräsklippare
           <svg class="accordion-icon w-4 h-4 opacity-60 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </button>
         <div class="mobile-accordion-content hidden pb-1 space-y-0.5">
           {grasklippareItems.map((item) => (
-            <a href={item.href} class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-primary-light rounded-md transition-colors">
+            <a href={item.href} class="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-primary-light rounded-md transition-colors">
               {item.label}
             </a>
           ))}
@@ -213,13 +213,13 @@ const reservdelarItems = [
 
       <!-- Reservdelar accordion -->
       <div>
-        <button class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-2.5 text-sm font-semibold text-gray-100 hover:text-white" aria-expanded="false">
+        <button class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-4 text-sm font-semibold text-gray-100 hover:text-white" aria-expanded="false">
           Reservdelar
           <svg class="accordion-icon w-4 h-4 opacity-60 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </button>
         <div class="mobile-accordion-content hidden pb-1 space-y-0.5">
           {reservdelarItems.map((item) => (
-            <a href={item.href} class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-primary-light rounded-md transition-colors">
+            <a href={item.href} class="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-primary-light rounded-md transition-colors">
               {item.label}
             </a>
           ))}
