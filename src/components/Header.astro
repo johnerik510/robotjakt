@@ -163,7 +163,7 @@ const reservdelarItems = [
     </div>
   </div>
   </div>
-  <nav id="mobile-menu" class="hidden md:hidden absolute left-0 right-0 z-40 bg-primary-dark border-t border-primary-light shadow-2xl overflow-y-auto max-h-screen" aria-label="Mobilnavigering">
+  <nav id="mobile-menu" class="hidden md:hidden fixed left-0 right-0 bottom-0 z-40 bg-primary-dark border-t border-primary-light overflow-y-auto" style="top: var(--header-height, 0px);" aria-label="Mobilnavigering">
     <div class="px-4 py-2 divide-y divide-primary-light/30">
 
       <!-- Drönare accordion -->
@@ -245,14 +245,19 @@ const reservdelarItems = [
   const backdrop = document.getElementById('mobile-backdrop');
 
   function openMenu() {
+    const headerEl = document.querySelector('header');
+    const h = headerEl ? headerEl.getBoundingClientRect().bottom : 0;
+    (menu as HTMLElement).style.top = h + 'px';
     menu?.classList.remove('hidden');
     backdrop?.classList.remove('hidden');
     btn?.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
   }
   function closeMenu() {
     menu?.classList.add('hidden');
     backdrop?.classList.add('hidden');
     btn?.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
     // stäng alla accordions
     document.querySelectorAll('.mobile-accordion-content').forEach((c) => c.classList.add('hidden'));
     document.querySelectorAll('.accordion-icon').forEach((i) => (i as HTMLElement).style.transform = '');
