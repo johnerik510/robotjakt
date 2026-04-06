@@ -1,4 +1,12 @@
 ---
+const dronare = [
+  { label: 'Bästa drönaren 2026', href: '/dronare/' },
+  { label: 'För nybörjare', href: '/dronare-for-nyborjare/' },
+  { label: 'Med kamera', href: '/dronare-med-kamera/' },
+  { label: 'DJI Mini 5 Pro recension', href: '/dji-mini-5-pro/' },
+  { label: 'DJI Air 3S recension', href: '/dji-air-3s/' },
+];
+
 const robotdammsugare = [
   { label: 'Bästa robotdammsugare 2026', href: '/' },
   { label: 'Med moppfunktion', href: '/robotdammsugare-med-mopp/' },
@@ -86,12 +94,22 @@ const legal = [
 
 <footer class="bg-primary text-gray-300">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-8">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-8 gap-8">
       <div class="col-span-2 md:col-span-3 lg:col-span-1">
         <h3 class="font-heading text-white text-lg font-bold mb-4">Robotjakt</h3>
         <p class="text-sm leading-relaxed">
-          Vi testar och jämför konsumentrobotar för den svenska marknaden. Oberoende recensioner av robotdammsugare, robotgräsklippare och poolrobotar.
+          Vi testar och jämför konsumentrobotar för den svenska marknaden. Oberoende recensioner av robotdammsugare, robotgräsklippare, drönare och poolrobotar.
         </p>
+      </div>
+      <div>
+        <h4 class="font-heading text-white text-sm font-bold uppercase tracking-wider mb-4">Drönare</h4>
+        <ul class="space-y-2">
+          {dronare.map((item) => (
+            <li>
+              <a href={item.href} class="text-sm hover:text-white transition-colors">{item.label}</a>
+            </li>
+          ))}
+        </ul>
       </div>
       <div>
         <h4 class="font-heading text-white text-sm font-bold uppercase tracking-wider mb-4">Robotdammsugare</h4>

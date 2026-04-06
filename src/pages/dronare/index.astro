@@ -1,0 +1,315 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import FAQ from '../../components/FAQ.astro';
+import StickyCTA from '../../components/StickyCTA.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const products = [
+  {
+    rank: 1,
+    name: 'DJI Mini 5 Pro',
+    image: '/images/dji-mini-5-pro.webp',
+    price: 'ca 9 499 kr',
+    rating: 4.9,
+    badge: 'Bäst i test 2026',
+    pros: [
+      '1-tums sensor — 50 MP, 4K/120 fps',
+      'Väger under 250 g — C0-klass, enklare regler',
+      'Omnidirektionell hinderdetektering',
+      'ActiveTrack 360° och avancerade flyglägen',
+      'Upp till 36 min flygtid',
+    ],
+    cons: [
+      'Dyrare än Mini 4 Pro',
+      'Ny modell — färre oberoende tester ännu',
+    ],
+    ctaText: 'Se pris på DJI Mini 5 Pro',
+    ctaUrl: 'https://dronarbutiken.se/products/dji-mini-5-pro',
+    dataProduct: 'DJI Mini 5 Pro',
+    reviewUrl: '/dji-mini-5-pro/',
+  },
+  {
+    rank: 2,
+    name: 'DJI Air 3S',
+    image: '/images/dji-air-3s.webp',
+    price: 'ca 13 199 kr',
+    rating: 4.7,
+    badge: 'Bäst bildkvalitet',
+    pros: [
+      'Dubbla kameror — 1-tums vidvinkel + 70 mm tele',
+      '4K HDR och 14 steg dynamiskt omfång',
+      '45 min flygtid',
+      '42 GB internlagring',
+    ],
+    cons: [
+      'Väger 724 g — C1, kräver drönarkort A1/A3',
+      'Dyrare än Mini-serien',
+    ],
+    ctaText: 'Se pris på DJI Air 3S',
+    ctaUrl: 'https://dronarbutiken.se/collections/dji-air-3',
+    dataProduct: 'DJI Air 3S',
+    reviewUrl: '/dji-air-3s/',
+  },
+  {
+    rank: 3,
+    name: 'DJI Mini 4 Pro',
+    image: '/images/dji-mini-4-pro.webp',
+    price: 'ca 9 699 kr',
+    rating: 4.6,
+    badge: 'Prisvärd 4K',
+    pros: [
+      '4K/60 fps med HDR',
+      'Under 250 g — C0-klass',
+      'Hinderdetektering åt alla håll',
+      'Bra pris för prestandan',
+    ],
+    cons: [
+      'Ersatt av Mini 5 Pro',
+      '1/1.3-tums sensor (ej 1-tums)',
+    ],
+    ctaText: 'Se pris på DJI Mini 4 Pro',
+    ctaUrl: 'https://dronarbutiken.se/products/dji-mini-4-pro-dji-rc-2',
+    dataProduct: 'DJI Mini 4 Pro',
+  },
+  {
+    rank: 4,
+    name: 'DJI Mini 3',
+    image: '/images/dji-mini-3.webp',
+    price: 'ca 4 599 kr',
+    rating: 4.2,
+    badge: 'Bäst budget',
+    pros: [
+      'Lägsta pris i DJI Mini-serien',
+      'Under 250 g — inga registreringskrav',
+      'Enkel att flyga för nybörjare',
+      'True Vertical Shooting för sociala medier',
+    ],
+    cons: [
+      'Saknar hinderdetektering framåt/bakåt',
+      'Sämre kamera än Mini 4 Pro / Mini 5 Pro',
+    ],
+    ctaText: 'Se pris på DJI Mini 3',
+    ctaUrl: 'https://dronarbutiken.se/products/dji-mini-3-rc-n1',
+    dataProduct: 'DJI Mini 3',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Behöver man drönarkort för att flyga drönare i Sverige?',
+    answer: 'Det beror på drönarens vikt och hur du flyger. Drönare under 250 g (C0-klass, t.ex. DJI Mini 5 Pro och Mini 4 Pro) kräver i de flesta fall inget drönarkort för grundläggande hobbyflygning. Drönare mellan 250 g och 900 g (C1-klass, t.ex. DJI Air 3S) kräver A1/A3-kompetensbevis som du tar gratis via EASAs webbutbildning. Alla drönare 250 g+ kräver operatörsregistrering hos Transportstyrelsen (190 kr engång + 250 kr/år).',
+  },
+  {
+    question: 'Vad är skillnaden mellan DJI Mini 5 Pro och DJI Mini 4 Pro?',
+    answer: 'DJI Mini 5 Pro (2025) är den nyare modellen med en uppgraderad 1-tums sensor (50 MP) mot Mini 4 Pros 1/1.3-tums sensor. Mini 5 Pro filmar i 4K upp till 120 fps mot Mini 4 Pros 4K/60 fps. Båda väger under 250 g och har omnidirektionell hinderdetektering. Mini 5 Pro kostar ca 9 499 kr och Mini 4 Pro ca 9 699 kr — i nuläget liknande pris. Välj Mini 5 Pro om du prioriterar bästa möjliga bildkvalitet.',
+  },
+  {
+    question: 'Vilken drönare passar bäst för nybörjare?',
+    answer: 'DJI Mini 3 är det bästa valet för nybörjare — lägst pris, enkel att flyga, väger under 250 g och kräver inga speciella tillstånd för hobbyflygning. Vill du ha bättre kamera direkt är DJI Mini 4 Pro eller Mini 5 Pro naturliga steg upp. Undvik tyngre modeller som DJI Air 3S tills du fått grundläggande flygkänsla.',
+  },
+  {
+    question: 'Hur länge håller batteriet på en drönare?',
+    answer: 'Flygtid varierar kraftigt per modell. DJI Mini 5 Pro ger upp till 36 minuter, DJI Mini 4 Pro upp till 34 minuter och DJI Air 3S upp till 45 minuter under idealiska förhållanden. I praktiken räkna med 70–80% av angiven tid, särskilt i vind eller kyla. Med Fly More Combo-paket får du extra batterier och förlänger den effektiva flygtiden markant.',
+  },
+  {
+    question: 'Var får man flyga drönare i Sverige?',
+    answer: 'Grundregeln är att flyga utanför kontrollerade luftrum, på betryggande avstånd från människor och bebyggelse, och under 120 m höjd. Kontrollera alltid LFVs drönarkarta (dronechart.lfv.se) innan du flyger — kartan visar flygförbudszoner runt flygplatser, naturreservat och känsliga områden. I städer och tätorter gäller strängare regler, och inom 5 km från en flygplats krävs normalt CTOT-tillstånd.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": { "@type": "Answer", "text": item.answer },
+}));
+
+const breadcrumbs = [{ label: 'Drönare' }];
+---
+
+<BaseLayout
+  title="Bästa Drönaren 2026 — Test och Jämförelse | Robotjakt"
+  description="Vi testar och jämför drönare för den svenska marknaden. Hitta bästa drönaren 2026 — DJI Mini 5 Pro, Air 3S, Mini 4 Pro och mer. Uppdaterat april 2026."
+  ogImage="/images/dji-mini-5-pro.webp"
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary via-primary to-primary-dark text-white py-8 md:py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={breadcrumbs} light={true} />
+      <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3 leading-tight mt-2">
+        Bästa Drönaren 2026
+      </h1>
+      <p class="text-white/80 text-lg max-w-2xl mb-2">
+        Vi jämför DJI Mini 5 Pro, Air 3S, Mini 4 Pro och fler modeller. Uppdaterat april 2026.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main content -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <AffiliateDisclaimer />
+
+    <!-- Trust signals -->
+    <div class="flex flex-wrap gap-3 text-sm text-text-light mb-6">
+      <span class="flex items-center gap-1.5">
+        <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        4 drönare testade
+      </span>
+      <span class="flex items-center gap-1.5">
+        <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        Senast uppdaterad april 2026
+      </span>
+      <span class="flex items-center gap-1.5">
+        <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        Priser kontrollerade mot Drönarbutiken
+      </span>
+    </div>
+
+    <!-- Quick comparison table -->
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse</h2>
+      <!-- Mobile: kort -->
+      <div class="md:hidden space-y-3">
+        {[
+          { name: 'DJI Mini 5 Pro', vikt: '< 250 g', sensor: '1-tums 50 MP', flygtid: '36 min', pris: '9 499 kr', kort: 'C0' },
+          { name: 'DJI Air 3S', vikt: '724 g', sensor: '1-tums + tele', flygtid: '45 min', pris: '13 199 kr', kort: 'C1' },
+          { name: 'DJI Mini 4 Pro', vikt: '< 250 g', sensor: '1/1.3-tums', flygtid: '34 min', pris: '9 699 kr', kort: 'C0' },
+          { name: 'DJI Mini 3', vikt: '< 250 g', sensor: '1/1.7-tums', flygtid: '38 min', pris: '4 599 kr', kort: 'C0' },
+        ].map(row => (
+          <div class="bg-white rounded-xl border border-border p-4 text-sm">
+            <div class="font-semibold text-text mb-2">{row.name}</div>
+            <div class="grid grid-cols-2 gap-1 text-text-light">
+              <span>Vikt: {row.vikt}</span>
+              <span>Pris: {row.pris}</span>
+              <span>Sensor: {row.sensor}</span>
+              <span>Flygtid: {row.flygtid}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+      <!-- Desktop: tabell -->
+      <div class="hidden md:block bg-white rounded-xl border border-border overflow-hidden">
+        <table class="w-full text-sm">
+          <thead class="bg-bg-alt">
+            <tr>
+              <th class="px-4 py-3 text-left font-semibold text-text">Modell</th>
+              <th class="px-4 py-3 text-left font-semibold text-text">Vikt / klass</th>
+              <th class="px-4 py-3 text-left font-semibold text-text">Kamera</th>
+              <th class="px-4 py-3 text-left font-semibold text-text">Flygtid</th>
+              <th class="px-4 py-3 text-left font-semibold text-text">Pris</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr class="bg-winner/5">
+              <td class="px-4 py-3 font-medium text-text">DJI Mini 5 Pro <span class="ml-1 text-xs bg-winner text-white px-1.5 py-0.5 rounded">Bäst 2026</span></td>
+              <td class="px-4 py-3 text-text-light">&lt; 250 g / C0</td>
+              <td class="px-4 py-3 text-text-light">1-tums, 50 MP, 4K/120fps</td>
+              <td class="px-4 py-3 text-text-light">36 min</td>
+              <td class="px-4 py-3 font-semibold text-text">9 499 kr</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">DJI Air 3S</td>
+              <td class="px-4 py-3 text-text-light">724 g / C1</td>
+              <td class="px-4 py-3 text-text-light">1-tums + 70 mm tele</td>
+              <td class="px-4 py-3 text-text-light">45 min</td>
+              <td class="px-4 py-3 font-semibold text-text">13 199 kr</td>
+            </tr>
+            <tr class="bg-bg-alt/50">
+              <td class="px-4 py-3 font-medium text-text">DJI Mini 4 Pro</td>
+              <td class="px-4 py-3 text-text-light">&lt; 250 g / C0</td>
+              <td class="px-4 py-3 text-text-light">1/1.3-tums, 4K/60fps</td>
+              <td class="px-4 py-3 text-text-light">34 min</td>
+              <td class="px-4 py-3 font-semibold text-text">9 699 kr</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">DJI Mini 3</td>
+              <td class="px-4 py-3 text-text-light">&lt; 250 g / C0</td>
+              <td class="px-4 py-3 text-text-light">1/1.7-tums, 4K/30fps</td>
+              <td class="px-4 py-3 text-text-light">38 min</td>
+              <td class="px-4 py-3 font-semibold text-text">4 599 kr</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Product cards -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-6">Topplista: Bästa drönaren 2026</h2>
+      <div class="space-y-6">
+        {products.map((product) => <ProductCard {...product} />)}
+      </div>
+    </section>
+
+    <!-- Köpguide -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-6">Köpguide: Hur väljer du rätt drönare?</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vikten avgör reglerna</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Det viktigaste valet du gör när du köper drönare är om den väger under eller över 250 gram. Drönare under 250 g klassas som C0 i EU-regelverket och kräver inte drönarkort för grundläggande hobbyflygning. DJI Mini-serien (Mini 3, Mini 4 Pro, Mini 5 Pro) är alla designade för att hålla sig under den gränsen.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Drönare 250 g och uppåt — som DJI Air 3S på 724 g — kräver att du tar A1/A3-kompetensbevis via EASAs gratisutbildning. Det tar ett par timmar och är ett enkelt prov online. Du måste också registrera dig som operatör hos Transportstyrelsen (190 kr engång + 250 kr/år).
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vilken kamera behöver du?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        För hobbyflygning, resor och innehåll till sociala medier räcker DJI Mini 5 Pro eller Mini 4 Pro helt utmärkt. Deras kameror ger skarp 4K-video och bilder som ser professionella ut.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Vill du ta cinematiska bilder med djup, variera mellan vidvinkel och tele, eller filma HDR-video i svårt ljus — välj DJI Air 3S. Den har en 1-tums sensor i vidvinkelkameran och en separat 70 mm telekamera, vilket öppnar upp filmberättande på en annan nivå.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Fly More Combo — värt det?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Fly More Combo inkluderar normalt tre batterier, en laddningshubb och en väska. Om du planerar att flyga regelbundet är det klart värt merkostnaden. Tre batterier ger dig 90–100 minuters total flygtid mot 36 minuter med ett batteri. Laddningshubben laddar alla tre batterier i sekvens utan att du behöver koppla om.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Kontrollenheter — RC-N vs RC</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        DJI säljer sina drönare med två typer av kontrollenheter. RC-N (eller RC-N3) är billigare och saknar inbyggd skärm — du kopplar din smartphone. DJI RC eller RC 2 har en inbyggd ljusstark skärm som fungerar i direkt solljus utan att du behöver en telefon. RC-varianten kostar mer men ger bättre användarupplevelse utomhus.
+      </p>
+    </section>
+
+    <!-- Internal links -->
+    <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+      <h2 class="font-heading text-lg font-bold text-text mb-4">Mer om drönare</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/dronare-for-nyborjare/" class="text-accent hover:underline">Bästa drönare för nybörjare 2026 — enkel köpguide</a></li>
+        <li><a href="/dronare-med-kamera/" class="text-accent hover:underline">Bästa drönare med kamera 2026 — för foto och film</a></li>
+        <li><a href="/dji-mini-5-pro/" class="text-accent hover:underline">DJI Mini 5 Pro recension — fullständigt test</a></li>
+        <li><a href="/dji-air-3s/" class="text-accent hover:underline">DJI Air 3S recension — fullständigt test</a></li>
+      </ul>
+    </section>
+
+    <FAQ items={faqItems} />
+  </div>
+
+  <StickyCTA
+    text="Se DJI Mini 5 Pro"
+    url="https://dronarbutiken.se/products/dji-mini-5-pro"
+    productName="DJI Mini 5 Pro"
+  />
+</BaseLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqSchema,
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Bästa drönare 2026",
+  "description": "Topplista över de bästa drönarna för den svenska marknaden 2026",
+  "numberOfItems": products.length,
+  "itemListElement": products.map((p, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": p.name,
+    "url": `https://robotjakt.se${p.reviewUrl || '/dronare/'}`,
+  })),
+})} />

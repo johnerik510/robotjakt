@@ -1,0 +1,184 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const products = [
+  {
+    rank: 1,
+    name: 'DJI Air 3S',
+    image: '/images/dji-air-3s.webp',
+    price: 'ca 13 199 kr',
+    rating: 4.8,
+    badge: 'Bäst kamera 2026',
+    pros: [
+      'Dubbla kameror — 1-tums vidvinkel + 70 mm tele',
+      '4K HDR, 14 steg dynamiskt omfång',
+      '45 min flygtid — längst i klassen',
+      '42 GB internlagring',
+      'Nightscape hinderdetektering — säker i mörker',
+    ],
+    cons: [
+      '724 g — C1-klass, kräver drönarkort A1/A3',
+      'Högt pris',
+    ],
+    ctaText: 'Se pris på DJI Air 3S',
+    ctaUrl: 'https://dronarbutiken.se/collections/dji-air-3',
+    dataProduct: 'DJI Air 3S',
+    reviewUrl: '/dji-air-3s/',
+  },
+  {
+    rank: 2,
+    name: 'DJI Mini 5 Pro',
+    image: '/images/dji-mini-5-pro.webp',
+    price: 'ca 9 499 kr',
+    rating: 4.7,
+    badge: 'Bäst kamera under 250 g',
+    pros: [
+      '1-tums sensor — 50 MP och 4K/120 fps',
+      'Under 250 g — C0-klass, enklare regler',
+      'Omnidirektionell hinderdetektering',
+      'Bästa kameran i Mini-serien',
+    ],
+    cons: [
+      'Ingen telekamera',
+      'Ny modell — begränsad testdata',
+    ],
+    ctaText: 'Se pris på DJI Mini 5 Pro',
+    ctaUrl: 'https://dronarbutiken.se/products/dji-mini-5-pro',
+    dataProduct: 'DJI Mini 5 Pro',
+    reviewUrl: '/dji-mini-5-pro/',
+  },
+  {
+    rank: 3,
+    name: 'DJI Mini 4 Pro',
+    image: '/images/dji-mini-4-pro.webp',
+    price: 'ca 9 699 kr',
+    rating: 4.5,
+    badge: 'Prisvärd 4K',
+    pros: [
+      'Bra 4K/60fps-kamera',
+      'Under 250 g — inga tillståndskrav',
+      'Hinderdetektering åt alla håll',
+    ],
+    cons: [
+      'Äldre sensor än Mini 5 Pro',
+      'Ny modell gör den lite daterad',
+    ],
+    ctaText: 'Se pris på DJI Mini 4 Pro',
+    ctaUrl: 'https://dronarbutiken.se/products/dji-mini-4-pro-dji-rc-2',
+    dataProduct: 'DJI Mini 4 Pro',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Vilken drönare ger bäst bildkvalitet 2026?',
+    answer: 'DJI Air 3S ger den bästa bildkvaliteten av konsumentdrönarna 2026. Den kombinerar en 1-tums vidvinkelkamera (50 MP) med en 70 mm telekamera (48 MP), filmar i 4K HDR med 14 steg dynamiskt omfång och har 42 GB internlagring. Vill du ha bästa kamera under 250 g — välj DJI Mini 5 Pro med sin 1-tums sensor.',
+  },
+  {
+    question: 'Vad är skillnaden på 1-tums och 1/1.3-tums sensor i drönare?',
+    answer: 'En 1-tums sensor är fysiskt större och samlar in mer ljus, vilket ger bättre bilder i dåligt ljus, mer naturlig bakgrundsoskärpa (bokeh) och bättre dynamiskt omfång. DJI Air 3S och Mini 5 Pro har 1-tums sensorer. Mini 4 Pro har en 1/1.3-tums sensor som är bra men inte lika stark i svårt ljus.',
+  },
+  {
+    question: 'Behöver man drönarkort för att filma med drönare i Sverige?',
+    answer: 'Det beror på drönarens vikt. Drönare under 250 g som DJI Mini 5 Pro kräver inget drönarkort för hobbyflygning. DJI Air 3S på 724 g kräver A1/A3-kompetensbevis för kommersiell fotografering och i tätbefolkade områden. Kommersiell användning (betalt uppdrag) kräver normalt mer dokumentation oavsett vikt.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": { "@type": "Answer", "text": item.answer },
+}));
+
+const breadcrumbs = [
+  { label: 'Drönare', href: '/dronare/' },
+  { label: 'Med kamera' },
+];
+---
+
+<BaseLayout
+  title="Bästa Drönare med Kamera 2026 — För Foto och Film | Robotjakt"
+  description="Hitta drönaren med bäst kamera 2026. Vi rekommenderar DJI Air 3S och DJI Mini 5 Pro — 1-tums sensorer, 4K HDR och professionell bildkvalitet. Uppdaterat april 2026."
+  ogImage="/images/dji-air-3s.webp"
+>
+  <section class="bg-gradient-to-br from-primary via-primary to-primary-dark text-white py-8 md:py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={breadcrumbs} light={true} />
+      <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3 leading-tight mt-2">
+        Bästa Drönare med Kamera 2026
+      </h1>
+      <p class="text-white/80 text-lg max-w-2xl">
+        1-tums sensorer, 4K HDR och professionell bildkvalitet. Uppdaterat april 2026.
+      </p>
+    </div>
+  </section>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <AffiliateDisclaimer />
+
+    <div class="flex flex-wrap gap-3 text-sm text-text-light mb-6">
+      <span class="flex items-center gap-1.5">
+        <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        Senast uppdaterad april 2026
+      </span>
+    </div>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Bästa drönare med kamera 2026</h2>
+      <p class="text-text-light leading-relaxed mb-6">
+        Alla moderna DJI-drönare har bra kameror, men skillnaden i sensorstorlek och kameradesign är stor. En 1-tums sensor ger märkbar skillnad i bildkvalitet jämfört med mindre sensorer — framförallt i varierande ljus och för video med HDR.
+      </p>
+      <div class="space-y-6">
+        {products.map((product) => <ProductCard {...product} />)}
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vad ska du tänka på när du väljer kameradrönare?</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Sensorstorlek</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Sensorstorlek är den viktigaste faktorn för bildkvalitet. 1-tums sensor (DJI Air 3S, DJI Mini 5 Pro) ger klart bättre resultat i dåligt ljus och mer naturlig bakgrundsoskärpa. 1/1.3-tums (DJI Mini 4 Pro) är bra men märkbart svagare när ljuset sviktar.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">En eller två kameror?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        DJI Air 3S har dubbla kameror — vidvinkel och 70 mm tele. Det låter dig variera berättandet utan att flyga om tagningen. DJI Mini 5 Pro och Mini 4 Pro har bara vidvinkelkamera men kompenserar med hög bildkvalitet till lägre pris och vikt.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Video vs foto</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Prioriterar du video framför stillbilder — välj DJI Air 3S för dess HDR, dynamiskt omfång och möjlighet att filma i D-Log M för färggradering i post. Vill du primärt ta luftbilder till sociala medier räcker DJI Mini 5 Pro mer än väl.
+      </p>
+    </section>
+
+    <section class="mb-10 bg-bg-alt rounded-xl border border-border p-5">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Fler drönare-guider</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/dronare/" class="text-accent hover:underline">Bästa drönaren 2026 — komplett topplista</a></li>
+        <li><a href="/dronare-for-nyborjare/" class="text-accent hover:underline">Bästa drönare för nybörjare</a></li>
+        <li><a href="/dji-air-3s/" class="text-accent hover:underline">DJI Air 3S fullständig recension</a></li>
+        <li><a href="/dji-mini-5-pro/" class="text-accent hover:underline">DJI Mini 5 Pro fullständig recension</a></li>
+      </ul>
+    </section>
+
+    <FAQ items={faqItems} />
+  </div>
+
+  <StickyCTA
+    text="Se DJI Air 3S — bäst kamera"
+    url="https://dronarbutiken.se/collections/dji-air-3"
+    productName="DJI Air 3S"
+  />
+</BaseLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqSchema,
+})} />

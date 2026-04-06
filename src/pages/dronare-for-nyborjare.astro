@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const products = [
+  {
+    rank: 1,
+    name: 'DJI Mini 3',
+    image: '/images/dji-mini-3.webp',
+    price: 'ca 4 599 kr',
+    rating: 4.5,
+    badge: 'Bäst för nybörjare',
+    pros: [
+      'Lägst pris i DJI Mini-serien',
+      'Under 250 g — inga registreringskrav',
+      'Enkel att lära sig flyga',
+      'Automatiska flyglägen (QuickShots)',
+      'True Vertical Shooting för Instagram/TikTok',
+    ],
+    cons: [
+      'Saknar hinderdetektering framåt/bakåt',
+      'Äldre modell',
+    ],
+    ctaText: 'Se pris på DJI Mini 3',
+    ctaUrl: 'https://dronarbutiken.se/products/dji-mini-3-rc-n1',
+    dataProduct: 'DJI Mini 3',
+  },
+  {
+    rank: 2,
+    name: 'DJI Mini 4 Pro',
+    image: '/images/dji-mini-4-pro.webp',
+    price: 'ca 9 699 kr',
+    rating: 4.6,
+    badge: 'Bäst uppgradering',
+    pros: [
+      'Omnidirektionell hinderdetektering',
+      'Skarpare kamera — 4K/60fps',
+      'Under 250 g — enklare regler',
+      'ActiveTrack 360° — följer ditt motiv',
+    ],
+    cons: [
+      'Dyrare än Mini 3',
+      'Ersatt av Mini 5 Pro men fortfarande relevant',
+    ],
+    ctaText: 'Se pris på DJI Mini 4 Pro',
+    ctaUrl: 'https://dronarbutiken.se/products/dji-mini-4-pro-dji-rc-2',
+    dataProduct: 'DJI Mini 4 Pro',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Behöver nybörjare drönarkort i Sverige?',
+    answer: 'Nej — inte för DJI Mini 3 eller Mini 4 Pro som väger under 250 g. Du behöver inte drönarkort för hobbyflygning med C0-klassade drönare. Du måste däremot läsa på om grundläggande flygregler: håll drönaren synlig, flyg inte nära flygplatser, respektera integritetslagar och fotografera inte på privat mark utan tillstånd.',
+  },
+  {
+    question: 'Vad är det svåraste med att lära sig flyga drönare?',
+    answer: 'Det svåraste är vanligtvis orientering — att hålla reda på vilket håll drönaren är vänd när den flyger mot dig. DJI:s automatiska återvändarfunktion (Return to Home) är ett viktigt säkerhetsnät som nybörjare bör lära sig aktivera. Börja alltid med att flyga lågt och nära dig tills du är trygg med styrningen.',
+  },
+  {
+    question: 'Är DJI det bästa märket för nybörjare?',
+    answer: 'Ja, för nybörjare som vill ha en pålitlig drönare med bra kamera och säkerhetsfunktioner är DJI det självklara valet. Deras DJI Fly-app är väldesignad och guidar dig igenom setup och grundläggande inlärning. Billigare okända märken från Kina saknar ofta de säkerhetsfunktioner som gör flygning trygg för en nybörjare.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": { "@type": "Answer", "text": item.answer },
+}));
+
+const breadcrumbs = [
+  { label: 'Drönare', href: '/dronare/' },
+  { label: 'För nybörjare' },
+];
+---
+
+<BaseLayout
+  title="Bästa Drönare för Nybörjare 2026 — Enkel Köpguide | Robotjakt"
+  description="Hitta den bästa nybörjardrönaren 2026. Vi rekommenderar DJI Mini 3 och Mini 4 Pro — enkla att flyga, under 250 g, inga tillståndskrav. Köpguide för svenska konsumenter."
+  ogImage="/images/dji-mini-3.webp"
+>
+  <section class="bg-gradient-to-br from-primary via-primary to-primary-dark text-white py-8 md:py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={breadcrumbs} light={true} />
+      <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3 leading-tight mt-2">
+        Bästa Drönare för Nybörjare 2026
+      </h1>
+      <p class="text-white/80 text-lg max-w-2xl">
+        Enkla att flyga, under 250 g och utan krav på drönarkort. Uppdaterat april 2026.
+      </p>
+    </div>
+  </section>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <AffiliateDisclaimer />
+
+    <div class="flex flex-wrap gap-3 text-sm text-text-light mb-6">
+      <span class="flex items-center gap-1.5">
+        <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        Senast uppdaterad april 2026
+      </span>
+    </div>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Bästa nybörjardrönare 2026</h2>
+      <p class="text-text-light leading-relaxed mb-6">
+        Som nybörjare ska du välja en drönare under 250 gram — det förenklar regelverket kraftigt. Du slipper drönarkort och behöver inte registrera dig för hobbyflygning. DJI Mini-serien är gjord exakt för det här.
+      </p>
+      <div class="space-y-6">
+        {products.map((product) => <ProductCard {...product} />)}
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Tips för din första flygning</h2>
+
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">1. Välj en öppen plats utan folk</h3>
+          <p class="text-text-light text-sm leading-relaxed">En fotbollsplan, ett fält eller en öppen park är utmärkt för första flygningarna. Undvik trädgårdar och trånga utrymmen tills du är trygg med styrningen.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">2. Börja med att hovra på låg höjd</h3>
+          <p class="text-text-light text-sm leading-relaxed">Lyft bara 1–2 meter och håll drönaren stilla. Lär dig hur den reagerar på styrpinnarna innan du flyger högt eller snabbt.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">3. Aktivera Return to Home direkt</h3>
+          <p class="text-text-light text-sm leading-relaxed">Ställ in Return to Home-höjden i appen innan du flyger. Om du tappar signal eller batteriet är lågt flyger drönaren automatiskt hem.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">4. Kontrollera LFV:s drönarkarta</h3>
+          <p class="text-text-light text-sm leading-relaxed">Gå alltid till <a href="https://dronechart.lfv.se" class="text-accent hover:underline" rel="noopener noreferrer" target="_blank">dronechart.lfv.se</a> och kontrollera att det är tillåtet att flyga på din valda plats. Flygförbud gäller runt flygplatser, inom naturreservat och på flera andra platser.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10 bg-bg-alt rounded-xl border border-border p-5">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Fler guider om drönare</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/dronare/" class="text-accent hover:underline">Bästa drönaren 2026 — komplett topplista</a></li>
+        <li><a href="/dronare-med-kamera/" class="text-accent hover:underline">Bästa drönare med kamera — för foto och film</a></li>
+        <li><a href="/dji-mini-5-pro/" class="text-accent hover:underline">DJI Mini 5 Pro recension</a></li>
+      </ul>
+    </section>
+
+    <FAQ items={faqItems} />
+  </div>
+
+  <StickyCTA
+    text="Se DJI Mini 3 — bäst för nybörjare"
+    url="https://dronarbutiken.se/products/dji-mini-3-rc-n1"
+    productName="DJI Mini 3"
+  />
+</BaseLayout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqSchema,
+})} />

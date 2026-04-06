@@ -1,4 +1,12 @@
 ---
+const dronareItems = [
+  { label: 'Topplista', href: '/dronare/' },
+  { label: 'För nybörjare', href: '/dronare-for-nyborjare/' },
+  { label: 'Med kamera', href: '/dronare-med-kamera/' },
+  { label: 'DJI Mini 5 Pro', href: '/dji-mini-5-pro/' },
+  { label: 'DJI Air 3S', href: '/dji-air-3s/' },
+];
+
 const dammsugareItems = [
   { label: 'Topplista', href: '/' },
   { label: 'Köpguide', href: '/kopguide-robotdammsugare/' },
@@ -66,6 +74,24 @@ const reservdelarItems = [
         Robotjakt
       </a>
       <nav class="hidden md:flex items-center space-x-2" aria-label="Huvudnavigering">
+        <!-- Drönare dropdown -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light" aria-haspopup="true">
+            Drönare
+            <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="absolute left-0 top-full pt-1 hidden group-hover:block z-50 min-w-[180px]">
+            <div class="bg-white rounded-lg shadow-lg border border-gray-100 py-1">
+              {dronareItems.map((item) => (
+                <a href={item.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
         <!-- Robotdammsugare dropdown -->
         <div class="relative group">
           <button class="flex items-center gap-1 text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light" aria-haspopup="true">
@@ -147,7 +173,13 @@ const reservdelarItems = [
   </div>
   <nav id="mobile-menu" class="hidden md:hidden bg-primary-dark border-t border-primary-light" aria-label="Mobilnavigering">
     <div class="px-4 py-3 space-y-1">
-      <p class="text-xs font-bold uppercase tracking-wider text-gray-400 px-2 pt-2 pb-1">Robotdammsugare</p>
+      <p class="text-xs font-bold uppercase tracking-wider text-gray-400 px-2 pt-2 pb-1">Drönare</p>
+      {dronareItems.map((item) => (
+        <a href={item.href} class="block px-2 py-2 text-sm text-gray-200 hover:text-white transition-colors rounded-md hover:bg-primary-light">
+          {item.label}
+        </a>
+      ))}
+      <p class="text-xs font-bold uppercase tracking-wider text-gray-400 px-2 pt-3 pb-1">Robotdammsugare</p>
       {dammsugareItems.map((item) => (
         <a href={item.href} class="block px-2 py-2 text-sm text-gray-200 hover:text-white transition-colors rounded-md hover:bg-primary-light">
           {item.label}

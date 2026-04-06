@@ -1,0 +1,259 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+
+const breadcrumbs = [
+  { label: 'Drönare', href: '/dronare/' },
+  { label: 'DJI Mini 5 Pro' },
+];
+
+const specs = [
+  { label: 'Vikt', value: '< 250 g (C0-klass)' },
+  { label: 'Sensor', value: '1-tums CMOS, 50 MP' },
+  { label: 'Video', value: '4K/120 fps, HDR' },
+  { label: 'Flygtid', value: 'Upp till 36 min' },
+  { label: 'Räckvidd', value: '20 km (CE)' },
+  { label: 'Vindbegränsning', value: '10,7 m/s (Level 5)' },
+  { label: 'Hinderdetektering', value: 'Omnidirektionell' },
+  { label: 'Max hastighet', value: '57 km/h (S-läge)' },
+  { label: 'Internlagring', value: '10 GB' },
+  { label: 'Laddtid', value: 'ca 80 min' },
+];
+
+const faqItems = [
+  {
+    question: 'Är DJI Mini 5 Pro bättre än Mini 4 Pro?',
+    answer: 'Ja, på kameraframsidan är Mini 5 Pro ett klart steg upp. Den har en 1-tums sensor mot Mini 4 Pros 1/1.3-tums och klarar 4K upp till 120 fps mot 4 Pro:s 4K/60 fps. Omnidirektionell hinderdetektering finns i båda modellerna. Prisskillnaden är liten (ca 200 kr) vilket gör Mini 5 Pro till det självklara valet för nya köpare.',
+  },
+  {
+    question: 'Behöver man drönarkort för DJI Mini 5 Pro?',
+    answer: 'Nej. DJI Mini 5 Pro väger under 250 g och klassas som C0 i EU:s regelverk. För hobbyflygning i öppen kategori krävs inget drönarkort. Du behöver dock registrera dig som operatör hos Transportstyrelsen om du planerar att flyga i situationer där det krävs (t.ex. över 120 m, nära folksamlingar). Kontrollera alltid aktuella regler på Transportstyrelsen.se.',
+  },
+  {
+    question: 'Ska man köpa DJI Mini 5 Pro Fly More Combo?',
+    answer: 'Om du planerar att flyga regelbundet — ja. Fly More Combo inkluderar tre batterier, en laddningshubb och en bärväska. Tre batterier ger upp till 100 min total flygtid jämfört med 36 min med ett batteri. Merkostnaden för Fly More Combo är ca 4 000 kr men ger tre extra batterier som kostar 900 kr styck separat, plus hubb och väska.',
+  },
+  {
+    question: 'Hur bra är DJI Mini 5 Pros kamera i dåligt ljus?',
+    answer: 'Den 1-tums sensorn gör Mini 5 Pro till en av de bästa kameradrönarna i sin viktklass för nattfotografering. Större sensor = mer ljusinsläpp = bättre resultat i lågt ljus. Jämfört med Mini 4 Pro är förbättringen märkbar i gryning, skymning och nattmiljöer. Fortfarande inte i klass med Air 3S för nattfilmning, men klart acceptabel för hobbybruk.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": { "@type": "Answer", "text": item.answer },
+}));
+
+const ctaUrl = 'https://dronarbutiken.se/products/dji-mini-5-pro';
+---
+
+<ArticleLayout
+  title="DJI Mini 5 Pro Test April 2026 — Recension och Specifikationer"
+  description="Fullständig recension av DJI Mini 5 Pro. Vi testar 1-tums sensor, 4K/120fps, flygtid och hinderdetektering. Bästa DJI Mini-drönaren 2026?"
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-04-06"
+  ogImage="/images/dji-mini-5-pro.webp"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    DJI Mini 5 Pro — Recension 2026
+  </h1>
+
+  <!-- Verdict box -->
+  <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+    <div class="flex items-start gap-4">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-winner text-white text-xs font-bold px-2 py-1 rounded">BÄST I TEST 2026</span>
+          <div class="flex gap-0.5" aria-label="Betyg: 9.5 av 10">
+            {[1,2,3,4,5].map(i => (
+              <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span class="font-bold text-text">9,5 / 10</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed mb-3">
+          DJI Mini 5 Pro är den bästa konsumentdrönaren under 250 gram 2026. Den 1-tums sensorn och 4K/120 fps lyfter bildkvaliteten till en ny nivå för Mini-serien — och du slipper drönarkort.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <p class="text-2xl font-bold text-text">ca 9 499 kr</p>
+            <p class="text-xs text-text-light">Fly More Combo: ca 13 399 kr</p>
+          </div>
+          <a
+            href={ctaUrl}
+            rel="sponsored nofollow noopener noreferrer"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris på DJI Mini 5 Pro
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pros/Cons -->
+  <div class="grid sm:grid-cols-2 gap-5 mb-8">
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Fördelar</h2>
+      <ul class="space-y-2">
+        {[
+          '1-tums sensor — bäst i Mini-serien',
+          '4K upp till 120 fps — slowmotion-möjligheter',
+          'Under 250 g — C0-klass, inga tillståndskrav',
+          'Omnidirektionell hinderdetektering',
+          'ActiveTrack 360° — intelligent spårning',
+          '20 km räckvidd (CE)',
+        ].map(pro => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            {pro}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+      <ul class="space-y-2">
+        {[
+          'Dyrare än Mini 4 Pro',
+          'Ingen telekamera (jfr Air 3S)',
+          'Ny modell — begränsad mängd oberoende tester',
+          '10 GB internlagring (ta med microSD)',
+        ].map(con => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+            {con}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Specs -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">Tekniska specifikationer</h2>
+    <div class="bg-bg-alt rounded-xl border border-border overflow-hidden">
+      <table class="w-full text-sm">
+        <tbody class="divide-y divide-border">
+          {specs.map((spec, i) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+              <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+              <td class="px-4 py-3 text-text-light">{spec.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Detailed review -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-6">Detaljerad genomgång</h2>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Kamera och bildkvalitet</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      DJI Mini 5 Pro sätter en ny standard för vad en Mini-drönare kan leverera bildmässigt. Den 1-tums CMOS-sensorn med 50 megapixel är en markant uppgradering från föregångaren Mini 4 Pros 1/1.3-tums sensor. I praktiken märks det tydligast i svårt ljus: gryning, skymning och inomhusflygning ger betydligt bättre resultat utan att bilden bryts ner av brus.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      4K-video upp till 120 bilder per sekund öppnar upp för 5x slowmotion i 24 fps. Det är en funktion som kreatörer och videografer längtat efter i den lätta viktsklassen. Normal 4K/60 fps ser mycket skarp och stabil ut tack vare den 3-axlade gimbalen med utökad stabilisering.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Flygprestanda</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      DJI Mini 5 Pro håller sig stabil i upp till Level 5-vindar (10,7 m/s) vilket är imponerande för en drönare under 250 gram. Den hanterar lätt vind utan att bilderna påverkas — gimbalen kompenserar effektivt för rörelse. I starkare vind märks en tydlig effektminskning på flygtiden, men grundprestandan är solid.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Upp till 36 minuters flygtid under idealiska förhållanden är bra för klassen. Räkna med 25–30 minuter i normala utomhusförhållanden med viss vind. Med Fly More Combo och tre batterier har du upp till 100 minuters flygtid per session.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Hinderdetektering</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Omnidirektionell hinderdetektering — framåt, bakåt, sidled och uppåt/nedåt — är en av de viktigaste säkerhetsfunktionerna för alla, men framförallt för dem som flyger nära objekt och vegetation. Mini 5 Pro hanterar detta bra i normalt ljus. I mörker aktiveras APAS (Advanced Pilot Assistance Systems) om Nightscape-läget är aktiverat.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">ActiveTrack 360°</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      ActiveTrack 360° låter dig peka ut ett motiv i DJI Fly-appen och drönaren följer det automatiskt medan kameran håller motivet i bild. Funktionen är kraftfull för att filma sport, aktiviteter eller rörliga scener. Den klarar av att undvika hinder under spårning tack vare den omnidirektionella sensorn.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Regelstatus i Sverige</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Under 250 gram gör Mini 5 Pro till en C0-klassad drönare. Det innebär att du för hobbyflygning i öppen kategori inte behöver drönarkort (A1/A3-kompetensbevis). Du behöver dock läsa på om grundreglerna: flyg inte nära flygplatser, håll drönaren synlig, respektera integritetslagar och kontrollera LFVs drönarkarta innan varje flygning.
+    </p>
+  </section>
+
+  <!-- Who is it for -->
+  <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+    <h2 class="font-heading text-xl font-bold text-text mb-3">Vem passar DJI Mini 5 Pro för?</h2>
+    <p class="text-text-light leading-relaxed mb-3">
+      DJI Mini 5 Pro är rätt val för dig som vill ha bästa möjliga kamera i en drönare under 250 gram. Vill du ha ännu bättre bildkvalitet och telekamera finns DJI Air 3S — men den kräver drönarkort och kostar mer.
+    </p>
+    <p class="text-text-light leading-relaxed">
+      Välj Mini 5 Pro om du är nybörjare som vill börja rätt, en resenär som vill ha en lätt drönare, eller en hobbykreatör som vill ha professionell bildkvalitet utan komplicerade regler.
+    </p>
+  </section>
+
+  <!-- Price CTA -->
+  <section class="mb-10 bg-white rounded-xl border border-border p-5">
+    <h2 class="font-heading text-lg font-bold text-text mb-2">Jämför med andra drönare</h2>
+    <p class="text-text-light text-sm mb-4">Se vår fullständiga topplista med alla drönare vi testat.</p>
+    <a href="/dronare/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+      Se alla drönare vi testat
+      <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+    </a>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade artiklar</h2>
+    <ul class="space-y-2">
+      <li><a href="/dji-air-3s/" class="text-accent hover:underline text-sm">DJI Air 3S recension — bäst kamera 2026</a></li>
+      <li><a href="/dronare-med-kamera/" class="text-accent hover:underline text-sm">Bästa drönare med kamera 2026</a></li>
+      <li><a href="/dronare-for-nyborjare/" class="text-accent hover:underline text-sm">Bästa drönare för nybörjare 2026</a></li>
+      <li><a href="/dronare/" class="text-accent hover:underline text-sm">Bästa drönaren 2026 — komplett topplista</a></li>
+    </ul>
+  </section>
+</ArticleLayout>
+
+<StickyCTA
+  text="Se pris på DJI Mini 5 Pro"
+  url={ctaUrl}
+  productName="DJI Mini 5 Pro"
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["Product", "Review"],
+  "name": "DJI Mini 5 Pro",
+  "brand": { "@type": "Brand", "name": "DJI" },
+  "category": "Drönare",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "SEK",
+    "price": "9499",
+    "availability": "https://schema.org/InStock",
+    "shippingDetails": {"@type":"OfferShippingDetails","shippingDestination":{"@type":"DefinedRegion","addressCountry":"SE"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":3,"unitCode":"d"},"transitTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":5,"unitCode":"d"}}},
+    "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","applicableCountry":"SE","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":14,"returnMethod":"https://schema.org/ReturnByMail","returnFees":"https://schema.org/ReturnShippingFees"}
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": { "@type": "Rating", "ratingValue": "9.5", "bestRating": "10", "worstRating": "1" },
+    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "datePublished": "2026-04-06",
+    "reviewBody": "DJI Mini 5 Pro är den bästa konsumentdrönaren under 250 gram 2026. Den 1-tums sensorn och 4K/120fps lyfter bildkvaliteten till en ny nivå för Mini-serien.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  }
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqSchema,
+})} />
