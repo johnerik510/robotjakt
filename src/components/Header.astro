@@ -110,10 +110,10 @@ const reservdelarItems = [
             </div>
           </div>
         </div>
-        <!-- Robotgrasklippare dropdown -->
+        <!-- Robotgräsklippare dropdown -->
         <div class="relative group">
           <button class="flex items-center gap-1 text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light" aria-haspopup="true">
-            Robotgrasklippare
+            Robotgräsklippare
             <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
@@ -154,16 +154,8 @@ const reservdelarItems = [
         <a href="/fonsterputsrobot/" class="text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light">
           Fönsterputsrobot
         </a>
-        <!-- Alla robotar -->
-        <a href="/" class="text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light">
-          Alla robotar
-        </a>
-        <!-- Om oss -->
-        <a href="/om-redaktionen/" class="text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light">
-          Om oss
-        </a>
       </nav>
-      <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-md hover:bg-primary-light transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Oppna meny" aria-expanded="false" aria-controls="mobile-menu">
+      <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-md hover:bg-primary-light transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Öppna meny" aria-expanded="false" aria-controls="mobile-menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
@@ -171,50 +163,103 @@ const reservdelarItems = [
     </div>
   </div>
   </div>
-  <nav id="mobile-menu" class="hidden md:hidden bg-primary-dark border-t border-primary-light" aria-label="Mobilnavigering">
-    <div class="px-4 py-3 space-y-1">
-      <p class="text-xs font-bold uppercase tracking-wider text-gray-400 px-2 pt-2 pb-1">Drönare</p>
-      {dronareItems.map((item) => (
-        <a href={item.href} class="block px-2 py-2 text-sm text-gray-200 hover:text-white transition-colors rounded-md hover:bg-primary-light">
-          {item.label}
-        </a>
-      ))}
-      <p class="text-xs font-bold uppercase tracking-wider text-gray-400 px-2 pt-3 pb-1">Robotdammsugare</p>
-      {dammsugareItems.map((item) => (
-        <a href={item.href} class="block px-2 py-2 text-sm text-gray-200 hover:text-white transition-colors rounded-md hover:bg-primary-light">
-          {item.label}
-        </a>
-      ))}
-      <p class="text-xs font-bold uppercase tracking-wider text-gray-400 px-2 pt-3 pb-1">Robotgrasklippare</p>
-      {grasklippareItems.map((item) => (
-        <a href={item.href} class="block px-2 py-2 text-sm text-gray-200 hover:text-white transition-colors rounded-md hover:bg-primary-light">
-          {item.label}
-        </a>
-      ))}
-      <p class="text-xs font-bold uppercase tracking-wider text-gray-400 px-2 pt-3 pb-1">Reservdelar</p>
-      {reservdelarItems.map((item) => (
-        <a href={item.href} class="block px-2 py-2 text-sm text-gray-200 hover:text-white transition-colors rounded-md hover:bg-primary-light">
-          {item.label}
-        </a>
-      ))}
-      <p class="text-xs font-bold uppercase tracking-wider text-gray-400 px-2 pt-3 pb-1">Ovriga kategorier</p>
-      <a href="/poolrobot/" class="block px-2 py-2 text-sm text-gray-200 hover:text-white transition-colors rounded-md hover:bg-primary-light">Poolrobot</a>
-      <a href="/fonsterputsrobot/" class="block px-2 py-2 text-sm text-gray-200 hover:text-white transition-colors rounded-md hover:bg-primary-light">Fönsterputsrobot</a>
-      <a href="/" class="block px-2 py-2 text-sm text-gray-200 hover:text-white transition-colors rounded-md hover:bg-primary-light">Alla robotar</a>
-      <p class="text-xs font-bold uppercase tracking-wider text-gray-400 px-2 pt-3 pb-1">Om Robotjakt</p>
-      <a href="/om-redaktionen/" class="block px-2 py-2 text-sm text-gray-200 hover:text-white transition-colors rounded-md hover:bg-primary-light">Om redaktionen</a>
-      <a href="/sa-testar-vi/" class="block px-2 py-2 text-sm text-gray-200 hover:text-white transition-colors rounded-md hover:bg-primary-light">Sa testar vi</a>
-      <a href="/redaktionell-policy/" class="block px-2 py-2 text-sm text-gray-200 hover:text-white transition-colors rounded-md hover:bg-primary-light">Redaktionell policy</a>
+  <nav id="mobile-menu" class="hidden md:hidden bg-primary-dark border-t border-primary-light overflow-y-auto max-h-[80vh]" aria-label="Mobilnavigering">
+    <div class="px-4 py-2 divide-y divide-primary-light/30">
+
+      <!-- Drönare accordion -->
+      <div>
+        <button class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-3.5 text-sm font-semibold text-gray-100 hover:text-white" aria-expanded="false">
+          Drönare
+          <svg class="accordion-icon w-4 h-4 opacity-60 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="mobile-accordion-content hidden pb-2 space-y-0.5">
+          {dronareItems.map((item) => (
+            <a href={item.href} class="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-primary-light rounded-md transition-colors">
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Robotdammsugare accordion -->
+      <div>
+        <button class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-3.5 text-sm font-semibold text-gray-100 hover:text-white" aria-expanded="false">
+          Robotdammsugare
+          <svg class="accordion-icon w-4 h-4 opacity-60 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="mobile-accordion-content hidden pb-2 space-y-0.5">
+          {dammsugareItems.map((item) => (
+            <a href={item.href} class="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-primary-light rounded-md transition-colors">
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Robotgräsklippare accordion -->
+      <div>
+        <button class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-3.5 text-sm font-semibold text-gray-100 hover:text-white" aria-expanded="false">
+          Robotgräsklippare
+          <svg class="accordion-icon w-4 h-4 opacity-60 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="mobile-accordion-content hidden pb-2 space-y-0.5">
+          {grasklippareItems.map((item) => (
+            <a href={item.href} class="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-primary-light rounded-md transition-colors">
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Reservdelar accordion -->
+      <div>
+        <button class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-3.5 text-sm font-semibold text-gray-100 hover:text-white" aria-expanded="false">
+          Reservdelar
+          <svg class="accordion-icon w-4 h-4 opacity-60 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="mobile-accordion-content hidden pb-2 space-y-0.5">
+          {reservdelarItems.map((item) => (
+            <a href={item.href} class="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-primary-light rounded-md transition-colors">
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Övriga kategorier (alltid synliga) -->
+      <div class="py-2 space-y-0.5">
+        <a href="/poolrobot/" class="block px-2 py-3 text-sm text-gray-200 hover:text-white hover:bg-primary-light rounded-md transition-colors">Poolrobot</a>
+        <a href="/fonsterputsrobot/" class="block px-2 py-3 text-sm text-gray-200 hover:text-white hover:bg-primary-light rounded-md transition-colors">Fönsterputsrobot</a>
+      </div>
+
+      <!-- Om Robotjakt -->
+      <div class="py-2 space-y-0.5">
+        <a href="/om-redaktionen/" class="block px-2 py-3 text-sm text-gray-400 hover:text-white hover:bg-primary-light rounded-md transition-colors">Om redaktionen</a>
+        <a href="/sa-testar-vi/" class="block px-2 py-3 text-sm text-gray-400 hover:text-white hover:bg-primary-light rounded-md transition-colors">Så testar vi</a>
+      </div>
     </div>
   </nav>
 </header>
 
 <script>
+  // Hamburger toggle
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
   btn?.addEventListener('click', () => {
     menu?.classList.toggle('hidden');
     const expanded = btn.getAttribute('aria-expanded') === 'true';
     btn.setAttribute('aria-expanded', String(!expanded));
+  });
+
+  // Accordion
+  document.querySelectorAll('.mobile-accordion-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const content = btn.nextElementSibling as HTMLElement;
+      const icon = btn.querySelector('.accordion-icon') as HTMLElement;
+      const isOpen = !content.classList.contains('hidden');
+      content.classList.toggle('hidden', isOpen);
+      icon.style.transform = isOpen ? '' : 'rotate(180deg)';
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
   });
 </script>
