@@ -36,7 +36,7 @@ const reservdelarItems = [
 ];
 ---
 
-<header class="sticky top-0 z-50 shadow-lg">
+<header class="sticky top-0 z-50 shadow-lg relative">
   <!-- USP-bar -->
   <div class="bg-accent text-white text-xs font-semibold py-2 px-4">
     <div class="max-w-7xl mx-auto flex items-center justify-center gap-4 sm:gap-8 flex-wrap">
@@ -76,12 +76,12 @@ const reservdelarItems = [
       <nav class="hidden md:flex items-center space-x-2" aria-label="Huvudnavigering">
         <!-- Drönare dropdown -->
         <div class="relative group">
-          <button class="flex items-center gap-1 text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light" aria-haspopup="true">
+          <a href="/dronare/" class="flex items-center gap-1 text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light">
             Drönare
             <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
-          </button>
+          </a>
           <div class="absolute left-0 top-full pt-1 hidden group-hover:block z-50 min-w-[180px]">
             <div class="bg-white rounded-lg shadow-lg border border-gray-100 py-1">
               {dronareItems.map((item) => (
@@ -94,12 +94,12 @@ const reservdelarItems = [
         </div>
         <!-- Robotdammsugare dropdown -->
         <div class="relative group">
-          <button class="flex items-center gap-1 text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light" aria-haspopup="true">
+          <a href="/" class="flex items-center gap-1 text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light">
             Robotdammsugare
             <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
-          </button>
+          </a>
           <div class="absolute left-0 top-full pt-1 hidden group-hover:block z-50 min-w-[180px]">
             <div class="bg-white rounded-lg shadow-lg border border-gray-100 py-1">
               {dammsugareItems.map((item) => (
@@ -112,12 +112,12 @@ const reservdelarItems = [
         </div>
         <!-- Robotgräsklippare dropdown -->
         <div class="relative group">
-          <button class="flex items-center gap-1 text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light" aria-haspopup="true">
+          <a href="/robotgrasklippare/" class="flex items-center gap-1 text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light">
             Robotgräsklippare
             <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
-          </button>
+          </a>
           <div class="absolute left-0 top-full pt-1 hidden group-hover:block z-50 min-w-[180px]">
             <div class="bg-white rounded-lg shadow-lg border border-gray-100 py-1">
               {grasklippareItems.map((item) => (
@@ -130,12 +130,12 @@ const reservdelarItems = [
         </div>
         <!-- Reservdelar dropdown -->
         <div class="relative group">
-          <button class="flex items-center gap-1 text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light" aria-haspopup="true">
+          <a href="/reservdelar/" class="flex items-center gap-1 text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light">
             Reservdelar
             <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
-          </button>
+          </a>
           <div class="absolute left-0 top-full pt-1 hidden group-hover:block z-50 min-w-[220px]">
             <div class="bg-white rounded-lg shadow-lg border border-gray-100 py-1">
               {reservdelarItems.map((item) => (
@@ -163,7 +163,7 @@ const reservdelarItems = [
     </div>
   </div>
   </div>
-  <nav id="mobile-menu" class="hidden md:hidden bg-primary-dark border-t border-primary-light overflow-y-auto max-h-[80vh]" aria-label="Mobilnavigering">
+  <nav id="mobile-menu" class="hidden md:hidden absolute left-0 right-0 z-40 bg-primary-dark border-t border-primary-light shadow-2xl overflow-y-auto max-h-[70vh]" aria-label="Mobilnavigering">
     <div class="px-4 py-2 divide-y divide-primary-light/30">
 
       <!-- Drönare accordion -->
