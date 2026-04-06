@@ -1,4 +1,7 @@
 {
+  "redirects": [
+    { "source": "/:path*", "has": [{ "type": "host", "value": "www.robotjakt.se" }], "destination": "https://robotjakt.se/:path*", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
