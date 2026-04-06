@@ -6,5 +6,12 @@ export default defineConfig({
   site: 'https://robotjakt.se',
   output: 'static',
   vite: { plugins: [tailwindcss()] },
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      filter: (page) =>
+        !page.includes('/404') &&
+        !page.includes('/affiliate-disclaimer') &&
+        !page.includes('/sok'),
+    }),
+  ],
 });
