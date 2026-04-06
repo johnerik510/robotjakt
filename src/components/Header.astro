@@ -163,18 +163,18 @@ const reservdelarItems = [
     </div>
   </div>
   </div>
-  <nav id="mobile-menu" class="hidden md:hidden absolute left-0 right-0 z-40 bg-primary-dark border-t border-primary-light shadow-2xl overflow-y-auto max-h-[70vh]" aria-label="Mobilnavigering">
-    <div class="px-4 py-2 divide-y divide-primary-light/30">
+  <nav id="mobile-menu" class="hidden md:hidden absolute left-0 right-0 z-40 bg-primary-dark border-t border-primary-light shadow-2xl overflow-y-auto max-h-[50vh]" aria-label="Mobilnavigering">
+    <div class="px-4 py-1 divide-y divide-primary-light/30">
 
       <!-- Drönare accordion -->
       <div>
-        <button class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-3.5 text-sm font-semibold text-gray-100 hover:text-white" aria-expanded="false">
+        <button class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-2.5 text-sm font-semibold text-gray-100 hover:text-white" aria-expanded="false">
           Drönare
           <svg class="accordion-icon w-4 h-4 opacity-60 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </button>
-        <div class="mobile-accordion-content hidden pb-2 space-y-0.5">
+        <div class="mobile-accordion-content hidden pb-1 space-y-0.5">
           {dronareItems.map((item) => (
-            <a href={item.href} class="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-primary-light rounded-md transition-colors">
+            <a href={item.href} class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-primary-light rounded-md transition-colors">
               {item.label}
             </a>
           ))}
@@ -183,13 +183,13 @@ const reservdelarItems = [
 
       <!-- Robotdammsugare accordion -->
       <div>
-        <button class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-3.5 text-sm font-semibold text-gray-100 hover:text-white" aria-expanded="false">
+        <button class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-2.5 text-sm font-semibold text-gray-100 hover:text-white" aria-expanded="false">
           Robotdammsugare
           <svg class="accordion-icon w-4 h-4 opacity-60 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </button>
-        <div class="mobile-accordion-content hidden pb-2 space-y-0.5">
+        <div class="mobile-accordion-content hidden pb-1 space-y-0.5">
           {dammsugareItems.map((item) => (
-            <a href={item.href} class="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-primary-light rounded-md transition-colors">
+            <a href={item.href} class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-primary-light rounded-md transition-colors">
               {item.label}
             </a>
           ))}
@@ -198,13 +198,13 @@ const reservdelarItems = [
 
       <!-- Robotgräsklippare accordion -->
       <div>
-        <button class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-3.5 text-sm font-semibold text-gray-100 hover:text-white" aria-expanded="false">
+        <button class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-2.5 text-sm font-semibold text-gray-100 hover:text-white" aria-expanded="false">
           Robotgräsklippare
           <svg class="accordion-icon w-4 h-4 opacity-60 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </button>
-        <div class="mobile-accordion-content hidden pb-2 space-y-0.5">
+        <div class="mobile-accordion-content hidden pb-1 space-y-0.5">
           {grasklippareItems.map((item) => (
-            <a href={item.href} class="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-primary-light rounded-md transition-colors">
+            <a href={item.href} class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-primary-light rounded-md transition-colors">
               {item.label}
             </a>
           ))}
@@ -213,53 +213,67 @@ const reservdelarItems = [
 
       <!-- Reservdelar accordion -->
       <div>
-        <button class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-3.5 text-sm font-semibold text-gray-100 hover:text-white" aria-expanded="false">
+        <button class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-2.5 text-sm font-semibold text-gray-100 hover:text-white" aria-expanded="false">
           Reservdelar
           <svg class="accordion-icon w-4 h-4 opacity-60 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </button>
-        <div class="mobile-accordion-content hidden pb-2 space-y-0.5">
+        <div class="mobile-accordion-content hidden pb-1 space-y-0.5">
           {reservdelarItems.map((item) => (
-            <a href={item.href} class="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-primary-light rounded-md transition-colors">
+            <a href={item.href} class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-primary-light rounded-md transition-colors">
               {item.label}
             </a>
           ))}
         </div>
       </div>
 
-      <!-- Övriga kategorier (alltid synliga) -->
-      <div class="py-2 space-y-0.5">
-        <a href="/poolrobot/" class="block px-2 py-3 text-sm text-gray-200 hover:text-white hover:bg-primary-light rounded-md transition-colors">Poolrobot</a>
-        <a href="/fonsterputsrobot/" class="block px-2 py-3 text-sm text-gray-200 hover:text-white hover:bg-primary-light rounded-md transition-colors">Fönsterputsrobot</a>
-      </div>
-
-      <!-- Om Robotjakt -->
-      <div class="py-2 space-y-0.5">
-        <a href="/om-redaktionen/" class="block px-2 py-3 text-sm text-gray-400 hover:text-white hover:bg-primary-light rounded-md transition-colors">Om redaktionen</a>
-        <a href="/sa-testar-vi/" class="block px-2 py-3 text-sm text-gray-400 hover:text-white hover:bg-primary-light rounded-md transition-colors">Så testar vi</a>
+      <!-- Övriga + Om -->
+      <div class="py-1 flex flex-wrap gap-x-4">
+        <a href="/poolrobot/" class="block py-2 text-sm text-gray-300 hover:text-white transition-colors">Poolrobot</a>
+        <a href="/fonsterputsrobot/" class="block py-2 text-sm text-gray-300 hover:text-white transition-colors">Fönsterputsrobot</a>
+        <a href="/om-redaktionen/" class="block py-2 text-sm text-gray-500 hover:text-white transition-colors">Om redaktionen</a>
+        <a href="/sa-testar-vi/" class="block py-2 text-sm text-gray-500 hover:text-white transition-colors">Så testar vi</a>
       </div>
     </div>
   </nav>
+  <!-- Backdrop: stänger menyn vid klick utanför -->
+  <div id="mobile-backdrop" class="hidden fixed inset-0 z-30" aria-hidden="true"></div>
 </header>
 
 <script>
-  // Hamburger toggle
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
+  const backdrop = document.getElementById('mobile-backdrop');
+
+  function openMenu() {
+    menu?.classList.remove('hidden');
+    backdrop?.classList.remove('hidden');
+    btn?.setAttribute('aria-expanded', 'true');
+  }
+  function closeMenu() {
+    menu?.classList.add('hidden');
+    backdrop?.classList.add('hidden');
+    btn?.setAttribute('aria-expanded', 'false');
+    // stäng alla accordions
+    document.querySelectorAll('.mobile-accordion-content').forEach((c) => c.classList.add('hidden'));
+    document.querySelectorAll('.accordion-icon').forEach((i) => (i as HTMLElement).style.transform = '');
+    document.querySelectorAll('.mobile-accordion-btn').forEach((b) => b.setAttribute('aria-expanded', 'false'));
+  }
+
   btn?.addEventListener('click', () => {
-    menu?.classList.toggle('hidden');
-    const expanded = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!expanded));
+    menu?.classList.contains('hidden') ? openMenu() : closeMenu();
   });
 
+  backdrop?.addEventListener('click', closeMenu);
+
   // Accordion
-  document.querySelectorAll('.mobile-accordion-btn').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const content = btn.nextElementSibling as HTMLElement;
-      const icon = btn.querySelector('.accordion-icon') as HTMLElement;
+  document.querySelectorAll('.mobile-accordion-btn').forEach((b) => {
+    b.addEventListener('click', () => {
+      const content = b.nextElementSibling as HTMLElement;
+      const icon = b.querySelector('.accordion-icon') as HTMLElement;
       const isOpen = !content.classList.contains('hidden');
       content.classList.toggle('hidden', isOpen);
       icon.style.transform = isOpen ? '' : 'rotate(180deg)';
-      btn.setAttribute('aria-expanded', String(!isOpen));
+      b.setAttribute('aria-expanded', String(!isOpen));
     });
   });
 </script>
