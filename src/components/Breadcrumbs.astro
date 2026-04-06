@@ -14,8 +14,7 @@ const currentClass = light ? 'text-white/90 font-medium' : 'text-text-light font
 ---
 
 <nav aria-label="Breadcrumbs" class="w-full">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
-  <ol class={`flex flex-wrap items-center gap-1.5 text-xs ${light ? 'text-white/60' : 'text-text-lighter'}`} itemscope itemtype="https://schema.org/BreadcrumbList">
+  <ol class={`flex flex-wrap items-center gap-1.5 text-xs py-2 ${light ? 'text-white/60' : 'text-text-lighter'}`} itemscope itemtype="https://schema.org/BreadcrumbList">
     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
       <a href="/" itemprop="item" class={linkClass}>
         <span itemprop="name">Hem</span>
@@ -36,5 +35,4 @@ const currentClass = light ? 'text-white/90 font-medium' : 'text-text-light font
       </li>
     ))}
   </ol>
-  </div>
 </nav>
