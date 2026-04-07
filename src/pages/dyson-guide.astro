@@ -1,0 +1,223 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const affSpotScrub = 'https://www.awin1.com/cread.php?awinmid=25183&awinaffid=2834856&ued=https%3A%2F%2Fwww.dyson.se%2Fdammsugare%2Frobot%2Fspot-scrub-ai%2Fsvart';
+const affVisNav = 'https://www.awin1.com/cread.php?awinmid=25183&awinaffid=2834856&ued=https%3A%2F%2Fwww.dyson.se%2Fdammsugare%2Frobot%2F360-vis-nav';
+
+const faqItems = [
+  {
+    question: 'Hur många Dyson robotdammsugare finns det i Sverige 2026?',
+    answer: 'Dyson säljer två robotdammsugare i Sverige 2026: Dyson Spot+Scrub Ai (13 540 kr) med AI-fläckdetektering och wet roller, samt Dyson 360 Vis Nav med 360°-navigering och Hyperdymium-motor. Båda säljs exklusivt via dyson.se.',
+  },
+  {
+    question: 'Varför kostar Dyson robotdammsugare mer än Roborock och Dreame?',
+    answer: 'Dyson satsar på unik teknologi som inte finns hos konkurrenterna: AI-fläckdetektering med grön LED-ljussättning (Spot+Scrub Ai) och 360°-panoramakamera (360 Vis Nav). De investerar också mycket i motorteknik — Hyperdymium-motorn är en av de snabbaste i branschen. Priset speglar R&D-kostnaderna, inte nödvändigtvis bättre allround-prestanda.',
+  },
+  {
+    question: 'Kan jag jämföra Dyson robotdammsugare hos andra butiker än dyson.se?',
+    answer: 'Nej. Dyson säljer sina robotdammsugare exklusivt via dyson.se i Sverige. Du hittar dem inte på Elgiganten, Komplett eller MediaMarkt. Fördelen är 40 dagars prova-på-garanti och direkt kontakt med Dyson om något skulle gå fel.',
+  },
+  {
+    question: 'Vilken Dyson robotdammsugare passar ett hem med husdjur?',
+    answer: 'Båda modellerna hanterar husdjurshår väl. Spot+Scrub Ai är bättre om husdjuren spiller mat eller vatten eftersom den aktivt tar bort fläckar. 360 Vis Nav är bättre om problemet är päls i mattor och heltäckningsmattor, tack vare starkare sugkraft och HEPA-filtrering.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/' },
+  { label: 'Dyson robotdammsugare — guide 2026' },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Dyson Robotdammsugare 2026 – Guide och Jämförelse"
+  description="Komplett guide till Dysons robotdammsugare 2026. Jämför Spot+Scrub Ai och 360 Vis Nav — funktioner, pris och vilket alternativ passar dig."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-07</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Dyson robotdammsugare 2026 — guide och jämförelse
+    </h1>
+
+    <p class="text-text-light text-base leading-relaxed mb-8">
+      Dyson har två robotdammsugare på den svenska marknaden 2026. Spot+Scrub Ai är en våt- och torrobot med AI-fläckdetektering. 360 Vis Nav är en ren dammsugare med 360°-vision och exceptionell sugkraft. Här går vi igenom skillnaderna så att du vet vilken som passar ditt hem.
+    </p>
+
+    <!-- Comparison table -->
+    <div class="mb-10">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse</h2>
+      <!-- Mobile: cards -->
+      <div class="sm:hidden space-y-4">
+        <div class="bg-bg-alt rounded-xl border border-border p-4">
+          <p class="font-bold text-text mb-2">Dyson Spot+Scrub Ai</p>
+          <ul class="text-sm text-text-light space-y-1">
+            <li><span class="font-medium text-text">Pris:</span> 13 540 kr</li>
+            <li><span class="font-medium text-text">Typ:</span> Dammsugare + mopp (wet+dry)</li>
+            <li><span class="font-medium text-text">Sugkraft:</span> 18 000 Pa</li>
+            <li><span class="font-medium text-text">Drifttid:</span> upp till 110 min</li>
+            <li><span class="font-medium text-text">Fläckdetektering:</span> Ja — AI + grön LED</li>
+            <li><span class="font-medium text-text">Moppning:</span> Ja — självrengörande wet roller</li>
+          </ul>
+          <a href={affSpotScrub} rel="sponsored noopener noreferrer" target="_blank"
+            class="mt-3 w-full inline-flex justify-center items-center bg-cta text-white font-semibold px-4 py-2.5 rounded-lg text-sm min-h-[44px]">
+            Köp hos Dyson.se
+          </a>
+        </div>
+        <div class="bg-bg-alt rounded-xl border border-border p-4">
+          <p class="font-bold text-text mb-2">Dyson 360 Vis Nav</p>
+          <ul class="text-sm text-text-light space-y-1">
+            <li><span class="font-medium text-text">Pris:</span> Se dyson.se</li>
+            <li><span class="font-medium text-text">Typ:</span> Ren dammsugare</li>
+            <li><span class="font-medium text-text">Motor:</span> Hyperdymium (110 000 rpm)</li>
+            <li><span class="font-medium text-text">Drifttid:</span> upp till 65 min</li>
+            <li><span class="font-medium text-text">Navigering:</span> 360° kamera + 26 sensorer</li>
+            <li><span class="font-medium text-text">Moppning:</span> Nej</li>
+          </ul>
+          <a href={affVisNav} rel="sponsored noopener noreferrer" target="_blank"
+            class="mt-3 w-full inline-flex justify-center items-center bg-cta text-white font-semibold px-4 py-2.5 rounded-lg text-sm min-h-[44px]">
+            Se pris hos Dyson.se
+          </a>
+        </div>
+      </div>
+      <!-- Desktop: table -->
+      <div class="hidden sm:block rounded-xl border border-border overflow-hidden">
+        <table class="w-full text-sm">
+          <thead class="bg-bg-alt">
+            <tr>
+              <th class="px-4 py-3 text-left font-semibold text-text"></th>
+              <th class="px-4 py-3 text-left font-semibold text-text">Dyson Spot+Scrub Ai</th>
+              <th class="px-4 py-3 text-left font-semibold text-text">Dyson 360 Vis Nav</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['Pris', '13 540 kr', 'Se dyson.se'],
+              ['Typ', 'Dammsugare + mopp', 'Ren dammsugare'],
+              ['Sugkraft', '18 000 Pa', 'Hyperdymium (6× starkare)'],
+              ['Drifttid', 'upp till 110 min', 'upp till 65 min'],
+              ['Navigering', 'LiDAR + AI-kamera', '360° vision + 26 sensorer'],
+              ['Fläckdetektering', 'Ja — AI + grön LED', 'Nej'],
+              ['Moppning', 'Ja — wet roller', 'Nej'],
+              ['HEPA-filtrering', 'Dubbel hygienfiltrering', '5-steg HEPA, 99,99 %'],
+              ['Station', 'Tömmer + tvättar + torkar', 'Enkel laddstation'],
+            ].map(([label, val1, val2], i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : 'bg-bg-alt'}>
+                <td class="px-4 py-3 font-medium text-text">{label}</td>
+                <td class="px-4 py-3 text-text-light">{val1}</td>
+                <td class="px-4 py-3 text-text-light">{val2}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Detailed review: Spot+Scrub -->
+    <div class="mb-10">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Dyson Spot+Scrub Ai — AI som faktiskt tar bort fläckar</h2>
+      <div class="flex flex-col sm:flex-row gap-6 items-start">
+        <div class="sm:w-40 flex-shrink-0">
+          <div class="bg-gray-50 rounded-xl p-3">
+            <img src="/images/products/dyson-spot-scrub-ai.jpg" alt="Dyson Spot+Scrub Ai"
+              class="w-full h-auto object-contain" loading="lazy" />
+          </div>
+        </div>
+        <div class="flex-1 text-sm text-text-light leading-relaxed space-y-3">
+          <p>
+            Spot+Scrub Ai är Dysons svar på problemet som alla robotmoppar har: de torkar förbi fläckar utan att ta bort dem. AI-systemet identifierar fläcktypen, planerar hur många rengöringsdrag som krävs och bekräftar sedan att fläcken är borta innan den fortsätter. Det är en helt annan princip.
+          </p>
+          <p>
+            Wet rollern tvättar sig själv kontinuerligt under städning och dockningsstationen tar hand om allt underhåll — tvätt med 60 °C vatten, torkning med 45 °C varmluft och sterilisering av vattentanken. Du behöver knappt röra enheten.
+          </p>
+          <a href={affSpotScrub} rel="sponsored noopener noreferrer" target="_blank"
+            class="inline-flex items-center text-cta hover:underline font-semibold text-sm">
+            Köp hos Dyson.se — 13 540 kr
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Detailed review: Vis Nav -->
+    <div class="mb-10">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Dyson 360 Vis Nav — Dysons sugkraft i robotformat</h2>
+      <div class="flex flex-col sm:flex-row gap-6 items-start">
+        <div class="sm:w-40 flex-shrink-0">
+          <div class="bg-gray-50 rounded-xl p-3">
+            <img src="/images/products/dyson-360-vis-nav.jpg" alt="Dyson 360 Vis Nav"
+              class="w-full h-auto object-contain" loading="lazy" />
+          </div>
+        </div>
+        <div class="flex-1 text-sm text-text-light leading-relaxed space-y-3">
+          <p>
+            360 Vis Nav bygger på en panoramakamera som ger roboten en komplett bild av hemmet — inte bara en horisontell laseravsökning. Kombinerat med 26 sensorer och Hyperdymium-motorn på 110 000 rpm är det en av de bäst navigerande och kraftfullaste robotdammsugarna på marknaden.
+          </p>
+          <p>
+            Saknar moppfunktion. Drifttiden på 65 minuter begränsar räckvidden i stora hem. Men för ren dammsugning med allergifiltrerande HEPA-prestanda är den svår att slå.
+          </p>
+          <a href={affVisNav} rel="sponsored noopener noreferrer" target="_blank"
+            class="inline-flex items-center text-cta hover:underline font-semibold text-sm">
+            Se pris hos Dyson.se
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decision guide -->
+    <div class="bg-bg-alt rounded-xl border border-border p-6 mb-10">
+      <h2 class="font-heading text-lg font-bold text-text mb-4">Vilken Dyson passar dig?</h2>
+      <div class="space-y-3 text-sm text-text-light">
+        <div class="flex items-start gap-3">
+          <span class="text-winner font-bold flex-shrink-0">→</span>
+          <p><strong class="text-text">Mycket hårdgolv, husdjur, barn eller frekventa spill:</strong> Välj Spot+Scrub Ai. AI-fläckdetekteringen och wet rollern är designade för exakt den situationen.</p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-winner font-bold flex-shrink-0">→</span>
+          <p><strong class="text-text">Allergiker eller hem med mycket mattor:</strong> Välj 360 Vis Nav. HEPA-filtrering i fem steg och kraftfull sugkraft ger bäst luftkvalitet.</p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-winner font-bold flex-shrink-0">→</span>
+          <p><strong class="text-text">Vill ha moppning till lägre pris:</strong> Kolla Dreame X40 Ultra (ca 9 990 kr) eller Roborock S8 MaxV Ultra. De ger moppfunktion och självtömning till lägre kostnad än Dysons modeller.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <div class="mt-10 pt-8 border-t border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-4">Relaterade recensioner</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/dyson-spot-scrub-ai/" class="text-cta hover:underline">Dyson Spot+Scrub Ai — fullständig recension</a></li>
+        <li><a href="/dyson-360-vis-nav/" class="text-cta hover:underline">Dyson 360 Vis Nav — fullständig recension</a></li>
+        <li><a href="/robotdammsugare-med-mopp/" class="text-cta hover:underline">Bästa robotdammsugare med mopp 2026</a></li>
+        <li><a href="/" class="text-cta hover:underline">Bästa robotdammsugare 2026 — komplett topplista</a></li>
+      </ul>
+    </div>
+
+    <AffiliateDisclaimer />
+  </div>
+</BaseLayout>

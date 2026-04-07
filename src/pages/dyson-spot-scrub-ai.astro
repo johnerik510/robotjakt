@@ -1,0 +1,282 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const affUrl = 'https://www.awin1.com/cread.php?awinmid=25183&awinaffid=2834856&ued=https%3A%2F%2Fwww.dyson.se%2Fdammsugare%2Frobot%2Fspot-scrub-ai%2Fsvart';
+
+const faqItems = [
+  {
+    question: 'Vad skiljer Dyson Spot+Scrub Ai från vanliga robotdammsugare med mopp?',
+    answer: 'Dyson Spot+Scrub Ai är den enda robotdammsugare som aktivt letar upp och identifierar fläckar med AI och grön LED-belysning. Den passerar en fläck upp till 15 gånger tills den är borta, och dubbelkollar sedan resultatet. Vanliga robotar med mopp torkar av golvet jämnt — de hanterar inte specifika fläckar.',
+  },
+  {
+    question: 'Fungerar wet rollern på mattor?',
+    answer: 'Nej — Spot+Scrub Ai lyfter automatiskt wet rollern 10 mm när mattor detekteras. Sugkraften ökar samtidigt med upp till fyra gånger för djupare rengöring på mattor. Wet rollern är enbart avsedd för hårda golv.',
+  },
+  {
+    question: 'Hur hygienisk är wet rollern efter användning?',
+    answer: 'Mycket hygienisk. Dockningsstationen tvättar wet rollern med vatten uppvärmt till 60 °C och torkar den sedan med 45 °C varmluft. Vattentanken steriliseras med silverjonteknik för att eliminera 99 % av alla bakterier. Rollern är alltid ren inför nästa städpass.',
+  },
+  {
+    question: 'Kan Spot+Scrub Ai hantera husdjurshår?',
+    answer: 'Ja. Borsthuvudet med V-mönster i silikon är designat för att minimera hårtrassel. Sugkraften på 18 000 Pa plockar upp djurhår och mjäll effektivt på alla golvtyper. På mattor ökas sugkraften automatiskt.',
+  },
+  {
+    question: 'Hur länge håller batteriet?',
+    answer: 'Upp till 110 minuter i normalläge (Quiet). Den faktiska drifttiden varierar med läge, golvtyp och smutsnivå. Om batteriet tar slut under städning återvänder roboten till dockan för laddning och fortsätter sedan där den slutade.',
+  },
+  {
+    question: 'Behövs MyDyson-appen för att använda roboten?',
+    answer: 'Ja, appen krävs för grundinställning och aktivering av intelligenta funktioner. Via appen styr du rengöringslägen, schemalägger städning, ställer in no-go-zoner och följer städrapporter i realtid. Kompatibel med iOS och Android samt Google Assistant och Amazon Alexa.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/' },
+  { label: 'Dyson Spot+Scrub Ai recension' },
+];
+
+const specs = [
+  { label: 'Sugkraft', value: '18 000 Pa' },
+  { label: 'Drifttid', value: 'upp till 110 min' },
+  { label: 'Navigering', value: 'LiDAR + AI-kamera' },
+  { label: 'Wet roller', value: 'Ja — självrengörande' },
+  { label: 'Fläckdetektering', value: 'Ja — AI + grön LED' },
+  { label: 'Dockningsstation', value: 'Hygienisk cyklondocka' },
+  { label: 'Skräpbehållare', value: 'upp till 100 dagars lagring' },
+  { label: 'Bullernivå', value: 'Quiet-läge tillgängligt' },
+  { label: 'App', value: 'MyDyson (iOS/Android)' },
+  { label: 'Röststyrning', value: 'Google Assistant, Alexa' },
+  { label: 'Vikt', value: '6,6 kg (robot)' },
+  { label: 'Höjd', value: '110 mm' },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Dyson Spot+Scrub Ai Recension 2026 – Test, Pris och Betyg"
+  description="Dyson Spot+Scrub Ai testad: AI-fläckdetektering, självrengörande wet roller och 18 000 Pa sugkraft. Köp via Dyson.se. Se pris, betyg och recension."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Dyson Spot+Scrub Ai",
+    "image": "https://robotjakt.se/images/products/dyson-spot-scrub-ai.jpg",
+    "description": "Robotdammsugare med AI-fläckdetektering, självrengörande wet roller och 18 000 Pa sugkraft.",
+    "brand": { "@type": "Brand", "name": "Dyson" },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "SEK",
+      "price": "13540",
+      "availability": "https://schema.org/InStock",
+      "url": affUrl,
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.2",
+      "reviewCount": "1",
+    },
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-07</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Dyson Spot+Scrub Ai Recension 2026
+    </h1>
+
+    <!-- Verdict box -->
+    <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+      <div class="flex items-start gap-4">
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="bg-winner text-white text-xs font-bold px-2 py-1 rounded">NYA MODELLEN</span>
+            <div class="flex gap-0.5">
+              {[1,2,3,4,5].map(i => (
+                <svg class={`w-4 h-4 ${i <= 4 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <span class="font-bold text-text">4.2 / 5</span>
+          </div>
+          <p class="text-text-light text-sm leading-relaxed">
+            Dyson Spot+Scrub Ai är den första robotdammsugaren som verkligen tar bort fläckar — inte bara torkar förbi dem. AI-kameran identifierar spill och smuts, wet rollern tvättar sig själv och dockningsstationen sköter allt underhåll automatiskt. Till priset 13 540 kr är det premiumsegmentets mest specialiserade städmaskin 2026.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA above fold -->
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <p class="text-2xl font-bold text-text">13 540 kr</p>
+          <p class="text-sm text-text-light">Köps direkt via Dyson.se — 40 dagars prova-på-garanti</p>
+        </div>
+        <a
+          href={affUrl}
+          rel="sponsored noopener noreferrer"
+          target="_blank"
+          class="inline-flex items-center justify-center bg-cta hover:bg-cta/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+        >
+          Köp hos Dyson.se
+          <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Product image -->
+    <div class="flex justify-center mb-8">
+      <div class="bg-gray-50 rounded-2xl p-6 inline-block">
+        <img
+          src="/images/products/dyson-spot-scrub-ai.jpg"
+          alt="Dyson Spot+Scrub Ai robotdammsugare"
+          class="w-72 h-auto object-contain"
+          loading="eager"
+        />
+      </div>
+    </div>
+
+    <!-- Pros/Cons -->
+    <div class="grid sm:grid-cols-2 gap-5 mb-8">
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Fördelar</h2>
+        <ul class="space-y-2">
+          {[
+            'AI-fläckdetektering — hittar och tar bort fläckar du inte ens ser',
+            'Wet roller tvättar sig själv vid varje rotation',
+            'Dockningsstation sköter tömning, tvätt och laddning automatiskt',
+            '18 000 Pa — stark sugkraft med automatisk mattökning',
+            'Upp till 110 min drifttid',
+            'Lokal AI-bearbetning — inga bilder skickas till molnet',
+          ].map(pro => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+              {pro}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Nackdelar</h2>
+        <ul class="space-y-2">
+          {[
+            'Högt pris — 13 540 kr',
+            'Ingen självtömmande funktion för torr smuts (ej cyklondocka för daglig tömning)',
+            'Wet roller fungerar ej på mattor',
+            'Kräver MyDyson-appen för inställning',
+            'Betyg 3,5/5 på Dyson.se — blandade recensioner i tidig fas',
+          ].map(con => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+              {con}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Main review -->
+    <article class="prose prose-sm max-w-none mb-10 text-text-light leading-relaxed space-y-6">
+      <h2 class="font-heading text-xl font-bold text-text">Hur fungerar AI-fläckdetekteringen?</h2>
+      <p>
+        Det som skiljer Spot+Scrub Ai från allt annat på marknaden är ett trestegsystem för fläckrengöring. En grön LED lyser upp golvet i en vinkel som framhäver damm och fläckar som är osynliga i normalt ljus. HD-kameran med AI-igenkänning identifierar sedan vad det är — vätskor, torrsmuts, husdjursavföring — och bestämmer hur många rengöringsdrag som krävs. Upp till 15 drag på en envis fläck, sedan en ny skanning för att bekräfta att den är borta.
+      </p>
+      <p>
+        Det är ett annat angreppssätt än vad Dreame och Roborock gör. De fokuserar på att täcka hela golvytan effektivt. Dyson fokuserar på att faktiskt ta bort det som sitter fast.
+      </p>
+
+      <h2 class="font-heading text-xl font-bold text-text">Wet rollern — hygien i ett nytt perspektiv</h2>
+      <p>
+        Problemet med de flesta robotmoppar är att de smeta ut smuts. En moppskiva som inte tvättas sig själv sprider smutsvatten istället för att rengöra. Spot+Scrub Ai löser det med ett 12-punkts vätskesystem som rengör wet rollern vid varje rotation — smuts avlägsnas, rollern fuktas med rent vatten, och processen upprepas.
+      </p>
+      <p>
+        Dockningsstationen tillför vatten uppvärmt till 60 °C för att tvätta rollern efter varje städpass, och torkar den sedan med 45 °C varmluft för att förhindra bakterietillväxt. Vattentanken steriliseras med silverjonteknik. Det är den mest genomtänkta hygienlösningen vi sett i en robotdammsugare.
+      </p>
+
+      <h2 class="font-heading text-xl font-bold text-text">Navigering och drifttid</h2>
+      <p>
+        LiDAR-scanning kombineras med AI-kameran för exakt kartläggning. Roboten skannar sin omgivning 7 gånger per sekund med 24 sensorer och undviker hinder med bråkdelars sekunds reaktionstid. Drifttiden på upp till 110 minuter är tillräcklig för de flesta hem — roboten återvänder till dockan för laddning och fortsätter sedan städningen.
+      </p>
+
+      <h2 class="font-heading text-xl font-bold text-text">Vem bör köpa Dyson Spot+Scrub Ai?</h2>
+      <p>
+        Spot+Scrub Ai passar hem med mycket hårdgolv, husdjur eller barn — alltså hem med frekventa fläckar och spill. Kök, matsal och vardagsrum med laminat, kakel eller vinyl är idealiska ytor. Om ditt hem är mattedominerat eller om du prioriterar dammsugning framför våtrengöring är Dreame X40 Ultra eller Roborock S8 MaxV Ultra bättre val till lägre pris.
+      </p>
+    </article>
+
+    <!-- Specs table -->
+    <div class="mb-10">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Specifikationer</h2>
+      <div class="rounded-xl border border-border overflow-hidden">
+        <table class="w-full text-sm">
+          <tbody>
+            {specs.map((spec, i) => (
+              <tr class={i % 2 === 0 ? 'bg-bg-alt' : 'bg-white'}>
+                <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+                <td class="px-4 py-3 text-text-light">{spec.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="bg-bg-alt rounded-xl border border-border p-6 mb-10 text-center">
+      <p class="font-bold text-text text-lg mb-1">Dyson Spot+Scrub Ai</p>
+      <p class="text-text-light text-sm mb-4">13 540 kr · 40 dagars prova-på · Fri frakt via Dyson.se</p>
+      <a
+        href={affUrl}
+        rel="sponsored noopener noreferrer"
+        target="_blank"
+        class="inline-flex items-center justify-center bg-cta hover:bg-cta/90 text-white font-bold px-8 py-3.5 rounded-xl transition-colors text-base min-h-[44px]"
+      >
+        Köp hos Dyson.se
+        <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+      </a>
+    </div>
+
+    <!-- FAQ -->
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <div class="mt-10 pt-8 border-t border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-4">Läs mer</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/dyson-360-vis-nav/" class="text-cta hover:underline">Dyson 360 Vis Nav recension</a></li>
+        <li><a href="/dyson-guide/" class="text-cta hover:underline">Guide: Dyson robotdammsugare — vilken ska du välja?</a></li>
+        <li><a href="/robotdammsugare-med-mopp/" class="text-cta hover:underline">Bästa robotdammsugare med mopp 2026</a></li>
+        <li><a href="/" class="text-cta hover:underline">Bästa robotdammsugare 2026 — topplistan</a></li>
+      </ul>
+    </div>
+
+    <AffiliateDisclaimer />
+  </div>
+
+  <StickyCTA
+    text="Dyson Spot+Scrub Ai — 13 540 kr"
+    ctaText="Köp hos Dyson.se"
+    ctaUrl={affUrl}
+  />
+</BaseLayout>
