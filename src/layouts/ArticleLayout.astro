@@ -58,11 +58,11 @@ const articleSchema = {
 <BaseLayout title={title} description={description} ogImage={ogImage}>
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-    {showDisclaimer && <AffiliateDisclaimer />}
     {showAuthor && (
       <AuthorByline datePublished={datePublished} dateModified={lastUpdated} />
     )}
     <slot />
+    {showDisclaimer && <AffiliateDisclaimer />}
   </div>
 
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
