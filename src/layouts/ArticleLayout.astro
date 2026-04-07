@@ -13,9 +13,53 @@ interface Props {
   datePublished?: string;
   showDisclaimer?: boolean;
   showAuthor?: boolean;
+  productName?: string;
+  productBrand?: string;
+  productPrice?: string;
+  productImage?: string;
+  productRating?: string;
+  productAffiliateUrl?: string;
 }
 
-const { title, description, breadcrumbs, ogImage, lastUpdated, datePublished, showDisclaimer = true, showAuthor = true } = Astro.props;
+const { title, description, breadcrumbs, ogImage, lastUpdated, datePublished, showDisclaimer = true, showAuthor = true, productName, productBrand, productPrice, productImage, productRating, productAffiliateUrl } = Astro.props;
+
+const productSchema = productName ? {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: productName,
+  ...(productImage ? { image: `https://robotjakt.se${productImage}` } : {}),
+  ...(productBrand ? { brand: { '@type': 'Brand', name: productBrand } } : {}),
+  description: description || '',
+  offers: {
+    '@type': 'Offer',
+    priceCurrency: 'SEK',
+    price: productPrice ? productPrice.replace(/[^0-9]/g, '') : '',
+    availability: 'https://schema.org/InStock',
+    ...(productAffiliateUrl ? { url: productAffiliateUrl } : {}),
+  },
+  ...(productRating ? {
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: productRating,
+      bestRating: '10',
+      worstRating: '1',
+      ratingCount: '1',
+    },
+    review: {
+      '@type': 'Review',
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: productRating,
+        bestRating: '10',
+      },
+      author: {
+        '@type': 'Person',
+        name: 'John Erik Johansson',
+      },
+      datePublished: datePublished || lastUpdated || '2026-04-07',
+    },
+  } : {}),
+} : null;
 
 const pageUrl = Astro.url.href;
 
@@ -67,4 +111,7 @@ const articleSchema = {
 
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  {productSchema && (
+    <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+  )}
 </BaseLayout>
