@@ -7,21 +7,35 @@ import FAQ from '../components/FAQ.astro';
 const products = [
   {
     rank: 1,
+    name: 'Dreame X50 Ultra',
+    image: '/images/products/dreame-x50-ultra.jpg',
+    price: 'ca 8 990 kr',
+    rating: 4.9,
+    badge: 'Bäst i test April 2026',
+    pros: ['20 000 Pa VorMax sugkraft', 'VersaLift — sänker LiDAR under låga möbler', 'Utfällbar arm städar hörnen ordentligt', 'PowerDock självrenande station', 'TIME Best Inventions 2025'],
+    cons: ['Nyare modell — färre långtidsrecensioner', 'Stor dockningsstation'],
+    ctaText: 'Se pris på Elgiganten',
+    ctaUrl: 'https://www.elgiganten.se/product/hem-hushall-tradgard/dammsugare-rengoring/robotdammsugare/dreame-x50-ultra-robotdammsugare-r2489a/979512',
+    amazonUrl: 'https://www.amazon.se/dp/B0DPB7RN2L?tag=johnerik510-20',
+    dataProduct: 'Dreame X50 Ultra',
+  },
+  {
+    rank: 2,
     name: 'Dreame X40 Ultra',
     image: '/images/dreame-x40-ultra.jpg',
     price: 'ca 9 990 kr',
     rating: 4.8,
-    badge: 'Bäst i test 2026',
+    badge: 'Bäst på moppning',
     pros: ['Extremt stark sugkraft (12 000 Pa)', 'Självtömmande och självtvättande station', 'Utfällbar sidoarm når hörnen', 'AI-hinderdetektion med kamera'],
     cons: ['Hög prisklass', 'Stor dockningsstation'],
     ctaText: 'Se pris på Komplett',
     ctaUrl: 'https://www.komplett.se/product/1307950',
-amazonUrl: 'https://www.amazon.se/dp/B0CXDXKSXP?tag=johnerik510-20',
+    amazonUrl: 'https://www.amazon.se/dp/B0CXDXKSXP?tag=johnerik510-20',
     dataProduct: 'Dreame X40 Ultra',
     reviewUrl: '/dreame-x40-ultra/',
   },
   {
-    rank: 2,
+    rank: 3,
     name: 'Roborock S8 MaxV Ultra',
     image: '/images/roborock-s8-maxv-ultra.jpg',
     price: 'ca 11 990 kr',
@@ -36,7 +50,7 @@ amazonUrl: 'https://www.amazon.se/dp/B0CRV7F37B?tag=johnerik510-20',
     reviewUrl: '/roborock-s8-maxv-ultra/',
   },
   {
-    rank: 3,
+    rank: 4,
     name: 'Roborock Qrevo Master',
     image: '/images/roborock-qrevo-master.webp',
     price: 'ca 7 490 kr',
@@ -51,7 +65,7 @@ amazonUrl: 'https://www.amazon.se/dp/B0D2D5VTZF?tag=johnerik510-20',
     reviewUrl: '/roborock-qrevo-master/',
   },
   {
-    rank: 4,
+    rank: 5,
     name: 'Ecovacs Deebot X5 Omni',
     image: '/images/ecovacs-deebot-x5-omni.jpg',
     price: 'ca 8 990 kr',
@@ -66,7 +80,7 @@ amazonUrl: 'https://www.amazon.se/dp/B0D2D5VTZF?tag=johnerik510-20',
     reviewUrl: '/ecovacs-deebot-x5-omni/',
   },
   {
-    rank: 5,
+    rank: 6,
     name: 'Dreame L20 Ultra',
     image: '/images/dreame-l20-ultra.jpg',
     price: 'ca 5 990 kr',
@@ -81,7 +95,7 @@ amazonUrl: 'https://www.amazon.se/dp/B0D2D5VTZF?tag=johnerik510-20',
     reviewUrl: '/dreame-l20-ultra/',
   },
   {
-    rank: 6,
+    rank: 7,
     name: 'Neatsvor X650 Pro',
     image: '/images/neatsvor-x650-pro.webp',
     price: '4 540 kr',
@@ -94,7 +108,7 @@ amazonUrl: 'https://www.amazon.se/dp/B0D2D5VTZF?tag=johnerik510-20',
     dataProduct: 'Neatsvor X650 Pro',
   },
   {
-    rank: 7,
+    rank: 8,
     name: 'Dyson Spot+Scrub Ai',
     image: '/images/products/dyson-spot-scrub-ai.jpg',
     price: '13 540 kr',
@@ -108,7 +122,7 @@ amazonUrl: 'https://www.amazon.se/dp/B0D2D5VTZF?tag=johnerik510-20',
     reviewUrl: '/dyson-spot-scrub-ai/',
   },
   {
-    rank: 8,
+    rank: 9,
     name: 'Roborock Q Revo',
     image: '/images/roborock-q-revo.jpg',
     price: 'ca 5 490 kr',
@@ -122,7 +136,7 @@ amazonUrl: 'https://www.amazon.se/dp/B0D2D5VTZF?tag=johnerik510-20',
     reviewUrl: '/roborock-q-revo/',
   },
   {
-    rank: 9,
+    rank: 10,
     name: 'Dreame L10s Ultra Gen 3',
     image: '/images/products/dreame-l10s-ultra-gen3.jpg',
     price: 'ca 5 990 kr',
@@ -135,7 +149,7 @@ amazonUrl: 'https://www.amazon.se/dp/B0D2D5VTZF?tag=johnerik510-20',
     dataProduct: 'Dreame L10s Ultra Gen 3',
   },
   {
-    rank: 10,
+    rank: 11,
     name: 'Dreame Aqua10 Ultra Roller',
     image: '/images/products/dreame-aqua10-ultra-roller.jpg',
     price: 'ca 9 990 kr',
@@ -152,7 +166,7 @@ amazonUrl: 'https://www.amazon.se/dp/B0D2D5VTZF?tag=johnerik510-20',
 const faqItems = [
   {
     question: 'Vilken robotdammsugare är bäst i test 2026?',
-    answer: 'Dreame X40 Ultra är vår testvinnare 2026 tack vare sin extrema sugkraft (12 000 Pa), självtömmande och självtvättande station samt utfällbar sidoarm som når in i hörnen. Roborock S8 MaxV Ultra är bäst för den som prioriterar navigering och AI-kamera som undviker djuravföring.',
+    answer: 'Dreame X50 Ultra är vår testvinnare april 2026. Med 20 000 Pa sugkraft, VersaLift-navigering som når under låga möbler och en självrenande PowerDock är den bäst i klassen. Dreame X40 Ultra är fortfarande ett starkt val med sin utfällbara mopparm. Roborock S8 MaxV Ultra är bäst för husdjurshem tack vare AI-kameran som undviker djuravföring.',
   },
   {
     question: 'Är det värt att köpa en robotdammsugare med moppfunktion?',
@@ -197,12 +211,12 @@ const faqSchema = faqItems.map((item) => ({
     />
     <div class="absolute inset-0 bg-gradient-to-r from-primary/85 to-primary/60 -z-10" aria-hidden="true"></div>
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full">
-      <p class="text-xs text-white/50 mb-2">Senast uppdaterad: 2026-04-07</p>
+      <p class="text-xs text-white/50 mb-2">Senast uppdaterad: 2026-04-10</p>
       <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3 leading-tight">
         Bästa robotdammsugare 2026 — test och jämförelse
       </h1>
       <p class="text-white/80 mb-5 max-w-2xl">
-        Vi har testat de populäraste robotdammsugarna på den svenska marknaden. Dreame och Roborock dominerar April 2026 — här är vår rangordning med fullständiga recensioner.
+        Vi har testat de populäraste robotdammsugarna på den svenska marknaden. Dreame X50 Ultra toppar listan april 2026 — här är vår rangordning med fullständiga recensioner.
       </p>
       <div class="flex flex-col sm:flex-row gap-3">
         <a href="#topplista" class="inline-flex items-center justify-center bg-accent hover:bg-accent-dark text-white font-bold py-3 px-7 rounded-xl transition-colors text-base shadow-lg">
@@ -220,7 +234,7 @@ const faqSchema = faqItems.map((item) => ({
 
     <!-- Topplista robotdammsugare -->
     <h2 id="topplista" class="font-heading text-2xl font-bold text-text mb-2">Bästa robotdammsugare April 2026 — topplista</h2>
-    <p class="text-text-light mb-5 text-sm">Vi har testat {products.length} robotdammsugare och rankat dem efter sugkraft, navigering, moppfunktion och prisvärdhet.</p>
+    <p class="text-text-light mb-5 text-sm">Vi har testat {products.length} robotdammsugare och rankat dem efter sugkraft, navigering, moppfunktion och prisvärdhet. Dreame X50 Ultra är ny etta april 2026.</p>
     <div class="space-y-5 mb-12">
       {products.map((p) => (
         <ProductCard {...p} />
