@@ -46,7 +46,7 @@ const models = [
     cta: 'https://www.komplett.se/search?search=ecovacs+deebot+t20+omni',
     
     ctaText: 'Se pris på T20 Omni',
-    reviewUrl: '/ecovacs-deebot-t20-omni/',
+    reviewUrl: '',
     description: 'Deebot T20 Omni är steget under X5 Omni med något lägre sugkraft men samma OMNI-stationskoncept. En välbalanserad modell för den som vill ha OMNI-komfort utan att betala toppris. Passar hem med mixade golv och normalt städbehov.',
   },
   {
@@ -65,7 +65,7 @@ const models = [
     cta: 'https://www.komplett.se/search?search=ecovacs+deebot+t10+omni',
     
     ctaText: 'Se pris på T10 Omni',
-    reviewUrl: '/ecovacs-deebot-t10-omni/',
+    reviewUrl: '',
     description: 'Deebot T10 Omni är det prisvärdaste alternativet i OMNI-serien. Du får OMNI-stationens auto-funktioner till ett lägre pris, men med lägre sugkraft och äldre AI. Bäst för den som vill testa Ecovacs OMNI-koncept utan att lägga ut topppengar.',
   },
 ];
@@ -104,7 +104,7 @@ const faqSchema = faqItems.map((item) => ({
 ---
 
 <BaseLayout
-  title="Ecovacs Deebot April 2026 – guide & jämförelse | Robotjakt"
+  title="Ecovacs Deebot 2026 – Guide & Jämförelse"
   description="Komplett guide till Ecovacs Deebot-serie 2026. X5 Omni, T20 Omni — vi hjälper dig välja rätt Ecovacs för ditt hem."
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -200,13 +200,15 @@ const faqSchema = faqItems.map((item) => ({
               </div>
             </div>
             <div class="flex flex-wrap gap-3">
-              <a
-                href={model.reviewUrl}
-                class="inline-flex items-center text-accent hover:underline font-medium text-sm"
-              >
-                Läs recension
-                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-              </a>
+              {model.reviewUrl && (
+                <a
+                  href={model.reviewUrl}
+                  class="inline-flex items-center text-accent hover:underline font-medium text-sm"
+                >
+                  Läs recension
+                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                </a>
+              )}
               <a
                 href={model.cta}
                 rel="sponsored nofollow noopener noreferrer"
@@ -320,8 +322,8 @@ const faqSchema = faqItems.map((item) => ({
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Ecovacs Deebot X5 Omni",
   "image": "https://robotjakt.se/images/ecovacs-deebot-x5-omni.jpg", "url": "https://robotjakt.se/ecovacs-deebot-x5-omni/" },
-      { "@type": "ListItem", "position": 2, "name": "Ecovacs Deebot T20 Omni", "url": "https://robotjakt.se/ecovacs-deebot-t20-omni/" },
-      { "@type": "ListItem", "position": 3, "name": "Ecovacs Deebot T10 Omni", "url": "https://robotjakt.se/ecovacs-deebot-t10-omni/" },
+      { "@type": "ListItem", "position": 2, "name": "Ecovacs Deebot T20 Omni", "url": "https://robotjakt.se/ecovacs-guide/" },
+      { "@type": "ListItem", "position": 3, "name": "Ecovacs Deebot T10 Omni", "url": "https://robotjakt.se/ecovacs-guide/" },
     ],
   })} />
 
