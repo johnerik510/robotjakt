@@ -240,7 +240,7 @@ const faqSchema = faqItems.map((item) => ({
 
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
-  "@type": ["Product", "Review"],
+  "@type": "Product",
   "name": "Maytronics Dolphin E30",
   "image": "https://robotjakt.se/images/dolphin-e30.webp",
   "brand": { "@type": "Brand", "name": "Maytronics" },
@@ -262,7 +262,7 @@ const faqSchema = faqItems.map((item) => ({
       "bestRating": "10",
       "worstRating": "1"
     },
-    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "author": { "@type": "Person", "name": "John Erik Johansson" },
     "datePublished": "2026-03-29",
     "reviewBody": "Dolphin E30 är vår topprankning bland poolrobotar 2026. Den kombinerar väggstädning, enkel filterrengöring och pålitlig motor i ett prisvärt paket runt 7 990 kr.",
     "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }

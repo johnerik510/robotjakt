@@ -247,7 +247,7 @@ const faqSchema = faqItems.map((item) => ({
 
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
-  "@type": ["Product", "Review"],
+  "@type": "Product",
   "name": "Maytronics Dolphin Sigma",
   "brand": { "@type": "Brand", "name": "Maytronics" },
   "category": "Poolrobot",
@@ -267,7 +267,7 @@ const faqSchema = faqItems.map((item) => ({
       "bestRating": "10",
       "worstRating": "1"
     },
-    "author": { "@type": "Organization", "name": "Robotjakt" },
+    "author": { "@type": "Person", "name": "John Erik Johansson" },
     "datePublished": "2026-03-29",
     "reviewBody": "Dolphin Sigma är Maytronics premiumval för dig som vill ha fullständig rengöring av botten, väggar och vattenlinje i en pool upp till 12x6 m. WiFi-appen ger full fjärrkontroll och schemaläggning, Smart Nav 2.0 optimerar täckningen.",
     "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
