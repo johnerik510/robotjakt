@@ -3,9 +3,9 @@
   "configurations": [
     {
       "name": "robotjakt",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
-      "port": 4322
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "/Users/axeljonemyr/Documents/robotjakt/dist", "--listen", "4321", "--no-clipboard"],
+      "port": 4321
     }
   ]
 }

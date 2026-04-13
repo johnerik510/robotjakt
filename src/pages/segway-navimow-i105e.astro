@@ -1,0 +1,300 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Utan slinga', href: '/robotgrasklippare-utan-slinga/' },
+  { label: 'Segway Navimow i105E' },
+];
+
+const kjellUrl = 'https://ion.kjell.com/t/t?a=1098281531&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.kjell.com%2Fse%2Fprodukter%2Fhem-fritid%2Ftradgard%2Frobotgrasklippare-tillbehor%2Frobotgrasklippare%2Fsegway-navimow-i105e-robotgrasklippare-p66290';
+
+const specs = [
+  { label: 'Klippyta', value: '500 m²' },
+  { label: 'Klippbredd', value: '18 cm' },
+  { label: 'Lutningstolerans', value: '30%' },
+  { label: 'Navigering', value: 'VisionFence (fisheye-kamera + AI) + EFLS 2.0 GNSS' },
+  { label: 'Uppkoppling', value: 'Wi-Fi (4G valfritt via Access+-modul)' },
+  { label: 'Kabelinstallation', value: 'Nej — utan slinga' },
+  { label: 'Drifttid', value: '60 min' },
+  { label: 'Skyddsklassning', value: 'IP66' },
+  { label: 'Installation', value: 'Basstationsantenn' },
+];
+
+const faqItems = [
+  {
+    question: 'Vad är VisionFence-tekniken på Segway Navimow i105E?',
+    answer: 'VisionFence är Segways navigeringssystem som kombinerar en 140° fisheye-kamera med AI-bildbehandling och EFLS 2.0 GNSS (satellitpositionering). Kameran analyserar omgivningen i realtid och identifierar gränser samt undviker hinder. GNSS-systemet ger precis positionering utan att du behöver gräva ner perimeterkabel. Tillsammans gör de att du enkelt ritar upp klippzoner direkt i appen.',
+  },
+  {
+    question: 'Behöver Segway Navimow i105E 4G-uppkoppling?',
+    answer: 'Nej, i105E fungerar som standard via Wi-Fi. 4G är valfritt och kräver Segways Access+-modul (art.nr p66296 på Kjell) som köps separat. Wi-Fi räcker för de flesta användare som befinner sig i närheten av sitt hemma-nätverk. Vill du kunna styra och övervaka roboten på distans behöver du Access+-modulen.',
+  },
+  {
+    question: 'Hur stor trädgård klarar Segway Navimow i105E?',
+    answer: 'i105E klarar klippytor upp till 500 m². Den passar alltså mindre trädgårdar och radhustomter. Har du en större yta bör du titta på Segway Navimow i108E (800 m²), H500E (500 m² med 4G inbyggd) eller modeller från Mammotion och Husqvarna Automower-serien.',
+  },
+  {
+    question: 'Hur skiljer sig Segway Navimow i105E mot H500E?',
+    answer: 'H500E riktar sig till betydligt större ytor (upp till 5 000 m²) och har 4G inbyggt — priset är ca 19 990 kr. i105E klarar upp till 500 m² och kostar 9 990 kr med 4G som tillval. Välj i105E om du har en liten trädgård och vill ha en prisvärd utan-slinga-modell. Välj H500E om du har en stor yta och vill ha 4G direkt från start.',
+  },
+  {
+    question: 'Var kan man köpa Segway Navimow i105E?',
+    answer: 'Segway Navimow i105E säljs bland annat på Kjell & Company, som finns i 18 butiker i Sverige. Du hittar produkten online på kjell.com eller i närmaste butik.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<ArticleLayout
+  title="Segway Navimow i105E Test April 2026 — Recension"
+  description="Vi testar Segway Navimow i105E — robotgräsklippare utan slinga för upp till 500 m². VisionFence-kamera + GNSS. Köps hos Kjell. Läs recensionen."
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-04-13"
+  ogImage="/images/segway-navimow-i105e.webp"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Segway Navimow i105E — Recension 2026
+  </h1>
+
+  <!-- Verdict box -->
+  <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+    <div class="flex items-start gap-4">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">UTAN SLINGA</span>
+          <div class="flex gap-0.5" aria-label="Betyg: 8 av 10">
+            {[1,2,3,4].map(i => (
+              <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+            <svg class="w-4 h-4 text-border" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+          </div>
+          <span class="font-bold text-text">8 / 10</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed mb-3">
+          Segway Navimow i105E är en prisvärd robotgräsklippare utan slinga för trädgårdar upp till 500 m². VisionFence-tekniken kombinerar en 140° fisheye-kamera med AI och EFLS 2.0 GNSS för precis navigering — ingen perimeterkabel krävs. 4G är valfritt tillval via separat modul.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <p class="text-2xl font-bold text-text">9 990 kr</p>
+            <p class="text-xs text-text-light">Hos Kjell &amp; Company</p>
+          </div>
+          <a
+            href={kjellUrl}
+            rel="sponsored nofollow noopener noreferrer"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris hos Kjell
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pros/Cons -->
+  <div class="grid sm:grid-cols-2 gap-5 mb-8">
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Fördelar med Segway Navimow i105E</h2>
+      <ul class="space-y-2">
+        {[
+          'Ingen perimeterkabel — snabb installation',
+          'VisionFence-kamera undviker hinder aktivt',
+          'IP66-klassad — klarar regn och smuts',
+          'Prisvärd utan-slinga-modell under 10 000 kr',
+          '4G som tillval — anpassa efter behov',
+          'EFLS 2.0 GNSS för precis positionering',
+        ].map(pro => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            {pro}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Nackdelar med Segway Navimow i105E</h2>
+      <ul class="space-y-2">
+        {[
+          'Klarar bara 500 m² — passar inte stora trädgårdar',
+          '4G kräver separat Access+-modul (extra kostnad)',
+          'Kortare drifttid (60 min) än större modeller',
+          'Max 30% lutning — begränsad på branta slänter',
+          'Begränsat antal återförsäljare i Sverige',
+        ].map(con => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+            {con}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Specs table -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">Specifikationer Segway Navimow i105E</h2>
+    <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+      <table class="w-full text-sm">
+        <tbody class="divide-y divide-border">
+          {specs.map((spec, i) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+              <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+              <td class="px-4 py-3 text-text-light">{spec.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Detailed review -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-6">Så presterar Segway Navimow i105E</h2>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">VisionFence och GNSS — navigationssystemet</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Hjärtat i i105E är VisionFence-systemet som kombinerar en bred 140° fisheye-kamera med AI-bildanalys och EFLS 2.0 GNSS. Kameran ser omgivningen i realtid och identifierar aktivt hinder — leksaker, djur, krukor — medan GNSS håller roboten kalibrerad mot de zongränser du ritat upp i appen. Resultatet är en robot som hittar rätt utan ett enda meter kabel i marken.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Installationen är enkel: montera basstationsantennen på en stadig yta med fri sikt mot himlen, koppla in strömmen och rita upp dina zoner i Navimow-appen. Hela processen brukar ta under en timme för en standardträdgård.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Klippresultat och ytkapacitet</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Med 18 cm klippbredd och systematisk bannavigering täcker i105E din 500 m²-trädgård jämnt och effektivt. Drifttiden på 60 min räcker för ett klipppass och roboten returnerar automatiskt till basstationen för laddning när det behövs. Schemaläggning sköts via appen.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Max 30% lutning är tillräckligt för de flesta villaträdgårdar, men har du branta slänter bör du jämföra med H500E (45% lutning) eller Husqvarna Automower-serien som har specialmodeller för extrema lutningar.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">4G som tillval — smart eller begränsning?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Att 4G är valfritt via Access+-modulen är ett smart val från Segway — det sänker grundpriset och ger dig möjlighet att uppgradera vid behov. Wi-Fi-uppkopplingen fungerar utmärkt om du befinner dig hemma och vill styra roboten. Vill du ha full fjärrkontroll och notiser var du än är behöver du Access+-modulen som kostar ytterligare.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      IP66-klassningen innebär att roboten klarar kraftigt regn och direkta vattenstrålar utan problem — klippning i duggregn är inget hinder.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Segway Navimow i105E vs H500E — vilket ska du välja?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Prisskillnaden är tydlig: i105E kostar 9 990 kr och H500E kostar ca 19 990 kr. i105E klarar 500 m² och H500E klarar 5 000 m². Om du har en trädgård under 500 m² är i105E det självklara valet — du sparar 10 000 kr och får i princip samma teknik men i en mer kompakt modell.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      H500E passar dig med en stor tomt, inbyggt 4G-behov och vilja att klippa längre per pass (120 min vs 60 min). Båda modellerna använder VisionFence och kräver ingen perimeterkabel.
+    </p>
+  </section>
+
+  <!-- For whom -->
+  <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+    <h2 class="font-heading text-xl font-bold text-text mb-3">Vem passar Segway Navimow i105E för?</h2>
+    <p class="text-text-light leading-relaxed mb-3">
+      i105E är rätt val för dig med en radhustomt eller liten villa med gräsyta upp till 500 m² som vill ha en utan-slinga-modell under 10 000 kr. Tekniken är mogen, installationen snabb och det faktum att 4G är valfritt gör den flexibel.
+    </p>
+    <p class="text-text-light leading-relaxed">
+      Passar inte om du har en yta över 500 m², branta slänter över 30% eller behöver 4G utan att investera i tillbehör. Kolla då på Segway Navimow H500E eller Mammotion LUBA-serien.
+    </p>
+  </section>
+
+  <!-- CTA section -->
+  <section class="mb-10 bg-white rounded-xl border border-border p-5">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Köp Segway Navimow i105E</h2>
+    <p class="text-text-light text-sm mb-4">Finns hos Kjell &amp; Company — online och i 18 butiker i Sverige.</p>
+    <a
+      href={kjellUrl}
+      rel="sponsored nofollow noopener noreferrer"
+      target="_blank"
+      class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+    >
+      Se pris hos Kjell
+      <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+    </a>
+  </section>
+
+  <!-- Compare section -->
+  <section class="mb-10 bg-white rounded-xl border border-border p-5">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med andra robotgräsklippare utan slinga</h2>
+    <p class="text-text-light text-sm mb-4">Se alla utan-slinga-modeller vi testat eller hela sortimentet.</p>
+    <div class="flex flex-col sm:flex-row gap-3">
+      <a href="/robotgrasklippare-utan-slinga/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+        Se alla robotgräsklippare utan slinga
+        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+      </a>
+      <a href="/robotgrasklippare/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+        Se alla robotgräsklippare vi testat
+        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+      </a>
+    </div>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <!-- Related links -->
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade recensioner</h2>
+    <ul class="space-y-2">
+      <li><a href="/segway-navimow-h500e/" class="text-accent hover:underline text-sm">Segway Navimow H500E recension — utan slinga för upp till 5 000 m²</a></li>
+      <li><a href="/segway-navimow-h800e/" class="text-accent hover:underline text-sm">Segway Navimow H800E recension — utan slinga för upp till 8 000 m²</a></li>
+      <li><a href="/robotgrasklippare-utan-slinga/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare utan slinga April 2026 — GPS och RTK-modeller</a></li>
+      <li><a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare April 2026 — komplett topplista och jämförelse</a></li>
+    </ul>
+  </section>
+</ArticleLayout>
+
+<StickyCTA
+  text="Se pris hos Kjell"
+  url={kjellUrl}
+  productName="Segway Navimow i105E"
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Segway Navimow i105E",
+  "image": "https://robotjakt.se/images/segway-navimow-i105e.webp",
+  "brand": { "@type": "Brand", "name": "Segway" },
+  "description": "Segway Navimow i105E robotgräsklippare utan slinga med VisionFence (fisheye-kamera + AI) och EFLS 2.0 GNSS för trädgårdar upp till 500 m².",
+  "category": "Robotgräsklippare",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "SEK",
+    "price": "9990",
+    "availability": "https://schema.org/InStock",
+    "shippingDetails": {"@type":"OfferShippingDetails","shippingDestination":{"@type":"DefinedRegion","addressCountry":"SE"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":3,"unitCode":"d"},"transitTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":5,"unitCode":"d"}}},
+    "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","applicableCountry":"SE","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":14,"returnMethod":"https://schema.org/ReturnByMail","returnFees":"https://schema.org/ReturnShippingFees"}
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "8",
+      "bestRating": "10",
+      "worstRating": "1"
+    },
+    "author": { "@type": "Person", "name": "John Erik Johansson" },
+    "datePublished": "2026-04-13",
+    "reviewBody": "Segway Navimow i105E är en prisvärd robotgräsklippare utan slinga för trädgårdar upp till 500 m². VisionFence kombinerar fisheye-kamera med AI och GNSS för precis navigering utan perimeterkabel.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  }
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqSchema,
+})} />
