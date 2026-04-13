@@ -25,7 +25,7 @@ const models = [
       'Fullautomatisk station — vatten, tömning, tvättning',
     ],
     cta: 'https://go.adt267.com/t/t?a=1615916040&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.komplett.se%2Fproduct%2F1307950',
-    amazon: 'https://www.amazon.se/dp/B0CXDXKSXP?tag=johnerik510-20',
+
     ctaText: 'Se pris på X40 Ultra',
     reviewUrl: '/dreame-x40-ultra/',
     description: 'Dreame X40 Ultra är toppmodellen med den unika utfällbara moppmodulen som faktiskt når in i hörnen, kombinerat med 12 000 Pa sugkraft och fullautomatisk station med varmvattentvätt. Det bästa valet för hem med mycket hårdgolv som kräver riktig moppning.',
@@ -101,7 +101,7 @@ const models = [
       'Bäst för familjer med barn och allergiker',
     ],
     cta: 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotdammsugare%2FDreame-Robotdammsugare-Bot-L10s-Pro%2F3141719',
-    amazon: 'https://www.amazon.se/s?k=dreame+l10s+pro+ultra+heat&tag=johnerik510-20',
+
     ctaText: 'Se pris på L10s Pro Ultra Heat',
     reviewUrl: '/dreame-l10s-pro-ultra-heat/',
     description: 'Dreame L10s Pro Ultra Heat är unik med 75°C varmvattenmoppning som desinficerar hårda golv. Utan AI-kamera men med helautomatisk station — bäst för barnfamiljer och allergiker.',
@@ -138,7 +138,7 @@ const models = [
       'App-styrning via Dreame Home',
     ],
     cta: 'https://go.adt267.com/t/t?a=1615916040&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.komplett.se%2Fsearch%3Fq%3Ddreame%2Bz10%2Bpro',
-    amazon: 'https://www.amazon.se/s?k=dreame+z10+pro&tag=johnerik510-20',
+
     ctaText: 'Se pris på Z10 Pro',
     reviewUrl: '/dreame-z10-pro/',
     description: 'Dreame Z10 Pro erbjuder automatisk dammtömning i budgetsegmentet — en funktion som normalt bara finns i premium. LiDAR och app-styrning ingår till ett rimligt pris.',
@@ -157,7 +157,7 @@ const models = [
       'App-styrning ingår',
     ],
     cta: 'https://go.adt267.com/t/t?a=1615916040&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.komplett.se%2Fsearch%3Fq%3Ddreame%2Bd10s%2Bpro',
-    amazon: 'https://www.amazon.se/s?k=dreame+d10s+pro&tag=johnerik510-20',
+
     ctaText: 'Se pris på D10s Pro',
     reviewUrl: '/dreame-d10s-pro/',
     description: 'Dreame D10s Pro är ingångsmodellen med LiDAR-navigering och moppfunktion till lägsta möjliga pris. Tömmer dammkorgen manuellt men ger Dreames tillförlitliga städkvalitet.',
@@ -295,15 +295,6 @@ const faqSchema = faqItems.map((item) => ({
                 class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
               >
                 {model.ctaText}
-                <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-              </a>
-              <a
-                href={model.amazon}
-                rel="sponsored nofollow noopener noreferrer"
-                target="_blank"
-                class="inline-flex items-center justify-center border-2 border-cta text-cta hover:bg-cta hover:text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
-              >
-                Amazon
                 <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
               </a>
             </div>
