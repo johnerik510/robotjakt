@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ProductCard from '../components/ProductCard.astro';
 import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
 
 const products = [
   {
@@ -268,11 +269,119 @@ const faqSchema = faqItems.map((item) => ({
   </section>
 
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-    <AffiliateDisclaimer />
+
+    <!-- Trust signals -->
+    <div class="flex flex-wrap gap-3 text-sm text-text-light mb-6">
+      <span class="flex items-center gap-1.5">
+        <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        {products.length} robotdammsugare testade
+      </span>
+      <span class="flex items-center gap-1.5">
+        <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        Senast uppdaterad april 2026
+      </span>
+      <span class="flex items-center gap-1.5">
+        <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        Priser verifierade mot butik
+      </span>
+    </div>
+
+    <!-- Snabbjämförelsetabell -->
+    <section class="mb-8" id="topplista">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse — topp 6</h2>
+      <!-- Mobil: kort -->
+      <div class="md:hidden space-y-3">
+        {[
+          { name: 'Dreame X50 Ultra', sug: '20 000 Pa', mopp: 'Ja', pris: '8 990 kr', badge: 'Bäst 2026' },
+          { name: 'Dreame X40 Ultra', sug: '12 000 Pa', mopp: 'Ja', pris: '9 990 kr', badge: '' },
+          { name: 'Roborock S8 MaxV Ultra', sug: '10 000 Pa', mopp: 'Ja', pris: '11 990 kr', badge: '' },
+          { name: 'Roborock Qrevo Master', sug: '10 000 Pa', mopp: 'Ja', pris: '7 490 kr', badge: '' },
+          { name: 'Ecovacs Deebot X5 Omni', sug: '12 800 Pa', mopp: 'Ja', pris: '8 990 kr', badge: '' },
+          { name: 'Dreame L20 Ultra', sug: '7 000 Pa', mopp: 'Ja', pris: '5 990 kr', badge: '' },
+        ].map(row => (
+          <div class={`bg-white rounded-xl border ${row.badge ? 'border-winner' : 'border-border'} p-4 text-sm`}>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="font-semibold text-text">{row.name}</span>
+              {row.badge && <span class="text-xs bg-winner text-white px-1.5 py-0.5 rounded">{row.badge}</span>}
+            </div>
+            <div class="grid grid-cols-2 gap-1 text-text-light">
+              <span>Sugkraft: {row.sug}</span>
+              <span>Pris: ca {row.pris}</span>
+              <span>Mopp: {row.mopp}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+      <!-- Desktop: tabell -->
+      <div class="hidden md:block bg-white rounded-xl border border-border overflow-hidden">
+        <table class="w-full text-sm">
+          <thead class="bg-bg-alt">
+            <tr>
+              <th class="px-4 py-3 text-left font-semibold text-text">Modell</th>
+              <th class="px-4 py-3 text-left font-semibold text-text">Sugkraft</th>
+              <th class="px-4 py-3 text-left font-semibold text-text">Mopp</th>
+              <th class="px-4 py-3 text-left font-semibold text-text">Station</th>
+              <th class="px-4 py-3 text-left font-semibold text-text">Pris</th>
+              <th class="px-4 py-3 text-left font-semibold text-text">Länk</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr class="bg-winner/5">
+              <td class="px-4 py-3 font-medium text-text">Dreame X50 Ultra <span class="ml-1 text-xs bg-winner text-white px-1.5 py-0.5 rounded">Bäst 2026</span></td>
+              <td class="px-4 py-3 text-text-light">20 000 Pa</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-text-light">Ultra</td>
+              <td class="px-4 py-3 font-semibold text-text">8 990 kr</td>
+              <td class="px-4 py-3"><a href="https://go.adt267.com/t/t?a=1615916040&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.komplett.se%2Fproduct%2F1319428%2Fhem-hushaall%2Fdammsugare-rengoring%2Frobotdammsugare%2Fdreame-x50-ultra-complete-robotdammsugare-vit" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Dreame X40 Ultra</td>
+              <td class="px-4 py-3 text-text-light">12 000 Pa</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-text-light">Ultra</td>
+              <td class="px-4 py-3 font-semibold text-text">9 990 kr</td>
+              <td class="px-4 py-3"><a href="https://go.adt267.com/t/t?a=1615916040&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.komplett.se%2Fproduct%2F1307950" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
+            </tr>
+            <tr class="bg-bg-alt/50">
+              <td class="px-4 py-3 font-medium text-text">Roborock S8 MaxV Ultra</td>
+              <td class="px-4 py-3 text-text-light">10 000 Pa</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-text-light">Ultra</td>
+              <td class="px-4 py-3 font-semibold text-text">11 990 kr</td>
+              <td class="px-4 py-3"><a href="https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Froborock-s8-maxv-ultra-white-135019" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Roborock Qrevo Master</td>
+              <td class="px-4 py-3 text-text-light">10 000 Pa</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-text-light">Komplett</td>
+              <td class="px-4 py-3 font-semibold text-text">7 490 kr</td>
+              <td class="px-4 py-3"><a href="https://go.adt267.com/t/t?a=1615916040&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.komplett.se%2Fsearch%3Fq%3DRoborock%2BQrevo%2BMaster" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
+            </tr>
+            <tr class="bg-bg-alt/50">
+              <td class="px-4 py-3 font-medium text-text">Ecovacs Deebot X5 Omni</td>
+              <td class="px-4 py-3 text-text-light">12 800 Pa</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-text-light">Ultra</td>
+              <td class="px-4 py-3 font-semibold text-text">8 990 kr</td>
+              <td class="px-4 py-3"><a href="https://go.adt267.com/t/t?a=1615916040&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.komplett.se%2Fproduct%2F1312251%2Fhem-fritid%2Fdammsugare-rengoring%2Frobotdammsugare%2Fecovacs-deebot-x5-omni-robotdammsugare-svart" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Dreame L20 Ultra</td>
+              <td class="px-4 py-3 text-text-light">7 000 Pa</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-text-light">Ultra</td>
+              <td class="px-4 py-3 font-semibold text-text">5 990 kr</td>
+              <td class="px-4 py-3"><a href="https://go.adt267.com/t/t?a=1615916040&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.komplett.se%2Fproduct%2F1307025" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
     <!-- Topplista robotdammsugare -->
-    <h2 id="topplista" class="font-heading text-2xl font-bold text-text mb-2">Bästa robotdammsugare April 2026 — topplista</h2>
-    <p class="text-text-light mb-5 text-sm">Vi har testat {products.length} robotdammsugare och rankat dem efter sugkraft, navigering, moppfunktion och prisvärdhet. Dreame X50 Ultra är ny etta april 2026.</p>
+    <h2 class="font-heading text-2xl font-bold text-text mb-2">Alla {products.length} robotdammsugare — detaljerade recensioner</h2>
+    <p class="text-text-light mb-5 text-sm">Dreame X50 Ultra är ny etta april 2026. Klicka på en modell för fullständig recension.</p>
     <div class="space-y-5 mb-12">
       {products.map((p) => (
         <ProductCard {...p} />
@@ -297,7 +406,7 @@ const faqSchema = faqItems.map((item) => ({
         </a>
         <a href="/eufy-guide/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">eufy — alla modeller 2026</h3>
-          <p class="text-sm text-text-light">X10 Pro Omni, X9 Pro, L70 Hybrid och RoboVac G30 — prisvärd kvalitet fran Anker.</p>
+          <p class="text-sm text-text-light">X10 Pro Omni, X9 Pro, L70 Hybrid och RoboVac G30 — prisvärd kvalitet från Anker.</p>
         </a>
       </div>
     </section>
@@ -457,7 +566,15 @@ const faqSchema = faqItems.map((item) => ({
     </section>
 
     <FAQ items={faqItems} />
+
+    <AffiliateDisclaimer />
   </div>
+
+  <StickyCTA
+    text="Se Dreame X50 Ultra hos Komplett"
+    url="https://go.adt267.com/t/t?a=1615916040&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.komplett.se%2Fproduct%2F1319428%2Fhem-hushaall%2Fdammsugare-rengoring%2Frobotdammsugare%2Fdreame-x50-ultra-complete-robotdammsugare-vit"
+    productName="Dreame X50 Ultra"
+  />
 
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",

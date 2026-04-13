@@ -112,8 +112,7 @@ const faqSchema = faqItems.map((item) => ({
   </section>
 
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <AffiliateDisclaimer />
-    <p class="text-sm text-text-light mb-2">Senast uppdaterad: april 2026 &mdash; {products.length} produkter</p>
+<p class="text-sm text-text-light mb-2">Senast uppdaterad: april 2026 &mdash; {products.length} produkter</p>
 
     <div class="bg-accent/5 border border-accent/20 rounded-xl px-5 py-4 mb-8 text-sm text-text">
       <strong>Säsongsstart-tips:</strong> Byt knivar och kontrollera begränsningskabeln varje vår innan du startar robotgräsklipparen. Det tar 15 minuter och förebygger driftstopp under säsongen.
@@ -187,6 +186,8 @@ const faqSchema = faqItems.map((item) => ({
     </section>
 
     <FAQ items={faqItems} />
+
+    <AffiliateDisclaimer />
   </main>
 
   <script type="application/ld+json" set:html={JSON.stringify({

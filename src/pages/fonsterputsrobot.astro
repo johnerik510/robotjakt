@@ -44,9 +44,7 @@ const faqSchema = faqItems.map((item) => ({
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-    <AffiliateDisclaimer />
-
-    <p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+<p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
       Fönsterputsrobot April 2026 — Bästa modellerna
@@ -56,10 +54,34 @@ const faqSchema = faqItems.map((item) => ({
     </p>
 
     <!-- Snabbjämförelse -->
-    <section class="mb-8" aria-label="Jämforelsetabell fönsterputsrobotar">
+    <section class="mb-8" aria-label="Jämförelsetabell fönsterputsrobotar">
       <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse — bästa modellerna 2026</h2>
-      <div class="overflow-x-auto rounded-xl border border-border">
-        <table class="w-full text-sm bg-white">
+      <!-- Mobil: kort -->
+      <div class="md:hidden space-y-3">
+        {[
+          { name: 'Ecovacs Winbot W2 Omni', pris: '4 990 kr', ram: 'Ja', teknik: 'Vatten + mikrofiberduk', betyg: '8,8', badge: 'Bäst i test' },
+          { name: 'Hobot Legee 688', pris: '2 499 kr', ram: 'Nej', teknik: 'Vatten + mikrofiberduk', betyg: '8,4', badge: 'Populärt val' },
+          { name: 'Ecovacs Winbot W1 Pro', pris: '2 990 kr', ram: 'Nej', teknik: 'Spray + duk', betyg: '8,2', badge: '' },
+          { name: 'Liectroux WS-1080', pris: '1 490 kr', ram: 'Nej', teknik: 'Vakuumsugsugning', betyg: '7,0', badge: 'Budget' },
+        ].map(row => (
+          <div class={`bg-white rounded-xl border ${row.badge === 'Bäst i test' ? 'border-winner' : 'border-border'} p-4 text-sm`}>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="font-semibold text-text">{row.name}</span>
+              {row.badge && <span class={`text-xs ${row.badge === 'Bäst i test' ? 'bg-winner' : 'bg-accent'} text-white px-1.5 py-0.5 rounded`}>{row.badge}</span>}
+            </div>
+            <div class="grid grid-cols-2 gap-1 text-text-light mb-3">
+              <span>Pris: ca {row.pris}</span>
+              <span>Utan ram: {row.ram}</span>
+              <span>Teknik: {row.teknik}</span>
+              <span>Betyg: {row.betyg}/10</span>
+            </div>
+            <a href="https://addrevenue.io/t?a=985383&c=3467327" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium text-sm">Se pris</a>
+          </div>
+        ))}
+      </div>
+      <!-- Desktop: tabell -->
+      <div class="hidden md:block bg-white rounded-xl border border-border overflow-hidden">
+        <table class="w-full text-sm">
           <thead>
             <tr class="border-b border-border bg-bg-alt">
               <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
@@ -67,15 +89,25 @@ const faqSchema = faqItems.map((item) => ({
               <th class="text-left px-4 py-3 font-semibold text-text">Utan ram</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Rengöringsteknik</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Betyg</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Länk</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-border">
-            <tr>
-              <td class="px-4 py-3 font-medium text-text">Ecovacs Winbot W2 Omni</td>
+            <tr class="bg-winner/5">
+              <td class="px-4 py-3 font-medium text-text">Ecovacs Winbot W2 Omni <span class="ml-1 text-xs bg-winner text-white px-1.5 py-0.5 rounded">Bäst 2026</span></td>
               <td class="px-4 py-3 text-text">ca 4 990 kr</td>
               <td class="px-4 py-3 text-winner font-semibold">Ja</td>
               <td class="px-4 py-3 text-text-light">Vatten + mikrofiberduk</td>
               <td class="px-4 py-3 text-winner font-semibold">8,8/10</td>
+              <td class="px-4 py-3"><a href="https://addrevenue.io/t?a=985383&c=3467327" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Hobot Legee 688</td>
+              <td class="px-4 py-3 text-text">ca 2 499 kr</td>
+              <td class="px-4 py-3 text-cta font-medium">Nej (kräver ram)</td>
+              <td class="px-4 py-3 text-text-light">Vatten + mikrofiberduk</td>
+              <td class="px-4 py-3 text-winner font-semibold">8,4/10</td>
+              <td class="px-4 py-3"><a href="https://addrevenue.io/t?a=985383&c=3467327" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
             </tr>
             <tr class="bg-bg-alt/50">
               <td class="px-4 py-3 font-medium text-text">Ecovacs Winbot W1 Pro</td>
@@ -83,13 +115,7 @@ const faqSchema = faqItems.map((item) => ({
               <td class="px-4 py-3 text-cta font-medium">Nej (kräver ram)</td>
               <td class="px-4 py-3 text-text-light">Spray + duk</td>
               <td class="px-4 py-3 text-winner font-semibold">8,2/10</td>
-            </tr>
-            <tr class="bg-bg-alt/50">
-              <td class="px-4 py-3 font-medium text-text">Hobot Legee 688</td>
-              <td class="px-4 py-3 text-text">ca 2 499 kr</td>
-              <td class="px-4 py-3 text-cta font-medium">Nej (kräver ram)</td>
-              <td class="px-4 py-3 text-text-light">Vatten + mikrofiberduk</td>
-              <td class="px-4 py-3 text-winner font-semibold">8,4/10</td>
+              <td class="px-4 py-3"><a href="https://addrevenue.io/t?a=985383&c=3467327" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-medium text-text">Liectroux WS-1080</td>
@@ -97,6 +123,7 @@ const faqSchema = faqItems.map((item) => ({
               <td class="px-4 py-3 text-cta font-medium">Nej (kräver ram)</td>
               <td class="px-4 py-3 text-text-light">Vakuumsugsugning</td>
               <td class="px-4 py-3 text-text-light font-semibold">7,0/10</td>
+              <td class="px-4 py-3"><a href="https://addrevenue.io/t?a=985383&c=3467327" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
             </tr>
           </tbody>
         </table>
@@ -268,7 +295,7 @@ const faqSchema = faqItems.map((item) => ({
               </ul>
             </div>
             <div>
-              <p class="text-xs font-semibind text-text mb-2">Kompromisser</p>
+              <p class="text-xs font-semibold text-text mb-2">Kompromisser</p>
               <ul class="space-y-1">
                 {['Kräver ren glasyta och fönsterram', 'Sämre rengöringsresultat än premiummodeller', 'Ingen automatisk spray — kräver förbehandling', 'Kortare livslängd än Ecovacs'].map(c => (
                   <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-cta font-bold mt-0.5">-</span>{c}</li>
@@ -352,17 +379,20 @@ const faqSchema = faqItems.map((item) => ({
         </a>
         <a href="/robotgrasklippare/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Bästa robotgräsklippare 2026</h3>
-          <p class="text-sm text-text-light">Fran Husqvarna Automower till slingfria GPS-modeller.</p>
+          <p class="text-sm text-text-light">Från Husqvarna Automower till slingfria GPS-modeller.</p>
         </a>
       </div>
     </section>
 
     <FAQ items={faqItems} />
+
+    <AffiliateDisclaimer />
   </div>
 
   <StickyCTA
-    text="Se bästa fönsterputsroboten"
-    url="#produkter"
+    text="Se pris på Winbot W2 Omni"
+    url="https://addrevenue.io/t?a=985383&c=3467327"
+    productName="Ecovacs Winbot W2 Omni"
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({

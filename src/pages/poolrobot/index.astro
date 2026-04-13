@@ -166,63 +166,86 @@ const faqSchema = faqItems.map((item) => ({
     <p class="text-text-light mb-4 max-w-2xl">
       Vi har testat och jämfört de mest populära poolrobotarna på den svenska marknaden 2026. Här är våra toppval rankade efter reningstäckning, filtreringsförmåga, drifttid och prisvärdhet.
     </p>
-    <AffiliateDisclaimer />
-
-    <!-- Jämförelsetabell -->
+<!-- Jämförelsetabell -->
     <section class="mb-8" aria-label="Jämförelsetabell poolrobotar" id="produkter">
       <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse</h2>
-      <div class="overflow-x-auto rounded-xl border border-border">
-        <table class="w-full text-sm bg-white">
+      <!-- Mobil: kort -->
+      <div class="md:hidden space-y-3">
+        {[
+          { name: 'Dolphin E30', pool: '10 x 5 m', vaggar: 'Ja', pris: '7 990 kr', betyg: '9,0', badge: 'Bäst i test' },
+          { name: 'Dolphin Sigma', pool: '12 x 6 m', vaggar: 'Ja', pris: '14 990 kr', betyg: '8,8', badge: 'Premium' },
+          { name: 'Zodiac Tornax OT2030', pool: '10 x 5 m', vaggar: 'Ja', pris: '9 490 kr', betyg: '8,5', badge: '' },
+          { name: 'Bestway AquaSurge', pool: '8 x 4 m', vaggar: 'Nej', pris: '2 990 kr', betyg: '7,5', badge: 'Budget' },
+          { name: 'Swim & Fun Deep Clean', pool: '10 x 5 m', vaggar: 'Delvis', pris: '4 990 kr', betyg: '8,0', badge: '' },
+        ].map(row => (
+          <div class={`bg-white rounded-xl border ${row.badge === 'Bäst i test' ? 'border-winner' : 'border-border'} p-4 text-sm`}>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="font-semibold text-text">{row.name}</span>
+              {row.badge && <span class={`text-xs ${row.badge === 'Bäst i test' ? 'bg-winner' : 'bg-accent'} text-white px-1.5 py-0.5 rounded`}>{row.badge}</span>}
+            </div>
+            <div class="grid grid-cols-2 gap-1 text-text-light mb-3">
+              <span>Pool: {row.pool}</span>
+              <span>Pris: ca {row.pris}</span>
+              <span>Väggar: {row.vaggar}</span>
+              <span>Betyg: {row.betyg}/10</span>
+            </div>
+            <a href="https://addrevenue.io/t?a=984922&c=3467327" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium text-sm">Se pris hos Villanytt</a>
+          </div>
+        ))}
+      </div>
+      <!-- Desktop: tabell -->
+      <div class="hidden md:block bg-white rounded-xl border border-border overflow-hidden">
+        <table class="w-full text-sm">
           <thead>
             <tr class="border-b border-border bg-bg-alt">
               <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Poolstorlek</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Klättrar väggar</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Botten+sidor</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Pris</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Betyg</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Länk</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-border">
-            <tr>
-              <td class="px-4 py-3 font-medium text-text">Maytronics Dolphin E30</td>
+            <tr class="bg-winner/5">
+              <td class="px-4 py-3 font-medium text-text">Dolphin E30 <span class="ml-1 text-xs bg-winner text-white px-1.5 py-0.5 rounded">Bäst i test</span></td>
               <td class="px-4 py-3 text-text-light">10 x 5 m</td>
-              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
               <td class="px-4 py-3 text-winner font-semibold">Ja</td>
               <td class="px-4 py-3 text-text">ca 7 990 kr</td>
               <td class="px-4 py-3 text-winner font-semibold">9,0/10</td>
+              <td class="px-4 py-3"><a href="https://addrevenue.io/t?a=984922&c=3467327" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
             </tr>
             <tr class="bg-bg-alt/50">
-              <td class="px-4 py-3 font-medium text-text">Maytronics Dolphin Sigma</td>
+              <td class="px-4 py-3 font-medium text-text">Dolphin Sigma</td>
               <td class="px-4 py-3 text-text-light">12 x 6 m</td>
-              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
               <td class="px-4 py-3 text-winner font-semibold">Ja</td>
               <td class="px-4 py-3 text-text">ca 14 990 kr</td>
               <td class="px-4 py-3 text-winner font-semibold">8,8/10</td>
+              <td class="px-4 py-3"><a href="https://addrevenue.io/t?a=984922&c=3467327" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-medium text-text">Zodiac Tornax OT2030</td>
               <td class="px-4 py-3 text-text-light">10 x 5 m</td>
               <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
               <td class="px-4 py-3 text-text">ca 9 490 kr</td>
               <td class="px-4 py-3 text-winner font-semibold">8,5/10</td>
+              <td class="px-4 py-3"><a href="https://addrevenue.io/t?a=984922&c=3467327" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
             </tr>
             <tr class="bg-bg-alt/50">
-              <td class="px-4 py-3 font-medium text-text">Bestway Flowclear AquaSurge</td>
+              <td class="px-4 py-3 font-medium text-text">Bestway AquaSurge</td>
               <td class="px-4 py-3 text-text-light">8 x 4 m</td>
               <td class="px-4 py-3 text-cta font-medium">Nej</td>
-              <td class="px-4 py-3 text-cta font-medium">Botten</td>
               <td class="px-4 py-3 text-text">ca 2 990 kr</td>
               <td class="px-4 py-3 text-winner font-semibold">7,5/10</td>
+              <td class="px-4 py-3"><a href="https://addrevenue.io/t?a=984922&c=3467327" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
             </tr>
             <tr>
-              <td class="px-4 py-3 font-medium text-text">Swim & Fun Deep Clean Robot</td>
+              <td class="px-4 py-3 font-medium text-text">Swim & Fun Deep Clean</td>
               <td class="px-4 py-3 text-text-light">10 x 5 m</td>
               <td class="px-4 py-3 text-text-light font-medium">Delvis</td>
-              <td class="px-4 py-3 text-text-light font-medium">Botten+nedre</td>
               <td class="px-4 py-3 text-text">ca 4 990 kr</td>
               <td class="px-4 py-3 text-winner font-semibold">8,0/10</td>
+              <td class="px-4 py-3"><a href="https://addrevenue.io/t?a=984922&c=3467327" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
             </tr>
           </tbody>
         </table>
@@ -300,11 +323,14 @@ const faqSchema = faqItems.map((item) => ({
     </section>
 
     <FAQ items={faqItems} />
+
+    <AffiliateDisclaimer />
   </div>
 
   <StickyCTA
-    text="Se bästa poolrobot"
-    url="#produkter"
+    text="Se pris hos Villanytt"
+    url="https://addrevenue.io/t?a=984922&c=3467327"
+    productName="Dolphin E30"
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({

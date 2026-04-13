@@ -49,9 +49,7 @@ const faqSchema = faqItems.map((item) => ({
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-    <AffiliateDisclaimer />
-
-    <script type="application/ld+json" set:html={JSON.stringify({
+<script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": faqSchema,
@@ -279,6 +277,8 @@ const faqSchema = faqItems.map((item) => ({
     </div>
 
     <FAQ items={faqItems} />
+
+    <AffiliateDisclaimer />
 
     <StickyCTA
       url="https://go.adt267.com/t/t?a=1615916040&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.komplett.se%2Fsearch%3Fq%3Droborock%2Bs8%2Bmaxv%2Bultra"

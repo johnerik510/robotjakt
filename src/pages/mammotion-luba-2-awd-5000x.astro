@@ -1,0 +1,305 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Utan slinga', href: '/robotgrasklippare-utan-slinga/' },
+  { label: 'Mammotion LUBA 2 AWD 5000X' },
+];
+
+const specs = [
+  { label: 'Klippyta', value: '5 000 m²' },
+  { label: 'Klippbredd', value: '40 cm' },
+  { label: 'Lutningstolerans', value: '80% (38°)' },
+  { label: 'Navigering', value: 'RTK GPS + AI Vision (utan slinga)' },
+  { label: 'Drivlina', value: 'AWD (4-hjulsdrift)' },
+  { label: 'Uppkoppling', value: '4G' },
+  { label: 'Vikt', value: '18,6 kg' },
+  { label: 'Laddtid', value: 'ca 120 min' },
+  { label: 'Drifttid', value: 'ca 190 min' },
+  { label: 'Slingkabel', value: 'Krävs ej' },
+  { label: 'Pris', value: 'ca 25 990 kr' },
+];
+
+const faqItems = [
+  {
+    question: 'Behöver Mammotion LUBA 2 AWD 5000X perimeterkabel?',
+    answer: 'Nej, LUBA 2 AWD 5000X kräver ingen perimeterkabel. Roboten använder RTK GPS för centimeterprecision i positionering och en AI Vision-kamera för att identifiera hinder. Gränser ritas direkt i Mammotion-appen via en interaktiv karta. Du monterar en RTK-referensantenn med fri himmelssikt — det är hela installationen.',
+  },
+  {
+    question: 'Vad är skillnaden mellan LUBA 2 AWD 5000X och LUBA AWO 3000?',
+    answer: 'LUBA 2 AWD 5000X är flaggskeppsmodellen med 5 000 m² kapacitet mot AWO 3000:s 3 000 m², 40 cm klippbredd mot 26 cm och 80% lutningstolerans mot 75%. AWD 5000X:s 4-hjulsdrift ger ännu bättre grepp i kuperad terräng. AWO 3000 är det mer priseffektiva alternativet för mindre ytor.',
+  },
+  {
+    question: 'Hur lång tid tar installationen av LUBA 2 AWD 5000X?',
+    answer: 'Installationen tar normalt 2–3 timmar för en stor tomt. Du monterar RTK-antennen på ett lämpligt ställe med fri himmelssikt och ansluter laddstationen. Sedan ritar du upp klippzoner och hinder i appen — detta är den del som tar mest tid på en komplex 5 000 m² tomt. Inga grävarbeten behövs.',
+  },
+  {
+    question: 'Klarar LUBA 2 AWD 5000X brant terräng?',
+    answer: 'Ja, LUBA 2 AWD 5000X klarar upp till 80% lutning tack vare AWD och kraftfullt hjulupphäng. Det är markant bättre än Husqvarna Automower 430X Nera (45%) och Segway Navimow H800E (45%). För tomter med riktigt branta backar är LUBA 2 AWD det mest kapabla alternativet på marknaden.',
+  },
+  {
+    question: 'Hur fungerar AI Vision-kameran på LUBA 2 AWD 5000X?',
+    answer: 'AI Vision-kameran identifierar och undviker hinder som trädgrenar, leksaker, möbler och husdjur i realtid. Kameran kompletterar RTK GPS-navigeringen och ger roboten förmågan att anpassa sig till temporära hinder utan att fastna. Det är ett av de tydligaste fördelarna jämfört med kabelbaserade Husqvarna-modeller.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<ArticleLayout
+  title="Mammotion LUBA 2 AWD 5000X Test 2026 — Recension & Pris"
+  description="Mammotion LUBA 2 AWD 5000X testad: RTK GPS utan slinga, AWD, 80% lutning och 5 000 m² kapacitet. AI Vision-kamera för hinderundvikning. Se betyg och pris 2026."
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-04-13"
+  ogImage="/images/mammotion-luba-2-awd-5000x.webp"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Mammotion LUBA 2 AWD 5000X — Recension 2026
+  </h1>
+
+  <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+    <div class="flex items-start gap-4">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">UTAN SLINGA — AWD — STOR TOMT</span>
+          <div class="flex gap-0.5" aria-label="Betyg: 4.4 av 5">
+            {[1,2,3,4,5].map(i => (
+              <svg class={`w-4 h-4 ${i <= 4 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span class="font-bold text-text">4,4 / 5</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed mb-3">
+          Mammotion LUBA 2 AWD 5000X är flaggskeppsmodellen för den som vill ha maximal prestanda utan slinga. RTK GPS, AWD-drivlina, 80% lutningstolerans och 40 cm klippbredd gör den till det kapablaste alternativet för stora, kuperade tomter 2026.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <p class="text-2xl font-bold text-text">ca 25 990 kr</p>
+            <p class="text-xs text-text-light">Pris kan variera — jämför alltid</p>
+          </div>
+          <a
+            href="https://www.maskinklippet.se/tradgard/robotgrasklippare-och-tillbehor/robotgrasklippare/mammotion-luba-2-awd-5000x-robotgrasklippare"
+            rel="sponsored nofollow noopener noreferrer"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+          >
+            Se pris på LUBA 2 AWD 5000X
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid sm:grid-cols-2 gap-5 mb-8">
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Fördelar med Mammotion LUBA 2 AWD 5000X</h2>
+      <ul class="space-y-2">
+        {[
+          'Ingen perimeterkabel — RTK GPS-navigering',
+          '80% lutningstolerans — bäst i klassen',
+          '5 000 m² kapacitet — stor tomt',
+          'AWD — 4-hjulsdrift för bättre grepp',
+          '40 cm klippbredd — effektivt täcker ytan',
+          'AI Vision-kamera undviker hinder automatiskt',
+          '190 min drifttid per laddning',
+        ].map(pro => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            {pro}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Nackdelar med Mammotion LUBA 2 AWD 5000X</h2>
+      <ul class="space-y-2">
+        {[
+          'Tung — 18,6 kg gör den klumpig att flytta',
+          'RTK-antenn kräver fri himmelssikt',
+          'Kortare markhistorik än Husqvarna Automower',
+          'Smalare servicenätverk i Sverige',
+          'Lång laddtid — 120 min per cykel',
+        ].map(con => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+            {con}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">Specifikationer Mammotion LUBA 2 AWD 5000X</h2>
+    <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+      <table class="w-full text-sm">
+        <tbody class="divide-y divide-border">
+          {specs.map((spec, i) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+              <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+              <td class="px-4 py-3 text-text-light">{spec.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-6">Så presterar Mammotion LUBA 2 AWD 5000X</h2>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">RTK GPS — slingfri precision</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      RTK GPS ger centimeterprecision i positionering — roboten vet exakt var den befinner sig på tomten och klipper systematiskt utan att missa ytor. Jämfört med enklare GPS-system i exempelvis Segway Navimow är RTK:s noggrannhet en klar fördel på tomter med komplexa former.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Referensantennen behöver placeras med fri sikt mot himlen. Under täta träd kan GPS-mottagningen försämras tillfälligt — AI Vision-kameran tar då över ansvaret för hinderundvikning.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">AWD och 80% lutning</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      4-hjulsdriften är det som verkligen skiljer LUBA 2 AWD från konkurrenterna. Husqvarna Automower 430X Nera klarar 45% lutning. Segway Navimow H800E klarar 45%. LUBA 2 AWD 5000X klarar 80% — det är nästan dubbelt så brant.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      I praktiken innebär det att roboten hanterar sluttningar och kuperad terräng som skulle stoppa alla traditionella slingmodeller. För lantgårdar, trädgårdar i kuperat landskap eller tomter med tydliga nivåskillnader är detta avgörande.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">AI Vision-kameran</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Framåtkameran med AI-bearbetning identifierar hinder i realtid — trädgrenar som fallit ner, leksaker, katter och annat som hamnar i vägen. Roboten stannar eller kör runt hindret beroende på situation.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Det är en genuint användbar funktion för familjer med barn och husdjur. Kabelbaserade robotar stannar visserligen också vid hinder via bumper-sensorer, men AI Vision identifierar hindret på avstånd och undviker det proaktivt.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">40 cm klippbredd</h3>
+    <p class="text-text-light leading-relaxed mb-6">
+      40 cm klippbredd är mer än dubbelt mot Husqvarnas standardmodeller (18–22 cm). På en 5 000 m² tomt är det avgörande för att roboten faktiskt ska hinna täcka hela ytan inom rimlig tid. Drifttiden på 190 minuter kombinerat med den breda klippbanan gör att 415X kan täcka sin maximala yta per laddcykel.
+    </p>
+  </section>
+
+  <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+    <h2 class="font-heading text-xl font-bold text-text mb-3">LUBA 2 AWD 5000X vs Husqvarna 430X Nera vs Segway H800E</h2>
+    <div class="overflow-hidden mb-4">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-border">
+            <th class="text-left py-2 pr-3 font-semibold text-text">Egenskap</th>
+            <th class="text-left py-2 pr-3 font-semibold text-text">LUBA 2 AWD 5000X</th>
+            <th class="text-left py-2 pr-3 font-semibold text-text">430X Nera</th>
+            <th class="text-left py-2 font-semibold text-text">H800E</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-border text-text-light">
+          <tr>
+            <td class="py-2 pr-3 font-medium text-text">Max yta</td>
+            <td class="py-2 pr-3 font-semibold text-winner">5 000 m²</td>
+            <td class="py-2 pr-3">3 200 m²</td>
+            <td class="py-2">3 000 m²</td>
+          </tr>
+          <tr>
+            <td class="py-2 pr-3 font-medium text-text">Lutning</td>
+            <td class="py-2 pr-3 font-semibold text-winner">80%</td>
+            <td class="py-2 pr-3">45%</td>
+            <td class="py-2">45%</td>
+          </tr>
+          <tr>
+            <td class="py-2 pr-3 font-medium text-text">Klippbredd</td>
+            <td class="py-2 pr-3 font-semibold text-winner">40 cm</td>
+            <td class="py-2 pr-3">22 cm</td>
+            <td class="py-2">22 cm</td>
+          </tr>
+          <tr>
+            <td class="py-2 pr-3 font-medium text-text">Slinga</td>
+            <td class="py-2 pr-3 font-semibold text-winner">Nej</td>
+            <td class="py-2 pr-3">Ja</td>
+            <td class="py-2 font-semibold text-winner">Nej</td>
+          </tr>
+          <tr>
+            <td class="py-2 pr-3 font-medium text-text">Pris</td>
+            <td class="py-2 pr-3">ca 25 990 kr</td>
+            <td class="py-2 pr-3">ca 39 990 kr</td>
+            <td class="py-2">ca 17 990 kr</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-text-light text-sm">
+      LUBA 2 AWD 5000X vinner på yta, lutning och klippbredd. Husqvarna 430X Nera är mer beprövad med bättre servicenätverk. H800E är det billigaste slingfria alternativet men klarar hälften så stor yta.
+    </p>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade recensioner</h2>
+    <ul class="space-y-2">
+      <li><a href="/mammotion-luba-awo-3000/" class="text-accent hover:underline text-sm">Mammotion LUBA AWO 3000 — utan slinga för upp till 3 000 m²</a></li>
+      <li><a href="/segway-navimow-h800e/" class="text-accent hover:underline text-sm">Segway Navimow H800E — slingfritt alternativ för 3 000 m²</a></li>
+      <li><a href="/husqvarna-automower-430x-nera/" class="text-accent hover:underline text-sm">Husqvarna Automower 430X Nera — det beprövade alternativet</a></li>
+      <li><a href="/robotgrasklippare-utan-slinga/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare utan slinga 2026</a></li>
+      <li><a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare 2026 — alla modeller</a></li>
+    </ul>
+  </section>
+</ArticleLayout>
+
+<StickyCTA
+  text="Se pris på LUBA 2 AWD 5000X"
+  url="https://www.maskinklippet.se/tradgard/robotgrasklippare-och-tillbehor/robotgrasklippare/mammotion-luba-2-awd-5000x-robotgrasklippare"
+  productName="Mammotion LUBA 2 AWD 5000X"
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Mammotion LUBA 2 AWD 5000X",
+  "image": "https://robotjakt.se/images/mammotion-luba-2-awd-5000x.webp",
+  "brand": { "@type": "Brand", "name": "Mammotion" },
+  "description": "Mammotion LUBA 2 AWD 5000X robotgräsklippare utan slingkabel med RTK GPS, AWD, 80% lutning och 5 000 m² kapacitet.",
+  "category": "Robotgräsklippare",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "SEK",
+    "price": "25990",
+    "availability": "https://schema.org/InStock",
+  }
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Mammotion LUBA 2 AWD 5000X",
+    "brand": { "@type": "Brand", "name": "Mammotion" },
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.4",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "author": { "@type": "Person", "name": "John Erik Johansson" },
+  "datePublished": "2026-04-13",
+  "reviewBody": "Mammotion LUBA 2 AWD 5000X kombinerar RTK GPS utan slinga med AWD, 80% lutning och 5 000 m² kapacitet. Bäst för stora kuperade tomter 2026.",
+  "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqSchema,
+})} />

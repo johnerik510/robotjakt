@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const faqItems = [
@@ -44,9 +45,7 @@ const faqSchema = faqItems.map((item) => ({
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-    <AffiliateDisclaimer />
-
-    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Köpguide robotgräsklippare April 2026 — Så väljer du rätt
@@ -242,10 +241,53 @@ const faqSchema = faqItems.map((item) => ({
       </div>
     </section>
 
+    <!-- Topp 3 — affiliate CTA:er -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Våra topp 3 robotgräsklippare 2026</h2>
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl border border-winner p-5">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-xs bg-winner text-white px-2 py-0.5 rounded font-bold">Bäst totalt</span>
+            <span class="font-heading font-bold text-text">Husqvarna 430X Nera</span>
+            <span class="ml-auto font-bold text-text">ca 39 990 kr</span>
+          </div>
+          <p class="text-sm text-text-light mb-3">GPS+4G, 3 200 m², 45 % lutning, tyst 58 dB. Mest tillförlitlig robotgräsklippare på marknaden.</p>
+          <a href="https://www.bygghemma.se/tradgard-och-utemiljo/tradgardsmaskiner/robotgrasklippare/robotgrasklippare-husqvarna-automower-430x-nera/p-1838454" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]">
+            Se pris hos Bygghemma
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-xs bg-accent text-white px-2 py-0.5 rounded font-bold">Bäst budget</span>
+            <span class="font-heading font-bold text-text">Gardena Sileno City 500</span>
+            <span class="ml-auto font-bold text-text">ca 5 990 kr</span>
+          </div>
+          <p class="text-sm text-text-light mb-3">Tyst 57 dB, enkel installation, pålitlig för ytor upp till 500 m². Perfekt för liten trädgård.</p>
+          <a href="https://go.adt284.net/t/t?a=1870484629&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotgraesklippare%2FGardena-SILENO-city-Robotic-Lawnmower-500-m%2F3050973" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]">
+            Se pris hos Proshop
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-xs bg-accent text-white px-2 py-0.5 rounded font-bold">Utan slinga</span>
+            <span class="font-heading font-bold text-text">Segway Navimow i105E</span>
+            <span class="ml-auto font-bold text-text">9 990 kr</span>
+          </div>
+          <p class="text-sm text-text-light mb-3">VisionFence-kamera + GNSS, ingen perimeterkabel, IP66 vattentålig. Bäst prisvärd utan-slinga-modell.</p>
+          <a href="https://ion.kjell.com/t/t?a=1098281531&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.kjell.com%2Fse%2Fprodukter%2Fhem-fritid%2Ftradgard%2Frobotgrasklippare-tillbehor%2Frobotgrasklippare%2Fsegway-navimow-i105e-robotgrasklippare-p66290" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]">
+            Se pris hos Kjell
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA-box -->
     <div class="bg-accent/5 border border-accent/20 rounded-xl p-6 mb-10 text-center">
-      <h2 class="font-heading text-xl font-bold text-text mb-2">Redo att välja robotgräsklippare?</h2>
-      <p class="text-text-light mb-4 text-sm">Se vår uppdaterade topplista med priser, specs och detaljerade betyg för 2026.</p>
+      <h2 class="font-heading text-xl font-bold text-text mb-2">Se alla modeller testade</h2>
+      <p class="text-text-light mb-4 text-sm">Vår fullständiga topplista med priser, specs och betyg — uppdaterad april 2026.</p>
       <a href="/robotgrasklippare/" class="inline-flex items-center justify-center px-6 py-3 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors min-h-[44px]">
         Se topplistan — bästa robotgräsklippare 2026
         <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
@@ -253,6 +295,8 @@ const faqSchema = faqItems.map((item) => ({
     </div>
 
     <FAQ items={faqItems} />
+
+    <AffiliateDisclaimer />
 
     <!-- Intern länkning -->
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
@@ -264,6 +308,12 @@ const faqSchema = faqItems.map((item) => ({
       </ul>
     </section>
   </div>
+
+  <StickyCTA
+    text="Se pris hos Proshop"
+    url="https://go.adt284.net/t/t?a=1870484629&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotgraesklippare%2FGardena-SILENO-city-Robotic-Lawnmower-500-m%2F3050973"
+    productName="Gardena Sileno City 500"
+  />
 
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",

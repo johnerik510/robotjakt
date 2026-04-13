@@ -60,9 +60,7 @@ const jsonLd = {
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-    <AffiliateDisclaimer />
-
-    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-04-05">2026-04-05</time></p>
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-04-05">2026-04-05</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Roborock vs Narwal 2026 — vilken är bäst?
@@ -205,6 +203,8 @@ const jsonLd = {
     </div>
 
     <FAQ items={faqItems} />
+
+    <AffiliateDisclaimer />
 
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </div>

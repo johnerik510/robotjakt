@@ -125,9 +125,7 @@ const faqSchema = faqItems.map((item) => ({
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-    <AffiliateDisclaimer />
-
-    <p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+<p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
       Robotgräsklippare bäst i test 2026 — topp 6 testade
@@ -139,8 +137,33 @@ const faqSchema = faqItems.map((item) => ({
     <!-- Jämförelsetabell -->
     <section class="mb-8" aria-label="Jämförelsetabell robotgräsklippare">
       <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse</h2>
-      <div class="overflow-x-auto rounded-xl border border-border">
-        <table class="w-full text-sm bg-white">
+      <!-- Mobil: kort -->
+      <div class="md:hidden space-y-3">
+        {[
+          { name: 'Husqvarna 430X Nera', yta: '3 200 m²', slinga: 'Nej', pris: '39 990 kr', betyg: '9,5', url: 'https://www.bygghemma.se/tradgard-och-utemiljo/tradgardsmaskiner/robotgrasklippare/robotgrasklippare-husqvarna-automower-430x-nera/p-1838454', badge: 'Bäst 2026' },
+          { name: 'Husqvarna 315X', yta: '1 600 m²', slinga: 'Nej', pris: '19 990 kr', betyg: '9,0', url: 'https://www.husqvarna.com/se/produkter/robotgrasklippare/automower-315x/', badge: '' },
+          { name: 'Mammotion LUBA 3000', yta: '3 000 m²', slinga: 'Ja', pris: '24 990 kr', betyg: '9,0', url: 'https://www.maskinklippet.se/tradgard/robotgrasklippare-och-tillbehor/robotgrasklippare/mammotion-luba-2-awd-3000x-robotgrasklippare', badge: 'Utan slinga' },
+          { name: 'Gardena Sileno City 500', yta: '500 m²', slinga: 'Nej', pris: '5 990 kr', betyg: '8,2', url: 'https://go.adt284.net/t/t?a=1870484629&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotgraesklippare%2FGardena-SILENO-city-Robotic-Lawnmower-500-m%2F3050973', badge: 'Budget' },
+          { name: 'Worx Landroid M500', yta: '500 m²', slinga: 'Nej', pris: '9 990 kr', betyg: '8,0', url: 'https://www.pricerunner.se/pl/1595-4860328/Robotgraesklippare/Worx-Landroid-M500-WR141E-priser', badge: '' },
+        ].map(row => (
+          <div class={`bg-white rounded-xl border ${row.badge === 'Bäst 2026' ? 'border-winner' : 'border-border'} p-4 text-sm`}>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="font-semibold text-text">{row.name}</span>
+              {row.badge && <span class={`text-xs ${row.badge === 'Utan slinga' ? 'bg-accent' : 'bg-winner'} text-white px-1.5 py-0.5 rounded`}>{row.badge}</span>}
+            </div>
+            <div class="grid grid-cols-2 gap-1 text-text-light mb-3">
+              <span>Yta: {row.yta}</span>
+              <span>Pris: ca {row.pris}</span>
+              <span>Utan slinga: {row.slinga}</span>
+              <span>Betyg: {row.betyg}/10</span>
+            </div>
+            <a href={row.url} rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium text-sm">Se pris</a>
+          </div>
+        ))}
+      </div>
+      <!-- Desktop: tabell -->
+      <div class="hidden md:block bg-white rounded-xl border border-border overflow-hidden">
+        <table class="w-full text-sm">
           <thead>
             <tr class="border-b border-border bg-bg-alt">
               <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
@@ -287,6 +310,8 @@ const faqSchema = faqItems.map((item) => ({
     </section>
 
     <FAQ items={faqItems} />
+
+    <AffiliateDisclaimer />
   </div>
 
   <StickyCTA
