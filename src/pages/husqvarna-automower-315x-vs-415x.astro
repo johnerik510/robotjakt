@@ -1,0 +1,227 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Husqvarna 315X vs 415X' },
+];
+
+const faqItems = [
+  {
+    question: 'Vilken är bäst — Husqvarna Automower 315X eller 415X?',
+    answer: '415X är bättre för dig som vill ha bredare klippbana (22 cm mot 315X:s 18 cm) och modernare 4G-uppkoppling. 315X är bättre om du vill ha mer yta per krona — 315X klarar 1 600 m² mot 415X:s 1 500 m² och kostar ca 7 000 kr mindre. Välj 415X om klippbredden och 4G väger tyngst, 315X om prisvärdhet och maximal yta är prioritet.',
+  },
+  {
+    question: 'Klarar både 315X och 415X 40% lutning?',
+    answer: 'Ja, båda modellerna klarar exakt 40% lutning — det är en av egenskaperna de delar. Ingen av dem passar för extremt brant terräng över 40%. För backar brantare än 40% bör du istället titta på Husqvarna 430X Nera (45%) eller Mammotion LUBA (upp till 80%).',
+  },
+  {
+    question: 'Är 4G verkligen värt 7 000 kr mer?',
+    answer: '4G-uppkopplingen i 415X är bättre än 315X:s 3G — snabbare respons i appen och bättre täckning på platser med svagt 3G-nät. Men i praktiken är skillnaden för de flesta användare marginell. Om du bor i ett område med god 3G-täckning räcker 315X alldeles utmärkt. 4G är mest värdefullt om du styr roboten på avstånd från platser med svagt mobilnät.',
+  },
+  {
+    question: 'Vilken kräver mindre underhåll — 315X eller 415X?',
+    answer: 'Underhållskravet är i princip identiskt för båda modellerna. Knivblad byts var 1–3 månader, laddstation och perimeterkabel kräver minimalt underhåll. Den bredare klippbanan på 415X innebär att bladen kan slitas något fortare på stora ytor med mycket gräs, men skillnaden är marginell i det vardagliga.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Husqvarna Automower 315X vs 415X 2026 — Fullständig jämförelse"
+  description="Vi jämför Husqvarna Automower 315X och 415X. Vad skiljer dem? Klippbredd, uppkoppling, pris och kapacitet klargjorda. Vilket ska du välja 2026?"
+>
+  <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={breadcrumbs} light={true} />
+      <h1 class="font-heading text-2xl sm:text-3xl font-bold mb-2">Husqvarna Automower 315X vs 415X 2026</h1>
+      <p class="text-gray-300 text-sm max-w-2xl">Samma lutningstolerans och samma kabelbaserade navigering — men 415X har bredare klippbana och 4G. Värt prisskillnaden?</p>
+    </div>
+  </section>
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <p class="text-text-light mb-4 text-base">
+      Husqvarna Automower 315X och 415X är nära besläktade modeller i Husqvarnas mellanklasssegment. Båda kräver perimeterkabel, klarar 40% lutning och hanterar liknande tomtstorlekar.
+    </p>
+    <p class="text-text-light mb-6 text-base">
+      Men det finns tre konkreta skillnader: klippbredd, uppkoppling och pris. Här är allt du behöver veta.
+    </p>
+
+    <h2 class="font-heading text-xl font-bold mt-6 mb-4">Snabbjämförelse</h2>
+    <div class="mb-8">
+      <table class="w-full text-sm border-collapse">
+        <thead>
+          <tr class="bg-primary text-white">
+            <th class="p-3 text-left font-semibold">Egenskap</th>
+            <th class="p-3 text-left font-semibold">Automower 315X</th>
+            <th class="p-3 text-left font-semibold">Automower 415X</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-border bg-white">
+            <td class="p-3 font-medium text-text">Max yta</td>
+            <td class="p-3 text-text-light font-semibold text-winner">1 600 m²</td>
+            <td class="p-3 text-text-light">1 500 m²</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">Klippbredd</td>
+            <td class="p-3 text-text-light">18 cm</td>
+            <td class="p-3 text-text-light font-semibold text-winner">22 cm</td>
+          </tr>
+          <tr class="border-b border-border bg-white">
+            <td class="p-3 font-medium text-text">Uppkoppling</td>
+            <td class="p-3 text-text-light">3G</td>
+            <td class="p-3 text-text-light font-semibold text-winner">4G</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">Lutning</td>
+            <td class="p-3 text-text-light">40%</td>
+            <td class="p-3 text-text-light">40%</td>
+          </tr>
+          <tr class="border-b border-border bg-white">
+            <td class="p-3 font-medium text-text">Klipphöjd</td>
+            <td class="p-3 text-text-light">20–60 mm</td>
+            <td class="p-3 text-text-light">20–50 mm</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">Vikt</td>
+            <td class="p-3 text-text-light font-semibold text-winner">7,7 kg</td>
+            <td class="p-3 text-text-light">9,7 kg</td>
+          </tr>
+          <tr class="border-b border-border bg-white">
+            <td class="p-3 font-medium text-text">Bullernivå</td>
+            <td class="p-3 text-text-light font-semibold text-winner">58 dB</td>
+            <td class="p-3 text-text-light">61 dB</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">Laddtid</td>
+            <td class="p-3 text-text-light">50 min</td>
+            <td class="p-3 text-text-light">60 min</td>
+          </tr>
+          <tr class="border-b border-border bg-white">
+            <td class="p-3 font-medium text-text">Drifttid</td>
+            <td class="p-3 text-text-light">60 min</td>
+            <td class="p-3 text-text-light">50 min</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">Navigering</td>
+            <td class="p-3 text-text-light">GPS + kabel</td>
+            <td class="p-3 text-text-light">GPS + kabel</td>
+          </tr>
+          <tr class="bg-white">
+            <td class="p-3 font-medium text-text">Pris</td>
+            <td class="p-3 font-bold text-winner">ca 19 990 kr</td>
+            <td class="p-3 text-text-light">ca 26 900 kr</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="font-heading text-xl font-bold mt-8 mb-4">Klippbredd — den tydligaste skillnaden</h2>
+    <p class="text-text-light mb-4 text-base">
+      22 cm mot 18 cm kan låta som en liten skillnad, men det är 22% bredare klippbana. På en 1 200 m² tomt innebär det märkbart kortare klipptid per cykel och att roboten behöver göra färre vändningar.
+    </p>
+    <p class="text-text-light mb-6 text-base">
+      För en liten trädgård under 800 m² märker du skillnaden knappt — 315X klarar det utan problem. För en 1 200–1 500 m² tomt är 415X:s bredare klippbana ett reellt argument.
+    </p>
+
+    <h2 class="font-heading text-xl font-bold mt-8 mb-4">4G vs 3G — uppkoppling i praktiken</h2>
+    <p class="text-text-light mb-4 text-base">
+      315X använder 3G för kommunikation med Automower Connect-appen. 415X har 4G. I de allra flesta svenska hemmiljöer är skillnaden försumbar — appen svarar snabbt på båda.
+    </p>
+    <p class="text-text-light mb-6 text-base">
+      4G har ett konkret försprång om du styr roboten på distans från platser med dålig 3G-täckning, eller om 3G-nätet i ditt område är under utfasning. I Sverige håller 3G på att avvecklas, vilket i framtiden kan påverka 315X:s uppkoppling.
+    </p>
+
+    <h2 class="font-heading text-xl font-bold mt-8 mb-4">Prisskillnad och prisvärdhet</h2>
+    <p class="text-text-light mb-4 text-base">
+      315X kostar ca 19 990 kr och 415X ca 26 900 kr — en skillnad på ungefär 7 000 kr. För de 7 000 kr extra får du bredare klippbana, 4G och 2 kg tyngre robot med något kortare drifttid.
+    </p>
+    <p class="text-text-light mb-6 text-base">
+      För de flesta villaägare med en normal tomt under 1 500 m² är 315X det klart mer prisvärda valet. 415X är värt det om klippbredden och 4G är genuint viktiga för din situation.
+    </p>
+
+    <div class="grid sm:grid-cols-2 gap-5 mb-8">
+      <div class="bg-winner/5 border border-winner/20 rounded-xl p-5">
+        <h3 class="font-semibold text-text mb-3">Välj Automower 315X om du...</h3>
+        <ul class="space-y-2">
+          {[
+            'Har en tomt under 1 600 m²',
+            'Vill ha bästa prisvärdhet',
+            'Inte behöver bredare klippbana',
+            'Bor i område med god 3G-täckning',
+            'Värdesätter lättare vikt (7,7 kg)',
+          ].map(item => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-4">
+          <a href="https://www.husqvarna.com/se/produkter/robotgrasklippare/automower-315x/" rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-4 py-2 rounded-lg text-sm w-full min-h-[44px]">
+            Se pris på 315X
+          </a>
+        </div>
+      </div>
+      <div class="bg-accent/5 border border-accent/20 rounded-xl p-5">
+        <h3 class="font-semibold text-text mb-3">Välj Automower 415X om du...</h3>
+        <ul class="space-y-2">
+          {[
+            'Vill ha 22 cm bred klippbana',
+            'Föredrar 4G-uppkoppling',
+            'Har en tomt på 1 200–1 500 m²',
+            'Värdesätter framtidssäkrad uppkoppling',
+          ].map(item => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-accent font-bold flex-shrink-0 mt-0.5">+</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-4">
+          <a href="https://www.husqvarna.com/se/produkter/robotgrasklippare/automower-415x/" rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white font-semibold px-4 py-2 rounded-lg text-sm w-full min-h-[44px]">
+            Se pris på 415X
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <FAQ items={faqItems} />
+
+    <AffiliateDisclaimer />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade recensioner</h2>
+      <ul class="space-y-2">
+        <li><a href="/husqvarna-automower-315x/" class="text-accent hover:underline text-sm">Husqvarna Automower 315X — fullständig recension</a></li>
+        <li><a href="/husqvarna-automower-415x/" class="text-accent hover:underline text-sm">Husqvarna Automower 415X — fullständig recension</a></li>
+        <li><a href="/husqvarna-automower-430x-nera/" class="text-accent hover:underline text-sm">Husqvarna Automower 430X Nera — för stora trädgårdar</a></li>
+        <li><a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare 2026 — alla modeller</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Jämför pris på Automower 315X"
+    url="https://www.husqvarna.com/se/produkter/robotgrasklippare/automower-315x/"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>
