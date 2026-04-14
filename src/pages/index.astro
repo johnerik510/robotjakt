@@ -286,8 +286,18 @@ const faqSchema = faqItems.map((item) => ({
       </span>
     </div>
 
+    <!-- Topplista robotdammsugare -->
+    <div id="topplista"></div>
+    <h2 class="font-heading text-2xl font-bold text-text mb-2">Alla {products.length} robotdammsugare — detaljerade recensioner</h2>
+    <p class="text-text-light mb-5 text-sm">Dreame X50 Ultra är ny etta april 2026. Klicka på en modell för fullständig recension.</p>
+    <div class="space-y-5 mb-8">
+      {products.map((p) => (
+        <ProductCard {...p} />
+      ))}
+    </div>
+
     <!-- Snabbjämförelsetabell -->
-    <section class="mb-8" id="topplista">
+    <section class="mb-12">
       <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse — topp 6</h2>
       <!-- Mobil: kort -->
       <div class="md:hidden space-y-3">
@@ -378,15 +388,6 @@ const faqSchema = faqItems.map((item) => ({
         </table>
       </div>
     </section>
-
-    <!-- Topplista robotdammsugare -->
-    <h2 class="font-heading text-2xl font-bold text-text mb-2">Alla {products.length} robotdammsugare — detaljerade recensioner</h2>
-    <p class="text-text-light mb-5 text-sm">Dreame X50 Ultra är ny etta april 2026. Klicka på en modell för fullständig recension.</p>
-    <div class="space-y-5 mb-12">
-      {products.map((p) => (
-        <ProductCard {...p} />
-      ))}
-    </div>
 
     <!-- Märkesguider -->
     <section class="mb-10">
