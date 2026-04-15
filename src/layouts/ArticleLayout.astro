@@ -19,9 +19,11 @@ interface Props {
   productImage?: string;
   productRating?: string;
   productAffiliateUrl?: string;
+  productPros?: string[];
+  productCons?: string[];
 }
 
-const { title, description, breadcrumbs, ogImage, lastUpdated, datePublished, showDisclaimer = true, showAuthor = true, productName, productBrand, productPrice, productImage, productRating, productAffiliateUrl } = Astro.props;
+const { title, description, breadcrumbs, ogImage, lastUpdated, datePublished, showDisclaimer = true, showAuthor = true, productName, productBrand, productPrice, productImage, productRating, productAffiliateUrl, productPros = [], productCons = [] } = Astro.props;
 
 const productSchema = productName ? {
   '@context': 'https://schema.org',
@@ -34,6 +36,7 @@ const productSchema = productName ? {
     '@type': 'Offer',
     priceCurrency: 'SEK',
     price: productPrice ? productPrice.replace(/[^0-9]/g, '') : '',
+    priceValidUntil: '2027-12-31',
     availability: 'https://schema.org/InStock',
     ...(productAffiliateUrl ? { url: productAffiliateUrl } : {}),
   },
@@ -57,6 +60,18 @@ const productSchema = productName ? {
         name: 'John Erik Johansson',
       },
       datePublished: datePublished || lastUpdated || '2026-04-07',
+      ...(productPros.length > 0 ? {
+        positiveNotes: {
+          '@type': 'ItemList',
+          itemListElement: productPros.map((p, i) => ({ '@type': 'ListItem', position: i + 1, name: p })),
+        },
+      } : {}),
+      ...(productCons.length > 0 ? {
+        negativeNotes: {
+          '@type': 'ItemList',
+          itemListElement: productCons.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c })),
+        },
+      } : {}),
     },
   } : {}),
 } : null;

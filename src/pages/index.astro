@@ -247,6 +247,8 @@ const faqSchema = faqItems.map((item) => ({
       class="absolute inset-0 w-full h-full object-cover -z-10"
       loading="eager"
       fetchpriority="high"
+      width="1920"
+      height="600"
     />
     <div class="absolute inset-0 bg-gradient-to-r from-primary/85 to-primary/60 -z-10" aria-hidden="true"></div>
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full">
@@ -418,7 +420,7 @@ const faqSchema = faqItems.map((item) => ({
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <a href="/robotgrasklippare/" class="group bg-white rounded-xl overflow-hidden border border-border hover:border-accent hover:shadow-md transition-all">
           <div class="relative h-36 overflow-hidden bg-gray-100">
-            <img src="/images/cat-robotgrasklippare.webp" alt="Robotgräsklippare" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+            <img src="/images/cat-robotgrasklippare.webp" alt="Robotgräsklippare" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="160" />
           </div>
           <div class="p-4">
             <h3 class="font-heading font-semibold text-text group-hover:text-accent transition-colors mb-1">Robotgräsklippare</h3>
@@ -427,7 +429,7 @@ const faqSchema = faqItems.map((item) => ({
         </a>
         <a href="/poolrobot/" class="group bg-white rounded-xl overflow-hidden border border-border hover:border-accent hover:shadow-md transition-all">
           <div class="relative h-36 overflow-hidden bg-gray-100">
-            <img src="/images/cat-poolrobot.webp" alt="Poolrobot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+            <img src="/images/cat-poolrobot.webp" alt="Poolrobot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="160" />
           </div>
           <div class="p-4">
             <h3 class="font-heading font-semibold text-text group-hover:text-accent transition-colors mb-1">Poolrobot</h3>
@@ -436,7 +438,7 @@ const faqSchema = faqItems.map((item) => ({
         </a>
         <a href="/fonsterputsrobot/" class="group bg-white rounded-xl overflow-hidden border border-border hover:border-accent hover:shadow-md transition-all">
           <div class="relative h-36 overflow-hidden bg-gray-100">
-            <img src="/images/cat-fonsterputsrobot.webp" alt="Fönsterputsrobot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+            <img src="/images/cat-fonsterputsrobot.webp" alt="Fönsterputsrobot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="160" />
           </div>
           <div class="p-4">
             <h3 class="font-heading font-semibold text-text group-hover:text-accent transition-colors mb-1">Fönsterputsrobot</h3>
@@ -530,6 +532,56 @@ const faqSchema = faqItems.map((item) => ({
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-1">Ecovacs — guide till alla modeller</h3>
           <p class="text-xs text-text-lighter mb-2">Märkesguide</p>
           <p class="text-sm text-text-light">Deebot T-serien, X-serien och Ozmo — vilken Ecovacs passar dig?</p>
+        </a>
+        <a href="/ecovacs-deebot-t30s-pro/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-1">Ecovacs Deebot T30S Pro</h3>
+          <p class="text-xs text-text-lighter mb-2">8,6/10 — Tyst premium</p>
+          <p class="text-sm text-text-light">Självrenande station, 11 000 Pa och TrueMapping 2.0 för snabbare kartläggning.</p>
+        </a>
+        <a href="/dreame-z10-pro/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-1">Dreame Z10 Pro</h3>
+          <p class="text-xs text-text-lighter mb-2">8,4/10 — Självtömmande klassiker</p>
+          <p class="text-sm text-text-light">Prisvärd modell med självtömmande station och pålitlig LiDAR-navigering.</p>
+        </a>
+        <a href="/dreame-l10s-pro-ultra-heat/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-1">Dreame L10s Pro Ultra Heat</h3>
+          <p class="text-xs text-text-lighter mb-2">8,7/10 — Varmvattentvätt</p>
+          <p class="text-sm text-text-light">Tvättar mopparna i 75°C varmvatten — bäst hygien i mellanpris-segmentet.</p>
+        </a>
+        <a href="/husqvarna-automower-450x/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-1">Husqvarna Automower 450X</h3>
+          <p class="text-xs text-text-lighter mb-2">Robotgräsklippare</p>
+          <p class="text-sm text-text-light">Klarar 5 000 m² och 45% lutning — Husqvarnas storsäljare för större trädgårdar.</p>
+        </a>
+        <a href="/mcculloch-rob-r600/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-1">McCulloch ROB R600</h3>
+          <p class="text-xs text-text-lighter mb-2">Budget-robotgräsklippare</p>
+          <p class="text-sm text-text-light">Upp till 600 m² till låg kostnad — bästa valet för den mindre trädgården.</p>
+        </a>
+        <a href="/dolphin-nautilus-cc-plus/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-1">Dolphin Nautilus CC Plus</h3>
+          <p class="text-xs text-text-lighter mb-2">Poolrobot</p>
+          <p class="text-sm text-text-light">Maytronics bästsäljare för pooler upp till 10 m — dubbla scrubbing-borstar.</p>
+        </a>
+        <a href="/robotdammsugare-lagenhet/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-1">Robotdammsugare för lägenhet</h3>
+          <p class="text-xs text-text-lighter mb-2">Köpguide</p>
+          <p class="text-sm text-text-light">Vilka modeller passar bäst i en lägenhet? Storlek, ljudnivå och smart kartläggning.</p>
+        </a>
+        <a href="/robotdammsugare-langt-har/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-1">Robotdammsugare för långt hår</h3>
+          <p class="text-xs text-text-lighter mb-2">Specialguide</p>
+          <p class="text-sm text-text-light">Så undviker du hårinvecklade borstar — modellerna som klarar långt hår bäst.</p>
+        </a>
+        <a href="/robotgrasklippare-utan-arsgransavgift/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-1">Robotgräsklippare utan årsavgift</h3>
+          <p class="text-xs text-text-lighter mb-2">Köpguide</p>
+          <p class="text-sm text-text-light">Slipp prenumerationer och dolda kostnader — modeller helt utan månadsavgift.</p>
+        </a>
+        <a href="/billigaste-fonsterputsrobot/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-1">Billigaste fönsterputsroboten</h3>
+          <p class="text-xs text-text-lighter mb-2">Budgetguide</p>
+          <p class="text-sm text-text-light">Fönsterputsrobotar som kostar mindre än 2 000 kr — rena fönster utan klättring.</p>
         </a>
         <a href="/jamfor/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-1">Alla jämförelser</h3>
