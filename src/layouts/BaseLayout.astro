@@ -21,6 +21,10 @@ const canonicalUrl = canonical || Astro.url.href;
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>{title}</title>
+
+  <!-- Pages can inject preload hints (hero image) via this slot — MUST be early so browser discovers hero preload before fonts/scripts -->
+  <slot name="head" />
+
   <meta name="description" content={description} />
   <link rel="canonical" href={canonicalUrl} />
 
@@ -41,11 +45,8 @@ const canonicalUrl = canonical || Astro.url.href;
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" /></noscript>
-
-  <link rel="preload" as="image" href="/images/hero-robotjakt.webp" fetchpriority="high" />
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -83,9 +84,6 @@ const canonicalUrl = canonical || Astro.url.href;
 
   <!-- GSC verification placeholder -->
   <!-- <meta name="google-site-verification" content="VERIFICATION_CODE" /> -->
-
-  <!-- Pages can inject additional head content (e.g. preload hints) -->
-  <slot name="head" />
 
   <!-- Addrevenue Easylinks – deferred to reduce render-blocking -->
   <script is:inline>
