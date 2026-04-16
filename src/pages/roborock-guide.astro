@@ -108,7 +108,7 @@ const models = [
     rating: '4.1 / 5',
     features: ['5 500 Pa sugkraft', 'Roterande moppar med mattlyftning', 'Automatisk dammtömning', 'LiDAR-navigering', 'Utan mopptvättning'],
     cta: 'https://go.adt267.com/t/t?a=1615916040&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.komplett.se%2Fproduct%2F1310616%2Fhem-fritid%2Fdammsugare-rengoring%2Frobotdammsugare%2Froborock-qrevo-s-robotdammsugare-vit',
-
+    teknikproffsetUrl: 'https://dot.teknikproffset.se/t/t?a=1954032646&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.teknikproffset.se%2Fhem-hushall-tradgard%2Fstadprodukter%2Fdammsugare-tillbehor%2Frobotdammsugare%2Froborock-q-revo-robotdammsugare-svart',
     ctaText: 'Se pris på Q Revo',
     reviewUrl: '/roborock-q-revo/',
     description: 'Roborock Q Revo ger Qrevo-seriens roterande moppar och automatisk dammtömning till ett lägre ingångspris. Utan mopptvättning i stationen men ett utmärkt val för prismedvetna.',
@@ -246,6 +246,17 @@ const faqSchema = faqItems.map((item) => ({
                 {model.ctaText}
                 <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
               </a>
+              {model.teknikproffsetUrl && (
+                <a
+                  href={model.teknikproffsetUrl}
+                  rel="sponsored nofollow noopener noreferrer"
+                  target="_blank"
+                  class="inline-flex items-center justify-center border-2 border-border text-text-light hover:border-cta hover:text-cta font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+                >
+                  Teknikproffset
+                  <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                </a>
+              )}
             </div>
           </div>
         </section>
