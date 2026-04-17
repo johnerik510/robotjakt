@@ -209,10 +209,4 @@ const faqSchema = faqItems.map((item) => ({
     "reviewBody": "Roborock Qrevo MaxV Ultra är bästa Qrevo-valet för husdjursägare med AI-kamera och 10 000 Pa sugkraft.",
     "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
   })} />
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqSchema,
-  })} />
 </BaseLayout>

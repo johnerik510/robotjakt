@@ -353,10 +353,4 @@ const faqSchema = faqItems.map((item) => ({
       { "@type": "ListItem", "position": 2, "name": "iRobot Roomba-guide", "item": "https://robotjakt.se/irobot-guide/" },
     ],
   })} />
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqSchema,
-  })} />
 </BaseLayout>

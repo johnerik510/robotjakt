@@ -2,9 +2,9 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 
+/* FAQPage JSON-LD removed: Google's Aug 2023 policy restricts FAQ rich results
+   to government/health-authority sites. Data kept for visual FAQ rendering. */
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
   mainEntity: [
     {
       "@type": "Question",
@@ -182,5 +182,4 @@ const comparisons = [
     </div>
   </section>
 
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </BaseLayout>

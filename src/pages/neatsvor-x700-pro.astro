@@ -251,10 +251,4 @@ const faqSchema = faqItems.map((item) => ({
     "reviewBody": "Neatsvor X700 Pro levererar LiDAR-navigering och moppfunktion till ett pris som är svårslaget i sin klass. Perfekt for budget-medvetna konsumenter som vill ha smart städning utan premiumprislappen.",
     "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
   })} />
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqSchema,
-  })} />
 </BaseLayout>

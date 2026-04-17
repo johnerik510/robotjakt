@@ -336,10 +336,4 @@ const faqSchema = faqItems.map((item) => ({
       { "@type": "ListItem", "position": 2, "name": "eufy-guide", "item": "https://robotjakt.se/eufy-guide/" },
     ],
   })} />
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqSchema,
-  })} />
 </BaseLayout>

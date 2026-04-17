@@ -218,10 +218,4 @@ const faqSchema = faqItems.map((item) => ({
     text="Jämför pris på Automower 315X"
     url="https://www.husqvarna.com/se/robotgrasklippare/automower-310e-nera/"
   />
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqSchema,
-  })} />
 </BaseLayout>

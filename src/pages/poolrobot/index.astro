@@ -346,10 +346,4 @@ const faqSchema = faqItems.map((item) => ({
       "url": "https://robotjakt.se/poolrobot/",
     })),
   })} />
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqSchema,
-  })} />
 </BaseLayout>

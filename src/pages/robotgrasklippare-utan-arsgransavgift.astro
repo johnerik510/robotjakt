@@ -326,10 +326,4 @@ const faqSchema = faqItems.map((item) => ({
       { "@type": "ListItem", "position": 4, "name": "Husqvarna Automower 315X", "url": "https://robotjakt.se/robotgrasklippare-utan-arsgransavgift/" },
     ],
   })} />
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqSchema,
-  })} />
 </BaseLayout>

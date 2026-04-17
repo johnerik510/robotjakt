@@ -163,10 +163,4 @@ const faqSchema = faqItems.map(item => ({
       </ul>
     </section>
   </div>
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqSchema,
-  })} />
 </BaseLayout>

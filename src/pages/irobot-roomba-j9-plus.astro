@@ -238,10 +238,4 @@ const faqSchema = faqItems.map((item) => ({
     "reviewBody": "iRobot Roomba j9+ är det självklara valet för husdjursägare med djuravföringsdetektering och 60-dagars Clean Base som viktigaste egenskaper.",
     "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
   })} />
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqSchema,
-  })} />
 </BaseLayout>

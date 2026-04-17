@@ -326,10 +326,4 @@ const faqSchema = faqItems.map((item) => ({
       { "@type": "ListItem", "position": 3, "name": "Ecovacs Deebot T10 Omni", "url": "https://robotjakt.se/ecovacs-guide/" },
     ],
   })} />
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqSchema,
-  })} />
 </BaseLayout>

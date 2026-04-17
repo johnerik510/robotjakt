@@ -276,10 +276,4 @@ const faqSchema = faqItems.map((item) => ({
     "reviewBody": "Hobot Legee 688 är en pålitlig fönsterputsrobot med stark sugkraft och tyst drift. App-styrning gör den enkel att schemalägga. Kabeldrift begränsar friheten något men ger trygg användning på höga höjder.",
     "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
   })} />
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqSchema,
-  })} />
 </BaseLayout>

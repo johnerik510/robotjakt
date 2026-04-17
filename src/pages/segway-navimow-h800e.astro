@@ -229,10 +229,4 @@ const faqSchema = faqItems.map((item) => ({
     "reviewBody": "Segway Navimow H800E kombinerar RTK GPS med 45% lutningskapacitet utan slinga. Bäst för den som prioriterar enkel installation på stor kuperad tomt.",
     "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
   })} />
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqSchema,
-  })} />
 </BaseLayout>

@@ -254,10 +254,4 @@ const faqSchema = faqItems.map((item) => ({
     "reviewBody": "eufy X10 Pro Omni levererar premium-funktion till ett pris som är märkbart lägre än toppklassen. MopExtend, LiDAR och fullautomatisk station gör det till ett utmärkt val i mellanklass-premium.",
     "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
   })} />
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqSchema,
-  })} />
 </BaseLayout>

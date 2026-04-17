@@ -296,10 +296,4 @@ const faqSchema = faqItems.map((item) => ({
       { "@type": "ListItem", "position": 3, "name": "Intex Auto Pool Cleaner", "url": "https://robotjakt.se/billigaste-poolrobot/" },
     ],
   })} />
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqSchema,
-  })} />
 </BaseLayout>

@@ -275,10 +275,4 @@ const faqSchema = faqItems.map((item) => ({
   "image": "https://robotjakt.se/images/husqvarna-automower-315x.webp", "url": "https://robotjakt.se/husqvarna-automower-315x/" },
     ],
   })} />
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqSchema,
-  })} />
 </BaseLayout>

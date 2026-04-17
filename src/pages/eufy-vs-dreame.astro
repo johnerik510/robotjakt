@@ -213,10 +213,4 @@ const faqSchema = faqItems.map((item) => ({
     price="ca 7 990 kr"
     url="https://www.dreametech.com"
   />
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqSchema,
-  })} />
 </BaseLayout>

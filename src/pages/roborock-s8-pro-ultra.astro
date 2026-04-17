@@ -253,10 +253,4 @@ const faqSchema = faqItems.map((item) => ({
     "reviewBody": "Roborock S8 Pro Ultra är en välbeprövad premiumrobot med FlexiArm sidborste och dubbla gummirullar. Prisvärt alternativ till S8 MaxV Ultra för hem utan behov av AI-kamera.",
     "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
   })} />
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqSchema,
-  })} />
 </BaseLayout>
