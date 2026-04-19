@@ -11,24 +11,51 @@ const relAttr = isExternal ? "sponsored nofollow noopener noreferrer" : undefine
 const targetAttr = isExternal ? "_blank" : undefined;
 ---
 
-<div id="sticky-cta" class="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-border shadow-lg px-4 md:hidden translate-y-full transition-transform duration-300" style="padding-top: 0.75rem; padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));" data-product={productName}>
-  <a href={url} rel={relAttr} target={targetAttr} class="flex items-center justify-center w-full px-6 py-3 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors text-sm min-h-[44px]">
+<div
+  id="sticky-cta"
+  class="fixed left-0 right-0 z-40 bg-white border-t border-border shadow-lg md:hidden translate-y-full transition-transform duration-300"
+  style="bottom: 0; padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom, 0px));"
+  data-product={productName}
+>
+  <a
+    href={url}
+    rel={relAttr}
+    target={targetAttr}
+    class="flex items-center justify-center w-full px-6 py-3 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors text-sm min-h-[44px]"
+  >
     {text}
-    <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+    <svg class="w-4 h-4 ml-1.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+    </svg>
   </a>
 </div>
 
 <script>
-  const stickyCta = document.getElementById('sticky-cta');
-  let lastScroll = 0;
+  const bar = document.getElementById('sticky-cta');
+  if (!bar) throw new Error('sticky-cta missing');
+
+  // Hysteresis: show at 400px, hide only when back below 200px — prevents
+  // flicker when Chrome fires scroll events while hiding/showing its own bars
+  let visible = false;
+  const show = () => { if (!visible) { visible = true; bar.classList.remove('translate-y-full'); } };
+  const hide = () => { if (visible) { visible = false; bar.classList.add('translate-y-full'); } };
 
   window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-    if (currentScroll > 400) {
-      stickyCta?.classList.remove('translate-y-full');
-    } else {
-      stickyCta?.classList.add('translate-y-full');
-    }
-    lastScroll = currentScroll;
+    if (window.scrollY > 400) show();
+    else if (window.scrollY < 200) hide();
   }, { passive: true });
+
+  // Visual Viewport API: re-anchor to actual visible bottom when Chrome's
+  // address bar or bottom nav bar appears/disappears
+  const vv = window.visualViewport;
+  if (vv) {
+    const pin = () => {
+      // gap = pixels of browser chrome below the visual viewport
+      const gap = Math.max(0, window.innerHeight - (vv.offsetTop + vv.height));
+      bar.style.bottom = `${gap}px`;
+    };
+    vv.addEventListener('resize', pin, { passive: true });
+    vv.addEventListener('scroll', pin, { passive: true });
+    pin();
+  }
 </script>
