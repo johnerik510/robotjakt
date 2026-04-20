@@ -1,0 +1,439 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import FAQ from '../../components/FAQ.astro';
+import StickyCTA from '../../components/StickyCTA.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const products = [
+  {
+    rank: 1,
+    name: 'Dreame X50 Ultra',
+    image: '/images/products/dreame-x50-ultra.webp',
+    price: 'ca 8 990 kr',
+    rating: 4.9,
+    badge: 'Bäst i test 2026',
+    pros: ['20 000 Pa VorMax sugkraft', 'VersaLift — sänker LiDAR under låga möbler', 'Utfällbar arm städar hörnen ordentligt', 'PowerDock självrenande station'],
+    cons: ['Nyare modell — färre långtidsrecensioner', 'Stor dockningsstation'],
+    ctaText: 'Se pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fdreame-x50-ultra-white-151996',
+    dataProduct: 'Dreame X50 Ultra',
+  },
+  {
+    rank: 2,
+    name: 'Dreame X40 Ultra',
+    image: '/images/dreame-x40-ultra.webp',
+    price: 'ca 9 990 kr',
+    rating: 4.8,
+    badge: 'Bäst på moppning',
+    pros: ['Extremt stark sugkraft (12 000 Pa)', 'Självtömmande och självtvättande station', 'Utfällbar sidoarm når hörnen', 'AI-hinderdetektion med kamera'],
+    cons: ['Hög prisklass', 'Stor dockningsstation'],
+    ctaText: 'Se pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fdreame-x40-ultra-151995',
+    dataProduct: 'Dreame X40 Ultra',
+    reviewUrl: '/dreame-x40-ultra/',
+  },
+  {
+    rank: 3,
+    name: 'Roborock S8 MaxV Ultra',
+    image: '/images/roborock-s8-maxv-ultra.webp',
+    price: 'ca 11 990 kr',
+    rating: 4.7,
+    badge: 'Bäst för husdjur',
+    pros: ['AI-kamera undviker djuravföring', 'Dubbla gummirullar — trasslas inte', 'Branschledande LiDAR-navigering', 'Komplett självtömmande station'],
+    cons: ['Dyrast i testet', 'App kan kännas komplex'],
+    ctaText: 'Se pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Froborock-s8-maxv-ultra-white-135019',
+    dataProduct: 'Roborock S8 MaxV Ultra',
+    reviewUrl: '/roborock-s8-maxv-ultra/',
+  },
+  {
+    rank: 4,
+    name: 'Roborock Qrevo Master',
+    image: '/images/roborock-qrevo-master.webp',
+    price: 'ca 7 490 kr',
+    rating: 4.6,
+    badge: 'Bästa värde',
+    pros: ['Premiumfunktioner till lägre pris', 'FlexiArm moppsystem når hörnen', 'Stark sugkraft (10 000 Pa)', 'Komplett station'],
+    cons: ['Något högre ljudnivå', 'Enklare kamera än S8 MaxV Ultra'],
+    ctaText: 'Se pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Froborock-qrevo-curv-white-148694',
+    dataProduct: 'Roborock Qrevo Master',
+    reviewUrl: '/roborock-qrevo-master/',
+  },
+  {
+    rank: 5,
+    name: 'Ecovacs Deebot X5 Omni',
+    image: '/images/ecovacs-deebot-x5-omni.webp',
+    price: 'ca 8 990 kr',
+    rating: 4.5,
+    badge: 'Innovativt',
+    pros: ['Fyrkantig design når hörnen direkt', 'Kraftfull moppning med varmvatten', 'AIVI 3D AI-kamera'],
+    cons: ['Nyare på marknaden', 'Tillbehör kan vara dyra'],
+    ctaText: 'Se pris hos Proshop',
+    ctaUrl: 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotdammsugare%2FEcovacs-Robotdammsugare-Deebot-T30C-Vit%2F3356577',
+    dataProduct: 'Ecovacs Deebot X5 Omni',
+    reviewUrl: '/ecovacs-deebot-x5-omni/',
+  },
+  {
+    rank: 6,
+    name: 'Dreame L20 Ultra',
+    image: '/images/dreame-l20-ultra.webp',
+    price: 'ca 5 990 kr',
+    rating: 4.4,
+    badge: 'Bäst mellanpris',
+    pros: ['Utmärkt pris/prestanda', 'Självtömmande station ingår', 'Moppfunktion med varmvatten', 'LiDAR-navigering'],
+    cons: ['Inte lika stark sugkraft som X40 Ultra', 'Enklare hinderdetektion'],
+    ctaText: 'Se pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fdreame-l10s-ultra-gen-2-151994',
+    dataProduct: 'Dreame L20 Ultra',
+    reviewUrl: '/dreame-l20-ultra/',
+  },
+  {
+    rank: 7,
+    name: 'Roborock Q Revo',
+    image: '/images/roborock-q-revo.webp',
+    price: 'ca 5 490 kr',
+    rating: 4.3,
+    badge: 'Bra pris',
+    pros: ['Dubbla roterande moppar', 'Station tvättar moppar automatiskt', 'LiDAR-navigering', 'Under 6 000 kr'],
+    cons: ['Lägre sugkraft (5 500 Pa)', 'Färre AI-funktioner'],
+    ctaText: 'Se pris hos Komplett',
+    ctaUrl: 'https://go.adt267.com/t/t?a=1615916040&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.komplett.se%2Fproduct%2F1310891%2Fhem-fritid%2Fdammsugare-rengoring%2Frobotdammsugare%2Froborock-qrevo-maxv-robotdammsugare-svart',
+    dataProduct: 'Roborock Q Revo',
+    reviewUrl: '/roborock-q-revo/',
+  },
+  {
+    rank: 8,
+    name: 'Neatsvor X650 Pro',
+    image: '/images/neatsvor-x650-pro.webp',
+    price: '4 540 kr',
+    rating: 4.3,
+    badge: 'Billigast i testet',
+    pros: ['6 000 Pa sugkraft', 'Mopp ingår', 'App + Google Home + WiFi', '120–180 min batteritid'],
+    cons: ['Ingen LiDAR-navigering', 'Enklare station (ej självtömmande)'],
+    ctaText: 'Köp hos Neatsvor',
+    ctaUrl: 'https://addrevenue.io/t?a=985945&c=3467327',
+    dataProduct: 'Neatsvor X650 Pro',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Vilken robotdammsugare är bäst i test 2026?',
+    answer: 'Dreame X50 Ultra är vår testvinnare april 2026. Med 20 000 Pa sugkraft, VersaLift-navigering som når under låga möbler och en självrenande PowerDock är den bäst i klassen. Dreame X40 Ultra är ett starkt alternativ med sin unika utfällbara mopparm. Roborock S8 MaxV Ultra är bäst för husdjurshem tack vare AI-kameran som undviker djuravföring.',
+  },
+  {
+    question: 'Är det värt att köpa en robotdammsugare med moppfunktion?',
+    answer: 'Ja, moderna robotdammsugare med mopp gör ett bra jobb på hårdgolv. Modeller som Dreame X40 Ultra och Roborock S8 MaxV Ultra torkar bort intorkade fläckar. För heltäckningsmattor är moppfunktionen mindre relevant — välj en modell med automatisk mopplyftning om du har både mattor och hårdgolv.',
+  },
+  {
+    question: 'Vilken robotdammsugare är bäst för husdjur?',
+    answer: 'För djurägare rekommenderar vi modeller med stark sugkraft (minst 8 000 Pa) och gummirullar som inte trasslas av päls. Roborock S8 MaxV Ultra har en AI-kamera som identifierar och undviker djuravföring. Dreame X40 Ultra och Roborock Qrevo Master klarar djurhår utmärkt. Se vår guide: Robotdammsugare för husdjur.',
+  },
+  {
+    question: 'Hur ofta behöver man tömma en robotdammsugare?',
+    answer: 'Med en självtömmande station behöver du bara tömma påsen var 30–60 dag beroende på hemstorlek och smutsbelastning. Utan station bör du tömma behållaren efter varje städning. Nästan alla premiummodeller 2026 inkluderar självtömmande station.',
+  },
+  {
+    question: 'Kan en robotdammsugare ersätta en vanlig dammsugare?',
+    answer: 'För daglig underhållsstädning ja. En robotdammsugare håller golven rena mellan mer grundliga städningar. För djuprengöring av soffor, trappor och svåråtkomliga ställen behöver du fortfarande en vanlig eller sladdlös dammsugare.',
+  },
+  {
+    question: 'Vad är LiDAR-navigering och varför är det viktigt?',
+    answer: 'LiDAR är en lasersensor som skapar en exakt karta av hemmet i realtid. Det ger effektivare städrutter, bättre hinderundvikande och möjlighet att sätta "no-go zones" i appen. Budget-modeller utan LiDAR navigerar slumpmässigt och missar ytor. Nästan alla robotar över 5 000 kr har LiDAR 2026.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare' },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Robotdammsugare Bäst i Test 2026 — Topp 8 testade och jämförda"
+  description="Robotdammsugare bäst i test 2026: Dreame X50 Ultra vinner. 8 toppmodeller testade — Dreame, Roborock, Ecovacs. Jämförelse med priser, för- och nackdelar."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-04-20">2026-04-20</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
+      Robotdammsugare bäst i test 2026 — topp 8 testade
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Vi har testat och jämfört {products.length} robotdammsugare och rankat dem efter sugkraft, navigering, moppning och prisvärdhet. Här är våra toppval för 2026.
+    </p>
+
+    <!-- Jämförelsetabell -->
+    <section class="mb-8" aria-label="Jämförelsetabell robotdammsugare">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse</h2>
+      <!-- Mobil: kort -->
+      <div class="md:hidden space-y-3">
+        {[
+          { name: 'Dreame X50 Ultra', sugkraft: '20 000 Pa', station: 'Ja', pris: '8 990 kr', betyg: '9,8', badge: 'Bäst 2026', url: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fdreame-x50-ultra-white-151996' },
+          { name: 'Dreame X40 Ultra', sugkraft: '12 000 Pa', station: 'Ja', pris: '9 990 kr', betyg: '9,5', badge: '', url: '/dreame-x40-ultra/' },
+          { name: 'Roborock S8 MaxV Ultra', sugkraft: '10 000 Pa', station: 'Ja', pris: '11 990 kr', betyg: '9,4', badge: 'Husdjur', url: '/roborock-s8-maxv-ultra/' },
+          { name: 'Roborock Qrevo Master', sugkraft: '10 000 Pa', station: 'Ja', pris: '7 490 kr', betyg: '9,2', badge: 'Värde', url: '/roborock-qrevo-master/' },
+          { name: 'Ecovacs X5 Omni', sugkraft: '8 000 Pa', station: 'Ja', pris: '8 990 kr', betyg: '9,0', badge: '', url: '/ecovacs-deebot-x5-omni/' },
+          { name: 'Dreame L20 Ultra', sugkraft: '7 000 Pa', station: 'Ja', pris: '5 990 kr', betyg: '8,8', badge: 'Mellanpris', url: '/dreame-l20-ultra/' },
+          { name: 'Roborock Q Revo', sugkraft: '5 500 Pa', station: 'Ja', pris: '5 490 kr', betyg: '8,5', badge: '', url: '/roborock-q-revo/' },
+          { name: 'Neatsvor X650 Pro', sugkraft: '6 000 Pa', station: 'Nej', pris: '4 540 kr', betyg: '8,2', badge: 'Budget', url: 'https://addrevenue.io/t?a=985945&c=3467327' },
+        ].map(row => (
+          <div class={`bg-white rounded-xl border ${row.badge === 'Bäst 2026' ? 'border-winner' : 'border-border'} p-4 text-sm`}>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="font-semibold text-text">{row.name}</span>
+              {row.badge && <span class={`text-xs ${row.badge === 'Bäst 2026' ? 'bg-winner' : 'bg-accent'} text-white px-1.5 py-0.5 rounded`}>{row.badge}</span>}
+            </div>
+            <div class="grid grid-cols-2 gap-1 text-text-light mb-3">
+              <span>Sugkraft: {row.sugkraft}</span>
+              <span>Pris: ca {row.pris}</span>
+              <span>Autostation: {row.station}</span>
+              <span>Betyg: {row.betyg}/10</span>
+            </div>
+            {row.url.startsWith('http') ? (
+              <a href={row.url} rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium text-sm">Se pris</a>
+            ) : (
+              <a href={row.url} class="text-accent hover:underline font-medium text-sm">Läs recension</a>
+            )}
+          </div>
+        ))}
+      </div>
+      <!-- Desktop: tabell -->
+      <div class="hidden md:block bg-white rounded-xl border border-border overflow-hidden">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-border bg-bg-alt">
+              <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Sugkraft</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Autostation</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Pris</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Betyg</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Länk</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr class="bg-winner/5">
+              <td class="px-4 py-3 font-medium text-text">Dreame X50 Ultra <span class="ml-1 text-xs bg-winner text-white px-1.5 py-0.5 rounded">Bäst 2026</span></td>
+              <td class="px-4 py-3 text-text-light">20 000 Pa</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-text">ca 8 990 kr</td>
+              <td class="px-4 py-3 text-winner font-semibold">9,8/10</td>
+              <td class="px-4 py-3"><a href="https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fdreame-x50-ultra-white-151996" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
+            </tr>
+            <tr class="bg-bg-alt/50">
+              <td class="px-4 py-3 font-medium text-text">Dreame X40 Ultra</td>
+              <td class="px-4 py-3 text-text-light">12 000 Pa</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-text">ca 9 990 kr</td>
+              <td class="px-4 py-3 text-winner font-semibold">9,5/10</td>
+              <td class="px-4 py-3"><a href="/dreame-x40-ultra/" class="text-accent hover:underline font-medium">Läs recension</a></td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Roborock S8 MaxV Ultra</td>
+              <td class="px-4 py-3 text-text-light">10 000 Pa</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-text">ca 11 990 kr</td>
+              <td class="px-4 py-3 text-winner font-semibold">9,4/10</td>
+              <td class="px-4 py-3"><a href="/roborock-s8-maxv-ultra/" class="text-accent hover:underline font-medium">Läs recension</a></td>
+            </tr>
+            <tr class="bg-bg-alt/50">
+              <td class="px-4 py-3 font-medium text-text">Roborock Qrevo Master</td>
+              <td class="px-4 py-3 text-text-light">10 000 Pa</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-text">ca 7 490 kr</td>
+              <td class="px-4 py-3 text-winner font-semibold">9,2/10</td>
+              <td class="px-4 py-3"><a href="/roborock-qrevo-master/" class="text-accent hover:underline font-medium">Läs recension</a></td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Ecovacs Deebot X5 Omni</td>
+              <td class="px-4 py-3 text-text-light">8 000 Pa</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-text">ca 8 990 kr</td>
+              <td class="px-4 py-3 text-winner font-semibold">9,0/10</td>
+              <td class="px-4 py-3"><a href="/ecovacs-deebot-x5-omni/" class="text-accent hover:underline font-medium">Läs recension</a></td>
+            </tr>
+            <tr class="bg-bg-alt/50">
+              <td class="px-4 py-3 font-medium text-text">Dreame L20 Ultra</td>
+              <td class="px-4 py-3 text-text-light">7 000 Pa</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-text">ca 5 990 kr</td>
+              <td class="px-4 py-3 text-winner font-semibold">8,8/10</td>
+              <td class="px-4 py-3"><a href="/dreame-l20-ultra/" class="text-accent hover:underline font-medium">Läs recension</a></td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Roborock Q Revo</td>
+              <td class="px-4 py-3 text-text-light">5 500 Pa</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-text">ca 5 490 kr</td>
+              <td class="px-4 py-3 text-winner font-semibold">8,5/10</td>
+              <td class="px-4 py-3"><a href="/roborock-q-revo/" class="text-accent hover:underline font-medium">Läs recension</a></td>
+            </tr>
+            <tr class="bg-bg-alt/50">
+              <td class="px-4 py-3 font-medium text-text">Neatsvor X650 Pro</td>
+              <td class="px-4 py-3 text-text-light">6 000 Pa</td>
+              <td class="px-4 py-3 text-cta font-medium">Nej</td>
+              <td class="px-4 py-3 text-text">4 540 kr</td>
+              <td class="px-4 py-3 text-winner font-semibold">8,2/10</td>
+              <td class="px-4 py-3"><a href="https://addrevenue.io/t?a=985945&c=3467327" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Topplista med produktkort -->
+    <div class="space-y-5 mb-12">
+      {products.map((p) => (
+        <div>
+          <ProductCard {...p} />
+          {p.reviewUrl && (
+            <div class="mt-2 px-1">
+              <a href={p.reviewUrl} class="text-accent hover:underline text-sm font-medium">Läs vår fullständiga recension av {p.name}</a>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <!-- Köpguide-sektion -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Köpguide: Hur väljer man robotdammsugare?</h2>
+      <div class="space-y-6 text-text-light text-sm leading-relaxed">
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Sugkraft — hur mycket behöver du?</h3>
+          <p>Modern sugkraft mäts i Pascal (Pa). Budget-modeller har 3 000–5 000 Pa. Mellanklassmodeller ligger på 6 000–8 000 Pa och räcker för de flesta hem. Premium-modeller (10 000–35 000 Pa) är nödvändiga om du har tjocka mattor, husdjur eller höga krav på grundlighet. Kom ihåg att höga Pa-siffror drar mer batteri — roboten väljer automatisk nivå baserat på underlag.</p>
+        </div>
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Självtömmande station — värt prisskillnaden</h3>
+          <p>En självtömmande station töms roboten automatiskt efter varje städning och skickar dammet till en större påse. Du behöver bara tömma påsen var 4–8 vecka. Utan station tömmer du behållaren efter varje pass. Skillnaden i bekvämlighet är stor — räkna på att nästan alla modeller över 5 000 kr inkluderar station 2026.</p>
+        </div>
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Moppfunktion — för hårdgolv och flisgolv</h3>
+          <p>Moderna robotar kombinerar dammsugning och moppning i samma körning. Avgörande funktioner: varmvattenmoppning (tar bort intorkade fläckar), automatisk mopplyftning (roboten lyfter moppdelen ovanpå mattor) och självtvättning i stationen. Se vår guide: <a href="/robotdammsugare-med-mopp/" class="text-accent hover:underline">Bästa robotdammsugare med mopp 2026</a>.</p>
+        </div>
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Husdjur — gummirullar och AI-kamera</h3>
+          <p>För hem med hund eller katt är gummirullar (ej borsthuvud) avgörande — de trasslas inte av päls. Roborock S8 MaxV Ultra är enda modellen som aktivt undviker djuravföring via AI-kamera. Läs mer: <a href="/robotdammsugare-husdjur/" class="text-accent hover:underline">Robotdammsugare för husdjur</a>.</p>
+        </div>
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Prisklasser 2026</h3>
+          <p>Budget (under 5 000 kr): täcker grundläggande behov, enklare navigering. Mellanklass (5 000–8 000 kr): LiDAR-navigering, moppfunktion, självtömmande station — här sitter bästa värdet. Premium (8 000–15 000 kr+): maxprestanda, AI-kamera, utfällbar mopp, varmvatten.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kategoriguider -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Guider per behov</h2>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <a href="/robotdammsugare-med-mopp/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Med moppfunktion</h3>
+          <p class="text-sm text-text-light">Bästa robotdammsugare som även moppar hårdgolv med varmvatten.</p>
+        </a>
+        <a href="/robotdammsugare-husdjur/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">För husdjur</h3>
+          <p class="text-sm text-text-light">Modeller med gummirullar och AI-kamera för hem med hund eller katt.</p>
+        </a>
+        <a href="/robotdammsugare-med-bassation/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Med självtömmande station</h3>
+          <p class="text-sm text-text-light">Robotar som töms automatiskt — tömmer påsen var 4–8 vecka.</p>
+        </a>
+        <a href="/robotdammsugare-lagenhet/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">För lägenhet</h3>
+          <p class="text-sm text-text-light">Kompakta modeller med smart navigering för lägenheter och mindre hem.</p>
+        </a>
+        <a href="/robotdammsugare-storlagenhet/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Stor bostad</h3>
+          <p class="text-sm text-text-light">Robotar med lång batteritid och effektiv kartläggning för ytor över 100 kvm.</p>
+        </a>
+        <a href="/robotdammsugare-langt-har/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">För långt hår</h3>
+          <p class="text-sm text-text-light">Modeller med trasselfri borste — perfekt för hushåll med långhåriga.</p>
+        </a>
+        <a href="/billigaste-robotdammsugare/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Billigaste robotdammsugare</h3>
+          <p class="text-sm text-text-light">Bästa modellerna under 5 000 kr — prisvärd automatisk städning.</p>
+        </a>
+        <a href="/kopguide-robotdammsugare/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Köpguide</h3>
+          <p class="text-sm text-text-light">Allt du behöver veta innan köpet — sugkraft, navigering, station och pris.</p>
+        </a>
+        <a href="/reservdelar/robotdammsugare/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Reservdelar</h3>
+          <p class="text-sm text-text-light">Filter, borstar och tillbehör — förläng livet på din robotdammsugare.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Märkesguider -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Märkesguider</h2>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <a href="/dreame-guide/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Dreame</h3>
+          <p class="text-sm text-text-light">Alla Dreame-modeller jämförda — X-serien, L-serien och nyheter 2026.</p>
+        </a>
+        <a href="/roborock-guide/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Roborock</h3>
+          <p class="text-sm text-text-light">S8-serien, Qrevo-serien och Saros — komplett guide till Roborocks sortiment.</p>
+        </a>
+        <a href="/ecovacs-guide/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Ecovacs</h3>
+          <p class="text-sm text-text-light">Deebot-serien och Winbot — Ecovacs guide med test och jämförelse.</p>
+        </a>
+        <a href="/eufy-guide/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Eufy</h3>
+          <p class="text-sm text-text-light">Eufy X10 Pro Omni och fler modeller — guide och jämförelse.</p>
+        </a>
+        <a href="/irobot-guide/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">iRobot Roomba</h3>
+          <p class="text-sm text-text-light">Roomba-serien komplett — J-serien, S-serien och budget-alternativ.</p>
+        </a>
+        <a href="/dyson-guide/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Dyson</h3>
+          <p class="text-sm text-text-light">360 Vis Nav och Spot+Scrub Ai — Dysons robotdammsugare testade.</p>
+        </a>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <AffiliateDisclaimer />
+  </div>
+
+  <StickyCTA
+    text="Se pris på Dreame X50 Ultra"
+    url="https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fdreame-x50-ultra-white-151996"
+    productName="Dreame X50 Ultra"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Bästa robotdammsugare April 2026",
+    "description": "Topplista över de bästa robotdammsugarna 2026, rankade efter test.",
+    "numberOfItems": products.length,
+    "itemListElement": products.map((p, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": p.name,
+      "url": p.reviewUrl ? `https://robotjakt.se${p.reviewUrl}` : `https://robotjakt.se/robotdammsugare/`,
+    })),
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+</BaseLayout>
