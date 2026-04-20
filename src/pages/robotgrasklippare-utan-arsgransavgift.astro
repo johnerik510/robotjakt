@@ -27,9 +27,8 @@ const products = [
       'Ingen prenumerationsavgift — köp en gång',
       'App-styrning utan löpande kostnader',
     ],
-    cta: 'https://www.maskinklippet.se/tradgard/robotgrasklippare-och-tillbehor/robotgrasklippare/mammotion-luba-2-awd-3000x-robotgrasklippare',
-    
-    ctaText: 'Se pris på LUBA AWO 3000',
+    cta: '/robotgrasklippare/',
+    ctaText: 'Se hela topplistan',
     description: 'Mammotion LUBA AWO 3000 är det starkaste argumentet mot Husqvarnas EPOS-prenumeration. Du får GPS-navigering utan kabel och utan obligatorisk årsavgift. Betala en gång — klipp trädgården för alltid. Klarar trädgårdar upp till 3 000 m² och lutningar upp till 75%. Markering av klippzoner sker via appen utan kabel i marken.',
   },
   {
@@ -48,9 +47,8 @@ const products = [
       'Bluetooth + WiFi-anslutning utan löpande kostnad',
       'Stöldskydd via PIN-kod',
     ],
-    cta: 'https://www.netonnet.se/art/hem-fritid/tradgard/robotgrasklippare/worx-landroid-m500-plus/1032750.11732/',
-    
-    ctaText: 'Se pris på Landroid M500',
+    cta: '/robotgrasklippare/',
+    ctaText: 'Se hela topplistan',
     description: 'Worx Landroid M500 är en solid kabelbaserad robotgräsklippare utan prenumerationsavgift. WiFi-appen och alla smarta funktioner ingår i köpet — inga extra kostnader varje år. Passar trädgårdar upp till 500 m² och fungerar bra i trädgårdar med smalare passager tack vare AI Corridor Cutting.',
   },
   {
@@ -69,8 +67,8 @@ const products = [
       'Enkel installation med Gardenas kabelkit',
       'Pålitlig och underhållsvänlig',
     ],
-    cta: 'https://www.netonnet.se/art/hem-fritid/tradgard/robotgrasklippare/gardena-sileno-minimo-500/1016072.11732/',
-    ctaText: 'Se pris på Sileno City 500',
+    cta: '/robotgrasklippare/',
+    ctaText: 'Se hela topplistan',
     description: 'Gardena Sileno City 500 är ett tyskt alternativ känt för pålitlighet och tysthet. 57 dB gör den till en av de tystaste på marknaden — kör den nattetid utan att störa grannar. Inga prenumerationsavgifter, inga dolda kostnader. Passar trädgårdar upp till 500 m².',
   },
   {
@@ -236,8 +234,8 @@ const faqSchema = faqItems.map((item) => ({
             </div>
             <a
               href={product.cta}
-              rel="sponsored nofollow noopener noreferrer"
-              target="_blank"
+              rel={product.cta.startsWith('http') ? 'sponsored nofollow noopener noreferrer' : undefined}
+              target={product.cta.startsWith('http') ? '_blank' : undefined}
               class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
             >
               {product.ctaText}

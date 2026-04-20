@@ -46,8 +46,8 @@ const products = [
     badge: 'UTAN SLINGA',
     pros: ['Ingen perimeterkabel — RTK GPS', '4G och kamerasystem', 'Kan klippa komplexa former via app', '26 cm klippbredd'],
     cons: ['RTK-antenn krävs', 'Nyare teknik med färre oberoende tester'],
-    ctaText: 'Se pris på LUBA AWO 3000',
-    ctaUrl: 'https://www.maskinklippet.se/tradgard/robotgrasklippare-och-tillbehor/robotgrasklippare/mammotion-luba-2-awd-3000x-robotgrasklippare',
+    ctaText: 'Läs recension',
+    ctaUrl: '/mammotion-luba-awo-3000/',
 
     dataProduct: 'Mammotion LUBA AWO 3000',
     reviewUrl: '/mammotion-luba-awo-3000/',
@@ -74,8 +74,8 @@ const products = [
     rating: 4.0,
     pros: ['Bra pris/prestanda-förhållande', 'WiFi-ansluten med AIA-navigering', 'Expansionsbar med moduler'],
     cons: ['Navigering sämre än Husqvarna', 'Slinga krävs'],
-    ctaText: 'Se pris på Worx Landroid M500',
-    ctaUrl: 'https://www.pricerunner.se/pl/1595-4860328/Robotgraesklippare/Worx-Landroid-M500-WR141E-priser',
+    ctaText: 'Läs recension',
+    ctaUrl: '/worx-landroid-m500/',
 
     dataProduct: 'Worx Landroid M500',
     reviewUrl: '/worx-landroid-m500/',
@@ -142,9 +142,9 @@ const faqSchema = faqItems.map((item) => ({
         {[
           { name: 'Husqvarna 430V NERA', yta: '3 200 m²', slinga: 'Nej', pris: '39 990 kr', betyg: '9,5', url: '/robotgrasklippare/', badge: 'Bäst 2026' },
           { name: 'Husqvarna 310E NERA', yta: '1 600 m²', slinga: 'Nej', pris: '19 990 kr', betyg: '9,0', url: '/robotgrasklippare/', badge: '' },
-          { name: 'Mammotion LUBA 3000', yta: '3 000 m²', slinga: 'Ja', pris: '24 990 kr', betyg: '9,0', url: 'https://www.maskinklippet.se/tradgard/robotgrasklippare-och-tillbehor/robotgrasklippare/mammotion-luba-2-awd-3000x-robotgrasklippare', badge: 'Utan slinga' },
+          { name: 'Mammotion LUBA 3000', yta: '3 000 m²', slinga: 'Ja', pris: '24 990 kr', betyg: '9,0', url: '/mammotion-luba-awo-3000/', badge: 'Utan slinga' },
           { name: 'Gardena Sileno City 500', yta: '500 m²', slinga: 'Nej', pris: '5 990 kr', betyg: '8,2', url: 'https://go.adt284.net/t/t?a=1870484629&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotgraesklippare%2FGardena-SILENO-city-Robotic-Lawnmower-500-m%2F3050973', badge: 'Budget' },
-          { name: 'Worx Landroid M500', yta: '500 m²', slinga: 'Nej', pris: '9 990 kr', betyg: '8,0', url: 'https://www.pricerunner.se/pl/1595-4860328/Robotgraesklippare/Worx-Landroid-M500-WR141E-priser', badge: '' },
+          { name: 'Worx Landroid M500', yta: '500 m²', slinga: 'Nej', pris: '9 990 kr', betyg: '8,0', url: '/worx-landroid-m500/', badge: '' },
         ].map(row => (
           <div class={`bg-white rounded-xl border ${row.badge === 'Bäst 2026' ? 'border-winner' : 'border-border'} p-4 text-sm`}>
             <div class="flex items-center gap-2 mb-2">
@@ -157,7 +157,11 @@ const faqSchema = faqItems.map((item) => ({
               <span>Utan slinga: {row.slinga}</span>
               <span>Betyg: {row.betyg}/10</span>
             </div>
-            <a href={row.url} rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium text-sm">Se pris</a>
+            {row.url.startsWith('http') ? (
+              <a href={row.url} rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium text-sm">Se pris</a>
+            ) : (
+              <a href={row.url} class="text-accent hover:underline font-medium text-sm">Läs recension</a>
+            )}
           </div>
         ))}
       </div>
@@ -197,7 +201,7 @@ const faqSchema = faqItems.map((item) => ({
               <td class="px-4 py-3 text-winner font-semibold">Ja</td>
               <td class="px-4 py-3 text-text">ca 24 990 kr</td>
               <td class="px-4 py-3 text-winner font-semibold">9,0/10</td>
-              <td class="px-4 py-3"><a href="https://www.maskinklippet.se/tradgard/robotgrasklippare-och-tillbehor/robotgrasklippare/mammotion-luba-2-awd-3000x-robotgrasklippare" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
+              <td class="px-4 py-3"><a href="/mammotion-luba-awo-3000/" class="text-accent hover:underline font-medium">Läs recension</a></td>
             </tr>
             <tr class="bg-bg-alt/50">
               <td class="px-4 py-3 font-medium text-text">Gardena Sileno City 500</td>
@@ -213,7 +217,7 @@ const faqSchema = faqItems.map((item) => ({
               <td class="px-4 py-3 text-cta font-medium">Nej</td>
               <td class="px-4 py-3 text-text">ca 9 990 kr</td>
               <td class="px-4 py-3 text-winner font-semibold">8,0/10</td>
-              <td class="px-4 py-3"><a href="https://www.pricerunner.se/pl/1595-4860328/Robotgraesklippare/Worx-Landroid-M500-WR141E-priser" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
+              <td class="px-4 py-3"><a href="/worx-landroid-m500/" class="text-accent hover:underline font-medium">Läs recension</a></td>
             </tr>
           </tbody>
         </table>

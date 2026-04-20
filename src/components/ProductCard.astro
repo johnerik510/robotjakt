@@ -25,6 +25,9 @@ interface Props {
 
 const { rank, name, image, price, rating, badge, pros, cons, ctaText, ctaUrl, dataProduct, reviewUrl, amazonUrl, proshopUrl, kjellUrl, dustinUrl, teknikproffsetUrl, robotdammsugarenUrl, elonUrl, komplettUrl, neatsvorUrl } = Astro.props;
 const stars = Math.round(rating * 2) / 2;
+const ctaIsExternal = ctaUrl?.startsWith('http') ?? false;
+const ctaRel = ctaIsExternal ? "sponsored nofollow noopener noreferrer" : undefined;
+const ctaTarget = ctaIsExternal ? "_blank" : undefined;
 ---
 
 <article class="bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow p-5" data-product={dataProduct || name}>
@@ -75,7 +78,7 @@ const stars = Math.round(rating * 2) / 2;
         </div>
       </div>
       <div class="flex flex-wrap items-center gap-3">
-        <a href={ctaUrl} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-6 py-3 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors min-h-[44px] text-sm">
+        <a href={ctaUrl} rel={ctaRel} target={ctaTarget} class="inline-flex items-center justify-center px-6 py-3 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors min-h-[44px] text-sm">
           {ctaText}
           <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
         </a>
