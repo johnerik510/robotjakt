@@ -92,6 +92,33 @@ const breadcrumbSchema = {
   ],
 };
 
+// Auto-generera relaterade artiklar från samma sektion
+const autoPathname = Astro.url.pathname.replace(/\/$/, '');
+const autoSection = autoPathname.split('/').filter(Boolean)[0];
+let autoRelated: { title: string; href: string }[] = [];
+if (autoSection) {
+  const pagesGlob = import.meta.glob('/src/pages/**/*.astro', { eager: false });
+  const mdGlob = import.meta.glob('/src/pages/**/*.md', { eager: false });
+  const allPaths = [...Object.keys(pagesGlob), ...Object.keys(mdGlob)];
+  autoRelated = allPaths
+    .map((p) => {
+      const rel = p.replace('/src/pages', '').replace(/\.(astro|md)$/, '').replace(/\/index$/, '');
+      return rel || '/';
+    })
+    .filter((href) => {
+      if (href === autoPathname || href === autoPathname + '/') return false;
+      if (href.startsWith('/404') || href.includes('[')) return false;
+      if (href === '/' || href === `/${autoSection}` || href === `/${autoSection}/`) return false;
+      return href.startsWith(`/${autoSection}/`);
+    })
+    .slice(0, 6)
+    .map((href) => {
+      const slug = href.split('/').filter(Boolean).pop() || '';
+      const label = slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+      return { title: label, href: href.endsWith('/') ? href : href + '/' };
+    });
+}
+
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
@@ -114,13 +141,25 @@ const articleSchema = {
 };
 ---
 
-<BaseLayout title={title} description={description} ogImage={ogImage}>
+<BaseLayout title={title} description={description} ogImage={ogImage} hideAutoRelated={true}>
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
     {showAuthor && (
       <AuthorByline datePublished={datePublished} dateModified={lastUpdated} />
     )}
     <slot />
+    {autoRelated.length > 0 && (
+      <aside class="mt-12 pt-8 border-t border-slate-200">
+        <h2 class="text-xl font-bold text-slate-900 mb-4">Relaterade guider</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {autoRelated.map((article) => (
+            <a href={article.href} class="block p-4 bg-white rounded-lg border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all">
+              <span class="font-medium text-slate-800 hover:text-blue-700">{article.title}</span>
+            </a>
+          ))}
+        </div>
+      </aside>
+    )}
     {showDisclaimer && <AffiliateDisclaimer />}
   </div>
 

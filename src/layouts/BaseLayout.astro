@@ -9,10 +9,40 @@ interface Props {
   description: string;
   ogImage?: string;
   canonical?: string;
+  hideAutoRelated?: boolean;
 }
 
-const { title, description, ogImage = '/og-default.jpg', canonical } = Astro.props;
+const { title, description, ogImage = '/og-default.jpg', canonical, hideAutoRelated = false } = Astro.props;
 const canonicalUrl = canonical || Astro.url.href;
+
+// Auto-related links för sidor som inte går via ArticleLayout
+let baseAutoRelated: { title: string; href: string }[] = [];
+if (!hideAutoRelated) {
+  const basePathname = Astro.url.pathname.replace(/\/$/, '');
+  const baseSection = basePathname.split('/').filter(Boolean)[0];
+  if (baseSection) {
+    const pagesGlob = import.meta.glob('/src/pages/**/*.astro', { eager: false });
+    const mdGlob = import.meta.glob('/src/pages/**/*.md', { eager: false });
+    const allPaths = [...Object.keys(pagesGlob), ...Object.keys(mdGlob)];
+    baseAutoRelated = allPaths
+      .map((p) => {
+        const rel = p.replace('/src/pages', '').replace(/\.(astro|md)$/, '').replace(/\/index$/, '');
+        return rel || '/';
+      })
+      .filter((href) => {
+        if (href === basePathname || href === basePathname + '/') return false;
+        if (href.startsWith('/404') || href.includes('[')) return false;
+        if (href === '/' || href === `/${baseSection}` || href === `/${baseSection}/`) return false;
+        return href.startsWith(`/${baseSection}/`);
+      })
+      .slice(0, 6)
+      .map((href) => {
+        const slug = href.split('/').filter(Boolean).pop() || '';
+        const label = slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+        return { title: label, href: href.endsWith('/') ? href : href + '/' };
+      });
+  }
+}
 ---
 
 <!DOCTYPE html>
@@ -98,6 +128,18 @@ const canonicalUrl = canonical || Astro.url.href;
   <Header />
   <main id="main-content">
     <slot />
+    {baseAutoRelated.length > 0 && (
+      <aside class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-slate-200 pb-8">
+        <h2 class="text-xl font-bold text-slate-900 mb-4">Relaterade guider</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {baseAutoRelated.map((article) => (
+            <a href={article.href} class="block p-4 bg-white rounded-lg border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all">
+              <span class="font-medium text-slate-800 hover:text-blue-700">{article.title}</span>
+            </a>
+          ))}
+        </div>
+      </aside>
+    )}
   </main>
   <Footer />
   <CookieConsent />
