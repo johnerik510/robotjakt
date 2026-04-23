@@ -21,9 +21,10 @@ interface Props {
   elonUrl?: string;
   komplettUrl?: string;
   neatsvorUrl?: string;
+  estoreUrl?: string;
 }
 
-const { rank, name, image, price, rating, badge, pros, cons, ctaText, ctaUrl, dataProduct, reviewUrl, amazonUrl, proshopUrl, kjellUrl, dustinUrl, teknikproffsetUrl, robotdammsugarenUrl, elonUrl, komplettUrl, neatsvorUrl } = Astro.props;
+const { rank, name, image, price, rating, badge, pros, cons, ctaText, ctaUrl, dataProduct, reviewUrl, amazonUrl, proshopUrl, kjellUrl, dustinUrl, teknikproffsetUrl, robotdammsugarenUrl, elonUrl, komplettUrl, neatsvorUrl, estoreUrl } = Astro.props;
 const stars = Math.round(rating * 2) / 2;
 const ctaIsExternal = ctaUrl?.startsWith('http') ?? false;
 const ctaRel = ctaIsExternal ? "sponsored nofollow noopener noreferrer" : undefined;
@@ -133,6 +134,12 @@ const ctaTarget = ctaIsExternal ? "_blank" : undefined;
         {neatsvorUrl && (
           <a href={neatsvorUrl} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-5 py-3 border-2 border-border text-text-light font-semibold rounded-lg hover:border-cta hover:text-cta transition-colors min-h-[44px] text-sm">
             Neatsvor
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+        )}
+        {estoreUrl && (
+          <a href={estoreUrl} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-5 py-3 border-2 border-border text-text-light font-semibold rounded-lg hover:border-cta hover:text-cta transition-colors min-h-[44px] text-sm">
+            eStore
             <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
           </a>
         )}
