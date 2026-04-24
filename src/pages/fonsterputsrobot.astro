@@ -12,7 +12,7 @@ const breadcrumbs = [
 const faqItems = [
   {
     question: 'Klarar en fönsterputsrobot fönster utan ram?',
-    answer: 'Det beror på modellen. Ecovacs Winbot W2 Omni är speciellt konstruerad för ramfria fönster och använder AI-säkerhetsdetektering för att känna igen glaskanten utan fysisk ram. Enklare modeller som W1 Pro och Liectroux WS-1080 kräver en ram att stanna mot — de kan inte användas utan ram eftersom de inte kan identifiera glasets kant.',
+    answer: 'Det beror på modellen. Ecovacs Winbot W2 Omni är speciellt konstruerad för ramfria fönster och använder AI-säkerhetsdetektering för att känna igen glaskanten utan fysisk ram. Enklare modeller som W1 Pro och Liectroux HCR-10 kräver en ram att stanna mot — de kan inte användas utan ram eftersom de inte kan identifiera glasets kant.',
   },
   {
     question: 'Kan fönsterputsrobotar användas utomhus?',
@@ -24,7 +24,7 @@ const faqItems = [
   },
   {
     question: 'Är fönsterputsrobotar säkra — kan de ramla ner?',
-    answer: 'Alla seriösa fönsterputsrobotar har inbyggda säkerhetssystem. Winbot W2 Omni har AI-detektering av glasets kant. W1 Pro och Liectroux WS-1080 har en säkerhetsline som ingår i förpackningen — du fäster linan i roboten och i ett ankare på väggen som backup. Säkerhetslinan aktiveras bara om vakuumsugningen skulle svikta. Alltid med säkerhetsline vid tvätteriet på höga höjder.',
+    answer: 'Alla seriösa fönsterputsrobotar har inbyggda säkerhetssystem. Winbot W2 Omni har AI-detektering av glasets kant. W1 Pro och Liectroux HCR-10 har en säkerhetsline som ingår i förpackningen — du fäster linan i roboten och i ett ankare på väggen som backup. HCR-10 har dessutom ett inbyggt UPS-batteri som håller roboten kvar på glaset i 25 minuter vid strömavbrott. Alltid med säkerhetsline på höga höjder.',
   },
 ];
 
@@ -44,7 +44,7 @@ const faqSchema = faqItems.map((item) => ({
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-<p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+<p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-04-23">2026-04-23</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
       Fönsterputsrobot April 2026 — Bästa modellerna
@@ -62,7 +62,7 @@ const faqSchema = faqItems.map((item) => ({
           { name: 'Ecovacs Winbot W2 Omni', pris: '4 990 kr', ram: 'Ja', teknik: 'Vatten + mikrofiberduk', betyg: '8,8', badge: 'Bäst i test', url: 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FFoenstertvaett%2FEcovacs-Winbot-W2-OMNI%2F3398871' },
           { name: 'Hobot Legee 688', pris: '2 499 kr', ram: 'Nej', teknik: 'Vatten + mikrofiberduk', betyg: '8,4', badge: 'Populärt val', url: 'https://www.amazon.se/HOBOT-LEGEE-688-tv%C3%A4ttrobot-friktionssystem/dp/B07R4BJXBH?tag=johnerik510-20' },
           { name: 'Ecovacs Winbot W1 Pro', pris: '2 990 kr', ram: 'Nej', teknik: 'Spray + duk', betyg: '8,2', badge: '', url: 'https://www.amazon.se/dp/B09VH7V3VP?tag=johnerik510-20' },
-          { name: 'Liectroux WS-1080', pris: '1 490 kr', ram: 'Nej', teknik: 'Vakuumsugsugning', betyg: '7,0', badge: 'Budget', url: 'https://addrevenue.io/t?a=985383&c=3467327' },
+          { name: 'Liectroux HCR-10', pris: '999 kr', ram: 'Nej', teknik: 'Spray + mikrofiberduk', betyg: '7,5', badge: 'Budget', url: 'https://www.amazon.se/dp/B0CS298M9C?tag=johnerik510-20' },
         ].map(row => (
           <div class={`bg-white rounded-xl border ${row.badge === 'Bäst i test' ? 'border-winner' : 'border-border'} p-4 text-sm`}>
             <div class="flex items-center gap-2 mb-2">
@@ -118,12 +118,12 @@ const faqSchema = faqItems.map((item) => ({
               <td class="px-4 py-3"><a href="https://www.amazon.se/dp/B09VH7V3VP?tag=johnerik510-20" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
             </tr>
             <tr>
-              <td class="px-4 py-3 font-medium text-text">Liectroux WS-1080</td>
-              <td class="px-4 py-3 text-text">ca 1 490 kr</td>
+              <td class="px-4 py-3 font-medium text-text">Liectroux HCR-10</td>
+              <td class="px-4 py-3 text-text">ca 999 kr</td>
               <td class="px-4 py-3 text-cta font-medium">Nej (kräver ram)</td>
-              <td class="px-4 py-3 text-text-light">Vakuumsugsugning</td>
-              <td class="px-4 py-3 text-text-light font-semibold">7,0/10</td>
-              <td class="px-4 py-3"><a href="https://addrevenue.io/t?a=985383&c=3467327" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
+              <td class="px-4 py-3 text-text-light">Spray + mikrofiberduk</td>
+              <td class="px-4 py-3 text-text-light font-semibold">7,5/10</td>
+              <td class="px-4 py-3"><a href="https://www.amazon.se/dp/B0CS298M9C?tag=johnerik510-20" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent hover:underline font-medium">Se pris</a></td>
             </tr>
           </tbody>
         </table>
@@ -274,22 +274,22 @@ const faqSchema = faqItems.map((item) => ({
         </div>
       </section>
 
-      <!-- Produkt 3: Liectroux WS-1080 -->
+      <!-- Produkt 4: Liectroux HCR-10 -->
       <section class="bg-white rounded-xl border border-border overflow-hidden">
         <div class="bg-bg-alt px-5 py-3 border-b border-border flex items-center gap-3">
           <span class="bg-text-lighter text-white text-xs font-bold px-2 py-1 rounded">BUDGET</span>
-          <span class="font-heading font-bold text-text">Liectroux WS-1080</span>
-          <span class="ml-auto font-bold text-text">ca 1 490 kr</span>
+          <span class="font-heading font-bold text-text">Liectroux HCR-10</span>
+          <span class="ml-auto font-bold text-text">ca 999 kr</span>
         </div>
         <div class="p-5">
           <p class="text-text-light text-sm leading-relaxed mb-4">
-            Liectroux WS-1080 är det billigaste alternativet med vakuumsugsugning mot glaset. Den kräver ren glasyta och en ram att orientera sig mot. Fungerar för grundläggande fönsterputsning på standardfönster. Säkerhetsline ingår. Kräver mer manuell kontroll av rengöringsresultatet jämfört med dyrare modeller.
+            Liectroux HCR-10 är det billigaste alternativet med automatisk spray och 2 800 Pa sugkraft. Inbyggt UPS-batteri håller roboten kvar på glaset i 25 minuter vid strömavbrott — en säkerhetsfunktion som premiummoteller kostar 3–4 gånger mer. Kräver fönsterram. Säkerhetsline ingår. Bäst pris/funktion i budgetsegmentet.
           </p>
           <div class="grid sm:grid-cols-2 gap-4 mb-4">
             <div>
               <p class="text-xs font-semibold text-text mb-2">Vad den klarar</p>
               <ul class="space-y-1">
-                {['Lägst pris i testet', 'Enkel att komma igång med', 'Säkerhetsline ingår'].map(p => (
+                {['Lägst pris i testet — 999 kr', 'UPS-batteri — sitter kvar 25 min vid strömavbrott', 'Automatisk spray med vattentank', '2 800 Pa sugkraft', 'Säkerhetsline ingår'].map(p => (
                   <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-winner font-bold mt-0.5">+</span>{p}</li>
                 ))}
               </ul>
@@ -297,19 +297,19 @@ const faqSchema = faqItems.map((item) => ({
             <div>
               <p class="text-xs font-semibold text-text mb-2">Kompromisser</p>
               <ul class="space-y-1">
-                {['Kräver ren glasyta och fönsterram', 'Sämre rengöringsresultat än premiummodeller', 'Ingen automatisk spray — kräver förbehandling', 'Kortare livslängd än Ecovacs'].map(c => (
+                {['Kräver fönsterram — inte för ramfria ytor', 'Ingen app-styrning', 'Lägre täckning än Hobot Legee 688 och W1 Pro', 'Längre leveranstid via Amazon.se'].map(c => (
                   <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-cta font-bold mt-0.5">-</span>{c}</li>
                 ))}
               </ul>
             </div>
           </div>
           <a
-            href="https://addrevenue.io/t?a=985383&c=3467327"
+            href="https://www.amazon.se/dp/B0CS298M9C?tag=johnerik510-20"
             rel="sponsored nofollow noopener noreferrer"
             target="_blank"
             class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
           >
-            Se pris på Liectroux WS-1080
+            Se pris på Liectroux HCR-10
             <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
           </a>
         </div>
