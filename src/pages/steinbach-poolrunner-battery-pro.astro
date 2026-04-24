@@ -1,7 +1,6 @@
 ---
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import FAQ from '../components/FAQ.astro';
-import StickyCTA from '../components/StickyCTA.astro';
 
 const breadcrumbs = [
   { label: 'Poolrobot', href: '/poolrobot/' },
@@ -220,11 +219,6 @@ const faqSchema = faqItems.map((item) => ({
   </section>
 </ArticleLayout>
 
-<StickyCTA
-  text="Poolrobotar hos Villanytt"
-  url="https://addrevenue.io/t?a=984922&c=3467327&url=https%3A%2F%2Fvillanytt.se%2Fprodukt-kategori%2Fpoolrobot%2F"
-  productName="Steinbach Poolrunner Battery Pro"
-/>
 
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
