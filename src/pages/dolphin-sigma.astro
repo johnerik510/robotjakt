@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
 
 const breadcrumbs = [
   { label: 'Poolrobot', href: '/poolrobot/' },
@@ -242,6 +243,11 @@ const faqSchema = faqItems.map((item) => ({
       <li><a href="/kopguide-poolrobot/" class="text-accent hover:underline text-sm">Kopguide poolrobot — sa valjer du ratt modell</a></li>
     </ul>
   </section>
+
+  <StickyCTA
+    text="Se topplista poolrobotar"
+    url="/poolrobot/"
+  />
 </ArticleLayout>
 
 
