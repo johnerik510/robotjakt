@@ -4,6 +4,7 @@ import ProductCard from '../components/ProductCard.astro';
 import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import StickyCTA from '../components/StickyCTA.astro';
 
 const products = [
   {
@@ -234,4 +235,9 @@ const faqSchema = faqItems.map((item) => ({
       "url": "https://robotjakt.se/poolrobot-for-nedgraevd-pool/",
     })),
   })} />
+
+  <StickyCTA
+    url="https://www.amazon.se/s?k=dolphin+e30+poolrobot&tag=johnerik510-20"
+    text="Se Dolphin E30 hos Amazon.se"
+  />
 </BaseLayout>

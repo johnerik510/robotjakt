@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import StickyCTA from '../components/StickyCTA.astro';
 
 const affSpotScrub = 'https://www.awin1.com/cread.php?awinmid=25183&awinaffid=2834856&ued=https%3A%2F%2Fwww.dyson.se%2Fdammsugare%2Frobot%2Fspot-scrub-ai%2Fsvart';
 const affVisNav = 'https://www.awin1.com/cread.php?awinmid=25183&awinaffid=2834856&ued=https%3A%2F%2Fwww.dyson.se%2Fdammsugare%2Frobot%2F360-vis-nav';
@@ -214,4 +215,9 @@ const faqSchema = faqItems.map((item) => ({
 
     <AffiliateDisclaimer />
   </div>
+
+  <StickyCTA
+    url={affVisNav}
+    text="Se Dyson 360 Vis Nav hos Dyson.se"
+  />
 </BaseLayout>
