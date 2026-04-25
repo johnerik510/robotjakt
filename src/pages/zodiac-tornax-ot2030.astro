@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
 
 const breadcrumbs = [
   { label: 'Poolrobot', href: '/poolrobot/' },
@@ -83,8 +84,7 @@ const faqSchema = faqItems.map((item) => ({
             <p class="text-2xl font-bold text-text">ca 9 490 kr</p>
             <p class="text-xs text-text-light">Pris kan variera — jämför alltid</p>
           </div>
-          
-          
+          <a href="https://www.amazon.se/s?k=zodiac+tornax+ot2030&tag=johnerik510-20" target="_blank" rel="nofollow sponsored noopener noreferrer" class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm shadow-sm">Se pris på Amazon.se →</a>
         </div>
       </div>
     </div>
@@ -211,6 +211,8 @@ const faqSchema = faqItems.map((item) => ({
     </ul>
   </section>
 </ArticleLayout>
+
+<StickyCTA url="https://www.amazon.se/s?k=zodiac+tornax+ot2030&tag=johnerik510-20" productName="Zodiac Tornax OT2030" />
 
 
 <script type="application/ld+json" set:html={JSON.stringify({
