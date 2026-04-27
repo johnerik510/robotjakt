@@ -1,2 +1,16 @@
 # www → non-www
 https://www.robotjakt.se/* https://robotjakt.se/:splat 301
+
+# Flata URL:er → nya folder-URL:er (hub-and-spoke-struktur)
+/robotdammsugare-husdjur     /robotdammsugare/husdjur/    301
+/robotdammsugare-husdjur/    /robotdammsugare/husdjur/    301
+/robotdammsugare-med-mopp    /robotdammsugare/med-mopp/   301
+/robotdammsugare-med-mopp/   /robotdammsugare/med-mopp/   301
+/robotdammsugare-lagenhet    /robotdammsugare/lagenhet/   301
+/robotdammsugare-lagenhet/   /robotdammsugare/lagenhet/   301
+/robotdammsugare-langt-har   /robotdammsugare/langt-har/  301
+/robotdammsugare-langt-har/  /robotdammsugare/langt-har/  301
+/robotdammsugare-med-bassation   /robotdammsugare/med-bassation/   301
+/robotdammsugare-med-bassation/  /robotdammsugare/med-bassation/   301
+/robotdammsugare-storlagenhet    /robotdammsugare/storlagenhet/    301
+/robotdammsugare-storlagenhet/   /robotdammsugare/storlagenhet/    301
