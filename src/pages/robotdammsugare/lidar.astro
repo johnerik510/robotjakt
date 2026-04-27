@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import FAQ from '../../components/FAQ.astro';
+import StickyCTA from '../../components/StickyCTA.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/robotdammsugare/' },
+  { label: 'Med LiDAR' },
+];
+
+const products = [
+  {
+    rank: 1,
+    name: 'Roborock S8 MaxV Ultra',
+    image: '/images/roborock-s8-maxv-ultra.webp',
+    price: 'ca 11 990 kr',
+    rating: 4.8,
+    badge: 'Bäst LiDAR + AI',
+    pros: ['PreciSense LiDAR + ReactiveAI 3.0', 'Branschledande hinderdetektion', 'Multi-floor-mappar', 'Snabb och exakt kartläggning'],
+    cons: ['Hög prisklass', 'Komplex app i början'],
+    ctaText: 'Se pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Froborock-s8-maxv-ultra-white-135019',
+    reviewUrl: '/roborock-s8-maxv-ultra/',
+    dataProduct: 'Roborock S8 MaxV Ultra',
+  },
+  {
+    rank: 2,
+    name: 'Dreame X40 Ultra',
+    image: '/images/dreame-x40-ultra.webp',
+    price: 'ca 9 990 kr',
+    rating: 4.7,
+    badge: 'Snabbast kartläggning',
+    pros: ['Pathfinder LiDAR + 3D Structured Light', 'Snabbast på komplexa planlösningar', 'Multi-floor-mappar', 'Kombinerar LiDAR med AI-kamera'],
+    cons: ['Hög prisklass', 'Stor station'],
+    ctaText: 'Se pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fdreame-x40-ultra-151995',
+    reviewUrl: '/dreame-x40-ultra/',
+    dataProduct: 'Dreame X40 Ultra',
+  },
+  {
+    rank: 3,
+    name: 'Ecovacs Deebot X5 Omni',
+    image: '/images/ecovacs-deebot-x5-omni.webp',
+    price: 'ca 8 990 kr',
+    rating: 4.5,
+    badge: 'TrueMapping 3.0',
+    pros: ['TrueMapping 3.0 + AIVI 3D 2.0', 'Mycket exakta kartor', 'Stark AI för möbelidentifiering', 'Fyrkantig design'],
+    cons: ['Något bullrigare', 'Tillbehör kan vara dyra'],
+    ctaText: 'Se pris hos Proshop',
+    ctaUrl: 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotdammsugare%2FEcovacs-Robotdammsugare-Deebot-T30C-Vit%2F3356577',
+    reviewUrl: '/ecovacs-deebot-x5-omni/',
+    dataProduct: 'Ecovacs Deebot X5 Omni',
+  },
+  {
+    rank: 4,
+    name: 'Eufy X10 Pro Omni',
+    image: '/images/eufy-x10-pro-omni.webp',
+    price: 'ca 5 990 kr',
+    rating: 4.4,
+    badge: 'LiDAR till budget',
+    pros: ['Klassisk LiDAR-navigering', 'AI-hinderdetektion', 'Lågt pris för funktionen', 'Bra app'],
+    cons: ['Svagare AI än premium', 'Mindre dammbehållare'],
+    ctaText: 'Se pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Feufy-x10-pro-omni-153028',
+    reviewUrl: '/eufy-x10-pro-omni/',
+    dataProduct: 'Eufy X10 Pro Omni',
+  },
+];
+
+const faqItems = [
+  { question: 'Är LiDAR ett krav 2026?', answer: 'Ja om du värdesätter pålitlig städning. Modeller utan LiDAR navigerar slumpmässigt eller med svag kameranavigation och fungerar dåligt jämfört med LiDAR-modeller.' },
+  { question: 'Fungerar LiDAR i mörker?', answer: 'Ja. LiDAR genererar sitt eget laserljus och påverkas inte av rummens belysning. Det är en av dess största fördelar mot kameranavigering.' },
+  { question: 'Är LiDAR säkert för ögonen?', answer: 'Ja. Robotarnas LiDAR är klass 1 — säker för människor och djur enligt internationell standard.' },
+  { question: 'Kan LiDAR-tornet skadas?', answer: 'Det är robust men kan slitas om något återkommande slår mot det. Garanti gäller normalt 2 år. Nyare modeller (Dyson 360 Vis Nav, Roborock Saros) har platt design som reducerar risken.' },
+];
+---
+
+<BaseLayout
+  title="Bästa robotdammsugare med LiDAR 2026 — exakt navigering"
+  description="Robotdammsugare med LiDAR navigerar exakt och kartlägger ditt hem på minuter. Här är de modellerna med bäst LiDAR-implementation 2026."
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-04-27">2026-04-27</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
+      Bästa robotdammsugare med LiDAR 2026
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      LiDAR är skillnaden mellan en robot som funkar och en som irriterar. Här är de modeller som har 2026 års bästa LiDAR-implementation och AI-hinderdetektion.
+    </p>
+
+    <div class="space-y-6 mb-10">
+      {products.map(p => <ProductCard {...p} />)}
+    </div>
+
+    <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Varför LiDAR är det viktigaste valet</h2>
+      <p class="text-text-light leading-relaxed mb-3">
+        En LiDAR-robot bygger en exakt 2D-karta av din bostad på 5–10 minuter och städar systematiskt i raka linjer. En robot utan LiDAR navigerar antingen slumpmässigt eller med kameranavigering — båda är klart sämre. Detta är inte en lyx — det är förutsättningen för smart städning, no-go-zoner och rumsspecifika scheman.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        <a href="/guide/lidar-navigation/" class="text-accent hover:underline">Läs vår tekniska genomgång av LiDAR</a> för djupare förståelse.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/guide/lidar-navigation/" class="text-accent hover:underline text-sm">LiDAR-teknik förklarat</a></li>
+        <li><a href="/guide/sugkraft/" class="text-accent hover:underline text-sm">Sugkraft i Pa</a></li>
+        <li><a href="/robotdammsugare/husdjur/" class="text-accent hover:underline text-sm">Bäst för husdjur</a></li>
+        <li><a href="/robotdammsugare/budget/" class="text-accent hover:underline text-sm">Bäst i budget</a></li>
+      </ul>
+    </section>
+
+    <AffiliateDisclaimer />
+  </div>
+
+  <StickyCTA text="Se bäst med LiDAR" url="#main" />
+</BaseLayout>

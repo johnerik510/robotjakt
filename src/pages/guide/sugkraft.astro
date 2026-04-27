@@ -1,0 +1,100 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const breadcrumbs = [
+  { label: 'Guider', href: '/guide/' },
+  { label: 'Sugkraft Pa' },
+];
+
+const faqItems = [
+  { question: 'Vad är Pa i en robotdammsugare?', answer: 'Pa står för Pascal och är enheten för tryckskillnad. I robotdammsugarens fall mäts sugkraften i hur mycket undertryck motorn skapar. Högre Pa innebär att fler partiklar och mer påsatt smuts dras upp i en passage.' },
+  { question: 'Hur mycket sugkraft behöver jag?', answer: 'Hårda golv klarar sig fint på 3 000–4 000 Pa. Har du mattor eller husdjur bör du sikta på minst 6 000 Pa. För djupa flokati-mattor och kraftig pälsfällning är 8 000–12 000 Pa rätt nivå.' },
+  { question: 'Är det skillnad på "uppmätt" och "max" Pa?', answer: 'Ja. Tillverkare anger ofta max-Pa under optimala laboratorieförhållanden. Verklig sugkraft i städläge är ofta 30–50 % lägre. Tester från konsumentmedier ger en mer realistisk bild.' },
+  { question: 'Slits roboten snabbare av höga sugkraftslägen?', answer: 'Motorn arbetar hårdare, men moderna borstlösa motorer är dimensionerade för flera tusen timmars drift även i max-läge. Filter och borstar slits snabbare — räkna med ett par månader mellan filterbyten vid daglig användning på max.' },
+  { question: 'Hjälper hög Pa mot allergier?', answer: 'Hög sugkraft hjälper, men avgörande är HEPA-filtret och hur tätt dammbehållaren sluter. En modell med 4 000 Pa och bra HEPA-tätning kan vara bättre för allergiker än en otät 12 000 Pa-modell.' },
+  { question: 'Vilken Pa har de mest sålda modellerna 2026?', answer: 'Roborock S8 MaxV Ultra: 10 000 Pa. Dreame X40 Ultra: 12 000 Pa. Ecovacs Deebot X5 Omni: 18 000 Pa. Eufy X10 Pro Omni: 8 000 Pa. iRobot Roomba j9+: 4 000 Pa (Roomba mäter dock på en annan skala).' },
+];
+---
+
+<ArticleLayout
+  title="Sugkraft i robotdammsugare — Pa-värde och vad du verkligen behöver"
+  description="Komplett guide till sugkraft i robotdammsugare. Vad Pa betyder, hur mycket du behöver för olika golvtyper och husdjur, samt vilka modeller som leder 2026."
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-04-27"
+  datePublished="2026-04-27"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Sugkraft i robotdammsugare — så mycket Pa behöver du 2026
+  </h1>
+  <p class="text-text-light text-lg mb-6 leading-relaxed">
+    Pa är det första värdet tillverkare lyfter fram i marknadsföringen. Men hur mycket du faktiskt behöver beror på din bostad — och fler Pa är inte alltid bättre. Här är en ärlig genomgång av vad sugkraft är, hur den mäts och vilken nivå som räcker för dig.
+  </p>
+
+  <figure class="my-6">
+    <img src="/images/roborock-s8-maxv-ultra.webp" alt="Roborock S8 MaxV Ultra med 10 000 Pa sugkraft" class="rounded-xl border border-border w-full" loading="lazy" />
+    <figcaption class="text-xs text-text-lighter mt-2">Roborock S8 MaxV Ultra levererar 10 000 Pa — mer än tillräckligt för de flesta hem.</figcaption>
+  </figure>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Pa förklarat på 30 sekunder</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    Pa (Pascal) mäter trycket motorn kan skapa relativt omgivningens lufttryck. Ju större tryckskillnad, desto starkare luftström genom borstvalsen och desto mer smuts lyfts upp. Det är ungefär samma princip som skiljer en handdammsugare från en industriell våtsug — bara nedskalat. Ett värde på 5 000 Pa ungefär motsvarar en bra handhållen Dyson, 12 000 Pa börjar närma sig vad enklare bärbara modeller levererar.
+  </p>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Riktvärden per bostadstyp</h2>
+  <div class="overflow-x-auto rounded-xl border border-border my-4">
+    <table class="w-full text-sm bg-white">
+      <thead class="bg-bg-alt border-b border-border">
+        <tr>
+          <th class="text-left px-4 py-3 font-semibold text-text">Boendemiljö</th>
+          <th class="text-left px-4 py-3 font-semibold text-text">Rekommenderad Pa</th>
+          <th class="text-left px-4 py-3 font-semibold text-text">Exempel-modell</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-border">
+        <tr><td class="px-4 py-3">Liten lägenhet, hårdgolv</td><td class="px-4 py-3">3 000–4 000 Pa</td><td class="px-4 py-3"><a href="/eufy-x10-pro-omni/" class="text-accent hover:underline">Eufy X10 Pro Omni</a></td></tr>
+        <tr><td class="px-4 py-3">Större hem med blandade golv</td><td class="px-4 py-3">5 000–7 000 Pa</td><td class="px-4 py-3"><a href="/dreame-l20-ultra/" class="text-accent hover:underline">Dreame L20 Ultra</a></td></tr>
+        <tr><td class="px-4 py-3">Husdjur och mattor</td><td class="px-4 py-3">8 000+ Pa</td><td class="px-4 py-3"><a href="/dreame-x40-ultra/" class="text-accent hover:underline">Dreame X40 Ultra</a></td></tr>
+        <tr><td class="px-4 py-3">Tjocka mattor, allergi i hushållet</td><td class="px-4 py-3">10 000+ Pa + HEPA</td><td class="px-4 py-3"><a href="/roborock-s8-maxv-ultra/" class="text-accent hover:underline">Roborock S8 MaxV Ultra</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Pa är inte allt — det här gör också skillnad</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    En robot med 12 000 Pa men sliten borstvals och tätningsläckor presterar sämre än en på 6 000 Pa med fräsch borste och tätt sluten kanal. Tre faktorer påverkar verklig städprestanda lika mycket som det rena Pa-värdet:
+  </p>
+  <ul class="list-disc pl-6 text-text-light space-y-2 mb-6">
+    <li><strong>Borstdesign</strong> — gummivalsar (Roborock, iRobot) trasslar inte i hår, borstvalsar med blandade material lyfter mer dammkorn.</li>
+    <li><strong>Mattdetektion och boost-läge</strong> — bra modeller höjer automatiskt sugkraften när de kör upp på matta.</li>
+    <li><strong>Filtrering</strong> — HEPA-13 fångar 99,97 % av partiklar ner till 0,3 mikrometer; viktigt för allergiker.</li>
+  </ul>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Boost-läge vs konstant max</h2>
+  <p class="text-text-light leading-relaxed mb-6">
+    Att alltid köra på max-läge är slöseri. Moderna premium-robotar har 4–5 sugkraftslägen och lyfter automatiskt till max bara på mattor och i intensiv städning. På hårda golv räcker mellanläge oftast och du sparar batteri (längre passage på en laddning) och ljudnivå. Skillnaden mellan tyst läge och max kan vara 60 dB vs 75 dB — det första går att sova bredvid, det andra dränker en TV.
+  </p>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Vanliga marknadsföringstrick</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    Vissa tillverkare anger Pa-värden som inte stämmer i verkligt städläge. Tre saker att se upp för:
+  </p>
+  <ul class="list-disc pl-6 text-text-light space-y-2 mb-6">
+    <li>Värden uppmätta utan dammbehållare på plats — sänker tryckfallet artificiellt.</li>
+    <li>"Upp till X Pa" som bara nås i en kort burst på 2 sekunder.</li>
+    <li>Pa-värden från olika skalor mellan kinesiska och europeiska tillverkare. iRobot och europeiska märken anger oftast lägre värden men presterar likvärdigt — testa modellerna mot varandra istället för att lita blint på siffran.</li>
+  </ul>
+
+  <FAQ items={faqItems} />
+
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Läs vidare</h2>
+    <ul class="space-y-2">
+      <li><a href="/robotdammsugare/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2026</a></li>
+      <li><a href="/guide/lidar-navigation/" class="text-accent hover:underline text-sm">LiDAR-navigation förklarat</a></li>
+      <li><a href="/guide/robotdammsugare-husdjur/" class="text-accent hover:underline text-sm">Robotdammsugare för husdjursägare</a></li>
+      <li><a href="/guide/robotdammsugare-mattor/" class="text-accent hover:underline text-sm">Robotdammsugare och mattor</a></li>
+      <li><a href="/reservdelar/filter/" class="text-accent hover:underline text-sm">HEPA-filter och ersättningsfilter</a></li>
+    </ul>
+  </section>
+</ArticleLayout>

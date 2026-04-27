@@ -1,0 +1,92 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const breadcrumbs = [
+  { label: 'Guider', href: '/guide/' },
+  { label: 'Robotdammsugare för husdjur' },
+];
+
+const faqItems = [
+  { question: 'Vilken robotdammsugare är bäst för hundar?', answer: 'För medelstora till stora hundar med kraftig pälsfällning är Roborock S8 MaxV Ultra och Dreame X40 Ultra de starkaste valen 2026. Båda har gummivalsar som inte trasslar i päls och AI som identifierar djuravföring.' },
+  { question: 'Klarar robotdammsugare kattlåda och avföring?', answer: 'AI-modeller från Roborock (ReactiveAI 3.0), Dreame (3D Structured Light) och iRobot (PrecisionVision) är tränade att känna igen och undvika djuravföring. Modeller utan AI riskerar att smeta ut allt — inte värt risken om du har hund eller katt.' },
+  { question: 'Trasslar hundpäls i borstvalsen?', answer: 'Hårda borstvalsar och blandborstar trasslar mycket. Modeller med dubbla gummivalsar (Roborock, iRobot, Dreame X40 Ultra) trasslar minimalt — du behöver bara rensa dem en gång i månaden istället för varje vecka.' },
+  { question: 'Är ljudnivån ett problem för katter och hundar?', answer: 'De flesta djur vänjer sig på 1–2 veckor om roboten kör i tysta läget (under 60 dB). Mer skygga djur kan behöva en månads tillvänjning. Schemalägg städning när husdjuren är ute eller i annat rum tills de vant sig.' },
+  { question: 'Hur ofta behöver man tömma roboten med husdjur i hemmet?', answer: 'Vid två stora hundar fylls dammbehållaren ofta varje städning. Här är automatisk tömningsstation näst intill obligatorisk — utan den tömmer du dagligen.' },
+  { question: 'Är HEPA-filter viktigt om man har husdjur?', answer: 'Ja, särskilt vid djurallergi i hushållet. HEPA-13 fångar 99,97 % av allergener inklusive pälsdander. Kontrollera att roboten har en sluten luftväg så att damm inte blåser ut igen.' },
+];
+---
+
+<ArticleLayout
+  title="Robotdammsugare för husdjur 2026 — guide för hund och katt"
+  description="Komplett köpguide för dig med husdjur. Vi går igenom vilken sugkraft, borste och AI-funktion du behöver för att hantera päls, smuts och olyckor."
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-04-27"
+  datePublished="2026-04-27"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Robotdammsugare för husdjur — så väljer du rätt 2026
+  </h1>
+  <p class="text-text-light text-lg mb-6 leading-relaxed">
+    Husdjur ställer helt andra krav på en robotdammsugare än ett djurfritt hem. Du behöver mer sugkraft, smartare borstdesign och framför allt AI som kan undvika de oundvikliga olyckor som händer när du inte är hemma. Här är vad du faktiskt behöver titta efter — och vilka modeller som klarar testet 2026.
+  </p>
+
+  <figure class="my-6">
+    <img src="/images/roborock-s8-maxv-ultra.webp" alt="Roborock S8 MaxV Ultra med ReactiveAI för husdjurshem" class="rounded-xl border border-border w-full" loading="lazy" />
+    <figcaption class="text-xs text-text-lighter mt-2">Roborock S8 MaxV Ultra är 2026 års starkaste val för hushåll med hund eller katt.</figcaption>
+  </figure>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Tre saker som spelar roll med husdjur</h2>
+  <ol class="list-decimal pl-6 text-text-light space-y-3 mb-6">
+    <li><strong>Gummivalsar istället för borstvalsar</strong> — borst trasslar in päls på minuter. Gummivalsar (Roborock DuoRoller, iRobot dual rubber brushes, Dreame TriCut) klipper av lösa hårstrån och släpper dem i dammbehållaren utan att kärva.</li>
+    <li><strong>AI-hinderdetektion</strong> — utan AI kommer roboten förr eller senare köra rakt över en pöl eller bajskorv. Roborock ReactiveAI 3.0 och Dreame 3D Structured Light är de bästa just nu — båda lär sig identifiera och undvika djuravföring.</li>
+    <li><strong>Hög sugkraft + boost på matta</strong> — pälsfällare behöver minst 6 000 Pa, helst 8 000+. Mattdetektion som automatiskt höjer effekten är avgörande.</li>
+  </ol>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Bästa modellerna 2026 för husdjur</h2>
+  <div class="space-y-4 mb-6">
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h3 class="font-semibold text-text mb-1">Roborock S8 MaxV Ultra — toppvalet</h3>
+      <p class="text-text-light text-sm mb-2">10 000 Pa, dubbla gummivalsar, ReactiveAI 3.0 med kameradetektion av kablar och avföring. Fullautomatisk station med varmvattentvätt av moppar. <a href="/roborock-s8-maxv-ultra/" class="text-accent hover:underline">Läs vår recension</a>.</p>
+    </div>
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h3 class="font-semibold text-text mb-1">Dreame X40 Ultra — premiumalternativet</h3>
+      <p class="text-text-light text-sm mb-2">12 000 Pa, TriCut gummivalsar, 3D Structured Light AI. Utfällbar mopp som når in i hörn. <a href="/dreame-x40-ultra/" class="text-accent hover:underline">Läs vår recension</a>.</p>
+    </div>
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h3 class="font-semibold text-text mb-1">iRobot Roomba j9+ — för dig som vill hålla det enkelt</h3>
+      <p class="text-text-light text-sm mb-2">PrecisionVision känner igen avföring och kablar. iRobots klassiska gummivalsar trasslar minimalt. Bra app, men sämre moppkapacitet än de kinesiska konkurrenterna. <a href="/irobot-roomba-j9-plus/" class="text-accent hover:underline">Läs vår recension</a>.</p>
+    </div>
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h3 class="font-semibold text-text mb-1">Eufy X10 Pro Omni — bästa prisvärda alternativet</h3>
+      <p class="text-text-light text-sm mb-2">8 000 Pa och AI-hinderdetektion till klart lägre pris än premium-modellerna. Bra val för mindre hushåll med en katt eller liten hund. <a href="/eufy-x10-pro-omni/" class="text-accent hover:underline">Läs vår recension</a>.</p>
+    </div>
+  </div>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Att tänka på vid stora hundar</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    Stora raser som schäfer, golden retriever och labrador fäller mer än de flesta robotdammsugare är dimensionerade för. Tre kritiska val:
+  </p>
+  <ul class="list-disc pl-6 text-text-light space-y-2 mb-6">
+    <li>Automatisk tömningsstation är nästan obligatorisk — annars tömmer du dagligen.</li>
+    <li>Sugkraft minst 8 000 Pa.</li>
+    <li>Daglig städning, helst två gånger i högsäsong (vår och höst).</li>
+  </ul>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Att tänka på vid katter</h2>
+  <p class="text-text-light leading-relaxed mb-6">
+    Katter är ofta skygga för robotar i början. Schemalägg städningen när du är hemma så katten kan se att roboten inte är ett hot. Tysta läget (Roborock Whisper Mode, Dreame Quiet Mode) ligger på 55–58 dB och fungerar för de flesta katter. Glöm inte att markera kattens vatten- och matskålar som no-go-zon i appen — annars kommer roboten välta dem.
+  </p>
+
+  <FAQ items={faqItems} />
+
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Läs vidare</h2>
+    <ul class="space-y-2">
+      <li><a href="/robotdammsugare/husdjur/" class="text-accent hover:underline text-sm">Bästa robotdammsugare för husdjur 2026 — topplista</a></li>
+      <li><a href="/guide/sugkraft/" class="text-accent hover:underline text-sm">Sugkraft i Pa förklarat</a></li>
+      <li><a href="/guide/lidar-navigation/" class="text-accent hover:underline text-sm">LiDAR-navigation och AI-detektion</a></li>
+      <li><a href="/guide/automatisk-tomning/" class="text-accent hover:underline text-sm">Automatisk tömningsstation</a></li>
+    </ul>
+  </section>
+</ArticleLayout>

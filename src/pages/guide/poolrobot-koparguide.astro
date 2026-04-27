@@ -1,0 +1,81 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const breadcrumbs = [
+  { label: 'Guider', href: '/guide/' },
+  { label: 'Poolrobot köpguide' },
+];
+
+const faqItems = [
+  { question: 'Behöver jag verkligen en poolrobot?', answer: 'Om du har en pool på 4×8 meter eller större sparar en poolrobot ca 1 timmes manuellt arbete per vecka. Modern poolrobot lyfter dessutom partiklar som filtersystemet missar.' },
+  { question: 'Kabel eller batteri?', answer: 'Batteripooler är bekvämare men har 90–120 minuters drifttid. Kabeldrivna kör i flera timmar. För pooler över 60 m² lutar vi mot kabel; under 60 m² är batteri enklare.' },
+  { question: 'Klarar poolroboten väggarna och vattenlinjen?', answer: 'Premiummodeller (Dolphin Sigma, Dolphin S200) klarar både golv, väggar och vattenlinjen. Budgetmodeller bara golv. Vattenlinjen är där flest alger samlas — viktig funktion.' },
+  { question: 'Funkar de i klorerade och saltvatten?', answer: 'Alla större fabrikat fungerar i båda. Saltvatten är dock mer aggressivt — kontrollera att modellen är saltvattengodkänd om du har saltklorering.' },
+  { question: 'Vintervård av poolrobot?', answer: 'Skölj rent med kranvatten, ta ut filterkorgarna, torka kabeln och förvara i originalkartongen i frostfritt utrymme. Lämna inte i poolen över vintern.' },
+];
+---
+
+<ArticleLayout
+  title="Poolrobot köpguide 2026 — så väljer du rätt modell"
+  description="Komplett köpguide för poolrobotar. Kabel vs batteri, vägg-klättring, filterstorlek och vilka modeller som leder 2026."
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-04-27"
+  datePublished="2026-04-27"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Poolrobot — komplett köpguide 2026
+  </h1>
+  <p class="text-text-light text-lg mb-6 leading-relaxed">
+    En bra poolrobot är skillnaden mellan att äga en pool och att vara slav under den. Här är vad du faktiskt behöver titta efter — och var de stora skillnaderna ligger mellan en 7 000 kr-modell och en på 25 000 kr.
+  </p>
+
+  <figure class="my-6">
+    <img src="/images/dolphin-sigma.webp" alt="Dolphin Sigma poolrobot" class="rounded-xl border border-border w-full" loading="lazy" />
+  </figure>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Kabel vs batteri — vad passar dig?</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    Det är det första valet du måste göra. Kabeldrivna modeller dominerar fortfarande premiumsegmentet — de erbjuder obegränsad drifttid och stark prestanda. Batterimodeller har de senaste två åren tagit stora steg och är klart enklare att hantera (ingen kabel som trasslar).
+  </p>
+  <ul class="list-disc pl-6 text-text-light space-y-2 mb-6">
+    <li><strong>Kabel</strong> — billigare, längre drifttid, högre prestanda. Klättrar oftast väggar.</li>
+    <li><strong>Batteri</strong> — bekvämare, smidigare, men kortare drifttid (90–120 min). Bäst för pooler under 60 m².</li>
+  </ul>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Funktioner som faktiskt spelar roll</h2>
+  <ul class="list-disc pl-6 text-text-light space-y-2 mb-6">
+    <li><strong>Väggklättring</strong> — kritiskt. Algeransamling sker mest på väggar och vattenlinje.</li>
+    <li><strong>Filterstorlek</strong> — minst 4 liter för pooler över 50 m² annars måste du tömma den mitt under körning.</li>
+    <li><strong>Cyklon-filter eller filterkorg</strong> — cyklon är enklare att rengöra och tappar inte tryck när det fyllts.</li>
+    <li><strong>WiFi och app</strong> — bekvämt för schemaläggning men inte avgörande.</li>
+    <li><strong>Smart navigation</strong> — bättre modeller kartlägger poolen och täcker hela ytan systematiskt.</li>
+  </ul>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Bästa poolrobotarna 2026</h2>
+  <ul class="list-disc pl-6 text-text-light space-y-2 mb-6">
+    <li><a href="/dolphin-sigma/" class="text-accent hover:underline">Dolphin Sigma</a> — toppvalet för stora pooler. Trippel-motorer, gyronavigation.</li>
+    <li><a href="/dolphin-s200/" class="text-accent hover:underline">Dolphin S200</a> — premium-allroundare med väggklättring och vattenlinjes-cleaning.</li>
+    <li><a href="/dolphin-e30/" class="text-accent hover:underline">Dolphin E30</a> — prisvärt mellanalternativ till svenska standardpooler.</li>
+    <li><a href="/dolphin-nautilus-cc-plus/" class="text-accent hover:underline">Dolphin Nautilus CC Plus</a> — best-seller och pålitlig basmodell.</li>
+    <li><a href="/bestway-aquasurge/" class="text-accent hover:underline">Bestway AquaSurge</a> — budgetalternativ för ovanmark-pooler.</li>
+  </ul>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Vanliga misstag</h2>
+  <ul class="list-disc pl-6 text-text-light space-y-2 mb-6">
+    <li>Köpa underdimensionerad — en robot för 30 m² i en 70 m²-pool fyller filtret innan den hinner halva poolen.</li>
+    <li>Lämna kabeln tilltrasslad — den tappar livslängd snabbt.</li>
+    <li>Glömma vintervård — frost spräcker plasthus och kontrolldosor.</li>
+    <li>Inte rensa filterkorgen mellan körningar — filtertrycket faller dramatiskt.</li>
+  </ul>
+
+  <FAQ items={faqItems} />
+
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Läs vidare</h2>
+    <ul class="space-y-2">
+      <li><a href="/poolrobot/" class="text-accent hover:underline text-sm">Bästa poolrobot 2026 — topplista</a></li>
+      <li><a href="/billigaste-poolrobot/" class="text-accent hover:underline text-sm">Billigaste poolrobot 2026</a></li>
+    </ul>
+  </section>
+</ArticleLayout>

@@ -1,0 +1,82 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const breadcrumbs = [
+  { label: 'Guider', href: '/guide/' },
+  { label: 'Underhåll' },
+];
+
+const faqItems = [
+  { question: 'Hur ofta måste man rensa borstvalsen?', answer: 'I husdjurshem en gång i veckan. Utan husdjur räcker en gång i månaden. Hår, garn och fibrer trasslar in sig och minskar sugkraft markant om man slarvar.' },
+  { question: 'Behöver HEPA-filtret bytas?', answer: 'Ja, var 3:e månad vid daglig användning. Tvättning fungerar för rengöring men minskar filtreringseffekten — ett byte är att rekommendera för allergiker.' },
+  { question: 'Hur länge håller batteriet?', answer: '500–1 200 fulla laddningscykler beroende på modell och användning. Det motsvarar 3–5 år vid daglig städning. Litiumjon-batterier tappar gradvis kapacitet.' },
+  { question: 'Kan jag spola moppkuddarna i tvättmaskinen?', answer: 'Ja, alla större tillverkare har tvättbara mikrofiberkuddar. 40 grader, inget sköljmedel (det förstör mikrofibrerna). Häng-torka — tumla aldrig.' },
+  { question: 'Vad gör jag om roboten kör fast ofta?', answer: 'Två vanligaste orsakerna: 1) Smutsiga falldetektionssensorer på undersidan — torka av med torr trasa. 2) Borstvals trasslad — rensa noga. Om problemen kvarstår, byt sidoborste och kontrollera hjulen.' },
+];
+---
+
+<ArticleLayout
+  title="Underhåll av robotdammsugare — checklista 2026"
+  description="Hur du håller din robotdammsugare i toppform. Veckovis, månadsvis och kvartalsvis underhåll — så håller den i 5+ år."
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-04-27"
+  datePublished="2026-04-27"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Underhåll av robotdammsugare — checklista
+  </h1>
+  <p class="text-text-light text-lg mb-6 leading-relaxed">
+    En robotdammsugare som inte underhålls tappar 30–50 % av sin sugkraft inom ett halvår. Med rätt rutin håller den i 5–8 år utan service. Här är checklistan jag följt på fyra olika modeller.
+  </p>
+
+  <figure class="my-6">
+    <img src="/images/cat-robotdammsugare.webp" alt="Underhåll av robotdammsugare" class="rounded-xl border border-border w-full" loading="lazy" />
+  </figure>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Veckovis (5 minuter)</h2>
+  <ul class="list-disc pl-6 text-text-light space-y-2 mb-4">
+    <li>Töm dammbehållaren (om du inte har autostation).</li>
+    <li>Rensa hår och trådar från huvudborsten — sax och tång räcker.</li>
+    <li>Skölj av smutsiga moppkuddar.</li>
+  </ul>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Månadsvis (15 minuter)</h2>
+  <ul class="list-disc pl-6 text-text-light space-y-2 mb-4">
+    <li>Torka av hjulen med fuktig trasa.</li>
+    <li>Rensa sidoborstarna helt — ta loss dem och skaka ut hår.</li>
+    <li>Torka LiDAR-tornets glasruta med microfiberduk.</li>
+    <li>Torka av falldetektionssensorerna under roboten.</li>
+    <li>Skölj av huvudfiltret. Klappa torrt — inte tumla.</li>
+  </ul>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Var 3:e månad</h2>
+  <ul class="list-disc pl-6 text-text-light space-y-2 mb-4">
+    <li>Byt HEPA-filter (eller efter ca 150 timmars körning).</li>
+    <li>Rengör autostationens slangar och påsar — kolla efter hårproppar.</li>
+    <li>Kontrollera om huvudborsten är sliten — byt vid synliga slitspår.</li>
+    <li>Kalibrera kartan om roboten verkar köra fel ofta.</li>
+  </ul>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Var 6–12:e månad</h2>
+  <ul class="list-disc pl-6 text-text-light space-y-2 mb-6">
+    <li>Byt huvudborste.</li>
+    <li>Byt sidoborstar.</li>
+    <li>Byt moppkuddar (oftare vid daglig moppning).</li>
+    <li>Uppdatera firmware via appen.</li>
+  </ul>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Reservdelar — vad och var</h2>
+  <p class="text-text-light leading-relaxed mb-6">
+    Originaldelar är säkrast men dyrt. Tredjepartsdelar fungerar för de flesta märken; kvalitet varierar. Vi har samlat länkar till verifierade reservdelar för:
+  </p>
+  <ul class="list-disc pl-6 text-text-light space-y-2 mb-6">
+    <li><a href="/reservdelar/dreame/" class="text-accent hover:underline">Dreame reservdelar</a></li>
+    <li><a href="/reservdelar/roborock/" class="text-accent hover:underline">Roborock reservdelar</a></li>
+    <li><a href="/reservdelar/ecovacs/" class="text-accent hover:underline">Ecovacs reservdelar</a></li>
+    <li><a href="/reservdelar/filter/" class="text-accent hover:underline">HEPA-filter</a></li>
+    <li><a href="/reservdelar/borstar/" class="text-accent hover:underline">Borstar (huvud + sido)</a></li>
+  </ul>
+
+  <FAQ items={faqItems} />
+</ArticleLayout>

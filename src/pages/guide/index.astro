@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const breadcrumbs = [{ label: 'Guider' }];
+
+const guides = [
+  {
+    title: 'LiDAR-navigation förklarat',
+    description: 'Hur LiDAR fungerar i robotdammsugare, varför det slår kameranavigering och vilka modeller som har bäst implementation.',
+    href: '/guide/lidar-navigation/',
+    category: 'Teknik',
+  },
+  {
+    title: 'Sugkraft i Pa — vad behöver du?',
+    description: 'Genomgång av Pa-värden, hur de mäts och hur mycket sugkraft du faktiskt behöver för olika golv och husdjur.',
+    href: '/guide/sugkraft/',
+    category: 'Teknik',
+  },
+  {
+    title: 'Automatisk tömningsstation',
+    description: 'Är dockningsstation med autotömning värt extrapengen? Fördelar, nackdelar och löpande kostnader.',
+    href: '/guide/automatisk-tomning/',
+    category: 'Köpguide',
+  },
+  {
+    title: 'Robotdammsugare för husdjur',
+    description: 'Köpguide för dig med hund eller katt. Sugkraft, borste, AI och vilka modeller som hanterar päls bäst.',
+    href: '/guide/robotdammsugare-husdjur/',
+    category: 'Köpguide',
+  },
+  {
+    title: 'Robotdammsugare med mopp',
+    description: 'Passiv, vibrerande eller roterande mopp — vad är skillnaden och vilka modeller har bäst moppning?',
+    href: '/guide/robotdammsugare-mopp/',
+    category: 'Köpguide',
+  },
+  {
+    title: 'Robotdammsugare och mattor',
+    description: 'Mattlyft, sugkraft och borstdesign — så väljer du rätt robot för matthem.',
+    href: '/guide/robotdammsugare-mattor/',
+    category: 'Köpguide',
+  },
+  {
+    title: 'Installation steg för steg',
+    description: 'Komplett guide till första installationen — från uppackning till första kartläggning.',
+    href: '/guide/installation/',
+    category: 'Användning',
+  },
+  {
+    title: 'Underhåll — checklista',
+    description: 'Vecko-, månads- och kvartalsvis underhåll så roboten håller i 5+ år.',
+    href: '/guide/underhall/',
+    category: 'Användning',
+  },
+  {
+    title: 'Poolrobot köpguide',
+    description: 'Kabel vs batteri, väggklättring, filterstorlek — så väljer du rätt poolrobot.',
+    href: '/guide/poolrobot-koparguide/',
+    category: 'Köpguide',
+  },
+  {
+    title: 'Robotgräsklippare köpguide',
+    description: 'Med eller utan begränsningskabel, klippkapacitet, lutning — komplett guide.',
+    href: '/guide/robotgrasklippare-koparguide/',
+    category: 'Köpguide',
+  },
+];
+
+const categories = [...new Set(guides.map(g => g.category))];
+---
+
+<BaseLayout
+  title="Guider — robotdammsugare, robotgräsklippare och poolrobotar | Robotjakt"
+  description="Komplett samling köpguider och teknikförklaringar för dig som funderar på robotdammsugare, robotgräsklippare eller poolrobot. Uppdaterat 2026."
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Guider — robotdammsugare, robotgräsklippare och poolrobotar
+    </h1>
+    <p class="text-text-light text-lg mb-8 leading-relaxed max-w-2xl">
+      Vi har samlat alla våra köpguider, teknikförklaringar och användningstips på ett ställe. Här hittar du svaren innan du köper — och hjälpen efter.
+    </p>
+
+    {categories.map(cat => (
+      <section class="mb-10">
+        <h2 class="font-heading text-xl font-bold text-text mb-4">{cat}</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {guides.filter(g => g.category === cat).map(g => (
+            <a href={g.href} class="block p-5 bg-white rounded-xl border border-border hover:border-accent hover:shadow-md transition-all">
+              <h3 class="font-heading font-bold text-text mb-2">{g.title}</h3>
+              <p class="text-sm text-text-light">{g.description}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+</BaseLayout>

@@ -1,0 +1,99 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const breadcrumbs = [
+  { label: 'Guider', href: '/guide/' },
+  { label: 'Automatisk tömning' },
+];
+
+const faqItems = [
+  { question: 'Hur länge räcker en dammpåse i tömningsstationen?', answer: 'Tillverkarna anger 30–60 dagar mellan påsbyten. I praktiken beror det på hur ofta roboten städar, hur stor bostaden är och om det finns husdjur. Räkna med 6–10 påsar per år i ett normalstort hem.' },
+  { question: 'Hur mycket extra kostar dammpåsarna?', answer: 'Originalpåsar kostar typiskt 300–500 kr för 6-pack. Tredjepartspåsar finns från 100–200 kr för 6-pack. Sätt på årsbasis blir det 300–800 kr extra per år.' },
+  { question: 'Finns det stationer med dammbehållare istället för påse?', answer: 'Ja. Eufy och vissa Roomba-modeller erbjuder påslösa stationer med tvättbar plastbehållare. Det är billigare i längden men dammigt vid tömning — sämre val för allergiker.' },
+  { question: 'Är automatisk tömning hög ljudnivå?', answer: 'Tömningen tar 10–20 sekunder och ligger på 75–80 dB — högt men kort. Schemalägg tömningen mitt på dagen om du har småbarn eller jobbar hemifrån.' },
+  { question: 'Kan stationen täppas till av hår?', answer: 'Ja, det är vanligaste underhållsproblemet. Långt hår kan bilda proppar i sugslangen. De flesta stationer har en lucka för manuell rensning — räkna med en kvart varje 1–2 månader.' },
+];
+---
+
+<ArticleLayout
+  title="Automatisk tömningsstation till robotdammsugare — värt pengarna?"
+  description="Är en dockstation med automatisk tömning verkligen värd merkostnaden? Vi går igenom fördelar, nackdelar och vilka modeller 2026 som har de bästa stationerna."
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-04-27"
+  datePublished="2026-04-27"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Automatisk tömningsstation — värt extrapengen?
+  </h1>
+  <p class="text-text-light text-lg mb-6 leading-relaxed">
+    Den enskilt största lyxen en robotdammsugare kan erbjuda är att du aldrig behöver röra dammbehållaren. En automatisk tömningsstation suger upp innehållet i en stor påse i basen — men funktionen kostar 1 500–3 000 kr extra och innebär löpande utgifter för påsar. Här är när det är värt det och när det inte är det.
+  </p>
+
+  <figure class="my-6">
+    <img src="/images/dreame-x40-ultra.webp" alt="Dreame X40 Ultra med fullautomatisk station" class="rounded-xl border border-border w-full" loading="lazy" />
+    <figcaption class="text-xs text-text-lighter mt-2">En fullautomatisk station hanterar tömning, vatten och mopptvätt — du behöver bara fylla på vatten ett par gånger i månaden.</figcaption>
+  </figure>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Vad gör en tömningsstation?</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    Stationen är robotens hem. När den dockar suger ett kraftigt vakuum innehållet ur dammbehållaren via en slang upp i en stor påse i stationen — oftast 2,5–4 liter. Den kan rymma 30–60 dagars uppsamlat damm. Premiumstationer 2026 gör mer än så: de fyller på vattentanken för moppning, sköljer ur smutsiga moppkuddar i varmvatten och torkar dem med varmluft.
+  </p>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">När det är värt det</h2>
+  <ul class="list-disc pl-6 text-text-light space-y-2 mb-4">
+    <li><strong>Du har husdjur</strong> — daglig städning fyller dammbehållaren snabbt; utan station blir det daglig tömning.</li>
+    <li><strong>Stor bostad (100 m²+)</strong> — fler ytor = mer damm = oftare manuell tömning.</li>
+    <li><strong>Allergi i hushållet</strong> — manuell tömning sprider damm; bra stationer är slutna med HEPA-filter på utblåset.</li>
+    <li><strong>Du vill kunna lämna roboten igång under en bortaresa</strong> — daglig städning i en vecka utan att någon är hemma kräver station.</li>
+  </ul>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">När du kan hoppa över den</h2>
+  <ul class="list-disc pl-6 text-text-light space-y-2 mb-6">
+    <li>Liten lägenhet under 50 m² utan husdjur — en manuell modell räcker gott.</li>
+    <li>Stram budget — pengarna gör mer nytta i bättre LiDAR och starkare sugkraft.</li>
+    <li>Du värdesätter låg ljudnivå — tömningen låter en del.</li>
+    <li>Du redan har en handhållen som du tömmer roboten i på 10 sekunder.</li>
+  </ul>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Fullautomatisk station — moppning + tömning</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    De dyrare stationerna (Dreame X40 Ultra, Roborock S8 MaxV Ultra, Ecovacs X5 Omni) är fullautomatiska: de fyller på rent vatten, samlar smutsigt vatten i en separat tank, tvättar moppkuddar i 60–75 °C varmvatten och torkar dem med varmluft så du slipper mögelluk. Det är ett enormt steg upp i bekvämlighet om du har mycket hårda golv. Räkna med att fylla på rent vatten en gång i veckan och tömma smutsvattnet samtidigt.
+  </p>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Löpande kostnader</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    Räkna med dessa kostnader per år vid daglig städning:
+  </p>
+  <div class="overflow-x-auto rounded-xl border border-border my-4">
+    <table class="w-full text-sm bg-white">
+      <thead class="bg-bg-alt border-b border-border">
+        <tr>
+          <th class="text-left px-4 py-3 font-semibold text-text">Förbrukningsvara</th>
+          <th class="text-left px-4 py-3 font-semibold text-text">Kostnad/år</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-border">
+        <tr><td class="px-4 py-3">Dammpåsar (original)</td><td class="px-4 py-3">300–800 kr</td></tr>
+        <tr><td class="px-4 py-3">Moppkuddar (utbyte 2 ggr/år)</td><td class="px-4 py-3">200–400 kr</td></tr>
+        <tr><td class="px-4 py-3">Sidoborstar och huvudborste</td><td class="px-4 py-3">200–500 kr</td></tr>
+        <tr><td class="px-4 py-3">HEPA-filter (2–3 byten)</td><td class="px-4 py-3">300–600 kr</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="text-text-light leading-relaxed mb-6">
+    Totalt 1 000–2 300 kr/år beroende på modell. Reservdelar finns på vår sida för <a href="/reservdelar/" class="text-accent hover:underline">reservdelar till robotdammsugare</a>.
+  </p>
+
+  <FAQ items={faqItems} />
+
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Läs vidare</h2>
+    <ul class="space-y-2">
+      <li><a href="/robotdammsugare/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2026</a></li>
+      <li><a href="/guide/lidar-navigation/" class="text-accent hover:underline text-sm">LiDAR-navigation förklarat</a></li>
+      <li><a href="/guide/robotdammsugare-mopp/" class="text-accent hover:underline text-sm">Robotdammsugare med mopp — komplett guide</a></li>
+      <li><a href="/reservdelar/" class="text-accent hover:underline text-sm">Reservdelar och förbrukningsvaror</a></li>
+    </ul>
+  </section>
+</ArticleLayout>

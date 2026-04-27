@@ -1,0 +1,124 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const breadcrumbs = [
+  { label: 'Guider', href: '/guide/' },
+  { label: 'LiDAR-navigation' },
+];
+
+const faqItems = [
+  {
+    question: 'Vad är LiDAR i en robotdammsugare?',
+    answer: 'LiDAR (Light Detection and Ranging) är en lasersensor som skickar ut laserstrålar och mäter tiden det tar för dem att studsa tillbaka. Roboten använder mätningarna för att bygga upp en exakt 2D-karta av rummet i realtid och navigera efter den. Det är samma grundteknik som används i självkörande bilar, fast i mindre skala.'
+  },
+  {
+    question: 'Är LiDAR bättre än kameranavigering (vSLAM)?',
+    answer: 'För kartläggning av rumsformer är LiDAR oftast överlägset — det fungerar i mörker, ger högre precision och är snabbare att lära sig en planlösning. Kameranavigering är däremot bättre på att identifiera vad föremål är (sko, kabel, husdjursavföring). De bästa premiummodellerna 2026 använder båda samtidigt.'
+  },
+  {
+    question: 'Fungerar LiDAR i totalt mörker?',
+    answer: 'Ja. Eftersom LiDAR genererar sitt eget ljus (laser) påverkas den inte av rumsbelysningen. Det är en stor fördel jämfört med rena kameralösningar som behöver tillräckligt med ljus för att se.'
+  },
+  {
+    question: 'Kan LiDAR-sensorn skadas av husdjur eller barn?',
+    answer: 'LiDAR-tornet på toppen av roboten är robust men kan slitas om något återkommande slår mot det. De flesta tillverkare ger 1–2 års garanti på sensorn. Vissa nyare modeller (Roborock Saros 10, Dyson 360 Vis Nav) har platta varianter eller dolda LiDAR-lösningar för att passa under låga möbler.'
+  },
+  {
+    question: 'Är LiDAR skadligt för ögonen?',
+    answer: 'Nej. Robotdammsugarens LiDAR använder klass 1-laser som är ofarlig för människor och husdjur enligt internationella säkerhetsstandarder. Du kan titta direkt på sensorn utan risk.'
+  },
+  {
+    question: 'Hur skiljer LiDAR sig från ToF-sensor?',
+    answer: 'ToF (Time-of-Flight) är en enklare avståndssensor som mäter ett fåtal punkter, oftast framåt. LiDAR är ett roterande system som scannar 360 grader runt roboten flera gånger per sekund. ToF räcker för att undvika hinder, men det är LiDAR som möjliggör riktig kartläggning.'
+  },
+];
+---
+
+<ArticleLayout
+  title="LiDAR-navigation i robotdammsugare 2026 — så fungerar det"
+  description="Guide till LiDAR-tekniken i robotdammsugare: hur den bygger kartor, varför den är överlägsen kameranavigering och vilka modeller som har den bästa LiDAR-implementationen 2026."
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-04-27"
+  datePublished="2026-04-27"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    LiDAR-navigation i robotdammsugare — guide 2026
+  </h1>
+  <p class="text-text-light text-lg mb-6 leading-relaxed">
+    LiDAR är den enskilt viktigaste tekniska skillnaden mellan en bra och en dålig robotdammsugare 2026. Den avgör hur snabbt roboten lär sig din planlösning, hur effektivt den städar och hur ofta den kör fast. Här går vi igenom hur tekniken fungerar, varför den slår äldre lösningar och vilka modeller som har de starkaste implementationerna just nu.
+  </p>
+
+  <figure class="my-6">
+    <img src="/images/dreame-x40-ultra.webp" alt="Dreame X40 Ultra med LiDAR-torn på toppen" class="rounded-xl border border-border w-full" loading="lazy" />
+    <figcaption class="text-xs text-text-lighter mt-2">LiDAR-tornet på Dreame X40 Ultra roterar med 5 varv/sekund och scannar rummet i 360 grader.</figcaption>
+  </figure>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Så fungerar LiDAR i praktiken</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    Tornet du ser ovanpå moderna premium-robotar innehåller en roterande laserdiod. Den skickar ut tusentals pulser per sekund, mäter tiden det tar för varje puls att reflekteras tillbaka och räknar om mätningen till ett avstånd. Resultatet är en molnpunktskarta som uppdateras flera gånger per sekund. Roboten kombinerar punktmolnet med data från sina hjulgivare och bygger en 2D-planlösning du kan se direkt i appen.
+  </p>
+  <p class="text-text-light leading-relaxed mb-4">
+    När kartan är klar kan du namnge rum, dra upp städzoner, sätta no-go-linjer och schemalägga städning rum för rum. Detta är inte möjligt med äldre robotar som navigerar med slumpmässiga rörelser eller bara enkel optisk flödesnavigering — kartan är förutsättningen för all smart städning.
+  </p>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">LiDAR vs vSLAM — vad är skillnaden?</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    vSLAM (visual SLAM) använder en kamera och datorseende för att navigera, ungefär som en självkörande bil. Det fungerar bra i upplysta rum men tappar precision i mörker. LiDAR fungerar lika bra dygnet runt eftersom lasern inte behöver omgivande ljus.
+  </p>
+  <p class="text-text-light leading-relaxed mb-4">
+    Det finns dock saker LiDAR inte kan: sensorerna mäter avstånd, inte bilder. LiDAR ser därför inte att en sko är en sko eller att en kabel är en kabel — bara att något står där. För att lösa det kombinerar de bästa robotarna 2026 LiDAR med en kamera och AI som identifierar vanliga hinder. Roborock kallar sin lösning för ReactiveAI 3.0, Dreame använder 3D Structured Light och Ecovacs har AIVI 3D 2.0. Resultatet är en robot som både ser planlösningen och förstår vad som ligger i vägen.
+  </p>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Vad du tjänar i praktiken</h2>
+  <ul class="list-disc pl-6 text-text-light space-y-2 mb-6">
+    <li><strong>Snabbare första städning</strong> — kartan är klar på 5–10 minuter istället för 30+.</li>
+    <li><strong>Systematisk täckning</strong> — roboten kör i raka linjer och missar inga ytor.</li>
+    <li><strong>Multi-floor-mappar</strong> — premium-modeller sparar 3–5 våningar separat.</li>
+    <li><strong>Selektiv städning</strong> — be roboten bara städa köket eller hallen via appen.</li>
+    <li><strong>No-go-zoner och virtuella väggar</strong> — skydda hundskålen, datorkabeln eller barnens lekzon.</li>
+  </ul>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Vilka modeller har bäst LiDAR 2026?</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    LiDAR-hårdvaran har konvergerat de senaste två åren — det är mjukvaran och AI-paketet ovanpå som skiljer modellerna åt. Tre modeller sticker ut just nu:
+  </p>
+  <div class="space-y-4 mb-6">
+    <div class="bg-bg-alt rounded-xl border border-border p-5">
+      <h3 class="font-semibold text-text mb-1">Roborock S8 MaxV Ultra</h3>
+      <p class="text-text-light text-sm">PreciSense LiDAR + ReactiveAI 3.0. Branschens bästa hinderdetektion, särskilt för djuravföring och kablar. <a href="/roborock-s8-maxv-ultra/" class="text-accent hover:underline">Läs vår recension</a>.</p>
+    </div>
+    <div class="bg-bg-alt rounded-xl border border-border p-5">
+      <h3 class="font-semibold text-text mb-1">Dreame X40 Ultra</h3>
+      <p class="text-text-light text-sm">Pathfinder LiDAR + 3D Structured Light AI. Snabbast på att bygga kartor över komplexa planlösningar. <a href="/dreame-x40-ultra/" class="text-accent hover:underline">Läs vår recension</a>.</p>
+    </div>
+    <div class="bg-bg-alt rounded-xl border border-border p-5">
+      <h3 class="font-semibold text-text mb-1">Ecovacs Deebot X5 Omni</h3>
+      <p class="text-text-light text-sm">TrueMapping 3.0 + AIVI 3D 2.0. Mycket exakta kartor och stark AI för möbelidentifiering. <a href="/ecovacs-deebot-x5-omni/" class="text-accent hover:underline">Läs vår recension</a>.</p>
+    </div>
+  </div>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Vanliga problem med LiDAR-robotar</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    LiDAR är inte felfritt. Glasväggar, mörka eller blanka golv och spegelytor kan ge falska reflektioner som förvränger kartan. Lösningen är ofta att köra in roboten manuellt vid kartläggningen så den får tid att korrigera, eller att rita in virtuella väggar runt problematiska ytor i appen. Höga trösklar (över 2 cm) är ett annat klassiskt problem som inte LiDAR löser — där behöver du istället en modell med RoboSwing eller liknande mekanisk lyftfunktion.
+  </p>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Värt extrapengen?</h2>
+  <p class="text-text-light leading-relaxed mb-6">
+    Skillnaden mellan en LiDAR-robot för 5 000 kr och en gyronavigerande för 2 000 kr är inte marginell — den är fundamental. Den senare missar ytor, fastnar oftare och du tappar all möjlighet till smart appstyrning. Vill du ha en robot som faktiskt fungerar utan att du behöver övervaka den, är LiDAR ett krav, inte en bonus. Om budgeten ligger under 3 000 kr bör du leta i kategorin <a href="/billigaste-robotdammsugare/" class="text-accent hover:underline">billigaste robotdammsugare 2026</a> — där hittar du LiDAR-modeller från Eufy och Xiaomi i prisklassen.
+  </p>
+
+  <FAQ items={faqItems} />
+
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Läs vidare</h2>
+    <ul class="space-y-2">
+      <li><a href="/robotdammsugare/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2026 — alla märken jämförda</a></li>
+      <li><a href="/guide/sugkraft/" class="text-accent hover:underline text-sm">Sugkraft i Pa — vad behöver du verkligen?</a></li>
+      <li><a href="/guide/automatisk-tomning/" class="text-accent hover:underline text-sm">Automatisk tömningsstation — värt pengarna?</a></li>
+      <li><a href="/guide/robotdammsugare-husdjur/" class="text-accent hover:underline text-sm">Robotdammsugare för husdjursägare</a></li>
+      <li><a href="/dreame-vs-ecovacs/" class="text-accent hover:underline text-sm">Dreame vs Ecovacs 2026</a></li>
+      <li><a href="/eufy-vs-roborock/" class="text-accent hover:underline text-sm">Eufy vs Roborock 2026</a></li>
+    </ul>
+  </section>
+</ArticleLayout>

@@ -1,0 +1,87 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const breadcrumbs = [
+  { label: 'Guider', href: '/guide/' },
+  { label: 'Installation' },
+];
+
+const faqItems = [
+  { question: 'Hur lång tid tar installationen?', answer: '15–30 minuter inklusive uppackning, laddning av batteri, app-koppling och första kartläggning. Räkna med ytterligare en timme för att roboten ska bli klar med första rumskartan.' },
+  { question: 'Behöver jag göra något i hemmet före första körningen?', answer: 'Plocka bort lösa kablar, slangar och småsaker från golvet. Sätt upp dörrstoppar om du vill att roboten ska kunna ta sig in i rum med tunga dörrar. Fyll på vatten i moppmodellen.' },
+  { question: 'Var ska basstationen stå?', answer: 'På en plan yta, mot en vägg, med minst 50 cm fritt på båda sidor och 1,5 meter framåt. Inte i hörn, inte under låga möbler — roboten behöver kunna manövrera fritt vid dockning.' },
+  { question: 'Behöver jag separat WiFi-nätverk för 2,4 GHz?', answer: 'De flesta robotar kräver fortfarande 2,4 GHz-anslutning första gången. Tvåbands-routrar med samma SSID på båda banden brukar fungera, men vid problem koppla telefonen till 2,4 GHz tillfälligt under installationen.' },
+  { question: 'Måste roboten ladda fullt innan första körningen?', answer: 'Ja, helst 100 %. Första kartläggningen drar mer batteri än normal städning. Om batteriet tar slut mitt i kartläggningen kan kartan bli inkomplett.' },
+];
+---
+
+<ArticleLayout
+  title="Installera robotdammsugare — komplett guide steg för steg"
+  description="Så installerar du din nya robotdammsugare på 30 minuter. WiFi-koppling, kartläggning, no-go-zoner och första städningen — komplett guide."
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-04-27"
+  datePublished="2026-04-27"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Installera robotdammsugare — guide steg för steg
+  </h1>
+  <p class="text-text-light text-lg mb-6 leading-relaxed">
+    Med rätt förberedelser tar installationen mindre än 30 minuter. Här är en komplett genomgång för alla större märken — Roborock, Dreame, Ecovacs, iRobot, Eufy och Xiaomi.
+  </p>
+
+  <figure class="my-6">
+    <img src="/images/dreame-l20-ultra.webp" alt="Dreame L20 Ultra basstation och uppackning" class="rounded-xl border border-border w-full" loading="lazy" />
+  </figure>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Steg 1 — placering av station</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    Välj en plats med minst 50 cm fritt på båda sidor och 1,5 meter framåt. Stationen behöver alltid samma uttag — flytta inte runt den. Eluttag behöver vara nära så sladden inte korsar gångvägar (roboten kan annars dra med sig kabeln).
+  </p>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Steg 2 — förbered hemmet</h2>
+  <ul class="list-disc pl-6 text-text-light space-y-2 mb-4">
+    <li>Plocka bort lösa kablar, småsaker och leksaker från golvet.</li>
+    <li>Lyft upp tunna mattor som glider — dem kan roboten dra ihop.</li>
+    <li>Stäng dörrar till rum du inte vill att roboten ska gå in i (du kan släppa in dem senare via app).</li>
+    <li>Sätt upp dörrstoppar om du vill att den ska kunna ta sig in mellan rum.</li>
+    <li>Vid moppmodell — fyll vattentanken med rent kallvatten.</li>
+  </ul>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Steg 3 — koppla till app</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    Ladda ner respektive app (Roborock, Mi Home, Ecovacs Home, iRobot Home, eufy Clean). Skapa konto. Sätt på roboten. Följ guiden i appen — den ber dig välja WiFi-nätverk, ange lösenord och scanna QR-kod på robotens undersida. Gå tillbaka till 2,4 GHz-bandet om kopplingen misslyckas på 5 GHz.
+  </p>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Steg 4 — första kartläggning</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    Starta kartläggningsläge i appen. Roboten kör då en utforskningsrunda utan att städa — den fokuserar på att rita kartan så snabbt och exakt som möjligt. Räkna med 15–30 minuter för en normalstor lägenhet, längre för stora hus. Stör inte roboten under kartläggningen.
+  </p>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Steg 5 — namnge rum och sätt no-go-zoner</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    När kartan är klar kan du:
+  </p>
+  <ul class="list-disc pl-6 text-text-light space-y-2 mb-4">
+    <li>Namnge varje rum (kök, vardagsrum, hall ...) — hjälper röststyrning via Alexa/Google.</li>
+    <li>Rita no-go-zoner runt djurmatskålar, kabelbalkar, blomkrukor.</li>
+    <li>Markera mattor manuellt så mopp-lyft aktiveras direkt.</li>
+    <li>Schemalägga städning — vardagar 09:00 är populärt.</li>
+  </ul>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Steg 6 — första riktiga städningen</h2>
+  <p class="text-text-light leading-relaxed mb-6">
+    Starta en full städning. Den första körningen kommer ta längre tid än kommande — roboten lär sig planlösningen ännu mer detaljerat. Rensa borstvalsen efter första körningen — du kommer hitta saker du inte visste att du tappat.
+  </p>
+
+  <FAQ items={faqItems} />
+
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Läs vidare</h2>
+    <ul class="space-y-2">
+      <li><a href="/guide/underhall/" class="text-accent hover:underline text-sm">Underhåll och rengöring av robotdammsugare</a></li>
+      <li><a href="/reservdelar/" class="text-accent hover:underline text-sm">Reservdelar och förbrukningsvaror</a></li>
+      <li><a href="/guide/lidar-navigation/" class="text-accent hover:underline text-sm">LiDAR och kartläggning</a></li>
+    </ul>
+  </section>
+</ArticleLayout>

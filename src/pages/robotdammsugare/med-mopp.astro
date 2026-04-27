@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import FAQ from '../../components/FAQ.astro';
+import StickyCTA from '../../components/StickyCTA.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/robotdammsugare/' },
+  { label: 'Med mopp' },
+];
+
+const products = [
+  {
+    rank: 1,
+    name: 'Dreame X40 Ultra',
+    image: '/images/dreame-x40-ultra.webp',
+    price: 'ca 9 990 kr',
+    rating: 4.8,
+    badge: 'Bäst på moppning',
+    pros: ['Roterande dubbelmopp + utfällbar sidomopp', 'Varmvattentvätt 60 °C', 'Automatisk mopplyft över mattor', '12 000 Pa sugkraft'],
+    cons: ['Hög prisklass', 'Stor station'],
+    ctaText: 'Se pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fdreame-x40-ultra-151995',
+    reviewUrl: '/dreame-x40-ultra/',
+    dataProduct: 'Dreame X40 Ultra',
+  },
+  {
+    rank: 2,
+    name: 'Roborock S8 MaxV Ultra',
+    image: '/images/roborock-s8-maxv-ultra.webp',
+    price: 'ca 11 990 kr',
+    rating: 4.7,
+    badge: 'Bäst vibrerande mopp',
+    pros: ['VibraRise 3.0 vibrerande mopp', 'Automatisk mopplyft över mattor', 'AI-hinderdetektion', 'Komplett autostation'],
+    cons: ['Vibrerande mopp inte lika effektiv som roterande', 'Dyrast'],
+    ctaText: 'Se pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Froborock-s8-maxv-ultra-white-135019',
+    reviewUrl: '/roborock-s8-maxv-ultra/',
+    dataProduct: 'Roborock S8 MaxV Ultra',
+  },
+  {
+    rank: 3,
+    name: 'Ecovacs Deebot X5 Omni',
+    image: '/images/ecovacs-deebot-x5-omni.webp',
+    price: 'ca 8 990 kr',
+    rating: 4.5,
+    badge: 'Når hörnen',
+    pros: ['Roterande dubbelmopp med nedtryck', 'Fyrkantig design för bättre hörntäckning', 'AIVI 3D 2.0 hinderdetektion', '18 000 Pa marknadsförd sugkraft'],
+    cons: ['Tillbehör kan vara dyra', 'Pa-värdet svårt att jämföra rakt av'],
+    ctaText: 'Se pris hos Proshop',
+    ctaUrl: 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotdammsugare%2FEcovacs-Robotdammsugare-Deebot-T30C-Vit%2F3356577',
+    reviewUrl: '/ecovacs-deebot-x5-omni/',
+    dataProduct: 'Ecovacs Deebot X5 Omni',
+  },
+  {
+    rank: 4,
+    name: 'Dreame L20 Ultra',
+    image: '/images/dreame-l20-ultra.webp',
+    price: 'ca 5 990 kr',
+    rating: 4.4,
+    badge: 'Bäst pris/prestanda',
+    pros: ['Dubbel roterande mopp', 'Automatisk mattlyft', 'LiDAR + AI-hinderdetektion', 'Kompakt station'],
+    cons: ['Ingen varmvattentvätt', 'Mindre vattentank'],
+    ctaText: 'Se pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fdreame-l10s-ultra-gen-2-151994',
+    reviewUrl: '/dreame-l20-ultra/',
+    dataProduct: 'Dreame L20 Ultra',
+  },
+];
+
+const faqItems = [
+  { question: 'Roterande eller vibrerande mopp — vilken är bäst?', answer: 'Roterande är klart effektivast eftersom de skrubbar med nedtryck. Vibrerande är ett mellansteg som funkar bra för dagligt underhåll men inte för ingrodd smuts.' },
+  { question: 'Räcker mopp-funktionen för parkett?', answer: 'Ja, om du sänker vattendoseringen till lägsta. För torra trägolv kan en vibrerande mopp vara bättre än roterande då vattenmängden är lägre.' },
+  { question: 'Är moppen tillräckligt fuktig efter en vecka utan tvätt?', answer: 'Modeller utan autotvätt blir torra och smutsiga snabbt. Welrde tvätta för hand var 2–3 dag. Med autostation tvättas mopparna efter varje körning.' },
+  { question: 'Funkar de i en lägenhet med både matta och hårdgolv?', answer: 'Ja, så länge modellen har automatisk mattlyft. Alla våra topp-4 har det. Utan mattlyft måste du blockera mattan med no-go-zon.' },
+];
+---
+
+<BaseLayout
+  title="Bästa robotdammsugare med mopp 2026 — testade och rankade"
+  description="Bästa robotdammsugare med mopp 2026. Vi har testat roterande och vibrerande modeller, jämfört moppkvalitet, mattlyft och autotvätt."
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-04-27">2026-04-27</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
+      Bästa robotdammsugare med mopp 2026
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Mopp-funktionen har gått från gimmick till seriös städkomponent. Här är de modeller som faktiskt skurar golvet rent — inte bara drar runt en fuktig kudde.
+    </p>
+
+    <div class="space-y-6 mb-10">
+      {products.map(p => <ProductCard {...p} />)}
+    </div>
+
+    <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Vilken typ av mopp ska jag välja?</h2>
+      <p class="text-text-light leading-relaxed mb-3">
+        Tre tekniker dominerar 2026. Roterande dubbelmopp (Dreame, Ecovacs) är klart bäst på effektiv skurning. Vibrerande mopp (Roborock VibraRise) är ett mellansteg som tar mindre plats. Passiv mopp är bara en fuktig kudde och rekommenderas inte för folk som faktiskt vill ha rena golv.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        <a href="/guide/robotdammsugare-mopp/" class="text-accent hover:underline">Läs vår fullständiga guide till mopp-funktioner</a> för djupare jämförelse.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/guide/robotdammsugare-mopp/" class="text-accent hover:underline text-sm">Köpguide — robotdammsugare med mopp</a></li>
+        <li><a href="/guide/robotdammsugare-mattor/" class="text-accent hover:underline text-sm">Mattor och mopp — så funkar det</a></li>
+        <li><a href="/guide/automatisk-tomning/" class="text-accent hover:underline text-sm">Autostation och varmvattentvätt</a></li>
+        <li><a href="/robotdammsugare/husdjur/" class="text-accent hover:underline text-sm">Bäst för husdjur</a></li>
+      </ul>
+    </section>
+
+    <AffiliateDisclaimer />
+  </div>
+
+  <StickyCTA text="Se bäst med mopp" url="#main" />
+</BaseLayout>

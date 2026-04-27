@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import FAQ from '../../components/FAQ.astro';
+import StickyCTA from '../../components/StickyCTA.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/robotdammsugare/' },
+  { label: 'Budget' },
+];
+
+const products = [
+  {
+    rank: 1,
+    name: 'Eufy X10 Pro Omni',
+    image: '/images/eufy-x10-pro-omni.webp',
+    price: 'ca 5 990 kr',
+    rating: 4.5,
+    badge: 'Bäst i budget',
+    pros: ['8 000 Pa sugkraft', 'AI-hinderdetektion', 'Roterande mopp + autostation', 'Bra app och support'],
+    cons: ['Svagare AI än premium-modellerna', 'Mindre dammbehållare i station'],
+    ctaText: 'Se pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Feufy-x10-pro-omni-153028',
+    reviewUrl: '/eufy-x10-pro-omni/',
+    dataProduct: 'Eufy X10 Pro Omni',
+  },
+  {
+    rank: 2,
+    name: 'Dreame L10s Ultra Gen 2',
+    image: '/images/dreame-l10s-pro-ultra-heat.webp',
+    price: 'ca 4 990 kr',
+    rating: 4.4,
+    badge: 'Mest funktion/krona',
+    pros: ['7 000 Pa sugkraft', 'Dubbel roterande mopp', 'LiDAR + 3D Structured Light', 'Komplett autostation'],
+    cons: ['Saknar varmvattentvätt', 'Något äldre design'],
+    ctaText: 'Se pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fdreame-l10s-ultra-gen-2-151994',
+    reviewUrl: '/dreame-l10s-ultra-gen2/',
+    dataProduct: 'Dreame L10s Ultra Gen 2',
+  },
+  {
+    rank: 3,
+    name: 'Dreame D10s Pro',
+    image: '/images/dreame-d10s-pro.webp',
+    price: 'ca 2 990 kr',
+    rating: 4.2,
+    badge: 'Billigast som duger',
+    pros: ['5 000 Pa sugkraft', 'LiDAR-navigering', 'Passiv mopp', 'Bra pris/prestanda'],
+    cons: ['Manuell tömning', 'Ingen AI-hinderdetektion'],
+    ctaText: 'Se pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fdreame-d10s-pro-151997',
+    reviewUrl: '/dreame-d10s-pro/',
+    dataProduct: 'Dreame D10s Pro',
+  },
+];
+
+const faqItems = [
+  { question: 'Hur billig kan jag gå utan att ångra mig?', answer: 'Cirka 2 500 kr är gränsen där du fortfarande får LiDAR-navigering. Under det blir det gyronavigation eller slumpmässig rörelse — inte värt det.' },
+  { question: 'Vad förlorar jag genom att välja budget?', answer: 'Främst tre saker: AI-hinderdetektion (kan smeta ut djuravföring), automatisk tömning (manuellt vart 2–4 dygn) och varmvattentvätt av moppar (kan bli mögelluk).' },
+  { question: 'Är begagnad ett bra alternativ?', answer: 'Endast om du vet säkert hur många timmar batteriet körts. Litiumjon-batterier förlorar 20–30 % kapacitet efter 2 år. Köp original-tillbehör direkt från tillverkaren oavsett.' },
+  { question: 'Räcker 5 000 Pa i en lägenhet?', answer: 'Ja, för en normalstor lägenhet med blandade golv och utan stora hundar. På mattor använder roboten boost-läge automatiskt.' },
+];
+---
+
+<BaseLayout
+  title="Bästa budget-robotdammsugare 2026 — under 6 000 kr"
+  description="Bästa robotdammsugare under 6 000 kr 2026. Vi rankar de modeller som ger mest funktion för pengarna utan att kompromissa på kvaliteten."
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-04-27">2026-04-27</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
+      Bästa budget-robotdammsugare 2026
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Du behöver inte spendera 12 000 kr för att få en bra robot. För 3 000–6 000 kr får du LiDAR-navigering, fungerande moppning och tillräcklig sugkraft för en normalstor lägenhet eller mindre hus.
+    </p>
+
+    <div class="space-y-6 mb-10">
+      {products.map(p => <ProductCard {...p} />)}
+    </div>
+
+    <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Vad du absolut inte ska kompromissa på</h2>
+      <ul class="list-disc pl-6 text-text-light space-y-2">
+        <li>LiDAR-navigering — utan det missar roboten ytor och fastnar oftare. <a href="/guide/lidar-navigation/" class="text-accent hover:underline">Läs varför LiDAR är ett krav</a>.</li>
+        <li>Minst 4 000 Pa sugkraft i en lägenhet med hårdgolv.</li>
+        <li>App-styrning för att kunna sätta no-go-zoner och scheman.</li>
+        <li>Bra varumärkessupport — viktigt vid garanti och firmware-uppdateringar.</li>
+      </ul>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/billigaste-robotdammsugare/" class="text-accent hover:underline text-sm">Allra billigaste robotdammsugare 2026</a></li>
+        <li><a href="/guide/sugkraft/" class="text-accent hover:underline text-sm">Sugkraft i Pa förklarat</a></li>
+        <li><a href="/guide/lidar-navigation/" class="text-accent hover:underline text-sm">LiDAR-navigation</a></li>
+        <li><a href="/robotdammsugare/husdjur/" class="text-accent hover:underline text-sm">Bäst för husdjur</a></li>
+        <li><a href="/robotdammsugare/med-mopp/" class="text-accent hover:underline text-sm">Bäst med mopp</a></li>
+      </ul>
+    </section>
+
+    <AffiliateDisclaimer />
+  </div>
+
+  <StickyCTA text="Se bästa budget" url="#main" />
+</BaseLayout>

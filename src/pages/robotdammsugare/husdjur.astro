@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import FAQ from '../../components/FAQ.astro';
+import StickyCTA from '../../components/StickyCTA.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/robotdammsugare/' },
+  { label: 'För husdjur' },
+];
+
+const products = [
+  {
+    rank: 1,
+    name: 'Roborock S8 MaxV Ultra',
+    image: '/images/roborock-s8-maxv-ultra.webp',
+    price: 'ca 11 990 kr',
+    rating: 4.8,
+    badge: 'Bäst för husdjur',
+    pros: ['ReactiveAI 3.0 — undviker djuravföring', 'Dubbla gummirullar trasslar inte i päls', '10 000 Pa sugkraft + boost på matta', 'HEPA-filter i sluten luftväg'],
+    cons: ['Hög prisklass', 'Komplex app i början'],
+    ctaText: 'Se pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Froborock-s8-maxv-ultra-white-135019',
+    reviewUrl: '/roborock-s8-maxv-ultra/',
+    dataProduct: 'Roborock S8 MaxV Ultra',
+  },
+  {
+    rank: 2,
+    name: 'Dreame X40 Ultra',
+    image: '/images/dreame-x40-ultra.webp',
+    price: 'ca 9 990 kr',
+    rating: 4.7,
+    badge: 'Starkast sug',
+    pros: ['12 000 Pa — branschledande sugkraft', 'TriCut gummivalsar trasslar inte', '3D Structured Light identifierar avföring', 'Utfällbar moppmodul når hörnen'],
+    cons: ['Stor station', 'Kort långtidshistorik'],
+    ctaText: 'Se pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fdreame-x40-ultra-151995',
+    reviewUrl: '/dreame-x40-ultra/',
+    dataProduct: 'Dreame X40 Ultra',
+  },
+  {
+    rank: 3,
+    name: 'iRobot Roomba j9+',
+    image: '/images/irobot-roomba-j9-plus.webp',
+    price: 'ca 7 490 kr',
+    rating: 4.5,
+    badge: 'Bäst app',
+    pros: ['PrecisionVision känner igen avföring och kablar', 'Klassiska iRobot gummivalsar', 'Pålitlig automatisk tömning', 'Mycket bra app och support'],
+    cons: ['Lägre Pa-värde än konkurrenter', 'Saknar moppfunktion'],
+    ctaText: 'Se pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Firobot-roomba-j9-plus-148015',
+    reviewUrl: '/irobot-roomba-j9-plus/',
+    dataProduct: 'iRobot Roomba j9+',
+  },
+  {
+    rank: 4,
+    name: 'Eufy X10 Pro Omni',
+    image: '/images/eufy-x10-pro-omni.webp',
+    price: 'ca 5 990 kr',
+    rating: 4.4,
+    badge: 'Bästa värdet',
+    pros: ['8 000 Pa till klart lägre pris', 'AI-hinderdetektion', 'Roterande mopp och autotvätt', 'Bra för en hund eller katt'],
+    cons: ['Svagare AI än premium-modellerna', 'Något kortare batteritid'],
+    ctaText: 'Se pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Feufy-x10-pro-omni-153028',
+    reviewUrl: '/eufy-x10-pro-omni/',
+    dataProduct: 'Eufy X10 Pro Omni',
+  },
+];
+
+const faqItems = [
+  { question: 'Vilken är bäst för långhåriga hundar?', answer: 'Roborock S8 MaxV Ultra. Dubbla gummivalsar trasslar minimalt även med långhårig pälsfällning. Dreame X40 Ultra är ett likvärdigt val.' },
+  { question: 'Klarar de katturin och avföring?', answer: 'AI-modellerna (Roborock, Dreame, iRobot j9+) är tränade att känna igen och stanna vid avföring. Modeller utan AI kommer smeta ut. För kattfamiljer är AI ett krav.' },
+  { question: 'Är 8 000 Pa nog för en stor hund?', answer: 'För en katt eller liten hund: ja. För medelstora och stora hundar med kraftig fällning: sikta på 10 000+ Pa.' },
+  { question: 'Stör roboten husdjuren?', answer: 'I tysta läget (55–58 dB) vänjer sig de flesta djur inom 1–2 veckor. Schemalägg städningen när husdjuren är ute eller i annat rum tills tillvänjningen är klar.' },
+];
+---
+
+<BaseLayout
+  title="Bästa robotdammsugare för husdjur 2026 — testade och rankade"
+  description="Bästa robotdammsugare för hundar och katter 2026. Vi rankar de modeller som hanterar päls, smuts och olyckor utan att smeta ut allt. Testade och jämförda."
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-04-27">2026-04-27</time> · 4 modeller testade</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
+      Bästa robotdammsugare för husdjur 2026
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Husdjur ställer specifika krav: gummivalsar som inte trasslar i päls, AI som undviker olyckor och tillräcklig sugkraft för att hantera daglig pälsfällning. Här är de modellerna som klarar testet 2026.
+    </p>
+
+    <div class="space-y-6 mb-10">
+      {products.map(p => <ProductCard {...p} />)}
+    </div>
+
+    <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Vad gör en robot bra för husdjurshem?</h2>
+      <p class="text-text-light leading-relaxed mb-3">
+        Tre saker avgör skillnaden mellan en robot som funkar i husdjurshem och en som inte gör det: gummivalsar istället för traditionella borstvalsar, AI-detektion av djuravföring och tillräcklig sugkraft för päls. <a href="/guide/robotdammsugare-husdjur/" class="text-accent hover:underline">Läs vår fullständiga köpguide för husdjurshem</a> för djupare genomgång.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        Modeller utan AI riskerar att köra över avföring och smeta ut den över hela hemmet. Det är inte värt risken — välj en modell med kameradetektion om du har hund eller katt.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/guide/robotdammsugare-husdjur/" class="text-accent hover:underline text-sm">Komplett köpguide för husdjurshem</a></li>
+        <li><a href="/guide/sugkraft/" class="text-accent hover:underline text-sm">Sugkraft i Pa förklarat</a></li>
+        <li><a href="/robotdammsugare/" class="text-accent hover:underline text-sm">Bästa robotdammsugare 2026 — alla märken</a></li>
+        <li><a href="/robotdammsugare/budget/" class="text-accent hover:underline text-sm">Bästa budget-robotdammsugare</a></li>
+        <li><a href="/robotdammsugare/med-mopp/" class="text-accent hover:underline text-sm">Bästa robotdammsugare med mopp</a></li>
+      </ul>
+    </section>
+
+    <AffiliateDisclaimer />
+  </div>
+
+  <StickyCTA text="Se bäst för husdjur" url="#main" />
+</BaseLayout>

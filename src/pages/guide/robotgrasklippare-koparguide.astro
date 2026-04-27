@@ -1,0 +1,87 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const breadcrumbs = [
+  { label: 'Guider', href: '/guide/' },
+  { label: 'Robotgräsklippare köpguide' },
+];
+
+const faqItems = [
+  { question: 'Med eller utan begränsningskabel?', answer: 'Modeller utan kabel (Husqvarna EPOS, Mammotion Luba, Segway Navimow) använder GPS och är klart bekvämare att installera. De kostar dock 30–60 % mer. Begränsningskabel-modeller är fortfarande mer pålitliga på små och komplexa tomter.' },
+  { question: 'Hur stor tomt klarar en robotgräsklippare?', answer: 'Husqvarna 105: upp till 600 m². 315X: 1 500 m². 415X: 1 500 m². 450X: 5 000 m². Mammotion Luba 2 AWD 5000: 5 000 m². Mät tomten innan köp.' },
+  { question: 'Kan den klippa lutande mark?', answer: 'Standard: 25 % lutning. 4WD-modeller (Mammotion Luba, Husqvarna 4WD): upp till 75 % lutning. För stora svenska sluttningstomter är 4WD ett krav.' },
+  { question: 'Hur ofta klipper roboten?', answer: 'Optimalt 4–6 dagar i veckan, 2–4 timmar per dag. Den tar bara 2–3 mm åt gången, vilket gödar gräset (mulching) och håller det tätt och friskt.' },
+  { question: 'Stör den grannarna med ljud?', answer: 'Moderna robotgräsklippare ligger på 55–62 dB — knappt hörs på en vanlig svensk villatomt. Klart tystare än bensindrivna klippare.' },
+];
+---
+
+<ArticleLayout
+  title="Robotgräsklippare köpguide 2026 — så väljer du rätt modell"
+  description="Komplett köpguide för robotgräsklippare 2026. Med eller utan begränsningskabel, klippkapacitet, lutning och bästa modellerna jämförda."
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-04-27"
+  datePublished="2026-04-27"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Robotgräsklippare — komplett köpguide 2026
+  </h1>
+  <p class="text-text-light text-lg mb-6 leading-relaxed">
+    En robotgräsklippare ger dig timmar tillbaka varje vecka från och med första sommaren. Men det finns mer att överväga än "Husqvarna eller inte" — kabelfri navigering, 4WD och RTK-GPS har ändrat marknaden de senaste två åren.
+  </p>
+
+  <figure class="my-6">
+    <img src="/images/husqvarna-automower-415x.webp" alt="Husqvarna Automower 415X" class="rounded-xl border border-border w-full" loading="lazy" />
+  </figure>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Med eller utan begränsningskabel?</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    Det är 2026 års stora val. Klassiska Husqvarna Automower förlitar sig på en begränsningskabel som grävs ner i marken — pålitligt men krångligt vid installation. Nya modeller från Husqvarna (EPOS), Mammotion (Luba 2) och Segway (Navimow) använder RTK-GPS och behöver ingen kabel. Du ritar gränserna i en app och roboten håller sig innanför.
+  </p>
+  <ul class="list-disc pl-6 text-text-light space-y-2 mb-6">
+    <li><strong>Begränsningskabel</strong> — robust, fungerar oavsett GPS-täckning, billigare. Kabeln kan slitas och behöva lagas.</li>
+    <li><strong>RTK-GPS / kabelfri</strong> — enkel installation, lätt att flytta, inga grävjobb. Kräver fri sikt mot himlen och en RTK-antenn.</li>
+  </ul>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Storlek på tomt — välj rätt klass</h2>
+  <div class="overflow-x-auto rounded-xl border border-border my-4">
+    <table class="w-full text-sm bg-white">
+      <thead class="bg-bg-alt border-b border-border">
+        <tr>
+          <th class="text-left px-4 py-3 font-semibold text-text">Tomtstorlek</th>
+          <th class="text-left px-4 py-3 font-semibold text-text">Rekommenderad modell</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-border">
+        <tr><td class="px-4 py-3">Upp till 600 m²</td><td class="px-4 py-3"><a href="/husqvarna-automower-105/" class="text-accent hover:underline">Husqvarna 105</a></td></tr>
+        <tr><td class="px-4 py-3">600–1 500 m²</td><td class="px-4 py-3"><a href="/husqvarna-automower-315x/" class="text-accent hover:underline">Husqvarna 315X</a> / <a href="/gardena-sileno-life-750/" class="text-accent hover:underline">Gardena Sileno Life 750</a></td></tr>
+        <tr><td class="px-4 py-3">1 500–3 000 m²</td><td class="px-4 py-3"><a href="/husqvarna-automower-415x/" class="text-accent hover:underline">Husqvarna 415X</a></td></tr>
+        <tr><td class="px-4 py-3">3 000+ m²</td><td class="px-4 py-3"><a href="/husqvarna-automower-450x/" class="text-accent hover:underline">Husqvarna 450X</a></td></tr>
+        <tr><td class="px-4 py-3">Stor + brant</td><td class="px-4 py-3"><a href="/husqvarna-automower-430x-nera/" class="text-accent hover:underline">Husqvarna 430X NERA</a> (4WD)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Lutning — viktigt på svenska tomter</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    Standardmodeller klarar 25 % lutning (14 grader). Sluttningstomter med stenfundament eller berghällar behöver 4WD. Husqvarna 4WD klarar 70 %, Mammotion Luba 2 AWD upp till 80 %. För svenska berghällstomter är detta avgörande.
+  </p>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Komplexa tomter — flera områden</h2>
+  <p class="text-text-light leading-relaxed mb-6">
+    Bor du på en tomt med flera gräsöar separerade av asfaltsgångar krävs antingen en modell som kan transportera sig själv mellan zoner (Husqvarna EPOS Plus) eller att du flyttar roboten manuellt. Kontrollera funktionen "passages" eller "transit zones" i specifikationerna.
+  </p>
+
+  <FAQ items={faqItems} />
+
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Läs vidare</h2>
+    <ul class="space-y-2">
+      <li><a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare 2026</a></li>
+      <li><a href="/billigaste-robotgrasklippare/" class="text-accent hover:underline text-sm">Billigaste robotgräsklippare 2026</a></li>
+      <li><a href="/husqvarna-vs-gardena/" class="text-accent hover:underline text-sm">Husqvarna vs Gardena</a></li>
+      <li><a href="/husqvarna-vs-mammotion/" class="text-accent hover:underline text-sm">Husqvarna vs Mammotion</a></li>
+      <li><a href="/husqvarna-vs-segway-navimow/" class="text-accent hover:underline text-sm">Husqvarna vs Segway Navimow</a></li>
+    </ul>
+  </section>
+</ArticleLayout>

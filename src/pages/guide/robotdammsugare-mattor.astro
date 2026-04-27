@@ -1,0 +1,84 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const breadcrumbs = [
+  { label: 'Guider', href: '/guide/' },
+  { label: 'Mattor' },
+];
+
+const faqItems = [
+  { question: 'Klarar robotdammsugare tjocka mattor?', answer: 'Mattor upp till 20 mm hanterar de flesta premium-modeller. Tjockare flokati eller långhåriga matttyper kan fastna i borstvalsen. Roborock S8 MaxV Ultra och Dreame X40 Ultra har bäst mattprestanda.' },
+  { question: 'Lyfter roboten över mattans kant utan att fastna?', answer: 'Modeller med 4WD eller MaxLift kan klara upp till 22 mm trösklar. Vanligast är 15–20 mm. Mät kanten på din matta innan köp.' },
+  { question: 'Vad är boost-läge på matta?', answer: 'En automatisk höjning av sugkraften till max när roboten detekterar matta. Bra modeller har detta automatiskt — du behöver inte ställa in något.' },
+  { question: 'Kan moppen skada en matta?', answer: 'Ja, om mattlyft saknas. Roboten skulle då dra en fuktig mopp över mattan. Premiummodeller lyfter mopparna automatiskt; budgetmodeller måste du själv blockera mattan med no-go-zon.' },
+  { question: 'Bästa borste för mattor?', answer: 'Borstvalsar lyfter mer dammkorn ur matta än rena gummivalsar. För hushåll med mycket mattor kan en blandborste vara bättre — men då tappar du i hårhantering. Roborock erbjuder både gummivals och blandborste till samma robot.' },
+];
+---
+
+<ArticleLayout
+  title="Robotdammsugare och mattor — komplett guide 2026"
+  description="Hur väljer du rätt robotdammsugare för ett hem med mattor? Mattlyft, sugkraft, borstdesign — allt du behöver veta för att hitta rätt modell."
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-04-27"
+  datePublished="2026-04-27"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Robotdammsugare och mattor — så funkar det 2026
+  </h1>
+  <p class="text-text-light text-lg mb-6 leading-relaxed">
+    Mattor ställer tre specifika krav på en robotdammsugare: tillräcklig sugkraft för att lyfta dammkorn ur fibrerna, mattdetektion för att höja effekten automatiskt och tillräcklig markfrigång för att klara mattans kant. Här är vad som spelar roll och vilka modeller som klarar hela paketet.
+  </p>
+
+  <figure class="my-6">
+    <img src="/images/eufy-x10-pro-omni.webp" alt="Eufy X10 Pro Omni på matta" class="rounded-xl border border-border w-full" loading="lazy" />
+    <figcaption class="text-xs text-text-lighter mt-2">En bra matt-modell höjer sugkraften automatiskt och lyfter moppen.</figcaption>
+  </figure>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Vad är "mattdetektion"?</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    En sensor i botten känner av att underlaget förändrats — antingen via tryck, ultraljud eller kameraanalys. När mattan detekteras höjs sugkraften till maxläge och eventuella moppkuddar lyfts upp 5–10 mm. På bättre modeller fungerar detta sömlöst utan att du märker det.
+  </p>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Tjocklek på mattan — hur mycket klarar roboten?</h2>
+  <div class="overflow-x-auto rounded-xl border border-border my-4">
+    <table class="w-full text-sm bg-white">
+      <thead class="bg-bg-alt border-b border-border">
+        <tr>
+          <th class="text-left px-4 py-3 font-semibold text-text">Mattyp</th>
+          <th class="text-left px-4 py-3 font-semibold text-text">Tjocklek</th>
+          <th class="text-left px-4 py-3 font-semibold text-text">Klarar de flesta robotar?</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-border">
+        <tr><td class="px-4 py-3">Plattvävda</td><td class="px-4 py-3">3–8 mm</td><td class="px-4 py-3">Ja</td></tr>
+        <tr><td class="px-4 py-3">Standardmatta</td><td class="px-4 py-3">8–15 mm</td><td class="px-4 py-3">Ja, premium</td></tr>
+        <tr><td class="px-4 py-3">Tjock matta</td><td class="px-4 py-3">15–22 mm</td><td class="px-4 py-3">Bara toppmodeller</td></tr>
+        <tr><td class="px-4 py-3">Flokati / shaggy</td><td class="px-4 py-3">22+ mm</td><td class="px-4 py-3">Sätt no-go-zon</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Bästa modellerna för matthem</h2>
+  <ul class="list-disc pl-6 text-text-light space-y-2 mb-6">
+    <li><a href="/dreame-x40-ultra/" class="text-accent hover:underline">Dreame X40 Ultra</a> — 12 000 Pa, automatisk mopp-lyft, klarar 22 mm tröskel</li>
+    <li><a href="/roborock-s8-maxv-ultra/" class="text-accent hover:underline">Roborock S8 MaxV Ultra</a> — 10 000 Pa, VibraRise mopp-lyft</li>
+    <li><a href="/eufy-x10-pro-omni/" class="text-accent hover:underline">Eufy X10 Pro Omni</a> — 8 000 Pa, prisvärt mellanalternativ</li>
+  </ul>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Mattfransar — speciell varning</h2>
+  <p class="text-text-light leading-relaxed mb-6">
+    Persiska mattor och andra med långa fransar är robotens värsta fiende. Borstvalsen sväljer fransarna och låser sig. Lägg en virtuell vägg eller no-go-zon vid mattans kant; det finns inte en robot på marknaden som hanterar långa fransar bra.
+  </p>
+
+  <FAQ items={faqItems} />
+
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Läs vidare</h2>
+    <ul class="space-y-2">
+      <li><a href="/guide/sugkraft/" class="text-accent hover:underline text-sm">Sugkraft i Pa förklarat</a></li>
+      <li><a href="/guide/robotdammsugare-husdjur/" class="text-accent hover:underline text-sm">Husdjur och mattor — kombinationsguide</a></li>
+      <li><a href="/guide/robotdammsugare-mopp/" class="text-accent hover:underline text-sm">Mopp-modeller och mattlyft</a></li>
+    </ul>
+  </section>
+</ArticleLayout>
