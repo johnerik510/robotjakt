@@ -218,6 +218,19 @@ const faqSchema = faqItems.map((item) => ({
         "priceCurrency": "SEK",
         "price": "6490",
         "availability": "https://schema.org/InStock",
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.3",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "1"
+      },
+      "review": {
+        "@type": "Review",
+        "reviewRating": { "@type": "Rating", "ratingValue": "4.3", "bestRating": "5" },
+        "author": { "@type": "Person", "name": "John Erik Johansson" },
+        "datePublished": "2026-04-05"
       }
     },
     "reviewRating": {
