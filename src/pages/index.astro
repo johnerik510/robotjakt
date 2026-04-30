@@ -665,6 +665,32 @@ const faqSchema = faqItems.map((item) => ({
       </div>
     </section>
 
+    <!-- Senaste recensioner -->
+    <section class="mb-12">
+      <div class="flex items-center justify-between mb-5">
+        <h2 class="font-heading text-2xl font-bold text-text">Senaste recensioner och guider</h2>
+        <a href="/robotdammsugare/" class="text-sm font-semibold text-accent hover:underline">Alla recensioner →</a>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {[
+          { href: "/dreame-x40-ultra-vs-roborock-s8-maxv-ultra/", title: "Dreame X40 Ultra vs Roborock S8 MaxV Ultra — Vilken är bäst?", date: "2026-04-26", dateLabel: "26 april 2026", category: "Jämförelse" },
+          { href: "/dyson-spot-scrub-ai/", title: "Dyson Spot+Scrub Ai — Recension med AI-fläckdetektering", date: "2026-04-22", dateLabel: "22 april 2026", category: "Recension" },
+          { href: "/jamfor/roborock-saros-10r-vs-dreame-x40-ultra/", title: "Roborock Saros 10R vs Dreame X40 Ultra — Direktjämförelse", date: "2026-04-18", dateLabel: "18 april 2026", category: "Jämförelse" },
+          { href: "/dyson-360-vis-nav/", title: "Dyson 360 Vis Nav — Test och recension 2026", date: "2026-04-12", dateLabel: "12 april 2026", category: "Recension" },
+          { href: "/guide/automatisk-tomning/", title: "Robotdammsugare med automatisk tömning — Guide 2026", date: "2026-04-08", dateLabel: "8 april 2026", category: "Guide" },
+          { href: "/dreame-x40-ultra/", title: "Dreame X40 Ultra — Test och recension 2026", date: "2026-04-03", dateLabel: "3 april 2026", category: "Recension" },
+        ].map((art) => (
+          <a href={art.href} class="group block bg-white border border-border hover:border-accent rounded-xl p-4 transition-colors">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-accent bg-accent/8 px-2 py-0.5 rounded-full">{art.category}</span>
+              <time datetime={art.date} class="text-[11px] text-text-lighter">{art.dateLabel}</time>
+            </div>
+            <h3 class="text-sm font-semibold text-text group-hover:text-accent leading-snug transition-colors">{art.title}</h3>
+          </a>
+        ))}
+      </div>
+    </section>
+
     <FAQ items={faqItems} />
 
     <AffiliateDisclaimer />
