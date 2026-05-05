@@ -1,0 +1,195 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Segway Navimow' },
+];
+
+const models = [
+  {
+    name: 'Segway Navimow i105E',
+    badge: 'BÄST PRIS UTAN SLINGA',
+    badgeColor: 'bg-accent',
+    price: 'ca 9 990 kr',
+    area: 'upp till 500 m²',
+    features: ['Vision Fence — inga kablar', 'Kamerabaserad gränsdetektion', '4G som tillval', 'Bullernivå 58 dB', 'Klarar 45% lutning'],
+    cta: 'https://www.robotmower.se/robotgrasklippare/segway-navimow/segway-navimow-i105e',
+    ctaText: 'Se pris på Navimow i105E',
+    reviewUrl: '/segway-navimow-i105e/',
+    description: 'Navimow i105E är marknadens mest prisvärda robotgräsklippare utan perimeterkabel — ca 9 990 kr för en tomt upp till 500 m². Vision Fence-tekniken kombinerar kamera och GPS för att hålla roboten inom zonerna utan ett enda steg av kabelinstallation.',
+  },
+  {
+    name: 'Segway Navimow H800E',
+    badge: 'MELLANKLASSEN',
+    badgeColor: 'bg-accent',
+    price: 'ca 17 990 kr',
+    area: 'upp till 3 000 m²',
+    features: ['Vision Fence utan kablar', '4G inbyggt', 'Kamera + RTK GPS', 'Klarar 50% lutning', 'Snabbinstallation 30 min'],
+    cta: 'https://www.robotmower.se/robotgrasklippare/segway-navimow/segway-navimow-h800e',
+    ctaText: 'Se pris på Navimow H800E',
+    reviewUrl: '/segway-navimow-h800e/',
+    description: 'Navimow H800E täcker tomter upp till 3 000 m² med Vision Fence-teknik och inbyggd 4G. Priset på ca 17 990 kr gör den till ett av de mest konkurrenskraftiga utan-slinga-alternativen i mellanklass, med 50% lutningskapacitet.',
+  },
+  {
+    name: 'Segway Navimow H500E',
+    badge: 'BÄST I TEST SEGWAY',
+    badgeColor: 'bg-winner',
+    price: 'ca 19 990 kr',
+    area: 'upp till 5 000 m²',
+    features: ['Vision Fence — inga kablar', '4G inbyggt från start', 'RTK GPS + kamera', 'Klarar 50% lutning', 'Störst yta i klassen'],
+    cta: 'https://www.robotmower.se/robotgrasklippare/segway-navimow/segway-navimow-h500e',
+    ctaText: 'Se pris på Navimow H500E',
+    reviewUrl: '/segway-navimow-h500e/',
+    description: 'Navimow H500E är Segways flaggskeppsmodell och klarar tomter upp till 5 000 m² — mer yta per krona än i princip alla konkurrenter i utan-slinga-segmentet. Ca 19 990 kr med inbyggd 4G och Vision Fence-teknik gör den till det bästa alternativet för stora tomter.',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Hur fungerar Segway Navimow utan perimeterkabel?',
+    answer: 'Segway Navimow använder Vision Fence-teknologi — en kombination av kamera och GPS (EFLS, Exact Fusion Locating System) för att hålla sig inom definierade zoner. Du kartlägger trädgårdens gränser digitalt i Navimow-appen och roboten följer kartan med hjälp av kameran och satellitpositionering. Ingen kabel behöver grävas ner eller läggas ut.',
+  },
+  {
+    question: 'Vilket Navimow-modell ska jag välja?',
+    answer: 'Under 500 m²: i105E (ca 9 990 kr) är marknadens billigaste utan-slinga-alternativ och ett utmärkt val. 500–3 000 m²: H800E (ca 17 990 kr) med inbyggd 4G och bredare klippning. Över 3 000 m²: H500E (ca 19 990 kr) klarar upp till 5 000 m² och erbjuder bäst pris per klippt kvadratmeter i utan-slinga-segmentet.',
+  },
+  {
+    question: 'Hur jämför sig Segway Navimow mot Mammotion LUBA?',
+    answer: 'Segway Navimow H500E (19 990 kr, 5 000 m²) och Mammotion LUBA AWO 3000 (24 990 kr, 3 000 m²) är de närmaste konkurrenterna. H500E vinner på pris/yta-förhållandet. LUBA AWO 3000 har kamera och är något mer beprövad bland svenska användare. Båda använder RTK GPS men med olika kompletterande tekniker (Vision Fence vs RTK basstationsantenn).',
+  },
+  {
+    question: 'Fungerar Segway Navimow i dåligt väder?',
+    answer: 'Ja, Navimow-modellerna är byggda för att klippa i alla väderförhållanden inklusive regn. IPX5-klassade mot stänkvatten. En automatisk regnsensor pausar klippningen vid kraftigt regn om du aktiverar det i appen. Kamerasystemet (Vision Fence) kan ha något sämre precision vid kraftigt regn men roboten är designad för nordeuropeiskt klimat.',
+  },
+  {
+    question: 'Vad ingår i paketet när man köper Segway Navimow?',
+    answer: 'Paketet inkluderar roboten, laddstation, RTK-antenn (för H-serien), nätadapter och snabbstartsguide. Inget kabelkit eller stiftpåsar behövs eftersom Navimow inte använder perimeterkabel. H-seriens RTK-antenn monteras på ett fast underlag (husvägg, staket) för bäst signalstabilitet. Installationen tar normalt 20–40 minuter.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Segway Navimow robotgräsklippare 2026 — utan slinga från 9 990 kr"
+  description="Guide till Segway Navimow i105E, H800E och H500E 2026. Jämför Vision Fence utan perimeterkabel — hitta rätt modell för din tomt."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-05-05">2026-05-05</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Segway Navimow robotgräsklippare 2026 — Vision Fence utan slinga
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Segway Navimow erbjuder robotgräsklippning utan perimeterkabel från ca 9 990 kr — billigast i utan-slinga-kategorin. Vi jämför alla tre modeller och hjälper dig välja rätt Navimow för din trädgård.
+    </p>
+
+    <section class="mb-8 bg-bg-alt rounded-xl border border-border p-6">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Segway Navimow — Vision Fence-tekniken</h2>
+      <p class="text-text-light leading-relaxed mb-3">
+        Segway Navimow är kända för sin Vision Fence-teknik som kombinerar kameradetektion med RTK GPS (EFLS). Jämfört med konkurrenterna Mammotion LUBA och Husqvarna EPOS är Navimow-serien marknadens mest prisvärda utan-slinga-alternativ — i105E-modellen kostar under 10 000 kr.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        Installationen tar 20–40 minuter: montera RTK-antennen (H-serien), lägg till laddstationen och kartlägg trädgårdens zoner i appen. Ingen kabel grävs ner, inga stift sätts i marken. Navimow-appen (iOS och Android) stödjer schemaläggning, zonhantering och fjärrstyrning via 4G.
+      </p>
+    </section>
+
+    <h2 class="font-heading text-2xl font-bold text-text mb-6" id="modeller">Segway Navimow-modeller 2026</h2>
+    <div class="space-y-6">
+      {models.map((model) => (
+        <section class="bg-white rounded-xl border border-border overflow-hidden shadow-sm">
+          <div class="p-5 sm:p-6">
+            <div class="flex flex-wrap items-start gap-3 mb-3">
+              <h3 class="font-heading text-xl font-bold text-text">{model.name}</h3>
+              <span class={`${model.badgeColor} text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wide`}>
+                {model.badge}
+              </span>
+            </div>
+            <p class="text-text-light leading-relaxed mb-4">{model.description}</p>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <div>
+                <p class="text-xs font-semibold text-text mb-2">Funktioner</p>
+                <ul class="space-y-1">
+                  {model.features.map(f => (
+                    <li class="flex items-start gap-1.5 text-xs text-text-light">
+                      <span class="text-winner font-bold mt-0.5">+</span>{f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-text mb-2">Pris</p>
+                <p class="text-2xl font-bold text-text mb-1">{model.price}</p>
+                <p class="text-xs font-semibold text-text mb-2">Areal</p>
+                <p class="text-sm font-semibold text-text">{model.area}</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a href={model.reviewUrl} class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+                Läs recension
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+              </a>
+              <a
+                href={model.cta}
+                rel="sponsored nofollow noopener noreferrer"
+                target="_blank"
+                class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+              >
+                {model.ctaText}
+                <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              </a>
+            </div>
+          </div>
+        </section>
+      ))}
+    </div>
+
+    <FAQ items={faqItems} />
+
+    <AffiliateDisclaimer />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare 2026 — alla märken jämförda</a></li>
+        <li><a href="/segway-navimow-i105e/" class="text-accent hover:underline text-sm">Segway Navimow i105E — recension 2026</a></li>
+        <li><a href="/segway-navimow-h500e/" class="text-accent hover:underline text-sm">Segway Navimow H500E — recension 2026</a></li>
+        <li><a href="/segway-navimow-h800e/" class="text-accent hover:underline text-sm">Segway Navimow H800E — recension 2026</a></li>
+        <li><a href="/mammotion-vs-segway-navimow/" class="text-accent hover:underline text-sm">Mammotion vs Segway Navimow — vilken ska du välja?</a></li>
+        <li><a href="/gardena-vs-segway-navimow/" class="text-accent hover:underline text-sm">Gardena vs Segway Navimow — jämförelse 2026</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA text="Se bästa Segway Navimow 2026" url="#modeller" />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Segway Navimow robotgräsklippare 2026",
+    "description": "Segway Navimow-modeller utan perimeterkabel jämförda 2026.",
+    "numberOfItems": 3,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Segway Navimow H500E", "url": "https://robotjakt.se/segway-navimow-h500e/" },
+      { "@type": "ListItem", "position": 2, "name": "Segway Navimow H800E", "url": "https://robotjakt.se/segway-navimow-h800e/" },
+      { "@type": "ListItem", "position": 3, "name": "Segway Navimow i105E", "url": "https://robotjakt.se/segway-navimow-i105e/" },
+    ],
+    "mainEntity": {
+      "@type": "FAQPage",
+      "mainEntity": faqSchema
+    }
+  })} />
+</BaseLayout>

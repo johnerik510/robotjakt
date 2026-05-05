@@ -1,0 +1,237 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Mammotion LUBA' },
+];
+
+const models = [
+  {
+    name: 'Mammotion LUBA 2 AWO 1000H',
+    badge: 'BÄST FÖR LITEN TOMT',
+    badgeColor: 'bg-accent',
+    price: 'ca 14 990 kr',
+    area: 'upp till 1 000 m²',
+    features: ['RTK GPS — ingen perimeterkabel', '4G-uppkoppling', 'Klippbredd 22 cm', 'Klarar 75% lutning', 'Mammotion-appen med zonkartläggning'],
+    cta: 'https://www.amazon.se/s?k=mammotion+luba+2+awo+1000h&tag=johnerik510-20',
+    ctaText: 'Se pris på LUBA 2 AWO 1000H',
+    reviewUrl: '/mammotion-luba-2-awo-1000h/',
+    description: 'LUBA 2 AWO 1000H är Mammotions mest prisvärda utan-slinga-modell för tomter upp till 1 000 m². RTK GPS ger centimeterprecision utan kabelinstallation — ett stort steg upp från kabelbaserade budgetalternativ för bara ca 15 000 kr.',
+  },
+  {
+    name: 'Mammotion LUBA AWO 3000',
+    badge: 'BÄST I TEST MAMMOTION',
+    badgeColor: 'bg-winner',
+    price: 'ca 24 990 kr',
+    area: 'upp till 3 000 m²',
+    features: ['RTK GPS utan perimeterkabel', '4G + WiFi-uppkoppling', 'Klippbredd 26 cm', 'Kamera för hinderdetektering', 'Klarar 75% lutning'],
+    cta: 'https://www.amazon.se/s?k=mammotion+luba+awo+3000&tag=johnerik510-20',
+    ctaText: 'Se pris på LUBA AWO 3000',
+    reviewUrl: '/mammotion-luba-awo-3000/',
+    description: 'LUBA AWO 3000 är flaggskeppet i Mammotions AWO-serie och klarar tomter upp till 3 000 m² med RTK GPS-navigering utan en enda meter perimeterkabel. Kamerasystem för hinderdetektering och 4G gör den till ett av marknadens mest avancerade alternativ i sin prisklass.',
+  },
+  {
+    name: 'Mammotion LUBA 2 AWD 5000X',
+    badge: 'STÖRST KAPACITET',
+    badgeColor: 'bg-accent',
+    price: 'ca 25 990 kr',
+    area: 'upp till 5 000 m²',
+    features: ['RTK GPS utan perimeterkabel', 'AWD (fyrhjulsdrift)', '4G inbyggt', 'Klarar 75% lutning', 'Klippbredd 26 cm'],
+    cta: 'https://www.amazon.se/s?k=mammotion+luba+2+awd+5000x&tag=johnerik510-20',
+    ctaText: 'Se pris på LUBA 2 AWD 5000X',
+    reviewUrl: '/mammotion-luba-2-awd-5000x/',
+    description: 'LUBA 2 AWD 5000X är Mammotions absoluta toppmodell med fyrhjulsdrift och 5 000 m² kapacitet. AWD ger exceptionell grepp i kuperad terräng och fuktigt underlag. Priset på ca 25 990 kr är konkurrenskraftigt för ett GPS-system av denna klass utan kabelinstallation.',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Behöver man perimeterkabel med Mammotion LUBA?',
+    answer: 'Nej, det är en av LUBA-seriens stora fördelar. Alla Mammotion LUBA-modeller använder RTK GPS-navigering och kräver ingen perimeterkabel. Du sätter upp en liten RTK-basstation (ingår i paketet) och kartlägger sedan trädgårdens zoner via appen. Installationen tar 30–60 minuter och kräver inget grävarbete.',
+  },
+  {
+    question: 'Hur tillförlitlig är Mammotion LUBA i praktiken?',
+    answer: 'Mammotion LUBA har fått positiva omdömen från användare med kabelbaserade Husqvarna- och Gardena-robotar som testat utan-slinga-tekniken. RTK GPS ger centimeterprecision och roboten håller sig väl inom utsatt yta. Programvaran uppdateras regelbundet via 4G. Viktigaste nackdelen: om 4G-signalen faller bort i områden med dålig täckning kan roboten behöva vänta i sin bas.',
+  },
+  {
+    question: 'Vilken Mammotion LUBA-modell passar min trädgård?',
+    answer: 'Under 1 000 m²: LUBA 2 AWO 1000H (ca 14 990 kr) ger bäst pris/yta-förhållande. 1 000–3 000 m²: LUBA AWO 3000 (ca 24 990 kr) med kamera och bredare klippning. Över 3 000 m² eller kuperad terräng: LUBA 2 AWD 5000X (ca 25 990 kr) med fyrhjulsdrift.',
+  },
+  {
+    question: 'Hur jämför sig Mammotion mot Husqvarna och Segway Navimow?',
+    answer: 'Mammotion LUBA erbjuder utan-slinga-teknik till lägre pris än Husqvarnas EPOS-alternativ. Jämfört med Segway Navimow H500E (19 990 kr, 5 000 m²) är LUBA AWO 3000 något dyrare men erbjuder kamera och beprövad RTK-teknik. Husqvarna 430X Nera med EPOS kostar ca 24 990 kr + tillbehörskostnad. LUBA är totalt sett ett av marknadens mest kostnadseffektiva GPS-alternativ.',
+  },
+  {
+    question: 'Fungerar Mammotion LUBA i Sverige med 4G?',
+    answer: 'Ja, LUBA 2-serien fungerar på svenska 4G-nät. 4G behövs för fjärrstyrning och kartuppdateringar — roboten kan klippa utan aktiv 4G-anslutning men du förlorar möjligheten att ändra schema eller se status på distans. Testat och bekräftat att fungera på Telia, Tele2 och Tre-nät i Sverige.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Mammotion LUBA robotgräsklippare 2026 — utan slinga, RTK GPS"
+  description="Guide till Mammotion LUBA-serien 2026. Jämför AWO 1000H, AWO 3000 och AWD 5000X — GPS utan perimeterkabel från ca 14 990 kr."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-05-05">2026-05-05</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Mammotion LUBA robotgräsklippare 2026 — GPS utan slinga
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Mammotion LUBA är en av marknadens ledande robotgräsklippare utan perimeterkabel. Med RTK GPS-precision klarar LUBA-serien tomter från 1 000 till 5 000 m² utan ett enda meters kabelinstallation. Här jämför vi alla modeller.
+    </p>
+
+    <section class="mb-8 bg-bg-alt rounded-xl border border-border p-6">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Mammotion — GPS-precision utan kabelkrångel</h2>
+      <p class="text-text-light leading-relaxed mb-3">
+        Mammotion grundades 2019 med fokus på att lösa det största problemet med robotgräsklippare: perimeterkabeln. LUBA-serien använder RTK GPS (Real-Time Kinematic) — samma teknik som professionell lantmäteri — och placerar roboten med centimeterprecision utan kabel.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        Inga grävarbeten, ingen kabel som går sönder, inga begränsningar från kabelns placering. Du kartlägger trädgårdens zoner digitalt i appen och är igång på under en timme. LUBA-serien erbjuder dessutom 4G-uppkoppling för fjärrstyrning och Mammotions kamerabaserade hinderdetektering.
+      </p>
+    </section>
+
+    <h2 class="font-heading text-2xl font-bold text-text mb-6" id="modeller">Mammotion LUBA-modeller 2026</h2>
+    <div class="space-y-6">
+      {models.map((model) => (
+        <section class="bg-white rounded-xl border border-border overflow-hidden shadow-sm">
+          <div class="p-5 sm:p-6">
+            <div class="flex flex-wrap items-start gap-3 mb-3">
+              <h3 class="font-heading text-xl font-bold text-text">{model.name}</h3>
+              <span class={`${model.badgeColor} text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wide`}>
+                {model.badge}
+              </span>
+            </div>
+            <p class="text-text-light leading-relaxed mb-4">{model.description}</p>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <div>
+                <p class="text-xs font-semibold text-text mb-2">Funktioner</p>
+                <ul class="space-y-1">
+                  {model.features.map(f => (
+                    <li class="flex items-start gap-1.5 text-xs text-text-light">
+                      <span class="text-winner font-bold mt-0.5">+</span>{f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-text mb-2">Pris</p>
+                <p class="text-2xl font-bold text-text mb-1">{model.price}</p>
+                <p class="text-xs font-semibold text-text mb-2">Areal</p>
+                <p class="text-sm font-semibold text-text">{model.area}</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a href={model.reviewUrl} class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+                Läs recension
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+              </a>
+              <a
+                href={model.cta}
+                rel="sponsored nofollow noopener noreferrer"
+                target="_blank"
+                class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+              >
+                {model.ctaText}
+                <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              </a>
+            </div>
+          </div>
+        </section>
+      ))}
+    </div>
+
+    <section class="mt-10 mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Mammotion vs Husqvarna vs Segway — vad ska du välja?</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-bg-alt">
+              <th class="text-left p-3 font-semibold text-text border border-border">Modell</th>
+              <th class="text-left p-3 font-semibold text-text border border-border">Pris</th>
+              <th class="text-left p-3 font-semibold text-text border border-border">Areal</th>
+              <th class="text-left p-3 font-semibold text-text border border-border">Slinga</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-winner/5">
+              <td class="p-3 border border-border font-medium">Mammotion LUBA AWO 3000</td>
+              <td class="p-3 border border-border">ca 24 990 kr</td>
+              <td class="p-3 border border-border">3 000 m²</td>
+              <td class="p-3 border border-border text-winner font-semibold">Nej</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-border font-medium">Segway Navimow H500E</td>
+              <td class="p-3 border border-border">ca 19 990 kr</td>
+              <td class="p-3 border border-border">5 000 m²</td>
+              <td class="p-3 border border-border text-winner font-semibold">Nej</td>
+            </tr>
+            <tr class="bg-bg-alt">
+              <td class="p-3 border border-border font-medium">Husqvarna 430X Nera (EPOS)</td>
+              <td class="p-3 border border-border">ca 27 000+ kr</td>
+              <td class="p-3 border border-border">3 200 m²</td>
+              <td class="p-3 border border-border text-winner font-semibold">Nej (EPOS)</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-border font-medium">Husqvarna 315X</td>
+              <td class="p-3 border border-border">ca 14 990 kr</td>
+              <td class="p-3 border border-border">1 600 m²</td>
+              <td class="p-3 border border-border text-red-500 font-semibold">Ja</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <AffiliateDisclaimer />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare 2026 — alla märken jämförda</a></li>
+        <li><a href="/mammotion-luba-awo-3000/" class="text-accent hover:underline text-sm">Mammotion LUBA AWO 3000 — recension 2026</a></li>
+        <li><a href="/mammotion-luba-2-awd-5000x/" class="text-accent hover:underline text-sm">Mammotion LUBA 2 AWD 5000X — recension 2026</a></li>
+        <li><a href="/mammotion-luba-2-awo-1000h/" class="text-accent hover:underline text-sm">Mammotion LUBA 2 AWO 1000H — recension 2026</a></li>
+        <li><a href="/husqvarna-vs-mammotion/" class="text-accent hover:underline text-sm">Husqvarna vs Mammotion — vilket märke ska du välja?</a></li>
+        <li><a href="/mammotion-luba-awo-3000-vs-segway-navimow-h800e/" class="text-accent hover:underline text-sm">Mammotion AWO 3000 vs Segway H800E — jämförelse</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA text="Se bästa Mammotion LUBA 2026" url="#modeller" />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Mammotion LUBA robotgräsklippare 2026",
+    "description": "Mammotion LUBA-modeller utan perimeterkabel testade 2026.",
+    "numberOfItems": 3,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Mammotion LUBA AWO 3000", "url": "https://robotjakt.se/mammotion-luba-awo-3000/" },
+      { "@type": "ListItem", "position": 2, "name": "Mammotion LUBA 2 AWD 5000X", "url": "https://robotjakt.se/mammotion-luba-2-awd-5000x/" },
+      { "@type": "ListItem", "position": 3, "name": "Mammotion LUBA 2 AWO 1000H", "url": "https://robotjakt.se/mammotion-luba-2-awo-1000h/" },
+    ],
+    "mainEntity": {
+      "@type": "FAQPage",
+      "mainEntity": faqSchema
+    }
+  })} />
+</BaseLayout>

@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Worx Landroid' },
+];
+
+const faqItems = [
+  {
+    question: 'Är Worx Landroid bra?',
+    answer: 'Worx Landroid M500 är ett solitt mellanklass-alternativ för tomter upp till 500 m². Styrkan är WiFi-appen med fjärrstyrning, AIA-navigeringsteknik (undviker att fastna i hörn) och det modulära tillbehörssystemet. Svagheten är bullernivån (63 dB, jämfört med Gardenenas 57 dB) och att den saknar GPS. För den som prioriterar app-funktioner och vill ha lite mer avancerad navigering än enkla budgetmodeller är Landroid M500 ett bra val.',
+  },
+  {
+    question: 'Vad är Worx AIA-teknik?',
+    answer: 'AIA (Artificial Intelligence Algorithm) är Worx patenterade navigeringsteknik som hjälper roboten att ta sig ut ur svåra situationer — smala passager, hörn och komplexa trädgårdsformer. Tekniken gör att Landroid M500 klarar mer komplexa trädgårdar bättre än enklare slumpbaserade navigeringsmodeller, men är inte lika avancerad som GPS-navigering.',
+  },
+  {
+    question: 'Vad är Worx Landroid tillbehörssystemet?',
+    answer: 'Landroid M500 stöder ett modulärt tillbehörssystem med bland annat: borste för rengöring av klippkammare, regnskydd för laddstationen, och nätverkstillbehör. Systemet är Worx unika försäljningsargument och gör att du kan anpassa roboten över tid. Tillbehör köps separat och kostar normalt 200–800 kr per modul.',
+  },
+  {
+    question: 'Hur jämför sig Worx Landroid mot Gardena Sileno?',
+    answer: 'Gardena Sileno City 500 kostar ca 5 990 kr och Worx Landroid M500 kostar ca 9 990 kr. Gardena vinner på tystnad (57 dB vs 63 dB) och pris. Worx vinner på app (WiFi vs Bluetooth), AIA-navigering och tillbehörssystemet. För de flesta hem är Gardenas 57 dB ett tydligt argument — men vill du ha WiFi-app och bättre navigering är Worx värt mellankildnaden.',
+  },
+  {
+    question: 'Kräver Worx Landroid M500 perimeterkabel?',
+    answer: 'Ja, Worx Landroid M500 kräver en perimeterkabel precis som Gardena Sileno och Husqvarna Automower (utan EPOS). Kabelinstallationen tar normalt 2–4 timmar och kan göras som DIY. Vill du ha en robot utan perimeterkabel, titta på Segway Navimow i105E (ca 9 990 kr) som är i samma prisklass men kabelfrtt.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+---
+
+<BaseLayout
+  title="Worx Landroid robotgräsklippare 2026 — test och recension"
+  description="Guide till Worx Landroid M500 2026. WiFi-app, AIA-navigering och modulärt tillbehörssystem. Värd priset mot Gardena och Segway?"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-05-05">2026-05-05</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Worx Landroid robotgräsklippare 2026 — WiFi-app och AIA-navigering
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Worx Landroid M500 är mellanklassens mest funktionsrika kabelbaserade robotgräsklippare — WiFi-app med fjärrstyrning, patenterad AIA-navigering och ett modulärt tillbehörssystem. Vi testar om den är värd priset mot Gardena och kabelfriatternativ.
+    </p>
+
+    <section class="mb-8 bg-bg-alt rounded-xl border border-border p-6">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Worx Landroid M500 — specifikationer</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        {[
+          { label: 'Klippyta', value: '500 m²' },
+          { label: 'Klippbredd', value: '18 cm' },
+          { label: 'Bullernivå', value: '63 dB' },
+          { label: 'Lutningstolerans', value: '35%' },
+          { label: 'Navigering', value: 'AIA + slinga' },
+          { label: 'Uppkoppling', value: 'WiFi + app' },
+          { label: 'Laddtid', value: '90 min' },
+          { label: 'Drifttid', value: '90 min' },
+          { label: 'Pris', value: 'ca 9 990 kr' },
+        ].map(spec => (
+          <div class="bg-white rounded-lg border border-border p-3">
+            <p class="text-xs text-text-light mb-1">{spec.label}</p>
+            <p class="font-semibold text-text text-sm">{spec.value}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section id="modeller" class="mb-8 bg-white rounded-xl border border-border p-6 shadow-sm">
+      <div class="flex flex-wrap items-start gap-3 mb-3">
+        <h2 class="font-heading text-xl font-bold text-text">Worx Landroid M500</h2>
+        <span class="bg-winner text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">BÄST I TEST WORX</span>
+      </div>
+      <p class="text-text-light leading-relaxed mb-4">
+        Worx Landroid M500 är Worx mest populära modell för tomter upp till 500 m². Det som skiljer den från billigare alternativ är WiFi-appen med full fjärrstyrning (inte bara Bluetooth), AIA-navigationstekniken som hanterar komplexa trädgårdar bättre och det unika modulära tillbehörssystemet. Priset på ca 9 990 kr placerar den i mellanklass.
+      </p>
+      <ul class="space-y-1 mb-5">
+        {['WiFi-app med schemaläggning och fjärrstyrning', 'AIA-navigering för hörn och komplexa former', 'Modulärt tillbehörssystem', '35% lutningskapacitet', 'Automatisk laddning och regnsensor'].map(f => (
+          <li class="flex items-start gap-1.5 text-sm text-text-light">
+            <span class="text-winner font-bold mt-0.5">+</span>{f}
+          </li>
+        ))}
+      </ul>
+      <div class="flex flex-wrap gap-3">
+        <a href="/worx-landroid-m500/" class="inline-flex items-center text-accent hover:underline font-medium text-sm">
+          Läs fullständig recension
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+        <a
+          href="https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotgraesklippare%2FWorx-Landroid-M500-Plus-WR165E-robotic-lawnmower-500-m%2F3066543"
+          rel="sponsored nofollow noopener noreferrer"
+          target="_blank"
+          class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+        >
+          Se pris hos Proshop
+          <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+        </a>
+        <a
+          href="https://www.pricerunner.se/pl/1595-4860328/Robotgraesklippare/Worx-Landroid-M500-WR141E-priser"
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+          class="inline-flex items-center justify-center border-2 border-cta text-cta hover:bg-cta hover:text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+        >
+          Jämför priser (PriceRunner)
+          <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+        </a>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Worx Landroid vs konkurrenterna</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-bg-alt">
+              <th class="text-left p-3 font-semibold text-text border border-border">Modell</th>
+              <th class="text-left p-3 font-semibold text-text border border-border">Pris</th>
+              <th class="text-left p-3 font-semibold text-text border border-border">dB</th>
+              <th class="text-left p-3 font-semibold text-text border border-border">App</th>
+              <th class="text-left p-3 font-semibold text-text border border-border">Slinga</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-winner/5">
+              <td class="p-3 border border-border font-medium">Worx Landroid M500</td>
+              <td class="p-3 border border-border">ca 9 990 kr</td>
+              <td class="p-3 border border-border">63 dB</td>
+              <td class="p-3 border border-border text-winner">WiFi</td>
+              <td class="p-3 border border-border text-red-500">Ja</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-border font-medium">Gardena Sileno City 500</td>
+              <td class="p-3 border border-border">ca 5 990 kr</td>
+              <td class="p-3 border border-border text-winner font-semibold">57 dB</td>
+              <td class="p-3 border border-border">Bluetooth</td>
+              <td class="p-3 border border-border text-red-500">Ja</td>
+            </tr>
+            <tr class="bg-bg-alt">
+              <td class="p-3 border border-border font-medium">Segway Navimow i105E</td>
+              <td class="p-3 border border-border">ca 9 990 kr</td>
+              <td class="p-3 border border-border">58 dB</td>
+              <td class="p-3 border border-border text-winner">WiFi + 4G</td>
+              <td class="p-3 border border-border text-winner font-semibold">Nej</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-text-light mt-3">Segway Navimow i105E kostar lika mycket som Worx Landroid M500 men kräver ingen perimeterkabel — för de flesta hem är det ett övertygande argument för Navimow.</p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <AffiliateDisclaimer />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/robotgrasklippare/" class="text-accent hover:underline text-sm">Bästa robotgräsklippare 2026 — alla märken jämförda</a></li>
+        <li><a href="/worx-landroid-m500/" class="text-accent hover:underline text-sm">Worx Landroid M500 — fullständig recension 2026</a></li>
+        <li><a href="/worx-vs-husqvarna/" class="text-accent hover:underline text-sm">Worx vs Husqvarna robotgräsklippare 2026</a></li>
+        <li><a href="/gardena-robotgrasklippare/" class="text-accent hover:underline text-sm">Gardena Sileno 2026 — tystare budgetalternativ</a></li>
+        <li><a href="/segway-navimow-robotgrasklippare/" class="text-accent hover:underline text-sm">Segway Navimow 2026 — kabelfrtt i samma prisklass</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se pris på Worx Landroid M500"
+    url="https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotgraesklippare%2FWorx-Landroid-M500-Plus-WR165E-robotic-lawnmower-500-m%2F3066543"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Worx Landroid robotgräsklippare 2026",
+    "numberOfItems": 1,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Worx Landroid M500", "url": "https://robotjakt.se/worx-landroid-m500/" },
+    ],
+    "mainEntity": {
+      "@type": "FAQPage",
+      "mainEntity": faqSchema
+    }
+  })} />
+</BaseLayout>
