@@ -13,6 +13,7 @@ interface Props {
   datePublished?: string;
   showDisclaimer?: boolean;
   showAuthor?: boolean;
+  image?: string;
   productName?: string;
   productBrand?: string;
   productPrice?: string;
@@ -23,7 +24,7 @@ interface Props {
   productCons?: string[];
 }
 
-const { title, description, breadcrumbs, ogImage, lastUpdated, datePublished, showDisclaimer = true, showAuthor = true, productName, productBrand, productPrice, productImage, productRating, productAffiliateUrl, productPros = [], productCons = [] } = Astro.props;
+const { title, description, breadcrumbs, ogImage, lastUpdated, datePublished, showDisclaimer = true, showAuthor = true, productName, productBrand, productPrice, productImage, productRating, productAffiliateUrl, productPros = [], productCons = [], image } = Astro.props;
 
 const productSchema = productName ? {
   '@context': 'https://schema.org',
@@ -146,6 +147,11 @@ const articleSchema = {
     <Breadcrumbs items={breadcrumbs} />
     {showAuthor && (
       <AuthorByline datePublished={datePublished} dateModified={lastUpdated} />
+    )}
+    {image && (
+      <div class="mb-6 rounded-xl overflow-hidden aspect-[16/9] bg-slate-100">
+        <img src={image} alt="" class="w-full h-full object-cover" loading="lazy" />
+      </div>
     )}
     <slot />
     {autoRelated.length > 0 && (
