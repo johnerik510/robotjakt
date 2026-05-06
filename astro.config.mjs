@@ -5,9 +5,8 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://robotjakt.se',
   output: 'static',
-  build: {
-    inlineStylesheets: 'always',
-  },
+  trailingSlash: 'always',
+  build: { format: 'directory', inlineStylesheets: 'always' },
   vite: { plugins: [tailwindcss()] },
   integrations: [
     sitemap({
