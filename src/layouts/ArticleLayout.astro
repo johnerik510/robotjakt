@@ -150,7 +150,7 @@ const articleSchema = {
     )}
     {image && (
       <div class="mb-6 rounded-xl overflow-hidden aspect-[16/9] bg-slate-100">
-        <img src={image} alt="" class="w-full h-full object-cover" loading="lazy" />
+        <img src={image} alt={title} class="w-full h-full object-cover" loading="lazy" />
       </div>
     )}
     <slot />
