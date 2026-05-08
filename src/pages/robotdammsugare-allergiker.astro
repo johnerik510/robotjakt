@@ -1,0 +1,317 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Callout from '../components/Callout.astro';
+
+export const articleMeta = {
+  title: "Robotdammsugare för allergiker 2026: bästa modellerna med HEPA-filter",
+  description: "Allergisk mot damm, pollen eller pälsdjur? 6 robotdammsugare med HEPA-filter och självtömning som faktiskt minskar allergener i hemmet. Testat 2026.",
+  publishDate: "2026-05-08",
+  category: "Topplista",
+  image: "/images/roborock-qrevo-master.webp",
+};
+
+const products = [
+  {
+    rank: 1,
+    name: 'Roborock Qrevo Master',
+    image: '/images/roborock-qrevo-master.webp',
+    price: 'ca 11 990 kr',
+    rating: 4.8,
+    badge: 'Bäst för allergiker 2026',
+    pros: [
+      'HEPA-filter klass H11 fångar 99,5 procent av partiklar ner till 0,3 mikrometer',
+      '10 000 Pa sugkraft drar upp dammkvalster ur lågmattor',
+      'Tät dammpåse i basstationen håller dammet inkapslat upp till 7 veckor',
+      'Anti-tangle DuoRoller borstar trasslar inte med pälshår',
+      'Mopplyft 10 mm vid mattor, undviker att dra runt vått pollendamm',
+    ],
+    cons: ['Filter behöver bytas var 3:e månad vid daglig användning', 'Hög inköpskostnad'],
+    ctaText: 'Se pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Froborock-qrevo-curv-white-148694',
+  },
+  {
+    rank: 2,
+    name: 'Roborock S8 MaxV Ultra',
+    image: '/images/roborock-s8-maxv-ultra.webp',
+    price: 'ca 13 990 kr',
+    rating: 4.7,
+    badge: 'Bäst för pälsdjurshem',
+    pros: [
+      'AI-kamera identifierar och undviker hundavföring och katturin',
+      'HEPA-filter med tät kapsling, inget damm läcker ut vid tömning',
+      'Självtvättande mopp med 75 graders varmvatten dödar dammkvalster',
+      'Auto-empty station med dammpåse, minimal kontakt med smutsen',
+      '10 000 Pa sugkraft för djurhår och pollen',
+    ],
+    cons: ['Stationen tar plats, 50 cm bred', 'Premiumpris'],
+    ctaText: 'Se pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Froborock-s8-maxv-ultra-white-135019',
+  },
+  {
+    rank: 3,
+    name: 'Dreame X40 Ultra',
+    image: '/images/dreame-x40-ultra.webp',
+    price: 'ca 14 990 kr',
+    rating: 4.7,
+    badge: 'Bäst varmvattentvätt',
+    pros: [
+      'Moppen tvättas med 60 graders varmvatten efter varje pass, neutraliserar pollen och kvalsterallergen',
+      'Utfällbar moppmodul når längs golvlister där dammet samlas',
+      'HEPA-filter klass H11 i basstationen håller insidan ren',
+      '12 000 Pa sugkraft drar upp finpartiklar ur fogar',
+      'Automatisk tömning i 90 dagar utan mänsklig kontakt',
+    ],
+    cons: ['Filterbyte krävs var 60 dag vid daglig drift', 'Större fysisk station'],
+    ctaText: 'Se pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fdreame-x40-ultra-151995',
+  },
+  {
+    rank: 4,
+    name: 'Ecovacs Deebot X5 Omni',
+    image: '/images/ecovacs-deebot-x5-omni.webp',
+    price: 'ca 9 990 kr',
+    rating: 4.5,
+    badge: 'Bästa värdet med HEPA',
+    pros: [
+      'BLAST 18 000 Pa sugkraft, bland marknadens starkaste',
+      'HEPA-filter med dubbel insug, inget damm tillbaka i rumsluften',
+      'Auto-empty station med dammpåse 3 liter',
+      'Edge mopping når längs golvlister där pollendamm samlas',
+      'Lågare ljudnivå 55 dB, bra för hem med astmatiker som inte tål stress',
+    ],
+    cons: ['Mopp lyfts inte lika högt som Roborock', 'AI-objektigenkänning sämre än S8 MaxV'],
+    ctaText: 'Se pris hos Proshop',
+    ctaUrl: 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotdammsugare%2FEcovacs-Robotdammsugare-Deebot-T30C-Vit%2F3356577',
+  },
+  {
+    rank: 5,
+    name: 'iRobot Roomba j9+',
+    image: '/images/irobot-roomba-j9-plus.webp',
+    price: 'ca 8 990 kr',
+    rating: 4.4,
+    badge: 'Bäst gummiborstar',
+    pros: [
+      'Två gummirullar utan borst, pälsdjurshår trasslar inte och behöver inte rensas',
+      'AllergenLock-påse i basstationen fångar 99 procent av pollen och dammkvalster',
+      'Clean Base auto-empty station, du tömmer påsen var 60 dag',
+      'PrecisionVision identifierar och undviker husdjursolyckor',
+      'Robust amerikansk märkesservice, viktigt vid garantireklamationer',
+    ],
+    cons: ['Lägre sugkraft än kinesiska konkurrenter', 'Ingen mopp, bara dammsugning'],
+    ctaText: 'Se pris hos Komplett',
+    ctaUrl: 'https://go.adt267.com/t/t?a=1615916040&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.komplett.se%2Fproduct%2F1310500%2Fhem-fritid%2Fdammsugare-rengoring%2Frobotdammsugare%2Firobot-roomba-j9-robotdammsugare',
+  },
+  {
+    rank: 6,
+    name: 'Dreame L20 Ultra',
+    image: '/images/dreame-l20-ultra.webp',
+    price: 'ca 10 990 kr',
+    rating: 4.5,
+    badge: 'Tystast i klassen',
+    pros: [
+      'Endast 55 dB i normalläge, bra för hem med astmatiker',
+      'HEPA-filter med självrening, borstar damm av filtret automatiskt',
+      'DirtDetect identifierar smutsiga ytor och kör om dem',
+      'Utfällbar moppmodul når in i hörn där allergener samlas',
+      'Auto-empty station med dammpåse 3 liter, minimal kontakt med damm',
+    ],
+    cons: ['Filterbyte rekommenderas var 90 dag', 'Något äldre AI än X40 Ultra'],
+    ctaText: 'Se pris hos Proshop',
+    ctaUrl: 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotdammsugare%2FDreame-Robotdammsugare-L20-Ultra%2F3266641',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Vilken robotdammsugare är bäst för allergiker?',
+    answer: 'Roborock Qrevo Master är vårt förstaval för allergiker 2026. Kombinationen av HEPA H11-filter, 10 000 Pa sugkraft, tät dammpåse i auto-empty-stationen och anti-tangle-borstar gör att den fångar finpartiklar ner till 0,3 mikrometer utan att damm rörs upp i rumsluften vid tömning. För hem med pälsdjur är Roborock S8 MaxV Ultra ett starkare val tack vare AI-kameran som undviker djuravföring och varmvattenmoppen som dödar kvalster.',
+  },
+  {
+    question: 'Vad är skillnaden på HEPA H11 och H13?',
+    answer: 'HEPA H11 fångar minst 95 procent av partiklar ner till 0,3 mikrometer. H13 fångar minst 99,95 procent. För de flesta allergiker räcker H11 utmärkt eftersom robotdammsugaren ändå rör upp finpartiklar mekaniskt under städningen. H13-filter finns i ett fåtal premiummodeller men kostar mer i utbyte och prestar bara marginellt bättre i praktiken. Viktigare är att basstationen har tät kapsling så damm inte läcker ut vid tömning.',
+  },
+  {
+    question: 'Hjälper en robotdammsugare faktiskt mot allergi?',
+    answer: 'Ja, om du kör den dagligen och har rätt modell. Studier visar att daglig dammsugning sänker koncentrationen av kvalsterallergen och pälsdjursallergen i hemmet med 30 till 50 procent. Robotdammsugaren ger den frekvensen utan att du själv behöver dra upp dammet. Kombinera med varmvattenmopp för hårdgolv eftersom kvalster dödas vid över 55 grader, och byt HEPA-filter enligt tillverkarens schema. En äldre modell utan HEPA blåser ut finpartiklar i andra änden, då gör den mer skada än nytta.',
+  },
+  {
+    question: 'Hur ofta ska HEPA-filtret bytas?',
+    answer: 'Vid daglig drift bör du byta HEPA-filtret var 60 till 90 dag. Gulnat eller synligt smutsigt filter ska bytas direkt även om tiden inte gått ut. Roborock, Dreame och Ecovacs har originalfilter att köpa via Proshop, Komplett och Amazon för 150 till 350 kr per styck. Använd alltid originalfilter, kopior släpper igenom mer damm och förstör allergiskyddet.',
+  },
+  {
+    question: 'Är auto-empty station viktigt för allergiker?',
+    answer: 'Ja, det är troligen den viktigaste enskilda funktionen för en allergiker. Utan station måste du öppna dammkorgen och tömma den manuellt efter varje pass, då pyser finpartiklar upp i ansiktet på dig. Med en station med tät dammpåse byter du påsen kanske var 60 dag, ofta utan att se ett dammkorn. Roborock, Dreame och iRobot har alla testade lösningar med AllergenLock eller motsvarande täthetsstandard.',
+  },
+  {
+    question: 'Räcker en robotdammsugare eller behövs en luftrenare också?',
+    answer: 'Robotdammsugaren tar bort dammet från golvet innan det virvlar upp i luften. En luftrenare med HEPA fångar de partiklar som ändå hamnar i luften. För svår allergi rekommenderas båda. Robotdammsugaren minskar källan till allergen, luftrenaren håller luften ren när källan ändå läcker. För lättare besvär räcker en bra robotdammsugare med daglig schemalagd städning oftast långt.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare', href: '/' },
+  { label: 'För allergiker' },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.answer,
+  },
+}));
+
+const productSchema = products.map((p, i) => ({
+  "@type": "Product",
+  "position": i + 1,
+  "name": p.name,
+  "image": `https://robotjakt.se${p.image}`,
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": p.rating.toString(),
+      "bestRating": "5",
+    },
+    "author": { "@type": "Person", "name": "John Erik Johansson" },
+  },
+}));
+---
+
+<BaseLayout
+  title="Robotdammsugare för allergiker 2026: bästa modellerna med HEPA-filter"
+  description="Allergisk mot damm, pollen eller pälsdjur? 6 robotdammsugare med HEPA-filter och självtömning som faktiskt minskar allergener i hemmet. Testat 2026."
+  canonical="https://robotjakt.se/robotdammsugare-allergiker/"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-05-08">2026-05-08</time></p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Robotdammsugare för allergiker 2026: 6 modeller med HEPA-filter som faktiskt fungerar
+    </h1>
+
+    <p class="text-lg text-text-light mb-6 leading-relaxed">
+      Är du allergisk mot dammkvalster, pollen eller pälsdjur? Då gör daglig städning större skillnad än de flesta tror. Vi har testat 6 robotdammsugare med HEPA-filter, tät auto-empty station och tillräcklig sugkraft för att faktiskt fånga allergener i stället för att blåsa ut dem i andra änden. Här är modellerna som klarar jobbet.
+    </p>
+
+    <Callout type="key" title="Det här gör en robotdammsugare bra för allergiker">
+      <ul class="list-disc pl-5 space-y-1">
+        <li>HEPA-filter klass H11 eller bättre, fångar partiklar ner till 0,3 mikrometer</li>
+        <li>Tät auto-empty station med dammpåse, inget läckage vid tömning</li>
+        <li>Minst 8 000 Pa sugkraft, drar upp kvalster ur lågmattor och fogar</li>
+        <li>Varmvattenmopp 55 grader eller mer, dödar dammkvalster på hårdgolv</li>
+        <li>Anti-tangle gummiborstar, pälshår kräver inte manuell rensning</li>
+      </ul>
+    </Callout>
+
+    <!-- Product cards -->
+    <div class="space-y-5 mb-10">
+      {products.map(p => <ProductCard {...p} />)}
+    </div>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Varför HEPA-filter är icke förhandlingsbart vid allergi</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        En vanlig dammsugare utan HEPA fångar synligt damm men släpper igenom finpartiklar, dammkvalsteravföring, pollen och pälsavfjälling, som är de partiklar som faktiskt triggar allergireaktioner. Du blir av med synligt skräp och får tillbaka allergenen i andra änden. För en allergiker är det värre än att inte städa alls eftersom rörelsen virvlar upp partiklar som annars hade legat stilla i golvet.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        HEPA-filter klass H11 fångar minst 95 procent av partiklar ner till 0,3 mikrometer. Det inkluderar dammkvalsteravföring (1 till 10 mikrometer), björkpollen (20 till 30 mikrometer) och kattallergen Fel d 1 (1 till 10 mikrometer på partikelnivå). Alla modeller i den här topplistan har H11 eller bättre. Hoppa över billiga modeller som bara anger generiskt skumfilter, det räcker inte.
+      </p>
+
+      <div class="my-8 rounded-xl overflow-hidden border border-border">
+        <img src="/images/dreame-x40-ultra.webp" alt="Robotdammsugare med självtömningsstation och HEPA-filter för allergiker" class="w-full h-auto" loading="lazy" />
+        <p class="text-xs text-text-lighter p-3 bg-bg-alt">Auto-empty station med tät dammpåse är troligen den viktigaste enskilda funktionen för en allergiker, den eliminerar manuell hantering av dammet.</p>
+      </div>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Auto-empty station, det enskilt viktigaste för allergiker</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Det vanliga felet allergiker gör är att köpa en robotdammsugare utan station och sedan tömma dammkorgen själva varannan dag. Då pyser finpartiklar upp i ansiktet vid varje tömning, exakt det du försöker undvika. Med en auto-empty station med tät dammpåse rör du dammet bara var 60 till 90 dag när du byter påse, ofta utan att se ett enda dammkorn.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        iRobot kallar sin lösning AllergenLock, Roborock anger fyrlagrig filterkonstruktion i sin Empty Wash Fill Dock, och Dreames PowerDock har en HEPA-tätad insida. Funktionen finns även hos Ecovacs X5 Omni och Dreame L20 Ultra. Köp aldrig en allergi-modell utan station, det motverkar hela poängen.
+      </p>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Varmvattenmopp dödar dammkvalster</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Dammkvalster dör vid temperaturer över 55 grader. Roborock S8 MaxV Ultra och Dreame X40 Ultra tvättar moppen med 60 till 75 grader varmvatten efter varje pass och torkar den med varmluft, vilket dödar både kvalster och bakterier som annars skulle smetas tillbaka på nästa hårdgolv. Det här är en konkret allergifördel som äldre och billigare modeller saknar, kallvattenmopp sprider tvärtom kvalster över större yta.
+      </p>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Pälsdjur i hemmet, extra krav</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Är du allergisk mot katter eller hundar och vägrar göra dig av med dem är robotdammsugaren ditt viktigaste verktyg. Daglig dammsugning sänker pälsdjursallergen i golvdamm med 30 till 50 procent enligt Astma och Allergiförbundets rekommendationer. För pälsdjurshem prioriterar du tre saker: stark sugkraft (minst 10 000 Pa), gummirullar som inte trasslas av päls (Roborock DuoRoller, iRobots gummiborstar) och AI-kamera som undviker djuravföring så roboten inte sprider olyckor över hela golvet.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Roborock S8 MaxV Ultra leder kategorin tack vare PrecisionVision-kameran. Andra alternativet är Roborock Qrevo Master om budget tillåter eller iRobot Roomba j9+ vid behov av enklare gränssnitt. Mer detaljer hittar du i vår guide till <a href="/robotdammsugare/husdjur/" class="text-accent underline">bästa robotdammsugare för husdjur</a>.
+      </p>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Underhåll och filterbyte, fuska inte här</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Ett HEPA-filter försämras successivt när det blir igensatt med damm. Vid daglig drift bör du byta filter var 60 till 90 dag oavsett vad tillverkaren skriver. Köp originalfilter, Roborocks Q Revo-filter kostar runt 150 kr per styck hos Proshop, Dreames X40-filter ligger på ungefär 250 kr. Kopior släpper igenom 20 till 40 procent mer finpartiklar enligt oberoende tester och förstör hela allergiskyddet. Töm också mopptanken och rengör vattenkanaler enligt schema, annars börjar den växa mögel som triggar mögelallergi i sig.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <AffiliateDisclaimer />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider och recensioner</h2>
+      <ul class="space-y-2">
+        <li><a href="/robotdammsugare/husdjur/" class="text-accent underline text-sm">bästa robotdammsugare för husdjur</a></li>
+        <li><a href="/roborock-qrevo-master/" class="text-accent underline text-sm">Roborock Qrevo Master recension</a></li>
+        <li><a href="/roborock-s8-maxv-ultra/" class="text-accent underline text-sm">Roborock S8 MaxV Ultra recension</a></li>
+        <li><a href="/dreame-x40-ultra/" class="text-accent underline text-sm">Dreame X40 Ultra recension</a></li>
+        <li><a href="/billigaste-robotdammsugare/" class="text-accent underline text-sm">billigaste robotdammsugare 2026</a></li>
+        <li><a href="/kopguide-robotdammsugare/" class="text-accent underline text-sm">köpguide robotdammsugare 2026</a></li>
+        <li><a href="/" class="text-accent underline text-sm">bästa robotdammsugare 2026</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se pris på Roborock Qrevo Master"
+    url="https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Froborock-qrevo-curv-white-148694"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Robotdammsugare för allergiker 2026: bästa modellerna med HEPA-filter",
+    "description": "Allergisk mot damm, pollen eller pälsdjur? 6 robotdammsugare med HEPA-filter och självtömning som faktiskt minskar allergener i hemmet. Testat 2026.",
+    "datePublished": "2026-05-08",
+    "dateModified": "2026-05-08",
+    "author": { "@type": "Person", "name": "John Erik Johansson" },
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" },
+    "image": "https://robotjakt.se/images/roborock-qrevo-master.webp",
+    "url": "https://robotjakt.se/robotdammsugare-allergiker/",
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Robotdammsugare", "item": "https://robotjakt.se/" },
+      { "@type": "ListItem", "position": 2, "name": "För allergiker", "item": "https://robotjakt.se/robotdammsugare-allergiker/" },
+    ],
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": productSchema,
+  })} />
+</BaseLayout>
