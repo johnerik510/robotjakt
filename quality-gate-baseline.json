@@ -1,19 +1,15 @@
 {
-  "generatedAt": "2026-05-09T07:41:13.225Z",
-  "count": 8,
+  "generatedAt": "2026-05-09T08:17:02.567Z",
+  "count": 5,
   "summary": {
-    "04-articlemeta": 1,
     "08-image-binary-duplicates": 1,
-    "15-rendered-images": 6
+    "15-rendered-images": 4
   },
   "signatures": [
-    "52c99bb5780d240e",
     "82098d8c860c6ae6",
     "026e9df8e3a0af3d",
     "2201b81ed48a65c5",
     "91c4623cc2640988",
-    "9be10da2d6d159b6",
-    "48c3aa152097f416",
     "f42bdc262603b120"
   ]
 }
