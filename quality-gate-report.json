@@ -1,28 +1,14 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-05-09T06:20:13.195Z",
-  "durationMs": 1001,
+  "timestamp": "2026-05-09T06:23:30.744Z",
+  "durationMs": 1002,
   "summary": {
     "checks": 8,
-    "errors": 4,
+    "errors": 2,
     "warnings": 4
   },
   "results": [
-    {
-      "check": "02-anchors",
-      "severity": "error",
-      "file": "src/components/AffiliateDisclaimer.astro",
-      "line": 3,
-      "message": "Förbjuden ankartext \"läs mer\": <p class=\"text-xs text-text-lighter mb-3\">Robotjakt.se innehåller affiliatelänkar, vi kan få provisi"
-    },
-    {
-      "check": "02-anchors",
-      "severity": "error",
-      "file": "src/pages/om-redaktionen.astro",
-      "line": 93,
-      "message": "Förbjuden ankartext \"läs mer\": <a href=\"/sa-testar-vi/\" class=\"text-accent font-semibold text-sm underline\">Läs mer om vår testmeto"
-    },
     {
       "check": "04-articlemeta",
       "severity": "error",
