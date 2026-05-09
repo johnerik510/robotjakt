@@ -17,7 +17,7 @@ const products = [
     pros: ['Extremt tillförlitlig GPS+4G-navigering', 'Fungerar i komplexa trädgårdar upp till 3200 m²', 'Solinladdning kompatibel', 'Tyst drift 58 dB'],
     cons: ['Hög prisklass', 'Kräver installationskabel (perimeterkabel)'],
     ctaText: 'Se pris på Husqvarna 430V NERA',
-    ctaUrl: '/husqvarna-automower-430x-nera/',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520430v%2520nera',
 
     dataProduct: 'Husqvarna Automower 430V NERA',
     reviewUrl: '/husqvarna-automower-430x-nera/',
@@ -32,7 +32,7 @@ const products = [
     pros: ['Pålitlig GPS-assisterad navigering', 'Bra app och 4G-uppkoppling', 'Passar de flesta villaträdgårdar upp till 1600 m²'],
     cons: ['Behöver perimeterkabel'],
     ctaText: 'Se pris på Husqvarna 310E NERA',
-    ctaUrl: '/husqvarna-automower-315x/',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520310e%2520nera',
 
     dataProduct: 'Husqvarna Automower 310E NERA',
     reviewUrl: '/husqvarna-automower-315x/',
@@ -128,11 +128,33 @@ const faqSchema = faqItems.map((item) => ({
 <p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-05-05">2026-05-05</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
-      Robotgräsklippare bäst i test 2026, topp 6 testade
+      Robotgräsklippare bäst i test 2026, {products.length} testade
     </h1>
     <p class="text-text-light mb-6 max-w-2xl">
-      Vi har testat och jämfört {products.length} robotgräsklippare och rankat dem efter prestanda, täckningsyta, installation och prisvärdhet. Här är våra toppval för 2026.
+      Vi har testat och jämfört {products.length} robotgräsklippare och rankat dem efter prestanda, täckningsyta, installation och prisvärdhet. Vinnaren 2026 är <strong>Husqvarna Automower 430V NERA</strong> (4,8/5).
     </p>
+
+    <!-- Vinnar-CTA above the fold -->
+    <div class="bg-gradient-to-br from-winner/10 to-accent/10 border-2 border-winner/30 rounded-2xl p-5 sm:p-6 mb-8">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <div class="flex-shrink-0">
+          <span class="inline-block bg-winner text-white text-xs font-bold uppercase tracking-wider px-2 py-1 rounded">Bäst i test 2026</span>
+        </div>
+        <div class="flex-grow">
+          <div class="font-heading text-xl font-bold text-text mb-1">Husqvarna Automower 430V NERA</div>
+          <div class="text-text-light text-sm mb-3">Tillförlitlig GPS+4G, klipper upp till 3 200 m², 4,8/5 i test. Pris ca <strong>39 990 kr</strong>.</div>
+          <a
+            href="https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520430v%2520nera"
+            rel="sponsored nofollow noopener noreferrer"
+            target="_blank"
+            data-affiliate="true"
+            class="inline-flex items-center gap-2 bg-cta hover:bg-cta-dark text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm shadow-sm"
+          >
+            Se pris hos Elon &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
 
     <!-- Jämförelsetabell -->
     <section class="mb-8" aria-label="Jämförelsetabell robotgräsklippare">
@@ -140,8 +162,8 @@ const faqSchema = faqItems.map((item) => ({
       <!-- Mobil: kort -->
       <div class="md:hidden space-y-3">
         {[
-          { name: 'Husqvarna 430V NERA', yta: '3 200 m²', slinga: 'Nej', pris: '39 990 kr', betyg: '9,5', url: '/husqvarna-430v-nera/', badge: 'Bäst 2026' },
-          { name: 'Husqvarna 310E NERA', yta: '1 600 m²', slinga: 'Nej', pris: '19 990 kr', betyg: '9,0', url: '/husqvarna-310e-nera/', badge: '' },
+          { name: 'Husqvarna 430V NERA', yta: '3 200 m²', slinga: 'Nej', pris: '39 990 kr', betyg: '9,5', url: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520430v%2520nera', badge: 'Bäst 2026' },
+          { name: 'Husqvarna 310E NERA', yta: '1 600 m²', slinga: 'Nej', pris: '19 990 kr', betyg: '9,0', url: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520310e%2520nera', badge: '' },
           { name: 'Mammotion LUBA 3000', yta: '3 000 m²', slinga: 'Ja', pris: '24 990 kr', betyg: '9,0', url: '/mammotion-luba-awo-3000/', badge: 'Utan slinga' },
           { name: 'Gardena Sileno City 500', yta: '500 m²', slinga: 'Nej', pris: '5 990 kr', betyg: '8,2', url: 'https://go.adt284.net/t/t?a=1870484629&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotgraesklippare%2FGardena-SILENO-city-Robotic-Lawnmower-500-m%2F3050973', badge: 'Budget' },
           { name: 'Worx Landroid M500', yta: '500 m²', slinga: 'Nej', pris: '9 990 kr', betyg: '8,0', url: '/worx-landroid-m500/', badge: '' },
@@ -185,7 +207,7 @@ const faqSchema = faqItems.map((item) => ({
               <td class="px-4 py-3 text-cta font-medium">Nej</td>
               <td class="px-4 py-3 text-text">ca 39 990 kr</td>
               <td class="px-4 py-3 text-winner font-semibold">9,5/10</td>
-              <td class="px-4 py-3"></td>
+              <td class="px-4 py-3"><a href="https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520430v%2520nera" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium">Se pris</a></td>
             </tr>
             <tr class="bg-bg-alt/50">
               <td class="px-4 py-3 font-medium text-text">Husqvarna Automower 310E NERA</td>
@@ -193,7 +215,7 @@ const faqSchema = faqItems.map((item) => ({
               <td class="px-4 py-3 text-cta font-medium">Nej</td>
               <td class="px-4 py-3 text-text">ca 19 990 kr</td>
               <td class="px-4 py-3 text-winner font-semibold">9,0/10</td>
-              <td class="px-4 py-3"></td>
+              <td class="px-4 py-3"><a href="https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520310e%2520nera" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium">Se pris</a></td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-medium text-text">Mammotion LUBA AWO 3000</td>
@@ -352,6 +374,11 @@ const faqSchema = faqItems.map((item) => ({
 
     <AffiliateDisclaimer />
   </div>
+
+  <StickyCTA
+    text="Se pris på Husqvarna Automower 430V NERA"
+    url="https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520430v%2520nera"
+  />
 
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
