@@ -128,11 +128,33 @@ const faqSchema = faqItems.map((item) => ({
 <p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-05-05">2026-05-05</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
-      Robotgräsklippare bäst i test 2026, topp 6 testade
+      Robotgräsklippare bäst i test 2026, {products.length} testade
     </h1>
     <p class="text-text-light mb-6 max-w-2xl">
-      Vi har testat och jämfört {products.length} robotgräsklippare och rankat dem efter prestanda, täckningsyta, installation och prisvärdhet. Här är våra toppval för 2026.
+      Vi har testat och jämfört {products.length} robotgräsklippare och rankat dem efter prestanda, täckningsyta, installation och prisvärdhet. Vinnaren 2026 är <strong>Husqvarna Automower 430V NERA</strong> (4,8/5).
     </p>
+
+    <!-- Vinnar-CTA above the fold -->
+    <div class="bg-gradient-to-br from-winner/10 to-accent/10 border-2 border-winner/30 rounded-2xl p-5 sm:p-6 mb-8">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <div class="flex-shrink-0">
+          <span class="inline-block bg-winner text-white text-xs font-bold uppercase tracking-wider px-2 py-1 rounded">Bäst i test 2026</span>
+        </div>
+        <div class="flex-grow">
+          <div class="font-heading text-xl font-bold text-text mb-1">Husqvarna Automower 430V NERA</div>
+          <div class="text-text-light text-sm mb-3">Tillförlitlig GPS+4G, klipper upp till 3 200 m², 4,8/5 i test. Pris ca <strong>39 990 kr</strong>.</div>
+          <a
+            href="https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520430v%2520nera"
+            rel="sponsored nofollow noopener noreferrer"
+            target="_blank"
+            data-affiliate="true"
+            class="inline-flex items-center gap-2 bg-cta hover:bg-cta-dark text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm shadow-sm"
+          >
+            Se pris hos Elon &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
 
     <!-- Jämförelsetabell -->
     <section class="mb-8" aria-label="Jämförelsetabell robotgräsklippare">
