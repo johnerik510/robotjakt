@@ -1,11 +1,11 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-05-09T06:12:55.394Z",
-  "durationMs": 1005,
+  "timestamp": "2026-05-09T06:20:13.195Z",
+  "durationMs": 1001,
   "summary": {
     "checks": 8,
-    "errors": 13,
+    "errors": 4,
     "warnings": 4
   },
   "results": [
@@ -47,69 +47,6 @@
       "check": "04-articlemeta",
       "severity": "warning",
       "message": "Bild \"/images/roborock-saros-10r.webp\" används av 2 artiklar: Roborock Saros 10R vs Dreame X40 Ultra April 2026 | Roborock Saros 10R vs Roborock S8 MaxV Ultra April 2026"
-    },
-    {
-      "check": "05-mailto",
-      "severity": "error",
-      "file": "src/components/Footer.astro",
-      "line": 185,
-      "message": "mailto: utan email_off-wrapper: ELS Catalyst AB &middot; Org.nr 559583-6163 &middot; <!--email_off--><a href=\"mailto:elscatalyst@pro"
-    },
-    {
-      "check": "05-mailto",
-      "severity": "error",
-      "file": "src/pages/affiliate-disclaimer.astro",
-      "line": 40,
-      "message": "mailto: utan email_off-wrapper: Har du frågor om vår affiliate-modell? Kontakta oss på <!--email_off--><a href=\"mailto:elscatalyst@p"
-    },
-    {
-      "check": "05-mailto",
-      "severity": "error",
-      "file": "src/pages/integritetspolicy.astro",
-      "line": 17,
-      "message": "mailto: utan email_off-wrapper: <p>John Erik Johansson &auml;r personuppgiftsansvarig f&ouml;r Robotjakt.se.<br />E-post: <!--email_"
-    },
-    {
-      "check": "05-mailto",
-      "severity": "error",
-      "file": "src/pages/integritetspolicy.astro",
-      "line": 46,
-      "message": "mailto: utan email_off-wrapper: <p>Frågor om integritet? Kontakta oss på <!--email_off--><a href=\"mailto:elscatalyst@proton.me\" clas"
-    },
-    {
-      "check": "05-mailto",
-      "severity": "error",
-      "file": "src/pages/kontakt.astro",
-      "line": 21,
-      "message": "mailto: utan email_off-wrapper: <li><strong class=\"text-text\">E-post:</strong> <!--email_off--><a href=\"mailto:elscatalyst@proton.me"
-    },
-    {
-      "check": "05-mailto",
-      "severity": "error",
-      "file": "src/pages/om-oss.astro",
-      "line": 82,
-      "message": "mailto: utan email_off-wrapper: Har du fragor eller feedback? Kontakta oss pa <!--email_off--><a href=\"mailto:elscatalyst@proton.me\""
-    },
-    {
-      "check": "05-mailto",
-      "severity": "error",
-      "file": "src/pages/om-redaktionen.astro",
-      "line": 51,
-      "message": "mailto: utan email_off-wrapper: Kontakt: <!--email_off--><a href=\"mailto:elscatalyst@proton.me\" class=\"text-accent underline\">elscat"
-    },
-    {
-      "check": "05-mailto",
-      "severity": "error",
-      "file": "src/pages/redaktionell-policy.astro",
-      "line": 75,
-      "message": "mailto: utan email_off-wrapper: Kontakta oss: <!--email_off--><a href=\"mailto:elscatalyst@proton.me\" class=\"text-accent underline\">e"
-    },
-    {
-      "check": "05-mailto",
-      "severity": "error",
-      "file": "src/pages/sa-testar-vi.astro",
-      "line": 143,
-      "message": "mailto: utan email_off-wrapper: <p>Har du frågor om vår testmetod? Kontakta oss på <!--email_off--><a href=\"mailto:elscatalyst@proto"
     },
     {
       "check": "08-image-binary-duplicates",
