@@ -1,11 +1,11 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-05-09T06:04:34.037Z",
-  "durationMs": 1031,
+  "timestamp": "2026-05-09T06:12:55.394Z",
+  "durationMs": 1005,
   "summary": {
     "checks": 8,
-    "errors": 16,
+    "errors": 13,
     "warnings": 4
   },
   "results": [
@@ -15,27 +15,6 @@
       "file": "src/components/AffiliateDisclaimer.astro",
       "line": 3,
       "message": "Förbjuden ankartext \"läs mer\": <p class=\"text-xs text-text-lighter mb-3\">Robotjakt.se innehåller affiliatelänkar, vi kan få provisi"
-    },
-    {
-      "check": "02-anchors",
-      "severity": "error",
-      "file": "src/pages/dyson-360-vis-nav.astro",
-      "line": 276,
-      "message": "Förbjuden ankartext \"läs mer\": <h2 class=\"font-heading text-lg font-bold text-text mb-4\">Läs mer</h2>"
-    },
-    {
-      "check": "02-anchors",
-      "severity": "error",
-      "file": "src/pages/dyson-spot-scrub-ai.astro",
-      "line": 260,
-      "message": "Förbjuden ankartext \"läs mer\": <h2 class=\"font-heading text-lg font-bold text-text mb-4\">Läs mer</h2>"
-    },
-    {
-      "check": "02-anchors",
-      "severity": "error",
-      "file": "src/pages/jamfor/roborock-saros-10r-vs-dreame-x40-ultra.astro",
-      "line": 213,
-      "message": "Förbjuden ankartext \"läs mer\": <h2 class=\"font-heading text-lg font-bold text-text mb-3\">Läs mer</h2>"
     },
     {
       "check": "02-anchors",
