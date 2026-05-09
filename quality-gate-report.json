@@ -1,49 +1,27 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-05-09T14:18:49.862Z",
-  "durationMs": 3802,
+  "timestamp": "2026-05-09T18:55:35.939Z",
+  "durationMs": 1019,
   "summary": {
-    "checks": 9,
-    "errors": 5,
+    "checks": 8,
+    "errors": 1,
     "warnings": 0,
     "newErrors": 0,
-    "baselinedErrors": 5
+    "baselinedErrors": 1
   },
   "results": [],
   "baseline": {
-    "saved": true,
-    "count": 5
+    "status": "compared",
+    "baselineCount": 5,
+    "baselinedCount": 1,
+    "newErrorCount": 0
   },
   "allResults": [
     {
       "check": "08-image-binary-duplicates",
       "severity": "error",
       "message": "2 bildfiler är binär-identiska (8KB) — samma bild laddats med olika filnamn: public/images/husqvarna-315x.webp | public/images/husqvarna-automower-315x.webp"
-    },
-    {
-      "check": "15-rendered-images",
-      "severity": "error",
-      "file": "index.html",
-      "message": "2 <article>-kort delar samma <img src=\"/images/cat-poolrobot.webp\"> på index.html — varje kort behöver unik bild"
-    },
-    {
-      "check": "15-rendered-images",
-      "severity": "error",
-      "file": "index.html",
-      "message": "2 <article>-kort delar samma <img src=\"/images/dreame-x40-ultra.webp\"> på index.html — varje kort behöver unik bild"
-    },
-    {
-      "check": "15-rendered-images",
-      "severity": "error",
-      "file": "index.html",
-      "message": "2 <article>-kort delar samma <img src=\"/images/roborock-s8-maxv-ultra.webp\"> på index.html — varje kort behöver unik bild"
-    },
-    {
-      "check": "15-rendered-images",
-      "severity": "error",
-      "file": "reservdelar/dreame/index.html",
-      "message": "2 <article>-kort delar samma <img src=\"/images/parts-robot-filter-3.webp\"> på reservdelar/dreame/index.html — varje kort behöver unik bild"
     }
   ]
 }

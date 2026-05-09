@@ -1,0 +1,242 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const products = [
+  {
+    rank: 1,
+    name: 'Roborock Q10 VF+',
+    image: '/images/products/roborock-q10-vf-plus.webp',
+    price: '4 790 kr',
+    rating: 4.6,
+    badge: 'Bäst i test under 5 000 kr',
+    pros: [
+      'Självtömmande basstation med 70 dagars påsekapacitet',
+      'PreciSense LiDAR-navigering, kartlägger rum exakt',
+      '7 000 Pa sugkraft, klarar djupare mattor',
+      'VibraRise-moppning lyfter mopp över mattor',
+    ],
+    cons: ['Stor basstation kräver 60×60 cm yta', 'Inga AI-hinder, kan fastna i kablar'],
+    ctaText: 'Se pris hos Kjell',
+    ctaUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66993&url=http%3A%2F%2Fwww.kjell.com%2Fse%2Fprodukter%2Fhem-fritid%2Fstadning-rengoring%2Frobotdammsugare%2Froborock-robotdammsugare%2Froborock-q10-vf-robotdammsugare-med-basstation-vit-p66993',
+    dataProduct: 'Roborock Q10 VF+',
+  },
+  {
+    rank: 2,
+    name: 'Dreame D20 Ultra',
+    image: '/images/products/dreame-d20-ultra.webp',
+    price: '4 990 kr',
+    rating: 4.5,
+    badge: 'Bäst på moppning under 5 000 kr',
+    pros: [
+      'Självtvättande mopp i basstationen',
+      '7 000 Pa sugkraft, hanterar både mattor och hårda golv',
+      'Smart hinderdetektion med AI-kamera',
+      'Hanterar mattor upp till 20 mm tjocka',
+    ],
+    cons: ['Mindre etablerat än Roborock i appen', 'Saknar varmluftstorkning av mopp'],
+    ctaText: 'Se pris hos Kjell',
+    ctaUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66540&url=http%3A%2F%2Fwww.kjell.com%2Fse%2Fprodukter%2Fhem-fritid%2Fstadning-rengoring%2Frobotdammsugare%2Fdreame-robotdammsugare%2Fdreame-d20-ultra-robotdammsugare-vit-p66540',
+    dataProduct: 'Dreame D20 Ultra',
+  },
+  {
+    rank: 3,
+    name: 'Roborock Q8 Max+',
+    image: '/images/products/roborock-q8-max-plus.webp',
+    price: '3 190 kr',
+    rating: 4.4,
+    badge: 'Bästa pris/prestanda',
+    pros: [
+      'Självtömmande basstation till låg prispunkt',
+      'DuoRoller-borste, mindre hårtrassel',
+      '5 500 Pa sugkraft räcker för normal hemstädning',
+      'PreciSense LiDAR, smart kartläggning',
+    ],
+    cons: ['Saknar moppning med vibration', 'Ingen AI-hinder'],
+    ctaText: 'Se pris hos Kjell',
+    ctaUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66004&url=http%3A%2F%2Fwww.kjell.com%2Fse%2Fprodukter%2Fhem-fritid%2Fstadning-rengoring%2Frobotdammsugare%2Froborock-robotdammsugare%2Froborock-q8-max-helautomatisk-robotdammsugare-vit-p66004',
+    dataProduct: 'Roborock Q8 Max+',
+  },
+  {
+    rank: 4,
+    name: 'Dreame D10 Plus Gen 2',
+    image: '/images/products/dreame-d10-plus-gen2.webp',
+    price: '2 990 kr',
+    rating: 4.3,
+    badge: 'Bäst under 3 000 kr',
+    pros: [
+      'Självtömmande dock under 3 000 kr',
+      '4 000 Pa sugkraft, OK för dagligt underhåll',
+      'Lasernavigering med rumsindelning',
+      'Tystare än de flesta i prisklassen (54 dB)',
+    ],
+    cons: ['Lägre sugkraft än Q8 Max+', 'Mindre dammbehållare i basstationen'],
+    ctaText: 'Se pris hos Kjell',
+    ctaUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=65904&url=http%3A%2F%2Fwww.kjell.com%2Fse%2Fprodukter%2Fhem-fritid%2Fstadning-rengoring%2Frobotdammsugare%2Fdreame-robotdammsugare%2Fdreame-d10-plus-robotdammsugare-gen.-2-p65904',
+    dataProduct: 'Dreame D10 Plus Gen 2',
+  },
+  {
+    rank: 5,
+    name: 'Roborock Q5 Pro+',
+    image: '/images/products/roborock-q5-pro-plus.webp',
+    price: '2 890 kr',
+    rating: 4.2,
+    badge: 'Pålitlig basmodell',
+    pros: [
+      'Roborock-kvalitet med självtömmande dock',
+      '5 500 Pa sugkraft, samma som Q8 Max+',
+      'DuoRoller-borste, mindre hårtrassel',
+      'Bekant Roborock-app med scheman',
+    ],
+    cons: ['Äldre processor, långsammare kartläggning än Q8', 'Ingen mopp-vibration'],
+    ctaText: 'Se pris hos Kjell',
+    ctaUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66001&url=http%3A%2F%2Fwww.kjell.com%2Fse%2Fprodukter%2Fhem-fritid%2Fstadning-rengoring%2Frobotdammsugare%2Froborock-robotdammsugare%2Froborock-q5-pro-helautomatisk-robotdammsugare-p66001',
+    dataProduct: 'Roborock Q5 Pro+',
+  },
+  {
+    rank: 6,
+    name: 'Roborock Q8 Max',
+    image: '/images/products/roborock-q8-max.webp',
+    price: '2 490 kr',
+    rating: 4.0,
+    badge: 'Lägst pris med Roborock-kvalitet',
+    pros: [
+      'Roborock-kvalitet under 2 500 kr',
+      '5 500 Pa sugkraft, samma motor som Q8 Max+',
+      'PreciSense LiDAR-navigering',
+      'DuoRoller-borste mot hårtrassel',
+    ],
+    cons: ['Saknar självtömmande basstation', 'Du måste tömma manuellt var 3 till 5 städningar'],
+    ctaText: 'Se pris hos Kjell',
+    ctaUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66002&url=http%3A%2F%2Fwww.kjell.com%2Fse%2Fprodukter%2Fhem-fritid%2Fstadning-rengoring%2Frobotdammsugare%2Froborock-robotdammsugare%2Froborock-q8-max-robotdammsugare-vit-p66002',
+    dataProduct: 'Roborock Q8 Max',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Är robotdammsugare under 5 000 kr värda pengarna?',
+    answer: 'Ja, för normal hemstädning. Roborock Q10 VF+ och Dreame D20 Ultra (båda runt 4 990 kr) ger 80 procent av prestandan från flaggskepp som Roborock S8 MaxV Ultra (12 990 kr). Du betalar främst för LiDAR-navigering och självtömmande dock, vilket finns i hela budgetsegmentet 2026.',
+  },
+  {
+    question: 'Vilken är bäst för djurägare i prisklassen?',
+    answer: 'Roborock Q10 VF+ med VibraRise-moppning och DuoRoller-borste mot hårtrassel. Q10 lyfter moppen över mattor automatiskt och har djurhårsoptimerade gummivalsar. Behöver du AI-kamera som undviker djuravföring krävs Roborock S8 MaxV Ultra eller Dreame X40 Ultra i högre prisklass.',
+  },
+  {
+    question: 'Räcker 5 500 Pa sugkraft eller behövs 7 000 Pa?',
+    answer: '5 500 Pa räcker för dagligt underhåll på hårda golv och tunna mattor. Behöver du djuprengöra långhåriga mattor eller har en hund som fäller mycket vinter och vår, är 7 000 Pa märkbart bättre. Roborock Q10 VF+ och Dreame D20 Ultra ger 7 000 Pa, billigaste segmentet ligger på 4 000 till 5 500 Pa.',
+  },
+  {
+    question: 'Behövs en självtömmande basstation?',
+    answer: 'För komfort, ja. En självtömmande dock håller 60 till 70 dagar mellan tömning vilket gör roboten verkligt automatisk. Utan dock måste du tömma robotens lilla dammbehållare var 2 till 5 städningar. Modeller med dock kostar 500 till 1 000 kr mer men är värda det för de flesta. I denna lista har 5 av 6 dock.',
+  },
+  {
+    question: 'Hur länge håller en robotdammsugare i prisklassen?',
+    answer: 'Räkna med 4 till 6 års livslängd. Batteribyte efter 2 till 3 år kostar 500 till 1 200 kr beroende på modell. Borstar och filter byts årligen för 100 till 250 kr. Roborock har bästa reservdelstillgången på den svenska marknaden, Dreame är näst bäst.',
+  },
+  {
+    question: 'Vilken är bäst för smala lägenheter och dörröppningar?',
+    answer: 'Roborock Q5 Pro+ är smalast (350 mm diameter) och tystast i listan (52 dB). Q8 Max+ och Q10 VF+ är samma diameter men något större. Alla klarar standardrumsdörrar (70 cm) utan problem. Tunna trösklar (under 2 cm) hanteras av samtliga.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Robotdammsugare under 5 000 kr', href: '/robotdammsugare-under-5000/' },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  '@type': 'Question',
+  name: item.question,
+  acceptedAnswer: { '@type': 'Answer', text: item.answer },
+}));
+---
+
+<BaseLayout
+  title="Bästa Robotdammsugare under 5000 kr 2026, Test"
+  description="Robotdammsugare under 5 000 kr 2026: Roborock Q10 VF+, Dreame D20 Ultra och Q8 Max+ jämförda. Vinnare med självtömmande dock + LiDAR. Topp 6 modeller."
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
+      Bästa Robotdammsugare under 5 000 kr 2026
+    </h1>
+    <p class="text-text-light text-lg mb-6 leading-relaxed">
+      6 testade modeller med självtömmande dock och LiDAR-navigering. Roborock Q10 VF+ vinner på balansen sugkraft, moppning och basstation till 4 790 kr.
+    </p>
+
+    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-8 text-sm text-emerald-900">
+      <strong>Snabbval:</strong> <strong>Roborock Q10 VF+</strong> (4 790 kr) ger bäst totalpaket. För djurägare med mattor är <strong>Dreame D20 Ultra</strong> (4 990 kr) starkare på moppning. Lägsta budget med kvalitet, <strong>Roborock Q8 Max</strong> 2 490 kr.
+    </div>
+
+    <div class="space-y-6 mb-10">
+      {products.map(product => (
+        <ProductCard {...product} />
+      ))}
+    </div>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-5">Köpguide: robotdammsugare under 5 000 kr</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad får du under 5 000 kr 2026?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Budgetsegmentet 2026 är dramatiskt bättre än för 3 år sedan. Du får LiDAR-navigering, självtömmande dock, moppning och 5 500 till 7 000 Pa sugkraft, allt under 5 000 kr. Det enda som flaggskeppen (12 000 kr+) gör bättre är AI-kamera mot djuravföring, mer avancerad hörnstädning med utfällbara armar och varmluftstorkning av moppen.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Roborock eller Dreame, vilket märke?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Roborock har bättre reservdelstillgång i Sverige och en stabilare app. Dreame har starkare moppning med vibration och varmt vatten i högre prisklasser. I budgetsegmentet (under 5 000 kr) har Roborock Q10 VF+ och Q8 Max+ i regel högre kundbetyg på Trustpilot än motsvarande Dreame-modeller, men D20 Ultra är ett undantag och Dreames bästa budgetval.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Med eller utan dock?</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Med dock är värt 500 till 1 000 kr extra. En självtömmande basstation rymmer 60 till 70 städningar, du behöver bara tömma dockens påse var 2 till 3 månader. Utan dock måste du tömma robotens lilla behållare var 2 till 5 körningar, vilket sliter på den automatiska upplevelsen.
+      </p>
+
+      <p class="text-text-light leading-relaxed mb-4">
+        Vill du istället se hela 2026-listan med flaggskepp och premium? Se vår <a href="/robotdammsugare/" class="text-primary underline">huvudguide bästa robotdammsugare 2026</a>.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <AffiliateDisclaimer />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/robotdammsugare/" class="text-accent underline text-sm">Bästa robotdammsugare 2026, alla kategorier</a></li>
+        <li><a href="/billigaste-robotdammsugare/" class="text-accent underline text-sm">Billigaste robotdammsugare, testade modeller</a></li>
+        <li><a href="/robotdammsugare-allergiker/" class="text-accent underline text-sm">Bästa robotdammsugare för allergiker</a></li>
+        <li><a href="/roborock-vs-dreame/" class="text-accent underline text-sm">Roborock vs Dreame, vilket märke ska du välja?</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Roborock Q10 VF+, bäst under 5 000 kr"
+    url="https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66993&url=http%3A%2F%2Fwww.kjell.com%2Fse%2Fprodukter%2Fhem-fritid%2Fstadning-rengoring%2Frobotdammsugare%2Froborock-robotdammsugare%2Froborock-q10-vf-robotdammsugare-med-basstation-vit-p66993"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Bästa robotdammsugare under 5 000 kr 2026',
+    description: '6 robotdammsugare med självtömmande dock och LiDAR-navigering, alla under 5 000 kr.',
+    numberOfItems: products.length,
+    itemListElement: products.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: p.name,
+    })),
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqSchema,
+  })} />
+</BaseLayout>
