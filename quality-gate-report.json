@@ -1,8 +1,8 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-05-09T07:41:13.224Z",
-  "durationMs": 4126,
+  "timestamp": "2026-05-09T07:42:38.101Z",
+  "durationMs": 1066,
   "summary": {
     "checks": 9,
     "errors": 8,
@@ -10,10 +10,33 @@
     "newErrors": 0,
     "baselinedErrors": 8
   },
-  "results": [],
+  "results": [
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/eufy-x10-pro-omni.webp\" används av 2 artiklar: Robotdammsugare och mattor, komplett guide 2026 | eufy Robotdammsugare Guide 2026, Alla Modeller"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/cat-robotgrasklippare.webp\" används av 2 artiklar: Robotgräsklippare köpguide 2026, så väljer du rätt modell | Köpguide Robotgräsklippare 2026, Tips & Råd"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/ecovacs-deebot-x5-omni.webp\" används av 2 artiklar: Ecovacs Deebot X5 Omni vs Roborock S8 MaxV Ultra April 2026 | Ecovacs Deebot X5 Omni vs Dreame X40 Ultra April 2026"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/roborock-saros-10r.webp\" används av 2 artiklar: Roborock Saros 10R vs Dreame X40 Ultra April 2026 | Roborock Saros 10R vs Roborock S8 MaxV Ultra April 2026"
+    }
+  ],
   "baseline": {
-    "saved": true,
-    "count": 8
+    "status": "compared",
+    "baselineCount": 8,
+    "baselinedCount": 8,
+    "newErrorCount": 0
   },
   "allResults": [
     {
