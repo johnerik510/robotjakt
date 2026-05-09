@@ -25,7 +25,7 @@ const products = [
     features: [
       '10 000 Pa sugkraft',
       'Auto-tömning, mopptvätt och vattenpåfyllning',
-      'ReactiveAI 3.0 — djuravföringsdetektion',
+      'ReactiveAI 3.0, djuravföringsdetektion',
       'Roterande + lyftbar moppmodul',
       'LiDAR + AI-kamera-navigering',
     ],
@@ -47,8 +47,8 @@ const products = [
     autoRefill: true,
     stationSize: 'Stor',
     features: [
-      '12 000 Pa sugkraft — starkast i klassen',
-      'Utfällbar moppmodul — når hörnen',
+      '12 000 Pa sugkraft, starkast i klassen',
+      'Utfällbar moppmodul, når hörnen',
       'Varmvattentvätt av moppar (70 grader)',
       'Auto-tömning och automatisk vattenpåfyllning',
       'LiDAR + AI-kamera-navigering',
@@ -74,7 +74,7 @@ const products = [
     stationSize: 'Stor',
     features: [
       '8 000 Pa sugkraft',
-      'OMNI-station — marknadens mest kompletta allt-i-ett',
+      'OMNI-station, marknadens mest kompletta allt-i-ett',
       'Varmvattentvätt och torkning av moppar',
       'Dubbla roterande moppar med lyftfunktion',
       'TrueMapping 2.0 LiDAR-navigering',
@@ -83,7 +83,7 @@ const products = [
 
     ctaText: 'Se pris hos Proshop',
     reviewUrl: '/ecovacs-deebot-x5-omni/',
-    description: 'Ecovacs Deebot X5 Omni med OMNI-station erbjuder hela paketet — auto-tömning, varmvattenmopptvätt, torkning och automatisk påfyllning — till ett lägre pris än konkurrenterna. Bäst värde i klassen för den som vill ha full automatik utan att betala toppris.',
+    description: 'Ecovacs Deebot X5 Omni med OMNI-station erbjuder hela paketet, auto-tömning, varmvattenmopptvätt, torkning och automatisk påfyllning, till ett lägre pris än konkurrenterna. Bäst värde i klassen för den som vill ha full automatik utan att betala toppris.',
   },
   {
     name: 'Dreame L20 Ultra',
@@ -114,7 +114,7 @@ const products = [
 const faqItems = [
   {
     question: 'Vad är skillnaden på självtömmande och självrenande basstation?',
-    answer: 'En självtömmande basstation tömmer bara dammkorgen automatiskt in i en större påse i stationen — du byter påsen var 60-90 dag. En självrenande basstation tar ett steg längre och tvättar även mopparna automatiskt (med vatten, ibland varmvatten). De mest avancerade stationerna som Roborock Ultra, Dreame Ultra och Ecovacs OMNI gör båda: tömmer dammkorgen och tvättar mopparna, plus fyller på vattentanken och torkar mopparna klara.',
+    answer: 'En självtömmande basstation tömmer bara dammkorgen automatiskt in i en större påse i stationen, du byter påsen var 60-90 dag. En självrenande basstation tar ett steg längre och tvättar även mopparna automatiskt (med vatten, ibland varmvatten). De mest avancerade stationerna som Roborock Ultra, Dreame Ultra och Ecovacs OMNI gör båda: tömmer dammkorgen och tvättar mopparna, plus fyller på vattentanken och torkar mopparna klara.',
   },
   {
     question: 'Är det värt att betala för en avancerad basstation?',
@@ -122,11 +122,11 @@ const faqItems = [
   },
   {
     question: 'Vilken robotdammsugare med basstation är bäst för husdjur?',
-    answer: 'Roborock S8 MaxV Ultra är det bästa valet för husdjurshem. Kombinationen av ReactiveAI 3.0 (undviker djuravföringar) och den fullautomatiska stationen gör den unik. Övriga modeller i denna guide saknar djuravföringsdetektion — utan den riskerar du att roboten kör igenom och sprider avföringen. S8 MaxV Ultra är det enda valet om du har katter eller hundar.',
+    answer: 'Roborock S8 MaxV Ultra är det bästa valet för husdjurshem. Kombinationen av ReactiveAI 3.0 (undviker djuravföringar) och den fullautomatiska stationen gör den unik. Övriga modeller i denna guide saknar djuravföringsdetektion, utan den riskerar du att roboten kör igenom och sprider avföringen. S8 MaxV Ultra är det enda valet om du har katter eller hundar.',
   },
   {
     question: 'Hur stor plats tar en basstation?',
-    answer: 'De flesta avancerade basstationer (Ultra/OMNI) är 40-50 cm breda och 40-50 cm djupa — ungefär som en liten tvättmaskin. De är designade för att stå längs en vägg med god ventilation. Dreame L20 Ultra är något kompaktare än konkurrenterna. Räkna med att behöva 60-70 cm väggutrymme och sätta stationen nära ett eluttag. Planera placeringen i förväg — en placering med god räckvidd till alla rum ger bäst städresultat.',
+    answer: 'De flesta avancerade basstationer (Ultra/OMNI) är 40-50 cm breda och 40-50 cm djupa, ungefär som en liten tvättmaskin. De är designade för att stå längs en vägg med god ventilation. Dreame L20 Ultra är något kompaktare än konkurrenterna. Räkna med att behöva 60-70 cm väggutrymme och sätta stationen nära ett eluttag. Planera placeringen i förväg, en placering med god räckvidd till alla rum ger bäst städresultat.',
   },
   {
     question: 'Behöver jag köpa påsar till stationen?',
@@ -152,24 +152,24 @@ function boolClass(val: boolean) {
 ---
 
 <BaseLayout
-  title="Bästa robotdammsugare basstation April 2026 – topp 5"
-  description="Vi testar de bästa robotdammsugarna med basstation 2026. Självtömmande, självrenande mopp och automatisk påfyllning — se vilka som är värda priset."
+  title="Bästa robotdammsugare basstation April 2026, topp 5"
+  description="Vi testar de bästa robotdammsugarna med basstation 2026. Självtömmande, självrenande mopp och automatisk påfyllning, se vilka som är värda priset."
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
 <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
-      Bästa robotdammsugare med basstation 2026 — självtömmande
+      Bästa robotdammsugare med basstation 2026, självtömmande
     </h1>
     <p class="text-text-light mb-4 max-w-2xl">
-      4 modeller testade med avancerade basstationer. Självtömmande dammkorg, automatisk mopptvätt med varmvatten och automatisk vattenpåfyllning — vi jämför de bästa alternativen 2026 och hjälper dig välja rätt.
+      4 modeller testade med avancerade basstationer. Självtömmande dammkorg, automatisk mopptvätt med varmvatten och automatisk vattenpåfyllning, vi jämför de bästa alternativen 2026 och hjälper dig välja rätt.
     </p>
     <p class="text-xs text-text-lighter mb-6">4 produkter testade</p>
 
     <!-- Comparison table -->
     <section class="mb-10" aria-label="Jämförelsetabell robotdammsugare med basstation">
-      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse — basstationsfunktioner</h2>
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse, basstationsfunktioner</h2>
       <div class="overflow-x-auto rounded-xl border border-border">
         <table class="w-full text-sm bg-white">
           <thead>
@@ -255,27 +255,27 @@ function boolClass(val: boolean) {
       <h2 class="font-heading text-2xl font-bold text-text mb-4">Vilken passar ditt behov?</h2>
       <div class="space-y-4">
         <div class="bg-white rounded-xl border border-border p-5">
-          <h3 class="font-semibold text-text mb-2">Husdjur — katter och hundar</h3>
+          <h3 class="font-semibold text-text mb-2">Husdjur, katter och hundar</h3>
           <p class="text-text-light text-sm leading-relaxed">
-            Roborock S8 MaxV Ultra är det enda valet. ReactiveAI 3.0 identifierar och undviker djuravföringar — ingen annan modell i denna guide erbjuder den funktionen. Kombinerat med fullautomatisk station är det den mest handsfree-lösningen för husdjurshem.
+            Roborock S8 MaxV Ultra är det enda valet. ReactiveAI 3.0 identifierar och undviker djuravföringar, ingen annan modell i denna guide erbjuder den funktionen. Kombinerat med fullautomatisk station är det den mest handsfree-lösningen för husdjurshem.
           </p>
         </div>
         <div class="bg-white rounded-xl border border-border p-5">
           <h3 class="font-semibold text-text mb-2">Mycket hårdgolv och hörn</h3>
           <p class="text-text-light text-sm leading-relaxed">
-            Dreame X40 Ultra med utfällbar moppmodul når faktiskt in i hörnen och tvättar mopparna med 70-graders varmvatten. Det bästa moppresultatet i klassen — välj X40 Ultra om moppkvaliteten är din prioritet.
+            Dreame X40 Ultra med utfällbar moppmodul når faktiskt in i hörnen och tvättar mopparna med 70-graders varmvatten. Det bästa moppresultatet i klassen, välj X40 Ultra om moppkvaliteten är din prioritet.
           </p>
         </div>
         <div class="bg-white rounded-xl border border-border p-5">
-          <h3 class="font-semibold text-text mb-2">Bäst värde — full automatik, lägre pris</h3>
+          <h3 class="font-semibold text-text mb-2">Bäst värde, full automatik, lägre pris</h3>
           <p class="text-text-light text-sm leading-relaxed">
-            Ecovacs Deebot X5 Omni till ca 8 499 kr ger dig hela paketet — auto-tömning, varmvattenmopptvätt, torkning och automatisk påfyllning — ca 2 500 kr billigare än toppmodellerna. Det bästa värdet i kategorin 2026.
+            Ecovacs Deebot X5 Omni till ca 8 499 kr ger dig hela paketet, auto-tömning, varmvattenmopptvätt, torkning och automatisk påfyllning, ca 2 500 kr billigare än toppmodellerna. Det bästa värdet i kategorin 2026.
           </p>
         </div>
         <div class="bg-white rounded-xl border border-border p-5">
           <h3 class="font-semibold text-text mb-2">Begränsat utrymme för stationen</h3>
           <p class="text-text-light text-sm leading-relaxed">
-            Dreame L20 Ultra har en kompaktare stationsdesign än konkurrenterna och passar bättre i trånga utrymmen. Du offrar inte funktionalitet — varmvattenmopptvätt och auto-tömning ingår ändå.
+            Dreame L20 Ultra har en kompaktare stationsdesign än konkurrenterna och passar bättre i trånga utrymmen. Du offrar inte funktionalitet, varmvattenmopptvätt och auto-tömning ingår ändå.
           </p>
         </div>
       </div>
@@ -293,13 +293,13 @@ function boolClass(val: boolean) {
         <li><a href="/roborock-s8-maxv-ultra/" class="text-accent underline text-sm">Roborock S8 MaxV Ultra recension 2026</a></li>
         <li><a href="/dreame-x40-ultra/" class="text-accent underline text-sm">Dreame X40 Ultra recension 2026</a></li>
         <li><a href="/ecovacs-deebot-x5-omni/" class="text-accent underline text-sm">Ecovacs Deebot X5 Omni recension 2026</a></li>
-        <li><a href="/" class="text-accent underline text-sm">Bästa robotdammsugare 2026 — alla märken jämförda</a></li>
+        <li><a href="/" class="text-accent underline text-sm">Bästa robotdammsugare 2026, alla märken jämförda</a></li>
       </ul>
     </section>
   </div>
 
   <StickyCTA
-    text="Se bästa pris — S8 MaxV Ultra"
+    text="Se bästa pris, S8 MaxV Ultra"
     url="https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Froborock-s8-maxv-ultra-white-135019"
   />
 
@@ -307,7 +307,7 @@ function boolClass(val: boolean) {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": "Bästa robotdammsugare med basstation 2026",
-    "description": "Robotdammsugare med avancerade basstationer — testade och rankade 2026.",
+    "description": "Robotdammsugare med avancerade basstationer, testade och rankade 2026.",
     "numberOfItems": 4,
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Roborock S8 MaxV Ultra", "url": "https://robotjakt.se/roborock-s8-maxv-ultra/" },

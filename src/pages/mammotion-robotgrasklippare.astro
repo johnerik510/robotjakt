@@ -17,11 +17,11 @@ const models = [
     badgeColor: 'bg-accent',
     price: 'ca 14 990 kr',
     area: 'upp till 1 000 m²',
-    features: ['RTK GPS — ingen perimeterkabel', '4G-uppkoppling', 'Klippbredd 22 cm', 'Klarar 75% lutning', 'Mammotion-appen med zonkartläggning'],
+    features: ['RTK GPS, ingen perimeterkabel', '4G-uppkoppling', 'Klippbredd 22 cm', 'Klarar 75% lutning', 'Mammotion-appen med zonkartläggning'],
     cta: 'https://www.amazon.se/s?k=mammotion+luba+2+awo+1000h&tag=johnerik510-20',
     ctaText: 'Se pris på LUBA 2 AWO 1000H',
     reviewUrl: '/mammotion-luba-2-awo-1000h/',
-    description: 'LUBA 2 AWO 1000H är Mammotions mest prisvärda utan-slinga-modell för tomter upp till 1 000 m². RTK GPS ger centimeterprecision utan kabelinstallation — ett stort steg upp från kabelbaserade budgetalternativ för bara ca 15 000 kr.',
+    description: 'LUBA 2 AWO 1000H är Mammotions mest prisvärda utan-slinga-modell för tomter upp till 1 000 m². RTK GPS ger centimeterprecision utan kabelinstallation, ett stort steg upp från kabelbaserade budgetalternativ för bara ca 15 000 kr.',
   },
   {
     name: 'Mammotion LUBA AWO 3000',
@@ -52,7 +52,7 @@ const models = [
 const faqItems = [
   {
     question: 'Behöver man perimeterkabel med Mammotion LUBA?',
-    answer: 'Nej, det är en av LUBA-seriens stora fördelar. Alla Mammotion LUBA-modeller använder RTK GPS-navigering och kräver ingen perimeterkabel. Du sätter upp en liten RTK-basstation (ingår i paketet) och kartlägger sedan trädgårdens zoner via appen. Installationen tar 30–60 minuter och kräver inget grävarbete.',
+    answer: 'Nej, det är en av LUBA-seriens stora fördelar. Alla Mammotion LUBA-modeller använder RTK GPS-navigering och kräver ingen perimeterkabel. Du sätter upp en liten RTK-basstation (ingår i paketet) och kartlägger sedan trädgårdens zoner via appen. Installationen tar 30 till 60 minuter och kräver inget grävarbete.',
   },
   {
     question: 'Hur tillförlitlig är Mammotion LUBA i praktiken?',
@@ -60,7 +60,7 @@ const faqItems = [
   },
   {
     question: 'Vilken Mammotion LUBA-modell passar min trädgård?',
-    answer: 'Under 1 000 m²: LUBA 2 AWO 1000H (ca 14 990 kr) ger bäst pris/yta-förhållande. 1 000–3 000 m²: LUBA AWO 3000 (ca 24 990 kr) med kamera och bredare klippning. Över 3 000 m² eller kuperad terräng: LUBA 2 AWD 5000X (ca 25 990 kr) med fyrhjulsdrift.',
+    answer: 'Under 1 000 m²: LUBA 2 AWO 1000H (ca 14 990 kr) ger bäst pris/yta-förhållande. 1 000 till 3 000 m²: LUBA AWO 3000 (ca 24 990 kr) med kamera och bredare klippning. Över 3 000 m² eller kuperad terräng: LUBA 2 AWD 5000X (ca 25 990 kr) med fyrhjulsdrift.',
   },
   {
     question: 'Hur jämför sig Mammotion mot Husqvarna och Segway Navimow?',
@@ -68,7 +68,7 @@ const faqItems = [
   },
   {
     question: 'Fungerar Mammotion LUBA i Sverige med 4G?',
-    answer: 'Ja, LUBA 2-serien fungerar på svenska 4G-nät. 4G behövs för fjärrstyrning och kartuppdateringar — roboten kan klippa utan aktiv 4G-anslutning men du förlorar möjligheten att ändra schema eller se status på distans. Testat och bekräftat att fungera på Telia, Tele2 och Tre-nät i Sverige.',
+    answer: 'Ja, LUBA 2-serien fungerar på svenska 4G-nät. 4G behövs för fjärrstyrning och kartuppdateringar, roboten kan klippa utan aktiv 4G-anslutning men du förlorar möjligheten att ändra schema eller se status på distans. Testat och bekräftat att fungera på Telia, Tele2 och Tre-nät i Sverige.',
   },
 ];
 
@@ -83,24 +83,24 @@ const faqSchema = faqItems.map((item) => ({
 ---
 
 <BaseLayout
-  title="Mammotion LUBA robotgräsklippare 2026 — utan slinga, RTK GPS"
-  description="Guide till Mammotion LUBA-serien 2026. Jämför AWO 1000H, AWO 3000 och AWD 5000X — GPS utan perimeterkabel från ca 14 990 kr."
+  title="Mammotion LUBA robotgräsklippare 2026, utan slinga, RTK GPS"
+  description="Guide till Mammotion LUBA-serien 2026. Jämför AWO 1000H, AWO 3000 och AWD 5000X, GPS utan perimeterkabel från ca 14 990 kr."
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
     <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-05-05">2026-05-05</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
-      Mammotion LUBA robotgräsklippare 2026 — GPS utan slinga
+      Mammotion LUBA robotgräsklippare 2026, GPS utan slinga
     </h1>
     <p class="text-text-light mb-6 max-w-2xl">
       Mammotion LUBA är en av marknadens ledande robotgräsklippare utan perimeterkabel. Med RTK GPS-precision klarar LUBA-serien tomter från 1 000 till 5 000 m² utan ett enda meters kabelinstallation. Här jämför vi alla modeller.
     </p>
 
     <section class="mb-8 bg-bg-alt rounded-xl border border-border p-6">
-      <h2 class="font-heading text-xl font-bold text-text mb-3">Mammotion — GPS-precision utan kabelkrångel</h2>
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Mammotion, GPS-precision utan kabelkrångel</h2>
       <p class="text-text-light leading-relaxed mb-3">
-        Mammotion grundades 2019 med fokus på att lösa det största problemet med robotgräsklippare: perimeterkabeln. LUBA-serien använder RTK GPS (Real-Time Kinematic) — samma teknik som professionell lantmäteri — och placerar roboten med centimeterprecision utan kabel.
+        Mammotion grundades 2019 med fokus på att lösa det största problemet med robotgräsklippare: perimeterkabeln. LUBA-serien använder RTK GPS (Real-Time Kinematic), samma teknik som professionell lantmäteri, och placerar roboten med centimeterprecision utan kabel.
       </p>
       <p class="text-text-light leading-relaxed">
         Inga grävarbeten, ingen kabel som går sönder, inga begränsningar från kabelns placering. Du kartlägger trädgårdens zoner digitalt i appen och är igång på under en timme. LUBA-serien erbjuder dessutom 4G-uppkoppling för fjärrstyrning och Mammotions kamerabaserade hinderdetektering.
@@ -158,7 +158,7 @@ const faqSchema = faqItems.map((item) => ({
     </div>
 
     <section class="mt-10 mb-10">
-      <h2 class="font-heading text-2xl font-bold text-text mb-4">Mammotion vs Husqvarna vs Segway — vad ska du välja?</h2>
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Mammotion vs Husqvarna vs Segway, vad ska du välja?</h2>
       <div class="overflow-x-auto">
         <table class="w-full text-sm border-collapse">
           <thead>
@@ -206,12 +206,12 @@ const faqSchema = faqItems.map((item) => ({
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
       <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
       <ul class="space-y-2">
-        <li><a href="/robotgrasklippare/" class="text-accent underline text-sm">Bästa robotgräsklippare 2026 — alla märken jämförda</a></li>
-        <li><a href="/mammotion-luba-awo-3000/" class="text-accent underline text-sm">Mammotion LUBA AWO 3000 — recension 2026</a></li>
-        <li><a href="/mammotion-luba-2-awd-5000x/" class="text-accent underline text-sm">Mammotion LUBA 2 AWD 5000X — recension 2026</a></li>
-        <li><a href="/mammotion-luba-2-awo-1000h/" class="text-accent underline text-sm">Mammotion LUBA 2 AWO 1000H — recension 2026</a></li>
-        <li><a href="/husqvarna-vs-mammotion/" class="text-accent underline text-sm">Husqvarna vs Mammotion — vilket märke ska du välja?</a></li>
-        <li><a href="/mammotion-luba-awo-3000-vs-segway-navimow-h800e/" class="text-accent underline text-sm">Mammotion AWO 3000 vs Segway H800E — jämförelse</a></li>
+        <li><a href="/robotgrasklippare/" class="text-accent underline text-sm">Bästa robotgräsklippare 2026, alla märken jämförda</a></li>
+        <li><a href="/mammotion-luba-awo-3000/" class="text-accent underline text-sm">Mammotion LUBA AWO 3000, recension 2026</a></li>
+        <li><a href="/mammotion-luba-2-awd-5000x/" class="text-accent underline text-sm">Mammotion LUBA 2 AWD 5000X, recension 2026</a></li>
+        <li><a href="/mammotion-luba-2-awo-1000h/" class="text-accent underline text-sm">Mammotion LUBA 2 AWO 1000H, recension 2026</a></li>
+        <li><a href="/husqvarna-vs-mammotion/" class="text-accent underline text-sm">Husqvarna vs Mammotion, vilket märke ska du välja?</a></li>
+        <li><a href="/mammotion-luba-awo-3000-vs-segway-navimow-h800e/" class="text-accent underline text-sm">Mammotion AWO 3000 vs Segway H800E, jämförelse</a></li>
       </ul>
     </section>
   </div>

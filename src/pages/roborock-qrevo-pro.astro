@@ -8,7 +8,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 const faqItems = [
   {
     question: 'Vad är skillnaden mellan Roborock Qrevo Pro och Qrevo Master?',
-    answer: 'Qrevo Master är Roborocks toppmodell med starkare sugkraft (13 000 Pa mot Qrevo Pros 7 000 Pa) och AI-kamera med djuravföringsdetektering. Qrevo Pro saknar kamera men levererar automatisk dammtömning, mopptvättning och avtorkning — allt till lägre pris. För de flesta utan husdjur är Qrevo Pro ett bättre val per krona.',
+    answer: 'Qrevo Master är Roborocks toppmodell med starkare sugkraft (13 000 Pa mot Qrevo Pros 7 000 Pa) och AI-kamera med djuravföringsdetektering. Qrevo Pro saknar kamera men levererar automatisk dammtömning, mopptvättning och avtorkning, allt till lägre pris. För de flesta utan husdjur är Qrevo Pro ett bättre val per krona.',
   },
   {
     question: 'Har Roborock Qrevo Pro automatisk mopptvättning?',
@@ -24,7 +24,7 @@ const faqItems = [
   },
   {
     question: 'Vilka reservdelar passar Roborock Qrevo Pro?',
-    answer: 'Qrevo Pro delar reservdelssystem med Qrevo S och Qrevo MaxV. Du hittar kompatibla kit med HEPA-filter, sidoborstar, huvudborste och moppkuddar på Amazon. Byt filter var 2 månad och sidoborstar var 6–12 månad.',
+    answer: 'Qrevo Pro delar reservdelssystem med Qrevo S och Qrevo MaxV. Du hittar kompatibla kit med HEPA-filter, sidoborstar, huvudborste och moppkuddar på Amazon. Byt filter var 2 månad och sidoborstar var 6 till 12 månad.',
   },
 ];
 
@@ -35,12 +35,12 @@ const breadcrumbs = [
 const specs = [
   { label: 'Sugkraft', value: '7 000 Pa' },
   { label: 'Navigering', value: 'LiDAR + PreciSense' },
-  { label: 'Klippbredd', value: '—' },
-  { label: 'Moppfunktion', value: 'Ja — roterande mopp' },
+  { label: 'Klippbredd', value: ',' },
+  { label: 'Moppfunktion', value: 'Ja, roterande mopp' },
   { label: 'Automatisk dammtömning', value: 'Ja' },
-  { label: 'Mopptvättning', value: 'Ja — varmt vatten' },
-  { label: 'Mopptorkning', value: 'Ja — varmluft' },
-  { label: 'Mattlyftning', value: 'Ja — 5 mm' },
+  { label: 'Mopptvättning', value: 'Ja, varmt vatten' },
+  { label: 'Mopptorkning', value: 'Ja, varmluft' },
+  { label: 'Mattlyftning', value: 'Ja, 5 mm' },
   { label: 'AI-kamera', value: 'Nej' },
   { label: 'App', value: 'Roborock (iOS/Android)' },
   { label: 'Röststyrning', value: 'Google Assistant, Alexa' },
@@ -55,7 +55,7 @@ const faqSchema = faqItems.map((item) => ({
 ---
 
 <BaseLayout
-  title="Roborock Qrevo Pro Recension 2026 – Test och Pris Sverige"
+  title="Roborock Qrevo Pro Recension 2026, Test och Pris Sverige"
   description="Roborock Qrevo Pro testad: 7 000 Pa, automatisk mopptvättning och dammtömning utan AI-kamera. Se betyg, pris och jämförelse med Qrevo Master 2026."
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -81,7 +81,7 @@ const faqSchema = faqItems.map((item) => ({
             <span class="font-bold text-text">4.3 / 5</span>
           </div>
           <p class="text-text-light text-sm leading-relaxed">
-            Roborock Qrevo Pro levererar helautomatisk städning med mopptvättning, dammtömning och mopptorkning — utan att kosta som Qrevo Master. Utan AI-kamera men med LiDAR-navigering och 7 000 Pa sugkraft är det ett genomarbetat val för hem utan husdjur.
+            Roborock Qrevo Pro levererar helautomatisk städning med mopptvättning, dammtömning och mopptorkning, utan att kosta som Qrevo Master. Utan AI-kamera men med LiDAR-navigering och 7 000 Pa sugkraft är det ett genomarbetat val för hem utan husdjur.
           </p>
         </div>
       </div>
@@ -91,7 +91,7 @@ const faqSchema = faqItems.map((item) => ({
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <p class="text-2xl font-bold text-text">ca 6 490 kr</p>
-          <p class="text-sm text-text-light">Pris varierar — jämför alltid mellan butiker</p>
+          <p class="text-sm text-text-light">Pris varierar, jämför alltid mellan butiker</p>
         </div>
         <div class="flex flex-col sm:flex-row gap-3">
           <a
@@ -110,8 +110,8 @@ const faqSchema = faqItems.map((item) => ({
         <h2 class="font-semibold text-text mb-3">Fördelar med Roborock Qrevo Pro</h2>
         <ul class="space-y-2">
           {[
-            'Helautomatisk station — dammtömning + mopptvättning + torkning',
-            '7 000 Pa — stark sugkraft för djur- och familjehushåll',
+            'Helautomatisk station, dammtömning + mopptvättning + torkning',
+            '7 000 Pa, stark sugkraft för djur- och familjehushåll',
             'LiDAR-navigering med rumsigenkänning',
             'Automatisk mattlyftning (5 mm)',
             'Prisvärd jämfört med Qrevo Master',
@@ -128,7 +128,7 @@ const faqSchema = faqItems.map((item) => ({
         <h2 class="font-semibold text-text mb-3">Nackdelar med Roborock Qrevo Pro</h2>
         <ul class="space-y-2">
           {[
-            'Ingen AI-kamera — kan inte undvika husdjursavföring',
+            'Ingen AI-kamera, kan inte undvika husdjursavföring',
             'Lägre sugkraft än Qrevo Master (7 000 vs 13 000 Pa)',
             'Inga obstacle avoidance-kameror',
           ].map(con => (
@@ -142,11 +142,11 @@ const faqSchema = faqItems.map((item) => ({
     </div>
 
     <section class="mb-10">
-      <h2 class="font-heading text-2xl font-bold text-text mb-4">Roborock Qrevo Pro — detaljerad genomgång</h2>
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Roborock Qrevo Pro, detaljerad genomgång</h2>
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Helautomatisk station</h3>
       <p class="text-text-light leading-relaxed mb-6">
-        Stationen sköter dammtömning efter varje städpass, tvättar mopparna med varmt vatten under pågående städning och torkar dem sedan med varmluft. I praktiken kan du gå veckor utan att behöva röra roboten — fyll vattenttankarna (ca 3 liter) en gång i veckan och töm dammpåsen var 7:e vecka.
+        Stationen sköter dammtömning efter varje städpass, tvättar mopparna med varmt vatten under pågående städning och torkar dem sedan med varmluft. I praktiken kan du gå veckor utan att behöva röra roboten, fyll vattenttankarna (ca 3 liter) en gång i veckan och töm dammpåsen var 7:e vecka.
       </p>
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Specifikationer Roborock Qrevo Pro</h3>
@@ -163,14 +163,14 @@ const faqSchema = faqItems.map((item) => ({
         </table>
       </div>
 
-      <h3 class="font-heading text-xl font-semibold text-text mb-3">Qrevo Pro vs Qrevo Master — när är Pro tillräckligt?</h3>
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Qrevo Pro vs Qrevo Master, när är Pro tillräckligt?</h3>
       <p class="text-text-light leading-relaxed mb-4">
-        Qrevo Master kostar ca 4 000 kr mer och tillför AI-kamera med djuravföringsdetektering, starkare sugkraft (13 000 Pa) och fler hinder-sensorer. För hem utan husdjur och utan extremt smutsiga ytor levererar Qrevo Pro identisk komfort. Välj Master om du har katt eller hund — annars är Pro det smartare köpet per krona.
+        Qrevo Master kostar ca 4 000 kr mer och tillför AI-kamera med djuravföringsdetektering, starkare sugkraft (13 000 Pa) och fler hinder-sensorer. För hem utan husdjur och utan extremt smutsiga ytor levererar Qrevo Pro identisk komfort. Välj Master om du har katt eller hund, annars är Pro det smartare köpet per krona.
       </p>
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Reservdelar och underhåll</h3>
       <p class="text-text-light leading-relaxed mb-4">
-        Qrevo Pro delar reservdelssystem med Qrevo S och Qrevo MaxV. Byt HEPA-filter var 2 månad, sidoborstar var 6–12 månad och huvudborsten var 12 månader. Amazon erbjuder kompletta kit på ca 200–300 kr.
+        Qrevo Pro delar reservdelssystem med Qrevo S och Qrevo MaxV. Byt HEPA-filter var 2 månad, sidoborstar var 6 till 12 månad och huvudborsten var 12 månader. Amazon erbjuder kompletta kit på ca 200 till 300 kr.
       </p>
     </section>
 
@@ -190,10 +190,10 @@ const faqSchema = faqItems.map((item) => ({
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
       <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med liknande modeller</h2>
       <ul class="space-y-2">
-        <li><a href="/roborock-qrevo-master/" class="text-accent underline text-sm">Roborock Qrevo Master — mer kraft och AI-kamera</a></li>
-        <li><a href="/roborock-s8-pro-ultra/" class="text-accent underline text-sm">Roborock S8 Pro Ultra — äldre flaggskepp med FlexiArm</a></li>
-        <li><a href="/reservdelar/roborock/" class="text-accent underline text-sm">Roborock reservdelar — filter, borstar och tillbehör</a></li>
-        <li><a href="/roborock-guide/" class="text-accent underline text-sm">Roborock — alla modeller guide 2026</a></li>
+        <li><a href="/roborock-qrevo-master/" class="text-accent underline text-sm">Roborock Qrevo Master, mer kraft och AI-kamera</a></li>
+        <li><a href="/roborock-s8-pro-ultra/" class="text-accent underline text-sm">Roborock S8 Pro Ultra, äldre flaggskepp med FlexiArm</a></li>
+        <li><a href="/reservdelar/roborock/" class="text-accent underline text-sm">Roborock reservdelar, filter, borstar och tillbehör</a></li>
+        <li><a href="/roborock-guide/" class="text-accent underline text-sm">Roborock, alla modeller guide 2026</a></li>
       </ul>
     </section>
   </div>
@@ -241,7 +241,7 @@ const faqSchema = faqItems.map((item) => ({
     },
     "author": { "@type": "Person", "name": "John Erik Johansson" },
     "datePublished": "2026-04-05",
-    "reviewBody": "Roborock Qrevo Pro levererar helautomatisk städning till ett rimligare pris än Qrevo Master — utan AI-kamera men med all nödvändig automatik.",
+    "reviewBody": "Roborock Qrevo Pro levererar helautomatisk städning till ett rimligare pris än Qrevo Master, utan AI-kamera men med all nödvändig automatik.",
     "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
   })} />
 </BaseLayout>

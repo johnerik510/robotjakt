@@ -8,7 +8,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 const faqItems = [
   {
     question: 'Vad är skillnaden mellan Roborock Qrevo MaxV Ultra och Qrevo Master?',
-    answer: 'Qrevo MaxV Ultra har AI-kamera med djuravföringsdetektering och 10 000 Pa sugkraft. Qrevo Master har 13 000 Pa och fler sensorer men kostar ca 2 000–3 000 kr mer. MaxV Ultra är bättre pris/prestanda för husdjursägare som inte behöver absolut maximal sugkraft.',
+    answer: 'Qrevo MaxV Ultra har AI-kamera med djuravföringsdetektering och 10 000 Pa sugkraft. Qrevo Master har 13 000 Pa och fler sensorer men kostar ca 2 000 till 3 000 kr mer. MaxV Ultra är bättre pris/prestanda för husdjursägare som inte behöver absolut maximal sugkraft.',
   },
   {
     question: 'Kan Roborock Qrevo MaxV Ultra undvika hundskit?',
@@ -20,7 +20,7 @@ const faqItems = [
   },
   {
     question: 'Vilka reservdelar passar Roborock Qrevo MaxV Ultra?',
-    answer: 'Qrevo MaxV Ultra delar reservdelssystem med Qrevo Pro och Qrevo S. Kompatibla kit med HEPA-filter, sidoborstar och moppkuddar finns på Amazon. Byt filter var 2 månad och sidoborstar var 6–12 månad.',
+    answer: 'Qrevo MaxV Ultra delar reservdelssystem med Qrevo Pro och Qrevo S. Kompatibla kit med HEPA-filter, sidoborstar och moppkuddar finns på Amazon. Byt filter var 2 månad och sidoborstar var 6 till 12 månad.',
   },
   {
     question: 'Stödjer Qrevo MaxV Ultra Matter och HomeKit?',
@@ -35,13 +35,13 @@ const breadcrumbs = [
 const specs = [
   { label: 'Sugkraft', value: '10 000 Pa' },
   { label: 'Navigering', value: 'LiDAR + AI-kamera (ReactiveAI 2.0)' },
-  { label: 'AI-hinder', value: 'Ja — 30+ hinderkategorier' },
-  { label: 'Husdjursavföring', value: 'Ja — detekteras och undviks' },
-  { label: 'Moppfunktion', value: 'Ja — roterande mopp' },
+  { label: 'AI-hinder', value: 'Ja, 30+ hinderkategorier' },
+  { label: 'Husdjursavföring', value: 'Ja, detekteras och undviks' },
+  { label: 'Moppfunktion', value: 'Ja, roterande mopp' },
   { label: 'Automatisk dammtömning', value: 'Ja' },
-  { label: 'Mopptvättning', value: 'Ja — varmt vatten 55°C' },
-  { label: 'Mopptorkning', value: 'Ja — varmluft' },
-  { label: 'Mattlyftning', value: 'Ja — 7 mm' },
+  { label: 'Mopptvättning', value: 'Ja, varmt vatten 55°C' },
+  { label: 'Mopptorkning', value: 'Ja, varmluft' },
+  { label: 'Mattlyftning', value: 'Ja, 7 mm' },
   { label: 'App', value: 'Roborock (iOS/Android)' },
   { label: 'Röststyrning', value: 'Google Assistant, Alexa' },
   { label: 'Batteri', value: '5 200 mAh' },
@@ -55,7 +55,7 @@ const faqSchema = faqItems.map((item) => ({
 ---
 
 <BaseLayout
-  title="Roborock Qrevo MaxV Ultra Recension 2026 – Test och Pris"
+  title="Roborock Qrevo MaxV Ultra Recension 2026, Test och Pris"
   description="Roborock Qrevo MaxV Ultra testad: AI-kamera, 10 000 Pa och helautomatisk station. Bästa valet för husdjursägare. Se betyg, pris och jämförelse 2026."
   ogImage="/images/roborock-qrevo-maxv-ultra.webp"
 >
@@ -71,7 +71,7 @@ const faqSchema = faqItems.map((item) => ({
       <div class="flex items-start gap-4">
         <div class="flex-1">
           <div class="flex items-center gap-3 mb-2">
-            <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">BAST FOR HUSDJUR — QREVO</span>
+            <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">BAST FOR HUSDJUR, QREVO</span>
             <div class="flex gap-0.5">
               {[1,2,3,4,5].map(i => (
                 <svg class={`w-4 h-4 ${i <= 4 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
@@ -82,7 +82,7 @@ const faqSchema = faqItems.map((item) => ({
             <span class="font-bold text-text">4.4 / 5</span>
           </div>
           <p class="text-text-light text-sm leading-relaxed">
-            Roborock Qrevo MaxV Ultra kombinerar AI-kamera med djuravföringsdetektering, 10 000 Pa sugkraft och helautomatisk station. Det är Qrevo-seriens bästa val för hem med husdjur — utan att kosta som flaggskeppet S8 MaxV Ultra.
+            Roborock Qrevo MaxV Ultra kombinerar AI-kamera med djuravföringsdetektering, 10 000 Pa sugkraft och helautomatisk station. Det är Qrevo-seriens bästa val för hem med husdjur, utan att kosta som flaggskeppet S8 MaxV Ultra.
           </p>
         </div>
       </div>
@@ -92,7 +92,7 @@ const faqSchema = faqItems.map((item) => ({
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <p class="text-2xl font-bold text-text">ca 8 990 kr</p>
-          <p class="text-sm text-text-light">Pris varierar — jämför alltid mellan butiker</p>
+          <p class="text-sm text-text-light">Pris varierar, jämför alltid mellan butiker</p>
         </div>
         <div class="flex flex-col sm:flex-row gap-3">
           <a
@@ -119,8 +119,8 @@ const faqSchema = faqItems.map((item) => ({
         <h2 class="font-semibold text-text mb-3">Fördelar med Roborock Qrevo MaxV Ultra</h2>
         <ul class="space-y-2">
           {[
-            'AI-kamera — undviker husdjursavföring, kablar och hinder',
-            '10 000 Pa — stark sugkraft för sällskapsdjurshår',
+            'AI-kamera, undviker husdjursavföring, kablar och hinder',
+            '10 000 Pa, stark sugkraft för sällskapsdjurshår',
             'Helautomatisk station med mopptvättning 55°C',
             '7 mm mattlyftning',
             'Prisvärd jämfört med S8 MaxV Ultra',
@@ -151,11 +151,11 @@ const faqSchema = faqItems.map((item) => ({
     </div>
 
     <section class="mb-10">
-      <h2 class="font-heading text-2xl font-bold text-text mb-4">Roborock Qrevo MaxV Ultra — detaljerad genomgång</h2>
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Roborock Qrevo MaxV Ultra, detaljerad genomgång</h2>
 
-      <h3 class="font-heading text-xl font-semibold text-text mb-3">ReactiveAI 2.0 — intelligent hinderdetektion</h3>
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">ReactiveAI 2.0, intelligent hinderdetektion</h3>
       <p class="text-text-light leading-relaxed mb-6">
-        AI-kameran i Qrevo MaxV Ultra identifierar och kategoriserar hinder i realtid: husdjursavföring, kablar, strumpor, skor och mer. Roboten svänger undan i tid istället för att köra rakt igenom. Det fungerar i dagsljus och i mörker tack vare närinfrarött stödljus. I tester undviker den husdjursavföring i 95%+ av fallen — det lilla som missas sker vid extrema ljusförhållanden.
+        AI-kameran i Qrevo MaxV Ultra identifierar och kategoriserar hinder i realtid: husdjursavföring, kablar, strumpor, skor och mer. Roboten svänger undan i tid istället för att köra rakt igenom. Det fungerar i dagsljus och i mörker tack vare närinfrarött stödljus. I tester undviker den husdjursavföring i 95%+ av fallen, det lilla som missas sker vid extrema ljusförhållanden.
       </p>
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Specifikationer Roborock Qrevo MaxV Ultra</h3>
@@ -172,9 +172,9 @@ const faqSchema = faqItems.map((item) => ({
         </table>
       </div>
 
-      <h3 class="font-heading text-xl font-semibold text-text mb-3">Qrevo MaxV Ultra vs S8 MaxV Ultra — rätt modell?</h3>
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Qrevo MaxV Ultra vs S8 MaxV Ultra, rätt modell?</h3>
       <p class="text-text-light leading-relaxed mb-4">
-        S8 MaxV Ultra kostar ca 4 000–5 000 kr mer och har starkare sugkraft (10 000 Pa mot Qrevo MaxV Ultras 10 000 Pa — de är faktiskt lika) men S8-serien erbjuder FlexiArm sidborste och dubbla gummirullar. Qrevo MaxV Ultra är ett utmärkt val om du vill ha AI-kamera och helautomatisk station utan att betala S8-serien-priset.
+        S8 MaxV Ultra kostar ca 4 000 till 5 000 kr mer och har starkare sugkraft (10 000 Pa mot Qrevo MaxV Ultras 10 000 Pa, de är faktiskt lika) men S8-serien erbjuder FlexiArm sidborste och dubbla gummirullar. Qrevo MaxV Ultra är ett utmärkt val om du vill ha AI-kamera och helautomatisk station utan att betala S8-serien-priset.
       </p>
     </section>
 
@@ -185,11 +185,11 @@ const faqSchema = faqItems.map((item) => ({
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
       <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med liknande modeller</h2>
       <ul class="space-y-2">
-        <li><a href="/roborock-qrevo-master/" class="text-accent underline text-sm">Roborock Qrevo Master — ännu starkare och fler sensorer</a></li>
-        <li><a href="/roborock-qrevo-pro/" class="text-accent underline text-sm">Roborock Qrevo Pro — utan AI-kamera, lägre pris</a></li>
-        <li><a href="/roborock-s8-maxv-ultra/" class="text-accent underline text-sm">Roborock S8 MaxV Ultra — flaggskeppet med FlexiArm</a></li>
-        <li><a href="/reservdelar/roborock/" class="text-accent underline text-sm">Roborock reservdelar — filter, borstar och tillbehör</a></li>
-        <li><a href="/roborock-guide/" class="text-accent underline text-sm">Roborock guide 2026 — alla modeller, test och jämförelser</a></li>
+        <li><a href="/roborock-qrevo-master/" class="text-accent underline text-sm">Roborock Qrevo Master, ännu starkare och fler sensorer</a></li>
+        <li><a href="/roborock-qrevo-pro/" class="text-accent underline text-sm">Roborock Qrevo Pro, utan AI-kamera, lägre pris</a></li>
+        <li><a href="/roborock-s8-maxv-ultra/" class="text-accent underline text-sm">Roborock S8 MaxV Ultra, flaggskeppet med FlexiArm</a></li>
+        <li><a href="/reservdelar/roborock/" class="text-accent underline text-sm">Roborock reservdelar, filter, borstar och tillbehör</a></li>
+        <li><a href="/roborock-guide/" class="text-accent underline text-sm">Roborock guide 2026, alla modeller, test och jämförelser</a></li>
       </ul>
     </section>
   </div>

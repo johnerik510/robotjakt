@@ -11,7 +11,7 @@ const breadcrumbs = [
 const specs = [
   { label: 'Klippyta', value: '1 500 m²' },
   { label: 'Klippbredd', value: '22 cm' },
-  { label: 'Klipphöjd', value: '20–50 mm' },
+  { label: 'Klipphöjd', value: '20 till 50 mm' },
   { label: 'Lutningstolerans', value: '40%' },
   { label: 'Bullernivå', value: '61 dB(A)' },
   { label: 'Navigering', value: 'GPS + perimeterkabel' },
@@ -26,11 +26,11 @@ const specs = [
 const faqItems = [
   {
     question: 'Vad skiljer Husqvarna Automower 415X från 315X?',
-    answer: '415X har 22 cm klippbredd mot 315X:s 18 cm, 4G-uppkoppling mot 315X:s 3G och väger 9,7 kg mot 7,7 kg. Klipphöjden är 20–50 mm på 415X mot 20–60 mm på 315X. 315X klarar däremot en något större yta (1 600 m² mot 415X:s 1 500 m²). 415X passar dig som prioriterar bredare klippbana och modernare uppkoppling — 315X är det mer priseffektiva valet för yta.',
+    answer: '415X har 22 cm klippbredd mot 315X:s 18 cm, 4G-uppkoppling mot 315X:s 3G och väger 9,7 kg mot 7,7 kg. Klipphöjden är 20 till 50 mm på 415X mot 20 till 60 mm på 315X. 315X klarar däremot en något större yta (1 600 m² mot 415X:s 1 500 m²). 415X passar dig som prioriterar bredare klippbana och modernare uppkoppling, 315X är det mer priseffektiva valet för yta.',
   },
   {
     question: 'Behöver Husqvarna Automower 415X perimeterkabel?',
-    answer: 'Ja, precis som alla modeller i den traditionella Automower-serien kräver 415X att du gräver ner en perimeterkabel längs tomtgränsen. Kabeln definierar klippzonen och guidar roboten tillbaka till laddstationen. Det är det viktigaste att planera för i installationen — räkna med ett halvdagsarbete för en normalträdgård.',
+    answer: 'Ja, precis som alla modeller i den traditionella Automower-serien kräver 415X att du gräver ner en perimeterkabel längs tomtgränsen. Kabeln definierar klippzonen och guidar roboten tillbaka till laddstationen. Det är det viktigaste att planera för i installationen, räkna med ett halvdagsarbete för en normalträdgård.',
   },
   {
     question: 'Vad kostar Husqvarna Automower 415X?',
@@ -42,7 +42,7 @@ const faqItems = [
   },
   {
     question: 'Kan Automower 415X styras med mobilen?',
-    answer: 'Ja, 415X har inbyggd 4G och fungerar med Automower Connect-appen för iOS och Android. Via appen schemalägger du klippningen, ser robotens position och status, och styr roboten direkt. 4G-uppkopplingen innebär att du kan styra roboten var du än befinner dig — du behöver inte WiFi hemma.',
+    answer: 'Ja, 415X har inbyggd 4G och fungerar med Automower Connect-appen för iOS och Android. Via appen schemalägger du klippningen, ser robotens position och status, och styr roboten direkt. 4G-uppkopplingen innebär att du kan styra roboten var du än befinner dig, du behöver inte WiFi hemma.',
   },
 ];
 
@@ -57,7 +57,7 @@ const faqSchema = faqItems.map((item) => ({
 ---
 
 <ArticleLayout
-  title="Husqvarna Automower 415X Test 2026 — Recension & Pris"
+  title="Husqvarna Automower 415X Test 2026, Recension & Pris"
   description="Husqvarna Automower 415X testad: 22 cm klippbredd, 4G-uppkoppling och 40% lutning för 1 500 m². Hur skiljer den sig från 315X? Se recension och pris 2026."
   breadcrumbs={breadcrumbs}
   lastUpdated="2026-04-13"
@@ -69,7 +69,7 @@ const faqSchema = faqItems.map((item) => ({
   </div>
 
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
-    Husqvarna Automower 415X — Recension 2026
+    Husqvarna Automower 415X, Recension 2026
   </h1>
 
   <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -92,7 +92,7 @@ const faqSchema = faqItems.map((item) => ({
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div>
             <p class="text-2xl font-bold text-text">ca 26 900 kr</p>
-            <p class="text-xs text-text-light">Pris kan variera — jämför alltid</p>
+            <p class="text-xs text-text-light">Pris kan variera, jämför alltid</p>
           </div>
           <a
             href="https://www.amazon.se/s?k=husqvarna+automower+415x&tag=johnerik510-20"
@@ -113,10 +113,10 @@ const faqSchema = faqItems.map((item) => ({
       <h2 class="font-semibold text-text mb-3">Fördelar med Husqvarna Automower 415X</h2>
       <ul class="space-y-2">
         {[
-          '22 cm klippbredd — bredare än 315X',
-          '4G-uppkoppling — styr var du än befinner dig',
+          '22 cm klippbredd, bredare än 315X',
+          '4G-uppkoppling, styr var du än befinner dig',
           'GPS-navigering med stöldspårning',
-          'Tyst 61 dB — klipp dag och natt',
+          'Tyst 61 dB, klipp dag och natt',
           'Pålitlig Husqvarna-teknik med 3 års garanti',
           'Automower Connect-app med Alexa/Google Home',
         ].map(pro => (
@@ -131,8 +131,8 @@ const faqSchema = faqItems.map((item) => ({
       <h2 class="font-semibold text-text mb-3">Nackdelar med Husqvarna Automower 415X</h2>
       <ul class="space-y-2">
         {[
-          'Perimeterkabel krävs — installation tillkommer',
-          'Max 1 500 m² — räcker inte för stora tomter',
+          'Perimeterkabel krävs, installation tillkommer',
+          'Max 1 500 m², räcker inte för stora tomter',
           'Kortare drifttid (50 min) vs många konkurrenter',
           'Dyrare än 315X utan proportionellt större yta',
         ].map(con => (
@@ -166,7 +166,7 @@ const faqSchema = faqItems.map((item) => ({
 
     <h3 class="font-heading text-xl font-semibold text-text mb-3">Klippbredd och effektivitet</h3>
     <p class="text-text-light leading-relaxed mb-4">
-      22 cm klippbredd är 4 cm bredare än 315X:s 18 cm. Det låter lite men innebär i praktiken att 415X täcker ytan snabbare — varje körning täcker mer gräs. På en 1 000 m² tomt gör det en påtaglig skillnad i hur tätt roboten behöver arbeta.
+      22 cm klippbredd är 4 cm bredare än 315X:s 18 cm. Det låter lite men innebär i praktiken att 415X täcker ytan snabbare, varje körning täcker mer gräs. På en 1 000 m² tomt gör det en påtaglig skillnad i hur tätt roboten behöver arbeta.
     </p>
     <p class="text-text-light leading-relaxed mb-6">
       Klipphöjden justeras mellan 20 och 50 mm, vilket ger flexibilitet för olika gräsmattepreferenser. De tre artikulerade bladen ger ett jämnt klippresultat även i ojämn terräng.
@@ -174,7 +174,7 @@ const faqSchema = faqItems.map((item) => ({
 
     <h3 class="font-heading text-xl font-semibold text-text mb-3">4G och GPS-navigering</h3>
     <p class="text-text-light leading-relaxed mb-4">
-      4G-uppkopplingen gör att du kan styra och övervaka roboten var du än befinner dig — på semester, på jobbet eller i affären. Automower Connect-appen visar position, status och eventuella felmeddelanden i realtid.
+      4G-uppkopplingen gör att du kan styra och övervaka roboten var du än befinner dig, på semester, på jobbet eller i affären. Automower Connect-appen visar position, status och eventuella felmeddelanden i realtid.
     </p>
     <p class="text-text-light leading-relaxed mb-6">
       GPS-systemet används primärt för stöldspårning och app-positionering. Roboten navigerar fortfarande med perimeterkabel som yttre gräns, vilket ger pålitlig och förutsägbar klippning oavsett väderförhållanden eller träd som skymmer himlen.
@@ -182,10 +182,10 @@ const faqSchema = faqItems.map((item) => ({
 
     <h3 class="font-heading text-xl font-semibold text-text mb-3">Installation</h3>
     <p class="text-text-light leading-relaxed mb-4">
-      Som alla Husqvarna Automower-modeller med perimeterkabel kräver 415X att kabeln grävs ner längs tomtgränsen. För en 1 000–1 500 m² tomt tar installationen ett halvdagsarbete om du gör det själv. Husqvarna levererar med installationskit och guide.
+      Som alla Husqvarna Automower-modeller med perimeterkabel kräver 415X att kabeln grävs ner längs tomtgränsen. För en 1 000 till 1 500 m² tomt tar installationen ett halvdagsarbete om du gör det själv. Husqvarna levererar med installationskit och guide.
     </p>
     <p class="text-text-light leading-relaxed mb-6">
-      Professionell installation kostar normalt 1 500–3 500 kr beroende på trädgårdens komplexitet. Kabeln är dold i marken och kräver i praktiken inget underhåll väl nedgrävd.
+      Professionell installation kostar normalt 1 500 till 3 500 kr beroende på trädgårdens komplexitet. Kabeln är dold i marken och kräver i praktiken inget underhåll väl nedgrävd.
     </p>
 
     <h3 class="font-heading text-xl font-semibold text-text mb-3">Säkerhet</h3>
@@ -195,7 +195,7 @@ const faqSchema = faqItems.map((item) => ({
   </section>
 
   <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
-    <h2 class="font-heading text-xl font-bold text-text mb-3">415X vs 315X vs 430X Nera — vilket passar dig?</h2>
+    <h2 class="font-heading text-xl font-bold text-text mb-3">415X vs 315X vs 430X Nera, vilket passar dig?</h2>
     <div class="overflow-hidden mb-4">
       <table class="w-full text-sm">
         <thead>
@@ -256,10 +256,10 @@ const faqSchema = faqItems.map((item) => ({
   <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
     <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade recensioner</h2>
     <ul class="space-y-2">
-      <li><a href="/husqvarna-automower-315x/" class="text-accent underline text-sm">Husqvarna Automower 315X — för trädgårdar upp till 1 600 m²</a></li>
-      <li><a href="/husqvarna-automower-430x-nera/" class="text-accent underline text-sm">Husqvarna Automower 430X Nera — för trädgårdar upp till 3 200 m²</a></li>
-      <li><a href="/husqvarna-automower-315x-vs-415x/" class="text-accent underline text-sm">Husqvarna Automower 315X vs 415X — fullständig jämförelse</a></li>
-      <li><a href="/robotgrasklippare/" class="text-accent underline text-sm">Bästa robotgräsklippare 2026 — komplett topplista</a></li>
+      <li><a href="/husqvarna-automower-315x/" class="text-accent underline text-sm">Husqvarna Automower 315X, för trädgårdar upp till 1 600 m²</a></li>
+      <li><a href="/husqvarna-automower-430x-nera/" class="text-accent underline text-sm">Husqvarna Automower 430X Nera, för trädgårdar upp till 3 200 m²</a></li>
+      <li><a href="/husqvarna-automower-315x-vs-415x/" class="text-accent underline text-sm">Husqvarna Automower 315X vs 415X, fullständig jämförelse</a></li>
+      <li><a href="/robotgrasklippare/" class="text-accent underline text-sm">Bästa robotgräsklippare 2026, komplett topplista</a></li>
     </ul>
   </section>
 </ArticleLayout>

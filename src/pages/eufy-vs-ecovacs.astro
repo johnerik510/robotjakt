@@ -12,24 +12,24 @@ const breadcrumbs = [
 
 const faqItems = [
   {
-    question: 'Vilken är bäst — Eufy eller Ecovacs?',
-    answer: 'Eufy X10 Pro Omni och Ecovacs Deebot X5 Omni är båda utmärkta robotdammsugare i premiumsegmentet — men de passar olika behov. Ecovacs har starkare moppfunktion med OZMO Turbo och bättre hinderdetektering (AI-kamera i toppmodellerna). Eufy är billigare, enklare att använda och har starkare sug (8 000 Pa). Har du en mix av mattor och hårdgolv: Ecovacs. Prioriterar du sug och prisvärdhet: Eufy.',
+    question: 'Vilken är bäst, Eufy eller Ecovacs?',
+    answer: 'Eufy X10 Pro Omni och Ecovacs Deebot X5 Omni är båda utmärkta robotdammsugare i premiumsegmentet, men de passar olika behov. Ecovacs har starkare moppfunktion med OZMO Turbo och bättre hinderdetektering (AI-kamera i toppmodellerna). Eufy är billigare, enklare att använda och har starkare sug (8 000 Pa). Har du en mix av mattor och hårdgolv: Ecovacs. Prioriterar du sug och prisvärdhet: Eufy.',
   },
   {
-    question: 'Vilken har bättre moppfunktion — Eufy eller Ecovacs?',
+    question: 'Vilken har bättre moppfunktion, Eufy eller Ecovacs?',
     answer: 'Ecovacs vinner på moppning. Deebot X5 Omni och X8 Pro Omni har OZMO Turbo-moppning med roterande moppskivor och automatisk mopplifting vid mattor. Eufy X10 Pro Omni har moppfunktion men saknar roterende moppskivor och automatisk lyftning är mer begränsad. För hem med blandat golv (mattor + parkettgolv): välj Ecovacs.',
   },
   {
-    question: 'Vilken har starkare sug — Eufy eller Ecovacs?',
-    answer: 'Eufy vinner på sugstyrka. Eufy X10 Pro Omni har 8 000 Pa sugstyrkia. Ecovacs Deebot X5 Omni har 8 000 Pa (likvärdigt) men äldre Ecovacs-modeller (T20 Omni) har 6 000 Pa. I praktiken är sugen i 8 000 Pa-klassen likvärdiga — skillnaden syns mer i djuppälsmoppar och tjocka mattor.',
+    question: 'Vilken har starkare sug, Eufy eller Ecovacs?',
+    answer: 'Eufy vinner på sugstyrka. Eufy X10 Pro Omni har 8 000 Pa sugstyrkia. Ecovacs Deebot X5 Omni har 8 000 Pa (likvärdigt) men äldre Ecovacs-modeller (T20 Omni) har 6 000 Pa. I praktiken är sugen i 8 000 Pa-klassen likvärdiga, skillnaden syns mer i djuppälsmoppar och tjocka mattor.',
   },
   {
     question: 'Är Ecovacs bättre för husdjursägare?',
-    answer: 'Ecovacs Deebot T20 Omni och X8 Pro Omni har AI-hinderdetektering som identifierar och undviker husdjursavföring — viktigt för de med hundar. Eufy X10 Pro Omni saknar denna specifika funktion och kan köra in i avföring. Har du hund: välj Ecovacs för säkrare drift.',
+    answer: 'Ecovacs Deebot T20 Omni och X8 Pro Omni har AI-hinderdetektering som identifierar och undviker husdjursavföring, viktigt för de med hundar. Eufy X10 Pro Omni saknar denna specifika funktion och kan köra in i avföring. Har du hund: välj Ecovacs för säkrare drift.',
   },
   {
     question: 'Vad kostar Eufy vs Ecovacs?',
-    answer: 'Eufy X10 Pro Omni: ca 5 990–7 990 kr. Ecovacs Deebot T20 Omni: ca 5 990–6 990 kr. Ecovacs Deebot X5 Omni: ca 7 990–9 990 kr. Ecovacs X8 Pro Omni: ca 9 990–12 990 kr. Eufy är generellt billigare eller jämförbart med Ecovacs i de flesta segment.',
+    answer: 'Eufy X10 Pro Omni: ca 5 990 till 7 990 kr. Ecovacs Deebot T20 Omni: ca 5 990 till 6 990 kr. Ecovacs Deebot X5 Omni: ca 7 990 till 9 990 kr. Ecovacs X8 Pro Omni: ca 9 990 till 12 990 kr. Eufy är generellt billigare eller jämförbart med Ecovacs i de flesta segment.',
   },
   {
     question: 'Har Eufy eller Ecovacs bättre navigering?',
@@ -48,8 +48,8 @@ const faqSchema = faqItems.map((item) => ({
 ---
 
 <BaseLayout
-  title="Eufy vs Ecovacs 2026 — Vilket Märke Vinner?"
-  description="Vi jämför Eufy och Ecovacs robotdammsugare 2026. Moppning, navigering, hinderdetektering och pris — se vilken som passar ditt hem bäst."
+  title="Eufy vs Ecovacs 2026, Vilket Märke Vinner?"
+  description="Vi jämför Eufy och Ecovacs robotdammsugare 2026. Moppning, navigering, hinderdetektering och pris, se vilken som passar ditt hem bäst."
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -92,13 +92,13 @@ const faqSchema = faqItems.map((item) => ({
           </thead>
           <tbody>
             {[
-              { label: 'Pris', eufy: 'ca 5 990–7 990 kr', ecovacs: 'ca 7 990–9 990 kr', winner: 'eufy' },
+              { label: 'Pris', eufy: 'ca 5 990 till 7 990 kr', ecovacs: 'ca 7 990 till 9 990 kr', winner: 'eufy' },
               { label: 'Sugstyrka', eufy: '8 000 Pa', ecovacs: '8 000 Pa', winner: 'draw' },
               { label: 'Navigering', eufy: 'LiDAR', ecovacs: 'LiDAR + AI-kamera', winner: 'ecovacs' },
               { label: 'Moppfunktion', eufy: 'Standard', ecovacs: 'OZMO Turbo (roterande)', winner: 'ecovacs' },
               { label: 'Mopplifting vid mattor', eufy: 'Begränsad', ecovacs: 'Automatisk lyftning', winner: 'ecovacs' },
               { label: 'Husdjursdetektering', eufy: 'Nej', ecovacs: 'Ja (AI-kamera)', winner: 'ecovacs' },
-              { label: 'Basstation', eufy: 'Ja — tömning, påfyllning, tvättning', ecovacs: 'Ja — OMNI Station', winner: 'draw' },
+              { label: 'Basstation', eufy: 'Ja, tömning, påfyllning, tvättning', ecovacs: 'Ja, OMNI Station', winner: 'draw' },
               { label: 'Bullernivå', eufy: 'ca 68 dB', ecovacs: 'ca 66 dB', winner: 'ecovacs' },
               { label: 'Batteritid', eufy: 'ca 180 min', ecovacs: 'ca 180 min', winner: 'draw' },
               { label: 'App', eufy: 'EufyHome', ecovacs: 'Ecovacs Home', winner: 'draw' },
@@ -124,7 +124,7 @@ const faqSchema = faqItems.map((item) => ({
     <section class="mb-8">
       <h2 class="text-2xl font-bold text-gray-900 mb-4">Moppning: Ecovacs vinner tydligt</h2>
       <p class="text-gray-600 mb-4">
-        Ecovacs OZMO Turbo-teknik med roterande moppskivor applicerar vatten med tryck mot golvet — en cirkulär mopprörelse som är effektivare mot intorkad smuts än Eufys standardmoppning. Deebot X5 Omni lyfter dessutom moppmodulen automatiskt när den detekterar mattor, vilket förhindrar att mattor blöts ned.
+        Ecovacs OZMO Turbo-teknik med roterande moppskivor applicerar vatten med tryck mot golvet, en cirkulär mopprörelse som är effektivare mot intorkad smuts än Eufys standardmoppning. Deebot X5 Omni lyfter dessutom moppmodulen automatiskt när den detekterar mattor, vilket förhindrar att mattor blöts ned.
       </p>
       <p class="text-gray-600 mb-4">
         Eufy X10 Pro Omni har moppfunktion men standardmoppning utan roterande moppskivor. Vid övergången matta/hårdgolv är lyfthöjden mer begränsad. Har du ett hem med en mix av mattor och parkett/klinker: Ecovacs är det klart bättre valet.
@@ -151,7 +151,7 @@ const faqSchema = faqItems.map((item) => ({
             <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Prioriterar pris och vill ha bra prestanda för pengarna</span></li>
             <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Inte har husdjur och har enkla golvytor</span></li>
             <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Vill ha en enkel, pålitlig robot utan för många avancerade inställningar</span></li>
-            <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Primärt dammsugning — moppning är sekundärt</span></li>
+            <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Primärt dammsugning, moppning är sekundärt</span></li>
           </ul>
         </div>
         <div class="bg-green-50 border border-green-200 rounded-xl p-5">

@@ -14,7 +14,7 @@ const products = [
     price: '5 990 kr',
     rating: 4.6,
     badge: 'Bäst för lägenhet',
-    pros: ['Kompakt — 9,9 cm hög, passar under soffan', 'Fullautomatisk station', 'LiDAR-navigering perfekt för öppen planlösning', 'Tyst i normalläge'],
+    pros: ['Kompakt, 9,9 cm hög, passar under soffan', 'Fullautomatisk station', 'LiDAR-navigering perfekt för öppen planlösning', 'Tyst i normalläge'],
     cons: ['Station tar golvyta', 'Pris i överkant för litet hem'],
     ctaText: 'Se pris hos Elon',
     ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fdreame-l10s-ultra-gen-2-151994',
@@ -57,7 +57,7 @@ const products = [
     price: '4 540 kr',
     rating: 4.2,
     badge: 'Bäst budget med mopp',
-    pros: ['6 000 Pa — starkast i klassen för priset', 'Mopp och dammsugning i ett pass', 'Tyst drift — bra för lägenhet', 'App + Google Home', 'Fri frakt, 1–3 dagar'],
+    pros: ['6 000 Pa, starkast i klassen för priset', 'Mopp och dammsugning i ett pass', 'Tyst drift, bra för lägenhet', 'App + Google Home', 'Fri frakt, 1 till 3 dagar'],
     cons: ['Ingen automatisk tömningsstation', 'Ingen LiDAR'],
     ctaText: 'Köp hos Neatsvor',
     ctaUrl: 'https://addrevenue.io/t?a=985945&c=3467327&url=https%3A%2F%2Fwww.neatsvor.se%2Fprodukt%2Fneatsvor-x650-pro-robotdammsugare%2F',
@@ -81,23 +81,23 @@ const products = [
 const faqItems = [
   {
     question: 'Vilken robotdammsugare är bäst för en liten lägenhet?',
-    answer: 'För ett- eller tvårummare under 50 m² räcker Dreame D10s Pro (ca 2 990 kr) mer än väl — LiDAR-navigering och moppfunktion ingår utan automatisk station. Vill du ha hands-off-upplevelse i lite större lägenhet (50–100 m²) är Dreame L20 Ultra eller Roborock Q Revo bättre val med automatisk station.',
+    answer: 'För ett- eller tvårummare under 50 m² räcker Dreame D10s Pro (ca 2 990 kr) mer än väl, LiDAR-navigering och moppfunktion ingår utan automatisk station. Vill du ha hands-off-upplevelse i lite större lägenhet (50 till 100 m²) är Dreame L20 Ultra eller Roborock Q Revo bättre val med automatisk station.',
   },
   {
     question: 'Behöver jag automatisk station i en lägenhet?',
-    answer: 'Inte nödvändigtvis. I en liten lägenhet städas ytan snabbt och dammkorgen behöver inte tömmas dagligen. En modell utan automatisk station (som Dreame D10s Pro) sparar 2 000–3 000 kr. Men om du vill ha minimal skötsel — tömning max en gång i månaden — är automatisk station värt priset.',
+    answer: 'Inte nödvändigtvis. I en liten lägenhet städas ytan snabbt och dammkorgen behöver inte tömmas dagligen. En modell utan automatisk station (som Dreame D10s Pro) sparar 2 000 till 3 000 kr. Men om du vill ha minimal skötsel, tömning max en gång i månaden, är automatisk station värt priset.',
   },
   {
     question: 'Hur viktig är höjden på robotdammsugaren för en lägenhet?',
-    answer: 'Viktigt om du har låga möbler, soffor eller sängar med litet utrymme under. De flesta robotar är 9–10 cm höga. Dreame L20 Ultra (9,9 cm) och Roborock Q Revo är bland de kompaktare. Mät alltid under dina möbler innan köp — under 9 cm-modeller är ovanliga men finns.',
+    answer: 'Viktigt om du har låga möbler, soffor eller sängar med litet utrymme under. De flesta robotar är 9 till 10 cm höga. Dreame L20 Ultra (9,9 cm) och Roborock Q Revo är bland de kompaktare. Mät alltid under dina möbler innan köp, under 9 cm-modeller är ovanliga men finns.',
   },
   {
     question: 'Fungerar robotdammsugare med öppen planlösning?',
-    answer: 'Ja — öppen planlösning är faktiskt idealiskt för robotdammsugare med LiDAR. Inga väggar att navigera runt gör att roboten kartlägger snabbt och städar effektivt. Alla modeller på den här listan hanterar öppen planlösning utmärkt.',
+    answer: 'Ja, öppen planlösning är faktiskt idealiskt för robotdammsugare med LiDAR. Inga väggar att navigera runt gör att roboten kartlägger snabbt och städar effektivt. Alla modeller på den här listan hanterar öppen planlösning utmärkt.',
   },
   {
     question: 'Kan robotdammsugare städa under soffbord och stolar?',
-    answer: 'Ja om roboten är lägre än möbeln och det finns tillräckligt utrymme. Robotar är ca 35 cm i diameter — stolar med ben tätt ihop kan begränsa tillgängligheten. Öppna den fria vägen under soffbord och undvik trängsel på golvet för bästa resultat.',
+    answer: 'Ja om roboten är lägre än möbeln och det finns tillräckligt utrymme. Robotar är ca 35 cm i diameter, stolar med ben tätt ihop kan begränsa tillgängligheten. Öppna den fria vägen under soffbord och undvik trängsel på golvet för bästa resultat.',
   },
 ];
 
@@ -113,7 +113,7 @@ const faqSchema = faqItems.map((item) => ({
 ---
 
 <BaseLayout
-  title="Bästa Robotdammsugare för Lägenhet 2026 – Test"
+  title="Bästa Robotdammsugare för Lägenhet 2026, Test"
   description="Vi har testat de bästa robotdammsugarna för lägenhet 2026. Kompakta modeller med LiDAR-navigering, moppfunktion och automatisk station. Se topplistan."
 >
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -122,7 +122,7 @@ const faqSchema = faqItems.map((item) => ({
       Bästa Robotdammsugare för Lägenhet 2026
     </h1>
     <p class="text-text-light text-lg mb-6 leading-relaxed">
-      4 modeller testade — kompakta, tysta och effektiva för ett- och flervärummare.
+      4 modeller testade, kompakta, tysta och effektiva för ett- och flervärummare.
     </p>
 
     <!-- Snabbjämförelse -->
@@ -131,19 +131,19 @@ const faqSchema = faqItems.map((item) => ({
       <div class="grid sm:grid-cols-2 gap-4 text-sm">
         <div class="flex items-start gap-2">
           <span class="text-winner font-bold mt-0.5">1.</span>
-          <div><a href="/dreame-l20-ultra/" class="font-semibold text-accent underline">Dreame L20 Ultra</a> — bäst totalt för lägenhet med automatisk station</div>
+          <div><a href="/dreame-l20-ultra/" class="font-semibold text-accent underline">Dreame L20 Ultra</a>, bäst totalt för lägenhet med automatisk station</div>
         </div>
         <div class="flex items-start gap-2">
           <span class="font-bold text-text-lighter mt-0.5">2.</span>
-          <div><a href="/roborock-q-revo/" class="font-semibold text-accent underline">Roborock Q Revo</a> — stark mellanklass med station</div>
+          <div><a href="/roborock-q-revo/" class="font-semibold text-accent underline">Roborock Q Revo</a>, stark mellanklass med station</div>
         </div>
         <div class="flex items-start gap-2">
           <span class="font-bold text-text-lighter mt-0.5">3.</span>
-          <div><a href="/eufy-x10-pro-omni/" class="font-semibold text-accent underline">eufy X10 Pro Omni</a> — MopExtend, bra pris/prestanda</div>
+          <div><a href="/eufy-x10-pro-omni/" class="font-semibold text-accent underline">eufy X10 Pro Omni</a>, MopExtend, bra pris/prestanda</div>
         </div>
         <div class="flex items-start gap-2">
           <span class="font-bold text-text-lighter mt-0.5">4.</span>
-          <div><a href="/dreame-d10s-pro/" class="font-semibold text-accent underline">Dreame D10s Pro</a> — bäst budget under 3 000 kr</div>
+          <div><a href="/dreame-d10s-pro/" class="font-semibold text-accent underline">Dreame D10s Pro</a>, bäst budget under 3 000 kr</div>
         </div>
       </div>
     </div>
@@ -161,17 +161,17 @@ const faqSchema = faqItems.map((item) => ({
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Lägenhetsstorlek avgör vilket val</h3>
       <p class="text-text-light leading-relaxed mb-4">
-        Under 50 m² (1–2 rum) behöver du ingen dyr modell med automatisk station — Dreame D10s Pro klarar ytan på en laddning och dammkorgen töms kanske varannan dag. Från 50–100 m² (2–4 rum) är automatisk station ett tydligt lyft i bekvämlighet, och Dreame L20 Ultra eller Roborock Q Revo lönar sig.
+        Under 50 m² (1 till 2 rum) behöver du ingen dyr modell med automatisk station, Dreame D10s Pro klarar ytan på en laddning och dammkorgen töms kanske varannan dag. Från 50 till 100 m² (2 till 4 rum) är automatisk station ett tydligt lyft i bekvämlighet, och Dreame L20 Ultra eller Roborock Q Revo lönar sig.
       </p>
 
-      <h3 class="font-heading text-xl font-semibold text-text mb-3">Tysthet — viktigt i lägenhet</h3>
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Tysthet, viktigt i lägenhet</h3>
       <p class="text-text-light leading-relaxed mb-4">
-        Alla modeller på listan kör på 60–67 dB i normalläge — lägre än en köksfläkt. Dreame L20 Ultra är bland de tystaste i kategorin. Kör gärna roboten dagtid om du har grannar under dig.
+        Alla modeller på listan kör på 60 till 67 dB i normalläge, lägre än en köksfläkt. Dreame L20 Ultra är bland de tystaste i kategorin. Kör gärna roboten dagtid om du har grannar under dig.
       </p>
 
-      <h3 class="font-heading text-xl font-semibold text-text mb-3">Moppfunktion — värt det på hårda golv</h3>
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Moppfunktion, värt det på hårda golv</h3>
       <p class="text-text-light leading-relaxed mb-6">
-        Lägenheter med laminat, klinker eller parkett drar stor nytta av moppfunktion. Alla modeller på listan har mopp. Dreame L20 Ultra och eufy X10 Pro Omni har de bästa moppsystemen i klassen — roterande moppmoduler med varmvattenstvätt.
+        Lägenheter med laminat, klinker eller parkett drar stor nytta av moppfunktion. Alla modeller på listan har mopp. Dreame L20 Ultra och eufy X10 Pro Omni har de bästa moppsystemen i klassen, roterande moppmoduler med varmvattenstvätt.
       </p>
     </section>
 
@@ -182,7 +182,7 @@ const faqSchema = faqItems.map((item) => ({
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
       <h2 class="font-heading text-lg font-bold text-text mb-3">Fler guider</h2>
       <ul class="space-y-2">
-        <li><a href="/" class="text-accent underline text-sm">Bästa robotdammsugare 2026 — alla kategorier</a></li>
+        <li><a href="/" class="text-accent underline text-sm">Bästa robotdammsugare 2026, alla kategorier</a></li>
         <li><a href="/robotdammsugare/med-mopp/" class="text-accent underline text-sm">Bästa robotdammsugare med mopp 2026</a></li>
         <li><a href="/billigaste-robotdammsugare/" class="text-accent underline text-sm">Bästa billiga robotdammsugare under 4 000 kr</a></li>
       </ul>

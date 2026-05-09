@@ -1,0 +1,141 @@
+{
+  "site": "robotjakt",
+  "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
+  "timestamp": "2026-05-09T06:04:34.037Z",
+  "durationMs": 1031,
+  "summary": {
+    "checks": 8,
+    "errors": 16,
+    "warnings": 4
+  },
+  "results": [
+    {
+      "check": "02-anchors",
+      "severity": "error",
+      "file": "src/components/AffiliateDisclaimer.astro",
+      "line": 3,
+      "message": "Förbjuden ankartext \"läs mer\": <p class=\"text-xs text-text-lighter mb-3\">Robotjakt.se innehåller affiliatelänkar, vi kan få provisi"
+    },
+    {
+      "check": "02-anchors",
+      "severity": "error",
+      "file": "src/pages/dyson-360-vis-nav.astro",
+      "line": 276,
+      "message": "Förbjuden ankartext \"läs mer\": <h2 class=\"font-heading text-lg font-bold text-text mb-4\">Läs mer</h2>"
+    },
+    {
+      "check": "02-anchors",
+      "severity": "error",
+      "file": "src/pages/dyson-spot-scrub-ai.astro",
+      "line": 260,
+      "message": "Förbjuden ankartext \"läs mer\": <h2 class=\"font-heading text-lg font-bold text-text mb-4\">Läs mer</h2>"
+    },
+    {
+      "check": "02-anchors",
+      "severity": "error",
+      "file": "src/pages/jamfor/roborock-saros-10r-vs-dreame-x40-ultra.astro",
+      "line": 213,
+      "message": "Förbjuden ankartext \"läs mer\": <h2 class=\"font-heading text-lg font-bold text-text mb-3\">Läs mer</h2>"
+    },
+    {
+      "check": "02-anchors",
+      "severity": "error",
+      "file": "src/pages/om-redaktionen.astro",
+      "line": 93,
+      "message": "Förbjuden ankartext \"läs mer\": <a href=\"/sa-testar-vi/\" class=\"text-accent font-semibold text-sm underline\">Läs mer om vår testmeto"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "error",
+      "message": "Duplicerad bild \"/images/dreame-l20-ultra.webp\" bland senaste 6 publicerade artiklar: Automatisk tömningsstation till robotdammsugare, värt pengarna? | Installera robotdammsugare, komplett guide steg för steg"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/eufy-x10-pro-omni.webp\" används av 2 artiklar: Robotdammsugare och mattor, komplett guide 2026 | eufy Robotdammsugare Guide 2026, Alla Modeller"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/cat-robotgrasklippare.webp\" används av 2 artiklar: Robotgräsklippare köpguide 2026, så väljer du rätt modell | Köpguide Robotgräsklippare 2026, Tips & Råd"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/ecovacs-deebot-x5-omni.webp\" används av 2 artiklar: Ecovacs Deebot X5 Omni vs Roborock S8 MaxV Ultra April 2026 | Ecovacs Deebot X5 Omni vs Dreame X40 Ultra April 2026"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/roborock-saros-10r.webp\" används av 2 artiklar: Roborock Saros 10R vs Dreame X40 Ultra April 2026 | Roborock Saros 10R vs Roborock S8 MaxV Ultra April 2026"
+    },
+    {
+      "check": "05-mailto",
+      "severity": "error",
+      "file": "src/components/Footer.astro",
+      "line": 185,
+      "message": "mailto: utan email_off-wrapper: ELS Catalyst AB &middot; Org.nr 559583-6163 &middot; <!--email_off--><a href=\"mailto:elscatalyst@pro"
+    },
+    {
+      "check": "05-mailto",
+      "severity": "error",
+      "file": "src/pages/affiliate-disclaimer.astro",
+      "line": 40,
+      "message": "mailto: utan email_off-wrapper: Har du frågor om vår affiliate-modell? Kontakta oss på <!--email_off--><a href=\"mailto:elscatalyst@p"
+    },
+    {
+      "check": "05-mailto",
+      "severity": "error",
+      "file": "src/pages/integritetspolicy.astro",
+      "line": 17,
+      "message": "mailto: utan email_off-wrapper: <p>John Erik Johansson &auml;r personuppgiftsansvarig f&ouml;r Robotjakt.se.<br />E-post: <!--email_"
+    },
+    {
+      "check": "05-mailto",
+      "severity": "error",
+      "file": "src/pages/integritetspolicy.astro",
+      "line": 46,
+      "message": "mailto: utan email_off-wrapper: <p>Frågor om integritet? Kontakta oss på <!--email_off--><a href=\"mailto:elscatalyst@proton.me\" clas"
+    },
+    {
+      "check": "05-mailto",
+      "severity": "error",
+      "file": "src/pages/kontakt.astro",
+      "line": 21,
+      "message": "mailto: utan email_off-wrapper: <li><strong class=\"text-text\">E-post:</strong> <!--email_off--><a href=\"mailto:elscatalyst@proton.me"
+    },
+    {
+      "check": "05-mailto",
+      "severity": "error",
+      "file": "src/pages/om-oss.astro",
+      "line": 82,
+      "message": "mailto: utan email_off-wrapper: Har du fragor eller feedback? Kontakta oss pa <!--email_off--><a href=\"mailto:elscatalyst@proton.me\""
+    },
+    {
+      "check": "05-mailto",
+      "severity": "error",
+      "file": "src/pages/om-redaktionen.astro",
+      "line": 51,
+      "message": "mailto: utan email_off-wrapper: Kontakt: <!--email_off--><a href=\"mailto:elscatalyst@proton.me\" class=\"text-accent underline\">elscat"
+    },
+    {
+      "check": "05-mailto",
+      "severity": "error",
+      "file": "src/pages/redaktionell-policy.astro",
+      "line": 75,
+      "message": "mailto: utan email_off-wrapper: Kontakta oss: <!--email_off--><a href=\"mailto:elscatalyst@proton.me\" class=\"text-accent underline\">e"
+    },
+    {
+      "check": "05-mailto",
+      "severity": "error",
+      "file": "src/pages/sa-testar-vi.astro",
+      "line": 143,
+      "message": "mailto: utan email_off-wrapper: <p>Har du frågor om vår testmetod? Kontakta oss på <!--email_off--><a href=\"mailto:elscatalyst@proto"
+    },
+    {
+      "check": "08-image-binary-duplicates",
+      "severity": "error",
+      "message": "2 bildfiler är binär-identiska (8KB) — samma bild laddats med olika filnamn: public/images/husqvarna-315x.webp | public/images/husqvarna-automower-315x.webp"
+    }
+  ]
+}

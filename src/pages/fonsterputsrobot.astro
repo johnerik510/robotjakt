@@ -12,7 +12,7 @@ const breadcrumbs = [
 const faqItems = [
   {
     question: 'Klarar en fönsterputsrobot fönster utan ram?',
-    answer: 'Det beror på modellen. Ecovacs Winbot W2 Omni är speciellt konstruerad för ramfria fönster och använder AI-säkerhetsdetektering för att känna igen glaskanten utan fysisk ram. Enklare modeller som W1 Pro och Liectroux HCR-10 kräver en ram att stanna mot — de kan inte användas utan ram eftersom de inte kan identifiera glasets kant.',
+    answer: 'Det beror på modellen. Ecovacs Winbot W2 Omni är speciellt konstruerad för ramfria fönster och använder AI-säkerhetsdetektering för att känna igen glaskanten utan fysisk ram. Enklare modeller som W1 Pro och Liectroux HCR-10 kräver en ram att stanna mot, de kan inte användas utan ram eftersom de inte kan identifiera glasets kant.',
   },
   {
     question: 'Kan fönsterputsrobotar användas utomhus?',
@@ -20,11 +20,11 @@ const faqItems = [
   },
   {
     question: 'Hur länge tar det för en robot att putsa ett fönster?',
-    answer: 'Ett standardfönster på ca 80 x 120 cm tar ungefär 5–10 minuter för en fönsterputsrobot. Större fönster, balkongräcken av glas eller panoramafönster tar proportionellt längre tid. Winbot W2 Omni är snabbast i vart test och klarar ett standardfönster på ca 5 minuter.',
+    answer: 'Ett standardfönster på ca 80 x 120 cm tar ungefär 5 till 10 minuter för en fönsterputsrobot. Större fönster, balkongräcken av glas eller panoramafönster tar proportionellt längre tid. Winbot W2 Omni är snabbast i vart test och klarar ett standardfönster på ca 5 minuter.',
   },
   {
-    question: 'Är fönsterputsrobotar säkra — kan de ramla ner?',
-    answer: 'Alla seriösa fönsterputsrobotar har inbyggda säkerhetssystem. Winbot W2 Omni har AI-detektering av glasets kant. W1 Pro och Liectroux HCR-10 har en säkerhetsline som ingår i förpackningen — du fäster linan i roboten och i ett ankare på väggen som backup. HCR-10 har dessutom ett inbyggt UPS-batteri som håller roboten kvar på glaset i 25 minuter vid strömavbrott. Alltid med säkerhetsline på höga höjder.',
+    question: 'Är fönsterputsrobotar säkra, kan de ramla ner?',
+    answer: 'Alla seriösa fönsterputsrobotar har inbyggda säkerhetssystem. Winbot W2 Omni har AI-detektering av glasets kant. W1 Pro och Liectroux HCR-10 har en säkerhetsline som ingår i förpackningen, du fäster linan i roboten och i ett ankare på väggen som backup. HCR-10 har dessutom ett inbyggt UPS-batteri som håller roboten kvar på glaset i 25 minuter vid strömavbrott. Alltid med säkerhetsline på höga höjder.',
   },
 ];
 
@@ -47,15 +47,15 @@ const faqSchema = faqItems.map((item) => ({
 <p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-04-23">2026-04-23</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
-      Fönsterputsrobot April 2026 — Bästa modellerna
+      Fönsterputsrobot April 2026, Bästa modellerna
     </h1>
     <p class="text-text-light mb-6 max-w-2xl">
-      Vi jämför de bästa fönsterputsrobotarna 2026 och hjälper dig hitta rätt modell för dina fönster. Oavsett om du har ramfria glasytor, höga fönster eller utomhusfönster — här är vad som faktiskt fungerar.
+      Vi jämför de bästa fönsterputsrobotarna 2026 och hjälper dig hitta rätt modell för dina fönster. Oavsett om du har ramfria glasytor, höga fönster eller utomhusfönster, här är vad som faktiskt fungerar.
     </p>
 
     <!-- Snabbjämförelse -->
     <section class="mb-8" aria-label="Jämförelsetabell fönsterputsrobotar">
-      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse — bästa modellerna 2026</h2>
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse, bästa modellerna 2026</h2>
       <!-- Mobil: kort -->
       <div class="md:hidden space-y-3">
         {[
@@ -148,7 +148,7 @@ const faqSchema = faqItems.map((item) => ({
             <div>
               <p class="text-xs font-semibold text-text mb-2">Vad den klarar</p>
               <ul class="space-y-1">
-                {['Fungerar utan ram — valfri glasyta', 'AI-säkerhetsdetektering av glaskanten', 'Rengör med vatten och mikrofiberduk', 'Automatisk navigering på glaset'].map(p => (
+                {['Fungerar utan ram, valfri glasyta', 'AI-säkerhetsdetektering av glaskanten', 'Rengör med vatten och mikrofiberduk', 'Automatisk navigering på glaset'].map(p => (
                   <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-winner font-bold mt-0.5">+</span>{p}</li>
                 ))}
               </ul>
@@ -156,7 +156,7 @@ const faqSchema = faqItems.map((item) => ({
             <div>
               <p class="text-xs font-semibold text-text mb-2">Kompromisser</p>
               <ul class="space-y-1">
-                {['Dyrast i testet (4 990 kr)', 'Batteritid 45 min — räcker för 3-4 fönster', 'Kräver laddning mellan stora projekt'].map(c => (
+                {['Dyrast i testet (4 990 kr)', 'Batteritid 45 min, räcker för 3-4 fönster', 'Kräver laddning mellan stora projekt'].map(c => (
                   <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-cta font-bold mt-0.5">-</span>{c}</li>
                 ))}
               </ul>
@@ -198,7 +198,7 @@ const faqSchema = faqItems.map((item) => ({
             <div>
               <p class="text-xs font-semibold text-text mb-2">Vad den klarar</p>
               <ul class="space-y-1">
-                {['Stark sugkraft — 2 800 Pa', 'Tyst drift ca 55 dB', 'App-styrning via Hobot-appen', 'Pålitlig kabeldrift utan batteribrist'].map(p => (
+                {['Stark sugkraft, 2 800 Pa', 'Tyst drift ca 55 dB', 'App-styrning via Hobot-appen', 'Pålitlig kabeldrift utan batteribrist'].map(p => (
                   <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-winner font-bold mt-0.5">+</span>{p}</li>
                 ))}
               </ul>
@@ -206,7 +206,7 @@ const faqSchema = faqItems.map((item) => ({
             <div>
               <p class="text-xs font-semibold text-text mb-2">Kompromisser</p>
               <ul class="space-y-1">
-                {['Kräver fönsterram — fungerar inte utan', 'Kabel begränsar rörelsefrihet', 'Begränsad tankstorlek 80 ml'].map(c => (
+                {['Kräver fönsterram, fungerar inte utan', 'Kabel begränsar rörelsefrihet', 'Begränsad tankstorlek 80 ml'].map(c => (
                   <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-cta font-bold mt-0.5">-</span>{c}</li>
                 ))}
               </ul>
@@ -256,7 +256,7 @@ const faqSchema = faqItems.map((item) => ({
             <div>
               <p class="text-xs font-semibold text-text mb-2">Kompromisser</p>
               <ul class="space-y-1">
-                {['Kräver fönsterram — fungerar inte utan', 'Ingen AI-kantigenkänning', 'Sämre på stora glasytor'].map(c => (
+                {['Kräver fönsterram, fungerar inte utan', 'Ingen AI-kantigenkänning', 'Sämre på stora glasytor'].map(c => (
                   <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-cta font-bold mt-0.5">-</span>{c}</li>
                 ))}
               </ul>
@@ -283,13 +283,13 @@ const faqSchema = faqItems.map((item) => ({
         </div>
         <div class="p-5">
           <p class="text-text-light text-sm leading-relaxed mb-4">
-            Liectroux HCR-10 är det billigaste alternativet med automatisk spray och 2 800 Pa sugkraft. Inbyggt UPS-batteri håller roboten kvar på glaset i 25 minuter vid strömavbrott — en säkerhetsfunktion som premiummoteller kostar 3–4 gånger mer. Kräver fönsterram. Säkerhetsline ingår. Bäst pris/funktion i budgetsegmentet.
+            Liectroux HCR-10 är det billigaste alternativet med automatisk spray och 2 800 Pa sugkraft. Inbyggt UPS-batteri håller roboten kvar på glaset i 25 minuter vid strömavbrott, en säkerhetsfunktion som premiummoteller kostar 3 till 4 gånger mer. Kräver fönsterram. Säkerhetsline ingår. Bäst pris/funktion i budgetsegmentet.
           </p>
           <div class="grid sm:grid-cols-2 gap-4 mb-4">
             <div>
               <p class="text-xs font-semibold text-text mb-2">Vad den klarar</p>
               <ul class="space-y-1">
-                {['Lägst pris i testet — 999 kr', 'UPS-batteri — sitter kvar 25 min vid strömavbrott', 'Automatisk spray med vattentank', '2 800 Pa sugkraft', 'Säkerhetsline ingår'].map(p => (
+                {['Lägst pris i testet, 999 kr', 'UPS-batteri, sitter kvar 25 min vid strömavbrott', 'Automatisk spray med vattentank', '2 800 Pa sugkraft', 'Säkerhetsline ingår'].map(p => (
                   <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-winner font-bold mt-0.5">+</span>{p}</li>
                 ))}
               </ul>
@@ -297,7 +297,7 @@ const faqSchema = faqItems.map((item) => ({
             <div>
               <p class="text-xs font-semibold text-text mb-2">Kompromisser</p>
               <ul class="space-y-1">
-                {['Kräver fönsterram — inte för ramfria ytor', 'Ingen app-styrning', 'Lägre täckning än Hobot Legee 688 och W1 Pro', 'Längre leveranstid via Amazon.se'].map(c => (
+                {['Kräver fönsterram, inte för ramfria ytor', 'Ingen app-styrning', 'Lägre täckning än Hobot Legee 688 och W1 Pro', 'Längre leveranstid via Amazon.se'].map(c => (
                   <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-cta font-bold mt-0.5">-</span>{c}</li>
                 ))}
               </ul>
@@ -322,12 +322,12 @@ const faqSchema = faqItems.map((item) => ({
       <h2 class="font-heading text-2xl font-bold text-text mb-4">Hur fungerar fönsterputsrobotar?</h2>
       <div class="space-y-5 text-sm text-text-light leading-relaxed">
         <div class="bg-white rounded-xl border border-border p-5">
-          <h3 class="font-semibold text-text mb-2">Vakuumsugsugning — hur roboten sitter fast</h3>
-          <p>Alla fönsterputsrobotar använder vakuumsugsugning mot glaset för att häfta fast. En eller flera inbyggda fläktar skapar undertryck som håller roboten mot ytan. Sugkraften är tillräcklig för att roboten ska klara vertikala glasrutor och lätt lutade ytor. Stäng alltid av roboten innan du tar bort den — annars tappas vakuumet och roboten kan ramla.</p>
+          <h3 class="font-semibold text-text mb-2">Vakuumsugsugning, hur roboten sitter fast</h3>
+          <p>Alla fönsterputsrobotar använder vakuumsugsugning mot glaset för att häfta fast. En eller flera inbyggda fläktar skapar undertryck som håller roboten mot ytan. Sugkraften är tillräcklig för att roboten ska klara vertikala glasrutor och lätt lutade ytor. Stäng alltid av roboten innan du tar bort den, annars tappas vakuumet och roboten kan ramla.</p>
         </div>
         <div class="bg-white rounded-xl border border-border p-5">
-          <h3 class="font-semibold text-text mb-2">Ram vs utan ram — viktig skillnad</h3>
-          <p>Enklare fönsterputsrobotar (W1 Pro, Liectroux WS-1080) navigerar längs fönsterramen — de "känner" ramen och vänder när de når den. Det betyder att de inte kan användas på glaspartier utan synlig ram runt hela kanten. Premium-modellen Winbot W2 Omni löser detta med AI-kamera som identifierar glaskantens ljusbrytningsmönster utan fysisk ram.</p>
+          <h3 class="font-semibold text-text mb-2">Ram vs utan ram, viktig skillnad</h3>
+          <p>Enklare fönsterputsrobotar (W1 Pro, Liectroux WS-1080) navigerar längs fönsterramen, de "känner" ramen och vänder när de når den. Det betyder att de inte kan användas på glaspartier utan synlig ram runt hela kanten. Premium-modellen Winbot W2 Omni löser detta med AI-kamera som identifierar glaskantens ljusbrytningsmönster utan fysisk ram.</p>
         </div>
       </div>
     </section>
@@ -339,15 +339,15 @@ const faqSchema = faqItems.map((item) => ({
         <p class="mb-3">Fönsterputsrobotar finns i tre prisklasser:</p>
         <ul class="space-y-3">
           <li class="flex items-start gap-2">
-            <span class="font-semibold text-text min-w-[120px]">Budget (1 000–2 000 kr):</span>
+            <span class="font-semibold text-text min-w-[120px]">Budget (1 000 till 2 000 kr):</span>
             <span>Grundläggande funktion, kräver ram, enklare rengöringsteknik. Passar den som sällan putsar och vill ha ett enkelt hjälpmedel. Liectroux WS-1080 är representant.</span>
           </li>
           <li class="flex items-start gap-2">
-            <span class="font-semibold text-text min-w-[120px]">Mellanklass (2 000–3 500 kr):</span>
+            <span class="font-semibold text-text min-w-[120px]">Mellanklass (2 000 till 3 500 kr):</span>
             <span>Bättre rengöringsresultat, spray-funktion, pålitligare navigering. Kräver fortfarande ram. Ecovacs Winbot W1 Pro är det bästa alternativet i denna klass.</span>
           </li>
           <li class="flex items-start gap-2">
-            <span class="font-semibold text-text min-w-[120px]">Premium (4 000–6 000 kr):</span>
+            <span class="font-semibold text-text min-w-[120px]">Premium (4 000 till 6 000 kr):</span>
             <span>Ramfri funktion, AI-navigering, vattentank. Ecovacs Winbot W2 Omni dominerar premiumsegmentet och är det enda alternativet om du har ramfria fönster.</span>
           </li>
         </ul>
@@ -358,7 +358,7 @@ const faqSchema = faqItems.map((item) => ({
     <section class="mb-10 bg-accent/5 border border-accent/20 rounded-xl p-6">
       <h2 class="font-heading text-xl font-bold text-text mb-2">Utforska fler robotkategorier</h2>
       <p class="text-text-light text-sm leading-relaxed mb-4">
-        Vi testar och jämför alla typer av konsumentrobotar — robotdammsugare, robotgräsklippare och poolrobotar för den svenska marknaden.
+        Vi testar och jämför alla typer av konsumentrobotar, robotdammsugare, robotgräsklippare och poolrobotar för den svenska marknaden.
       </p>
       <a
         href="/"
@@ -375,7 +375,7 @@ const faqSchema = faqItems.map((item) => ({
       <div class="grid sm:grid-cols-2 gap-4">
         <a href="/poolrobot/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Bästa poolrobot 2026</h3>
-          <p class="text-sm text-text-light">Alla modeller testade och rankade — budget till premium.</p>
+          <p class="text-sm text-text-light">Alla modeller testade och rankade, budget till premium.</p>
         </a>
         <a href="/robotgrasklippare/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Bästa robotgräsklippare 2026</h3>

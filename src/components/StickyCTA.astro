@@ -34,7 +34,7 @@ const targetAttr = isExternal ? "_blank" : undefined;
   const bar = document.getElementById('sticky-cta');
   if (!bar) throw new Error('sticky-cta missing');
 
-  // Hysteresis: show at 400px, hide only when back below 200px — prevents
+  // Hysteresis: show at 400px, hide only when back below 200px, prevents
   // flicker when Chrome fires scroll events while hiding/showing its own bars
   let visible = false;
   const show = () => { if (!visible) { visible = true; bar.classList.remove('translate-y-full'); } };

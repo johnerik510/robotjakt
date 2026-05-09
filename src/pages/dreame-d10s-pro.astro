@@ -7,8 +7,8 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const faqItems = [
   {
-    question: 'Dreame D10s Pro eller Dreame L20 Ultra — vilket ska jag välja?',
-    answer: 'D10s Pro är ett budgetvänligt alternativ utan automatisk station. L20 Ultra har fullautomatisk station, starkare sugkraft (7 000 Pa) och Dreame Home-appens fulla funktioner. Om du är nöjd med att tömma dammkorgen manuellt och vill spara ca 2 000–3 000 kr är D10s Pro ett utmärkt val. L20 Ultra rekommenderas om du vill ha hands-off-upplevelse.',
+    question: 'Dreame D10s Pro eller Dreame L20 Ultra, vilket ska jag välja?',
+    answer: 'D10s Pro är ett budgetvänligt alternativ utan automatisk station. L20 Ultra har fullautomatisk station, starkare sugkraft (7 000 Pa) och Dreame Home-appens fulla funktioner. Om du är nöjd med att tömma dammkorgen manuellt och vill spara ca 2 000 till 3 000 kr är D10s Pro ett utmärkt val. L20 Ultra rekommenderas om du vill ha hands-off-upplevelse.',
   },
   {
     question: 'Har Dreame D10s Pro automatisk station?',
@@ -39,7 +39,7 @@ const specs = [
   { label: 'Dammkorg', value: '200 ml' },
   { label: 'Navigering', value: 'LiDAR SLAM' },
   { label: 'Mopp', value: 'Vibrerande moppmodul' },
-  { label: 'Automatisk station', value: 'Nej — manuell tömning' },
+  { label: 'Automatisk station', value: 'Nej, manuell tömning' },
   { label: 'App', value: 'Dreame Home (iOS/Android)' },
   { label: 'Röststyrning', value: 'Google Assistant, Alexa' },
   { label: 'Bullernivå', value: 'ca 67 dB (max)' },
@@ -57,7 +57,7 @@ const faqSchema = faqItems.map((item) => ({
 ---
 
 <BaseLayout
-  title="Dreame D10s Pro Test 2026 – Recension och Pris Sverige"
+  title="Dreame D10s Pro Test 2026, Recension och Pris Sverige"
   description="Dreame D10s Pro testad: LiDAR-navigering, moppfunktion och budget-vänligt pris. Bästa Dreame för budgetmedvetna. Se betyg, pris och köpguide."
   ogImage="/images/dreame-d10s-pro.webp"
 >
@@ -99,7 +99,7 @@ const faqSchema = faqItems.map((item) => ({
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <p class="text-2xl font-bold text-text">ca 2 990 kr</p>
-          <p class="text-sm text-text-light">Pris varierar — jämför alltid mellan butiker</p>
+          <p class="text-sm text-text-light">Pris varierar, jämför alltid mellan butiker</p>
         </div>
         <div class="flex flex-col sm:flex-row gap-3">
           <a
@@ -135,7 +135,7 @@ const faqSchema = faqItems.map((item) => ({
             'Dreame Home-app med rumsplanering',
             'Lång drifttid (150 min)',
             'Tyst i normalläge',
-            'Kompakt design — passar under möbler',
+            'Kompakt design, passar under möbler',
           ].map(pro => (
             <li class="flex items-start gap-2 text-sm text-text-light">
               <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
@@ -148,10 +148,10 @@ const faqSchema = faqItems.map((item) => ({
         <h2 class="font-semibold text-text mb-3">Nackdelar med Dreame D10s Pro</h2>
         <ul class="space-y-2">
           {[
-            'Ingen automatisk station — manuell tömning krävs',
+            'Ingen automatisk station, manuell tömning krävs',
             'Lägre sugkraft (4 000 Pa)',
             'Enkel moppmodul utan rotering',
-            'Liten dammkorg (200 ml) — tömning oftare',
+            'Liten dammkorg (200 ml), tömning oftare',
           ].map(con => (
             <li class="flex items-start gap-2 text-sm text-text-light">
               <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
@@ -163,16 +163,16 @@ const faqSchema = faqItems.map((item) => ({
     </div>
 
     <section class="mb-10">
-      <h2 class="font-heading text-2xl font-bold text-text mb-4">Dreame D10s Pro — detaljerad genomgång</h2>
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Dreame D10s Pro, detaljerad genomgång</h2>
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">LiDAR-navigering på budget</h3>
       <p class="text-text-light leading-relaxed mb-6">
-        Att få LiDAR-navigering under 3 000 kr är D10s Pros starkaste kort. Roboten kartlägger hemmet på första körningen, delar in i rum och navigerar systematiskt — inte slumpmässigt som äldre modeller. Dreame Home-appen ger access till rumsplanering, no-go zones och schemaläggning på samma nivå som Dreames dyrare modeller.
+        Att få LiDAR-navigering under 3 000 kr är D10s Pros starkaste kort. Roboten kartlägger hemmet på första körningen, delar in i rum och navigerar systematiskt, inte slumpmässigt som äldre modeller. Dreame Home-appen ger access till rumsplanering, no-go zones och schemaläggning på samma nivå som Dreames dyrare modeller.
       </p>
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Moppning och städprestanda</h3>
       <p class="text-text-light leading-relaxed mb-6">
-        Moppmodulen vibrerar för att lösa upp lätt smuts på hårda golv. Den är effektiv för dagligt underhåll men inte jämförbar med roterande moppmoduler i dyrare modeller. Lyfter moppmodulen automatiskt vid mattor om installerat korrekt. Sugkraften på 4 000 Pa räcker för lätta hem — för husdjurs- och storfamiljshem rekommenderas L20 Ultra.
+        Moppmodulen vibrerar för att lösa upp lätt smuts på hårda golv. Den är effektiv för dagligt underhåll men inte jämförbar med roterande moppmoduler i dyrare modeller. Lyfter moppmodulen automatiskt vid mattor om installerat korrekt. Sugkraften på 4 000 Pa räcker för lätta hem, för husdjurs- och storfamiljshem rekommenderas L20 Ultra.
       </p>
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Specifikationer Dreame D10s Pro</h3>
@@ -202,9 +202,9 @@ const faqSchema = faqItems.map((item) => ({
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
       <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med liknande modeller</h2>
       <ul class="space-y-2">
-        <li><a href="/dreame-l20-ultra/" class="text-accent underline text-sm">Dreame L20 Ultra — nästa steg med automatisk station</a></li>
+        <li><a href="/dreame-l20-ultra/" class="text-accent underline text-sm">Dreame L20 Ultra, nästa steg med automatisk station</a></li>
         <li><a href="/billigaste-robotdammsugare/" class="text-accent underline text-sm">Bästa billiga robotdammsugare under 4 000 kr 2026</a></li>
-        <li><a href="/" class="text-accent underline text-sm">Bästa robotdammsugare 2026 — alla kategorier</a></li>
+        <li><a href="/" class="text-accent underline text-sm">Bästa robotdammsugare 2026, alla kategorier</a></li>
       </ul>
     </section>
   </div>

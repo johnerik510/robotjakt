@@ -10,7 +10,7 @@ const affUrl = 'https://go.adt267.com/t/t?a=1615916040&as=2063681412&t=2&tk=1&ur
 const faqItems = [
   {
     question: 'Vad är 360° visionsystemet i Dyson 360 Vis Nav?',
-    answer: 'En panoramakamera på 360° monterad på toppen av roboten analyserar hela rummet kontinuerligt. Den kombineras med 26 sensorer som tar 20 000 mätningar per sekund och bygger en exakt karta över hemmet. Kameran registrerar bara former och kontraster — inga bilder sparas eller skickas.',
+    answer: 'En panoramakamera på 360° monterad på toppen av roboten analyserar hela rummet kontinuerligt. Den kombineras med 26 sensorer som tar 20 000 mätningar per sekund och bygger en exakt karta över hemmet. Kameran registrerar bara former och kontraster, inga bilder sparas eller skickas.',
   },
   {
     question: 'Hur stark är sugkraften jämfört med Roborock och Dreame?',
@@ -50,7 +50,7 @@ const specs = [
   { label: 'Mopp', value: 'Nej' },
   { label: 'App', value: 'MyDyson (iOS/Android)' },
   { label: 'Röststyrning', value: 'Amazon Alexa, Google Assistant' },
-  { label: 'Kamera', value: 'Ja — 360° vision (ingen bildinspelning)' },
+  { label: 'Kamera', value: 'Ja, 360° vision (ingen bildinspelning)' },
 ];
 
 const faqSchema = faqItems.map((item) => ({
@@ -64,7 +64,7 @@ const faqSchema = faqItems.map((item) => ({
 ---
 
 <BaseLayout
-  title="Dyson 360 Vis Nav Recension 2026 – Test, Pris och Betyg"
+  title="Dyson 360 Vis Nav Recension 2026, Test, Pris och Betyg"
   description="Dyson 360 Vis Nav testad: 360° visionsystem, Hyperdymium-motor och HEPA-filtrering i fem steg. Köps via Dyson.se. Se pris, specifikationer och recension."
 >
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -111,7 +111,7 @@ const faqSchema = faqItems.map((item) => ({
             <span class="font-bold text-text">4.0 / 5</span>
           </div>
           <p class="text-text-light text-sm leading-relaxed">
-            Dyson 360 Vis Nav är en av marknadens starkaste robotdammsugare rent sukmässigt. 360°-kameran kombinerat med 26 sensorer ger exakt navigering som lämnar få blinda fläckar. Den saknar moppfunktion och drifttiden på 65 minuter är kortare än konkurrenterna — men för ren dammsugning levererar den Dysons typiska prestanda i robotformat.
+            Dyson 360 Vis Nav är en av marknadens starkaste robotdammsugare rent sukmässigt. 360°-kameran kombinerat med 26 sensorer ger exakt navigering som lämnar få blinda fläckar. Den saknar moppfunktion och drifttiden på 65 minuter är kortare än konkurrenterna, men för ren dammsugning levererar den Dysons typiska prestanda i robotformat.
           </p>
         </div>
       </div>
@@ -156,8 +156,8 @@ const faqSchema = faqItems.map((item) => ({
         <h2 class="font-semibold text-text mb-3">Fördelar med Dyson 360 Vis Nav</h2>
         <ul class="space-y-2">
           {[
-            '360° visionsystem — ser hela rummet, inga blinda vinklar',
-            'Hyperdymium-motor — 110 000 rpm, exceptionell sugkraft',
+            '360° visionsystem, ser hela rummet, inga blinda vinklar',
+            'Hyperdymium-motor, 110 000 rpm, exceptionell sugkraft',
             'HEPA-filtrering i fem steg, 99,99 % av partiklar ≥ 0,1 µm',
             'D-formad kropp når in i hörnen',
             'Klättrar 21 mm trösklar',
@@ -175,10 +175,10 @@ const faqSchema = faqItems.map((item) => ({
         <ul class="space-y-2">
           {[
             'Ingen moppfunktion',
-            'Kort drifttid — max 65 min',
+            'Kort drifttid, max 65 min',
             'Säljs bara via Dyson.se',
             'Dyrare än jämförbara konkurrenter med moppfunktion',
-            '4,0/5 på Dyson.se — blandade åsikter om värde kontra pris',
+            '4,0/5 på Dyson.se, blandade åsikter om värde kontra pris',
           ].map(con => (
             <li class="flex items-start gap-2 text-sm text-text-light">
               <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
@@ -191,12 +191,12 @@ const faqSchema = faqItems.map((item) => ({
 
     <!-- Main review -->
     <article class="prose prose-sm max-w-none mb-10 text-text-light leading-relaxed space-y-6">
-      <h2 class="font-heading text-xl font-bold text-text">360° vision — vad det faktiskt innebär</h2>
+      <h2 class="font-heading text-xl font-bold text-text">360° vision, vad det faktiskt innebär</h2>
       <p>
-        De flesta robotdammsugare navigerar med LiDAR — en laser som skjuter strålar horisontellt och mäter avstånd. Det fungerar bra, men missar saker på golvet och ovanför lasernivån. Dyson 360 Vis Nav tar ett annat grepp: en panoramakamera på toppen ser hela rummet i 360° och analyserar kontinuerligt var roboten befinner sig.
+        De flesta robotdammsugare navigerar med LiDAR, en laser som skjuter strålar horisontellt och mäter avstånd. Det fungerar bra, men missar saker på golvet och ovanför lasernivån. Dyson 360 Vis Nav tar ett annat grepp: en panoramakamera på toppen ser hela rummet i 360° och analyserar kontinuerligt var roboten befinner sig.
       </p>
       <p>
-        Kombinerat med 26 externa sensorer som gör 20 mätningar per sekund resulterar det i en av marknadens mest precisa navigeringar. Roboten vet exakt var den är, vart den ska och vad den ska undvika. Kameran registrerar bara former och kontraster — inga bilder sparas eller skickas till Dyson.
+        Kombinerat med 26 externa sensorer som gör 20 mätningar per sekund resulterar det i en av marknadens mest precisa navigeringar. Roboten vet exakt var den är, vart den ska och vad den ska undvika. Kameran registrerar bara former och kontraster, inga bilder sparas eller skickas till Dyson.
       </p>
 
       <h2 class="font-heading text-xl font-bold text-text">Sugkraft och borsthuvud</h2>
@@ -209,7 +209,7 @@ const faqSchema = faqItems.map((item) => ({
 
       <h2 class="font-heading text-xl font-bold text-text">Passar 360 Vis Nav ditt hem?</h2>
       <p>
-        360 Vis Nav är rätt val om du vill ha en stark robotdammsugare utan moppfunktion och är beredd att betala Dyson-priset. Den passar hem med allergiker (HEPA-filtrering), husdjursägare och hem med blandade golvtyper. Om du vill ha moppning i samma enhet är Dyson Spot+Scrub Ai det naturliga nästa steget — eller Dreame X40 Ultra till lägre pris.
+        360 Vis Nav är rätt val om du vill ha en stark robotdammsugare utan moppfunktion och är beredd att betala Dyson-priset. Den passar hem med allergiker (HEPA-filtrering), husdjursägare och hem med blandade golvtyper. Om du vill ha moppning i samma enhet är Dyson Spot+Scrub Ai det naturliga nästa steget, eller Dreame X40 Ultra till lägre pris.
       </p>
     </article>
 
@@ -232,22 +232,22 @@ const faqSchema = faqItems.map((item) => ({
 
     <!-- Comparison: Vis Nav vs Spot+Scrub Ai -->
     <div class="bg-bg-alt rounded-xl border border-border p-5 mb-10">
-      <h2 class="font-heading text-lg font-bold text-text mb-4">360 Vis Nav vs Spot+Scrub Ai — vilken ska du välja?</h2>
+      <h2 class="font-heading text-lg font-bold text-text mb-4">360 Vis Nav vs Spot+Scrub Ai, vilken ska du välja?</h2>
       <div class="grid sm:grid-cols-2 gap-4 text-sm">
         <div>
           <p class="font-semibold text-text mb-2">Välj 360 Vis Nav om du:</p>
           <ul class="space-y-1 text-text-light">
-            <li>— Vill ha ren dammsugning utan moppning</li>
-            <li>— Prioriterar HEPA-filtrering för allergier</li>
-            <li>— Har mycket mattor i hemmet</li>
+            <li>, Vill ha ren dammsugning utan moppning</li>
+            <li>, Prioriterar HEPA-filtrering för allergier</li>
+            <li>, Har mycket mattor i hemmet</li>
           </ul>
         </div>
         <div>
           <p class="font-semibold text-text mb-2">Välj Spot+Scrub Ai om du:</p>
           <ul class="space-y-1 text-text-light">
-            <li>— Har mycket hårdgolv med frekventa fläckar</li>
-            <li>— Vill ha automatisk våtrengöring</li>
-            <li>— Har husdjur eller barn som spiller</li>
+            <li>, Har mycket hårdgolv med frekventa fläckar</li>
+            <li>, Vill ha automatisk våtrengöring</li>
+            <li>, Har husdjur eller barn som spiller</li>
           </ul>
         </div>
       </div>
@@ -275,9 +275,9 @@ const faqSchema = faqItems.map((item) => ({
     <div class="mt-10 pt-8 border-t border-border">
       <h2 class="font-heading text-lg font-bold text-text mb-4">Läs mer</h2>
       <ul class="space-y-2 text-sm">
-        <li><a href="/dyson-spot-scrub-ai/" class="text-cta hover:underline">Dyson Spot+Scrub Ai recension — med AI-fläckdetektering</a></li>
+        <li><a href="/dyson-spot-scrub-ai/" class="text-cta hover:underline">Dyson Spot+Scrub Ai recension, med AI-fläckdetektering</a></li>
         <li><a href="/dyson-guide/" class="text-cta hover:underline">Guide: Alla Dyson robotdammsugare jämförda</a></li>
-        <li><a href="/" class="text-cta hover:underline">Bästa robotdammsugare 2026 — topplistan</a></li>
+        <li><a href="/" class="text-cta hover:underline">Bästa robotdammsugare 2026, topplistan</a></li>
       </ul>
     </div>
 
@@ -285,7 +285,7 @@ const faqSchema = faqItems.map((item) => ({
   </div>
 
   <StickyCTA
-    text="Dyson 360 Vis Nav — se pris"
+    text="Dyson 360 Vis Nav, se pris"
     ctaText="Se pris hos Dyson.se"
     ctaUrl={affUrl}
   />

@@ -28,8 +28,8 @@ const products = [
     price: '5 900 kr',
     rating: 4.3,
     badge: 'Bäst budget',
-    pros: ['Batteridrift — ingen kabel', 'Rengör botten och väggar', 'Lättviktig (4,5 kg)', 'Passar pooler upp till 80 m³'],
-    cons: ['Ingen app', 'Batteridriven — begränsad drifttid'],
+    pros: ['Batteridrift, ingen kabel', 'Rengör botten och väggar', 'Lättviktig (4,5 kg)', 'Passar pooler upp till 80 m³'],
+    cons: ['Ingen app', 'Batteridriven, begränsad drifttid'],
     ctaText: 'Se pris hos Villanytt',
     ctaUrl: 'https://addrevenue.io/t?a=984922&c=3467327&url=https%3A%2F%2Fvillanytt.se%2Fprodukt%2Fpoolrobot-orca-50cl-batteridriven%2F',
     dataProduct: 'Planet Pool Orca 50CL',
@@ -102,7 +102,7 @@ const products = [
     image: '/images/steinbach-poolrunner-battery-pro.webp',
     price: 'ca 3 990 kr',
     rating: 3.5,
-    pros: ['Trådlös — batteridrift', 'Lättviktig (5 kg)', 'Prisvärd'],
+    pros: ['Trådlös, batteridrift', 'Lättviktig (5 kg)', 'Prisvärd'],
     cons: ['Enbart botten', '90 min batteri', 'Ej utbytbart batteri'],
     dataProduct: 'Steinbach Poolrunner Battery Pro',
     reviewUrl: '/steinbach-poolrunner-battery-pro/',
@@ -112,7 +112,7 @@ const products = [
 const faqItems = [
   {
     question: 'Hur länge håller en poolrobot?',
-    answer: 'En poolrobot håller normalt 5–10 år med rätt skötsel. Det viktigaste är att alltid ta upp roboten ur poolen efter varje rengöringscykel, spola av den med rent vatten och förvara den svalt och skyddat från sol och frost. Byt filter och borstar regelbundet enligt tillverkarens anvisningar.',
+    answer: 'En poolrobot håller normalt 5 till 10 år med rätt skötsel. Det viktigaste är att alltid ta upp roboten ur poolen efter varje rengöringscykel, spola av den med rent vatten och förvara den svalt och skyddat från sol och frost. Byt filter och borstar regelbundet enligt tillverkarens anvisningar.',
   },
   {
     question: 'Kan poolroboten vara i vattnet hela tiden?',
@@ -124,11 +124,11 @@ const faqItems = [
   },
   {
     question: 'Vad skiljer en poolrobot från en manuell dammsugare?',
-    answer: 'En poolrobot arbetar helt automatiskt utan att du behöver göra något — du lägger ner den i poolen och hämtar den när den är klar. En manuell pooldammsugare kopplas till poolens filterpump och kräver att du manuellt styr munstycket längs botten och väggarna. En robot är betydligt enklare och mer tidseffektiv.',
+    answer: 'En poolrobot arbetar helt automatiskt utan att du behöver göra något, du lägger ner den i poolen och hämtar den när den är klar. En manuell pooldammsugare kopplas till poolens filterpump och kräver att du manuellt styr munstycket längs botten och väggarna. En robot är betydligt enklare och mer tidseffektiv.',
   },
   {
     question: 'Vilken poolrobot passar en rund pool?',
-    answer: 'De flesta poolrobotar passar både rektangulära och runda pooler — robotarna navigerar efter poolens form automatiskt. Det viktigaste är att kontrollera att kabeln är lång nog i förhållande till poolens diameter, och att poolens yta (m²) ryms inom robotens kapacitet. Välj en modell med minst 20 % marginal över din faktiska poolstorlek.',
+    answer: 'De flesta poolrobotar passar både rektangulära och runda pooler, robotarna navigerar efter poolens form automatiskt. Det viktigaste är att kontrollera att kabeln är lång nog i förhållande till poolens diameter, och att poolens yta (m²) ryms inom robotens kapacitet. Välj en modell med minst 20 % marginal över din faktiska poolstorlek.',
   },
 ];
 
@@ -147,15 +147,15 @@ const faqSchema = faqItems.map((item) => ({
 ---
 
 <BaseLayout
-  title="Bästa poolrobot April 2026 — Test & Jämförelse"
-  description="Vi har testat och jämfört de bästa poolrobotarna 2026. Hitta rätt modell för din pool — storlek, filtreringsförmåga och pris jämfört."
+  title="Bästa poolrobot April 2026, Test & Jämförelse"
+  description="Vi har testat och jämfört de bästa poolrobotarna 2026. Hitta rätt modell för din pool, storlek, filtreringsförmåga och pris jämfört."
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
     <p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
-      Bästa poolrobot April 2026 — Test och jämförelse
+      Bästa poolrobot April 2026, Test och jämförelse
     </h1>
     <p class="text-text-light mb-4 max-w-2xl">
       Vi har testat och jämfört de mest populära poolrobotarna på den svenska marknaden 2026. Här är våra toppval rankade efter reningstäckning, filtreringsförmåga, drifttid och prisvärdhet.
@@ -281,7 +281,7 @@ const faqSchema = faqItems.map((item) => ({
       <div class="space-y-6 text-text-light text-sm leading-relaxed">
         <div>
           <h3 class="font-heading text-lg font-bold text-text mb-2">Poolstorlek och kabellängd</h3>
-          <p>Kontrollera alltid att kabeln räcker till poolens längd plus lite extra — roboten ska kunna nå alla hörn utan att kabeln stramar. En 15 m kabel räcker för de flesta villapooler på 8–10 m, men har du en längre pool behöver du en modell med 18 m kabel eller mer.</p>
+          <p>Kontrollera alltid att kabeln räcker till poolens längd plus lite extra, roboten ska kunna nå alla hörn utan att kabeln stramar. En 15 m kabel räcker för de flesta villapooler på 8 till 10 m, men har du en längre pool behöver du en modell med 18 m kabel eller mer.</p>
         </div>
         <div>
           <h3 class="font-heading text-lg font-bold text-text mb-2">Botten vs väggar</h3>
@@ -289,15 +289,15 @@ const faqSchema = faqItems.map((item) => ({
         </div>
         <div>
           <h3 class="font-heading text-lg font-bold text-text mb-2">Filtertyp</h3>
-          <p>Patronfilter är enklast att rensa — plocka ut patronen, skölj av och sätt tillbaka. Påsfilter samlar mer smuts och passar pooler med mycket organiskt material (löv, insekter), men är lite mer krångliga att hantera. Välj patronfilter för enklast skötsel.</p>
+          <p>Patronfilter är enklast att rensa, plocka ut patronen, skölj av och sätt tillbaka. Påsfilter samlar mer smuts och passar pooler med mycket organiskt material (löv, insekter), men är lite mer krångliga att hantera. Välj patronfilter för enklast skötsel.</p>
         </div>
         <div>
           <h3 class="font-heading text-lg font-bold text-text mb-2">Drifttid</h3>
-          <p>2–3 timmar räcker normalt för en omgång i en villapool. Kör roboten en gång per dag eller varannan dag beroende på hur mycket poolen används. Premium-modeller som Dolphin Sigma kan köras längre tack vare kraftigare motor och batteri.</p>
+          <p>2 till 3 timmar räcker normalt för en omgång i en villapool. Kör roboten en gång per dag eller varannan dag beroende på hur mycket poolen används. Premium-modeller som Dolphin Sigma kan köras längre tack vare kraftigare motor och batteri.</p>
         </div>
         <div>
           <h3 class="font-heading text-lg font-bold text-text mb-2">App-kontroll</h3>
-          <p>WiFi-styrning via app är onödig funktion i budget- och mellanklassmodeller — roboten gör sitt jobb lika bra utan. I premiumsegmentet ger appen möjlighet att schemalägga, se städhistorik och styra roboten manuellt, vilket kan vara praktiskt för större pooler.</p>
+          <p>WiFi-styrning via app är onödig funktion i budget- och mellanklassmodeller, roboten gör sitt jobb lika bra utan. I premiumsegmentet ger appen möjlighet att schemalägga, se städhistorik och styra roboten manuellt, vilket kan vara praktiskt för större pooler.</p>
         </div>
       </div>
     </section>
@@ -308,15 +308,15 @@ const faqSchema = faqItems.map((item) => ({
       <div class="grid sm:grid-cols-2 gap-4">
         <a href="/robotgrasklippare/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Bästa robotgräsklippare 2026</h3>
-          <p class="text-sm text-text-light">Vi testar och jämför robotgräsklippare — Husqvarna, Gardena, Mammotion och fler.</p>
+          <p class="text-sm text-text-light">Vi testar och jämför robotgräsklippare, Husqvarna, Gardena, Mammotion och fler.</p>
         </a>
         <a href="/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Alla robottester</h3>
-          <p class="text-sm text-text-light">Se alla våra tester och jämförelser — robotar för hem och trädgård.</p>
+          <p class="text-sm text-text-light">Se alla våra tester och jämförelser, robotar för hem och trädgård.</p>
         </a>
         <a href="/poolrobot-for-nedgraevd-pool/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Poolrobot för nedgrävd pool</h3>
-          <p class="text-sm text-text-light">Väggklättring, bottenrengöring och vattenlinje — bästa valet för din nedgrävda pool.</p>
+          <p class="text-sm text-text-light">Väggklättring, bottenrengöring och vattenlinje, bästa valet för din nedgrävda pool.</p>
         </a>
       </div>
     </section>

@@ -19,7 +19,7 @@ const models = [
     rating: '4.7 / 5',
     features: [
       '8 000 Pa sugkraft',
-      'OMNI-station — auto-tömning, mopptvätt, påfyllning',
+      'OMNI-station, auto-tömning, mopptvätt, påfyllning',
       'Dubbla roterande moppar med lyftfunktion',
       'AI-hinderdetektion med kamera',
       'TrueMapping 2.0 LiDAR-navigering',
@@ -28,7 +28,7 @@ const models = [
     
     ctaText: 'Se pris på X5 Omni',
     reviewUrl: '/ecovacs-deebot-x5-omni/',
-    description: 'Ecovacs Deebot X5 Omni är märkets toppmodell 2026 och ett av de mest kompletta alternativen på marknaden. OMNI-stationen hanterar allt automatiskt — tömmning, mopptvätt och vattenpåfyllning. Bäst för hem som vill ha en riktig allt-i-ett-lösning utan daglig skötsel.',
+    description: 'Ecovacs Deebot X5 Omni är märkets toppmodell 2026 och ett av de mest kompletta alternativen på marknaden. OMNI-stationen hanterar allt automatiskt, tömmning, mopptvätt och vattenpåfyllning. Bäst för hem som vill ha en riktig allt-i-ett-lösning utan daglig skötsel.',
   },
   {
     name: 'Ecovacs Deebot T20 Omni',
@@ -73,7 +73,7 @@ const models = [
 const faqItems = [
   {
     question: 'Vad betyder "OMNI" hos Ecovacs?',
-    answer: 'OMNI är Ecovacs varumärke för deras allt-i-ett-stationskoncept. En OMNI-station hanterar automatiskt: tömmning av dammkorgen, rengöring av moppar (med varmt vatten på de nyare modellerna), påfyllning av vattentanken och torkning av mopparna. Det innebär att du i princip bara behöver byta dammkorgspåsen var 60-90 dag och köpa vatten till tanken — allt annat sköter stationen.',
+    answer: 'OMNI är Ecovacs varumärke för deras allt-i-ett-stationskoncept. En OMNI-station hanterar automatiskt: tömmning av dammkorgen, rengöring av moppar (med varmt vatten på de nyare modellerna), påfyllning av vattentanken och torkning av mopparna. Det innebär att du i princip bara behöver byta dammkorgspåsen var 60-90 dag och köpa vatten till tanken, allt annat sköter stationen.',
   },
   {
     question: 'Är Ecovacs ett pålitligt märke?',
@@ -81,15 +81,15 @@ const faqItems = [
   },
   {
     question: 'Vilken Ecovacs ska jag välja?',
-    answer: 'Välj X5 Omni om du vill ha bästa möjliga städresultat och mest automatik — det är toppmodellen. Välj T20 Omni om du vill ha OMNI-komfort till ett rimligare pris och inte behöver maximal sugkraft. Välj T10 Omni om du har en begränsad budget men ändå vill ha auto-station. Alla tre har OMNI-station, men X5 Omni ger mest för pengarna i termer av prestanda.',
+    answer: 'Välj X5 Omni om du vill ha bästa möjliga städresultat och mest automatik, det är toppmodellen. Välj T20 Omni om du vill ha OMNI-komfort till ett rimligare pris och inte behöver maximal sugkraft. Välj T10 Omni om du har en begränsad budget men ändå vill ha auto-station. Alla tre har OMNI-station, men X5 Omni ger mest för pengarna i termer av prestanda.',
   },
   {
     question: 'Fungerar Ecovacs-appen på svenska?',
-    answer: 'Ecovacs Home-appen finns inte på svenska — gränssnittet är primärt på engelska. Grundfunktioner som start, stopp, schemaläggning och rumsplanering är enkla att använda ändå. Appen stödjer Google Assistant och Alexa med svenska röstkommandon. Ecovacs har gjort gränssnittet mer intuitivt i senare versioner och de flesta svenska användare anpassar sig snabbt.',
+    answer: 'Ecovacs Home-appen finns inte på svenska, gränssnittet är primärt på engelska. Grundfunktioner som start, stopp, schemaläggning och rumsplanering är enkla att använda ändå. Appen stödjer Google Assistant och Alexa med svenska röstkommandon. Ecovacs har gjort gränssnittet mer intuitivt i senare versioner och de flesta svenska användare anpassar sig snabbt.',
   },
   {
     question: 'Hur jämför sig Ecovacs mot Roborock?',
-    answer: 'Ecovacs och Roborock är de två starkaste alternativen i premium-segmentet 2026. Ecovacs OMNI-station är marknadsledande inom allt-i-ett-automatik och en av de mest kompletta lösningarna. Roborock är starkare på AI-djuravföringsdetektion (ReactiveAI 3.0) och har en mer polerad app-upplevelse. Välj Ecovacs X5 Omni om allt-i-ett-stationen är prioritet — välj Roborock S8 MaxV Ultra om du har husdjur och vill ha AI-säkerhet.',
+    answer: 'Ecovacs och Roborock är de två starkaste alternativen i premium-segmentet 2026. Ecovacs OMNI-station är marknadsledande inom allt-i-ett-automatik och en av de mest kompletta lösningarna. Roborock är starkare på AI-djuravföringsdetektion (ReactiveAI 3.0) och har en mer polerad app-upplevelse. Välj Ecovacs X5 Omni om allt-i-ett-stationen är prioritet, välj Roborock S8 MaxV Ultra om du har husdjur och vill ha AI-säkerhet.',
   },
 ];
 
@@ -104,25 +104,25 @@ const faqSchema = faqItems.map((item) => ({
 ---
 
 <BaseLayout
-  title="Ecovacs Deebot 2026 – Guide & Jämförelse"
-  description="Komplett guide till Ecovacs Deebot-serie 2026. X5 Omni, T20 Omni — vi hjälper dig välja rätt Ecovacs för ditt hem."
+  title="Ecovacs Deebot 2026, Guide & Jämförelse"
+  description="Komplett guide till Ecovacs Deebot-serie 2026. X5 Omni, T20 Omni, vi hjälper dig välja rätt Ecovacs för ditt hem."
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
 <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
-      Ecovacs robotdammsugare 2026 — Deebot-serien jämförd
+      Ecovacs robotdammsugare 2026, Deebot-serien jämförd
     </h1>
     <p class="text-text-light mb-6 max-w-2xl">
-      Ecovacs Deebot är kända för sina OMNI-stationer — marknadens mest kompletta allt-i-ett-lösningar. Vi guidar dig genom X5 Omni, T20 Omni och T10 Omni och hjälper dig välja rätt modell för ditt hem och din budget.
+      Ecovacs Deebot är kända för sina OMNI-stationer, marknadens mest kompletta allt-i-ett-lösningar. Vi guidar dig genom X5 Omni, T20 Omni och T10 Omni och hjälper dig välja rätt modell för ditt hem och din budget.
     </p>
 
     <!-- Brand overview -->
     <section class="mb-8 bg-bg-alt rounded-xl border border-border p-6">
-      <h2 class="font-heading text-xl font-bold text-text mb-3">Ecovacs — pionjärer inom robotstädning</h2>
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Ecovacs, pionjärer inom robotstädning</h2>
       <p class="text-text-light leading-relaxed mb-3">
-        Ecovacs Robotics grundades 1998 i Suzhou, Kina — ett av de äldsta bolagen i kategorin för robotdammsugare. Märket är känt för att ha lanserat OMNI-stationskonceptet i stor skala: en basstation som automatiskt tömmer dammkorgen, tvättar mopparna med varmt vatten, fyller på vattentanken och torkar mopparna klara för nästa städning.
+        Ecovacs Robotics grundades 1998 i Suzhou, Kina, ett av de äldsta bolagen i kategorin för robotdammsugare. Märket är känt för att ha lanserat OMNI-stationskonceptet i stor skala: en basstation som automatiskt tömmer dammkorgen, tvättar mopparna med varmt vatten, fyller på vattentanken och torkar mopparna klara för nästa städning.
       </p>
       <p class="text-text-light leading-relaxed">
         I Sverige säljs Ecovacs via Komplett, Elgiganten och MediaMarkt. Alla modeller i denna guide levereras med 2 års garanti och full support via svenska auktoriserade återförsäljare. Ecovacs Home-appen stödjer iOS och Android och erbjuder kartskapning, rumsdelning och städscheman.
@@ -131,7 +131,7 @@ const faqSchema = faqItems.map((item) => ({
 
     <!-- Comparison table -->
     <section class="mb-10" aria-label="Jämförelsetabell Ecovacs Deebot-modeller">
-      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse — Ecovacs Deebot 2026</h2>
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse, Ecovacs Deebot 2026</h2>
       <div class="overflow-x-auto rounded-xl border border-border">
         <table class="w-full text-sm bg-white">
           <thead>
@@ -236,9 +236,9 @@ const faqSchema = faqItems.map((item) => ({
       <h2 class="font-heading text-2xl font-bold text-text mb-4">Vilken Ecovacs passar ditt behov?</h2>
       <div class="space-y-4">
         <div class="bg-white rounded-xl border border-border p-5">
-          <h3 class="font-semibold text-text mb-2">Maximal automatik — minsta möjliga skötsel</h3>
+          <h3 class="font-semibold text-text mb-2">Maximal automatik, minsta möjliga skötsel</h3>
           <p class="text-text-light text-sm leading-relaxed">
-            X5 Omni är det självklara valet. Full OMNI-station, dubbla roterande moppar och 8 000 Pa sugkraft gör den till en av marknadens mest handsfree-lösningar. Du fyller på vatten och byter påse var tredje månad — resten sköter stationen.
+            X5 Omni är det självklara valet. Full OMNI-station, dubbla roterande moppar och 8 000 Pa sugkraft gör den till en av marknadens mest handsfree-lösningar. Du fyller på vatten och byter påse var tredje månad, resten sköter stationen.
           </p>
         </div>
         <div class="bg-white rounded-xl border border-border p-5">
@@ -248,7 +248,7 @@ const faqSchema = faqItems.map((item) => ({
           </p>
         </div>
         <div class="bg-white rounded-xl border border-border p-5">
-          <h3 class="font-semibold text-text mb-2">Testa OMNI-konceptet — lägsta ingångspris</h3>
+          <h3 class="font-semibold text-text mb-2">Testa OMNI-konceptet, lägsta ingångspris</h3>
           <p class="text-text-light leading-relaxed text-sm">
             T10 Omni till ca 5 499 kr är det billigaste sättet att komma in i OMNI-ekosystemet. Grundläggande auto-station och sonic moppfunktion. Räcker väl för mindre hem och lägenheter med begränsat städbehov.
           </p>
@@ -258,7 +258,7 @@ const faqSchema = faqItems.map((item) => ({
 
     <!-- Ecovacs vs Roborock -->
     <section class="mb-10">
-      <h2 class="font-heading text-2xl font-bold text-text mb-4">Ecovacs vs Roborock — de viktigaste skillnaderna</h2>
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Ecovacs vs Roborock, de viktigaste skillnaderna</h2>
       <div class="space-y-4">
         <div class="bg-white rounded-xl border border-border p-5">
           <div class="flex items-center gap-2 mb-3">
@@ -284,7 +284,7 @@ const faqSchema = faqItems.map((item) => ({
             <span class="text-xs font-semibold px-2 py-0.5 rounded bg-winner/10 text-winner">Ecovacs vinner marginellt</span>
           </div>
           <p class="text-text-light text-sm leading-relaxed">
-            Ecovacs X5 Omni till ca 8 499 kr mot Roborock S8 MaxV Ultra till ca 10 990 kr — Ecovacs ger mycket för pengarna. För den som prioriterar OMNI-stationens automatik framför AI-djurskydd är Ecovacs klart prisvärdare. Roborock motiverar merpriset enbart om AI-säkerhetsfunktionen är avgörande.
+            Ecovacs X5 Omni till ca 8 499 kr mot Roborock S8 MaxV Ultra till ca 10 990 kr, Ecovacs ger mycket för pengarna. För den som prioriterar OMNI-stationens automatik framför AI-djurskydd är Ecovacs klart prisvärdare. Roborock motiverar merpriset enbart om AI-säkerhetsfunktionen är avgörande.
           </p>
         </div>
       </div>
@@ -298,11 +298,11 @@ const faqSchema = faqItems.map((item) => ({
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
       <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
       <ul class="space-y-2">
-        <li><a href="/ecovacs-deebot-x5-omni/" class="text-accent underline text-sm">Ecovacs Deebot X5 Omni recension 2026 — toppmodellen testad</a></li>
-        <li><a href="/roborock-vs-ecovacs/" class="text-accent underline text-sm">Roborock vs Ecovacs 2026 — vilket märke ska du välja?</a></li>
-        <li><a href="/roborock-guide/" class="text-accent underline text-sm">Roborock guide 2026 — alla modeller jämförda</a></li>
-        <li><a href="/" class="text-accent underline text-sm">Bästa robotdammsugare 2026 — alla märken jämförda</a></li>
-        <li><a href="/reservdelar/ecovacs/" class="text-accent underline text-sm">Ecovacs reservdelar — filter, borstar och moppkuddar</a></li>
+        <li><a href="/ecovacs-deebot-x5-omni/" class="text-accent underline text-sm">Ecovacs Deebot X5 Omni recension 2026, toppmodellen testad</a></li>
+        <li><a href="/roborock-vs-ecovacs/" class="text-accent underline text-sm">Roborock vs Ecovacs 2026, vilket märke ska du välja?</a></li>
+        <li><a href="/roborock-guide/" class="text-accent underline text-sm">Roborock guide 2026, alla modeller jämförda</a></li>
+        <li><a href="/" class="text-accent underline text-sm">Bästa robotdammsugare 2026, alla märken jämförda</a></li>
+        <li><a href="/reservdelar/ecovacs/" class="text-accent underline text-sm">Ecovacs reservdelar, filter, borstar och moppkuddar</a></li>
         <li><a href="/reservdelar/filter/" class="text-accent underline text-sm">Ersättningsfilter till robotdammsugare</a></li>
       </ul>
     </section>

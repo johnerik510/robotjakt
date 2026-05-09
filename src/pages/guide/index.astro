@@ -12,7 +12,7 @@ const guides = [
     category: 'Teknik',
   },
   {
-    title: 'Sugkraft i Pa — vad behöver du?',
+    title: 'Sugkraft i Pa, vad behöver du?',
     description: 'Genomgång av Pa-värden, hur de mäts och hur mycket sugkraft du faktiskt behöver för olika golv och husdjur.',
     href: '/guide/sugkraft/',
     category: 'Teknik',
@@ -31,37 +31,37 @@ const guides = [
   },
   {
     title: 'Robotdammsugare med mopp',
-    description: 'Passiv, vibrerande eller roterande mopp — vad är skillnaden och vilka modeller har bäst moppning?',
+    description: 'Passiv, vibrerande eller roterande mopp, vad är skillnaden och vilka modeller har bäst moppning?',
     href: '/guide/robotdammsugare-mopp/',
     category: 'Köpguide',
   },
   {
     title: 'Robotdammsugare och mattor',
-    description: 'Mattlyft, sugkraft och borstdesign — så väljer du rätt robot för matthem.',
+    description: 'Mattlyft, sugkraft och borstdesign, så väljer du rätt robot för matthem.',
     href: '/guide/robotdammsugare-mattor/',
     category: 'Köpguide',
   },
   {
     title: 'Installation steg för steg',
-    description: 'Komplett guide till första installationen — från uppackning till första kartläggning.',
+    description: 'Komplett guide till första installationen, från uppackning till första kartläggning.',
     href: '/guide/installation/',
     category: 'Användning',
   },
   {
-    title: 'Underhåll — checklista',
+    title: 'Underhåll, checklista',
     description: 'Vecko-, månads- och kvartalsvis underhåll så roboten håller i 5+ år.',
     href: '/guide/underhall/',
     category: 'Användning',
   },
   {
     title: 'Poolrobot köpguide',
-    description: 'Kabel vs batteri, väggklättring, filterstorlek — så väljer du rätt poolrobot.',
+    description: 'Kabel vs batteri, väggklättring, filterstorlek, så väljer du rätt poolrobot.',
     href: '/guide/poolrobot-koparguide/',
     category: 'Köpguide',
   },
   {
     title: 'Robotgräsklippare köpguide',
-    description: 'Med eller utan begränsningskabel, klippkapacitet, lutning — komplett guide.',
+    description: 'Med eller utan begränsningskabel, klippkapacitet, lutning, komplett guide.',
     href: '/guide/robotgrasklippare-koparguide/',
     category: 'Köpguide',
   },
@@ -71,17 +71,17 @@ const categories = [...new Set(guides.map(g => g.category))];
 ---
 
 <BaseLayout
-  title="Guider — robotdammsugare, robotgräsklippare och poolrobotar | Robotjakt"
+  title="Guider, robotdammsugare, robotgräsklippare och poolrobotar | Robotjakt"
   description="Komplett samling köpguider och teknikförklaringar för dig som funderar på robotdammsugare, robotgräsklippare eller poolrobot. Uppdaterat 2026."
 >
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
-      Guider — robotdammsugare, robotgräsklippare och poolrobotar
+      Guider, robotdammsugare, robotgräsklippare och poolrobotar
     </h1>
     <p class="text-text-light text-lg mb-8 leading-relaxed max-w-2xl">
-      Vi har samlat alla våra köpguider, teknikförklaringar och användningstips på ett ställe. Här hittar du svaren innan du köper — och hjälpen efter.
+      Vi har samlat alla våra köpguider, teknikförklaringar och användningstips på ett ställe. Här hittar du svaren innan du köper, och hjälpen efter.
     </p>
 
     {categories.map(cat => (

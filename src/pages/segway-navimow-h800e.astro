@@ -8,15 +8,15 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 const faqItems = [
   {
     question: 'Behöver Segway Navimow H800E slingkabel?',
-    answer: 'Nej — H800E använder Exact!Fusion GPS+RTK för att navigera utan slingkabel. Du definierar gränserna i appen istället. Det gör installation dramatiskt enklare jämfört med Husqvarna Automower, men kräver att GPS-mottagning fungerar väl på din tomt.',
+    answer: 'Nej, H800E använder Exact!Fusion GPS+RTK för att navigera utan slingkabel. Du definierar gränserna i appen istället. Det gör installation dramatiskt enklare jämfört med Husqvarna Automower, men kräver att GPS-mottagning fungerar väl på din tomt.',
   },
   {
     question: 'Vad är Exact!Fusion GPS-teknologin?',
-    answer: 'Exact!Fusion kombinerar RTK GPS (centimeterprecision), IMU och visuell detektion för att positionera roboten utan slinga. I Sverige med god satellitstäckning fungerar det utmärkt på de flesta öppna tomter. Träd och byggnader kan skymma GPS — testa positioneringen på din specifika tomt innan köp.',
+    answer: 'Exact!Fusion kombinerar RTK GPS (centimeterprecision), IMU och visuell detektion för att positionera roboten utan slinga. I Sverige med god satellitstäckning fungerar det utmärkt på de flesta öppna tomter. Träd och byggnader kan skymma GPS, testa positioneringen på din specifika tomt innan köp.',
   },
   {
     question: 'Vad är kapaciteten på Segway Navimow H800E?',
-    answer: 'H800E klarar upp till 3 000 m² gräsyta — stor villatomt. Den har starkare motor och batteri än H500E (1 800 m²) och är bättre lämpad för kuperad terräng med upp till 45% lutning.',
+    answer: 'H800E klarar upp till 3 000 m² gräsyta, stor villatomt. Den har starkare motor och batteri än H500E (1 800 m²) och är bättre lämpad för kuperad terräng med upp till 45% lutning.',
   },
   {
     question: 'Hur jämförs H800E mot Husqvarna Automower 430X Nera?',
@@ -24,7 +24,7 @@ const faqItems = [
   },
   {
     question: 'Kan Segway Navimow H800E hantera brant terräng?',
-    answer: 'Ja, H800E klarar upp till 45% lutning — jämförbart med Husqvarna 430X Nera. Utan slinga kan roboten dessutom anpassas mer flexibelt runt hinder och backar via app utan att lägga om kabel.',
+    answer: 'Ja, H800E klarar upp till 45% lutning, jämförbart med Husqvarna 430X Nera. Utan slinga kan roboten dessutom anpassas mer flexibelt runt hinder och backar via app utan att lägga om kabel.',
   },
 ];
 
@@ -35,7 +35,7 @@ const breadcrumbs = [
 const specs = [
   { label: 'Klippyta', value: 'upp till 3 000 m²' },
   { label: 'Max lutning', value: '45%' },
-  { label: 'Klipphöjd', value: '25–65 mm' },
+  { label: 'Klipphöjd', value: '25 till 65 mm' },
   { label: 'Klippbredd', value: '22 cm' },
   { label: 'Navigering', value: 'Exact!Fusion RTK GPS (utan slinga)' },
   { label: 'Bullernivå', value: '60 dB(A)' },
@@ -58,7 +58,7 @@ const faqSchema = faqItems.map((item) => ({
 ---
 
 <BaseLayout
-  title="Segway Navimow H800E Test 2026 – Recension & Pris"
+  title="Segway Navimow H800E Test 2026, Recension & Pris"
   description="Segway Navimow H800E testad: RTK GPS utan slinga, 45% lutning och 3 000 m² kapacitet. Enkel installation. Se betyg, pris och jämförelse 2026."
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -73,7 +73,7 @@ const faqSchema = faqItems.map((item) => ({
       <div class="flex items-start gap-4">
         <div class="flex-1">
           <div class="flex items-center gap-3 mb-2">
-            <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">UTAN SLINGA — STOR TOMT</span>
+            <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">UTAN SLINGA, STOR TOMT</span>
             <div class="flex gap-0.5">
               {[1,2,3,4,5].map(i => (
                 <svg class={`w-4 h-4 ${i <= 4 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
@@ -84,7 +84,7 @@ const faqSchema = faqItems.map((item) => ({
             <span class="font-bold text-text">4.2 / 5</span>
           </div>
           <p class="text-text-light text-sm leading-relaxed">
-            Segway Navimow H800E kombinerar Exact!Fusion RTK GPS med 45% lutningskapacitet för tomter upp till 3 000 m² — utan en meter slingkabel. För den som vill slippa grävningsarbete och ändå ha en robot som hanterar stor, kuperad tomt är H800E ett starkt alternativ till Husqvarna.
+            Segway Navimow H800E kombinerar Exact!Fusion RTK GPS med 45% lutningskapacitet för tomter upp till 3 000 m², utan en meter slingkabel. För den som vill slippa grävningsarbete och ändå ha en robot som hanterar stor, kuperad tomt är H800E ett starkt alternativ till Husqvarna.
           </p>
         </div>
       </div>
@@ -94,7 +94,7 @@ const faqSchema = faqItems.map((item) => ({
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <p class="text-2xl font-bold text-text">ca 17 990 kr</p>
-          <p class="text-sm text-text-light">Pris varierar — jämför alltid mellan butiker</p>
+          <p class="text-sm text-text-light">Pris varierar, jämför alltid mellan butiker</p>
         </div>
         <div class="flex flex-col sm:flex-row gap-3">
           <a
@@ -115,11 +115,11 @@ const faqSchema = faqItems.map((item) => ({
         <h2 class="font-semibold text-text mb-3">Fördelar med Segway Navimow H800E</h2>
         <ul class="space-y-2">
           {[
-            'Ingen slingkabel — RTK GPS-navigering',
-            '45% lutning — hanterar kuperad terräng',
+            'Ingen slingkabel, RTK GPS-navigering',
+            '45% lutning, hanterar kuperad terräng',
             '3 000 m² kapacitet',
             'Enkel installation via app',
-            'Tyst (60 dB) — ingen störning för grannar',
+            'Tyst (60 dB), ingen störning för grannar',
             'WiFi-styrning från mobilen',
           ].map(pro => (
             <li class="flex items-start gap-2 text-sm text-text-light">
@@ -148,16 +148,16 @@ const faqSchema = faqItems.map((item) => ({
     </div>
 
     <section class="mb-10">
-      <h2 class="font-heading text-2xl font-bold text-text mb-4">Segway Navimow H800E — detaljerad genomgång</h2>
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Segway Navimow H800E, detaljerad genomgång</h2>
 
-      <h3 class="font-heading text-xl font-semibold text-text mb-3">Exact!Fusion — GPS utan kompromisser</h3>
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Exact!Fusion, GPS utan kompromisser</h3>
       <p class="text-text-light leading-relaxed mb-6">
         H800E:s RTK GPS ger centimeterprecision i positionering. Det innebär att roboten vet exakt var den befinner sig i trädgården och klipper systematiskt utan att missa ytor. Kombination med IMU (rörelsesensor) och visuell detektion ger pålitlig navigering även vid kortvariga GPS-avbrott under träd.
       </p>
 
-      <h3 class="font-heading text-xl font-semibold text-text mb-3">Installation — 30 minuter istället för 4 timmar</h3>
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Installation, 30 minuter istället för 4 timmar</h3>
       <p class="text-text-light leading-relaxed mb-6">
-        Utan slingkabel är installation dramatiskt enklare: placera stationen, anslut ström och rita in gränserna i appen via GPS-koordinater. Kalibrering tar 15–30 minuter. Inga grävningsverktyg, inga spikar, inget kabelarbete. Det är H800E:s absolut tydligaste fördel mot Husqvarna.
+        Utan slingkabel är installation dramatiskt enklare: placera stationen, anslut ström och rita in gränserna i appen via GPS-koordinater. Kalibrering tar 15 till 30 minuter. Inga grävningsverktyg, inga spikar, inget kabelarbete. Det är H800E:s absolut tydligaste fördel mot Husqvarna.
       </p>
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Specifikationer Segway Navimow H800E</h3>
@@ -176,7 +176,7 @@ const faqSchema = faqItems.map((item) => ({
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">För vem passar Segway Navimow H800E?</h3>
       <p class="text-text-light leading-relaxed mb-4">
-        H800E passar villaägare med 1 000–3 000 m² tomt och kuperad terräng som vill slippa slingkabel-installation. Välj H800E om enkel installation väger tyngst. Välj Husqvarna Automower 430X Nera om beprövad tillförlitlighet och lokalt servicenätverk är viktigast.
+        H800E passar villaägare med 1 000 till 3 000 m² tomt och kuperad terräng som vill slippa slingkabel-installation. Välj H800E om enkel installation väger tyngst. Välj Husqvarna Automower 430X Nera om beprövad tillförlitlighet och lokalt servicenätverk är viktigast.
       </p>
     </section>
 
@@ -187,11 +187,11 @@ const faqSchema = faqItems.map((item) => ({
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
       <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med liknande modeller</h2>
       <ul class="space-y-2">
-        <li><a href="/segway-navimow-i105e/" class="text-accent underline text-sm">Segway Navimow i105E — utan slinga för upp till 500 m²</a></li>
-        <li><a href="/segway-navimow-h500e/" class="text-accent underline text-sm">Segway Navimow H500E — utan slinga för upp till 5 000 m²</a></li>
+        <li><a href="/segway-navimow-i105e/" class="text-accent underline text-sm">Segway Navimow i105E, utan slinga för upp till 500 m²</a></li>
+        <li><a href="/segway-navimow-h500e/" class="text-accent underline text-sm">Segway Navimow H500E, utan slinga för upp till 5 000 m²</a></li>
         <li><a href="/robotgrasklippare-utan-slinga/" class="text-accent underline text-sm">Bästa robotgräsklippare utan slinga 2026</a></li>
-        <li><a href="/husqvarna-automower-430x-nera/" class="text-accent underline text-sm">Husqvarna Automower 430X Nera — beprövat alternativ</a></li>
-        <li><a href="/robotgrasklippare/" class="text-accent underline text-sm">Bästa robotgräsklippare 2026 — alla modeller</a></li>
+        <li><a href="/husqvarna-automower-430x-nera/" class="text-accent underline text-sm">Husqvarna Automower 430X Nera, beprövat alternativ</a></li>
+        <li><a href="/robotgrasklippare/" class="text-accent underline text-sm">Bästa robotgräsklippare 2026, alla modeller</a></li>
       </ul>
     </section>
   </div>

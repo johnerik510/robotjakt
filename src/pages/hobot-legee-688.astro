@@ -16,7 +16,7 @@ const specs = [
   { label: 'Täckning', value: '30 m²/h' },
   { label: 'Batteri', value: '2 600 mAh' },
   { label: 'Strömförsörjning', value: 'Kabel (medföljande)' },
-  { label: 'App-styrning', value: 'Ja — Hobot-app (iOS/Android)' },
+  { label: 'App-styrning', value: 'Ja, Hobot-app (iOS/Android)' },
   { label: 'Bullernivå', value: 'ca 55 dB' },
   { label: 'Vikt', value: '830 g' },
   { label: 'Säkerhetsline', value: 'Ingår' },
@@ -29,7 +29,7 @@ const faqItems = [
   },
   {
     question: 'Måste Hobot Legee 688 vara ansluten till elnätet hela tiden?',
-    answer: 'Ja, Legee 688 drivs via kabel under drift och kan inte köras enbart på batteri. Det inbyggda batteriet är ett säkerhetsskydd — om kabeln lossar håller batteriet roboten fast mot glaset tills du kan ta ner den. Kabeln begränsar rörelsefriheten något men gör roboten pålitlig på höga höjder.',
+    answer: 'Ja, Legee 688 drivs via kabel under drift och kan inte köras enbart på batteri. Det inbyggda batteriet är ett säkerhetsskydd, om kabeln lossar håller batteriet roboten fast mot glaset tills du kan ta ner den. Kabeln begränsar rörelsefriheten något men gör roboten pålitlig på höga höjder.',
   },
   {
     question: 'Hur bra rengör Hobot Legee 688 köksfönster och badrumsspeglar?',
@@ -37,11 +37,11 @@ const faqItems = [
   },
   {
     question: 'Vad är skillnaden mot Hobot Legee 688 vs Ecovacs Winbot W1 Pro?',
-    answer: 'Båda modellerna kräver fönsterram och levererar likvärdig rengöringskvalitet. Winbot W1 Pro har en integrerad sprayflaska för automatisk befuktning medan Legee 688 fuktade dukar manuellt. Hobot Legee 688 är tystare (55 vs ca 65 dB) och har app-styrning. Priserna är jämförbara — välj efter vilken funktion du värdesätter mest.',
+    answer: 'Båda modellerna kräver fönsterram och levererar likvärdig rengöringskvalitet. Winbot W1 Pro har en integrerad sprayflaska för automatisk befuktning medan Legee 688 fuktade dukar manuellt. Hobot Legee 688 är tystare (55 vs ca 65 dB) och har app-styrning. Priserna är jämförbara, välj efter vilken funktion du värdesätter mest.',
   },
   {
     question: 'Hur lång är garantin på Hobot Legee 688 i Sverige?',
-    answer: '2 års garanti gäller vid köp via auktoriserade återförsäljare i Sverige. Kontrollera att butiken säljer officiell nordisk version — importerade produkter utan EU-märkning kan ha kortare garanti eller sakna garantiservice i Sverige.',
+    answer: '2 års garanti gäller vid köp via auktoriserade återförsäljare i Sverige. Kontrollera att butiken säljer officiell nordisk version, importerade produkter utan EU-märkning kan ha kortare garanti eller sakna garantiservice i Sverige.',
   },
 ];
 
@@ -56,8 +56,8 @@ const faqSchema = faqItems.map((item) => ({
 ---
 
 <BaseLayout
-  title="Hobot Legee 688 Recension 2026 – Test & Betyg"
-  description="Vi testar Hobot Legee 688 2026. En av de populäraste fönsterputsrobotarna — men klarar den köksfönster och badrumsspeglar?"
+  title="Hobot Legee 688 Recension 2026, Test & Betyg"
+  description="Vi testar Hobot Legee 688 2026. En av de populäraste fönsterputsrobotarna, men klarar den köksfönster och badrumsspeglar?"
   ogImage="/images/hobot-legee-688.webp"
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -65,7 +65,7 @@ const faqSchema = faqItems.map((item) => ({
 <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
-      Hobot Legee 688 recension 2026 — bäst för fönster?
+      Hobot Legee 688 recension 2026, bäst för fönster?
     </h1>
 
     <!-- Verdict box -->
@@ -89,7 +89,7 @@ const faqSchema = faqItems.map((item) => ({
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <div>
               <p class="text-2xl font-bold text-text">ca 2 499 kr</p>
-              <p class="text-xs text-text-light">Pris kan variera — jämför alltid</p>
+              <p class="text-xs text-text-light">Pris kan variera, jämför alltid</p>
             </div>
             <a
               href="https://www.amazon.se/HOBOT-LEGEE-688-tv%C3%A4ttrobot-friktionssystem/dp/B07R4BJXBH?tag=johnerik510-20"
@@ -112,7 +112,7 @@ const faqSchema = faqItems.map((item) => ({
         <h2 class="font-semibold text-text mb-3">Fördelar med Hobot Legee 688</h2>
         <ul class="space-y-2">
           {[
-            'Stark sugkraft — 2 800 Pa',
+            'Stark sugkraft, 2 800 Pa',
             'Tyst drift ca 55 dB',
             'Bra fönsterrekke med app-styrning',
             'App-styrning via Hobot-appen',
@@ -131,8 +131,8 @@ const faqSchema = faqItems.map((item) => ({
           {[
             'Långsam på stora glasytor',
             'Kabel krävs under drift',
-            'Begränsad tankstorlek — 80 ml',
-            'Kräver fönsterram — fungerar inte utan',
+            'Begränsad tankstorlek, 80 ml',
+            'Kräver fönsterram, fungerar inte utan',
           ].map(con => (
             <li class="flex items-start gap-2 text-sm text-text-light">
               <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
@@ -166,31 +166,31 @@ const faqSchema = faqItems.map((item) => ({
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Sugkraft och fäste mot glaset</h3>
       <p class="text-text-light leading-relaxed mb-4">
-        Hobot Legee 688 genererar 2 800 Pa sugkraft mot glaset — tillräckligt för att klara vertikala fönster och standardlutade ytor. I praktiken sitter roboten stadigt mot glaset utan att glida vid normalt arbete. Säkerhetslinan som ingår ger ett viktigt extra skyddslager vid höga höjder — baka alltid in den i rutinen.
+        Hobot Legee 688 genererar 2 800 Pa sugkraft mot glaset, tillräckligt för att klara vertikala fönster och standardlutade ytor. I praktiken sitter roboten stadigt mot glaset utan att glida vid normalt arbete. Säkerhetslinan som ingår ger ett viktigt extra skyddslager vid höga höjder, baka alltid in den i rutinen.
       </p>
       <p class="text-text-light leading-relaxed mb-6">
-        Kabeldriften innebär att sugkraften aldrig påverkas av batteristatus — roboten levererar konsekvent kraft under hela städpasset. Det är en fördel jämfört med renodlade batteridrivna modeller som kan tappa sugkraft mot slutet av laddningscykeln.
+        Kabeldriften innebär att sugkraften aldrig påverkas av batteristatus, roboten levererar konsekvent kraft under hela städpasset. Det är en fördel jämfört med renodlade batteridrivna modeller som kan tappa sugkraft mot slutet av laddningscykeln.
       </p>
 
-      <h3 class="font-heading text-xl font-semibold text-text mb-3">Rengöringsresultat — köksfönster och badrumsspeglar</h3>
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Rengöringsresultat, köksfönster och badrumsspeglar</h3>
       <p class="text-text-light leading-relaxed mb-4">
         För underhållsrengöring av köksfönster och badrumsspeglar levererar Legee 688 bra resultat. Mikrofiberdukarnas kombination av mekanisk skrubbning och fukt löser fingeravtryck, kondensfläckar och normalt hushållsdamm effektivt. Rengöringsresultatet är streck fritt vid normalt smutsiga ytor.
       </p>
       <p class="text-text-light leading-relaxed mb-6">
-        Den begränsade tankstorleken på 80 ml innebär att duken kan torka ut vid längre körsessioner. På badrumsspeglar och köksrutor — som typiskt är kompakta ytor — räcker tanken bra för en hel session. För längre panelglas kan det krävas att du fuktar om duken manuellt.
+        Den begränsade tankstorleken på 80 ml innebär att duken kan torka ut vid längre körsessioner. På badrumsspeglar och köksrutor, som typiskt är kompakta ytor, räcker tanken bra för en hel session. För längre panelglas kan det krävas att du fuktar om duken manuellt.
       </p>
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">App-styrning och användarvänlighet</h3>
       <p class="text-text-light leading-relaxed mb-4">
-        Hobot-appen (iOS och Android) gör det möjligt att starta, stoppa och välja städmönster direkt från mobilen. App-styrningen är enkel att komma igång med — anslutningen via Wi-Fi tar ett par minuter vid första installationen. Appen erbjuder tre städlägen: Z-mönster, spiralmönster och manuell styrning.
+        Hobot-appen (iOS och Android) gör det möjligt att starta, stoppa och välja städmönster direkt från mobilen. App-styrningen är enkel att komma igång med, anslutningen via Wi-Fi tar ett par minuter vid första installationen. Appen erbjuder tre städlägen: Z-mönster, spiralmönster och manuell styrning.
       </p>
       <p class="text-text-light leading-relaxed mb-6">
         Fjärrstyrning via app är särskilt användbar vid höga fönster där du inte bekvämt kan nå roboten. Du sätter roboten mot glaset, går undan och styr cleaningen från din telefon. Det är ett klokt säkerhetsupplägg för fönster på andra våningen eller högre.
       </p>
 
-      <h3 class="font-heading text-xl font-semibold text-text mb-3">Kabeldrift — fördel eller nackdel?</h3>
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Kabeldrift, fördel eller nackdel?</h3>
       <p class="text-text-light leading-relaxed mb-4">
-        Kabeldriften är Legee 688:s mest diskuterade egenskap. Kabeln begränsar rörelsefriheten — du behöver ett eluttag i närheten och kabeln kan hindra roboten från att nå fönstrets ytterkanter om kabeln är för kort utsträckt. För inomhusfönster nära ett eluttag är detta sällan ett problem.
+        Kabeldriften är Legee 688:s mest diskuterade egenskap. Kabeln begränsar rörelsefriheten, du behöver ett eluttag i närheten och kabeln kan hindra roboten från att nå fönstrets ytterkanter om kabeln är för kort utsträckt. För inomhusfönster nära ett eluttag är detta sällan ett problem.
       </p>
       <p class="text-text-light leading-relaxed mb-6">
         Fördelen med kabeln är att roboten aldrig riskerar att stanna av batteribrist mitt i ett fönster. För husåll som städar regelbundet och vill ha en pålitlig robot utan oro för batteri är kabeldriften en styrka snarare än en begränsning.
@@ -212,7 +212,7 @@ const faqSchema = faqItems.map((item) => ({
         Legee 688 passar dig med standardfönster med synlig ram som vill ha en tyst, app-styrbar fönsterputsrobot under 3 000 kr. Idealisk för kök och badrum med kompakta fönsterytor där den begränsade tankstorleken inte är ett problem.
       </p>
       <p class="text-text-light leading-relaxed">
-        Har du ramfria fönster, stora panoramafönster eller glasytor utan ram rekommenderar vi istället <a href="/ecovacs-winbot-w2-omni/" class="text-accent underline">Ecovacs Winbot W2 Omni</a> — den enda modellen som klarar fönster utan ram.
+        Har du ramfria fönster, stora panoramafönster eller glasytor utan ram rekommenderar vi istället <a href="/ecovacs-winbot-w2-omni/" class="text-accent underline">Ecovacs Winbot W2 Omni</a>, den enda modellen som klarar fönster utan ram.
       </p>
     </section>
 
@@ -234,8 +234,8 @@ const faqSchema = faqItems.map((item) => ({
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
       <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
       <ul class="space-y-2">
-        <li><a href="/fonsterputsrobot/" class="text-accent underline text-sm">Bästa fönsterputsrobot 2026 — komplett jämförelse och topplista</a></li>
-        <li><a href="/ecovacs-winbot-w2-omni/" class="text-accent underline text-sm">Ecovacs Winbot W2 Omni recension 2026 — bäst i test</a></li>
+        <li><a href="/fonsterputsrobot/" class="text-accent underline text-sm">Bästa fönsterputsrobot 2026, komplett jämförelse och topplista</a></li>
+        <li><a href="/ecovacs-winbot-w2-omni/" class="text-accent underline text-sm">Ecovacs Winbot W2 Omni recension 2026, bäst i test</a></li>
       </ul>
     </section>
   </div>

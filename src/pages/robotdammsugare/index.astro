@@ -14,8 +14,8 @@ const products = [
     price: 'ca 8 990 kr',
     rating: 4.9,
     badge: 'Bäst i test 2026',
-    pros: ['20 000 Pa VorMax sugkraft', 'VersaLift — sänker LiDAR under låga möbler', 'Utfällbar arm städar hörnen ordentligt', 'PowerDock självrenande station'],
-    cons: ['Nyare modell — färre långtidsrecensioner', 'Stor dockningsstation'],
+    pros: ['20 000 Pa VorMax sugkraft', 'VersaLift, sänker LiDAR under låga möbler', 'Utfällbar arm städar hörnen ordentligt', 'PowerDock självrenande station'],
+    cons: ['Nyare modell, färre långtidsrecensioner', 'Stor dockningsstation'],
     ctaText: 'Se pris hos Elon',
     ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fdreame-x50-ultra-white-151996',
     dataProduct: 'Dreame X50 Ultra',
@@ -41,7 +41,7 @@ const products = [
     price: 'ca 11 990 kr',
     rating: 4.7,
     badge: 'Bäst för husdjur',
-    pros: ['AI-kamera undviker djuravföring', 'Dubbla gummirullar — trasslas inte', 'Branschledande LiDAR-navigering', 'Komplett självtömmande station'],
+    pros: ['AI-kamera undviker djuravföring', 'Dubbla gummirullar, trasslas inte', 'Branschledande LiDAR-navigering', 'Komplett självtömmande station'],
     cons: ['Dyrast i testet', 'App kan kännas komplex'],
     ctaText: 'Se pris hos Elon',
     ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Froborock-s8-maxv-ultra-white-135019',
@@ -111,7 +111,7 @@ const products = [
     price: '4 540 kr',
     rating: 4.3,
     badge: 'Billigast i testet',
-    pros: ['6 000 Pa sugkraft', 'Mopp ingår', 'App + Google Home + WiFi', '120–180 min batteritid'],
+    pros: ['6 000 Pa sugkraft', 'Mopp ingår', 'App + Google Home + WiFi', '120 till 180 min batteritid'],
     cons: ['Ingen LiDAR-navigering', 'Enklare station (ej självtömmande)'],
     ctaText: 'Köp hos Neatsvor',
     ctaUrl: 'https://addrevenue.io/t?a=985945&c=3467327&url=https%3A%2F%2Fwww.neatsvor.se%2Fprodukt%2Fneatsvor-x650-pro-robotdammsugare%2F',
@@ -126,7 +126,7 @@ const faqItems = [
   },
   {
     question: 'Är det värt att köpa en robotdammsugare med moppfunktion?',
-    answer: 'Ja, moderna robotdammsugare med mopp gör ett bra jobb på hårdgolv. Modeller som Dreame X40 Ultra och Roborock S8 MaxV Ultra torkar bort intorkade fläckar. För heltäckningsmattor är moppfunktionen mindre relevant — välj en modell med automatisk mopplyftning om du har både mattor och hårdgolv.',
+    answer: 'Ja, moderna robotdammsugare med mopp gör ett bra jobb på hårdgolv. Modeller som Dreame X40 Ultra och Roborock S8 MaxV Ultra torkar bort intorkade fläckar. För heltäckningsmattor är moppfunktionen mindre relevant, välj en modell med automatisk mopplyftning om du har både mattor och hårdgolv.',
   },
   {
     question: 'Vilken robotdammsugare är bäst för husdjur?',
@@ -134,7 +134,7 @@ const faqItems = [
   },
   {
     question: 'Hur ofta behöver man tömma en robotdammsugare?',
-    answer: 'Med en självtömmande station behöver du bara tömma påsen var 30–60 dag beroende på hemstorlek och smutsbelastning. Utan station bör du tömma behållaren efter varje städning. Nästan alla premiummodeller 2026 inkluderar självtömmande station.',
+    answer: 'Med en självtömmande station behöver du bara tömma påsen var 30 till 60 dag beroende på hemstorlek och smutsbelastning. Utan station bör du tömma behållaren efter varje städning. Nästan alla premiummodeller 2026 inkluderar självtömmande station.',
   },
   {
     question: 'Kan en robotdammsugare ersätta en vanlig dammsugare?',
@@ -161,15 +161,15 @@ const faqSchema = faqItems.map((item) => ({
 ---
 
 <BaseLayout
-  title="Robotdammsugare Bäst i Test 2026 — Topp 8 testade och jämförda"
-  description="Robotdammsugare bäst i test 2026: Dreame X50 Ultra vinner. 8 toppmodeller testade — Dreame, Roborock, Ecovacs. Jämförelse med priser, för- och nackdelar."
+  title="Robotdammsugare Bäst i Test 2026, Topp 8 testade och jämförda"
+  description="Robotdammsugare bäst i test 2026: Dreame X50 Ultra vinner. 8 toppmodeller testade, Dreame, Roborock, Ecovacs. Jämförelse med priser, för- och nackdelar."
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
     <p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-04-20">2026-04-20</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
-      Robotdammsugare bäst i test 2026 — topp 8 testade
+      Robotdammsugare bäst i test 2026, topp 8 testade
     </h1>
     <p class="text-text-light mb-6 max-w-2xl">
       Vi har testat och jämfört {products.length} robotdammsugare och rankat dem efter sugkraft, navigering, moppning och prisvärdhet. Här är våra toppval för 2026.
@@ -311,24 +311,24 @@ const faqSchema = faqItems.map((item) => ({
       <h2 class="font-heading text-2xl font-bold text-text mb-4">Köpguide: Hur väljer man robotdammsugare?</h2>
       <div class="space-y-6 text-text-light text-sm leading-relaxed">
         <div>
-          <h3 class="font-heading text-lg font-bold text-text mb-2">Sugkraft — hur mycket behöver du?</h3>
-          <p>Modern sugkraft mäts i Pascal (Pa). Budget-modeller har 3 000–5 000 Pa. Mellanklassmodeller ligger på 6 000–8 000 Pa och räcker för de flesta hem. Premium-modeller (10 000–35 000 Pa) är nödvändiga om du har tjocka mattor, husdjur eller höga krav på grundlighet. Kom ihåg att höga Pa-siffror drar mer batteri — roboten väljer automatisk nivå baserat på underlag.</p>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Sugkraft, hur mycket behöver du?</h3>
+          <p>Modern sugkraft mäts i Pascal (Pa). Budget-modeller har 3 000 till 5 000 Pa. Mellanklassmodeller ligger på 6 000 till 8 000 Pa och räcker för de flesta hem. Premium-modeller (10 000 till 35 000 Pa) är nödvändiga om du har tjocka mattor, husdjur eller höga krav på grundlighet. Kom ihåg att höga Pa-siffror drar mer batteri, roboten väljer automatisk nivå baserat på underlag.</p>
         </div>
         <div>
-          <h3 class="font-heading text-lg font-bold text-text mb-2">Självtömmande station — värt prisskillnaden</h3>
-          <p>En självtömmande station töms roboten automatiskt efter varje städning och skickar dammet till en större påse. Du behöver bara tömma påsen var 4–8 vecka. Utan station tömmer du behållaren efter varje pass. Skillnaden i bekvämlighet är stor — räkna på att nästan alla modeller över 5 000 kr inkluderar station 2026.</p>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Självtömmande station, värt prisskillnaden</h3>
+          <p>En självtömmande station töms roboten automatiskt efter varje städning och skickar dammet till en större påse. Du behöver bara tömma påsen var 4 till 8 vecka. Utan station tömmer du behållaren efter varje pass. Skillnaden i bekvämlighet är stor, räkna på att nästan alla modeller över 5 000 kr inkluderar station 2026.</p>
         </div>
         <div>
-          <h3 class="font-heading text-lg font-bold text-text mb-2">Moppfunktion — för hårdgolv och flisgolv</h3>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Moppfunktion, för hårdgolv och flisgolv</h3>
           <p>Moderna robotar kombinerar dammsugning och moppning i samma körning. Avgörande funktioner: varmvattenmoppning (tar bort intorkade fläckar), automatisk mopplyftning (roboten lyfter moppdelen ovanpå mattor) och självtvättning i stationen. Se vår guide: <a href="/robotdammsugare/med-mopp/" class="text-accent underline">Bästa robotdammsugare med mopp 2026</a>.</p>
         </div>
         <div>
-          <h3 class="font-heading text-lg font-bold text-text mb-2">Husdjur — gummirullar och AI-kamera</h3>
-          <p>För hem med hund eller katt är gummirullar (ej borsthuvud) avgörande — de trasslas inte av päls. Roborock S8 MaxV Ultra är enda modellen som aktivt undviker djuravföring via AI-kamera. Läs mer: <a href="/robotdammsugare/husdjur/" class="text-accent underline">Robotdammsugare för husdjur</a>.</p>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Husdjur, gummirullar och AI-kamera</h3>
+          <p>För hem med hund eller katt är gummirullar (ej borsthuvud) avgörande, de trasslas inte av päls. Roborock S8 MaxV Ultra är enda modellen som aktivt undviker djuravföring via AI-kamera. Läs mer: <a href="/robotdammsugare/husdjur/" class="text-accent underline">Robotdammsugare för husdjur</a>.</p>
         </div>
         <div>
           <h3 class="font-heading text-lg font-bold text-text mb-2">Prisklasser 2026</h3>
-          <p>Budget (under 5 000 kr): täcker grundläggande behov, enklare navigering. Mellanklass (5 000–8 000 kr): LiDAR-navigering, moppfunktion, självtömmande station — här sitter bästa värdet. Premium (8 000–15 000 kr+): maxprestanda, AI-kamera, utfällbar mopp, varmvatten.</p>
+          <p>Budget (under 5 000 kr): täcker grundläggande behov, enklare navigering. Mellanklass (5 000 till 8 000 kr): LiDAR-navigering, moppfunktion, självtömmande station, här sitter bästa värdet. Premium (8 000 till 15 000 kr+): maxprestanda, AI-kamera, utfällbar mopp, varmvatten.</p>
         </div>
       </div>
     </section>
@@ -347,7 +347,7 @@ const faqSchema = faqItems.map((item) => ({
         </a>
         <a href="/robotdammsugare/med-bassation/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Med självtömmande station</h3>
-          <p class="text-sm text-text-light">Robotar som töms automatiskt — tömmer påsen var 4–8 vecka.</p>
+          <p class="text-sm text-text-light">Robotar som töms automatiskt, tömmer påsen var 4 till 8 vecka.</p>
         </a>
         <a href="/robotdammsugare/lagenhet/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">För lägenhet</h3>
@@ -359,19 +359,19 @@ const faqSchema = faqItems.map((item) => ({
         </a>
         <a href="/robotdammsugare/langt-har/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">För långt hår</h3>
-          <p class="text-sm text-text-light">Modeller med trasselfri borste — perfekt för hushåll med långhåriga.</p>
+          <p class="text-sm text-text-light">Modeller med trasselfri borste, perfekt för hushåll med långhåriga.</p>
         </a>
         <a href="/billigaste-robotdammsugare/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Billigaste robotdammsugare</h3>
-          <p class="text-sm text-text-light">Bästa modellerna under 5 000 kr — prisvärd automatisk städning.</p>
+          <p class="text-sm text-text-light">Bästa modellerna under 5 000 kr, prisvärd automatisk städning.</p>
         </a>
         <a href="/kopguide-robotdammsugare/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Köpguide</h3>
-          <p class="text-sm text-text-light">Allt du behöver veta innan köpet — sugkraft, navigering, station och pris.</p>
+          <p class="text-sm text-text-light">Allt du behöver veta innan köpet, sugkraft, navigering, station och pris.</p>
         </a>
         <a href="/reservdelar/robotdammsugare/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Reservdelar</h3>
-          <p class="text-sm text-text-light">Filter, borstar och tillbehör — förläng livet på din robotdammsugare.</p>
+          <p class="text-sm text-text-light">Filter, borstar och tillbehör, förläng livet på din robotdammsugare.</p>
         </a>
       </div>
     </section>
@@ -382,27 +382,27 @@ const faqSchema = faqItems.map((item) => ({
       <div class="grid sm:grid-cols-3 gap-4">
         <a href="/dreame-guide/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Dreame</h3>
-          <p class="text-sm text-text-light">Alla Dreame-modeller jämförda — X-serien, L-serien och nyheter 2026.</p>
+          <p class="text-sm text-text-light">Alla Dreame-modeller jämförda, X-serien, L-serien och nyheter 2026.</p>
         </a>
         <a href="/roborock-guide/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Roborock</h3>
-          <p class="text-sm text-text-light">S8-serien, Qrevo-serien och Saros — komplett guide till Roborocks sortiment.</p>
+          <p class="text-sm text-text-light">S8-serien, Qrevo-serien och Saros, komplett guide till Roborocks sortiment.</p>
         </a>
         <a href="/ecovacs-guide/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Ecovacs</h3>
-          <p class="text-sm text-text-light">Deebot-serien och Winbot — Ecovacs guide med test och jämförelse.</p>
+          <p class="text-sm text-text-light">Deebot-serien och Winbot, Ecovacs guide med test och jämförelse.</p>
         </a>
         <a href="/eufy-guide/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Eufy</h3>
-          <p class="text-sm text-text-light">Eufy X10 Pro Omni och fler modeller — guide och jämförelse.</p>
+          <p class="text-sm text-text-light">Eufy X10 Pro Omni och fler modeller, guide och jämförelse.</p>
         </a>
         <a href="/irobot-guide/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">iRobot Roomba</h3>
-          <p class="text-sm text-text-light">Roomba-serien komplett — J-serien, S-serien och budget-alternativ.</p>
+          <p class="text-sm text-text-light">Roomba-serien komplett, J-serien, S-serien och budget-alternativ.</p>
         </a>
         <a href="/dyson-guide/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Dyson</h3>
-          <p class="text-sm text-text-light">360 Vis Nav och Spot+Scrub Ai — Dysons robotdammsugare testade.</p>
+          <p class="text-sm text-text-light">360 Vis Nav och Spot+Scrub Ai, Dysons robotdammsugare testade.</p>
         </a>
       </div>
     </section>
