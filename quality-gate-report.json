@@ -1,14 +1,21 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-05-09T06:23:30.744Z",
-  "durationMs": 1002,
+  "timestamp": "2026-05-09T07:41:13.224Z",
+  "durationMs": 4126,
   "summary": {
-    "checks": 8,
-    "errors": 2,
-    "warnings": 4
+    "checks": 9,
+    "errors": 8,
+    "warnings": 4,
+    "newErrors": 0,
+    "baselinedErrors": 8
   },
-  "results": [
+  "results": [],
+  "baseline": {
+    "saved": true,
+    "count": 8
+  },
+  "allResults": [
     {
       "check": "04-articlemeta",
       "severity": "error",
@@ -38,6 +45,42 @@
       "check": "08-image-binary-duplicates",
       "severity": "error",
       "message": "2 bildfiler är binär-identiska (8KB) — samma bild laddats med olika filnamn: public/images/husqvarna-315x.webp | public/images/husqvarna-automower-315x.webp"
+    },
+    {
+      "check": "15-rendered-images",
+      "severity": "error",
+      "file": "index.html",
+      "message": "2 <article>-kort delar samma <img src=\"/images/cat-poolrobot.webp\"> på index.html — varje kort behöver unik bild"
+    },
+    {
+      "check": "15-rendered-images",
+      "severity": "error",
+      "file": "index.html",
+      "message": "2 <article>-kort delar samma <img src=\"/images/dreame-x40-ultra.webp\"> på index.html — varje kort behöver unik bild"
+    },
+    {
+      "check": "15-rendered-images",
+      "severity": "error",
+      "file": "index.html",
+      "message": "2 <article>-kort delar samma <img src=\"/images/roborock-s8-maxv-ultra.webp\"> på index.html — varje kort behöver unik bild"
+    },
+    {
+      "check": "15-rendered-images",
+      "severity": "error",
+      "file": "index.html",
+      "message": "2 <article>-kort delar samma <img src=\"/images/roborock-qrevo-master.webp\"> på index.html — varje kort behöver unik bild"
+    },
+    {
+      "check": "15-rendered-images",
+      "severity": "error",
+      "file": "index.html",
+      "message": "2 <article>-kort delar samma <img src=\"/images/dreame-l20-ultra.webp\"> på index.html — varje kort behöver unik bild"
+    },
+    {
+      "check": "15-rendered-images",
+      "severity": "error",
+      "file": "reservdelar/dreame/index.html",
+      "message": "2 <article>-kort delar samma <img src=\"/images/parts-robot-filter-3.webp\"> på reservdelar/dreame/index.html — varje kort behöver unik bild"
     }
   ]
 }
