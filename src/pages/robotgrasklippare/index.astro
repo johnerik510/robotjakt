@@ -96,7 +96,7 @@ const faqItems = [
   },
   {
     question: 'Vad kostar installationen av en robotgräsklippare?',
-    answer: 'En DIY-installation av perimeterkabeln är möjlig och kostar bara din tid, medföljer i de flesta fall instruktioner och kablar. Anlitar du en proffs kan installationen kosta 2000 till 5000 kr beroende på trädgårdens storlek och komplexitet. Modeller utan slinga (RTK GPS) kräver bara montering av en basstationsantenn, vilket de flesta gör själva på 1 till 2 timmar.',
+    answer: 'En DIY-installation av perimeterkabeln är möjlig och kostar bara din tid, medföljer i de flesta fall instruktioner och kablar. Anlitar du en proffs kan installationen kosta beroende på trädgårdens storlek och komplexitet. Modeller utan slinga (RTK GPS) kräver bara montering av en basstationsantenn, vilket de flesta gör själva på 1 till 2 timmar.',
   },
 ];
 
@@ -137,7 +137,7 @@ const faqSchema = faqItems.map((item) => ({
         </div>
         <div class="flex-grow">
           <div class="font-heading text-xl font-bold text-text mb-1">Husqvarna Automower 430V NERA</div>
-          <div class="text-text-light text-sm mb-3">Tillförlitlig GPS+4G, klipper upp till 3 200 m², 4,8/5 i test. Pris ca <strong>39 990 kr</strong>.</div>
+          <div class="text-text-light text-sm mb-3">Tillförlitlig GPS+4G, klipper upp till 3 200 m², 4,8/5 i test. Pris ca <strong></strong>.</div>
           <a
             href="https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520430v%2520nera"
             rel="sponsored nofollow noopener noreferrer"
@@ -157,11 +157,11 @@ const faqSchema = faqItems.map((item) => ({
       <!-- Mobil: kort -->
       <div class="md:hidden space-y-3">
         {[
-          { name: 'Husqvarna 430V NERA', yta: '3 200 m²', slinga: 'Nej', pris: '39 990 kr', betyg: '9,5', url: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520430v%2520nera', badge: 'Bäst 2026' },
-          { name: 'Husqvarna 310E NERA', yta: '1 600 m²', slinga: 'Nej', pris: '19 990 kr', betyg: '9,0', url: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520310e%2520nera', badge: '' },
-          { name: 'Mammotion LUBA 3000', yta: '3 000 m²', slinga: 'Ja', pris: '24 990 kr', betyg: '9,0', url: '/mammotion-luba-awo-3000/', badge: 'Utan slinga' },
-          { name: 'Gardena Sileno City 500', yta: '500 m²', slinga: 'Nej', pris: '5 990 kr', betyg: '8,2', url: 'https://go.adt284.net/t/t?a=1870484629&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotgraesklippare%2FGardena-SILENO-city-Robotic-Lawnmower-500-m%2F3050973', badge: 'Budget' },
-          { name: 'Worx Landroid M500', yta: '500 m²', slinga: 'Nej', pris: '9 990 kr', betyg: '8,0', url: '/worx-landroid-m500/', badge: '' },
+          { name: 'Husqvarna 430V NERA', yta: '3 200 m²', slinga: 'Nej', betyg: '9,5', url: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520430v%2520nera', badge: 'Bäst 2026' },
+          { name: 'Husqvarna 310E NERA', yta: '1 600 m²', slinga: 'Nej', betyg: '9,0', url: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520310e%2520nera', badge: '' },
+          { name: 'Mammotion LUBA 3000', yta: '3 000 m²', slinga: 'Ja', betyg: '9,0', url: '/mammotion-luba-awo-3000/', badge: 'Utan slinga' },
+          { name: 'Gardena Sileno City 500', yta: '500 m²', slinga: 'Nej', betyg: '8,2', url: 'https://go.adt284.net/t/t?a=1870484629&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotgraesklippare%2FGardena-SILENO-city-Robotic-Lawnmower-500-m%2F3050973', badge: 'Budget' },
+          { name: 'Worx Landroid M500', yta: '500 m²', slinga: 'Nej', betyg: '8,0', url: '/worx-landroid-m500/', badge: '' },
         ].map(row => (
           <div class={`bg-white rounded-xl border ${row.badge === 'Bäst 2026' ? 'border-winner' : 'border-border'} p-4 text-sm`}>
             <div class="flex items-center gap-2 mb-2">
@@ -190,7 +190,6 @@ const faqSchema = faqItems.map((item) => ({
               <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Yta</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Utan slinga</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Pris</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Betyg</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Länk</th>
             </tr>
@@ -200,7 +199,6 @@ const faqSchema = faqItems.map((item) => ({
               <td class="px-4 py-3 font-medium text-text">Husqvarna Automower 430V NERA</td>
               <td class="px-4 py-3 text-text-light">3 200 m²</td>
               <td class="px-4 py-3 text-cta font-medium">Nej</td>
-              <td class="px-4 py-3 text-text">ca 39 990 kr</td>
               <td class="px-4 py-3 text-winner font-semibold">9,5/10</td>
               <td class="px-4 py-3"><a href="https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520430v%2520nera" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium">Se pris</a></td>
             </tr>
@@ -208,7 +206,6 @@ const faqSchema = faqItems.map((item) => ({
               <td class="px-4 py-3 font-medium text-text">Husqvarna Automower 310E NERA</td>
               <td class="px-4 py-3 text-text-light">1 600 m²</td>
               <td class="px-4 py-3 text-cta font-medium">Nej</td>
-              <td class="px-4 py-3 text-text">ca 19 990 kr</td>
               <td class="px-4 py-3 text-winner font-semibold">9,0/10</td>
               <td class="px-4 py-3"><a href="https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520310e%2520nera" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium">Se pris</a></td>
             </tr>
@@ -216,7 +213,6 @@ const faqSchema = faqItems.map((item) => ({
               <td class="px-4 py-3 font-medium text-text">Mammotion LUBA AWO 3000</td>
               <td class="px-4 py-3 text-text-light">3 000 m²</td>
               <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 text-text">ca 24 990 kr</td>
               <td class="px-4 py-3 text-winner font-semibold">9,0/10</td>
               <td class="px-4 py-3"><a href="/mammotion-luba-awo-3000/" class="text-accent underline font-medium">Läs recension</a></td>
             </tr>
@@ -224,7 +220,6 @@ const faqSchema = faqItems.map((item) => ({
               <td class="px-4 py-3 font-medium text-text">Gardena Sileno City 500</td>
               <td class="px-4 py-3 text-text-light">500 m²</td>
               <td class="px-4 py-3 text-cta font-medium">Nej</td>
-              <td class="px-4 py-3 text-text">ca 5 990 kr</td>
               <td class="px-4 py-3 text-winner font-semibold">8,2/10</td>
               <td class="px-4 py-3"><a href="https://go.adt284.net/t/t?a=1870484629&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotgraesklippare%2FGardena-SILENO-city-Robotic-Lawnmower-500-m%2F3050973" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium">Se pris</a></td>
             </tr>
@@ -232,7 +227,6 @@ const faqSchema = faqItems.map((item) => ({
               <td class="px-4 py-3 font-medium text-text">Worx Landroid M500</td>
               <td class="px-4 py-3 text-text-light">500 m²</td>
               <td class="px-4 py-3 text-cta font-medium">Nej</td>
-              <td class="px-4 py-3 text-text">ca 9 990 kr</td>
               <td class="px-4 py-3 text-winner font-semibold">8,0/10</td>
               <td class="px-4 py-3"><a href="/worx-landroid-m500/" class="text-accent underline font-medium">Läs recension</a></td>
             </tr>
@@ -285,7 +279,7 @@ const faqSchema = faqItems.map((item) => ({
         </a>
         <a href="/gardena-robotgrasklippare/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-1">Gardena Sileno</h3>
-          <p class="text-xs text-text-light">Sileno City och Life, tysta budgetmodeller från 5 990 kr.</p>
+          <p class="text-xs text-text-light">Sileno City och Life, tysta budgetmodeller från .</p>
         </a>
         <a href="/mammotion-robotgrasklippare/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-1">Mammotion LUBA</h3>
@@ -293,7 +287,7 @@ const faqSchema = faqItems.map((item) => ({
         </a>
         <a href="/segway-navimow-robotgrasklippare/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-1">Segway Navimow</h3>
-          <p class="text-xs text-text-light">i105E, H800E och H500E, utan slinga från 9 990 kr.</p>
+          <p class="text-xs text-text-light">i105E, H800E och H500E, utan slinga från .</p>
         </a>
         <a href="/worx-robotgrasklippare/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-1">Worx Landroid</h3>
@@ -317,7 +311,7 @@ const faqSchema = faqItems.map((item) => ({
         </div>
         <div>
           <h3 class="font-heading text-lg font-bold text-text mb-2">Prisklasser</h3>
-          <p>Budget (under 8 000 kr): täcker ytor upp till 500 till 750 m², enkel app, inga GPS-funktioner. Mellanklass (8 000 till 25 000 kr): GPS-navigering, bättre app, passar villaträdgårdar. Premium (25 000 kr+): maxprestanda, 4G, stora ytor, komplexa trädgårdar.</p>
+          <p>Budget (till lägre pris): täcker ytor upp till 500 till 750 m², enkel app, inga GPS-funktioner. Mellanklass : GPS-navigering, bättre app, passar villaträdgårdar. Premium (+): maxprestanda, 4G, stora ytor, komplexa trädgårdar.</p>
         </div>
       </div>
     </section>
@@ -336,7 +330,7 @@ const faqSchema = faqItems.map((item) => ({
         </a>
         <a href="/billigaste-robotgrasklippare/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Billigaste robotgräsklippare</h3>
-          <p class="text-sm text-text-light">Bästa modellerna under 10 000 kr, prisvärda val som klarar jobbet.</p>
+          <p class="text-sm text-text-light">Bästa modellerna till lägre pris, prisvärda val som klarar jobbet.</p>
         </a>
         <a href="/robotgrasklippare-liten-tradgard/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
           <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Liten trädgård, under 500 m²</h3>
@@ -351,7 +345,7 @@ const faqSchema = faqItems.map((item) => ({
           <p class="text-sm text-text-light">Modeller som klarar brant terräng, Husqvarna 450X, Mammotion LUBA och Segway Navimow.</p>
         </a>
         <a href="/robotgrasklippare-under-5000/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
-          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Under 5 000 kr, budget</h3>
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Till lägre pris, budget</h3>
           <p class="text-sm text-text-light">Bästa budget-robotgräsklipparna för radhus och mindre villatomter.</p>
         </a>
         <a href="/worx-vs-husqvarna/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">

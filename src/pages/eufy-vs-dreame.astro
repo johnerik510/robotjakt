@@ -13,7 +13,7 @@ const breadcrumbs = [
 const faqItems = [
   {
     question: 'Vilken är bäst, Eufy eller Dreame?',
-    answer: 'Det beror på budget och behov. Dreame L20 Ultra och X40 Ultra vinner på sugstyrka (7 000 till 12 000 Pa), moppkvalitet (dubbla roterande moppskivor) och AI-hinderdetektering. Eufy X10 Pro Omni är billigare (ca 5 990 till 7 990 kr) och enklare att använda med bra grundprestanda. Har du ett hem med myeket hårdgolv som behöver moppas: Dreame. Söker du bra prestanda för pengarna utan avancerade funktioner: Eufy.',
+    answer: 'Det beror på budget och behov. Dreame L20 Ultra och X40 Ultra vinner på sugstyrka (7 000 till 12 000 Pa), moppkvalitet (dubbla roterande moppskivor) och AI-hinderdetektering. Eufy X10 Pro Omni är billigare och enklare att använda med bra grundprestanda. Har du ett hem med myeket hårdgolv som behöver moppas: Dreame. Söker du bra prestanda för pengarna utan avancerade funktioner: Eufy.',
   },
   {
     question: 'Vilken har starkare sug, Eufy eller Dreame?',
@@ -25,7 +25,7 @@ const faqItems = [
   },
   {
     question: 'Är Dreame värt det extra priset jämfört med Eufy?',
-    answer: 'Om moppning är viktigt: ja. Dreame L20 Ultra kostar ca 7 990 till 9 990 kr mot Eufy X10 Pro Omnis 5 990 till 7 990 kr. Prisskillnaden på 2 000 till 3 000 kr köper dig dubbla roterande moppskivor, starkare AI-hinderdetektering och bättre moppkvalitet. Är du primärt ute efter dammsugning utan avancerad moppning: Eufy är mer prisvärt.',
+    answer: 'Om moppning är viktigt: ja. Dreame L20 Ultra mot Eufy X10 Pro Omnis . Prisskillnaden på köper dig dubbla roterande moppskivor, starkare AI-hinderdetektering och bättre moppkvalitet. Är du primärt ute efter dammsugning utan avancerad moppning: Eufy är mer prisvärt.',
   },
   {
     question: 'Vilken passar bäst i ett hem med mattor?',
@@ -33,7 +33,7 @@ const faqItems = [
   },
   {
     question: 'Vad kostar service och tillbehör för Eufy vs Dreame?',
-    answer: 'Tillbehörskostnader är jämförbara. Bägge märken säljer reservfilter, sidborstar och moppkuddar direkt via sina webbplatser. Dreames dubbla moppskivor slits snabbare och behöver bytas oftare än Eufys standardmoppmodul. Räkna med ca 200 till 400 kr per år för förbrukningsmaterial på båda märken.',
+    answer: 'Tillbehörskostnader är jämförbara. Bägge märken säljer reservfilter, sidborstar och moppkuddar direkt via sina webbplatser. Dreames dubbla moppskivor slits snabbare och behöver bytas oftare än Eufys standardmoppmodul. Räkna med per år för förbrukningsmaterial på båda märken.',
   },
 ];
 
@@ -67,7 +67,7 @@ const faqSchema = faqItems.map((item) => ({
       <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
         <p class="text-xs font-semibold text-blue-700 uppercase mb-1">Bäst pris och enkelhet</p>
         <h2 class="text-xl font-bold text-gray-900 mb-2">Eufy X10 Pro Omni</h2>
-        <p class="text-sm text-gray-600 mb-4">8 000 Pa, LiDAR-navigering, automatisk tömning och fyllning. Enkelt, pålitligt och ca 5 990 till 7 990 kr. Bäst för dem som prioriterar dammsugning framför moppning.</p>
+        <p class="text-sm text-gray-600 mb-4">8 000 Pa, LiDAR-navigering, automatisk tömning och fyllning. Enkelt, pålitligt och . Bäst för dem som prioriterar dammsugning framför moppning.</p>
         <a href="https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotdammsugare%2FEufy-Robotdammsugare-X10-Pro-Omni-Black%2F3282928" target="_blank" rel="noopener noreferrer nofollow" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold py-2.5 px-4 rounded-lg text-center transition-colors">Se Eufy X10 Pro Omni</a>
       </div>
       <div class="bg-orange-50 border border-orange-200 rounded-xl p-5">
@@ -92,7 +92,7 @@ const faqSchema = faqItems.map((item) => ({
           </thead>
           <tbody>
             {[
-              { label: 'Pris', eufy: 'ca 5 990 till 7 990 kr', dreame: 'ca 7 990 till 9 990 kr', winner: 'eufy' },
+              { label: 'Pris', eufy: '', dreame: '', winner: 'eufy' },
               { label: 'Sugstyrka', eufy: '8 000 Pa', dreame: '7 000 Pa (12 000 Pa X40 Ultra)', winner: 'draw' },
               { label: 'Navigering', eufy: 'LiDAR', dreame: 'LiDAR + AI-kamera', winner: 'dreame' },
               { label: 'Moppfunktion', eufy: 'Standard', dreame: 'Dubbla roterande moppskivor', winner: 'dreame' },
@@ -164,7 +164,7 @@ const faqSchema = faqItems.map((item) => ({
             <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Vill ha bra prestanda för pengarna utan att betala för avancerade funktioner</span></li>
             <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Primärt dammsugning, moppning är sekundärt</span></li>
             <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Vill ha en enkel app och enkelt dagligt bruk</span></li>
-            <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Budgeten är 5 000 till 7 000 kr och inte mer</span></li>
+            <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Budgeten är och inte mer</span></li>
           </ul>
         </div>
         <div class="bg-orange-50 border border-orange-200 rounded-xl p-5">

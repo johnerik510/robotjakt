@@ -25,7 +25,7 @@ const faqItems = [
   },
   {
     question: 'Vilken är billigast i drift, Husqvarna eller Gardena?',
-    answer: 'Driftkostnaderna är likartade eftersom de delar teknikplattform. Knivar behöver bytas var 1-3 månader (100-200 kr), och strömförbrukningen är ca 10-20 kr per månad. Skillnaden är inköpspriset: Gardena SILENO City 500 kostar ca 3 990 kr mot Husqvarna Automower 105 på ca 5 990 kr, ungefär 2 000 kr skillnad i initialinvestering. Totalt över 5 år är skillnaden marginell eftersom driftkostnaderna är identiska.',
+    answer: 'Driftkostnaderna är likartade eftersom de delar teknikplattform. Knivar behöver bytas var 1-3 månader och är en mindre löpande kostnad, och strömförbrukningen är låg. Skillnaden är inköpspriset mellan Gardena SILENO City 500 och Husqvarna Automower 105 i initialinvestering. Totalt över 5 år är skillnaden marginell eftersom driftkostnaderna är identiska.',
   },
   {
     question: 'Kan jag byta från Gardena till Husqvarna utan att lägga ny kabel?',
@@ -98,11 +98,6 @@ const faqSchema = faqItems.map((item) => ({
             </tr>
           </thead>
           <tbody class="divide-y divide-border">
-            <tr>
-              <td class="px-4 py-3 font-medium text-text">Pris ca</td>
-              <td class="px-4 py-3 text-text-light">7 990 kr</td>
-              <td class="px-4 py-3 text-winner font-semibold">5 490 kr</td>
-            </tr>
             <tr class="bg-bg-alt/30">
               <td class="px-4 py-3 font-medium text-text">Max area</td>
               <td class="px-4 py-3 text-winner font-semibold">1 500 m²</td>
@@ -159,7 +154,7 @@ const faqSchema = faqItems.map((item) => ({
             <span class="text-xs font-semibold px-2 py-0.5 rounded bg-winner/10 text-winner">Gardena vinner</span>
           </div>
           <p class="text-text-light text-sm leading-relaxed">
-            Gardena SILENO City 500 börjar på ca 3 990 kr, en av marknadens mest prisvärda robotgräsklippare för trädgårdar upp till 500 m². Husqvarnas billigaste modell (Automower 105) kostar ca 5 990 kr för 150 m². För en normalträdgård på 400 till 700 m² kan du klara dig utmärkt med Gardena SILENO Life 750 till ca 5 490 kr, och spara 2 000 till 5 000 kr jämfört med ett Husqvarna-alternativ med samma kapacitet.
+            Gardena SILENO City 500 är en av marknadens mest prisvärda robotgräsklippare för trädgårdar upp till 500 m². Husqvarnas billigaste modell (Automower 105) klarar upp till 150 m². För en normalträdgård på 400 till 700 m² kan du klara dig utmärkt med Gardena SILENO Life 750 och spara jämfört med ett Husqvarna-alternativ med samma kapacitet.
           </p>
         </div>
 
@@ -276,7 +271,7 @@ const faqSchema = faqItems.map((item) => ({
         Valet är enklare än det verkar, de ägs av samma bolag och delar teknik. Välj baserat på tre faktorer: trädgårdsstorlek, budget och om du vill ha GPS-stöldskydd.
       </p>
       <p class="text-text-light leading-relaxed mb-3">
-        <strong class="text-text">Tomt under 750 m² och prisvärdshet viktigast:</strong> Gardena SILENO Life 750 till ca 5 490 kr levererar samma kärnfunktion som Husqvarna fast 2 000+ kr billigare.
+        <strong class="text-text">Tomt under 750 m² och prisvärdshet viktigast:</strong> Gardena SILENO Life 750 till levererar samma kärnfunktion som Husqvarna fast 2 000+ kr billigare.
       </p>
       <p class="text-text-light leading-relaxed">
         <strong class="text-text">Stor tomt, GPS-stöldskydd eller komplex terräng:</strong> Husqvarna Automower utan tvekan. Servicenätverket, GPS och modellutbudet gör det till det enda alternativet för krävande krav.

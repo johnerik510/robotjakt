@@ -1,13 +1,11 @@
 ---
 /**
- * TableOfContents, återanvändbar innehållsförteckning.
- *
+ * TableOfContents, återanvändbar innehållsförteckning. *
  * Användning:
- *   <TableOfContents headings={[{ text: 'Rubrik', slug: 'rubrik' }, ...]} />
+ *   <TableOfContents headings={[{ text: 'Rubrik', slug: 'rubrik' }...]} />
  *
  * Tips: generera headings-arrayen från MDX frontmatter eller manuellt för
- * .astro-sidor. Varje H2 på sidan måste ha id={slug} för att länkarna ska fungera.
- */
+ * .astro-sidor. Varje H2 på sidan måste ha id={slug} för att länkarna ska fungera. */
 interface Heading {
   text: string;
   slug: string;

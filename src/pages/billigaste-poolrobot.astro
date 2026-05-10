@@ -15,11 +15,11 @@ const breadcrumbs = [
 const faqItems = [
   {
     question: 'Vad är den billigaste poolroboten som faktiskt fungerar?',
-    answer: 'Intex Auto Pool Cleaner till ca 1 990 kr är den absolut billigaste och fungerar för grundläggande bottensugning i mindre pooler. Den kräver dock att filterpumpen är igång och rengör bara botten. Bestway Flowclear AquaSurge till ca 2 990 kr är en bättre budget-kompromiss, den har en inbyggd motor och är mer självständig.',
+    answer: 'Intex Auto Pool Cleaner till är den absolut billigaste och fungerar för grundläggande bottensugning i mindre pooler. Den kräver dock att filterpumpen är igång och rengör bara botten. Bestway Flowclear AquaSurge till är en bättre budget-kompromiss, den har en inbyggd motor och är mer självständig.',
   },
   {
     question: 'Klarar billiga poolrobotar att rengöra väggarna?',
-    answer: 'De flesta poolrobotar under 5 000 kr rengör bara poolbotten. Swim & Fun Deep Clean Robot (ca 4 990 kr) är ett undantag och klarar nedre väggpartiet, men klättrar inte hela vägen upp. För fullständig väggstädning inklusive vattenlinjen behöver du en mellanklass- eller premiumrobot som Maytronics Dolphin E30 (ca 7 990 kr) eller högre.',
+    answer: 'De flesta poolrobotar till lägre pris rengör bara poolbotten. Swim & Fun Deep Clean Robot är ett undantag och klarar nedre väggpartiet, men klättrar inte hela vägen upp. För fullständig väggstädning inklusive vattenlinjen behöver du en mellanklass- eller premiumrobot som Maytronics Dolphin E30 eller högre.',
   },
   {
     question: 'Hur länge håller en billig poolrobot?',
@@ -27,7 +27,7 @@ const faqItems = [
   },
   {
     question: 'Är det värt att köpa en billig poolrobot eller ska man spara ihop?',
-    answer: 'Det beror på din pool. Har du en enkel pool på 6 x 3 m som bara behöver bottenrengöring är Bestway Flowclear AquaSurge ett bra val. Har du en stor pool, vita väggar som kräver regelbunden väggstädning eller prioriterar lång livslängd är det värt att spara ihop till Dolphin E30 vid ca 7 990 kr. Kostnaden per år skiljer sig inte dramatiskt när man räknar in kortare livslängd på billigare modeller.',
+    answer: 'Det beror på din pool. Har du en enkel pool på 6 x 3 m som bara behöver bottenrengöring är Bestway Flowclear AquaSurge ett bra val. Har du en stor pool, vita väggar som kräver regelbunden väggstädning eller prioriterar lång livslängd är det värt att spara ihop till Dolphin E30 vid . Kostnaden per år skiljer sig inte dramatiskt när man räknar in kortare livslängd på billigare modeller.',
   },
 ];
 
@@ -42,29 +42,28 @@ const faqSchema = faqItems.map((item) => ({
 ---
 
 <BaseLayout
-  title="Billigaste poolrobot 2026: 5 modeller under 5 000 kr (testat)"
-  description="5 budget-poolrobotar testade 2026, modeller under 5 000 kr. Se vad de klarar, vad de missar mot dyrare alternativ och vilken som faktiskt är värd pengarna."
+  title="Billigaste poolrobot 2026: 5 modeller till lägre pris (testat)"
+  description="5 budget-poolrobotar testade 2026, modeller till lägre pris. Se vad de klarar, vad de missar mot dyrare alternativ och vilken som faktiskt är värd pengarna."
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
 <p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
-      Billigaste poolrobot 2026, Bäst under 5 000 kr
+      Billigaste poolrobot 2026, Bäst till lägre pris
     </h1>
     <p class="text-text-light mb-6 max-w-2xl">
-      Vill du ha en poolrobot utan att betala premiumpris? Vi går igenom de bästa alternativen under 5 000 kr och förklarar vad du faktiskt får, och vad du kompromissar med.
+      Vill du ha en poolrobot utan att betala premiumpris? Vi går igenom de bästa alternativen till lägre pris och förklarar vad du faktiskt får, och vad du kompromissar med.
     </p>
 
     <!-- Snabbjämförelse -->
     <section class="mb-8" aria-label="Jämförelsetabell billiga poolrobotar">
-      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse, under 5 000 kr</h2>
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse, till lägre pris</h2>
       <div class="overflow-x-auto rounded-xl border border-border">
         <table class="w-full text-sm bg-white">
           <thead>
             <tr class="border-b border-border bg-bg-alt">
               <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Pris</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Rengör väggar</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Egen motor</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Betyg</th>
@@ -73,21 +72,18 @@ const faqSchema = faqItems.map((item) => ({
           <tbody class="divide-y divide-border">
             <tr>
               <td class="px-4 py-3 font-medium text-text">Bestway Flowclear AquaSurge</td>
-              <td class="px-4 py-3 text-text">ca 2 990 kr</td>
               <td class="px-4 py-3 text-cta font-medium">Nej</td>
               <td class="px-4 py-3 text-winner font-semibold">Ja</td>
               <td class="px-4 py-3 text-winner font-semibold">7,5/10</td>
             </tr>
             <tr class="bg-bg-alt/50">
               <td class="px-4 py-3 font-medium text-text">Swim & Fun Deep Clean Robot</td>
-              <td class="px-4 py-3 text-text">ca 4 990 kr</td>
               <td class="px-4 py-3 text-text-light font-medium">Nedre väggar</td>
               <td class="px-4 py-3 text-winner font-semibold">Ja</td>
               <td class="px-4 py-3 text-winner font-semibold">8,0/10</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-medium text-text">Intex Auto Pool Cleaner</td>
-              <td class="px-4 py-3 text-text">ca 1 990 kr</td>
               <td class="px-4 py-3 text-cta font-medium">Nej</td>
               <td class="px-4 py-3 text-cta font-medium">Nej (via pump)</td>
               <td class="px-4 py-3 text-text-light font-semibold">6,5/10</td>
@@ -105,11 +101,11 @@ const faqSchema = faqItems.map((item) => ({
         <div class="bg-bg-alt px-5 py-3 border-b border-border flex items-center gap-3">
           <span class="bg-winner text-white text-xs font-bold px-2 py-1 rounded">BÄST BUDGET</span>
           <span class="font-heading font-bold text-text">Bestway Flowclear AquaSurge</span>
-          <span class="ml-auto font-bold text-text">ca 2 990 kr</span>
+          <span class="ml-auto font-bold text-text"></span>
         </div>
         <div class="p-5">
           <p class="text-text-light text-sm leading-relaxed mb-4">
-            Bestway Flowclear AquaSurge är det bästa alternativet om du vill ha en självständig poolrobot med inbyggd motor under 3 000 kr. Den kör automatiskt längs poolbotten, suger upp smuts och sand och lagrar allt i ett inbyggt filter. Enkel, pålitlig och passar de flesta rektangulära pooler upp till ca 8 x 4 m.
+            Bestway Flowclear AquaSurge är det bästa alternativet om du vill ha en självständig poolrobot med inbyggd motor till lägre pris. Den kör automatiskt längs poolbotten, suger upp smuts och sand och lagrar allt i ett inbyggt filter. Enkel, pålitlig och passar de flesta rektangulära pooler upp till ca 8 x 4 m.
           </p>
           <div class="grid sm:grid-cols-2 gap-4 mb-4">
             <div>
@@ -146,11 +142,11 @@ const faqSchema = faqItems.map((item) => ({
         <div class="bg-bg-alt px-5 py-3 border-b border-border flex items-center gap-3">
           <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">BÄST UNDER 5000 KR</span>
           <span class="font-heading font-bold text-text">Swim & Fun Deep Clean Robot</span>
-          <span class="ml-auto font-bold text-text">ca 4 990 kr</span>
+          <span class="ml-auto font-bold text-text"></span>
         </div>
         <div class="p-5">
           <p class="text-text-light text-sm leading-relaxed mb-4">
-            Swim & Fun Deep Clean Robot är det bästa valet strax under 5 000 kr och sticker ut från konkurrenterna i budgetsegmentet genom att rengöra botten och de nedre väggpartierna. Det gör den till ett klart bättre alternativ för pooler där alger och smuts samlas längs kanten. Finns hos svenska återförsäljare med bra service.
+            Swim & Fun Deep Clean Robot är det bästa valet strax till lägre pris och sticker ut från konkurrenterna i budgetsegmentet genom att rengöra botten och de nedre väggpartierna. Det gör den till ett klart bättre alternativ för pooler där alger och smuts samlas längs kanten. Finns hos svenska återförsäljare med bra service.
           </p>
           <div class="grid sm:grid-cols-2 gap-4 mb-4">
             <div>
@@ -187,7 +183,7 @@ const faqSchema = faqItems.map((item) => ({
         <div class="bg-bg-alt px-5 py-3 border-b border-border flex items-center gap-3">
           <span class="bg-text-lighter text-white text-xs font-bold px-2 py-1 rounded">ENKLASTE</span>
           <span class="font-heading font-bold text-text">Intex Auto Pool Cleaner</span>
-          <span class="ml-auto font-bold text-text">ca 1 990 kr</span>
+          <span class="ml-auto font-bold text-text"></span>
         </div>
         <div class="p-5">
           <p class="text-text-light text-sm leading-relaxed mb-4">
@@ -230,8 +226,8 @@ const faqSchema = faqItems.map((item) => ({
       <h2 class="font-heading text-2xl font-bold text-text mb-4">Vad kompromissar du med i budgetsegmentet?</h2>
       <div class="space-y-5 text-sm text-text-light leading-relaxed">
         <div class="bg-white rounded-xl border border-border p-5">
-          <h3 class="font-semibold text-text mb-2">Ingen väggstädning (under 3 000 kr)</h3>
-          <p>Poolrobotar under ca 3 000 kr rengör bara botten. Alger och kalkfläckar längs väggkanten tas inte bort automatiskt, det kräver manuell borstning eller en dyrare robot. Om dina poolvägg lätt missfärgas är väggstädning ett must och du behöver gå upp till ca 7 990 kr (Dolphin E30).</p>
+          <h3 class="font-semibold text-text mb-2">Ingen väggstädning (till lägre pris)</h3>
+          <p>Poolrobotar under rengör bara botten. Alger och kalkfläckar längs väggkanten tas inte bort automatiskt, det kräver manuell borstning eller en dyrare robot. Om dina poolvägg lätt missfärgas är väggstädning ett must och du behöver gå upp till  (Dolphin E30).</p>
         </div>
         <div class="bg-white rounded-xl border border-border p-5">
           <h3 class="font-semibold text-text mb-2">Kortare livslängd</h3>
@@ -248,7 +244,7 @@ const faqSchema = faqItems.map((item) => ({
     <section class="mb-10 bg-accent/5 border border-accent/20 rounded-xl p-6">
       <h2 class="font-heading text-xl font-bold text-text mb-2">Vill du ha mer, och har budget för det?</h2>
       <p class="text-text-light text-sm leading-relaxed mb-4">
-        Mellanklass- och premiumrobotar rengör botten och väggar, håller längre och ger bättre täckning. Dolphin E30 till ca 7 990 kr är vår bäst-i-test och rekommenderas för de flesta villapooler.
+        Mellanklass- och premiumrobotar rengör botten och väggar, håller längre och ger bättre täckning. Dolphin E30 till är vår bäst-i-test och rekommenderas för de flesta villapooler.
       </p>
       <a
         href="/poolrobot/"
@@ -287,8 +283,8 @@ const faqSchema = faqItems.map((item) => ({
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "Billigaste poolrobot 2026, under 5 000 kr",
-    "description": "De bästa billiga poolrobotarna under 5 000 kr, rankade efter test.",
+    "name": "Billigaste poolrobot 2026, till lägre pris",
+    "description": "De bästa billiga poolrobotarna till lägre pris, rankade efter test.",
     "numberOfItems": 3,
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Bestway Flowclear AquaSurge", "url": "https://robotjakt.se/billigaste-poolrobot/" },

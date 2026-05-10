@@ -9,7 +9,7 @@ const breadcrumbs = [
 
 const faqItems = [
   { question: 'Hur länge räcker en dammpåse i tömningsstationen?', answer: 'Tillverkarna anger 30 till 60 dagar mellan påsbyten. I praktiken beror det på hur ofta roboten städar, hur stor bostaden är och om det finns husdjur. Räkna med 6 till 10 påsar per år i ett normalstort hem.' },
-  { question: 'Hur mycket extra kostar dammpåsarna?', answer: 'Originalpåsar kostar typiskt 300 till 500 kr för 6-pack. Tredjepartspåsar finns från 100 till 200 kr för 6-pack. Sätt på årsbasis blir det 300 till 800 kr extra per år.' },
+  { question: 'Hur mycket extra kostar dammpåsarna?', answer: 'Originalpåsar kostar typiskt för 6-pack. Tredjepartspåsar finns från för 6-pack. Sätt på årsbasis blir det 300 till extra per år.' },
   { question: 'Finns det stationer med dammbehållare istället för påse?', answer: 'Ja. Eufy och vissa Roomba-modeller erbjuder påslösa stationer med tvättbar plastbehållare. Det är billigare i längden men dammigt vid tömning, sämre val för allergiker.' },
   { question: 'Är automatisk tömning hög ljudnivå?', answer: 'Tömningen tar 10 till 20 sekunder och ligger på 75 till 80 dB, högt men kort. Schemalägg tömningen mitt på dagen om du har småbarn eller jobbar hemifrån.' },
   { question: 'Kan stationen täppas till av hår?', answer: 'Ja, det är vanligaste underhållsproblemet. Långt hår kan bilda proppar i sugslangen. De flesta stationer har en lucka för manuell rensning, räkna med en kvart varje 1 till 2 månader.' },
@@ -36,7 +36,7 @@ export const articleMeta = {
     Automatisk tömningsstation, värt extrapengen?
   </h1>
   <p class="text-text-light text-lg mb-6 leading-relaxed">
-    Den enskilt största lyxen en robotdammsugare kan erbjuda är att du aldrig behöver röra dammbehållaren. En automatisk tömningsstation suger upp innehållet i en stor påse i basen, men funktionen kostar 1 500 till 3 000 kr extra och innebär löpande utgifter för påsar. Här är när det är värt det och när det inte är det.
+    Den enskilt största lyxen en robotdammsugare kan erbjuda är att du aldrig behöver röra dammbehållaren. En automatisk tömningsstation suger upp innehållet i en stor påse i basen, men funktionen extra och innebär löpande utgifter för påsar. Här är när det är värt det och när det inte är det.
   </p>
 
   <figure class="my-6">
@@ -74,24 +74,14 @@ export const articleMeta = {
   <p class="text-text-light leading-relaxed mb-4">
     Räkna med dessa kostnader per år vid daglig städning:
   </p>
-  <div class="overflow-x-auto rounded-xl border border-border my-4">
-    <table class="w-full text-sm bg-white">
-      <thead class="bg-bg-alt border-b border-border">
-        <tr>
-          <th class="text-left px-4 py-3 font-semibold text-text">Förbrukningsvara</th>
-          <th class="text-left px-4 py-3 font-semibold text-text">Kostnad/år</th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-border">
-        <tr><td class="px-4 py-3">Dammpåsar (original)</td><td class="px-4 py-3">300 till 800 kr</td></tr>
-        <tr><td class="px-4 py-3">Moppkuddar (utbyte 2 ggr/år)</td><td class="px-4 py-3">200 till 400 kr</td></tr>
-        <tr><td class="px-4 py-3">Sidoborstar och huvudborste</td><td class="px-4 py-3">200 till 500 kr</td></tr>
-        <tr><td class="px-4 py-3">HEPA-filter (2 till 3 byten)</td><td class="px-4 py-3">300 till 600 kr</td></tr>
-      </tbody>
-    </table>
-  </div>
+  <ul class="list-disc pl-6 text-text-light leading-relaxed mb-4 space-y-1">
+    <li>Dammpåsar (original)</li>
+    <li>Moppkuddar (utbyte 2 gånger per år)</li>
+    <li>Sidoborstar och huvudborste</li>
+    <li>HEPA-filter (2 till 3 byten per år)</li>
+  </ul>
   <p class="text-text-light leading-relaxed mb-6">
-    Totalt 1 000 till 2 300 kr/år beroende på modell. Reservdelar finns på vår sida för <a href="/reservdelar/" class="text-accent underline">reservdelar till robotdammsugare</a>.
+    Aktuella priser på reservdelar finns på vår sida för <a href="/reservdelar/" class="text-accent underline">reservdelar till robotdammsugare</a>.
   </p>
 
   <FAQ items={faqItems} />

@@ -12,8 +12,8 @@ const breadcrumbs = [
 
 const faqItems = [
   {
-    question: 'Fungerar billiga fönsterputsrobotar under 2 000 kr verkligen?',
-    answer: 'Ja, men med begränsningar. Budget-modeller under 2 000 kr utför grundläggande fönsterputsning på standardfönster med ram. De saknar AI-navigering och avancerad sensorstyrning som premiummodeller har, men klarar rutinmässig puts väl. Liectroux HCR-10 och Hobot Legee 688 representerar det bästa du kan få under 1 500 kr, båda med vattensystem och inbyggt säkerhetsbatteri.',
+    question: 'Fungerar billiga fönsterputsrobotar till lägre pris verkligen?',
+    answer: 'Ja, men med begränsningar. Budget-modeller till lägre pris utför grundläggande fönsterputsning på standardfönster med ram. De saknar AI-navigering och avancerad sensorstyrning som premiummodeller har, men klarar rutinmässig puts väl. Liectroux HCR-10 och Hobot Legee 688 representerar det bästa du kan få till lägre pris, båda med vattensystem och inbyggt säkerhetsbatteri.',
   },
   {
     question: 'Vilken billig fönsterputsrobot är säkrast, ramlar de inte?',
@@ -21,7 +21,7 @@ const faqItems = [
   },
   {
     question: 'Kräver billiga fönsterputsrobotar fönsterram?',
-    answer: 'Ja, alla budget-modeller under 2 000 kr kräver en synlig fönsterram att navigera mot. De kan inte användas på ramfria glaspartier, stora panoramafönster utan ram eller glasräcken. För ramfria fönster krävs Ecovacs Winbot W2 Omni (ca 4 990 kr) med AI-kantigenkänning. Om dina fönster har ram är Liectroux HCR-10 eller Hobot Legee 688 ett utmärkt val.',
+    answer: 'Ja, alla budget-modeller till lägre pris kräver en synlig fönsterram att navigera mot. De kan inte användas på ramfria glaspartier, stora panoramafönster utan ram eller glasräcken. För ramfria fönster krävs Ecovacs Winbot W2 Omni med AI-kantigenkänning. Om dina fönster har ram är Liectroux HCR-10 eller Hobot Legee 688 ett utmärkt val.',
   },
   {
     question: 'Hur mycket täcker en billig fönsterputsrobot per timme?',
@@ -29,7 +29,7 @@ const faqItems = [
   },
   {
     question: 'Är det värt att köpa billigaste fönsterputsrobot eller ska man spara ihop till en bättre?',
-    answer: 'Det beror på hur ofta du putsar fönster. Putsar du 1 till 2 gånger per år och har standardfönster med ram räcker Liectroux HCR-10 till 999 kr utmärkt. Vill du ha bästa möjliga budget-resultat med app-styrning, välj Hobot Legee 688 till 1 299 kr. För ramfria fönster eller proffsresultat: gå direkt till Ecovacs Winbot W1 Pro (ca 2 990 kr).',
+    answer: 'Det beror på hur ofta du putsar fönster. Putsar du 1 till 2 gånger per år och har standardfönster med ram räcker Liectroux HCR- utmärkt. Vill du ha bästa möjliga budget-resultat med app-styrning, välj Hobot Legee . För ramfria fönster eller proffsresultat: gå direkt till Ecovacs Winbot W1 Pro .',
   },
 ];
 
@@ -44,18 +44,18 @@ const faqSchema = faqItems.map((item) => ({
 ---
 
 <BaseLayout
-  title="Billigaste fönsterputsrobot 2026, under 2 000 kr"
-  description="Vi testar de billigaste fönsterputsrobotarna 2026. Fungerar de? Se vilka under 2 000 kr som faktiskt levererar rent glas."
+  title="Billigaste fönsterputsrobot 2026, till lägre pris"
+  description="Vi testar de billigaste fönsterputsrobotarna 2026. Fungerar de? Se vilka till lägre pris som faktiskt levererar rent glas."
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
 <p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-04-23">2026-04-23</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
-      Billigaste fönsterputsrobot 2026, under 2 000 kr
+      Billigaste fönsterputsrobot 2026, till lägre pris
     </h1>
     <p class="text-text-light mb-6 max-w-2xl">
-      Vi testar de billigaste fönsterputsrobotarna på marknaden 2026. Fungerar de? Vi tar reda på vilka under 2 000 kr som faktiskt levererar rent glas, och vilka som inte håller vad de lovar.
+      Vi testar de billigaste fönsterputsrobotarna på marknaden 2026. Fungerar de? Vi tar reda på vilka till lägre pris som faktiskt levererar rent glas, och vilka som inte håller vad de lovar.
     </p>
 
     <!-- Jämförelsetabell -->
@@ -70,8 +70,7 @@ const faqSchema = faqItems.map((item) => ({
               <th class="text-left px-4 py-3 font-semibold text-text">Kabel/Batteri</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Täckning (m²/h)</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Garanti</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Pris ca</th>
-            </tr>
+              </tr>
           </thead>
           <tbody class="divide-y divide-border">
             <tr>
@@ -80,7 +79,6 @@ const faqSchema = faqItems.map((item) => ({
               <td class="px-4 py-3 text-text-light">Kabel</td>
               <td class="px-4 py-3 text-winner font-semibold">20 m²/h</td>
               <td class="px-4 py-3 text-text-light">1 år</td>
-              <td class="px-4 py-3 font-semibold text-text">1 299 kr</td>
             </tr>
             <tr class="bg-bg-alt/30">
               <td class="px-4 py-3 font-medium text-text">Liectroux HCR-10</td>
@@ -88,7 +86,6 @@ const faqSchema = faqItems.map((item) => ({
               <td class="px-4 py-3 text-text-light">Kabel + UPS</td>
               <td class="px-4 py-3 text-text-light">17 m²/h</td>
               <td class="px-4 py-3 text-text-light">1 år</td>
-              <td class="px-4 py-3 font-semibold text-text">999 kr</td>
             </tr>
           </tbody>
         </table>
@@ -103,11 +100,11 @@ const faqSchema = faqItems.map((item) => ({
         <div class="bg-bg-alt px-5 py-3 border-b border-border flex items-center gap-3">
           <span class="bg-winner text-white text-xs font-bold px-2 py-1 rounded">BÄST I BUDGET 2026</span>
           <span class="font-heading font-bold text-text">Hobot Legee 688</span>
-          <span class="ml-auto font-bold text-text">ca 1 299 kr</span>
+          <span class="ml-auto font-bold text-text"></span>
         </div>
         <div class="p-5">
           <p class="text-text-light text-sm leading-relaxed mb-4">
-            Hobot Legee 688 är det klart bästa valet i budgetsegmentet under 2 000 kr. Kabeldrift ger pålitlig prestanda utan batteristress, 2 800 Pa sugkraft håller roboten stadigt mot glaset och 20 m²/h är den bästa täckningstakten i klassen. App-styrning via Hobot-appen fungerar stabilt. Kräver fönsterram.
+            Hobot Legee 688 är det klart bästa valet i budgetsegmentet till lägre pris. Kabeldrift ger pålitlig prestanda utan batteristress, 2 800 Pa sugkraft håller roboten stadigt mot glaset och 20 m²/h är den bästa täckningstakten i klassen. App-styrning via Hobot-appen fungerar stabilt. Kräver fönsterram.
           </p>
           <div class="grid sm:grid-cols-2 gap-4 mb-4">
             <div>
@@ -153,17 +150,17 @@ const faqSchema = faqItems.map((item) => ({
         <div class="bg-bg-alt px-5 py-3 border-b border-border flex items-center gap-3">
           <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">BILLIGASTE MED SÄKERHETSBATTERI</span>
           <span class="font-heading font-bold text-text">Liectroux HCR-10</span>
-          <span class="ml-auto font-bold text-text">ca 999 kr</span>
+          <span class="ml-auto font-bold text-text"></span>
         </div>
         <div class="p-5">
           <p class="text-text-light text-sm leading-relaxed mb-4">
-            Liectroux HCR-10 är det billigaste alternativet med automatisk vattensystemspray och inbyggt UPS-säkerhetsbatteri som håller roboten fast på glaset i 25 minuter vid strömavbrott. Tre rengöringslägen, 2 800 Pa sugkraft och fjärrkontroll ingår. Kräver fönsterram. Bäst i prisklass för den som vill ha vattensystem utan att betala 1 300 kr.
+            Liectroux HCR-10 är det billigaste alternativet med automatisk vattensystemspray och inbyggt UPS-säkerhetsbatteri som håller roboten fast på glaset i 25 minuter vid strömavbrott. Tre rengöringslägen, 2 800 Pa sugkraft och fjärrkontroll ingår. Kräver fönsterram. Bäst i prisklass för den som vill ha vattensystem utan att betala .
           </p>
           <div class="grid sm:grid-cols-2 gap-4 mb-4">
             <div>
               <p class="text-xs font-semibold text-text mb-2">Vad den klarar</p>
               <ul class="space-y-1">
-                {['999 kr, lägst pris med spray', 'UPS-batteri, sitter kvar 25 min vid strömavbrott', '2 800 Pa sugkraft', 'Tre automatiska rengöringslägen', 'Säkerhetslina ingår'].map(p => (
+                {['Lägst pris med spray i testet', 'UPS-batteri, sitter kvar 25 min vid strömavbrott', '2 800 Pa sugkraft', 'Tre automatiska rengöringslägen', 'Säkerhetslina ingår'].map(p => (
                   <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-winner font-bold mt-0.5">+</span>{p}</li>
                 ))}
               </ul>
@@ -198,7 +195,7 @@ const faqSchema = faqItems.map((item) => ({
       <div class="grid sm:grid-cols-2 gap-5 mb-6">
         <div class="bg-white rounded-xl border border-border p-5">
           <h3 class="font-semibold text-text mb-2">Kabeldriven vs batteridrift</h3>
-          <p class="text-sm text-text-light">Alla budget-modeller under 2 000 kr är kabeldrivna, det är faktiskt en fördel. Du slipper tänka på batteritid och roboten håller alltid stabil sugkraft mot glaset. Kabeln begränsar visserligen rörelsefriheten men är inget problem för standardstorlekar.</p>
+          <p class="text-sm text-text-light">Alla budget-modeller till lägre pris är kabeldrivna, det är faktiskt en fördel. Du slipper tänka på batteritid och roboten håller alltid stabil sugkraft mot glaset. Kabeln begränsar visserligen rörelsefriheten men är inget problem för standardstorlekar.</p>
         </div>
         <div class="bg-white rounded-xl border border-border p-5">
           <h3 class="font-semibold text-text mb-2">Säkerhetsline, alltid obligatorisk</h3>
@@ -239,7 +236,7 @@ const faqSchema = faqItems.map((item) => ({
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": "Billigaste fönsterputsrobot 2026",
-    "description": "De billigaste fönsterputsrobotarna under 2 000 kr, rankade efter test.",
+    "description": "De billigaste fönsterputsrobotarna till lägre pris, rankade efter test.",
     "numberOfItems": 2,
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Hobot Legee 688",

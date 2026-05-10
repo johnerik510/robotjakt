@@ -11,7 +11,7 @@ const affVisNav = 'https://www.awin1.com/cread.php?awinmid=25183&awinaffid=28348
 const faqItems = [
   {
     question: 'Hur många Dyson robotdammsugare finns det i Sverige 2026?',
-    answer: 'Dyson säljer två robotdammsugare i Sverige 2026: Dyson Spot+Scrub Ai (13 540 kr) med AI-fläckdetektering och wet roller, samt Dyson 360 Vis Nav med 360°-navigering och Hyperdymium-motor. Båda säljs exklusivt via dyson.se.',
+    answer: 'Dyson säljer två robotdammsugare i Sverige 2026: Dyson Spot+Scrub Ai med AI-fläckdetektering och wet roller, samt Dyson 360 Vis Nav med 360°-navigering och Hyperdymium-motor. Båda säljs exklusivt via dyson.se.',
   },
   {
     question: 'Varför kostar Dyson robotdammsugare mer än Roborock och Dreame?',
@@ -67,7 +67,7 @@ const faqSchema = faqItems.map((item) => ({
         <div class="bg-bg-alt rounded-xl border border-border p-4">
           <p class="font-bold text-text mb-2">Dyson Spot+Scrub Ai</p>
           <ul class="text-sm text-text-light space-y-1">
-            <li><span class="font-medium text-text">Pris:</span> 13 540 kr</li>
+            <li><span class="font-medium text-text">Pris:</span> </li>
             <li><span class="font-medium text-text">Typ:</span> Dammsugare + mopp (wet+dry)</li>
             <li><span class="font-medium text-text">Sugkraft:</span> 18 000 Pa</li>
             <li><span class="font-medium text-text">Drifttid:</span> upp till 110 min</li>
@@ -107,7 +107,7 @@ const faqSchema = faqItems.map((item) => ({
           </thead>
           <tbody>
             {[
-              ['Pris', '13 540 kr', 'Se dyson.se'],
+              ['Pris', '', 'Se dyson.se'],
               ['Typ', 'Dammsugare + mopp', 'Ren dammsugare'],
               ['Sugkraft', '18 000 Pa', 'Hyperdymium (6× starkare)'],
               ['Drifttid', 'upp till 110 min', 'upp till 65 min'],
@@ -147,7 +147,7 @@ const faqSchema = faqItems.map((item) => ({
           </p>
           <a href={affSpotScrub} rel="sponsored noopener noreferrer" target="_blank"
             class="inline-flex items-center text-cta hover:underline font-semibold text-sm">
-            Köp hos Dyson.se, 13 540 kr
+            Köp hos Dyson.se, 
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
           </a>
         </div>
@@ -194,7 +194,7 @@ const faqSchema = faqItems.map((item) => ({
         </div>
         <div class="flex items-start gap-3">
           <span class="text-winner font-bold flex-shrink-0">→</span>
-          <p><strong class="text-text">Vill ha moppning till lägre pris:</strong> Kolla Dreame X40 Ultra (ca 9 990 kr) eller Roborock S8 MaxV Ultra. De ger moppfunktion och självtömning till lägre kostnad än Dysons modeller.</p>
+          <p><strong class="text-text">Vill ha moppning till lägre pris:</strong> Kolla Dreame X40 Ultra eller Roborock S8 MaxV Ultra. De ger moppfunktion och självtömning till lägre kostnad än Dysons modeller.</p>
         </div>
       </div>
     </div>

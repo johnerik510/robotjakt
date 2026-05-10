@@ -13,7 +13,7 @@ const breadcrumbs = [
 const faqItems = [
   {
     question: 'Vilken är bäst, Husqvarna Automower eller Segway Navimow?',
-    answer: 'Det beror på om du vill ha kabel eller inte. Husqvarna Automower 430X Nera (ca 24 990 kr) ger pålitlig GPS-navigation, utmärkt kantklippning och ett etablerat servicenätverk. Segway Navimow H1500E (ca 19 990 kr) är slingfri, enklare installation men lite sämre kantklippning. Vill du ha premium-GPS med beprövat servicenät: Husqvarna. Vill du slippa kabel till lägre pris: Segway.',
+    answer: 'Det beror på om du vill ha kabel eller inte. Husqvarna Automower 430X Nera ger pålitlig GPS-navigation, utmärkt kantklippning och ett etablerat servicenätverk. Segway Navimow H1500E är slingfri, enklare installation men lite sämre kantklippning. Vill du ha premium-GPS med beprövat servicenät: Husqvarna. Vill du slippa kabel till lägre pris: Segway.',
   },
   {
     question: 'Behöver Husqvarna Automower 430X Nera kabel?',
@@ -59,7 +59,7 @@ const faqSchema = faqItems.map((item) => ({
       Husqvarna Automower vs Segway Navimow 2026, GPS mot GPS
     </h1>
     <p class="text-text-light mb-6 max-w-2xl">
-      Båda är kabelläsa GPS-robotgräsklippare utan perimeterkabel. Husqvarna Automower 430X Nera (ca 24 990 kr) använder EPOS RTK-GPS med ett etablerat servicenätverk. Segway Navimow H1500E (ca 19 990 kr) använder EFLS och ankarsensorer, lägre pris, enklare installation. Vilket GPS-system vinner?
+      Båda är kabelläsa GPS-robotgräsklippare utan perimeterkabel. Husqvarna Automower 430X Nera använder EPOS RTK-GPS med ett etablerat servicenätverk. Segway Navimow H1500E använder EFLS och ankarsensorer, lägre pris, enklare installation. Vilket GPS-system vinner?
     </p>
 
     <!-- Quick verdict -->
@@ -67,20 +67,20 @@ const faqSchema = faqItems.map((item) => ({
       <div class="bg-orange-50 border border-orange-200 rounded-xl p-5">
         <p class="text-xs font-semibold text-orange-700 uppercase mb-1">Bäst precision och servicenätverk</p>
         <h2 class="font-heading text-xl font-bold text-text mb-2">Husqvarna Automower 430X Nera</h2>
-        <p class="text-text-light text-sm mb-4">ca 24 990 kr, EPOS RTK-GPS, klarar 3 200 m², etablerat service- och reservdelsnätverk i Sverige.</p>
+        <p class="text-text-light text-sm mb-4">, EPOS RTK-GPS, klarar 3 200 m², etablerat service- och reservdelsnätverk i Sverige.</p>
         <a
           href="https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520430x%2520nera"
           rel="sponsored nofollow noopener noreferrer"
           target="_blank"
           class="block w-full text-center bg-orange-600 hover:bg-orange-700 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm"
         >
-          Se Husqvarna Automower, ca 24 990 kr
+          Se Husqvarna Automower, 
         </a>
       </div>
       <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
         <p class="text-xs font-semibold text-blue-700 uppercase mb-1">Bäst pris för GPS utan kabel</p>
         <h2 class="font-heading text-xl font-bold text-text mb-2">Segway Navimow H1500E</h2>
-        <p class="text-text-light text-sm mb-4">ca 19 990 kr, slingfri EFLS-navigation, klarar 1 500 m², WiFi-app med full fjärrkontroll.</p>
+        <p class="text-text-light text-sm mb-4">, slingfri EFLS-navigation, klarar 1 500 m², WiFi-app med full fjärrkontroll.</p>
         <a
           href="/segway-navimow-h500e/"
           class="block w-full text-center bg-blue-700 hover:bg-blue-800 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm"
@@ -103,7 +103,7 @@ const faqSchema = faqItems.map((item) => ({
         </thead>
         <tbody>
           {[
-            { label: 'Pris', husq: 'ca 24 990 kr', segway: 'ca 19 990 kr', winner: 'segway' },
+            { label: 'Pris', husq: '', segway: '', winner: 'segway' },
             { label: 'Navigationstyp', husq: 'EPOS RTK-GPS', segway: 'EFLS + GPS/GNSS', winner: 'draw' },
             { label: 'Installation', husq: 'RTK-basenhet, 30 till 60 min', segway: 'Ankarsensorer, 30 till 60 min', winner: 'draw' },
             { label: 'Max yta', husq: '3 200 m²', segway: '1 500 m²', winner: 'husq' },
@@ -136,13 +136,13 @@ const faqSchema = faqItems.map((item) => ({
       Husqvarna Automower 430X Nera använder EPOS (Exact Positioning Operating System), en RTK GPS-teknik med centimeterprecision via en fast basenhet i trädgården. Modellen klarar upp till 3 200 m² och lutningar upp till 45%. Husqvarnas styrka är det välestablerade servicenätverket i Sverige med återförsäljare, reservdelar och serviceavtal tillgängliga nationellt.
     </p>
     <p class="text-text-light mb-6">
-      Nackdelen är priset, ca 24 990 kr för 430X Nera är ca 5 000 kr mer än Segway H1500E. Bullernivån (65 dB) är något högre än Segways 60 dB. Kantklippningen är utmärkt tack vare EPOS-precisionens exakta zondefiniering.
+      Nackdelen är priset, för 430X Nera är mer än Segway H1500E. Bullernivån (65 dB) är något högre än Segways 60 dB. Kantklippningen är utmärkt tack vare EPOS-precisionens exakta zondefiniering.
     </p>
 
     <!-- Segway section -->
     <h2 class="font-heading text-2xl font-bold text-text mb-3">Segway Navimow H1500E, prisvärd GPS utan kabel</h2>
     <p class="text-text-light mb-3">
-      Segway Navimow H1500E är slingfri med EFLS (Exact Fusion Locating System), en kombination av visuell navigation och GPS/GNSS med ankarsensorer. Modellen klarar 1 500 m² och lutningar upp till 50%. Till ca 19 990 kr är den ca 5 000 kr billigare än Husqvarna 430X Nera för liknande kabelläs GPS-funktionalitet.
+      Segway Navimow H1500E är slingfri med EFLS (Exact Fusion Locating System), en kombination av visuell navigation och GPS/GNSS med ankarsensorer. Modellen klarar 1 500 m² och lutningar upp till 50%. Till är den billigare än Husqvarna 430X Nera för liknande kabelläs GPS-funktionalitet.
     </p>
     <p class="text-text-light mb-6">
       Segway H1500E är tystare (60 dB) och billigare, men klarar inte lika stor yta som Husqvarna. Kantklippningen har en 5 till 15 cm säkerhetsbuffert mot hinder. Servicenätverket i Sverige är mer begränsat, mer beroende av onlineservice.
@@ -165,7 +165,7 @@ const faqSchema = faqItems.map((item) => ({
         <h3 class="font-heading font-bold text-text mb-3">Välj Segway Navimow H1500E om du...</h3>
         <ul class="space-y-2 text-sm text-text-light">
           <li>+ Har trädgård upp till 1 500 m²</li>
-          <li>+ Vill ha lägst pris för kabelläs GPS (5 000 kr billigare)</li>
+          <li>+ Vill ha lägst pris för kabelläs GPS (billigare)</li>
           <li>+ Vill ha tystare klippning (60 dB)</li>
           <li>+ Vill ha enkelt WiFi-app med full fjärrkontroll</li>
           <li>+ Har sluttningar upp till 50%</li>

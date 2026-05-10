@@ -21,15 +21,15 @@ const faqItems = [
   },
   {
     question: 'Vad är Worx Landroid tillbehörssystemet?',
-    answer: 'Landroid M500 stöder ett modulärt tillbehörssystem med bland annat: borste för rengöring av klippkammare, regnskydd för laddstationen, och nätverkstillbehör. Systemet är Worx unika försäljningsargument och gör att du kan anpassa roboten över tid. Tillbehör köps separat och kostar normalt 200 till 800 kr per modul.',
+    answer: 'Landroid M500 stöder ett modulärt tillbehörssystem med bland annat: borste för rengöring av klippkammare, regnskydd för laddstationen, och nätverkstillbehör. Systemet är Worx unika försäljningsargument och gör att du kan anpassa roboten över tid. Tillbehör köps separat och kostar normalt per modul.',
   },
   {
     question: 'Hur jämför sig Worx Landroid mot Gardena Sileno?',
-    answer: 'Gardena Sileno City 500 kostar ca 5 990 kr och Worx Landroid M500 kostar ca 9 990 kr. Gardena vinner på tystnad (57 dB vs 63 dB) och pris. Worx vinner på app (WiFi vs Bluetooth), AIA-navigering och tillbehörssystemet. För de flesta hem är Gardenas 57 dB ett tydligt argument, men vill du ha WiFi-app och bättre navigering är Worx värt mellankildnaden.',
+    answer: 'Gardena Sileno City 500 och Worx Landroid M500 . Gardena vinner på tystnad (57 dB vs 63 dB) och pris. Worx vinner på app (WiFi vs Bluetooth), AIA-navigering och tillbehörssystemet. För de flesta hem är Gardenas 57 dB ett tydligt argument, men vill du ha WiFi-app och bättre navigering är Worx värt mellankildnaden.',
   },
   {
     question: 'Kräver Worx Landroid M500 perimeterkabel?',
-    answer: 'Ja, Worx Landroid M500 kräver en perimeterkabel precis som Gardena Sileno och Husqvarna Automower (utan EPOS). Kabelinstallationen tar normalt 2 till 4 timmar och kan göras som DIY. Vill du ha en robot utan perimeterkabel, titta på Segway Navimow i105E (ca 9 990 kr) som är i samma prisklass men kabelfrtt.',
+    answer: 'Ja, Worx Landroid M500 kräver en perimeterkabel precis som Gardena Sileno och Husqvarna Automower (utan EPOS). Kabelinstallationen tar normalt 2 till 4 timmar och kan göras som DIY. Vill du ha en robot utan perimeterkabel, titta på Segway Navimow i105E som är i samma prisklass men kabelfrtt.',
   },
 ];
 
@@ -55,8 +55,7 @@ const faqSchema = faqItems.map((item) => ({
       Worx Landroid robotgräsklippare 2026, WiFi-app och AIA-navigering
     </h1>
     <p class="text-text-light mb-6 max-w-2xl">
-      Worx Landroid M500 är mellanklassens mest funktionsrika kabelbaserade robotgräsklippare, WiFi-app med fjärrstyrning, patenterad AIA-navigering och ett modulärt tillbehörssystem. Vi testar om den är värd priset mot Gardena och kabelfriatternativ.
-    </p>
+      Worx Landroid M500 är mellanklassens mest funktionsrika kabelbaserade robotgräsklippare, WiFi-app med fjärrstyrning, patenterad AIA-navigering och ett modulärt tillbehörssystem. Vi testar om den är värd priset mot Gardena och kabelfriatternativ. </p>
 
     <section class="mb-8 bg-bg-alt rounded-xl border border-border p-6">
       <h2 class="font-heading text-xl font-bold text-text mb-3">Worx Landroid M500, specifikationer</h2>
@@ -70,8 +69,7 @@ const faqSchema = faqItems.map((item) => ({
           { label: 'Uppkoppling', value: 'WiFi + app' },
           { label: 'Laddtid', value: '90 min' },
           { label: 'Drifttid', value: '90 min' },
-          { label: 'Pris', value: 'ca 9 990 kr' },
-        ].map(spec => (
+          ].map(spec => (
           <div class="bg-white rounded-lg border border-border p-3">
             <p class="text-xs text-text-light mb-1">{spec.label}</p>
             <p class="font-semibold text-text text-sm">{spec.value}</p>
@@ -86,8 +84,7 @@ const faqSchema = faqItems.map((item) => ({
         <span class="bg-winner text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">BÄST I TEST WORX</span>
       </div>
       <p class="text-text-light leading-relaxed mb-4">
-        Worx Landroid M500 är Worx mest populära modell för tomter upp till 500 m². Det som skiljer den från billigare alternativ är WiFi-appen med full fjärrstyrning (inte bara Bluetooth), AIA-navigationstekniken som hanterar komplexa trädgårdar bättre och det unika modulära tillbehörssystemet. Priset på ca 9 990 kr placerar den i mellanklass.
-      </p>
+        Worx Landroid M500 är Worx mest populära modell för tomter upp till 500 m². Det som skiljer den från billigare alternativ är WiFi-appen med full fjärrstyrning (inte bara Bluetooth), AIA-navigationstekniken som hanterar komplexa trädgårdar bättre och det unika modulära tillbehörssystemet. Priset på placerar den i mellanklass. </p>
       <ul class="space-y-1 mb-5">
         {['WiFi-app med schemaläggning och fjärrstyrning', 'AIA-navigering för hörn och komplexa former', 'Modulärt tillbehörssystem', '35% lutningskapacitet', 'Automatisk laddning och regnsensor'].map(f => (
           <li class="flex items-start gap-1.5 text-sm text-text-light">
@@ -128,7 +125,6 @@ const faqSchema = faqItems.map((item) => ({
           <thead>
             <tr class="bg-bg-alt">
               <th class="text-left p-3 font-semibold text-text border border-border">Modell</th>
-              <th class="text-left p-3 font-semibold text-text border border-border">Pris</th>
               <th class="text-left p-3 font-semibold text-text border border-border">dB</th>
               <th class="text-left p-3 font-semibold text-text border border-border">App</th>
               <th class="text-left p-3 font-semibold text-text border border-border">Slinga</th>
@@ -137,21 +133,18 @@ const faqSchema = faqItems.map((item) => ({
           <tbody>
             <tr class="bg-winner/5">
               <td class="p-3 border border-border font-medium">Worx Landroid M500</td>
-              <td class="p-3 border border-border">ca 9 990 kr</td>
               <td class="p-3 border border-border">63 dB</td>
               <td class="p-3 border border-border text-winner">WiFi</td>
               <td class="p-3 border border-border text-red-500">Ja</td>
             </tr>
             <tr>
               <td class="p-3 border border-border font-medium">Gardena Sileno City 500</td>
-              <td class="p-3 border border-border">ca 5 990 kr</td>
               <td class="p-3 border border-border text-winner font-semibold">57 dB</td>
               <td class="p-3 border border-border">Bluetooth</td>
               <td class="p-3 border border-border text-red-500">Ja</td>
             </tr>
             <tr class="bg-bg-alt">
               <td class="p-3 border border-border font-medium">Segway Navimow i105E</td>
-              <td class="p-3 border border-border">ca 9 990 kr</td>
               <td class="p-3 border border-border">58 dB</td>
               <td class="p-3 border border-border text-winner">WiFi + 4G</td>
               <td class="p-3 border border-border text-winner font-semibold">Nej</td>

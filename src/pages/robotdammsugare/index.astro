@@ -90,7 +90,7 @@ const products = [
     image: '/images/roborock-q-revo.webp',
     rating: 4.3,
     badge: 'Bra pris',
-    pros: ['Dubbla roterande moppar', 'Station tvättar moppar automatiskt', 'LiDAR-navigering', 'Under 6 000 kr'],
+    pros: ['Dubbla roterande moppar', 'Station tvättar moppar automatiskt', 'LiDAR-navigering', 'Till lägre pris'],
     cons: ['Lägre sugkraft (5 500 Pa)', 'Färre AI-funktioner'],
     ctaText: 'Se pris hos Komplett',
     ctaUrl: 'https://go.adt267.com/t/t?a=1615916040&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.komplett.se%2Fproduct%2F1310891%2Fhem-fritid%2Fdammsugare-rengoring%2Frobotdammsugare%2Froborock-qrevo-maxv-robotdammsugare-svart',
@@ -134,7 +134,7 @@ const faqItems = [
   },
   {
     question: 'Vad är LiDAR-navigering och varför är det viktigt?',
-    answer: 'LiDAR är en lasersensor som skapar en exakt karta av hemmet i realtid. Det ger effektivare städrutter, bättre hinderundvikande och möjlighet att sätta "no-go zones" i appen. Budget-modeller utan LiDAR navigerar slumpmässigt och missar ytor. Nästan alla robotar över 5 000 kr har LiDAR 2026.',
+    answer: 'LiDAR är en lasersensor som skapar en exakt karta av hemmet i realtid. Det ger effektivare städrutter, bättre hinderundvikande och möjlighet att sätta "no-go zones" i appen. Budget-modeller utan LiDAR navigerar slumpmässigt och missar ytor. Nästan alla robotar över har LiDAR 2026.',
   },
 ];
 
@@ -173,14 +173,14 @@ const faqSchema = faqItems.map((item) => ({
       <!-- Mobil: kort -->
       <div class="md:hidden space-y-3">
         {[
-          { name: 'Dreame X50 Ultra', sugkraft: '20 000 Pa', station: 'Ja', pris: '8 990 kr', betyg: '9,8', badge: 'Bäst 2026', url: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fdreame-x50-ultra-white-151996' },
-          { name: 'Dreame X40 Ultra', sugkraft: '12 000 Pa', station: 'Ja', pris: '9 990 kr', betyg: '9,5', badge: '', url: '/dreame-x40-ultra/' },
-          { name: 'Roborock S8 MaxV Ultra', sugkraft: '10 000 Pa', station: 'Ja', pris: '11 990 kr', betyg: '9,4', badge: 'Husdjur', url: '/roborock-s8-maxv-ultra/' },
-          { name: 'Roborock Qrevo Master', sugkraft: '10 000 Pa', station: 'Ja', pris: '7 490 kr', betyg: '9,2', badge: 'Värde', url: '/roborock-qrevo-master/' },
-          { name: 'Ecovacs X5 Omni', sugkraft: '8 000 Pa', station: 'Ja', pris: '8 990 kr', betyg: '9,0', badge: '', url: '/ecovacs-deebot-x5-omni/' },
-          { name: 'Dreame L20 Ultra', sugkraft: '7 000 Pa', station: 'Ja', pris: '5 990 kr', betyg: '8,8', badge: 'Mellanpris', url: '/dreame-l20-ultra/' },
-          { name: 'Roborock Q Revo', sugkraft: '5 500 Pa', station: 'Ja', pris: '5 490 kr', betyg: '8,5', badge: '', url: '/roborock-q-revo/' },
-          { name: 'Neatsvor X650 Pro', sugkraft: '6 000 Pa', station: 'Nej', pris: '4 540 kr', betyg: '8,2', badge: 'Budget', url: 'https://addrevenue.io/t?a=985945&c=3467327&url=https%3A%2F%2Fwww.neatsvor.se%2Fprodukt%2Fneatsvor-x650-pro-robotdammsugare%2F' },
+          { name: 'Dreame X50 Ultra', sugkraft: '20 000 Pa', station: 'Ja', betyg: '9,8', badge: 'Bäst 2026', url: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fdreame-x50-ultra-white-151996' },
+          { name: 'Dreame X40 Ultra', sugkraft: '12 000 Pa', station: 'Ja', betyg: '9,5', badge: '', url: '/dreame-x40-ultra/' },
+          { name: 'Roborock S8 MaxV Ultra', sugkraft: '10 000 Pa', station: 'Ja', betyg: '9,4', badge: 'Husdjur', url: '/roborock-s8-maxv-ultra/' },
+          { name: 'Roborock Qrevo Master', sugkraft: '10 000 Pa', station: 'Ja', betyg: '9,2', badge: 'Värde', url: '/roborock-qrevo-master/' },
+          { name: 'Ecovacs X5 Omni', sugkraft: '8 000 Pa', station: 'Ja', betyg: '9,0', badge: '', url: '/ecovacs-deebot-x5-omni/' },
+          { name: 'Dreame L20 Ultra', sugkraft: '7 000 Pa', station: 'Ja', betyg: '8,8', badge: 'Mellanpris', url: '/dreame-l20-ultra/' },
+          { name: 'Roborock Q Revo', sugkraft: '5 500 Pa', station: 'Ja', betyg: '8,5', badge: '', url: '/roborock-q-revo/' },
+          { name: 'Neatsvor X650 Pro', sugkraft: '6 000 Pa', station: 'Nej', betyg: '8,2', badge: 'Budget', url: 'https://addrevenue.io/t?a=985945&c=3467327&url=https%3A%2F%2Fwww.neatsvor.se%2Fprodukt%2Fneatsvor-x650-pro-robotdammsugare%2F' },
         ].map(row => (
           <div class={`bg-white rounded-xl border ${row.badge === 'Bäst 2026' ? 'border-winner' : 'border-border'} p-4 text-sm`}>
             <div class="flex items-center gap-2 mb-2">
@@ -209,7 +209,6 @@ const faqSchema = faqItems.map((item) => ({
               <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Sugkraft</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Autostation</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Pris</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Betyg</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Länk</th>
             </tr>
@@ -219,7 +218,6 @@ const faqSchema = faqItems.map((item) => ({
               <td class="px-4 py-3 font-medium text-text">Dreame X50 Ultra <span class="ml-1 text-xs bg-winner text-white px-1.5 py-0.5 rounded">Bäst 2026</span></td>
               <td class="px-4 py-3 text-text-light">20 000 Pa</td>
               <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 text-text">ca 8 990 kr</td>
               <td class="px-4 py-3 text-winner font-semibold">9,8/10</td>
               <td class="px-4 py-3"><a href="https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fdreame-x50-ultra-white-151996" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium">Se pris</a></td>
             </tr>
@@ -227,7 +225,6 @@ const faqSchema = faqItems.map((item) => ({
               <td class="px-4 py-3 font-medium text-text">Dreame X40 Ultra</td>
               <td class="px-4 py-3 text-text-light">12 000 Pa</td>
               <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 text-text">ca 9 990 kr</td>
               <td class="px-4 py-3 text-winner font-semibold">9,5/10</td>
               <td class="px-4 py-3"><a href="/dreame-x40-ultra/" class="text-accent underline font-medium">Läs recension</a></td>
             </tr>
@@ -235,7 +232,6 @@ const faqSchema = faqItems.map((item) => ({
               <td class="px-4 py-3 font-medium text-text">Roborock S8 MaxV Ultra</td>
               <td class="px-4 py-3 text-text-light">10 000 Pa</td>
               <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 text-text">ca 11 990 kr</td>
               <td class="px-4 py-3 text-winner font-semibold">9,4/10</td>
               <td class="px-4 py-3"><a href="/roborock-s8-maxv-ultra/" class="text-accent underline font-medium">Läs recension</a></td>
             </tr>
@@ -243,7 +239,6 @@ const faqSchema = faqItems.map((item) => ({
               <td class="px-4 py-3 font-medium text-text">Roborock Qrevo Master</td>
               <td class="px-4 py-3 text-text-light">10 000 Pa</td>
               <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 text-text">ca 7 490 kr</td>
               <td class="px-4 py-3 text-winner font-semibold">9,2/10</td>
               <td class="px-4 py-3"><a href="/roborock-qrevo-master/" class="text-accent underline font-medium">Läs recension</a></td>
             </tr>
@@ -251,7 +246,6 @@ const faqSchema = faqItems.map((item) => ({
               <td class="px-4 py-3 font-medium text-text">Ecovacs Deebot X5 Omni</td>
               <td class="px-4 py-3 text-text-light">8 000 Pa</td>
               <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 text-text">ca 8 990 kr</td>
               <td class="px-4 py-3 text-winner font-semibold">9,0/10</td>
               <td class="px-4 py-3"><a href="/ecovacs-deebot-x5-omni/" class="text-accent underline font-medium">Läs recension</a></td>
             </tr>
@@ -259,7 +253,6 @@ const faqSchema = faqItems.map((item) => ({
               <td class="px-4 py-3 font-medium text-text">Dreame L20 Ultra</td>
               <td class="px-4 py-3 text-text-light">7 000 Pa</td>
               <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 text-text">ca 5 990 kr</td>
               <td class="px-4 py-3 text-winner font-semibold">8,8/10</td>
               <td class="px-4 py-3"><a href="/dreame-l20-ultra/" class="text-accent underline font-medium">Läs recension</a></td>
             </tr>
@@ -267,7 +260,6 @@ const faqSchema = faqItems.map((item) => ({
               <td class="px-4 py-3 font-medium text-text">Roborock Q Revo</td>
               <td class="px-4 py-3 text-text-light">5 500 Pa</td>
               <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 text-text">ca 5 490 kr</td>
               <td class="px-4 py-3 text-winner font-semibold">8,5/10</td>
               <td class="px-4 py-3"><a href="/roborock-q-revo/" class="text-accent underline font-medium">Läs recension</a></td>
             </tr>
@@ -275,7 +267,6 @@ const faqSchema = faqItems.map((item) => ({
               <td class="px-4 py-3 font-medium text-text">Neatsvor X650 Pro</td>
               <td class="px-4 py-3 text-text-light">6 000 Pa</td>
               <td class="px-4 py-3 text-cta font-medium">Nej</td>
-              <td class="px-4 py-3 text-text">4 540 kr</td>
               <td class="px-4 py-3 text-winner font-semibold">8,2/10</td>
               <td class="px-4 py-3"><a href="https://addrevenue.io/t?a=985945&c=3467327&url=https%3A%2F%2Fwww.neatsvor.se%2Fprodukt%2Fneatsvor-x650-pro-robotdammsugare%2F" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium">Se pris</a></td>
             </tr>
@@ -308,7 +299,7 @@ const faqSchema = faqItems.map((item) => ({
         </div>
         <div>
           <h3 class="font-heading text-lg font-bold text-text mb-2">Självtömmande station, värt prisskillnaden</h3>
-          <p>En självtömmande station töms roboten automatiskt efter varje städning och skickar dammet till en större påse. Du behöver bara tömma påsen var 4 till 8 vecka. Utan station tömmer du behållaren efter varje pass. Skillnaden i bekvämlighet är stor, räkna på att nästan alla modeller över 5 000 kr inkluderar station 2026.</p>
+          <p>En självtömmande station töms roboten automatiskt efter varje städning och skickar dammet till en större påse. Du behöver bara tömma påsen var 4 till 8 vecka. Utan station tömmer du behållaren efter varje pass. Skillnaden i bekvämlighet är stor, räkna på att nästan alla modeller över inkluderar station 2026.</p>
         </div>
         <div>
           <h3 class="font-heading text-lg font-bold text-text mb-2">Moppfunktion, för hårdgolv och flisgolv</h3>
@@ -320,7 +311,7 @@ const faqSchema = faqItems.map((item) => ({
         </div>
         <div>
           <h3 class="font-heading text-lg font-bold text-text mb-2">Prisklasser 2026</h3>
-          <p>Budget (under 5 000 kr): täcker grundläggande behov, enklare navigering. Mellanklass (5 000 till 8 000 kr): LiDAR-navigering, moppfunktion, självtömmande station, här sitter bästa värdet. Premium (8 000 till 15 000 kr+): maxprestanda, AI-kamera, utfällbar mopp, varmvatten.</p>
+          <p>Budget (till lägre pris): täcker grundläggande behov, enklare navigering. Mellanklass : LiDAR-navigering, moppfunktion, självtömmande station, här sitter bästa värdet. Premium (+): maxprestanda, AI-kamera, utfällbar mopp, varmvatten.</p>
         </div>
       </div>
     </section>
@@ -354,7 +345,7 @@ const faqSchema = faqItems.map((item) => ({
           <p class="text-sm text-text-light">Modeller med trasselfri borste, perfekt för hushåll med långhåriga.</p>
         </a>
         <a href="/robotdammsugare-under-5000/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">
-          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Under 5 000 kr</h3>
+          <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2">Till lägre pris</h3>
           <p class="text-sm text-text-light">6 modeller med självtömmande dock och LiDAR till budgetpris.</p>
         </a>
         <a href="/billigaste-robotdammsugare/" class="bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors group">

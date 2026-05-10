@@ -13,7 +13,7 @@ const breadcrumbs = [
 const faqItems = [
   {
     question: 'Vilken är bäst, Dreame X40 Ultra eller Roborock S8 MaxV Ultra?',
-    answer: 'Dreame X40 Ultra är det bästa valet för de flesta. Den har starkare sugkraft (12 000 Pa mot 10 000 Pa), bättre moppning i hörnen tack vare den utfällbara sidoarmen, hygienisk 70-graders mopptvätt och ett större batteri, allt till 2 000 kr lägre pris. Roborock S8 MaxV Ultra är dock det klara valet om du har husdjur och behöver skydd mot djuravföring på golvet.',
+    answer: 'Dreame X40 Ultra är det bästa valet för de flesta. Den har starkare sugkraft (12 000 Pa mot 10 000 Pa), bättre moppning i hörnen tack vare den utfällbara sidoarmen, hygienisk 70-graders mopptvätt och ett större batteri, allt till lägre pris. Roborock S8 MaxV Ultra är dock det klara valet om du har husdjur och behöver skydd mot djuravföring på golvet.',
   },
   {
     question: 'Klarar Dreame X40 Ultra av hem med husdjur?',
@@ -24,7 +24,7 @@ const faqItems = [
     answer: 'Dreame X40 Ultra har en utfällbar sidoarm på moppmodulen som gör att den når in i hörnen och längs väggar, något Roborock S8 MaxV Ultra inte klarar eftersom dess moppmodul sitter i mitten av roboten. Dreame tvättar dessutom mopparna med 70-graders varmvatten i stationen, medan Roborock använder kallvatten. Dreame vinner moppkategorin klart.',
   },
   {
-    question: 'Är 2 000 kr mer för Roborock S8 MaxV Ultra motiverat?',
+    question: 'Är mer för Roborock S8 MaxV Ultra motiverat?',
     answer: 'Endast om du har husdjur och vill ha AI-djuravföringsskydd. ReactiveAI 3.0 i Roborock S8 MaxV Ultra är en funktion som inte finns i Dreame X40 Ultra och som kan vara avgörande för husdjurshem. För alla andra är Dreame X40 Ultra det bättre köpet, den erbjuder mer för pengarna med starkare sugkraft, bättre moppning och ett större batteri på 6 400 mAh mot Roborocks 5 200 mAh.',
   },
   {
@@ -55,14 +55,14 @@ const faqSchema = faqItems.map((item) => ({
       Dreame X40 Ultra vs Roborock S8 MaxV Ultra 2026
     </h1>
     <p class="text-text-light mb-6 max-w-2xl">
-      Dreame X40 Ultra till 9 990 kr eller Roborock S8 MaxV Ultra till 11 990 kr? Vi jämför de två starkaste flaggskeppsmodellerna på marknaden 2026, kategori för kategori, och ger dig ett tydligt svar baserat på ditt hem och dina behov.
+      Dreame X40 Ultra till eller Roborock S8 MaxV Ultra till ? Vi jämför de två starkaste flaggskeppsmodellerna på marknaden 2026, kategori för kategori, och ger dig ett tydligt svar baserat på ditt hem och dina behov.
     </p>
 
     <!-- Quick verdict -->
     <section class="mb-8 bg-winner/5 border border-winner/20 rounded-xl p-5">
       <h2 class="font-heading text-lg font-bold text-text mb-2">Snabbsvar, för dig som vill ha svaret direkt</h2>
       <p class="text-text-light text-sm leading-relaxed mb-2">
-        <strong class="text-text">Dreame X40 Ultra vinner för de flesta:</strong> Starkare sugkraft, bättre moppning i hörnen, större batteri och 2 000 kr billigare.
+        <strong class="text-text">Dreame X40 Ultra vinner för de flesta:</strong> Starkare sugkraft, bättre moppning i hörnen, större batteri och billigare.
       </p>
       <p class="text-text-light text-sm leading-relaxed">
         <strong class="text-text">Välj Roborock S8 MaxV Ultra om:</strong> Du har husdjur och behöver skydd mot djuravföring på golvet, ReactiveAI 3.0 är den enda funktionen i klassen som identifierar detta.
@@ -82,11 +82,6 @@ const faqSchema = faqItems.map((item) => ({
             </tr>
           </thead>
           <tbody class="divide-y divide-border">
-            <tr>
-              <td class="px-4 py-3 font-medium text-text">Pris ca</td>
-              <td class="px-4 py-3 text-winner font-semibold">9 990 kr</td>
-              <td class="px-4 py-3 text-text-light">11 990 kr</td>
-            </tr>
             <tr class="bg-bg-alt/30">
               <td class="px-4 py-3 font-medium text-text">Sugkraft</td>
               <td class="px-4 py-3 text-winner font-semibold">12 000 Pa</td>
@@ -188,7 +183,7 @@ const faqSchema = faqItems.map((item) => ({
             <span class="text-xs font-semibold px-2 py-0.5 rounded bg-winner/10 text-winner">Dreame vinner</span>
           </div>
           <p class="text-text-light text-sm leading-relaxed">
-            Dreame X40 Ultra kostar ca 9 990 kr mot Roborock S8 MaxV Ultras 11 990 kr, 2 000 kr skillnad. Dreame erbjuder starkare sugkraft, bättre moppresultat och större batteri till lägre pris. Roborocks merpris är motiverat enbart om ReactiveAI 3.0-djurskyddet är ett krav. För alla andra hem är Dreame det överlägsna värdet.
+            Dreame X40 Ultra mot Roborock S8 MaxV Ultras , skillnad. Dreame erbjuder starkare sugkraft, bättre moppresultat och större batteri till lägre pris. Roborocks merpris är motiverat enbart om ReactiveAI 3.0-djurskyddet är ett krav. För alla andra hem är Dreame det överlägsna värdet.
           </p>
         </div>
 
@@ -217,7 +212,7 @@ const faqSchema = faqItems.map((item) => ({
               'Har mycket hårdgolv och vill ha rena hörn',
               'Prioriterar hygienisk mopptvätt med 70 grader',
               'Inte har husdjur med olycksrisk',
-              'Vill spara 2 000 kr jämfört med Roborock',
+              'Vill spara jämfört med Roborock',
               'Har stort hem och behöver långt batteri (6 400 mAh)',
             ].map(item => (
               <li class="flex items-start gap-2 text-sm text-text-light">
@@ -273,7 +268,7 @@ const faqSchema = faqItems.map((item) => ({
     <section class="mb-10 bg-winner/5 border border-winner/20 rounded-xl p-6">
       <h2 class="font-heading text-xl font-bold text-text mb-3">Redaktionens slutsats</h2>
       <p class="text-text-light leading-relaxed mb-3">
-        Dreame X40 Ultra är slutvinnaren för de allra flesta hem 2026. Den vinner på sugkraft, moppkvalitet, batteri och pris, fyra av fem kategorier. Till 2 000 kr lägre pris än Roborock S8 MaxV Ultra är det svårt att motivera att betala mer.
+        Dreame X40 Ultra är slutvinnaren för de allra flesta hem 2026. Den vinner på sugkraft, moppkvalitet, batteri och pris, fyra av fem kategorier. Till lägre pris än Roborock S8 MaxV Ultra är det svårt att motivera att betala mer.
       </p>
       <p class="text-text-light leading-relaxed mb-3">
         <strong class="text-text">Undantaget är husdjurshem:</strong> Om du har katter eller hundar och behöver trygghet mot djuravföringsincidenter på golvet är Roborock S8 MaxV Ultra med ReactiveAI 3.0 det enda säkra valet. Ingen annan modell i klassen erbjuder denna funktion.

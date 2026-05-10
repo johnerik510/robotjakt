@@ -14,7 +14,7 @@ const products = [
     rating: 4.8,
     badge: 'Tunnast + starkast 2026',
     pros: ['7,98 cm hög, når under låga möbler', '20 000 Pa sugkraft, starkast på marknaden', 'StarSight 2.0: 3D ToF LiDAR + RGB-kamera', '100+ objekttyper inkl. djuravföring', '80°C mopptvätt i 10-i-1-station'],
-    cons: ['Högsta prisklassen, ca 14 990 kr', 'Extra 5 000 kr jämfört med Dreame X40 Ultra'],
+    cons: ['Högsta prisklassen', 'Extra jämfört med Dreame X40 Ultra'],
     ctaText: 'Se pris hos Elon',
     ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Froborock-saros-10-white-149298',
 
@@ -163,7 +163,7 @@ const faqItems = [
   },
   {
     question: 'Vad kostar en bra robotdammsugare med mopp?',
-    answer: 'Prisvärda alternativ med moppfunktion börjar runt 3 000 till 5 000 kr (utan automatisk station). För en toppenhet med självtvättande station och automatisk vattenpåfyllning räknar du med 6 000 till 12 000 kr. Dreame L20 Ultra runt 5 990 kr ger bäst moppkvalitet för pengarna i mellanklass.',
+    answer: 'Prisvärda alternativ med moppfunktion börjar  (utan automatisk station). För en toppenhet med självtvättande station och automatisk vattenpåfyllning räknar du med . Dreame L20 Ultra ger bäst moppkvalitet för pengarna i mellanklass.',
   },
   {
     question: 'Hur ofta behöver man tvätta mopparna?',
@@ -187,7 +187,7 @@ const faqSchema = faqItems.map((item) => ({
 
 <BaseLayout
   title="Bästa Robotdammsugare med Mopp 2026 till 9 Testade"
-  description="9 robotdammsugare med mopp testade. Självtvättande moppar, upp till 20 000 Pa sugkraft och automatisk mattdetektering. Från 3 490 kr till 14 990 kr."
+  description="9 robotdammsugare med mopp testade. Självtvättande moppar, upp till 20 000 Pa sugkraft och automatisk mattdetektering. Från ."
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -198,8 +198,7 @@ const faqSchema = faqItems.map((item) => ({
     </h1>
 
     <p class="text-lg text-text-light mb-6 leading-relaxed">
-      Dammsugning och moppning i samma körning sparar tid, men skillnaden mellan modellerna är stor. Vi har testat 9 robotdammsugare med mopp och rankat dem efter moppkvalitet, självtvättning och hur väl de undviker mattor.
-    </p>
+      Dammsugning och moppning i samma körning sparar tid, men skillnaden mellan modellerna är stor. Vi har testat 9 robotdammsugare med mopp och rankat dem efter moppkvalitet, självtvättning och hur väl de undviker mattor. </p>
 
     <!-- Quick comparison table -->
     <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8 overflow-x-auto">
@@ -211,8 +210,7 @@ const faqSchema = faqItems.map((item) => ({
             <th class="text-left pb-3 font-semibold text-text">Sugkraft</th>
             <th class="text-left pb-3 font-semibold text-text">Moppkvalitet</th>
             <th class="text-left pb-3 font-semibold text-text">Självtvättning</th>
-            <th class="text-left pb-3 font-semibold text-text">Pris</th>
-          </tr>
+            </tr>
         </thead>
         <tbody class="divide-y divide-border">
           <tr class="bg-winner/5">
@@ -220,35 +218,30 @@ const faqSchema = faqItems.map((item) => ({
             <td class="py-3 text-text-light">12 000 Pa</td>
             <td class="py-3 text-text-light">Utmärkt (utfällbar)</td>
             <td class="py-3 text-winner font-medium">Ja, varmvatten</td>
-            <td class="py-3 text-text-light">ca 9 990 kr</td>
           </tr>
           <tr>
             <td class="py-3 font-semibold text-text">Roborock S8 MaxV Ultra</td>
             <td class="py-3 text-text-light">10 000 Pa</td>
             <td class="py-3 text-text-light">Utmärkt (lyftbar)</td>
             <td class="py-3 text-winner font-medium">Ja, varmvatten</td>
-            <td class="py-3 text-text-light">ca 11 990 kr</td>
           </tr>
           <tr>
             <td class="py-3 font-semibold text-text">Roborock Qrevo Master</td>
             <td class="py-3 text-text-light">7 000 Pa</td>
             <td class="py-3 text-text-light">Mycket bra</td>
             <td class="py-3 text-winner font-medium">Ja, varmvatten</td>
-            <td class="py-3 text-text-light">ca 7 490 kr</td>
           </tr>
           <tr>
             <td class="py-3 font-semibold text-text">Ecovacs Deebot X5 Omni</td>
             <td class="py-3 text-text-light">8 000 Pa</td>
             <td class="py-3 text-text-light">Mycket bra</td>
             <td class="py-3 text-winner font-medium">Ja</td>
-            <td class="py-3 text-text-light">ca 8 990 kr</td>
           </tr>
           <tr>
             <td class="py-3 font-semibold text-text">Dreame L20 Ultra</td>
             <td class="py-3 text-text-light">7 000 Pa</td>
             <td class="py-3 text-text-light">Bra</td>
             <td class="py-3 text-winner font-medium">Ja, varmvatten</td>
-            <td class="py-3 text-text-light">ca 5 990 kr</td>
           </tr>
         </tbody>
       </table>
@@ -284,16 +277,13 @@ const faqSchema = faqItems.map((item) => ({
 
       <h2 class="font-heading text-2xl font-bold text-text mb-4">Vilka golv passar en moppande robot för?</h2>
       <p class="text-text-light leading-relaxed mb-4">
-        Robotdammsugare med mopp fungerar bäst på <strong>hårdgolv</strong>, laminat, trä, klinker, vinyl och marmor. Moppfunktionen är idealisk för hem med mycket hårdgolv och mattor på specifika ställen, eftersom robotarna undviker mattorna med mopparna aktiva.
-      </p>
+        Robotdammsugare med mopp fungerar bäst på <strong>hårdgolv</strong>, laminat, trä, klinker, vinyl och marmor. Moppfunktionen är idealisk för hem med mycket hårdgolv och mattor på specifika ställen, eftersom robotarna undviker mattorna med mopparna aktiva. </p>
       <p class="text-text-light leading-relaxed mb-4">
-        Har du <strong>heltäckningsmattor</strong> i stora delar av hemmet ger moppfunktionen litet mervärde. Fokusera då istället på sugkraft och batterikapacitet.
-      </p>
+        Har du <strong>heltäckningsmattor</strong> i stora delar av hemmet ger moppfunktionen litet mervärde. Fokusera då istället på sugkraft och batterikapacitet. </p>
 
       <h2 class="font-heading text-2xl font-bold text-text mb-4">Var köper man en robotdammsugare med mopp?</h2>
       <p class="text-text-light leading-relaxed">
-        De populäraste modellerna hittar du hos Komplett, Elgiganten, MediaMarkt och NetOnNet. Priset varierar ofta mellan butikerna, så det lönar sig att jämföra. Alla modeller i vår topplista säljs i Sverige med svensk garanti.
-      </p>
+        De populäraste modellerna hittar du hos Komplett, Elgiganten, MediaMarkt och NetOnNet. Priset varierar ofta mellan butikerna, så det lönar sig att jämföra. Alla modeller i vår topplista säljs i Sverige med svensk garanti. </p>
     </section>
 
     <FAQ items={faqItems} />

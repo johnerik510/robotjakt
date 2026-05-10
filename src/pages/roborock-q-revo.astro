@@ -7,8 +7,8 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const faqItems = [
   {
-    question: 'Är Roborock Q Revo värd priset på 5 490 kr?',
-    answer: 'Ja, för de flesta hem är Q Revo ett utmärkt val i sin prisklass. Du får dubbla roterande moppar som tvättas automatiskt i stationen, LiDAR-navigation och automatisk fyll-och-töm-station, allt till under 6 000 kr. Det är ett komplett städsystem som normalt kostar betydligt mer.',
+    question: 'Är Roborock Q Revo värd priset?',
+    answer: 'Ja, för de flesta hem är Q Revo ett utmärkt val i sin prisklass. Du får dubbla roterande moppar som tvättas automatiskt i stationen, LiDAR-navigation och automatisk fyll-och-töm-station, allt till ett lägre pris än premiummodellerna. Det är ett komplett städsystem som normalt kostar betydligt mer.',
   },
   {
     question: 'Vad är DuoRoller-moppsystemet på Q Revo?',
@@ -16,7 +16,7 @@ const faqItems = [
   },
   {
     question: 'Vad är skillnaden mellan Q Revo och Roborock S8 Max Ultra?',
-    answer: 'S8 Max Ultra har betydligt starkare sugkraft på 10 000 Pa mot Q Revos 5 500 Pa, och kostar ca 3 000 kr mer (8 490 kr vs 5 490 kr). Båda har automatisk mopptvätt i stationen. S8 Max Ultra passar hem som prioriterar sugkraft och djupare mattengöring. Q Revo är det smartare valet om budgeten är under 6 000 kr och du har mest hårdgolv att moppa.',
+    answer: 'S8 Max Ultra har betydligt starkare sugkraft på 10 000 Pa mot Q Revos 5 500 Pa, och kostar mer. Båda har automatisk mopptvätt i stationen. S8 Max Ultra passar hem som prioriterar sugkraft och djupare mattengöring. Q Revo är det smartare valet om du vill hålla nere kostnaden och har mest hårdgolv att moppa.',
   },
   {
     question: 'Hur fungerar den automatiska stationen på Q Revo?',
@@ -28,7 +28,7 @@ const faqItems = [
   },
   {
     question: 'Vad är skillnaden mot Dreame L10s Ultra Gen 2?',
-    answer: 'Dreame L10s Ultra Gen 2 kostar ca 4 990 kr och har starkare sugkraft på 7 000 Pa mot Q Revos 5 500 Pa. Båda har dubbla roterande moppar och automatisk mopptvätt. L10s Ultra Gen 2 har dessutom 3D structured light-navigation som ger bättre hinderdetektering. Q Revo har en något enklare station-design och bättre batterikapacitet (180 min vs 170 min). Väljer du på sugkraft vinner L10s, väljer du på stationskvalitet och Roborocks ekosystem är Q Revo ett starkt alternativ.',
+    answer: 'Dreame L10s Ultra Gen 2 och har starkare sugkraft på 7 000 Pa mot Q Revos 5 500 Pa. Båda har dubbla roterande moppar och automatisk mopptvätt. L10s Ultra Gen 2 har dessutom 3D structured light-navigation som ger bättre hinderdetektering. Q Revo har en något enklare station-design och bättre batterikapacitet (180 min vs 170 min). Väljer du på sugkraft vinner L10s, väljer du på stationskvalitet och Roborocks ekosystem är Q Revo ett starkt alternativ.',
   },
 ];
 
@@ -55,7 +55,7 @@ const breadcrumbs = [
 
 <BaseLayout
   title="Roborock Q Revo Recension 2026, Test och Omdöme"
-  description="Roborock Q Revo testad 2026. Dubbla moppar, automatisk station och LiDAR-navigation till 5 490 kr. Betyg 8.3/10. Se pris och omdöme."
+  description="Roborock Q Revo testad 2026. Dubbla moppar, automatisk station och LiDAR-navigation . Betyg 8.3/10. Se pris och omdöme."
   ogImage="/images/roborock-q-revo.webp"
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -81,8 +81,7 @@ const breadcrumbs = [
           <span class="font-bold text-text">8.3 / 10</span>
         </div>
         <p class="text-text-light text-sm leading-relaxed">
-          Roborock Q Revo levererar dubbla roterande moppar och en komplett fyll-och-töm-station till under 6 000 kr. Ett starkt val för hem som vill ha automatisk moppning och dammsugning i ett system utan att betala premiumpriser.
-        </p>
+          Roborock Q Revo levererar dubbla roterande moppar och en komplett fyll-och-töm-station till ett lägre pris. Ett starkt val för hem som vill ha automatisk moppning och dammsugning i ett system utan att betala premiumpriser. </p>
       </div>
     </div>
 
@@ -90,7 +89,6 @@ const breadcrumbs = [
     <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <p class="text-2xl font-bold text-text">ca 5 490 kr</p>
           <p class="text-sm text-text-light">Jämför alltid priser mellan butiker</p>
         </div>
         <div class="flex flex-col sm:flex-row gap-3">
@@ -180,7 +178,7 @@ const breadcrumbs = [
             </thead>
             <tbody class="divide-y divide-border">
               {[
-                ['Pris', 'ca 5 490 kr', 'ca 4 990 kr'],
+                ['Pris', '', ''],
                 ['Sugkraft', '5 500 Pa', '7 000 Pa'],
                 ['Moppning', 'Dubbla roterande moppar', 'Dubbla roterande moppar'],
                 ['Station', 'Tvättar moppar automatiskt', 'Tvättar moppar automatiskt'],
@@ -200,8 +198,7 @@ const breadcrumbs = [
         </div>
       </div>
       <p class="text-text-light text-sm leading-relaxed">
-        De två modellerna är nära varandra i pris och har liknande funktioner. L10s Ultra Gen 2 har starkare sugkraft och bättre hinderdetektering med 3D structured light. Q Revo erbjuder längre batteritid och Roborocks beprövade ekosystem. Väljer du på pris och sugkraft vinner L10s, väljer du Roborock-plattformen är Q Revo det naturliga valet.
-      </p>
+        De två modellerna är nära varandra i pris och har liknande funktioner. L10s Ultra Gen 2 har starkare sugkraft och bättre hinderdetektering med 3D structured light. Q Revo erbjuder längre batteritid och Roborocks beprövade ekosystem. Väljer du på pris och sugkraft vinner L10s, väljer du Roborock-plattformen är Q Revo det naturliga valet. </p>
     </section>
 
     <!-- Full review -->
@@ -210,32 +207,25 @@ const breadcrumbs = [
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">DuoRoller-moppsystemet</h3>
       <p class="text-text-light leading-relaxed mb-4">
-        DuoRoller är kärnan i Q Revos moppfunktion. De två roterande moppskivorna snurrar mot golvet med 200 rpm och ger en mer aktiv rengöring än ett enkelt vibrerande kläde. Det innebär att klibbiga fläckar, torkade skvättar och smuts effektivt borstas bort istället för att bara fuktas och lyftas ytligt.
-      </p>
+        DuoRoller är kärnan i Q Revos moppfunktion. De två roterande moppskivorna snurrar mot golvet med 200 rpm och ger en mer aktiv rengöring än ett enkelt vibrerande kläde. Det innebär att klibbiga fläckar, torkade skvättar och smuts effektivt borstas bort istället för att bara fuktas och lyftas ytligt. </p>
       <p class="text-text-light leading-relaxed mb-6">
-        Vid mattor lyfts moppskivorna automatiskt upp via LiDAR-igenkänning. Det gör att roboten kan köra ett kombinerat dammsugnings- och moppningspass utan att du behöver flytta mattor manuellt. Stationen tvättar sedan moppskivorna automatiskt efter körningen, ett system som håller dem rena inför nästa pass.
-      </p>
+        Vid mattor lyfts moppskivorna automatiskt upp via LiDAR-igenkänning. Det gör att roboten kan köra ett kombinerat dammsugnings- och moppningspass utan att du behöver flytta mattor manuellt. Stationen tvättar sedan moppskivorna automatiskt efter körningen, ett system som håller dem rena inför nästa pass. </p>
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Sugkraft och dammsugningsprestanda</h3>
       <p class="text-text-light leading-relaxed mb-4">
-        Med 5 500 Pa sugkraft placerar sig Q Revo i den lägre mellanklass. Det är tillräckligt för hårdgolv, kakel och korta mattor. På tjocka mattor eller i hem med husdjur med lång päls kan sugkraften upplevas som begränsad jämfört med modeller i 7 000 till 10 000 Pa-segmentet.
-      </p>
+        Med 5 500 Pa sugkraft placerar sig Q Revo i den lägre mellanklass. Det är tillräckligt för hårdgolv, kakel och korta mattor. På tjocka mattor eller i hem med husdjur med lång päls kan sugkraften upplevas som begränsad jämfört med modeller i 7 000 till 10 000 Pa-segmentet. </p>
       <p class="text-text-light leading-relaxed mb-6">
-        LiDAR PreciSense-navigeringen är precis och pålitlig. Roboten kartlägger hemmet på första körningen, delar upp i rum och skapar en detaljerad karta i Roborock Home-appen. Du kan ange förbjudna zoner, virtuella väggar och städscheman per rum direkt i appen.
-      </p>
+        LiDAR PreciSense-navigeringen är precis och pålitlig. Roboten kartlägger hemmet på första körningen, delar upp i rum och skapar en detaljerad karta i Roborock Home-appen. Du kan ange förbjudna zoner, virtuella väggar och städscheman per rum direkt i appen. </p>
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Den automatiska fyll-och-töm-stationen</h3>
       <p class="text-text-light leading-relaxed mb-4">
-        Stationen hanterar hela underhållscykeln: den fyller på rent vatten i robotens tank, tömmer smutsvatten, tömmer dammkorgen och tvättar moppskivorna automatiskt. Vid normal användning räcker det med att tappa ur smutsvatten och fylla på rent vatten en gång i veckan.
-      </p>
+        Stationen hanterar hela underhållscykeln: den fyller på rent vatten i robotens tank, tömmer smutsvatten, tömmer dammkorgen och tvättar moppskivorna automatiskt. Vid normal användning räcker det med att tappa ur smutsvatten och fylla på rent vatten en gång i veckan. </p>
       <p class="text-text-light leading-relaxed mb-6">
-        Det är en komplett fyll-och-töm-station i en prisklassen som ofta bara erbjuder enklare alternativ. Att Q Revo inkluderar automatisk mopptvätt till detta pris är ett av dess starkaste argument.
-      </p>
+        Det är en komplett fyll-och-töm-station i en prisklassen som ofta bara erbjuder enklare alternativ. Att Q Revo inkluderar automatisk mopptvätt till detta pris är ett av dess starkaste argument. </p>
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Batteri och drifttid</h3>
       <p class="text-text-light leading-relaxed mb-6">
-        Batteriet på 5 200 mAh ger upp till 180 minuters drifttid, en av de längsta i sin prisklass. Det innebär att roboten klarar att städa ett större hem på ett enda laddningspass. Vid behov återvänder den självständigt till stationen för laddning och fortsätter sedan städningen där den slutade.
-      </p>
+        Batteriet på 5 200 mAh ger upp till 180 minuters drifttid, en av de längsta i sin prisklass. Det innebär att roboten klarar att städa ett större hem på ett enda laddningspass. Vid behov återvänder den självständigt till stationen för laddning och fortsätter sedan städningen där den slutade. </p>
 
       <!-- Specs table -->
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Specifikationer Roborock Q Revo</h3>
@@ -254,11 +244,9 @@ const breadcrumbs = [
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">För vem passar Roborock Q Revo?</h3>
       <p class="text-text-light leading-relaxed mb-4">
-        Q Revo passar bäst för hem med mestadels hårdgolv och kakel som vill ha ett komplett automatiserat städsystem under 6 000 kr. Det är ett utmärkt förstaköp för den som vill testa ett robotsystem med automatisk moppning utan att investera i en toppmodell.
-      </p>
+        Q Revo passar bäst för hem med mestadels hårdgolv och kakel som vill ha ett komplett automatiserat städsystem till lägre pris. Det är ett utmärkt förstaköp för den som vill testa ett robotsystem med automatisk moppning utan att investera i en toppmodell. </p>
       <p class="text-text-light leading-relaxed">
-        Har du tjocka mattor eller husdjur med lång päls rekommenderar vi att du tittar på <a href="/roborock-s8-max-ultra/" class="text-accent underline">Roborock S8 Max Ultra</a> med 10 000 Pa sugkraft. Vill du jämföra fler modeller i Roborock-sortimentet, se vår <a href="/roborock-guide/" class="text-accent underline">Roborock-guide</a> eller <a href="/roborock-qrevo-master/" class="text-accent underline">Roborock Qrevo Master-recension</a>. För det bredaste urvalet, se <a href="/" class="text-accent underline">bästa robotdammsugare 2026</a>.
-      </p>
+        Har du tjocka mattor eller husdjur med lång päls rekommenderar vi att du tittar på <a href="/roborock-s8-max-ultra/" class="text-accent underline">Roborock S8 Max Ultra</a> med 10 000 Pa sugkraft. Vill du jämföra fler modeller i Roborock-sortimentet, se vår <a href="/roborock-guide/" class="text-accent underline">Roborock-guide</a> eller <a href="/roborock-qrevo-master/" class="text-accent underline">Roborock Qrevo Master-recension</a>. För det bredaste urvalet, se <a href="/" class="text-accent underline">bästa robotdammsugare 2026</a>. </p>
     </section>
 
     <FAQ items={faqItems} />
@@ -311,7 +299,7 @@ const breadcrumbs = [
           },
           "author": { "@type": "Person", "name": "John Erik Johansson" },
           "datePublished": "2026-03-29",
-          "reviewBody": "Roborock Q Revo levererar dubbla roterande moppar och en komplett fyll-och-töm-station till under 6 000 kr. Ett starkt val för hem som vill ha automatisk moppning och dammsugning i ett system utan att betala premiumpriser."
+          "reviewBody": "Roborock Q Revo levererar dubbla roterande moppar och en komplett fyll-och-töm-station till ett lägre pris. Ett starkt val för hem som vill ha automatisk moppning och dammsugning i ett system utan att betala premiumpriser."
         }
       }
     ]

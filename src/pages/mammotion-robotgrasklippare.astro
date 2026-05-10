@@ -20,7 +20,7 @@ const models = [
     cta: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dmammotion%2520luba%25202%2520awo%25201000h',
     ctaText: 'Se pris på LUBA 2 AWO 1000H',
     reviewUrl: '/mammotion-luba-2-awo-1000h/',
-    description: 'LUBA 2 AWO 1000H är Mammotions mest prisvärda utan-slinga-modell för tomter upp till 1 000 m². RTK GPS ger centimeterprecision utan kabelinstallation, ett stort steg upp från kabelbaserade budgetalternativ för bara ca 15 000 kr.',
+    description: 'LUBA 2 AWO 1000H är Mammotions mest prisvärda utan-slinga-modell för tomter upp till 1 000 m². RTK GPS ger centimeterprecision utan kabelinstallation, ett stort steg upp från kabelbaserade budgetalternativ för bara .',
   },
   {
     name: 'Mammotion LUBA AWO 3000',
@@ -42,7 +42,7 @@ const models = [
     cta: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dmammotion%2520luba%25202%2520awd%25205000x',
     ctaText: 'Se pris på LUBA 2 AWD 5000X',
     reviewUrl: '/mammotion-luba-2-awd-5000x/',
-    description: 'LUBA 2 AWD 5000X är Mammotions absoluta toppmodell med fyrhjulsdrift och 5 000 m² kapacitet. AWD ger exceptionell grepp i kuperad terräng och fuktigt underlag. Priset på ca 25 990 kr är konkurrenskraftigt för ett GPS-system av denna klass utan kabelinstallation.',
+    description: 'LUBA 2 AWD 5000X är Mammotions absoluta toppmodell med fyrhjulsdrift och 5 000 m² kapacitet. AWD ger exceptionell grepp i kuperad terräng och fuktigt underlag. Priset på är konkurrenskraftigt för ett GPS-system av denna klass utan kabelinstallation.',
   },
 ];
 
@@ -57,11 +57,11 @@ const faqItems = [
   },
   {
     question: 'Vilken Mammotion LUBA-modell passar min trädgård?',
-    answer: 'Under 1 000 m²: LUBA 2 AWO 1000H (ca 14 990 kr) ger bäst pris/yta-förhållande. 1 000 till 3 000 m²: LUBA AWO 3000 (ca 24 990 kr) med kamera och bredare klippning. Över 3 000 m² eller kuperad terräng: LUBA 2 AWD 5000X (ca 25 990 kr) med fyrhjulsdrift.',
+    answer: 'Under 1 000 m²: LUBA 2 AWO 1000H ger bäst pris/yta-förhållande. 1 000 till 3 000 m²: LUBA AWO 3000 med kamera och bredare klippning. Över 3 000 m² eller kuperad terräng: LUBA 2 AWD 5000X med fyrhjulsdrift.',
   },
   {
     question: 'Hur jämför sig Mammotion mot Husqvarna och Segway Navimow?',
-    answer: 'Mammotion LUBA erbjuder utan-slinga-teknik till lägre pris än Husqvarnas EPOS-alternativ. Jämfört med Segway Navimow H500E (19 990 kr, 5 000 m²) är LUBA AWO 3000 något dyrare men erbjuder kamera och beprövad RTK-teknik. Husqvarna 430X Nera med EPOS kostar ca 24 990 kr + tillbehörskostnad. LUBA är totalt sett ett av marknadens mest kostnadseffektiva GPS-alternativ.',
+    answer: 'Mammotion LUBA erbjuder utan-slinga-teknik till lägre pris än Husqvarnas EPOS-alternativ. Jämfört med Segway Navimow H500E (, 5 000 m²) är LUBA AWO 3000 något dyrare men erbjuder kamera och beprövad RTK-teknik. Husqvarna 430X Nera med EPOS  + tillbehörskostnad. LUBA är totalt sett ett av marknadens mest kostnadseffektiva GPS-alternativ.',
   },
   {
     question: 'Fungerar Mammotion LUBA i Sverige med 4G?',
@@ -81,7 +81,7 @@ const faqSchema = faqItems.map((item) => ({
 
 <BaseLayout
   title="Mammotion LUBA robotgräsklippare 2026, utan slinga, RTK GPS"
-  description="Guide till Mammotion LUBA-serien 2026. Jämför AWO 1000H, AWO 3000 och AWD 5000X, GPS utan perimeterkabel från ca 14 990 kr."
+  description="Guide till Mammotion LUBA-serien 2026. Jämför AWO 1000H, AWO 3000 och AWD 5000X, GPS utan perimeterkabel från ."
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -161,7 +161,6 @@ const faqSchema = faqItems.map((item) => ({
           <thead>
             <tr class="bg-bg-alt">
               <th class="text-left p-3 font-semibold text-text border border-border">Modell</th>
-              <th class="text-left p-3 font-semibold text-text border border-border">Pris</th>
               <th class="text-left p-3 font-semibold text-text border border-border">Areal</th>
               <th class="text-left p-3 font-semibold text-text border border-border">Slinga</th>
             </tr>
@@ -169,25 +168,21 @@ const faqSchema = faqItems.map((item) => ({
           <tbody>
             <tr class="bg-winner/5">
               <td class="p-3 border border-border font-medium">Mammotion LUBA AWO 3000</td>
-              <td class="p-3 border border-border">ca 24 990 kr</td>
               <td class="p-3 border border-border">3 000 m²</td>
               <td class="p-3 border border-border text-winner font-semibold">Nej</td>
             </tr>
             <tr>
               <td class="p-3 border border-border font-medium">Segway Navimow H500E</td>
-              <td class="p-3 border border-border">ca 19 990 kr</td>
               <td class="p-3 border border-border">5 000 m²</td>
               <td class="p-3 border border-border text-winner font-semibold">Nej</td>
             </tr>
             <tr class="bg-bg-alt">
               <td class="p-3 border border-border font-medium">Husqvarna 430X Nera (EPOS)</td>
-              <td class="p-3 border border-border">ca 27 000+ kr</td>
               <td class="p-3 border border-border">3 200 m²</td>
               <td class="p-3 border border-border text-winner font-semibold">Nej (EPOS)</td>
             </tr>
             <tr>
               <td class="p-3 border border-border font-medium">Husqvarna 315X</td>
-              <td class="p-3 border border-border">ca 14 990 kr</td>
               <td class="p-3 border border-border">1 600 m²</td>
               <td class="p-3 border border-border text-red-500 font-semibold">Ja</td>
             </tr>
