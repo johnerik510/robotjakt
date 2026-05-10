@@ -15,7 +15,6 @@ const products = [
     name: 'Mammotion LUBA AWO 3000',
     badge: 'BÄST UTAN PRENUMERATION',
     badgeColor: 'bg-winner',
-    price: 'ca 14 999 kr',
     rating: '4.7 / 5',
     area: '3 000 m²',
     nav: 'GPS + RTK (kabelfritttt)',
@@ -35,7 +34,6 @@ const products = [
     name: 'Worx Landroid M500',
     badge: 'PRISVÄRD',
     badgeColor: 'bg-accent',
-    price: 'ca 4 499 kr',
     area: '500 m²',
     nav: 'Perimeterkabel',
     subscription: 'Ingen',
@@ -55,7 +53,6 @@ const products = [
     name: 'Gardena Sileno City 500',
     badge: 'TYST & PÅLITLIG',
     badgeColor: 'bg-text-lighter',
-    price: 'ca 3 999 kr',
     area: '500 m²',
     nav: 'Perimeterkabel',
     subscription: 'Ingen',
@@ -75,7 +72,6 @@ const products = [
     name: 'Husqvarna Automower 315X',
     badge: 'KABELMODELL UTAN GPS-AVGIFT',
     badgeColor: 'bg-bg-alt text-text',
-    price: 'ca 9 999 kr',
     area: '1 600 m²',
     nav: 'Perimeterkabel (ingen GPS)',
     subscription: 'Ingen, kabelmodell kräver ingen EPOS-prenumeration',
@@ -208,7 +204,7 @@ const faqSchema = faqItems.map((item) => ({
           <div class="bg-bg-alt px-5 py-3 border-b border-border flex items-center gap-3 flex-wrap">
             <span class={`${product.badgeColor} text-white text-xs font-bold px-2 py-1 rounded`}>{product.badge}</span>
             <span class="font-heading font-bold text-text">{product.name}</span>
-            <span class="ml-auto font-bold text-text">{product.price}</span>
+            
           </div>
           <div class="p-5">
             <p class="text-text-light text-sm leading-relaxed mb-4">{product.description}</p>

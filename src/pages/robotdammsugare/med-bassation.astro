@@ -15,7 +15,6 @@ const products = [
     name: 'Roborock S8 MaxV Ultra',
     badge: 'BÄST I TEST 2026',
     badgeColor: 'bg-winner',
-    price: 'ca 10 999 kr',
     rating: '4.9 / 5',
     selfEmptying: true,
     mopCleaning: true,
@@ -39,7 +38,6 @@ const products = [
     name: 'Dreame X40 Ultra',
     badge: 'BÄST MOPPNING',
     badgeColor: 'bg-accent',
-    price: 'ca 10 999 kr',
     rating: '4.8 / 5',
     selfEmptying: true,
     mopCleaning: true,
@@ -65,7 +63,6 @@ const products = [
     name: 'Ecovacs Deebot X5 Omni',
     badge: 'BÄST VÄRDE',
     badgeColor: 'bg-winner',
-    price: 'ca 8 499 kr',
     rating: '4.7 / 5',
     selfEmptying: true,
     mopCleaning: true,
@@ -89,7 +86,6 @@ const products = [
     name: 'Dreame L20 Ultra',
     badge: 'KOMPAKT ULTRA',
     badgeColor: 'bg-text-lighter',
-    price: 'ca 7 999 kr',
     rating: '4.6 / 5',
     selfEmptying: true,
     mopCleaning: true,
@@ -180,7 +176,6 @@ function boolClass(val: boolean) {
               <th class="text-left px-4 py-3 font-semibold text-text">Varmvatten</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Auto-påfyllning</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Stationsstorlek</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Pris ca</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-border">
@@ -192,7 +187,6 @@ function boolClass(val: boolean) {
                 <td class={`px-4 py-3 ${boolClass(p.hotWater)}`}>{boolCell(p.hotWater)}</td>
                 <td class={`px-4 py-3 ${boolClass(p.autoRefill)}`}>{boolCell(p.autoRefill)}</td>
                 <td class="px-4 py-3 text-text-light">{p.stationSize}</td>
-                <td class="px-4 py-3 font-semibold text-text whitespace-nowrap">{p.price}</td>
               </tr>
             ))}
           </tbody>
@@ -207,7 +201,7 @@ function boolClass(val: boolean) {
           <div class="bg-bg-alt px-5 py-3 border-b border-border flex items-center gap-3 flex-wrap">
             <span class={`${product.badgeColor} text-white text-xs font-bold px-2 py-1 rounded`}>{product.badge}</span>
             <span class="font-heading font-bold text-text">{product.name}</span>
-            <span class="ml-auto font-bold text-text">{product.price}</span>
+            
           </div>
           <div class="p-5">
             <p class="text-text-light text-sm leading-relaxed mb-4">{product.description}</p>

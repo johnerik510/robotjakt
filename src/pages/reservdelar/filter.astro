@@ -13,7 +13,6 @@ const products = [
     name: 'Roborock S8 / S8+ / S8 Pro Ultra, komplett tillbehörskit',
     compat: 'Passar: S8, S8+, S8 Pro Ultra, S8 Max Ultra, S8 MaxV Ultra',
     includes: '2 HEPA-filter, 2 huvudborstar, 4 sidoborstar, 4 moppdukar',
-    price: '252 kr',
     badge: 'Bästsäljare',
     interval: 'Byt filter var 2 till 3 mån',
   },
@@ -23,7 +22,6 @@ const products = [
     name: 'Roborock S8 / S8+ / S8 Pro Ultra, filter + gummiborstar',
     compat: 'Passar: S8, S8+, S8 Pro Ultra',
     includes: '4 HEPA-filter, 2 gummiborstar, 6 sidoborstar',
-    price: '195 kr',
     badge: 'Bästa pris',
     interval: 'Byt filter var 2 mån',
   },
@@ -33,7 +31,6 @@ const products = [
     name: 'Roborock Qrevo S / Qrevo Pro / Qrevo MaxV, 20-delars kit',
     compat: 'Passar: Qrevo S, Qrevo Pro, Qrevo MaxV, Qrevo Plus',
     includes: '4 HEPA-filter, 1 huvudborste, 4 moppkuddar, 6 sidoborstar, 4 dammpåsar',
-    price: '220 kr',
     badge: null,
     interval: 'Byt filter var 2 till 3 mån',
   },
@@ -43,7 +40,6 @@ const products = [
     name: 'Dreame X40 Ultra / X30 Ultra / L20 Ultra, 18-delars tillbehörskit',
     compat: 'Passar: X40 Ultra, X30 Ultra, L20 Ultra, L10s Ultra Gen2',
     includes: '4 HEPA-filter, 1 huvudborste, 4 moppkuddar, 4 sidoborstar, 4 dammpåsar',
-    price: '256 kr',
     badge: 'Populärt val',
     interval: 'Byt filter var 2 till 3 mån',
   },
@@ -53,7 +49,6 @@ const products = [
     name: 'Dreame X40 Ultra / L10s Pro Ultra Heat / X30 Pro, 4-pack filter',
     compat: 'Passar: X40 Ultra Complete, X40 Master, L10s Pro Ultra Heat, X30 Pro Plus',
     includes: '4 HEPA E12-filter',
-    price: '125 kr',
     badge: 'Bästa pris',
     interval: 'Byt var 2 mån',
   },
@@ -63,7 +58,6 @@ const products = [
     name: 'Ecovacs Deebot X5 Omni / X5 Pro, 20-delars komplett kit',
     compat: 'Passar: Deebot X5 Omni, X5 Pro',
     includes: '4 HEPA-filter, 1 rullborste, 4 sidoborstar, 6 dammpåsar, 4 mopptorkdukar',
-    price: '226 kr',
     badge: null,
     interval: 'Byt filter var 2 mån',
   },
@@ -73,7 +67,6 @@ const products = [
     name: 'Ecovacs Deebot X5 Omni / X5 Pro, filter + borstar + mopp',
     compat: 'Passar: Deebot X5 Omni, X5 Pro',
     includes: '3 HEPA-filter, 1 huvudborste, 4 sidoborstar, 3 dammpåsar, 4 mopptorkdukar',
-    price: '231 kr',
     badge: null,
     interval: 'Byt filter var 2 mån',
   },
@@ -149,7 +142,7 @@ const faqSchema = faqItems.map((item) => ({
               <p class="text-xs text-text-light mb-1"><strong class="text-text">Innehåller:</strong> {p.includes}</p>
               <p class="text-xs text-text-light mb-4"><strong class="text-text">Byta:</strong> {p.interval}</p>
               <div class="flex flex-wrap items-center gap-3">
-                <span class="text-xl font-bold text-text">{p.price}</span>
+                
                 
               </div>
             </div>

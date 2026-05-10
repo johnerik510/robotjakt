@@ -12,7 +12,6 @@ const products = [
     name: 'Roborock Qrevo S / Qrevo Pro / Qrevo MaxV, 20-delars kit',
     compat: 'Passar: Qrevo S, Qrevo Pro, Qrevo MaxV Ultra, Qrevo Plus',
     includes: '1 gummiborste, 6 sidoborstar, 4 HEPA-filter, 4 moppkuddar, 4 dammpåsar',
-    price: '220 kr',
     badge: 'Bästsäljare',
   },
   {
@@ -20,7 +19,6 @@ const products = [
     name: 'Roborock Qrevo Pro / Qrevo S / Qrevo MaxV, 22-delars kit',
     compat: 'Passar: Qrevo Pro, Qrevo S, Qrevo MaxV Ultra',
     includes: '2 gummiborstar, 6 sidoborstar, 4 HEPA-filter, 4 dammpåsar, 4 mopptorkdukar',
-    price: '303 kr',
     badge: 'Mest komplett',
   },
   {
@@ -28,7 +26,6 @@ const products = [
     name: 'Roborock Qrevo S / Qrevo Pro / Qrevo MaxV, 21-delars kit',
     compat: 'Passar: Qrevo S, Qrevo Pro, Qrevo MaxV Ultra',
     includes: '1 gummiborste, 4 sidoborstar, 4 HEPA-filter, 4 mopptorkdukar, 6 dammpåsar',
-    price: '212 kr',
     badge: 'Bästa pris',
   },
   {
@@ -36,7 +33,6 @@ const products = [
     name: 'Roborock Qrevo Master, dammpåsar 5-pack',
     compat: 'Passar: Qrevo Master, Qrevo MaxV Ultra (med automatisk station)',
     includes: '5 dammpåsar för automatisk tömningsstation',
-    price: '149 kr',
     badge: null,
   },
   {
@@ -44,7 +40,6 @@ const products = [
     name: 'Roborock Qrevo-serien, HEPA-filter 4-pack',
     compat: 'Passar: Qrevo S, Qrevo Pro, Qrevo MaxV Ultra, Qrevo Master',
     includes: '4 HEPA E11-filter',
-    price: '89 kr',
     badge: 'Bästa filterpris',
   },
 ];
@@ -109,7 +104,7 @@ const faqSchema = faqItems.map(item => ({
               <p class="text-xs text-text-lighter mb-1"><span class="font-medium">Passar:</span> {p.compat}</p>
               <p class="text-xs text-text-light mb-3"><span class="font-medium">Innehaller:</span> {p.includes}</p>
               <div class="flex items-center gap-4">
-                <span class="text-lg font-bold text-text">{p.price}</span>
+                
                 
               </div>
             </div>

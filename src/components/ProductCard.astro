@@ -3,7 +3,7 @@ interface Props {
   rank?: number;
   name: string;
   image?: string;
-  price: string;
+  price?: string;
   rating: number;
   badge?: string;
   pros: string[];
@@ -64,7 +64,7 @@ const ctaTarget = ctaIsExternal ? "_blank" : undefined;
             name
           )}
         </h3>
-        <span class="text-lg font-bold text-text whitespace-nowrap">{price}</span>
+        {price && <span class="text-lg font-bold text-text whitespace-nowrap">{price}</span>}
       </div>
       {badge && <span class="inline-block text-xs font-semibold bg-accent/10 text-accent px-2 py-0.5 rounded-full mb-2">{badge}</span>}
       <div class="flex items-center gap-1 mb-3" aria-label={`Betyg: ${rating} av 5`}>

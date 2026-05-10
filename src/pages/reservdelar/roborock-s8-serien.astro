@@ -12,7 +12,6 @@ const products = [
     name: 'Roborock S8 / S8+ / S8 Pro Ultra, komplett tillbehörskit 20-delar',
     compat: 'Passar: S8, S8+, S8 Pro Ultra, S8 Max Ultra, S8 MaxV Ultra',
     includes: '2 HEPA-filter, 2 gummiborstar, 4 sidoborstar, 4 moppdukar, skruvmejsel',
-    price: '252 kr',
     badge: 'Bästsäljare',
   },
   {
@@ -20,7 +19,6 @@ const products = [
     name: 'Roborock S8+ / S8 Pro Ultra / S8 Max Ultra, kit med dammpåsar',
     compat: 'Passar: S8+, S8 Pro Ultra, S8 Max Ultra',
     includes: '2 HEPA-filter, 2 gummiborstar, 4 sidoborstar, 4 dammpåsar, 4 moppdukar',
-    price: '287 kr',
     badge: 'Mest komplett',
   },
   {
@@ -28,7 +26,6 @@ const products = [
     name: 'Roborock S8 / S8+ / S8 Pro Ultra, gummiborstar + HEPA-filter',
     compat: 'Passar: S8, S8+, S8 Pro Ultra',
     includes: '2 gummiborstar (dubbel gummirulle), 6 sidoborstar, 4 HEPA-filter',
-    price: '195 kr',
     badge: 'Bästa pris',
   },
   {
@@ -36,7 +33,6 @@ const products = [
     name: 'Roborock S8 MaxV Ultra / S8 Max Ultra, dammpåsar 5-pack',
     compat: 'Passar: S8 MaxV Ultra, S8 Max Ultra, S8 Pro Ultra (med station)',
     includes: '5 dammpåsar för automatisk tömningsstation',
-    price: '149 kr',
     badge: null,
   },
   {
@@ -44,7 +40,6 @@ const products = [
     name: 'Roborock S8 serien, moppkuddar 8-pack',
     compat: 'Passar: S8, S8+, S8 Pro Ultra, S8 Max Ultra, S8 MaxV Ultra',
     includes: '8 tvättbara moppkuddar i mikrofiber',
-    price: '119 kr',
     badge: null,
   },
   {
@@ -52,7 +47,6 @@ const products = [
     name: 'Roborock S8 / S8 Pro Ultra, HEPA-filter 4-pack',
     compat: 'Passar: S8, S8+, S8 Pro Ultra, S8 Max Ultra, S8 MaxV Ultra',
     includes: '4 HEPA E11-filter',
-    price: '99 kr',
     badge: 'Bästa filterpris',
   },
 ];
@@ -117,7 +111,7 @@ const faqSchema = faqItems.map(item => ({
               <p class="text-xs text-text-lighter mb-1"><span class="font-medium">Passar:</span> {p.compat}</p>
               <p class="text-xs text-text-light mb-3"><span class="font-medium">Innehaller:</span> {p.includes}</p>
               <div class="flex items-center gap-4">
-                <span class="text-lg font-bold text-text">{p.price}</span>
+                
                 
               </div>
             </div>

@@ -13,7 +13,6 @@ const products = [
     name: 'Roborock S8 / S8+ / S8 Pro Ultra, komplett tillbehörskit',
     compat: 'Passar: S8, S8+, S8 Pro Ultra, S8 Max Ultra, S8 MaxV Ultra',
     includes: '2 HEPA-filter, 2 huvudborstar, 4 sidoborstar, 4 moppdukar, skruvmejsel',
-    price: '252 kr',
     badge: 'Bästsäljare',
     series: 'S8-serien',
   },
@@ -23,7 +22,6 @@ const products = [
     name: 'Roborock S8+ / S8 Pro Ultra, komplett kit med dammpåsar',
     compat: 'Passar: S8+, S8 Pro Ultra, S8 Max Ultra',
     includes: '2 HEPA-filter, 2 huvudborstar, 4 sidoborstar, 4 dammpåsar, 4 moppdukar',
-    price: '287 kr',
     badge: 'Mest komplett',
     series: 'S8-serien',
   },
@@ -33,7 +31,6 @@ const products = [
     name: 'Roborock S8 / S8+ / S8 Pro Ultra, gummiborstar + filter',
     compat: 'Passar: S8, S8+, S8 Pro Ultra',
     includes: '2 gummiborstar, 6 sidoborstar, 4 HEPA-filter',
-    price: '195 kr',
     badge: 'Bästa pris',
     series: 'S8-serien',
   },
@@ -43,7 +40,6 @@ const products = [
     name: 'Roborock Qrevo S / Qrevo Pro / Qrevo MaxV, 20-delars kit',
     compat: 'Passar: Qrevo S, Qrevo Pro, Qrevo MaxV, Qrevo Plus',
     includes: '1 huvudborste, 6 sidoborstar, 4 HEPA-filter, 4 moppkuddar, 4 dammpåsar',
-    price: '220 kr',
     badge: null,
     series: 'Qrevo-serien',
   },
@@ -53,7 +49,6 @@ const products = [
     name: 'Roborock Qrevo Pro / Qrevo S / Qrevo MaxV, 22-delars kit',
     compat: 'Passar: Qrevo Pro, Qrevo S, Qrevo MaxV',
     includes: '2 huvudborstar, 6 sidoborstar, 4 HEPA-filter, 4 dammpåsar, 4 mopptorkdukar',
-    price: '303 kr',
     badge: null,
     series: 'Qrevo-serien',
   },
@@ -63,7 +58,6 @@ const products = [
     name: 'Roborock Qrevo S / Qrevo Pro / Qrevo MaxV, 21-delars kit',
     compat: 'Passar: Qrevo S, Qrevo Pro, Qrevo MaxV',
     includes: '1 huvudborste, 4 sidoborstar, 4 HEPA-filter, 4 mopptorkdukar, 6 dammpåsar',
-    price: '212 kr',
     badge: 'Bästa pris Qrevo',
     series: 'Qrevo-serien',
   },
@@ -139,7 +133,7 @@ const faqSchema = faqItems.map((item) => ({
               <p class="text-xs text-accent font-medium mb-2">{p.compat}</p>
               <p class="text-xs text-text-light mb-4"><strong class="text-text">Innehåller:</strong> {p.includes}</p>
               <div class="flex flex-wrap items-center gap-3">
-                <span class="text-xl font-bold text-text">{p.price}</span>
+                
                 
               </div>
             </div>
@@ -165,7 +159,7 @@ const faqSchema = faqItems.map((item) => ({
               <p class="text-xs text-accent font-medium mb-2">{p.compat}</p>
               <p class="text-xs text-text-light mb-4"><strong class="text-text">Innehåller:</strong> {p.includes}</p>
               <div class="flex flex-wrap items-center gap-3">
-                <span class="text-xl font-bold text-text">{p.price}</span>
+                
                 
               </div>
             </div>
