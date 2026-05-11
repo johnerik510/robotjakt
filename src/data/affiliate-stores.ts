@@ -27,8 +27,8 @@ export const AFFILIATE_STORES: Record<string, AffiliateStore> = {
     commission: 0.05,
     network: 'adtraction',
     baseUrl: 'https://www.elon.se',
-    searchUrl: 'https://www.elon.se/?q={q}',
-    buildUrl: (t) => `https://track.adtraction.com/t/t?a=1606750990&c=2063681412&p=1&s=&url=${encodeURIComponent(t)}`,
+    searchUrl: 'https://www.elon.se/sok?q={q}',
+    buildUrl: (t) => `https://track.adtraction.com/t/t?a=1606750993&c=2063681412&p=1&s=&url=${encodeURIComponent(t)}`,
   },
   'Estore': {
     name: 'Estore',
