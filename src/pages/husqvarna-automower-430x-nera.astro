@@ -266,6 +266,13 @@ const faqSchema = faqItems.map((item) => ({
   "shippingDetails": {"@type":"OfferShippingDetails","shippingDestination":{"@type":"DefinedRegion","addressCountry":"SE"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":3,"unitCode":"d"},"transitTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":5,"unitCode":"d"}}},
   "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","applicableCountry":"SE","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":14,"returnMethod":"https://schema.org/ReturnByMail","returnFees":"https://schema.org/ReturnShippingFees"}
   },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "9.5",
+    "reviewCount": "1",
+    "bestRating": "10",
+    "worstRating": "1"
+  },
   "review": {
     "@type": "Review",
     "reviewRating": {
