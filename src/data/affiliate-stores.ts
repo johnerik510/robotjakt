@@ -10,7 +10,12 @@ export interface AffiliateStore {
   network: 'adtraction' | 'addrevenue' | 'awin' | 'direct';
   baseUrl: string;
   searchUrl?: string;
-  buildUrl: (targetUrl: string) => string;
+  /**
+   * @deprecated Använd aldrig denna funktion. Bevarad endast för bakåtkompatibilitet
+   * med gammal kod. Returnerar alltid undefined så att hallucinerade tracker-URL:er
+   * aldrig kan genereras. Använd `resolveTrackedUrl` från `lib/cta-resolver.ts` istället.
+   */
+  buildUrl: (targetUrl: string) => string | undefined;
 }
 
 export const AFFILIATE_STORES: Record<string, AffiliateStore> = {
@@ -20,7 +25,7 @@ export const AFFILIATE_STORES: Record<string, AffiliateStore> = {
     network: 'adtraction',
     baseUrl: 'https://www.csmegastore.se',
     searchUrl: 'https://www.csmegastore.se/?q={q}',
-    buildUrl: (t) => `https://track.adtraction.com/t/t?a=1514097158&c=2063681412&p=1&s=&url=${encodeURIComponent(t)}`,
+    buildUrl: () => undefined,
   },
   'Elon': {
     name: 'Elon',
@@ -28,7 +33,7 @@ export const AFFILIATE_STORES: Record<string, AffiliateStore> = {
     network: 'adtraction',
     baseUrl: 'https://www.elon.se',
     searchUrl: 'https://www.elon.se/sok?q={q}',
-    buildUrl: (t) => `https://track.adtraction.com/t/t?a=1606750993&c=2063681412&p=1&s=&url=${encodeURIComponent(t)}`,
+    buildUrl: () => undefined,
   },
   'Estore': {
     name: 'Estore',
@@ -36,7 +41,7 @@ export const AFFILIATE_STORES: Record<string, AffiliateStore> = {
     network: 'adtraction',
     baseUrl: 'https://www.estore.nu',
     searchUrl: 'https://www.estore.nu/?q={q}',
-    buildUrl: (t) => `https://track.adtraction.com/t/t?a=1954032577&c=2063681412&p=1&s=&url=${encodeURIComponent(t)}`,
+    buildUrl: () => undefined,
   },
   'Kjell & Company': {
     name: 'Kjell & Company',
@@ -44,7 +49,7 @@ export const AFFILIATE_STORES: Record<string, AffiliateStore> = {
     network: 'adtraction',
     baseUrl: 'https://www.kjell.com',
     searchUrl: 'https://www.kjell.com/?q={q}',
-    buildUrl: (t) => `https://track.adtraction.com/t/t?a=1098281528&c=2063681412&p=1&s=&url=${encodeURIComponent(t)}`,
+    buildUrl: () => undefined,
   },
   'Komplett': {
     name: 'Komplett',
@@ -52,7 +57,7 @@ export const AFFILIATE_STORES: Record<string, AffiliateStore> = {
     network: 'adtraction',
     baseUrl: 'https://www.komplett.se',
     searchUrl: 'https://www.komplett.se/?q={q}',
-    buildUrl: (t) => `https://track.adtraction.com/t/t?a=1615916037&c=2063681412&p=1&s=&url=${encodeURIComponent(t)}`,
+    buildUrl: () => undefined,
   },
   'Proshop': {
     name: 'Proshop',
@@ -60,7 +65,7 @@ export const AFFILIATE_STORES: Record<string, AffiliateStore> = {
     network: 'adtraction',
     baseUrl: 'https://www.proshop.se',
     searchUrl: 'https://www.proshop.se/?q={q}',
-    buildUrl: (t) => `https://track.adtraction.com/t/t?a=1870484628&c=2063681412&p=1&s=&url=${encodeURIComponent(t)}`,
+    buildUrl: () => undefined,
   },
   'Teknikproffset': {
     name: 'Teknikproffset',
@@ -68,7 +73,7 @@ export const AFFILIATE_STORES: Record<string, AffiliateStore> = {
     network: 'adtraction',
     baseUrl: 'https://www.teknikproffset.se',
     searchUrl: 'https://www.teknikproffset.se/?q={q}',
-    buildUrl: (t) => `https://track.adtraction.com/t/t?a=1954032645&c=2063681412&p=1&s=&url=${encodeURIComponent(t)}`,
+    buildUrl: () => undefined,
   },
   'Dronarbutiken': {
     name: 'Dronarbutiken',
@@ -76,7 +81,7 @@ export const AFFILIATE_STORES: Record<string, AffiliateStore> = {
     network: 'addrevenue',
     baseUrl: 'https://www.dronarbutiken.se',
     searchUrl: 'https://www.dronarbutiken.se/?q={q}',
-    buildUrl: (t) => `https://addrevenue.io/t?a=987736&c=3467327&url=${encodeURIComponent(t)}`,
+    buildUrl: () => undefined,
   },
   'Villanytt': {
     name: 'Villanytt',
@@ -84,7 +89,7 @@ export const AFFILIATE_STORES: Record<string, AffiliateStore> = {
     network: 'addrevenue',
     baseUrl: 'https://www.villanytt.se',
     searchUrl: 'https://www.villanytt.se/?q={q}',
-    buildUrl: (t) => `https://addrevenue.io/t?a=984922&c=3467327&url=${encodeURIComponent(t)}`,
+    buildUrl: () => undefined,
   },
   'Robot-dammsugaren': {
     name: 'Robot-dammsugaren',
@@ -92,7 +97,7 @@ export const AFFILIATE_STORES: Record<string, AffiliateStore> = {
     network: 'addrevenue',
     baseUrl: 'https://www.robot-dammsugaren.se',
     searchUrl: 'https://www.robot-dammsugaren.se/?q={q}',
-    buildUrl: (t) => `https://addrevenue.io/t?a=985815&c=3467327&url=${encodeURIComponent(t)}`,
+    buildUrl: () => undefined,
   },
   'Robotrent': {
     name: 'Robotrent',
@@ -100,7 +105,7 @@ export const AFFILIATE_STORES: Record<string, AffiliateStore> = {
     network: 'addrevenue',
     baseUrl: 'https://www.robotrent.se',
     searchUrl: 'https://www.robotrent.se/?q={q}',
-    buildUrl: (t) => `https://addrevenue.io/t?a=985383&c=3467327&url=${encodeURIComponent(t)}`,
+    buildUrl: () => undefined,
   },
   'Neatsvor': {
     name: 'Neatsvor',
@@ -108,7 +113,7 @@ export const AFFILIATE_STORES: Record<string, AffiliateStore> = {
     network: 'addrevenue',
     baseUrl: 'https://www.neatsvor.se',
     searchUrl: 'https://www.neatsvor.se/?q={q}',
-    buildUrl: (t) => `https://addrevenue.io/t?a=985945&c=3467327&url=${encodeURIComponent(t)}`,
+    buildUrl: () => undefined,
   },
 };
 
@@ -124,15 +129,8 @@ export function getStore(storeName: string): AffiliateStore | undefined {
   return undefined;
 }
 
-export function buildSearchDeeplink(storeName: string, query: string): string | undefined {
-  const store = getStore(storeName);
-  if (!store?.searchUrl) return undefined;
-  const targetUrl = store.searchUrl.replace('{q}', encodeURIComponent(query));
-  return store.buildUrl(targetUrl);
-}
-
-export function buildProductDeeplink(storeName: string, productPageUrl: string): string | undefined {
-  const store = getStore(storeName);
-  if (!store) return undefined;
-  return store.buildUrl(productPageUrl);
-}
+/**
+ * @deprecated Använd resolveTrackedUrl från lib/cta-resolver.ts istället.
+ * Kvar för bakåtkompat, re-exporteras från cta-resolver. Använd inte direkt.
+ */
+export { buildSearchDeeplink, buildProductDeeplink } from '../lib/cta-resolver';
