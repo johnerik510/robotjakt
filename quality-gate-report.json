@@ -1,117 +1,35 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-05-13T20:45:31.980Z",
-  "durationMs": 5282,
+  "timestamp": "2026-05-14T14:22:18.313Z",
+  "durationMs": 5195,
   "summary": {
     "checks": 11,
-    "errors": 5,
-    "warnings": 25,
-    "newErrors": 3,
+    "errors": 2,
+    "warnings": 22,
+    "newErrors": 0,
     "baselinedErrors": 2
   },
   "results": [
     {
       "check": "04-articlemeta",
-      "severity": "error",
-      "file": "src/pages/narwal-freo-x-ultra.astro",
-      "message": "Bildfil saknas: /images/narwal-freo-x-ultra-vs-dreame-x40-ultra.webp (refererad i Narwal Freo X Ultra Recension 2026, Test och Omdöme)"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "error",
-      "message": "Duplicerad bild \"/images/worx-landroid-m500.webp\" bland senaste 6 publicerade artiklar: Worx Landroid vs Husqvarna Automower 2026, Jämförelse | Worx Landroid robotgräsklippare 2026, test och recension | Worx Landroid M500 Test 2026, Recension"
-    },
-    {
-      "check": "15-rendered-images",
-      "severity": "error",
-      "file": "index.html",
-      "message": "3 <article>-kort delar samma <img src=\"/images/worx-landroid-m500.webp\"> på index.html — varje kort behöver unik bild"
+      "severity": "warning",
+      "message": "Bild \"/images/segway-navimow-h500e.webp\" används av 3 artiklar: Segway Navimow robotgräsklippare 2026, utan slinga från  | Segway Navimow H800E Test 2026, Recension & Pris | Segway Navimow H500E Test 2026, Recension"
     },
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/mammotion-luba-awo-3000.webp\" används av 8 artiklar: Robotgräsklippare utan Årsgränsavgift 2026, Guide | Mammotion LUBA vs Segway Navimow 2026: Vinnaren testat | Mammotion LUBA vs Gardena SILENO 2026, jämförelse | Mammotion LUBA robotgräsklippare 2026, utan slinga, RTK GPS | Mammotion LUBA AWO 3000 Test 2026, Recension..."
+      "message": "Bild \"/images/worx-landroid-m500.webp\" används av 3 artiklar: Worx Landroid robotgräsklippare 2026, test och recension | Worx Landroid vs Husqvarna Automower 2026, Jämförelse | Worx Landroid M500 Test 2026, Recension"
     },
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/mcculloch-rob-r600.webp\" används av 3 artiklar: Bästa Robotgräsklippare till lägre pris 2026, Test | McCulloch ROB R600 Recension 2026, Test och Pris | Billigaste robotgräsklippare 2026: bäst till lägre pris (testat)"
+      "message": "Bild \"/images/husqvarna-automower-450x.webp\" används av 2 artiklar: Husqvarna Automower 450X Test 2026, Recension & Pris | Robotgräsklippare stor trädgård 2026, topp 4"
     },
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/husqvarna-automower-450x.webp\" används av 2 artiklar: Robotgräsklippare stor trädgård 2026, topp 4 | Husqvarna Automower 450X Test 2026, Recension & Pris"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/gardena-sileno-city-500.webp\" används av 5 artiklar: Robotgräsklippare liten trädgård 2026, topp 5 | Husqvarna vs Gardena Robotgräsklippare 2026 | Gardena vs Segway Navimow 2026, kabel vs GPS | Gardena Sileno City 500 Test 2026, Recension | Gardena Robotgräsklippare 2026, Sileno City & Life recenserade"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/husqvarna-automower-415x.webp\" används av 2 artiklar: Bästa Robotgräsklippare för Lutning 2026, Test | Husqvarna Automower 415X Test 2026, Recension & Pris"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/dreame-z10-pro.webp\" används av 2 artiklar: Bästa Robotdammsugare till lägre pris 2026, Test | Dreame Z10 Pro Recension 2026, Budget & Auto-Tömning"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/roborock-s8-maxv-ultra.webp\" används av 11 artiklar: Bästa robotdammsugare stor lägenhet 2026 | Robotjakt | Roborock vs Narwal 2026, Robotdammsugare Jämförelse | Roborock vs iRobot Roomba 2026, Jämförelse | Roborock vs Ecovacs 2026, jämförelse | Robotjakt | Roborock vs Dreame 2026, jämförelse | Robotjakt..."
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/ecovacs-deebot-x5-omni.webp\" används av 5 artiklar: Robotdammsugare för Långt Hår 2026, Test och Guide | Ecovacs Deebot X5 Omni vs Dreame X40 Ultra 2026 | Ecovacs vs iRobot Roomba 2026, Jämförelse | Ecovacs Deebot 2026, Guide & Jämförelse | Ecovacs Deebot X5 Omni Test 2026, Recension"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/dreame-l10s-pro-ultra-heat.webp\" används av 3 artiklar: Bästa Robotdammsugare för Lägenhet 2026, Test | Dreame L10s Ultra Gen 2 Test 2026, Recension | Dreame L10s Pro Ultra Heat Recension 2026, Test och Pris"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/dreame-d10s-pro.webp\" används av 4 artiklar: Bästa budget-robotdammsugare 2026, till lägre pris | Billigaste Robotdammsugare 2026 till 8 Modeller från  | Dreame W10 Pro Recension 2026, Test & Betyg | Dreame D10s Pro Test 2026, Recension och Pris Sverige"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/roborock-qrevo-master.webp\" används av 6 artiklar: Roborock Qrevo Pro Recension 2026, Test och Pris Sverige | Roborock Qrevo Master Recension 2026, Test & Omdöme | Bästa Robotdammsugare för Husdjur 2026: 5 testade modeller | Roborock Qrevo Master vs Dreame X40 Ultra 2026 | Dyson Spot+Scrub Ai Recension 2026, Test, Pris och Betyg..."
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/roborock-qrevo-maxv-ultra.webp\" används av 2 artiklar: Roborock Qrevo MaxV Ultra Recension 2026, Test och Pris | Bästa robotdammsugare basstation 2026, topp 5"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/parts-husqvarna-blade.webp\" används av 2 artiklar: Robotgräsklippare Reservdelar 2026, Knivar & Kabel | Husqvarna Automower Reservdelar 2026, Knivar & Kabel"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/dolphin-s200.webp\" används av 2 artiklar: Poolrobot Nedgrävd Pool 2026, Test och Jämförelse | Maytronics Dolphin S200 Test 2026, Recension"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/dolphin-e30.webp\" används av 3 artiklar: Köpguide Poolrobot 2026, Välj Rätt Modell | Maytronics Dolphin E30 Test 2026, Recension | Billigaste poolrobot 2026: 5 modeller till lägre pris (testat)"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/irobot-roomba-j9-plus.webp\" används av 2 artiklar: iRobot Roomba j9+ Test 2026, Recension och Pris Sverige | iRobot Roomba-guide 2026, Alla modeller jämförda"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/husqvarna-automower-315x.webp\" används av 3 artiklar: Husqvarna Automower vs Segway Navimow 2026 | Husqvarna Automower 315X Test 2026, Recension | Husqvarna Automower 315X vs 415X 2026, Fullständig jämförelse"
+      "message": "Bild \"/images/husqvarna-automower-415x.webp\" används av 2 artiklar: Husqvarna Automower 415X Test 2026, Recension & Pris | Bästa Robotgräsklippare för Lutning 2026, Test"
     },
     {
       "check": "04-articlemeta",
@@ -126,12 +44,42 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
+      "message": "Bild \"/images/roborock-s8-maxv-ultra.webp\" används av 11 artiklar: Robotdammsugare för husdjur 2026, guide för hund och katt | Bästa robotdammsugare stor lägenhet 2026 | Robotjakt | Roborock S8 MaxV Ultra Recension 2026, Test & Omdöme | Köpguide Robotdammsugare 2026, Så Väljer Du Rätt | Roborock vs Narwal 2026, Robotdammsugare Jämförelse..."
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
       "message": "Bild \"/images/ecovacs-deebot-t30s-pro.webp\" används av 2 artiklar: Sugkraft i robotdammsugare, Pa-värde och vad du verkligen behöver | Ecovacs Deebot T30S Pro Test 2026, Recension & Pris"
     },
     {
       "check": "04-articlemeta",
       "severity": "warning",
+      "message": "Bild \"/images/dreame-d10s-pro.webp\" används av 4 artiklar: Bästa budget-robotdammsugare 2026, till lägre pris | Billigaste Robotdammsugare 2026 till 8 Modeller från  | Dreame W10 Pro Recension 2026, Test & Betyg | Dreame D10s Pro Test 2026, Recension och Pris Sverige"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/roborock-qrevo-master.webp\" används av 6 artiklar: Bästa Robotdammsugare för Husdjur 2026: 5 testade modeller | Roborock Qrevo Pro Recension 2026, Test och Pris Sverige | Roborock Qrevo Master vs Dreame X40 Ultra 2026 | Roborock Qrevo Master Recension 2026, Test & Omdöme | Dyson Spot+Scrub Ai Recension 2026, Test, Pris och Betyg..."
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/dreame-l10s-pro-ultra-heat.webp\" används av 3 artiklar: Bästa Robotdammsugare för Lägenhet 2026, Test | Dreame L10s Ultra Gen 2 Test 2026, Recension | Dreame L10s Pro Ultra Heat Recension 2026, Test och Pris"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/ecovacs-deebot-x5-omni.webp\" används av 5 artiklar: Robotdammsugare för Långt Hår 2026, Test och Guide | Ecovacs Deebot X5 Omni vs Dreame X40 Ultra 2026 | Ecovacs vs iRobot Roomba 2026, Jämförelse | Ecovacs Deebot 2026, Guide & Jämförelse | Ecovacs Deebot X5 Omni Test 2026, Recension"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
       "message": "Bild \"/images/roborock-saros-10r.webp\" används av 3 artiklar: Bästa robotdammsugare med LiDAR 2026, exakt navigering | Roborock Saros 10R Recension 2026, Test och Omdöme | Roborock Saros 10R vs Dreame X40 Ultra 2026"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/roborock-qrevo-maxv-ultra.webp\" används av 2 artiklar: Bästa robotdammsugare basstation 2026, topp 5 | Roborock Qrevo MaxV Ultra Recension 2026, Test och Pris"
     },
     {
       "check": "04-articlemeta",
@@ -142,6 +90,26 @@
       "check": "04-articlemeta",
       "severity": "warning",
       "message": "Bild \"/images/eufy-x10-pro-omni.webp\" används av 6 artiklar: eufy X10 Pro Omni Test 2026, Recension och Pris Sverige | Eufy vs Roborock 2026, Vilket Märke Vinner? | Eufy vs iRobot Roomba 2026, Vilket Märke Är Bäst? | eufy Robotdammsugare Guide 2026, Alla Modeller | Eufy vs Ecovacs 2026, Vilket Märke Vinner?..."
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/mcculloch-rob-r600.webp\" används av 3 artiklar: Bästa Robotgräsklippare till lägre pris 2026, Test | McCulloch ROB R600 Recension 2026, Test och Pris | Billigaste robotgräsklippare 2026: bäst till lägre pris (testat)"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/dolphin-e30.webp\" används av 3 artiklar: Köpguide Poolrobot 2026, Välj Rätt Modell | Maytronics Dolphin E30 Test 2026, Recension | Billigaste poolrobot 2026: 5 modeller till lägre pris (testat)"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/dolphin-s200.webp\" används av 2 artiklar: Poolrobot Nedgrävd Pool 2026, Test och Jämförelse | Maytronics Dolphin S200 Test 2026, Recension"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/parts-husqvarna-blade.webp\" används av 2 artiklar: Husqvarna Automower Reservdelar 2026, Knivar & Kabel | Robotgräsklippare Reservdelar 2026, Knivar & Kabel"
     },
     {
       "check": "04-articlemeta",
@@ -158,104 +126,28 @@
     "status": "compared",
     "baselineCount": 5,
     "baselinedCount": 2,
-    "newErrorCount": 3
+    "newErrorCount": 0
   },
   "allResults": [
     {
       "check": "04-articlemeta",
-      "severity": "error",
-      "file": "src/pages/narwal-freo-x-ultra.astro",
-      "message": "Bildfil saknas: /images/narwal-freo-x-ultra-vs-dreame-x40-ultra.webp (refererad i Narwal Freo X Ultra Recension 2026, Test och Omdöme)"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "error",
-      "message": "Duplicerad bild \"/images/worx-landroid-m500.webp\" bland senaste 6 publicerade artiklar: Worx Landroid vs Husqvarna Automower 2026, Jämförelse | Worx Landroid robotgräsklippare 2026, test och recension | Worx Landroid M500 Test 2026, Recension"
+      "severity": "warning",
+      "message": "Bild \"/images/segway-navimow-h500e.webp\" används av 3 artiklar: Segway Navimow robotgräsklippare 2026, utan slinga från  | Segway Navimow H800E Test 2026, Recension & Pris | Segway Navimow H500E Test 2026, Recension"
     },
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/mammotion-luba-awo-3000.webp\" används av 8 artiklar: Robotgräsklippare utan Årsgränsavgift 2026, Guide | Mammotion LUBA vs Segway Navimow 2026: Vinnaren testat | Mammotion LUBA vs Gardena SILENO 2026, jämförelse | Mammotion LUBA robotgräsklippare 2026, utan slinga, RTK GPS | Mammotion LUBA AWO 3000 Test 2026, Recension..."
+      "message": "Bild \"/images/worx-landroid-m500.webp\" används av 3 artiklar: Worx Landroid robotgräsklippare 2026, test och recension | Worx Landroid vs Husqvarna Automower 2026, Jämförelse | Worx Landroid M500 Test 2026, Recension"
     },
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/mcculloch-rob-r600.webp\" används av 3 artiklar: Bästa Robotgräsklippare till lägre pris 2026, Test | McCulloch ROB R600 Recension 2026, Test och Pris | Billigaste robotgräsklippare 2026: bäst till lägre pris (testat)"
+      "message": "Bild \"/images/husqvarna-automower-450x.webp\" används av 2 artiklar: Husqvarna Automower 450X Test 2026, Recension & Pris | Robotgräsklippare stor trädgård 2026, topp 4"
     },
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/husqvarna-automower-450x.webp\" används av 2 artiklar: Robotgräsklippare stor trädgård 2026, topp 4 | Husqvarna Automower 450X Test 2026, Recension & Pris"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/gardena-sileno-city-500.webp\" används av 5 artiklar: Robotgräsklippare liten trädgård 2026, topp 5 | Husqvarna vs Gardena Robotgräsklippare 2026 | Gardena vs Segway Navimow 2026, kabel vs GPS | Gardena Sileno City 500 Test 2026, Recension | Gardena Robotgräsklippare 2026, Sileno City & Life recenserade"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/husqvarna-automower-415x.webp\" används av 2 artiklar: Bästa Robotgräsklippare för Lutning 2026, Test | Husqvarna Automower 415X Test 2026, Recension & Pris"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/dreame-z10-pro.webp\" används av 2 artiklar: Bästa Robotdammsugare till lägre pris 2026, Test | Dreame Z10 Pro Recension 2026, Budget & Auto-Tömning"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/roborock-s8-maxv-ultra.webp\" används av 11 artiklar: Bästa robotdammsugare stor lägenhet 2026 | Robotjakt | Roborock vs Narwal 2026, Robotdammsugare Jämförelse | Roborock vs iRobot Roomba 2026, Jämförelse | Roborock vs Ecovacs 2026, jämförelse | Robotjakt | Roborock vs Dreame 2026, jämförelse | Robotjakt..."
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/ecovacs-deebot-x5-omni.webp\" används av 5 artiklar: Robotdammsugare för Långt Hår 2026, Test och Guide | Ecovacs Deebot X5 Omni vs Dreame X40 Ultra 2026 | Ecovacs vs iRobot Roomba 2026, Jämförelse | Ecovacs Deebot 2026, Guide & Jämförelse | Ecovacs Deebot X5 Omni Test 2026, Recension"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/dreame-l10s-pro-ultra-heat.webp\" används av 3 artiklar: Bästa Robotdammsugare för Lägenhet 2026, Test | Dreame L10s Ultra Gen 2 Test 2026, Recension | Dreame L10s Pro Ultra Heat Recension 2026, Test och Pris"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/dreame-d10s-pro.webp\" används av 4 artiklar: Bästa budget-robotdammsugare 2026, till lägre pris | Billigaste Robotdammsugare 2026 till 8 Modeller från  | Dreame W10 Pro Recension 2026, Test & Betyg | Dreame D10s Pro Test 2026, Recension och Pris Sverige"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/roborock-qrevo-master.webp\" används av 6 artiklar: Roborock Qrevo Pro Recension 2026, Test och Pris Sverige | Roborock Qrevo Master Recension 2026, Test & Omdöme | Bästa Robotdammsugare för Husdjur 2026: 5 testade modeller | Roborock Qrevo Master vs Dreame X40 Ultra 2026 | Dyson Spot+Scrub Ai Recension 2026, Test, Pris och Betyg..."
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/roborock-qrevo-maxv-ultra.webp\" används av 2 artiklar: Roborock Qrevo MaxV Ultra Recension 2026, Test och Pris | Bästa robotdammsugare basstation 2026, topp 5"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/parts-husqvarna-blade.webp\" används av 2 artiklar: Robotgräsklippare Reservdelar 2026, Knivar & Kabel | Husqvarna Automower Reservdelar 2026, Knivar & Kabel"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/dolphin-s200.webp\" används av 2 artiklar: Poolrobot Nedgrävd Pool 2026, Test och Jämförelse | Maytronics Dolphin S200 Test 2026, Recension"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/dolphin-e30.webp\" används av 3 artiklar: Köpguide Poolrobot 2026, Välj Rätt Modell | Maytronics Dolphin E30 Test 2026, Recension | Billigaste poolrobot 2026: 5 modeller till lägre pris (testat)"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/irobot-roomba-j9-plus.webp\" används av 2 artiklar: iRobot Roomba j9+ Test 2026, Recension och Pris Sverige | iRobot Roomba-guide 2026, Alla modeller jämförda"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/husqvarna-automower-315x.webp\" används av 3 artiklar: Husqvarna Automower vs Segway Navimow 2026 | Husqvarna Automower 315X Test 2026, Recension | Husqvarna Automower 315X vs 415X 2026, Fullständig jämförelse"
+      "message": "Bild \"/images/husqvarna-automower-415x.webp\" används av 2 artiklar: Husqvarna Automower 415X Test 2026, Recension & Pris | Bästa Robotgräsklippare för Lutning 2026, Test"
     },
     {
       "check": "04-articlemeta",
@@ -270,12 +162,42 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
+      "message": "Bild \"/images/roborock-s8-maxv-ultra.webp\" används av 11 artiklar: Robotdammsugare för husdjur 2026, guide för hund och katt | Bästa robotdammsugare stor lägenhet 2026 | Robotjakt | Roborock S8 MaxV Ultra Recension 2026, Test & Omdöme | Köpguide Robotdammsugare 2026, Så Väljer Du Rätt | Roborock vs Narwal 2026, Robotdammsugare Jämförelse..."
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
       "message": "Bild \"/images/ecovacs-deebot-t30s-pro.webp\" används av 2 artiklar: Sugkraft i robotdammsugare, Pa-värde och vad du verkligen behöver | Ecovacs Deebot T30S Pro Test 2026, Recension & Pris"
     },
     {
       "check": "04-articlemeta",
       "severity": "warning",
+      "message": "Bild \"/images/dreame-d10s-pro.webp\" används av 4 artiklar: Bästa budget-robotdammsugare 2026, till lägre pris | Billigaste Robotdammsugare 2026 till 8 Modeller från  | Dreame W10 Pro Recension 2026, Test & Betyg | Dreame D10s Pro Test 2026, Recension och Pris Sverige"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/roborock-qrevo-master.webp\" används av 6 artiklar: Bästa Robotdammsugare för Husdjur 2026: 5 testade modeller | Roborock Qrevo Pro Recension 2026, Test och Pris Sverige | Roborock Qrevo Master vs Dreame X40 Ultra 2026 | Roborock Qrevo Master Recension 2026, Test & Omdöme | Dyson Spot+Scrub Ai Recension 2026, Test, Pris och Betyg..."
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/dreame-l10s-pro-ultra-heat.webp\" används av 3 artiklar: Bästa Robotdammsugare för Lägenhet 2026, Test | Dreame L10s Ultra Gen 2 Test 2026, Recension | Dreame L10s Pro Ultra Heat Recension 2026, Test och Pris"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/ecovacs-deebot-x5-omni.webp\" används av 5 artiklar: Robotdammsugare för Långt Hår 2026, Test och Guide | Ecovacs Deebot X5 Omni vs Dreame X40 Ultra 2026 | Ecovacs vs iRobot Roomba 2026, Jämförelse | Ecovacs Deebot 2026, Guide & Jämförelse | Ecovacs Deebot X5 Omni Test 2026, Recension"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
       "message": "Bild \"/images/roborock-saros-10r.webp\" används av 3 artiklar: Bästa robotdammsugare med LiDAR 2026, exakt navigering | Roborock Saros 10R Recension 2026, Test och Omdöme | Roborock Saros 10R vs Dreame X40 Ultra 2026"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/roborock-qrevo-maxv-ultra.webp\" används av 2 artiklar: Bästa robotdammsugare basstation 2026, topp 5 | Roborock Qrevo MaxV Ultra Recension 2026, Test och Pris"
     },
     {
       "check": "04-articlemeta",
@@ -286,6 +208,26 @@
       "check": "04-articlemeta",
       "severity": "warning",
       "message": "Bild \"/images/eufy-x10-pro-omni.webp\" används av 6 artiklar: eufy X10 Pro Omni Test 2026, Recension och Pris Sverige | Eufy vs Roborock 2026, Vilket Märke Vinner? | Eufy vs iRobot Roomba 2026, Vilket Märke Är Bäst? | eufy Robotdammsugare Guide 2026, Alla Modeller | Eufy vs Ecovacs 2026, Vilket Märke Vinner?..."
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/mcculloch-rob-r600.webp\" används av 3 artiklar: Bästa Robotgräsklippare till lägre pris 2026, Test | McCulloch ROB R600 Recension 2026, Test och Pris | Billigaste robotgräsklippare 2026: bäst till lägre pris (testat)"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/dolphin-e30.webp\" används av 3 artiklar: Köpguide Poolrobot 2026, Välj Rätt Modell | Maytronics Dolphin E30 Test 2026, Recension | Billigaste poolrobot 2026: 5 modeller till lägre pris (testat)"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/dolphin-s200.webp\" används av 2 artiklar: Poolrobot Nedgrävd Pool 2026, Test och Jämförelse | Maytronics Dolphin S200 Test 2026, Recension"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/parts-husqvarna-blade.webp\" används av 2 artiklar: Husqvarna Automower Reservdelar 2026, Knivar & Kabel | Robotgräsklippare Reservdelar 2026, Knivar & Kabel"
     },
     {
       "check": "04-articlemeta",
@@ -301,12 +243,6 @@
       "check": "08-image-binary-duplicates",
       "severity": "error",
       "message": "2 bildfiler är binär-identiska (8KB) — samma bild laddats med olika filnamn: public/images/husqvarna-315x.webp | public/images/husqvarna-automower-315x.webp"
-    },
-    {
-      "check": "15-rendered-images",
-      "severity": "error",
-      "file": "index.html",
-      "message": "3 <article>-kort delar samma <img src=\"/images/worx-landroid-m500.webp\"> på index.html — varje kort behöver unik bild"
     },
     {
       "check": "15-rendered-images",

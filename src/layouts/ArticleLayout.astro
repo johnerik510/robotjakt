@@ -60,7 +60,7 @@ const productSchema = productName ? {
         '@type': 'Person',
         name: 'John Erik Johansson',
       },
-      datePublished: datePublished || lastUpdated || '2026-04-07',
+      datePublished: datePublished || lastUpdated,
       ...(productPros.length > 0 ? {
         positiveNotes: {
           '@type': 'ItemList',
