@@ -134,7 +134,15 @@ const faqItems = [
   },
   {
     question: 'Vad är LiDAR-navigering och varför är det viktigt?',
-    answer: 'LiDAR är en lasersensor som skapar en exakt karta av hemmet i realtid. Det ger effektivare städrutter, bättre hinderundvikande och möjlighet att sätta "no-go zones" i appen. Budget-modeller utan LiDAR navigerar slumpmässigt och missar ytor. Nästan alla robotar över har LiDAR 2026.',
+    answer: 'LiDAR är en lasersensor som skapar en exakt karta av hemmet i realtid. Det ger effektivare städrutter, bättre hinderundvikning och möjlighet att sätta no-go-zoner i appen. Budget-modeller utan LiDAR navigerar slumpmässigt och missar ytor. Nästan alla mellanklassrobotar och uppåt har LiDAR 2026.',
+  },
+  {
+    question: 'Säljer Husqvarna robotdammsugare?',
+    answer: 'Nej, Husqvarna tillverkar robotgräsklippare (Automower-serien) och inte robotdammsugare. Letar du efter Husqvarna är det utomhusrobotar du hittar. Vill du ha en robotdammsugare med samma fokus på kvalitet och support, titta på Dreame, Roborock eller iRobot, som alla har auktoriserade svenska återförsäljare.',
+  },
+  {
+    question: 'Vilken robotdammsugare passar bäst i lägenhet?',
+    answer: 'För lägenheter rekommenderar vi en kompakt modell med LiDAR och låg höjd. Roborock Q Revo och Dreame L20 Ultra är båda utmärkta i lägenhetsmiljö, de hanterar trösklar och navigerar smidigt runt möbler. Se vår guide över robotdammsugare för lägenhet för fler alternativ.',
   },
 ];
 
@@ -153,8 +161,8 @@ const faqSchema = faqItems.map((item) => ({
 ---
 
 <BaseLayout
-  title="Robotdammsugare Bäst i Test 2026, Topp 8 testade och jämförda"
-  description="Robotdammsugare bäst i test 2026: Dreame X50 Ultra vinner. 8 toppmodeller testade, Dreame, Roborock, Ecovacs. Jämförelse med priser, för- och nackdelar."
+  title="Robotdammsugare Bäst i Test 2026, Topp 8 Testade och Jämförda"
+  description="Robotdammsugare bäst i test 2026. Vi har testat 8 toppmodeller från Dreame, Roborock och Ecovacs. Jämförelse med sugkraft, station, mopp och pris."
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -164,8 +172,20 @@ const faqSchema = faqItems.map((item) => ({
       Robotdammsugare bäst i test 2026, topp 8 testade
     </h1>
     <p class="text-text-light mb-6 max-w-2xl">
-      Vi har testat och jämfört {products.length} robotdammsugare och rankat dem efter sugkraft, navigering, moppning och prisvärdhet. Här är våra toppval för 2026.
+      Vi har testat och jämfört {products.length} robotdammsugare och rankat dem efter sugkraft, navigering, moppning och prisvärdhet. Här är våra toppval för 2026, från premiumstationer till budget med LiDAR.
     </p>
+
+    <!-- Snabbnavigering till djupare guider -->
+    <div class="bg-bg-alt rounded-xl border border-border p-4 mb-6 text-sm">
+      <p class="text-text-light mb-2"><strong class="text-text">Letar du efter en specifik kategori?</strong></p>
+      <ul class="flex flex-wrap gap-x-4 gap-y-1">
+        <li><a href="/robotdammsugare/husdjur/" class="text-accent underline">robotdammsugare för husdjur</a></li>
+        <li><a href="/robotdammsugare/langt-har/" class="text-accent underline">robotdammsugare långt hår</a></li>
+        <li><a href="/robotdammsugare/med-mopp/" class="text-accent underline">robotdammsugare med mopp</a></li>
+        <li><a href="/robotdammsugare/lagenhet/" class="text-accent underline">robotdammsugare lägenhet</a></li>
+        <li><a href="/billigaste-robotdammsugare/" class="text-accent underline">billigaste robotdammsugare</a></li>
+      </ul>
+    </div>
 
     <!-- Jämförelsetabell -->
     <section class="mb-8" aria-label="Jämförelsetabell robotdammsugare">
@@ -189,9 +209,8 @@ const faqSchema = faqItems.map((item) => ({
             </div>
             <div class="grid grid-cols-2 gap-1 text-text-light mb-3">
               <span>Sugkraft: {row.sugkraft}</span>
-              <span>Pris: ca {row.pris}</span>
-              <span>Autostation: {row.station}</span>
               <span>Betyg: {row.betyg}/10</span>
+              <span>Autostation: {row.station}</span>
             </div>
             {row.url.startsWith('http') ? (
               <a href={row.url} rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium text-sm">Se pris</a>

@@ -11,19 +11,27 @@ const affVisNav = 'https://www.awin1.com/cread.php?awinmid=25183&awinaffid=28348
 const faqItems = [
   {
     question: 'Hur många Dyson robotdammsugare finns det i Sverige 2026?',
-    answer: 'Dyson säljer två robotdammsugare i Sverige 2026: Dyson Spot+Scrub Ai med AI-fläckdetektering och wet roller, samt Dyson 360 Vis Nav med 360°-navigering och Hyperdymium-motor. Båda säljs exklusivt via dyson.se.',
+    answer: 'Dyson säljer två robotdammsugare i Sverige 2026: Dyson Spot+Scrub Ai med AI-fläckdetektering och självrenande wet roller, samt Dyson 360 Vis Nav med 360-graders panoramakamera och Hyperdymium-motor. Båda säljs exklusivt via dyson.se.',
   },
   {
     question: 'Varför kostar Dyson robotdammsugare mer än Roborock och Dreame?',
-    answer: 'Dyson satsar på unik teknologi som inte finns hos konkurrenterna: AI-fläckdetektering med grön LED-ljussättning (Spot+Scrub Ai) och 360°-panoramakamera (360 Vis Nav). De investerar också mycket i motorteknik, Hyperdymium-motorn är en av de snabbaste i branschen. Priset speglar R&D-kostnaderna, inte nödvändigtvis bättre allround-prestanda.',
+    answer: 'Dyson satsar på unik teknologi som inte finns hos konkurrenterna: AI-fläckdetektering med grön LED (Spot+Scrub Ai) och 360-graders panoramakamera plus Hyperdymium-motor på 110 000 rpm (360 Vis Nav). Priset speglar R&D-kostnader och svensk garanti, inte alltid bättre allroundprestanda mot Roborock S8 MaxV Ultra eller Dreame X40 Ultra.',
   },
   {
-    question: 'Kan jag jämföra Dyson robotdammsugare hos andra butiker än dyson.se?',
-    answer: 'Nej. Dyson säljer sina robotdammsugare exklusivt via dyson.se i Sverige. Du hittar dem inte på Elgiganten, Komplett eller MediaMarkt. Fördelen är 40 dagars prova-på-garanti och direkt kontakt med Dyson om något skulle gå fel.',
+    question: 'Kan jag köpa Dyson robotdammsugare hos andra butiker än dyson.se?',
+    answer: 'Nej. Dyson säljer sina robotdammsugare exklusivt via dyson.se i Sverige. Du hittar dem inte hos Elgiganten, Komplett eller MediaMarkt. Fördelen är 40 dagars prova-på-garanti, fri frakt och direkt kontakt med Dyson om något går fel.',
   },
   {
     question: 'Vilken Dyson robotdammsugare passar ett hem med husdjur?',
-    answer: 'Båda modellerna hanterar husdjurshår väl. Spot+Scrub Ai är bättre om husdjuren spiller mat eller vatten eftersom den aktivt tar bort fläckar. 360 Vis Nav är bättre om problemet är päls i mattor och heltäckningsmattor, tack vare starkare sugkraft och HEPA-filtrering.',
+    answer: 'Båda modellerna hanterar husdjurshår väl. Spot+Scrub Ai är bättre om husdjuren spiller mat eller vatten eftersom den aktivt identifierar och tar bort fläckar. 360 Vis Nav är bättre om problemet är päls i mattor och heltäckningsmattor, tack vare starkare sugkraft och HEPA-filtrering i fem steg.',
+  },
+  {
+    question: 'Har Dyson 360 Vis Nav moppfunktion?',
+    answer: 'Nej. 360 Vis Nav är en ren dammsugare utan moppmodul. Vill du ha både dammsugning och moppning är Dyson Spot+Scrub Ai rätt val, eller en konkurrent som Dreame X40 Ultra eller Roborock S8 MaxV Ultra.',
+  },
+  {
+    question: 'Hur länge går Dyson robotdammsugarna på en laddning?',
+    answer: 'Spot+Scrub Ai håller upp till 110 minuter och 360 Vis Nav upp till 65 minuter på en laddning. Båda återvänder automatiskt till sin dockningsstation för laddning. Spot+Scrub Ai täcker större ytor i ett pass medan 360 Vis Nav passar bättre i mindre och medelstora hem.',
   },
 ];
 
@@ -41,30 +49,30 @@ const faqSchema = faqItems.map((item) => ({
   },
 }));
 export const articleMeta = {
-  title: "Dyson Robotdammsugare 2026, Spot+Scrub Ai vs 360 Vis Nav",
-  description: "Robotdammsugare Dyson 2026: vi testar Spot+Scrub Ai och 360 Vis Nav. Sugkraft, tömningsstation, navigering och pris, se vilken Dyson som är bäst.",
+  title: "Robotdammsugare Dyson 2026, Spot+Scrub Ai mot 360 Vis Nav",
+  description: "Robotdammsugare Dyson 2026: vi jämför Spot+Scrub Ai och 360 Vis Nav på sugkraft, AI, navigering och pris. Se vilken Dyson som passar ditt hem.",
   publishDate: "2026-03-19",
   category: "Guide",
-  image: "/images/roborock-qrevo-master.webp",
+  image: "/images/products/dyson-spot-scrub-ai.webp",
 };
 
 ---
 
 <BaseLayout
-  title="Dyson Robotdammsugare 2026, Spot+Scrub Ai vs 360 Vis Nav"
-  description="Robotdammsugare Dyson 2026: vi testar Spot+Scrub Ai och 360 Vis Nav. Sugkraft, tömningsstation, navigering och pris, se vilken Dyson som är bäst."
+  title="Robotdammsugare Dyson 2026, Spot+Scrub Ai mot 360 Vis Nav"
+  description="Robotdammsugare Dyson 2026: vi jämför Spot+Scrub Ai och 360 Vis Nav på sugkraft, AI, navigering och pris. Se vilken Dyson som passar ditt hem."
 >
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
 
-    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-07</p>
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-05-15</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
-      Dyson robotdammsugare 2026, guide och jämförelse
+      Robotdammsugare Dyson 2026, guide och jämförelse
     </h1>
 
     <p class="text-text-light text-base leading-relaxed mb-8">
-      Dyson har två robotdammsugare på den svenska marknaden 2026. Spot+Scrub Ai är en våt- och torrobot med AI-fläckdetektering. 360 Vis Nav är en ren dammsugare med 360°-vision och exceptionell sugkraft. Här går vi igenom skillnaderna så att du vet vilken som passar ditt hem.
+      Dyson har två robotdammsugare på den svenska marknaden 2026. Spot+Scrub Ai är en kombinerad våt- och torrobot med AI-fläckdetektering. 360 Vis Nav är en ren dammsugare med 360-graders panoramakamera och Hyperdymium-motor. Här går vi igenom skillnaderna så att du vet vilken Dyson som passar ditt hem och dina golv.
     </p>
 
     <!-- Comparison table -->
@@ -155,7 +163,7 @@ export const articleMeta = {
           </p>
           <a href={affSpotScrub} rel="sponsored noopener noreferrer" target="_blank"
             class="inline-flex items-center text-cta hover:underline font-semibold text-sm">
-            Köp hos Dyson.se, 
+            Köp Dyson Spot+Scrub Ai hos Dyson.se
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
           </a>
         </div>
@@ -181,7 +189,7 @@ export const articleMeta = {
           </p>
           <a href={affVisNav} rel="sponsored noopener noreferrer" target="_blank"
             class="inline-flex items-center text-cta hover:underline font-semibold text-sm">
-            Se pris hos Dyson.se
+            Köp Dyson 360 Vis Nav hos Dyson.se
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
           </a>
         </div>
@@ -228,4 +236,10 @@ export const articleMeta = {
     url={affVisNav}
     text="Se Dyson 360 Vis Nav hos Dyson.se"
   />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema,
+  })} />
 </BaseLayout>
