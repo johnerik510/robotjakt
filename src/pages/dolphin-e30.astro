@@ -20,6 +20,10 @@ const specs = [
 
 const faqItems = [
   {
+    question: 'Är Dolphin E30 bra?',
+    answer: 'Ja, Dolphin E30 är vår topprankning bland prisvärda poolrobotar 2026 med betyget 9,0 av 10. Den rengör både botten och väggar, har enkel patronfilterrengöring och hanterar pooler upp till 10x5 meter. Maytronics-motorn är beprövad och håller i 7 till 10 år med rätt skötsel. För 95 procent av svenska villapoolägare är E30 det rätta valet.',
+  },
+  {
     question: 'Kan Dolphin E30 vara i pool hela sommaren?',
     answer: 'Dolphin E30 kan lämnas i poolen under säsongen, men bör tas upp ur vattnet efter varje rengöringscykel. Kontinuerlig vistelse i klorerat vatten sliter i onödan på motor, kabel och filter och kortar livslängden. Bästa praxis: kör roboten 2 till 3 timmar, ta upp den, skölj av med rent vatten och förvara skuggat. På det sättet håller Dolphin E30 i 7 till 10 år.',
   },
@@ -35,6 +39,14 @@ const faqItems = [
     question: 'Passar Dolphin E30 runda pooler?',
     answer: 'Ja, Dolphin E30 navigerar automatiskt efter poolens form och passar både rektangulära och runda pooler. Det viktigaste är att kontrollera kabellängden i förhållande till poolens diameter. Med 15 m kabel räcker roboten till de allra flesta villapooler. Kontrollera att kabeln inte stramar i de längsta banorna, roboten ska kunna nå alla delar av botten och väggarna utan att kabeln hindrar.',
   },
+  {
+    question: 'Hur lång är drifttiden på Dolphin E30?',
+    answer: 'Dolphin E30 har en cykeltid på cirka 2 timmar per körning. För en normal villapool upp till 10x5 meter räcker en cykel för att rengöra hela poolen, botten och väggar. Roboten stänger av sig automatiskt när cykeln är klar. För daglig användning under badsäsongen rekommenderar vi 2 till 3 körningar per vecka.',
+  },
+  {
+    question: 'Vad är skillnaden mellan Dolphin E30 och S200?',
+    answer: 'Dolphin S200 rengör även vattenlinjen, har svivlande kabel som inte trasslar, längre kabel (18 m) och hanterar större pooler (upp till 12x6 m). E30 är prisvärdare och räcker för standardpooler upp till 10x5 m där manuell vattenlinjerengöring accepteras. För 95 procent av svenska villapoolägare är E30 fullt tillräcklig.',
+  },
 ];
 
 const faqSchema = faqItems.map((item) => ({
@@ -46,8 +58,8 @@ const faqSchema = faqItems.map((item) => ({
   },
 }));
 export const articleMeta = {
-  title: "Maytronics Dolphin E30 Test 2026, Recension",
-  description: "Vi testar Dolphin E30, vår bästa poolrobot 2026. Rengör botten och väggar, enkel att använda och prisvärd. Läs vår fullständiga recension.",
+  title: "Dolphin E30 recension 2026: bäst i test poolrobot för villapool",
+  description: "Dolphin E30 recension 2026: 9,0/10 i test. Bäst i test poolrobot för villapool upp till 10x5 m. Rengör botten och väggar, 15 m kabel, 2 h drifttid.",
   publishDate: "2026-02-11",
   category: "Recension",
   image: "/images/dolphin-e30.webp",
@@ -56,16 +68,19 @@ export const articleMeta = {
 ---
 
 <ArticleLayout
-  title="Maytronics Dolphin E30 Test 2026, Recension"
-  description="Vi testar Dolphin E30, vår bästa poolrobot 2026. Rengör botten och väggar, enkel att använda och prisvärd. Läs vår fullständiga recension."
+  title="Dolphin E30 recension 2026: bäst i test poolrobot för villapool"
+  description="Dolphin E30 recension 2026: 9,0/10 i test. Bäst i test poolrobot för villapool upp till 10x5 m. Rengör botten och väggar, 15 m kabel, 2 h drifttid."
   ogImage="/images/dolphin-e30.webp"
   breadcrumbs={breadcrumbs}
-  lastUpdated="2026-03-29"
+  lastUpdated="2026-05-15"
   datePublished="2026-02-11"
 >
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
-    Maytronics Dolphin E30, Recension 2026
+    Dolphin E30 recension 2026, bäst i test poolrobot
   </h1>
+  <p class="text-text-light mb-6 leading-relaxed">
+    Dolphin E30 är vår testvinnare bland poolrobotar 2026 med betyget 9,0 av 10. Roboten rengör botten och väggar på en villapool upp till 10x5 meter på cirka 2 timmar, har 15 m kabel och en patronfilter som rensas på under 2 minuter. Bästa balansen mellan pris och prestanda för svenska villapoolägare.
+  </p>
 
   <!-- Verdict box -->
   <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">

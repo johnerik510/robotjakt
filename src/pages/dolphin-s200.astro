@@ -20,8 +20,12 @@ const specs = [
 
 const faqItems = [
   {
+    question: 'Är Dolphin S200 bra?',
+    answer: 'Ja, Dolphin S200 är mellansegmentets bästa poolrobot 2026 med betyget 8,5 av 10. Den rengör botten, väggar och vattenlinjen, har svivlande kabel som aldrig trasslar och 18 m räckvidd. Passar pooler upp till 12x6 meter. Det enda en standardanvändare saknar är app-styrning och schemaläggning, vilket kräver Dolphin Sigma.',
+  },
+  {
     question: 'Vad skiljer Dolphin S200 från Dolphin E30?',
-    answer: 'Dolphin S200 rengör vattenlinjen (E30 gör inte det), har längre kabel (18 m vs 15 m), svivlande kabel som inte trasslar sig, och hanterar pooler upp till 12x6 m istället för 10x5 m. S200 mer men ger betydligt bättre täckning.',
+    answer: 'Dolphin S200 rengör vattenlinjen (E30 gör inte det), har längre kabel (18 m vs 15 m), svivlande kabel som inte trasslar sig, och hanterar pooler upp till 12x6 m istället för 10x5 m. S200 är dyrare men ger betydligt bättre täckning.',
   },
   {
     question: 'Rengör Dolphin S200 vattenlinjen?',
@@ -33,7 +37,15 @@ const faqItems = [
   },
   {
     question: 'Hur ofta behöver jag köra Dolphin S200?',
-    answer: 'Under badsäsongen rekommenderas 2-3 körningar per vecka för att hålla poolen ren. Under perioder med mycket pollen, löv eller regn kan daglig körning behövas. Varje cykel tar cirka 2,5 timmar och roboten stänger av sig automatiskt.',
+    answer: 'Under badsäsongen rekommenderas 2 till 3 körningar per vecka för att hålla poolen ren. Under perioder med mycket pollen, löv eller regn kan daglig körning behövas. Varje cykel tar cirka 2,5 timmar och roboten stänger av sig automatiskt.',
+  },
+  {
+    question: 'Hur stor pool klarar Dolphin S200?',
+    answer: 'Dolphin S200 är dimensionerad för pooler upp till 12x6 meter, vilket täcker de allra flesta villapooler i Sverige. Den 18 m svivlande kabeln räcker till hörnen utan att spänna. Har du en pool större än 12x6 m bör du istället titta på Dolphin Sigma eller en kommersiell modell.',
+  },
+  {
+    question: 'Har Dolphin S200 app eller WiFi?',
+    answer: 'Nej, Dolphin S200 har varken app eller WiFi. Roboten startas manuellt via en knapp på transformatorn och kör en automatisk cykel på 2,5 timmar. För app-styrning, schemaläggning och fjärrkontroll behöver du gå upp till Dolphin Sigma. För de flesta poolägare räcker manuell start fullt ut.',
   },
 ];
 
@@ -46,8 +58,8 @@ const faqSchema = faqItems.map((item) => ({
   },
 }));
 export const articleMeta = {
-  title: "Maytronics Dolphin S200 Test 2026, Recension",
-  description: "Vi testar Dolphin S200, poolrobot med vattenlinje-rengöring, svivlande kabel och 18 m räckvidd. Komplett recension med betyg.",
+  title: "Dolphin S200 recension 2026: poolrobot med vattenlinjerengöring",
+  description: "Dolphin S200 recension 2026: 8,5/10 i test. Poolrobot med vattenlinjerengöring, svivlande 18 m kabel och 2,5 h drifttid. Pooler upp till 12x6 meter.",
   publishDate: "2026-02-15",
   category: "Recension",
   image: "/images/dolphin-s200.webp",
@@ -56,16 +68,19 @@ export const articleMeta = {
 ---
 
 <ArticleLayout
-  title="Maytronics Dolphin S200 Test 2026, Recension"
-  description="Vi testar Dolphin S200, poolrobot med vattenlinje-rengöring, svivlande kabel och 18 m räckvidd. Komplett recension med betyg."
+  title="Dolphin S200 recension 2026: poolrobot med vattenlinjerengöring"
+  description="Dolphin S200 recension 2026: 8,5/10 i test. Poolrobot med vattenlinjerengöring, svivlande 18 m kabel och 2,5 h drifttid. Pooler upp till 12x6 meter."
   ogImage="/images/dolphin-s200.webp"
   breadcrumbs={breadcrumbs}
-  lastUpdated="2026-04-04"
+  lastUpdated="2026-05-15"
   datePublished="2026-02-15"
 >
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
-    Maytronics Dolphin S200, Recension 2026
+    Dolphin S200 recension 2026, poolrobot med vattenlinjerengöring
   </h1>
+  <p class="text-text-light mb-6 leading-relaxed">
+    Dolphin S200 är mellansegmentets bästa poolrobot 2026 med betyget 8,5 av 10. Den rengör botten, väggar och vattenlinjen på cirka 2,5 timmar, har 18 m svivlande kabel som aldrig trasslar och hanterar pooler upp till 12x6 meter. Steget upp från E30 om du vill slippa skrubba vattenlinjen manuellt.
+  </p>
 
   <!-- Verdict box -->
   <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
