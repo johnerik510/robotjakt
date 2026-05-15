@@ -112,21 +112,29 @@ const faqSchema = faqItems.map((item) => ({
     "text": item.answer,
   },
 }));
+
+export const articleMeta = {
+  title: "Robotgräsklippare bäst i test 2026, 5 modeller rankade",
+  description: "Robotgräsklippare bäst i test 2026: Husqvarna Automower 430V NERA vinner med 4,8/5. Budget, mellanklass och utan slinga jämförda. Klara köpråd per gräsyta.",
+  publishDate: "2026-05-05",
+  category: "Topplista",
+  image: "/images/husqvarna-430x-nera.webp",
+};
 ---
 
 <BaseLayout
-  title="Robotgräsklippare bäst i test 2026, 5 modeller jämförda"
-  description="Robotgräsklippare bäst i test 2026. Husqvarna Automower 430V NERA vinner med 4,8/5. Mammotion LUBA, Gardena Sileno, Worx Landroid och Segway Navimow jämförda mot pris och yta."
+  title="Robotgräsklippare bäst i test 2026, 5 modeller rankade"
+  description="Robotgräsklippare bäst i test 2026: Husqvarna Automower 430V NERA vinner med 4,8/5. Budget, mellanklass och utan slinga jämförda. Klara köpråd per gräsyta."
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-<p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-05-05">2026-05-05</time></p>
+<p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-05-15">2026-05-15</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
-      Robotgräsklippare bäst i test 2026, {products.length} modeller rankade
+      Robotgräsklippare bäst i test 2026
     </h1>
     <p class="text-text-light mb-6 max-w-2xl">
-      Husqvarna Automower 430V NERA är vår vinnare 2026 med 4,8/5 och 3 200 m² i klippkapacitet. Vill du slippa perimeterkabel är Mammotion LUBA AWO 3000 bäst utan slinga. Här är hela rankingen, inklusive budget-, mellan- och premiumalternativ med GPS-RTK eller traditionell slinga.
+      Husqvarna Automower 430V NERA är vår vinnare med 4,8/5 och klippkapacitet upp till 3 200 m². Vill du slippa perimeterkabel är Mammotion LUBA AWO 3000 bästa utan-slinga-alternativet. Fem modeller rankade efter yta, lutning och pris.
     </p>
 
     <!-- Vinnar-CTA above the fold -->
