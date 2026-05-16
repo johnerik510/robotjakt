@@ -358,9 +358,5 @@ export const articleMeta = {
     "reviewBody": "Roborock S8 MaxV Ultra är det självklara valet för husdjurshem 2026. AI-kameran identifierar och undviker djuravföring, dubbla gummirullar trasslas inte av päls och stationen sköter självtömning, mopptvätt med varmvatten och torkning utan manuellt efterarbete.",
     "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
   })} />
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqSchema,
-  })} />
+  {/* FAQPage schema emitteras via FAQ-komponenten */}
 </BaseLayout>

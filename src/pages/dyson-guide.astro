@@ -237,9 +237,5 @@ export const articleMeta = {
     text="Se Dyson 360 Vis Nav hos Dyson.se"
   />
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqSchema,
-  })} />
+  {/* FAQPage schema emitteras via FAQ-komponenten */}
 </BaseLayout>

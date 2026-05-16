@@ -297,11 +297,7 @@ const productSchema = products.map((p, i) => ({
     ],
   })} />
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqSchema,
-  })} />
+  {/* FAQPage schema emitteras via FAQ-komponenten */}
 
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",

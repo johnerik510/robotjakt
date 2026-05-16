@@ -437,9 +437,5 @@ const faqSchema = faqItems.map((item) => ({
       "url": p.reviewUrl ? `https://robotjakt.se${p.reviewUrl}` : `https://robotjakt.se/robotdammsugare/`,
     })),
   })} />
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqSchema,
-  })} />
+  {/* FAQPage schema emitteras via FAQ-komponenten */}
 </BaseLayout>
