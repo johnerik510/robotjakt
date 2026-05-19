@@ -4,8 +4,8 @@
     {
       "name": "robotjakt",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "/Users/axeljonemyr/Documents/robotjakt/dist", "--listen", "4399", "--no-clipboard"],
-      "port": 4399
+      "runtimeArgs": ["serve", "/Users/axeljonemyr/Documents/robotjakt/dist", "--listen", "4328", "--no-clipboard"],
+      "port": 4328
     }
   ]
 }
