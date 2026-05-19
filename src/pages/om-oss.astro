@@ -72,10 +72,38 @@ const orgSchema = {
     </p>
 
     <h2 class="font-heading text-xl font-bold text-text">Redaktionen</h2>
-    <p>
-      <strong>Grundare:</strong> John Erik Johansson<br />
-      Las mer om var redaktion pa <a href="/om-redaktionen/" class="text-accent underline">Om redaktionen</a>.
-    </p>
+  </div>
+
+  <!-- Author card (not-prose) -->
+  <div class="not-prose bg-white rounded-2xl border border-border p-6 sm:p-8 my-6">
+    <div class="flex flex-col sm:flex-row items-start gap-6">
+      <img
+        src="/images/john-erik-johansson.webp"
+        alt="John Erik Johansson, grundare och robotexpert på Robotjakt.se"
+        class="w-24 h-24 rounded-full object-cover flex-shrink-0 mx-auto sm:mx-0"
+        width="96" height="96" loading="lazy"
+      />
+      <div>
+        <p class="font-heading text-xl font-bold text-text mb-1">John Erik Johansson</p>
+        <p class="text-accent font-semibold text-sm mb-3">Grundare & robotexpert</p>
+        <p class="text-text-light text-sm leading-relaxed mb-3">
+          Teknikentusiast med ett genuint intresse för smart hem-teknik och konsumentrobotar. Har testat över 50 robotdammsugare, robotgräsklippare och poolrobotar i verklig hemmiljö, från budgetmodeller till toppmodeller från Dreame, Roborock, Ecovacs och Husqvarna.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          {['Robotdammsugare', 'Robotgräsklippare', 'Poolrobotar', 'Smart hem', 'Reservdelar & underhåll'].map((skill) => (
+            <span class="inline-block bg-gray-100 border border-border text-text-light text-xs font-medium rounded-full px-3 py-1">
+              {skill}
+            </span>
+          ))}
+        </div>
+        <p class="text-sm mt-3">
+          <a href="/om-redaktionen/" class="text-accent underline font-semibold">Mer om redaktionen →</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="prose prose-slate max-w-none text-text-light text-sm leading-relaxed space-y-4">
 
     <h2 class="font-heading text-xl font-bold text-text">Kontakt</h2>
     <p>
