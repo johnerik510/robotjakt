@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-05-09T14:07:13.282Z",
-  "count": 5,
+  "generatedAt": "2026-05-21T20:02:58.422Z",
+  "count": 4,
   "summary": {
     "08-image-binary-duplicates": 1,
-    "15-rendered-images": 4
+    "15-rendered-images": 1,
+    "16-rendered-image-files-exist": 2
   },
   "signatures": [
     "82098d8c860c6ae6",
-    "026e9df8e3a0af3d",
-    "2201b81ed48a65c5",
-    "91c4623cc2640988",
-    "f42bdc262603b120"
+    "f42bdc262603b120",
+    "ee6630fdb1d1b606",
+    "72186ffe8dc2671d"
   ]
 }
