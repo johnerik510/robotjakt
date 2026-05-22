@@ -4,8 +4,45 @@ import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ProductCard from '../components/ProductCard.astro';
 
-const villanytt = 'https://addrevenue.io/t?a=984922&c=3467327&url=https%3A%2F%2Fvillanytt.se%2Fprodukt-kategori%2Fpoolrobot%2F';
+const products = [
+  {
+    rank: 1,
+    name: 'Zodiac Electric Pool Cleaner GT3220',
+    image: '/images/zodiac-gt3220.webp',
+    rating: 4.5,
+    badge: 'Bäst budget',
+    pros: ['Rengör botten och väggar', 'Pålitlig Zodiac-kvalitet', 'Enkel filtertömning', 'Prisvärd ingångsnivå'],
+    cons: ['Ingen app/WiFi', 'Kabeldriven'],
+    ctaText: 'Se pris hos CS Megastore',
+    ctaUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=20565812&url=https://www.csmegastore.se/i/20565812/zodiac-electric-pool-cleaner-gt3220',
+    dataProduct: 'Zodiac GT3220',
+  },
+  {
+    rank: 2,
+    name: 'Planet Pool Orca 50CL',
+    image: '/images/orca-50cl.webp',
+    rating: 4.3,
+    badge: 'Batteridrift, ingen kabel',
+    pros: ['Batteridrift, ingen kabel', 'Rengör botten och väggar', 'Lättviktig 4,5 kg', 'Passar pooler upp till 80 m³'],
+    cons: ['Ingen app', 'Begränsad drifttid per laddning'],
+    ctaText: 'Se pris hos Villanytt',
+    ctaUrl: 'https://addrevenue.io/t?c=3467327&a=984922&m=SE&u=https%3A%2F%2Fvillanytt.se%2Fprodukt%2Fpoolrobot-orca-50cl-batteridriven%2F%3Futm_source%3DGoogle%20Shopping%26utm_campaign%3DGoogle%20Shopping%26utm_medium%3Dcpc%26utm_term%3D62432',
+    dataProduct: 'Planet Pool Orca 50CL',
+  },
+  {
+    rank: 3,
+    name: 'CF 200CL Poolrobot',
+    image: '/images/cf-200cl.webp',
+    rating: 4.2,
+    pros: ['Rengör botten och väggar', 'Kraftfull sugmotor', 'Enkel att hantera', 'Passar de flesta poolformer'],
+    cons: ['Ingen app', 'Kabeldriven'],
+    ctaText: 'Se pris hos Villanytt',
+    ctaUrl: 'https://addrevenue.io/t?c=3467327&a=984922&m=SE&u=https%3A%2F%2Fvillanytt.se%2Fprodukt%2Fcf-200cl-poolrobot%2F%3Futm_source%3DGoogle%20Shopping%26utm_campaign%3DGoogle%20Shopping%26utm_medium%3Dcpc%26utm_term%3D74422',
+    dataProduct: 'CF 200CL Poolrobot',
+  },
+];
 
 const breadcrumbs = [
   { label: 'Poolrobot', href: '/poolrobot/' },
@@ -15,19 +52,19 @@ const breadcrumbs = [
 const faqItems = [
   {
     question: 'Vad är den billigaste poolroboten som faktiskt fungerar?',
-    answer: 'Intex Auto Pool Cleaner till är den absolut billigaste och fungerar för grundläggande bottensugning i mindre pooler. Den kräver dock att filterpumpen är igång och rengör bara botten. Bestway Flowclear AquaSurge till är en bättre budget-kompromiss, den har en inbyggd motor och är mer självständig.',
+    answer: 'Zodiac Electric Pool Cleaner GT3220 är det bästa prisvärdaalternativet för de flesta. Den rengör botten och väggar, har pålitlig Zodiac-kvalitet och kostar klart under premiumsegmentet. Planet Pool Orca 50CL är ett bra alternativ om du vill slippa kabeln.',
   },
   {
     question: 'Klarar billiga poolrobotar att rengöra väggarna?',
-    answer: 'De flesta poolrobotar till lägre pris rengör bara poolbotten. Swim & Fun Deep Clean Robot är ett undantag och klarar nedre väggpartiet, men klättrar inte hela vägen upp. För fullständig väggstädning inklusive vattenlinjen behöver du en mellanklass- eller premiumrobot som Maytronics Dolphin E30 eller högre.',
+    answer: 'Ja, Zodiac GT3220 och Planet Pool Orca 50CL rengör både botten och väggar. Orca 50CL är batteridrift och klättrar längs väggarna utan kabel. För vattenlinjestädning och app-styrning behöver du en premiumrobot som Zodiac CNX-LI 5220 IQ.',
   },
   {
     question: 'Hur länge håller en billig poolrobot?',
-    answer: 'Budgetrobotar har generellt kortare livslängd än mellanklass- och premiummodeller, räkna med 2 till 4 år med rätt skötsel, jämfört med 5 till 10 år för bättre modeller. Det viktigaste för livslängden är att ta upp roboten ur poolen efter varje cykel, spola av med rent vatten och förvara den skyddat från sol och frost. Utsätts roboten konstant för poolkemikalier försämras motortätningar och kabel mycket snabbare.',
+    answer: 'Budgetrobotar håller typiskt 3 till 5 år med rätt skötsel, jämfört med 7 till 10 år för premiummodeller. Det viktigaste är att ta upp roboten ur poolen efter varje cykel, spola av med rent vatten och förvara den skyddat från sol och frost.',
   },
   {
     question: 'Är det värt att köpa en billig poolrobot eller ska man spara ihop?',
-    answer: 'Det beror på din pool. Har du en enkel pool på 6 x 3 m som bara behöver bottenrengöring är Bestway Flowclear AquaSurge ett bra val. Har du en stor pool, vita väggar som kräver regelbunden väggstädning eller prioriterar lång livslängd är det värt att spara ihop till Dolphin E30 vid . Kostnaden per år skiljer sig inte dramatiskt när man räknar in kortare livslängd på billigare modeller.',
+    answer: 'Det beror på din pool. Har du en standardpool och vill ha automatisk botten- och väggstädning utan app är Zodiac GT3220 ett utmärkt val. Har du en stor pool, prioriterar app-styrning eller schemaläggning är det värt att gå upp till Zodiac CNX-LI 5220 IQ. Räknat per år är prisskillnaden ofta lägre än man tror när man tar hänsyn till livslängd.',
   },
 ];
 
@@ -44,7 +81,7 @@ export const articleMeta = {
   description: "Vi testar de billigaste poolrobotarna 2026. Hitta en prisvärd robot som klarar din pool. Se topplista med pris, rengöringsresultat och betyg.",
   publishDate: "2026-02-03",
   category: "Topplista",
-  image: "/images/dolphin-e30.webp",
+  image: "/images/zodiac-gt3220.webp",
 };
 
 ---
@@ -67,34 +104,34 @@ export const articleMeta = {
     <!-- Snabbjämförelse -->
     <section class="mb-8" aria-label="Jämförelsetabell billiga poolrobotar">
       <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse, till lägre pris</h2>
-      <div class="overflow-x-auto rounded-xl border border-border">
-        <table class="w-full text-sm bg-white">
+      <div class="bg-white rounded-xl border border-border overflow-hidden">
+        <table class="w-full text-sm">
           <thead>
             <tr class="border-b border-border bg-bg-alt">
+              <th class="text-left px-4 py-3 font-semibold text-text">#</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Rengör väggar</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Egen motor</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Klättrar väggar</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Betyg</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-border">
-            <tr>
-              <td class="px-4 py-3 font-medium text-text">Bestway Flowclear AquaSurge</td>
-              <td class="px-4 py-3 text-cta font-medium">Nej</td>
+            <tr class="bg-winner/5">
+              <td class="px-4 py-3 font-semibold text-winner">1</td>
+              <td class="px-4 py-3 font-medium text-text">Zodiac GT3220 <span class="ml-1 text-xs bg-winner text-white px-1.5 py-0.5 rounded">Bäst budget</span></td>
               <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 text-winner font-semibold">7,5/10</td>
+              <td class="px-4 py-3 text-winner font-semibold">9,0/10</td>
             </tr>
             <tr class="bg-bg-alt/50">
-              <td class="px-4 py-3 font-medium text-text">Swim & Fun Deep Clean Robot</td>
-              <td class="px-4 py-3 text-text-light font-medium">Nedre väggar</td>
+              <td class="px-4 py-3 font-semibold text-text-lighter">2</td>
+              <td class="px-4 py-3 font-medium text-text">Planet Pool Orca 50CL</td>
               <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 text-winner font-semibold">8,0/10</td>
+              <td class="px-4 py-3 font-semibold">8,6/10</td>
             </tr>
             <tr>
-              <td class="px-4 py-3 font-medium text-text">Intex Auto Pool Cleaner</td>
-              <td class="px-4 py-3 text-cta font-medium">Nej</td>
-              <td class="px-4 py-3 text-cta font-medium">Nej (via pump)</td>
-              <td class="px-4 py-3 text-text-light font-semibold">6,5/10</td>
+              <td class="px-4 py-3 font-semibold text-text-lighter">3</td>
+              <td class="px-4 py-3 font-medium text-text">CF 200CL Poolrobot</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 font-semibold">8,2/10</td>
             </tr>
           </tbody>
         </table>
@@ -102,131 +139,10 @@ export const articleMeta = {
     </section>
 
     <!-- Produkter -->
-    <div class="space-y-8 mb-12" id="produkter">
-
-      <!-- Produkt 1: Bestway Flowclear AquaSurge -->
-      <section class="bg-white rounded-xl border border-border overflow-hidden">
-        <div class="bg-bg-alt px-5 py-3 border-b border-border flex items-center gap-3">
-          <span class="bg-winner text-white text-xs font-bold px-2 py-1 rounded">BÄST BUDGET</span>
-          <span class="font-heading font-bold text-text">Bestway Flowclear AquaSurge</span>
-          <span class="ml-auto font-bold text-text"></span>
-        </div>
-        <div class="p-5">
-          <p class="text-text-light text-sm leading-relaxed mb-4">
-            Bestway Flowclear AquaSurge är det bästa alternativet om du vill ha en självständig poolrobot med inbyggd motor till lägre pris. Den kör automatiskt längs poolbotten, suger upp smuts och sand och lagrar allt i ett inbyggt filter. Enkel, pålitlig och passar de flesta rektangulära pooler upp till ca 8 x 4 m.
-          </p>
-          <div class="grid sm:grid-cols-2 gap-4 mb-4">
-            <div>
-              <p class="text-xs font-semibold text-text mb-2">Vad den klarar</p>
-              <ul class="space-y-1">
-                {['Rengör poolbotten automatiskt', 'Inbyggd motor, ingen filterpump krävs', 'Enkel att använda och ta upp'].map(p => (
-                  <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-winner font-bold mt-0.5">+</span>{p}</li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <p class="text-xs font-semibold text-text mb-2">Kompromisser</p>
-              <ul class="space-y-1">
-                {['Rengör inte väggarna', 'Basic slumpnavigering', 'Kortare livslängd än mellanklass'].map(c => (
-                  <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-cta font-bold mt-0.5">-</span>{c}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <a
-            href={villanytt}
-            rel="sponsored nofollow noopener noreferrer"
-            target="_blank"
-            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
-          >
-            Se pris på Bestway AquaSurge
-            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-          </a>
-        </div>
-      </section>
-
-      <!-- Produkt 2: Swim & Fun Deep Clean Robot -->
-      <section class="bg-white rounded-xl border border-border overflow-hidden">
-        <div class="bg-bg-alt px-5 py-3 border-b border-border flex items-center gap-3">
-          <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">BÄST UNDER 5000 KR</span>
-          <span class="font-heading font-bold text-text">Swim & Fun Deep Clean Robot</span>
-          <span class="ml-auto font-bold text-text"></span>
-        </div>
-        <div class="p-5">
-          <p class="text-text-light text-sm leading-relaxed mb-4">
-            Swim & Fun Deep Clean Robot är det bästa valet strax till lägre pris och sticker ut från konkurrenterna i budgetsegmentet genom att rengöra botten och de nedre väggpartierna. Det gör den till ett klart bättre alternativ för pooler där alger och smuts samlas längs kanten. Finns hos svenska återförsäljare med bra service.
-          </p>
-          <div class="grid sm:grid-cols-2 gap-4 mb-4">
-            <div>
-              <p class="text-xs font-semibold text-text mb-2">Vad den klarar</p>
-              <ul class="space-y-1">
-                {['Rengör botten och nedre väggar', 'Bra filtreringskapacitet', 'Prisvärd mellanväg', 'Tillgänglig hos svenska återförsäljare'].map(p => (
-                  <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-winner font-bold mt-0.5">+</span>{p}</li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <p class="text-xs font-semibold text-text mb-2">Kompromisser</p>
-              <ul class="space-y-1">
-                {['Klättrar inte hela vägen upp på väggarna', 'Ingen app-styrning', 'Kortare livslängd än premiumrobotar'].map(c => (
-                  <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-cta font-bold mt-0.5">-</span>{c}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <a
-            href={villanytt}
-            rel="sponsored nofollow noopener noreferrer"
-            target="_blank"
-            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
-          >
-            Se pris på Swim & Fun Deep Clean
-            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-          </a>
-        </div>
-      </section>
-
-      <!-- Produkt 3: Intex Auto Pool Cleaner -->
-      <section class="bg-white rounded-xl border border-border overflow-hidden">
-        <div class="bg-bg-alt px-5 py-3 border-b border-border flex items-center gap-3">
-          <span class="bg-text-lighter text-white text-xs font-bold px-2 py-1 rounded">ENKLASTE</span>
-          <span class="font-heading font-bold text-text">Intex Auto Pool Cleaner</span>
-          <span class="ml-auto font-bold text-text"></span>
-        </div>
-        <div class="p-5">
-          <p class="text-text-light text-sm leading-relaxed mb-4">
-            Intex Auto Pool Cleaner är det allra billigaste alternativet men skiljer sig fundamentalt från de andra, den har ingen egen motor utan ansluts direkt till poolens filterpump och sugkraft driver rengöringen. Den rör sig längs botten via vattenflödet och suger upp smuts. Fungerar bra för enklare Intex-pooler men räknas egentligen inte som en robot utan snarare som ett halvautomatiskt sug-tillbehör.
-          </p>
-          <div class="grid sm:grid-cols-2 gap-4 mb-4">
-            <div>
-              <p class="text-xs font-semibold text-text mb-2">Vad den klarar</p>
-              <ul class="space-y-1">
-                {['Extremt lågt pris', 'Rengör botten passivt via pumpens sugkraft', 'Enkel montering på filterpumpen'].map(p => (
-                  <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-winner font-bold mt-0.5">+</span>{p}</li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <p class="text-xs font-semibold text-text mb-2">Kompromisser</p>
-              <ul class="space-y-1">
-                {['Ingen egen motor, kräver filterpumpen', 'Begränsad täckning, missar hörn', 'Rengör inte väggar', 'Passar bara Intex-pooler'].map(c => (
-                  <li class="flex items-start gap-1.5 text-xs text-text-light"><span class="text-cta font-bold mt-0.5">-</span>{c}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <a
-            href={villanytt}
-            rel="sponsored nofollow noopener noreferrer"
-            target="_blank"
-            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
-          >
-            Se pris på Intex Auto Pool Cleaner
-            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-          </a>
-        </div>
-      </section>
-
+    <div class="space-y-6 mb-12" id="produkter">
+      {products.map(product => (
+        <ProductCard {...product} />
+      ))}
     </div>
 
     <!-- Vad du kompromissar med -->
@@ -234,25 +150,25 @@ export const articleMeta = {
       <h2 class="font-heading text-2xl font-bold text-text mb-4">Vad kompromissar du med i budgetsegmentet?</h2>
       <div class="space-y-5 text-sm text-text-light leading-relaxed">
         <div class="bg-white rounded-xl border border-border p-5">
-          <h3 class="font-semibold text-text mb-2">Ingen väggstädning (till lägre pris)</h3>
-          <p>Poolrobotar under rengör bara botten. Alger och kalkfläckar längs väggkanten tas inte bort automatiskt, det kräver manuell borstning eller en dyrare robot. Om dina poolvägg lätt missfärgas är väggstädning ett must och du behöver gå upp till  (Dolphin E30).</p>
+          <h3 class="font-semibold text-text mb-2">Ingen WiFi-app</h3>
+          <p>Budgetrobotar som Zodiac GT3220 och Orca 50CL saknar app-styrning. Du startar dem manuellt och hämtar dem när cykeln är klar. Det fungerar utmärkt för daglig rengöring men du kan inte schemalägga eller fjärrstyra. Zodiac CNX-LI 5220 IQ erbjuder WiFi-app om det är viktigt.</p>
         </div>
         <div class="bg-white rounded-xl border border-border p-5">
           <h3 class="font-semibold text-text mb-2">Kortare livslängd</h3>
-          <p>Billigare komponenter innebär kortare livslängd. En budgetrobot håller typiskt 2 till 4 år med rätt skötsel, mot 5 till 10 år för bättre modeller. Räknar du in livslängden blir kostnaden per år inte dramatiskt lägre jämfört med ett mellanklasskval.</p>
+          <p>Billigare komponenter innebär kortare livslängd. En budgetrobot håller typiskt 3 till 5 år med rätt skötsel, mot 7 till 10 år för premiummodeller. Ta alltid upp roboten ur poolen efter varje cykel och skölj av med rent vatten.</p>
         </div>
         <div class="bg-white rounded-xl border border-border p-5">
           <h3 class="font-semibold text-text mb-2">Basic navigering</h3>
-          <p>Billiga robotar kör i slumpmässiga mönster utan intelligent täckning. De missar ibland hörn och kör över samma ytor upprepade gånger. Resultatet är ändå acceptabelt för enklare pooler, men inte lika effektivt som intelligentare modeller.</p>
+          <p>Budgetrobotar kör i systematiska men enkla mönster utan intelligent täckning. De klarar de flesta poolformer men premium-modeller med avancerad navigering är mer effektiva per timme och missar färre ytor.</p>
         </div>
       </div>
     </section>
 
     <!-- CTA-box: vill du ha mer? -->
     <section class="mb-10 bg-accent/5 border border-accent/20 rounded-xl p-6">
-      <h2 class="font-heading text-xl font-bold text-text mb-2">Vill du ha mer, och har budget för det?</h2>
+      <h2 class="font-heading text-xl font-bold text-text mb-2">Vill du ha en premiumrobot?</h2>
       <p class="text-text-light text-sm leading-relaxed mb-4">
-        Mellanklass- och premiumrobotar rengör botten och väggar, håller längre och ger bättre täckning. Dolphin E30 till är vår bäst-i-test och rekommenderas för de flesta villapooler.
+        Zodiac CNX-LI 5220 IQ erbjuder WiFi-app, rengör botten, väggar och vattenlinje och håller längre. Se hela topplistan med alla poolrobotar rankade.
       </p>
       <a
         href="/poolrobot/"
@@ -292,8 +208,8 @@ export const articleMeta = {
   </div>
 
   <StickyCTA
-    text="Se bästa billiga poolrobot"
-    url="#produkter"
+    text="Zodiac GT3220, bästa budgetpoolrobot"
+    url="https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=20565812&url=https://www.csmegastore.se/i/20565812/zodiac-electric-pool-cleaner-gt3220"
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({

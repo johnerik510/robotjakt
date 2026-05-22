@@ -9,51 +9,39 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 const products = [
   {
     rank: 1,
-    name: 'Husqvarna Automower 430V NERA',
-    image: '/images/husqvarna-430x-nera.webp',
+    name: 'Dreame A3 AWD Pro 5000',
+    image: '/images/dreame-a3-awd-pro.webp',
     rating: 4.8,
     badge: 'Bäst för stor trädgård 2026',
-    pros: ['3 200 m², klarar de största villaträdgårdar', 'GPS + 4G-navigering med exakt precision', 'Solinladdning kompatibel', 'Tyst 58 dB, störer inte', 'Bäst servicenätverk i Sverige'],
-    cons: ['Hög prisklass', 'Perimeterkabel krävs vid installation', 'Professionell installation rekommenderas'],
-    ctaText: 'Läs recension',
-    ctaUrl: '/robotgrasklippare/',
-
+    pros: ['Upp till 5 000 m² utan perimeterkabel', 'RTK GPS + LiDAR, AWD-drift', '45 graders lutningskapacitet', 'Enkel app-installation utan kabel'],
+    cons: ['Hög prisklass', 'RTK-antenn krävs (ingår)'],
+    ctaText: 'Se pris hos CS Megastore',
+    ctaUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25340186&url=https://www.csmegastore.se/i/25340186/dreame-a3-awd-pro-robotgrasklippare-5000m2',
+    dataProduct: 'Dreame A3 AWD Pro 5000',
   },
   {
     rank: 2,
-    name: 'Mammotion LUBA AWO 3000',
-    image: '/images/mammotion-luba-awo-3000.webp',
-    rating: 4.5,
-    badge: 'Utan slinga, bästa GPS-alternativet',
-    pros: ['3 000 m² utan perimeterkabel, RTK GPS', '4G och kamerasystem för hinderundvikning', 'Kan klippa komplexa former via app-ritning', '26 cm klippbredd för effektiv täckning', 'Enklare installation än kabelbaserade modeller'],
-    cons: ['RTK-antenn krävs (ingår)', 'Kräver fri sikt mot himlen för GPS', 'Färre oberoende långtidstester'],
-    ctaText: 'Se hela topplistan',
-    ctaUrl: '/robotgrasklippare/',
-
+    name: 'Mammotion Luba 3 5000X',
+    image: '/images/mammotion-luba-3-5000x.webp',
+    rating: 4.6,
+    badge: 'AWD, 5 000 m²',
+    pros: ['5 000 m² utan perimeterkabel, RTK GPS + LiDAR', 'AWD-drift, klarar 45 grader', '4G och kamerasystem', 'Klippa komplexa former via app-ritning'],
+    cons: ['Dyrast i klassen', 'RTK-antenn krävs'],
+    ctaText: 'Se pris hos CS Megastore',
+    ctaUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25727478&url=https://www.csmegastore.se/i/25727478/mammotion-luba-3-5000x-awd-lidar-rtk-robotgrasklippare',
+    dataProduct: 'Mammotion Luba 3 5000X',
   },
   {
     rank: 3,
-    name: 'Husqvarna Automower 310E NERA',
-    image: '/images/husqvarna-automower-315x.webp',
-    rating: 4.5,
-    badge: 'Prisvärd för upp till 1600 m²',
-    pros: ['1 600 m² med beprövad GPS-navigering', 'Bra app med 4G-uppkoppling', 'Robust och driftsäker i alla väder', 'Enkel service och reservdelstillgång', 'Tyst och diskret drift'],
-    cons: ['Räcker inte för riktigt stora tomter', 'Perimeterkabel krävs'],
-    ctaText: 'Läs recension',
-    ctaUrl: '/robotgrasklippare/',
-
-  },
-  {
-    rank: 4,
-    name: 'Segway Navimow H500E',
-    image: '/images/segway-navimow-h500e.webp',
-    rating: 4.3,
-    badge: 'Prisvärd GPS-modell utan slinga',
-    pros: ['Upp till 1 500 m² utan perimeterkabel', 'GPS-navigering med exakta gränslinjer', 'Snabb installation, klar på 30 till 60 minuter', 'WiFi och Bluetooth-styrning via app', 'Prisvärt alternativ utan kabelbehov'],
-    cons: ['Lägre max-yta än premiumalternativ', 'Kräver fri sikt för GPS', 'Enklare navigeringslogik än Husqvarna'],
-    ctaText: 'Se pris på Segway Navimow H500E',
-    ctaUrl: 'https://go.adt267.com/t/t?a=1615916040&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.komplett.se%2Fproduct%2F1320162%2Fhem-fritid%2Ftradgaard%2Fgrasklippare%2Frobotgrasklippare%2Fmova-600-robotgrasklippare',
-
+    name: 'Segway Navimow i220E',
+    image: '/images/segway-navimow-i220e.webp',
+    rating: 4.4,
+    badge: 'LiDAR Pro 2 000 m²',
+    pros: ['23 997 kr', 'Utan perimeterkabel, LiDAR + GNSS', 'Upp till 2 000 m²', 'IP67, klarar allt väder'],
+    cons: ['Kräver fri sikt mot himlen', 'Max 2 000 m²'],
+    ctaText: 'Se pris hos CS Megastore',
+    ctaUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25567775&url=https://www.csmegastore.se/i/25567775/segway-navimow-i220e-lidar-pro-robotgrasklippare-2000-m2',
+    dataProduct: 'Segway Navimow i220E',
   },
 ];
 
@@ -227,8 +215,8 @@ export const articleMeta = {
   </div>
 
   <StickyCTA
-    text="Se pris på Husqvarna Automower 430V NERA"
-    url="/husqvarna-automower-430x-nera/"
+    text="Se pris på Dreame A3 AWD Pro 5000 hos CS Megastore"
+    url="https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25340186&url=https://www.csmegastore.se/i/25340186/dreame-a3-awd-pro-robotgrasklippare-5000m2"
   />
 <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",

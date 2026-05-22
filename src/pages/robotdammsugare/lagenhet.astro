@@ -10,67 +10,51 @@ import AuthorByline from '../../components/AuthorByline.astro';
 const products = [
   {
     rank: 1,
-    name: 'Dreame L20 Ultra',
-    image: '/images/dreame-l20-ultra.webp',
-    rating: 4.6,
-    badge: 'Bäst för lägenhet',
-    pros: ['Kompakt, 9,9 cm hög, passar under soffan', 'Fullautomatisk station', 'LiDAR-navigering perfekt för öppen planlösning', 'Tyst i normalläge'],
-    cons: ['Station tar golvyta', 'Pris i överkant för litet hem'],
-    ctaText: 'Läs recension',
-    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fdreame-l10s-ultra-gen-2-151994',
-    reviewUrl: '/dreame-l20-ultra/',
+    name: 'Dreame L10s Ultra Gen 3',
+    image: '/images/dreame-l10s-ultra-gen3.webp',
+    rating: 4.7,
+    badge: 'Bäst för lägenhet 2026',
+    pros: ['8 490 kr, bäst pris med LiDAR och station', 'Fullautomatisk basstation', 'LiDAR-navigering för öppen planlösning', 'Moppfunktion med lyft vid mattor'],
+    cons: ['Station tar golvyta', 'Inga varmvattentvättar'],
+    ctaText: 'Se pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=153176&url=https://www.elon.se/dreame-l10s-ultra-gen-3-black-153176',
+    dataProduct: 'Dreame L10s Ultra Gen 3',
   },
   {
     rank: 2,
-    name: 'Roborock Q Revo',
-    image: '/images/roborock-q-revo.webp',
-    rating: 4.3,
-    badge: 'Bra val mellanklass',
-    pros: ['Självtömmande station', 'Moppfunktion med automatisk lyft', 'Enkel Roborock-app', 'Bra sugkraft för pris'],
-    cons: ['Något bullrigare vid max', 'Moppmodulen når inte hörnen perfekt'],
-    ctaText: 'Se pris hos Komplett',
-    ctaUrl: 'https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1&cupa_sku=1310891&url=https://www.komplett.se/product/1310891/hem-fritid/dammsugare-rengoring/robotdammsugare/roborock-qrevo-maxv-robotdammsugare-svart?channable=02d4c76964003133313038393130& Home_Dust & Cleaning',
-    reviewUrl: '/roborock-q-revo/',
-
-    teknikproffsetUrl: 'https://dot.teknikproffset.se/t/t?a=1954032646&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.teknikproffset.se%2Fhem-hushall-tradgard%2Fstadprodukter%2Fdammsugare-tillbehor%2Frobotdammsugare%2Froborock-q-revo-maxv-vit',
-    proshopUrl: 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotdammsugare%2FRoborock-Robotdammsugare-Q-Revo-MaxV-Black%2F3342139',
-
+    name: 'Roborock Qrevo S',
+    image: '/images/roborock-qrevo-s.webp',
+    rating: 4.4,
+    badge: 'Bra Roborock mellanklass',
+    pros: ['5 588 kr', 'LiDAR-navigering', 'Moppfunktion', 'Beprövad Roborock-app'],
+    cons: ['Ingen självtömmande station', 'Manuell tömning krävs'],
+    ctaText: 'Se pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=146251&url=https://www.elon.se/roborock-qrevo-s-white-146251',
+    dataProduct: 'Roborock Qrevo S',
   },
   {
     rank: 3,
-    name: 'eufy X10 Pro Omni',
-    image: '/images/eufy-x10-pro-omni.webp',
-    rating: 4.4,
-    badge: 'MopExtend-teknik',
-    pros: ['MopExtend når kanter', 'Kompakt station', 'LiDAR-navigering', 'Prisvärt vs Dreame X40'],
-    cons: ['Lägre sugkraft (8 000 Pa)', 'eufy-appen enklare än konkurrenter'],
-    ctaText: 'Se pris hos Proshop',
-    ctaUrl: 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotdammsugare%2FEufy-Robotdammsugare-X10-Pro-Omni-Black%2F3282928',
-    reviewUrl: '/eufy-x10-pro-omni/',
+    name: 'Dreame D20 Ultra',
+    image: 'https://www.elon.se/media/catalog/product/1/5/152003_1_ee2623103eca84a9664991d40cbf14cc.jpeg',
+    rating: 4.5,
+    badge: 'Billigast med station',
+    pros: ['4 990 kr, billigast med självtömmande station', 'LiDAR-navigering', 'Moppfunktion', 'Enkel app-styrning'],
+    cons: ['Enklare hinderdetektion', 'Lägre sugkraft'],
+    ctaText: 'Se pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=152003&url=https://www.elon.se/dreame-d20-ultra-152003',
+    dataProduct: 'Dreame D20 Ultra',
   },
   {
     rank: 4,
-    name: 'Neatsvor X650 Pro',
-    image: '/images/neatsvor-x650-pro.webp',
-    rating: 4.2,
-    badge: 'Bäst budget med mopp',
-    pros: ['6 000 Pa, starkast i klassen för priset', 'Mopp och dammsugning i ett pass', 'Tyst drift, bra för lägenhet', 'App + Google Home', 'Fri frakt, 1 till 3 dagar'],
-    cons: ['Ingen automatisk tömningsstation', 'Ingen LiDAR'],
+    name: 'Neatsvor X520',
+    image: 'https://www.neatsvor.se/wp-content/uploads/2022/03/Neatsvor-X520-robotdammsugare.webp',
+    rating: 4.1,
+    badge: 'Budget utan station',
+    pros: ['4 990 kr', 'Moppfunktion ingår', 'App + Google Home', 'Fri frakt'],
+    cons: ['Ingen LiDAR', 'Enklare navigering'],
     ctaText: 'Köp hos Neatsvor',
-    ctaUrl: 'https://addrevenue.io/t?c=3467327&a=985945&m=SE&u=https%3A%2F%2Fwww.neatsvor.se%2Fprodukt%2Fneatsvor-x650-pro-robotdammsugare%2F',
-    dataProduct: 'Neatsvor X650 Pro',
-  },
-  {
-    rank: 5,
-    name: 'Dreame D10s Pro',
-    image: '/images/dreame-d10s-pro.webp',
-    rating: 3.9,
-    badge: 'Bäst budget LiDAR',
-    pros: ['LiDAR till lägre pris', 'Moppfunktion ingår', 'Lång drifttid', 'Kompakt design'],
-    cons: ['Ingen automatisk station', 'Liten dammkorg (200 ml)', '4 000 Pa räcker inte för husdjurshår'],
-    ctaText: 'Se pris hos Teknikproffset',
-    ctaUrl: 'https://dot.teknikproffset.se/t/t?a=1954032646&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.teknikproffset.se%2Fhem-hushall-tradgard%2Fstadprodukter%2Fdammsugare-tillbehor%2Frobotdammsugare%2Fdreame-d10s-pro-robotdammsugare',
-    reviewUrl: '/dreame-d10s-pro/',
+    ctaUrl: 'https://addrevenue.io/t?c=3467327&a=985945&m=SE&u=https%3A%2F%2Fwww.neatsvor.se%2Fprodukt%2Fneatsvor-x520-robotdammsugare%2F',
+    dataProduct: 'Neatsvor X520',
   },
 ];
 
@@ -195,8 +179,8 @@ export const articleMeta = {
   </div>
 
   <StickyCTA
-    text="Se bästa robotdammsugaren för lägenhet"
-    url="/dreame-l20-ultra/"
+    text="Se pris på Dreame L20 Ultra hos Proshop"
+    url="https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotdammsugare%2FDreame-Robotdammsugare-L20-Ultra%2F3266641"
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({

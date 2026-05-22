@@ -9,50 +9,51 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 const products = [
   {
     rank: 1,
-    name: 'Gardena Sileno City 500',
-    image: '/images/gardena-sileno-city-500.webp',
-    rating: 4.5,
+    name: 'MOVA 1000',
+    image: '/images/mova-1000.webp',
+    rating: 4.3,
     badge: 'Bäst för liten trädgård 2026',
-    pros: ['Upp till 500 m², perfekt för villa eller radhus', 'Tyst drift 57 dB, störer inte grannar', 'Enkel installation med perimeterkabel', 'Pålitlig Gardena-kvalitet', 'Bra app med grundläggande schemaläggning'],
-    cons: ['Slinga krävs', 'Begränsad app jämfört med dyrare alternativ', 'Max 500 m², inte för medelstora trädgårdar'],
-    ctaText: 'Se pris på Gardena Sileno City 500',
-    ctaUrl: 'https://go.adt284.net/t/t?a=1870484629&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotgraesklippare%2FGardena-SILENO-city-Robotic-Lawnmower-500-m%2F3050973',
+    pros: ['Billigast med GPS-navigering', 'Ingen perimeterkabel', 'Upp till 1 000 m²', 'Enkel installation i appen'],
+    cons: ['Relativt nytt märke', 'Begränsad servicehistorik'],
+    ctaText: 'Se pris hos Kjell',
+    ctaUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66311&url=http://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare-tillbehor/robotgrasklippare/mova-1000-robotic-lawn-mower-robotgrasklippare-p66311',
+    dataProduct: 'MOVA 1000',
   },
   {
     rank: 2,
-    name: 'Worx Landroid M500',
-    image: '/images/worx-landroid-m500.webp',
-    rating: 4.3,
-    badge: 'Bäst WiFi-styrning',
-    pros: ['500 m² med WiFi-app och AIA-navigering', 'Modulärt system, bygg ut med tillbehör', 'Röstkontroll via Alexa och Google', 'Kan klippa i smala passager'],
-    cons: ['Slinga krävs', 'Navigering sämre än Husqvarna i komplexa former', 'Dyrare förbrukningsmaterial'],
-    ctaText: 'Se hela topplistan',
-    ctaUrl: '/robotgrasklippare/',
-
+    name: 'Worx Landroid Vision 500 (WR305E)',
+    image: '/images/worx-landroid-vision-500.webp',
+    rating: 4.1,
+    badge: 'Vision utan kabel',
+    pros: ['6 990 kr', 'Ingen perimeterkabel, Vision-kamera', 'WiFi-ansluten med app-kontroll', 'Upp till 500 m²'],
+    cons: ['Begränsat till 500 m²', 'Ny Vision-teknik'],
+    ctaText: 'Se pris hos Komplett',
+    ctaUrl: 'https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1&cupa_sku=1333222&url=https://www.komplett.se/product/1333222/hem-fritid/dammsugare-rengoring/robotgrasklippare/worx-wr305e-landroid-vision-cloud-500m2',
+    dataProduct: 'Worx Landroid Vision 500',
   },
   {
     rank: 3,
-    name: 'Segway Navimow H500E',
-    image: '/images/segway-navimow-h500e.webp',
-    rating: 4.4,
-    badge: 'Utan slinga, GPS-navigering',
-    pros: ['Ingen perimeterkabel krävs, GPS-navigering', 'Upp till 500 m² via app-gränsritning', 'Enkel installation, klar på 30 minuter', 'Exakt navigering längs gränskanter', 'WiFi och Bluetooth-styrning'],
-    cons: ['Dyrare initialkostnad', 'Kräver fri sikt mot himlen för GPS', 'Nyare teknik med färre långtidserfarenheter'],
-    ctaText: 'Se pris på Segway Navimow H500E',
-    ctaUrl: 'https://go.adt267.com/t/t?a=1615916040&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.komplett.se%2Fproduct%2F1320162%2Fhem-fritid%2Ftradgaard%2Fgrasklippare%2Frobotgrasklippare%2Fmova-600-robotgrasklippare',
-
+    name: 'Gardena SILENO city 500',
+    image: '/images/gardena-sileno-city-500.webp',
+    rating: 4.0,
+    badge: 'Pålitlig, tyst, klassisk',
+    pros: ['Upp till 500 m²', 'Tyst drift 57 dB', 'Enkel installation', 'Pålitlig Gardena-kvalitet'],
+    cons: ['Perimeterkabel krävs', 'Ingen GPS', 'Grundläggande app'],
+    ctaText: 'Se pris hos Proshop',
+    ctaUrl: 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3051379&url=https://www.proshop.se/Robotgraesklippare/Gardena-smart-SILENO-city-robotic-lawnmower-500m2-klipphojd-2-5cm/3051379',
+    dataProduct: 'Gardena SILENO city 500',
   },
   {
     rank: 4,
-    name: 'Husqvarna Automower 310E NERA',
-    image: '/images/husqvarna-automower-315x.webp',
-    rating: 4.7,
-    badge: 'Premium, håller i decennier',
-    pros: ['Beprövad GPS-assisterad navigering', 'Klarar 1600 m², massiv överkapacitet för 500 m²', 'Extremt tyst och diskret', 'Professionell klippkvalitet', 'Lång livslängd och enkel service'],
-    cons: ['Hög prisklass för liten trädgård', 'Perimeterkabel krävs', 'Överkonstruerad för de minsta tomterna'],
-    ctaText: 'Läs recension',
-    ctaUrl: '/robotgrasklippare/',
-
+    name: 'Dreame A1 Pro 1000 (LiDAR)',
+    image: '/images/dreame-a1-pro.webp',
+    rating: 4.3,
+    badge: 'GPS + LiDAR utan kabel',
+    pros: ['12 990 kr', 'LiDAR + RTK GPS', 'Ingen perimeterkabel', 'Enkel app-installation'],
+    cons: ['Kräver fri sikt mot himlen', 'Nyare modell'],
+    ctaText: 'Se pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=154749&url=https://www.elon.se/dreame-a1-pro-360-lidar-1000-m-154749',
+    dataProduct: 'Dreame A1 Pro',
   },
 ];
 
@@ -216,7 +217,7 @@ export const articleMeta = {
 
   <StickyCTA
     text="Se pris på Gardena Sileno City 500"
-    url="https://go.adt284.net/t/t?a=1870484629&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotgraesklippare%2FGardena-SILENO-city-Robotic-Lawnmower-500-m%2F3050973"
+    url="https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotgraesklippare%2FGardena-SILENO-city-Robotic-Lawnmower-500-m%2F3050973"
   />
 <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",

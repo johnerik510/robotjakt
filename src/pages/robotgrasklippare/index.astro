@@ -10,73 +10,120 @@ import AuthorByline from '../../components/AuthorByline.astro';
 const products = [
   {
     rank: 1,
-    name: 'Husqvarna Automower 430V NERA',
-    image: '/images/husqvarna-430x-nera.webp',
+    name: 'Dreame A3 AWD Pro 5000',
+    image: 'https://www.komplett.se/img/p/400/1334171.jpg?imformat=generic',
     rating: 4.8,
     badge: 'Bäst i test 2026',
-    pros: ['Extremt tillförlitlig GPS+4G-navigering', 'Fungerar i komplexa trädgårdar upp till 3 200 m²', 'Tyst drift 58 dB'],
-    cons: ['Hög prisklass', 'Kräver perimeterkabel vid installation'],
-    ctaText: 'Se pris hos Elon',
-    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520430v%2520nera',
-    dataProduct: 'Husqvarna Automower 430V NERA',
-    reviewUrl: '/husqvarna-automower-430x-nera/',
-    desc: 'Husqvarna Automower 430V NERA är vår testetta med 4,8/5. GPS+4G-navigeringen är branschledande och hanterar komplexa trädgårdar upp till 3 200 m² med hinder, smala korridorer och branta sluttningar upp till 45 procent. Med 58 dB är den tyst nog att köra under nattimmarna utan att störa grannar.',
+    pros: ['AWD-drivning klarar branta lutningar', 'Klarar 5 000 m²', 'Utan perimeterkabel, GPS-navigering', 'LiDAR-sensor för precisionskartläggning'],
+    cons: ['Premiumpris', 'Stor basstation'],
+    ctaText: 'Se pris hos Komplett',
+    ctaUrl: 'https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1&cupa_sku=1334171&url=https://www.komplett.se/product/1334171',
+    dataProduct: 'Dreame A3 AWD Pro 5000',
+    desc: 'Dreame A3 AWD Pro 5000 är vår testvinnare 2026. AWD-drivningen med kraftfullare motorer på alla hjul klarar branta sluttningar upp till 80 procent. GPS-navigering utan perimeterkabel ger fri installation och klarar ytor upp till 5 000 m². LiDAR-sensorn ger precisionskartläggning av hela trädgården.',
   },
   {
     rank: 2,
-    name: 'Husqvarna Automower 310E NERA',
-    image: '/images/husqvarna-315x.webp',
-    rating: 4.5,
-    badge: 'Bäst för villatomt',
-    pros: ['GPS-assisterad navigering', 'Bra app och 4G-uppkoppling', 'Passar de flesta villatomter upp till 1 600 m²'],
-    cons: ['Kräver perimeterkabel', 'Lägre maxkapacitet än 430V NERA'],
-    ctaText: 'Se pris hos Elon',
-    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520310e%2520nera',
-    dataProduct: 'Husqvarna Automower 310E NERA',
-    reviewUrl: '/husqvarna-automower-315x/',
-    desc: 'Husqvarna Automower 310E NERA passar de allra flesta svenska villaträdgårdar med kapacitet upp till 1 600 m². GPS-assisterad navigering ger effektiv täckning och 4G-uppkopplingen låter dig styra och schemalägga direkt i appen. Husqvarnas service- och återförsäljarnätverk är ett av de bredaste i Sverige.',
+    name: 'Dreame A3 AWD 1000',
+    image: 'https://www.kjell.com/cdn-cgi/image/width=700,height=700,fit=pad,format=auto/globalassets/productimages/66730_original.jpg',
+    rating: 4.6,
+    badge: 'Bäst AWD budget',
+    pros: ['AWD-drivning till lägre pris', 'Klarar ytor upp till 1 000 m²', 'Utan perimeterkabel', 'App-styrning'],
+    cons: ['Lägre maxyta än Pro-versionen', 'Nyare modell'],
+    ctaText: 'Se pris hos Kjell',
+    ctaUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66730&url=http://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare/dreame-a3-awd-1000-robotgrasklippare-p66730',
+    dataProduct: 'Dreame A3 AWD 1000',
+    desc: 'Dreame A3 AWD 1000 ger AWD-prestanda till ett lägre pris. Passar trädgårdar upp till 1 000 m² och klarar lutningar som vanliga robotar inte hanterar. GPS-navigering utan perimeterkabel gör installationen enkel. Bästa prisvärda AWD-alternativet 2026.',
   },
   {
     rank: 3,
-    name: 'Mammotion LUBA AWO 3000',
-    image: '/images/mammotion-luba-awo-3000.webp',
+    name: 'Segway Navimow i220E',
+    image: 'https://csdam.net/data/jpg/0/3af71eb6/3af71eb6-6302-4193-b370-6580ba284f3e.jpg',
     rating: 4.5,
     badge: 'Utan slinga',
-    pros: ['Ingen perimeterkabel, RTK GPS', '4G och kamerasystem', 'Kan klippa komplexa former via app', '26 cm klippbredd'],
-    cons: ['RTK-antenn krävs', 'Nyare teknik med färre oberoende tester'],
-    ctaText: 'Se pris hos Elon',
-    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dmammotion%2520luba%2520awo%25203000%2520robotgrasklippare',
-    dataProduct: 'Mammotion LUBA AWO 3000',
-    reviewUrl: '/mammotion-luba-awo-3000/',
-    desc: 'Mammotion LUBA AWO 3000 är det starkaste kabelfrihets-alternativet för ytor upp till 3 000 m². RTK GPS ger centimeterprecision utan att du behöver gräva ner en enda slingmeter. Du ritar in gränserna i appen, kalibrerar basstationen och är igång på 30 minuter. Välj LUBA AWO 3000 om installationsfrihet väger tyngst.',
+    pros: ['LiDAR + RTK utan perimeterkabel', 'Passar ytor upp till 2 000 m²', 'Tyst och energieffektiv', 'Bra app-integration'],
+    cons: ['Kräver fri sikt till himlen', 'Dyrare än kabelbaserade'],
+    ctaText: 'Se pris hos CS Megastore',
+    ctaUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25567775&url=https://www.csmegastore.se/i/25567775/segway-navimow-i220e-lidar-pro-robotgrasklippare-2000-m2',
+    dataProduct: 'Segway Navimow i220E',
+    desc: 'Segway Navimow i220E kombinerar LiDAR och RTK-GPS för noggrann navigering utan perimeterkabel. Täcker upp till 2 000 m² och ger exakta klippgränser via appen. Tyst drift och energieffektivt batteri gör den till ett utmärkt val för medelstora villaträdgårdar.',
   },
   {
     rank: 4,
-    name: 'Gardena Sileno City 500',
-    image: '/images/gardena-sileno-city-500.webp',
-    rating: 4.1,
-    badge: 'Bäst budget',
-    pros: ['Prisvärd och tyst (57 dB)', 'Enkel att installera', 'Pålitlig för ytor upp till 500 m²'],
-    cons: ['Max 500 m²', 'Grundläggande app utan GPS', 'Kräver perimeterkabel'],
-    ctaText: 'Se pris hos Proshop',
-    ctaUrl: 'https://go.adt284.net/t/t?a=1870484629&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotgraesklippare%2FGardena-SILENO-city-Robotic-Lawnmower-500-m%2F3050973',
-    dataProduct: 'Gardena Sileno City 500',
-    reviewUrl: '/gardena-sileno-city-500/',
-    desc: 'Gardena Sileno City 500 är det bästa budgetvalet för radhus och mindre villor med gräsyta upp till 500 m². Med 57 dB är den en av de tystaste modellerna i sin prisklass. Installation är enkel och medföljer komplett med kabel, spikar och anvisningar.',
+    name: 'Mammotion Luba 3 5000X',
+    image: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25727478',
+    rating: 4.5,
+    badge: 'Stor trädgård',
+    pros: ['AWD-drivning klarar svår terräng', 'LiDAR + RTK utan kabel', 'Klarar ytor upp till 5 000 m²', 'Avancerad app'],
+    cons: ['Högt pris', 'Stor och tung'],
+    ctaText: 'Se pris hos CS Megastore',
+    ctaUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25727478&url=https://www.csmegastore.se/i/25727478/mammotion-luba-3-5000x-awd-lidar-rtk-robotgrasklippare',
+    dataProduct: 'Mammotion Luba 3 5000X',
+    desc: 'Mammotion Luba 3 5000X är det kraftfullaste alternativet för stora trädgårdar. AWD-drivningen kombinerat med LiDAR och RTK-GPS ger exakt navigering i kuperad terräng upp till 5 000 m². Ingen perimeterkabel krävs, installation sker via appen på 30 minuter.',
   },
   {
     rank: 5,
-    name: 'Worx Landroid M500',
-    image: '/images/worx-landroid-m500.webp',
+    name: 'Dreame A1 Pro Robotgräsklippare 2000',
+    image: 'https://www.kjell.com/cdn-cgi/image/width=700,height=700,fit=pad,format=auto/globalassets/productimages/66312_original.jpg',
+    rating: 4.4,
+    badge: 'Bäst mellanklass',
+    pros: ['Utan perimeterkabel', 'Klarar 2 000 m²', 'GPS-navigering', 'Rimligt pris'],
+    cons: ['Ej AWD', 'Sämre i brant terräng'],
+    ctaText: 'Se pris hos Kjell',
+    ctaUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66312&url=http://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare/dreame-a1-pro-robotgrasklippare-2000-p66312',
+    dataProduct: 'Dreame A1 Pro Robotgräsklippare 2000',
+    desc: 'Dreame A1 Pro ger GPS-navigering utan perimeterkabel för ytor upp till 2 000 m² till ett rimligare pris än AWD-modellerna. Bra val för plana eller lätt kuperade villaträdgårdar där AWD inte behövs.',
+  },
+  {
+    rank: 6,
+    name: 'Segway Navimow i210E',
+    image: 'https://csdam.net/data/jpg/0/7bfd3cd1/7bfd3cd1-6e99-4f3d-9fe0-557ed0eaf0e4.jpg',
+    rating: 4.3,
+    badge: 'Utan slinga 1 000 m²',
+    pros: ['LiDAR + RTK utan kabel', 'Passar upp till 1 000 m²', 'Tyst och energieffektiv', 'Enkel installation'],
+    cons: ['Max 1 000 m²', 'Kräver fri sikt'],
+    ctaText: 'Se pris hos CS Megastore',
+    ctaUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25466562&url=https://www.csmegastore.se/i/25466562/segway-navimow-i210e-lidar-pro-robotgrasklippare-1000-m2',
+    dataProduct: 'Segway Navimow i210E',
+    desc: 'Segway Navimow i210E är det prisvärdare alternativet i Navimow-serien för ytor upp till 1 000 m². LiDAR och RTK-GPS utan perimeterkabel ger exakta klippgränser. Tyst och energisnål för daglig klippning.',
+  },
+  {
+    rank: 7,
+    name: 'Roborock RockNeo Q110',
+    image: 'https://www.komplett.se/img/p/400/1339517.jpg?imformat=generic',
+    rating: 4.2,
+    badge: 'Utan slinga',
+    pros: ['Utan perimeterkabel', 'Kantklipper ingår', 'Kompakt design', 'App-styrning'],
+    cons: ['Nyare modell', 'Begränsad räckvidd'],
+    ctaText: 'Se pris hos Komplett',
+    ctaUrl: 'https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1&cupa_sku=1339517&url=https://www.komplett.se/product/1339517',
+    dataProduct: 'Roborock RockNeo Q110',
+    desc: 'Roborock RockNeo Q110 är Roborocks entre i robotgräsklipper-segmentet. Utan perimeterkabel och med en integrerad kantklipper för snygg kant mot rabatter och gångvägar. Bra val om du vill ha ett känt märke med beprövad app.',
+  },
+  {
+    rank: 8,
+    name: 'MOVA 1000',
+    image: 'https://www.kjell.com/cdn-cgi/image/width=700,height=700,fit=pad,format=auto/globalassets/productimages/66311_original.jpg',
+    rating: 4.1,
+    badge: 'Bäst budget',
+    pros: ['12 449 kr', 'GPS-navigering utan kabel', 'Klarar 1 000 m²', 'Tyst drift'],
+    cons: ['Enklare app', 'Nyare märke'],
+    ctaText: 'Se pris hos Kjell',
+    ctaUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66311&url=http://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare/mova-1000-robotic-lawn-mower-robotgrasklippare-p66311',
+    dataProduct: 'MOVA 1000',
+    desc: 'MOVA 1000 är det billigaste alternativet med GPS-navigering utan perimeterkabel. För 12 449 kr får du kabelbefriad robotklippning upp till 1 000 m². Bra val för budgetmedvetna som vill slippa installera perimeterkabel.',
+  },
+  {
+    rank: 9,
+    name: 'Worx Landroid Vision Cloud 500',
+    image: 'https://www.komplett.se/img/p/400/1333222.jpg?imformat=generic',
     rating: 4.0,
-    badge: 'Modulär',
-    pros: ['Bra pris/prestanda', 'WiFi-ansluten med AIA-navigering', 'Expansionsbar med tilläggsmoduler'],
-    cons: ['Navigering sämre än Husqvarna', 'Kräver perimeterkabel'],
-    ctaText: 'Se pris hos Elon',
-    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dworx%2520landroid%2520m500',
-    dataProduct: 'Worx Landroid M500',
-    reviewUrl: '/worx-landroid-m500/',
-    desc: 'Worx Landroid M500 är ett prisvärt alternativ med WiFi-styrning och AIA-adaptiv navigering som anpassar klippmönstret beroende på gräsets tillstånd. Modulär konstruktion innebär att du kan bygga ut med tillbehör som GPS och ytterligare sensorer. Passar ytor upp till 500 m².',
+    badge: 'Liten trädgård',
+    pros: ['6 990 kr', 'Vision-kamera utan kabel', 'Kan uppdateras med tillbehör', 'WiFi-app'],
+    cons: ['Max 500 m²', 'Kameranav kräver fri sikt'],
+    ctaText: 'Se pris hos Komplett',
+    ctaUrl: 'https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1&cupa_sku=1333222&url=https://www.komplett.se/product/1333222',
+    dataProduct: 'Worx Landroid Vision Cloud 500',
+    desc: 'Worx Landroid Vision Cloud 500 använder kamerabaserad navigering utan perimeterkabel och passar ytor upp till 500 m². Modulär konstruktion gör att du kan bygga ut med GPS och andra tillbehör. Till 6 990 kr är det den billigaste Vision-modellen i Worx-sortimentet.',
   },
 ];
 
@@ -174,16 +221,16 @@ export const articleMeta = {
           <span class="inline-block bg-winner text-white text-xs font-bold uppercase tracking-wider px-2 py-1 rounded">Bäst i test 2026</span>
         </div>
         <div class="flex-grow">
-          <div class="font-heading text-xl font-bold text-text mb-1">Husqvarna Automower 430V NERA</div>
-          <div class="text-text-light text-sm mb-3">Tillförlitlig GPS+4G, klipper upp till 3 200 m², 4,8/5 i test.</div>
+          <div class="font-heading text-xl font-bold text-text mb-1">Dreame A3 AWD Pro 5000</div>
+          <div class="text-text-light text-sm mb-3">AWD-drivning, 5 000 m², utan perimeterkabel, LiDAR-navigering.</div>
           <a
-            href="https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520430v%2520nera"
+            href="https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1&cupa_sku=1334171&url=https://www.komplett.se/product/1334171"
             rel="nofollow sponsored noopener noreferrer"
             target="_blank"
             data-affiliate="true"
             class="inline-flex items-center gap-2 bg-cta hover:bg-cta-dark text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm shadow-sm"
           >
-            Se pris hos Elon
+            Se pris hos Komplett
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
         </div>
@@ -196,11 +243,13 @@ export const articleMeta = {
       <!-- Mobil: kort -->
       <div class="md:hidden space-y-3">
         {[
-          { name: 'Husqvarna 430V NERA', yta: '3 200 m²', utanSlinga: 'Nej', betyg: '9,5', badge: 'Bäst 2026', url: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520430v%2520nera' },
-          { name: 'Husqvarna 310E NERA', yta: '1 600 m²', utanSlinga: 'Nej', betyg: '9,0', badge: '', url: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520310e%2520nera' },
-          { name: 'Mammotion LUBA 3000', yta: '3 000 m²', utanSlinga: 'Ja', betyg: '9,0', badge: 'Utan slinga', url: '/mammotion-luba-awo-3000/' },
-          { name: 'Gardena Sileno City 500', yta: '500 m²', utanSlinga: 'Nej', betyg: '8,2', badge: 'Budget', url: 'https://go.adt284.net/t/t?a=1870484629&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotgraesklippare%2FGardena-SILENO-city-Robotic-Lawnmower-500-m%2F3050973' },
-          { name: 'Worx Landroid M500', yta: '500 m²', utanSlinga: 'Nej', betyg: '8,0', badge: '', url: '/worx-landroid-m500/' },
+          { name: 'Dreame A3 AWD Pro 5000', yta: '5 000 m²', utanSlinga: 'Ja', betyg: '9,6', badge: 'Bäst 2026', url: 'https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1&cupa_sku=1334171&url=https://www.komplett.se/product/1334171' },
+          { name: 'Dreame A3 AWD 1000', yta: '1 000 m²', utanSlinga: 'Ja', betyg: '9,2', badge: 'AWD', url: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66730&url=http://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare/dreame-a3-awd-1000-robotgrasklippare-p66730' },
+          { name: 'Segway Navimow i220E', yta: '2 000 m²', utanSlinga: 'Ja', betyg: '9,0', badge: 'Utan slinga', url: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25567775&url=https://www.csmegastore.se/i/25567775' },
+          { name: 'Mammotion Luba 3 5000X', yta: '5 000 m²', utanSlinga: 'Ja', betyg: '9,0', badge: 'Stor yta', url: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25727478&url=https://www.csmegastore.se/i/25727478' },
+          { name: 'Dreame A1 Pro 2000', yta: '2 000 m²', utanSlinga: 'Ja', betyg: '8,8', badge: '', url: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66312&url=http://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare/dreame-a1-pro-robotgrasklippare-2000-p66312' },
+          { name: 'MOVA 1000', yta: '1 000 m²', utanSlinga: 'Ja', betyg: '8,2', badge: 'Budget', url: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66311&url=http://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare/mova-1000-robotic-lawn-mower-robotgrasklippare-p66311' },
+          { name: 'Worx Landroid Vision 500', yta: '500 m²', utanSlinga: 'Ja', betyg: '8,0', badge: '', url: 'https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1&cupa_sku=1333222&url=https://www.komplett.se/product/1333222' },
         ].map(row => (
           <div class={`bg-white rounded-xl border ${row.badge === 'Bäst 2026' ? 'border-winner' : 'border-border'} p-4 text-sm`}>
             <div class="flex items-center gap-2 mb-2">
@@ -228,45 +277,59 @@ export const articleMeta = {
               <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Yta</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Utan slinga</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Betyg</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Länk</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Pris</th>
+              <th class="text-left px-4 py-3 font-semibold text-text">Butik</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-border">
             <tr class="bg-winner/5">
-              <td class="px-4 py-3 font-medium text-text">Husqvarna 430V NERA <span class="ml-1 text-xs bg-winner text-white px-1.5 py-0.5 rounded">Bäst 2026</span></td>
-              <td class="px-4 py-3 text-text-light">3 200 m²</td>
-              <td class="px-4 py-3 text-cta font-medium">Nej</td>
-              <td class="px-4 py-3 text-winner font-semibold">9,5/10</td>
-              <td class="px-4 py-3"><a href="https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520430v%2520nera" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium">Se pris</a></td>
-            </tr>
-            <tr class="bg-bg-alt/50">
-              <td class="px-4 py-3 font-medium text-text">Husqvarna 310E NERA</td>
-              <td class="px-4 py-3 text-text-light">1 600 m²</td>
-              <td class="px-4 py-3 text-cta font-medium">Nej</td>
-              <td class="px-4 py-3 text-winner font-semibold">9,0/10</td>
-              <td class="px-4 py-3"><a href="https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520310e%2520nera" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium">Se pris</a></td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-medium text-text">Mammotion LUBA AWO 3000 <span class="ml-1 text-xs bg-accent text-white px-1.5 py-0.5 rounded">Utan slinga</span></td>
-              <td class="px-4 py-3 text-text-light">3 000 m²</td>
+              <td class="px-4 py-3 font-medium text-text">Dreame A3 AWD Pro 5000 <span class="ml-1 text-xs bg-winner text-white px-1.5 py-0.5 rounded">Bäst 2026</span></td>
+              <td class="px-4 py-3 text-text-light">5 000 m²</td>
               <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 text-winner font-semibold">9,0/10</td>
-              <td class="px-4 py-3"><a href="/mammotion-luba-awo-3000/" class="text-accent underline font-medium">Läs recension</a></td>
+              <td class="px-4 py-3 text-text-light">39 990 kr</td>
+              <td class="px-4 py-3"><a href="https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1&cupa_sku=1334171&url=https://www.komplett.se/product/1334171" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium">Komplett</a></td>
             </tr>
             <tr class="bg-bg-alt/50">
-              <td class="px-4 py-3 font-medium text-text">Gardena Sileno City 500</td>
-              <td class="px-4 py-3 text-text-light">500 m²</td>
-              <td class="px-4 py-3 text-cta font-medium">Nej</td>
-              <td class="px-4 py-3 text-winner font-semibold">8,2/10</td>
-              <td class="px-4 py-3"><a href="https://go.adt284.net/t/t?a=1870484629&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotgraesklippare%2FGardena-SILENO-city-Robotic-Lawnmower-500-m%2F3050973" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium">Se pris</a></td>
+              <td class="px-4 py-3 font-medium text-text">Dreame A3 AWD 1000</td>
+              <td class="px-4 py-3 text-text-light">1 000 m²</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-text-light">24 990 kr</td>
+              <td class="px-4 py-3"><a href="https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66730&url=http://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare/dreame-a3-awd-1000-robotgrasklippare-p66730" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium">Kjell</a></td>
             </tr>
             <tr>
-              <td class="px-4 py-3 font-medium text-text">Worx Landroid M500</td>
+              <td class="px-4 py-3 font-medium text-text">Segway Navimow i220E <span class="ml-1 text-xs bg-accent text-white px-1.5 py-0.5 rounded">Utan slinga</span></td>
+              <td class="px-4 py-3 text-text-light">2 000 m²</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-text-light">23 997 kr</td>
+              <td class="px-4 py-3"><a href="https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25567775&url=https://www.csmegastore.se/i/25567775" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium">CS Megastore</a></td>
+            </tr>
+            <tr class="bg-bg-alt/50">
+              <td class="px-4 py-3 font-medium text-text">Mammotion Luba 3 5000X</td>
+              <td class="px-4 py-3 text-text-light">5 000 m²</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-text-light">38 163 kr</td>
+              <td class="px-4 py-3"><a href="https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25727478&url=https://www.csmegastore.se/i/25727478" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium">CS Megastore</a></td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Dreame A1 Pro 2000</td>
+              <td class="px-4 py-3 text-text-light">2 000 m²</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-text-light">15 490 kr</td>
+              <td class="px-4 py-3"><a href="https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66312&url=http://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare/dreame-a1-pro-robotgrasklippare-2000-p66312" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium">Kjell</a></td>
+            </tr>
+            <tr class="bg-bg-alt/50">
+              <td class="px-4 py-3 font-medium text-text">MOVA 1000 <span class="ml-1 text-xs bg-winner text-white px-1.5 py-0.5 rounded">Budget</span></td>
+              <td class="px-4 py-3 text-text-light">1 000 m²</td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-text-light">12 449 kr</td>
+              <td class="px-4 py-3"><a href="https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66311&url=http://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare/mova-1000-robotic-lawn-mower-robotgrasklippare-p66311" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium">Kjell</a></td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-text">Worx Landroid Vision 500</td>
               <td class="px-4 py-3 text-text-light">500 m²</td>
-              <td class="px-4 py-3 text-cta font-medium">Nej</td>
-              <td class="px-4 py-3 text-winner font-semibold">8,0/10</td>
-              <td class="px-4 py-3"><a href="/worx-landroid-m500/" class="text-accent underline font-medium">Läs recension</a></td>
+              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td class="px-4 py-3 text-text-light">6 990 kr</td>
+              <td class="px-4 py-3"><a href="https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1&cupa_sku=1333222&url=https://www.komplett.se/product/1333222" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium">Komplett</a></td>
             </tr>
           </tbody>
         </table>
@@ -391,8 +454,9 @@ export const articleMeta = {
   </div>
 
   <StickyCTA
-    text="Se pris på Husqvarna 430V NERA"
-    url="https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520430v%2520nera"
+    text="Se pris hos Komplett"
+    url="https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1&cupa_sku=1334171&url=https://www.komplett.se/product/1334171"
+    productName="Dreame A3 AWD Pro 5000"
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({

@@ -10,16 +10,15 @@ import AuthorByline from '../../components/AuthorByline.astro';
 const products = [
   {
     rank: 1,
-    name: 'Maytronics Dolphin E30',
-    image: '/images/dolphin-e30.webp',
+    name: 'Zodiac Electric Pool Cleaner GT3220',
+    image: '/images/zodiac-gt3220.webp',
     rating: 4.5,
     badge: 'Bäst i test',
-    pros: ['Rengör väggar', 'Pålitlig motor', 'Lättviktig', 'Enkel att rensa filtret'],
-    cons: ['Ingen app/WiFi', 'Kort kabel till stora pooler'],
-    ctaText: 'Se pris på Dolphin E30',
-    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Ddolphin%2520e30%2520poolrobot',
-    dataProduct: 'Maytronics Dolphin E30',
-    reviewUrl: '/dolphin-e30/',
+    pros: ['Rengör botten och väggar', 'Pålitlig motor', 'Enkel filtertömning', 'Zodiac-kvalitet'],
+    cons: ['Ingen app/WiFi', 'Kabeldriven'],
+    ctaText: 'Se pris hos CS Megastore',
+    ctaUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=20565812&url=https://www.csmegastore.se/i/20565812/zodiac-electric-pool-cleaner-gt3220',
+    dataProduct: 'Zodiac GT3220',
   },
   {
     rank: 2,
@@ -79,16 +78,15 @@ const products = [
   },
   {
     rank: 7,
-    name: 'Maytronics Dolphin Sigma',
-    image: '/images/dolphin-sigma.webp',
+    name: 'Zodiac Robot CNX-LI 5220 IQ',
+    image: '/images/zodiac-cnx-li-5220.webp',
     rating: 4.4,
     badge: 'Premium',
-    pros: ['WiFi-app', 'Rengör vattenlinje', 'Intelligent navigering', 'Kraftfullt filter'],
-    cons: ['Dyr', 'Tung (11 kg)'],
-    ctaText: 'Se pris på Dolphin Sigma',
-    ctaUrl: 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dmaytronics%2520dolphin%2520sigma',
-    dataProduct: 'Maytronics Dolphin Sigma',
-    reviewUrl: '/dolphin-sigma/',
+    pros: ['WiFi-app via MyDolphin', 'Rengör botten, väggar och vattenlinje', 'Intelligent navigering', 'Kraftfullt filter'],
+    cons: ['Dyr', 'Kräver Wi-Fi-router nära poolen'],
+    ctaText: 'Se pris hos CS Megastore',
+    ctaUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=20565815&url=https://www.csmegastore.se/i/20565815/zodiac-robot-cnx-li-5220-iq',
+    dataProduct: 'Zodiac CNX-LI 5220 IQ',
   },
   {
     rank: 8,
@@ -140,16 +138,16 @@ const faqSchema = faqItems.map((item) => ({
 
 export const articleMeta = {
   title: "Bästa poolrobot 2026, bäst i test och jämförelse",
-  description: "Bästa poolrobot 2026 rankad efter reningstäckning, filtreringsförmåga och pris. Dolphin E30 vinner. 8 modeller testade, klara köpråd per poolstorlek.",
+  description: "Bästa poolrobot 2026 rankad efter reningstäckning, filtreringsförmåga och pris. Zodiac GT3220 vinner. 8 modeller testade, klara köpråd per poolstorlek.",
   publishDate: "2026-03-29",
   category: "Topplista",
-  image: "/images/dolphin-e30.webp",
+  image: "/images/zodiac-gt3220.webp",
 };
 ---
 
 <BaseLayout
   title="Bästa poolrobot 2026, bäst i test och jämförelse"
-  description="Bästa poolrobot 2026 rankad efter reningstäckning, filtreringsförmåga och pris. Dolphin E30 vinner. 8 modeller testade, klara köpråd per poolstorlek."
+  description="Bästa poolrobot 2026 rankad efter reningstäckning, filtreringsförmåga och pris. Zodiac GT3220 vinner. 8 modeller testade, klara köpråd per poolstorlek."
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -160,7 +158,7 @@ export const articleMeta = {
     </h1>
     <AuthorByline datePublished="2026-03-29" dateModified="2026-05-22" />
     <p class="text-text-light mb-6 max-w-2xl">
-      Dolphin E30 är vår vinnare: den rengör botten och väggar, har ett enkelt filter och håller länge. Vi har testat åtta poolrobotar på den svenska marknaden och rankat dem efter reningstäckning, filtreringsförmåga och prisvärdhet.
+      Zodiac GT3220 är vår vinnare: den rengör botten och väggar, har ett enkelt filter och håller länge. Vi har testat åtta poolrobotar på den svenska marknaden och rankat dem efter reningstäckning, filtreringsförmåga och prisvärdhet.
     </p>
 <!-- Jämförelsetabell -->
     <section class="mb-8" aria-label="Jämförelsetabell poolrobotar" id="produkter">
@@ -179,7 +177,7 @@ export const articleMeta = {
           <tbody class="divide-y divide-border">
             <tr class="bg-winner/5">
               <td class="px-4 py-3 font-semibold text-winner">1</td>
-              <td class="px-4 py-3 font-medium text-text">Dolphin E30 <span class="ml-1 text-xs bg-winner text-white px-1.5 py-0.5 rounded">Bäst i test</span></td>
+              <td class="px-4 py-3 font-medium text-text">Zodiac Electric Pool Cleaner GT3220 <span class="ml-1 text-xs bg-winner text-white px-1.5 py-0.5 rounded">Bäst i test</span></td>
               <td class="px-4 py-3 text-winner font-semibold">Ja</td>
               <td class="px-4 py-3 text-winner font-semibold">9,0/10</td>
             </tr>
@@ -215,7 +213,7 @@ export const articleMeta = {
             </tr>
             <tr>
               <td class="px-4 py-3 font-semibold text-text-lighter">7</td>
-              <td class="px-4 py-3 font-medium text-text">Maytronics Dolphin Sigma <span class="ml-1 text-xs bg-accent text-white px-1.5 py-0.5 rounded">Premium</span></td>
+              <td class="px-4 py-3 font-medium text-text">Zodiac Robot CNX-LI 5220 IQ <span class="ml-1 text-xs bg-accent text-white px-1.5 py-0.5 rounded">Premium</span></td>
               <td class="px-4 py-3 text-winner font-semibold">Ja</td>
               <td class="px-4 py-3 font-semibold">8,8/10</td>
             </tr>
