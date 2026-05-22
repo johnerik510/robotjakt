@@ -1,4 +1,6 @@
 ---
+import { resolveMultiCTA, storeFromUrl } from '../lib/multi-cta';
+
 interface Props {
   rank?: number;
   name: string;
@@ -10,25 +12,28 @@ interface Props {
   cons: string[];
   ctaText?: string;
   ctaUrl?: string;
+  brand?: string;       // Valfritt märke — auto-detekteras från name om ej angivet
   dataProduct?: string;
   reviewUrl?: string;
-  amazonUrl?: string;
-  proshopUrl?: string;
-  kjellUrl?: string;
-  dustinUrl?: string;
-  teknikproffsetUrl?: string;
-  robotdammsugarenUrl?: string;
-  elonUrl?: string;
-  komplettUrl?: string;
-  neatsvorUrl?: string;
-  estoreUrl?: string;
 }
 
-const { rank, name, image, price, rating, badge, pros, cons, ctaText, ctaUrl, dataProduct, reviewUrl, amazonUrl, proshopUrl, kjellUrl, dustinUrl, teknikproffsetUrl, robotdammsugarenUrl, elonUrl, komplettUrl, neatsvorUrl, estoreUrl } = Astro.props;
+const { rank, name, image, price, rating, badge, pros, cons, ctaText, ctaUrl, brand, dataProduct, reviewUrl } = Astro.props;
+
+// Slå upp alla butiker som säljer produkten, sorterade efter provision
+const fallbackStore = ctaUrl ? storeFromUrl(ctaUrl) : '';
+const fallback = ctaUrl ? { store: fallbackStore, url: ctaUrl } : undefined;
+const multi = resolveMultiCTA(name, brand, fallback);
+
+// Primär CTA: multi-CTA primary, annars fallback till ctaUrl
+const primaryUrl  = multi?.primary.url  ?? ctaUrl;
+const primaryStore = (multi?.primary.store ?? fallbackStore) || 'Butik';
+const primaryCtaText = `Köp hos ${primaryStore}`;
+const otherCTAs = multi?.others ?? [];
+
 const stars = Math.round(rating * 2) / 2;
-const ctaIsExternal = ctaUrl?.startsWith('http') ?? false;
-const ctaRel = ctaIsExternal ? "sponsored nofollow noopener noreferrer" : undefined;
-const ctaTarget = ctaIsExternal ? "_blank" : undefined;
+const isExternal = primaryUrl?.startsWith('http') ?? false;
+const rel = isExternal ? "sponsored nofollow noopener noreferrer" : undefined;
+const target = isExternal ? "_blank" : undefined;
 ---
 
 <article class="bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow p-5" data-product={dataProduct || name}>
@@ -41,8 +46,8 @@ const ctaTarget = ctaIsExternal ? "_blank" : undefined;
       )}
       {image ? (
         <div class="w-48 h-48 sm:w-56 sm:h-56 bg-gray-50 rounded-xl p-3 flex items-center justify-center">
-          {ctaUrl ? (
-            <a href={ctaUrl} rel={ctaRel} target={ctaTarget} aria-label={`Se pris på ${name}`} class="block w-full h-full">
+          {primaryUrl ? (
+            <a href={primaryUrl} rel={rel} target={target} aria-label={`Se pris på ${name}`} class="block w-full h-full">
               <img src={image} alt={name} class="w-full h-full object-contain" loading="lazy" width="200" height="200" />
             </a>
           ) : (
@@ -55,18 +60,21 @@ const ctaTarget = ctaIsExternal ? "_blank" : undefined;
         </div>
       )}
     </div>
+
     <div class="flex-1 min-w-0">
       <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
         <h3 class="font-heading text-lg font-bold text-text">
-          {ctaUrl ? (
-            <a href={ctaUrl} rel={ctaRel} target={ctaTarget} class="!text-text hover:!text-accent transition-colors no-underline">{name}</a>
+          {primaryUrl ? (
+            <a href={primaryUrl} rel={rel} target={target} class="!text-text hover:!text-accent transition-colors no-underline">{name}</a>
           ) : (
             name
           )}
         </h3>
         {price && <span class="text-lg font-bold text-text whitespace-nowrap">{price}</span>}
       </div>
+
       {badge && <span class="inline-block text-xs font-semibold bg-accent/10 text-accent px-2 py-0.5 rounded-full mb-2">{badge}</span>}
+
       <div class="flex items-center gap-1 mb-3" aria-label={`Betyg: ${rating} av 5`}>
         {Array.from({ length: 5 }).map((_, i) => (
           <svg class={`w-4 h-4 ${i < Math.floor(stars) ? 'text-star' : i < stars ? 'text-star' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
@@ -75,6 +83,7 @@ const ctaTarget = ctaIsExternal ? "_blank" : undefined;
         ))}
         <span class="text-sm font-medium text-text-light ml-1">{rating}/5</span>
       </div>
+
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4 text-sm">
         <div>
           <p class="font-semibold text-winner mb-1">Fördelar</p>
@@ -84,80 +93,48 @@ const ctaTarget = ctaIsExternal ? "_blank" : undefined;
         </div>
         <div>
           <p class="font-semibold text-cta mb-1">Nackdelar</p>
-
           <ul class="space-y-0.5">
             {cons.map(c => <li class="flex items-start gap-1.5"><span class="text-cta mt-0.5">-</span> {c}</li>)}
           </ul>
         </div>
       </div>
-      <div class="flex flex-wrap items-center gap-3">
-        {ctaUrl && ctaText && (
-          <a href={ctaUrl} rel={ctaRel} target={ctaTarget} class="inline-flex items-center justify-center px-6 py-3 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors min-h-[44px] text-sm">
-            {ctaText}
-            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-          </a>
+
+      <div class="space-y-2">
+        {/* Primär CTA-knapp */}
+        {primaryUrl && (
+          <div class="flex flex-wrap items-center gap-3">
+            <a href={primaryUrl} rel={rel} target={target} class="inline-flex items-center justify-center px-6 py-3 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors min-h-[44px] text-sm">
+              {primaryCtaText}
+              <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
+            {reviewUrl && (
+              <a href={reviewUrl} class="inline-flex items-center text-text-light hover:text-accent font-medium text-sm min-h-[44px] transition-colors">
+                Fullständig recension
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+              </a>
+            )}
+          </div>
         )}
-        {amazonUrl && (
-          <a href={amazonUrl} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-5 py-3 border-2 border-cta text-cta font-semibold rounded-lg hover:bg-cta hover:text-white transition-colors min-h-[44px] text-sm">
-            Amazon
-            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-          </a>
+
+        {/* Sekundära CTA:er: "Även hos: Komplett  Proshop" */}
+        {otherCTAs.length > 0 && (
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="text-xs font-semibold text-text-lighter uppercase tracking-wide">Även hos:</span>
+            {otherCTAs.map((o) => (
+              <a
+                href={o.url}
+                rel="sponsored nofollow noopener noreferrer"
+                target="_blank"
+                class="inline-flex items-center px-3 py-1.5 rounded-lg border border-border text-xs font-semibold text-text-light hover:border-cta hover:text-cta transition-colors min-h-[36px]"
+              >
+                {o.store}
+              </a>
+            ))}
+          </div>
         )}
-        {proshopUrl && (
-          <a href={proshopUrl} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-5 py-3 border-2 border-border text-text-light font-semibold rounded-lg hover:border-cta hover:text-cta transition-colors min-h-[44px] text-sm">
-            Proshop
-            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-          </a>
-        )}
-        {kjellUrl && (
-          <a href={kjellUrl} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-5 py-3 border-2 border-border text-text-light font-semibold rounded-lg hover:border-cta hover:text-cta transition-colors min-h-[44px] text-sm">
-            Kjell
-            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-          </a>
-        )}
-        {dustinUrl && (
-          <a href={dustinUrl} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-5 py-3 border-2 border-border text-text-light font-semibold rounded-lg hover:border-cta hover:text-cta transition-colors min-h-[44px] text-sm">
-            Dustin
-            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-          </a>
-        )}
-        {teknikproffsetUrl && (
-          <a href={teknikproffsetUrl} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-5 py-3 border-2 border-border text-text-light font-semibold rounded-lg hover:border-cta hover:text-cta transition-colors min-h-[44px] text-sm">
-            Teknikproffset
-            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-          </a>
-        )}
-        {robotdammsugarenUrl && (
-          <a href={robotdammsugarenUrl} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-5 py-3 border-2 border-border text-text-light font-semibold rounded-lg hover:border-cta hover:text-cta transition-colors min-h-[44px] text-sm">
-            Robot-dammsugaren
-            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-          </a>
-        )}
-        {elonUrl && (
-          <a href={elonUrl} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-5 py-3 border-2 border-border text-text-light font-semibold rounded-lg hover:border-cta hover:text-cta transition-colors min-h-[44px] text-sm">
-            Elon
-            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-          </a>
-        )}
-        {komplettUrl && (
-          <a href={komplettUrl} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-5 py-3 border-2 border-border text-text-light font-semibold rounded-lg hover:border-cta hover:text-cta transition-colors min-h-[44px] text-sm">
-            Komplett
-            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-          </a>
-        )}
-        {neatsvorUrl && (
-          <a href={neatsvorUrl} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-5 py-3 border-2 border-border text-text-light font-semibold rounded-lg hover:border-cta hover:text-cta transition-colors min-h-[44px] text-sm">
-            Neatsvor
-            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-          </a>
-        )}
-        {estoreUrl && (
-          <a href={estoreUrl} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-5 py-3 border-2 border-border text-text-light font-semibold rounded-lg hover:border-cta hover:text-cta transition-colors min-h-[44px] text-sm">
-            eStore
-            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-          </a>
-        )}
-        {reviewUrl && (
+
+        {/* Fallback: recensionslänk utan CTA-URL */}
+        {!primaryUrl && reviewUrl && (
           <a href={reviewUrl} class="inline-flex items-center text-text-light hover:text-accent font-medium text-sm min-h-[44px] transition-colors">
             Fullständig recension
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>

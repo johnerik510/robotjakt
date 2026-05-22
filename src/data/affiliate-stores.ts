@@ -18,15 +18,10 @@ export interface AffiliateStore {
   buildUrl: (targetUrl: string) => string | undefined;
 }
 
+// Verkliga provisioner (verifierade 2026-05-22):
+// Elon 5%, Kjell 5%, Komplett 4%, CS Megastore 4%, Proshop 3.2%, Addrevenue ~3%
 export const AFFILIATE_STORES: Record<string, AffiliateStore> = {
-  'CSMegastore': {
-    name: 'CSMegastore',
-    commission: 0.05,
-    network: 'adtraction',
-    baseUrl: 'https://www.csmegastore.se',
-    searchUrl: 'https://www.csmegastore.se/?q={q}',
-    buildUrl: () => undefined,
-  },
+  // Aktiva Adtraction-butiker (nyckel matchar FEED_BY_STORE och BRAND_TO_STORES)
   'Elon': {
     name: 'Elon',
     commission: 0.05,
@@ -35,65 +30,59 @@ export const AFFILIATE_STORES: Record<string, AffiliateStore> = {
     searchUrl: 'https://www.elon.se/sok?q={q}',
     buildUrl: () => undefined,
   },
-  'Estore': {
-    name: 'Estore',
-    commission: 0.05,
-    network: 'adtraction',
-    baseUrl: 'https://www.estore.nu',
-    searchUrl: 'https://www.estore.nu/?q={q}',
-    buildUrl: () => undefined,
-  },
   'Kjell & Company': {
-    name: 'Kjell & Company',
+    name: 'Kjell',
     commission: 0.05,
     network: 'adtraction',
     baseUrl: 'https://www.kjell.com',
-    searchUrl: 'https://www.kjell.com/?q={q}',
+    searchUrl: 'https://www.kjell.com/se/sok?query={q}',
     buildUrl: () => undefined,
   },
   'Komplett': {
     name: 'Komplett',
-    commission: 0.05,
+    commission: 0.04,
     network: 'adtraction',
     baseUrl: 'https://www.komplett.se',
-    searchUrl: 'https://www.komplett.se/?q={q}',
+    searchUrl: 'https://www.komplett.se/search/?query={q}',
+    buildUrl: () => undefined,
+  },
+  'CS MEGASTORE': {
+    name: 'CS Megastore',
+    commission: 0.04,
+    network: 'adtraction',
+    baseUrl: 'https://www.csmegastore.se',
+    searchUrl: 'https://www.csmegastore.se/?q={q}',
+    buildUrl: () => undefined,
+  },
+  // Alias: BRAND_TO_STORES använder 'CSMegastore' (ihopskrivet)
+  'CSMegastore': {
+    name: 'CS Megastore',
+    commission: 0.04,
+    network: 'adtraction',
+    baseUrl: 'https://www.csmegastore.se',
+    searchUrl: 'https://www.csmegastore.se/?q={q}',
     buildUrl: () => undefined,
   },
   'Proshop': {
     name: 'Proshop',
-    commission: 0.05,
+    commission: 0.032,
     network: 'adtraction',
     baseUrl: 'https://www.proshop.se',
-    searchUrl: 'https://www.proshop.se/?q={q}',
+    searchUrl: 'https://www.proshop.se/?search={q}',
     buildUrl: () => undefined,
   },
-  'Teknikproffset': {
-    name: 'Teknikproffset',
-    commission: 0.05,
-    network: 'adtraction',
-    baseUrl: 'https://www.teknikproffset.se',
-    searchUrl: 'https://www.teknikproffset.se/?q={q}',
-    buildUrl: () => undefined,
-  },
+  // Aktiva Addrevenue-butiker (~3%)
   'Dronarbutiken': {
     name: 'Dronarbutiken',
-    commission: 0.05,
+    commission: 0.03,
     network: 'addrevenue',
     baseUrl: 'https://www.dronarbutiken.se',
     searchUrl: 'https://www.dronarbutiken.se/?q={q}',
     buildUrl: () => undefined,
   },
-  'Villanytt': {
-    name: 'Villanytt',
-    commission: 0.05,
-    network: 'addrevenue',
-    baseUrl: 'https://www.villanytt.se',
-    searchUrl: 'https://www.villanytt.se/?q={q}',
-    buildUrl: () => undefined,
-  },
   'Robot-dammsugaren': {
     name: 'Robot-dammsugaren',
-    commission: 0.05,
+    commission: 0.03,
     network: 'addrevenue',
     baseUrl: 'https://www.robot-dammsugaren.se',
     searchUrl: 'https://www.robot-dammsugaren.se/?q={q}',
@@ -101,7 +90,7 @@ export const AFFILIATE_STORES: Record<string, AffiliateStore> = {
   },
   'Robotrent': {
     name: 'Robotrent',
-    commission: 0.05,
+    commission: 0.03,
     network: 'addrevenue',
     baseUrl: 'https://www.robotrent.se',
     searchUrl: 'https://www.robotrent.se/?q={q}',
@@ -109,7 +98,7 @@ export const AFFILIATE_STORES: Record<string, AffiliateStore> = {
   },
   'Neatsvor': {
     name: 'Neatsvor',
-    commission: 0.05,
+    commission: 0.03,
     network: 'addrevenue',
     baseUrl: 'https://www.neatsvor.se',
     searchUrl: 'https://www.neatsvor.se/?q={q}',

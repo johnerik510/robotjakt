@@ -1,18 +1,14 @@
-// AUTO-GENERATED from Adtraction product feeds. DO NOT EDIT MANUALLY.
-// Source: /tmp/lookups/robot_*.json (parsed from /tmp/feeds/robot_*.xml)
-// Generated: 2026-05-12
-// Total entries: 198075
-// Feed-files: addrevenue.json (4716), estore.json (93159), teknikproffset.json (82237), komplett.json (7767)
-//
-// To regenerate:
-//   1. Download new feeds to /tmp/feeds/robot_<brand>.xml
-//   2. node /Users/axeljonemyr/Documents/scripts/parse-all-feeds.mjs
-//   3. node /Users/axeljonemyr/Documents/scripts/build-feed-matches.mjs robot /Users/axeljonemyr/Documents/robotjakt/src/data/feed-matches.ts
+// AUTO-GENERATED from Adtraction + Addrevenue product feeds.
+// Aktiva butiker: Elon, Kjell, Komplett, CS Megastore, Proshop, Addrevenue.
+// Regenereras från /tmp/lookups/robotjakt_*_robots.json (filtrade feeds per butik).
+// Senast uppdaterad: 2026-05-22
 
-import f0 from './feed-matches/addrevenue.json' with { type: 'json' };
-import f1 from './feed-matches/estore.json' with { type: 'json' };
-import f2 from './feed-matches/teknikproffset.json' with { type: 'json' };
-import f3 from './feed-matches/komplett.json' with { type: 'json' };
+import f_elon from './feed-matches/elon.json' with { type: 'json' };
+import f_kjell from './feed-matches/kjell.json' with { type: 'json' };
+import f_komplett from './feed-matches/komplett.json' with { type: 'json' };
+import f_csmegastore from './feed-matches/csmegastore.json' with { type: 'json' };
+import f_proshop from './feed-matches/proshop.json' with { type: 'json' };
+import f_addrevenue from './feed-matches/addrevenue_robots.json' with { type: 'json' };
 
 export interface FeedMatch {
   title: string;
@@ -25,12 +21,24 @@ export interface FeedMatch {
   feedSource: string;
 }
 
+// Per-butik lookup används av multi-cta.ts för snabb filtrering per butik
+export const FEED_BY_STORE: Record<string, Record<string, FeedMatch>> = {
+  'Elon': f_elon as Record<string, FeedMatch>,
+  'Kjell & Company': f_kjell as Record<string, FeedMatch>,
+  'Komplett': f_komplett as Record<string, FeedMatch>,
+  'CS MEGASTORE': f_csmegastore as Record<string, FeedMatch>,
+  'Proshop': f_proshop as Record<string, FeedMatch>,
+  'Addrevenue': f_addrevenue as Record<string, FeedMatch>,
+};
+
 export const FEED_MATCHES: Record<string, FeedMatch> = Object.assign(
   {} as Record<string, FeedMatch>,
-  f0 as Record<string, FeedMatch>,
-  f1 as Record<string, FeedMatch>,
-  f2 as Record<string, FeedMatch>,
-  f3 as Record<string, FeedMatch>,
+  f_addrevenue as Record<string, FeedMatch>,
+  f_komplett as Record<string, FeedMatch>,
+  f_proshop as Record<string, FeedMatch>,
+  f_csmegastore as Record<string, FeedMatch>,
+  f_kjell as Record<string, FeedMatch>,
+  f_elon as Record<string, FeedMatch>,
 );
 
 export function findFeedMatch(brand: string, title: string): FeedMatch | undefined {
