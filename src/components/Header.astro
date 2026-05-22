@@ -66,24 +66,6 @@ const reservdelarItems = [
         <img src="/images/logo.svg" alt="Robotjakt" class="h-10 w-auto flex-shrink-0 group-hover:scale-105 transition-transform" width="197" height="40" />
       </a>
       <nav class="hidden md:flex items-center space-x-2" aria-label="Huvudnavigering">
-        <!-- Drönare dropdown -->
-        <div class="relative group">
-          <a href="/dronare/" class="flex items-center gap-1 text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light">
-            Drönare
-            <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </a>
-          <div class="absolute left-0 top-full pt-1 hidden group-hover:block z-50 min-w-[180px]">
-            <div class="bg-white rounded-lg shadow-lg border border-gray-100 py-1">
-              {dronareItems.map((item) => (
-                <a href={item.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
-                  {item.label}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
         <!-- Robotdammsugare dropdown -->
         <div class="relative group">
           <a href="/robotdammsugare/" class="flex items-center gap-1 text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light">
@@ -120,17 +102,17 @@ const reservdelarItems = [
             </div>
           </div>
         </div>
-        <!-- Reservdelar dropdown -->
+        <!-- Drönare dropdown -->
         <div class="relative group">
-          <a href="/reservdelar/" class="flex items-center gap-1 text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light">
-            Reservdelar
+          <a href="/dronare/" class="flex items-center gap-1 text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light">
+            Drönare
             <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </a>
-          <div class="absolute left-0 top-full pt-1 hidden group-hover:block z-50 min-w-[220px]">
+          <div class="absolute left-0 top-full pt-1 hidden group-hover:block z-50 min-w-[180px]">
             <div class="bg-white rounded-lg shadow-lg border border-gray-100 py-1">
-              {reservdelarItems.map((item) => (
+              {dronareItems.map((item) => (
                 <a href={item.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
                   {item.label}
                 </a>
@@ -138,14 +120,7 @@ const reservdelarItems = [
             </div>
           </div>
         </div>
-        <!-- Poolrobot -->
-        <a href="/poolrobot/" class="text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light">
-          Poolrobot
-        </a>
-        <!-- Fönsterputsrobot -->
-        <a href="/fonsterputsrobot/" class="text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light">
-          Fönsterputsrobot
-        </a>
+        {/* Reservdelar, Poolrobot och Fönsterputsrobot dolda från menyn — sidorna lever kvar */}
       </nav>
       <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-md hover:bg-primary-light transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Öppna meny" aria-expanded="false" aria-controls="mobile-menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -157,21 +132,6 @@ const reservdelarItems = [
   </div>
   <nav id="mobile-menu" class="hidden md:hidden fixed left-0 right-0 bottom-0 z-40 bg-primary-dark border-t border-primary-light overflow-y-auto" style="top: var(--header-height, 0px);" aria-label="Mobilnavigering">
     <div class="px-4 py-2 divide-y divide-primary-light/30">
-
-      <!-- Drönare accordion -->
-      <div>
-        <button class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-4 text-sm font-semibold text-gray-100 hover:text-white" aria-expanded="false">
-          Drönare
-          <svg class="accordion-icon w-4 h-4 opacity-60 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-        </button>
-        <div class="mobile-accordion-content hidden pb-1 space-y-0.5">
-          {dronareItems.map((item) => (
-            <a href={item.href} class="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-primary-light rounded-md transition-colors">
-              {item.label}
-            </a>
-          ))}
-        </div>
-      </div>
 
       <!-- Robotdammsugare accordion -->
       <div>
@@ -203,14 +163,14 @@ const reservdelarItems = [
         </div>
       </div>
 
-      <!-- Reservdelar accordion -->
+      <!-- Drönare accordion -->
       <div>
         <button class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-4 text-sm font-semibold text-gray-100 hover:text-white" aria-expanded="false">
-          Reservdelar
+          Drönare
           <svg class="accordion-icon w-4 h-4 opacity-60 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </button>
         <div class="mobile-accordion-content hidden pb-1 space-y-0.5">
-          {reservdelarItems.map((item) => (
+          {dronareItems.map((item) => (
             <a href={item.href} class="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-primary-light rounded-md transition-colors">
               {item.label}
             </a>
@@ -218,11 +178,7 @@ const reservdelarItems = [
         </div>
       </div>
 
-      <!-- Övriga kategorier -->
-      <div>
-        <a href="/poolrobot/" class="block px-2 py-4 text-sm font-semibold text-gray-100 hover:text-white hover:bg-primary-light rounded-md transition-colors">Poolrobot</a>
-        <a href="/fonsterputsrobot/" class="block px-2 py-4 text-sm font-semibold text-gray-100 hover:text-white hover:bg-primary-light rounded-md transition-colors">Fönsterputsrobot</a>
-      </div>
+      {/* Reservdelar, Poolrobot och Fönsterputsrobot dolda från mobilmenyn — sidorna lever kvar */}
 
       <!-- Om Robotjakt -->
       <div>
