@@ -15,120 +15,96 @@
  *
  * REGEL: hand-byggda tracker-URL:er får ALDRIG förekomma utanför den här
  * filen och feed-matches.ts. Quality-gate blockerar push om de hittas.
+ *
+ * Aktiva affiliate-feeds (2026-05-22):
+ *   Elon 5%       a=1606750995  as=2063681412
+ *   Kjell 5%      a=1487384319  as=2063681412
+ *   Komplett 4%   a=1615916042  as=2063681412
+ *   CS Megastore  a=1514097163  as=2063681412
+ *   Proshop 3.2%  a=1870484630  as=2063681412
+ *   Addrevenue (Dronarbutiken a=987736, Neatsvor a=985945,
+ *               Robot-dammsugaren.se a=985815, Robotrent a=985383,
+ *               Nordenspa/Villanytt a=984922)  c=3467327
  */
 
 export const VERIFIED_LINKS: Record<string, string> = {
-  // Bekräftade 2026-05-13 (har aktiv feed-täckning, nuvarande tracker-URL i kod fungerar enligt Adtraction broken-links):
-  'Kjell & Company': 'https://ion.kjell.com/t/t?a=1098281531&as=2063681412&t=2&tk=1',
-  'CS MEGASTORE': 'https://go.csmegastore.se/t/t?a=1514097161&as=2063681412&t=2&tk=1',
-  'Elon': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1',
-  'Komplett': 'https://go.adt267.com/t/t?a=1615916040&as=2063681412&t=2&tk=1',
-  // OBS: Proshop nedan har as=2057390123 (ladcykelguidens kanal) i koden, inte robotjakts 2063681412.
-  // Behöver kontroll, kan vara fel kanal-routing. Lämnar som-är tills användaren bekräftar.
-  'Proshop': 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1',
-  'Teknikproffset': 'https://dot.teknikproffset.se/t/t?a=1954032646&as=2063681412&t=2&tk=1',
-  // Bulk-importerade 2026-05-13 från befintliga tracker-URLs i pages (alla URLs kopierade exakt, inga konstruerade):
-  'CS MEGASTORE_2': 'https://go.csmegastore.se/t/t?a=1514097161&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.csmegastore.se%2Fi%2F20624542%2Froborock-s8-maxv-ultra-dammsugare-utan-p%25C3%25A5se',
-  'CS MEGASTORE_3': 'https://go.csmegastore.se/t/t?a=1514097161&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.csmegastore.se%2Fi%2F24161332%2Froborock-robotdammsugare-saros-10r-svart',
-  'Elon_10': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fdreame-l10s-ultra-gen-2-151994',
-  'Elon_11': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Deufy%2520x10%2520pro%2520omni%2520robotdammsugare',
-  'Elon_12': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520105',
-  'Elon_13': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520315x',
-  'Elon_14': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520415x',
-  'Elon_15': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520430x%2520nera',
-  'Elon_16': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520450x',
-  'Elon_17': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower',
-  'Elon_18': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dmammotion%2520luba%2520awo%25203000',
-  'Elon_19': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Froborock-s8-maxv-ultra-white-135019',
-  'Elon_2': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3DHOBOT%2520LEGEE%2520688%2520tv%2525C3%2525A4ttrobot%2520friktionssystem',
-  'Elon_20': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Froborock-qrevo-curv-white-148694',
-  'Elon_21': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fdreame-l10s-ultra-gen-3-white-153175',
-  'Elon_22': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fdreame-aqua10-ultra-roller-white-152012',
-  'Elon_23': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fdreame-x60-ultra-white-153177',
-  'Elon_24': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Froborock-qrevo-edge-white-148695',
-  'Elon_25': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Froborock-qrevo-s-white-146251',
-  'Elon_26': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dirobot%2520roomba%2520j9%2520plus%2520robotdammsugare',
-  'Elon_27': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Froborock-saros-10-white-149298',
-  'Elon_28': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dmammotion%2520luba%25202%2520awo%25201000h%2520robotgrasklippare',
-  'Elon_29': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dsegway%2520navimow%2520h800e',
-  'Elon_3': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Froborock-q5-pro-black-135221',
-  'Elon_30': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dmammotion%2520luba%25202%2520awo%25201000h',
-  'Elon_31': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dmammotion%2520luba%25202%2520awd%25205000x',
-  'Elon_32': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dmammotion%2520luba%2520awo%25203000%2520robotgrasklippare',
-  'Elon_33': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dmcculloch%2520rob%2520r600',
-  'Elon_34': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dneatsvor%2520x700%2520pro',
-  'Elon_35': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Drobotdammsugare%2520reservdelar',
-  'Elon_36': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Froborock-s8-pro-ultra-white',
-  'Elon_37': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Feufy-x10-pro-omni-153028',
-  'Elon_38': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fdreame-d10s-pro-151997',
-  'Elon_39': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520430v%2520nera',
-  'Elon_4': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Ddolphin%2520e30%2520poolrobot',
-  'Elon_40': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520310e%2520nera',
-  'Elon_41': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dhusqvarna%2520automower%2520450x%2520nera%2520robotgrasklippare',
-  'Elon_42': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dworx%2520landroid%2520m500',
-  'Elon_43': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dsteinbach%2520poolrunner%2520battery%2520pro',
-  'Elon_44': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dworx%2520landroid',
-  'Elon_45': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dzodiac%2520tornax%2520ot2030',
-  'Elon_5': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Ddolphin%2520nautilus%2520cc%2520plus',
-  'Elon_6': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dmaytronics%2520dolphin%2520s200',
-  'Elon_7': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fsok%3Fq%3Dmaytronics%2520dolphin%2520sigma',
-  'Elon_8': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fdreame-x40-ultra-151995',
-  'Elon_9': 'https://to.elon.se/t/t?a=1606750993&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.elon.se%2Fdreame-x50-ultra-white-151996',
-  'Kjell & Company_2': 'https://ion.kjell.com/t/t?a=1098281531&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.kjell.com%2Fse%2Fprodukter%2Fhem-fritid%2Ftradgard%2Frobotgrasklippare-tillbehor%2Frobotgrasklippare%2Fsegway-navimow-i105e-robotgrasklippare-p66290',
-  'Komplett_2': 'https://go.adt267.com/t/t?a=1615916040&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.komplett.se%2Fproduct%2F1312253%2Fhem-hushaall%2Fdammsugare-rengoring%2Frobotdammsugare%2Fecovacs-deebot-t30-omni-robotdammsugare-svart',
-  'Komplett_3': 'https://go.adt267.com/t/t?a=1615916040&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.komplett.se%2Fproduct%2F1306068%2Fhem-hushaall%2Fdammsugare-rengoring%2Frobotdammsugare%2Fdyson-360-vis-nav-robotdammsugare-blaa',
-  'Komplett_4': 'https://go.adt267.com/t/t?a=1615916040&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.komplett.se%2Fproduct%2F1300083%2Fhem-hushaall%2Fdammsugare-rengoring%2Frobotdammsugare%2Fecovacs-deebot-t20-omni-robotdammsugare-vit',
-  'Komplett_5': 'https://go.adt267.com/t/t?a=1615916040&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.komplett.se%2Fproduct%2F1320162%2Fhem-fritid%2Ftradgaard%2Fgrasklippare%2Frobotgrasklippare%2Fmova-600-robotgrasklippare',
-  'Komplett_6': 'https://go.adt267.com/t/t?a=1615916040&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.komplett.se%2Fproduct%2F1320163%2Fhem-fritid%2Ftradgaard%2Fgrasklippare%2Frobotgrasklippare%2Fmova-1000-robotgrasklippare',
-  'Komplett_7': 'https://go.adt267.com/t/t?a=1615916040&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.komplett.se%2Fproduct%2F1320411%2Fhem-fritid%2Fdammsugare-rengoring%2Frobotdammsugare%2Froborock-saros-10-robotdammsugare-vit',
-  'Komplett_8': 'https://go.adt267.com/t/t?a=1615916040&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.komplett.se%2Fproduct%2F1307027%2Fhem-fritid%2Fdammsugare-rengoring%2Frobotdammsugare%2Froborock-s8-maxv-ultra-robotdammsugare-svart',
-  'Komplett_9': 'https://go.adt267.com/t/t?a=1615916040&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.komplett.se%2Fproduct%2F1310500%2Fhem-fritid%2Fdammsugare-rengoring%2Frobotdammsugare%2Firobot-roomba-j9-robotdammsugare',
+  // Generiska ingångslänkar (homepage/kategori) per butik:
+  'Kjell & Company': 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1',
+  'CS MEGASTORE': 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1',
+  'Elon': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1',
+  'Komplett': 'https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1',
+  'Proshop': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1',
+
+  // Produktspecifika djuplänkar — Elon (feed-verifierade):
+  'Elon_s8_maxv_ultra': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=135019&url=https://www.elon.se/roborock-s8-maxv-ultra-white-135019',
+  'Elon_x50_ultra': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=151996&url=https://www.elon.se/dreame-x50-ultra-white-151996',
+  'Elon_x60_ultra': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=153177&url=https://www.elon.se/dreame-x60-ultra-white-153177',
+  'Elon_saros20': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=154763&url=https://www.elon.se/roborock-saros-20-sonic-s20s52-00-svart-154763',
+  'Elon_qrevo_s': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=146251&url=https://www.elon.se/roborock-qrevo-s-white-146251',
+  'Elon_qrevo_curv': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=148694&url=https://www.elon.se/roborock-qrevo-curv-white-148694',
+  'Elon_l10s_gen3': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=153176&url=https://www.elon.se/dreame-l10s-ultra-gen-3-black-153176',
+  'Elon_aqua10': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=152011&url=https://www.elon.se/dreame-aqua10-ultra-roller-white-152011',
+  'Elon_matrix10': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=152009&url=https://www.elon.se/dreame-matrix-10-ultra-152009',
+  'Elon_d20_ultra': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=152003&url=https://www.elon.se/dreame-d20-ultra-152003',
+  'Elon_d20_plus': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=152004&url=https://www.elon.se/dreame-d20-plus-152004',
+  'Elon_l40_ultra': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=152002&url=https://www.elon.se/dreame-l40-ultra-152002',
+  'Elon_eufy_x10': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=153028&url=https://www.elon.se/eufy-x10-pro-omni-153028',
+  'Elon_d10s_pro': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=151997&url=https://www.elon.se/dreame-d10s-pro-151997',
+  'Elon_saros10': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=149298&url=https://www.elon.se/roborock-saros-10-white-149298',
+  'Elon_qrevo_edge': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=148695&url=https://www.elon.se/roborock-qrevo-edge-white-148695',
+  'Elon_x40_ultra': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=151995&url=https://www.elon.se/dreame-x40-ultra-151995',
+
+  // Produktspecifika djuplänkar — Komplett (feed-verifierade):
+  'Komplett_s8_maxv_ultra': 'https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1&cupa_sku=1307027&url=https://www.komplett.se/product/1307027/hem-fritid/dammsugare-rengoring/robotdammsugare/roborock-s8-maxv-ultra-robotdammsugare-svart',
+  'Komplett_saros10': 'https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1&cupa_sku=1320411&url=https://www.komplett.se/product/1320411/hem-fritid/dammsugare-rengoring/robotdammsugare/roborock-saros-10-robotdammsugare-vit',
+  'Komplett_worx_vision': 'https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1&cupa_sku=1333222&url=https://www.komplett.se/product/1333222/hem-fritid/dammsugare-rengoring/robotgrasklippare/worx-wr305e-landroid-vision-cloud-500m2',
+  'Komplett_dreame_a3_5000': 'https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1&cupa_sku=1334171&url=https://www.komplett.se/product/1334171/hem-fritid/tradgard/robotgrasklippare/dreame-a3-awd-pro-5000m2-robotgrasklippare',
+  'Komplett_rockneoq110': 'https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1&cupa_sku=1339517&url=https://www.komplett.se/product/1339517/hem-fritid/tradgard/robotgrasklippare/roborock-rockneoq110-robotgrasklippare',
+
+  // Produktspecifika djuplänkar — Kjell (feed-verifierade):
+  'Kjell_dreame_a1_pro': 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66312&url=http://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare-tillbehor/robotgrasklippare/dreame-a1-pro-robotgrasklippare-p66312',
+  'Kjell_dreame_a3_1000': 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66730&url=http://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare-tillbehor/robotgrasklippare/dreame-a3-awd-1000-robotgrasklippare-p66730',
+  'Kjell_mova_1000': 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66311&url=http://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare-tillbehor/robotgrasklippare/mova-1000-robotic-lawn-mower-robotgrasklippare-p66311',
+  'Kjell_dji_mini3': 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=57774&url=http://www.kjell.com/se/produkter/hem-fritid/fritid/dronare/dji-dronare/dji-mini-3-p57774',
+  'Kjell_dji_mini4pro': 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=57765&url=http://www.kjell.com/se/produkter/hem-fritid/fritid/dronare/dji-dronare/dji-mini-4-pro-fly-more-com',
+  'Kjell_dji_mini5pro': 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=57972&url=http://www.kjell.com/se/produkter/hem-fritid/fritid/dronare/dji-dronare/dji-mini-5-pro-hopfallbar-d',
+
+  // Produktspecifika djuplänkar — CS Megastore (feed-verifierade):
+  'CS MEGASTORE_s8_maxv_ultra': 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=20624542&url=https://www.csmegastore.se/i/20624542/roborock-s8-maxv-ultra-dammsugare-utan-p%C3%A5se',
+  'CS MEGASTORE_saros10r': 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=24161332&url=https://www.csmegastore.se/i/24161332/roborock-robotdammsugare-saros-10r-svart',
+  'CS MEGASTORE_dreame_a3_5000': 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25340186&url=https://www.csmegastore.se/i/25340186/dreame-a3-awd-pro-robotgrasklippare-5000m2',
+  'CS MEGASTORE_navimow_i220e': 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25567775&url=https://www.csmegastore.se/i/25567775/segway-navimow-i220e-lidar-pro-robotgrasklippare-2000-m2',
+  'CS MEGASTORE_navimow_i210e': 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25466562&url=https://www.csmegastore.se/i/25466562/segway-navimow-i210e',
+  'CS MEGASTORE_luba3_5000x': 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25727478&url=https://www.csmegastore.se/i/25727478/mammotion-luba-3-5000x-awd-lidar-rtk-robotgrasklippare',
+
+  // Produktspecifika djuplänkar — Proshop (feed-verifierade):
+  'Proshop_x50_ultra': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3434057&url=https://www.proshop.se/Robotdammsugare/Dreame-Robotdammsugare-X50-Ultra-White/3434057',
+  'Proshop_s8_maxv_ultra': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3281903&url=https://www.proshop.se/Robotdammsugare/Roborock-Robotdammsugare-S8-MaxV-Ultra-Black/3281903',
+  'Proshop_qrevo_edge': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3368325&url=https://www.proshop.se/Robotdammsugare/Roborock-Robotdammsugare-Qrevo-Edge-White/3368325',
+  'Proshop_qrevo_s': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3353131&url=https://www.proshop.se/Robotdammsugare/Roborock-Robotdammsugare-Qrevo-S-White/3353131',
+  'Proshop_gardena_sileno_city': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3051379&url=https://www.proshop.se/Robotgraesklippare/Gardena-smart-SILENO-city-robotic-lawnmower-500-m/3051379',
+  'Proshop_gardena_sileno_life750': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3051380&url=https://www.proshop.se/Robotgraesklippare/Gardena-smart-SILENO-life-robotic-lawnmower-750-m/3051380',
+  'Proshop_gardena_sileno_life1100': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3260133&url=https://www.proshop.se/Robotgraesklippare/Gardena-Robotgraesklippare-smart-SILENO-life-1100-m/3260133',
+  'Proshop_gardena_sileno_sense': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3443528&url=https://www.proshop.se/Robotgraesklippare/Gardena-smart-SILENO-sense-robotic-lawnmower-600-m/3443528',
+
+  // Addrevenue — Neatsvor:
   'Neatsvor': 'https://addrevenue.io/t?c=3467327&a=985945&m=SE&u=https%3A%2F%2Fwww.neatsvor.se%2Fprodukt%2Fneatsvor-x520-robotdammsugare%2F',
-  'Neatsvor_2': 'https://addrevenue.io/t?c=3467327&a=985945&m=SE&u=https%3A%2F%2Fwww.neatsvor.se%2Fprodukt%2Fneatsvor-x500-robotdammsugare%2F',
-  'Neatsvor_3': 'https://addrevenue.io/t?c=3467327&a=985945&m=SE&u=https%3A%2F%2Fwww.neatsvor.se%2Fprodukt%2Fneatsvor-x650-pro-robotdammsugare%2F',
-  'Nordenspa': 'https://addrevenue.io/t?a=984922&c=3467327&url=https%3A%2F%2Fvillanytt.se%2Fprodukt-kategori%2Fpoolrobot%2F',
-  'Nordenspa_2': 'https://addrevenue.io/t?c=3467327&a=984922&m=SE&u=https%3A%2F%2Fvillanytt.se%2Fprodukt%2Fpoolrobot-orca-50cl-batteridriven%2F%3Futm_source%3DGoogle%20Shopping%26utm_campaign%3DGoogle%20Shopping%26utm_medium%3Dcpc%26utm_term%3D62432',
-  'Nordenspa_3': 'https://addrevenue.io/t?c=3467327&a=984922&m=SE&u=https%3A%2F%2Fvillanytt.se%2Fprodukt%2Fcf-200cl-poolrobot%2F%3Futm_source%3DGoogle%20Shopping%26utm_campaign%3DGoogle%20Shopping%26utm_medium%3Dcpc%26utm_term%3D74422',
-  'Nordenspa_4': 'https://addrevenue.io/t?c=3467327&a=984922&m=SE&u=https%3A%2F%2Fvillanytt.se%2Fprodukt%2Fpoolrobot-orca-300cl-batteridriven%2F%3Futm_source%3DGoogle%20Shopping%26utm_campaign%3DGoogle%20Shopping%26utm_medium%3Dcpc%26utm_term%3D60843',
-  'Nordenspa_5': 'https://addrevenue.io/t?c=3467327&a=984922&m=SE&u=https%3A%2F%2Fvillanytt.se%2Fprodukt%2Fpoolrobot-cf-400cl%2F%3Futm_source%3DGoogle%20Shopping%26utm_campaign%3DGoogle%20Shopping%26utm_medium%3Dcpc%26utm_term%3D74421',
-  'Pix4D': 'https://addrevenue.io/t?c=3467327&a=987736&m=SE&u=https%3A%2F%2Fdronarbutiken.se%2Fproducts%2Fdji-air-3s-dji-rc-n3',
-  'Pix4D_2': 'https://addrevenue.io/t?c=3467327&a=987736&m=SE&u=https%3A%2F%2Fdronarbutiken.se%2Fproducts%2Fdji-mini-5-pro',
-  'Pix4D_3': 'https://addrevenue.io/t?c=3467327&a=987736&m=SE&u=https%3A%2F%2Fdronarbutiken.se%2Fproducts%2Fdji-mini-4-pro-dji-rc-2',
-  'Pix4D_4': 'https://addrevenue.io/t?c=3467327&a=987736&m=SE&u=https%3A%2F%2Fdronarbutiken.se%2Fproducts%2Fdji-mini-3-dji-rc',
-  'Proshop_10': 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotgraesklippare%2FGardena-smart-SILENO-city-robotic-lawnmower-500-m%2F3051379',
-  'Proshop_11': 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotgraesklippare%2FGardena-smart-SILENO-life-robotic-lawnmower-750-m%2F3051380',
-  'Proshop_12': 'https://go.adt284.net/t/t?a=1870484629&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotgraesklippare%2FGardena',
-  'Proshop_13': 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotgraesklippare%2FGardena-smart-SILENO-sense-robotic-lawnmower-600-m%2F3443528',
-  'Proshop_14': 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotdammsugare%2FDreame-Robotdammsugare-X50-Ultra-White%2F3434057',
-  'Proshop_15': 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotdammsugare%2FRoborock-Robotdammsugare-Q-Revo-MaxV-Black%2F3342139',
-  'Proshop_16': 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotdammsugare%2FRoborock-Robotdammsugare-Qrevo-Edge-White%2F3368325',
-  'Proshop_17': 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotdammsugare%2FRoborock-Robotdammsugare-Qrevo-S-White%2F3353131',
-  'Proshop_18': 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotdammsugare%2FiRobot-Robotdammsugare-Roomba-Combo-j9%2F3232483',
-  'Proshop_19': 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotdammsugare%2FNarwal-Robotdammsugare-Freo-X-Ultra%2F3274713',
-  'Proshop_2': 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotdammsugare%2FDreame-Robotdammsugare-Bot-D10s-Plus%2F3310305',
-  'Proshop_20': 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotdammsugare%2FRoborock-Robotdammsugare-S8-MaxV-Ultra-Black%2F3281903',
-  'Proshop_21': 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotdammsugare%2FRoborock-Robotdammsugare-S8-Pro-Ultra-black%2F3198803',
-  'Proshop_22': 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotdammsugare%2FDreame-Robotdammsugare-L20-Ultra%2F3266641',
-  'Proshop_23': 'https://go.adt284.net/t/t?a=1870484629&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotgraesklippare%2FGardena-Robotgraesklippare-smart-SILENO-life-1100-m%2F3260133',
-  'Proshop_24': 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotgraesklippare%2FWorx-Landroid-M500-Plus-WR165E-robotic-lawnmower-500-m%2F3066543',
-  'Proshop_3': 'https://go.adt284.net/t/t?a=1870484629&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotgraesklippare%2FGardena-SILENO-city-Robotic-Lawnmower-500-m%2F3050973',
-  'Proshop_4': 'https://go.adt284.net/t/t?a=1870484629&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotgraesklippare%2FGardenase/Robotgrasklippare-Gardena-SILENO-minimo-500/p/41-2432',
-  'Proshop_5': 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotdammsugare%2FDreame-Robotdammsugare-Bot-L10s-Pro%2F3141719',
-  'Proshop_6': 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotdammsugare%2FDreame-Robotdammsugare-X40-Ultra%2F3396835',
-  'Proshop_7': 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotdammsugare%2FEcovacs-Robotdammsugare-Deebot-T30C-Vit%2F3356577',
-  'Proshop_8': 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FFoenstertvaett%2FEcovacs-Winbot-W2-OMNI%2F3398871',
-  'Proshop_9': 'https://go.adt284.net/t/t?a=1870484629&as=2057390123&t=2&tk=1&url=https%3A%2F%2Fwww.proshop.se%2FRobotdammsugare%2FEufy-Robotdammsugare-X10-Pro-Omni-Black%2F3282928',
+  'Neatsvor_x500': 'https://addrevenue.io/t?c=3467327&a=985945&m=SE&u=https%3A%2F%2Fwww.neatsvor.se%2Fprodukt%2Fneatsvor-x500-robotdammsugare%2F',
+  'Neatsvor_x600pro': 'https://addrevenue.io/t?c=3467327&a=985945&m=SE&u=https%3A%2F%2Fwww.neatsvor.se%2Fprodukt%2Fneatsvor-x600-pro-robotdammsugare-vit%2F',
+  'Neatsvor_x650pro': 'https://addrevenue.io/t?c=3467327&a=985945&m=SE&u=https%3A%2F%2Fwww.neatsvor.se%2Fprodukt%2Fneatsvor-x650-pro-robotdammsugare%2F',
+
+  // Addrevenue — Dronarbutiken:
+  'Dronarbutiken_air3s': 'https://addrevenue.io/t?c=3467327&a=987736&m=SE&u=https%3A%2F%2Fdronarbutiken.se%2Fproducts%2Fdji-air-3s-dji-rc-n3',
+
+  // Addrevenue — Robot-dammsugaren.se:
   'Robot-dammsugaren.se': 'https://addrevenue.io/t?a=985815&c=3467327&url=https%3A%2F%2Frobot-dammsugaren.se%2Fproducts%2Fjonr-x1-max',
-  'Robot-dammsugaren.se_2': 'https://addrevenue.io/t?a=985815&c=3467327&url=https%3A%2F%2Frobot-dammsugaren.se%2Fproducts%2Fjonr-t5-pro-gen-2',
-  'Robot-dammsugaren.se_3': 'https://addrevenue.io/t?c=3467327&a=985815&m=SE&u=https%3A%2F%2Frobot-dammsugaren.se%2Fproducts%2Fjonr-p20-pro',
+  'Robot-dammsugaren.se_t5pro': 'https://addrevenue.io/t?a=985815&c=3467327&url=https%3A%2F%2Frobot-dammsugaren.se%2Fproducts%2Fjonr-t5-pro-gen-2',
+  'Robot-dammsugaren.se_p20pro': 'https://addrevenue.io/t?c=3467327&a=985815&m=SE&u=https%3A%2F%2Frobot-dammsugaren.se%2Fproducts%2Fjonr-p20-pro',
+
+  // Addrevenue — Robotrent.se:
   'Robotrent.se': 'https://addrevenue.io/t?c=3467327&a=985383&m=SE&u=https%3A%2F%2Frobotrent.se%2Fproducts%2Fliectroux-l200-robotdammsugare-med-moppfunktion',
-  'Robotrent.se_2': 'https://addrevenue.io/t?c=3467327&a=985383&m=SE&u=https%3A%2F%2Frobotrent.se%2Fproducts%2Fliectroux-c30b-robotdammsugare',
-  'Teknikproffset_2': 'https://dot.teknikproffset.se/t/t?a=1954032646&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.teknikproffset.se%2Fhem-hushall-tradgard%2Fstadprodukter%2Fdammsugare-tillbehor%2Frobotdammsugare%2Ftp-link-tapo-magslim-lidar-navigering-robotdammsugare-och-mopp-smart-auto-empty-dock-tapo-rv20-mopp-plus',
-  'Teknikproffset_3': 'https://dot.teknikproffset.se/t/t?a=1954032646&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.teknikproffset.se%2Fhem-hushall-tradgard%2Fstadprodukter%2Fdammsugare-tillbehor%2Frobotdammsugare%2Fdreame-d10s-pro-robotdammsugare',
-  'Teknikproffset_4': 'https://dot.teknikproffset.se/t/t?a=1954032646&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.teknikproffset.se%2Fhem-hushall-tradgard%2Fstadprodukter%2Fdammsugare-tillbehor%2Frobotdammsugare%2Fxiaomi-dreame-bot-z10-pro-stovsuger-robotstyret-04liter',
-  'Teknikproffset_5': 'https://dot.teknikproffset.se/t/t?a=1954032646&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.teknikproffset.se%2Fhem-hushall-tradgard%2Fstadprodukter%2Fdammsugare-tillbehor%2Frobotdammsugare%2Froborock-q-revo-maxv-vit',
-  'Teknikproffset_6': 'https://dot.teknikproffset.se/t/t?a=1954032646&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.teknikproffset.se%2Fhem-hushall-tradgard%2Fstadprodukter%2Fdammsugare-tillbehor%2Frobotdammsugare%2Froborock-q-revo-robotdammsugare-svart',
-  'Teknikproffset_7': 'https://dot.teknikproffset.se/t/t?a=1954032646&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.teknikproffset.se%2Fhem-hushall-tradgard%2Fstadprodukter%2Fdammsugare-tillbehor%2Frobotdammsugare%2Froborock-q-revo-pro-robotdammsugare',
-  'Teknikproffset_8': 'https://dot.teknikproffset.se/t/t?a=1954032646&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.teknikproffset.se%2Fhem-hushall-tradgard%2Fstadprodukter%2Fdammsugare-tillbehor%2Frobotdammsugare%2Froborock-s8-maxv-ultra-robot-vacuum-and-mop-cleaner-with-self-cleaning-station-black',
-  'Teknikproffset_9': 'https://dot.teknikproffset.se/t/t?a=1954032646&as=2063681412&t=2&tk=1&url=https%3A%2F%2Fwww.teknikproffset.se%2Fhem-hushall-tradgard%2Fstadprodukter%2Fdammsugare-tillbehor%2Frobotdammsugare%2Froborock-s8-pro-ultra-robotdammsugare-vit',
+  'Robotrent.se_c30b': 'https://addrevenue.io/t?c=3467327&a=985383&m=SE&u=https%3A%2F%2Frobotrent.se%2Fproducts%2Fliectroux-c30b-robotdammsugare',
+
+  // Addrevenue — Nordenspa/Villanytt (poolrobotar):
+  'Nordenspa': 'https://addrevenue.io/t?a=984922&c=3467327&url=https%3A%2F%2Fvillanytt.se%2Fprodukt-kategori%2Fpoolrobot%2F',
 };
