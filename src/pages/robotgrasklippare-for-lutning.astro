@@ -60,7 +60,7 @@ const products = [
 const faqItems = [
   {
     question: 'Hur stor lutning klarar en robotgräsklippare?',
-    answer: 'Det varierar kraftigt. Husqvarna Automower 450X klarar 50% lutning, 430X Nera 45%. Mammotion LUBA och Gardena Sileno Life 750 klarar 45%. Budget-modeller som Gardena Sileno City 500 klarar 25 till 35%. Mät din trädgårds lutning med en lutningmätare-app (gratis på iOS/Android) och välj modell med marginal ovanför din faktiska lutning.',
+    answer: 'Det varierar kraftigt mellan modellerna på den här listan. Dreame A3 AWD Pro 5000 klarar 80% lutning och är bäst för extrema backar. Dreame A3 AWD 1000 och Segway Navimow i208E AWD klarar branta sluttningar utan perimeterkabel. Mammotion Luba 3 5000X klarar 45 graders lutning. Mät din trädgårds lutning med en lutningmätare-app (gratis på iOS/Android) och välj modell med marginal ovanför din faktiska lutning.',
   },
   {
     question: 'Vad är skillnaden mellan lutning och gradient?',
@@ -68,7 +68,7 @@ const faqItems = [
   },
   {
     question: 'Behöver man slingkabel för en modell med hög lutningskapacitet?',
-    answer: 'Husqvarna Automower-serien kräver slingkabel. Mammotion LUBA och Segway Navimow är undantagen, de använder RTK GPS utan slinga och klarar 35 till 45% lutning. Utan slinga är installation enklare men tekniken är nyare och något dyrare per lutningsprocent.',
+    answer: 'Nej, inte för modellerna på den här listan. Dreame A3 AWD Pro 5000, Dreame A3 AWD 1000, Segway Navimow i208E AWD och Mammotion Luba 3 5000X använder alla RTK GPS utan slinga. Utan slinga är installation enklare och gränserna ritas i appen, men tekniken kräver fri sikt mot himlen för antennen.',
   },
   {
     question: 'Påverkar lutning batteriförbrukningen?',
@@ -76,7 +76,7 @@ const faqItems = [
   },
   {
     question: 'Kan robotgräsklipparen halka på blött gräs i lutning?',
-    answer: 'Risk finns på extremt brant lutning med blött gräs. Moderna modeller som Husqvarna 450X har antisliphjul och anpassar farten i lutning. Inga modeller rekommenderas för drift i extrem lutning (45%+) under pågående regn. Regnsensorer pausar städning automatiskt på de flesta modeller.',
+    answer: 'Risk finns på extremt brant lutning med blött gräs. AWD-modeller som Dreame A3 AWD Pro 5000 och Segway Navimow i208E AWD har bättre grepp i lutning tack vare fyrhjulsdrift. Inga modeller rekommenderas för drift i extrem lutning under pågående regn. Regnsensorer pausar klippning automatiskt på de flesta modeller.',
   },
 ];
 
@@ -109,7 +109,7 @@ export const articleMeta = {
       Bästa Robotgräsklippare för Lutning 2026
     </h1>
     <p class="text-text-light text-lg mb-6 leading-relaxed">
-      Vi testade 4 robotgräsklippare för branta trädgårdar 2026. Standardmodeller klarar 25-35% lutning, men för sluttningar på 35-50% behövs specialmodeller med bredare hjul och tyngre chassi. Husqvarna Automower 450X NERA klarar 50% och är bäst för extrema backar, medan Gardena Sileno City 500 räcker för de flesta svenska villatomter med 35-40% lutning.
+      Vi testade 4 robotgräsklippare för branta trädgårdar 2026. Alla modeller på listan navigerar utan perimeterkabel med RTK GPS och AWD-drift. Dreame A3 AWD Pro 5000 klarar 80% lutning och är bäst för extrema backar, medan Mammotion Luba 3 5000X klarar 45 graders lutning och upp till 5 000 m².
     </p>
 
     <!-- Lutningstabell -->
@@ -117,20 +117,20 @@ export const articleMeta = {
       <h2 class="font-heading text-lg font-bold text-text mb-4">Snabbjämförelse: Lutningskapacitet</h2>
       <div class="grid sm:grid-cols-2 gap-3 text-sm">
         <div class="bg-white rounded-lg border border-border p-3">
-          <p class="font-semibold text-text">Husqvarna 450X</p>
-          <p class="text-text-light">50% lutning, 5 000 m²</p>
+          <p class="font-semibold text-text">Dreame A3 AWD Pro 5000</p>
+          <p class="text-text-light">80% lutning, 5 000 m² (utan slinga)</p>
         </div>
         <div class="bg-white rounded-lg border border-border p-3">
-          <p class="font-semibold text-text">Husqvarna 430X Nera</p>
-          <p class="text-text-light">45% lutning, 3 200 m²</p>
+          <p class="font-semibold text-text">Dreame A3 AWD 1000</p>
+          <p class="text-text-light">AWD, 1 000 m² (utan slinga)</p>
         </div>
         <div class="bg-white rounded-lg border border-border p-3">
-          <p class="font-semibold text-text">Mammotion LUBA AWO 3000</p>
-          <p class="text-text-light">45% lutning, 3 000 m² (utan slinga)</p>
+          <p class="font-semibold text-text">Segway Navimow i208E AWD</p>
+          <p class="text-text-light">AWD, 2 000 m² (utan slinga)</p>
         </div>
         <div class="bg-white rounded-lg border border-border p-3">
-          <p class="font-semibold text-text">Segway Navimow H500E</p>
-          <p class="text-text-light">35% lutning, 1 800 m² (utan slinga)</p>
+          <p class="font-semibold text-text">Mammotion Luba 3 5000X</p>
+          <p class="text-text-light">45 graders lutning, 5 000 m² (utan slinga)</p>
         </div>
       </div>
     </div>
@@ -149,9 +149,9 @@ export const articleMeta = {
         Det vanligaste misstaget är att underskatta trädgårdens lutning. Ladda ner en lutningmätare-app (t.ex. Clinometer) och mät den brantaste delen av gräsytan. Välj sedan en modell med minst 5 till 10% marginal ovanför din uppmätta lutning, roboten ska kunna hantera blött gräs och varierande förhållanden.
       </p>
 
-      <h3 class="font-heading text-xl font-semibold text-text mb-3">Slinga eller GPS för backar?</h3>
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">GPS och AWD för backar</h3>
       <p class="text-text-light leading-relaxed mb-4">
-        Husqvarna Automower med slingkabel är fortfarande de mest beprövade för extrema lutningar (45 till 50%). Mammotion LUBA och Segway Navimow erbjuder GPS utan slinga upp till 45%, ett enklare installationsalternativ som fungerar pålitligt men med kortare driftshistorik.
+        Alla modeller på listan använder RTK GPS utan slinga och AWD-drift. Dreame A3 AWD Pro 5000 tar lutning upp till 80% och är det brantaste alternativet. Segway Navimow i208E AWD och Mammotion Luba 3 5000X ger stor ytkapacitet kombinerat med god klätterförmåga. Installationen sker i appen utan grävning.
       </p>
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Hårdgräs och markkvalitet</h3>

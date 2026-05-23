@@ -60,19 +60,19 @@ const products = [
 const faqItems = [
   {
     question: 'Vilken robotgräsklippare passar bäst för en liten trädgård under 500 m²?',
-    answer: 'Gardena Sileno City 500 är det naturliga valet för de flesta med liten trädgård. Den , är tyst och klarar upp till 500 m². Vill du slippa kabeln är Segway Navimow H500E ett utmärkt alternativ , enkel installation utan grävning.',
+    answer: 'MOVA 1000 och Gardena SILENO city 500 är de naturliga valen för de flesta med liten trädgård. Gardena är tyst och klarar upp till 500 m² med kabel. Vill du slippa kabeln är Dreame A1 Pro 1000 ett utmärkt alternativ med LiDAR och RTK GPS, enkel installation utan grävning.',
   },
   {
     question: 'Måste man lägga perimeterkabel för en liten trädgård?',
-    answer: 'Inte längre. Segway Navimow H500E använder GPS och kräver ingen kabel alls, du ritar gränserna i appen. Traditionella modeller som Gardena Sileno City 500 och Worx Landroid M500 kräver kabel, men den är enkel att installera själv på en liten tomt på 1 till 2 timmar.',
+    answer: 'Inte längre. Dreame A1 Pro 1000 och MOVA 1000 använder GPS och kräver ingen kabel alls, du ritar gränserna i appen. Gardena SILENO city 500 och Worx Landroid Vision 500 har också GPS-alternativ, men Gardena-modellen kräver kabel. Kabeln är enkel att installera själv på en liten tomt på 1 till 2 timmar.',
   },
   {
     question: 'Hur lång tid tar installationen på en liten trädgård?',
-    answer: 'Med perimeterkabel räknar du med 2 till 4 timmar för en tomt på 200 till 500 m², beroende på form och hinder. Kabeln läggs längs kanten och runt hinder, sedan testkör du roboten. Segway Navimow H500E tar 30 till 60 minuter att installera, du monterar basstationen och ritar gränserna i appen.',
+    answer: 'Med perimeterkabel räknar du med 2 till 4 timmar för en tomt på 200 till 500 m², beroende på form och hinder. Kabeln läggs längs kanten och runt hinder, sedan testkör du roboten. Dreame A1 Pro 1000 och MOVA 1000 tar 30 till 60 minuter att installera, du monterar basstationen och ritar gränserna i appen.',
   },
   {
     question: 'Kan en robotgräsklippare hantera trädgårdar med blomsterrabatter och hinder?',
-    answer: 'Ja, perimeterkabeln läggs runt rabatter och hinder, och roboten vet var den inte får köra. Worx Landroid M500 och Husqvarna 315X hanterar komplexa former med öar och smalare passager (minst 60 cm bred öppning). GPS-modeller som Segway Navimow klarar komplexa former via app-ritning.',
+    answer: 'Ja, perimeterkabeln läggs runt rabatter och hinder, och roboten vet var den inte får köra. Worx Landroid Vision 500 hanterar komplexa former med öar och smalare passager. GPS-modeller som Dreame A1 Pro 1000 och MOVA 1000 klarar komplexa former via app-ritning utan kabel.',
   },
   {
     question: 'Vad kostar driften av en robotgräsklippare per år?',
@@ -80,7 +80,7 @@ const faqItems = [
   },
   {
     question: 'Är det värt att köpa Husqvarna Automower 315X till en liten trädgård?',
-    answer: 'Om du planerar att bo kvar länge och vill ha en robot som håller i 10 till 15 år, ja. Husqvarna har bäst service-nätverk och reservdelstillgång i Sverige. Om du söker ett prisvärt alternativ för en liten trädgård räcker Gardena Sileno City 500 eller Worx Landroid M500 utmärkt till en tredjedel av priset.',
+    answer: 'De fyra modellerna på listan passar olika behov. MOVA 1000 är billigast med GPS. Gardena SILENO city 500 är tyst och pålitlig. Worx Landroid Vision 500 kräver ingen kabel. Dreame A1 Pro 1000 kombinerar LiDAR och RTK GPS för flexibel installation. Välj efter yta, budget och om du vill ha kabel eller GPS.',
   },
 ];
 
@@ -138,32 +138,32 @@ export const articleMeta = {
           </thead>
           <tbody class="divide-y divide-border">
             <tr class="bg-winner/5">
-              <td class="px-4 py-3 font-semibold text-text">Gardena Sileno City 500</td>
+              <td class="px-4 py-3 font-semibold text-text">MOVA 1000</td>
+              <td class="px-4 py-3 text-text-light">1 000 m²</td>
+              <td class="px-4 py-3 text-winner font-semibold">Nej (GPS)</td>
+              <td class="px-4 py-3 text-winner font-medium">Ja</td>
+              <td class="px-4 py-3 text-text-light">30 till 60 min</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-text">Worx Landroid Vision 500</td>
+              <td class="px-4 py-3 text-text-light">500 m²</td>
+              <td class="px-4 py-3 text-winner font-semibold">Nej (Vision)</td>
+              <td class="px-4 py-3 text-winner font-medium">Ja, WiFi</td>
+              <td class="px-4 py-3 text-text-light">30 till 60 min</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-text">Gardena SILENO city 500</td>
               <td class="px-4 py-3 text-text-light">500 m²</td>
               <td class="px-4 py-3 text-cta font-medium">Ja</td>
               <td class="px-4 py-3 text-winner font-medium">Ja</td>
               <td class="px-4 py-3 text-text-light">2 till 3 h</td>
             </tr>
             <tr>
-              <td class="px-4 py-3 font-semibold text-text">Worx Landroid M500</td>
-              <td class="px-4 py-3 text-text-light">500 m²</td>
-              <td class="px-4 py-3 text-cta font-medium">Ja</td>
-              <td class="px-4 py-3 text-winner font-medium">Ja, WiFi</td>
-              <td class="px-4 py-3 text-text-light">2 till 3 h</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-semibold text-text">Segway Navimow H500E</td>
-              <td class="px-4 py-3 text-text-light">500 m²</td>
+              <td class="px-4 py-3 font-semibold text-text">Dreame A1 Pro 1000 (LiDAR)</td>
+              <td class="px-4 py-3 text-text-light">1 000 m²</td>
               <td class="px-4 py-3 text-winner font-semibold">Nej (GPS)</td>
-              <td class="px-4 py-3 text-winner font-medium">Ja, WiFi</td>
+              <td class="px-4 py-3 text-winner font-medium">Ja</td>
               <td class="px-4 py-3 text-text-light">30 till 60 min</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-semibold text-text">Husqvarna Automower 315X</td>
-              <td class="px-4 py-3 text-text-light">1 600 m²</td>
-              <td class="px-4 py-3 text-cta font-medium">Ja</td>
-              <td class="px-4 py-3 text-winner font-medium">Ja, 3G</td>
-              <td class="px-4 py-3 text-text-light">3 till 5 h</td>
             </tr>
           </tbody>
         </table>
@@ -181,11 +181,11 @@ export const articleMeta = {
       <div class="grid sm:grid-cols-2 gap-5 mb-6">
         <div class="bg-white rounded-xl border border-border p-5">
           <h3 class="font-semibold text-text mb-2">Perimeterkabel, beprövat och billigt</h3>
-          <p class="text-sm text-text-light">Gardena Sileno City 500 och Worx Landroid M500 kräver kabel. Kabeln installeras ovanpå gräset eller grävs ner ett par centimeter. På en liten tomt tar det 2 till 3 timmar och ger ett pålitligt och stabilt resultat.</p>
+          <p class="text-sm text-text-light">Gardena SILENO city 500 kräver kabel. Kabeln installeras ovanpå gräset eller grävs ner ett par centimeter. På en liten tomt tar det 2 till 3 timmar och ger ett pålitligt och stabilt resultat.</p>
         </div>
         <div class="bg-white rounded-xl border border-border p-5">
           <h3 class="font-semibold text-text mb-2">GPS utan slinga, enklare installation</h3>
-          <p class="text-sm text-text-light">Segway Navimow H500E kräver ingen kabel. Du monterar en basenhet och ritar gränserna i appen. Tar 30 till 60 minuter och är ett bra val om du inte vill gräva. Kostar mer men sparar installationstid och ger mer flexibilitet om du vill ändra gränserna.</p>
+          <p class="text-sm text-text-light">MOVA 1000, Worx Landroid Vision 500 och Dreame A1 Pro 1000 kräver ingen perimeterkabel. Du ritar gränserna i appen. Tar 30 till 60 minuter och är ett bra val om du inte vill gräva. Ger mer flexibilitet om du vill ändra gränserna.</p>
         </div>
       </div>
 
