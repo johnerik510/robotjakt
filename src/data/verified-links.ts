@@ -43,7 +43,9 @@ export const VERIFIED_LINKS: Record<string, string> = {
   'Elon_qrevo_s': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=146251&url=https://www.elon.se/roborock-qrevo-s-white-146251',
   'Elon_qrevo_curv': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=148694&url=https://www.elon.se/roborock-qrevo-curv-white-148694',
   'Elon_l10s_gen3': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=153176&url=https://www.elon.se/dreame-l10s-ultra-gen-3-black-153176',
+  'Elon_l10s_gen3_white': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=153175&url=https://www.elon.se/dreame-l10s-ultra-gen-3-white-153175',
   'Elon_aqua10': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=152011&url=https://www.elon.se/dreame-aqua10-ultra-roller-white-152011',
+  'Elon_aqua10_white': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=152012&url=https://www.elon.se/dreame-aqua10-ultra-roller-white-152012',
   'Elon_matrix10': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=152009&url=https://www.elon.se/dreame-matrix-10-ultra-152009',
   'Elon_d20_ultra': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=152003&url=https://www.elon.se/dreame-d20-ultra-152003',
   'Elon_d20_plus': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=152004&url=https://www.elon.se/dreame-d20-plus-152004',
@@ -62,6 +64,7 @@ export const VERIFIED_LINKS: Record<string, string> = {
   'Komplett_rockneoq110': 'https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1&cupa_sku=1339517&url=https://www.komplett.se/product/1339517/hem-fritid/tradgard/robotgrasklippare/roborock-rockneoq110-robotgrasklippare',
 
   // Produktspecifika djuplänkar Kjell (feed-verifierade):
+  'Kjell_navimow_i105e': 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66290&url=http://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare-tillbehor/robotgrasklippare/segway-navimow-i105e-robotgrasklippare-p66290',
   'Kjell_dreame_a1_pro': 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66312&url=http://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare-tillbehor/robotgrasklippare/dreame-a1-pro-robotgrasklippare-p66312',
   'Kjell_dreame_a3_1000': 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66730&url=http://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare-tillbehor/robotgrasklippare/dreame-a3-awd-1000-robotgrasklippare-p66730',
   'Kjell_mova_1000': 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66311&url=http://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare-tillbehor/robotgrasklippare/mova-1000-robotic-lawn-mower-robotgrasklippare-p66311',
@@ -79,9 +82,19 @@ export const VERIFIED_LINKS: Record<string, string> = {
 
   // Produktspecifika djuplänkar Proshop (feed-verifierade):
   'Proshop_x50_ultra': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3434057&url=https://www.proshop.se/Robotdammsugare/Dreame-Robotdammsugare-X50-Ultra-White/3434057',
+  'Proshop_x40_ultra': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3396835&url=https://www.proshop.se/Robotdammsugare/Dreame-Robotdammsugare-X40-Ultra/3396835',
   'Proshop_s8_maxv_ultra': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3281903&url=https://www.proshop.se/Robotdammsugare/Roborock-Robotdammsugare-S8-MaxV-Ultra-Black/3281903',
+  'Proshop_qrevo_maxv': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3342139&url=https://www.proshop.se/Robotdammsugare/Roborock-Robotdammsugare-Q-Revo-MaxV-Black/3342139',
   'Proshop_qrevo_edge': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3368325&url=https://www.proshop.se/Robotdammsugare/Roborock-Robotdammsugare-Qrevo-Edge-White/3368325',
   'Proshop_qrevo_s': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3353131&url=https://www.proshop.se/Robotdammsugare/Roborock-Robotdammsugare-Qrevo-S-White/3353131',
+  'Proshop_t30c': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3356577&url=https://www.proshop.se/Robotdammsugare/Ecovacs-Robotdammsugare-Deebot-T30C-Vit/3356577',
+  'Proshop_eufy_x10': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3282928&url=https://www.proshop.se/Robotdammsugare/Eufy-Robotdammsugare-X10-Pro-Omni-Black/3282928',
+  'Proshop_narwal_freo': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3274713&url=https://www.proshop.se/Robotdammsugare/Narwal-Robotdammsugare-Freo-X-Ultra/3274713',
+  'Proshop_hobot_2s': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3313226&url=https://www.proshop.se/Foenstertvaett/Hobot-2S-White/3313226',
+  'Proshop_winbot_w2pro': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3356596&url=https://www.proshop.se/Foenstertvaett/Ecovacs-Winbot-W2-Pro/3356596',
+  'Proshop_zodiac_gt3220': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3145255&url=https://www.proshop.se/Pool-badbassaeng/Zodiac-Robot-GT3220/3145255',
+  'Proshop_navimow_i105e': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3252813&url=https://www.proshop.se/Robotgraesklippare/Segway-Navimow-i105e-robotgraesklippare-500-m/3252813',
+  'Proshop_worx_m500': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3066543&url=https://www.proshop.se/Robotgraesklippare/Worx-Landroid-M500-Plus-WR165E-robotic-lawnmower-500-m/3066543',
   'Proshop_gardena_sileno_city': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3051379&url=https://www.proshop.se/Robotgraesklippare/Gardena-smart-SILENO-city-robotic-lawnmower-500-m/3051379',
   'Proshop_gardena_sileno_life750': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3051380&url=https://www.proshop.se/Robotgraesklippare/Gardena-smart-SILENO-life-robotic-lawnmower-750-m/3051380',
   'Proshop_gardena_sileno_life1100': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3260133&url=https://www.proshop.se/Robotgraesklippare/Gardena-Robotgraesklippare-smart-SILENO-life-1100-m/3260133',
