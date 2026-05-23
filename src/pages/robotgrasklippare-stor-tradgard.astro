@@ -48,27 +48,27 @@ const products = [
 const faqItems = [
   {
     question: 'Vilken robotgräsklippare klarar störst yta?',
-    answer: 'Husqvarna Automower 430X Nera klarar upp till 3 200 m², vilket är störst bland de vi testat. Mammotion LUBA AWO 3000 klarar 3 000 m² utan perimeterkabel. Båda räcker för de flesta stora villatomter och lantgårdar. Välj Husqvarna för beprövad pålitlighet, Mammotion om du vill slippa kabel.',
+    answer: 'Dreame A3 AWD Pro 5000 och Mammotion Luba 3 5000X klarar upp till 5 000 m² utan perimeterkabel, vilket är störst i vår test. Segway Navimow i220E klarar 2 000 m². Alla tre kräver ingen perimeterkabel och installeras via appen på under en timme.',
   },
   {
     question: 'Hur länge tar det att installera robotgräsklippare på en stor tomt?',
-    answer: 'Med perimeterkabel på en tomt runt 2 000 m² räknar du med 6 till 10 timmar DIY-installation eller 4 till 6 timmar med proffs. Husqvarna rekommenderar auktoriserade installatörer för tomter över 1 500 m² för att säkerställa rätt kabeldragning. Mammotion LUBA AWO 3000 utan kabel tar 1 till 2 timmar att installera oavsett tomtstorlek.',
+    answer: 'Alla modeller i vår lista kräver ingen perimeterkabel. Du placerar RTK-basstationen eller aktiverar LiDAR-sensorn, ritar gränser i appen och är igång. Dreame A3 AWD Pro 5000 och Mammotion Luba 3 5000X är vanligtvis klara att klippa inom 30 till 60 minuter från uppackning. Segway Navimow i220E är igång på 20 till 40 minuter.',
   },
   {
     question: 'Kan en robotgräsklippare hantera branta sluttningar?',
-    answer: 'Husqvarna Automower 430X Nera klarar upp till 45 % lutning, bland de bästa i klassen. Mammotion LUBA AWO 3000 klarar 75 % lutning (38 grader) tack vare AWD-driften (fyrhjulsdrift). Segway Navimow H500E klarar 35 % lutning. För branta slänter är Mammotion det starkaste valet.',
+    answer: 'Dreame A3 AWD Pro 5000 är starkast med AWD-drivning som klarar upp till 80 % lutning. Mammotion Luba 3 5000X klarar 45 % lutning med AWD. Segway Navimow i220E klarar 40 % lutning. För branta slänter är Dreame A3 AWD Pro det starkaste valet tack vare fyrhjulsdriften.',
   },
   {
-    question: 'Vilken är skillnaden mellan Husqvarna 430X och 315X?',
-    answer: 'Husqvarna 430X Nera klarar 3 200 m² mot 315X:s 1 600 m². 430X har 4G mot 315X:s 3G, solinladdningsstöd och avancerade GPS-funktioner. Välj 315X om din tomt är under 1 000 m², den ger bättre prisvärdhet. Välj 430X för tomter över 1 500 m² eller om du vill ha maximala funktioner.',
+    question: 'Vilken är skillnaden mellan Dreame A3 AWD Pro och Mammotion Luba 3 5000X?',
+    answer: 'Dreame A3 AWD Pro 5000 klarar upp till 80 % lutning mot Mammotions 45 %. Dreame har LiDAR-sensor i kombination med RTK GPS för extra precisionskartläggning. Mammotion Luba 3 5000X erbjuder 4G-anslutning och ett mer moget ekosystem med fler tredjepartsrecensioner. Dreame är starkast i kuperad terräng, Mammotion är starkt för flata till svagt kuperade stora tomter.',
   },
   {
     question: 'Hur ofta behöver man ladda robotgräsklippare på stor tomt?',
-    answer: 'Moderna robotgräsklippare hanterar laddningen automatiskt. Roboten går hem och laddar när batteriet börjar ta slut, sedan fortsätter den klippningen där den slutade. En Husqvarna 430X Nera klipper ca 60 till 90 min per cykel och kör 3 till 5 cykler per dag beroende på tomtstorlek. Du behöver inte göra något.',
+    answer: 'Moderna robotgräsklippare hanterar laddningen automatiskt. Roboten returnerar till laddstationen när batteriet börjar ta slut och fortsätter sedan klippningen. Dreame A3 AWD Pro 5000 och Mammotion Luba 3 5000X kör flera cykler per dag för att täcka 5 000 m². Du behöver inte göra något manuellt.',
   },
   {
-    question: 'Är Mammotion LUBA AWO 3000 lika pålitlig som Husqvarna?',
-    answer: 'Mammotion är ett yngre märke med färre oberoende långtidstester. Tekniken är imponerande och RTK GPS-navigeringen är precis, men Husqvarna har ett etablerat servicenätverk med auktoriserade verkstäder i hela Sverige och decennier av beprövad pålitlighet. För en stor investering och långsiktig drift väger servicenätverket tungt.',
+    question: 'Är GPS-klippare lika pålitliga som kabelbaserade?',
+    answer: 'RTK GPS-tekniken har mognat avsevärt och Dreame, Mammotion och Segway Navimow levererar idag hög precision. Den huvudsakliga begränsningen är fri sikt mot himlen, tät trädtäckning eller höga hinder kan störa GPS-signalen. Kabelbaserade system är mer förlåtande i sådana miljöer. Alla tre modellerna vi rankar fungerar pålitligt i öppna till halvöppna trädgårdar.',
   },
 ];
 
@@ -87,10 +87,11 @@ const faqSchema = faqItems.map((item) => ({
 }));
 export const articleMeta = {
   title: "Bästa robotgräsklippare stor trädgård 2026: 1000+ m²",
-  description: "Bästa robotgräsklipparna för stora trädgårdar 2026. Vi testar modeller som klarar 1 000 m² och mer. Se topplista med pris, kapacitet och prestanda.",
+  description: "Bästa robotgräsklipparna för stora trädgårdar 2026. Dreame A3 AWD Pro 5000 och Mammotion Luba 3 5000X klarar upp till 5 000 m² utan perimeterkabel.",
   publishDate: "2026-03-29",
+  updatedDate: "2026-05-23",
   category: "Topplista",
-  image: "/images/husqvarna-automower-450x.webp",
+  image: "/images/mammotion-luba-2-awd-5000x.webp",
 };
 
 ---
@@ -108,7 +109,7 @@ export const articleMeta = {
     </h1>
 
     <p class="text-lg text-text-light mb-6 leading-relaxed">
-      Robotgräsklippare för stor trädgård 2026 testade: Husqvarna Automower 430V NERA klarar 3 200 m² med GPS och 4G. Mammotion LUBA AWO 3000 klarar 3 000 m² helt utan kabel. Vi har rankad de 4 bästa modellerna för tomter över 1 000 m² och förklarar vad du faktiskt behöver betala för.
+      Dreame A3 AWD Pro 5000 och Mammotion Luba 3 5000X klarar upp till 5 000 m² helt utan perimeterkabel med AWD-drivning och RTK GPS. Segway Navimow i220E passar tomter upp till 2 000 m². Tre modeller rankade för tomter över 1 000 m², utan en enda meter kabel att gräva ner.
     </p>
 
     <!-- Snabbjämförelse -->
@@ -127,32 +128,25 @@ export const articleMeta = {
           </thead>
           <tbody class="divide-y divide-border">
             <tr class="bg-winner/5">
-              <td class="px-4 py-3 font-semibold text-text">Husqvarna Automower 430X Nera</td>
-              <td class="px-4 py-3 text-winner font-semibold">3 200 m²</td>
-              <td class="px-4 py-3 text-cta font-medium">Ja</td>
-              <td class="px-4 py-3 text-winner font-medium">GPS + 4G</td>
-              <td class="px-4 py-3 text-text-light">45 %</td>
+              <td class="px-4 py-3 font-semibold text-text">Dreame A3 AWD Pro 5000</td>
+              <td class="px-4 py-3 text-winner font-semibold">5 000 m²</td>
+              <td class="px-4 py-3 text-winner font-semibold">Nej (GPS + LiDAR)</td>
+              <td class="px-4 py-3 text-winner font-medium">RTK GPS + LiDAR</td>
+              <td class="px-4 py-3 text-winner font-medium">80 % (AWD)</td>
             </tr>
             <tr>
-              <td class="px-4 py-3 font-semibold text-text">Mammotion LUBA AWO 3000</td>
-              <td class="px-4 py-3 text-winner font-semibold">3 000 m²</td>
+              <td class="px-4 py-3 font-semibold text-text">Mammotion Luba 3 5000X</td>
+              <td class="px-4 py-3 text-winner font-semibold">5 000 m²</td>
               <td class="px-4 py-3 text-winner font-semibold">Nej (RTK GPS)</td>
-              <td class="px-4 py-3 text-winner font-medium">RTK GPS</td>
-              <td class="px-4 py-3 text-text-light">75 %</td>
+              <td class="px-4 py-3 text-winner font-medium">RTK GPS + LiDAR</td>
+              <td class="px-4 py-3 text-text-light">45 % (AWD)</td>
             </tr>
             <tr>
-              <td class="px-4 py-3 font-semibold text-text">Husqvarna Automower 315X</td>
-              <td class="px-4 py-3 text-text-light">1 600 m²</td>
-              <td class="px-4 py-3 text-cta font-medium">Ja</td>
-              <td class="px-4 py-3 text-winner font-medium">GPS + 3G</td>
+              <td class="px-4 py-3 font-semibold text-text">Segway Navimow i220E</td>
+              <td class="px-4 py-3 text-text-light">2 000 m²</td>
+              <td class="px-4 py-3 text-winner font-semibold">Nej (LiDAR + GNSS)</td>
+              <td class="px-4 py-3 text-winner font-medium">LiDAR + GNSS</td>
               <td class="px-4 py-3 text-text-light">40 %</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-semibold text-text">Segway Navimow H500E</td>
-              <td class="px-4 py-3 text-text-light">1 500 m²</td>
-              <td class="px-4 py-3 text-winner font-semibold">Nej (GPS)</td>
-              <td class="px-4 py-3 text-winner font-medium">GPS</td>
-              <td class="px-4 py-3 text-text-light">35 %</td>
             </tr>
           </tbody>
         </table>
@@ -175,11 +169,11 @@ export const articleMeta = {
         </div>
         <div class="bg-white rounded-xl border border-border p-5">
           <h3 class="font-semibold text-text mb-2">Lutningsförmåga</h3>
-          <p class="text-sm text-text-light">Har du en tomt med branta slänter är Mammotion LUBA AWO 3000 med sin AWD-drift överlägsen. Den klarar upp till 75 % lutning, ingen annan modell i klassen kommer i närheten.</p>
+          <p class="text-sm text-text-light">Har du en tomt med branta slänter är Dreame A3 AWD Pro 5000 överlägsen med AWD-drift och upp till 80 % lutningskapacitet. Mammotion Luba 3 5000X klarar 45 % med AWD. Segway Navimow i220E passar flata till svagt kuperade tomter.</p>
         </div>
         <div class="bg-white rounded-xl border border-border p-5">
           <h3 class="font-semibold text-text mb-2">Servicenätverk</h3>
-          <p class="text-sm text-text-light">För en stor investering väger servicetillgång tungt. Husqvarna har auktoriserade verkstäder i hela Sverige. Mammotion är nyare och servicenätverket är inte lika etablerat, väg in detta vid köp.</p>
+          <p class="text-sm text-text-light">Dreame, Mammotion och Segway är relativt nya på den svenska marknaden. Service sker primärt via återförsäljare och tillverkarens support. Väg in supportkvaliteten vid köp av en produkt i den här prisklassen.</p>
         </div>
         <div class="bg-white rounded-xl border border-border p-5">
           <h3 class="font-semibold text-text mb-2">Installationskostnad</h3>
@@ -189,10 +183,10 @@ export const articleMeta = {
 
       <h2 class="font-heading text-2xl font-bold text-text mb-4">Kabel eller GPS för stor trädgård?</h2>
       <p class="text-text-light leading-relaxed mb-4">
-        För riktigt stora tomter (2 000 m²+) är GPS-modeller som Mammotion LUBA AWO 3000 ett attraktivt alternativ. Kabeldragning på en stor tomt är tidskrävande och kostsam, medan RTK GPS-installation tar 1 till 2 timmar oavsett tomtstorlek.
+        Alla modeller i vår lista kräver ingen perimeterkabel: Dreame A3 AWD Pro 5000, Mammotion Luba 3 5000X och Segway Navimow i220E navigerar med RTK GPS och/eller LiDAR. RTK GPS-installation tar 30 till 60 minuter oavsett tomtstorlek, mot 6 till 10 timmar kabeldragning för en stor tomt.
       </p>
       <p class="text-text-light leading-relaxed mb-4">
-        Husqvarnas kabelbaserade system är dock mer beprövat och pålitligt i komplexa former med hinder och öar i gräsmattan. Om trädgården har oregelbundna former, träd och rabatter mitt på gräset är kabel ofta säkrare navigering.
+        GPS-navigering kräver fri sikt mot himlen. Har trädgården tät trädtäckning eller många höga hinder kan GPS-signalen störas. I sådana fall bör du kontrollera att din specifika tomt passar för dessa modeller innan köp.
       </p>
     </section>
 
@@ -207,8 +201,8 @@ export const articleMeta = {
         <li><a href="/robotgrasklippare/" class="text-accent underline text-sm">Bästa robotgräsklippare 2026, komplett topplista</a></li>
         <li><a href="/robotgrasklippare-liten-tradgard/" class="text-accent underline text-sm">Robotgräsklippare för liten trädgård, under 500 m²</a></li>
         <li><a href="/robotgrasklippare-utan-slinga/" class="text-accent underline text-sm">Robotgräsklippare utan slinga, GPS och RTK 2026</a></li>
-        <li><a href="/husqvarna-automower-430x-nera/" class="text-accent underline text-sm">Husqvarna Automower 430X Nera recension</a></li>
-        <li><a href="/mammotion-luba-awo-3000/" class="text-accent underline text-sm">Mammotion LUBA AWO 3000 recension</a></li>
+        <li><a href="/mammotion-robotgrasklippare/" class="text-accent underline text-sm">Mammotion Luba guide, alla modeller jämförda</a></li>
+        <li><a href="/segway-navimow-robotgrasklippare/" class="text-accent underline text-sm">Segway Navimow guide, alla modeller jämförda</a></li>
         <li><a href="/kopguide-robotgrasklippare/" class="text-accent underline text-sm">Köpguide robotgräsklippare, allt du behöver veta</a></li>
       </ul>
     </section>
