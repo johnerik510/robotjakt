@@ -1,0 +1,141 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const breadcrumbs = [
+  { label: 'Guider', href: '/guide/' },
+  { label: 'Robotdammsugare för äldre' },
+];
+
+const faqItems = [
+  {
+    question: 'Vilken robotdammsugare är enklast för en äldre person?',
+    answer: 'iRobot Roomba j9+ är generellt lättast att komma igång med. Appen är tydlig och välstrukturerad, och roboten kräver minimal konfiguration. Dreame L10s Pro Ultra Heat är ett bra alternativ för den som vill ha kombinerad dammsugning och moppning utan att behöva hantera fyra separata behållare.',
+  },
+  {
+    question: 'Hur tyst är en robotdammsugare?',
+    answer: 'I normalt läge ligger moderna robotdammsugare på 65 till 72 dB, ungefär som en lugnare konversation. I eco-läge sjunker de flesta till under 60 dB. Roborock Q Revo Pro och Dreame-modeller har tysta lägen som är märkbart lugnare, lämpliga när man vill sova eller koncentrera sig.',
+  },
+  {
+    question: 'Behöver jag preparera hemmet innan robotdammsugaren kör?',
+    answer: 'Ja, men det minskar med mer avancerade modeller. Grundregeln är att plocka upp lösa sladdar och sängkläder som hänger ned till golvet. Modeller med kameradetektion (Roborock, Dreame X40 Ultra) klarar skor, strumpor och mindre hinder utan hjälp. Modeller utan AI kräver mer förberedelse.',
+  },
+  {
+    question: 'Klarar robotdammsugare trösklar?',
+    answer: 'De flesta moderna robotdammsugare klarar trösklar upp till 15 till 20 mm. Är trösklarna högre, upp till 25 mm, behövs modeller med specifikt hög klätterhöjd som Roborock Saros 10R. Trappor klarar inga robotdammsugare, de stannar vid kanten tack vare trappdetekteringssensorer.',
+  },
+  {
+    question: 'Hur ofta behöver man städa roboten?',
+    answer: 'Med en självtömmande station behöver du tömma stationen var 30 till 60 dag beroende på hur dammigt hemmet är. Utan station behöver du tömma dammbehållaren efter varje städning, vilket tar 30 sekunder. Borsthuvudet behöver rengöras ungefär en gång i månaden.',
+  },
+  {
+    question: 'Vad kostar en lämplig robotdammsugare för äldre?',
+    answer: 'En pålitlig robotdammsugare med automatisk tömningsstation kostar 5 000 till 9 000 kr. Det är prisnivån för modeller som faktiskt städar ordentligt och inte kräver dagliga manuella ingrepp. Billigare modeller under 3 000 kr klarar sällan kraven på självständighet och pålitlighet.',
+  },
+];
+
+export const articleMeta = {
+  title: "Robotdammsugare för äldre: enklaste modellerna 2026",
+  description: "Guide till robotdammsugare för äldre 2026. Vi går igenom vilka modeller som är enklast att använda, tystast och kräver minst underhåll. Se konkreta rekommendationer.",
+  publishDate: "2026-05-23",
+  category: "Guider",
+  image: "/images/dreame-d10-plus.webp",
+};
+---
+
+<ArticleLayout
+  image={articleMeta.image}
+  title="Robotdammsugare för äldre: enklaste modellerna 2026"
+  description="Guide till robotdammsugare för äldre 2026. Vi går igenom vilka modeller som är enklast att använda, tystast och kräver minst underhåll."
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-05-23"
+  datePublished="2026-05-23"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Robotdammsugare för äldre: enklaste modellerna 2026
+  </h1>
+  <p class="text-text-light text-lg mb-6 leading-relaxed">
+    En robotdammsugare kan vara ett stort praktiskt stöd i ett äldre hem. Men valet av modell spelar stor roll. Tekniken har blivit avancerad, och det som marknadsförs som "enkelt" är inte alltid det. Den här guiden fokuserar på modeller som faktiskt är lätta att sätta igång, kräver minimalt underhåll och städar pålitligt utan att du behöver övervaka dem.
+  </p>
+
+  <figure class="my-6">
+    <img
+      src="/images/dreame-d10-plus.webp"
+      alt="Dreame D10 Plus robotdammsugare med automatisk tömningsstation"
+      class="rounded-xl border border-border w-full"
+      loading="lazy"
+    />
+    <figcaption class="text-xs text-text-lighter mt-2">En modell med automatisk tömningsstation minskar behovet av daglig skötsel avsevärt.</figcaption>
+  </figure>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Vad äldre faktiskt behöver av en robotdammsugare</h2>
+  <p class="text-text-light mb-4">
+    Många robotdammsugare är designade för teknikentusiaster som uppskattar avancerade kartläggningsinställningar och detaljerade scheman per rum. Det är sällan rätt utgångspunkt för ett äldre hushåll. Prioritera istället dessa egenskaper:
+  </p>
+  <ul class="list-disc pl-5 text-text-light space-y-2 mb-6">
+    <li><strong>Automatisk tömningsstation</strong>, utan den behöver du tömma dammbehållaren efter varje städning. Med station klarar du dig 30 till 60 dagar utan att röra roboten.</li>
+    <li><strong>Enkel app med tydliga knappar</strong>, appen ska ha ett städa nu-knapp synlig direkt på startsidan. Undvik appar som kräver att du konfigurerar zoner eller skapar komplexa scheman för att köra en städning.</li>
+    <li><strong>Tyst drift</strong>, i eco-läge ska roboten ligga under 60 dB. Det gör det möjligt att sova, titta på TV eller ha ett samtal medan den städar.</li>
+    <li><strong>Pålitlig navigering</strong>, en robot som fastnar under möbler, kör fast vid trösklar eller missar halva rummet skapar frustration. LiDAR-navigering (laser) är mer pålitlig än kamerabaserad i miljöer med varierande ljusförhållanden.</li>
+    <li><strong>Bred hemkompatibilitet</strong>, trösklar, mattor, hårt golv och möbelben nära golvet ska alla hanteras utan manuell hjälp.</li>
+  </ul>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Bästa robotdammsugarna för äldre 2026: rankade och testade</h2>
+
+  <div class="space-y-5 mb-8">
+    <div class="bg-white rounded-xl border border-border p-5">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="bg-accent text-white text-xs font-bold px-2 py-0.5 rounded">1. Bästa valet</span>
+        <h3 class="font-semibold text-text">Roborock Q Revo Pro</h3>
+      </div>
+      <p class="text-text-light text-sm mb-3">LiDAR-navigering, automatisk tömning, självtvätt av moppar och 5 500 Pa sugkraft. Appen är välstrukturerad med ett tydligt städa nu-flöde. Tyst läge på 57 dB. Kräver nästan inget manuellt underhåll under en hel månad. <a href="/roborock-qrevo-pro/" class="text-accent underline">Läs vår recension av Roborock Q Revo Pro</a>.</p>
+      <p class="text-text-lighter text-xs">Pris: ca 7 000 kr | Tömningsstation: ingår | Moppfunktion: ja</p>
+    </div>
+
+    <div class="bg-white rounded-xl border border-border p-5">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="bg-gray-100 text-gray-700 text-xs font-bold px-2 py-0.5 rounded">2. Enklast att komma igång</span>
+        <h3 class="font-semibold text-text">iRobot Roomba j9+</h3>
+      </div>
+      <p class="text-text-light text-sm mb-3">iRobots app är bland de mest lättanvända på marknaden. Roboten lär sig hem-layouten automatiskt och behöver ingen manuell kartläggning. PrecisionVision-kameran känner igen hinder. Automatisk tömning ingår. Inte lika tyst som Roborock men mer intuitiv att sätta igång direkt. <a href="/robotdammsugare/" class="text-accent underline">Se fler robotdammsugare</a>.</p>
+      <p class="text-text-lighter text-xs">Pris: ca 8 500 kr | Tömningsstation: ingår | Moppfunktion: nej</p>
+    </div>
+
+    <div class="bg-white rounded-xl border border-border p-5">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="bg-gray-100 text-gray-700 text-xs font-bold px-2 py-0.5 rounded">3. Bäst för kombination städ och mopp</span>
+        <h3 class="font-semibold text-text">Dreame L10s Pro Ultra Heat</h3>
+      </div>
+      <p class="text-text-light text-sm mb-3">Dammsugning och moppning i samma körning, med varmvattensköljning av mopparna i stationen. Minskar antal manuella städmoment avsevärt. LiDAR-navigation, 7 000 Pa sugkraft och eco-läge på 60 dB. Appen kräver lite mer konfiguration än iRobot men är tillräckligt tydlig. <a href="/dreame-l10s-pro-ultra-heat/" class="text-accent underline">Läs vår recension</a>.</p>
+      <p class="text-text-lighter text-xs">Pris: ca 7 500 kr | Tömningsstation: ingår | Moppfunktion: ja</p>
+    </div>
+  </div>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Viktiga praktiska detaljer</h2>
+
+  <h3 class="font-semibold text-text text-xl mb-2">Förberedelse av hemmet</h3>
+  <p class="text-text-light mb-4">
+    Alla robotdammsugare kräver en viss förberedelse första gången. Plocka undan lösa sladdar, sängkläder som hänger ned till golvet och mycket lågtsittande möbler. Modeller med kameradetektion (Roborock, Dreame X40 Ultra) kan navigera runt skor och strumpor utan förvarning, men det är alltid tryggare att hålla golvet relativt rent.
+  </p>
+
+  <h3 class="font-semibold text-text text-xl mb-2">Trösklar och olika golvtyper</h3>
+  <p class="text-text-light mb-4">
+    Moderna LiDAR-robotar klarar trösklar upp till 15 till 20 mm utan problem. Övergångar mellan trägolv och mattor hanteras automatiskt med sugreglering. Trappor stannar roboten vid, inbyggda sensorer känner av kanten.
+  </p>
+
+  <h3 class="font-semibold text-text text-xl mb-2">Röststyrning</h3>
+  <p class="text-text-light mb-4">
+    Alla tre rekommenderade modeller fungerar med Alexa och Google Assistant. Det innebär att du kan starta en städning med röstkommando utan att behöva plocka upp telefonen: "Alexa, be roboten städa." Det är ett praktiskt komplement till appen.
+  </p>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Vad du ska undvika</h2>
+  <ul class="list-disc pl-5 text-text-light space-y-2 mb-6">
+    <li><strong>Modeller utan automatisk tömningsstation</strong>, du behöver tömma dammbehållaren efter varje städcykel, vilket snabbt blir en jobbig rutin.</li>
+    <li><strong>Billiga modeller under 3 000 kr</strong>, de saknar LiDAR-navigering och fastnar ofta. Pålitlighet och stadigt städmönster kräver minst mellanklass.</li>
+    <li><strong>Modeller med komplicerade appar</strong>, undvik modeller där du tvingas rita kartor, definiera zoner och sätta upp komplexa regler bara för att köra en grundläggande städning.</li>
+    <li><strong>Robotdammsugare utan mjuka borstvalsar</strong>, hårda borstvalsar trasslar in hår och kräver regelbunden rengöring. Gummivalsar kräver inte lika frekvent underhåll.</li>
+  </ul>
+
+  <FAQ items={faqItems} />
+
+</ArticleLayout>
