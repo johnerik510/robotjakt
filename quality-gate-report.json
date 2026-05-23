@@ -1,14 +1,14 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-05-21T21:03:22.174Z",
-  "durationMs": 7671,
+  "timestamp": "2026-05-23T08:41:51.946Z",
+  "durationMs": 16120,
   "summary": {
     "checks": 13,
-    "errors": 4,
+    "errors": 20,
     "warnings": 24,
     "newErrors": 0,
-    "baselinedErrors": 4
+    "baselinedErrors": 20
   },
   "results": [
     {
@@ -84,22 +84,17 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/husqvarna-430x-nera.webp\" används av 2 artiklar: Husqvarna Automower 430X Nera recension 2026: utan slinga | Robotgräsklippare bäst i test 2026, 5 modeller rankade"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/husqvarna-automower-450x.webp\" används av 2 artiklar: Husqvarna Automower 450X recension 2026: stor trädgård | Bästa robotgräsklippare stor trädgård 2026: 1000+ m²"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
       "message": "Bild \"/images/mammotion-luba-awo-3000.webp\" används av 8 artiklar: Husqvarna vs Mammotion Luba robotgräsklippare 2026 | Mammotion Luba AWO 3000 recension 2026: GPS-gräsrobot | Bästa robotgräsklippare utan slinga 2026: GPS-topplista | Mammotion vs Segway Navimow robotgräsklippare 2026 | Robotgräsklippare utan årsgränsavgift 2026: topplista..."
     },
     {
       "check": "04-articlemeta",
       "severity": "warning",
       "message": "Bild \"/images/irobot-roomba-j9-plus.webp\" används av 2 artiklar: iRobot Roomba j9+ recension 2026: smart dammsugare | iRobot Roomba guide 2026: välj rätt Roomba-modell nu"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/mammotion-luba-2-awd-5000x.webp\" används av 2 artiklar: Mammotion Luba 2 AWD 5000X recension 2026 och test | Bästa robotgräsklippare stor trädgård 2026: 1000+ m²"
     },
     {
       "check": "04-articlemeta",
@@ -129,16 +124,82 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
+      "message": "Bild \"https://csdam.net/data/jpg/0/dc98b5ed/dc98b5ed-5b66-4dc3-85d2-044eee59877f.jpg\" används av 2 artiklar: Bästa poolrobot 2026, bäst i test och jämförelse | Billigaste poolrobot 2026: bäst i test för pengarna"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
       "message": "Bild \"/images/parts-husqvarna-blade.webp\" används av 2 artiklar: Reservdelar Husqvarna Automower 2026: knivar och mer | Reservdelar robotgräsklippare 2026: knivar och mer"
     }
   ],
   "baseline": {
     "status": "compared",
-    "baselineCount": 4,
-    "baselinedCount": 4,
+    "baselineCount": 97,
+    "baselinedCount": 20,
     "newErrorCount": 0
   },
   "allResults": [
+    {
+      "check": "01-dashes",
+      "severity": "error",
+      "file": "src/lib/cta-resolver.ts",
+      "line": 69,
+      "message": "em-dash hittad: \"// Tillbehör/reservdels-nyckelord — om matchad titel innehåller dessa men frågan\""
+    },
+    {
+      "check": "01-dashes",
+      "severity": "error",
+      "file": "src/pages/robotdammsugare/index.astro",
+      "line": 291,
+      "message": "em-dash hittad: \"{ name: 'Roborock Saros 20 Sonic', sugkraft: '—', station: 'Ja', betyg: '9,6', b\""
+    },
+    {
+      "check": "01-dashes",
+      "severity": "error",
+      "file": "src/pages/robotdammsugare/index.astro",
+      "line": 292,
+      "message": "em-dash hittad: \"{ name: 'Dreame X60 Ultra', sugkraft: '—', station: 'Ja', betyg: '9,5', badge: '\""
+    },
+    {
+      "check": "01-dashes",
+      "severity": "error",
+      "file": "src/pages/robotdammsugare/index.astro",
+      "line": 294,
+      "message": "em-dash hittad: \"{ name: 'Dreame Aqua10 Ultra Roller', sugkraft: '—', station: 'Ja', betyg: '9,2'\""
+    },
+    {
+      "check": "01-dashes",
+      "severity": "error",
+      "file": "src/pages/robotdammsugare/index.astro",
+      "line": 296,
+      "message": "em-dash hittad: \"{ name: 'Dreame L10s Ultra Gen 3', sugkraft: '—', station: 'Ja', betyg: '8,8', b\""
+    },
+    {
+      "check": "01-dashes",
+      "severity": "error",
+      "file": "src/pages/robotdammsugare/index.astro",
+      "line": 297,
+      "message": "em-dash hittad: \"{ name: 'Dreame D20 Ultra', sugkraft: '—', station: 'Ja', betyg: '8,5', badge: '\""
+    },
+    {
+      "check": "01-dashes",
+      "severity": "error",
+      "file": "src/pages/robotdammsugare/index.astro",
+      "line": 298,
+      "message": "em-dash hittad: \"{ name: 'Neatsvor X600 Pro', sugkraft: '—', station: 'Nej', betyg: '8,0', badge:\""
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "error",
+      "file": "src/pages/billigaste-poolrobot.astro",
+      "message": "Bildfil saknas: https://csdam.net/data/jpg/0/dc98b5ed/dc98b5ed-5b66-4dc3-85d2-044eee59877f.jpg (refererad i Billigaste poolrobot 2026: bäst i test för pengarna)"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "error",
+      "file": "src/pages/poolrobot/index.astro",
+      "message": "Bildfil saknas: https://csdam.net/data/jpg/0/dc98b5ed/dc98b5ed-5b66-4dc3-85d2-044eee59877f.jpg (refererad i Bästa poolrobot 2026, bäst i test och jämförelse)"
+    },
     {
       "check": "04-articlemeta",
       "severity": "warning",
@@ -212,22 +273,17 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/husqvarna-430x-nera.webp\" används av 2 artiklar: Husqvarna Automower 430X Nera recension 2026: utan slinga | Robotgräsklippare bäst i test 2026, 5 modeller rankade"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/husqvarna-automower-450x.webp\" används av 2 artiklar: Husqvarna Automower 450X recension 2026: stor trädgård | Bästa robotgräsklippare stor trädgård 2026: 1000+ m²"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
       "message": "Bild \"/images/mammotion-luba-awo-3000.webp\" används av 8 artiklar: Husqvarna vs Mammotion Luba robotgräsklippare 2026 | Mammotion Luba AWO 3000 recension 2026: GPS-gräsrobot | Bästa robotgräsklippare utan slinga 2026: GPS-topplista | Mammotion vs Segway Navimow robotgräsklippare 2026 | Robotgräsklippare utan årsgränsavgift 2026: topplista..."
     },
     {
       "check": "04-articlemeta",
       "severity": "warning",
       "message": "Bild \"/images/irobot-roomba-j9-plus.webp\" används av 2 artiklar: iRobot Roomba j9+ recension 2026: smart dammsugare | iRobot Roomba guide 2026: välj rätt Roomba-modell nu"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/mammotion-luba-2-awd-5000x.webp\" används av 2 artiklar: Mammotion Luba 2 AWD 5000X recension 2026 och test | Bästa robotgräsklippare stor trädgård 2026: 1000+ m²"
     },
     {
       "check": "04-articlemeta",
@@ -257,6 +313,11 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
+      "message": "Bild \"https://csdam.net/data/jpg/0/dc98b5ed/dc98b5ed-5b66-4dc3-85d2-044eee59877f.jpg\" används av 2 artiklar: Bästa poolrobot 2026, bäst i test och jämförelse | Billigaste poolrobot 2026: bäst i test för pengarna"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
       "message": "Bild \"/images/parts-husqvarna-blade.webp\" används av 2 artiklar: Reservdelar Husqvarna Automower 2026: knivar och mer | Reservdelar robotgräsklippare 2026: knivar och mer"
     },
     {
@@ -265,22 +326,73 @@
       "message": "2 bildfiler är binär-identiska (8KB) — samma bild laddats med olika filnamn: public/images/husqvarna-315x.webp | public/images/husqvarna-automower-315x.webp"
     },
     {
+      "check": "10-tracker-allowlist",
+      "severity": "error",
+      "file": "src/pages/billigaste-poolrobot.astro",
+      "line": 31,
+      "message": "Tracker-URL saknar feed-cupa_sku OCH finns inte i verified-links.ts: https://addrevenue.io/t?c=3467327&a=984922&m=SE&u=https%3A%2F%2Fvillanytt.se%2Fprodukt%2Fpoolrobot-orca-50cl-batteridriven%2F%3Futm_source%3 — lägg till i verified-links.ts efter manuell verifiering"
+    },
+    {
+      "check": "10-tracker-allowlist",
+      "severity": "error",
+      "file": "src/pages/billigaste-poolrobot.astro",
+      "line": 42,
+      "message": "Tracker-URL saknar feed-cupa_sku OCH finns inte i verified-links.ts: https://addrevenue.io/t?c=3467327&a=984922&m=SE&u=https%3A%2F%2Fvillanytt.se%2Fprodukt%2Fcf-200cl-poolrobot%2F%3Futm_source%3DGoogle%20Shopp — lägg till i verified-links.ts efter manuell verifiering"
+    },
+    {
+      "check": "10-tracker-allowlist",
+      "severity": "error",
+      "file": "src/pages/dji-mini-5-pro.astro",
+      "line": 49,
+      "message": "Tracker-URL saknar feed-cupa_sku OCH finns inte i verified-links.ts: https://addrevenue.io/t?c=3467327&a=987736&m=SE&u=https%3A%2F%2Fdronarbutiken.se%2Fproducts%2Fdji-mini-5-pro — lägg till i verified-links.ts efter manuell verifiering"
+    },
+    {
+      "check": "10-tracker-allowlist",
+      "severity": "error",
+      "file": "src/pages/dronare-for-nyborjare.astro",
+      "line": 162,
+      "message": "Tracker-URL saknar feed-cupa_sku OCH finns inte i verified-links.ts: https://addrevenue.io/t?c=3467327&a=987736&m=SE&u=https%3A%2F%2Fdronarbutiken.se%2Fproducts%2Fdji-mini-3-dji-rc — lägg till i verified-links.ts efter manuell verifiering"
+    },
+    {
+      "check": "10-tracker-allowlist",
+      "severity": "error",
+      "file": "src/pages/poolrobot/index.astro",
+      "line": 32,
+      "message": "Tracker-URL saknar feed-cupa_sku OCH finns inte i verified-links.ts: https://addrevenue.io/t?c=3467327&a=984922&m=SE&u=https%3A%2F%2Fvillanytt.se%2Fprodukt%2Fpoolrobot-orca-50cl-batteridriven%2F%3Futm_source%3 — lägg till i verified-links.ts efter manuell verifiering"
+    },
+    {
+      "check": "10-tracker-allowlist",
+      "severity": "error",
+      "file": "src/pages/poolrobot/index.astro",
+      "line": 43,
+      "message": "Tracker-URL saknar feed-cupa_sku OCH finns inte i verified-links.ts: https://addrevenue.io/t?c=3467327&a=984922&m=SE&u=https%3A%2F%2Fvillanytt.se%2Fprodukt%2Fcf-200cl-poolrobot%2F%3Futm_source%3DGoogle%20Shopp — lägg till i verified-links.ts efter manuell verifiering"
+    },
+    {
+      "check": "10-tracker-allowlist",
+      "severity": "error",
+      "file": "src/pages/poolrobot/index.astro",
+      "line": 65,
+      "message": "Tracker-URL saknar feed-cupa_sku OCH finns inte i verified-links.ts: https://addrevenue.io/t?c=3467327&a=984922&m=SE&u=https%3A%2F%2Fvillanytt.se%2Fprodukt%2Fpoolrobot-orca-300cl-batteridriven%2F%3Futm_source% — lägg till i verified-links.ts efter manuell verifiering"
+    },
+    {
+      "check": "10-tracker-allowlist",
+      "severity": "error",
+      "file": "src/pages/poolrobot/index.astro",
+      "line": 76,
+      "message": "Tracker-URL saknar feed-cupa_sku OCH finns inte i verified-links.ts: https://addrevenue.io/t?c=3467327&a=984922&m=SE&u=https%3A%2F%2Fvillanytt.se%2Fprodukt%2Fpoolrobot-cf-400cl%2F%3Futm_source%3DGoogle%20Shopp — lägg till i verified-links.ts efter manuell verifiering"
+    },
+    {
+      "check": "10-tracker-allowlist",
+      "severity": "error",
+      "file": "src/pages/robotdammsugare/budget.astro",
+      "line": 85,
+      "message": "Tracker-URL saknar feed-cupa_sku OCH finns inte i verified-links.ts: https://addrevenue.io/t?c=3467327&a=985945&m=SE&u=https%3A%2F%2Fwww.neatsvor.se%2Fprodukt%2Fneatsvor-x500-robotdammsugare-vit%2F — lägg till i verified-links.ts efter manuell verifiering"
+    },
+    {
       "check": "15-rendered-images",
       "severity": "error",
       "file": "reservdelar/dreame/index.html",
       "message": "2 <article>-kort delar samma <img src=\"/images/parts-robot-filter-3.webp\"> på reservdelar/dreame/index.html — varje kort behöver unik bild"
-    },
-    {
-      "check": "16-rendered-image-files-exist",
-      "severity": "error",
-      "file": "404.html",
-      "message": "Bildreferens \"/favicon-32x32.webp\" finns inte på disk — renderas på 153 sida(r): 404.html, affiliate-disclaimer/index.html, billigaste-fonsterputsrobot/index.html (+150 fler sidor)"
-    },
-    {
-      "check": "16-rendered-image-files-exist",
-      "severity": "error",
-      "file": "404.html",
-      "message": "Bildreferens \"/apple-touch-icon.webp\" finns inte på disk — renderas på 153 sida(r): 404.html, affiliate-disclaimer/index.html, billigaste-fonsterputsrobot/index.html (+150 fler sidor)"
     }
   ]
 }
