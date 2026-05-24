@@ -73,7 +73,7 @@ export const VERIFIED_LINKS: Record<string, string> = {
   'Kjell_dji_mini5pro': 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=57972&url=http://www.kjell.com/se/produkter/hem-fritid/fritid/dronare/dji-dronare/dji-mini-5-pro-hopfallbar-d',
 
   // Produktspecifika djuplänkar CS Megastore (feed-verifierade):
-  'CS MEGASTORE_s8_maxv_ultra': 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=20624542&url=https://www.csmegastore.se/i/20624542/roborock-s8-maxv-ultra-dammsugare-utan-p%C3%A5se',
+  'CS MEGASTORE_s8_maxv_ultra': 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=21582900&url=https://www.csmegastore.se/i/21582900/roborock-s8-maxv-ultra-dammsugare-utan-p%C3%A5se',
   'CS MEGASTORE_saros10r': 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=24161332&url=https://www.csmegastore.se/i/24161332/roborock-robotdammsugare-saros-10r-svart',
   'CS MEGASTORE_dreame_a3_5000': 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25340186&url=https://www.csmegastore.se/i/25340186/dreame-a3-awd-pro-robotgrasklippare-5000m2',
   'CS MEGASTORE_navimow_i220e': 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25567775&url=https://www.csmegastore.se/i/25567775/segway-navimow-i220e-lidar-pro-robotgrasklippare-2000-m2',
