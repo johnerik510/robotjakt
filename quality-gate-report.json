@@ -1,19 +1,492 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-05-23T11:27:20.558Z",
-  "durationMs": 2017,
+  "timestamp": "2026-05-24T20:52:30.868Z",
+  "durationMs": 17687,
   "summary": {
-    "checks": 15,
-    "errors": 20,
+    "checks": 17,
+    "errors": 61,
     "warnings": 24,
-    "newErrors": 0,
-    "baselinedErrors": 20
+    "newErrors": 50,
+    "baselinedErrors": 11
   },
-  "results": [],
+  "results": [
+    {
+      "check": "14-cta-text",
+      "severity": "error",
+      "file": "src/pages/billigaste-robotdammsugare.astro",
+      "line": 41,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
+    },
+    {
+      "check": "14-cta-text",
+      "severity": "error",
+      "file": "src/pages/billigaste-robotdammsugare.astro",
+      "line": 65,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
+    },
+    {
+      "check": "14-cta-text",
+      "severity": "error",
+      "file": "src/pages/index.astro",
+      "line": 92,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
+    },
+    {
+      "check": "14-cta-text",
+      "severity": "error",
+      "file": "src/pages/index.astro",
+      "line": 104,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
+    },
+    {
+      "check": "14-cta-text",
+      "severity": "error",
+      "file": "src/pages/index.astro",
+      "line": 193,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
+    },
+    {
+      "check": "14-cta-text",
+      "severity": "error",
+      "file": "src/pages/index.astro",
+      "line": 205,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
+    },
+    {
+      "check": "14-cta-text",
+      "severity": "error",
+      "file": "src/pages/robotdammsugare/budget.astro",
+      "line": 60,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
+    },
+    {
+      "check": "14-cta-text",
+      "severity": "error",
+      "file": "src/pages/robotdammsugare/budget.astro",
+      "line": 72,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
+    },
+    {
+      "check": "14-cta-text",
+      "severity": "error",
+      "file": "src/pages/robotdammsugare/budget.astro",
+      "line": 84,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
+    },
+    {
+      "check": "14-cta-text",
+      "severity": "error",
+      "file": "src/pages/robotdammsugare/index.astro",
+      "line": 151,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
+    },
+    {
+      "check": "14-cta-text",
+      "severity": "error",
+      "file": "src/pages/robotdammsugare/lagenhet.astro",
+      "line": 55,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
+    },
+    {
+      "check": "14-cta-text",
+      "severity": "error",
+      "file": "src/pages/robotdammsugare/lidar.astro",
+      "line": 72,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
+    },
+    {
+      "check": "14-cta-text",
+      "severity": "error",
+      "file": "src/pages/robotdammsugare/med-mopp.astro",
+      "line": 107,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
+    },
+    {
+      "check": "14-cta-text",
+      "severity": "error",
+      "file": "src/components/MultiStoreCTA.astro",
+      "line": 112,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "dreame-d10s-pro/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3310305&u (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "dreame-l10s-pro-ultra-heat/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=153176&url=h (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "dreame-z10-pro/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=152003&url=h (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "dyson-360-vis-nav/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://go.adt267.com/t/t?a=1615916042&#38;as=2063681412&#38;t=2&#38;tk=1 (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "dyson-360-vis-nav/index.html",
+      "line": 45,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://go.adt267.com/t/t?a=1615916042&#38;as=2063681412&#38;t=2&#38;tk=1 (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "dyson-guide/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://www.awin1.com/cread.php?awinmid=25183&#38;awinaffid=2834856&#38;ued=http (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "dyson-guide/index.html",
+      "line": 35,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://www.awin1.com/cread.php?awinmid=25183&#38;awinaffid=2834856&#38;ued=http (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "dyson-guide/index.html",
+      "line": 41,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://www.awin1.com/cread.php?awinmid=25183&#38;awinaffid=2834856&#38;ued=http (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "dyson-guide/index.html",
+      "line": 47,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://www.awin1.com/cread.php?awinmid=25183&#38;awinaffid=2834856&#38;ued=http (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "dyson-spot-scrub-ai/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://www.awin1.com/cread.php?awinmid=25183&#38;awinaffid=2834856&#38;ued=http (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "dyson-spot-scrub-ai/index.html",
+      "line": 47,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://www.awin1.com/cread.php?awinmid=25183&#38;awinaffid=2834856&#38;ued=http (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "ecovacs-deebot-t30s-pro/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1 (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "eufy-vs-dreame/index.html",
+      "line": 31,
+      "message": "Affiliate-länk saknar rel=\"sponsored\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3282928&u (rel: \"noopener noreferrer nofollow\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "eufy-vs-ecovacs/index.html",
+      "line": 31,
+      "message": "Affiliate-länk saknar rel=\"sponsored\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3282928&u (rel: \"noopener noreferrer nofollow\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "eufy-vs-irobot/index.html",
+      "line": 31,
+      "message": "Affiliate-länk saknar rel=\"sponsored\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3282928&u (rel: \"noopener noreferrer nofollow\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "eufy-x10-pro-omni/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3282928&u (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "irobot-roomba-j9-plus/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1 (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "jamfor/ecovacs-deebot-x5-omni-vs-roborock-s8-maxv-ultra/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3356577&u (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "jamfor/ecovacs-deebot-x5-omni-vs-roborock-s8-maxv-ultra/index.html",
+      "line": 35,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=135019&url=h (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "jamfor/roborock-saros-10r-vs-dreame-x40-ultra/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=149298&url=h (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "jamfor/roborock-saros-10r-vs-dreame-x40-ultra/index.html",
+      "line": 35,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=151995&url=h (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "jamfor/roborock-saros-10r-vs-roborock-s8-maxv-ultra/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=149298&url=h (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "jamfor/roborock-saros-10r-vs-roborock-s8-maxv-ultra/index.html",
+      "line": 35,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=135019&url=h (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "narwal-freo-x-ultra/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3274713&u (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "narwal-freo-x-ultra/index.html",
+      "line": 35,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3274713&u (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "narwal-freo-x-ultra-vs-dreame-x40-ultra/index.html",
+      "line": 43,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3274713&u (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "narwal-freo-x-ultra-vs-dreame-x40-ultra/index.html",
+      "line": 45,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=151995&url=h (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "neatsvor-x700-pro/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://addrevenue.io/t?c=3467327&a=985945&m=SE&u=https%3A%2F%2Fwww.neatsvor.se% (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "reservdelar/index.html",
+      "line": 29,
+      "message": "Affiliate-länk saknar rel=\"sponsored\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1 (rel: \"nofollow noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "roborock-qrevo-maxv-ultra/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1&cupa_sku=1310891&u (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "roborock-s8-max-ultra/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=135019&url=h (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "roborock-s8-maxv-ultra/index.html",
+      "line": 35,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://to.elon.se/t/t?a=1606750995&#38;as=2063681412&#38;t=2&#38;tk=1&#38;cupa_ (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "roborock-s8-pro-ultra/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=135019&url=h (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "roborock-vs-irobot/index.html",
+      "line": 53,
+      "message": "Affiliate-länk saknar rel=\"nofollow sponsored\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=135019&url=h (rel: \"(tomt)\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "roborock-vs-irobot/index.html",
+      "line": 55,
+      "message": "Affiliate-länk saknar rel=\"nofollow sponsored\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1 (rel: \"(tomt)\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "worx-robotgrasklippare/index.html",
+      "line": 37,
+      "message": "Affiliate-länk saknar rel=\"sponsored\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3066543&u (rel: \"nofollow noopener noreferrer\") "
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/dreame-d10s-pro.webp\" används av 3 artiklar: Dreame D10s Pro recension 2026: enkel robot med mopp | Dreame W10 Pro recension 2026: golvtvätt-robot testad | Bästa budget-robotdammsugare 2026: testade prisval"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/dreame-l10s-pro-ultra-heat.webp\" används av 3 artiklar: Dreame L10s Pro Ultra Heat Recension 2026, Test och Pris | Dreame L10s Ultra Gen 2 recension 2026: värd köpet? | Bästa robotdammsugare för lägenhet 2026: testtopplista"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/dreame-l20-ultra.webp\" används av 2 artiklar: Dreame L20 Ultra recension 2026: bäst i mellanklass? | Automatisk tömning i robotdammsugare: guide och test"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/dreame-x40-ultra.webp\" används av 8 artiklar: Dreame vs Ecovacs 2026: vilken robotdammsugare vinner? | Dreame X30 Ultra recension 2026: är den värd pengarna? | Dreame X40 Ultra vs Roborock S8 MaxV Ultra: test 2026 | Dreame X40 Ultra Test 2026, Recension och Pris Sverige | LiDAR-navigering i robotdammsugare: komplett guide..."
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/dreame-z10-pro.webp\" används av 2 artiklar: Dreame Z10 Pro recension 2026: budget-robot med mopp | Bästa robotdammsugare under 5000 kr 2026: testade toppar"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/roborock-s8-maxv-ultra.webp\" används av 11 artiklar: Dyson 360 Vis Nav Recension 2026, Test, Pris och Betyg | Robotdammsugare för husdjur: guide och rekommendationer | Roborock S8 Max Ultra Recension 2026, Test och Omdöme | Roborock S8 MaxV Ultra Recension 2026, Test och Omdöme | Roborock vs Dreame 2026: vilken robotdammsugare vinner?..."
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/roborock-qrevo-master.webp\" används av 5 artiklar: Dyson Spot Scrub AI recension 2026: golvtvätt-robot | Roborock Qrevo Master vs Dreame X40 Ultra 2026: test | Roborock Qrevo Master Recension 2026, Test & Omdöme | Roborock Qrevo Pro recension 2026: mellanklass-robot | Bästa robotdammsugare för husdjur 2026: testad topplista"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/ecovacs-deebot-t30s-pro.webp\" används av 2 artiklar: Ecovacs Deebot T30S Pro Test 2026, Recension & Pris | Sugkraft i robotdammsugare: Pa-guide och test 2026"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/ecovacs-deebot-x5-omni.webp\" används av 5 artiklar: Ecovacs Deebot X5 Omni recension 2026: fyrkantig robot | Ecovacs Deebot guide 2026: vilken robot ska du välja? | Ecovacs Deebot X5 Omni vs Dreame X40 Ultra 2026: test | Bästa robotdammsugare för långt hår 2026: testtopplista | Ecovacs vs iRobot Roomba 2026: vilken robot vinner?"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/cat-fonsterputsrobot.webp\" används av 3 artiklar: Ecovacs Winbot W2 Omni recension 2026: fönsterrobot | Bästa fönsterputsrobot 2026: testade och rankade modeller | Billigaste fönsterputsroboten 2026: bäst för pengarna"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/eufy-x10-pro-omni.webp\" används av 6 artiklar: eufy robotdammsugare 2026: guide till alla modeller | eufy vs Ecovacs 2026: vilken robotdammsugare vinner? | eufy vs Roborock 2026: vilken robot vinner i test? | eufy X10 Pro Omni Test 2026, Recension och Pris Sverige | eufy vs iRobot 2026: vilken robotdammsugare är bäst?..."
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/gardena-sileno-city-500.webp\" används av 5 artiklar: Gardena Sileno City 500 recension 2026: liten trädgård | Husqvarna vs Gardena Sileno robotgräsklippare 2026 | Bästa robotgräsklippare liten trädgård 2026: under 500 | Gardena vs Segway Navimow 2026: vilken robot vinner? | Bästa Gardena robotgräsklippare 2026: guide och test"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/husqvarna-automower-315x.webp\" används av 3 artiklar: Husqvarna Automower 315X recension 2026: pålitlig robot | Husqvarna vs Segway Navimow 2026: slinga eller GPS? | Husqvarna Automower 315X vs 415X: vilken ska du välja?"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/husqvarna-automower-415x.webp\" används av 2 artiklar: Husqvarna Automower 415X Test 2026, Recension & Pris | Bästa robotgräsklippare för lutning 2026: branttest"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/mammotion-luba-awo-3000.webp\" används av 8 artiklar: Husqvarna vs Mammotion Luba robotgräsklippare 2026 | Mammotion Luba AWO 3000 recension 2026: GPS-gräsrobot | Bästa robotgräsklippare utan slinga 2026: GPS-topplista | Mammotion vs Segway Navimow robotgräsklippare 2026 | Robotgräsklippare utan årsgränsavgift 2026: topplista..."
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/irobot-roomba-j9-plus.webp\" används av 2 artiklar: iRobot Roomba j9+ recension 2026: smart dammsugare | iRobot Roomba guide 2026: välj rätt Roomba-modell nu"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/mammotion-luba-2-awd-5000x.webp\" används av 2 artiklar: Mammotion Luba 2 AWD 5000X recension 2026 och test | Bästa robotgräsklippare stor trädgård 2026: 1000+ m²"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/mcculloch-rob-r600.webp\" används av 3 artiklar: McCulloch ROB R600 recension 2026: budget-robot testad | Bästa Robotgräsklippare till lägre pris 2026, Test | Billigaste robotgräsklipparen 2026: bäst för pengarna"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/roborock-qrevo-maxv-ultra.webp\" används av 2 artiklar: Roborock Qrevo MaxV Ultra Recension 2026, Test och Pris | Bästa robotdammsugare med basstation 2026: testade"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/roborock-saros-10r.webp\" används av 3 artiklar: Roborock Saros 10R Recension 2026, Test och Omdöme | Bästa robotdammsugare med LiDAR-navigering 2026: test | Roborock Saros 10R vs Dreame X40 Ultra 2026: vilken?"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/segway-navimow-h500e.webp\" används av 3 artiklar: Segway Navimow H500E recension 2026: trädgård 500 m² | Bästa Segway Navimow robotgräsklippare 2026: guide | Segway Navimow H800E recension 2026: GPS-robot testad"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/worx-landroid-m500.webp\" används av 3 artiklar: Worx Landroid M500 recension 2026: sling-robot testad | Bästa Worx Landroid robotgräsklippare 2026: topplista | Worx Landroid vs Husqvarna Automower 2026: jämförelse"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"https://csdam.net/data/jpg/0/dc98b5ed/dc98b5ed-5b66-4dc3-85d2-044eee59877f.jpg\" används av 2 artiklar: Bästa poolrobot 2026, bäst i test och jämförelse | Billigaste poolrobot 2026: bäst i test för pengarna"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/parts-husqvarna-blade.webp\" används av 2 artiklar: Reservdelar Husqvarna Automower 2026: knivar och mer | Reservdelar robotgräsklippare 2026: knivar och mer"
+    }
+  ],
   "baseline": {
-    "saved": true,
-    "count": 20
+    "status": "compared",
+    "baselineCount": 11,
+    "baselinedCount": 11,
+    "newErrorCount": 50
   },
   "allResults": [
     {
@@ -203,73 +676,360 @@
       "message": "2 bildfiler är binär-identiska (8KB) — samma bild laddats med olika filnamn: public/images/husqvarna-315x.webp | public/images/husqvarna-automower-315x.webp"
     },
     {
-      "check": "10-tracker-allowlist",
+      "check": "14-cta-text",
       "severity": "error",
-      "file": "src/pages/billigaste-poolrobot.astro",
-      "line": 31,
-      "message": "Tracker-URL saknar feed-cupa_sku OCH finns inte i verified-links.ts: https://addrevenue.io/t?c=3467327&a=984922&m=SE&u=https%3A%2F%2Fvillanytt.se%2Fprodukt%2Fpoolrobot-orca-50cl-batteridriven%2F%3Futm_source%3 — lägg till i verified-links.ts efter manuell verifiering"
+      "file": "src/pages/billigaste-robotdammsugare.astro",
+      "line": 41,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
     },
     {
-      "check": "10-tracker-allowlist",
+      "check": "14-cta-text",
       "severity": "error",
-      "file": "src/pages/billigaste-poolrobot.astro",
-      "line": 42,
-      "message": "Tracker-URL saknar feed-cupa_sku OCH finns inte i verified-links.ts: https://addrevenue.io/t?c=3467327&a=984922&m=SE&u=https%3A%2F%2Fvillanytt.se%2Fprodukt%2Fcf-200cl-poolrobot%2F%3Futm_source%3DGoogle%20Shopp — lägg till i verified-links.ts efter manuell verifiering"
-    },
-    {
-      "check": "10-tracker-allowlist",
-      "severity": "error",
-      "file": "src/pages/dji-mini-5-pro.astro",
-      "line": 49,
-      "message": "Tracker-URL saknar feed-cupa_sku OCH finns inte i verified-links.ts: https://addrevenue.io/t?c=3467327&a=987736&m=SE&u=https%3A%2F%2Fdronarbutiken.se%2Fproducts%2Fdji-mini-5-pro — lägg till i verified-links.ts efter manuell verifiering"
-    },
-    {
-      "check": "10-tracker-allowlist",
-      "severity": "error",
-      "file": "src/pages/dronare-for-nyborjare.astro",
-      "line": 162,
-      "message": "Tracker-URL saknar feed-cupa_sku OCH finns inte i verified-links.ts: https://addrevenue.io/t?c=3467327&a=987736&m=SE&u=https%3A%2F%2Fdronarbutiken.se%2Fproducts%2Fdji-mini-3-dji-rc — lägg till i verified-links.ts efter manuell verifiering"
-    },
-    {
-      "check": "10-tracker-allowlist",
-      "severity": "error",
-      "file": "src/pages/poolrobot/index.astro",
-      "line": 32,
-      "message": "Tracker-URL saknar feed-cupa_sku OCH finns inte i verified-links.ts: https://addrevenue.io/t?c=3467327&a=984922&m=SE&u=https%3A%2F%2Fvillanytt.se%2Fprodukt%2Fpoolrobot-orca-50cl-batteridriven%2F%3Futm_source%3 — lägg till i verified-links.ts efter manuell verifiering"
-    },
-    {
-      "check": "10-tracker-allowlist",
-      "severity": "error",
-      "file": "src/pages/poolrobot/index.astro",
-      "line": 43,
-      "message": "Tracker-URL saknar feed-cupa_sku OCH finns inte i verified-links.ts: https://addrevenue.io/t?c=3467327&a=984922&m=SE&u=https%3A%2F%2Fvillanytt.se%2Fprodukt%2Fcf-200cl-poolrobot%2F%3Futm_source%3DGoogle%20Shopp — lägg till i verified-links.ts efter manuell verifiering"
-    },
-    {
-      "check": "10-tracker-allowlist",
-      "severity": "error",
-      "file": "src/pages/poolrobot/index.astro",
+      "file": "src/pages/billigaste-robotdammsugare.astro",
       "line": 65,
-      "message": "Tracker-URL saknar feed-cupa_sku OCH finns inte i verified-links.ts: https://addrevenue.io/t?c=3467327&a=984922&m=SE&u=https%3A%2F%2Fvillanytt.se%2Fprodukt%2Fpoolrobot-orca-300cl-batteridriven%2F%3Futm_source% — lägg till i verified-links.ts efter manuell verifiering"
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
     },
     {
-      "check": "10-tracker-allowlist",
+      "check": "14-cta-text",
       "severity": "error",
-      "file": "src/pages/poolrobot/index.astro",
-      "line": 76,
-      "message": "Tracker-URL saknar feed-cupa_sku OCH finns inte i verified-links.ts: https://addrevenue.io/t?c=3467327&a=984922&m=SE&u=https%3A%2F%2Fvillanytt.se%2Fprodukt%2Fpoolrobot-cf-400cl%2F%3Futm_source%3DGoogle%20Shopp — lägg till i verified-links.ts efter manuell verifiering"
+      "file": "src/pages/index.astro",
+      "line": 92,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
     },
     {
-      "check": "10-tracker-allowlist",
+      "check": "14-cta-text",
+      "severity": "error",
+      "file": "src/pages/index.astro",
+      "line": 104,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
+    },
+    {
+      "check": "14-cta-text",
+      "severity": "error",
+      "file": "src/pages/index.astro",
+      "line": 193,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
+    },
+    {
+      "check": "14-cta-text",
+      "severity": "error",
+      "file": "src/pages/index.astro",
+      "line": 205,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
+    },
+    {
+      "check": "14-cta-text",
       "severity": "error",
       "file": "src/pages/robotdammsugare/budget.astro",
-      "line": 85,
-      "message": "Tracker-URL saknar feed-cupa_sku OCH finns inte i verified-links.ts: https://addrevenue.io/t?c=3467327&a=985945&m=SE&u=https%3A%2F%2Fwww.neatsvor.se%2Fprodukt%2Fneatsvor-x500-robotdammsugare-vit%2F — lägg till i verified-links.ts efter manuell verifiering"
+      "line": 60,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
+    },
+    {
+      "check": "14-cta-text",
+      "severity": "error",
+      "file": "src/pages/robotdammsugare/budget.astro",
+      "line": 72,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
+    },
+    {
+      "check": "14-cta-text",
+      "severity": "error",
+      "file": "src/pages/robotdammsugare/budget.astro",
+      "line": 84,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
+    },
+    {
+      "check": "14-cta-text",
+      "severity": "error",
+      "file": "src/pages/robotdammsugare/index.astro",
+      "line": 151,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
+    },
+    {
+      "check": "14-cta-text",
+      "severity": "error",
+      "file": "src/pages/robotdammsugare/lagenhet.astro",
+      "line": 55,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
+    },
+    {
+      "check": "14-cta-text",
+      "severity": "error",
+      "file": "src/pages/robotdammsugare/lidar.astro",
+      "line": 72,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
+    },
+    {
+      "check": "14-cta-text",
+      "severity": "error",
+      "file": "src/pages/robotdammsugare/med-mopp.astro",
+      "line": 107,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
+    },
+    {
+      "check": "14-cta-text",
+      "severity": "error",
+      "file": "src/components/MultiStoreCTA.astro",
+      "line": 112,
+      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
     },
     {
       "check": "15-rendered-images",
       "severity": "error",
       "file": "reservdelar/dreame/index.html",
       "message": "2 <article>-kort delar samma <img src=\"/images/parts-robot-filter-3.webp\"> på reservdelar/dreame/index.html — varje kort behöver unik bild"
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "dreame-d10s-pro/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3310305&u (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "dreame-l10s-pro-ultra-heat/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=153176&url=h (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "dreame-z10-pro/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=152003&url=h (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "dyson-360-vis-nav/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://go.adt267.com/t/t?a=1615916042&#38;as=2063681412&#38;t=2&#38;tk=1 (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "dyson-360-vis-nav/index.html",
+      "line": 45,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://go.adt267.com/t/t?a=1615916042&#38;as=2063681412&#38;t=2&#38;tk=1 (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "dyson-guide/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://www.awin1.com/cread.php?awinmid=25183&#38;awinaffid=2834856&#38;ued=http (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "dyson-guide/index.html",
+      "line": 35,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://www.awin1.com/cread.php?awinmid=25183&#38;awinaffid=2834856&#38;ued=http (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "dyson-guide/index.html",
+      "line": 41,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://www.awin1.com/cread.php?awinmid=25183&#38;awinaffid=2834856&#38;ued=http (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "dyson-guide/index.html",
+      "line": 47,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://www.awin1.com/cread.php?awinmid=25183&#38;awinaffid=2834856&#38;ued=http (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "dyson-spot-scrub-ai/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://www.awin1.com/cread.php?awinmid=25183&#38;awinaffid=2834856&#38;ued=http (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "dyson-spot-scrub-ai/index.html",
+      "line": 47,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://www.awin1.com/cread.php?awinmid=25183&#38;awinaffid=2834856&#38;ued=http (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "ecovacs-deebot-t30s-pro/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1 (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "eufy-vs-dreame/index.html",
+      "line": 31,
+      "message": "Affiliate-länk saknar rel=\"sponsored\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3282928&u (rel: \"noopener noreferrer nofollow\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "eufy-vs-ecovacs/index.html",
+      "line": 31,
+      "message": "Affiliate-länk saknar rel=\"sponsored\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3282928&u (rel: \"noopener noreferrer nofollow\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "eufy-vs-irobot/index.html",
+      "line": 31,
+      "message": "Affiliate-länk saknar rel=\"sponsored\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3282928&u (rel: \"noopener noreferrer nofollow\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "eufy-x10-pro-omni/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3282928&u (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "irobot-roomba-j9-plus/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1 (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "jamfor/ecovacs-deebot-x5-omni-vs-roborock-s8-maxv-ultra/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3356577&u (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "jamfor/ecovacs-deebot-x5-omni-vs-roborock-s8-maxv-ultra/index.html",
+      "line": 35,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=135019&url=h (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "jamfor/roborock-saros-10r-vs-dreame-x40-ultra/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=149298&url=h (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "jamfor/roborock-saros-10r-vs-dreame-x40-ultra/index.html",
+      "line": 35,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=151995&url=h (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "jamfor/roborock-saros-10r-vs-roborock-s8-maxv-ultra/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=149298&url=h (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "jamfor/roborock-saros-10r-vs-roborock-s8-maxv-ultra/index.html",
+      "line": 35,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=135019&url=h (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "narwal-freo-x-ultra/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3274713&u (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "narwal-freo-x-ultra/index.html",
+      "line": 35,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3274713&u (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "narwal-freo-x-ultra-vs-dreame-x40-ultra/index.html",
+      "line": 43,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3274713&u (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "narwal-freo-x-ultra-vs-dreame-x40-ultra/index.html",
+      "line": 45,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=151995&url=h (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "neatsvor-x700-pro/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://addrevenue.io/t?c=3467327&a=985945&m=SE&u=https%3A%2F%2Fwww.neatsvor.se% (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "reservdelar/index.html",
+      "line": 29,
+      "message": "Affiliate-länk saknar rel=\"sponsored\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1 (rel: \"nofollow noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "roborock-qrevo-maxv-ultra/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1&cupa_sku=1310891&u (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "roborock-s8-max-ultra/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=135019&url=h (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "roborock-s8-maxv-ultra/index.html",
+      "line": 35,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://to.elon.se/t/t?a=1606750995&#38;as=2063681412&#38;t=2&#38;tk=1&#38;cupa_ (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "roborock-s8-pro-ultra/index.html",
+      "line": 33,
+      "message": "Affiliate-länk saknar rel=\"nofollow\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=135019&url=h (rel: \"sponsored noopener noreferrer\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "roborock-vs-irobot/index.html",
+      "line": 53,
+      "message": "Affiliate-länk saknar rel=\"nofollow sponsored\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=135019&url=h (rel: \"(tomt)\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "roborock-vs-irobot/index.html",
+      "line": 55,
+      "message": "Affiliate-länk saknar rel=\"nofollow sponsored\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1 (rel: \"(tomt)\") "
+    },
+    {
+      "check": "17-affiliate-rel",
+      "severity": "error",
+      "file": "worx-robotgrasklippare/index.html",
+      "line": 37,
+      "message": "Affiliate-länk saknar rel=\"sponsored\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3066543&u (rel: \"nofollow noopener noreferrer\") "
     }
   ]
 }
