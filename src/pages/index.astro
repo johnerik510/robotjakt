@@ -312,6 +312,8 @@ const faqSchema = faqItems.map((item) => ({
       loading="eager"
       fetchpriority="high"
       aria-hidden="true"
+      width="1280"
+      height="720"
     />
     <div class="absolute inset-0 bg-primary/80" aria-hidden="true"></div>
     <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
@@ -356,7 +358,7 @@ const faqSchema = faqItems.map((item) => ({
             </div>
             <div class="flex items-center gap-5 mb-6">
               <div class="w-24 h-24 bg-white/5 rounded-2xl flex items-center justify-center flex-shrink-0 overflow-hidden">
-                <img src="/images/products/dreame-x50-ultra.webp" alt="Dreame X50 Ultra" class="w-full h-full object-contain" loading="eager" />
+                <img src="/images/products/dreame-x50-ultra.webp" alt="Dreame X50 Ultra" class="w-full h-full object-contain" loading="eager" width="500" height="500" />
               </div>
               <div>
                 <div class="font-heading text-xl font-bold text-white mb-1">Dreame X50 Ultra</div>
@@ -406,6 +408,8 @@ const faqSchema = faqItems.map((item) => ({
                   alt={`Testkategori: ${kat.name}`}
                   class="absolute inset-0 w-full h-full object-cover"
                   loading="lazy"
+                  width="128"
+                  height="160"
                 />
               </a>
               <div class="flex flex-col justify-center min-w-0">
@@ -591,7 +595,7 @@ const faqSchema = faqItems.map((item) => ({
         {senasteRecensioner.map((artikel) => (
           <article class="py-6 border-t border-border">
             <a href={artikel.href} class="block aspect-[16/9] rounded-xl overflow-hidden bg-bg-alt mb-4 relative" tabindex="-1" aria-hidden="true">
-              <img src={artikel.image} alt={artikel.title} class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <img src={artikel.image} alt={artikel.title} class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="450" />
             </a>
             <div class="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wider mb-2">
               <span class="text-accent">{artikel.category}</span>
@@ -629,7 +633,7 @@ const faqSchema = faqItems.map((item) => ({
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <figure class="group relative rounded-2xl overflow-hidden ring-1 ring-border">
             <div class="aspect-[4/5] overflow-hidden">
-              <img src="/images/team-marcus.webp" alt="Marcus Lindqvist, grundare Robotjakt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <img src="/images/team-marcus.webp" alt="Marcus Lindqvist, grundare Robotjakt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width="500" height="556" />
             </div>
             <figcaption class="p-5 bg-white">
               <div class="font-heading font-bold text-lg text-text leading-tight">Marcus Lindqvist</div>
@@ -639,7 +643,7 @@ const faqSchema = faqItems.map((item) => ({
           </figure>
           <figure class="group relative rounded-2xl overflow-hidden ring-1 ring-border">
             <div class="aspect-[4/5] overflow-hidden">
-              <img src="/images/team-anna.webp" alt="Anna Svensson, teknikredaktör Robotjakt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <img src="/images/team-anna.webp" alt="Anna Svensson, teknikredaktör Robotjakt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width="500" height="549" />
             </div>
             <figcaption class="p-5 bg-white">
               <div class="font-heading font-bold text-lg text-text leading-tight">Anna Svensson</div>
