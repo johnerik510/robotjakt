@@ -9,10 +9,10 @@ interface Props {
 }
 
 const {
-  author = 'John Erik Johansson',
-  authorTitle = 'Grundare & robotexpert',
-  authorImage = '/images/john-erik-johansson.webp',
-  authorBio = 'Teknikentusiast och robotexpert. Testat 50+ robotdammsugare, robotgräsklippare och poolrobotar i hemmet med fokus på prestanda, smart hem-integration och långsiktig hållbarhet.',
+  author = 'Anna Svensson',
+  authorTitle = 'Teknikredaktör',
+  authorImage = '/images/team-anna.webp',
+  authorBio = 'Teknikredaktör med fokus på smarta hem och konsumentrobotar. Testat och jämfört robotdammsugare, robotgräsklippare och poolrobotar för den svenska marknaden.',
   datePublished,
   dateModified,
 } = Astro.props;
@@ -59,7 +59,7 @@ const showUpdated = !!dateModified && dateModified !== datePublished;
   image: `https://robotjakt.se${authorImage}`,
   jobTitle: authorTitle,
   description: authorBio,
-  knowsAbout: ['robotdammsugare', 'robotgräsklippare', 'poolrobotar', 'smart hem', 'Dreame', 'Roborock', 'Husqvarna'],
+  knowsAbout: ['robotdammsugare', 'robotgräsklippare', 'poolrobotar', 'smarta hem', 'Dreame', 'Roborock', 'Husqvarna'],
   worksFor: {
     '@type': 'Organization',
     name: 'Robotjakt',

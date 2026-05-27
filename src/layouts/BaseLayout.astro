@@ -3,16 +3,53 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
+interface ArticleMeta {
+  headline?: string;
+  description?: string;
+  datePublished?: string;
+  dateModified?: string;
+  image?: string;
+}
+
 interface Props {
   title: string;
   description: string;
   ogImage?: string;
   canonical?: string;
   hideAutoRelated?: boolean;
+  article?: boolean | ArticleMeta;
 }
 
-const { title, description, ogImage = '/og-default.jpg', canonical, hideAutoRelated = false } = Astro.props;
+const { title, description, ogImage = '/og-default.jpg', canonical, hideAutoRelated = false, article } = Astro.props;
 const canonicalUrl = canonical || Astro.url.href;
+
+const articleMeta: ArticleMeta = typeof article === 'object' && article !== null ? article : {};
+const articleSchema = article ? {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: articleMeta.headline ?? title,
+  description: articleMeta.description ?? description,
+  datePublished: articleMeta.datePublished ?? '2026-01-01',
+  dateModified: articleMeta.dateModified ?? '2026-05-27',
+  image: articleMeta.image
+    ? (articleMeta.image.startsWith('http') ? articleMeta.image : `https://robotjakt.se${articleMeta.image}`)
+    : `https://robotjakt.se/og-default.jpg`,
+  author: {
+    '@type': 'Person',
+    name: 'Anna Svensson',
+    url: 'https://robotjakt.se/om-redaktionen/',
+    jobTitle: 'Teknikredaktör',
+    image: 'https://robotjakt.se/images/team-anna.webp',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Robotjakt',
+    url: 'https://robotjakt.se',
+    logo: { '@type': 'ImageObject', url: 'https://robotjakt.se/favicon.svg' },
+  },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+  inLanguage: 'sv-SE',
+} : null;
 
 // Auto-related links för sidor som inte går via ArticleLayout
 let baseAutoRelated: { title: string; href: string }[] = [];
@@ -122,6 +159,8 @@ if (!hideAutoRelated) {
       "contactType": "editorial"
     }
   })} />
+
+  {articleSchema && <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />}
 
   <!-- Addrevenue Easylinks, deferred to reduce render-blocking -->
   <script is:inline>

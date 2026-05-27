@@ -1,72 +1,16 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-05-24T20:54:35.416Z",
-  "durationMs": 16054,
+  "timestamp": "2026-05-26T09:03:10.458Z",
+  "durationMs": 25069,
   "summary": {
     "checks": 17,
-    "errors": 19,
+    "errors": 11,
     "warnings": 24,
-    "newErrors": 8,
+    "newErrors": 0,
     "baselinedErrors": 11
   },
   "results": [
-    {
-      "check": "14-cta-text",
-      "severity": "error",
-      "file": "src/components/MultiStoreCTA.astro",
-      "line": 112,
-      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
-    },
-    {
-      "check": "17-affiliate-rel",
-      "severity": "error",
-      "file": "eufy-vs-dreame/index.html",
-      "line": 31,
-      "message": "Affiliate-länk saknar rel=\"sponsored\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3282928&u (rel: \"noopener noreferrer nofollow\") "
-    },
-    {
-      "check": "17-affiliate-rel",
-      "severity": "error",
-      "file": "eufy-vs-ecovacs/index.html",
-      "line": 31,
-      "message": "Affiliate-länk saknar rel=\"sponsored\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3282928&u (rel: \"noopener noreferrer nofollow\") "
-    },
-    {
-      "check": "17-affiliate-rel",
-      "severity": "error",
-      "file": "eufy-vs-irobot/index.html",
-      "line": 31,
-      "message": "Affiliate-länk saknar rel=\"sponsored\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3282928&u (rel: \"noopener noreferrer nofollow\") "
-    },
-    {
-      "check": "17-affiliate-rel",
-      "severity": "error",
-      "file": "reservdelar/index.html",
-      "line": 29,
-      "message": "Affiliate-länk saknar rel=\"sponsored\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1 (rel: \"nofollow noopener noreferrer\") "
-    },
-    {
-      "check": "17-affiliate-rel",
-      "severity": "error",
-      "file": "roborock-vs-irobot/index.html",
-      "line": 53,
-      "message": "Affiliate-länk saknar rel=\"nofollow sponsored\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=135019&url=h (rel: \"(tomt)\") "
-    },
-    {
-      "check": "17-affiliate-rel",
-      "severity": "error",
-      "file": "roborock-vs-irobot/index.html",
-      "line": 55,
-      "message": "Affiliate-länk saknar rel=\"nofollow sponsored\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1 (rel: \"(tomt)\") "
-    },
-    {
-      "check": "17-affiliate-rel",
-      "severity": "error",
-      "file": "worx-robotgrasklippare/index.html",
-      "line": 37,
-      "message": "Affiliate-länk saknar rel=\"sponsored\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3066543&u (rel: \"nofollow noopener noreferrer\") "
-    },
     {
       "check": "04-articlemeta",
       "severity": "warning",
@@ -192,7 +136,7 @@
     "status": "compared",
     "baselineCount": 11,
     "baselinedCount": 11,
-    "newErrorCount": 8
+    "newErrorCount": 0
   },
   "allResults": [
     {
@@ -382,66 +326,10 @@
       "message": "2 bildfiler är binär-identiska (8KB) — samma bild laddats med olika filnamn: public/images/husqvarna-315x.webp | public/images/husqvarna-automower-315x.webp"
     },
     {
-      "check": "14-cta-text",
-      "severity": "error",
-      "file": "src/components/MultiStoreCTA.astro",
-      "line": 112,
-      "message": "Förbjuden CTA-text \"Köp hos...\" — ska vara \"Bra pris hos [Butik]\" (CLAUDE.md §CTA-standarder)"
-    },
-    {
       "check": "15-rendered-images",
       "severity": "error",
       "file": "reservdelar/dreame/index.html",
       "message": "2 <article>-kort delar samma <img src=\"/images/parts-robot-filter-3.webp\"> på reservdelar/dreame/index.html — varje kort behöver unik bild"
-    },
-    {
-      "check": "17-affiliate-rel",
-      "severity": "error",
-      "file": "eufy-vs-dreame/index.html",
-      "line": 31,
-      "message": "Affiliate-länk saknar rel=\"sponsored\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3282928&u (rel: \"noopener noreferrer nofollow\") "
-    },
-    {
-      "check": "17-affiliate-rel",
-      "severity": "error",
-      "file": "eufy-vs-ecovacs/index.html",
-      "line": 31,
-      "message": "Affiliate-länk saknar rel=\"sponsored\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3282928&u (rel: \"noopener noreferrer nofollow\") "
-    },
-    {
-      "check": "17-affiliate-rel",
-      "severity": "error",
-      "file": "eufy-vs-irobot/index.html",
-      "line": 31,
-      "message": "Affiliate-länk saknar rel=\"sponsored\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3282928&u (rel: \"noopener noreferrer nofollow\") "
-    },
-    {
-      "check": "17-affiliate-rel",
-      "severity": "error",
-      "file": "reservdelar/index.html",
-      "line": 29,
-      "message": "Affiliate-länk saknar rel=\"sponsored\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1 (rel: \"nofollow noopener noreferrer\") "
-    },
-    {
-      "check": "17-affiliate-rel",
-      "severity": "error",
-      "file": "roborock-vs-irobot/index.html",
-      "line": 53,
-      "message": "Affiliate-länk saknar rel=\"nofollow sponsored\" — href: https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=135019&url=h (rel: \"(tomt)\") "
-    },
-    {
-      "check": "17-affiliate-rel",
-      "severity": "error",
-      "file": "roborock-vs-irobot/index.html",
-      "line": 55,
-      "message": "Affiliate-länk saknar rel=\"nofollow sponsored\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1 (rel: \"(tomt)\") "
-    },
-    {
-      "check": "17-affiliate-rel",
-      "severity": "error",
-      "file": "worx-robotgrasklippare/index.html",
-      "line": 37,
-      "message": "Affiliate-länk saknar rel=\"sponsored\" — href: https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3066543&u (rel: \"nofollow noopener noreferrer\") "
     }
   ]
 }
