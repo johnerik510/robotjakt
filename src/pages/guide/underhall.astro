@@ -87,5 +87,28 @@ export const articleMeta = {
     <li><a href="/reservdelar/borstar/" class="text-accent underline">Borstar (huvud + sido)</a></li>
   </ul>
 
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Felsökning: vanliga symptom och vad de betyder</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    Många felproblem med robotdammsugare har enkla förklaringar som du kan åtgärda själv utan service. Börjar roboten köra i cirklar eller ta konstiga kurser mitt i städningen är LiDAR-tornet det första du kontrollerar. En smutsig glasruta på tornet, täckt av damm eller pälsfibrer, förvränger avståndsmätningarna och gör att roboten inte längre vet var väggarna finns. Torka av med en torr mikrofiberduk och starta om en ny körning.
+  </p>
+  <ul class="list-disc pl-6 text-text-light space-y-3 mb-4">
+    <li><strong>Roboten stannar mitt i städning:</strong> vanligaste orsaken är full dammkorg eller igensatt borstvals. Töm korgen, rensa borsten och starta om. Om felet kvarstår, kontrollera att slanganslutningen till auto-empty-stationen sitter ordentligt.</li>
+    <li><strong>Roboten städar sämre trots nylig rensning:</strong> filtret kan vara mättat. Ett igensatt HEPA-filter ser rent ut på ytan men flödesmotståndet har ökat. Byt filtret och testa sugkraften mot din hand, du ska känna ett tydligt drag.</li>
+    <li><strong>Appen tappar kartbilden eller kartan ser konstig ut:</strong> det är ofta ett tecken på att en firmware-uppdatering ändrat kartformat. Uppdatera roboten via appen, starta en komplett ny kartläggning av hemmet och spara den som ny karta.</li>
+    <li><strong>Roboten hittar inte hem till laddstationen:</strong> kontrollera att stationens area är fri från föremål och att ljusförhållandena i rummet inte förändrats drastiskt. Direkt solljus som träffar stationens IR-sensor kan störa navigeringen. Flytta stationen en halvmeter eller sätt en skärm framför fönstret under städningstiden.</li>
+    <li><strong>Roboten fastnar upprepat på samma ställe:</strong> lägg en virtuell no-go-zon kring det området i appen och åtgärda tröskeln eller hindret om möjligt. Kontrollera också att hjulupphängningarna rör sig fritt och inte är blockerade av garn eller fibrer.</li>
+  </ul>
+
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Vinterförvaring och långtidsförvaring</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    Om du ska förvara roboten under en längre period, exempelvis vid flytt, semester eller om du byter till en annan städrutitt under vintern, finns det några enkla steg som förlänger batteriets livslängd markant. Ladda batteriet till 60 till 80 procent, inte till 100 procent. Litiumjonbatterier åldras snabbast när de förvaras fullt laddade under lång tid, och den kemiska stressen vid 100 procent laddning accelererar kapacitetsförlusten.
+  </p>
+  <p class="text-text-light leading-relaxed mb-4">
+    Rengör roboten ordentligt innan förvaring. Damm och päls som ligger kvar i borst, filter och dammkorg under månader kan kompaktera sig och bli svårare att rengöra senare. Det är också hygienmässigt motiverat om du plockar fram roboten till ett nytt hem eller efter en lång paus.
+  </p>
+  <p class="text-text-light leading-relaxed mb-4">
+    Förvara alltid roboten i rumstemperatur. Kalla garaget, boden eller källaren är sämre alternativ eftersom litiumjonbatterier inte trivs vid temperaturer under fem grader. Kyla minskar batterikapaciteten tillfälligt och vid upprepad exponering kan den permanenta kapaciteten sjunka märkbart. En stabil förvaringsplats inomhus, gärna på en hylla i ett uppvärmt utrymme, är det bästa alternativet. Vid förvaring längre än tre månader rekommenderas att du kontrollerar laddnivån en gång i månaden och laddar upp till 60 procent om batteriet sjunkit under 40 procent.
+  </p>
+
   <FAQ items={faqItems} />
 </ArticleLayout>
