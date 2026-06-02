@@ -92,7 +92,7 @@ const faqSchema = faqItems.map((item) => ({
 }));
 export const articleMeta = {
   title: "Billigaste robotgräsklipparen 2026: bäst för pengarna",
-  description: "De billigaste robotgräsklipparna 2026 testade. Slingbaserade och GPS-styrda modeller rankade på pris och prestanda. Hitta rätt robot för din budget.",
+  description: "De billigaste robotgräsklipparna 2026 jämförda. Slingbaserade och GPS-styrda modeller rankade på pris och prestanda. Hitta rätt robot för din budget.",
   publishDate: "2026-02-05",
   category: "Topplista",
   image: "/images/mcculloch-rob-r600.webp",
@@ -102,7 +102,7 @@ export const articleMeta = {
 
 <BaseLayout
   title="Billigaste robotgräsklipparen 2026: bäst för pengarna"
-  description="De billigaste robotgräsklipparna 2026 testade. Slingbaserade och GPS-styrda modeller rankade på pris och prestanda. Hitta rätt robot för din budget."
+  description="De billigaste robotgräsklipparna 2026 jämförda. Slingbaserade och GPS-styrda modeller rankade på pris och prestanda. Hitta rätt robot för din budget."
   article={{ datePublished: "2026-02-05", dateModified: "2026-05-27", image: "/images/mcculloch-rob-r600.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -114,8 +114,13 @@ export const articleMeta = {
     </h1>
     <AuthorByline datePublished="2026-02-05" dateModified="2026-05-22" />
     <p class="text-text-light mb-6 max-w-2xl">
-      Billigaste robotgräsklippare 2026 testade: MOVA 1000 med GPS-navigering, Gardena SILENO city 600 med Gardena-kvalitet och Dreame A1 Pro 2000 utan perimeterkabel. Vi har testat {products.length} budgetmodeller och rankat dem efter klippkvalitet, tillförlitlighet och vad du verkligen kompromissar med.
+      Billigaste robotgräsklippare 2026 jämförda: MOVA 1000 med GPS-navigering, Gardena SILENO city 600 med Gardena-kvalitet och Dreame A1 Pro 2000 utan perimeterkabel. Vi har jämfört {products.length} budgetmodeller och rankat dem efter klippkvalitet, tillförlitlighet och vad du verkligen kompromissar med.
     </p>
+
+    <!-- Topplista -->
+    <div class="space-y-5 mb-12">
+      {products.map(p => <ProductCard {...p} />)}
+    </div>
 
     <!-- Sammanfattningsruta -->
     <div class="bg-accent/5 border border-accent/20 rounded-xl p-5 mb-8">
@@ -134,11 +139,6 @@ export const articleMeta = {
           <span class="text-text-light"><strong class="text-text">Liten yta</strong>, passar ytor upp till 500 till 750 m²</span>
         </div>
       </div>
-    </div>
-
-    <!-- Topplista -->
-    <div class="space-y-5 mb-12">
-      {products.map(p => <ProductCard {...p} />)}
     </div>
 
     <!-- Köpguide-sektion -->
@@ -207,7 +207,7 @@ export const articleMeta = {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": "Billigaste robotgräsklippare 2026",
-    "description": "De bästa robotgräsklipparna till lägre pris 2026, testade och rankade.",
+    "description": "De bästa robotgräsklipparna till lägre pris 2026, jämförda och rankade.",
     "numberOfItems": products.length,
     "itemListElement": products.map((p, i) => ({
       "@type": "ListItem",

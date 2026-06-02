@@ -104,7 +104,7 @@ const faqSchema = faqItems.map((item) => ({
 }));
 export const articleMeta = {
   title: "Bästa robotgräsklippare utan slinga 2026: GPS-topplista",
-  description: "Bästa robotgräsklippare utan slinga 2026. GPS-styrda modeller från Mammotion och Segway Navimow testade. Se topplista, pris och vilken som passar din trädgård.",
+  description: "Bästa robotgräsklippare utan slinga 2026. GPS-styrda modeller från Mammotion och Segway Navimow jämförda. Se topplista, pris och vilken som passar din trädgård.",
   publishDate: "2026-05-16",
   category: "Topplista",
   image: "/images/mammotion-luba-awo-3000.webp",
@@ -114,15 +114,14 @@ export const articleMeta = {
 
 <BaseLayout
   title="Bästa robotgräsklippare utan slinga 2026: GPS-topplista"
-  description="Bästa robotgräsklippare utan slinga 2026. GPS-styrda modeller från Mammotion och Segway Navimow testade. Se topplista, pris och vilken som passar din trädgård."
+  description="Bästa robotgräsklippare utan slinga 2026. GPS-styrda modeller från Mammotion och Segway Navimow jämförda. Se topplista, pris och vilken som passar din trädgård."
   article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/mammotion-luba-awo-3000.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
   <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
     <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <img src="/images/team-anna.webp" alt="Anna Svensson" class="w-5 h-5 rounded-full object-cover" width="20" height="20" loading="lazy" />
-      <span class="font-medium text-slate-700">Anna Svensson</span>
+      <span class="font-medium text-slate-700">Robotjakts redaktion</span>
     </a>
     <span>·</span>
     <span>Uppdaterad 27 maj 2026</span>
@@ -133,27 +132,8 @@ export const articleMeta = {
       Robotgräsklippare utan slinga 2026, GPS och RTK-modeller
     </h1>
     <p class="text-text-light mb-6 max-w-2xl">
-      Dreame A3 AWD 1000 är vinnaren 2026 och klarar upp till 1 000 m² utan en enda meter kabel. Mammotion Luba 3 5000X är bästa valet för stora tomter och klarar upp till 5 000 m². Fem GPS-modeller testade och jämförda efter noggrannhet, installationstid och pris.
+      Dreame A3 AWD 1000 är vinnaren 2026 och klarar upp till 1 000 m² utan en enda meter kabel. Mammotion Luba 3 5000X är bästa valet för stora tomter och klarar upp till 5 000 m². Fem GPS-modeller jämförda och jämförda efter noggrannhet, installationstid och pris.
     </p>
-
-    <!-- Förklaring av tekniken -->
-    <div class="bg-accent/5 border border-accent/20 rounded-xl p-5 mb-8">
-      <h2 class="font-heading text-lg font-bold text-text mb-3">Vad är RTK GPS utan slinga?</h2>
-      <div class="grid sm:grid-cols-3 gap-3 text-sm">
-        <div class="flex items-start gap-2">
-          <span class="text-winner font-bold mt-0.5">+</span>
-          <span class="text-text-light"><strong class="text-text">Ingen grävning</strong>, installera på 1 till 2 timmar utan verktyg</span>
-        </div>
-        <div class="flex items-start gap-2">
-          <span class="text-winner font-bold mt-0.5">+</span>
-          <span class="text-text-light"><strong class="text-text">Flexibla gränser</strong>, ändra klippzoner när som helst i appen</span>
-        </div>
-        <div class="flex items-start gap-2">
-          <span class="text-winner font-bold mt-0.5">+</span>
-          <span class="text-text-light"><strong class="text-text">Centimeterprecision</strong>, RTK GPS är lika exakt som perimeterkabel</span>
-        </div>
-      </div>
-    </div>
 
     <!-- Topplista -->
     <div class="space-y-5 mb-10">
@@ -172,6 +152,25 @@ export const articleMeta = {
           )}
         </div>
       ))}
+    </div>
+
+    <!-- Förklaring av tekniken -->
+    <div class="bg-accent/5 border border-accent/20 rounded-xl p-5 mb-8">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Vad är RTK GPS utan slinga?</h2>
+      <div class="grid sm:grid-cols-3 gap-3 text-sm">
+        <div class="flex items-start gap-2">
+          <span class="text-winner font-bold mt-0.5">+</span>
+          <span class="text-text-light"><strong class="text-text">Ingen grävning</strong>, installera på 1 till 2 timmar utan verktyg</span>
+        </div>
+        <div class="flex items-start gap-2">
+          <span class="text-winner font-bold mt-0.5">+</span>
+          <span class="text-text-light"><strong class="text-text">Flexibla gränser</strong>, ändra klippzoner när som helst i appen</span>
+        </div>
+        <div class="flex items-start gap-2">
+          <span class="text-winner font-bold mt-0.5">+</span>
+          <span class="text-text-light"><strong class="text-text">Centimeterprecision</strong>, RTK GPS är lika exakt som perimeterkabel</span>
+        </div>
+      </div>
     </div>
 
     <!-- Husqvarna-not -->

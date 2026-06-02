@@ -57,8 +57,8 @@ const productSchema = productName ? {
         bestRating: '10',
       },
       author: {
-        '@type': 'Person',
-        name: 'John Erik Johansson',
+        '@type': 'Organization',
+        name: 'Robotjakts redaktion',
       },
       datePublished: datePublished || lastUpdated,
       ...(productPros.length > 0 ? {
@@ -129,11 +129,9 @@ const articleSchema = {
   ...(datePublished ? { datePublished } : {}),
   image: ogImage ? (ogImage.startsWith('http') ? ogImage : `https://robotjakt.se${ogImage}`) : 'https://robotjakt.se/og-default.jpg',
   author: {
-    '@type': 'Person',
-    name: 'Anna Svensson',
+    '@type': 'Organization',
+    name: 'Robotjakts redaktion',
     url: 'https://robotjakt.se/om-redaktionen/',
-    jobTitle: 'Teknikredaktör',
-    image: 'https://robotjakt.se/images/team-anna.webp',
   },
   publisher: {
     '@type': 'Organization',

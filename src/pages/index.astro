@@ -12,7 +12,7 @@ const products = [
     image: '/images/products/dreame-x50-ultra.webp',
     rating: 4.9,
     badge: 'Bäst i test 2026',
-    pros: ['Kraftfull sugkraft, starkast vi testat', 'Utfällbar arm städar hörnen ordentligt', 'PowerDock självrenande station'],
+    pros: ['Kraftfull sugkraft, starkast vi jämfört', 'Utfällbar arm städar hörnen ordentligt', 'PowerDock självrenande station'],
     cons: ['Nyare modell, färre långtidsrecensioner', 'Stor dockningsstation'],
     ctaText: 'Bra pris hos Elon',
     ctaUrl: 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=151996&url=https://www.elon.se/dreame-x50-ultra-white-151996',
@@ -25,7 +25,7 @@ const products = [
     image: '/images/products/dreame-x60-ultra.webp',
     rating: 4.8,
     badge: 'Starkast sugkraft 2026',
-    pros: ['Kraftfull sugkraft, bland de högsta vi testat', 'Moppning med 100°C varmvatten', 'AI-navigering', 'Städar och tömmer sig helt självständigt'],
+    pros: ['Kraftfull sugkraft, bland de högsta vi jämfört', 'Moppning med 100°C varmvatten', 'AI-navigering', 'Städar och tömmer sig helt självständigt'],
     cons: ['Premiumprisklass', 'Stor dockningsstation krävs'],
     ctaText: 'Bra pris hos Elon',
     ctaUrl: 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=153177&url=https://www.elon.se/dreame-x60-ultra-white-153177',
@@ -150,7 +150,7 @@ const products = [
     image: '/images/products/dreame-x60-ultra.webp',
     rating: 4.7,
     badge: '35 000 Pa, starkast i klassen',
-    pros: ['Kraftfull sugkraft, bland de högsta vi testat', 'Moppning med 100°C varmvatten', 'Städar och tömmer sig helt självständigt', 'AI-navigering'],
+    pros: ['Kraftfull sugkraft, bland de högsta vi jämfört', 'Moppning med 100°C varmvatten', 'Städar och tömmer sig helt självständigt', 'AI-navigering'],
     cons: ['Premiumprisklass', 'Stor dockningsstation krävs'],
     ctaText: 'Bra pris hos Elon',
     ctaUrl: 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=153177&url=https://www.elon.se/dreame-x60-ultra-white-153177',
@@ -213,21 +213,21 @@ const kategorier = [
     href: '/robotdammsugare/',
     name: 'Robotdammsugare',
     img: '/images/cat-robotdammsugare.webp',
-    lede: 'Vi testar sugkraft, navigering och moppfunktion, och rankar modeller från Dreame, Roborock, Ecovacs och Dyson i flera veckor innan vi sätter listan.',
+    lede: 'Vi jämför sugkraft, navigering och moppfunktion utifrån specifikationer, oberoende tester och användaromdömen, och rankar modeller från Dreame, Roborock, Ecovacs och Dyson.',
     meta: 'LiDAR · Sugkraft · Mopp',
   },
   {
     href: '/robotgrasklippare/',
     name: 'Robotgräsklippare',
     img: '/images/cat-robotgrasklippare.webp',
-    lede: 'GPS-navigering, kabelfrihetszon och arbetsyta jämförs mot pris. Husqvarna Automower, Mammotion LUBA och Segway Navimow testade sida vid sida.',
+    lede: 'GPS-navigering, kabelfrihetszon och arbetsyta jämförs mot pris. Husqvarna Automower, Mammotion LUBA och Segway Navimow jämförda sida vid sida.',
     meta: 'GPS · Kabelfri · Husqvarna',
   },
   {
     href: '/poolrobot/',
     name: 'Poolrobot',
     img: '/images/cat-poolrobot.webp',
-    lede: 'Sugteknik, filterkapacitet och klätterförmåga avgjorde rankingen. Dolphin, Zodiac och Bestway testade i verkliga pooler under säsong.',
+    lede: 'Sugteknik, filterkapacitet och klätterförmåga avgjorde rankingen. Dolphin, Zodiac och Bestway jämförda utifrån specifikationer och oberoende tester.',
     meta: 'Dolphin · Zodiac · Filter',
   },
   {
@@ -267,7 +267,7 @@ function fmtDate(d: string) {
 const faqItems = [
   {
     question: 'Vilken robotdammsugare är bäst i test 2026?',
-    answer: 'Dreame X50 Ultra är vår testvinnare april 2026. Med kraftfull sugkraft, utfällbar mopparm och en självrenande PowerDock är den bäst i klassen. Dreame X40 Ultra är fortfarande ett starkt val med sin utfällbara mopparm. Roborock S8 MaxV Ultra är bäst för husdjurshem tack vare AI-kameran som undviker djuravföring.',
+    answer: 'Dreame X50 Ultra är vår topplacering april 2026. Med kraftfull sugkraft, utfällbar mopparm och en självrenande PowerDock är den bäst i klassen. Dreame X40 Ultra är fortfarande ett starkt val med sin utfällbara mopparm. Roborock S8 MaxV Ultra är bäst för husdjurshem tack vare AI-kameran som undviker djuravföring.',
   },
   {
     question: 'Är det värt att köpa en robotdammsugare med moppfunktion?',
@@ -336,7 +336,7 @@ const faqSchema = faqItems.map((item) => ({
             2026.
           </h1>
           <p class="text-white/70 text-base leading-relaxed mb-4 max-w-md">
-            {products.length} robotdammsugare testade i riktiga hem april 2026. Dreame X50 Ultra vinner med kraftfull sugkraft och utfällbar mopparm som når hörnen.
+            {products.length} robotdammsugare jämförda april 2026 utifrån specifikationer, oberoende tester och användaromdömen. Dreame X50 Ultra vinner med kraftfull sugkraft och utfällbar mopparm som når hörnen.
           </p>
           <div class="flex flex-wrap gap-3 mb-5">
             <a href="#topplista" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-7 py-3.5 rounded-xl transition-colors shadow-lg shadow-accent/25 text-base">
@@ -372,7 +372,7 @@ const faqSchema = faqItems.map((item) => ({
               </div>
             </div>
             <ul class="space-y-2 mb-6">
-              {['Kraftfull sugkraft, starkast vi testat', 'Utfällbar arm städar hörnen', 'PowerDock självrenande station'].map(pro => (
+              {['Kraftfull sugkraft, starkast vi jämfört', 'Utfällbar arm städar hörnen', 'PowerDock självrenande station'].map(pro => (
                 <li class="flex items-center gap-2 text-sm text-white/70">
                   <svg class="w-4 h-4 text-winner flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
                   {pro}
@@ -443,7 +443,7 @@ const faqSchema = faqItems.map((item) => ({
         <div class="flex flex-wrap gap-3 text-sm text-text-light self-start sm:self-end">
           <span class="flex items-center gap-1.5">
             <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            {products.length} testade
+            {products.length} jämförda
           </span>
           <span class="flex items-center gap-1.5">
             <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
@@ -677,7 +677,7 @@ const faqSchema = faqItems.map((item) => ({
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="font-heading text-2xl sm:text-3xl font-bold text-text mb-3">Letar du efter en specifik robottyp?</h2>
       <p class="text-text max-w-2xl mx-auto mb-8">
-        Hitta rätt kategori för ditt behov, vi testar robotdammsugare, robotgräsklippare, poolrobotar och fönsterputsrobotar.
+        Hitta rätt kategori för ditt behov, Vi jämför robotdammsugare, robotgräsklippare, poolrobotar och fönsterputsrobotar.
       </p>
       <div class="flex flex-wrap justify-center gap-2.5">
         {[

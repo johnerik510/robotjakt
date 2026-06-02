@@ -1,16 +1,21 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-05-26T09:03:10.458Z",
-  "durationMs": 25069,
+  "timestamp": "2026-05-31T21:00:18.017Z",
+  "durationMs": 15405,
   "summary": {
     "checks": 17,
     "errors": 11,
-    "warnings": 24,
+    "warnings": 25,
     "newErrors": 0,
     "baselinedErrors": 11
   },
   "results": [
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/dolphin-s200.webp\" används av 2 artiklar: Dolphin S200 recension 2026: poolrobot för 10 m pool | Bästa poolrobot nedgrävd pool 2026: testade robotar"
+    },
     {
       "check": "04-articlemeta",
       "severity": "warning",
@@ -19,7 +24,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/dreame-l10s-pro-ultra-heat.webp\" används av 3 artiklar: Dreame L10s Pro Ultra Heat Recension 2026, Test och Pris | Dreame L10s Ultra Gen 2 recension 2026: värd köpet? | Bästa robotdammsugare för lägenhet 2026: testtopplista"
+      "message": "Bild \"/images/dreame-l10s-pro-ultra-heat.webp\" används av 3 artiklar: Dreame L10s Pro Ultra Heat Recension 2026: Test och Pris | Dreame L10s Ultra Gen 2 recension 2026: värd köpet? | Bästa robotdammsugare för lägenhet 2026: testtopplista"
     },
     {
       "check": "04-articlemeta",
@@ -29,7 +34,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/dreame-x40-ultra.webp\" används av 8 artiklar: Dreame vs Ecovacs 2026: vilken robotdammsugare vinner? | Dreame X30 Ultra recension 2026: är den värd pengarna? | Dreame X40 Ultra vs Roborock S8 MaxV Ultra: test 2026 | Dreame X40 Ultra Test 2026, Recension och Pris Sverige | LiDAR-navigering i robotdammsugare: komplett guide..."
+      "message": "Bild \"/images/dreame-x40-ultra.webp\" används av 8 artiklar: Dreame vs Ecovacs 2026: vilken robotdammsugare vinner? | Dreame X30 Ultra recension 2026: är den värd pengarna? | Dreame X40 Ultra vs Roborock S8 MaxV Ultra: test 2026 | Dreame X40 Ultra recension 2026: test och pris Sverige | LiDAR-navigering robotdammsugare 2026: bättre än kamera?..."
     },
     {
       "check": "04-articlemeta",
@@ -39,17 +44,17 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/roborock-s8-maxv-ultra.webp\" används av 11 artiklar: Dyson 360 Vis Nav Recension 2026, Test, Pris och Betyg | Robotdammsugare för husdjur: guide och rekommendationer | Roborock S8 Max Ultra Recension 2026, Test och Omdöme | Roborock S8 MaxV Ultra Recension 2026, Test och Omdöme | Roborock vs Dreame 2026: vilken robotdammsugare vinner?..."
+      "message": "Bild \"/images/roborock-s8-maxv-ultra.webp\" används av 11 artiklar: Dyson 360 Vis Nav Recension 2026: Test, Pris och Betyg | Robotdammsugare för husdjur 2026: guide, sugkraft och filter | Roborock S8 Max Ultra Recension 2026: Test och Omdöme | Roborock S8 MaxV Ultra Recension 2026: Test och Omdöme | Roborock vs Dreame 2026: vilken robotdammsugare vinner?..."
     },
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/roborock-qrevo-master.webp\" används av 5 artiklar: Dyson Spot Scrub AI recension 2026: golvtvätt-robot | Roborock Qrevo Master vs Dreame X40 Ultra 2026: test | Roborock Qrevo Master Recension 2026, Test & Omdöme | Roborock Qrevo Pro recension 2026: mellanklass-robot | Bästa robotdammsugare för husdjur 2026: testad topplista"
+      "message": "Bild \"/images/roborock-qrevo-master.webp\" används av 5 artiklar: Dyson Spot Scrub AI recension 2026: golvtvätt-robot | Roborock Qrevo Master vs Dreame X40 Ultra 2026: test | Roborock Qrevo Master Recension 2026: Test och Omdöme | Roborock Qrevo Pro recension 2026: mellanklass-robot | Bästa robotdammsugare för husdjur 2026: Roborock S8 MaxV Ultra vinner"
     },
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/ecovacs-deebot-t30s-pro.webp\" används av 2 artiklar: Ecovacs Deebot T30S Pro Test 2026, Recension & Pris | Sugkraft i robotdammsugare: Pa-guide och test 2026"
+      "message": "Bild \"/images/ecovacs-deebot-t30s-pro.webp\" används av 2 artiklar: Ecovacs Deebot T30S Pro test 2026: recension och pris | Sugkraft i robotdammsugare: Pa-guide och test 2026"
     },
     {
       "check": "04-articlemeta",
@@ -64,7 +69,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/eufy-x10-pro-omni.webp\" används av 6 artiklar: eufy robotdammsugare 2026: guide till alla modeller | eufy vs Ecovacs 2026: vilken robotdammsugare vinner? | eufy vs Roborock 2026: vilken robot vinner i test? | eufy X10 Pro Omni Test 2026, Recension och Pris Sverige | eufy vs iRobot 2026: vilken robotdammsugare är bäst?..."
+      "message": "Bild \"/images/eufy-x10-pro-omni.webp\" används av 6 artiklar: eufy robotdammsugare guide 2026: vilket modell passar dig? | eufy vs Ecovacs 2026: vilken robotdammsugare vinner? | eufy vs Roborock 2026: vilken robot vinner i test? | eufy X10 Pro Omni test 2026: recension och pris i Sverige | eufy vs iRobot 2026: vilken robotdammsugare är bäst?..."
     },
     {
       "check": "04-articlemeta",
@@ -79,7 +84,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/husqvarna-automower-415x.webp\" används av 2 artiklar: Husqvarna Automower 415X Test 2026, Recension & Pris | Bästa robotgräsklippare för lutning 2026: branttest"
+      "message": "Bild \"/images/husqvarna-automower-415x.webp\" används av 2 artiklar: Husqvarna Automower 415X test 2026: recension och pris | Bästa robotgräsklippare för lutning 2026: branttest"
     },
     {
       "check": "04-articlemeta",
@@ -99,17 +104,17 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/mcculloch-rob-r600.webp\" används av 3 artiklar: McCulloch ROB R600 recension 2026: budget-robot testad | Bästa Robotgräsklippare till lägre pris 2026, Test | Billigaste robotgräsklipparen 2026: bäst för pengarna"
+      "message": "Bild \"/images/mcculloch-rob-r600.webp\" används av 3 artiklar: McCulloch ROB R600 recension 2026: budget-robot testad | Bästa Robotgräsklippare till lägre pris 2026: Test | Billigaste robotgräsklipparen 2026: bäst för pengarna"
     },
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/roborock-qrevo-maxv-ultra.webp\" används av 2 artiklar: Roborock Qrevo MaxV Ultra Recension 2026, Test och Pris | Bästa robotdammsugare med basstation 2026: testade"
+      "message": "Bild \"/images/roborock-qrevo-maxv-ultra.webp\" används av 2 artiklar: Roborock Qrevo MaxV Ultra Recension 2026: Test och Pris | Bästa robotdammsugare med basstation 2026: testade"
     },
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/roborock-saros-10r.webp\" används av 3 artiklar: Roborock Saros 10R Recension 2026, Test och Omdöme | Bästa robotdammsugare med LiDAR-navigering 2026: test | Roborock Saros 10R vs Dreame X40 Ultra 2026: vilken?"
+      "message": "Bild \"/images/roborock-saros-10r.webp\" används av 3 artiklar: Roborock Saros 10R Recension 2026: Test och Omdöme | Bästa robotdammsugare med LiDAR-navigering 2026: test | Roborock Saros 10R vs Dreame X40 Ultra 2026: vilken?"
     },
     {
       "check": "04-articlemeta",
@@ -124,7 +129,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"https://csdam.net/data/jpg/0/dc98b5ed/dc98b5ed-5b66-4dc3-85d2-044eee59877f.jpg\" används av 2 artiklar: Bästa poolrobot 2026, bäst i test och jämförelse | Billigaste poolrobot 2026: bäst i test för pengarna"
+      "message": "Bild \"https://csdam.net/data/jpg/0/dc98b5ed/dc98b5ed-5b66-4dc3-85d2-044eee59877f.jpg\" används av 2 artiklar: Bästa poolrobot 2026: bäst i test och jämförelse | Billigaste poolrobot 2026: bäst i test för pengarna"
     },
     {
       "check": "04-articlemeta",
@@ -150,42 +155,42 @@
       "check": "01-dashes",
       "severity": "error",
       "file": "src/pages/robotdammsugare/index.astro",
-      "line": 291,
+      "line": 292,
       "message": "em-dash hittad: \"{ name: 'Roborock Saros 20 Sonic', sugkraft: '—', station: 'Ja', betyg: '9,6', b\""
     },
     {
       "check": "01-dashes",
       "severity": "error",
       "file": "src/pages/robotdammsugare/index.astro",
-      "line": 292,
+      "line": 293,
       "message": "em-dash hittad: \"{ name: 'Dreame X60 Ultra', sugkraft: '—', station: 'Ja', betyg: '9,5', badge: '\""
     },
     {
       "check": "01-dashes",
       "severity": "error",
       "file": "src/pages/robotdammsugare/index.astro",
-      "line": 294,
+      "line": 295,
       "message": "em-dash hittad: \"{ name: 'Dreame Aqua10 Ultra Roller', sugkraft: '—', station: 'Ja', betyg: '9,2'\""
     },
     {
       "check": "01-dashes",
       "severity": "error",
       "file": "src/pages/robotdammsugare/index.astro",
-      "line": 296,
+      "line": 297,
       "message": "em-dash hittad: \"{ name: 'Dreame L10s Ultra Gen 3', sugkraft: '—', station: 'Ja', betyg: '8,8', b\""
     },
     {
       "check": "01-dashes",
       "severity": "error",
       "file": "src/pages/robotdammsugare/index.astro",
-      "line": 297,
+      "line": 298,
       "message": "em-dash hittad: \"{ name: 'Dreame D20 Ultra', sugkraft: '—', station: 'Ja', betyg: '8,5', badge: '\""
     },
     {
       "check": "01-dashes",
       "severity": "error",
       "file": "src/pages/robotdammsugare/index.astro",
-      "line": 298,
+      "line": 299,
       "message": "em-dash hittad: \"{ name: 'Neatsvor X600 Pro', sugkraft: '—', station: 'Nej', betyg: '8,0', badge:\""
     },
     {
@@ -198,7 +203,12 @@
       "check": "04-articlemeta",
       "severity": "error",
       "file": "src/pages/poolrobot/index.astro",
-      "message": "Bildfil saknas: https://csdam.net/data/jpg/0/dc98b5ed/dc98b5ed-5b66-4dc3-85d2-044eee59877f.jpg (refererad i Bästa poolrobot 2026, bäst i test och jämförelse)"
+      "message": "Bildfil saknas: https://csdam.net/data/jpg/0/dc98b5ed/dc98b5ed-5b66-4dc3-85d2-044eee59877f.jpg (refererad i Bästa poolrobot 2026: bäst i test och jämförelse)"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/dolphin-s200.webp\" används av 2 artiklar: Dolphin S200 recension 2026: poolrobot för 10 m pool | Bästa poolrobot nedgrävd pool 2026: testade robotar"
     },
     {
       "check": "04-articlemeta",
@@ -208,7 +218,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/dreame-l10s-pro-ultra-heat.webp\" används av 3 artiklar: Dreame L10s Pro Ultra Heat Recension 2026, Test och Pris | Dreame L10s Ultra Gen 2 recension 2026: värd köpet? | Bästa robotdammsugare för lägenhet 2026: testtopplista"
+      "message": "Bild \"/images/dreame-l10s-pro-ultra-heat.webp\" används av 3 artiklar: Dreame L10s Pro Ultra Heat Recension 2026: Test och Pris | Dreame L10s Ultra Gen 2 recension 2026: värd köpet? | Bästa robotdammsugare för lägenhet 2026: testtopplista"
     },
     {
       "check": "04-articlemeta",
@@ -218,7 +228,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/dreame-x40-ultra.webp\" används av 8 artiklar: Dreame vs Ecovacs 2026: vilken robotdammsugare vinner? | Dreame X30 Ultra recension 2026: är den värd pengarna? | Dreame X40 Ultra vs Roborock S8 MaxV Ultra: test 2026 | Dreame X40 Ultra Test 2026, Recension och Pris Sverige | LiDAR-navigering i robotdammsugare: komplett guide..."
+      "message": "Bild \"/images/dreame-x40-ultra.webp\" används av 8 artiklar: Dreame vs Ecovacs 2026: vilken robotdammsugare vinner? | Dreame X30 Ultra recension 2026: är den värd pengarna? | Dreame X40 Ultra vs Roborock S8 MaxV Ultra: test 2026 | Dreame X40 Ultra recension 2026: test och pris Sverige | LiDAR-navigering robotdammsugare 2026: bättre än kamera?..."
     },
     {
       "check": "04-articlemeta",
@@ -228,17 +238,17 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/roborock-s8-maxv-ultra.webp\" används av 11 artiklar: Dyson 360 Vis Nav Recension 2026, Test, Pris och Betyg | Robotdammsugare för husdjur: guide och rekommendationer | Roborock S8 Max Ultra Recension 2026, Test och Omdöme | Roborock S8 MaxV Ultra Recension 2026, Test och Omdöme | Roborock vs Dreame 2026: vilken robotdammsugare vinner?..."
+      "message": "Bild \"/images/roborock-s8-maxv-ultra.webp\" används av 11 artiklar: Dyson 360 Vis Nav Recension 2026: Test, Pris och Betyg | Robotdammsugare för husdjur 2026: guide, sugkraft och filter | Roborock S8 Max Ultra Recension 2026: Test och Omdöme | Roborock S8 MaxV Ultra Recension 2026: Test och Omdöme | Roborock vs Dreame 2026: vilken robotdammsugare vinner?..."
     },
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/roborock-qrevo-master.webp\" används av 5 artiklar: Dyson Spot Scrub AI recension 2026: golvtvätt-robot | Roborock Qrevo Master vs Dreame X40 Ultra 2026: test | Roborock Qrevo Master Recension 2026, Test & Omdöme | Roborock Qrevo Pro recension 2026: mellanklass-robot | Bästa robotdammsugare för husdjur 2026: testad topplista"
+      "message": "Bild \"/images/roborock-qrevo-master.webp\" används av 5 artiklar: Dyson Spot Scrub AI recension 2026: golvtvätt-robot | Roborock Qrevo Master vs Dreame X40 Ultra 2026: test | Roborock Qrevo Master Recension 2026: Test och Omdöme | Roborock Qrevo Pro recension 2026: mellanklass-robot | Bästa robotdammsugare för husdjur 2026: Roborock S8 MaxV Ultra vinner"
     },
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/ecovacs-deebot-t30s-pro.webp\" används av 2 artiklar: Ecovacs Deebot T30S Pro Test 2026, Recension & Pris | Sugkraft i robotdammsugare: Pa-guide och test 2026"
+      "message": "Bild \"/images/ecovacs-deebot-t30s-pro.webp\" används av 2 artiklar: Ecovacs Deebot T30S Pro test 2026: recension och pris | Sugkraft i robotdammsugare: Pa-guide och test 2026"
     },
     {
       "check": "04-articlemeta",
@@ -253,7 +263,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/eufy-x10-pro-omni.webp\" används av 6 artiklar: eufy robotdammsugare 2026: guide till alla modeller | eufy vs Ecovacs 2026: vilken robotdammsugare vinner? | eufy vs Roborock 2026: vilken robot vinner i test? | eufy X10 Pro Omni Test 2026, Recension och Pris Sverige | eufy vs iRobot 2026: vilken robotdammsugare är bäst?..."
+      "message": "Bild \"/images/eufy-x10-pro-omni.webp\" används av 6 artiklar: eufy robotdammsugare guide 2026: vilket modell passar dig? | eufy vs Ecovacs 2026: vilken robotdammsugare vinner? | eufy vs Roborock 2026: vilken robot vinner i test? | eufy X10 Pro Omni test 2026: recension och pris i Sverige | eufy vs iRobot 2026: vilken robotdammsugare är bäst?..."
     },
     {
       "check": "04-articlemeta",
@@ -268,7 +278,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/husqvarna-automower-415x.webp\" används av 2 artiklar: Husqvarna Automower 415X Test 2026, Recension & Pris | Bästa robotgräsklippare för lutning 2026: branttest"
+      "message": "Bild \"/images/husqvarna-automower-415x.webp\" används av 2 artiklar: Husqvarna Automower 415X test 2026: recension och pris | Bästa robotgräsklippare för lutning 2026: branttest"
     },
     {
       "check": "04-articlemeta",
@@ -288,17 +298,17 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/mcculloch-rob-r600.webp\" används av 3 artiklar: McCulloch ROB R600 recension 2026: budget-robot testad | Bästa Robotgräsklippare till lägre pris 2026, Test | Billigaste robotgräsklipparen 2026: bäst för pengarna"
+      "message": "Bild \"/images/mcculloch-rob-r600.webp\" används av 3 artiklar: McCulloch ROB R600 recension 2026: budget-robot testad | Bästa Robotgräsklippare till lägre pris 2026: Test | Billigaste robotgräsklipparen 2026: bäst för pengarna"
     },
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/roborock-qrevo-maxv-ultra.webp\" används av 2 artiklar: Roborock Qrevo MaxV Ultra Recension 2026, Test och Pris | Bästa robotdammsugare med basstation 2026: testade"
+      "message": "Bild \"/images/roborock-qrevo-maxv-ultra.webp\" används av 2 artiklar: Roborock Qrevo MaxV Ultra Recension 2026: Test och Pris | Bästa robotdammsugare med basstation 2026: testade"
     },
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/roborock-saros-10r.webp\" används av 3 artiklar: Roborock Saros 10R Recension 2026, Test och Omdöme | Bästa robotdammsugare med LiDAR-navigering 2026: test | Roborock Saros 10R vs Dreame X40 Ultra 2026: vilken?"
+      "message": "Bild \"/images/roborock-saros-10r.webp\" används av 3 artiklar: Roborock Saros 10R Recension 2026: Test och Omdöme | Bästa robotdammsugare med LiDAR-navigering 2026: test | Roborock Saros 10R vs Dreame X40 Ultra 2026: vilken?"
     },
     {
       "check": "04-articlemeta",
@@ -313,7 +323,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"https://csdam.net/data/jpg/0/dc98b5ed/dc98b5ed-5b66-4dc3-85d2-044eee59877f.jpg\" används av 2 artiklar: Bästa poolrobot 2026, bäst i test och jämförelse | Billigaste poolrobot 2026: bäst i test för pengarna"
+      "message": "Bild \"https://csdam.net/data/jpg/0/dc98b5ed/dc98b5ed-5b66-4dc3-85d2-044eee59877f.jpg\" används av 2 artiklar: Bästa poolrobot 2026: bäst i test och jämförelse | Billigaste poolrobot 2026: bäst i test för pengarna"
     },
     {
       "check": "04-articlemeta",

@@ -2,16 +2,14 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 
-const personSchema = {
+const editorialSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'John Erik Johansson',
+  '@type': 'Organization',
+  name: 'Robotjakts redaktion',
   url: 'https://robotjakt.se/om-redaktionen/',
-  image: 'https://robotjakt.se/images/john-erik-johansson.webp',
-  jobTitle: 'Grundare & robotexpert',
-  description: 'Teknikentusiast och robotexpert. Testat 50+ robotdammsugare, robotgräsklippare och poolrobotar i hemmet.',
+  description: 'Robotjakts redaktion jämför konsumentrobotar utifrån verifierbar data: tekniska specifikationer, kapacitet, navigeringsteknik, oberoende tester och recensioner samt aktuella priser hos svenska butiker.',
   knowsAbout: ['robotdammsugare', 'robotgräsklippare', 'poolrobotar', 'smart hem', 'Dreame', 'Roborock', 'Husqvarna', 'Ecovacs'],
-  worksFor: {
+  parentOrganization: {
     '@type': 'Organization',
     name: 'Robotjakt.se',
     url: 'https://robotjakt.se',
@@ -21,7 +19,7 @@ const personSchema = {
 
 <BaseLayout
   title="Redaktionen bakom Robotjakt.se: experter på robotar"
-  description="Möt redaktionen bakom Robotjakt.se. Vi testar och recenserar robotar oberoende och objektivt. Läs om vår bakgrund och hur vi granskar produkterna."
+  description="Möt redaktionen bakom Robotjakt.se. Vi granskar robotar oberoende och objektivt. Läs om vår bakgrund och hur vi granskar produkterna."
   article={true}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -30,29 +28,16 @@ const personSchema = {
     <h1 class="font-heading text-3xl font-bold text-text mb-6">Om redaktionen</h1>
 
     <div class="bg-white rounded-2xl border border-border p-6 sm:p-8 mb-8">
-      <div class="flex flex-col sm:flex-row items-start gap-6">
-        <img
-          src="/images/john-erik-johansson.webp"
-          alt="John Erik Johansson"
-          class="w-24 h-24 rounded-full object-cover flex-shrink-0"
-          width="96"
-          height="96"
-          loading="eager"
-        />
-        <div>
-          <h2 class="font-heading text-xl font-bold text-text mb-1">John Erik Johansson</h2>
-          <p class="text-sm text-accent font-semibold mb-3">Grundare & robotexpert</p>
-          <p class="text-text-light text-sm leading-relaxed mb-3">
-            Teknikentusiast med ett genuint intresse för smart hem-teknik och konsumentrobotar. Har testat över 50 robotdammsugare, robotgräsklippare och poolrobotar i verklig hemmiljö, från budgetmodeller till toppmodeller från Dreame, Roborock, Ecovacs, Husqvarna och fler.
-          </p>
-          <p class="text-text-light text-sm leading-relaxed mb-3">
-            Robotjakt grundades med ett enda mål: att ge svenska konsumenter ärliga, oberoende och databaserade rekommendationer. Alla tester genomförs i verklig miljö, inte i ett labb. Det innebär att resultaten speglar hur robotarna faktiskt presterar i svenska hem och trädgårdar.
-          </p>
-          <p class="text-text-light text-sm leading-relaxed">
-            Kontakt: <!--email_off--><a href="mailto:elscatalyst@proton.me" class="text-accent underline">elscatalyst@proton.me</a><!--/email_off-->
-          </p>
-        </div>
-      </div>
+      <p class="text-sm text-accent font-semibold mb-3">Oberoende jämförelse av konsumentrobotar</p>
+      <p class="text-text-light text-sm leading-relaxed mb-3">
+        Robotjakt är en oberoende svensk guide för robotdammsugare, robotgräsklippare och poolrobotar. Vi köper inte in och labbtestar inte robotarna själva. I stället jämför vi modellerna utifrån verifierbar data så att du kan fatta ett välgrundat köpbeslut.
+      </p>
+      <p class="text-text-light text-sm leading-relaxed mb-3">
+        Vårt underlag är tekniska specifikationer från tillverkarna, klippyta och kapacitet, navigeringsteknik, oberoende tester och recensioner samt aktuella priser hos svenska butiker. Vi väger samman dessa källor och redovisar både styrkor och svagheter för varje produkt. Rangordningen styrs av produktens egenskaper och pris, aldrig av vilken provision en länk ger.
+      </p>
+      <p class="text-text-light text-sm leading-relaxed">
+        Kontakt: <!--email_off--><a href="mailto:elscatalyst@proton.me" class="text-accent underline">elscatalyst@proton.me</a><!--/email_off-->
+      </p>
     </div>
 
     <div class="space-y-6">
@@ -87,22 +72,22 @@ const personSchema = {
       </div>
 
       <div class="bg-white rounded-2xl border border-border p-6 sm:p-8">
-        <h2 class="font-heading text-xl font-bold text-text mb-3">Så testar vi</h2>
+        <h2 class="font-heading text-xl font-bold text-text mb-3">Så jämför vi</h2>
         <p class="text-sm text-text-light leading-relaxed mb-3">
-          Varje robot testas i minst 4 veckor i verklig hemmiljö. Vi utvärderar navigering, rengöringsresultat, batteritid, ljudnivå, appfunktionalitet och prisvärdhet. Testkriterierna är anpassade för svenska förhållanden, trädgårdar med nordiskt klimat, hem med tröskelramar och blandade golvytor.
+          Vi väger samman tekniska specifikationer, kapacitet och navigeringsteknik med oberoende tester, recensioner och aktuella priser hos svenska butiker. Bedömningen tar hänsyn till svenska förhållanden, trädgårdar med nordiskt klimat, hem med trösklar och blandade golvytor.
         </p>
-        <a href="/sa-testar-vi/" class="text-accent font-semibold text-sm underline">Så testar vi</a>
+        <a href="/sa-testar-vi/" class="text-accent font-semibold text-sm underline">Så jämför vi</a>
       </div>
 
       <div class="bg-white rounded-2xl border border-border p-6 sm:p-8">
         <h2 class="font-heading text-xl font-bold text-text mb-3">Redaktionell policy</h2>
         <p class="text-sm text-text-light leading-relaxed mb-3">
-          Vi tar aldrig betalt för positiva recensioner. Alla rekommendationer baseras på våra egna tester och erfarenheter. Affiliatelänkar påverkar aldrig vilka produkter vi rekommenderar eller vilken ranking de får.
+          Vi tar aldrig betalt för positiva omdömen. Alla rekommendationer baseras på verifierbar data och en samlad bedömning av oberoende källor. Affiliatelänkar påverkar aldrig vilka produkter vi rekommenderar eller vilken ranking de får.
         </p>
         <a href="/redaktionell-policy/" class="text-accent font-semibold text-sm underline">Läs vår redaktionella policy &rarr;</a>
       </div>
     </div>
   </div>
 
-  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(editorialSchema)} />
 </BaseLayout>

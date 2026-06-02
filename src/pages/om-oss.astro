@@ -6,16 +6,9 @@ const orgSchema = {
   '@type': 'Organization',
   name: 'Robotjakt.se',
   url: 'https://robotjakt.se',
-  description: 'Sveriges mest palitliga guide for robotdammsugare, robotgrasklippare och poolrobotar. Oberoende tester och recensioner.',
+  description: 'Oberoende svensk guide som jämför robotdammsugare, robotgräsklippare och poolrobotar utifrån specifikationer, oberoende tester och aktuella priser hos svenska butiker.',
   foundingDate: '2025',
-  founder: {
-    '@type': 'Person',
-    name: 'John Erik Johansson',
-    url: 'https://robotjakt.se/om-redaktionen/',
-    image: 'https://robotjakt.se/images/john-erik-johansson.webp',
-    jobTitle: 'Grundare & robotexpert',
-    knowsAbout: ['robotdammsugare', 'robotgräsklippare', 'poolrobotar', 'hemautomation', 'smarta hemprodukter'],
-  },
+  knowsAbout: ['robotdammsugare', 'robotgräsklippare', 'poolrobotar', 'hemautomation', 'smarta hemprodukter'],
   contactPoint: {
     '@type': 'ContactPoint',
     email: 'elscatalyst@proton.me',
@@ -27,7 +20,7 @@ const orgSchema = {
 
 <ArticleLayout
   title="Om Robotjakt.se: oberoende robottest och recensioner"
-  description="Vi är Robotjakt.se, oberoende testare av robotdammsugare, robotgräsklippare och poolrobotar sedan 2024. Läs om hur vi testar och vad vi värderar."
+  description="Vi är Robotjakt.se, oberoende testare av robotdammsugare, robotgräsklippare och poolrobotar sedan 2024. Läs om hur Vi jämför och vad vi värderar."
   breadcrumbs={[{ label: 'Om oss' }]}
   showDisclaimer={false}
   showAuthor={false}
@@ -36,7 +29,7 @@ const orgSchema = {
 
   <div class="prose prose-slate max-w-none text-text-light text-sm leading-relaxed space-y-4">
     <p>
-      Robotjakt.se är en oberoende svensk guide som hjälper dig hitta rätt konsumentrobot. Vi testar, jämför och recenserar robotdammsugare, robotgräsklippare, poolrobotar och robotmoppar från alla stora tillverkare, med fokus på vad som faktiskt spelar roll för svenska hem och trädgårdar.
+      Robotjakt.se är en oberoende svensk guide som hjälper dig hitta rätt konsumentrobot. Vi jämför och rangordnar robotdammsugare, robotgräsklippare, poolrobotar och robotmoppar från alla stora tillverkare, med fokus på vad som faktiskt spelar roll för svenska hem och trädgårdar.
     </p>
 
     <h2 class="font-heading text-xl font-bold text-text">Vad vi täcker</h2>
@@ -50,17 +43,17 @@ const orgSchema = {
       <li><strong>Robotmoppar:</strong> dedikerade moppningsrobotar för hårdgolv.</li>
     </ul>
 
-    <h2 class="font-heading text-xl font-bold text-text">Hur vi testar</h2>
+    <h2 class="font-heading text-xl font-bold text-text">Hur vi jämför</h2>
     <p>
-      Vi utvärderar varje robot baserat på prestanda, navigering, funktioner, ljudnivå, appfunktionalitet och prisvärdhet. För robotdammsugare kontrollerar vi sugkraft, moppning, hinderdetektion och hur väl de hanterar vanliga utmaningar i svenska hem: trösklar, mattor, husdjurshår och större ytor. För robotgräsklippare testar vi klippkvalitet, installationskomplexitet, hantering av sluttningar och integration med mobilapp.
+      Vi bedömer varje robot utifrån prestanda, navigering, funktioner, ljudnivå, appfunktionalitet och prisvärdhet. Underlaget är tekniska specifikationer från tillverkarna, oberoende tester och recensioner samt aktuella priser hos svenska butiker. För robotdammsugare väger vi in sugkraft, moppning, hinderdetektion och hur väl de hanterar vanliga utmaningar i svenska hem: trösklar, mattor, husdjurshår och större ytor. För robotgräsklippare väger vi in klippkvalitet, installation, hantering av sluttningar och integration med mobilapp.
     </p>
     <p>
-      <a href="/sa-testar-vi/" class="text-accent underline font-semibold">Vår testmetod i detalj</a>
+      <a href="/sa-testar-vi/" class="text-accent underline font-semibold">Vår metod i detalj</a>
     </p>
 
     <h2 class="font-heading text-xl font-bold text-text">Oberoende rekommendationer</h2>
     <p>
-      Våra rekommendationer bygger på våra egna tester och erfarenheter. Vi listar alltid för- och nackdelar, ingen modell är perfekt för alla. Våra topplistor uppdateras löpande när nya modeller släpps eller när priser och specifikationer ändras.
+      Våra rekommendationer bygger på verifierbar data och en samlad bedömning av oberoende källor. Vi listar alltid för- och nackdelar, ingen modell är perfekt för alla. Våra topplistor uppdateras löpande när nya modeller släpps eller när priser och specifikationer ändras.
     </p>
     <p>
       <a href="/redaktionell-policy/" class="text-accent underline font-semibold">Läs vår redaktionella policy &rarr;</a>
@@ -74,40 +67,30 @@ const orgSchema = {
     <h2 class="font-heading text-xl font-bold text-text">Redaktionen</h2>
   </div>
 
-  <!-- Author card (not-prose) -->
+  <!-- Editorial card (not-prose) -->
   <div class="not-prose bg-white rounded-2xl border border-border p-6 sm:p-8 my-6">
-    <div class="flex flex-col sm:flex-row items-start gap-6">
-      <img
-        src="/images/john-erik-johansson.webp"
-        alt="John Erik Johansson, grundare och robotexpert på Robotjakt.se"
-        class="w-24 h-24 rounded-full object-cover flex-shrink-0 mx-auto sm:mx-0"
-        width="96" height="96" loading="lazy"
-      />
-      <div>
-        <p class="font-heading text-xl font-bold text-text mb-1">John Erik Johansson</p>
-        <p class="text-accent font-semibold text-sm mb-3">Grundare & robotexpert</p>
-        <p class="text-text-light text-sm leading-relaxed mb-3">
-          Teknikentusiast med ett genuint intresse för smart hem-teknik och konsumentrobotar. Har testat över 50 robotdammsugare, robotgräsklippare och poolrobotar i verklig hemmiljö, från budgetmodeller till toppmodeller från Dreame, Roborock, Ecovacs och Husqvarna.
-        </p>
-        <div class="flex flex-wrap gap-2">
-          {['Robotdammsugare', 'Robotgräsklippare', 'Poolrobotar', 'Smart hem', 'Reservdelar & underhåll'].map((skill) => (
-            <span class="inline-block bg-gray-100 border border-border text-text-light text-xs font-medium rounded-full px-3 py-1">
-              {skill}
-            </span>
-          ))}
-        </div>
-        <p class="text-sm mt-3">
-          <a href="/om-redaktionen/" class="text-accent underline font-semibold">Mer om redaktionen →</a>
-        </p>
-      </div>
+    <p class="font-heading text-xl font-bold text-text mb-1">Robotjakts redaktion</p>
+    <p class="text-accent font-semibold text-sm mb-3">Oberoende jämförelse av konsumentrobotar</p>
+    <p class="text-text-light text-sm leading-relaxed mb-3">
+      Vi köper inte in och labbtestar inte robotarna själva. I stället jämför vi modellerna utifrån verifierbar data: tekniska specifikationer, kapacitet, navigeringsteknik, oberoende tester och recensioner samt aktuella priser hos svenska butiker, oberoende av provision. Det täcker robotdammsugare, robotgräsklippare och poolrobotar från budgetmodeller till toppmodeller från Dreame, Roborock, Ecovacs och Husqvarna.
+    </p>
+    <div class="flex flex-wrap gap-2">
+      {['Robotdammsugare', 'Robotgräsklippare', 'Poolrobotar', 'Smart hem', 'Reservdelar & underhåll'].map((skill) => (
+        <span class="inline-block bg-gray-100 border border-border text-text-light text-xs font-medium rounded-full px-3 py-1">
+          {skill}
+        </span>
+      ))}
     </div>
+    <p class="text-sm mt-3">
+      <a href="/om-redaktionen/" class="text-accent underline font-semibold">Mer om redaktionen</a>
+    </p>
   </div>
 
   <div class="prose prose-slate max-w-none text-text-light text-sm leading-relaxed space-y-4">
 
     <h2 class="font-heading text-xl font-bold text-text">Kontakt</h2>
     <p>
-      Har du fragor eller feedback? Kontakta oss pa <!--email_off--><a href="mailto:elscatalyst@proton.me" class="text-accent underline">elscatalyst@proton.me</a><!--/email_off-->.
+      Har du frågor eller feedback? Kontakta oss på <!--email_off--><a href="mailto:elscatalyst@proton.me" class="text-accent underline">elscatalyst@proton.me</a><!--/email_off-->.
     </p>
   </div>
 

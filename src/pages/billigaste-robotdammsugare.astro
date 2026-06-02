@@ -133,7 +133,7 @@ const faqSchema = faqItems.map((item) => ({
 }));
 export const articleMeta = {
   title: "Billigaste robotdammsugaren 2026: från 999 kr, bäst för pengarna",
-  description: "Bästa billiga robotdammsugarna 2026 testade. LiDAR-navigation och mopp till lågt pris. Se topplista, specifikationer och vår rekommendation per budget.",
+  description: "Bästa billiga robotdammsugarna 2026 jämförda. LiDAR-navigation och mopp till lågt pris. Se topplista, specifikationer och vår rekommendation per budget.",
   publishDate: "2026-04-20",
   category: "Topplista",
   image: "/images/liectroux-l200.webp",
@@ -143,7 +143,7 @@ export const articleMeta = {
 
 <BaseLayout
   title="Billigaste robotdammsugaren 2026: från 999 kr, bäst för pengarna"
-  description="Bästa billiga robotdammsugarna 2026 testade. LiDAR-navigation och mopp till lågt pris. Se topplista, specifikationer och vår rekommendation per budget."
+  description="Bästa billiga robotdammsugarna 2026 jämförda. LiDAR-navigation och mopp till lågt pris. Se topplista, specifikationer och vår rekommendation per budget."
   article={{ datePublished: "2026-04-20", dateModified: "2026-05-27", image: "/images/liectroux-l200.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -151,12 +151,17 @@ export const articleMeta = {
 <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-05-15</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
-      Billigaste robotdammsugare 2026, 8 budgetmodeller testade
+      Billigaste robotdammsugare 2026, 8 budgetmodeller jämförda
     </h1>
     <AuthorByline datePublished="2026-04-20" dateModified="2026-05-22" />
     <p class="text-lg text-text-light mb-6 leading-relaxed">
-      Du behöver inte lägga premiumpris för att få en robotdammsugare som faktiskt städar. Vi har testat 8 budgetmodeller och sorterat bort dem som bara studsar runt slumpmässigt. Här är robotarna som ger riktig städkraft i kategorin under 4 000 kr, med tonvikt på LiDAR-navigation och fungerande mopp.
+      Du behöver inte lägga premiumpris för att få en robotdammsugare som faktiskt städar. Vi har jämfört 8 budgetmodeller och sorterat bort dem som bara studsar runt slumpmässigt. Här är robotarna som ger riktig städkraft i kategorin under 4 000 kr, med tonvikt på LiDAR-navigation och fungerande mopp.
     </p>
+
+    <!-- Product cards -->
+    <div class="space-y-5 mb-10">
+      {products.map(p => <ProductCard {...p} />)}
+    </div>
 
     <!-- Budget guide box -->
     <div class="bg-accent/5 border border-accent/20 rounded-xl p-5 mb-8">
@@ -175,11 +180,6 @@ export const articleMeta = {
           <p class="text-text-light text-xs">Stationen töms automatiskt, du slipper röra dammkorgen i veckor. Få modeller i budgetklass.</p>
         </div>
       </div>
-    </div>
-
-    <!-- Product cards -->
-    <div class="space-y-5 mb-10">
-      {products.map(p => <ProductCard {...p} />)}
     </div>
 
     <!-- Guide section -->

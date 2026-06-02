@@ -35,11 +35,9 @@ const articleSchema = article ? {
     ? (articleMeta.image.startsWith('http') ? articleMeta.image : `https://robotjakt.se${articleMeta.image}`)
     : `https://robotjakt.se/og-default.jpg`,
   author: {
-    '@type': 'Person',
-    name: 'Anna Svensson',
+    '@type': 'Organization',
+    name: 'Robotjakts redaktion',
     url: 'https://robotjakt.se/om-redaktionen/',
-    jobTitle: 'Teknikredaktör',
-    image: 'https://robotjakt.se/images/team-anna.webp',
   },
   publisher: {
     '@type': 'Organization',
@@ -124,20 +122,8 @@ if (!hideAutoRelated) {
     "@type": "WebSite",
     "name": "Robotjakt",
     "url": "https://robotjakt.se",
-    "description": "Vi testar och jämför robotdammsugare för den svenska marknaden. Oberoende recensioner och uppdaterade priser.",
+    "description": "Vi jämför robotdammsugare för den svenska marknaden. Oberoende recensioner och uppdaterade priser.",
     "inLanguage": "sv-SE"
-  })} />
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "John Erik Johansson",
-    "jobTitle": "Grundare & redaktör",
-    "url": "https://robotjakt.se/om-redaktionen/",
-    "image": "https://robotjakt.se/images/john-erik-johansson.webp",
-    "email": "elscatalyst@proton.me",
-    "worksFor": { "@type": "Organization", "name": "Robotjakt.se", "url": "https://robotjakt.se" },
-    "knowsAbout": ["robotdammsugare", "robotgräsklippare", "poolrobotar", "fönsterputsrobotar", "smarta hem", "konsumentrobotar"]
   })} />
 
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -145,14 +131,9 @@ if (!hideAutoRelated) {
     "@type": "Organization",
     "name": "Robotjakt.se",
     "url": "https://robotjakt.se",
-    "description": "Sveriges mest pålitliga guide för robotdammsugare, robotgräsklippare och poolrobotar. Oberoende tester och recensioner.",
+    "description": "Oberoende svensk guide som jämför robotdammsugare, robotgräsklippare och poolrobotar utifrån specifikationer, oberoende tester och aktuella priser hos svenska butiker.",
     "foundingDate": "2025",
-    "founder": {
-      "@type": "Person",
-      "name": "John Erik Johansson",
-      "url": "https://robotjakt.se/om-redaktionen/",
-      "image": "https://robotjakt.se/images/john-erik-johansson.webp"
-    },
+    "knowsAbout": ["robotdammsugare", "robotgräsklippare", "poolrobotar", "fönsterputsrobotar", "smarta hem", "konsumentrobotar"],
     "contactPoint": {
       "@type": "ContactPoint",
       "email": "elscatalyst@proton.me",

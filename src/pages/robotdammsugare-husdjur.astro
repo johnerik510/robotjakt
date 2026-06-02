@@ -144,7 +144,7 @@ const productSchema = products.map((p, i) => ({
       "ratingValue": p.rating.toString(),
       "bestRating": "5",
     },
-    "author": { "@type": "Person", "name": "John Erik Johansson" },
+    "author": { "@type": "Organization", "name": "Robotjakts redaktion" },
   },
 }));
 ---
@@ -159,15 +159,14 @@ const productSchema = products.map((p, i) => ({
     <Breadcrumbs items={breadcrumbs} />
     <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
       <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-        <img src="/images/team-anna.webp" alt="Anna Svensson" class="w-5 h-5 rounded-full object-cover" width="20" height="20" loading="lazy" />
-        <span class="font-medium text-slate-700">Anna Svensson</span>
+        <span class="font-medium text-slate-700">Robotjakts redaktion</span>
       </a>
       <span>·</span>
       <span>Publicerad 31 maj 2026</span>
     </div>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
-      Bästa robotdammsugare för husdjur 2026: hanterar hund- och katthår: hundhår och katthår utan trassel
+      Bästa robotdammsugare för husdjur 2026: hanterar hund- och katthår utan trassel
     </h1>
 
     <p class="text-lg text-text-light mb-6 leading-relaxed">
@@ -314,7 +313,7 @@ const productSchema = products.map((p, i) => ({
     "description": "Vi går igenom vilka robotdammsugare som hanterar hundhår och katthår bäst. Se vilka funktioner som verkligen spelar roll.",
     "datePublished": "2026-05-31",
     "dateModified": "2026-05-31",
-    "author": { "@type": "Person", "name": "John Erik Johansson" },
+    "author": { "@type": "Organization", "name": "Robotjakts redaktion" },
     "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" },
     "image": "https://robotjakt.se/images/robotdammsugare-husdjur.webp",
     "url": "https://robotjakt.se/robotdammsugare-husdjur/",
