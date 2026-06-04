@@ -438,10 +438,10 @@ const top5 = products.slice(0, 5);
 
   <!-- Alla testade robotdammsugare -->
   <section class="max-w-6xl mx-auto px-4 py-12">
-    <h2 class="font-heading text-2xl font-bold text-text mb-2">Alla testade robotdammsugare</h2>
-    <p class="text-text-light mb-6">Samtliga {allProducts.length} modeller vi rankar, alla med verifierade priser.</p>
+    <h2 class="font-heading text-2xl font-bold text-text mb-2">Fler testade robotdammsugare</h2>
+    <p class="text-text-light mb-6">Ytterligare {allProducts.length - 5} modeller utöver topplistan ovan, alla med verifierade priser.</p>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      {allProducts.map((p) => (
+      {allProducts.slice(5).map((p) => (
         <article class="group bg-white border border-border rounded-xl overflow-hidden hover:border-accent hover:shadow-sm transition-all flex flex-col">
           {p.reviewUrl
             ? <a href={p.reviewUrl} class="block" tabindex="-1" aria-hidden="true">

@@ -1,16 +1,52 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-06-03T18:49:31.267Z",
-  "durationMs": 18549,
+  "timestamp": "2026-06-04T06:17:26.873Z",
+  "durationMs": 14480,
   "summary": {
     "checks": 17,
-    "errors": 11,
+    "errors": 17,
     "warnings": 25,
-    "newErrors": 0,
+    "newErrors": 6,
     "baselinedErrors": 11
   },
   "results": [
+    {
+      "check": "15-rendered-images",
+      "severity": "error",
+      "file": "index.html",
+      "message": "2 <article>-kort delar samma <img src=\"/images/products/dreame-x50-ultra.webp\"> på index.html — varje kort behöver unik bild"
+    },
+    {
+      "check": "15-rendered-images",
+      "severity": "error",
+      "file": "index.html",
+      "message": "2 <article>-kort delar samma <img src=\"/images/products/dreame-x60-ultra.webp\"> på index.html — varje kort behöver unik bild"
+    },
+    {
+      "check": "15-rendered-images",
+      "severity": "error",
+      "file": "index.html",
+      "message": "2 <article>-kort delar samma <img src=\"/images/roborock-s8-maxv-ultra.webp\"> på index.html — varje kort behöver unik bild"
+    },
+    {
+      "check": "15-rendered-images",
+      "severity": "error",
+      "file": "index.html",
+      "message": "2 <article>-kort delar samma <img src=\"/images/products/roborock-qrevo-curv.webp\"> på index.html — varje kort behöver unik bild"
+    },
+    {
+      "check": "15-rendered-images",
+      "severity": "error",
+      "file": "index.html",
+      "message": "2 <article>-kort delar samma <img src=\"/images/ecovacs-deebot-x5-omni.webp\"> på index.html — varje kort behöver unik bild"
+    },
+    {
+      "check": "15-rendered-images",
+      "severity": "error",
+      "file": "index.html",
+      "message": "2 <article>-kort delar samma <img src=\"/images/products/dreame-l10s-ultra-gen3.webp\"> på index.html — varje kort behöver unik bild"
+    },
     {
       "check": "04-articlemeta",
       "severity": "warning",
@@ -141,7 +177,7 @@
     "status": "compared",
     "baselineCount": 11,
     "baselinedCount": 11,
-    "newErrorCount": 0
+    "newErrorCount": 6
   },
   "allResults": [
     {
@@ -155,42 +191,42 @@
       "check": "01-dashes",
       "severity": "error",
       "file": "src/pages/robotdammsugare/index.astro",
-      "line": 292,
+      "line": 309,
       "message": "em-dash hittad: \"{ name: 'Roborock Saros 20 Sonic', sugkraft: '—', station: 'Ja', betyg: '9,6', b\""
     },
     {
       "check": "01-dashes",
       "severity": "error",
       "file": "src/pages/robotdammsugare/index.astro",
-      "line": 293,
+      "line": 310,
       "message": "em-dash hittad: \"{ name: 'Dreame X60 Ultra', sugkraft: '—', station: 'Ja', betyg: '9,5', badge: '\""
     },
     {
       "check": "01-dashes",
       "severity": "error",
       "file": "src/pages/robotdammsugare/index.astro",
-      "line": 295,
+      "line": 312,
       "message": "em-dash hittad: \"{ name: 'Dreame Aqua10 Ultra Roller', sugkraft: '—', station: 'Ja', betyg: '9,2'\""
     },
     {
       "check": "01-dashes",
       "severity": "error",
       "file": "src/pages/robotdammsugare/index.astro",
-      "line": 297,
+      "line": 314,
       "message": "em-dash hittad: \"{ name: 'Dreame L10s Ultra Gen 3', sugkraft: '—', station: 'Ja', betyg: '8,8', b\""
     },
     {
       "check": "01-dashes",
       "severity": "error",
       "file": "src/pages/robotdammsugare/index.astro",
-      "line": 298,
+      "line": 315,
       "message": "em-dash hittad: \"{ name: 'Dreame D20 Ultra', sugkraft: '—', station: 'Ja', betyg: '8,5', badge: '\""
     },
     {
       "check": "01-dashes",
       "severity": "error",
       "file": "src/pages/robotdammsugare/index.astro",
-      "line": 299,
+      "line": 316,
       "message": "em-dash hittad: \"{ name: 'Neatsvor X600 Pro', sugkraft: '—', station: 'Nej', betyg: '8,0', badge:\""
     },
     {
@@ -334,6 +370,42 @@
       "check": "08-image-binary-duplicates",
       "severity": "error",
       "message": "2 bildfiler är binär-identiska (8KB) — samma bild laddats med olika filnamn: public/images/husqvarna-315x.webp | public/images/husqvarna-automower-315x.webp"
+    },
+    {
+      "check": "15-rendered-images",
+      "severity": "error",
+      "file": "index.html",
+      "message": "2 <article>-kort delar samma <img src=\"/images/products/dreame-x50-ultra.webp\"> på index.html — varje kort behöver unik bild"
+    },
+    {
+      "check": "15-rendered-images",
+      "severity": "error",
+      "file": "index.html",
+      "message": "2 <article>-kort delar samma <img src=\"/images/products/dreame-x60-ultra.webp\"> på index.html — varje kort behöver unik bild"
+    },
+    {
+      "check": "15-rendered-images",
+      "severity": "error",
+      "file": "index.html",
+      "message": "2 <article>-kort delar samma <img src=\"/images/roborock-s8-maxv-ultra.webp\"> på index.html — varje kort behöver unik bild"
+    },
+    {
+      "check": "15-rendered-images",
+      "severity": "error",
+      "file": "index.html",
+      "message": "2 <article>-kort delar samma <img src=\"/images/products/roborock-qrevo-curv.webp\"> på index.html — varje kort behöver unik bild"
+    },
+    {
+      "check": "15-rendered-images",
+      "severity": "error",
+      "file": "index.html",
+      "message": "2 <article>-kort delar samma <img src=\"/images/ecovacs-deebot-x5-omni.webp\"> på index.html — varje kort behöver unik bild"
+    },
+    {
+      "check": "15-rendered-images",
+      "severity": "error",
+      "file": "index.html",
+      "message": "2 <article>-kort delar samma <img src=\"/images/products/dreame-l10s-ultra-gen3.webp\"> på index.html — varje kort behöver unik bild"
     },
     {
       "check": "15-rendered-images",
