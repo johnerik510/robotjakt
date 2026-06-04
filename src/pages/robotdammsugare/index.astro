@@ -236,8 +236,6 @@ export const articleMeta = {
       Robotdammsugare bäst i test 2026, topp 8 jämförda
     </h1>
 
-    <AuthorByline datePublished="2026-04-20" dateModified="2026-05-22" />
-
     <p class="text-text-light mb-6 max-w-2xl">
       Dreame X50 Ultra är vår bästa robotdammsugare i test 2026. Den har den starkaste sugkraften vi jämfört och en utfällbar arm som städar ända in i hörnen och längs väggar. Den självrenande PowerDock-stationen sköter tömning och mopptvätt åt dig.
     </p>
@@ -280,6 +278,25 @@ export const articleMeta = {
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Topplista med produktkort, H2 per produkt och beskrivning -->
+    <div class="space-y-10 mb-12">
+      {products.map((p) => (
+        <div>
+          <h2 class="font-heading text-xl font-bold text-text mb-3">
+            #{p.rank}. {p.name}
+            {p.badge && <span class="ml-2 text-sm font-semibold text-accent bg-accent/10 px-2 py-0.5 rounded">{p.badge}</span>}
+          </h2>
+          <ProductCard {...p} />
+          <p class="mt-4 text-text-light text-sm leading-relaxed">{p.desc}</p>
+          {p.reviewUrl && (
+            <div class="mt-2">
+              <a href={p.reviewUrl} class="text-accent underline text-sm font-medium">Läs vår fullständiga recension av {p.name}</a>
+            </div>
+          )}
+        </div>
+      ))}
     </div>
 
     <!-- Jämförelsetabell -->
@@ -390,24 +407,7 @@ export const articleMeta = {
       </div>
     </section>
 
-    <!-- Topplista med produktkort, H2 per produkt och beskrivning -->
-    <div class="space-y-10 mb-12">
-      {products.map((p) => (
-        <div>
-          <h2 class="font-heading text-xl font-bold text-text mb-3">
-            #{p.rank}. {p.name}
-            {p.badge && <span class="ml-2 text-sm font-semibold text-accent bg-accent/10 px-2 py-0.5 rounded">{p.badge}</span>}
-          </h2>
-          <ProductCard {...p} />
-          <p class="mt-4 text-text-light text-sm leading-relaxed">{p.desc}</p>
-          {p.reviewUrl && (
-            <div class="mt-2">
-              <a href={p.reviewUrl} class="text-accent underline text-sm font-medium">Läs vår fullständiga recension av {p.name}</a>
-            </div>
-          )}
-        </div>
-      ))}
-    </div>
+    <AuthorByline datePublished="2026-04-20" dateModified="2026-05-22" />
 
     <!-- Köpguide-sektion -->
     <section class="mb-12">

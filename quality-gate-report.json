@@ -1,8 +1,8 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-05-31T21:00:18.017Z",
-  "durationMs": 15405,
+  "timestamp": "2026-06-03T18:49:31.267Z",
+  "durationMs": 18549,
   "summary": {
     "checks": 17,
     "errors": 11,
@@ -14,12 +14,12 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/dolphin-s200.webp\" används av 2 artiklar: Dolphin S200 recension 2026: poolrobot för 10 m pool | Bästa poolrobot nedgrävd pool 2026: testade robotar"
+      "message": "Bild \"/images/dolphin-s200.webp\" används av 2 artiklar: Dolphin S200 recension 2026: poolrobot för 10 m pool | Bästa poolrobot nedgrävd pool 2026: jämförda robotar"
     },
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/dreame-d10s-pro.webp\" används av 3 artiklar: Dreame D10s Pro recension 2026: enkel robot med mopp | Dreame W10 Pro recension 2026: golvtvätt-robot testad | Bästa budget-robotdammsugare 2026: testade prisval"
+      "message": "Bild \"/images/dreame-d10s-pro.webp\" används av 3 artiklar: Dreame D10s Pro recension 2026: enkel robot med mopp | Dreame W10 Pro recension 2026: golvtvätt-robot testad | Bästa budget-robotdammsugare 2026: jämförda prisval"
     },
     {
       "check": "04-articlemeta",
@@ -39,7 +39,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/dreame-z10-pro.webp\" används av 2 artiklar: Dreame Z10 Pro recension 2026: budget-robot med mopp | Bästa robotdammsugare under 5000 kr 2026: testade toppar"
+      "message": "Bild \"/images/dreame-z10-pro.webp\" används av 2 artiklar: Dreame Z10 Pro recension 2026: budget-robot med mopp | Bästa robotdammsugare under 5000 kr 2026: jämförda toppar"
     },
     {
       "check": "04-articlemeta",
@@ -64,7 +64,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/cat-fonsterputsrobot.webp\" används av 3 artiklar: Ecovacs Winbot W2 Omni recension 2026: fönsterrobot | Bästa fönsterputsrobot 2026: testade och rankade modeller | Billigaste fönsterputsroboten 2026: bäst för pengarna"
+      "message": "Bild \"/images/cat-fonsterputsrobot.webp\" används av 3 artiklar: Ecovacs Winbot W2 Omni recension 2026: fönsterrobot | Bästa fönsterputsrobot 2026: jämförda och rankade modeller | Billigaste fönsterputsroboten 2026: bäst för pengarna"
     },
     {
       "check": "04-articlemeta",
@@ -109,7 +109,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/roborock-qrevo-maxv-ultra.webp\" används av 2 artiklar: Roborock Qrevo MaxV Ultra Recension 2026: Test och Pris | Bästa robotdammsugare med basstation 2026: testade"
+      "message": "Bild \"/images/roborock-qrevo-maxv-ultra.webp\" används av 2 artiklar: Roborock Qrevo MaxV Ultra Recension 2026: Test och Pris | Bästa robotdammsugare med basstation 2026: jämförda"
     },
     {
       "check": "04-articlemeta",
@@ -208,12 +208,12 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/dolphin-s200.webp\" används av 2 artiklar: Dolphin S200 recension 2026: poolrobot för 10 m pool | Bästa poolrobot nedgrävd pool 2026: testade robotar"
+      "message": "Bild \"/images/dolphin-s200.webp\" används av 2 artiklar: Dolphin S200 recension 2026: poolrobot för 10 m pool | Bästa poolrobot nedgrävd pool 2026: jämförda robotar"
     },
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/dreame-d10s-pro.webp\" används av 3 artiklar: Dreame D10s Pro recension 2026: enkel robot med mopp | Dreame W10 Pro recension 2026: golvtvätt-robot testad | Bästa budget-robotdammsugare 2026: testade prisval"
+      "message": "Bild \"/images/dreame-d10s-pro.webp\" används av 3 artiklar: Dreame D10s Pro recension 2026: enkel robot med mopp | Dreame W10 Pro recension 2026: golvtvätt-robot testad | Bästa budget-robotdammsugare 2026: jämförda prisval"
     },
     {
       "check": "04-articlemeta",
@@ -233,7 +233,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/dreame-z10-pro.webp\" används av 2 artiklar: Dreame Z10 Pro recension 2026: budget-robot med mopp | Bästa robotdammsugare under 5000 kr 2026: testade toppar"
+      "message": "Bild \"/images/dreame-z10-pro.webp\" används av 2 artiklar: Dreame Z10 Pro recension 2026: budget-robot med mopp | Bästa robotdammsugare under 5000 kr 2026: jämförda toppar"
     },
     {
       "check": "04-articlemeta",
@@ -258,7 +258,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/cat-fonsterputsrobot.webp\" används av 3 artiklar: Ecovacs Winbot W2 Omni recension 2026: fönsterrobot | Bästa fönsterputsrobot 2026: testade och rankade modeller | Billigaste fönsterputsroboten 2026: bäst för pengarna"
+      "message": "Bild \"/images/cat-fonsterputsrobot.webp\" används av 3 artiklar: Ecovacs Winbot W2 Omni recension 2026: fönsterrobot | Bästa fönsterputsrobot 2026: jämförda och rankade modeller | Billigaste fönsterputsroboten 2026: bäst för pengarna"
     },
     {
       "check": "04-articlemeta",
@@ -303,7 +303,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/roborock-qrevo-maxv-ultra.webp\" används av 2 artiklar: Roborock Qrevo MaxV Ultra Recension 2026: Test och Pris | Bästa robotdammsugare med basstation 2026: testade"
+      "message": "Bild \"/images/roborock-qrevo-maxv-ultra.webp\" används av 2 artiklar: Roborock Qrevo MaxV Ultra Recension 2026: Test och Pris | Bästa robotdammsugare med basstation 2026: jämförda"
     },
     {
       "check": "04-articlemeta",
