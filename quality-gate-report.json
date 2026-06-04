@@ -1,46 +1,16 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-06-04T06:17:26.873Z",
-  "durationMs": 14480,
+  "timestamp": "2026-06-04T06:18:36.487Z",
+  "durationMs": 13919,
   "summary": {
     "checks": 17,
-    "errors": 17,
+    "errors": 12,
     "warnings": 25,
-    "newErrors": 6,
+    "newErrors": 1,
     "baselinedErrors": 11
   },
   "results": [
-    {
-      "check": "15-rendered-images",
-      "severity": "error",
-      "file": "index.html",
-      "message": "2 <article>-kort delar samma <img src=\"/images/products/dreame-x50-ultra.webp\"> på index.html — varje kort behöver unik bild"
-    },
-    {
-      "check": "15-rendered-images",
-      "severity": "error",
-      "file": "index.html",
-      "message": "2 <article>-kort delar samma <img src=\"/images/products/dreame-x60-ultra.webp\"> på index.html — varje kort behöver unik bild"
-    },
-    {
-      "check": "15-rendered-images",
-      "severity": "error",
-      "file": "index.html",
-      "message": "2 <article>-kort delar samma <img src=\"/images/roborock-s8-maxv-ultra.webp\"> på index.html — varje kort behöver unik bild"
-    },
-    {
-      "check": "15-rendered-images",
-      "severity": "error",
-      "file": "index.html",
-      "message": "2 <article>-kort delar samma <img src=\"/images/products/roborock-qrevo-curv.webp\"> på index.html — varje kort behöver unik bild"
-    },
-    {
-      "check": "15-rendered-images",
-      "severity": "error",
-      "file": "index.html",
-      "message": "2 <article>-kort delar samma <img src=\"/images/ecovacs-deebot-x5-omni.webp\"> på index.html — varje kort behöver unik bild"
-    },
     {
       "check": "15-rendered-images",
       "severity": "error",
@@ -177,7 +147,7 @@
     "status": "compared",
     "baselineCount": 11,
     "baselinedCount": 11,
-    "newErrorCount": 6
+    "newErrorCount": 1
   },
   "allResults": [
     {
@@ -370,36 +340,6 @@
       "check": "08-image-binary-duplicates",
       "severity": "error",
       "message": "2 bildfiler är binär-identiska (8KB) — samma bild laddats med olika filnamn: public/images/husqvarna-315x.webp | public/images/husqvarna-automower-315x.webp"
-    },
-    {
-      "check": "15-rendered-images",
-      "severity": "error",
-      "file": "index.html",
-      "message": "2 <article>-kort delar samma <img src=\"/images/products/dreame-x50-ultra.webp\"> på index.html — varje kort behöver unik bild"
-    },
-    {
-      "check": "15-rendered-images",
-      "severity": "error",
-      "file": "index.html",
-      "message": "2 <article>-kort delar samma <img src=\"/images/products/dreame-x60-ultra.webp\"> på index.html — varje kort behöver unik bild"
-    },
-    {
-      "check": "15-rendered-images",
-      "severity": "error",
-      "file": "index.html",
-      "message": "2 <article>-kort delar samma <img src=\"/images/roborock-s8-maxv-ultra.webp\"> på index.html — varje kort behöver unik bild"
-    },
-    {
-      "check": "15-rendered-images",
-      "severity": "error",
-      "file": "index.html",
-      "message": "2 <article>-kort delar samma <img src=\"/images/products/roborock-qrevo-curv.webp\"> på index.html — varje kort behöver unik bild"
-    },
-    {
-      "check": "15-rendered-images",
-      "severity": "error",
-      "file": "index.html",
-      "message": "2 <article>-kort delar samma <img src=\"/images/ecovacs-deebot-x5-omni.webp\"> på index.html — varje kort behöver unik bild"
     },
     {
       "check": "15-rendered-images",
