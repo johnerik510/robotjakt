@@ -108,7 +108,7 @@ export const articleMeta = {
     <section class="mb-10" aria-label="Jämförelsetabell Roborock Saros 10R vs Dreame X40 Ultra">
       <h2 class="font-heading text-xl font-bold text-text mb-4">Specifikationer jämfört</h2>
       <div class="rounded-xl border border-border overflow-hidden">
-        <table class="w-full text-sm bg-white">
+        <table class="cmp-table table-fixed w-full text-sm bg-white">
           <thead>
             <tr class="bg-bg-alt">
               <th class="px-4 py-3 text-left font-semibold text-text">Specifikation</th>
@@ -231,4 +231,19 @@ export const articleMeta = {
     text="Bra pris hos Roborock Saros 10R"
     url="https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=149298&url=https://www.elon.se/roborock-saros-10-white-149298"
   />
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
 </BaseLayout>

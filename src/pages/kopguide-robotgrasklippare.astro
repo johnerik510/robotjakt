@@ -106,7 +106,7 @@ export const articleMeta = {
             Tillverkarnas angivna maxyta är under idealförhållanden, plan gräsmatta utan hinder. I verkligheten minskar kapaciteten av sluttningar, hinder, komplexa former och växtperiod. Välj alltid en modell med 20 till 30 % marginal.
           </p>
           <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-4">
-            <table class="w-full text-sm">
+            <table class="cmp-table table-fixed w-full text-sm">
               <thead>
                 <tr class="border-b border-border">
                   <th class="text-left px-4 py-3 font-semibold text-text">Trädgårdsyta</th>
@@ -346,4 +346,19 @@ export const articleMeta = {
       "url": "https://robotjakt.se"
     }
   })} />
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
 </BaseLayout>

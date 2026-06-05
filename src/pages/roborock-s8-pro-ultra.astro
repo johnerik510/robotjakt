@@ -206,7 +206,7 @@ export const articleMeta = {
       <!-- Specs table -->
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Specifikationer Roborock S8 Pro Ultra</h3>
       <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
-        <table class="w-full text-sm">
+        <table class="cmp-table table-fixed w-full text-sm">
           <tbody class="divide-y divide-border">
             {specs.map((spec, i) => (
               <tr class={i % 2 === 0 ? 'bg-white' : ''}>
@@ -275,4 +275,19 @@ export const articleMeta = {
     "reviewBody": "Roborock S8 Pro Ultra är en välbeprövad premiumrobot med FlexiArm sidborste och dubbla gummirullar. Prisvärt alternativ till S8 MaxV Ultra för hem utan behov av AI-kamera.",
     "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
   })} />
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
 </BaseLayout>

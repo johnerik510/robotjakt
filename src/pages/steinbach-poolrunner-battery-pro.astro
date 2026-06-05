@@ -140,7 +140,7 @@ export const articleMeta = {
   <section class="mb-10">
     <h2 class="font-heading text-2xl font-bold text-text mb-4">Tekniska specifikationer Steinbach Poolrunner Battery Pro</h2>
     <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
-      <table class="w-full text-sm">
+      <table class="cmp-table table-fixed w-full text-sm">
         <tbody class="divide-y divide-border">
           {specs.map((spec, i) => (
             <tr class={i % 2 === 0 ? 'bg-white' : ''}>
@@ -225,6 +225,21 @@ export const articleMeta = {
       <li><a href="/billigaste-poolrobot/" class="text-accent underline text-sm">Billigaste poolrobot 2026</a></li>
     </ul>
   </section>
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
 </ArticleLayout>
 
 <StickyCTA url="https://addrevenue.io/t?a=984922&c=3467327&url=https%3A%2F%2Fvillanytt.se%2Fprodukt-kategori%2Fpoolrobot%2F" productName="Steinbach Poolrunner Battery Pro" />

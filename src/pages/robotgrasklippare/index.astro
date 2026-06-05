@@ -272,7 +272,7 @@ export const articleMeta = {
       </div>
       <!-- Desktop: tabell -->
       <div class="hidden md:block bg-white rounded-xl border border-border overflow-hidden">
-        <table class="w-full text-sm">
+        <table class="cmp-table table-fixed w-full text-sm">
           <thead>
             <tr class="border-b border-border bg-bg-alt">
               <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
@@ -478,4 +478,19 @@ export const articleMeta = {
     "@type": "FAQPage",
     "mainEntity": faqSchema,
   })} />
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
 </BaseLayout>

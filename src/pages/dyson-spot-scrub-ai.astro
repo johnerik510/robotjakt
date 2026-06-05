@@ -239,7 +239,7 @@ export const articleMeta = {
     <div class="mb-10">
       <h2 class="font-heading text-xl font-bold text-text mb-4">Tekniska specifikationer Dyson Spot+Scrub Ai</h2>
       <div class="rounded-xl border border-border overflow-hidden">
-        <table class="w-full text-sm">
+        <table class="cmp-table table-fixed w-full text-sm">
           <tbody>
             {specs.map((spec, i) => (
               <tr class={i % 2 === 0 ? 'bg-bg-alt' : 'bg-white'}>
@@ -288,4 +288,19 @@ export const articleMeta = {
     text="Dyson Spot+Scrub Ai, hos Dyson.se"
     url={affUrl}
   />
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
 </BaseLayout>

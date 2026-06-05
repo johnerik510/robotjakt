@@ -180,7 +180,7 @@ export const articleMeta = {
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Specifikationer Ecovacs Deebot T30S Pro</h3>
       <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
-        <table class="w-full text-sm">
+        <table class="cmp-table table-fixed w-full text-sm">
           <tbody class="divide-y divide-border">
             {specs.map((spec, i) => (
               <tr class={i % 2 === 0 ? 'bg-white' : ''}>
@@ -258,4 +258,19 @@ export const articleMeta = {
     "reviewBody": "Ecovacs Deebot T30S Pro imponerar med 11 000 Pa och OZMO Turbo 2.0. TrueDetect 3D och lång drifttid gör den till ett genomarbetat alternativ i premiumklassen.",
     "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
   })} />
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
 </BaseLayout>

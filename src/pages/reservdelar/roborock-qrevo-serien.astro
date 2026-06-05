@@ -132,7 +132,7 @@ export const articleMeta = {
     <section class="mb-10">
       <h2 class="font-heading text-2xl font-bold text-text mb-4">Underhallsschema, Roborock Qrevo-serien</h2>
       <div class="bg-bg-alt rounded-xl border border-border overflow-hidden">
-        <table class="w-full text-sm">
+        <table class="cmp-table table-fixed w-full text-sm">
           <thead>
             <tr class="bg-primary text-white">
               <th class="px-4 py-3 text-left font-semibold">Del</th>
@@ -166,4 +166,19 @@ export const articleMeta = {
       </ul>
     </section>
   </div>
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
 </BaseLayout>

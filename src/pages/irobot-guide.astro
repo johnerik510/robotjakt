@@ -139,7 +139,7 @@ export const articleMeta = {
     <section class="mb-10" aria-label="Jämförelsetabell Roomba-modeller">
       <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse, Roomba-modeller 2026</h2>
       <div class="hidden sm:block rounded-xl border border-border overflow-hidden">
-        <table class="w-full text-sm bg-white">
+        <table class="cmp-table table-fixed w-full text-sm bg-white">
           <thead>
             <tr class="border-b border-border bg-bg-alt">
               <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
@@ -351,4 +351,19 @@ export const articleMeta = {
       { "@type": "ListItem", "position": 2, "name": "iRobot Roomba-guide", "item": "https://robotjakt.se/irobot-guide/" },
     ],
   })} />
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
 </BaseLayout>

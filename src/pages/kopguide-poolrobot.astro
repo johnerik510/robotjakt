@@ -85,7 +85,7 @@ export const articleMeta = {
       Om din pool tenderar att få alger eller missfärgningar på väggarna behöver du en modell som klättrar väggarna. Alger fäster lika gärna på väggarna som på botten, och en robot som bara rengör botten löser inte det problemet.
     </p>
     <div class="bg-white rounded-xl border border-border overflow-hidden mb-4">
-      <table class="w-full text-sm">
+      <table class="cmp-table table-fixed w-full text-sm">
         <thead>
           <tr class="border-b border-border bg-bg-alt">
             <th class="text-left px-4 py-3 font-semibold text-text">Täckning</th>
@@ -223,6 +223,21 @@ export const articleMeta = {
       <li><a href="/guide/poolrobot-koparguide/" class="text-accent underline text-sm">Poolrobot köpguide: kabel vs batteri, väggklättring och filter</a></li>
     </ul>
   </section>
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
 </ArticleLayout>
 
 <StickyCTA

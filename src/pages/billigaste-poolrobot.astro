@@ -113,7 +113,7 @@ export const articleMeta = {
     <section class="mb-8" aria-label="Jämförelsetabell billiga poolrobotar">
       <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse, till lägre pris</h2>
       <div class="bg-white rounded-xl border border-border overflow-hidden">
-        <table class="w-full text-sm">
+        <table class="cmp-table table-fixed w-full text-sm">
           <thead>
             <tr class="border-b border-border bg-bg-alt">
               <th class="text-left px-4 py-3 font-semibold text-text">#</th>
@@ -232,4 +232,19 @@ export const articleMeta = {
       { "@type": "ListItem", "position": 3, "name": "Intex Auto Pool Cleaner", "url": "https://robotjakt.se/billigaste-poolrobot/" },
     ],
   })} />
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
 </BaseLayout>

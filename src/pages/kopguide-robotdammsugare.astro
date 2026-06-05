@@ -114,7 +114,7 @@ export const articleMeta = {
             Sugkraften mäts i Pascal (Pa) och anger hur starkt roboten suger. Mer Pa innebär bättre upptagning av djurhår, smuts i mattor och finkornat damm.
           </p>
           <div class="bg-bg-alt rounded-xl border border-border overflow-hidden">
-            <table class="w-full text-sm">
+            <table class="cmp-table table-fixed w-full text-sm">
               <thead>
                 <tr class="border-b border-border">
                   <th class="text-left px-4 py-3 font-semibold text-text">Sugkraft</th>
@@ -331,4 +331,19 @@ export const articleMeta = {
     url="https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=151996&url=https://www.elon.se/dreame-x50-ultra-white-151996"
     productName="Dreame X50 Ultra"
   />
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
 </BaseLayout>

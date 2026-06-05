@@ -128,7 +128,7 @@ export const articleMeta = {
     <!-- Snabbjämförelse -->
     <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8 overflow-x-auto">
       <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse, storlägenhetrobotar 2026</h2>
-      <table class="w-full text-sm min-w-[560px]">
+      <table class="cmp-table table-fixed w-full text-sm">
         <thead>
           <tr class="border-b border-border">
             <th class="text-left pb-3 font-semibold text-text">Modell</th>
@@ -226,4 +226,19 @@ export const articleMeta = {
     text="Bra pris hos Roborock S8 MaxV Ultra"
     url="https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=135019&url=https://www.elon.se/roborock-s8-maxv-ultra-white-135019"
   />
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
 </BaseLayout>

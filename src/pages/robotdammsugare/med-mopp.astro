@@ -190,7 +190,7 @@ export const articleMeta = {
     <!-- Quick comparison table -->
     <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8 overflow-x-auto">
       <h2 class="font-heading text-xl font-bold text-text mb-4">Bästa robotdammsugare med mopp 2026: snabbjämförelse</h2>
-      <table class="w-full text-sm min-w-[500px]">
+      <table class="cmp-table table-fixed w-full text-sm">
         <thead>
           <tr class="border-b border-border">
             <th class="text-left pb-3 font-semibold text-text">Modell</th>
@@ -295,4 +295,19 @@ export const articleMeta = {
     text="Se bästa pris på Dreame X40 Ultra"
     url="https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=151995&url=https://www.elon.se/dreame-x40-ultra-151995"
   />
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
 </BaseLayout>

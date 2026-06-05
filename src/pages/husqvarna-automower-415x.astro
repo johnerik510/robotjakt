@@ -155,7 +155,7 @@ export const articleMeta = {
   <section class="mb-10">
     <h2 class="font-heading text-2xl font-bold text-text mb-4">Tekniska specifikationer Husqvarna Automower 415X</h2>
     <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
-      <table class="w-full text-sm">
+      <table class="cmp-table table-fixed w-full text-sm">
         <tbody class="divide-y divide-border">
           {specs.map((spec, i) => (
             <tr class={i % 2 === 0 ? 'bg-white' : ''}>
@@ -204,7 +204,7 @@ export const articleMeta = {
   <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
     <h2 class="font-heading text-xl font-bold text-text mb-3">415X vs 315X vs 430X Nera, vilket passar dig?</h2>
     <div class="overflow-hidden mb-4">
-      <table class="w-full text-sm">
+      <table class="cmp-table table-fixed w-full text-sm">
         <thead>
           <tr class="border-b border-border">
             <th class="text-left py-2 pr-4 font-semibold text-text">Egenskap</th>
@@ -269,6 +269,21 @@ export const articleMeta = {
       <li><a href="/robotgrasklippare/" class="text-accent underline text-sm">Bästa robotgräsklippare 2026, komplett topplista</a></li>
     </ul>
   </section>
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
 </ArticleLayout>
 
 <StickyCTA

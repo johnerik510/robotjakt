@@ -121,7 +121,7 @@ export const articleMeta = {
       </div>
       <!-- Desktop: table -->
       <div class="hidden sm:block rounded-xl border border-border overflow-hidden">
-        <table class="w-full text-sm">
+        <table class="cmp-table table-fixed w-full text-sm">
           <thead class="bg-bg-alt">
             <tr>
               <th class="px-4 py-3 text-left font-semibold text-text"></th>
@@ -246,4 +246,19 @@ export const articleMeta = {
   />
 
   {/* FAQPage schema emitteras via FAQ-komponenten */}
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
 </BaseLayout>

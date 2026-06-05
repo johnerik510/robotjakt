@@ -168,7 +168,7 @@ const breadcrumbs = [{ label: 'Drönare' }];
       </div>
       <!-- Desktop: tabell -->
       <div class="hidden md:block bg-white rounded-xl border border-border overflow-hidden">
-        <table class="w-full text-sm">
+        <table class="cmp-table table-fixed w-full text-sm">
           <thead class="bg-bg-alt">
             <tr>
               <th class="px-4 py-3 text-left font-semibold text-text">Modell</th>
@@ -281,6 +281,21 @@ const breadcrumbs = [{ label: 'Drönare' }];
     url="https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=57972&url=https://www.kjell.com/se/produkter/hem-fritid/fritid/dronare/dji-dronare/dji-mini-5-pro-hopfallbar-dronare-med-50-mp-kamera-p57972"
     productName="DJI Mini 5 Pro"
   />
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
 </BaseLayout>
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",

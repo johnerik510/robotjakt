@@ -103,7 +103,7 @@ export const articleMeta = {
     <section class="mb-10" aria-label="Jämförelsetabell Narwal Freo X Ultra vs Dreame X40 Ultra">
       <h2 class="font-heading text-xl font-bold text-text mb-4">Specifikationer jämfört</h2>
       <div class="rounded-xl border border-border overflow-hidden">
-        <table class="w-full text-sm bg-white">
+        <table class="cmp-table table-fixed w-full text-sm bg-white">
           <thead>
             <tr class="border-b border-border bg-bg-alt">
               <th class="px-4 py-3 text-left font-semibold text-text">Egenskap</th>
@@ -218,4 +218,19 @@ export const articleMeta = {
     "author": { "@type": "Organization", "name": "Robotjakts redaktion" },
     "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" },
   })} />
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
 </BaseLayout>
