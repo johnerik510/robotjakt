@@ -30,6 +30,8 @@ const STORE_PATTERNS: Record<string, RegExp> = {
   // Kjell apid uppdaterat till 1487384319 (gammalt 1098281531 var fel)
   'Kjell & Company': /(?:track\.adtraction\.com|(?:ion\.kjell\.com)|go\.adt\d+\.\w+|[a-z0-9-]+\.[a-z0-9-]+\.[a-z]+)\/t\/t\?[^"]*a=(1487384314|1487384315|1487384316|1487384317|1487384318|1487384319)\b/,
   'Komplett': /(?:track\.adtraction\.com|go\.adt\d+\.\w+|go\.adt267\.com|[a-z0-9-]+\.[a-z0-9-]+\.[a-z]+)\/t\/t\?[^"]*a=(1615916037|1615916038|1615916039|1615916040|1615916041|1615916042)\b/,
+  // CDON via Tradedoubler: feedens productUrl ÄR deeplinken (kanal a(3482941)).
+  'CDON': /pdt\.tradedoubler\.com\/click\?a\(3482941\)/,
   'Pix4D': /addrevenue\.io\/t\?[^"]*a=987736\b/,
   'Neatsvor': /addrevenue\.io\/t\?[^"]*a=985945\b/,
   'Xiaomi': /addrevenue\.io\/t\?[^"]*a=985837\b/,
@@ -167,13 +169,16 @@ export function resolveProductDeeplink(storeName: string, productName: string): 
   const direct = resolveFromStoreFeed(storeName, productName);
   if (direct) return direct;
 
-  // Fallback: sök i hela FEED_MATCHES (bakåtkompatibilitet för gamla feeds)
+  // Fallback: sök i hela FEED_MATCHES (bakåtkompatibilitet för gamla feeds).
+  // Använder strictMatchScore (inte lös tokenOverlap) så att modellnummer måste
+  // stämma och tillbehör exkluderas — annars matchas t.ex. "Landroid Vision 500"
+  // felaktigt mot "Landroid M700 Plus".
   const entries = getStoreEntries(storeName);
   if (entries.length === 0) return undefined;
   let best: FeedMatch | undefined;
   let bestScore = 0;
   for (const entry of entries) {
-    const score = tokenOverlap(productName, entry.title);
+    const score = strictMatchScore(productName, entry.title);
     if (score > bestScore) {
       bestScore = score;
       best = entry;

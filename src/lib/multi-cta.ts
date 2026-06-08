@@ -38,6 +38,7 @@ const ACTIVE_STORES: Array<{ key: string; display: string; commission: number }>
   { key: 'Kjell & Company', display: 'Kjell',     commission: 0.05  },
   { key: 'Komplett',      display: 'Komplett',     commission: 0.04  },
   { key: 'CS MEGASTORE',  display: 'CS Megastore', commission: 0.04  },
+  { key: 'CDON',          display: 'CDON',         commission: 0.045 },
   { key: 'Proshop',       display: 'Proshop',      commission: 0.032 },
   { key: 'Dronarbutiken', display: 'Dronarbutiken', commission: 0.03 },
 ];
@@ -86,6 +87,15 @@ const BRAND_KEYWORDS: Array<[string, string]> = [
   ['roomba',     'irobot'],
   ['grimsholm',  'grimsholm'],
   ['cf',         'cf'],
+  ['einhell',    'einhell'],
+  ['freelexo',   'einhell'],
+  ['greenworks', 'greenworks'],
+  ['optimow',    'greenworks'],
+  ['indego',     'bosch'],
+  ['liectroux',  'liectroux'],
+  ['wybot',      'wybot'],
+  ['osprey',     'wybot'],
+  ['dyson',      'dyson'],
 ];
 
 function detectBrand(productName: string): string {
@@ -184,5 +194,6 @@ export function storeFromUrl(url: string): string {
   if (url.includes('go.csmegastore.se') || url.includes('csmegastore.se')) return 'CS MEGASTORE';
   if (url.includes('go.adt284.net') || url.includes('proshop.se')) return 'Proshop';
   if (url.includes('addrevenue.io')) return 'Dronarbutiken';
+  if (url.includes('tradedoubler.com') || url.includes('cdon.se')) return 'CDON';
   return '';
 }
