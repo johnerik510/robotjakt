@@ -1,0 +1,29 @@
+---
+/**
+ * StatHighlight — GEO/AEO-komponent för verifierad statistik med källhänvisning.
+ * Princeton-faktorn: källcitering +115%, statistik +41% AI-citeringsfrekvens.
+ *
+ * Användning:
+ * <StatHighlight figure="29 %" source="CAMM" sourceUrl="https://..." year="2025">
+ *   Andel stockholmare med allergisk snuva.
+ * </StatHighlight>
+ *
+ * REGEL: Figur och källa MÅSTE vara verifierade mot primärkälla vid commit-tidpunkten.
+ */
+interface Props {
+  figure: string;
+  source: string;
+  sourceUrl: string;
+  year?: string | number;
+}
+const { figure, source, sourceUrl, year } = Astro.props;
+---
+<div class="bg-blue-50 border border-blue-200 rounded-xl p-4 flex flex-col gap-2">
+  <p class="font-heading text-2xl font-bold text-accent leading-none">{figure}</p>
+  <div class="text-sm text-text leading-snug">
+    <slot />
+  </div>
+  <p class="text-xs text-text-light mt-auto">
+    Källa: <a href={sourceUrl} rel="noopener noreferrer" class="underline hover:text-accent" target="_blank">{source}{year ? ` (${year})` : ''}</a>
+  </p>
+</div>

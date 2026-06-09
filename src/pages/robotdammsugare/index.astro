@@ -4,6 +4,8 @@ import ProductCard from '../../components/ProductCard.astro';
 import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
+import StatHighlight from '../../components/StatHighlight.astro';
+import ExpertQuote from '../../components/ExpertQuote.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
 
@@ -434,6 +436,47 @@ export const articleMeta = {
           <p>Budget: täcker grundläggande behov, enklare navigering. Mellanklass: LiDAR-navigering, moppfunktion, självtömmande station, här sitter bästa värdet. Premium: maxprestanda, AI-kamera, utfällbar mopp, varmvatten.</p>
         </div>
       </div>
+    </section>
+
+    <!-- GEO/AEO: Verifierade fakta om allergi, damm och testresultat -->
+    <section class="mb-12" aria-label="Forskning om allergi och inomhusluft">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Robotdammsugare och inomhusluft: vad forskningen visar</h2>
+      <p class="text-text-light text-sm leading-relaxed mb-5">
+        Regelbunden dammsugning med robotdammsugare minskar ansamlingen av dammkvalster och husdjursallergener. Nedan är relevanta fakta om allergi, inomhusluft och prestanda.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
+        <StatHighlight
+          figure="29 %"
+          source="CAMM, Miljöhälsorapport Stockholm"
+          sourceUrl="https://www.camm.regionstockholm.se/rapporter-och-faktablad/rapporter/miljohalsorapporter/miljohalsorapport-2025/12-allergi-och-sjukdomar-i-luftvagarna/"
+          year="2025"
+        >
+          Andel vuxna stockholmare med allergisk snuva 2023 (upp från 24 % 2007). Dammkvalster och pälsdjursallergen är de vanligaste inomhusutlösarna.
+        </StatHighlight>
+        <StatHighlight
+          figure="91-97 % dammupptag"
+          source="Energimyndigheten Testlab"
+          sourceUrl="https://www.energimyndigheten.se/effektiv-energianvandning/tester/tester-a-o/robotdammsugare/"
+          year="2018"
+        >
+          Dammupptag på hårda golv i Energimyndighetens test av 6 robotdammsugare. På mattor sjunker resultaten till 61-93 %, vilket är en reell begränsning för tjocka mattor.
+        </StatHighlight>
+        <StatHighlight
+          figure="~70 dB"
+          source="Energimyndigheten Testlab"
+          sourceUrl="https://www.energimyndigheten.se/effektiv-energianvandning/tester/tester-a-o/robotdammsugare/"
+          year="2018"
+        >
+          Typisk ljudnivå för robotdammsugare (ungefär som ett vanligt samtal). Självtömmande stationer kan kortvarigt nå 80 dB vid tömning.
+        </StatHighlight>
+      </div>
+      <ExpertQuote
+        name="Pernilla Lantz"
+        role="Ansvarig för testet, Energimyndighetens Testlab"
+        sourceUrl="https://www.energimyndigheten.se/effektiv-energianvandning/tester/tester-a-o/robotdammsugare/"
+      >
+        "Dammsugare med låg effekt kan ha en mycket bra dammupptagning, både vid dammsugning av hårda golv och mattor."
+      </ExpertQuote>
     </section>
 
     <!-- Kategoriguider -->
