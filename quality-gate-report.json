@@ -1,14 +1,14 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-06-05T21:12:05.194Z",
-  "durationMs": 14552,
+  "timestamp": "2026-06-09T14:15:10.501Z",
+  "durationMs": 17039,
   "summary": {
-    "checks": 17,
-    "errors": 11,
+    "checks": 18,
+    "errors": 12,
     "warnings": 25,
     "newErrors": 0,
-    "baselinedErrors": 11
+    "baselinedErrors": 12
   },
   "results": [
     {
@@ -140,7 +140,7 @@
   "baseline": {
     "status": "compared",
     "baselineCount": 11,
-    "baselinedCount": 11,
+    "baselinedCount": 12,
     "newErrorCount": 0
   },
   "allResults": [
@@ -148,49 +148,56 @@
       "check": "01-dashes",
       "severity": "error",
       "file": "src/lib/cta-resolver.ts",
-      "line": 69,
+      "line": 71,
       "message": "em-dash hittad: \"// Tillbehör/reservdels-nyckelord — om matchad titel innehåller dessa men frågan\""
     },
     {
       "check": "01-dashes",
       "severity": "error",
+      "file": "src/lib/cta-resolver.ts",
+      "line": 174,
+      "message": "em-dash hittad: \"// stämma och tillbehör exkluderas — annars matchas t.ex. \"Landroid Vision 500\"\""
+    },
+    {
+      "check": "01-dashes",
+      "severity": "error",
       "file": "src/pages/robotdammsugare/index.astro",
-      "line": 309,
+      "line": 311,
       "message": "em-dash hittad: \"{ name: 'Roborock Saros 20 Sonic', sugkraft: '—', station: 'Ja', betyg: '9,6', b\""
     },
     {
       "check": "01-dashes",
       "severity": "error",
       "file": "src/pages/robotdammsugare/index.astro",
-      "line": 310,
+      "line": 312,
       "message": "em-dash hittad: \"{ name: 'Dreame X60 Ultra', sugkraft: '—', station: 'Ja', betyg: '9,5', badge: '\""
     },
     {
       "check": "01-dashes",
       "severity": "error",
       "file": "src/pages/robotdammsugare/index.astro",
-      "line": 312,
+      "line": 314,
       "message": "em-dash hittad: \"{ name: 'Dreame Aqua10 Ultra Roller', sugkraft: '—', station: 'Ja', betyg: '9,2'\""
     },
     {
       "check": "01-dashes",
       "severity": "error",
       "file": "src/pages/robotdammsugare/index.astro",
-      "line": 314,
+      "line": 316,
       "message": "em-dash hittad: \"{ name: 'Dreame L10s Ultra Gen 3', sugkraft: '—', station: 'Ja', betyg: '8,8', b\""
     },
     {
       "check": "01-dashes",
       "severity": "error",
       "file": "src/pages/robotdammsugare/index.astro",
-      "line": 315,
+      "line": 317,
       "message": "em-dash hittad: \"{ name: 'Dreame D20 Ultra', sugkraft: '—', station: 'Ja', betyg: '8,5', badge: '\""
     },
     {
       "check": "01-dashes",
       "severity": "error",
       "file": "src/pages/robotdammsugare/index.astro",
-      "line": 316,
+      "line": 318,
       "message": "em-dash hittad: \"{ name: 'Neatsvor X600 Pro', sugkraft: '—', station: 'Nej', betyg: '8,0', badge:\""
     },
     {
