@@ -46,6 +46,7 @@ Intern länkstruktur: alla kluster-sidor länkar till sin pillar page, alla pill
 - `/kopguide-robotgrasklippare/` — Köpguide robotgräsklippare (slinga vs GPS, installation, underhall)
 - `/robotgrasklippare-utan-slinga/` — Bästa robotgräsklippare utan slinga 2026 (GPS-baserade)
 - `/billigaste-robotgrasklippare/` — Billigaste robotgräsklippare 2026 (under 10 000 kr)
+- `/guide/vinterforvaring-robotgrasklippare/` — Vinterförvaring av robotgräsklippare (info-guide, säsong) — PUBLICERAD 2026-06-15, länkar till /robotgrasklippare/ + köpguide
 
 ### Recensioner (planerade)
 - `/husqvarna-automower-430x/` — Husqvarna Automower 430X recension

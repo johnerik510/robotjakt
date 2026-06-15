@@ -1,0 +1,145 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import Callout from '../../components/Callout.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
+
+const breadcrumbs = [
+  { label: 'Guider', href: '/guide/' },
+  { label: 'Vinterförvaring av robotgräsklippare' },
+];
+
+const tocHeadings = [
+  { text: 'Kan robotgräsklipparen vara ute på vintern?', slug: 'ute-pa-vintern' },
+  { text: 'När ska man ta in robotgräsklipparen?', slug: 'nar-ta-in' },
+  { text: 'Hur förbereder man roboten steg för steg?', slug: 'steg-for-steg' },
+  { text: 'Hur sköter man batteriet under vintern?', slug: 'batteriet' },
+  { text: 'Vad gör man med laddstationen och kabeln?', slug: 'laddstation' },
+  { text: 'Var ska roboten förvaras?', slug: 'var-forvara' },
+  { text: 'När kan roboten starta igen på våren?', slug: 'varen' },
+];
+
+const faqItems = [
+  { question: 'Kan robotgräsklipparen stå ute hela vintern?', answer: 'Nej. Frost, snö och fukt skadar elektronik och batteri. Roboten ska förvaras inomhus i ett torrt, frostfritt utrymme. Laddstationen kan stå kvar ute om du kopplar bort nätadaptern och täcker den, men själva roboten ska alltid in.' },
+  { question: 'Vid vilken temperatur ska man ta in roboten?', answer: 'Ta in roboten innan nattemperaturen regelbundet kryper mot noll grader, vilket i Sverige oftast är oktober till november. Litiumjonbatteriet mår dåligt under 5 grader och klipparen slutar ändå arbeta när gräset gått i vintervila.' },
+  { question: 'Ska batteriet vara fulladdat under förvaringen?', answer: 'Nej, inte fullt. Förvara batteriet på 60 till 80 procent. Litiumjonbatterier åldras snabbast vid 100 procent laddning under lång tid. Kontrollera nivån ungefär en gång i månaden och ladda upp om den sjunkit under 40 procent.' },
+  { question: 'Kan laddstationen stå kvar ute på vintern?', answer: 'Ja, de flesta laddstationer är byggda för att stå ute året runt. Koppla bort nätadaptern från eluttaget och täck över stationen så att kontaktblecken hålls torra. Begränsningskabeln i marken kan ligga kvar orörd.' },
+  { question: 'Behöver jag göra något med begränsningskabeln?', answer: 'Nej. Begränsningskabeln (slingan) ligger nedgrävd eller fäst i marken och tål frost utan problem. Lämna den orörd. På GPS- och RTK-modeller utan slinga sker all gränssättning i appen, så där finns ingen kabel att tänka på.' },
+  { question: 'När kan jag starta roboten igen på våren?', answer: 'Starta först när risken för nattfrost är över och gräset börjat växa, oftast i april eller maj beroende på var i landet du bor. Ladda upp batteriet helt, rengör knivarna och kontrollera att laddstationens kontakter är rena och torra innan första klippningen.' },
+];
+
+export const articleMeta = {
+  title: "Vinterförvaring av robotgräsklippare 2026: så gör du steg för steg",
+  description: "Så vinterförvarar du robotgräsklipparen rätt 2026. När du tar in den, batterivård på 60 till 80 procent, laddstation ute och vårstart förklarat steg för steg.",
+  publishDate: "2026-06-15",
+  category: "Guider",
+  image: "/images/vinterforvaring-robotgrasklippare-hero.webp",
+};
+---
+
+<ArticleLayout
+  image={articleMeta.image}
+  ogImage={articleMeta.image}
+  title="Vinterförvaring av robotgräsklippare 2026: så gör du steg för steg"
+  description="Så vinterförvarar du robotgräsklipparen rätt 2026. När du tar in den, batterivård på 60 till 80 procent, laddstation ute och vårstart förklarat steg för steg."
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-06-15"
+  datePublished="2026-06-15"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Vinterförvaring av robotgräsklippare, komplett guide
+  </h1>
+  <p class="text-text-light text-lg mb-6 leading-relaxed">
+    När klippsäsongen är slut är det vintervården som avgör om roboten håller i tio år eller dör efter tre. Det viktigaste handlar om två saker: att hålla elektroniken frostfri och att inte förvara litiumjonbatteriet fulladdat. Här är hela rutinen, från när du tar in roboten till hur du startar den igen på våren.
+  </p>
+
+  <TableOfContents headings={tocHeadings} />
+
+  <h2 id="ute-pa-vintern" class="font-heading text-2xl font-bold text-text mt-8 mb-3">Kan robotgräsklipparen vara ute på vintern?</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    Nej, roboten ska inte stå ute över vintern. Frost, smältvatten och fukt tränger in i elektronik och batteri och förkortar livslängden kraftigt. Den enda del som tål att stå kvar utomhus är laddstationen, förutsatt att du kopplar bort strömmen och täcker över den. Själva roboten ska alltid förvaras inomhus.
+  </p>
+  <p class="text-text-light leading-relaxed mb-4">
+    Tillverkarna är samstämmiga på den punkten. Husqvarna, Gardena och Segway anger alla att roboten ska förvaras frostfritt, och garantin kan påverkas om en frostskadad enhet lämnas in. Litiumjonbatteriet är den känsligaste komponenten: under fem grader sjunker kapaciteten tillfälligt, och vid upprepad frost kan kapacitetsförlusten bli permanent.
+  </p>
+
+  <Callout type="warning" title="Vanligaste vintermissen">
+    Att glömma roboten i laddstationen när första frostnatten kommer. Den klarar enstaka kalla nätter, men en hel vinter ute spräcker batteriet och fyller elektroniken med kondens. Sätt en påminnelse i oktober.
+  </Callout>
+
+  <h2 id="nar-ta-in" class="font-heading text-2xl font-bold text-text mt-8 mb-3">När ska man ta in robotgräsklipparen?</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    Ta in roboten när nattemperaturen regelbundet närmar sig noll grader, vilket i större delen av Sverige innebär oktober till november. Gräset slutar växa under cirka fem grader, så roboten har ändå inget jobb kvar att göra. Vänta inte till första riktiga frostnatten, då tar du onödiga risker med batteriet.
+  </p>
+  <p class="text-text-light leading-relaxed mb-6">
+    Tidpunkten varierar med var i landet du bor. I södra Sverige håller säsongen ofta in i november, medan norra Sverige kan kräva att roboten tas in redan i slutet av september. Följ gräset snarare än kalendern: när tillväxten avstannat och dygnsmedeltemperaturen sjunkit under fem grader är det dags.
+  </p>
+
+  <figure class="my-6">
+    <img src="/images/vinterforvaring-robotgrasklippare-inline.webp" alt="Robotgräsklippare och laddstation utomhus i vinterlandskap med snö" class="rounded-xl border border-border w-full" loading="lazy" width="1200" height="675" />
+    <figcaption class="text-sm text-text-light mt-2">Laddstationen kan stå kvar ute om strömmen kopplas bort, men roboten ska in i ett frostfritt utrymme.</figcaption>
+  </figure>
+
+  <h2 id="steg-for-steg" class="font-heading text-2xl font-bold text-text mt-8 mb-3">Hur förbereder man roboten steg för steg?</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    Vinterförberedelsen tar en kvart och består av fem moment: rengöring, knivkoll, laddning till lagringsnivå, avstängning och torr förvaring. Gör dem i den ordningen så slipper du obehagliga överraskningar i april. Här är checklistan.
+  </p>
+  <ol class="list-decimal pl-6 text-text-light space-y-2 mb-6">
+    <li><strong>Rengör roboten.</strong> Borsta bort gräs, jord och löv från chassi, hjul och knivskiva. Använd en torr eller lätt fuktad borste, aldrig högtryckstvätt som pressar in vatten i lager och elektronik.</li>
+    <li><strong>Kontrollera knivarna.</strong> Slöa eller spruckna knivar bör bytas inför nästa säsong. Det är billigt och du har då en klippklar robot på våren.</li>
+    <li><strong>Ladda till lagringsnivå.</strong> Sätt batteriet på 60 till 80 procent, inte fullt. Mer om varför nedan.</li>
+    <li><strong>Stäng av roboten helt.</strong> Använd huvudströmbrytaren, inte bara viloläge, så att batteriet inte långsamt laddas ur under vintern.</li>
+    <li><strong>Förvara torrt och frostfritt.</strong> Lägg roboten på en hylla inomhus, gärna i originalkartongen om du har kvar den.</li>
+  </ol>
+
+  <Callout type="tip" title="Passa på att serva">
+    Vintern är rätt läge att beställa nya knivar och eventuella reservdelar. Då slipper du köa hos tillverkaren i mars när alla andra vaknar till liv samtidigt. En djupare genomgång hittar du i vår <a href="/guide/underhall/" class="text-accent underline">guide till underhåll av robot</a>.
+  </Callout>
+
+  <h2 id="batteriet" class="font-heading text-2xl font-bold text-text mt-8 mb-3">Hur sköter man batteriet under vintern?</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    Förvara litiumjonbatteriet på 60 till 80 procent och i rumstemperatur. Ett fulladdat batteri åldras snabbast under lång lagring, eftersom den kemiska stressen vid 100 procent accelererar kapacitetsförlusten. Lika illa är att låta batteriet ladda ur helt, då kan det bli djupurladdat och oåterkalleligt skadat.
+  </p>
+  <p class="text-text-light leading-relaxed mb-6">
+    Kontrollera laddnivån ungefär en gång i månaden under vintern. Har den sjunkit under 40 procent laddar du upp till runt 60 igen. På modeller med uttagbart batteri kan du förvara batteriet separat i rumstemperatur, vilket är ännu skonsammare än att låta det sitta kvar i roboten i ett svalt utrymme.
+  </p>
+
+  <h2 id="laddstation" class="font-heading text-2xl font-bold text-text mt-8 mb-3">Vad gör man med laddstationen och kabeln?</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    Laddstationen får stå kvar ute. Koppla bort nätadaptern från eluttaget och täck över stationen så att kontaktblecken hålls torra och fria från is. Begränsningskabeln (slingan) ligger nedgrävd i marken och tål frost utan åtgärd, så den lämnar du orörd.
+  </p>
+  <p class="text-text-light leading-relaxed mb-6">
+    Har du en modell utan slinga, exempelvis en RTK-baserad robot från Mammotion eller Segway, finns ingen kabel att tänka på eftersom gränserna sätts digitalt i appen. RTK-antennen tål normalt att sitta kvar, men kontrollera tillverkarens anvisning. Funderar du på att uppgradera till en kabelfri modell kan du jämföra alternativen i vår översikt över <a href="/robotgrasklippare-utan-slinga/" class="text-accent underline">bästa robotgräsklippare utan slinga</a>.
+  </p>
+
+  <h2 id="var-forvara" class="font-heading text-2xl font-bold text-text mt-8 mb-3">Var ska roboten förvaras?</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    Förvara roboten torrt och frostfritt, helst i 5 till 15 grader. En hylla i ett uppvärmt förråd, en källare med underhållsvärme eller ett isolerat garage fungerar bra. Undvik ouppvärmda uthus och kalla garage där temperaturen regelbundet faller under noll, eftersom kyla både tappar batterikapacitet och bildar kondens.
+  </p>
+  <p class="text-text-light leading-relaxed mb-6">
+    Lägg gärna roboten i originalkartongen eller täck den med en tygduk så att den hålls dammfri. Ställ den inte direkt på ett kallt betonggolv, en hylla eller en pall håller den ifrån golvkylan. För stora och dyrare modeller, exempelvis till en villatomt över 1 500 kvadratmeter, är det extra värt att vårda elektroniken väl. Letar du efter en sådan klippare hittar du våra rekommendationer för <a href="/robotgrasklippare-stor-tradgard/" class="text-accent underline">robotgräsklippare för stor trädgård</a>.
+  </p>
+
+  <h2 id="varen" class="font-heading text-2xl font-bold text-text mt-8 mb-3">När kan roboten starta igen på våren?</h2>
+  <p class="text-text-light leading-relaxed mb-4">
+    Starta roboten först när nattfrosten är över och gräset börjat växa, vanligen i april till maj. Att klippa fryst eller mycket blött gräs sliter på både knivar och motor och ger ett dåligt klippresultat. Ge gräsmattan en chans att torka upp efter snösmältningen innan första körningen.
+  </p>
+  <p class="text-text-light leading-relaxed mb-6">
+    Inför premiären laddar du batteriet fullt, monterar nya knivar om du köpte sådana, och rengör laddstationens kontaktbleck från oxid med en torr trasa. Kontrollera att begränsningskabeln är hel om du har en slingmodell. Är du i färd med att köpa din första robot inför säsongen är vår <a href="/kopguide-robotgrasklippare/" class="text-accent underline">köpguide för robotgräsklippare</a> och <a href="/robotgrasklippare/" class="text-accent underline">topplistan över bästa robotgräsklippare 2026</a> bra startpunkter.
+  </p>
+
+  <FAQ items={faqItems} />
+
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Läs vidare</h2>
+    <ul class="space-y-2">
+      <li><a href="/robotgrasklippare/" class="text-accent underline text-sm">Bästa robotgräsklippare 2026</a></li>
+      <li><a href="/kopguide-robotgrasklippare/" class="text-accent underline text-sm">Köpguide robotgräsklippare</a></li>
+      <li><a href="/robotgrasklippare-utan-slinga/" class="text-accent underline text-sm">Bästa robotgräsklippare utan slinga</a></li>
+      <li><a href="/robotgrasklippare-stor-tradgard/" class="text-accent underline text-sm">Robotgräsklippare för stor trädgård</a></li>
+      <li><a href="/guide/underhall/" class="text-accent underline text-sm">Underhåll av robot, checklista</a></li>
+    </ul>
+  </section>
+</ArticleLayout>
+</content>
+</invoke>
