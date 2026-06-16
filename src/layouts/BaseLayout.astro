@@ -175,32 +175,11 @@ if (!hideAutoRelated) {
   <Footer />
 
 
-  <!-- Deferred: GA4 + Clarity, loaded on first user interaction or after 5s -->
+  <!-- Vilande gtag-stub (ingen GA4/analytics kopplad), behövs av affiliate-klick-trackern nedan -->
   <script>
-    (function() {
-      var loaded = false;
-      function loadDeferredScripts() {
-        if (loaded) return;
-        loaded = true;
-
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        window.gtag = gtag;
-
-        // Microsoft Clarity, robotjakt.se (production only)
-        if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-          (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","w3eu14lqpp");
-        }
-      }
-
-      // Load on first user interaction
-      ['scroll', 'click', 'touchstart', 'keydown'].forEach(function(evt) {
-        window.addEventListener(evt, loadDeferredScripts, { once: true, passive: true });
-      });
-
-      // Fallback: load after 5 seconds regardless
-      setTimeout(loadDeferredScripts, 5000);
-    })();
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
   </script>
   <!-- AFFI_TRACKING_V1_START -->
   <script is:inline>
