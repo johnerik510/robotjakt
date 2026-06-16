@@ -183,16 +183,9 @@ if (!hideAutoRelated) {
         if (loaded) return;
         loaded = true;
 
-        // GA4
-        var gs = document.createElement('script');
-        gs.src = 'https://www.googletagmanager.com/gtag/js?id=G-G2V09YKFPS';
-        gs.async = true;
-        document.head.appendChild(gs);
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         window.gtag = gtag;
-        gtag('js', new Date());
-        gtag('config', 'G-G2V09YKFPS');
 
         // Microsoft Clarity, robotjakt.se (production only)
         if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
