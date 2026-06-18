@@ -1,30 +1,16 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-06-18T19:47:19.050Z",
-  "durationMs": 14671,
+  "timestamp": "2026-06-18T19:48:16.163Z",
+  "durationMs": 14561,
   "summary": {
     "checks": 18,
-    "errors": 14,
+    "errors": 12,
     "warnings": 25,
-    "newErrors": 2,
+    "newErrors": 0,
     "baselinedErrors": 12
   },
   "results": [
-    {
-      "check": "01-dashes",
-      "severity": "error",
-      "file": "src/pages/husqvarna-automower-315x-vs-415x.astro",
-      "line": 78,
-      "message": "em-dash hittad: \"<!-- Above-the-fold CTA (discontinued models — route to current Husqvarna range)\""
-    },
-    {
-      "check": "01-dashes",
-      "severity": "error",
-      "file": "src/pages/mcculloch-rob-r600.astro",
-      "line": 113,
-      "message": "em-dash hittad: \"<!-- Above-the-fold CTA (no affiliate for this model — route to convertible alte\""
-    },
     {
       "check": "04-articlemeta",
       "severity": "warning",
@@ -155,7 +141,7 @@
     "status": "compared",
     "baselineCount": 11,
     "baselinedCount": 12,
-    "newErrorCount": 2
+    "newErrorCount": 0
   },
   "allResults": [
     {
@@ -171,20 +157,6 @@
       "file": "src/lib/cta-resolver.ts",
       "line": 174,
       "message": "em-dash hittad: \"// stämma och tillbehör exkluderas — annars matchas t.ex. \"Landroid Vision 500\"\""
-    },
-    {
-      "check": "01-dashes",
-      "severity": "error",
-      "file": "src/pages/husqvarna-automower-315x-vs-415x.astro",
-      "line": 78,
-      "message": "em-dash hittad: \"<!-- Above-the-fold CTA (discontinued models — route to current Husqvarna range)\""
-    },
-    {
-      "check": "01-dashes",
-      "severity": "error",
-      "file": "src/pages/mcculloch-rob-r600.astro",
-      "line": 113,
-      "message": "em-dash hittad: \"<!-- Above-the-fold CTA (no affiliate for this model — route to convertible alte\""
     },
     {
       "check": "01-dashes",
