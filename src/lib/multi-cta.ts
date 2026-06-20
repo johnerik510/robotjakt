@@ -193,7 +193,27 @@ export function storeFromUrl(url: string): string {
   if (url.includes('go.adt267.com') || url.includes('komplett.se')) return 'Komplett';
   if (url.includes('go.csmegastore.se') || url.includes('csmegastore.se')) return 'CS MEGASTORE';
   if (url.includes('go.adt284.net') || url.includes('proshop.se')) return 'Proshop';
-  if (url.includes('addrevenue.io')) return 'Dronarbutiken';
+  if (url.includes('addrevenue.io')) {
+    // Addrevenue används för flera butiker. Avgör butik via target-domänen
+    // i u=-parametern, aldrig blint "Dronarbutiken" (det mislabelar Robotrent,
+    // Neatsvor m.fl. och bryter CTA-standarden butik=destination).
+    let host = '';
+    try {
+      const target = new URL(url).searchParams.get('u');
+      if (target) host = new URL(decodeURIComponent(target)).hostname.replace(/^www\./, '');
+    } catch { /* ignore */ }
+    if (host.includes('neatsvor')) return 'Neatsvor';
+    if (host.includes('robotrent')) return 'Robotrent';
+    if (host.includes('robot-dammsugaren')) return 'Robot-dammsugaren';
+    if (host.includes('dronarbutiken')) return 'Dronarbutiken';
+    if (host.includes('villanytt')) return 'Villanytt';
+    if (host.includes('dustie')) return 'Dustie';
+    if (host.includes('mistore')) return 'MiStore';
+    // Okänd addrevenue-domän: härled rent namn ur domänen (aldrig mislabel)
+    const seg = host.split('.')[0];
+    if (seg) return seg.charAt(0).toUpperCase() + seg.slice(1);
+    return 'Dronarbutiken';
+  }
   if (url.includes('tradedoubler.com') || url.includes('cdon.se')) return 'CDON';
   return '';
 }

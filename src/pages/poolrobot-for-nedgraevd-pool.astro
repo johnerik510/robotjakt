@@ -5,6 +5,11 @@ import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import StickyCTA from '../components/StickyCTA.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import AnswerBox from '../components/AnswerBox.astro';
+import MoneyFeatured from '../components/MoneyFeatured.astro';
+import MoneyComparisonTable from '../components/MoneyComparisonTable.astro';
+import MoneyTOC from '../components/MoneyTOC.astro';
 
 const products = [
   {
@@ -102,75 +107,37 @@ export const articleMeta = {
   description="Bästa poolrobotar för nedgrävda pooler 2026. Vi jämför och rankar Dolphin, Zodiac och fler. Hitta rätt poolrobot efter poolstorlek och budget."
   article={{ datePublished: "2026-03-29", dateModified: "2026-05-27", image: "/images/dolphin-s200.webp" }}
 >
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Robotjakts redaktion</span>
-    </a>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-03-29</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Bästa poolrobot för nedgrävd pool 2026
     </h1>
 
+    <AuthorByline datePublished="2026-03-29" dateModified="2026-05-27" />
+
+    <AnswerBox
+      question="Snabbt svar: Vilken poolrobot är bäst för nedgrävd pool 2026?"
+      answer="Dolphin E30 är vår bästa poolrobot för nedgrävd pool 2026 till priset. Den rengör botten och nedre väggar i pooler upp till 8 meter, är lätt att lyfta upp och har en pålitlig motor med enkelt filter som håller skötseln låg."
+    />
+
+    <MoneyFeatured {...products[0]} />
+
+    <MoneyComparisonTable products={products} title="Jämförelsetabell - poolrobot för nedgrävd pool 2026" />
+
     <p class="text-lg text-text-light mb-6 leading-relaxed">
       Dolphin E30 är vår bästa poolrobot för nedgrävd pool 2026 till priset. Den rengör både botten och de nedre väggarna i pooler upp till 8 meter, och den lättviktiga konstruktionen gör den enkel att lyfta upp ur vattnet. En pålitlig motor och ett enkelt filter håller skötseln låg. </p>
 
-    <!-- Snabbjämförelse -->
-    <section class="mb-8" aria-label="Jämförelsetabell poolrobotar nedgrävd pool">
-      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse</h2>
-      <div class="overflow-x-auto rounded-xl border border-border">
-        <table class="w-full text-sm bg-white min-w-[520px]">
-          <thead>
-            <tr class="border-b border-border bg-bg-alt">
-              <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Max poollängd</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Väggklättring</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">WiFi-app</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Rengöringscykel</th>
-              </tr>
-          </thead>
-          <tbody class="divide-y divide-border">
-            <tr class="bg-winner/5">
-              <td class="px-4 py-3 font-semibold text-text">Dolphin E30</td>
-              <td class="px-4 py-3 text-text-light">8 m</td>
-              <td class="px-4 py-3 text-text-light">Nedre väggar</td>
-              <td class="px-4 py-3 text-cta font-medium">Nej</td>
-              <td class="px-4 py-3 text-text-light">2 h</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-semibold text-text">Zodiac Tornax OT2030</td>
-              <td class="px-4 py-3 text-text-light">10 m</td>
-              <td class="px-4 py-3 text-text-light">Nedre väggar</td>
-              <td class="px-4 py-3 text-cta font-medium">Nej</td>
-              <td class="px-4 py-3 text-text-light">2,5 h</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-semibold text-text">Dolphin Nautilus CC Plus</td>
-              <td class="px-4 py-3 text-text-light">12 m</td>
-              <td class="px-4 py-3 text-winner font-semibold">Hela väggen</td>
-              <td class="px-4 py-3 text-winner font-medium">Ja</td>
-              <td class="px-4 py-3 text-text-light">2,5 h</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-semibold text-text">Dolphin Active X4</td>
-              <td class="px-4 py-3 text-text-light">12 m</td>
-              <td class="px-4 py-3 text-winner font-semibold">Väggar + vattenlinje</td>
-              <td class="px-4 py-3 text-winner font-medium">Ja</td>
-              <td class="px-4 py-3 text-text-light">3 h</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+    <MoneyTOC />
 
     <!-- Produktkort -->
     <div class="space-y-5 mb-10">
-      {products.map(p => <ProductCard {...p} />)}
+      {products.map((p, i) => (
+        <div>
+          <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-4">{p.rank ?? i + 1}. {p.name}{p.badge ? `, ${p.badge}` : ''}</h2>
+          <ProductCard {...p} />
+        </div>
+      ))}
     </div>
 
     <!-- Guide -->

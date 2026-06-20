@@ -6,6 +6,10 @@ import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
+import MoneyFeatured from '../../components/MoneyFeatured.astro';
+import MoneyComparisonTable from '../../components/MoneyComparisonTable.astro';
+import MoneyTOC from '../../components/MoneyTOC.astro';
 
 const products = [
   {
@@ -114,6 +118,20 @@ const products = [
   },
   {
     rank: 9,
+    name: 'Gardena Sileno free 1000',
+    image: 'https://csdam.net/data/jpg/0/4b6e76a4/4b6e76a4-6071-4f7e-b114-1e4eb271865c.jpg',
+    rating: 4.4,
+    badge: 'Bäst Gardena, utan slinga',
+    pros: ['RTK-GPS, ingen perimeterkabel att gräva ner', 'Gardena smart-app med zoner och scheman', 'Klarar gräsmattor upp till 1 000 m²', 'Etablerat märke med svensk service och reservdelar'],
+    cons: ['Kräver fri sikt mot himlen för RTK-signal', 'Dyrare än enklare slingmodeller'],
+    ctaText: 'Bra pris hos CS Megastore',
+    ctaUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=21859841&url=https://www.csmegastore.se/i/21859841/gardena-sladdl%c3%b6s-robotgr%c3%a4sklippare-smart-sileno-free-rtk-gps-1000-m',
+    dataProduct: 'Gardena Sileno free 1000',
+    reviewUrl: '/gardena-robotgrasklippare/',
+    desc: 'Gardena smart Sileno free är Gardenas trådlösa RTK-modell, du slipper gräva ner någon slinga och markerar gränserna digitalt i appen istället. Den klarar gräsmattor upp till 1 000 m², styrs via Gardena smart-appen med zoner och scheman, och har den service och reservdelstillgång som gör Gardena till ett tryggt val.',
+  },
+  {
+    rank: 10,
     name: 'Worx Landroid Vision Cloud 500',
     image: 'https://www.komplett.se/img/p/400/1333222.jpg?imformat=generic',
     rating: 4.0,
@@ -176,7 +194,7 @@ const faqSchema = faqItems.map((item) => ({
 }));
 
 export const articleMeta = {
-  title: "Robotgräsklippare bäst i test 2026: 9 modeller rankade",
+  title: "Robotgräsklippare bäst i test 2026: 10 modeller rankade",
   description: "Robotgräsklippare bäst i test 2026: Dreame A3 AWD Pro 5000 vinner med 4,8/5 och klarar 5 000 m² utan perimeterkabel. AWD, utan slinga och budget rankade.",
   publishDate: "2026-05-16",
   category: "Topplista",
@@ -185,22 +203,33 @@ export const articleMeta = {
 ---
 
 <BaseLayout
-  title="Robotgräsklippare bäst i test 2026: 9 modeller rankade"
+  title="Robotgräsklippare bäst i test 2026: 10 modeller rankade"
   description="Robotgräsklippare bäst i test 2026: Dreame A3 AWD Pro 5000 vinner med 4,8/5 och klarar 5 000 m² utan perimeterkabel. AWD, utan slinga och budget rankade."
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/dreame-a3-awd-1000.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-06-20", image: "/images/dreame-a3-awd-1000.webp" }}
 >
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
-      Robotgräsklippare bäst i test 2026, 9 modeller rankade
+      Robotgräsklippare bäst i test 2026, 10 modeller rankade
     </h1>
 
-    <AuthorByline datePublished="2026-05-16" dateModified="2026-05-22" />
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-06-20" />
+
+    <AnswerBox
+      question="Snabbt svar: Vilken robotgräsklippare är bäst 2026?"
+      answer="Dreame A3 AWD Pro 5000 är bäst i test 2026 med 4,8/5. Den klarar tomter upp till 5 000 m² helt utan perimeterkabel via GPS och LiDAR, och AWD-driften tar branta lutningar. Du markerar gränserna i appen i stället för att gräva ner kabel."
+    />
+
+    <MoneyFeatured {...products[0]} />
+
+    <MoneyComparisonTable products={products} title="Jämförelsetabell - bästa robotgräsklippare 2026" />
 
     <p class="text-text-light mb-6 max-w-2xl">
       Dreame A3 AWD Pro 5000 är vår bästa robotgräsklippare i test 2026. Den klarar tomter upp till 5 000 m² helt utan perimeterkabel med GPS-navigering och LiDAR, och AWD-driften tar branta lutningar. Du markerar gränserna i appen i stället för att gräva ner kabel.
     </p>
+
+    <MoneyTOC />
 
     <!-- Kategori-pills -->
     <nav aria-label="Filtrera per behov" class="mb-8">
@@ -215,127 +244,6 @@ export const articleMeta = {
       </ul>
     </nav>
 
-    <!-- Vinnar-CTA above the fold -->
-    <div class="bg-gradient-to-br from-winner/10 to-accent/10 border-2 border-winner/30 rounded-2xl p-5 sm:p-6 mb-8">
-      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-        <div class="flex-shrink-0">
-          <span class="inline-block bg-winner text-white text-xs font-bold uppercase tracking-wider px-2 py-1 rounded">Bäst i test 2026</span>
-        </div>
-        <div class="flex-grow">
-          <div class="font-heading text-xl font-bold text-text mb-1">Dreame A3 AWD Pro 5000</div>
-          <div class="text-text-light text-sm mb-3">AWD-drivning, 5 000 m², utan perimeterkabel, LiDAR-navigering.</div>
-          <a
-            href="https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1&cupa_sku=1334171&url=https://www.komplett.se/product/1334171/hem-fritid/tradgaard/grasklippare/robotgrasklippare/dreame-robotic-mower-a3-awd-pro-5000m2?channable=02d4c769640031333334313731ce"
-            rel="nofollow sponsored noopener"
-            target="_blank"
-            data-affiliate="true"
-            class="inline-flex items-center gap-2 bg-cta hover:bg-cta-dark text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm shadow-sm"
-          >
-            Bra pris hos Komplett
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Jämförelsetabell -->
-    <section class="mb-8" aria-label="Jämförelsetabell robotgräsklippare">
-      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse</h2>
-      <!-- Mobil: kort -->
-      <div class="md:hidden space-y-3">
-        {[
-          { name: 'Dreame A3 AWD Pro 5000', yta: '5 000 m²', utanSlinga: 'Ja', betyg: '9,6', badge: 'Bäst 2026', url: 'https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1&cupa_sku=1334171&url=https://www.komplett.se/product/1334171/hem-fritid/tradgaard/grasklippare/robotgrasklippare/dreame-robotic-mower-a3-awd-pro-5000m2?channable=02d4c769640031333334313731ce' },
-          { name: 'Dreame A3 AWD 1000', yta: '1 000 m²', utanSlinga: 'Ja', betyg: '9,2', badge: 'AWD', url: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66730&url=https://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare-tillbehor/robotgrasklippare/dreame-a3-awd-1000-robotgrasklippare-p66730' },
-          { name: 'Segway Navimow i220E', yta: '2 000 m²', utanSlinga: 'Ja', betyg: '9,0', badge: 'Utan slinga', url: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25567775&url=https://www.csmegastore.se/i/25567775/segway-navimow-i220e-lidar-pro-robotgr%c3%a4sklippare-2000-m' },
-          { name: 'Mammotion Luba 3 5000X', yta: '5 000 m²', utanSlinga: 'Ja', betyg: '9,0', badge: 'Stor yta', url: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25727478&url=https://www.csmegastore.se/i/25727478/mammotion-luba-3-5000x-awd-lidar-rtk-robotgr%c3%a4sklippare' },
-          { name: 'Dreame A1 Pro 2000', yta: '2 000 m²', utanSlinga: 'Ja', betyg: '8,8', badge: '', url: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66312&url=https://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare-tillbehor/robotgrasklippare/dreame-a1-pro-robotgrasklippare-2000-p66312' },
-          { name: 'MOVA 1000', yta: '1 000 m²', utanSlinga: 'Ja', betyg: '8,2', badge: 'Budget', url: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66311&url=https://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare-tillbehor/robotgrasklippare/mova-1000-robotic-lawn-mower-robotgrasklippare-p66311' },
-          { name: 'Worx Landroid Vision 500', yta: '500 m²', utanSlinga: 'Ja', betyg: '8,0', badge: '', url: 'https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1&cupa_sku=1333222&url=https://www.komplett.se/product/1333222/hem-fritid/tradgaard/grasklippare/robotgrasklippare/worx-wr305e-landroid-vision-cloud-500m?channable=02d4c769640031333333323232ad' },
-        ].map(row => (
-          <div class={`bg-white rounded-xl border ${row.badge === 'Bäst 2026' ? 'border-winner' : 'border-border'} p-4 text-sm`}>
-            <div class="flex items-center gap-2 mb-2">
-              <span class="font-semibold text-text">{row.name}</span>
-              {row.badge && <span class={`text-xs ${row.badge === 'Utan slinga' ? 'bg-accent' : 'bg-winner'} text-white px-1.5 py-0.5 rounded`}>{row.badge}</span>}
-            </div>
-            <div class="grid grid-cols-2 gap-1 text-text-light mb-3">
-              <span>Yta: {row.yta}</span>
-              <span>Betyg: {row.betyg}/10</span>
-              <span>Utan slinga: {row.utanSlinga}</span>
-            </div>
-            {row.url.startsWith('http') ? (
-              <a href={row.url} rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium text-sm">Se pris</a>
-            ) : (
-              <a href={row.url} class="text-accent underline font-medium text-sm">Läs recension</a>
-            )}
-          </div>
-        ))}
-      </div>
-      <!-- Desktop: tabell -->
-      <div class="hidden md:block bg-white rounded-xl border border-border overflow-hidden">
-        <table class="cmp-table table-fixed w-full text-sm">
-          <thead>
-            <tr class="border-b border-border bg-bg-alt">
-              <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Yta</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Utan slinga</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Pris</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Butik</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-border">
-            <tr class="bg-winner/5">
-              <td class="px-4 py-3 font-medium text-text">Dreame A3 AWD Pro 5000 <span class="ml-1 text-xs bg-winner text-white px-1.5 py-0.5 rounded">Bäst 2026</span></td>
-              <td class="px-4 py-3 text-text-light">5 000 m²</td>
-              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 text-text-light">Se pris</td>
-              <td class="px-4 py-3"><a href="https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1&cupa_sku=1334171&url=https://www.komplett.se/product/1334171/hem-fritid/tradgaard/grasklippare/robotgrasklippare/dreame-robotic-mower-a3-awd-pro-5000m2?channable=02d4c769640031333334313731ce" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium">Komplett</a></td>
-            </tr>
-            <tr class="bg-bg-alt/50">
-              <td class="px-4 py-3 font-medium text-text">Dreame A3 AWD 1000</td>
-              <td class="px-4 py-3 text-text-light">1 000 m²</td>
-              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 text-text-light">Se pris</td>
-              <td class="px-4 py-3"><a href="https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66730&url=https://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare-tillbehor/robotgrasklippare/dreame-a3-awd-1000-robotgrasklippare-p66730" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium">Kjell</a></td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-medium text-text">Segway Navimow i220E <span class="ml-1 text-xs bg-accent text-white px-1.5 py-0.5 rounded">Utan slinga</span></td>
-              <td class="px-4 py-3 text-text-light">2 000 m²</td>
-              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 text-text-light">Se pris</td>
-              <td class="px-4 py-3"><a href="https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25567775&url=https://www.csmegastore.se/i/25567775/segway-navimow-i220e-lidar-pro-robotgr%c3%a4sklippare-2000-m" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium">CS Megastore</a></td>
-            </tr>
-            <tr class="bg-bg-alt/50">
-              <td class="px-4 py-3 font-medium text-text">Mammotion Luba 3 5000X</td>
-              <td class="px-4 py-3 text-text-light">5 000 m²</td>
-              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 text-text-light">Se pris</td>
-              <td class="px-4 py-3"><a href="https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25727478&url=https://www.csmegastore.se/i/25727478/mammotion-luba-3-5000x-awd-lidar-rtk-robotgr%c3%a4sklippare" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium">CS Megastore</a></td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-medium text-text">Dreame A1 Pro 2000</td>
-              <td class="px-4 py-3 text-text-light">2 000 m²</td>
-              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 text-text-light">Se pris</td>
-              <td class="px-4 py-3"><a href="https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66312&url=https://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare-tillbehor/robotgrasklippare/dreame-a1-pro-robotgrasklippare-2000-p66312" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium">Kjell</a></td>
-            </tr>
-            <tr class="bg-bg-alt/50">
-              <td class="px-4 py-3 font-medium text-text">MOVA 1000 <span class="ml-1 text-xs bg-winner text-white px-1.5 py-0.5 rounded">Budget</span></td>
-              <td class="px-4 py-3 text-text-light">1 000 m²</td>
-              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 text-text-light">Se pris</td>
-              <td class="px-4 py-3"><a href="https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66311&url=https://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare-tillbehor/robotgrasklippare/mova-1000-robotic-lawn-mower-robotgrasklippare-p66311" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium">Kjell</a></td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-medium text-text">Worx Landroid Vision 500</td>
-              <td class="px-4 py-3 text-text-light">500 m²</td>
-              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 text-text-light">Se pris</td>
-              <td class="px-4 py-3"><a href="https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1&cupa_sku=1333222&url=https://www.komplett.se/product/1333222/hem-fritid/tradgaard/grasklippare/robotgrasklippare/worx-wr305e-landroid-vision-cloud-500m?channable=02d4c769640031333333323232ad" rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium">Komplett</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
 
     <!-- Topplista med produktkort, H2 per produkt och beskrivning -->
     <div class="space-y-10 mb-12">
@@ -482,19 +390,5 @@ export const articleMeta = {
     "@type": "FAQPage",
     "mainEntity": faqSchema,
   })} />
-
-<style>
-  .cmp-table th,
-  .cmp-table td {
-    overflow-wrap: break-word;
-    hyphens: auto;
-    vertical-align: top;
-  }
-  @media (max-width: 640px) {
-    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
-    .cmp-table th,
-    .cmp-table td { padding: 0.4rem 0.45rem; }
-  }
-</style>
 
 </BaseLayout>

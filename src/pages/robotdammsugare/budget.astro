@@ -6,6 +6,10 @@ import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
+import MoneyFeatured from '../../components/MoneyFeatured.astro';
+import MoneyComparisonTable from '../../components/MoneyComparisonTable.astro';
+import MoneyTOC from '../../components/MoneyTOC.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/robotdammsugare/' },
@@ -93,6 +97,18 @@ const faqItems = [
   { question: 'Är begagnad ett bra alternativ?', answer: 'Endast om du vet säkert hur många timmar batteriet körts. Litiumjon-batterier förlorar 20 till 30 % kapacitet efter 2 år. Köp original-tillbehör direkt från tillverkaren oavsett.' },
   { question: 'Räcker 5 000 Pa i en lägenhet?', answer: 'Ja, för en normalstor lägenhet med blandade golv och utan stora hundar. På mattor använder roboten boost-läge automatiskt.' },
 ];
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Bästa budget-robotdammsugare 2026",
+  "itemListElement": products.map((p, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": p.name,
+    "url": "https://robotjakt.se/robotdammsugare/budget/",
+  })),
+};
 export const articleMeta = {
   title: "Bästa budget-robotdammsugare 2026: jämförda prisval",
   description: "Bästa budget-robotdammsugarna 2026 jämförda. LiDAR och app-styrning till lågt pris. Se topplista med specifikationer, betyg och bästa köp under 3 000 kr.",
@@ -108,20 +124,36 @@ export const articleMeta = {
   description="Bästa budget-robotdammsugarna 2026 jämförda. LiDAR och app-styrning till lågt pris. Se topplista med specifikationer, betyg och bästa köp under 3 000 kr."
   article={{ datePublished: "2026-05-15", dateModified: "2026-05-27", image: "/images/dreame-d10s-pro.webp" }}
 >
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
-    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-05-15">2026-05-15</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
       Billig robotdammsugare 2026, bäst i test
     </h1>
     <AuthorByline datePublished="2026-05-15" dateModified="2026-05-22" />
+
+    <AnswerBox
+      question="Snabbt svar: Vilken är den bästa budget-robotdammsugaren 2026?"
+      answer="Dreame D20 Ultra är den bästa budget-robotdammsugaren 2026. Den är billigast med en självtömmande station som ingår, och du får både LiDAR-navigering och moppfunktion utan att tumma på navigering eller automatik för att hålla priset nere."
+    />
+
+    <MoneyFeatured {...products[0]} />
+
+    <MoneyComparisonTable products={products} title="Jämförelsetabell - budget-robotdammsugare 2026" />
+
     <p class="text-text-light mb-6 max-w-2xl">
       Dreame D20 Ultra är vår bästa robotdammsugare i budget 2026. Den är billigast med en självtömmande station som ingår, och du får både LiDAR-navigering och moppfunktion. Du behöver alltså inte tumma på navigering eller automatik för att hålla priset nere.
     </p>
 
+    <MoneyTOC />
+
     <div class="space-y-6 mb-10">
-      {products.map(p => <ProductCard {...p} />)}
+      {products.map((p, i) => (
+        <div>
+          <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-4">{p.rank ?? i + 1}. {p.name}{p.badge ? `, ${p.badge}` : ''}</h2>
+          <ProductCard {...p} />
+        </div>
+      ))}
     </div>
 
     <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
@@ -148,7 +180,13 @@ export const articleMeta = {
     </section>
 
     <AffiliateDisclaimer />
+
+    <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
   </div>
 
-  <StickyCTA text="Se bästa budget" url="#main" />
+  <StickyCTA
+    text={products[0].ctaText}
+    url={products[0].ctaUrl}
+    productName={products[0].name}
+  />
 </BaseLayout>

@@ -5,6 +5,11 @@ import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import AnswerBox from '../components/AnswerBox.astro';
+import MoneyFeatured from '../components/MoneyFeatured.astro';
+import MoneyComparisonTable from '../components/MoneyComparisonTable.astro';
+import MoneyTOC from '../components/MoneyTOC.astro';
 
 const products = [
   {
@@ -101,69 +106,37 @@ export const articleMeta = {
   description="Bästa robotgräsklipparna för stora trädgårdar 2026. Vi jämför modeller som klarar 1 000 m² och mer. Se topplista med pris, kapacitet och prestanda."
   article={{ datePublished: "2026-03-29", dateModified: "2026-05-27", image: "/images/mammotion-luba-2-awd-5000x.webp" }}
 >
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Robotjakts redaktion</span>
-    </a>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-03-29</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Bästa robotgräsklippare för stor trädgård 2026, över 1000 m²
     </h1>
+    <AuthorByline datePublished="2026-03-29" dateModified="2026-05-23" />
+
+    <AnswerBox
+      question="Snabbt svar: Vilken robotgräsklippare är bäst för stor trädgård 2026?"
+      answer="Dreame A3 AWD Pro 5000 är bäst för stor trädgård 2026. Den klarar tomter upp till 5 000 m² helt utan perimeterkabel tack vare RTK GPS och LiDAR, och AWD-driften tar 45 graders lutning."
+    />
+
+    <MoneyFeatured {...products[0]} />
+
+    <MoneyComparisonTable products={products} title="Jämförelsetabell - robotgräsklippare för stor trädgård 2026" />
 
     <p class="text-lg text-text-light mb-6 leading-relaxed">
       Dreame A3 AWD Pro 5000 är vår bästa robotgräsklippare för stor trädgård 2026. Den klarar tomter upp till 5 000 m² helt utan perimeterkabel tack vare RTK GPS och LiDAR, och AWD-driften tar 45 graders lutning. Du markerar gränserna i appen i stället för att gräva ner kabel.
     </p>
 
-    <!-- Snabbjämförelse -->
-    <section class="mb-8" aria-label="Jämförelsetabell robotgräsklippare stor trädgård">
-      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse</h2>
-      <div class="overflow-x-auto rounded-xl border border-border">
-        <table class="w-full text-sm bg-white min-w-[560px]">
-          <thead>
-            <tr class="border-b border-border bg-bg-alt">
-              <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Maxyta (m²)</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Slinga krävs</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">GPS-navigering</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Lutning (%)</th>
-              </tr>
-          </thead>
-          <tbody class="divide-y divide-border">
-            <tr class="bg-winner/5">
-              <td class="px-4 py-3 font-semibold text-text">Dreame A3 AWD Pro 5000</td>
-              <td class="px-4 py-3 text-winner font-semibold">5 000 m²</td>
-              <td class="px-4 py-3 text-winner font-semibold">Nej (GPS + LiDAR)</td>
-              <td class="px-4 py-3 text-winner font-medium">RTK GPS + LiDAR</td>
-              <td class="px-4 py-3 text-winner font-medium">80 % (AWD)</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-semibold text-text">Mammotion Luba 3 5000X</td>
-              <td class="px-4 py-3 text-winner font-semibold">5 000 m²</td>
-              <td class="px-4 py-3 text-winner font-semibold">Nej (RTK GPS)</td>
-              <td class="px-4 py-3 text-winner font-medium">RTK GPS + LiDAR</td>
-              <td class="px-4 py-3 text-text-light">45 % (AWD)</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-semibold text-text">Segway Navimow i220E</td>
-              <td class="px-4 py-3 text-text-light">2 000 m²</td>
-              <td class="px-4 py-3 text-winner font-semibold">Nej (LiDAR + GNSS)</td>
-              <td class="px-4 py-3 text-winner font-medium">LiDAR + GNSS</td>
-              <td class="px-4 py-3 text-text-light">40 %</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+    <MoneyTOC />
 
     <!-- Produktkort -->
     <div class="space-y-5 mb-10">
-      {products.map(p => <ProductCard {...p} />)}
+      {products.map((p, i) => (
+        <div>
+          <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-4">{p.rank ?? i + 1}. {p.name}{p.badge ? `, ${p.badge}` : ''}</h2>
+          <ProductCard {...p} />
+        </div>
+      ))}
     </div>
 
     <!-- Guide -->
@@ -217,8 +190,9 @@ export const articleMeta = {
   </div>
 
   <StickyCTA
-    text="Bra pris hos Dreame A3 AWD Pro 5000 hos CS Megastore"
-    url="https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25340186&url=https://www.csmegastore.se/i/25340186/dreame-a3-awd-pro-robotgr%c3%a4sklippare-5000-m-4-cm-3-mm-1-cm-roterande-blad"
+    text={products[0].ctaText}
+    url={products[0].ctaUrl}
+    productName={products[0].name}
   />
 <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",

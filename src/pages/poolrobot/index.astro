@@ -6,6 +6,10 @@ import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
+import MoneyFeatured from '../../components/MoneyFeatured.astro';
+import MoneyComparisonTable from '../../components/MoneyComparisonTable.astro';
+import MoneyTOC from '../../components/MoneyTOC.astro';
 
 const products = [
   {
@@ -130,87 +134,31 @@ export const articleMeta = {
   description="Bästa poolrobot 2026 rankad efter reningstäckning, filtreringsförmåga och pris. Zodiac GT3220 vinner. 8 modeller jämförda, klara köpråd per poolstorlek."
   article={{ datePublished: "2026-03-29", dateModified: "2026-06-04", image: "https://csdam.net/data/jpg/0/dc98b5ed/dc98b5ed-5b66-4dc3-85d2-044eee59877f.jpg" }}
 >
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
-    <p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-05-15">2026-05-15</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
       Poolrobot bäst i test 2026
     </h1>
     <AuthorByline datePublished="2026-03-29" dateModified="2026-05-22" />
+
+    <AnswerBox
+      question="Snabbt svar: Vilken poolrobot är bäst 2026?"
+      answer="Zodiac Electric Pool Cleaner GT3220 är bästa poolrobot 2026. Den rengör både botten och väggar med en pålitlig motor och har ett filter som är enkelt att tömma, och Zodiac-kvaliteten gör att den håller länge."
+    />
+
+    <MoneyFeatured {...products[0]} />
+
+    <MoneyComparisonTable products={products} title="Jämförelsetabell - bästa poolrobot 2026" />
+
     <p class="text-text-light mb-4 max-w-2xl">
       Zodiac Electric Pool Cleaner GT3220 är vår bästa poolrobot i test 2026. Den rengör både botten och väggar med en pålitlig motor och har ett enkelt filter att tömma. Zodiac-kvaliteten gör att den håller länge.
     </p>
+
+    <MoneyTOC />
     <p class="text-sm text-text-lighter mb-6 max-w-2xl bg-bg-alt border border-border rounded-lg px-4 py-3">
       <strong class="text-text">Söker du Maytronics Dolphin?</strong> Dolphin E30, S200 och Sigma säljs via svenska poolfackhandlare och finns inte hos våra affiliatepartners. Vi har recenserat dem separat, men kan inte länka direkt till köp. Vill du ha en robot vi kan förmedla pris på: se listan nedan.
     </p>
-<!-- Jämförelsetabell -->
-    <section class="mb-8" aria-label="Jämförelsetabell poolrobotar" id="produkter">
-      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse</h2>
-      <!-- Desktop: tabell -->
-      <div class="bg-white rounded-xl border border-border overflow-hidden">
-        <table class="cmp-table table-fixed w-full text-sm">
-          <thead>
-            <tr class="border-b border-border bg-bg-alt">
-              <th class="text-left px-4 py-3 font-semibold text-text">#</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Klättrar väggar</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Betyg</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-border">
-            <tr class="bg-winner/5">
-              <td class="px-4 py-3 font-semibold text-winner">1</td>
-              <td class="px-4 py-3 font-medium text-text">Zodiac Electric Pool Cleaner GT3220 <span class="ml-1 text-xs bg-winner text-white px-1.5 py-0.5 rounded">Bäst i test</span></td>
-              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 text-winner font-semibold">9,0/10</td>
-            </tr>
-            <tr class="bg-bg-alt/50">
-              <td class="px-4 py-3 font-semibold text-text-lighter">2</td>
-              <td class="px-4 py-3 font-medium text-text">Planet Pool Orca 50CL <span class="ml-1 text-xs bg-accent text-white px-1.5 py-0.5 rounded">Bäst budget</span></td>
-              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 font-semibold">8,8/10</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-semibold text-text-lighter">3</td>
-              <td class="px-4 py-3 font-medium text-text">CF 200CL Poolrobot</td>
-              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 font-semibold">8,5/10</td>
-            </tr>
-            <tr class="bg-bg-alt/50">
-              <td class="px-4 py-3 font-semibold text-text-lighter">4</td>
-              <td class="px-4 py-3 font-medium text-text">Zodiac Tornax OT2030</td>
-              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 font-semibold">8,5/10</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-semibold text-text-lighter">5</td>
-              <td class="px-4 py-3 font-medium text-text">Planet Pool Orca 300+ <span class="ml-1 text-xs bg-accent text-white px-1.5 py-0.5 rounded">Mellanklass</span></td>
-              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 font-semibold">8,4/10</td>
-            </tr>
-            <tr class="bg-bg-alt/50">
-              <td class="px-4 py-3 font-semibold text-text-lighter">6</td>
-              <td class="px-4 py-3 font-medium text-text">CF 400CL Poolrobot</td>
-              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 font-semibold">8,3/10</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-semibold text-text-lighter">7</td>
-              <td class="px-4 py-3 font-medium text-text">Zodiac Robot CNX-LI 5220 IQ <span class="ml-1 text-xs bg-accent text-white px-1.5 py-0.5 rounded">Premium</span></td>
-              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 font-semibold">8,8/10</td>
-            </tr>
-            <tr class="bg-bg-alt/50">
-              <td class="px-4 py-3 font-semibold text-text-lighter">8</td>
-              <td class="px-4 py-3 font-medium text-text">Steinbach Poolrunner Battery Pro</td>
-              <td class="px-4 py-3 text-text-light font-medium">Nej</td>
-              <td class="px-4 py-3 font-semibold">7,0/10</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
 
     <!-- Topplista med produktkort -->
     <div class="space-y-10 mb-12">
@@ -282,9 +230,9 @@ export const articleMeta = {
   </div>
 
   <StickyCTA
-    text="Poolrobotar hos Villanytt"
-    url="https://addrevenue.io/t?a=984922&c=3467327&url=https%3A%2F%2Fvillanytt.se%2Fprodukt-kategori%2Fpoolrobot%2F"
-    productName="Poolrobot"
+    text={products[0].ctaText}
+    url={products[0].ctaUrl}
+    productName={products[0].name}
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -300,19 +248,5 @@ export const articleMeta = {
       "url": "https://robotjakt.se/poolrobot/",
     })),
   })} />
-
-<style>
-  .cmp-table th,
-  .cmp-table td {
-    overflow-wrap: break-word;
-    hyphens: auto;
-    vertical-align: top;
-  }
-  @media (max-width: 640px) {
-    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
-    .cmp-table th,
-    .cmp-table td { padding: 0.4rem 0.45rem; }
-  }
-</style>
 
 </BaseLayout>

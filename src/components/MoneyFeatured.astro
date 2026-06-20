@@ -1,0 +1,85 @@
+---
+/**
+ * Featured-block ("Redaktionens val") för money pages. Tar emot robotjakts
+ * befintliga produktobjekt (samma form som ProductCard) och auto-promotar till
+ * högsta-provisions-butiken via resolveMultiCTA. Renderas högt på sidan som
+ * hero-CTA, ovanför jämförelsetabellen.
+ */
+import { resolveMultiCTA, storeFromUrl } from '../lib/multi-cta';
+
+interface Props {
+  name: string;
+  image?: string;
+  rating: number;
+  badge?: string;
+  pros?: string[];
+  ctaUrl?: string;
+  brand?: string;
+  /** Kort 1-2 menings-beskrivning. Saknas: faller tillbaka på top-3 pros. */
+  description?: string;
+}
+const { name, image, rating, badge, pros = [], ctaUrl, brand, description } = Astro.props;
+
+const fallbackStore = ctaUrl ? storeFromUrl(ctaUrl) : '';
+const fallback = ctaUrl ? { store: fallbackStore, url: ctaUrl } : undefined;
+const multi = resolveMultiCTA(name, brand, fallback);
+const primaryUrl = multi?.primary.url ?? ctaUrl;
+const primaryStore = (multi?.primary.store ?? fallbackStore) || 'Butik';
+const others = multi?.others ?? [];
+const topPros = pros.slice(0, 3);
+const stars = Math.round(rating * 2) / 2;
+---
+
+{primaryUrl && (
+  <div class="not-prose my-6 bg-gradient-to-br from-accent/5 via-white to-accent/5 border-2 border-accent rounded-2xl p-5 sm:p-6 shadow-md relative overflow-hidden" data-product={name}>
+    <div class="absolute top-0 right-0 bg-accent text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-bl-xl">
+      {badge || 'Redaktionens val'}
+    </div>
+    <div class="flex flex-col sm:flex-row gap-4 sm:gap-5">
+      <div class="flex-shrink-0 mx-auto sm:mx-0">
+        {image && (
+          <a href={primaryUrl} rel="sponsored nofollow noopener noreferrer" target="_blank" class="block w-36 h-36 sm:w-44 sm:h-44 rounded-xl bg-gray-50 shadow-sm overflow-hidden">
+            <img src={image} alt={name} loading="eager" width="176" height="176" class="w-full h-full object-contain p-3" />
+          </a>
+        )}
+      </div>
+      <div class="flex-1 min-w-0">
+        {brand && <p class="text-xs font-semibold text-accent uppercase tracking-wide mb-1">{brand}</p>}
+        <h2 class="font-heading text-xl sm:text-2xl font-bold text-text leading-tight mb-1.5" data-toc-skip>
+          <a href={primaryUrl} rel="sponsored nofollow noopener noreferrer" target="_blank" class="!text-text hover:!text-accent transition-colors no-underline">{name}</a>
+        </h2>
+        <div class="flex items-center gap-1 mb-2.5" aria-label={`Betyg: ${rating} av 5`}>
+          {Array.from({ length: 5 }).map((_, i) => (
+            <svg class={`w-4 h-4 ${i < stars ? 'text-star' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+          ))}
+          <span class="text-sm font-medium text-text-light ml-1">{rating}/5</span>
+        </div>
+        {description && <p class="text-sm text-text-light leading-relaxed mb-3">{description}</p>}
+        {!description && topPros.length > 0 && (
+          <ul class="space-y-1 mb-3 text-sm text-text-light">
+            {topPros.map((p) => (
+              <li class="flex items-start gap-1.5"><span class="text-winner mt-0.5 font-bold">+</span> {p}</li>
+            ))}
+          </ul>
+        )}
+        <span class="block text-xs font-semibold text-text-lighter mb-1">Bra pris hos:</span>
+        <a href={primaryUrl} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-8 py-4 bg-cta hover:bg-cta-dark text-white font-bold text-base rounded-xl transition-colors shadow-md min-h-[56px] no-underline">
+          {primaryStore}
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+        </a>
+        {others.length > 0 && (
+          <div class="flex flex-wrap items-center gap-2 mt-3">
+            <span class="text-xs font-semibold text-text-lighter">Även hos:</span>
+            {others.map((o) => (
+              <a href={o.url} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center px-3 py-1.5 rounded-lg bg-white border border-border text-xs font-semibold text-text-light hover:border-accent hover:text-accent transition-colors no-underline">
+                {o.store}
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+)}

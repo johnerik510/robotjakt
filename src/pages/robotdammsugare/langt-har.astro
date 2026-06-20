@@ -5,6 +5,11 @@ import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
+import MoneyFeatured from '../../components/MoneyFeatured.astro';
+import MoneyComparisonTable from '../../components/MoneyComparisonTable.astro';
+import MoneyTOC from '../../components/MoneyTOC.astro';
 
 const products = [
   {
@@ -113,7 +118,7 @@ export const articleMeta = {
   description="Bästa robotdammsugarna för långt hår 2026. Gummirullar och anti-trassling-borstar jämförda. Se topplista med pris, prestanda och vår rekommendation."
   article={{ datePublished: "2026-04-27", dateModified: "2026-05-27", image: "/images/ecovacs-deebot-x5-omni.webp" }}
 >
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
   <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
     <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
@@ -122,13 +127,25 @@ export const articleMeta = {
     <span>·</span>
     <span>Uppdaterad 27 maj 2026</span>
   </div>
-<p class="text-xs text-text-lighter mb-2">Senast uppdaterad: 2026-05-15</p>
 <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
       Bästa robotdammsugare för långt hår 2026
     </h1>
+    <AuthorByline datePublished="2026-04-27" dateModified="2026-05-27" />
+
+    <AnswerBox
+      question="Snabbt svar: Vilken är den bästa robotdammsugaren för långt hår 2026?"
+      answer="Roborock S8 MaxV Ultra är vår bästa robotdammsugare för långt hår 2026. De dubbla gummirullarna trasslar inte av långa hårsträn och AI-kameran känner igen och undviker hår på golvet."
+    />
+
+    <MoneyFeatured {...products[0]} />
+
+    <MoneyComparisonTable products={products} title="Jämförelsetabell - robotdammsugare för långt hår 2026" />
+
     <p class="text-text-light text-lg mb-6 leading-relaxed">
       Roborock S8 MaxV Ultra är vår bästa robotdammsugare för långt hår 2026. De dubbla gummirullarna trasslar inte av långa hårsträn och AI-kameran känner igen och undviker hår på golvet. Den kraftfulla sugkraften och den fullautomatiska stationen sköter resten.
     </p>
+
+    <MoneyTOC />
 
     <!-- Snabbjämförelse -->
     <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
@@ -154,8 +171,11 @@ export const articleMeta = {
     </div>
 
     <div class="space-y-6 mb-10">
-      {products.map(product => (
-        <ProductCard {...product} />
+      {products.map((p, i) => (
+        <div>
+          <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-4">{p.rank ?? i + 1}. {p.name}{p.badge ? `, ${p.badge}` : ''}</h2>
+          <ProductCard {...p} />
+        </div>
       ))}
     </div>
 
@@ -192,8 +212,9 @@ export const articleMeta = {
   </div>
 
   <StickyCTA
-    text="Dreame X40 Ultra, bäst för långt hår"
-    url="https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=151995&url=https://www.elon.se/dreame-x40-ultra-151995"
+    text={products[0].ctaText}
+    url={products[0].ctaUrl}
+    productName={products[0].name}
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({

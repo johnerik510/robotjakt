@@ -6,6 +6,10 @@ import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import AuthorByline from '../components/AuthorByline.astro';
+import AnswerBox from '../components/AnswerBox.astro';
+import MoneyFeatured from '../components/MoneyFeatured.astro';
+import MoneyComparisonTable from '../components/MoneyComparisonTable.astro';
+import MoneyTOC from '../components/MoneyTOC.astro';
 
 const products = [
   {
@@ -105,21 +109,37 @@ export const articleMeta = {
   description="De billigaste robotgräsklipparna 2026 jämförda. Slingbaserade och GPS-styrda modeller rankade på pris och prestanda. Hitta rätt robot för din budget."
   article={{ datePublished: "2026-02-05", dateModified: "2026-06-10", image: "/images/mcculloch-rob-r600.webp" }}
 >
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
-<p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
       Billigaste robotgräsklippare 2026, Bäst till lägre pris
     </h1>
-    <AuthorByline datePublished="2026-02-05" dateModified="2026-05-22" />
+    <AuthorByline datePublished="2026-02-05" dateModified="2026-06-10" />
+
+    <AnswerBox
+      question="Snabbt svar: Vilken är den billigaste robotgräsklipparen 2026?"
+      answer="MOVA 1000 är den billigaste robotgräsklipparen med GPS-navigering 2026. Den behöver ingen perimeterkabel, du installerar den direkt i appen och den klarar tomter upp till 1 000 m² med tyst drift."
+    />
+
+    <MoneyFeatured {...products[0]} />
+
+    <MoneyComparisonTable products={products} title="Jämförelsetabell - billigaste robotgräsklippare 2026" />
+
     <p class="text-text-light mb-6 max-w-2xl">
       MOVA 1000 är den billigaste robotgräsklipparen med GPS-navigering 2026. Den behöver ingen perimeterkabel, du installerar den direkt i appen, och den klarar tomter upp till 1 000 m². Drift är tyst och priset lägst i klassen.
     </p>
 
+    <MoneyTOC />
+
     <!-- Topplista -->
     <div class="space-y-5 mb-12">
-      {products.map(p => <ProductCard {...p} />)}
+      {products.map((p, i) => (
+        <div>
+          <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-4">{p.rank ?? i + 1}. {p.name}{p.badge ? `, ${p.badge}` : ''}</h2>
+          <ProductCard {...p} />
+        </div>
+      ))}
     </div>
 
     <!-- Sammanfattningsruta -->
@@ -200,8 +220,9 @@ export const articleMeta = {
   </div>
 
   <StickyCTA
-    text="Bra pris hos Gardena SILENO city 600"
-    url="https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3059309&url=https://www.proshop.se/Robotgraesklippare/Gardena-SILENO-city-robotic-lawnmower-600-m/3059309"
+    text={products[0].ctaText}
+    url={products[0].ctaUrl}
+    productName={products[0].name}
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({

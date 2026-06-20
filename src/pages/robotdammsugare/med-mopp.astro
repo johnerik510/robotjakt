@@ -6,6 +6,10 @@ import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
+import MoneyFeatured from '../../components/MoneyFeatured.astro';
+import MoneyComparisonTable from '../../components/MoneyComparisonTable.astro';
+import MoneyTOC from '../../components/MoneyTOC.astro';
 
 const products = [
   {
@@ -161,6 +165,18 @@ const faqSchema = faqItems.map((item) => ({
     "text": item.answer,
   },
 }));
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Bästa robotdammsugare med mopp 2026",
+  "itemListElement": products.map((p, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": p.name,
+    "url": "https://robotjakt.se/robotdammsugare/med-mopp/",
+  })),
+};
 export const articleMeta = {
   title: "Bästa robotdammsugare med moppfunktion 2026: jämförda",
   description: "Bästa robotdammsugarna med moppfunktion 2026. Oscillerande och roterande moppar jämförda på hårda golv och mattor. Se topplista, jämförelse och bästa köp.",
@@ -176,67 +192,36 @@ export const articleMeta = {
   description="Bästa robotdammsugarna med moppfunktion 2026. Oscillerande och roterande moppar jämförda på hårda golv och mattor. Se topplista, jämförelse och bästa köp."
   article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/dreame-x40-ultra.webp" }}
 >
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-17</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Bästa Robotdammsugare med Mopp 2026
     </h1>
     <AuthorByline datePublished="2026-05-16" dateModified="2026-05-22" />
+
+    <AnswerBox
+      question="Snabbt svar: Vilken robotdammsugare med mopp är bäst 2026?"
+      answer="Dreame X50 Ultra är bästa robotdammsugaren med mopp 2026. Den utfällbara sidoarmen moppar ända in i hörnen och mopparna tvättas med varmvatten i den självrenande PowerDock-stationen, kraftfull nog för både golv och mattor i samma pass."
+    />
+
+    <MoneyFeatured {...products[0]} />
+
+    <MoneyComparisonTable products={products} title="Jämförelsetabell - robotdammsugare med mopp 2026" />
+
     <p class="text-lg text-text-light mb-6 leading-relaxed">
       Dreame X50 Ultra är vår bästa robotdammsugare med mopp 2026. Den utfällbara sidoarmen moppar ända in i hörnen och mopparna tvättas med varmvatten i den självrenande PowerDock-stationen. Sugkraften är kraftfull nog att klara både golv och mattor i samma pass.</p>
 
-    <!-- Quick comparison table -->
-    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8 overflow-x-auto">
-      <h2 class="font-heading text-xl font-bold text-text mb-4">Bästa robotdammsugare med mopp 2026: snabbjämförelse</h2>
-      <table class="cmp-table table-fixed w-full text-sm">
-        <thead>
-          <tr class="border-b border-border">
-            <th class="text-left pb-3 font-semibold text-text">Modell</th>
-            <th class="text-left pb-3 font-semibold text-text">Sugkraft</th>
-            <th class="text-left pb-3 font-semibold text-text">Moppkvalitet</th>
-            <th class="text-left pb-3 font-semibold text-text">Självtvättning</th>
-            </tr>
-        </thead>
-        <tbody class="divide-y divide-border">
-          <tr class="bg-winner/5">
-            <td class="py-3 font-semibold text-text">Dreame X40 Ultra</td>
-            <td class="py-3 text-text-light">12 000 Pa</td>
-            <td class="py-3 text-text-light">Utmärkt (utfällbar)</td>
-            <td class="py-3 text-winner font-medium">Ja, varmvatten</td>
-          </tr>
-          <tr>
-            <td class="py-3 font-semibold text-text">Roborock S8 MaxV Ultra</td>
-            <td class="py-3 text-text-light">10 000 Pa</td>
-            <td class="py-3 text-text-light">Utmärkt (lyftbar)</td>
-            <td class="py-3 text-winner font-medium">Ja, varmvatten</td>
-          </tr>
-          <tr>
-            <td class="py-3 font-semibold text-text">Roborock Qrevo Master</td>
-            <td class="py-3 text-text-light">7 000 Pa</td>
-            <td class="py-3 text-text-light">Mycket bra</td>
-            <td class="py-3 text-winner font-medium">Ja, varmvatten</td>
-          </tr>
-          <tr>
-            <td class="py-3 font-semibold text-text">Ecovacs Deebot X5 Omni</td>
-            <td class="py-3 text-text-light">8 000 Pa</td>
-            <td class="py-3 text-text-light">Mycket bra</td>
-            <td class="py-3 text-winner font-medium">Ja</td>
-          </tr>
-          <tr>
-            <td class="py-3 font-semibold text-text">Dreame L20 Ultra</td>
-            <td class="py-3 text-text-light">7 000 Pa</td>
-            <td class="py-3 text-text-light">Bra</td>
-            <td class="py-3 text-winner font-medium">Ja, varmvatten</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <MoneyTOC />
 
     <!-- Product cards -->
     <div class="space-y-5 mb-10">
-      {products.map(p => <ProductCard {...p} />)}
+      {products.map((p, i) => (
+        <div>
+          <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-4">{p.rank ?? i + 1}. {p.name}{p.badge ? `, ${p.badge}` : ''}</h2>
+          <ProductCard {...p} />
+        </div>
+      ))}
     </div>
 
     <!-- Guide section -->
@@ -289,25 +274,14 @@ export const articleMeta = {
         <li><a href="/billigaste-robotdammsugare/" class="text-accent underline text-sm">Billigaste robotdammsugare, bäst för pengarna</a></li>
       </ul>
     </section>
+
+    <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
   </div>
 
   <StickyCTA
-    text="Se bästa pris på Dreame X40 Ultra"
-    url="https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=151995&url=https://www.elon.se/dreame-x40-ultra-151995"
+    text={products[0].ctaText}
+    url={products[0].ctaUrl}
+    productName={products[0].name}
   />
-
-<style>
-  .cmp-table th,
-  .cmp-table td {
-    overflow-wrap: break-word;
-    hyphens: auto;
-    vertical-align: top;
-  }
-  @media (max-width: 640px) {
-    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
-    .cmp-table th,
-    .cmp-table td { padding: 0.4rem 0.45rem; }
-  }
-</style>
 
 </BaseLayout>

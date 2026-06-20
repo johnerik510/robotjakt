@@ -6,6 +6,10 @@ import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
+import MoneyFeatured from '../../components/MoneyFeatured.astro';
+import MoneyComparisonTable from '../../components/MoneyComparisonTable.astro';
+import MoneyTOC from '../../components/MoneyTOC.astro';
 
 const products = [
   {
@@ -90,6 +94,18 @@ const breadcrumbs = [
   { label: 'Robotdammsugare stor lägenhet' },
 ];
 
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Bästa robotdammsugare för stor lägenhet 2026",
+  "itemListElement": products.map((p, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": p.name,
+    "url": "https://robotjakt.se/robotdammsugare/storlagenhet/",
+  })),
+};
+
 const faqSchema = faqItems.map((item) => ({
   "@type": "Question",
   "name": item.question,
@@ -113,62 +129,37 @@ export const articleMeta = {
   description="Bästa robotdammsugarna för stora lägenheter och villor 2026. Lång batteritid och smart navigering jämförda. Se topplista med pris, kapacitet och betyg."
   article={{ datePublished: "2026-04-27", dateModified: "2026-05-27", image: "/images/roborock-s8-maxv-ultra.webp" }}
 >
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-03-29</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Bästa robotdammsugare för stor lägenhet 2026
     </h1>
     <AuthorByline datePublished="2026-04-27" dateModified="2026-05-22" />
+
+    <AnswerBox
+      question="Snabbt svar: Vilken robotdammsugare är bäst för stor lägenhet 2026?"
+      answer="Roborock S8 MaxV Ultra är bäst för stor lägenhet 2026. Den har räckvidd att täcka hela ytan, LiDAR-kartlägger flera rum med hög precision och stationen sköter automatisk tömning, mopptvätt och vattenpåfyllning så den klarar 100 till 200 m² på egen hand."
+    />
+
+    <MoneyFeatured {...products[0]} />
+
+    <MoneyComparisonTable products={products} title="Jämförelsetabell - robotdammsugare för stor lägenhet 2026" />
+
     <p class="text-lg text-text-light mb-6 leading-relaxed">
       Roborock S8 MaxV Ultra är vår bästa robotdammsugare för stor lägenhet 2026. Den har räckvidd att täcka hela ytan och LiDAR-kartlägger flera rum med hög precision. Stationen sköter automatisk tömning, mopptvätt och vattenpåfyllning så den klarar 100 till 200 m² på egen hand.
     </p>
 
-    <!-- Snabbjämförelse -->
-    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8 overflow-x-auto">
-      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse, storlägenhetrobotar 2026</h2>
-      <table class="cmp-table table-fixed w-full text-sm">
-        <thead>
-          <tr class="border-b border-border">
-            <th class="text-left pb-3 font-semibold text-text">Modell</th>
-            <th class="text-left pb-3 font-semibold text-text">Räckvidd (m²)</th>
-            <th class="text-left pb-3 font-semibold text-text">Kartläggning</th>
-            <th class="text-left pb-3 font-semibold text-text">Mopp</th>
-            </tr>
-        </thead>
-        <tbody class="divide-y divide-border">
-          <tr class="bg-winner/5">
-            <td class="py-3 font-semibold text-text">Roborock S8 MaxV Ultra</td>
-            <td class="py-3 text-winner font-semibold">300 m²</td>
-            <td class="py-3 text-text-light">LiDAR + kamera</td>
-            <td class="py-3 text-winner font-medium">Ja, lyftbar</td>
-          </tr>
-          <tr>
-            <td class="py-3 font-semibold text-text">Dreame X40 Ultra</td>
-            <td class="py-3 text-winner font-semibold">300 m²</td>
-            <td class="py-3 text-text-light">LiDAR + 3D</td>
-            <td class="py-3 text-winner font-medium">Ja, utfällbar</td>
-          </tr>
-          <tr>
-            <td class="py-3 font-semibold text-text">Ecovacs Deebot X5 Omni</td>
-            <td class="py-3 text-text-light">250 m²</td>
-            <td class="py-3 text-text-light">LiDAR</td>
-            <td class="py-3 text-winner font-medium">Ja, lyftbar</td>
-          </tr>
-          <tr>
-            <td class="py-3 font-semibold text-text">Roborock Qrevo Master</td>
-            <td class="py-3 text-text-light">250 m²</td>
-            <td class="py-3 text-text-light">LiDAR</td>
-            <td class="py-3 text-winner font-medium">Ja</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <MoneyTOC />
 
     <!-- Produktkort -->
     <div class="space-y-5 mb-10">
-      {products.map(p => <ProductCard {...p} />)}
+      {products.map((p, i) => (
+        <div>
+          <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-4">{p.rank ?? i + 1}. {p.name}{p.badge ? `, ${p.badge}` : ''}</h2>
+          <ProductCard {...p} />
+        </div>
+      ))}
     </div>
 
     <!-- Guide -->
@@ -220,25 +211,14 @@ export const articleMeta = {
         <li><a href="/" class="text-accent underline text-sm">Bästa robotdammsugare 2026, alla kategorier</a></li>
       </ul>
     </section>
+
+    <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
   </div>
 
   <StickyCTA
-    text="Bra pris hos Roborock S8 MaxV Ultra"
-    url="https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=135019&url=https://www.elon.se/roborock-s8-maxv-ultra-white-135019"
+    text={products[0].ctaText}
+    url={products[0].ctaUrl}
+    productName={products[0].name}
   />
-
-<style>
-  .cmp-table th,
-  .cmp-table td {
-    overflow-wrap: break-word;
-    hyphens: auto;
-    vertical-align: top;
-  }
-  @media (max-width: 640px) {
-    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
-    .cmp-table th,
-    .cmp-table td { padding: 0.4rem 0.45rem; }
-  }
-</style>
 
 </BaseLayout>

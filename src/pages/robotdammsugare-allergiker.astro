@@ -6,6 +6,11 @@ import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Callout from '../components/Callout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import AnswerBox from '../components/AnswerBox.astro';
+import MoneyFeatured from '../components/MoneyFeatured.astro';
+import MoneyComparisonTable from '../components/MoneyComparisonTable.astro';
+import MoneyTOC from '../components/MoneyTOC.astro';
 
 export const articleMeta = {
   title: "Bästa robotdammsugare för allergiker 2026: HEPA-test",
@@ -172,7 +177,7 @@ const productSchema = products.map((p, i) => ({
   canonical="https://robotjakt.se/robotdammsugare-allergiker/"
   article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/heroes/robotdammsugare-allergiker.webp" }}
 >
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
   <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
     <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
@@ -181,15 +186,26 @@ const productSchema = products.map((p, i) => ({
     <span>·</span>
     <span>Uppdaterad 27 maj 2026</span>
   </div>
-    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-05-08">2026-05-08</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Robotdammsugare för allergiker 2026: 6 modeller med HEPA-filter som faktiskt fungerar
     </h1>
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-05-27" />
+
+    <AnswerBox
+      question="Snabbt svar: Vilken är den bästa robotdammsugaren för allergiker 2026?"
+      answer="Roborock S8 MaxV Ultra är den bästa robotdammsugaren för allergiker 2026. HEPA-filtret är tätt kapslat så inget damm läcker ut vid tömning, och den varmvattentvättade moppen dödar dammkvalster. Stark sugkraft drar upp finpartiklar ur mattor."
+    />
+
+    <MoneyFeatured {...products[0]} />
+
+    <MoneyComparisonTable products={products} title="Jämförelsetabell - robotdammsugare för allergiker 2026" />
 
     <p class="text-lg text-text-light mb-6 leading-relaxed">
       Roborock S8 MaxV Ultra är den bästa robotdammsugaren för allergiker 2026. HEPA-filtret är tätt kapslat så inget damm läcker ut när stationen töms, och den självtvättande moppen med varmvatten dödar dammkvalster. Stark sugkraft drar dessutom upp finpartiklar ur mattor.
     </p>
+
+    <MoneyTOC />
 
     <Callout type="key" title="Det här gör en robotdammsugare bra för allergiker">
       <ul class="list-disc pl-5 space-y-1">
@@ -203,7 +219,12 @@ const productSchema = products.map((p, i) => ({
 
     <!-- Product cards -->
     <div class="space-y-5 mb-10">
-      {products.map(p => <ProductCard {...p} />)}
+      {products.map((p, i) => (
+        <div>
+          <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-4">{p.rank ?? i + 1}. {p.name}{p.badge ? `, ${p.badge}` : ''}</h2>
+          <ProductCard {...p} />
+        </div>
+      ))}
     </div>
 
     <section class="mb-10">
@@ -267,8 +288,9 @@ const productSchema = products.map((p, i) => ({
   </div>
 
   <StickyCTA
-    text="Bra pris hos Roborock Qrevo Curv hos Elon"
-    url="https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=148694&url=https://www.elon.se/roborock-qrevo-curv-white-148694"
+    text={products[0].ctaText}
+    url={products[0].ctaUrl}
+    productName={products[0].name}
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({

@@ -6,6 +6,10 @@ import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import AuthorByline from '../components/AuthorByline.astro';
+import AnswerBox from '../components/AnswerBox.astro';
+import MoneyFeatured from '../components/MoneyFeatured.astro';
+import MoneyComparisonTable from '../components/MoneyComparisonTable.astro';
+import MoneyTOC from '../components/MoneyTOC.astro';
 
 const products = [
   {
@@ -123,6 +127,18 @@ const breadcrumbs = [
   { label: 'Billigaste robotdammsugare' },
 ];
 
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Billigaste robotdammsugare 2026",
+  "itemListElement": products.map((p, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": p.name,
+    "url": "https://robotjakt.se/billigaste-robotdammsugare/",
+  })),
+};
+
 const faqSchema = faqItems.map((item) => ({
   "@type": "Question",
   "name": item.question,
@@ -146,21 +162,37 @@ export const articleMeta = {
   description="Bästa billiga robotdammsugarna 2026 jämförda. LiDAR-navigation och mopp till lågt pris. Se topplista, specifikationer och vår rekommendation per budget."
   article={{ datePublished: "2026-04-20", dateModified: "2026-05-27", image: "/images/liectroux-l200.webp" }}
 >
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-05-15</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Billigaste robotdammsugare 2026, 8 budgetmodeller jämförda
     </h1>
     <AuthorByline datePublished="2026-04-20" dateModified="2026-05-22" />
+
+    <AnswerBox
+      question="Snabbt svar: Vilken är den billigaste robotdammsugaren 2026?"
+      answer="Liectroux L200 är den billigaste robotdammsugaren med mopp 2026, den dammsuger och moppar i samma pass och navigerar med gyro istället för att studsa runt slumpmässigt. Vill du ha riktig LiDAR-navigation är Roborock Q5 Pro den billigaste vi rekommenderar."
+    />
+
+    <MoneyFeatured {...products[0]} />
+
+    <MoneyComparisonTable products={products} title="Jämförelsetabell - billigaste robotdammsugare 2026" />
+
     <p class="text-lg text-text-light mb-6 leading-relaxed">
       Liectroux L200 är den billigaste robotdammsugaren med mopp 2026. Den dammsuger och moppar i samma pass och navigerar med gyro istället för att studsa runt slumpmässigt, vilket är ovanligt i lägsta prisklassen. Du köper den direkt från svensk butik.
     </p>
 
-    <!-- Product cards -->
+    <MoneyTOC />
+
+    <!-- Detaljerade recensioner -->
     <div class="space-y-5 mb-10">
-      {products.map(p => <ProductCard {...p} />)}
+      {products.map(p => (
+        <div>
+          <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-4">{p.rank}. {p.name}{p.badge ? `, ${p.badge}` : ''}</h2>
+          <ProductCard {...p} />
+        </div>
+      ))}
     </div>
 
     <!-- Budget guide box -->
@@ -240,10 +272,13 @@ export const articleMeta = {
         <li><a href="/roborock-s8-maxv-ultra/" class="text-accent underline text-sm">Roborock S8 MaxV Ultra recension, bäst för husdjur</a></li>
       </ul>
     </section>
+
+    <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
   </div>
 
   <StickyCTA
-    text="Bra pris hos Roborock Q5 Pro"
-    url="https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=146251&url=https://www.elon.se/roborock-qrevo-s-white-146251"
+    text={products[0].ctaText}
+    url={products[0].ctaUrl}
+    productName={products[0].name}
   />
 </BaseLayout>

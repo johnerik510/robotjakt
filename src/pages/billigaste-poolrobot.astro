@@ -5,6 +5,11 @@ import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import ProductCard from '../components/ProductCard.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import AnswerBox from '../components/AnswerBox.astro';
+import MoneyFeatured from '../components/MoneyFeatured.astro';
+import MoneyComparisonTable from '../components/MoneyComparisonTable.astro';
+import MoneyTOC from '../components/MoneyTOC.astro';
 
 const products = [
   {
@@ -91,65 +96,36 @@ export const articleMeta = {
   description="Vi jämför de billigaste poolrobotarna 2026. Hitta en prisvärd robot som klarar din pool. Se topplista med pris, rengöringsresultat och betyg."
   article={{ datePublished: "2026-02-03", dateModified: "2026-05-27", image: "https://csdam.net/data/jpg/0/dc98b5ed/dc98b5ed-5b66-4dc3-85d2-044eee59877f.jpg" }}
 >
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Robotjakts redaktion</span>
-    </a>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
       Billigaste poolrobot 2026, Bäst till lägre pris
     </h1>
+    <AuthorByline datePublished="2026-02-03" dateModified="2026-05-27" />
+
+    <AnswerBox
+      question="Snabbt svar: Vilken är den billigaste poolroboten 2026?"
+      answer="Zodiac Electric Pool Cleaner GT3220 är den billigaste poolroboten vi rekommenderar 2026. Den rengör både botten och väggar och har pålitlig Zodiac-kvalitet till en låg ingångsnivå. Vill du slippa kabeln är Planet Pool Orca 50CL ett batteridrivet alternativ."
+    />
+
+    <MoneyFeatured {...products[0]} />
+
+    <MoneyComparisonTable products={products} title="Jämförelsetabell - billigaste poolrobot 2026" />
+
     <p class="text-text-light mb-6 max-w-2xl">
       Zodiac Electric Pool Cleaner GT3220 är vår billigaste poolrobot i test 2026. Den rengör både botten och väggar och har den pålitliga Zodiac-kvaliteten till en låg ingångsnivå. Filtertömningen är enkel och du slipper premiumpriset.
     </p>
 
-    <!-- Snabbjämförelse -->
-    <section class="mb-8" aria-label="Jämförelsetabell billiga poolrobotar">
-      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse, till lägre pris</h2>
-      <div class="bg-white rounded-xl border border-border overflow-hidden">
-        <table class="cmp-table table-fixed w-full text-sm">
-          <thead>
-            <tr class="border-b border-border bg-bg-alt">
-              <th class="text-left px-4 py-3 font-semibold text-text">#</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Klättrar väggar</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Betyg</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-border">
-            <tr class="bg-winner/5">
-              <td class="px-4 py-3 font-semibold text-winner">1</td>
-              <td class="px-4 py-3 font-medium text-text">Zodiac GT3220 <span class="ml-1 text-xs bg-winner text-white px-1.5 py-0.5 rounded">Bäst budget</span></td>
-              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 text-winner font-semibold">9,0/10</td>
-            </tr>
-            <tr class="bg-bg-alt/50">
-              <td class="px-4 py-3 font-semibold text-text-lighter">2</td>
-              <td class="px-4 py-3 font-medium text-text">Planet Pool Orca 50CL</td>
-              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 font-semibold">8,6/10</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-semibold text-text-lighter">3</td>
-              <td class="px-4 py-3 font-medium text-text">CF 200CL Poolrobot</td>
-              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 font-semibold">8,2/10</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+    <MoneyTOC />
 
     <!-- Produkter -->
     <div class="space-y-6 mb-12" id="produkter">
-      {products.map(product => (
-        <ProductCard {...product} />
+      {products.map((p, i) => (
+        <div>
+          <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-4">{p.rank ?? i + 1}. {p.name}{p.badge ? `, ${p.badge}` : ''}</h2>
+          <ProductCard {...p} />
+        </div>
       ))}
     </div>
 
@@ -216,8 +192,9 @@ export const articleMeta = {
   </div>
 
   <StickyCTA
-    text="Zodiac GT3220, bästa budgetpoolrobot"
-    url="https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=20565812&url=https://www.csmegastore.se/i/20565812/zodiac-electric-pool-cleaner-gt3220"
+    text={products[0].ctaText}
+    url={products[0].ctaUrl}
+    productName={products[0].name}
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -232,19 +209,5 @@ export const articleMeta = {
       { "@type": "ListItem", "position": 3, "name": "Intex Auto Pool Cleaner", "url": "https://robotjakt.se/billigaste-poolrobot/" },
     ],
   })} />
-
-<style>
-  .cmp-table th,
-  .cmp-table td {
-    overflow-wrap: break-word;
-    hyphens: auto;
-    vertical-align: top;
-  }
-  @media (max-width: 640px) {
-    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
-    .cmp-table th,
-    .cmp-table td { padding: 0.4rem 0.45rem; }
-  }
-</style>
 
 </BaseLayout>

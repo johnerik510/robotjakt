@@ -5,6 +5,11 @@ import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import AnswerBox from '../components/AnswerBox.astro';
+import MoneyFeatured from '../components/MoneyFeatured.astro';
+import MoneyComparisonTable from '../components/MoneyComparisonTable.astro';
+import MoneyTOC from '../components/MoneyTOC.astro';
 
 const products = [
   {
@@ -75,6 +80,18 @@ const breadcrumbs = [
   { label: 'Drönare', href: '/dronare/' },
   { label: 'För nybörjare' },
 ];
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Bästa drönare för nybörjare 2026",
+  "itemListElement": products.map((p, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": p.name,
+    "url": "https://robotjakt.se/dronare-for-nyborjare/",
+  })),
+};
 export const articleMeta = {
   title: "Bästa drönare för nybörjare 2026: jämförda och rankade",
   description: "Vi har jämfört de bästa drönarna för nybörjare 2026. Enkla att flyga, stabila och prisvärda. Se topplistan med specifikationer, pris och köpguide.",
@@ -91,32 +108,23 @@ export const articleMeta = {
   ogImage="/images/dji-mini-3.webp"
   article={{ datePublished: "2026-03-13", dateModified: "2026-05-27", image: "/images/dji-mini-5-pro.webp" }}
 >
-  <section class="bg-gradient-to-br from-primary via-primary to-primary-dark text-white py-8 md:py-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <Breadcrumbs items={breadcrumbs} light={true} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Robotjakts redaktion</span>
-    </a>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-      <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3 leading-tight mt-2">
-        Bästa Drönare för Nybörjare 2026
-      </h1>
-      <p class="text-white/80 text-lg max-w-2xl">
-        DJI Mini 3 är vår bästa drönare för nybörjare 2026. Den väger under 250 g och kräver därför inget drönarkort i Sverige, och den är enkel att lära sig flyga med automatiska flyglägen. Det är dessutom lägsta priset i DJI:s Mini-serie.
-      </p>
-    </div>
-  </section>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
+    <Breadcrumbs items={breadcrumbs} />
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight mt-2">
+      Bästa Drönare för Nybörjare 2026
+    </h1>
+    <AuthorByline datePublished="2026-03-13" dateModified="2026-05-27" />
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-<div class="flex flex-wrap gap-3 text-sm text-text-light mb-6">
-      <span class="flex items-center gap-1.5">
-        <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-        Senast uppdaterad april 2026
-      </span>
-    </div>
+    <AnswerBox
+      question="Snabbt svar: Vilken drönare är bäst för nybörjare 2026?"
+      answer="DJI Mini 3 är bäst för nybörjare 2026. Den väger under 250 g, så du slipper drönarkort i Sverige, och är enkel att lära sig med automatiska flyglägen. Det är dessutom lägsta priset i DJI:s Mini-serie."
+    />
+
+    <MoneyFeatured {...products[0]} />
+
+    <MoneyComparisonTable products={products} title="Jämförelsetabell - bästa drönare för nybörjare 2026" />
+
+    <MoneyTOC />
 
     <section class="mb-10">
       <h2 class="font-heading text-2xl font-bold text-text mb-4">Bästa nybörjardrönare 2026</h2>
@@ -124,7 +132,12 @@ export const articleMeta = {
         Som nybörjare ska du välja en drönare under 250 gram, det förenklar regelverket kraftigt. Du slipper drönarkort och behöver inte registrera dig för hobbyflygning. DJI Mini-serien är gjord exakt för det här.
       </p>
       <div class="space-y-6">
-        {products.map((product) => <ProductCard {...product} />)}
+        {products.map((p, i) => (
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-4">{p.rank ?? i + 1}. {p.name}{p.badge ? `, ${p.badge}` : ''}</h2>
+            <ProductCard {...p} />
+          </div>
+        ))}
       </div>
     </section>
 
@@ -163,11 +176,13 @@ export const articleMeta = {
     <FAQ items={faqItems} />
 
     <AffiliateDisclaimer />
+
+    <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
   </div>
 
   <StickyCTA
-    text="Se DJI Mini 3, bäst för nybörjare"
-    url="https://addrevenue.io/t?c=3467327&a=987736&m=SE&u=https%3A%2F%2Fdronarbutiken.se%2Fproducts%2Fdji-mini-3-dji-rc"
-    productName="DJI Mini 3"
+    text={products[0].ctaText}
+    url={products[0].ctaUrl}
+    productName={products[0].name}
   />
 </BaseLayout>

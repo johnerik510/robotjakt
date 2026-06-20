@@ -5,6 +5,11 @@ import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
+import MoneyFeatured from '../../components/MoneyFeatured.astro';
+import MoneyComparisonTable from '../../components/MoneyComparisonTable.astro';
+import MoneyTOC from '../../components/MoneyTOC.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/robotdammsugare/' },
@@ -81,6 +86,18 @@ const faqItems = [
   { question: 'Är LiDAR säkert för ögonen?', answer: 'Ja. Robotarnas LiDAR är klass 1, säker för människor och djur enligt internationell standard.' },
   { question: 'Kan LiDAR-tornet skadas?', answer: 'Det är robust men kan slitas om något återkommande slår mot det. Garanti gäller normalt 2 år. Nyare modeller (Dyson 360 Vis Nav, Roborock Saros) har platt design som reducerar risken.' },
 ];
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Bästa robotdammsugare med LiDAR 2026",
+  "itemListElement": products.map((p, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": p.name,
+    "url": "https://robotjakt.se/robotdammsugare/lidar/",
+  })),
+};
 export const articleMeta = {
   title: "Bästa robotdammsugare med LiDAR-navigering 2026: test",
   description: "Bästa robotdammsugarna med LiDAR-navigering 2026. Precis kartläggning och smart ruttplanering. Se topplista med pris, navigeringskvalitet och betyg.",
@@ -96,7 +113,7 @@ export const articleMeta = {
   description="Bästa robotdammsugarna med LiDAR-navigering 2026. Precis kartläggning och smart ruttplanering. Se topplista med pris, navigeringskvalitet och betyg."
   article={{ datePublished: "2026-04-26", dateModified: "2026-05-27", image: "/images/roborock-saros-10r.webp" }}
 >
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
   <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
     <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
@@ -105,17 +122,34 @@ export const articleMeta = {
     <span>·</span>
     <span>Uppdaterad 27 maj 2026</span>
   </div>
-    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-04-27">2026-04-27</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
       Bästa robotdammsugare med LiDAR 2026
     </h1>
+    <AuthorByline datePublished="2026-04-26" dateModified="2026-05-27" />
+
+    <AnswerBox
+      question="Snabbt svar: Vilken är den bästa robotdammsugaren med LiDAR 2026?"
+      answer="Dreame X50 Ultra är vår bästa robotdammsugare med LiDAR 2026. Kombinationen LiDAR och AI-kamera ger snabbast kartläggning även på komplexa planlösningar, och den utfällbara moppen når in i hörnen."
+    />
+
+    <MoneyFeatured {...products[0]} />
+
+    <MoneyComparisonTable products={products} title="Jämförelsetabell - robotdammsugare med LiDAR 2026" />
+
     <p class="text-text-light mb-6 max-w-2xl">
       Dreame X50 Ultra är vår bästa robotdammsugare med LiDAR 2026. Kombinationen LiDAR och AI-kamera ger snabbast kartläggning även på komplexa planlösningar, och den utfällbara moppen når in i hörnen. Sugkraften är kraftfull och hinderdetektionen pålitlig.
     </p>
 
+    <MoneyTOC />
+
     <div class="space-y-6 mb-10">
-      {products.map(p => <ProductCard {...p} />)}
+      {products.map((p, i) => (
+        <div>
+          <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-4">{p.rank ?? i + 1}. {p.name}{p.badge ? `, ${p.badge}` : ''}</h2>
+          <ProductCard {...p} />
+        </div>
+      ))}
     </div>
 
     <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
@@ -142,7 +176,13 @@ export const articleMeta = {
     </section>
 
     <AffiliateDisclaimer />
+
+    <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
   </div>
 
-  <StickyCTA text="Se bäst med LiDAR" url="#main" />
+  <StickyCTA
+    text={products[0].ctaText}
+    url={products[0].ctaUrl}
+    productName={products[0].name}
+  />
 </BaseLayout>

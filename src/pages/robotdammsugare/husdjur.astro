@@ -6,6 +6,10 @@ import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
+import MoneyFeatured from '../../components/MoneyFeatured.astro';
+import MoneyComparisonTable from '../../components/MoneyComparisonTable.astro';
+import MoneyTOC from '../../components/MoneyTOC.astro';
 
 const products = [
   {
@@ -113,6 +117,18 @@ const breadcrumbs = [
   { label: 'Robotdammsugare för husdjur' },
 ];
 
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Bästa robotdammsugare för husdjur 2026",
+  "itemListElement": products.map((p, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": p.name,
+    "url": "https://robotjakt.se/robotdammsugare/husdjur/",
+  })),
+};
+
 const faqSchema = faqItems.map((item) => ({
   "@type": "Question",
   "name": item.question,
@@ -136,17 +152,28 @@ export const articleMeta = {
   description="Roborock S8 MaxV Ultra undviker avföring med AI-kamera och trasslas aldrig av husdjurshår. 6 modeller testade mot päls och avföring. Ranking och priser 2026."
   article={{ datePublished: "2026-05-16", dateModified: "2026-06-04", image: "/images/roborock-qrevo-master.webp" }}
 >
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-05-15">2026-05-15</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Robotdammsugare husdjur 2026, bäst för hund och katt
     </h1>
     <AuthorByline datePublished="2026-05-16" dateModified="2026-05-22" />
+
+    <AnswerBox
+      question="Snabbt svar: Vilken robotdammsugare är bäst för husdjur 2026?"
+      answer="Roborock S8 MaxV Ultra är vår bästa robotdammsugare för husdjur 2026. Anti-tangel-gummirullarna trasslar inte av päls, 10 000 Pa sugkraft drar upp pälsen ur mattor och AI-kameran kör runt djuravföring i stället för att sprida ut den."
+    />
+
+    <MoneyFeatured {...products[0]} />
+
+    <MoneyComparisonTable products={products} title="Jämförelsetabell - robotdammsugare för husdjur 2026" />
+
     <p class="text-lg text-text-light mb-6 leading-relaxed">
       Roborock S8 MaxV Ultra är vår bästa robotdammsugare för husdjur 2026. Anti-tangel-gummirullarna trasslar inte av päls och 10 000 Pa sugkraft drar upp pälsen ur mattor. AI-kameran identifierar och kör runt djuravföring så roboten inte sprider ut den.
     </p>
+
+    <MoneyTOC />
 
     <!-- Key criteria box -->
     <div class="bg-accent/5 border border-accent/20 rounded-xl p-5 mb-8">
@@ -169,7 +196,12 @@ export const articleMeta = {
 
     <!-- Product cards -->
     <div class="space-y-5 mb-10">
-      {products.map(p => <ProductCard {...p} />)}
+      {products.map((p, i) => (
+        <div>
+          <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-4">{p.rank ?? i + 1}. {p.name}{p.badge ? `, ${p.badge}` : ''}</h2>
+          <ProductCard {...p} />
+        </div>
+      ))}
     </div>
 
     <!-- Guide section -->
@@ -223,6 +255,8 @@ export const articleMeta = {
         <li><a href="/robotdammsugare-husdjur/" class="text-accent underline text-sm">bästa robotdammsugare för husdjur: hund och katt</a></li>
       </ul>
     </section>
+
+    <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
   </div>
 
   <StickyCTA

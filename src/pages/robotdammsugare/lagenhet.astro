@@ -6,6 +6,10 @@ import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
+import MoneyFeatured from '../../components/MoneyFeatured.astro';
+import MoneyComparisonTable from '../../components/MoneyComparisonTable.astro';
+import MoneyTOC from '../../components/MoneyTOC.astro';
 
 const products = [
   {
@@ -105,15 +109,27 @@ export const articleMeta = {
   description="Bästa robotdammsugarna för lägenhet 2026. Kompakta och tysta modeller med smart navigering. Se topplista med pris, bullernivå och betyg Sverige."
   article={{ datePublished: "2026-04-27", dateModified: "2026-05-27", image: "/images/dreame-l10s-pro-ultra-heat.webp" }}
 >
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
 <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
       Bästa Robotdammsugare för Lägenhet 2026
     </h1>
     <AuthorByline datePublished="2026-04-27" dateModified="2026-05-22" />
+
+    <AnswerBox
+      question="Snabbt svar: Vilken robotdammsugare är bäst för lägenhet 2026?"
+      answer="Dreame L10s Ultra Gen 3 är bäst för lägenhet 2026. Den ger bäst pris med både LiDAR-navigering och fullautomatisk basstation, hittar rätt i öppna planlösningar och lyfter moppen automatiskt vid mattor."
+    />
+
+    <MoneyFeatured {...products[0]} />
+
+    <MoneyComparisonTable products={products} title="Jämförelsetabell - robotdammsugare för lägenhet 2026" />
+
     <p class="text-text-light text-lg mb-6 leading-relaxed">
       Dreame L10s Ultra Gen 3 är vår bästa robotdammsugare för lägenhet 2026. Den ger bäst pris med både LiDAR-navigering och fullautomatisk basstation, vilket gör att den hittar rätt i öppna planlösningar och sköter sig själv. Moppen lyfts automatiskt vid mattor.
     </p>
+
+    <MoneyTOC />
 
     <!-- Snabbjämförelse -->
     <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
@@ -140,8 +156,11 @@ export const articleMeta = {
 
     <!-- Produktlista -->
     <div class="space-y-6 mb-10">
-      {products.map(product => (
-        <ProductCard {...product} />
+      {products.map((p, i) => (
+        <div>
+          <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-4">{p.rank ?? i + 1}. {p.name}{p.badge ? `, ${p.badge}` : ''}</h2>
+          <ProductCard {...p} />
+        </div>
       ))}
     </div>
 
@@ -180,8 +199,9 @@ export const articleMeta = {
   </div>
 
   <StickyCTA
-    text="Bra pris hos Dreame L20 Ultra hos Proshop"
-    url="https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3396835&url=https://www.proshop.se/Robotdammsugare/Dreame-Robotdammsugare-X40-Ultra/3396835"
+    text={products[0].ctaText}
+    url={products[0].ctaUrl}
+    productName={products[0].name}
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({

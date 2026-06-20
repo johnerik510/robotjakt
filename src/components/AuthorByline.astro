@@ -1,8 +1,9 @@
 ---
 /**
- * Redaktionell byline.
- * Visar redaktionsnamn (länkad), kort metodbeskrivning, publicerings- + uppdateringsdatum.
- * Schema.org Organization JSON-LD inkluderad för structured data.
+ * Slim redaktionell byline (money page-mallen): redaktionsnamn (länkad) ·
+ * publiceringsdatum · "Uppdaterad [datum]" · lästid, allt på en rad.
+ * Ingen undertitel, ingen separat "Publicerad:"-rad. Organization JSON-LD
+ * för E-E-A-T. Lästid beräknas client-side från artikelns text.
  */
 interface Props {
   author?: string;
@@ -14,7 +15,6 @@ interface Props {
 
 const {
   author = 'Robotjakts redaktion',
-  authorTitle = 'Oberoende jämförelse av konsumentrobotar',
   authorBio = 'Vi jämför robotdammsugare, robotgräsklippare och poolrobotar utifrån verifierbar data: tekniska specifikationer, kapacitet, navigeringsteknik, oberoende tester och recensioner samt aktuella priser hos svenska butiker, oberoende av provision.',
   datePublished,
   dateModified,
@@ -29,29 +29,35 @@ const showPublished = !!datePublished;
 const showUpdated = !!dateModified && dateModified !== datePublished;
 ---
 
-<div class="flex items-start gap-4 py-4 mb-6 border-y border-gray-200">
+<div class="flex items-center gap-2.5 py-2 mb-4 border-b border-gray-200">
   <a href="/om-redaktionen/" aria-label={`Om ${author}`} class="shrink-0">
-    <span class="flex items-center justify-center w-14 h-14 rounded-full bg-gray-100 text-accent ring-2 ring-gray-100" aria-hidden="true">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 9.75h6M9 12h6m-6 2.25h3"/></svg>
+    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-accent/10 text-accent" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-4.5 h-4.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 9.75h6M9 12h6m-6 2.25h3"/></svg>
     </span>
   </a>
-  <div class="flex-1 min-w-0">
-    <div class="leading-snug">
-      <a href="/om-redaktionen/" class="font-semibold text-gray-900 hover:text-accent transition-colors">{author}</a>
-      <span class="text-sm text-gray-500 block">{authorTitle}</span>
-    </div>
-    {(showPublished || showUpdated) && (
-      <div class="flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs text-gray-500 mt-1.5">
-        {showPublished && (
-          <span>Publicerad: <time datetime={datePublished}>{formatDate(datePublished!)}</time></span>
-        )}
-        {showUpdated && (
-          <span>Uppdaterad: <time datetime={dateModified}>{formatDate(dateModified!)}</time></span>
-        )}
-      </div>
-    )}
+  <div class="flex flex-wrap items-center gap-x-1.5 gap-y-0 text-xs text-gray-500 min-w-0">
+    <a href="/om-redaktionen/" class="font-semibold text-gray-800 hover:text-accent transition-colors whitespace-nowrap">{author}</a>
+    {showPublished && (<><span class="text-gray-300">·</span><time datetime={datePublished}>{formatDate(datePublished!)}</time></>)}
+    {showUpdated && (<><span class="text-gray-300">·</span><span class="whitespace-nowrap">Uppdaterad <time datetime={dateModified}>{formatDate(dateModified!)}</time></span></>)}
+    <span class="text-gray-300">·</span>
+    <span class="inline-flex items-center gap-1 whitespace-nowrap">
+      <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span id="article-reading-time">Beräknar lästid...</span>
+    </span>
   </div>
 </div>
+
+<script>
+  (() => {
+    const el = document.getElementById('article-reading-time');
+    if (!el) return;
+    const scope = document.querySelector('[data-toc-scope]') || document.querySelector('main') || document.body;
+    const text = (scope as HTMLElement)?.innerText || '';
+    const words = text.trim().split(/\s+/).filter(Boolean).length;
+    const min = Math.max(1, Math.round(words / 200));
+    el.textContent = `${min} min läsning`;
+  })();
+</script>
 
 <script type="application/ld+json" set:html={JSON.stringify({
   '@context': 'https://schema.org',

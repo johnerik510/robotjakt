@@ -1,16 +1,23 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-06-18T19:48:16.163Z",
-  "durationMs": 14561,
+  "timestamp": "2026-06-20T08:45:09.541Z",
+  "durationMs": 24445,
   "summary": {
-    "checks": 18,
-    "errors": 12,
-    "warnings": 25,
-    "newErrors": 0,
-    "baselinedErrors": 12
+    "checks": 19,
+    "errors": 7,
+    "warnings": 26,
+    "newErrors": 1,
+    "baselinedErrors": 6
   },
   "results": [
+    {
+      "check": "01-dashes",
+      "severity": "error",
+      "file": "src/components/AuthorByline.astro",
+      "line": 4,
+      "message": "em-dash hittad: \"* publiceringsdatum · \"Uppdaterad [datum]\" · lästid — allt på en rad.\""
+    },
     {
       "check": "04-articlemeta",
       "severity": "warning",
@@ -79,12 +86,17 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/husqvarna-automower-315x.webp\" används av 3 artiklar: Husqvarna Automower 315X recension 2026: pålitlig robot | Husqvarna vs Segway Navimow 2026: slinga eller GPS? | Husqvarna Automower 315X vs 415X: vilken ska du välja?"
+      "message": "Bild \"/images/husqvarna-automower-315x.webp\" används av 2 artiklar: Husqvarna Automower 315X recension 2026: pålitlig robot | Husqvarna Automower 315X vs 415X: vilken ska du välja?"
     },
     {
       "check": "04-articlemeta",
       "severity": "warning",
       "message": "Bild \"/images/husqvarna-automower-415x.webp\" används av 2 artiklar: Husqvarna Automower 415X test 2026: recension och pris | Bästa robotgräsklippare för lutning 2026: branttest"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/husqvarna-430x-nera.webp\" används av 2 artiklar: Husqvarna Automower 430X Nera recension 2026: utan slinga | Husqvarna vs Segway Navimow 2026: 430V NERA mot i220E"
     },
     {
       "check": "04-articlemeta",
@@ -140,10 +152,17 @@
   "baseline": {
     "status": "compared",
     "baselineCount": 11,
-    "baselinedCount": 12,
-    "newErrorCount": 0
+    "baselinedCount": 6,
+    "newErrorCount": 1
   },
   "allResults": [
+    {
+      "check": "01-dashes",
+      "severity": "error",
+      "file": "src/components/AuthorByline.astro",
+      "line": 4,
+      "message": "em-dash hittad: \"* publiceringsdatum · \"Uppdaterad [datum]\" · lästid — allt på en rad.\""
+    },
     {
       "check": "01-dashes",
       "severity": "error",
@@ -157,48 +176,6 @@
       "file": "src/lib/cta-resolver.ts",
       "line": 174,
       "message": "em-dash hittad: \"// stämma och tillbehör exkluderas — annars matchas t.ex. \"Landroid Vision 500\"\""
-    },
-    {
-      "check": "01-dashes",
-      "severity": "error",
-      "file": "src/pages/robotdammsugare/index.astro",
-      "line": 311,
-      "message": "em-dash hittad: \"{ name: 'Roborock Saros 20 Sonic', sugkraft: '—', station: 'Ja', betyg: '9,6', b\""
-    },
-    {
-      "check": "01-dashes",
-      "severity": "error",
-      "file": "src/pages/robotdammsugare/index.astro",
-      "line": 312,
-      "message": "em-dash hittad: \"{ name: 'Dreame X60 Ultra', sugkraft: '—', station: 'Ja', betyg: '9,5', badge: '\""
-    },
-    {
-      "check": "01-dashes",
-      "severity": "error",
-      "file": "src/pages/robotdammsugare/index.astro",
-      "line": 314,
-      "message": "em-dash hittad: \"{ name: 'Dreame Aqua10 Ultra Roller', sugkraft: '—', station: 'Ja', betyg: '9,2'\""
-    },
-    {
-      "check": "01-dashes",
-      "severity": "error",
-      "file": "src/pages/robotdammsugare/index.astro",
-      "line": 316,
-      "message": "em-dash hittad: \"{ name: 'Dreame L10s Ultra Gen 3', sugkraft: '—', station: 'Ja', betyg: '8,8', b\""
-    },
-    {
-      "check": "01-dashes",
-      "severity": "error",
-      "file": "src/pages/robotdammsugare/index.astro",
-      "line": 317,
-      "message": "em-dash hittad: \"{ name: 'Dreame D20 Ultra', sugkraft: '—', station: 'Ja', betyg: '8,5', badge: '\""
-    },
-    {
-      "check": "01-dashes",
-      "severity": "error",
-      "file": "src/pages/robotdammsugare/index.astro",
-      "line": 318,
-      "message": "em-dash hittad: \"{ name: 'Neatsvor X600 Pro', sugkraft: '—', station: 'Nej', betyg: '8,0', badge:\""
     },
     {
       "check": "04-articlemeta",
@@ -280,12 +257,17 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/husqvarna-automower-315x.webp\" används av 3 artiklar: Husqvarna Automower 315X recension 2026: pålitlig robot | Husqvarna vs Segway Navimow 2026: slinga eller GPS? | Husqvarna Automower 315X vs 415X: vilken ska du välja?"
+      "message": "Bild \"/images/husqvarna-automower-315x.webp\" används av 2 artiklar: Husqvarna Automower 315X recension 2026: pålitlig robot | Husqvarna Automower 315X vs 415X: vilken ska du välja?"
     },
     {
       "check": "04-articlemeta",
       "severity": "warning",
       "message": "Bild \"/images/husqvarna-automower-415x.webp\" används av 2 artiklar: Husqvarna Automower 415X test 2026: recension och pris | Bästa robotgräsklippare för lutning 2026: branttest"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/husqvarna-430x-nera.webp\" används av 2 artiklar: Husqvarna Automower 430X Nera recension 2026: utan slinga | Husqvarna vs Segway Navimow 2026: 430V NERA mot i220E"
     },
     {
       "check": "04-articlemeta",

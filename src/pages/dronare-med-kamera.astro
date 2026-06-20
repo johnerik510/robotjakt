@@ -5,6 +5,11 @@ import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import AnswerBox from '../components/AnswerBox.astro';
+import MoneyFeatured from '../components/MoneyFeatured.astro';
+import MoneyComparisonTable from '../components/MoneyComparisonTable.astro';
+import MoneyTOC from '../components/MoneyTOC.astro';
 
 const products = [
   {
@@ -96,6 +101,18 @@ const breadcrumbs = [
   { label: 'Drönare', href: '/dronare/' },
   { label: 'Med kamera' },
 ];
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Bästa drönare med kamera 2026",
+  "itemListElement": products.map((p, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": p.name,
+    "url": "https://robotjakt.se/dronare-med-kamera/",
+  })),
+};
 export const articleMeta = {
   title: "Bästa drönare med kamera 2026: jämförda och rankade",
   description: "Vi jämför de bästa kameradrönarna 2026. DJI Mini 4 Pro, Air 3 och fler jämförs på bildkvalitet, flygtid och pris. Hitta rätt kameradrönare för dina behov.",
@@ -112,32 +129,23 @@ export const articleMeta = {
   ogImage="/images/dji-air-3s.webp"
   article={{ datePublished: "2026-03-15", dateModified: "2026-05-27", image: "/images/dji-air-3s.webp" }}
 >
-  <section class="bg-gradient-to-br from-primary via-primary to-primary-dark text-white py-8 md:py-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <Breadcrumbs items={breadcrumbs} light={true} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Robotjakts redaktion</span>
-    </a>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-      <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3 leading-tight mt-2">
-        Bästa Drönare med Kamera 2026
-      </h1>
-      <p class="text-white/80 text-lg max-w-2xl">
-        DJI Air 3S är vår bästa drönare med kamera 2026. Den har dubbla kameror med 1-tums vidvinkel och 70 mm tele samt 4K HDR med 14 steg dynamiskt omfång, vilket märks tydligt i dåligt ljus och vid solnedgång. Flygtiden på 45 minuter är längst i klassen.
-      </p>
-    </div>
-  </section>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
+    <Breadcrumbs items={breadcrumbs} />
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight mt-2">
+      Bästa Drönare med Kamera 2026
+    </h1>
+    <AuthorByline datePublished="2026-03-15" dateModified="2026-05-27" />
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-<div class="flex flex-wrap gap-3 text-sm text-text-light mb-6">
-      <span class="flex items-center gap-1.5">
-        <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-        Senast uppdaterad april 2026
-      </span>
-    </div>
+    <AnswerBox
+      question="Snabbt svar: Vilken drönare med kamera är bäst 2026?"
+      answer="DJI Air 3S är vår bästa drönare med kamera 2026. Den har dubbla kameror med 1-tums vidvinkel och 70 mm tele samt 4K HDR med 14 steg dynamiskt omfång, och en flygtid på 45 minuter som är längst i klassen."
+    />
+
+    <MoneyFeatured {...products[0]} />
+
+    <MoneyComparisonTable products={products} title="Jämförelsetabell - bästa drönare med kamera 2026" />
+
+    <MoneyTOC />
 
     <section class="mb-10">
       <h2 class="font-heading text-2xl font-bold text-text mb-4">Bästa drönare med kamera 2026</h2>
@@ -145,7 +153,12 @@ export const articleMeta = {
         Alla moderna DJI-drönare har bra kameror, men skillnaden i sensorstorlek och kameradesign är stor. En 1-tums sensor ger märkbar skillnad i bildkvalitet jämfört med mindre sensorer, framförallt i varierande ljus och för video med HDR.
       </p>
       <div class="space-y-6">
-        {products.map((product) => <ProductCard {...product} />)}
+        {products.map((p, i) => (
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-4">{p.rank ?? i + 1}. {p.name}{p.badge ? `, ${p.badge}` : ''}</h2>
+            <ProductCard {...p} />
+          </div>
+        ))}
       </div>
     </section>
 
@@ -181,11 +194,13 @@ export const articleMeta = {
     <FAQ items={faqItems} />
 
     <AffiliateDisclaimer />
+
+    <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
   </div>
 
   <StickyCTA
-    text="Se DJI Air 3S, bäst kamera"
-    url="https://addrevenue.io/t?c=3467327&a=987736&m=SE&u=https%3A%2F%2Fdronarbutiken.se%2Fproducts%2Fdji-air-3s-dji-rc-n3"
-    productName="DJI Air 3S"
+    text={products[0].ctaText}
+    url={products[0].ctaUrl}
+    productName={products[0].name}
   />
 </BaseLayout>

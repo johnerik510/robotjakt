@@ -5,6 +5,11 @@ import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
+import MoneyFeatured from '../../components/MoneyFeatured.astro';
+import MoneyComparisonTable from '../../components/MoneyComparisonTable.astro';
+import MoneyTOC from '../../components/MoneyTOC.astro';
 
 const products = [
   {
@@ -130,90 +135,34 @@ const breadcrumbs = [{ label: 'Drönare' }];
   ogImage="/images/dji-mini-5-pro.webp"
   article={true}
 >
-  <!-- Hero -->
-  <section class="bg-gradient-to-br from-primary via-primary to-primary-dark text-white py-8 md:py-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <Breadcrumbs items={breadcrumbs} light={true} />
-      <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3 leading-tight mt-2">
-        Bästa Drönaren 2026
-      </h1>
-      <p class="text-white/80 text-lg max-w-2xl mb-2">
-        DJI Mini 5 Pro är vår bästa drönare i test 2026. Den väger under 250 g och slipper därför EU-registreringskravet, samtidigt som 1-tums 50 MP-sensorn filmar i 4K/120 fps. Omnidirektionell hinderdetektering och upp till 36 minuters flygtid gör den trygg att flyga.</p>
-    </div>
-  </section>
-
   <!-- Main content -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <!-- Quick comparison table -->
-    <section class="mb-8">
-      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse</h2>
-      <!-- Mobile: kort -->
-      <div class="md:hidden space-y-3">
-        {[
-          { name: 'DJI Mini 5 Pro', vikt: '< 250 g', sensor: '1-tums 50 MP', flygtid: '36 min', kort: 'C0' },
-          { name: 'DJI Air 3S', vikt: '724 g', sensor: '1-tums + tele', flygtid: '45 min', kort: 'C1' },
-          { name: 'DJI Mini 4 Pro', vikt: '< 250 g', sensor: '1/1.3-tums', flygtid: '34 min', kort: 'C0' },
-          { name: 'DJI Mini 3', vikt: '< 250 g', sensor: '1/1.7-tums', flygtid: '38 min', kort: 'C0' },
-        ].map(row => (
-          <div class="bg-white rounded-xl border border-border p-4 text-sm">
-            <div class="font-semibold text-text mb-2">{row.name}</div>
-            <div class="grid grid-cols-2 gap-1 text-text-light">
-              <span>Vikt: {row.vikt}</span>
-              <span>Klass: {row.kort}</span>
-              <span>Sensor: {row.sensor}</span>
-              <span>Flygtid: {row.flygtid}</span>
-            </div>
-          </div>
-        ))}
-      </div>
-      <!-- Desktop: tabell -->
-      <div class="hidden md:block bg-white rounded-xl border border-border overflow-hidden">
-        <table class="cmp-table table-fixed w-full text-sm">
-          <thead class="bg-bg-alt">
-            <tr>
-              <th class="px-4 py-3 text-left font-semibold text-text">Modell</th>
-              <th class="px-4 py-3 text-left font-semibold text-text">Vikt / klass</th>
-              <th class="px-4 py-3 text-left font-semibold text-text">Kamera</th>
-              <th class="px-4 py-3 text-left font-semibold text-text">Flygtid</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-border">
-            <tr class="bg-winner/5">
-              <td class="px-4 py-3 font-medium text-text">DJI Mini 5 Pro <span class="ml-1 text-xs bg-winner text-white px-1.5 py-0.5 rounded">Bäst 2026</span></td>
-              <td class="px-4 py-3 text-text-light">&lt; 250 g / C0</td>
-              <td class="px-4 py-3 text-text-light">1-tums, 50 MP, 4K/120fps</td>
-              <td class="px-4 py-3 text-text-light">36 min</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-medium text-text">DJI Air 3S</td>
-              <td class="px-4 py-3 text-text-light">724 g / C1</td>
-              <td class="px-4 py-3 text-text-light">1-tums + 70 mm tele</td>
-              <td class="px-4 py-3 text-text-light">45 min</td>
-            </tr>
-            <tr class="bg-bg-alt/50">
-              <td class="px-4 py-3 font-medium text-text">DJI Mini 4 Pro</td>
-              <td class="px-4 py-3 text-text-light">&lt; 250 g / C0</td>
-              <td class="px-4 py-3 text-text-light">1/1.3-tums, 4K/60fps</td>
-              <td class="px-4 py-3 text-text-light">34 min</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-medium text-text">DJI Mini 3</td>
-              <td class="px-4 py-3 text-text-light">&lt; 250 g / C0</td>
-              <td class="px-4 py-3 text-text-light">1/1.7-tums, 4K/30fps</td>
-              <td class="px-4 py-3 text-text-light">38 min</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
+    <Breadcrumbs items={breadcrumbs} />
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight mt-2">
+      Bästa drönaren 2026
+    </h1>
+    <AuthorByline datePublished="2026-04-01" dateModified="2026-04-01" />
+
+    <AnswerBox
+      question="Snabbt svar: Vilken drönare är bäst 2026?"
+      answer="DJI Mini 5 Pro är vår bästa drönare i test 2026. Den väger under 250 g och slipper EU-registreringskravet, samtidigt som 1-tums 50 MP-sensorn filmar i 4K/120 fps med upp till 36 minuters flygtid."
+    />
+
+    <MoneyFeatured {...products[0]} />
+
+    <MoneyComparisonTable products={products} title="Jämförelsetabell - bästa drönare 2026" />
+
+    <MoneyTOC />
 
     <!-- Product cards -->
-    <section class="mb-10">
-      <h2 class="font-heading text-2xl font-bold text-text mb-6">Topplista: Bästa drönaren 2026</h2>
-      <div class="space-y-6">
-        {products.map((product) => <ProductCard {...product} />)}
-      </div>
-    </section>
+    <div class="space-y-5 mb-10">
+      {products.map((p, i) => (
+        <div>
+          <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-4">{p.rank ?? i + 1}. {p.name}{p.badge ? `, ${p.badge}` : ''}</h2>
+          <ProductCard {...p} />
+        </div>
+      ))}
+    </div>
 
     <!-- Köpguide -->
     <section class="mb-10">
@@ -277,24 +226,10 @@ const breadcrumbs = [{ label: 'Drönare' }];
   </div>
 
   <StickyCTA
-    text="Se DJI Mini 5 Pro"
-    url="https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=57972&url=https://www.kjell.com/se/produkter/hem-fritid/fritid/dronare/dji-dronare/dji-mini-5-pro-hopfallbar-dronare-med-50-mp-kamera-p57972"
-    productName="DJI Mini 5 Pro"
+    text={products[0].ctaText}
+    url={products[0].ctaUrl}
+    productName={products[0].name}
   />
-
-<style>
-  .cmp-table th,
-  .cmp-table td {
-    overflow-wrap: break-word;
-    hyphens: auto;
-    vertical-align: top;
-  }
-  @media (max-width: 640px) {
-    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
-    .cmp-table th,
-    .cmp-table td { padding: 0.4rem 0.45rem; }
-  }
-</style>
 
 </BaseLayout>
 <script type="application/ld+json" set:html={JSON.stringify({

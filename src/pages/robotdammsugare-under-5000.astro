@@ -5,6 +5,11 @@ import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import AnswerBox from '../components/AnswerBox.astro';
+import MoneyFeatured from '../components/MoneyFeatured.astro';
+import MoneyComparisonTable from '../components/MoneyComparisonTable.astro';
+import MoneyTOC from '../components/MoneyTOC.astro';
 
 const products = [
   {
@@ -162,27 +167,36 @@ export const articleMeta = {
   description="Bästa robotdammsugare under 5 000 kr 2026. Vi jämför och rankar budget-robotar med LiDAR, mopp och app-styrning. Hitta rätt robot för din budget."
   article={{ datePublished: "2026-05-09", dateModified: "2026-05-27", image: "/images/dreame-z10-pro.webp" }}
 >
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Robotjakts redaktion</span>
-    </a>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
       Bästa Robotdammsugare till lägre pris 2026
     </h1>
+    <AuthorByline datePublished="2026-05-09" dateModified="2026-05-27" />
+
+    <AnswerBox
+      question="Snabbt svar: Vilken är bästa robotdammsugaren under 5000 kr 2026?"
+      answer="Roborock Q10 VF+ är vår bästa robotdammsugare under 5 000 kr 2026. Den kombinerar LiDAR-navigering, stark sugkraft och en självtömmande basstation med 70 dagars påsekapacitet, och lyfter moppen automatiskt vid mattor."
+    />
+
+    <MoneyFeatured {...products[0]} />
+
+    <MoneyComparisonTable products={products} title="Jämförelsetabell - robotdammsugare under 5000 kr 2026" />
+
     <p class="text-text-light text-lg mb-6 leading-relaxed">
       Roborock Q10 VF+ är vår bästa robotdammsugare under 5 000 kr i test 2026. Den balanserar stark sugkraft, moppning och en självtömmande basstation med 70 dagars påsekapacitet. LiDAR-navigeringen kartlägger rummen exakt och moppen lyfts automatiskt vid mattor.</p>
 
     <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-8 text-sm text-emerald-900">
       <strong>Snabbval:</strong> <strong>Roborock Q10 VF+</strong> ger bäst totalpaket. För djurägare med mattor är <strong>Dreame D20 Ultra</strong> starkare på moppning. Lägsta budget med kvalitet: <strong>Roborock Q8 Max+</strong>.</div>
 
+    <MoneyTOC />
+
     <div class="space-y-6 mb-10">
-      {products.map(product => (
-        <ProductCard {...product} />
+      {products.map((p, i) => (
+        <div>
+          <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-4">{p.rank ?? i + 1}. {p.name}{p.badge ? `, ${p.badge}` : ''}</h2>
+          <ProductCard {...p} />
+        </div>
       ))}
     </div>
 
@@ -221,8 +235,9 @@ export const articleMeta = {
   </div>
 
   <StickyCTA
-    text="Roborock Q10 VF+, bäst till lägre pris"
-    url="https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66993&url=https://www.kjell.com/se/produkter/hem-fritid/stadning-rengoring/robotdammsugare/roborock-robotdammsugare/roborock-q10-vf-robotdammsugare-med-basstation-vit-p66993"
+    text={products[0].ctaText}
+    url={products[0].ctaUrl}
+    productName={products[0].name}
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({

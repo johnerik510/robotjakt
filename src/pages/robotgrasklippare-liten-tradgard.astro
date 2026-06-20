@@ -5,6 +5,11 @@ import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import AnswerBox from '../components/AnswerBox.astro';
+import MoneyFeatured from '../components/MoneyFeatured.astro';
+import MoneyComparisonTable from '../components/MoneyComparisonTable.astro';
+import MoneyTOC from '../components/MoneyTOC.astro';
 
 const products = [
   {
@@ -112,75 +117,36 @@ export const articleMeta = {
   description="Bästa robotgräsklipparna för liten trädgård under 500 m² 2026. Kompakta och tysta modeller jämförda. Se topplista, pris och vår rekommendation."
   article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/gardena-sileno-city-500.webp" }}
 >
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Robotjakts redaktion</span>
-    </a>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-03-29</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Bästa robotgräsklippare för liten trädgård 2026, under 500 m²
     </h1>
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-05-27" />
+
+    <AnswerBox
+      question="Snabbt svar: Vilken robotgräsklippare är bäst för liten trädgård 2026?"
+      answer="MOVA 1000 är bäst för liten trädgård 2026. Den är billigast i klassen med GPS-navigering, behöver ingen perimeterkabel och installeras direkt i appen. Den klarar ytor upp till 1 000 m²."
+    />
+
+    <MoneyFeatured {...products[0]} />
+
+    <MoneyComparisonTable products={products} title="Jämförelsetabell - robotgräsklippare för liten trädgård 2026" />
 
     <p class="text-lg text-text-light mb-6 leading-relaxed">
       MOVA 1000 är vår bästa robotgräsklippare för liten trädgård 2026. Den är billigast i klassen med GPS-navigering och behöver ingen perimeterkabel, så du installerar den direkt i appen. Den klarar ytor upp till 1 000 m². </p>
 
-    <!-- Snabbjämförelse -->
-    <section class="mb-8" aria-label="Jämförelsetabell robotgräsklippare liten trädgård">
-      <h2 class="font-heading text-xl font-bold text-text mb-4">Robotgräsklippare för liten trädgård 2026: snabbjämförelse</h2>
-      <div class="overflow-x-auto rounded-xl border border-border">
-        <table class="w-full text-sm bg-white min-w-[560px]">
-          <thead>
-            <tr class="border-b border-border bg-bg-alt">
-              <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Yta (m²)</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Slinga krävs</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">App-styrning</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Installation tid</th>
-              </tr>
-          </thead>
-          <tbody class="divide-y divide-border">
-            <tr class="bg-winner/5">
-              <td class="px-4 py-3 font-semibold text-text">MOVA 1000</td>
-              <td class="px-4 py-3 text-text-light">1 000 m²</td>
-              <td class="px-4 py-3 text-winner font-semibold">Nej (GPS)</td>
-              <td class="px-4 py-3 text-winner font-medium">Ja</td>
-              <td class="px-4 py-3 text-text-light">30 till 60 min</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-semibold text-text">Worx Landroid Vision 500</td>
-              <td class="px-4 py-3 text-text-light">500 m²</td>
-              <td class="px-4 py-3 text-winner font-semibold">Nej (Vision)</td>
-              <td class="px-4 py-3 text-winner font-medium">Ja, WiFi</td>
-              <td class="px-4 py-3 text-text-light">30 till 60 min</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-semibold text-text">Gardena SILENO city 500</td>
-              <td class="px-4 py-3 text-text-light">500 m²</td>
-              <td class="px-4 py-3 text-cta font-medium">Ja</td>
-              <td class="px-4 py-3 text-winner font-medium">Ja</td>
-              <td class="px-4 py-3 text-text-light">2 till 3 h</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-semibold text-text">Dreame A1 Pro 1000 (LiDAR)</td>
-              <td class="px-4 py-3 text-text-light">1 000 m²</td>
-              <td class="px-4 py-3 text-winner font-semibold">Nej (GPS)</td>
-              <td class="px-4 py-3 text-winner font-medium">Ja</td>
-              <td class="px-4 py-3 text-text-light">30 till 60 min</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+    <MoneyTOC />
 
     <!-- Produktkort -->
     <div class="space-y-5 mb-10">
-      {products.map(p => <ProductCard {...p} />)}
+      {products.map((p, i) => (
+        <div>
+          <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-4">{p.rank ?? i + 1}. {p.name}{p.badge ? `, ${p.badge}` : ''}</h2>
+          <ProductCard {...p} />
+        </div>
+      ))}
     </div>
 
     <!-- Guide -->
@@ -224,8 +190,9 @@ export const articleMeta = {
   </div>
 
   <StickyCTA
-    text="Bra pris hos Gardena Sileno City 500"
-    url="https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3051379&url=https://www.proshop.se/Robotgraesklippare/Gardena-smart-SILENO-city-robotic-lawnmower-500-m/3051379"
+    text={products[0].ctaText}
+    url={products[0].ctaUrl}
+    productName={products[0].name}
   />
 <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
