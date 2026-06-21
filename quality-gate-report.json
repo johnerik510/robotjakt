@@ -1,23 +1,16 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-06-20T08:45:09.541Z",
-  "durationMs": 24445,
+  "timestamp": "2026-06-20T08:46:14.157Z",
+  "durationMs": 24839,
   "summary": {
     "checks": 19,
-    "errors": 7,
+    "errors": 6,
     "warnings": 26,
-    "newErrors": 1,
+    "newErrors": 0,
     "baselinedErrors": 6
   },
   "results": [
-    {
-      "check": "01-dashes",
-      "severity": "error",
-      "file": "src/components/AuthorByline.astro",
-      "line": 4,
-      "message": "em-dash hittad: \"* publiceringsdatum · \"Uppdaterad [datum]\" · lästid — allt på en rad.\""
-    },
     {
       "check": "04-articlemeta",
       "severity": "warning",
@@ -153,16 +146,9 @@
     "status": "compared",
     "baselineCount": 11,
     "baselinedCount": 6,
-    "newErrorCount": 1
+    "newErrorCount": 0
   },
   "allResults": [
-    {
-      "check": "01-dashes",
-      "severity": "error",
-      "file": "src/components/AuthorByline.astro",
-      "line": 4,
-      "message": "em-dash hittad: \"* publiceringsdatum · \"Uppdaterad [datum]\" · lästid — allt på en rad.\""
-    },
     {
       "check": "01-dashes",
       "severity": "error",
