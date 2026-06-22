@@ -10,6 +10,7 @@ import AnswerBox from '../../components/AnswerBox.astro';
 import MoneyFeatured from '../../components/MoneyFeatured.astro';
 import MoneyComparisonTable from '../../components/MoneyComparisonTable.astro';
 import MoneyTOC from '../../components/MoneyTOC.astro';
+import Callout from '../../components/Callout.astro';
 
 const products = [
   {
@@ -111,6 +112,34 @@ const faqItems = [
     question: 'Är robotdammsugare bra för husdjursallergiker?',
     answer: 'Ja, en robotdammsugare med HEPA-filter och daglig schemaläggning minskar mängden allergener (pälsfjäll, saliv-protein) i hemmet märkbart. Roborock S8 MaxV Ultra och Dreame X40 Ultra har H13-klassade filter som fångar minst 99,95 procent av partiklar ner till 0,3 mikrometer. Töm dammkorgen utomhus och rengör filter regelbundet för bästa effekt.',
   },
+  {
+    question: 'Vilken robotdammsugare klarar hundhår bäst?',
+    answer: 'Roborock S8 MaxV Ultra klarar hundhår bäst tack vare dubbla gummirullar som inte trasslar och 10 000 Pa sugkraft som drar upp hår ur mattor. För labradorer, golden retrievers och schäfrar som fäller mycket är gummirullar viktigare än sugkraftssiffran, eftersom borststrullar fastnar i långa hundhår och tappar effekt mellan rensningarna.',
+  },
+  {
+    question: 'Bästa robotdammsugaren när man har hund?',
+    answer: 'När du har hund väger tre saker tyngst: anti-tangle-rullar i gummi, minst 8 000 Pa sugkraft och en automatisk tömningsstation så att du slipper tömma dammkorgen full med hår dagligen. Roborock S8 MaxV Ultra uppfyller alla tre och lägger till AI-kamera som kör runt hundbajs, vilket är den vanligaste anledningen till misslyckade körningar i hundhem.',
+  },
+  {
+    question: 'Vilken robotdammsugare är bäst för katthår?',
+    answer: 'För katthår fungerar samma modeller som för hundhår, men kattägare gynnas extra av gummirullar eftersom långhåriga raser som maine coon och perser lämnar fina, lätt-trasslande hårstrån. Roborock S8 MaxV Ultra och Dreame X50 Ultra hanterar katthår på både hårdgolv och mattor utan att rullen behöver rensas mellan körningarna.',
+  },
+  {
+    question: 'Behöver jag auto-empty station om jag har husdjur?',
+    answer: 'Ja, det är starkt rekommenderat. Husdjur producerar stora mängder päls och dander som fyller dammkorgen snabbt. Utan station behöver du tömma manuellt efter varje eller varannan körning, vilket exponerar dig för dander vid varje tömning. Med en station töms roboten automatiskt och du byter påse ungefär var 60 dag. Stationen med HEPA-tätad påse är särskilt viktig om någon i hushållet är allergisk mot djuren.',
+  },
+  {
+    question: 'Kan robotdammsugaren lära sig undvika djurens matplatser och leksaker?',
+    answer: 'Ja, med avancerade modeller. Roborock S8 MaxV Ultra och liknande modeller med AI-kamera kan identifiera och undvika specifika föremål på golvet, inklusive matskålar, leksaker och djuravföring. Enklare modeller med bara LiDAR undviker fasta hinder men kan inte skilja på en matteplatta och ett djur som ligger ner. Sätter du ut temporära virtuella zoner i appen kan du manuellt begränsa roboten från matplatsen.',
+  },
+  {
+    question: 'Är ljudnivån ett problem för katter och hundar?',
+    answer: 'De flesta djur vänjer sig på en till två veckor om roboten kör i tysta läget, under 60 dB. Mer skygga djur kan behöva en månads tillvänjning. Schemalägg städning när husdjuren är ute eller i ett annat rum tills de vant sig, eller kör på natten när många djur sover djupare och reagerar mindre på ljud.',
+  },
+  {
+    question: 'Hur rengör jag robotdammsugaren efter körning med husdjur?',
+    answer: 'Verifiera att auto-empty-stationen gjort sitt efter varje körning. Kontrollera borsthållarna varannan vecka och klipp bort fastnat pälshår med en sax. Rengör HEPA-filtret med en mjuk borste varje vecka och byt filtret var 60 dag vid daglig drift i husdjurshem. Moppen, om modellen har en, ska sköljas eller bytas ofta eftersom päls och dander samlas i duken.',
+  },
 ];
 
 const breadcrumbs = [
@@ -150,7 +179,7 @@ export const articleMeta = {
 <BaseLayout
   title="Bästa robotdammsugare för husdjur 2026: Roborock S8 MaxV Ultra vinner"
   description="Roborock S8 MaxV Ultra undviker avföring med AI-kamera och trasslas aldrig av husdjurshår. 6 modeller testade mot päls och avföring. Ranking och priser 2026."
-  article={{ datePublished: "2026-05-16", dateModified: "2026-06-04", image: "/images/roborock-qrevo-master.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-06-22", image: "/images/roborock-qrevo-master.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
@@ -158,7 +187,7 @@ export const articleMeta = {
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Robotdammsugare husdjur 2026, bäst för hund och katt
     </h1>
-    <AuthorByline datePublished="2026-05-16" dateModified="2026-05-22" />
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-06-22" />
 
     <AnswerBox
       question="Snabbt svar: Vilken robotdammsugare är bäst för husdjur 2026?"
@@ -220,6 +249,21 @@ export const articleMeta = {
         </div>
       </div>
 
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vilken robotdammsugare klarar hundhår och katthår?</h2>
+      <p class="text-text-light mb-4 leading-relaxed">
+        Hundhår och katthår ställer två olika krav på roboten: hår ska sugas upp ur mattor utan att rullen sätter igen, och långa strån får inte trassla sig runt borsten. Det är därför gummirullar plus hög sugkraft slår en ren sugkraftssiffra. Roborock S8 MaxV Ultra (10 000 Pa, dubbla gummirullar) och Dreame X50 Ultra hanterar både korthåriga och långhåriga raser, medan en enklare modell med traditionell borste tappar effekt så fort hundhåret börjar nysta sig.
+      </p>
+      <div class="grid sm:grid-cols-2 gap-5 mb-6">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Hundhår: tunga, fällande raser</h3>
+          <p class="text-sm text-text-light">Labrador, golden retriever och schäfer fäller stora mängder underull, särskilt vår och höst. Här gör 10 000 Pa eller mer skillnad i tjocka mattor, och en stor självtömmande station gör att korgen inte fylls mitt i en körning. AI-kamera som undviker hundbajs är värt mycket i hem med valp eller utehund.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Katthår: fina, lätt-trasslande strån</h3>
+          <p class="text-sm text-text-light">Maine coon, perser och norsk skogskatt lämnar långa, tunna hårstrån som lätt nystar sig runt en borstrulle. Gummirullar är viktigare än absolut maxsugkraft här. För kattägare räcker oftast 8 000 till 10 000 Pa, så länge rullen är av anti-tangle-typ.</p>
+        </div>
+      </div>
+
       <h2 class="font-heading text-2xl font-bold text-text mb-4">Praktiska tips: håll en robotdammsugare effektiv med husdjur</h2>
       <ul class="space-y-3 mb-6">
         {[
@@ -235,6 +279,103 @@ export const articleMeta = {
           </li>
         ))}
       </ul>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Varför päls är robotdammsugares största utmaning</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Päls skiljer sig från vanligt damm på ett avgörande sätt: det flätar ihop sig och kan sätta igen borstsystemet. En klassisk borstvals med nylonborstar fungerar bra för damm och smulor men börjar snabbt samla päls i axellagren, vilket leder till överhettning och i värsta fall att roboten stannar mitt i städningen. Modeller designade för husdjur löser det antingen med gummirullar som inte fångar päls lika lätt, eller med utbytbara borstar avsedda för husdjurshem.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Roborock kallar sitt system DuoRoller och kombinerar en gummirulle med en mjukare hybridrulle. Dreame använder en liknande uppbyggnad med anti-tangle-teknik. Båda systemen hanterar mellanlång och lång päls, som labrador och golden retriever, utan att behöva rensas efter varje körning. Kontrollera ändå borsthållarna varannan vecka och rensa bort inbyggd päls med den medföljande saxen.
+      </p>
+
+      <div class="my-8 rounded-xl overflow-hidden border border-border">
+        <img src="/images/robotdammsugare-husdjur.webp" alt="Robotdammsugare som städar päls från husdjur på trägolv" class="w-full h-auto" loading="lazy" width="1280" height="853" />
+        <p class="text-xs text-text-lighter p-3 bg-bg-alt">En modern robotdammsugare med anti-tangle-borstar hanterar päls från hundar och katter utan att trassla fast sig, förutsatt att borstar och filter rensas regelbundet.</p>
+      </div>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Auto-empty station: nödvändig i husdjurshem</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        En husdjursägare med en robotdammsugare utan station tömmer dammkorgen nästan dagligen under fällningssäsong. Det tar tid, det betyder kontakt med dander, och glömmer du en dag kan roboten gå full och sluta städa mitt i. Med en auto-empty station töms roboten automatiskt efter varje körning och du byter påse ungefär var 60 dag. Väljer du en station med HEPA-tätad påse reduceras din exponering mot dander och pälsdjursprotein till ett minimum.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Roborock S8 MaxV Ultra och Dreame X50 Ultra har dessutom varmvattenmoppning som tvättar moppduken efter städning. Det motverkar den inbyggda pälslukten som annars kan spridas tillbaka om roboten moppar utan att duken rengörs.
+      </p>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">AI-kamera och hinderdetektion i husdjurshem</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        En robotdammsugare som kör rakt in i djuravföring och sprider ut det på hela golvet är ett scenario de flesta husdjursägare vill undvika. Enklare LiDAR-modeller ser fasta hinder men kan inte skilja på en hög leksak och djuravföring. Modeller med AI-kamera, som Roborock S8 MaxV Ultra, identifierar och undviker specifika typer av hinder inklusive djuravföring, matkassar, skor och leksaker.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Du kan komplettera en modell utan AI-kamera med virtuella no-go-zoner i appen om du vet var djuret brukar göra sina behov. Men den manuella lösningen kräver att du uppdaterar zonen varje gång situationen ändras. AI-kameran gör det automatiskt och är värd merkostnaden för de flesta med hundar inomhus.
+      </p>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Hur mycket sugkraft behövs i ett husdjurshem?</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Päls tränger ner i mattor och textilier och kräver mer sugkraft än vanligt damm för att lossna. En grundmodell med 2 000 till 4 000 Pa klarar hårda golv men kämpar med mattor och soffor. För husdjurshem rekommenderar vi minst 8 000 Pa, gärna mer om du har tjocka mattor eller flera djur.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Dreame X50 Ultra toppar sugkraften i den här topplistan och hanterar päls i både heltäckningsmattor och hårdgolv utan problem. Roborock S8 MaxV Ultra är inte långt efter och kombinerar stark sugkraft med det viktigaste för husdjurshem, nämligen AI-kameran. Dreame L10s Ultra Gen 3 har lägre sugkraft men klarar normala mängder päls från de flesta raser.
+      </p>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Stora hundraser och päls: vad du behöver tänka på extra</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Stora raser som schäfer, golden retriever och labrador fäller mer än de flesta robotdammsugare är dimensionerade för. Tre kritiska val avgör om roboten klarar pälsmängden:
+      </p>
+      <ul class="list-disc pl-6 text-text-light space-y-2 mb-4">
+        <li>Automatisk tömningsstation är nästan obligatorisk, annars tömmer du dagligen under fällningssäsong.</li>
+        <li>Sugkraft minst 8 000 Pa, gärna 10 000 Pa eller mer för tjocka mattor.</li>
+        <li>Daglig städning, helst två gånger om dagen i högsäsong vår och höst.</li>
+      </ul>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Katter och robotdammsugare: undvik stress och vältade skålar</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Katter är ofta skygga för robotar i början. Schemalägg städningen när du är hemma så katten kan se att roboten inte är ett hot. Tysta läget, som Roborock Whisper Mode och Dreame Quiet Mode, ligger på 55 till 58 dB och fungerar för de flesta katter. Mer skygga djur kan behöva en månads tillvänjning, men de flesta vänjer sig på en till två veckor om roboten kör tyst. Glöm inte att markera kattens vatten- och matskålar som no-go-zon i appen, annars riskerar roboten att välta dem.
+      </p>
+
+      <Callout type="tip" title="Fällningssäsong: öka städfrekvensen">
+        Under vår och höst fäller de flesta hundar och katter mer päls än vanligt. Öka schemalagda körningar till minst morgon och kväll under fällningssäsong och kontrollera borsthållarna oftare. En robot som körs dagligen håller pälsnivåerna nere och minskar risken att korgen eller dammkanalen blockeras.
+      </Callout>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">HEPA-filter och dander: viktigt om någon i hushållet är allergisk</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Pälsdjursallergi utlöses inte av pälsen i sig utan av proteiner i djurens saliv, urin och hudfjäll, det som kallas dander. Dander är mycket litet och kan hänga kvar i luften i timmar. En robotdammsugare med HEPA-filter suger upp dander från golvet innan det virvlar upp, men bara om filtret är rent och tätt. H13-klassade filter, som Roborock S8 MaxV Ultra och Dreame X50 Ultra använder, fångar minst 99,95 procent av partiklar ner till 0,3 mikrometer.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        I en familj där någon är allergisk mot husdjuret är auto-empty-stationen med HEPA-tätad påse avgörande. Alternativet, att tömma korgen manuellt, pyser dander rakt mot ansiktet. Med stationen stannar dandret förslutet i påsen tills du byter den, oftast utan att exponeras. Mer om specifika allergifunktioner finns i vår guide om <a href="/robotdammsugare-allergiker/" class="text-accent underline">robotdammsugare för allergiker</a>.
+      </p>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Bäst robotdammsugare per ras: kortpälsad, mellanlång och långpälsad</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Rasen spelar roll när du väljer robot. Kortpälsade raser som labrador och beagle fäller visserligen päls, men den är sällan lång nog att trassla fast sig i borstsystemet. Problemet är i stället dander och finpartiklar som kräver ett ordentligt HEPA-filter snarare än extra borststyrka. En Dreame L10s Ultra Gen 3 med HEPA-filter och självtömmande station räcker väl för de flesta labrador- och beagle-hem.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Mellanlånga raser som golden retriever och collie ställer högre krav på borstsystemet. Päls med den längden flätar gärna ihop sig och sätter igen en klassisk nylonborstvals inom ett par körningar. Här är anti-tangle-borstar nödvändiga, antingen Roborocks DuoRoller-system eller Dreames gummiborstsystem. Kontrollera borsthållarna varannan vecka och rensa bort insamlat pälshår med den medlevererade saxen. Utan den rutinen tappar roboten sugkraft och riskerar överhettning.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Långpälsade och dubbelpälsade raser som husky och samojed är den krävande kategorin. De fäller enorma mängder under fällningssäsong och pälsen är lång nog att blockera även modeller med anti-tangle-funktion om du inte städar dagligen. Välj högsta möjliga sugkraft, minst 10 000 Pa, och planera för daglig rensning av borsthållarna under vår- och höstsäsongen. Katter tillhör i princip samma kategori: päls kombinerat med dander gör HEPA-filtret kritiskt, och tysta kattungar som rör sig i robotens väg gör AI-kamera mer motiverad än för de flesta hundar.
+      </p>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Underhåll och skötsel i husdjurshem</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Husdjurshem kräver tätare underhåll av robotdammsugaren jämfört med husdjursfria hem. Följ det här schemat för att hålla roboten i toppskick:
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-text-light mb-4">
+        <li>Varje vecka: kontrollera borsthållarna och klipp bort fastnat pälshår med saxen. Rengör HEPA-filtret med en mjuk borste.</li>
+        <li>Varannan vecka: töm auto-empty-stationen om den inte töms automatiskt. Rengör hjulaxlarna och sidoborstarna.</li>
+        <li>Var 60 dag: byt HEPA-filtret. I husdjurshem sätts filter igen dubbelt så snabbt som i husdjursfria hem.</li>
+        <li>Vid behov: rengör sensorer och kamera med en torr mikrofiberduk. Päls och damm kan täcka dem och försämra navigeringen.</li>
+      </ul>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vad kostar en bra robotdammsugare för husdjur?</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Robotdammsugare för husdjur finns i tre tydliga prisnivåer. I instegssegmentet hittar du modeller med anständig sugkraft och HEPA-filter men utan självtömmande station. De klarar kortpälsade raser och lättare pälsmängder, men kräver att du tömmer dammkorgen dagligen och rengör borstar frekvent.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        I mellansegmentet tillkommer självtömmande station, bättre anti-tangle-borstar och starkare sugkraft. Det är det segment de flesta husdjursägare med mellanlånga eller dubbelpälsade raser bör sikta mot. Stationen gör den dagliga skötseln dramatiskt enklare och motiverar merkostnaden snabbt.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        I premiumsegmentet börjar modellerna med varmvattenmoppning, AI-kamera och stationer som automatiskt tvättar moppduken. Roborock S8 MaxV Ultra och Dreame X50 Ultra är exempel. Räkna också med totalägandekostnaden: HEPA-filter byts var 60 dag i husdjurshem, borstar bör bytas var 6 till 12 månader och stationspåsar förbrukas löpande. Förbrukningsvarorna är ändå en bråkdel av vad städhjälp eller upprepade manuella dammsugningspass kostar i tid.
+      </p>
     </section>
 
     <FAQ items={faqItems} />
@@ -252,7 +393,6 @@ export const articleMeta = {
         <li><a href="/billigaste-robotdammsugare/" class="text-accent underline text-sm">Billigaste robotdammsugare, bäst för pengarna</a></li>
         <li><a href="/robotdammsugare-allergiker/" class="text-accent underline text-sm">robotdammsugare för allergiker</a></li>
         <li><a href="/guide/robotdammsugare-aldrevanlig/" class="text-accent underline text-sm">robotdammsugare för äldre: enklast att använda 2026</a></li>
-        <li><a href="/robotdammsugare-husdjur/" class="text-accent underline text-sm">bästa robotdammsugare för husdjur: hund och katt</a></li>
       </ul>
     </section>
 

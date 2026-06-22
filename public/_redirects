@@ -7,6 +7,12 @@ https://www.robotjakt.se/* https://robotjakt.se/:splat 301
 /roborock-s7    /roborock-guide/    301
 /roborock-s7/   /roborock-guide/    301
 
+# Konsoliderade kannibal-sidor → survivor-money pages
+/guide/robotdammsugare-husdjur     /robotdammsugare/husdjur/    301
+/guide/robotdammsugare-husdjur/    /robotdammsugare/husdjur/    301
+/guide/robotdammsugare-mopp        /robotdammsugare/med-mopp/   301
+/guide/robotdammsugare-mopp/       /robotdammsugare/med-mopp/   301
+
 # Flata URL:er → nya folder-URL:er (hub-and-spoke-struktur)
 /robotdammsugare-husdjur     /robotdammsugare/husdjur/    301
 /robotdammsugare-husdjur/    /robotdammsugare/husdjur/    301

@@ -105,6 +105,18 @@ const faqItems = [
     question: 'Vilken poolrobot passar en rund pool?',
     answer: 'De flesta poolrobotar passar både rektangulära och runda pooler, robotarna navigerar efter poolens form automatiskt. Det viktigaste är att kontrollera att kabeln är lång nog i förhållande till poolens diameter, och att poolens yta (m²) ryms inom robotens kapacitet. Välj en modell med minst 20 % marginal över din faktiska poolstorlek.',
   },
+  {
+    question: 'Hur ofta ska man köra en poolrobot?',
+    answer: 'Under badsäsongen räcker det oftast att köra poolroboten två till tre gånger i veckan. Används poolen dagligen eller står den under träd som fäller löv och pollen kör du den hellre varje dag. När säsongen är över och poolen står stilla behövs roboten mer sällan, men en körning innan vintertäckning hjälper till att hålla botten ren.',
+  },
+  {
+    question: 'Kan man bada med poolroboten i vattnet?',
+    answer: 'Nej, du ska inte bada samtidigt som poolroboten arbetar. Roboten drivs av el och kabeln samt rörliga delar utgör en onödig risk när någon är i vattnet. Kör roboten när poolen är tom, ta upp den när cykeln är klar och bada först därefter. De flesta tillverkare anger detta tydligt i sina säkerhetsanvisningar.',
+  },
+  {
+    question: 'Hur fungerar en poolrobot?',
+    answer: 'En poolrobot är en självgående enhet som sjunker till poolbotten och rör sig systematiskt över golv, väggar och ibland vattenlinjen. En inbyggd pump suger in vatten och smuts genom ett filter samtidigt som borstar lossar alger och beläggningar. Smutsen fångas i robotens egen filterkorg, helt skilt från poolens ordinarie filterpump.',
+  },
 ];
 
 const breadcrumbs = [
@@ -132,7 +144,7 @@ export const articleMeta = {
 <BaseLayout
   title="Bästa poolrobot 2026: bäst i test och jämförelse"
   description="Bästa poolrobot 2026 rankad efter reningstäckning, filtreringsförmåga och pris. Zodiac GT3220 vinner. 8 modeller jämförda, klara köpråd per poolstorlek."
-  article={{ datePublished: "2026-03-29", dateModified: "2026-06-04", image: "https://csdam.net/data/jpg/0/dc98b5ed/dc98b5ed-5b66-4dc3-85d2-044eee59877f.jpg" }}
+  article={{ datePublished: "2026-03-29", dateModified: "2026-06-22", image: "https://csdam.net/data/jpg/0/dc98b5ed/dc98b5ed-5b66-4dc3-85d2-044eee59877f.jpg" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
@@ -140,7 +152,7 @@ export const articleMeta = {
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
       Poolrobot bäst i test 2026
     </h1>
-    <AuthorByline datePublished="2026-03-29" dateModified="2026-05-22" />
+    <AuthorByline datePublished="2026-03-29" dateModified="2026-06-22" />
 
     <AnswerBox
       question="Snabbt svar: Vilken poolrobot är bäst 2026?"
@@ -177,6 +189,24 @@ export const articleMeta = {
         </div>
       ))}
     </div>
+
+    <!-- Batteri vs kabel -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Batteridriven eller kabeldriven poolrobot?</h2>
+      <p class="text-text-light mb-4 leading-relaxed text-sm">
+        Valet mellan batteri och kabel handlar om var poolen står och hur stor den är. Batteridrivna modeller som Planet Pool Orca 50CL är sladdlösa och smidiga att lyfta i och ur, men har en begränsad drifttid per laddning. Kabeldrivna robotar som Zodiac GT3220 och CF 200CL kör så länge du vill utan att tappa kraft, vilket passar större pooler, men kabeln måste hanteras så den inte trasslar.
+      </p>
+      <div class="grid sm:grid-cols-2 gap-5 mb-2">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Batteridriven, sladdlös frihet</h3>
+          <p class="text-sm text-text-light">Lättast att lyfta i och ur, ingen kabel som trasslar. Passar små och mellanstora pooler. Nackdelen är att städtiden styrs av batteriets kapacitet, så väldigt stora pooler kan kräva en extra laddning.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Kabeldriven, obegränsad drifttid</h3>
+          <p class="text-sm text-text-light">Tappar aldrig kraft mitt i en körning och passar stora villapooler. Kräver att kabeln är lång nog för poolens längd plus marginal, och att du ger akt på trassel kring trappor och stegar.</p>
+        </div>
+      </div>
+    </section>
 
     <!-- Köpguide-sektion -->
     <section class="mb-12">
