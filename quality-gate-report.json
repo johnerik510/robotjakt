@@ -1,8 +1,8 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-06-20T08:46:14.157Z",
-  "durationMs": 24839,
+  "timestamp": "2026-06-22T19:43:14.621Z",
+  "durationMs": 24379,
   "summary": {
     "checks": 19,
     "errors": 6,
@@ -44,7 +44,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/roborock-s8-maxv-ultra.webp\" används av 11 artiklar: Dyson 360 Vis Nav Recension 2026: Test, Pris och Betyg | Robotdammsugare för husdjur 2026: guide, sugkraft och filter | Roborock S8 Max Ultra Recension 2026: Test och Omdöme | Roborock S8 MaxV Ultra Recension 2026: Test och Omdöme | Roborock vs Dreame 2026: vilken robotdammsugare vinner?..."
+      "message": "Bild \"/images/roborock-s8-maxv-ultra.webp\" används av 10 artiklar: Dyson 360 Vis Nav Recension 2026: Test, Pris och Betyg | Roborock S8 Max Ultra Recension 2026: Test och Omdöme | Roborock S8 MaxV Ultra Recension 2026: Test och Omdöme | Roborock vs Dreame 2026: vilken robotdammsugare vinner? | Roborock vs Ecovacs Deebot 2026: vilken robot vinner?..."
     },
     {
       "check": "04-articlemeta",
@@ -94,7 +94,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/mammotion-luba-awo-3000.webp\" används av 8 artiklar: Husqvarna vs Mammotion 2026: 430V NERA mot LUBA 3 | Mammotion Luba AWO 3000 recension 2026: GPS-gräsrobot | Bästa robotgräsklippare utan slinga 2026: GPS-topplista | Mammotion vs Segway Navimow robotgräsklippare 2026 | Robotgräsklippare utan årsgränsavgift 2026: topplista..."
+      "message": "Bild \"/images/mammotion-luba-awo-3000.webp\" används av 8 artiklar: Husqvarna eller Mammotion 2026: 430V NERA vs LUBA 3 | Mammotion Luba AWO 3000 recension 2026: GPS-gräsrobot | Bästa robotgräsklippare utan slinga 2026: GPS-topplista | Mammotion vs Segway Navimow robotgräsklippare 2026 | Robotgräsklippare utan årsgränsavgift 2026: topplista..."
     },
     {
       "check": "04-articlemeta",
@@ -208,7 +208,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/roborock-s8-maxv-ultra.webp\" används av 11 artiklar: Dyson 360 Vis Nav Recension 2026: Test, Pris och Betyg | Robotdammsugare för husdjur 2026: guide, sugkraft och filter | Roborock S8 Max Ultra Recension 2026: Test och Omdöme | Roborock S8 MaxV Ultra Recension 2026: Test och Omdöme | Roborock vs Dreame 2026: vilken robotdammsugare vinner?..."
+      "message": "Bild \"/images/roborock-s8-maxv-ultra.webp\" används av 10 artiklar: Dyson 360 Vis Nav Recension 2026: Test, Pris och Betyg | Roborock S8 Max Ultra Recension 2026: Test och Omdöme | Roborock S8 MaxV Ultra Recension 2026: Test och Omdöme | Roborock vs Dreame 2026: vilken robotdammsugare vinner? | Roborock vs Ecovacs Deebot 2026: vilken robot vinner?..."
     },
     {
       "check": "04-articlemeta",
@@ -258,7 +258,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/mammotion-luba-awo-3000.webp\" används av 8 artiklar: Husqvarna vs Mammotion 2026: 430V NERA mot LUBA 3 | Mammotion Luba AWO 3000 recension 2026: GPS-gräsrobot | Bästa robotgräsklippare utan slinga 2026: GPS-topplista | Mammotion vs Segway Navimow robotgräsklippare 2026 | Robotgräsklippare utan årsgränsavgift 2026: topplista..."
+      "message": "Bild \"/images/mammotion-luba-awo-3000.webp\" används av 8 artiklar: Husqvarna eller Mammotion 2026: 430V NERA vs LUBA 3 | Mammotion Luba AWO 3000 recension 2026: GPS-gräsrobot | Bästa robotgräsklippare utan slinga 2026: GPS-topplista | Mammotion vs Segway Navimow robotgräsklippare 2026 | Robotgräsklippare utan årsgränsavgift 2026: topplista..."
     },
     {
       "check": "04-articlemeta",

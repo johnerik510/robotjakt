@@ -7,6 +7,12 @@ https://www.robotjakt.se/* https://robotjakt.se/:splat 301
 /roborock-s7    /roborock-guide/    301
 /roborock-s7/   /roborock-guide/    301
 
+# Konsoliderade köpguide-dubbletter → survivor (2026-06-22)
+/guide/poolrobot-koparguide        /kopguide-poolrobot/             301
+/guide/poolrobot-koparguide/       /kopguide-poolrobot/             301
+/kopguide-robotgrasklippare        /guide/robotgrasklippare-koparguide/   301
+/kopguide-robotgrasklippare/       /guide/robotgrasklippare-koparguide/   301
+
 # Konsoliderade kannibal-sidor → survivor-money pages
 /guide/robotdammsugare-husdjur     /robotdammsugare/husdjur/    301
 /guide/robotdammsugare-husdjur/    /robotdammsugare/husdjur/    301
