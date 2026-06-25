@@ -35,9 +35,17 @@ const articleSchema = article ? {
     ? (articleMeta.image.startsWith('http') ? articleMeta.image : `https://robotjakt.se${articleMeta.image}`)
     : `https://robotjakt.se/og-default.jpg`,
   author: {
-    '@type': 'Organization',
-    name: 'Robotjakts redaktion',
+    '@type': 'Person',
+    name: 'Axel Jönemyr',
+    jobTitle: 'Redaktör, Robotjakt',
     url: 'https://robotjakt.se/om-redaktionen/',
+    image: 'https://robotjakt.se/images/axel-jonemyr.webp',
+    worksFor: { '@type': 'Organization', name: 'Robotjakt', url: 'https://robotjakt.se' },
+    sameAs: [
+      'https://www.instagram.com/axlpxl/',
+      'https://www.strava.com/athletes/2699302',
+      'https://www.linkedin.com/in/axel-j%C3%B6nemyr-ba1443170/',
+    ],
   },
   publisher: {
     '@type': 'Organization',

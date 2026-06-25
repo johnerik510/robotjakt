@@ -2,38 +2,62 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 
-const editorialSchema = {
+const personSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'Robotjakts redaktion',
+  '@type': 'Person',
+  name: 'Axel Jönemyr',
   url: 'https://robotjakt.se/om-redaktionen/',
-  description: 'Robotjakts redaktion jämför konsumentrobotar utifrån verifierbar data: tekniska specifikationer, kapacitet, navigeringsteknik, oberoende tester och recensioner samt aktuella priser hos svenska butiker.',
-  knowsAbout: ['robotdammsugare', 'robotgräsklippare', 'poolrobotar', 'smart hem', 'Dreame', 'Roborock', 'Husqvarna', 'Ecovacs'],
-  parentOrganization: {
-    '@type': 'Organization',
-    name: 'Robotjakt.se',
-    url: 'https://robotjakt.se',
-  },
+  image: 'https://robotjakt.se/images/axel-jonemyr.webp',
+  jobTitle: 'Redaktör, Robotjakt',
+  description: 'Axel Jönemyr är redaktör för Robotjakt och jämför robotdammsugare och robotgräsklippare utifrån navigering, sugkraft, räckvidd och pris, baserat på specifikationer och verkliga tester.',
+  worksFor: { '@type': 'Organization', name: 'Robotjakt', url: 'https://robotjakt.se' },
+  knowsAbout: ['robotdammsugare', 'robotgräsklippare', 'hemrobotar', 'navigering', 'batteri'],
+  sameAs: [
+    'https://www.instagram.com/axlpxl/',
+    'https://www.strava.com/athletes/2699302',
+    'https://www.linkedin.com/in/axel-j%C3%B6nemyr-ba1443170/',
+  ],
 };
 ---
 
 <BaseLayout
-  title="Redaktionen bakom Robotjakt.se: experter på robotar"
-  description="Möt redaktionen bakom Robotjakt.se. Vi granskar robotar oberoende och objektivt. Läs om vår bakgrund och hur vi granskar produkterna."
+  title="Axel Jönemyr, redaktören bakom Robotjakt.se"
+  description="Axel Jönemyr är redaktör för Robotjakt. Läs om hur han jämför robotdammsugare och robotgräsklippare utifrån navigering, sugkraft, räckvidd, tester och priser."
   article={true}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={[{ label: 'Om redaktionen' }]} />
 
-    <h1 class="font-heading text-3xl font-bold text-text mb-6">Om redaktionen</h1>
+    <header class="mb-8 flex flex-col sm:flex-row items-start gap-6">
+      <img
+        src="/images/axel-jonemyr.webp"
+        alt="Axel Jönemyr, redaktör för Robotjakt"
+        width="112"
+        height="112"
+        class="w-28 h-28 rounded-full object-cover ring-2 ring-gray-100 shrink-0"
+        loading="eager"
+      />
+      <div>
+        <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-2">Axel Jönemyr</h1>
+        <p class="text-accent font-semibold mb-3">Redaktör, Robotjakt</p>
+        <p class="text-text-light text-lg leading-relaxed max-w-2xl">
+          Jag driver Robotjakt för att du ska kunna jämföra robotdammsugare och robotgräsklippare på riktiga grunder, navigering, sugkraft, räckvidd och pris, utan att läsa dig igenom tillverkarnas marknadsföring.
+        </p>
+        <nav class="flex flex-wrap items-center gap-x-4 gap-y-1 mt-4 text-sm" aria-label="Axels profiler">
+          <a href="https://www.linkedin.com/in/axel-j%C3%B6nemyr-ba1443170/" rel="me noopener" target="_blank" class="text-accent underline hover:opacity-80">LinkedIn</a>
+          <a href="https://www.instagram.com/axlpxl/" rel="me noopener" target="_blank" class="text-accent underline hover:opacity-80">Instagram</a>
+          <a href="https://www.strava.com/athletes/2699302" rel="me noopener" target="_blank" class="text-accent underline hover:opacity-80">Strava</a>
+        </nav>
+      </div>
+    </header>
 
     <div class="bg-white rounded-2xl border border-border p-6 sm:p-8 mb-8">
       <p class="text-sm text-accent font-semibold mb-3">Oberoende jämförelse av konsumentrobotar</p>
       <p class="text-text-light text-sm leading-relaxed mb-3">
-        Robotjakt är en oberoende svensk guide för robotdammsugare, robotgräsklippare och poolrobotar. Vi köper inte in och labbtestar inte robotarna själva. I stället jämför vi modellerna utifrån verifierbar data så att du kan fatta ett välgrundat köpbeslut.
+        Robotjakt är en oberoende svensk guide för robotdammsugare, robotgräsklippare och poolrobotar. Jag köper inte in och labbtestar inte robotarna själv. I stället jämför jag modellerna utifrån verifierbar data så att du kan fatta ett välgrundat köpbeslut.
       </p>
       <p class="text-text-light text-sm leading-relaxed mb-3">
-        Vårt underlag är tekniska specifikationer från tillverkarna, klippyta och kapacitet, navigeringsteknik, oberoende tester och recensioner samt aktuella priser hos svenska butiker. Vi väger samman dessa källor och redovisar både styrkor och svagheter för varje produkt. Rangordningen styrs av produktens egenskaper och pris, aldrig av vilken provision en länk ger.
+        Underlaget är tekniska specifikationer från tillverkarna, klippyta och kapacitet, navigeringsteknik, oberoende tester och recensioner samt aktuella priser hos svenska butiker. Jag väger samman dessa källor och redovisar både styrkor och svagheter för varje produkt. Rangordningen styrs av produktens egenskaper och pris, aldrig av vilken provision en länk ger.
       </p>
       <p class="text-text-light text-sm leading-relaxed">
         Kontakt: <!--email_off--><a href="mailto:info@robotjakt.se" class="text-accent underline">info@robotjakt.se</a><!--/email_off-->
@@ -72,9 +96,9 @@ const editorialSchema = {
       </div>
 
       <div class="bg-white rounded-2xl border border-border p-6 sm:p-8">
-        <h2 class="font-heading text-xl font-bold text-text mb-3">Så jämför vi</h2>
+        <h2 class="font-heading text-xl font-bold text-text mb-3">Så jämför jag</h2>
         <p class="text-sm text-text-light leading-relaxed mb-3">
-          Vi väger samman tekniska specifikationer, kapacitet och navigeringsteknik med oberoende tester, recensioner och aktuella priser hos svenska butiker. Bedömningen tar hänsyn till svenska förhållanden, trädgårdar med nordiskt klimat, hem med trösklar och blandade golvytor.
+          Jag väger samman tekniska specifikationer, kapacitet och navigeringsteknik med oberoende tester, recensioner och aktuella priser hos svenska butiker. Bedömningen tar hänsyn till svenska förhållanden, trädgårdar med nordiskt klimat, hem med trösklar och blandade golvytor.
         </p>
         <a href="/sa-testar-vi/" class="text-accent font-semibold text-sm underline">Så jämför vi</a>
       </div>
@@ -82,12 +106,12 @@ const editorialSchema = {
       <div class="bg-white rounded-2xl border border-border p-6 sm:p-8">
         <h2 class="font-heading text-xl font-bold text-text mb-3">Redaktionell policy</h2>
         <p class="text-sm text-text-light leading-relaxed mb-3">
-          Vi tar aldrig betalt för positiva omdömen. Alla rekommendationer baseras på verifierbar data och en samlad bedömning av oberoende källor. Affiliatelänkar påverkar aldrig vilka produkter vi rekommenderar eller vilken ranking de får.
+          Jag tar aldrig betalt för positiva omdömen. Alla rekommendationer baseras på verifierbar data och en samlad bedömning av oberoende källor. Affiliatelänkar påverkar aldrig vilka produkter jag rekommenderar eller vilken ranking de får.
         </p>
-        <a href="/redaktionell-policy/" class="text-accent font-semibold text-sm underline">Läs vår redaktionella policy &rarr;</a>
+        <a href="/redaktionell-policy/" class="text-accent font-semibold text-sm underline">Läs den redaktionella policyn &rarr;</a>
       </div>
     </div>
   </div>
 
-  <script type="application/ld+json" set:html={JSON.stringify(editorialSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
 </BaseLayout>

@@ -9,13 +9,20 @@ interface Props {
   author?: string;
   authorTitle?: string;
   authorBio?: string;
+  authorImage?: string;
+  authorHref?: string;
+  authorType?: 'Organization' | 'Person';
   datePublished?: string;
   dateModified?: string;
 }
 
 const {
-  author = 'Robotjakts redaktion',
-  authorBio = 'Vi jämför robotdammsugare, robotgräsklippare och poolrobotar utifrån verifierbar data: tekniska specifikationer, kapacitet, navigeringsteknik, oberoende tester och recensioner samt aktuella priser hos svenska butiker, oberoende av provision.',
+  author = 'Axel Jönemyr',
+  authorTitle = 'Redaktör, Robotjakt',
+  authorBio = 'Axel jämför robotdammsugare och robotgräsklippare utifrån navigering, sugkraft, räckvidd och pris, baserat på specifikationer och verkliga tester.',
+  authorImage = '/images/axel-jonemyr.webp',
+  authorHref = '/om-redaktionen/',
+  authorType = 'Person',
   datePublished,
   dateModified,
 } = Astro.props;
@@ -30,13 +37,17 @@ const showUpdated = !!dateModified && dateModified !== datePublished;
 ---
 
 <div class="flex items-center gap-2.5 py-2 mb-4 border-b border-gray-200">
-  <a href="/om-redaktionen/" aria-label={`Om ${author}`} class="shrink-0">
-    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-accent/10 text-accent" aria-hidden="true">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-4.5 h-4.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 9.75h6M9 12h6m-6 2.25h3"/></svg>
-    </span>
+  <a href={authorHref} aria-label={`Om ${author}`} class="shrink-0">
+    {authorImage ? (
+      <img src={authorImage} alt={author} width="32" height="32" loading="lazy" class="w-8 h-8 rounded-full object-cover ring-1 ring-gray-100" />
+    ) : (
+      <span class="flex items-center justify-center w-8 h-8 rounded-full bg-accent/10 text-accent" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-4.5 h-4.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 9.75h6M9 12h6m-6 2.25h3"/></svg>
+      </span>
+    )}
   </a>
   <div class="flex flex-wrap items-center gap-x-1.5 gap-y-0 text-xs text-gray-500 min-w-0">
-    <a href="/om-redaktionen/" class="font-semibold text-gray-800 hover:text-accent transition-colors whitespace-nowrap">{author}</a>
+    <a href={authorHref} class="font-semibold text-gray-800 hover:text-accent transition-colors whitespace-nowrap">{author}</a>
     {showPublished && (<><span class="text-gray-300">·</span><time datetime={datePublished}>{formatDate(datePublished!)}</time></>)}
     {showUpdated && (<><span class="text-gray-300">·</span><span class="whitespace-nowrap">Uppdaterad <time datetime={dateModified}>{formatDate(dateModified!)}</time></span></>)}
     <span class="text-gray-300">·</span>
@@ -61,9 +72,19 @@ const showUpdated = !!dateModified && dateModified !== datePublished;
 
 <script type="application/ld+json" set:html={JSON.stringify({
   '@context': 'https://schema.org',
-  '@type': 'Organization',
+  '@type': authorType,
   name: author,
-  url: 'https://robotjakt.se/om-redaktionen/',
+  url: `https://robotjakt.se${authorHref}`,
   description: authorBio,
-  knowsAbout: ['robotdammsugare', 'robotgräsklippare', 'poolrobotar', 'fönsterputsrobotar', 'smarta hem', 'Dreame', 'Roborock', 'Husqvarna', 'Ecovacs']
+  ...(authorType === 'Person' ? {
+    jobTitle: authorTitle,
+    worksFor: { '@type': 'Organization', name: 'Robotjakt', url: 'https://robotjakt.se' },
+    sameAs: [
+      'https://www.instagram.com/axlpxl/',
+      'https://www.strava.com/athletes/2699302',
+      'https://www.linkedin.com/in/axel-j%C3%B6nemyr-ba1443170/',
+    ],
+  } : {}),
+  ...(authorImage ? { image: `https://robotjakt.se${authorImage}` } : {}),
+  knowsAbout: ['robotdammsugare', 'robotgräsklippare', 'hemrobotar', 'navigering', 'batteri']
 })} />
