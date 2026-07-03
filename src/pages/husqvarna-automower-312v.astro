@@ -1,0 +1,272 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Husqvarna Automower 312V' },
+];
+
+const specs = [
+  { label: 'Max arbetsyta', value: '1 200 m² (800 m² vid oregelbunden form)' },
+  { label: 'Klippbredd', value: '22 cm' },
+  { label: 'Klipphöjd', value: '20 till 50 mm' },
+  { label: 'Navigering', value: 'Virtuell gräns, satellit + AI-vision' },
+  { label: 'Slingkabel', value: 'Nej, slinglös installation' },
+  { label: 'Max lutning', value: '40% i arbetsområdet (15% vid gräns)' },
+  { label: 'Ljudnivå', value: '63 dB(A)' },
+  { label: 'Vikt', value: '9,9 kg' },
+  { label: 'Batteri', value: 'Li-Ion 4 Ah' },
+  { label: 'Klipptid per laddning', value: '100 min (laddtid 100 min)' },
+  { label: 'Max aktiv tid', value: '15 timmar/dygn' },
+  { label: 'Väderskydd', value: 'IPX6' },
+  { label: 'Uppkoppling', value: 'Bluetooth, Wi-Fi, Automower Connect' },
+];
+
+const faqItems = [
+  {
+    question: 'Behöver Husqvarna Automower 312V slingkabel?',
+    answer: 'Nej. 312V är slinglös och använder virtuella gränser istället för nedgrävd begränsningskabel. Du kör roboten runt gräsmattan en gång via Automower Connect-appen för att rita upp arbetsytan, och positioneringen sköts av satellitnavigering med stöd av en AI-kamera. Det tar bort det mest tidskrävande momentet i en traditionell installation.',
+  },
+  {
+    question: 'Hur stor gräsmatta klarar Automower 312V?',
+    answer: '312V är byggd för gräsmattor upp till 1 200 m² vid systematisk klippning. Har du en oregelbunden trädgård med många hinder och passager är den praktiska rekommendationen upp till 800 m². Det gör 312V till den största i Husqvarnas slinglösa V-serie, ett steg över 308V (800 m²) och Aspire R6V (600 m²).',
+  },
+  {
+    question: 'Hur fungerar navigeringen utan slinga?',
+    answer: 'Roboten positionerar sig med satellitnavigering och håller koll på var arbetsytans virtuella gränser går. AI-kameran fyller två funktioner: den undviker föremål som leksaker och verktyg på gräsmattan, och den stöttar positioneringen i områden där satellitsignalen är svag, till exempel under träd eller nära husväggar. Så länge kameran ser gräs framför sig fortsätter roboten att klippa.',
+  },
+  {
+    question: 'Vad skiljer 312V från 308V?',
+    answer: 'Hårdvaran är i praktiken identisk, samma chassi, samma 22 cm klippbredd, samma kamera och satellitnavigering. Skillnaden är kapaciteten: 312V klarar 1 200 m² mot 308V:s 800 m², och har längre maximal aktiv tid per dygn. Har du en gräsmatta under 800 m² räcker 308V. Ligger du mellan 800 och 1 200 m² är 312V rätt val.',
+  },
+  {
+    question: 'Kan Automower 312V klippa flera separata gräsytor?',
+    answer: 'Ja. I appen kan du skapa flera arbetsområden med egna scheman, klipphöjder och klippmönster, till exempel en yta på framsidan och en på baksidan. Du kan också rita klippfria zoner runt rabatter, pool eller studsmatta. Ligger ytorna på samma nivå kan du skapa transportvägar som roboten följer mellan dem.',
+  },
+  {
+    question: 'Klarar 312V regn och sluttningar?',
+    answer: '312V är klassad IPX6 och kan klippa i regn utan problem, du kan välja i appen om den ska pausa vid regn eller köra ändå. När det gäller lutning klarar den 40% inne i arbetsområdet, vilket räcker för de flesta villatomter, men bara 15% precis vid den virtuella gränsen. Har du branta partier ända ut mot kanten bör du planera arbetsytan därefter.',
+  },
+];
+
+export const articleMeta = {
+  title: "Husqvarna Automower 312V recension 2026: bäst i test utan slinga",
+  description: "Husqvarna Automower 312V testad: slinglös robotgräsklippare för 1 200 m² med AI-kamera och satellitnavigering. Bäst i test enligt IT Retail. Värd det?",
+  publishDate: "2026-07-03",
+  category: "Recension",
+  image: "/images/husqvarna-automower-312v.webp",
+};
+---
+
+<ArticleLayout
+  title="Husqvarna Automower 312V recension 2026: bäst i test utan slinga"
+  description="Husqvarna Automower 312V testad: slinglös robotgräsklippare för 1 200 m² med AI-kamera och satellitnavigering. Bäst i test enligt IT Retail. Värd det?"
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-07-03"
+  ogImage="/images/husqvarna-automower-312v.webp"
+  datePublished="2026-07-03"
+  image="/images/husqvarna-automower-312v.webp"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Husqvarna Automower 312V recension 2026
+  </h1>
+
+  <!-- Verdict box -->
+  <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+    <div class="flex items-center gap-3 mb-2 flex-wrap">
+      <span class="bg-winner text-white text-xs font-bold px-2 py-1 rounded">TOPPVAL SLINGLÖST 2026</span>
+      <div class="flex gap-0.5" aria-label="Betyg: 9 av 10">
+        {[1,2,3,4,5].map(() => (
+          <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+        ))}
+      </div>
+      <span class="font-bold text-text">9,0 / 10</span>
+    </div>
+    <p class="text-text-light text-sm leading-relaxed mb-4">
+      Automower 312V är toppen av Husqvarnas slinglösa V-serie och vårt förstaval för trädgårdar mellan 800 och 1 200 m². Kombinationen av AI-kamera, satellitnavigering och slinglös installation ger Husqvarnas mogna klippkvalitet utan det tidskrävande kabelgrävet. IT Retail utsåg den till bäst i test. Priset är seriens högsta, men motiverat för den som har ytan.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-3">
+      <a href="/husqvarna-aspire-r6v-vs-308v-vs-312v/" class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]">
+        Jämför 312V mot 308V och Aspire R6V
+      </a>
+      <a href="/robotgrasklippare-utan-slinga/" class="inline-flex items-center justify-center bg-white border border-border hover:border-cta text-text font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]">
+        Alla slinglösa robotgräsklippare
+      </a>
+    </div>
+  </div>
+
+  <!-- What the tests say -->
+  <section class="mb-8 bg-bg-alt rounded-xl border border-border p-5">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Vad testerna säger om 312V</h2>
+    <blockquote class="border-l-4 border-winner pl-4 mb-3">
+      <p class="text-text-light text-sm leading-relaxed italic">
+        "Kombinationen av kamera, AI-vision och satellitnavigering gör den till en av marknadens mest avancerade robotgräsklippare för villasegmentet."
+      </p>
+      <footer class="text-xs text-text-lighter mt-1">
+        IT Retail, som utsåg 312V till bäst i test. <a href="https://it-retail.se/bast-i-test-husqvarna-automower-312v-ai-kameran-som-forandrar-robotgrasklippningen/" rel="nofollow noopener" target="_blank" class="text-accent underline">Läs testet</a>
+      </footer>
+    </blockquote>
+    <p class="text-text-light text-sm leading-relaxed">
+      Även <a href="https://teknikveckan.se/husqvarna-automower-312v-robotklipparen-som-slipper-kabelkaoset" rel="nofollow noopener" target="_blank" class="text-accent underline">Teknikveckan</a> ger 312V betyget 7 av 10 med utlåtandet "Teknikveckan rekommenderar" och lyfter fram just att den slipper kabelkaoset.
+    </p>
+  </section>
+
+  <!-- Pros/Cons -->
+  <div class="grid sm:grid-cols-2 gap-5 mb-8">
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Fördelar med Husqvarna Automower 312V</h2>
+      <ul class="space-y-2">
+        {[
+          'Slinglös, inget kabelgräv vid installation',
+          'AI-kamera undviker föremål och stöttar positionering under träd',
+          '1 200 m² kapacitet, störst i V-serien',
+          'Husqvarnas beprövade klippkvalitet och mulching',
+          'Flera arbetsytor och klippfria zoner via appen',
+          'Klarar regn (IPX6) och kör tyst på 63 dB',
+        ].map(pro => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            {pro}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Nackdelar med Husqvarna Automower 312V</h2>
+      <ul class="space-y-2">
+        {[
+          'Seriens högsta pris',
+          'Bara 15% lutningstolerans precis vid den virtuella gränsen',
+          'Satellitnavigering vill ha relativt fri sikt mot himlen',
+          'Överkapacitet för dig med gräsmatta under 800 m² (välj 308V)',
+        ].map(con => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+            {con}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Specs table -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">Tekniska specifikationer Husqvarna Automower 312V</h2>
+    <div class="bg-bg-alt rounded-xl border border-border overflow-hidden">
+      <table class="cmp-table table-fixed w-full text-sm">
+        <tbody class="divide-y divide-border">
+          {specs.map((spec, i) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+              <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+              <td class="px-4 py-3 text-text-light">{spec.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Detailed review -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-6">Så klipper Automower 312V i praktiken</h2>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Slinglös navigering med kamera och satellit</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Det stora med hela V-serien är att slingkabeln är borta. 312V positionerar sig med satellitnavigering och håller reda på arbetsytans virtuella gränser som du ritar upp i Automower Connect-appen. Istället för att gräva ner hundratals meter kabel kör du roboten runt gräsmattan en gång, och sedan är gränsen definierad digitalt. Vill du ändra formen på arbetsytan senare gör du det i appen, inte med spade.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      AI-kameran är det som skiljer 312V från renodlade satellitklippare. Den känner igen föremål framför roboten, kvarglömda leksaker, verktyg, trädgårdsslangar, och styr runt dem istället för att köra på. Lika viktigt är att kameran stöttar positioneringen där satellitsignalen tillfälligt blir svag, som under stora träd eller tätt intill husväggar. Så länge kameran ser gräs fortsätter roboten att klippa, vilket i praktiken tar bort de döda zoner som rena satellitlösningar kan få.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Klippresultat</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Klippbredden är 22 cm och klipphöjden justeras mellan 20 och 50 mm. Husqvarna har tillverkat robotgräsklippare sedan 1995, och det märks i hur jämnt resultatet blir. Roboten klipper lite gräs i taget och lämnar det finfördelade klippet kvar som mulch, vilket göder gräsmattan och gör att du slipper tömma en uppsamlare.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Med satellitstyrning kan roboten dessutom klippa systematiskt i raka banor istället för slumpmässigt, vilket både täcker ytan effektivare och kan ge det randiga gräsmatteutseendet många är ute efter. I IT Retails test lyfts just att klippkvaliteten håller sig hög och jämn även på mer komplexa tomter.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Installation och app</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Installationen börjar med att hitta en bra plats för laddstationen. Därefter tar appen dig igenom att köra roboten längs de gränser du vill ha och att markera klippfria zoner. Det som tidigare tog en halv dag med kabel, spikar och skarvdon är nu ett appstyrt moment på en stund.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      I Automower Connect styr du klippschema, klipphöjd och flera arbetsytor, följer robotens position på en karta och får notiser om den fastnar eller behöver hjälp. Roboten uppdaterar sin mjukvara trådlöst (FOTA), så nya funktioner och förbättringar kommer automatiskt. Stöldskyddet består av PIN-kod och GeoFence-larm.
+    </p>
+  </section>
+
+  <!-- For whom -->
+  <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+    <h2 class="font-heading text-xl font-bold text-text mb-3">Vem passar Automower 312V för?</h2>
+    <p class="text-text-light leading-relaxed mb-3">
+      312V är gjord för villaägaren med en gräsmatta mellan 800 och 1 200 m² som vill ha en slinglös robot och Husqvarnas mogna klippkvalitet, utan att kompromissa på kapacitet. Den passar särskilt bra för trädgårdar med hinder, träd och passager, där kombinationen kamera och satellit gör mest nytta.
+    </p>
+    <p class="text-text-light leading-relaxed">
+      Har du en mindre gräsmatta gör du en bättre affär med <a href="/husqvarna-automower-308v/" class="text-accent underline">308V (upp till 800 m²)</a> eller <a href="/husqvarna-automower-aspire-r6v/" class="text-accent underline">Aspire R6V (upp till 600 m²)</a>, som delar samma teknik men kostar mindre. Behöver du täcka väsentligt större ytor tittar du istället på Husqvarnas NERA-modeller.
+    </p>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <!-- Related links -->
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade recensioner och guider</h2>
+    <ul class="space-y-2">
+      <li><a href="/husqvarna-aspire-r6v-vs-308v-vs-312v/" class="text-accent underline text-sm">Husqvarna Aspire R6V vs 308V vs 312V, vilken slinglös ska du välja?</a></li>
+      <li><a href="/husqvarna-automower-308v/" class="text-accent underline text-sm">Husqvarna Automower 308V recension, slinglös för 800 m²</a></li>
+      <li><a href="/husqvarna-automower-aspire-r6v/" class="text-accent underline text-sm">Husqvarna Automower Aspire R6V recension, slinglös för 600 m²</a></li>
+      <li><a href="/robotgrasklippare-utan-slinga/" class="text-accent underline text-sm">Bästa robotgräsklippare utan slinga 2026</a></li>
+      <li><a href="/husqvarna-robotgrasklippare/" class="text-accent underline text-sm">Alla Husqvarna Automower-modeller 2026</a></li>
+      <li><a href="/robotgrasklippare/" class="text-accent underline text-sm">Bästa robotgräsklippare 2026, komplett topplista</a></li>
+    </ul>
+  </section>
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
+</ArticleLayout>
+
+<StickyCTA
+  text="Jämför alla slinglösa Husqvarna-modeller"
+  url="/husqvarna-aspire-r6v-vs-308v-vs-312v/"
+  productName="Husqvarna Automower 312V"
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Husqvarna Automower 312V",
+  "image": "https://robotjakt.se/images/husqvarna-automower-312v.webp",
+  "brand": { "@type": "Brand", "name": "Husqvarna" },
+  "category": "Robotgräsklippare",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "9.0",
+    "reviewCount": "1",
+    "bestRating": "10",
+    "worstRating": "1"
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": { "@type": "Rating", "ratingValue": "9.0", "bestRating": "10", "worstRating": "1" },
+    "author": { "@type": "Person", "name": "Axel Jönemyr", "jobTitle": "Redaktör, Robotjakt", "url": "https://robotjakt.se/om-redaktionen/", "worksFor": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" } },
+    "datePublished": "2026-07-03",
+    "reviewBody": "Automower 312V är toppen av Husqvarnas slinglösa V-serie och vårt förstaval för trädgårdar mellan 800 och 1 200 m². AI-kamera och satellitnavigering ger Husqvarnas mogna klippkvalitet utan kabelinstallation. Bäst i test enligt IT Retail.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  }
+})} />

@@ -1,0 +1,269 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Husqvarna Automower Aspire R6V' },
+];
+
+const specs = [
+  { label: 'Max arbetsyta', value: '600 m² (400 m² vid oregelbunden form)' },
+  { label: 'Klippbredd', value: '22 cm' },
+  { label: 'Klipphöjd', value: '20 till 50 mm' },
+  { label: 'Navigering', value: 'Virtuell gräns, satellit + AI-vision' },
+  { label: 'Slingkabel', value: 'Nej, slinglös installation' },
+  { label: 'Max lutning', value: '40% i arbetsområdet (15% vid gräns)' },
+  { label: 'Ljudnivå', value: '63 dB(A)' },
+  { label: 'Vikt', value: '9,9 kg' },
+  { label: 'Batteri', value: 'Li-Ion 4 Ah' },
+  { label: 'Klipptid per laddning', value: '100 min (laddtid 200 min)' },
+  { label: 'Stöldskydd', value: 'GeoFence + PIN-kod' },
+  { label: 'Väderskydd', value: 'IPX6' },
+  { label: 'Uppkoppling', value: 'Bluetooth, Wi-Fi, Automower Connect' },
+];
+
+const faqItems = [
+  {
+    question: 'Behöver Husqvarna Automower Aspire R6V slingkabel?',
+    answer: 'Nej. Aspire R6V är slinglös och använder virtuella gränser istället för nedgrävd begränsningskabel. Du ritar upp arbetsytan i Automower Connect-appen genom att köra roboten längs de gränser du vill ha, och positioneringen sköts av satellitnavigering med stöd av en AI-kamera. Det gör installationen till ett appstyrt moment istället för ett grävjobb.',
+  },
+  {
+    question: 'Hur stor gräsmatta klarar Aspire R6V?',
+    answer: 'Aspire R6V är gjord för mindre gräsmattor upp till 600 m² vid systematisk klippning, eller upp till 400 m² om trädgården är oregelbunden. Den är den minsta och mest prisvärda i Husqvarnas slinglösa V-serie. Har du mer än 600 m² bör du istället titta på 308V (800 m²) eller 312V (1 200 m²).',
+  },
+  {
+    question: 'Vad är skillnaden mellan Aspire R6V och 308V?',
+    answer: 'De delar samma chassi, kamera och satellitnavigering. Aspire R6V är billigare och gjord för mindre ytor (600 m² mot 800 m²), men laddar långsammare, cirka 200 minuter mot 308V:s 100 minuter. För en liten gräsmatta spelar laddtiden mindre roll eftersom roboten ändå hinner klart. Välj Aspire R6V om du har under 600 m² och vill ha billigaste vägen in i den slinglösa serien.',
+  },
+  {
+    question: 'Hur fungerar navigeringen utan slinga?',
+    answer: 'Aspire R6V positionerar sig med satellitnavigering och håller reda på arbetsytans virtuella gränser. AI-kameran undviker föremål på gräsmattan, som leksaker och verktyg, och stöttar positioneringen där satellitsignalen är svag, till exempel under träd eller nära husväggar. Så länge kameran ser gräs framför sig fortsätter roboten att klippa.',
+  },
+  {
+    question: 'Klarar Aspire R6V regn och lutning?',
+    answer: 'Ja, Aspire R6V är klassad IPX6 och kan klippa i regn. I appen väljer du om den ska pausa vid regn eller köra ändå. Den klarar 40% lutning inne i arbetsområdet, men bara 15% precis vid den virtuella gränsen, så branta partier bör ligga en bit in på gräsmattan snarare än ytterst vid kanten.',
+  },
+  {
+    question: 'Har Aspire R6V stöldskydd?',
+    answer: 'Ja. Aspire R6V har PIN-kod och GeoFence, ett geografiskt larm som slår till om roboten flyttas utanför det tillåtna området. Den har också lyft- och lutningssensorer som stoppar knivarna om roboten lyfts från marken. Larm skickas till Automower Connect-appen.',
+  },
+];
+
+export const articleMeta = {
+  title: "Husqvarna Automower Aspire R6V recension 2026: slinglös för 600 m²",
+  description: "Husqvarna Automower Aspire R6V testad: prisvärd slinglös robotgräsklippare för 600 m² med AI-kamera och satellit. Teknikveckan rekommenderar. Värd det?",
+  publishDate: "2026-07-03",
+  category: "Recension",
+  image: "/images/husqvarna-automower-aspire-r6v.webp",
+};
+---
+
+<ArticleLayout
+  title="Husqvarna Automower Aspire R6V recension 2026: slinglös för 600 m²"
+  description="Husqvarna Automower Aspire R6V testad: prisvärd slinglös robotgräsklippare för 600 m² med AI-kamera och satellit. Teknikveckan rekommenderar. Värd det?"
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-07-03"
+  ogImage="/images/husqvarna-automower-aspire-r6v.webp"
+  datePublished="2026-07-03"
+  image="/images/husqvarna-automower-aspire-r6v.webp"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Husqvarna Automower Aspire R6V recension 2026
+  </h1>
+
+  <!-- Verdict box -->
+  <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+    <div class="flex items-center gap-3 mb-2 flex-wrap">
+      <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">PRISVÄRT SLINGLÖST</span>
+      <div class="flex gap-0.5" aria-label="Betyg: 8,4 av 10">
+        {[1,2,3,4,5].map(() => (
+          <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+        ))}
+      </div>
+      <span class="font-bold text-text">8,4 / 10</span>
+    </div>
+    <p class="text-text-light text-sm leading-relaxed mb-4">
+      Aspire R6V är den billigaste vägen in i Husqvarnas slinglösa V-serie och vårt val för mindre gräsmattor upp till 600 m². Du får samma kamera och satellitnavigering som de dyrare modellerna, i ett paket byggt för att bara fungera. Laddningen är långsammare än syskonens, men på en liten yta spelar det liten roll.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-3">
+      <a href="/husqvarna-aspire-r6v-vs-308v-vs-312v/" class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]">
+        Jämför Aspire R6V mot 308V och 312V
+      </a>
+      <a href="/robotgrasklippare-liten-tradgard/" class="inline-flex items-center justify-center bg-white border border-border hover:border-cta text-text font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]">
+        Robotgräsklippare för liten trädgård
+      </a>
+    </div>
+  </div>
+
+  <!-- What the tests say -->
+  <section class="mb-8 bg-bg-alt rounded-xl border border-border p-5">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Vad testerna säger om Aspire R6V</h2>
+    <blockquote class="border-l-4 border-winner pl-4">
+      <p class="text-text-light text-sm leading-relaxed italic mb-1">
+        Teknikveckan kallar Aspire R6V för "robotgräsklipparnas Volvo 240": den har moderna finesser som virtuella gränser, AI-kamera och satellitnavigering, men försöker aldrig imponera med teknik för teknikens skull, utan fokuserar på att göra jobbet så problemfritt som möjligt.
+      </p>
+      <footer class="text-xs text-text-lighter mt-1">
+        Teknikveckan, betyg 8 av 10, "Teknikveckan rekommenderar". <a href="https://teknikveckan.se/husqvarna-automower-aspire-r6v-ar-robotgrasklipparnas-volvo-240" rel="nofollow noopener" target="_blank" class="text-accent underline">Läs testet</a>
+      </footer>
+    </blockquote>
+  </section>
+
+  <!-- Pros/Cons -->
+  <div class="grid sm:grid-cols-2 gap-5 mb-8">
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Fördelar med Aspire R6V</h2>
+      <ul class="space-y-2">
+        {[
+          'Billigaste slinglösa Husqvarna-modellen',
+          'Slinglös, inget kabelgräv vid installation',
+          'AI-kamera undviker föremål och stöttar positionering',
+          'Samma mogna klippkvalitet som dyrare V-modeller',
+          'GeoFence och PIN-kod som stöldskydd',
+          'Klarar regn (IPX6) och kör tyst på 63 dB',
+        ].map(pro => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            {pro}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Nackdelar med Aspire R6V</h2>
+      <ul class="space-y-2">
+        {[
+          'Långsammare laddning, cirka 200 min mot syskonens 100',
+          'Bara 600 m² kapacitet',
+          'Bara 15% lutningstolerans precis vid den virtuella gränsen',
+          'Satellitnavigering vill ha relativt fri sikt mot himlen',
+        ].map(con => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+            {con}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Specs table -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">Tekniska specifikationer Aspire R6V</h2>
+    <div class="bg-bg-alt rounded-xl border border-border overflow-hidden">
+      <table class="cmp-table table-fixed w-full text-sm">
+        <tbody class="divide-y divide-border">
+          {specs.map((spec, i) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+              <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+              <td class="px-4 py-3 text-text-light">{spec.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Detailed review -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-6">Så klipper Aspire R6V i praktiken</h2>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Slinglös teknik till lägsta priset</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Aspire R6V är en uppdatering av en av Husqvarnas mest populära klippare, nu utan slinga. Poängen är tillgänglighet: den tar med sig samma virtuella gränser, AI-kamera och satellitnavigering som de dyrare V-modellerna, men i ett paket riktat mot mindre gräsmattor och en lägre budget. Du får alltså den slinglösa installationen, det största lyftet i kategorin de senaste åren, utan att betala flaggskeppspris.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Kameran känner igen föremål framför roboten och styr runt dem, och den stöttar positioneringen där satellitsignalen tillfälligt tappar, som under ett träd eller intill en husvägg. Det gör att Aspire R6V klarar en normal villaträdgård med hinder utan de döda zoner som renodlade satellitklippare kan drabbas av.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Klippresultat och drift</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Klippbredden är 22 cm och klipphöjden justeras mellan 20 och 50 mm. Roboten klipper lite gräs i taget och lämnar mulch kvar som göder gräsmattan. På en yta upp till 600 m² hinner den enkelt klart även med den långsammare laddningen på cirka 200 minuter, eftersom den inte behöver köra lika många timmar per dygn som en robot för större tomter.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Det är här Teknikveckans "Volvo 240"-liknelse träffar rätt: Aspire R6V är inte den mest funktionsspäckade roboten, men den startar varje morgon, gör sitt jobb och fortsätter göra det år efter år. För många är just den förutsägbarheten viktigare än en lång funktionslista.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Installation, app och säkerhet</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Installationen sker via Automower Connect-appen: placera laddstationen, kör upp arbetsytans gränser och markera eventuella klippfria zoner. Inget grävande, inga spikar. Vill du ändra arbetsytan senare gör du det digitalt.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Stöldskyddet består av PIN-kod och GeoFence, som larmar om roboten förs bort från sitt område. Mjukvaran uppdateras trådlöst (FOTA), och appen sköter schema, klipphöjd, flera arbetsytor och notiser om roboten behöver hjälp.
+    </p>
+  </section>
+
+  <!-- For whom -->
+  <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+    <h2 class="font-heading text-xl font-bold text-text mb-3">Vem passar Aspire R6V för?</h2>
+    <p class="text-text-light leading-relaxed mb-3">
+      Aspire R6V är gjord för dig med en mindre villaträdgård upp till 600 m² som vill in i den slinglösa världen utan att betala för mer kapacitet än du behöver. Den passar den som värdesätter en robot som bara fungerar framför en lång funktionslista.
+    </p>
+    <p class="text-text-light leading-relaxed">
+      Har du en större gräsmatta väljer du <a href="/husqvarna-automower-308v/" class="text-accent underline">308V (upp till 800 m²)</a> för snabbare laddning och mer yta, eller <a href="/husqvarna-automower-312v/" class="text-accent underline">312V (upp till 1 200 m²)</a> om du har den största tomten. Alla tre delar samma teknik, skillnaden är kapacitet och pris.
+    </p>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <!-- Related links -->
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade recensioner och guider</h2>
+    <ul class="space-y-2">
+      <li><a href="/husqvarna-aspire-r6v-vs-308v-vs-312v/" class="text-accent underline text-sm">Husqvarna Aspire R6V vs 308V vs 312V, vilken slinglös ska du välja?</a></li>
+      <li><a href="/husqvarna-automower-308v/" class="text-accent underline text-sm">Husqvarna Automower 308V recension, slinglös för 800 m²</a></li>
+      <li><a href="/husqvarna-automower-312v/" class="text-accent underline text-sm">Husqvarna Automower 312V recension, slinglös för 1 200 m²</a></li>
+      <li><a href="/robotgrasklippare-liten-tradgard/" class="text-accent underline text-sm">Bästa robotgräsklippare för liten trädgård 2026</a></li>
+      <li><a href="/robotgrasklippare-utan-slinga/" class="text-accent underline text-sm">Bästa robotgräsklippare utan slinga 2026</a></li>
+      <li><a href="/husqvarna-robotgrasklippare/" class="text-accent underline text-sm">Alla Husqvarna Automower-modeller 2026</a></li>
+    </ul>
+  </section>
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
+</ArticleLayout>
+
+<StickyCTA
+  text="Jämför alla slinglösa Husqvarna-modeller"
+  url="/husqvarna-aspire-r6v-vs-308v-vs-312v/"
+  productName="Husqvarna Automower Aspire R6V"
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Husqvarna Automower Aspire R6V",
+  "image": "https://robotjakt.se/images/husqvarna-automower-aspire-r6v.webp",
+  "brand": { "@type": "Brand", "name": "Husqvarna" },
+  "category": "Robotgräsklippare",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "8.4",
+    "reviewCount": "1",
+    "bestRating": "10",
+    "worstRating": "1"
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": { "@type": "Rating", "ratingValue": "8.4", "bestRating": "10", "worstRating": "1" },
+    "author": { "@type": "Person", "name": "Axel Jönemyr", "jobTitle": "Redaktör, Robotjakt", "url": "https://robotjakt.se/om-redaktionen/", "worksFor": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" } },
+    "datePublished": "2026-07-03",
+    "reviewBody": "Aspire R6V är den billigaste vägen in i Husqvarnas slinglösa V-serie och vårt val för mindre gräsmattor upp till 600 m². Samma kamera och satellitnavigering som de dyrare modellerna. Teknikveckan rekommenderar.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  }
+})} />

@@ -1,0 +1,269 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Husqvarna Automower 308V' },
+];
+
+const specs = [
+  { label: 'Max arbetsyta', value: '800 m² (500 m² vid oregelbunden form)' },
+  { label: 'Klippbredd', value: '22 cm' },
+  { label: 'Klipphöjd', value: '20 till 50 mm' },
+  { label: 'Navigering', value: 'Virtuell gräns, satellit + AI-vision' },
+  { label: 'Slingkabel', value: 'Nej, slinglös installation' },
+  { label: 'Max lutning', value: '40% i arbetsområdet (15% vid gräns)' },
+  { label: 'Ljudnivå', value: '63 dB(A)' },
+  { label: 'Vikt', value: '9,9 kg' },
+  { label: 'Batteri', value: 'Li-Ion 4 Ah' },
+  { label: 'Klipptid per laddning', value: '100 min (laddtid 100 min)' },
+  { label: 'Knivsystem', value: '3 svängbara knivblad, dubbel skärriktning' },
+  { label: 'Väderskydd', value: 'IPX6' },
+  { label: 'Uppkoppling', value: 'Bluetooth, Wi-Fi, Automower Connect' },
+];
+
+const faqItems = [
+  {
+    question: 'Behöver Husqvarna Automower 308V slingkabel?',
+    answer: 'Nej. 308V är slinglös och ersätter den nedgrävda begränsningskabeln med virtuella gränser. Du ritar upp arbetsytan i Automower Connect-appen genom att köra roboten längs de gränser du vill ha, och positioneringen sköts av satellitnavigering med stöd av en AI-kamera. Det tar bort installationens mest tidskrävande moment.',
+  },
+  {
+    question: 'Hur stor gräsmatta klarar Automower 308V?',
+    answer: '308V är byggd för gräsmattor upp till 800 m² vid systematisk klippning, eller upp till 500 m² om trädgården är oregelbunden med många hinder och passager. Den ligger mitt i Husqvarnas slinglösa V-serie, mellan Aspire R6V (600 m²) och 312V (1 200 m²).',
+  },
+  {
+    question: 'Är Automower 308V driftsäker?',
+    answer: 'Ja, driftsäkerhet är dess starkaste kort. I Gör det självs 14 dagar långa test hade 308V bara ett enda avbrott och utsågs till den mest driftsäkra i sitt slag med betyget 8,0. Testet lyfte särskilt att den klipper mycket prydligt i raka banor och undviker hinder ner till 5 cm höjd.',
+  },
+  {
+    question: 'Vad skiljer 308V från Aspire R6V?',
+    answer: 'Båda är slinglösa med samma chassi, kamera och satellitnavigering. 308V klarar större yta (800 m² mot 600 m²) och har snabbare laddning, cirka 100 minuter mot Aspire R6V:s 200 minuter. Aspire R6V är däremot billigare och räcker gott för mindre gräsmattor. Välj 308V om du har mellan 600 och 800 m² eller vill ha kortare laddtid.',
+  },
+  {
+    question: 'Kan Automower 308V klippa flera gräsytor?',
+    answer: 'Ja. I appen skapar du flera arbetsområden med egna scheman och klipphöjder, till exempel fram- och baksida, och ritar klippfria zoner runt rabatter och möbler. Ligger ytorna på samma nivå kan roboten ta sig mellan dem via transportvägar du definierar.',
+  },
+  {
+    question: 'Kan Automower 308V köra i regn?',
+    answer: 'Ja. 308V är klassad IPX6 och kan klippa i regn utan problem. I appen väljer du själv om roboten ska pausa när det regnar eller köra på ändå. Husqvarnas robotar är byggda för principen klipp lite men ofta, och regn behöver inte stoppa klippningen.',
+  },
+];
+
+export const articleMeta = {
+  title: "Husqvarna Automower 308V recension 2026: slinglös för 800 m²",
+  description: "Husqvarna Automower 308V testad: slinglös robotgräsklippare för 800 m² med AI-kamera och satellit. Mest driftsäker i sitt slag enligt Gör det själv.",
+  publishDate: "2026-07-03",
+  category: "Recension",
+  image: "/images/husqvarna-automower-308v.webp",
+};
+---
+
+<ArticleLayout
+  title="Husqvarna Automower 308V recension 2026: slinglös för 800 m²"
+  description="Husqvarna Automower 308V testad: slinglös robotgräsklippare för 800 m² med AI-kamera och satellit. Mest driftsäker i sitt slag enligt Gör det själv."
+  breadcrumbs={breadcrumbs}
+  lastUpdated="2026-07-03"
+  ogImage="/images/husqvarna-automower-308v.webp"
+  datePublished="2026-07-03"
+  image="/images/husqvarna-automower-308v.webp"
+>
+  <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+    Husqvarna Automower 308V recension 2026
+  </h1>
+
+  <!-- Verdict box -->
+  <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+    <div class="flex items-center gap-3 mb-2 flex-wrap">
+      <span class="bg-winner text-white text-xs font-bold px-2 py-1 rounded">MEST DRIFTSÄKER</span>
+      <div class="flex gap-0.5" aria-label="Betyg: 8,6 av 10">
+        {[1,2,3,4,5].map(() => (
+          <svg class="w-4 h-4 text-winner" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+        ))}
+      </div>
+      <span class="font-bold text-text">8,6 / 10</span>
+    </div>
+    <p class="text-text-light text-sm leading-relaxed mb-4">
+      Automower 308V är mitten i Husqvarnas slinglösa V-serie och ett tryggt val för gräsmattor upp till 800 m². Den delar kamera och satellitnavigering med de dyrare modellerna men kostar mindre, och i oberoende test är det just driftsäkerheten som imponerar. Har du en normalstor villatomt är detta seriens mest balanserade köp.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-3">
+      <a href="/husqvarna-aspire-r6v-vs-308v-vs-312v/" class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]">
+        Jämför 308V mot Aspire R6V och 312V
+      </a>
+      <a href="/robotgrasklippare-utan-slinga/" class="inline-flex items-center justify-center bg-white border border-border hover:border-cta text-text font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]">
+        Alla slinglösa robotgräsklippare
+      </a>
+    </div>
+  </div>
+
+  <!-- What the tests say -->
+  <section class="mb-8 bg-bg-alt rounded-xl border border-border p-5">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Vad testerna säger om 308V</h2>
+    <blockquote class="border-l-4 border-winner pl-4">
+      <p class="text-text-light text-sm leading-relaxed italic mb-1">
+        Gör det själv gav 308V betyget 8,0 av 10 och utsåg den till "den mest driftsäkra i sitt slag". I det 14 dagar långa testet hade roboten bara ett enda avbrott och beskrivs klippa mycket prydligt i raka banor.
+      </p>
+      <footer class="text-xs text-text-lighter mt-1">
+        <a href="https://gds.se/verktyg/tradgardsmaskiner/grasklippare/test-1-av-10-husqvarna-308v" rel="nofollow noopener" target="_blank" class="text-accent underline">Läs Gör det självs test av 308V</a>
+      </footer>
+    </blockquote>
+  </section>
+
+  <!-- Pros/Cons -->
+  <div class="grid sm:grid-cols-2 gap-5 mb-8">
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Fördelar med Husqvarna Automower 308V</h2>
+      <ul class="space-y-2">
+        {[
+          'Slinglös, inget kabelgräv vid installation',
+          'Bevisat driftsäker i oberoende test',
+          'Prydligt klipp i raka banor med dubbel skärriktning',
+          'AI-kamera undviker hinder ner till 5 cm höjd',
+          '800 m² räcker för de flesta villatomter',
+          'Klarar regn (IPX6) och kör tyst på 63 dB',
+        ].map(pro => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+            {pro}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="bg-white rounded-xl border border-border p-5">
+      <h2 class="font-semibold text-text mb-3">Nackdelar med Husqvarna Automower 308V</h2>
+      <ul class="space-y-2">
+        {[
+          'Sparsamt utrustad jämfört med vissa konkurrenter',
+          'Bara 15% lutningstolerans precis vid den virtuella gränsen',
+          'För liten yta om du har över 800 m² (välj 312V)',
+          'Satellitnavigering vill ha relativt fri sikt mot himlen',
+        ].map(con => (
+          <li class="flex items-start gap-2 text-sm text-text-light">
+            <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+            {con}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Specs table -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">Tekniska specifikationer Husqvarna Automower 308V</h2>
+    <div class="bg-bg-alt rounded-xl border border-border overflow-hidden">
+      <table class="cmp-table table-fixed w-full text-sm">
+        <tbody class="divide-y divide-border">
+          {specs.map((spec, i) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+              <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+              <td class="px-4 py-3 text-text-light">{spec.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Detailed review -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-6">Så klipper Automower 308V i praktiken</h2>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Driftsäkerheten är huvudnumret</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Det som skiljer 308V från mängden är inte flest funktioner, utan att den bara gör sitt jobb. I Gör det självs test på två veckor stannade roboten bara en enda gång. För en robotgräsklippare är det precis det man vill ha: en maskin som klipper varje dag utan att du behöver gå ut och rädda den ur en rabatt. Husqvarnas tre decennier av robotutveckling märks tydligast just här.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Knivsystemet med tre svängbara blad och dubbel skärriktning ger ett prydligt, jämnt klipp. Testarna lyfte att 308V klipper i raka banor, vilket både täcker ytan effektivt och kan ge det randiga gräsmatteutseendet. Det finfördelade klippet ligger kvar som mulch och göder gräsmattan.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Slinglös navigering</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      308V använder virtuella gränser istället för nedgrävd kabel. Satellitnavigering håller reda på var roboten är, och AI-kameran fyller två roller: den undviker föremål på gräsmattan, ner till 5 cm höga hinder enligt testet, och den stöttar positioneringen där satellitsignalen är svag, som under träd eller nära husväggar.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      I praktiken betyder det att du slipper det tidskrävande kabelgrävet och kan justera arbetsytan i efterhand direkt i appen. Vill du flytta en gräns eller lägga till en klippfri zon runt en ny rabatt gör du det digitalt.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Installation och app</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Installationen handlar om att placera laddstationen och sedan låta Automower Connect-appen guida dig genom att köra upp arbetsytans gränser. 308V lyfts i test som en av de allra bästa om du vill ändra gränsen i efterhand, just för att allt sker i mjukvara.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      I appen sköter du klippschema, klipphöjd, flera arbetsytor och notiser. Mjukvaran uppdateras trådlöst (FOTA) och stöldskyddet består av PIN-kod och larm om roboten lyfts.
+    </p>
+  </section>
+
+  <!-- For whom -->
+  <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
+    <h2 class="font-heading text-xl font-bold text-text mb-3">Vem passar Automower 308V för?</h2>
+    <p class="text-text-light leading-relaxed mb-3">
+      308V är gjord för villaägaren med en gräsmatta upp till 800 m² som vill ha en slinglös robot som bara fungerar, år efter år. Den passar den som prioriterar driftsäkerhet och ett prydligt klipp framför att ha flest tekniska finesser.
+    </p>
+    <p class="text-text-light leading-relaxed">
+      Har du en mindre gräsmatta räcker <a href="/husqvarna-automower-aspire-r6v/" class="text-accent underline">Aspire R6V (upp till 600 m²)</a> och kostar mindre. Ligger du över 800 m² eller vill ha störst kapacitet väljer du <a href="/husqvarna-automower-312v/" class="text-accent underline">312V (upp till 1 200 m²)</a>, som är samma robot med större arbetsyta.
+    </p>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <!-- Related links -->
+  <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+    <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade recensioner och guider</h2>
+    <ul class="space-y-2">
+      <li><a href="/husqvarna-aspire-r6v-vs-308v-vs-312v/" class="text-accent underline text-sm">Husqvarna Aspire R6V vs 308V vs 312V, vilken slinglös ska du välja?</a></li>
+      <li><a href="/husqvarna-automower-312v/" class="text-accent underline text-sm">Husqvarna Automower 312V recension, slinglös för 1 200 m²</a></li>
+      <li><a href="/husqvarna-automower-aspire-r6v/" class="text-accent underline text-sm">Husqvarna Automower Aspire R6V recension, slinglös för 600 m²</a></li>
+      <li><a href="/robotgrasklippare-utan-slinga/" class="text-accent underline text-sm">Bästa robotgräsklippare utan slinga 2026</a></li>
+      <li><a href="/husqvarna-robotgrasklippare/" class="text-accent underline text-sm">Alla Husqvarna Automower-modeller 2026</a></li>
+      <li><a href="/robotgrasklippare/" class="text-accent underline text-sm">Bästa robotgräsklippare 2026, komplett topplista</a></li>
+    </ul>
+  </section>
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
+</ArticleLayout>
+
+<StickyCTA
+  text="Jämför alla slinglösa Husqvarna-modeller"
+  url="/husqvarna-aspire-r6v-vs-308v-vs-312v/"
+  productName="Husqvarna Automower 308V"
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Husqvarna Automower 308V",
+  "image": "https://robotjakt.se/images/husqvarna-automower-308v.webp",
+  "brand": { "@type": "Brand", "name": "Husqvarna" },
+  "category": "Robotgräsklippare",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "8.6",
+    "reviewCount": "1",
+    "bestRating": "10",
+    "worstRating": "1"
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": { "@type": "Rating", "ratingValue": "8.6", "bestRating": "10", "worstRating": "1" },
+    "author": { "@type": "Person", "name": "Axel Jönemyr", "jobTitle": "Redaktör, Robotjakt", "url": "https://robotjakt.se/om-redaktionen/", "worksFor": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" } },
+    "datePublished": "2026-07-03",
+    "reviewBody": "Automower 308V är mitten i Husqvarnas slinglösa V-serie och ett tryggt val för gräsmattor upp till 800 m². Samma kamera och satellitnavigering som de dyrare modellerna, till lägre pris, och i oberoende test imponerar driftsäkerheten.",
+    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }
+  }
+})} />

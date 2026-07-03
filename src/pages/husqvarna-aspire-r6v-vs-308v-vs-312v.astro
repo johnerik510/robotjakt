@@ -1,0 +1,285 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Aspire R6V vs 308V vs 312V' },
+];
+
+const faqItems = [
+  {
+    question: 'Vilken slinglös Husqvarna ska jag välja, Aspire R6V, 308V eller 312V?',
+    answer: 'Välj efter gräsmattans storlek. Aspire R6V passar upp till 600 m² och är billigast. 308V passar upp till 800 m² och laddar snabbare. 312V passar upp till 1 200 m² och är seriens flaggskepp med längst aktiv tid per dygn. Alla tre delar samma chassi, kamera och satellitnavigering, så det är kapaciteten och priset som skiljer.',
+  },
+  {
+    question: 'Är det verkligen samma robot med olika kapacitet?',
+    answer: 'I hög grad, ja. De tre delar chassi (9,9 kg), 22 cm klippbredd, klipphöjd 20 till 50 mm, IPX6-väderskydd, 63 dB ljudnivå, 4 Ah-batteri, AI-kamera och satellitnavigering. Skillnaderna är max arbetsyta (600, 800 respektive 1 200 m²), maximal aktiv tid per dygn och laddningen: Aspire R6V laddar på cirka 200 minuter, medan 308V och 312V laddar på cirka 100 minuter.',
+  },
+  {
+    question: 'Är det värt att betala för 312V om jag har en liten trädgård?',
+    answer: 'Nej. Har du under 600 m² gör du en bättre affär med Aspire R6V, och under 800 m² räcker 308V. Den extra kapaciteten i 312V ger inget mervärde på en liten yta, du betalar då för areal du inte använder. Köp efter din faktiska gräsmatta.',
+  },
+  {
+    question: 'Behöver någon av dem slingkabel?',
+    answer: 'Nej, alla tre är slinglösa. De ersätter den nedgrävda begränsningskabeln med virtuella gränser som du ritar upp i Automower Connect-appen, och navigerar med satellit plus AI-kamera. Det tar bort det mest tidskrävande momentet i en traditionell installation för alla tre modellerna.',
+  },
+  {
+    question: 'Klarar de branta trädgårdar?',
+    answer: 'Alla tre klarar 40% lutning inne i arbetsområdet, men bara 15% precis vid den virtuella gränsen. De passar därför trädgårdar där de brantaste partierna ligger en bit in på gräsmattan, inte ytterst vid kanten. Har du mycket branta tomter ända ut mot gränsen bör du titta på Husqvarnas NERA-modeller istället.',
+  },
+];
+
+export const articleMeta = {
+  title: "Husqvarna Aspire R6V vs 308V vs 312V: vilken slinglös ska du välja?",
+  description: "Husqvarna Automower Aspire R6V, 308V och 312V jämförda. Samma teknik, olika kapacitet. Se vilken slinglös robotgräsklippare som passar din trädgård.",
+  publishDate: "2026-07-03",
+  category: "Guide",
+  image: "/images/husqvarna-v-serien-jamforelse.webp",
+};
+---
+
+<BaseLayout
+  title="Husqvarna Aspire R6V vs 308V vs 312V: vilken slinglös ska du välja?"
+  description="Husqvarna Automower Aspire R6V, 308V och 312V jämförda. Samma teknik, olika kapacitet. Se vilken slinglös robotgräsklippare som passar din trädgård."
+  article={{ datePublished: "2026-07-03", dateModified: "2026-07-03", image: "/images/husqvarna-v-serien-jamforelse.webp" }}
+>
+  <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={breadcrumbs} light={true} />
+      <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-300">
+        <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-white transition-colors">
+          <span class="font-medium text-white">Axel Jönemyr</span>
+        </a>
+        <span>·</span>
+        <span>Redaktör, Robotjakt</span>
+        <span>·</span>
+        <span>Uppdaterad 3 juli 2026</span>
+      </div>
+      <h1 class="font-heading text-2xl sm:text-3xl font-bold mb-2">Husqvarna Aspire R6V vs 308V vs 312V 2026</h1>
+      <p class="text-gray-300 text-sm max-w-2xl">Husqvarnas tre nya slinglösa robotgräsklippare delar samma teknik men klarar olika stora gräsmattor. Här är hur du väljer rätt.</p>
+    </div>
+  </section>
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <p class="text-text-light mb-4 text-base">
+      Kortversionen: välj efter gräsmattans storlek. Aspire R6V är för mindre trädgårdar upp till 600 m² och kostar minst, 308V klarar 800 m² med snabbare laddning, och 312V är flaggskeppet för upp till 1 200 m². Alla tre är slinglösa och navigerar med samma AI-kamera och satellitteknik, så du väljer inte teknik, du väljer kapacitet.
+    </p>
+    <p class="text-text-light mb-6 text-base">
+      Det gör valet ovanligt enkelt: mät din yta, matcha mot modellen och betala inte för areal du inte behöver.
+    </p>
+
+    <!-- Above-the-fold nav -->
+    <div class="mb-6">
+      <a href="/robotgrasklippare-utan-slinga/" class="inline-flex items-center justify-center gap-2 bg-cta hover:bg-cta-dark text-white font-bold py-3 px-6 rounded-xl text-sm shadow-lg transition-colors">
+        Se alla slinglösa robotgräsklippare 2026 →
+      </a>
+    </div>
+
+    <figure class="mb-8">
+      <img
+        src="/images/husqvarna-v-serien-jamforelse.webp"
+        alt="Husqvarna Automower Aspire R6V, 308V och 312V sida vid sida"
+        class="w-full rounded-xl border border-border"
+        width="1212" height="675" loading="lazy"
+      />
+      <figcaption class="text-xs text-text-lighter mt-2 text-center">Husqvarnas slinglösa V-serie: Aspire R6V, 308V och 312V (från vänster).</figcaption>
+    </figure>
+
+    <h2 class="font-heading text-xl font-bold mt-6 mb-4">Snabbjämförelse</h2>
+    <div class="mb-8">
+      <table class="cmp-table table-fixed w-full text-sm border-collapse">
+        <thead>
+          <tr class="bg-primary text-white">
+            <th class="p-3 text-left font-semibold">Egenskap</th>
+            <th class="p-3 text-left font-semibold">Aspire R6V</th>
+            <th class="p-3 text-left font-semibold">308V</th>
+            <th class="p-3 text-left font-semibold">312V</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-border bg-white">
+            <td class="p-3 font-medium text-text">Max arbetsyta</td>
+            <td class="p-3 text-text-light">600 m²</td>
+            <td class="p-3 text-text-light">800 m²</td>
+            <td class="p-3 text-text-light font-semibold text-winner">1 200 m²</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">Prisnivå</td>
+            <td class="p-3 text-text-light font-semibold text-winner">Lägst</td>
+            <td class="p-3 text-text-light">Mellan</td>
+            <td class="p-3 text-text-light">Högst</td>
+          </tr>
+          <tr class="border-b border-border bg-white">
+            <td class="p-3 font-medium text-text">Laddtid</td>
+            <td class="p-3 text-text-light">ca 200 min</td>
+            <td class="p-3 text-text-light font-semibold text-winner">ca 100 min</td>
+            <td class="p-3 text-text-light font-semibold text-winner">ca 100 min</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">Max aktiv tid</td>
+            <td class="p-3 text-text-light">13 h</td>
+            <td class="p-3 text-text-light">10 h</td>
+            <td class="p-3 text-text-light font-semibold text-winner">15 h</td>
+          </tr>
+          <tr class="border-b border-border bg-white">
+            <td class="p-3 font-medium text-text">Klippbredd</td>
+            <td class="p-3 text-text-light">22 cm</td>
+            <td class="p-3 text-text-light">22 cm</td>
+            <td class="p-3 text-text-light">22 cm</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">Klipphöjd</td>
+            <td class="p-3 text-text-light">20 till 50 mm</td>
+            <td class="p-3 text-text-light">20 till 50 mm</td>
+            <td class="p-3 text-text-light">20 till 50 mm</td>
+          </tr>
+          <tr class="border-b border-border bg-white">
+            <td class="p-3 font-medium text-text">Navigering</td>
+            <td class="p-3 text-text-light">Satellit + AI-kamera</td>
+            <td class="p-3 text-text-light">Satellit + AI-kamera</td>
+            <td class="p-3 text-text-light">Satellit + AI-kamera</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">Lutning</td>
+            <td class="p-3 text-text-light">40%</td>
+            <td class="p-3 text-text-light">40%</td>
+            <td class="p-3 text-text-light">40%</td>
+          </tr>
+          <tr class="border-b border-border bg-white">
+            <td class="p-3 font-medium text-text">Ljudnivå</td>
+            <td class="p-3 text-text-light">63 dB</td>
+            <td class="p-3 text-text-light">63 dB</td>
+            <td class="p-3 text-text-light">63 dB</td>
+          </tr>
+          <tr class="border-b border-border">
+            <td class="p-3 font-medium text-text">Väderskydd</td>
+            <td class="p-3 text-text-light">IPX6</td>
+            <td class="p-3 text-text-light">IPX6</td>
+            <td class="p-3 text-text-light">IPX6</td>
+          </tr>
+          <tr class="border-b border-border bg-white">
+            <td class="p-3 font-medium text-text">Utmärkelse</td>
+            <td class="p-3 text-text-light">Teknikveckan rek.</td>
+            <td class="p-3 text-text-light">Driftsäkrast (GDS)</td>
+            <td class="p-3 text-text-light font-semibold text-winner">Bäst i test (IT Retail)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="font-heading text-xl font-bold mt-8 mb-4">Skillnaden som avgör: kapacitet, inte teknik</h2>
+    <p class="text-text-light mb-4 text-base">
+      Det ovanliga med den här jämförelsen är hur lika modellerna är. De sitter i samma chassi, väger lika mycket, klipper lika brett och navigerar med exakt samma kombination av satellit och AI-kamera. Husqvarna har alltså inte byggt tre olika robotar, utan en robot i tre kapacitetsnivåer.
+    </p>
+    <p class="text-text-light mb-6 text-base">
+      Det betyder att du inte behöver väga tekniska funktioner mot varandra. Den enda praktiska skillnaden utöver max arbetsyta är att Aspire R6V laddar långsammare (cirka 200 minuter mot 100), vilket bara märks om du pressar roboten nära dess kapacitetstak. Håller du dig inom respektive modells rekommenderade yta blir upplevelsen densamma.
+    </p>
+
+    <!-- Model recommendation cards -->
+    <div class="grid gap-5 mb-8">
+      <div class="bg-accent/5 border border-accent/20 rounded-xl p-5">
+        <h3 class="font-semibold text-text mb-2">Välj Aspire R6V om du...</h3>
+        <ul class="space-y-2 mb-4">
+          {[
+            'Har en gräsmatta upp till 600 m²',
+            'Vill ha billigaste vägen in i den slinglösa serien',
+            'Prioriterar en robot som bara fungerar framför funktioner',
+          ].map(item => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-accent font-bold flex-shrink-0 mt-0.5">+</span>{item}
+            </li>
+          ))}
+        </ul>
+        <a href="/husqvarna-automower-aspire-r6v/" class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-4 py-2 rounded-lg text-sm min-h-[44px]">
+          Recension av Aspire R6V
+        </a>
+      </div>
+      <div class="bg-winner/5 border border-winner/20 rounded-xl p-5">
+        <h3 class="font-semibold text-text mb-2">Välj 308V om du...</h3>
+        <ul class="space-y-2 mb-4">
+          {[
+            'Har en gräsmatta mellan 600 och 800 m²',
+            'Vill ha snabbare laddning än Aspire R6V',
+            'Värdesätter bevisad driftsäkerhet (mest driftsäker enligt Gör det själv)',
+          ].map(item => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>{item}
+            </li>
+          ))}
+        </ul>
+        <a href="/husqvarna-automower-308v/" class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-4 py-2 rounded-lg text-sm min-h-[44px]">
+          Recension av 308V
+        </a>
+      </div>
+      <div class="bg-winner/5 border border-winner/20 rounded-xl p-5">
+        <h3 class="font-semibold text-text mb-2">Välj 312V om du...</h3>
+        <ul class="space-y-2 mb-4">
+          {[
+            'Har en gräsmatta mellan 800 och 1 200 m²',
+            'Vill ha seriens största kapacitet och längsta aktiva tid',
+            'Vill ha bäst-i-test-modellen (IT Retail)',
+          ].map(item => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>{item}
+            </li>
+          ))}
+        </ul>
+        <a href="/husqvarna-automower-312v/" class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-4 py-2 rounded-lg text-sm min-h-[44px]">
+          Recension av 312V
+        </a>
+      </div>
+    </div>
+
+    <h2 class="font-heading text-xl font-bold mt-8 mb-4">Köpguide efter trädgårdens storlek</h2>
+    <p class="text-text-light mb-4 text-base">
+      Mät din gräsmatta först, det är hela beslutet. Har du en oregelbunden trädgård med många hinder och passager bör du räkna med den lägre siffran (400, 500 respektive 800 m²), eftersom systematisk klippning blir svårare ju mer uppbruten ytan är.
+    </p>
+    <ul class="space-y-2 mb-6 text-text-light text-base list-disc pl-5">
+      <li><strong>Upp till 600 m²:</strong> Aspire R6V räcker och är billigast.</li>
+      <li><strong>600 till 800 m²:</strong> 308V ger marginal och snabbare laddning.</li>
+      <li><strong>800 till 1 200 m²:</strong> 312V är enda modellen i serien med kapaciteten.</li>
+      <li><strong>Över 1 200 m² eller mycket branta tomter:</strong> titta på Husqvarnas NERA-modeller istället.</li>
+    </ul>
+
+    <FAQ items={faqItems} />
+
+    <AffiliateDisclaimer />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Fullständiga recensioner och guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/husqvarna-automower-aspire-r6v/" class="text-accent underline text-sm">Husqvarna Automower Aspire R6V recension, slinglös för 600 m²</a></li>
+        <li><a href="/husqvarna-automower-308v/" class="text-accent underline text-sm">Husqvarna Automower 308V recension, slinglös för 800 m²</a></li>
+        <li><a href="/husqvarna-automower-312v/" class="text-accent underline text-sm">Husqvarna Automower 312V recension, slinglös för 1 200 m²</a></li>
+        <li><a href="/robotgrasklippare-utan-slinga/" class="text-accent underline text-sm">Bästa robotgräsklippare utan slinga 2026</a></li>
+        <li><a href="/husqvarna-robotgrasklippare/" class="text-accent underline text-sm">Alla Husqvarna Automower-modeller 2026</a></li>
+        <li><a href="/robotgrasklippare/" class="text-accent underline text-sm">Bästa robotgräsklippare 2026, komplett topplista</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Se recension av bäst-i-test 312V"
+    url="/husqvarna-automower-312v/"
+    productName="Husqvarna Automower 312V"
+  />
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.72rem; line-height: 1.2rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.35rem 0.4rem; }
+  }
+</style>
+
+</BaseLayout>
