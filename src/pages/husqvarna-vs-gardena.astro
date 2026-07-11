@@ -4,6 +4,7 @@ import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
@@ -54,7 +55,7 @@ export const articleMeta = {
 <BaseLayout
   title="Husqvarna vs Gardena Sileno robotgräsklippare 2026"
   description="Husqvarna Automower eller Gardena Sileno? Vi jämför teknik, installation, slinga, appstyrning och pris. Klart svar för trädgårdar upp till 1 500 m²."
-  article={{ datePublished: "2026-05-16", dateModified: "2026-06-18", image: "/images/gardena-sileno-city-500.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-11", image: "/images/gardena-sileno-city-500.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -65,7 +66,7 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Senast uppdaterad 18 juni 2026</span>
+    <span>Senast uppdaterad 11 juli 2026</span>
   </div>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
@@ -74,6 +75,11 @@ export const articleMeta = {
     <p class="text-text-light mb-6 max-w-2xl">
       Husqvarna Automower och Gardena SILENO är de två dominerande märkena för robotgräsklippare i Sverige. Det finns dock en hemlighet: de ägs av samma företag. Vi reder ut skillnaderna, kategori för kategori, och ger dig ett tydligt svar på vilket märke som passar din trädgård och budget.
     </p>
+
+    <AnswerBox
+      question="Snabbt svar: Husqvarna eller Gardena robotgräsklippare 2026?"
+      answer="Välj Husqvarna Automower om du har en stor eller kuperad tomt och vill ha flest modeller och brantast lutningsförmåga. Välj Gardena SILENO för normalstora trädgårdar upp till 750 m² till lägre pris. Båda ägs av Husqvarna AB och delar teknikplattform, så skillnaden ligger i prissegment och kapacitet."
+    />
 
     <!-- Above-the-fold CTA -->
     <div class="grid sm:grid-cols-2 gap-3 mb-8">
@@ -317,6 +323,9 @@ export const articleMeta = {
         <li><a href="/gardena-sileno-life-750/" class="text-accent underline text-sm">Gardena SILENO Life 750 recension 2026</a></li>
         <li><a href="/husqvarna-vs-mammotion/" class="text-accent underline text-sm">Husqvarna vs Mammotion 2026, kabel vs GPS utan kabel</a></li>
         <li><a href="/robotgrasklippare/" class="text-accent underline text-sm">Bästa robotgräsklippare 2026, alla märken jämförda</a></li>
+        <li><a href="/gardena-robotgrasklippare/" class="text-accent underline text-sm">Gardena robotgräsklippare, alla SILENO-modeller 2026</a></li>
+        <li><a href="/mammotion-vs-gardena/" class="text-accent underline text-sm">Mammotion vs Gardena robotgräsklippare</a></li>
+        <li><a href="/robotgrasklippare-for-lutning/" class="text-accent underline text-sm">Bästa robotgräsklippare för lutning 2026</a></li>
       </ul>
     </section>
   </div>
