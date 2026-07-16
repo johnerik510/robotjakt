@@ -33,14 +33,6 @@ const productSchema = productName ? {
   ...(productImage ? { image: `https://robotjakt.se${productImage}` } : {}),
   ...(productBrand ? { brand: { '@type': 'Brand', name: productBrand } } : {}),
   description: description || '',
-  offers: {
-    '@type': 'Offer',
-    priceCurrency: 'SEK',
-    price: productPrice ? productPrice.replace(/[^0-9]/g, '') : '',
-    priceValidUntil: '2027-12-31',
-    availability: 'https://schema.org/InStock',
-    ...(productAffiliateUrl ? { url: productAffiliateUrl } : {}),
-  },
   ...(productRating ? {
     aggregateRating: {
       '@type': 'AggregateRating',

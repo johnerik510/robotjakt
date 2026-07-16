@@ -36,22 +36,28 @@ export const VERIFIED_LINKS: Record<string, string> = {
   'Proshop': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1',
 
   // Produktspecifika djuplänkar Elon (feed-verifierade):
-  'Elon_s8_maxv_ultra': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=135019&url=https://www.elon.se/roborock-s8-maxv-ultra-white-135019',
+  // 2026-07-16: Elon slutade sälja dessa tre (404 + borta ur Elons feed). Flyttade till
+  // Kjell, som har samma produkter i sin feed (samma 5% provision). Nyckelnamnet följer butiken.
+  'Kjell_s8_maxv_ultra': 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66015&url=http://www.kjell.com/se/produkter/hem-fritid/stadning-rengoring/robotdammsugare/roborock-robotdammsugare/roborock-s8-maxv-ultra-helautomatisk-robotdammsugare-vit-p66015',
   'Elon_x50_ultra': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=151996&url=https://www.elon.se/dreame-x50-ultra-white-151996',
   'Elon_x60_ultra': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=153177&url=https://www.elon.se/dreame-x60-ultra-white-153177',
   'Elon_saros20': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=154763&url=https://www.elon.se/roborock-saros-20-sonic-s20s52-00-svart-154763',
-  'Elon_qrevo_s': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=146251&url=https://www.elon.se/roborock-qrevo-s-white-146251',
+  'Kjell_qrevo_s': 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66011&url=http://www.kjell.com/se/produkter/hem-fritid/stadning-rengoring/robotdammsugare/roborock-robotdammsugare/roborock-qrevo-s-helautomatisk-robotdammsugare-vit-p66011',
   'Elon_qrevo_curv': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=148694&url=https://www.elon.se/roborock-qrevo-curv-white-148694',
   'Elon_l10s_gen3': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=153176&url=https://www.elon.se/dreame-l10s-ultra-gen-3-black-153176',
   'Elon_l10s_gen3_white': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=153175&url=https://www.elon.se/dreame-l10s-ultra-gen-3-white-153175',
-  'Elon_aqua10': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=152011&url=https://www.elon.se/dreame-aqua10-ultra-roller-white-152011',
+  // 2026-07-16: sku 152011 är BLACK i feeden, URL:en sa white -> 404. Rättad mot feedens trackedUrl.
+  'Elon_aqua10': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=152011&url=https://www.elon.se/dreame-aqua10-ultra-roller-black-152011',
   'Elon_aqua10_white': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=152012&url=https://www.elon.se/dreame-aqua10-ultra-roller-white-152012',
-  'Elon_matrix10': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=152009&url=https://www.elon.se/dreame-matrix-10-ultra-152009',
+  // 2026-07-16: URL saknade färgsegmentet -> 404. Rättad mot feedens trackedUrl (sku 152009 = white).
+  'Elon_matrix10': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=152009&url=https://www.elon.se/dreame-matrix-10-ultra-white-152009',
   'Elon_d20_ultra': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=152003&url=https://www.elon.se/dreame-d20-ultra-152003',
   'Elon_d20_plus': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=152004&url=https://www.elon.se/dreame-d20-plus-152004',
-  'Elon_l40_ultra': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=152002&url=https://www.elon.se/dreame-l40-ultra-152002',
-  'Elon_eufy_x10': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=153028&url=https://www.elon.se/eufy-x10-pro-omni-153028',
-  'Elon_d10s_pro': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=151997&url=https://www.elon.se/dreame-d10s-pro-151997',
+  'Kjell_l40_ultra': 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=65909&url=http://www.kjell.com/se/produkter/hem-fritid/stadning-rengoring/robotdammsugare/dreame-robotdammsugare/dreame-l40-ultra-robotdammsugare-p65909',
+  // 2026-07-16: Elon bytte URL/sku (153028 -> 155097), gamla gav 404. Rättad mot feedens trackedUrl.
+  'Elon_eufy_x10': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=155097&url=https://www.elon.se/eufy-eufy-x10-pro-omni-white-155097',
+  // 2026-07-16: Elon_d10s_pro borttagen. URL:en gav 404 och Dreame D10s Pro finns inte som
+  // robot i NÅGON av våra feeds (bara tillbehör) -> ingen verifierbar affiliatelänk = ingen CTA.
   'Elon_saros10': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=149298&url=https://www.elon.se/roborock-saros-10-white-149298',
   'Elon_qrevo_edge': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=148695&url=https://www.elon.se/roborock-qrevo-edge-white-148695',
   'Elon_x40_ultra': 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=151995&url=https://www.elon.se/dreame-x40-ultra-151995',
