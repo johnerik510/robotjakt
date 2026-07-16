@@ -4,6 +4,7 @@ import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EditorialCTA from '../components/EditorialCTA.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -78,6 +79,8 @@ export const articleMeta = {
       <p class="text-gray-600 text-lg max-w-2xl">
         Eufy ger mer teknologi per krona med LiDAR, stark sugstyrka och automatisk tömning. iRobot Roomba erbjuder ett etablerat ekosystem, överlägsen mjukvara och branschens bästa smarta hem-integration. Vilket passar ditt hem?
       </p>
+
+    <EditorialCTA products={['Eufy X10 Pro Omni']} />
     </header>
 
     <!-- Quick verdict -->

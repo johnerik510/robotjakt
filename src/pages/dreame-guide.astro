@@ -4,6 +4,7 @@ import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EditorialCTA from '../components/EditorialCTA.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -179,6 +180,8 @@ export const articleMeta = {
     </h1>
     <p class="text-text-light mb-6 max-w-2xl">
       Dreame klättrar snabbt i premiumsegmentet och utmanar nu Roborock om tätplatsen. Vi guidar dig genom 2026 ars modellserie, X40 Ultra, L20 Ultra och W10 Pro, och hjälper dig välja rätt modell för ditt hem. </p>
+
+    <EditorialCTA products={['Dreame X60 Ultra']} />
 
     <!-- Brand overview -->
     <section class="mb-8 bg-bg-alt rounded-xl border border-border p-6">

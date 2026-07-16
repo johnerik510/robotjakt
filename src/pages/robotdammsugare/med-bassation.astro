@@ -5,6 +5,7 @@ import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
+import EditorialCTA from '../../components/EditorialCTA.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -182,6 +183,8 @@ export const articleMeta = {
     <p class="text-text-light mb-4 max-w-2xl">
       Roborock Saros 20 Sonic är vår bästa robotdammsugare med basstation i test 2026. Stationen sköter auto-tömning, mopptvätt med varmvatten och vattenpåfyllning, och rengör dessutom mopparna med ultraljud. Det platta LiDAR-tornet gör roboten bara 8 cm hög så den passar under alla möbler.
     </p>
+
+    <EditorialCTA products={['Roborock Saros 20 Sonic']} />
     <p class="text-xs text-text-lighter mb-6">4 produkter jämförda</p>
 
     <!-- Comparison table -->

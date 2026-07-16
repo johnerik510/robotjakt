@@ -4,6 +4,7 @@ import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import EditorialCTA from '../../components/EditorialCTA.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -80,6 +81,8 @@ export const articleMeta = {
     <p class="text-text-light mb-6 max-w-2xl">
       Roborock Saros 10R är världens tunnaste robotdammsugare med mopp, 7,98 cm hög med 20 000 Pa sugkraft. Roborock S8 MaxV Ultra är det beprövade flaggskeppet med 3D LiDAR och helautomatisk station. Är extra värt det?
     </p>
+
+    <EditorialCTA products={['Roborock Saros 10R', 'Roborock S8 MaxV Ultra']} />
 
     <!-- Quick verdict -->
     <section class="mb-8 bg-winner/5 border border-winner/20 rounded-xl p-5">

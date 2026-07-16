@@ -4,6 +4,7 @@ import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EditorialCTA from '../components/EditorialCTA.astro';
 
 const breadcrumbs = [
   { label: 'Fönsterputsrobot' },
@@ -69,6 +70,8 @@ export const articleMeta = {
     </h1>
     <p class="text-text-light mb-6 max-w-2xl">
       Ecovacs Winbot W2 Pro är vår bästa fönsterputsrobot i test 2026 med betyg 8,8. Den rengör med vatten och mikrofiberduk för ett strimmfritt resultat, och till skillnad från flera konkurrenter klarar den även fönster utan ram.</p>
+
+    <EditorialCTA products={['Ecovacs Winbot W2 Pro']} />
 
     <!-- Snabbjämförelse -->
     <section class="mb-8" aria-label="Jämförelsetabell fönsterputsrobotar">

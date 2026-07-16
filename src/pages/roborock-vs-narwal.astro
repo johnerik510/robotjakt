@@ -4,6 +4,7 @@ import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EditorialCTA from '../components/EditorialCTA.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -73,6 +74,8 @@ export const articleMeta = {
     <p class="text-text-light mb-6 max-w-2xl">
       Roborock S8 MaxV Ultra och Narwal Freo X Ultra är två av de mest efterfrågade premium-robotarna 2026. Båda kombinerar kraftfull dammsugning med avancerad moppning och automatisk självtömning, men de prioriterar olika saker. Vi jämför dem rakt av.
     </p>
+
+    <EditorialCTA products={['Roborock S8 MaxV Ultra', 'Narwal Freo X Ultra']} />
 
     <!-- Brand overview -->
     <section class="mb-8">

@@ -4,6 +4,7 @@ import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EditorialCTA from '../components/EditorialCTA.astro';
 
 const breadcrumbs = [
   { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
@@ -111,6 +112,8 @@ export const articleMeta = {
     <p class="text-text-light mb-6 max-w-2xl">
       Segway Navimow erbjuder robotgräsklippning utan perimeterkabel från , billigast i utan-slinga-kategorin. Vi jämför alla tre modeller och hjälper dig välja rätt Navimow för din trädgård.
     </p>
+
+    <EditorialCTA products={['Segway Navimow i105E']} />
 
     <section class="mb-8 bg-bg-alt rounded-xl border border-border p-6">
       <h2 class="font-heading text-xl font-bold text-text mb-3">Segway Navimow utan slinga: Vision Fence och RTK GPS förklarade</h2>

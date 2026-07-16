@@ -4,6 +4,7 @@ import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EditorialCTA from '../components/EditorialCTA.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -78,6 +79,8 @@ export const articleMeta = {
       <p class="text-gray-600 text-lg max-w-2xl">
         Eufy X10 Pro Omni (8 000 Pa, ca 6 500 kr) ger mer sugkraft per krona. Ecovacs Deebot X5 Omni (8 000 Pa, ca 9 000 kr) vinner på moppning, hinderdetektering och husdjursfunktioner. Vi jämför sida vid sida.
       </p>
+
+    <EditorialCTA products={['Eufy X10 Pro Omni']} />
     </header>
 
     <!-- Quick verdict -->

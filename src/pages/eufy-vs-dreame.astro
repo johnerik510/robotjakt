@@ -4,6 +4,7 @@ import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EditorialCTA from '../components/EditorialCTA.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -78,6 +79,8 @@ export const articleMeta = {
       <p class="text-gray-600 text-lg max-w-2xl">
         Eufy är budgetvänligare med solid sugkraft och enkelt bruk. Dreame är mopping-specialisten med dubbla roterande moppskivor, MopExtend och upp till 12 000 Pa. Vi jämför märkena modell för modell.
       </p>
+
+    <EditorialCTA products={['Eufy X10 Pro Omni', 'Dreame X40 Ultra']} />
     </header>
 
     <!-- Quick verdict -->

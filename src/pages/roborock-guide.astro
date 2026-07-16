@@ -4,6 +4,7 @@ import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EditorialCTA from '../components/EditorialCTA.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -171,6 +172,8 @@ export const articleMeta = {
     </h1>
     <p class="text-text-light mb-6 max-w-2xl">
       Roborock är ett av marknadens starkaste premium-märken för robotdammsugare. Vi guidar dig genom 2026 ars modellserie, S8 MaxV Ultra, Qrevo Master och S7, och hjälper dig välja rätt modell för ditt hem. </p>
+
+    <EditorialCTA products={['Roborock Saros 10R']} />
 
     <!-- Brand overview -->
     <section class="mb-8 bg-bg-alt rounded-xl border border-border p-6">

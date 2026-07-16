@@ -4,6 +4,7 @@ import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EditorialCTA from '../components/EditorialCTA.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -75,6 +76,8 @@ export const articleMeta = {
     <p class="text-text-light mb-6 max-w-2xl">
       Roborock och Ecovacs är de två dominerande premiummärkena för robotdammsugare 2026. Vi ställer flaggskeppsmodellerna S8 MaxV Ultra och Deebot X5 Omni mot varandra, kategori för kategori, och ger dig ett tydligt svar på vilket märke som passar just ditt hem.
     </p>
+
+    <EditorialCTA products={['Roborock S8 MaxV Ultra']} />
 
     <!-- Brand overview -->
     <section class="mb-8">

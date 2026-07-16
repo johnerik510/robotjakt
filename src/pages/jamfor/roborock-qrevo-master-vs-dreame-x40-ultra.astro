@@ -4,6 +4,7 @@ import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import EditorialCTA from '../../components/EditorialCTA.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -75,6 +76,8 @@ export const articleMeta = {
     </h1>
     <p class="text-text-light mb-6 max-w-2xl">
       Roborock Qrevo Master till eller Dreame X40 Ultra till ? Båda är toppmodeller med fullautomatisk station och varmvattenmopp, men de skiljer sig på avgörande punkter. Vi jämför dem kategori för kategori. </p>
+
+    <EditorialCTA products={['Dreame X40 Ultra']} />
 
     <!-- Quick verdict -->
     <section class="mb-8 bg-winner/5 border border-winner/20 rounded-xl p-5">

@@ -4,6 +4,7 @@ import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EditorialCTA from '../components/EditorialCTA.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -79,6 +80,8 @@ export const articleMeta = {
     <p class="text-text-light mb-6 max-w-2xl">
       Dreame X50 Ultra (20 000 Pa, ca 9 000 kr) levererar mer sugkraft per krona än iRobot Roomba j9+ (ca 10 000 kr). iRobot har 20 år av mjukvaruutveckling och bäst integrationsstöd för smarta hem. Vi jämför sugkraft, moppning, navigering och total ägandekostnad 2026.
     </p>
+
+    <EditorialCTA products={['Dreame X40 Ultra']} />
 
     <h2 class="font-heading text-xl font-bold mt-6 mb-4">Snabbjämförelse</h2>
     <div class="overflow-x-auto mb-8">

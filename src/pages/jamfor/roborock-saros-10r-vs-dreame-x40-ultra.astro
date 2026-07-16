@@ -4,6 +4,7 @@ import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import EditorialCTA from '../../components/EditorialCTA.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -80,6 +81,8 @@ export const articleMeta = {
     <p class="text-text-light mb-6 max-w-2xl">
       Roborock Saros 10R . Dreame X40 Ultra . Båda är flaggskeppsrobotar med fullautomatisk station och avancerad moppfunktion, men Saros 10R är 7,98 cm tunn och har 20 000 Pa sugkraft. Är extra värt det?
     </p>
+
+    <EditorialCTA products={['Roborock Saros 10R', 'Dreame X40 Ultra']} />
 
     <!-- Quick verdict -->
     <section class="mb-8 bg-winner/5 border border-winner/20 rounded-xl p-5">

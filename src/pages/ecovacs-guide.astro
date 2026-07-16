@@ -4,6 +4,7 @@ import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EditorialCTA from '../components/EditorialCTA.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -128,6 +129,8 @@ export const articleMeta = {
     </h1>
     <p class="text-text-light mb-6 max-w-2xl">
       Ecovacs Deebot är kända för sina OMNI-stationer, marknadens mest kompletta allt-i-ett-lösningar. Vi guidar dig genom X12 Pro Omni, X9 Pro Omni och T50 Pro Omni och hjälper dig välja rätt modell för ditt hem och din budget.</p>
+
+    <EditorialCTA products={['Ecovacs Deebot X12 Pro Omni']} />
 
     <!-- Brand overview -->
     <section class="mb-8 bg-bg-alt rounded-xl border border-border p-6">

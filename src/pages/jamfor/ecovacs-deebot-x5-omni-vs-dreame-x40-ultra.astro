@@ -4,6 +4,7 @@ import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import EditorialCTA from '../../components/EditorialCTA.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -76,6 +77,8 @@ export const articleMeta = {
     <p class="text-text-light mb-6 max-w-2xl">
       Ecovacs X5 Omni till eller Dreame X40 Ultra till ? Båda är flaggskeppsrobotar med oscillerande mopp, självtömmande station och AI-navigering, men de löser problemet med hörn och väggar på helt olika sätt. Vi jämför dem kategori för kategori.
     </p>
+
+    <EditorialCTA products={['Dreame X40 Ultra']} />
 
     <!-- Quick verdict -->
     <section class="mb-8 bg-winner/5 border border-winner/20 rounded-xl p-5">

@@ -4,6 +4,7 @@ import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EditorialCTA from '../components/EditorialCTA.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -75,6 +76,8 @@ export const articleMeta = {
     <p class="text-text-light mb-6 max-w-2xl">
       iRobot Roomba uppfann robotdammsugaren. Roborock tog kategorin till nästa nivå med hög sugkraft och avancerade moppfunktioner. Vi ställer de bästa modellerna, S8 MaxV Ultra och Roomba j9+, mot varandra för att ge dig ett tydligt svar.
     </p>
+
+    <EditorialCTA products={['Roborock S8 MaxV Ultra']} />
 
     <!-- Brand overview -->
     <section class="mb-8">

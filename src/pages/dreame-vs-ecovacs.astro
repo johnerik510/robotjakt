@@ -4,6 +4,7 @@ import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EditorialCTA from '../components/EditorialCTA.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -70,6 +71,8 @@ export const articleMeta = {
     <p class="text-text-light mb-6 max-w-2xl">
       Dreame X40 Ultra (ca 9 000 kr, 12 000 Pa) vinner sugjämförelsen klart mot Ecovacs Deebot X5 Omni (ca 9 500 kr, 8 000 Pa). Ecovacs svarar med 260 minuters drifttid mot Dreames 210. Vi har jämfört båda modeller och ger tydlig rekommendation per kategori.
     </p>
+
+    <EditorialCTA products={['Dreame X40 Ultra']} />
 
     <h2 class="font-heading text-xl font-bold mt-6 mb-4">Snabbjämförelse</h2>
     <div class="overflow-x-auto mb-8">

@@ -4,6 +4,7 @@ import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EditorialCTA from '../components/EditorialCTA.astro';
 
 const faqItems = [
   {
@@ -79,6 +80,8 @@ export const articleMeta = {
     <p class="text-lg text-text-light mb-8 leading-relaxed">
       Marknaden för robotdammsugare har exploderat, hundratals modeller i alla prisklasser. Denna guide hjälper dig att förstå vad som faktiskt spelar roll och vilken typ av robot som passar ditt hem.
     </p>
+
+    <EditorialCTA products={['Dreame X50 Ultra']} />
 
     <!-- Decision guide -->
     <div class="bg-accent/5 border border-accent/20 rounded-xl p-5 mb-10">

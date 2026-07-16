@@ -4,6 +4,7 @@ import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EditorialCTA from '../components/EditorialCTA.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -89,6 +90,8 @@ export const articleMeta = {
     <p class="text-text-light mb-6 max-w-2xl">
       Narwal Freo X Ultra till eller Dreame X40 Ultra till ? Bada är toppmodeller med fullautomatisk station och avancerad moppning, men de prioriterar olika saker. Vi jämfori dem kategori för kategori.
     </p>
+
+    <EditorialCTA products={['Narwal Freo X Ultra', 'Dreame X40 Ultra']} />
 
     <!-- Quick verdict -->
     <section class="mb-8 bg-winner/5 border border-winner/20 rounded-xl p-5">

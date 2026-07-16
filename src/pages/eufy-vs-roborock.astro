@@ -4,6 +4,7 @@ import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EditorialCTA from '../components/EditorialCTA.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -79,6 +80,8 @@ export const articleMeta = {
     <p class="text-text-light mb-6 max-w-2xl">
       Eufy X10 Pro Omni (ca 5 500 kr, 8 000 Pa) är marknadsledande i mellansegmentet. Roborock S8 MaxV Ultra (ca 12 000 kr, 10 000 Pa) tar premiumkronan med AI-kamera och automatisk stationstömning. Vi har jämfört båda och ger ett tydligt svar per kategori: sugkraft, moppning, navigering och pris.
     </p>
+
+    <EditorialCTA products={['Eufy X10 Pro Omni', 'Roborock S8 MaxV Ultra']} />
 
     <h2 class="font-heading text-xl font-bold mt-6 mb-4">Märkesöversikt, Eufy vs Roborock</h2>
     <div class="grid sm:grid-cols-2 gap-4 mb-8">

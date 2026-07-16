@@ -4,6 +4,7 @@ import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EditorialCTA from '../components/EditorialCTA.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -75,6 +76,8 @@ export const articleMeta = {
     <p class="text-text-light mb-6 max-w-2xl">
       Dreame X40 Ultra till eller Roborock S8 MaxV Ultra till ? Vi jämför de två starkaste flaggskeppsmodellerna på marknaden 2026, kategori för kategori, och ger dig ett tydligt svar baserat på ditt hem och dina behov.
     </p>
+
+    <EditorialCTA products={['Dreame X40 Ultra', 'Roborock S8 MaxV Ultra']} />
 
     <!-- Quick verdict -->
     <section class="mb-8 bg-winner/5 border border-winner/20 rounded-xl p-5">

@@ -1,0 +1,72 @@
+---
+/**
+ * Kompakt CTA för redaktionella sidor (recensioner, jämförelser, guider).
+ * Placeras direkt efter ingressen/verdict-boxen, ovanför brödtexten, så att
+ * läsaren når ett köpalternativ utan att scrolla (CRO-regeln i CLAUDE.md).
+ *
+ * NOLLTOLERANS:
+ *  - Varje URL kommer ordagrant från produktfeedens trackedUrl via
+ *    resolveExactCTA(). Ingen URL konstrueras eller redigeras här.
+ *  - Butiksnamnet i knapptexten är butiken URL:en faktiskt går till.
+ *  - Saknas verifierad länk för produkten renderas INGENTING (null).
+ *
+ * Provisionsupplysning ligger BARA i footern (AffiliateDisclaimer) - aldrig här.
+ */
+import { resolveExactCTA } from '../lib/editorial-cta';
+
+interface Props {
+  /** 1-2 produktnamn. Måste vara produkter sidan faktiskt handlar om. */
+  products: string[];
+  /** Rubrik. Default: "Jämför priset på {produkt}". */
+  heading?: string;
+}
+
+const { products, heading } = Astro.props;
+
+// Fler butiker per produkt när bara en produkt visas, annars blir raden rörig.
+const maxPerProduct = products.length > 1 ? 3 : 4;
+const resolved = products
+  .map((name) => ({ name, stores: resolveExactCTA(name, maxPerProduct) }))
+  .filter((r) => r.stores.length > 0);
+
+const multi = resolved.length > 1;
+const title = heading ?? (resolved.length === 1
+  ? `Jämför priset på ${resolved[0].name}`
+  : 'Jämför priset hos svenska butiker');
+---
+
+{resolved.length > 0 && (
+  <div class="not-prose bg-bg-alt rounded-xl border border-border p-5 mb-8" data-editorial-cta>
+    <p class="font-semibold text-text mb-4">{title}</p>
+
+    <div class={multi ? 'space-y-4' : ''}>
+      {resolved.map((r) => (
+        <div data-product={r.name}>
+          {multi && (
+            <p class="text-sm font-semibold text-text mb-2">{r.name}</p>
+          )}
+          <div class="flex flex-col sm:flex-row gap-2 sm:flex-wrap">
+            <a
+              href={r.stores[0].url}
+              rel="sponsored nofollow noopener noreferrer"
+              target="_blank"
+              class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+            >
+              Bra pris hos {r.stores[0].store}
+            </a>
+            {r.stores.slice(1).map((s) => (
+              <a
+                href={s.url}
+                rel="sponsored nofollow noopener noreferrer"
+                target="_blank"
+                class="inline-flex items-center justify-center px-5 py-3 border-2 border-border text-text-light font-semibold rounded-lg hover:border-cta hover:text-cta transition-colors text-sm min-h-[44px]"
+              >
+                Bra pris hos {s.store}
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+)}

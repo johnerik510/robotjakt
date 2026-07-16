@@ -4,6 +4,7 @@ import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import EditorialCTA from '../../components/EditorialCTA.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -80,6 +81,8 @@ export const articleMeta = {
     <p class="text-text-light mb-6 max-w-2xl">
       Ecovacs Deebot X5 Omni är unik med sin fyrkantiga design och AIVI 3D-kameranavigering. Roborock S8 MaxV Ultra är ett beprövat flaggskepp med 3D LiDAR och 10 000 Pa sugkraft. Båda kostar till lägre pris, men de är fundamentalt olika robotar.
     </p>
+
+    <EditorialCTA products={['Roborock S8 MaxV Ultra']} />
 
     <!-- Quick verdict -->
     <section class="mb-8 bg-winner/5 border border-winner/20 rounded-xl p-5">

@@ -4,6 +4,7 @@ import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EditorialCTA from '../components/EditorialCTA.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -119,6 +120,8 @@ export const articleMeta = {
     <p class="text-text-light mb-6 max-w-2xl">
       eufy under Anker Innovations har byggt ett rykte för prisvärd kvalitetselektronik, och deras robotdammsugare lever upp till det. Från budgetvänliga RoboVac till premium X10 Pro Omni med självtvätt och automatisk tömning. Här är guiden till alla modeller 2026.
     </p>
+
+    <EditorialCTA products={['eufy X10 Pro Omni']} />
 
     <!-- Brand overview -->
     <section class="mb-8 bg-bg-alt rounded-xl border border-border p-6">
