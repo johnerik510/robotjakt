@@ -19,6 +19,9 @@ import { dirname, join } from 'node:path';
 
 const TOKEN = 'A9751A03193B436BAFE79D788BAFA71F24624598';
 const FID = 52017;
+// cdon.se svarar inte likadant på en naken klient — spegla en riktig webbläsare
+// när vi verifierar att produktsidorna lever.
+const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36';
 const API = (q, page) =>
   `https://api.tradedoubler.com/1.0/products.json;page=${page};pageSize=100;fid=${FID};q=${encodeURIComponent(q)}?token=${TOKEN}`;
 
@@ -175,9 +178,18 @@ async function main() {
     }
   }
 
+  // Verifiera att varje produkt faktiskt lever INNAN den skrivs.
+  // CDON:s feed listar produkter vars sida är borttagen: URL:en svarar HTTP 200
+  // men 301:ar tyst till kategorisidan, så en vanlig statuskoll missar det.
+  // Uppmätt 2026-07-16: 28 av 121 feed-produkter (23%) var döda på det viset,
+  // och 17 av 69 CDON-länkar på sajten (25%) skickade läsaren till en generisk
+  // kategorilista i stället för produkten. En kategorisida konverterar inte.
+  const candidates = [...byEan.values()].map(({ match }) => match);
+  const { kept: alive, dropped } = await filterAlive(candidates);
+
   // Bygg {brand||title: FeedMatch}
   const result = {};
-  for (const { match } of byEan.values()) {
+  for (const match of alive) {
     result[`${match.brand}||${match.title}`] = match;
   }
 
@@ -186,12 +198,53 @@ async function main() {
   writeFileSync(outPath, JSON.stringify(result, null, 1));
 
   console.log(`Skannade ${scanned} produkter över ${QUERIES.length} sökningar.`);
+  console.log(`Bortsorterade ${dropped} döda produkter (URL:en redirectar till kategorisida).`);
   console.log(`Skrev ${Object.keys(result).length} robotenheter → ${outPath}`);
   console.log(`Märken funna: ${[...brandsFound].sort().join(', ')}`);
   // Sammanfattning per märke
   const perBrand = {};
   for (const { match } of byEan.values()) perBrand[match.brand] = (perBrand[match.brand] ?? 0) + 1;
   console.log('Per märke:', JSON.stringify(perBrand));
+}
+
+// Behåller bara produkter vars cdon.se-URL fortfarande landar på en produktsida.
+// En borttagen produkt 301:ar till kategorisidan och svarar 200, så statuskoden
+// duger inte: vi måste följa redirecten och kolla att vi hamnar på /produkt/.
+//
+// VIKTIGT: cdon.se strypar samtidiga anrop. Ett strypt svar (403/429/timeout) är
+// INTE ett bevis på att produkten är borta, och får aldrig sortera bort den — då
+// slänger vi säljbara produkter. Bara ett lyckat svar som landar utanför
+// /produkt/ räknas som dött. Därför: sekventiellt, paus mellan anrop, retry med
+// backoff, och "behåll vid tvivel".
+async function filterAlive(matches) {
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  const kept = [];
+  let dropped = 0, unknown = 0;
+
+  for (const m of matches) {
+    let verdict = 'unknown';
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      try {
+        const res = await fetch(m.productUrl, {
+          redirect: 'follow',
+          headers: { 'User-Agent': UA },
+          signal: AbortSignal.timeout(30_000),
+        });
+        if (res.status === 429 || res.status === 403) { await sleep(attempt * 4000); continue; }
+        if (!res.ok) { await sleep(attempt * 2000); continue; }
+        verdict = new URL(res.url).pathname.startsWith('/produkt/') ? 'alive' : 'dead';
+        break;
+      } catch {
+        await sleep(attempt * 2000);
+      }
+    }
+    if (verdict === 'dead') { dropped++; }
+    else { kept.push(m); if (verdict === 'unknown') unknown++; }
+    await sleep(700);
+  }
+
+  if (unknown) console.log(`  (${unknown} produkter gick inte att verifiera – behållna, inte bortsorterade)`);
+  return { kept, dropped };
 }
 
 // Plockar ut den riktiga cdon.se-produkt-URL:en ur deeplinkens url(...)-del.
