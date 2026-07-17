@@ -292,10 +292,13 @@ export const articleMeta = {
 
 </ArticleLayout>
 
-<StickyCTA
-  text="Se Dolphin E30 hos Amazon.se"
-  url="https://addrevenue.io/t?a=984922&c=3467327&url=https%3A%2F%2Fvillanytt.se%2Fprodukt-kategori%2Fpoolrobot%2F"
-/>
+{/*
+  StickyCTA borttagen 2026-07-17. Den sa "Se Dolphin E30 hos Amazon.se" men länkade till
+  villanytt.se KATEGORISIDA för poolrobotar: fel butik, fel destination (kategorisida är
+  inte en produkt-URL) och Dolphin E30 säljs inte av någon av våra affiliate-butiker.
+  Enligt CLAUDE.md: produkt utan verifierad affiliatelänk = ingen CTA. Sätt tillbaka en
+  CTA först när en poolrobot sidan faktiskt rekommenderar finns i en feed.
+*/}
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "HowTo",

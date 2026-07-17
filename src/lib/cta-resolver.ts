@@ -68,6 +68,45 @@ function tokenOverlap(a: string, b: string): number {
   return n;
 }
 
+/**
+ * Som normalize(), men behåller '+'. normalize() strippar plus, vilket gjorde
+ * "Q5 Pro+" identisk med "Q5 Pro" — två olika modeller.
+ */
+function normalizePlus(s: string): string {
+  return s.toLowerCase().replace(/[^a-z0-9åäö+]+/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+/**
+ * Kräver att VARJE token i produktnamnet återfinns i kandidattiteln.
+ *
+ * Utan detta räckte det att tillräckligt många tokens överlappade, så det som
+ * SKILJER modeller åt (suffix, varianttillägg) kunde saknas helt i kandidaten:
+ *   "Roborock Qrevo S"  -> "Roborock Qrevo Curv White"   ('s' bortfiltrerad, längd <= 2)
+ *   "Roborock Saros 10R"-> "Roborock Saros 10 Vit"       ('10r' vs '10')
+ *   "Dreame D20 Plus"   -> "Dreame D20 black"            ('plus' saknas)
+ *   "Roborock Q5 Pro+"  -> "Roborock Q5 Pro"             ('+' strippades bort)
+ *
+ * Tre accepterade matchformer per token, i tur och ordning:
+ *  1. exakt token  ("plus" i "d10 plus ... gen 2")
+ *  2. delsträng i titeln, endast token >= 3 tecken  ("500" i "500m²")
+ *  3. delsträng i titeln utan mellanslag  ("gt3220" i "gt 3220")
+ * Korta tokens (<= 2 tecken, t.ex. "s", "q8") kräver exakt token — annars skulle
+ * de matcha inuti godtyckliga ord. Modellnummer-kontrollen i strictMatchScore
+ * fångar separat att "500" inte får matcha "5000".
+ */
+function allQueryTokensPresent(query: string, candidate: string): boolean {
+  const c = normalizePlus(candidate);
+  const cTokens = new Set(c.split(' '));
+  const cJoined = c.replace(/ /g, '');
+  for (const t of normalizePlus(query).split(' ')) {
+    if (!t) continue;
+    if (cTokens.has(t)) continue;
+    if (t.length >= 3 && (c.includes(t) || cJoined.includes(t))) continue;
+    return false;
+  }
+  return true;
+}
+
 // Tillbehör/reservdels-nyckelord — om matchad titel innehåller dessa men frågan inte → uteslut
 const ACCESSORY_TOKENS = new Set([
   'mopduk','moppduk','edgewise','filter','sidoborste','borste','borstar','tillbehor',
@@ -88,6 +127,11 @@ function strictMatchScore(query: string, candidateTitle: string): number {
   const cNorm = normalize(candidateTitle);
   const qTokens = new Set(qNorm.split(' ').filter((t) => t.length > 2));
   const cTokens = new Set(cNorm.split(' '));
+
+  // Varje ord i produktnamnet måste finnas i kandidaten. Utan detta räckte hög
+  // token-överlappning, och det som SKILJER modeller åt (suffix/variant) kunde
+  // saknas helt -> CTA till fel produkt. Hellre ingen CTA än fel CTA.
+  if (!allQueryTokensPresent(query, candidateTitle)) return 0;
 
   // Anpassa tröskel efter hur många unika tokens frågan har:
   // Korta produktnamn (t.ex. "Navimow i220E") har bara 2 meningsfulla tokens → acceptera 2
@@ -122,7 +166,9 @@ export function resolveTrackedUrl(storeName: string, productName?: string): stri
       let best: FeedMatch | undefined;
       let bestScore = 0;
       for (const entry of entries) {
-        const score = tokenOverlap(productName, entry.title);
+        // strictMatchScore, inte tokenOverlap: den lösa varianten matchade fel
+        // produkt (tillbehör, fel modellsuffix) och gav en levande CTA till fel sida.
+        const score = strictMatchScore(productName, entry.title);
         if (score > bestScore) {
           bestScore = score;
           best = entry;
