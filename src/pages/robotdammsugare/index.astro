@@ -214,15 +214,6 @@ const breadcrumbs = [
   { label: 'Robotdammsugare' },
 ];
 
-const faqSchema = faqItems.map((item) => ({
-  "@type": "Question",
-  "name": item.question,
-  "acceptedAnswer": {
-    "@type": "Answer",
-    "text": item.answer,
-  },
-}));
-
 export const articleMeta = {
   title: "Robotdammsugare bäst i test 2026: 11 modeller jämförda",
   description: "Robotdammsugare bäst i test 2026. Vi har jämfört 11 toppmodeller från Dreame och Roborock. Jämförelse med sugkraft, station, mopp och pris.",
@@ -458,11 +449,6 @@ export const articleMeta = {
       "name": p.name,
       "url": p.reviewUrl ? `https://robotjakt.se${p.reviewUrl}` : `https://robotjakt.se/robotdammsugare/`,
     })),
-  })} />
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqSchema,
   })} />
 
 </BaseLayout>

@@ -184,15 +184,6 @@ const breadcrumbs = [
   { label: 'Robotgräsklippare' },
 ];
 
-const faqSchema = faqItems.map((item) => ({
-  "@type": "Question",
-  "name": item.question,
-  "acceptedAnswer": {
-    "@type": "Answer",
-    "text": item.answer,
-  },
-}));
-
 export const articleMeta = {
   title: "Robotgräsklippare bäst i test 2026: 10 modeller rankade",
   description: "Robotgräsklippare bäst i test 2026: Dreame A3 AWD Pro 5000 vinner med 4,8/5 och klarar 5 000 m² utan perimeterkabel. AWD, utan slinga och budget rankade.",
@@ -384,11 +375,6 @@ export const articleMeta = {
       "name": p.name,
       "url": p.reviewUrl ? `https://robotjakt.se${p.reviewUrl}` : `https://robotjakt.se/robotgrasklippare/`,
     })),
-  })} />
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqSchema,
   })} />
 
 </BaseLayout>
