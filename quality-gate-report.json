@@ -1,16 +1,31 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-06-25T06:37:47.724Z",
-  "durationMs": 24573,
+  "timestamp": "2026-07-20T20:33:56.715Z",
+  "durationMs": 10729,
   "summary": {
-    "checks": 19,
-    "errors": 6,
-    "warnings": 26,
+    "checks": 20,
+    "errors": 8,
+    "warnings": 29,
     "newErrors": 0,
-    "baselinedErrors": 6
+    "baselinedErrors": 8
   },
   "results": [
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/dji-air-3s.webp\" används av 2 artiklar: DJI Air 3S recension 2026: avancerad kameradrönare | Bästa drönare med kamera 2026: jämförda och rankade"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/dji-mini-5-pro.webp\" används av 2 artiklar: DJI Mini 5 Pro recension 2026: kompakt kameradrönare | Bästa drönare för nybörjare 2026: jämförda och rankade"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/dolphin-e30.webp\" används av 2 artiklar: Dolphin E30 recension 2026: poolrobot för 8 m pool | Köpguide poolrobot 2026: hitta rätt robot för din pool"
+    },
     {
       "check": "04-articlemeta",
       "severity": "warning",
@@ -74,7 +89,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/gardena-sileno-city-500.webp\" används av 5 artiklar: Gardena Sileno City 500 recension 2026: liten trädgård | Husqvarna vs Gardena Sileno robotgräsklippare 2026 | Bästa robotgräsklippare liten trädgård 2026: under 500 | Gardena vs Segway Navimow 2026: vilken robot vinner? | Bästa Gardena robotgräsklippare 2026: guide och test"
+      "message": "Bild \"/images/gardena-sileno-city-500.webp\" används av 5 artiklar: Gardena Sileno City 500 recension 2026: liten trädgård | Husqvarna vs Gardena robotgräsklippare 2026: vilken vinner? | Bästa robotgräsklippare liten trädgård 2026: under 500 | Gardena vs Segway Navimow 2026: vilken robot vinner? | Bästa Gardena robotgräsklippare 2026: guide och test"
     },
     {
       "check": "04-articlemeta",
@@ -84,7 +99,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/husqvarna-automower-415x.webp\" används av 2 artiklar: Husqvarna Automower 415X test 2026: recension och pris | Bästa robotgräsklippare för lutning 2026: branttest"
+      "message": "Bild \"/images/husqvarna-automower-415x.webp\" används av 2 artiklar: Husqvarna Automower 415X test 2026: recension och pris | Bästa robotgräsklippare för lutning 2026 (upp till 45%)"
     },
     {
       "check": "04-articlemeta",
@@ -145,7 +160,7 @@
   "baseline": {
     "status": "compared",
     "baselineCount": 11,
-    "baselinedCount": 6,
+    "baselinedCount": 8,
     "newErrorCount": 0
   },
   "allResults": [
@@ -153,14 +168,28 @@
       "check": "01-dashes",
       "severity": "error",
       "file": "src/lib/cta-resolver.ts",
-      "line": 71,
+      "line": 73,
+      "message": "em-dash hittad: \"* \"Q5 Pro+\" identisk med \"Q5 Pro\" — två olika modeller.\""
+    },
+    {
+      "check": "01-dashes",
+      "severity": "error",
+      "file": "src/lib/cta-resolver.ts",
+      "line": 93,
+      "message": "em-dash hittad: \"* Korta tokens (<= 2 tecken, t.ex. \"s\", \"q8\") kräver exakt token — annars skulle\""
+    },
+    {
+      "check": "01-dashes",
+      "severity": "error",
+      "file": "src/lib/cta-resolver.ts",
+      "line": 110,
       "message": "em-dash hittad: \"// Tillbehör/reservdels-nyckelord — om matchad titel innehåller dessa men frågan\""
     },
     {
       "check": "01-dashes",
       "severity": "error",
       "file": "src/lib/cta-resolver.ts",
-      "line": 174,
+      "line": 220,
       "message": "em-dash hittad: \"// stämma och tillbehör exkluderas — annars matchas t.ex. \"Landroid Vision 500\"\""
     },
     {
@@ -174,6 +203,21 @@
       "severity": "error",
       "file": "src/pages/poolrobot/index.astro",
       "message": "Bildfil saknas: https://csdam.net/data/jpg/0/dc98b5ed/dc98b5ed-5b66-4dc3-85d2-044eee59877f.jpg (refererad i Bästa poolrobot 2026: bäst i test och jämförelse)"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/dji-air-3s.webp\" används av 2 artiklar: DJI Air 3S recension 2026: avancerad kameradrönare | Bästa drönare med kamera 2026: jämförda och rankade"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/dji-mini-5-pro.webp\" används av 2 artiklar: DJI Mini 5 Pro recension 2026: kompakt kameradrönare | Bästa drönare för nybörjare 2026: jämförda och rankade"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/dolphin-e30.webp\" används av 2 artiklar: Dolphin E30 recension 2026: poolrobot för 8 m pool | Köpguide poolrobot 2026: hitta rätt robot för din pool"
     },
     {
       "check": "04-articlemeta",
@@ -238,7 +282,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/gardena-sileno-city-500.webp\" används av 5 artiklar: Gardena Sileno City 500 recension 2026: liten trädgård | Husqvarna vs Gardena Sileno robotgräsklippare 2026 | Bästa robotgräsklippare liten trädgård 2026: under 500 | Gardena vs Segway Navimow 2026: vilken robot vinner? | Bästa Gardena robotgräsklippare 2026: guide och test"
+      "message": "Bild \"/images/gardena-sileno-city-500.webp\" används av 5 artiklar: Gardena Sileno City 500 recension 2026: liten trädgård | Husqvarna vs Gardena robotgräsklippare 2026: vilken vinner? | Bästa robotgräsklippare liten trädgård 2026: under 500 | Gardena vs Segway Navimow 2026: vilken robot vinner? | Bästa Gardena robotgräsklippare 2026: guide och test"
     },
     {
       "check": "04-articlemeta",
@@ -248,7 +292,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/husqvarna-automower-415x.webp\" används av 2 artiklar: Husqvarna Automower 415X test 2026: recension och pris | Bästa robotgräsklippare för lutning 2026: branttest"
+      "message": "Bild \"/images/husqvarna-automower-415x.webp\" används av 2 artiklar: Husqvarna Automower 415X test 2026: recension och pris | Bästa robotgräsklippare för lutning 2026 (upp till 45%)"
     },
     {
       "check": "04-articlemeta",
