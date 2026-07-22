@@ -1,21 +1,7 @@
 ---
 import ArticleLayout from '../layouts/ArticleLayout.astro';
-
-const orgSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'Robotjakt.se',
-  url: 'https://robotjakt.se',
-  description: 'Oberoende svensk guide som jämför robotdammsugare, robotgräsklippare och poolrobotar utifrån specifikationer, oberoende tester och aktuella priser hos svenska butiker.',
-  foundingDate: '2025',
-  knowsAbout: ['robotdammsugare', 'robotgräsklippare', 'poolrobotar', 'hemautomation', 'smarta hemprodukter'],
-  contactPoint: {
-    '@type': 'ContactPoint',
-    email: 'info@robotjakt.se',
-    contactType: 'editorial',
-  },
-  sameAs: [],
-};
+// Organization-schemat definieras en gång globalt i BaseLayout (@id https://robotjakt.se/#organization)
+// och emitteras på varje sida, inklusive den här. Ingen egen kopia behövs här.
 ---
 
 <ArticleLayout
@@ -64,15 +50,27 @@ const orgSchema = {
       Robotjakt.se finansieras genom affiliatelänkar. När du klickar på en länk till en butik och gör ett köp kan vi få en provision. Det kostar dig inget extra och påverkar inte våra recensioner eller rankningar.
     </p>
 
-    <h2 class="font-heading text-xl font-bold text-text">Redaktionen</h2>
+    <h2 class="font-heading text-xl font-bold text-text">Redaktören</h2>
   </div>
 
   <!-- Editorial card (not-prose) -->
   <div class="not-prose bg-white rounded-2xl border border-border p-6 sm:p-8 my-6">
-    <p class="font-heading text-xl font-bold text-text mb-1">Robotjakts redaktion</p>
-    <p class="text-accent font-semibold text-sm mb-3">Oberoende jämförelse av konsumentrobotar</p>
+    <div class="flex items-center gap-3 mb-3">
+      <img
+        src="/images/axel-jonemyr.webp"
+        alt="Axel Jönemyr, grundare och redaktör för Robotjakt"
+        width="48"
+        height="48"
+        class="w-12 h-12 rounded-full object-cover ring-1 ring-gray-100 shrink-0"
+        loading="lazy"
+      />
+      <div>
+        <p class="font-heading text-xl font-bold text-text">Axel Jönemyr</p>
+        <p class="text-accent font-semibold text-sm">Grundare och redaktör, Robotjakt</p>
+      </div>
+    </div>
     <p class="text-text-light text-sm leading-relaxed mb-3">
-      Vi köper inte in och labbtestar inte robotarna själva. I stället jämför vi modellerna utifrån verifierbar data: tekniska specifikationer, kapacitet, navigeringsteknik, oberoende tester och recensioner samt aktuella priser hos svenska butiker, oberoende av provision. Det täcker robotdammsugare, robotgräsklippare och poolrobotar från budgetmodeller till toppmodeller från Dreame, Roborock, Ecovacs och Husqvarna.
+      Jag köper inte in och labbtestar inte robotarna själv. I stället jämför jag modellerna utifrån verifierbar data: tekniska specifikationer, kapacitet, navigeringsteknik, oberoende tester och recensioner samt aktuella priser hos svenska butiker, oberoende av provision. Det täcker robotdammsugare, robotgräsklippare och poolrobotar från budgetmodeller till toppmodeller från Dreame, Roborock, Ecovacs och Husqvarna.
     </p>
     <div class="flex flex-wrap gap-2">
       {['Robotdammsugare', 'Robotgräsklippare', 'Poolrobotar', 'Smart hem', 'Reservdelar & underhåll'].map((skill) => (
@@ -82,7 +80,7 @@ const orgSchema = {
       ))}
     </div>
     <p class="text-sm mt-3">
-      <a href="/om-redaktionen/" class="text-accent underline font-semibold">Mer om redaktionen</a>
+      <a href="/om-redaktionen/" class="text-accent underline font-semibold">Mer om Axel</a>
     </p>
   </div>
 
@@ -93,6 +91,4 @@ const orgSchema = {
       Har du frågor eller feedback? Kontakta oss på <!--email_off--><a href="mailto:info@robotjakt.se" class="text-accent underline">info@robotjakt.se</a><!--/email_off-->.
     </p>
   </div>
-
-  <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
 </ArticleLayout>
