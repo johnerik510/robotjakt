@@ -166,7 +166,7 @@ const productSchema = products.map((p, i) => ({
       "ratingValue": p.rating.toString(),
       "bestRating": "5",
     },
-    "author": { "@type": "Person", "name": "Axel Jönemyr", "jobTitle": "Redaktör, Robotjakt", "url": "https://robotjakt.se/om-redaktionen/", "image": "https://robotjakt.se/images/axel-jonemyr.webp", "worksFor": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }, "sameAs": ["https://www.instagram.com/axlpxl/", "https://www.strava.com/athletes/2699302", "https://www.linkedin.com/in/axel-j%C3%B6nemyr-ba1443170/"] },
+    "author": { "@id": "https://robotjakt.se/#axel" },
   },
 }));
 ---
@@ -293,8 +293,8 @@ const productSchema = products.map((p, i) => ({
     "description": "Allergisk mot damm, pollen eller pälsdjur? 6 robotdammsugare med HEPA-filter och självtömning som faktiskt minskar allergener i hemmet. Testat 2026.",
     "datePublished": "2026-05-08",
     "dateModified": "2026-05-08",
-    "author": { "@type": "Person", "name": "Axel Jönemyr", "jobTitle": "Redaktör, Robotjakt", "url": "https://robotjakt.se/om-redaktionen/", "image": "https://robotjakt.se/images/axel-jonemyr.webp", "worksFor": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" }, "sameAs": ["https://www.instagram.com/axlpxl/", "https://www.strava.com/athletes/2699302", "https://www.linkedin.com/in/axel-j%C3%B6nemyr-ba1443170/"] },
-    "publisher": { "@type": "Organization", "name": "Robotjakt", "url": "https://robotjakt.se" },
+    "author": { "@id": "https://robotjakt.se/#axel" },
+    "publisher": { "@id": "https://robotjakt.se/#organization" },
     "image": "https://robotjakt.se/images/roborock-qrevo-master.webp",
     "url": "https://robotjakt.se/robotdammsugare-allergiker/",
   })} />

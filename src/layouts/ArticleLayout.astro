@@ -48,12 +48,7 @@ const productSchema = productName ? {
         ratingValue: productRating,
         bestRating: '10',
       },
-      author: {
-        '@type': 'Person',
-        name: 'Axel Jönemyr',
-        jobTitle: 'Redaktör, Robotjakt',
-        url: 'https://robotjakt.se/om-redaktionen/',
-      },
+      author: { '@id': 'https://robotjakt.se/#axel' },
       datePublished: datePublished || lastUpdated,
       ...(productPros.length > 0 ? {
         positiveNotes: {
@@ -122,25 +117,8 @@ const articleSchema = {
   ...(lastUpdated ? { dateModified: lastUpdated } : {}),
   ...(datePublished ? { datePublished } : {}),
   image: ogImage ? (ogImage.startsWith('http') ? ogImage : `https://robotjakt.se${ogImage}`) : 'https://robotjakt.se/og-default.jpg',
-  author: {
-    '@type': 'Person',
-    name: 'Axel Jönemyr',
-    jobTitle: 'Redaktör, Robotjakt',
-    url: 'https://robotjakt.se/om-redaktionen/',
-    image: 'https://robotjakt.se/images/axel-jonemyr.webp',
-    worksFor: { '@type': 'Organization', name: 'Robotjakt', url: 'https://robotjakt.se' },
-    sameAs: [
-      'https://www.instagram.com/axlpxl/',
-      'https://www.strava.com/athletes/2699302',
-      'https://www.linkedin.com/in/axel-j%C3%B6nemyr-ba1443170/',
-    ],
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'Robotjakt',
-    url: 'https://robotjakt.se',
-    logo: { '@type': 'ImageObject', url: 'https://robotjakt.se/favicon.svg' },
-  },
+  author: { '@id': 'https://robotjakt.se/#axel' },
+  publisher: { '@id': 'https://robotjakt.se/#organization' },
   mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
   inLanguage: 'sv-SE',
 };

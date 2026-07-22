@@ -34,28 +34,62 @@ const articleSchema = article ? {
   image: articleMeta.image
     ? (articleMeta.image.startsWith('http') ? articleMeta.image : `https://robotjakt.se${articleMeta.image}`)
     : `https://robotjakt.se/og-default.jpg`,
-  author: {
-    '@type': 'Person',
-    name: 'Axel Jönemyr',
-    jobTitle: 'Redaktör, Robotjakt',
-    url: 'https://robotjakt.se/om-redaktionen/',
-    image: 'https://robotjakt.se/images/axel-jonemyr.webp',
-    worksFor: { '@type': 'Organization', name: 'Robotjakt', url: 'https://robotjakt.se' },
-    sameAs: [
-      'https://www.instagram.com/axlpxl/',
-      'https://www.strava.com/athletes/2699302',
-      'https://www.linkedin.com/in/axel-j%C3%B6nemyr-ba1443170/',
-    ],
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'Robotjakt',
-    url: 'https://robotjakt.se',
-    logo: { '@type': 'ImageObject', url: 'https://robotjakt.se/favicon.svg' },
-  },
+  author: { '@id': 'https://robotjakt.se/#axel' },
+  publisher: { '@id': 'https://robotjakt.se/#organization' },
   mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
   inLanguage: 'sv-SE',
 } : null;
+
+// Entitetsgraf (Organization -> WebSite -> Person), emitteras på VARJE sida.
+// @id-noderna binder ihop author/publisher-referenser i artikel- och produktschema
+// på alla enskilda sidor, i stället för att varje sida upprepar hela objektet.
+const entityGraph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://robotjakt.se/#organization',
+      name: 'Robotjakt',
+      url: 'https://robotjakt.se',
+      logo: { '@type': 'ImageObject', url: 'https://robotjakt.se/favicon.svg' },
+      description: 'Oberoende svensk guide som jämför robotdammsugare, robotgräsklippare och poolrobotar utifrån specifikationer, oberoende tester och aktuella priser hos svenska butiker.',
+      foundingDate: '2025',
+      knowsAbout: ['robotdammsugare', 'robotgräsklippare', 'poolrobotar', 'fönsterputsrobotar', 'smarta hem', 'konsumentrobotar'],
+      founder: { '@id': 'https://robotjakt.se/#axel' },
+      contactPoint: {
+        '@type': 'ContactPoint',
+        email: 'info@robotjakt.se',
+        contactType: 'editorial',
+      },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://robotjakt.se/#website',
+      name: 'Robotjakt',
+      url: 'https://robotjakt.se',
+      description: 'Vi jämför robotdammsugare, robotgräsklippare och poolrobotar för den svenska marknaden. Oberoende recensioner och uppdaterade priser.',
+      publisher: { '@id': 'https://robotjakt.se/#organization' },
+      inLanguage: 'sv-SE',
+    },
+    {
+      '@type': 'Person',
+      '@id': 'https://robotjakt.se/#axel',
+      name: 'Axel Jönemyr',
+      url: 'https://robotjakt.se/om-redaktionen/',
+      image: 'https://robotjakt.se/images/axel-jonemyr.webp',
+      jobTitle: 'Grundare och redaktör, Robotjakt',
+      description: 'Axel Jönemyr är grundare och redaktör för Robotjakt och jämför robotdammsugare och robotgräsklippare utifrån navigering, sugkraft, räckvidd och pris, baserat på specifikationer och verkliga tester.',
+      worksFor: { '@id': 'https://robotjakt.se/#organization' },
+      knowsAbout: ['robotdammsugare', 'robotgräsklippare', 'hemrobotar', 'navigering', 'batteri'],
+      sameAs: [
+        'https://www.instagram.com/axlpxl/',
+        'https://www.strava.com/athletes/2699302',
+        'https://www.linkedin.com/in/axel-j%C3%B6nemyr-ba1443170/',
+        'https://www.facebook.com/axel.jonemyr/',
+      ],
+    },
+  ],
+};
 
 // Auto-related links för sidor som inte går via ArticleLayout
 let baseAutoRelated: { title: string; href: string }[] = [];
@@ -125,29 +159,7 @@ if (!hideAutoRelated) {
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Robotjakt",
-    "url": "https://robotjakt.se",
-    "description": "Vi jämför robotdammsugare för den svenska marknaden. Oberoende recensioner och uppdaterade priser.",
-    "inLanguage": "sv-SE"
-  })} />
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Robotjakt.se",
-    "url": "https://robotjakt.se",
-    "description": "Oberoende svensk guide som jämför robotdammsugare, robotgräsklippare och poolrobotar utifrån specifikationer, oberoende tester och aktuella priser hos svenska butiker.",
-    "foundingDate": "2025",
-    "knowsAbout": ["robotdammsugare", "robotgräsklippare", "poolrobotar", "fönsterputsrobotar", "smarta hem", "konsumentrobotar"],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "email": "info@robotjakt.se",
-      "contactType": "editorial"
-    }
-  })} />
+  <script type="application/ld+json" set:html={JSON.stringify(entityGraph)} />
 
   {articleSchema && <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />}
 

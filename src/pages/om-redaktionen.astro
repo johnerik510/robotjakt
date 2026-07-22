@@ -2,28 +2,22 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 
-const personSchema = {
+// Person-noden själv definieras en gång globalt i BaseLayout (@id https://robotjakt.se/#axel)
+// och emitteras på varje sida. Den här sidan lägger bara till en ProfilePage-nod vars
+// mainEntity pekar tillbaka på samma @id, precis som schema.org rekommenderar för en om-mig-sida.
+const profilePageSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Axel Jönemyr',
+  '@type': 'ProfilePage',
+  '@id': 'https://robotjakt.se/om-redaktionen/#profilepage',
   url: 'https://robotjakt.se/om-redaktionen/',
-  image: 'https://robotjakt.se/images/axel-jonemyr.webp',
-  jobTitle: 'Redaktör, Robotjakt',
-  description: 'Axel Jönemyr är redaktör för Robotjakt och jämför robotdammsugare och robotgräsklippare utifrån navigering, sugkraft, räckvidd och pris, baserat på specifikationer och verkliga tester.',
-  worksFor: { '@type': 'Organization', name: 'Robotjakt', url: 'https://robotjakt.se' },
-  knowsAbout: ['robotdammsugare', 'robotgräsklippare', 'hemrobotar', 'navigering', 'batteri'],
-  sameAs: [
-    'https://www.instagram.com/axlpxl/',
-    'https://www.strava.com/athletes/2699302',
-    'https://www.linkedin.com/in/axel-j%C3%B6nemyr-ba1443170/',
-  ],
+  name: 'Axel Jönemyr, redaktören bakom Robotjakt.se',
+  mainEntity: { '@id': 'https://robotjakt.se/#axel' },
 };
 ---
 
 <BaseLayout
   title="Axel Jönemyr, redaktören bakom Robotjakt.se"
   description="Axel Jönemyr är redaktör för Robotjakt. Läs om hur han jämför robotdammsugare och robotgräsklippare utifrån navigering, sugkraft, räckvidd, tester och priser."
-  article={true}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={[{ label: 'Om redaktionen' }]} />
@@ -39,7 +33,7 @@ const personSchema = {
       />
       <div>
         <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-2">Axel Jönemyr</h1>
-        <p class="text-accent font-semibold mb-3">Redaktör, Robotjakt</p>
+        <p class="text-accent font-semibold mb-3">Grundare och redaktör, Robotjakt</p>
         <p class="text-text-light text-lg leading-relaxed max-w-2xl">
           Jag driver Robotjakt för att du ska kunna jämföra robotdammsugare och robotgräsklippare på riktiga grunder, navigering, sugkraft, räckvidd och pris, utan att läsa dig igenom tillverkarnas marknadsföring.
         </p>
@@ -47,6 +41,7 @@ const personSchema = {
           <a href="https://www.linkedin.com/in/axel-j%C3%B6nemyr-ba1443170/" rel="me noopener" target="_blank" class="text-accent underline hover:opacity-80">LinkedIn</a>
           <a href="https://www.instagram.com/axlpxl/" rel="me noopener" target="_blank" class="text-accent underline hover:opacity-80">Instagram</a>
           <a href="https://www.strava.com/athletes/2699302" rel="me noopener" target="_blank" class="text-accent underline hover:opacity-80">Strava</a>
+          <a href="https://www.facebook.com/axel.jonemyr/" rel="me noopener" target="_blank" class="text-accent underline hover:opacity-80">Facebook</a>
         </nav>
       </div>
     </header>
@@ -113,5 +108,5 @@ const personSchema = {
     </div>
   </div>
 
-  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(profilePageSchema)} />
 </BaseLayout>

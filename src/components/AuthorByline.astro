@@ -18,7 +18,7 @@ interface Props {
 
 const {
   author = 'Axel Jönemyr',
-  authorTitle = 'Redaktör, Robotjakt',
+  authorTitle = 'Grundare och redaktör, Robotjakt',
   authorBio = 'Axel jämför robotdammsugare och robotgräsklippare utifrån navigering, sugkraft, räckvidd och pris, baserat på specifikationer och verkliga tester.',
   authorImage = '/images/axel-jonemyr.webp',
   authorHref = '/om-redaktionen/',
@@ -70,21 +70,6 @@ const showUpdated = !!dateModified && dateModified !== datePublished;
   })();
 </script>
 
-<script type="application/ld+json" set:html={JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': authorType,
-  name: author,
-  url: `https://robotjakt.se${authorHref}`,
-  description: authorBio,
-  ...(authorType === 'Person' ? {
-    jobTitle: authorTitle,
-    worksFor: { '@type': 'Organization', name: 'Robotjakt', url: 'https://robotjakt.se' },
-    sameAs: [
-      'https://www.instagram.com/axlpxl/',
-      'https://www.strava.com/athletes/2699302',
-      'https://www.linkedin.com/in/axel-j%C3%B6nemyr-ba1443170/',
-    ],
-  } : {}),
-  ...(authorImage ? { image: `https://robotjakt.se${authorImage}` } : {}),
-  knowsAbout: ['robotdammsugare', 'robotgräsklippare', 'hemrobotar', 'navigering', 'batteri']
-})} />
+{/* Ingen egen Person/Organization JSON-LD här: BaseLayout emitterar redan hela
+    entitetsgrafen (Organization -> WebSite -> Person, @id https://robotjakt.se/#axel)
+    på varje sida. En egen kopia här skulle bara duplicera samma noder utan @id-koppling. */}
