@@ -1,0 +1,46 @@
+---
+/**
+ * MethodologyBlock - "Så har vi granskat"-block för money pages (topplistor).
+ * Transparent betygsmodell knuten till /sa-testar-vi/, samma kriterier som där
+ * (håll i synk om metodsidan ändras). Ingen egen wrapping section/container:
+ * renderas rakt in i sidans befintliga innehållskolumn så att den ALLTID ärver
+ * rätt bredd, oavsett vilken max-w sidan använder (se seo-skillens incident-notis
+ * om komponenter som hamnar utanför breddbegränsningen).
+ *
+ * Placeras under det informativa innehållet, före FAQ/AffiliateDisclaimer,
+ * aldrig above the fold (CRO-regel: produkter/CTA ska synas utan scroll).
+ */
+interface Props {
+  criteria: string[];
+  productCount?: number;
+  lastUpdated?: string;
+}
+
+const { criteria, productCount, lastUpdated } = Astro.props;
+
+const formatDate = (dateStr: string) => {
+  const d = new Date(dateStr);
+  return d.toLocaleDateString('sv-SE', { day: 'numeric', month: 'long', year: 'numeric' });
+};
+---
+
+<section class="bg-white rounded-2xl border border-border p-6 sm:p-8 mb-10">
+  <h2 class="font-heading text-xl font-bold text-text mb-3">Så har vi granskat</h2>
+  <p class="text-sm text-text-light leading-relaxed mb-4">
+    Robotjakt köper inte in och labbtestar inte robotarna själva. Rangordningen bygger på tekniska specifikationer från tillverkarna, oberoende tester och recensioner samt aktuella priser hos svenska butiker, vägt samman utifrån kriterierna nedan. Affiliatelänkar påverkar aldrig placeringen.
+  </p>
+  <div class="flex flex-wrap gap-2 mb-4">
+    {criteria.map((c) => (
+      <span class="inline-block bg-bg-alt border border-border text-text-light text-xs font-medium rounded-full px-3 py-1">
+        {c}
+      </span>
+    ))}
+  </div>
+  <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-text-lighter">
+    {productCount && <span>{productCount} produkter jämförda</span>}
+    {productCount && lastUpdated && <span class="text-gray-300">·</span>}
+    {lastUpdated && <span>Senast uppdaterad <time datetime={lastUpdated}>{formatDate(lastUpdated)}</time></span>}
+    {(productCount || lastUpdated) && <span class="text-gray-300">·</span>}
+    <a href="/sa-testar-vi/" class="text-accent underline font-semibold">Läs hela vår metod</a>
+  </div>
+</section>

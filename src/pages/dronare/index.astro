@@ -10,6 +10,7 @@ import AnswerBox from '../../components/AnswerBox.astro';
 import MoneyFeatured from '../../components/MoneyFeatured.astro';
 import MoneyComparisonTable from '../../components/MoneyComparisonTable.astro';
 import MoneyTOC from '../../components/MoneyTOC.astro';
+import MethodologyBlock from '../../components/MethodologyBlock.astro';
 
 const products = [
   {
@@ -219,6 +220,8 @@ const breadcrumbs = [{ label: 'Drönare' }];
         Specifikationer verifierade mot Drönarbutiken
       </span>
     </div>
+
+    <MethodologyBlock criteria={['Flygtid & räckvidd', 'Kamera & bildstabilisering', 'Hinderdetektion & säkerhet', 'Portabilitet & vikt', 'App & flygläge', 'Pris & tillbehörskostnad']} productCount={4} lastUpdated="2026-04-01" />
 
     <FAQ items={faqItems} />
 

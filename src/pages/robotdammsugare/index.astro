@@ -12,6 +12,7 @@ import AnswerBox from '../../components/AnswerBox.astro';
 import MoneyFeatured from '../../components/MoneyFeatured.astro';
 import MoneyComparisonTable from '../../components/MoneyComparisonTable.astro';
 import MoneyTOC from '../../components/MoneyTOC.astro';
+import MethodologyBlock from '../../components/MethodologyBlock.astro';
 
 const products = [
   {
@@ -425,6 +426,8 @@ export const articleMeta = {
         </a>
       </div>
     </section>
+
+    <MethodologyBlock criteria={['Navigering & kartläggning', 'Sugkraft & rengöringsresultat', 'Moppfunktion', 'Batterilivslängd', 'App & smart hem', 'Buller & underhåll']} productCount={11} lastUpdated="2026-06-20" />
 
     <FAQ items={faqItems} />
 

@@ -10,6 +10,7 @@ import AnswerBox from '../../components/AnswerBox.astro';
 import MoneyFeatured from '../../components/MoneyFeatured.astro';
 import MoneyComparisonTable from '../../components/MoneyComparisonTable.astro';
 import MoneyTOC from '../../components/MoneyTOC.astro';
+import MethodologyBlock from '../../components/MethodologyBlock.astro';
 
 const products = [
   {
@@ -253,6 +254,8 @@ export const articleMeta = {
         </a>
       </div>
     </section>
+
+    <MethodologyBlock criteria={['Rengöringseffektivitet', 'Navigation & täckning', 'Filterkapacitet', 'Hantering & förvaring']} productCount={6} lastUpdated="2026-06-22" />
 
     <FAQ items={faqItems} />
 
