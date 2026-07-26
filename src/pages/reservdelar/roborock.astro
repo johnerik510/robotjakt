@@ -92,8 +92,8 @@ const faqSchema = faqItems.map((item) => ({
   },
 }));
 export const articleMeta = {
-  title: "Reservdelar Roborock robotdammsugare 2026: komplett",
-  description: "Komplett guide till reservdelar för Roborock 2026. Filter, borstar, moppar och dockningsstationer. Se kompatibilitet, byte-intervall och pris i Sverige.",
+  title: "Roborock reservdelar 2026: alla serier på ett ställe",
+  description: "Reservdelar till Roborock robotdammsugare 2026. Filter, borstar, moppar och dammpåsar till både S8-serien och Qrevo-serien, med kompatibilitet per serie.",
   publishDate: "2026-03-29",
   category: "Reservdelar",
   image: "/images/parts-roborock-filter.webp",
@@ -102,8 +102,8 @@ export const articleMeta = {
 ---
 
 <BaseLayout
-  title="Reservdelar Roborock robotdammsugare 2026: komplett"
-  description="Komplett guide till reservdelar för Roborock 2026. Filter, borstar, moppar och dockningsstationer. Se kompatibilitet, byte-intervall och pris i Sverige."
+  title="Roborock reservdelar 2026: alla serier på ett ställe"
+  description="Reservdelar till Roborock robotdammsugare 2026. Filter, borstar, moppar och dammpåsar till både S8-serien och Qrevo-serien, med kompatibilitet per serie."
   article={{ datePublished: "2026-03-29", dateModified: "2026-05-27", image: "/images/parts-roborock-filter.webp" }}
 >
   <section class="bg-primary text-white py-8">
@@ -118,8 +118,8 @@ export const articleMeta = {
     <span>·</span>
     <span>Uppdaterad 27 maj 2026</span>
   </div>
-      <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Roborock reservdelar</h1>
-      <p class="text-gray-200 max-w-2xl">Kompletta tillbehörskit till Roborock S8-serien och Qrevo-serien. Filter, borstar, moppkuddar och dammpåsar, allt du behöver för att hålla roboten i toppskick.</p>
+      <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Roborock reservdelar, alla serier</h1>
+      <p class="text-gray-200 max-w-2xl">Överblick över tillbehörskit till hela Roborock-sortimentet. Börja här om du vill se vilka filter, borstar, moppkuddar och dammpåsar som passar din serie, och gå sedan vidare till serien du äger.</p>
     </div>
   </section>
 
@@ -134,7 +134,8 @@ export const articleMeta = {
       <a href="/reservdelar/borstar/" class="bg-white border border-border rounded-lg px-4 py-3 text-center hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Bara borstar</a>
     </div>
 
-    <h2 id="s8serien" class="font-heading text-xl font-bold text-text mb-4">S8-serien</h2>
+    <h2 id="s8serien" class="font-heading text-xl font-bold text-text mb-2">S8-serien i urval</h2>
+    <p class="text-sm text-text-light mb-4">Här visas de vanligaste kiten. Full kompatibilitetslista för S8, S8+, S8 Pro Ultra, S8 Max Ultra och S8 MaxV Ultra, plus underhållsschema, finns på vår sida om <a href="/reservdelar/roborock-s8-serien/" class="text-accent underline">Roborock S8 reservdelar</a>.</p>
     <div class="space-y-4 mb-10">
       {products.filter(p => p.series === 'S8-serien').map((p, i) => (
         <article class="bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow p-5">
@@ -160,7 +161,8 @@ export const articleMeta = {
       ))}
     </div>
 
-    <h2 id="qrevoserien" class="font-heading text-xl font-bold text-text mb-4">Qrevo-serien</h2>
+    <h2 id="qrevoserien" class="font-heading text-xl font-bold text-text mb-2">Qrevo-serien i urval</h2>
+    <p class="text-sm text-text-light mb-4">Samma sak här: hela kompatibilitetslistan per Qrevo-modell ligger på vår sida om <a href="/reservdelar/roborock-qrevo-serien/" class="text-accent underline">Roborock Qrevo reservdelar</a>.</p>
     <div class="space-y-4 mb-10">
       {products.filter(p => p.series === 'Qrevo-serien').map((p, i) => (
         <article class="bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow p-5">
