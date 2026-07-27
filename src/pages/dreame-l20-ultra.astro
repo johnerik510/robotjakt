@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import FAQ from '../components/FAQ.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -60,12 +61,17 @@ export const articleMeta = {
   description="Dreame L20 Ultra testad: 7 000 Pa, roterande mopp med varmvattentvätt och självtömmande station. Prisvärt alternativ till X40 Ultra. Se pris och betyg."
   ogImage="/images/dreame-l20-ultra.webp"
   breadcrumbs={breadcrumbs}
-  lastUpdated="2026-03-29"
+  lastUpdated="2026-07-27"
   datePublished="2026-02-27"
 >
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
     Dreame L20 Ultra, Recension 2026
   </h1>
+
+  <AnswerBox
+    question="Snabbt svar: är Dreame L20 Ultra bäst i mellanklass?"
+    answer="L20 Ultra är vårt mellanklassval 2026: LiDAR-karta, roterande mopp som tvättas med varmt vatten i stationen och automatisk dammtömning. Du byter bort X40 Ultras 12 000 Pa och utfällbara sidoarm, vilket i praktiken bara märks på tjocka mattor med lång lugg och i trånga hörn."
+  />
 
   <!-- Verdict box -->
   <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -179,7 +185,7 @@ export const articleMeta = {
 
     <h3 class="font-heading text-xl font-semibold text-text mb-3">Självtömmande station</h3>
     <p class="text-text-light leading-relaxed mb-4">
-      Stationen tömer dammbehållaren automatiskt efter varje städcykel. Den tvättar och torkar mopparna med varmt vatten, vilket eliminerar bakterier och dålig lukt. Soppose behöver bytas var 30 till 60 dag, stationen påminner dig via appen.
+      Stationen tömmer dammbehållaren automatiskt efter varje städcykel. Den tvättar och torkar mopparna med varmt vatten, vilket eliminerar bakterier och dålig lukt. Soppåsen behöver bytas var 30 till 60 dagar, stationen påminner dig via appen.
     </p>
     <p class="text-text-light leading-relaxed mb-6">
       Stationen är kompakt och snygg i designen. Den tar ca 25 x 35 cm golvyta och passar de flesta hem. En komplett lösning som gör att du knappt behöver tänka på roboten i det dagliga.
@@ -187,10 +193,34 @@ export const articleMeta = {
 
     <h3 class="font-heading text-xl font-semibold text-text mb-3">När räcker L20 Ultra, när behöver man X40 Ultra?</h3>
     <p class="text-text-light leading-relaxed mb-4">
-      <a href="/dreame-x40-ultra/" class="text-accent underline">Dreame X40 Ultra</a> är vår topplacering och mer. Du behöver X40 Ultra om du har: tjocka, luddiga mattor (kräver 10 000+ På), hem med mycket hörn och smalpassager (utfällbar sidoarm hjälper) eller extrema städkrav med husdjur och allergiker.
+      <a href="/dreame-x40-ultra/" class="text-accent underline">Dreame X40 Ultra</a> är vår topplacering och mer. Du behöver X40 Ultra om du har: tjocka, luddiga mattor (kräver 10 000+ Pa), hem med mycket hörn och smalpassager (utfällbar sidoarm hjälper) eller extrema städkrav med husdjur och allergiker.
     </p>
     <p class="text-text-light leading-relaxed mb-6">
       För de allra flesta hem, villa eller lägenhet med normalt städbehov och blandade golvytor, är L20 Ultras 7 000 Pa och roterande mopp mer än tillräckligt. Prisskillnaden på är svår att motivera om du inte aktivt behöver de extra funktionerna.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Kan Dreame L20 Ultra dammsuga och moppa i samma körning?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Ja. Sugmunstycket och de roterande mopparna sitter på samma robot, så den suger upp löst damm först och tvättar golvet i samma svep. När sensorerna känner en matta lyfts moppplattorna 8,5 millimeter så att mattan hålls torr under hela passagen.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Ordningen spelar roll för resultatet. Grus och hår som ligger löst måste bort innan vattnet kommer, annars smetas det ut i stället för att plockas upp. På riktigt smutsiga golv i hall eller kök blir resultatet bättre av två passeringar än av en långsam, och det ställer du in per rum i appen. Har du mycket textila ytor är gränsdragningen mellan sug och mopp viktigare, och den går vi igenom i vår guide om <a href="/guide/robotdammsugare-mattor/" class="text-accent underline">robotdammsugare och mattor</a>.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur ofta bör du köra Dreame L20 Ultra?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      I ett hem med husdjur eller barn gör daglig körning mest nytta, eftersom hår och grus plockas upp innan det trampas in i golvet. Bor du utan djur räcker det ofta att dammsuga varannan dag och moppa hårdgolven ett par gånger i veckan.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Batteriet sätter gränsen för hur stort område en körning täcker. Med aktiv moppning ligger praktisk drifttid kring 90 till 120 minuter, och blir ytan större återvänder roboten till stationen, laddar och fortsätter där den slutade. Det innebär att du kan schemalägga hela bostaden på en gång även om den inte hinner klart i ett svep. För pälsande hushåll jämför vi de modeller som klarar hår bäst i vår topplista över <a href="/robotdammsugare/husdjur/" class="text-accent underline">bästa robotdammsugare för husdjur</a>.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad behöver du sköta själv på L20 Ultra?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Stationen tvättar och torkar mopparna med varmt vatten, men du fyller på rent vatten, tömmer smutsvattnet och byter soppåsen när appen säger till. Moppdukar, sidoborste och filter är förbrukningsdelar som tappar effekt gradvis, långt innan roboten själv flaggar för dem i appen.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Ett moment glöms nästan alltid bort: själva tvättbrickan i stationen. Där samlas smuts som skrapats av mopparna, och blir den inte skrubbad då och då tvättar roboten dukarna i sitt eget slam. Lyft ut brickan, skölj den och torka av kanterna med samma intervall som du byter soppåse. Hela rutinen, del för del, står i vår guide till <a href="/guide/underhall/" class="text-accent underline">underhåll av robotdammsugare</a>.
     </p>
   </section>
 

@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -54,7 +54,7 @@ export const articleMeta = {
 <BaseLayout
   title="Roborock vs Dreame 2026: vilken robotdammsugare vinner?"
   description="Roborock eller Dreame? Vi jämför sugkraft, navigering, moppning och pris. Klart svar på vilken robotdammsugare som passar ditt hem och budget 2026."
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/roborock-s8-maxv-ultra.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/roborock-s8-maxv-ultra.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -65,15 +65,20 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Roborock vs Dreame 2026, vilken är bäst?
     </h1>
     <p class="text-text-light mb-6 max-w-2xl">
       Roborock och Dreame är de två starkaste premium-märkena för robotdammsugare 2026. Vi jämför flaggskeppsmodellerna S8 MaxV Ultra mot X40 Ultra, kategori för kategori, och ger dig ett tydligt svar på vilket märke som passar ditt hem. </p>
+
+    <AnswerBox
+      question="Snabbt svar: Roborock eller Dreame 2026?"
+      answer="Välj Roborock S8 MaxV Ultra om du har husdjur, ReactiveAI 3.0 identifierar och undviker djuravföring på golvet. Välj Dreame X40 Ultra om du har mycket hårdgolv, den utfällbara moppen når in i hörnen och tvättas med 70-gradigt varmvatten. Båda navigerar med LiDAR och sköter tömning automatiskt i basstationen."
+    />
 
     <!-- Above-the-fold CTA -->
     <div class="grid sm:grid-cols-2 gap-3 mb-8">
@@ -292,9 +297,46 @@ export const articleMeta = {
         <strong class="text-text">Hård golv och hörn:</strong> Dreame X40 Ultra utan tvekan. Den utfällbara moppmodulen och varmvattentvätten ger ett städresultat inget annat alternativ matchar 2026. </p>
     </section>
 
+    <!-- Fördjupning: fler köpfrågor -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-6">Fler frågor inför valet</h2>
+      <div class="space-y-6">
+
+        <div>
+          <h3 class="font-semibold text-text mb-2">Hur mycket underhåll kräver robotarna trots basstationen?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Basstationen tömmer dammkorgen, tvättar mopparna och fyller på vatten, men den tar inte bort allt arbete. Du behöver själv fylla på rent vatten, tömma smutsvattentanken, byta dammpåse och hålla sensorerna rena. Räkna med några minuters tillsyn i veckan, oavsett om du väljer Roborock eller Dreame.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Borstar och filter är slitdelar på båda märkena. Sidoborstar böjer sig med tiden och ett igensatt filter stryper luftflödet, vilket försämrar städresultatet långt innan något faktiskt går sönder. Vi har samlat kompatibla <a href="/reservdelar/borstar/" class="text-accent underline">reservborstar till robotdammsugare</a> för både Roborock och Dreame, så att du slipper leta artikelnummer själv.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-text mb-2">Spelar det någon roll att apparna inte finns på svenska?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            För de flesta är det ett litet hinder. Både Roborock Home och Dreame Home är på engelska, men vardagsanvändningen handlar om att starta städning, välja rum och läsa kartan, moment som kräver få ord. Vill du finjustera zoner, scheman och vattenflöde behöver du dock ta dig igenom fler engelska menyer.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            De flesta inställningar gör du under de första veckorna. Därefter rullar städningen på schema och appen öppnas mest för att starta en extra körning eller justera en zon. Upplever du Dreame Home som rörig i början brukar det ge sig efter någon veckas användning.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-text mb-2">Vilken passar bäst i ett stort hem med många rum?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Båda klarar stora hem utan problem. LiDAR-navigeringen bygger en exakt karta med rumsuppdelning, drifttiden på cirka 180 minuter räcker för de flesta bostäder och basstationen tömmer dammkorgen själv. Det sista är den största vinsten i just stora hem, där dammkorgen annars fylls snabbt.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Har du främst hårdgolv väger Dreames hörnmoppning tyngre ju fler golvmeter som ska moppas. Jämför gärna med fler modeller i vår guide till <a href="/robotdammsugare/med-mopp/" class="text-accent underline">robotdammsugare med mopp</a> innan du bestämmer dig.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <!-- Related links -->
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">

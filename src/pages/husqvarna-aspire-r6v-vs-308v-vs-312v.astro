@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
@@ -45,9 +45,9 @@ export const articleMeta = {
 <BaseLayout
   title="Husqvarna Aspire R6V vs 308V vs 312V: vilken slinglös ska du välja?"
   description="Husqvarna Automower Aspire R6V, 308V och 312V jämförda. Samma teknik, olika kapacitet. Se vilken slinglös robotgräsklippare som passar din trädgård."
-  article={{ datePublished: "2026-07-03", dateModified: "2026-07-03", image: "/images/husqvarna-v-serien-jamforelse.webp" }}
+  article={{ datePublished: "2026-07-03", dateModified: "2026-07-27", image: "/images/husqvarna-v-serien-jamforelse.webp" }}
 >
-  <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-6">
+  <section class="bg-primary text-white py-6">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <Breadcrumbs items={breadcrumbs} light={true} />
       <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-300">
@@ -57,7 +57,7 @@ export const articleMeta = {
         <span>·</span>
         <span>Grundare och redaktör, Robotjakt</span>
         <span>·</span>
-        <span>Uppdaterad 3 juli 2026</span>
+        <span>Uppdaterad 27 juli 2026</span>
       </div>
       <h1 class="font-heading text-2xl sm:text-3xl font-bold mb-2">Husqvarna Aspire R6V vs 308V vs 312V 2026</h1>
       <p class="text-gray-300 text-sm max-w-2xl">Husqvarnas tre nya slinglösa robotgräsklippare delar samma teknik men klarar olika stora gräsmattor. Här är hur du väljer rätt.</p>
@@ -65,6 +65,10 @@ export const articleMeta = {
   </section>
 
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <AnswerBox
+      question="Snabbt svar: Aspire R6V, 308V eller 312V?"
+      answer="Välj efter gräsmattans storlek. Husqvarna Aspire R6V räcker upp till 600 m² och kostar minst. 308V klarar 800 m² och laddar dubbelt så snabbt. 312V toppar serien med 1 200 m² och längst aktiv tid. Tekniken är identisk i alla tre, så betala aldrig för yta du inte har."
+    />
     <p class="text-text-light mb-4 text-base">
       Kortversionen: välj efter gräsmattans storlek. Aspire R6V är för mindre trädgårdar upp till 600 m² och kostar minst, 308V klarar 800 m² med snabbare laddning, och 312V är flaggskeppet för upp till 1 200 m². Alla tre är slinglösa och navigerar med samma AI-kamera och satellitteknik, så du väljer inte teknik, du väljer kapacitet.
     </p>
@@ -245,9 +249,32 @@ export const articleMeta = {
       <li><strong>Över 1 200 m² eller mycket branta tomter:</strong> titta på Husqvarnas NERA-modeller istället.</li>
     </ul>
 
+    <h3 class="font-heading text-lg font-bold mt-8 mb-3">Hur fungerar virtuella gränser utan slinga?</h3>
+    <p class="text-text-light mb-4 text-base">
+      Du ritar upp gräsmattans gränser direkt i Automower Connect-appen i stället för att gräva ned en begränsningskabel. Roboten håller sig innanför med hjälp av satellitpositionering, och AI-kameran hjälper till att känna igen gräsytan. Vill du ändra en zon senare justerar du kartan i appen på någon minut.
+    </p>
+    <p class="text-text-light mb-6 text-base">
+      Det här är den största praktiska skillnaden mot äldre Automower-generationer. En nedgrävd kabel låser trädgårdens layout, medan virtuella gränser följer med när du anlägger en ny rabatt eller tar bort en buske. Planerar du om trädgården ofta är det ett tyngre argument än någon enskild specifikation.
+    </p>
+
+    <h3 class="font-heading text-lg font-bold mt-8 mb-3">Spelar den långsammare laddningen i Aspire R6V någon roll?</h3>
+    <p class="text-text-light mb-4 text-base">
+      För de flesta, nej. Aspire R6V laddar på cirka 200 minuter mot 100 för 308V och 312V, men eftersom roboten klipper i återkommande cykler dygnet runt hinner den ändå med hela ytan. Skillnaden märks först om gräsmattan ligger nära modellens tak på 600 m².
+    </p>
+    <p class="text-text-light mb-6 text-base">
+      Räkna i stället på aktiv tid per dygn: 13 timmar för Aspire R6V, 10 för 308V och 15 för 312V. En robot som får gå ofta klipper lite och ofta, vilket ger finfördelat klipp som göder gräsmattan i stället för att samlas i högar. Har du en mindre yta, jämför gärna fler alternativ i guiden om <a href="/robotgrasklippare-liten-tradgard/" class="text-accent underline">robotgräsklippare för liten trädgård</a>.
+    </p>
+
+    <h3 class="font-heading text-lg font-bold mt-8 mb-3">Tål V-serien regn och spolning?</h3>
+    <p class="text-text-light mb-4 text-base">
+      Ja, alla tre modellerna är IPX6-klassade, vilket betyder att de tål kraftiga vattenstrålar. De kan klippa i regn och chassit kan spolas rent med trädgårdsslangen vid rengöring. Undvik dock högtryckstvätt rakt mot tätningarna, packningarna är inte dimensionerade för det trycket oavsett märke.
+    </p>
+    <p class="text-text-light mb-6 text-base">
+      Vått gräs klipps sämre än torrt oavsett väderskydd: tunga strån lägger sig ned och klippet klumpar ihop sig. Låt hellre roboten stå över de värsta skyfallen via schemat i appen. Är tomten större än vad V-serien täcker hittar du tåligare alternativ i guiden om <a href="/robotgrasklippare-stor-tradgard/" class="text-accent underline">robotgräsklippare för stor trädgård</a>.
+    </p>
+
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
       <h2 class="font-heading text-lg font-bold text-text mb-3">Fullständiga recensioner och guider</h2>

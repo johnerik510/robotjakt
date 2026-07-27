@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
@@ -52,7 +52,7 @@ export const articleMeta = {
 <BaseLayout
   title="Worx Landroid vs Husqvarna Automower 2026: jämförelse"
   description="Worx Landroid eller Husqvarna Automower? Vi jämför teknik, installation, app-styrning och pris. Klart svar på vilken gräsrobot som passar din trädgård."
-  article={{ datePublished: "2026-04-05", dateModified: "2026-05-27", image: "/images/worx-landroid-m500.webp" }}
+  article={{ datePublished: "2026-04-05", dateModified: "2026-07-27", image: "/images/worx-landroid-m500.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -63,15 +63,20 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-04-05">2026-04-05</time></p>
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Worx Landroid vs Husqvarna Automower 2026
     </h1>
     <p class="text-text-light mb-6 max-w-2xl">
       Husqvarna är det etablerade premiummärket för robotgräsklippare i Sverige. Worx Landroid är utmanaren, lägre pris, WiFi-app och ett modulärt tillbehörssystem. Vi jämför dem rakt av så att du vet vilket som passar ditt hem och din budget. </p>
+
+    <AnswerBox
+      question="Snabbt svar: Worx Landroid eller Husqvarna Automower 2026?"
+      answer="Välj Worx Landroid M500 om din gräsmatta är under 500 kvadratmeter och priset avgör, du får WiFi-app och modulära tillbehör till klart lägre kostnad. Välj Husqvarna Automower om tomten är stor eller komplex, om du vill slippa gränskabel med 430X Nera, eller om lokal service väger tyngst."
+    />
 
     <!-- Above-the-fold CTA -->
     <div class="grid sm:grid-cols-2 gap-3 mb-8">
@@ -168,6 +173,44 @@ export const articleMeta = {
       <a href="/husqvarna-automower-430x-nera/" target="_blank" class="inline-flex items-center justify-center bg-bg-alt border border-border text-text font-semibold px-5 py-3 rounded-xl hover:bg-border transition-colors text-sm">Bra pris hos Husqvarna 430X Nera</a>
     </div>
 
+    <!-- Fördjupning: fler köpfrågor -->
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Fler frågor inför valet</h2>
+      <div class="space-y-6">
+
+        <div>
+          <h3 class="font-semibold text-text mb-2">Hur svårt är det att lägga gränskabeln själv?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Det är ett engångsjobb som de flesta klarar utan hantverkare. Kabeln läggs längs tomtens kant och runt rabatter, fästs med medföljande märlor eller grävs ner grunt, och ansluts till laddstationen. Räkna med flera timmars arbete för en normalstor tomt, mer om tomten har många öar och hinder.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Nackdelen kommer senare: en avgrävd kabel vid kantskärning eller plantering måste lagas innan roboten fungerar igen. Vill du slippa momentet helt finns fler kabelfria alternativ i vår guide till <a href="/robotgrasklippare-utan-slinga/" class="text-accent underline">robotgräsklippare utan slinga</a>, där Husqvarnas EPOS-modeller ingår.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-text mb-2">Blir gräsmattan bättre av robotklippning?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Ja, för de flesta gräsmattor. Roboten klipper lite och ofta i stället för mycket och sällan, och det finfördelade klippet faller ner mellan stråna där det bryts ner och göder gräsmattan naturligt. Resultatet blir tätare gräs, och du slipper både klipphögar och säckar till återvinningen.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Effekten gäller oavsett om du väljer Worx eller Husqvarna, klipprincipen är densamma. Skillnaden mellan märkena ligger i navigering, kapacitet och service, inte i själva klippresultatet på en normal gräsmatta.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-text mb-2">Vad gör du med robotgräsklipparen på vintern?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Både Worx och Husqvarna ska förvaras frostfritt under vintern, gärna rengjorda och med laddat batteri. Kyla och fukt sliter på batteri och elektronik, så garage eller förråd med plusgrader är rätt plats. Laddstationen kan tas in eller täckas över under samma period.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Gör du det till en rutin varje höst förlänger du robotens livslängd rejält. Vi har samlat hela momentlistan i vår guide till <a href="/guide/vinterforvaring-robotgrasklippare/" class="text-accent underline">vinterförvaring av robotgräsklippare</a>.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
     <!-- Se även -->
     <div class="border border-border rounded-xl p-5 mb-8">
       <h2 class="font-heading text-base font-bold text-text mb-3">Fler robotgräsklippare-jämförelser</h2>
@@ -182,7 +225,6 @@ export const articleMeta = {
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
   </div>
 

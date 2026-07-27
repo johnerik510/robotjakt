@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import EditorialCTA from '../components/EditorialCTA.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -50,7 +50,7 @@ export const articleMeta = {
 <BaseLayout
   title="Dreame vs Ecovacs 2026: vilken robotdammsugare vinner?"
   description="Dreame eller Ecovacs? Vi jämför AI-navigering, sugkraft, moppning och pris. Tydlig vinnare per kategori med konkreta rekommendationer för ditt hem."
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/dreame-x40-ultra.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/dreame-x40-ultra.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -61,9 +61,9 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-05-16">2026-05-16</time></p>
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Dreame vs Ecovacs 2026, vilket märke vinner?
@@ -71,6 +71,11 @@ export const articleMeta = {
     <p class="text-text-light mb-6 max-w-2xl">
       Dreame X40 Ultra (ca 9 000 kr, 12 000 Pa) vinner sugjämförelsen klart mot Ecovacs Deebot X5 Omni (ca 9 500 kr, 8 000 Pa). Ecovacs svarar med 260 minuters drifttid mot Dreames 210. Vi har jämfört båda modeller och ger tydlig rekommendation per kategori.
     </p>
+
+    <AnswerBox
+      question="Snabbt svar: Dreame eller Ecovacs 2026?"
+      answer="Dreame X40 Ultra vinner på prestanda med 12 000 Pa sugkraft och en utfällbar moppmodul som når hörn och kanter. Ecovacs Deebot X5 Omni är billigare och torkar mopparna med varmluft, vilket ger bättre hygien. Blandade golv och mattor: välj Dreame. Mest hårdgolv och lägre pris: välj Ecovacs."
+    />
 
     <EditorialCTA products={['Dreame X40 Ultra']} />
 
@@ -160,14 +165,38 @@ export const articleMeta = {
       Ecovacs Deebot X5 Omni är billigare än Dreame X40 Ultra. I det absoluta premiumsegmentet är prisskillnaden relativt liten, men Ecovacs erbjuder fullständig självtömningsstation och bra städresultat. Om du inte aktivt behöver Dreames utfällbara mopp eller 12 000 Pa sugkraft är Ecovacs det smartare köpet.
     </p>
 
+    <h3 class="font-heading text-lg font-bold text-text mt-6 mb-2">Hur skiljer sig navigeringen i praktiken?</h3>
+    <p class="text-text-light mb-4">
+      Båda robotarna bygger sina kartor med LiDAR, ett roterande lasertorn som mäter avstånd till väggar och möbler med hög precision. Skillnaden ligger i hinderhanteringen: Dreame X40 Ultra identifierar föremål med AI-kamera och Obstacle Avoidance 3.0, medan Ecovacs Deebot X5 Omni använder AIVI 3D. I vanliga hem navigerar båda utmärkt.
+    </p>
+    <p class="text-text-light mb-6">
+      Skillnaden märks först i röriga miljöer med sladdar, leksaker och skor på golvet, där hinderigenkänningen avgör om roboten väjer eller kör fast. Vill du förstå hur lasernavigeringen fungerar i grunden har vi en egen genomgång av <a href="/guide/lidar-navigation/" class="text-accent underline">LiDAR-navigation i robotdammsugare</a>.
+    </p>
+
+    <h3 class="font-heading text-lg font-bold text-text mt-6 mb-2">Räcker 8 000 Pa om du har mattor hemma?</h3>
+    <p class="text-text-light mb-4">
+      Ja, för normala mattor och hem utan husdjur räcker Ecovacs 8 000 Pa gott. Skillnaden mot Dreames 12 000 Pa märks först i tjocka mattluggar, lång päls och inbäddad smuts. Har du ullmattor eller katter med lång päls är Dreame X40 Ultra det tryggare valet.
+    </p>
+    <p class="text-text-light mb-6">
+      Sugkraften är dessutom bara en del av ekvationen. Borstvalsens design och hur tätt roboten sluter mot golvet påverkar hur mycket smuts som faktiskt lyfts, en svagare motor med bra tätning kan slå en starkare med läckage.
+    </p>
+
+    <h3 class="font-heading text-lg font-bold text-text mt-6 mb-2">Vilken av robotarna kräver minst eget underhåll?</h3>
+    <p class="text-text-light mb-4">
+      Underhållet är i praktiken likvärdigt: båda har basstationer som tömmer dammbehållaren och tvättar mopparna automatiskt. Ecovacs varmluftstorkning minskar risken för sur lukt i moppduken, vilket sparar en manuell tvätt då och då. Filter, borstvals och sidoborstar behöver du fortfarande rengöra och byta själv på båda.
+    </p>
+    <p class="text-text-light mb-6">
+      Räkna med samma grundrutin oavsett märke: rensa borstvalsen varje vecka och byt filter regelbundet. Hela schemat finns i vår guide till <a href="/guide/underhall/" class="text-accent underline">underhåll av robotdammsugare</a>.
+    </p>
+
     <div class="grid sm:grid-cols-2 gap-6 mb-8">
-      <a href="/dreame-x40-ultra/" class="block bg-white rounded-xl border border-border p-5 hover:border-accent hover:shadow-md transition-all group">
+      <a href="/dreame-x40-ultra/" class="block bg-white rounded-xl border border-border p-5 hover:border-accent transition-all group">
         <span class="text-xs font-semibold text-green-700 bg-green-50 px-2 py-0.5 rounded mb-2 inline-block">Bäst moppfunktion</span>
         <h3 class="font-heading text-lg font-bold text-text group-hover:text-accent mb-1">Dreame X40 Ultra</h3>
         <p class="text-sm text-text-light">12 000 Pa, utfällbar mopp, LiDAR + AI-kamera. Bäst för blandade golvytor.</p>
         <span class="inline-block mt-3 text-sm font-semibold text-accent">Läs recension →</span>
       </a>
-      <a href="/ecovacs-deebot-x5-omni/" class="block bg-white rounded-xl border border-border p-5 hover:border-accent hover:shadow-md transition-all group">
+      <a href="/ecovacs-deebot-x5-omni/" class="block bg-white rounded-xl border border-border p-5 hover:border-accent transition-all group">
         <span class="text-xs font-semibold text-accent bg-accent/10 px-2 py-0.5 rounded mb-2 inline-block">Bäst pris/prestanda</span>
         <h3 class="font-heading text-lg font-bold text-text group-hover:text-accent mb-1">Ecovacs Deebot X5 Omni</h3>
         <p class="text-sm text-text-light">8 000 Pa, varmluftstorkning, AIVI 3D. Bäst för hårdgolvsdom.</p>
@@ -194,7 +223,6 @@ export const articleMeta = {
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
   </div>
 
   <StickyCTA

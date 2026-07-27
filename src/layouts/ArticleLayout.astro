@@ -1,7 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import AuthorByline from '../components/AuthorByline.astro';
 
 interface Props {
@@ -141,14 +140,13 @@ const articleSchema = {
         <h2 class="text-xl font-bold text-slate-900 mb-4">Relaterade guider</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {autoRelated.map((article) => (
-            <a href={article.href} class="block p-4 bg-white rounded-lg border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all">
+            <a href={article.href} class="block p-4 bg-white rounded-lg border border-slate-200 hover:border-blue-400 transition-all">
               <span class="font-medium text-slate-800 hover:text-blue-700">{article.title}</span>
             </a>
           ))}
         </div>
       </aside>
     )}
-    {showDisclaimer && <AffiliateDisclaimer />}
   </div>
 
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />

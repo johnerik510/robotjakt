@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -69,7 +68,7 @@ const faqItems = [
   },
   {
     question: 'Vad är Clean Base och hur fungerar det?',
-    answer: 'Clean Base är iRobots automatiska tömningsstation. När Roomba återvänder till basen sugs dammkorgen automatiskt in i en påse i stationen. Påsen rymmer ungefär 60 dagars smuts och är förseglad, du tömer den utan att komma i kontakt med dammet. Clean Base ingår i +-modellerna (i7+, j7+, Combo i8+).',
+    answer: 'Clean Base är iRobots automatiska tömningsstation. När Roomba återvänder till basen sugs dammkorgen automatiskt in i en påse i stationen. Påsen rymmer ungefär 60 dagars smuts och är förseglad, du tömmer den utan att komma i kontakt med dammet. Clean Base ingår i +-modellerna (i7+, j7+, Combo i8+).',
   },
   {
     question: 'Vilken Roomba passar bäst för husdjur?',
@@ -310,7 +309,6 @@ export const articleMeta = {
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <!-- Related links -->
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">

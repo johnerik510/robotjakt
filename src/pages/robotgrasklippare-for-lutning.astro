@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProductCard from '../components/ProductCard.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -107,18 +106,18 @@ export const articleMeta = {
 <BaseLayout
   title="Bästa robotgräsklippare för lutning 2026 (upp till 45%)"
   description="Bästa robotgräsklipparna för branta trädgårdar 2026. Vi jämför klätterförmåga upp till 45%. Se topplista med pris, lutningsgräns och prestanda."
-  article={{ datePublished: "2026-04-05", dateModified: "2026-07-11", image: "/images/husqvarna-automower-415x.webp" }}
+  article={{ datePublished: "2026-04-05", dateModified: "2026-07-27", image: "/images/husqvarna-automower-415x.webp" }}
 >
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
       Bästa Robotgräsklippare för Lutning 2026
     </h1>
-    <AuthorByline datePublished="2026-04-05" dateModified="2026-07-11" />
+    <AuthorByline datePublished="2026-04-05" dateModified="2026-07-27" />
 
     <AnswerBox
       question="Snabbt svar: Vilken är den bästa robotgräsklipparen för lutning 2026?"
-      answer="Dreame A3 AWD Pro 5000 är vår bästa robotgräsklippare för lutning 2026. Fyrhjulsdriften klarar branta sluttningar där andra modeller spinner, och den navigerar helt utan perimeterkabel med RTK GPS och LiDAR på tomter upp till 5 000 m²."
+      answer="Dreame A3 AWD Pro 5000 är vår bästa robotgräsklippare för lutning 2026. Fyrhjulsdriften klarar branta sluttningar där andra modeller spinner, och den navigerar helt utan perimeterkabel med RTK GPS och LiDAR på tomter upp till 5 000 m². Har du en mindre tomt räcker Dreame A3 AWD 1000."
     />
 
     <MoneyFeatured {...products[0]} />
@@ -180,11 +179,42 @@ export const articleMeta = {
       <p class="text-text-light leading-relaxed mb-6">
         På brant mark med hårt, ojämnt underlag krävs hjuldrift med bra grepp. Husqvarna Automower-serien har grövre mönster specifikt för kuperad terräng. Kontrollera att hjulen på modellen du väljer är rätt för ditt underlag.
       </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Behöver RTK-antennen fri sikt även i en kuperad trädgård?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Ja, och det är lätt att missa i backig terräng. RTK-mottagningen bygger på satellitsignaler, och höga träd, husvägg och själva slänten kan skugga himlen just där du behöver täckning. Placera antennen högt och fritt, inte i skuggan av en byggnad eller tät krontäckning.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Alla fyra modellerna i listan navigerar med RTK GPS utan perimeterkabel, så antennens placering avgör hur stabil klippningen blir. Tappar roboten position mitt i passet märks det som att den stannar eller kör utanför den gräns du ritat. Vill du jämföra hela kategorin, se vår topplista över <a href="/robotgrasklippare-utan-slinga/" class="text-accent underline">robotgräsklippare utan slinga</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur ofta ska roboten klippa en sluttning?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Låt roboten gå ofta och ta lite gräs varje gång. Kort gräs ger bättre grepp än långt och tungt, och de finhackade klippen faller ner och göder gräsmattan i stället för att lägga sig som en matta. Långt gräs i en backe är där hjulen börjar spinna.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Efter en regnperiod är det värt att skjuta upp klippningen på de brantaste partierna tills gräset torkat. Blött gräs i lutning är kombinationen som ger sämst grepp, och regnsensorn pausar bara under pågående regn, inte timmarna efteråt.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Klipper roboten ända ut till kanten på en slänt?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Nej, knivarna sitter innanför chassit, så det blir alltid en smal remsa kvar längs kanter, staket och murar. I en slänt märks det mer, eftersom du sällan kommer åt att efterklippa lika bekvämt som på plan mark. Planera därför en klippbar kant, exempelvis en stenkant roboten kan köra över.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        En hård kant längs slänten gör dubbel nytta: roboten kan lägga hjulet på den och nå längre ut, och du slipper trimma för hand i den brantaste delen. Krönet är det andra stället att titta på, en tvär övergång mellan plant och brant kan lyfta framhjulen så att greppet släpper.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad gör du om roboten fastnar i backen?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Roboten larmar i appen när hjulen spinner eller den lutar för mycket, och du behöver hjälpa den upp för hand. Händer det på samma ställe varje gång är det sällan slumpen: höj klipphöjden ett steg, klipp oftare eller lägg gränsen strax innanför det brantaste partiet.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Ett återkommande stopp beror ofta på blött gräs, lös jord eller en grop i marken snarare än på lutningen i sig. Är hela sluttningen för brant för modellen hjälper inga inställningar, då är det en robot med högre lutningskapacitet som behövs. Har du dessutom stor yta att täcka, jämför modellerna i vår topplista över <a href="/robotgrasklippare-stor-tradgard/" class="text-accent underline">robotgräsklippare för stor trädgård</a>.
+      </p>
     </section>
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
       <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>

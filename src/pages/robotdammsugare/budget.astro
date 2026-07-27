@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
-import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
@@ -122,7 +121,7 @@ export const articleMeta = {
 <BaseLayout
   title="Bästa budget-robotdammsugare 2026: jämförda prisval"
   description="Bästa budget-robotdammsugarna 2026 jämförda. LiDAR och app-styrning till lågt pris. Se topplista med specifikationer, betyg och bästa köp under 3 000 kr."
-  article={{ datePublished: "2026-05-15", dateModified: "2026-05-27", image: "/images/dreame-d10s-pro.webp" }}
+  article={{ datePublished: "2026-05-15", dateModified: "2026-07-27", image: "/images/dreame-d10s-pro.webp" }}
 >
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
@@ -130,11 +129,11 @@ export const articleMeta = {
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
       Billig robotdammsugare 2026, bäst i test
     </h1>
-    <AuthorByline datePublished="2026-05-15" dateModified="2026-05-22" />
+    <AuthorByline datePublished="2026-05-15" dateModified="2026-07-27" />
 
     <AnswerBox
       question="Snabbt svar: Vilken är den bästa budget-robotdammsugaren 2026?"
-      answer="Dreame D20 Ultra är den bästa budget-robotdammsugaren 2026. Den är billigast med en självtömmande station som ingår, och du får både LiDAR-navigering och moppfunktion utan att tumma på navigering eller automatik för att hålla priset nere."
+      answer="Dreame D20 Ultra är den bästa budget-robotdammsugaren 2026. Den är billigast med en självtömmande station som ingår, och du får både LiDAR-navigering och moppfunktion utan att tumma på navigering eller automatik. Vill du ned i pris är Dreame D20 Plus billigare men saknar station, vilket betyder manuell tömning."
     />
 
     <MoneyFeatured {...products[0]} />
@@ -166,20 +165,55 @@ export const articleMeta = {
       </ul>
     </section>
 
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-5">Köpguide: billig robotdammsugare</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad skiljer LiDAR från enklare navigering?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        LiDAR skickar ut en laserstråle och mäter tiden tillbaka, vilket ger roboten en exakt karta över rummen. Enklare navigering bygger i stället på gyro och studsar mot möbler, kartan blir grov och roboten missar ytor. Utan karta går det heller inte att lägga no-go-zoner i appen.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Det är precis skillnaden mellan Neatsvor X600 Pro och X520 i listan, där bara den förra kartlägger med laser. I praktiken märks det på hur lång tid ett pass tar och hur mycket golv som blir kvar bakom stolsben och i rumshörn. En robot utan karta kör tills batteriet tar slut och kan inte tala om vad den faktiskt har städat.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur ofta måste du tömma en robot utan station?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Räkna med manuell tömning vart andra till vart fjärde dygn. Robotens egen dammbehållare är liten, och har du hår eller päls i hemmet fylls den snabbare än så. Missar du tömningen tappar roboten sugkraft långt innan behållaren ser full ut.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Frågan är alltså inte om du klarar tömningen, utan om du kommer att göra den. Bara en modell i listan har självtömmande station, och avsaknaden av station är den vanligaste anledningen till att en billig robot slutar användas efter några månader. Ska roboten skötas av någon annan i hushållet är stationen värd merkostnaden, och Dreame D20 Ultra är det billigaste sättet i listan att få den. Vad automatiken gör och var den inte räcker går vi igenom i guiden om <a href="/guide/automatisk-tomning/" class="text-accent underline">automatisk tömning i robotdammsugare</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Klarar en billig robotdammsugare mattor?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        På tunna mattor och trasmattor duger 4 000 till 5 000 Pa, och roboten går automatiskt upp i boostläge när den känner mattkanten. Tjock lugg är gränsen: där räcker budgetsegmentets sugkraft till underhåll mellan städningarna, men inte till den djuprengöring luggen behöver några gånger per år.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        En sak till att planera för: alla sex modeller moppar, men en fuktig moppduk hör inte hemma på en matta. Saknar modellen automatisk mopplyft kör du antingen mopp och matta i separata pass, eller markerar mattrummet som no-go-zon när moppen sitter på. Hur olika mattyper påverkar resultatet står i guiden om <a href="/guide/robotdammsugare-mattor/" class="text-accent underline">robotdammsugare och mattor</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vilka förbrukningsdelar behöver du räkna med?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Sidoborste, huvudborste, filter och moppduk är förbrukningsdelar på varje robot, oavsett pris. Batteriet avgör livslängden: litiumjonceller tappar 20 till 30 procent av kapaciteten efter ett par år, och en robot som inte längre når hela ytan på en laddning blir snabbt irriterande att äga.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Kontrollera därför att märket faktiskt säljer delar till just den modell du köper, och att de går att få i Sverige. Ett filter som inte finns att byta gör roboten sämre för varje månad som går. Köp originaltillbehör direkt från tillverkaren, kopior sitter ofta inte tätt och släpper förbi finkornigt damm i stället för att fånga det.
+      </p>
+    </section>
+
     <FAQ items={faqItems} />
 
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
       <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
       <ul class="space-y-2">
         <li><a href="/billigaste-robotdammsugare/" class="text-accent underline text-sm">Allra billigaste robotdammsugare 2026</a></li>
-        <li><a href="/guide/sugkraft/" class="text-accent underline text-sm">Sugkraft i På förklarat</a></li>
+        <li><a href="/guide/sugkraft/" class="text-accent underline text-sm">Sugkraft i Pa förklarat</a></li>
         <li><a href="/guide/lidar-navigation/" class="text-accent underline text-sm">LiDAR-navigation</a></li>
         <li><a href="/robotdammsugare/husdjur/" class="text-accent underline text-sm">Bäst för husdjur</a></li>
         <li><a href="/robotdammsugare/med-mopp/" class="text-accent underline text-sm">Bäst med mopp</a></li>
       </ul>
     </section>
 
-    <AffiliateDisclaimer />
 
     <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
   </div>

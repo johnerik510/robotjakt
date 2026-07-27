@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import EditorialCTA from '../../components/EditorialCTA.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -60,7 +60,7 @@ export const articleMeta = {
 <BaseLayout
   title="Ecovacs X5 Omni vs Roborock S8 MaxV Ultra 2026: test"
   description="Ecovacs Deebot X5 Omni eller Roborock S8 MaxV Ultra? Vi jämför design, moppning, sugkraft och pris. Klart svar på vilken robot som vinner 2026."
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/heroes/ecovacs-deebot-x5-omni-vs-roborock-s8-maxv-ultra.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/heroes/ecovacs-deebot-x5-omni-vs-roborock-s8-maxv-ultra.webp" }}
 >
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -71,13 +71,17 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-04-04">2026-04-04</time></p>
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Ecovacs Deebot X5 Omni vs Roborock S8 MaxV Ultra 2026
     </h1>
+    <AnswerBox
+      question="Snabbt svar: Ecovacs X5 Omni eller Roborock S8 MaxV Ultra?"
+      answer="Ecovacs Deebot X5 Omni är det smartare köpet för de flesta: fyrkantig kropp som täcker hörnen bättre, AIVI 3D med avföringsdetektering och lägre pris. Roborock S8 MaxV Ultra motiverar merkostnaden med 10 000 Pa mot 8 000 Pa och beprövad LiDAR-navigering, rätt val för hem med tjocka mattor."
+    />
     <p class="text-text-light mb-6 max-w-2xl">
       Ecovacs Deebot X5 Omni är unik med sin fyrkantiga design och AIVI 3D-kameranavigering. Roborock S8 MaxV Ultra är ett beprövat flaggskepp med 3D LiDAR och 10 000 Pa sugkraft. Båda kostar till lägre pris, men de är fundamentalt olika robotar.
     </p>
@@ -239,6 +243,35 @@ export const articleMeta = {
       </div>
     </section>
 
+    <!-- Deep dive: vanliga följdfrågor -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-6">Vanliga följdfrågor innan du väljer</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Varför är avföringsdetektering så viktig för husdjursägare?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        En robot som inte känner igen husdjursavföring kör rakt igenom den och smetar ut innehållet över golven i hela hemmet. X5 Omnis AIVI 3D identifierar avföring och styr undan, vilket gör att roboten kan städa hemma hos hund- och kattägare utan uppsikt. S8 MaxV Ultra saknar den funktionen.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Det här är den enskilt viktigaste skillnaden för dig med husdjur som ibland har olyckor inomhus. Sugkraft går att kompensera med fler städpass, en utsmetad olycka går inte att ångra. Fler modeller som fungerar bra i pälshem hittar du i vår genomgång av <a href="/robotdammsugare/husdjur/" class="text-cta hover:underline">robotdammsugare för husdjur</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Spelar bullernivån någon roll i praktiken?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Ja, om du är hemma när roboten arbetar. S8 MaxV Ultra ligger kring 65 dB i sitt tystaste läge mot X5 Omnis 68 dB, en skillnad du hör men sällan störs av. Schemalägger du städningen till timmar när ingen är hemma spelar bullernivån i stort sett ingen roll.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Tänk också på stationen: när roboten töms i stationen låter det betydligt mer än själva städningen under några sekunder. Båda modellerna schemaläggs enkelt i sina appar, så du kan lägga både städpass och tömning på tider när de inte stör.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Var ska stationen stå?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Stationen behöver ett eluttag, en plan golvyta och fritt utrymme framför sig så att roboten kan docka rakt. Många placerar den i hallen, grovköket eller tvättstugan där den varken syns eller hörs särskilt mycket. Båda stationerna är byggda för att få plats i ett litet skåputrymme.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Undvik att klämma in stationen i ett hörn där roboten måste vinkla sig fram, dockningen blir mer träffsäker med fri anfart. Vill du väga in fler praktiska faktorer före köpet, som underhåll och stationstyper, finns allt samlat i vår <a href="/kopguide-robotdammsugare/" class="text-cta hover:underline">köpguide för robotdammsugare</a>.
+      </p>
+    </section>
+
     <!-- Related comparisons -->
     <section class="mb-10">
       <h2 class="font-heading text-lg font-bold text-text mb-4">Relaterade jämförelser</h2>
@@ -253,7 +286,6 @@ export const articleMeta = {
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
   </div>
 
   <StickyCTA url="https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3356577&url=https://www.proshop.se/Robotdammsugare/Ecovacs-Robotdammsugare-Deebot-T30C-Vit/3356577" text="Se Ecovacs Deebot T30C hos Proshop" />

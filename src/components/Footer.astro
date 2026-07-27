@@ -1,109 +1,53 @@
 ---
-const dronare = [
-  { label: 'Bästa drönaren 2026', href: '/dronare/' },
-  { label: 'För nybörjare', href: '/dronare-for-nyborjare/' },
-  { label: 'Med kamera', href: '/dronare-med-kamera/' },
-  { label: 'DJI Mini 5 Pro recension', href: '/dji-mini-5-pro/' },
-  { label: 'DJI Air 3S recension', href: '/dji-air-3s/' },
-];
-
-const robotdammsugare = [
-  { label: 'Bästa robotdammsugare 2026', href: '/' },
-  { label: 'Med moppfunktion', href: '/robotdammsugare/med-mopp/' },
-  { label: 'För husdjur', href: '/robotdammsugare/husdjur/' },
-  { label: 'För lägenhet', href: '/robotdammsugare/lagenhet/' },
-  { label: 'För långt hår', href: '/robotdammsugare/langt-har/' },
-  { label: 'Med basstation', href: '/robotdammsugare/med-bassation/' },
-  { label: 'Stor lägenhet', href: '/robotdammsugare/storlagenhet/' },
-  { label: 'Budget under 4 000 kr', href: '/billigaste-robotdammsugare/' },
-  { label: 'Köpguide', href: '/kopguide-robotdammsugare/' },
-  { label: 'Dreame, alla modeller', href: '/dreame-guide/' },
-  { label: 'Roborock, alla modeller', href: '/roborock-guide/' },
-  { label: 'Ecovacs guide', href: '/ecovacs-guide/' },
-  { label: 'Roborock vs Dreame', href: '/roborock-vs-dreame/' },
-];
-
-const dammsugareRecensioner = [
-  { label: 'Dreame X40 Ultra', href: '/dreame-x40-ultra/' },
-  { label: 'Roborock S8 MaxV Ultra', href: '/roborock-s8-maxv-ultra/' },
-  { label: 'Roborock Qrevo Master', href: '/roborock-qrevo-master/' },
-  { label: 'Roborock Qrevo MaxV Ultra', href: '/roborock-qrevo-maxv-ultra/' },
-  { label: 'Roborock Qrevo Pro', href: '/roborock-qrevo-pro/' },
-  { label: 'Roborock S8 Pro Ultra', href: '/roborock-s8-pro-ultra/' },
-  { label: 'Dreame L20 Ultra', href: '/dreame-l20-ultra/' },
-  { label: 'Dreame L10s Pro Ultra Heat', href: '/dreame-l10s-pro-ultra-heat/' },
-  { label: 'Dreame L10s Ultra Gen2', href: '/dreame-l10s-ultra-gen2/' },
-  { label: 'Dreame D10s Pro', href: '/dreame-d10s-pro/' },
-  { label: 'Dreame Z10 Pro', href: '/dreame-z10-pro/' },
-  { label: 'eufy X10 Pro Omni', href: '/eufy-x10-pro-omni/' },
-  { label: 'iRobot Roomba j9+', href: '/irobot-roomba-j9-plus/' },
-];
-
-const robotgrasklippare = [
-  { label: 'Bästa robotgräsklippare 2026', href: '/robotgrasklippare/' },
-  { label: 'Köpguide', href: '/guide/robotgrasklippare-koparguide/' },
-  { label: 'Utan slinga', href: '/robotgrasklippare-utan-slinga/' },
-  { label: 'För lutning (upp till 50%)', href: '/robotgrasklippare-for-lutning/' },
-  { label: 'Under 5 000 kr', href: '/robotgrasklippare-under-5000/' },
-  { label: 'Liten trädgård', href: '/robotgrasklippare-liten-tradgard/' },
-  { label: 'Stor trädgård', href: '/robotgrasklippare-stor-tradgard/' },
-  { label: 'Husqvarna Automower 450X', href: '/husqvarna-automower-450x/' },
-  { label: 'Husqvarna Automower 430X', href: '/husqvarna-automower-430x-nera/' },
-  { label: 'Husqvarna Automower 315X', href: '/husqvarna-automower-315x/' },
-  { label: 'Segway Navimow H800E', href: '/segway-navimow-h800e/' },
-  { label: 'Segway Navimow H500E', href: '/segway-navimow-h500e/' },
-  { label: 'Mammotion LUBA AWO 3000', href: '/mammotion-luba-awo-3000/' },
-  { label: 'Gardena Sileno City 500', href: '/gardena-sileno-city-500/' },
-];
-
-const ovriga = [
-  { label: 'Poolrobot', href: '/poolrobot/' },
-  { label: 'Poolrobot köpguide', href: '/kopguide-poolrobot/' },
-  { label: 'Billigaste poolrobot', href: '/billigaste-poolrobot/' },
-  { label: 'Dolphin Nautilus CC Plus', href: '/dolphin-nautilus-cc-plus/' },
-  { label: 'Dolphin E30 recension', href: '/dolphin-e30/' },
-  { label: 'Dolphin Sigma recension', href: '/dolphin-sigma/' },
-  { label: 'Zodiac Tornax OT2030', href: '/zodiac-tornax-ot2030/' },
+// Footer 2.0 (2026-07-27): kompakt och kurerad. Mega-menyn bär de djupa
+// länkarna sitewide, footern håller kategorier, populära topplistor och
+// redaktionellt. Affiliate-disclosure ligger HÄR och bara här (hård regel),
+// max två rader, låg emfas.
+const kategorier = [
+  { label: 'Robotgräsklippare bäst i test', href: '/robotgrasklippare/' },
+  { label: 'Robotdammsugare bäst i test', href: '/robotdammsugare/' },
+  { label: 'Bästa poolroboten', href: '/poolrobot/' },
   { label: 'Fönsterputsrobot', href: '/fonsterputsrobot/' },
-  { label: 'Billigaste fönsterputsrobot', href: '/billigaste-fonsterputsrobot/' },
-  { label: 'Ecovacs Winbot W2 Omni', href: '/ecovacs-winbot-w2-omni/' },
+  { label: 'Bästa drönaren', href: '/dronare/' },
+  { label: 'Reservdelar', href: '/reservdelar/' },
 ];
 
-const reservdelar = [
-  { label: 'Alla reservdelar', href: '/reservdelar/' },
-  { label: 'Roborock S8-serien reservdelar', href: '/reservdelar/roborock-s8-serien/' },
-  { label: 'Roborock Qrevo-serien reservdelar', href: '/reservdelar/roborock-qrevo-serien/' },
-  { label: 'Roborock reservdelar', href: '/reservdelar/roborock/' },
-  { label: 'Dreame reservdelar', href: '/reservdelar/dreame/' },
-  { label: 'Filter', href: '/reservdelar/filter/' },
-  { label: 'Borstar', href: '/reservdelar/borstar/' },
-  { label: 'Ecovacs reservdelar', href: '/reservdelar/ecovacs/' },
-  { label: 'Husqvarna reservdelar', href: '/reservdelar/husqvarna/' },
+const popularaGuider = [
+  { label: 'Mammotion vs Segway Navimow', href: '/mammotion-vs-segway-navimow/' },
+  { label: 'Husqvarna vs Mammotion', href: '/husqvarna-vs-mammotion/' },
+  { label: 'Robotgräsklippare för brant lutning', href: '/robotgrasklippare-for-lutning/' },
+  { label: 'Robotgräsklippare utan slinga', href: '/robotgrasklippare-utan-slinga/' },
+  { label: 'Robotdammsugare för husdjur', href: '/robotdammsugare/husdjur/' },
+  { label: 'Roborock vs Dreame', href: '/roborock-vs-dreame/' },
+  { label: 'Köpguide robotdammsugare', href: '/kopguide-robotdammsugare/' },
+  { label: 'Köpguide robotgräsklippare', href: '/guide/robotgrasklippare-koparguide/' },
 ];
 
-const legal = [
-  { label: 'Om oss', href: '/om-oss/' },
+const omRobotjakt = [
+  { label: 'Om Robotjakt', href: '/om-oss/' },
   { label: 'Om redaktionen', href: '/om-redaktionen/' },
   { label: 'Så testar vi', href: '/sa-testar-vi/' },
   { label: 'Redaktionell policy', href: '/redaktionell-policy/' },
   { label: 'Kontakt', href: '/kontakt/' },
   { label: 'Integritetspolicy', href: '/integritetspolicy/' },
-  { label: 'Affiliate-disclaimer', href: '/affiliate-disclaimer/' },
 ];
 ---
 
 <footer class="bg-primary text-gray-300">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-8 gap-8">
-      <div class="col-span-2 md:col-span-3 lg:col-span-1">
-        <h3 class="font-heading text-white text-lg font-bold mb-4">Robotjakt</h3>
-        <p class="text-sm leading-relaxed">
-          Vi jämför konsumentrobotar för den svenska marknaden. Oberoende recensioner av robotdammsugare, robotgräsklippare, drönare och poolrobotar. </p>
+    <div class="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-[2fr_1fr_1.3fr_1fr]">
+      <div class="col-span-2 md:col-span-4 lg:col-span-1 lg:pr-8">
+        <a href="/" class="inline-block mb-4">
+          <img src="/images/logo.svg" alt="Robotjakt" class="h-9 w-auto" width="177" height="36" loading="lazy" />
+        </a>
+        <p class="text-sm leading-relaxed text-gray-400">
+          Robotjakt jämför konsumentrobotar för den svenska marknaden: robotdammsugare, robotgräsklippare, poolrobotar och drönare. Oberoende recensioner med nackdelarna utskrivna.
+        </p>
       </div>
       <div>
-        <h4 class="font-heading text-white text-sm font-bold uppercase tracking-wider mb-4">Drönare</h4>
-        <ul class="space-y-2">
-          {dronare.map((item) => (
+        <p class="font-heading text-white text-sm font-bold uppercase tracking-wider mb-4">Kategorier</p>
+        <ul class="space-y-2.5">
+          {kategorier.map((item) => (
             <li>
               <a href={item.href} class="text-sm hover:text-white transition-colors">{item.label}</a>
             </li>
@@ -111,9 +55,9 @@ const legal = [
         </ul>
       </div>
       <div>
-        <h4 class="font-heading text-white text-sm font-bold uppercase tracking-wider mb-4">Robotdammsugare</h4>
-        <ul class="space-y-2">
-          {robotdammsugare.map((item) => (
+        <p class="font-heading text-white text-sm font-bold uppercase tracking-wider mb-4">Populära jämförelser</p>
+        <ul class="space-y-2.5">
+          {popularaGuider.map((item) => (
             <li>
               <a href={item.href} class="text-sm hover:text-white transition-colors">{item.label}</a>
             </li>
@@ -121,49 +65,9 @@ const legal = [
         </ul>
       </div>
       <div>
-        <h4 class="font-heading text-white text-sm font-bold uppercase tracking-wider mb-4">Recensioner</h4>
-        <ul class="space-y-2">
-          {dammsugareRecensioner.map((item) => (
-            <li>
-              <a href={item.href} class="text-sm hover:text-white transition-colors">{item.label}</a>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-heading text-white text-sm font-bold uppercase tracking-wider mb-4">Robotgräsklippare</h4>
-        <ul class="space-y-2">
-          {robotgrasklippare.map((item) => (
-            <li>
-              <a href={item.href} class="text-sm hover:text-white transition-colors">{item.label}</a>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-heading text-white text-sm font-bold uppercase tracking-wider mb-4">Reservdelar</h4>
-        <ul class="space-y-2">
-          {reservdelar.map((item) => (
-            <li>
-              <a href={item.href} class="text-sm hover:text-white transition-colors">{item.label}</a>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-heading text-white text-sm font-bold uppercase tracking-wider mb-4">Pool & Fönster</h4>
-        <ul class="space-y-2">
-          {ovriga.map((item) => (
-            <li>
-              <a href={item.href} class="text-sm hover:text-white transition-colors">{item.label}</a>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-heading text-white text-sm font-bold uppercase tracking-wider mb-4">Information</h4>
-        <ul class="space-y-2">
-          {legal.map((item) => (
+        <p class="font-heading text-white text-sm font-bold uppercase tracking-wider mb-4">Redaktionellt</p>
+        <ul class="space-y-2.5">
+          {omRobotjakt.map((item) => (
             <li>
               <a href={item.href} class="text-sm hover:text-white transition-colors">{item.label}</a>
             </li>
@@ -172,11 +76,13 @@ const legal = [
       </div>
     </div>
     <div class="mt-12 pt-8 border-t border-primary-light">
-      <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-        <p class="text-sm">
-          &copy; 2026 Robotjakt.se. Alla rättigheter förbehållna. </p>
-        <p class="text-xs text-gray-400">
-          Robotjakt.se innehåller affiliatelänkar. Vi kan få provision när du handlar via våra länkar, utan extra kostnad för dig. </p>
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-3">
+        <p class="text-sm text-gray-400">
+          &copy; 2026 Robotjakt.se. Alla rättigheter förbehållna.
+        </p>
+        <p class="text-xs text-gray-400 md:text-right md:max-w-md">
+          Robotjakt.se innehåller affiliatelänkar. Vi kan få provision när du handlar via våra länkar, utan extra kostnad för dig.
+        </p>
       </div>
       <p class="mt-4 text-xs text-gray-400">
         ELS Catalyst AB &middot; Org.nr 559583-6163 &middot; <!--email_off--><a href="mailto:info@robotjakt.se" class="hover:text-gray-200 transition-colors">info@robotjakt.se</a><!--/email_off-->

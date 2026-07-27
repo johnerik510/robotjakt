@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProductCard from '../components/ProductCard.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -160,7 +159,7 @@ export const articleMeta = {
 <BaseLayout
   title="Billigaste robotdammsugaren 2026: från 999 kr, bäst för pengarna"
   description="Bästa billiga robotdammsugarna 2026 jämförda. LiDAR-navigation och mopp till lågt pris. Se topplista, specifikationer och vår rekommendation per budget."
-  article={{ datePublished: "2026-04-20", dateModified: "2026-05-27", image: "/images/liectroux-l200.webp" }}
+  article={{ datePublished: "2026-04-20", dateModified: "2026-07-27", image: "/images/liectroux-l200.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
@@ -168,11 +167,11 @@ export const articleMeta = {
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Billigaste robotdammsugare 2026, 8 budgetmodeller jämförda
     </h1>
-    <AuthorByline datePublished="2026-04-20" dateModified="2026-05-22" />
+    <AuthorByline datePublished="2026-04-20" dateModified="2026-07-27" />
 
     <AnswerBox
       question="Snabbt svar: Vilken är den billigaste robotdammsugaren 2026?"
-      answer="Liectroux L200 är den billigaste robotdammsugaren med mopp 2026, den dammsuger och moppar i samma pass och navigerar med gyro istället för att studsa runt slumpmässigt. Vill du ha riktig LiDAR-navigation är Roborock Q5 Pro den billigaste vi rekommenderar."
+      answer="Liectroux L200 är den billigaste robotdammsugaren med mopp 2026. Den dammsuger och moppar i samma pass, navigerar med gyro istället för att studsa runt slumpmässigt och köps direkt från svensk butik. Vill du ha riktig LiDAR-navigation som kartlägger hemmet är Roborock Q5 Pro den billigaste modellen vi rekommenderar."
     />
 
     <MoneyFeatured {...products[0]} />
@@ -252,11 +251,51 @@ export const articleMeta = {
           </li>
         ))}
       </ul>
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Bra att veta innan du köper en billig robotdammsugare</h2>
+      <div class="grid sm:grid-cols-1 gap-5 mb-6">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Vad betyder Pa när man pratar sugkraft?</h3>
+          <p class="text-sm text-text-light mb-3">Pa står för pascal och är ett mått på det undertryck roboten skapar, alltså hur hårt den suger. Ju högre siffra, desto tyngre partiklar lyfter den ur mattor och golvspringor. Budgetmodellerna i listan ligger på 3 000 till 6 000 Pa, där Neatsvor X520 är starkast i klassen.</p>
+          <p class="text-sm text-text-light">Siffran säger dock inte allt. Borstdesign och hur tätt munstycket ligger mot golvet påverkar resultatet minst lika mycket. Vill du gå djupare i vad siffrorna faktiskt betyder har vi en hel genomgång av <a href="/guide/sugkraft/" class="text-accent underline">sugkraft i robotdammsugare</a>.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Kan en billig robotdammsugare moppa ordentligt?</h3>
+          <p class="text-sm text-text-light mb-3">Ja, för underhållsmoppning. Budgetmodeller som Liectroux L200 och C30B drar en fuktad moppduk över golvet medan de dammsuger, vilket tar bort damm och lättare fläckar. De skurar inte, roterande moppar och självtvättande stationer hittar du först i dyrare klasser. Intorkat kladd får du fortfarande ta för hand.</p>
+          <p class="text-sm text-text-light">Räkna med att fylla vattentanken före körning och tvätta duken efteråt. Vill du prioritera moppfunktionen har vi rankat modellerna separat i vår topplista över <a href="/robotdammsugare/med-mopp/" class="text-accent underline">bästa robotdammsugare med mopp</a>.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Fungerar billiga robotdammsugare i mörker?</h3>
+          <p class="text-sm text-text-light mb-3">Modeller med LiDAR, som Roborock Q5 Pro och Dreame D20 Plus, navigerar lika bra i mörker som i dagsljus eftersom lasern mäter avstånd utan att behöva ljus. Gyro-modeller som Liectroux L200 påverkas inte heller av ljusnivån. Det är kamerabaserad hinderigenkänning i premiumklassen som kräver belysning.</p>
+          <p class="text-sm text-text-light">I praktiken betyder det att du kan låta en budgetrobot städa när ni sover eller är hemifrån, utan att lämna lampor tända.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Hur mycket underhåll kräver en robot utan tömningsstation?</h3>
+          <p class="text-sm text-text-light mb-3">Räkna med att tömma dammkorgen efter varannan till var tredje körning och rensa borsten från hår med jämna mellanrum. Filtret behöver knackas ur eller bytas när sugkraften märkbart sjunker. Med en automatisk tömningsstation slipper du dammkorgen i veckor, men i budgetklassen är stationer ovanliga.</p>
+          <p class="text-sm text-text-light">Underhållet tar bara någon minut per gång men är avgörande för att roboten ska prestera som ny. En full dammkorg eller igensatt borste märks direkt på städresultatet.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Vad är skillnaden mellan gyro-navigation och LiDAR i praktiken?</h3>
+          <p class="text-sm text-text-light mb-3">Gyro-navigation håller kurs med rörelsesensorer och kör i raka banor, men den bygger ingen exakt karta. LiDAR snurrar en laser runt roboten, mäter avstånd till väggar och möbler och skapar en ritning av hemmet. Skillnaden märks mest i städtid och hur ofta roboten kör om samma yta.</p>
+          <p class="text-sm text-text-light mb-3">I ett litet hem med öppna golvytor betyder skillnaden mindre än specifikationen antyder. Liectroux L200 och C30B tar sig igenom ett vardagspass utan att missa mycket, och C30B lägger dessutom upp en enkel kartläggning i appen.</p>
+          <p class="text-sm text-text-light">I större eller mer möblerade hem drar LiDAR ifrån. Roborock Q5 Pro och Dreame D20 Plus planerar rutten innan de börjar och kan städa rum för rum via appen. Vill du förstå tekniken på djupet har vi gått igenom <a href="/guide/lidar-navigation/" class="text-accent underline">LiDAR-navigation i robotdammsugare</a>.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Hur mycket stör en robotdammsugare när den går?</h3>
+          <p class="text-sm text-text-light mb-3">Ljudnivån hörs tydligt i samma rum men går att prata över. Det som stör mest är sällan själva suget utan hjulen och sidoborsten mot hårda golv. Modeller som marknadsförs med tyst drift, som Liectroux C30B och TP-Link Tapo RV20 Max Plus, är märkbart diskretare än de starkaste sugmaskinerna.</p>
+          <p class="text-sm text-text-light mb-3">Suget skalas ofta upp automatiskt när roboten kör upp på en matta, och då blir det högre en kort stund. Kör du på högsta sugläget hela passet blir ljudnivån konstant hög. Neatsvor X520 med 6 000 Pa är starkast i listan och det hörs.</p>
+          <p class="text-sm text-text-light">Bor du i lägenhet är schemaläggning mitt på dagen enklast för alla inblandade. Vi har rankat de modeller som passar mindre ytor och tunnare bjälklag i vår guide till <a href="/robotdammsugare/lagenhet/" class="text-accent underline">robotdammsugare för lägenhet</a>.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Klarar en budgetrobot trösklar och flera rum?</h3>
+          <p class="text-sm text-text-light mb-3">De flesta budgetrobotar tar låga trösklar utan hjälp men stannar vid höga kanter och trappsteg. Flera rum klarar de också, förutsatt att dörrarna står öppna. Utan LiDAR-karta kan roboten däremot inte styras till ett enskilt rum, den städar helt enkelt det den kommer åt.</p>
+          <p class="text-sm text-text-light mb-3">Fallsensorerna på undersidan stoppar roboten vid trappor, men i ett hus med flera plan får du bära den mellan våningarna. En robot utan karta utgår från laddstationens position varje gång, så flytta stationen till den våning du städar.</p>
+          <p class="text-sm text-text-light">Roborock Q5 Pro och TP-Link Tapo RV20 Max Plus bygger en karta med LiDAR och låter dig peka ut rum i appen. Det är den funktion som gör mest skillnad i ett större hem, och den finns bara i den övre delen av budgetklassen.</p>
+        </div>
+      </div>
     </section>
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <!-- Related links -->
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">

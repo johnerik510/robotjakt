@@ -1,6 +1,7 @@
 ---
 import { ctaRel } from '../lib/cta-rel';
 import ArticleLayout from '../layouts/ArticleLayout.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 
@@ -62,13 +63,18 @@ export const articleMeta = {
   title="DJI Mini 5 Pro recension 2026: kompakt kameradrönare"
   description="DJI Mini 5 Pro testad: kompakt under 249g med 4K-kamera och hinderundvikning. Se bildkvalitet, flygtid, vilka begränsningar viktgränsen ger och pris Sverige."
   breadcrumbs={breadcrumbs}
-  lastUpdated="2026-04-06"
+  lastUpdated="2026-07-27"
   ogImage="/images/dji-mini-5-pro.webp"
   datePublished="2026-02-09"
 >
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
     DJI Mini 5 Pro, Recension 2026
   </h1>
+
+  <AnswerBox
+    question="Snabbt svar: Är DJI Mini 5 Pro värd att köpa?"
+    answer="DJI Mini 5 Pro är den bästa konsumentdrönaren under 250 gram 2026 och får 9,5 av 10 i vår bedömning. Den 1-tums sensorn ger tydligt bättre bilder i svagt ljus än Mini 4 Pro, 4K/120 fps öppnar för slowmotion och du slipper drönarkort. Fly More Combo rekommenderas för längre flygpass."
+  />
 
   <!-- Verdict box -->
   <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -201,6 +207,52 @@ export const articleMeta = {
     <h3 class="font-heading text-xl font-semibold text-text mb-3">Regelstatus i Sverige</h3>
     <p class="text-text-light leading-relaxed mb-4">
       Under 250 gram gör Mini 5 Pro till en C0-klassad drönare. Det innebär att du för hobbyflygning i öppen kategori inte behöver drönarkort (A1/A3-kompetensbevis). Du behöver dock läsa på om grundreglerna: flyg inte nära flygplatser, håll drönaren synlig, respektera integritetslagar och kontrollera LFVs drönarkarta innan varje flygning.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Behöver DJI Mini 5 Pro ett microSD-kort?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Ja, i praktiken. DJI Mini 5 Pro har 10 GB internlagring, vilket fylls snabbt när du filmar i 4K, särskilt i 120 fps där filstorlekarna växer kraftigt. Ett microSD-kort är därför ett självklart tillbehör från dag ett, så att du aldrig behöver avbryta en flygning för att lagringen tagit slut.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Internlagringen fungerar bra som reserv om du glömt kortet hemma, men den räcker inte som huvudlagring för videoflygning. Välj ett kort som klarar kontinuerlig 4K-inspelning utan avbrott och töm det regelbundet till datorn, så slipper du sortera i lagringen ute i fält.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">När räcker DJI Mini 5 Pro och när ska du välja DJI Air 3S?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Mini 5 Pro räcker för de allra flesta hobbyflygare: bildkvaliteten från 1-tums sensorn är utmärkt och du slipper drönarkort. DJI Air 3S motiverar sin högre prislapp först när du behöver telekamera och ännu bättre nattfilmning, och då får du samtidigt räkna med tillståndskrav och högre vikt.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Fundera på vad du faktiskt filmar. Landskap, semesterresor och sport täcks utmärkt av Mini 5 Pro, medan den som regelbundet filmar i skymning eller vill komma närmare motiv på avstånd har mer nytta av Air 3S. Vi har gått igenom skillnaderna i detalj i vår <a href="/dji-air-3s/" class="text-accent underline">DJI Air 3S recension</a>.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur svårt är det att flyga DJI Mini 5 Pro som nybörjare?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      DJI Mini 5 Pro är enkel att flyga även för förstagångspiloter. Den omnidirektionella hinderdetekteringen stannar drönaren innan den når träd och stolpar, GPS-positioneringen håller den stilla i luften när du släpper spakarna och DJI Fly-appen guidar dig genom start och landning. De flesta känner sig trygga redan efter första batteriladdningen.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Börja på en öppen yta utan folk och träd, flyg lågt de första passen och testa hinderdetekteringen i lugn takt innan du ger dig på trängre miljöer. Är du osäker på vilken modell som passar en förstagångsköpare har vi samlat våra rekommendationer i guiden till <a href="/dronare-for-nyborjare/" class="text-accent underline">bästa drönare för nybörjare</a>.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur planerar du ett flygpass med DJI Mini 5 Pros laddtid?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Ett batteri räcker upp till 36 minuter i luften och laddas på cirka 80 minuter. Har du bara ett batteri blir det alltså långa pauser mellan passen. Fly More Combo med tre batterier och laddningshubb ger upp till 100 minuters flygtid innan du behöver ladda om.
+    </p>
+    <p class="text-text-light leading-relaxed mb-4">
+      Ladda hemma kvällen före i stället för i bilen på väg ut, då slipper du vänta när ljuset är som bäst. Den effektiva flygtiden landar närmare 25 till 30 minuter i normal vind, så tre batterier ger dig en bra bit över en timme i luften per utflykt.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Vill du jämföra flygtid och batteribehov mellan olika modeller har vi ställt kameradrönarna mot varandra i guiden till <a href="/dronare-med-kamera/" class="text-accent underline">bästa drönare med kamera</a>.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad ska du kontrollera innan du lyfter med DJI Mini 5 Pro?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Kontrollera tre saker före varje start: att du inte är nära en flygplats eller ett annat begränsat område enligt LFVs drönarkarta, att vinden ligger under gränsen på 10,7 m/s och att du har fri sikt till drönaren under hela flygningen. Vikten under 250 gram tar bort kravet på drönarkort, men inte reglerna för var du får flyga.
+    </p>
+    <p class="text-text-light leading-relaxed mb-4">
+      Hinderdetekteringen arbetar bäst i normalt ljus, så lägg in extra marginal till träd och kablar när du flyger i skymning. Välj landningsplats med omsorg också. En plan yta utan grus och löv skonar propellrar och gimbal, och gör starten enklare nästa gång.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Ska du jämföra Mini 5 Pro mot resten av fältet innan du köper hittar du hela rangordningen i vår topplista över <a href="/dronare/" class="text-accent underline">bästa drönaren 2026</a>.
     </p>
   </section>
 

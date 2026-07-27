@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProductCard from '../components/ProductCard.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -106,18 +105,18 @@ export const articleMeta = {
   title="Bästa drönare för nybörjare 2026: jämförda och rankade"
   description="Vi har jämfört de bästa drönarna för nybörjare 2026. Enkla att flyga, stabila och prisvärda. Se topplistan med specifikationer, pris och köpguide."
   ogImage="/images/dji-mini-3.webp"
-  article={{ datePublished: "2026-03-13", dateModified: "2026-05-27", image: "/images/dji-mini-5-pro.webp" }}
+  article={{ datePublished: "2026-03-13", dateModified: "2026-07-27", image: "/images/dji-mini-5-pro.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight mt-2">
       Bästa Drönare för Nybörjare 2026
     </h1>
-    <AuthorByline datePublished="2026-03-13" dateModified="2026-05-27" />
+    <AuthorByline datePublished="2026-03-13" dateModified="2026-07-27" />
 
     <AnswerBox
       question="Snabbt svar: Vilken drönare är bäst för nybörjare 2026?"
-      answer="DJI Mini 3 är bäst för nybörjare 2026. Den väger under 250 g, så du slipper drönarkort i Sverige, och är enkel att lära sig med automatiska flyglägen. Det är dessutom lägsta priset i DJI:s Mini-serie."
+      answer="DJI Mini 3 är bäst för nybörjare 2026. Den väger under 250 g, så du slipper drönarkort i Sverige, är enkel att lära sig med automatiska flyglägen och har lägst pris i DJI:s Mini-serie. Vill du ha hinderdetektering åt alla håll är DJI Mini 4 Pro steget upp."
     />
 
     <MoneyFeatured {...products[0]} />
@@ -164,6 +163,31 @@ export const articleMeta = {
       </div>
     </section>
 
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Bra att veta innan du köper din första drönare</h2>
+
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Behöver du hinderdetektering som nybörjare?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">Det är den funktion som räddar flest nybörjarkrascher. DJI Mini 3 saknar hinderdetektering framåt och bakåt, så du måste själv hålla koll på grenar och stolpar. DJI Mini 4 Pro känner av hinder åt alla håll och bromsar innan du hinner reagera, vilket kostar mer men förlåter mer.</p>
+          <p class="text-text-light text-sm leading-relaxed mb-3">Flyger du på öppna fält och håller drönaren väl synlig klarar du dig utan sensorerna. Problemet uppstår när du flyger nära träd, husfasader eller lyktstolpar, alltså precis de miljöer där bilderna ofta blir mest intressanta.</p>
+          <p class="text-text-light text-sm leading-relaxed">ActiveTrack 360° på Mini 4 Pro följer ett motiv automatiskt, och då är hinderdetektering nästan ett krav eftersom du inte styr själv. Hur de större modellerna hanterar samma sak har vi gått igenom i vår topplista över <a href="/dronare-med-kamera/" class="text-accent underline">bästa drönare med kamera</a>.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Hur mycket påverkar vind en drönare under 250 gram?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">Mycket. En drönare under 250 gram har lite massa att stå emot vinden med, så den kompenserar med motorkraft och drar batteri snabbare i blåst. Den hovrar också oroligare, vilket syns som små ryck i videon. Vänta ut byiga dagar under de första flygningarna.</p>
+          <p class="text-text-light text-sm leading-relaxed mb-3">Vinden är nästan alltid starkare på höjd än vid marken. En drönare som står stilla vid axelhöjd kan behöva kämpa tydligt en bit upp i luften, och motvind på vägen hem tar mer batteri än du räknat med.</p>
+          <p class="text-text-light text-sm leading-relaxed">Flyg därför gärna ut mot vinden först och ta hem drönaren med vinden i ryggen. Då har du marginal kvar om batteriet sjunker snabbare än väntat.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Räcker ett batteri för en flygtur?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">Sällan. Ett batteri räcker till en handfull tagningar innan du behöver landa, och du vill inte flyga ner till sista procenten. Räkna med att du landar tidigare än specifikationen antyder, särskilt i kyla och vind. Extra batterier är det första tillbehör vi rekommenderar.</p>
+          <p class="text-text-light text-sm leading-relaxed mb-3">Litiumbatterier tappar kapacitet i kyla, så en höstflygning ger kortare tid i luften än samma flygning i juli. Håll batterierna i innerfickan fram till start när det är kallt ute.</p>
+          <p class="text-text-light text-sm leading-relaxed">Ett andra och tredje batteri förvandlar en kort testflygning till en hel eftermiddag ute. Hur nybörjarmodellerna står sig mot resten av sortimentet ser du i vår topplista över <a href="/dronare/" class="text-accent underline">bästa drönaren 2026</a>.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="mb-10 bg-bg-alt rounded-xl border border-border p-5">
       <h2 class="font-heading text-lg font-bold text-text mb-3">Fler guider om drönare</h2>
       <ul class="space-y-2 text-sm">
@@ -175,7 +199,6 @@ export const articleMeta = {
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
   </div>

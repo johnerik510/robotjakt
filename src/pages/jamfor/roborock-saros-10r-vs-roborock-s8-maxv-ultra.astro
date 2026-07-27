@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import EditorialCTA from '../../components/EditorialCTA.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -60,7 +60,7 @@ export const articleMeta = {
 <BaseLayout
   title="Roborock Saros 10R vs S8 MaxV Ultra 2026: jämförelse"
   description="Roborock Saros 10R eller S8 MaxV Ultra? Vi jämför tunn design mot AI-kamera, 20 000 Pa mot 10 000 Pa och pris. Klart svar för rätt Roborock 2026."
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/heroes/roborock-saros-10r-vs-roborock-s8-maxv-ultra.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/heroes/roborock-saros-10r-vs-roborock-s8-maxv-ultra.webp" }}
 >
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -71,15 +71,21 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-04-04">2026-04-04</time></p>
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Roborock Saros 10R vs S8 MaxV Ultra 2026
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Roborock Saros 10R eller S8 MaxV Ultra?"
+      answer="Roborock S8 MaxV Ultra är bästa valet för de flesta hem: nästan samma städresultat till klart lägre pris. Saros 10R motiverar merkostnaden bara om du har möbler med under 10 cm frihöjd, tjocka mattor eller husdjur, med 7,98 cm höjd, 20 000 Pa sugkraft och djuravföringsdetektering via RGB-kameran."
+    />
+
     <p class="text-text-light mb-6 max-w-2xl">
-      Roborock Saros 10R är världens tunnaste robotdammsugare med mopp, 7,98 cm hög med 20 000 Pa sugkraft. Roborock S8 MaxV Ultra är det beprövade flaggskeppet med 3D LiDAR och helautomatisk station. Är extra värt det?
+      Roborock Saros 10R är världens tunnaste robotdammsugare med mopp, 7,98 cm hög med 20 000 Pa sugkraft. Roborock S8 MaxV Ultra är det beprövade flaggskeppet med 3D LiDAR och helautomatisk station. Är det värt merkostnaden?
     </p>
 
     <EditorialCTA products={['Roborock Saros 10R', 'Roborock S8 MaxV Ultra']} />
@@ -214,6 +220,30 @@ export const articleMeta = {
         S8 MaxV Ultra ger en enorm mängd prestanda för pengarna. Det är ett av de bästa pris/prestanda-förhållandena i premiumbåset. Saros 10R till är motiverat om du verkligen behöver tunnheten eller den extra sugkraften, men om du inte har låga möbler betalar du extra för egenskaper du aldrig använder. </p>
       <p class="text-text-light leading-relaxed mb-6">
         <strong>Vinnare: Roborock S8 MaxV Ultra</strong>, bäst värde per krona. </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Styrs båda i samma app om du redan har en Roborock?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Ja, båda modellerna styrs i Roborock Home, samma app som övriga Roborock-modeller. Du sköter scheman, rumsindelning, förbjudna zoner och sugkraftslägen på samma sätt oavsett vilken av dem du väljer. Har du använt en äldre Roborock tidigare känner du igen dig direkt, inställningarna följer samma logik.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Det gör också valet mindre riskabelt: appen är inte en faktor som skiljer modellerna åt, utan beslutet handlar helt om hårdvaran. Hela modellprogrammet och hur serierna förhåller sig till varandra går vi igenom i vår <a href="/roborock-guide/" class="text-accent underline">guide till Roborocks robotdammsugare</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad innebär automatisk mopplyft vid mattor?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Att roboten höjer mopplattorna när den kör upp på en matta, så att mattan inte blir fuktig eller smutsig av tvättvattnet. Både Saros 10R och S8 MaxV Ultra har funktionen, vilket betyder att du kan dammsuga och moppa hela hemmet i en och samma körning.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Vid riktigt tjocka, långluggade mattor kan lyfthöjden ändå bli en begränsning, då är det säkrast att markera mattan som moppfri zon i appen. Fler modeller som kombinerar dammsugning och moppning väl hittar du i topplistan över <a href="/robotdammsugare/med-mopp/" class="text-accent underline">robotdammsugare med mopp</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Behöver du plocka undan innan roboten städar?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Med Saros 10R sällan: den känner igen fler än 100 objekttyper, inklusive sladdar, strumpor och leksaker, och styr runt dem. S8 MaxV Ultra har också utmärkt hinderundvikning via PreciSense, men känner igen färre objekttyper, så lösa laddsladdar och små föremål bör plockas undan före körning.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        I ett vuxenhushåll med rena golv är skillnaden i praktiken liten. I barnfamiljer och hem där det ofta ligger saker på golvet betyder Saros 10R:s bredare objektigenkänning färre avbrutna städningar och färre gånger du behöver rädda en fastkörd robot.
+      </p>
     </section>
 
     <!-- Verdict -->
@@ -246,7 +276,6 @@ export const articleMeta = {
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
   </div>
 
   <StickyCTA url="https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66015&url=http://www.kjell.com/se/produkter/hem-fritid/stadning-rengoring/robotdammsugare/roborock-robotdammsugare/roborock-s8-maxv-ultra-helautomatisk-robotdammsugare-vit-p66015" text="Se Roborock S8 MaxV Ultra hos Kjell" />

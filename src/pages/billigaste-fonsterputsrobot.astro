@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Fönsterputsrobot', href: '/fonsterputsrobot/' },
@@ -54,7 +54,7 @@ export const articleMeta = {
 <BaseLayout
   title="Billigaste fönsterputsroboten 2026: bäst för pengarna"
   description="Vi jämför de billigaste fönsterputsrobotarna 2026. Hitta en prisvärd robot som faktiskt fungerar. Se topplista med pris, prestanda och betyg."
-  article={{ datePublished: "2026-02-01", dateModified: "2026-05-27", image: "/images/cat-fonsterputsrobot.webp" }}
+  article={{ datePublished: "2026-02-01", dateModified: "2026-07-27", image: "/images/cat-fonsterputsrobot.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -65,13 +65,17 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
-<p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-04-23">2026-04-23</time></p>
+<p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
       Billigaste fönsterputsrobot 2026, till lägre pris
     </h1>
+    <AnswerBox
+      question="Snabbt svar: Vilken är den billigaste fönsterputsroboten som faktiskt fungerar?"
+      answer="Hobot Legee 688 är det bästa budgetvalet: kabeldrift, 2 800 Pa sugkraft och 20 m²/h, klassens högsta täckningstakt. Liectroux HCR-10 är billigare och har automatisk spray plus UPS-batteri som håller kvar roboten i 25 minuter vid strömavbrott. Båda kräver fönsterram och passar inte ramfria glaspartier."
+    />
     <p class="text-text-light mb-6 max-w-2xl">
       Vi jämför de billigaste fönsterputsrobotarna på marknaden 2026. Fungerar de? Vi tar reda på vilka till lägre pris som faktiskt levererar rent glas, och vilka som inte håller vad de lovar.
     </p>
@@ -228,11 +232,31 @@ export const articleMeta = {
           <p class="text-sm text-text-light">Liectroux HCR-10 har ett inbyggt spraysystem som fuktar fönstret automatiskt. Hobot Legee 688 används med extern sprayflaska. Vid kraftig smuts, förbehandla fönstret manuellt med fönsterputs och låt torka något innan robotkörning. Båda modellerna levereras med mikrofiberduk, byt eller tvätta duken regelbundet.</p>
         </div>
       </div>
+
+      <div class="space-y-5">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Är det säkert att använda en billig fönsterputsrobot på övervåningen?</h3>
+          <p class="text-sm text-text-light mb-3">Ja, om säkerhetslinan är fäst i ett ankare på väggen vid fönstret varje gång. Liectroux HCR-10 sitter dessutom kvar på glaset i 25 minuter vid strömavbrott tack vare UPS-batteriet, och Hobot Legee 688 är kabeldriven, vilket i sig ger stabil drift.</p>
+          <p class="text-sm text-text-light mb-3">Vakuumsugningen håller roboten mot glaset, men linan avgör om ett missöde slutar med ett tappat verktyg eller en trasig robot på marken. Fäst den innan roboten sätts på glaset, inte efter, och kontrollera att ankaret sitter i något som faktiskt håller.</p>
+          <p class="text-sm text-text-light">Höga fönster är också där kabeln ställer till mest. Den ska ha slack nog att följa roboten över hela rutan utan att dra. Räkna med att stå kvar och hålla ett öga på körningen, en budgetmodell är inte något du startar och går ifrån.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Hur lång tid tar det att putsa hela huset?</h3>
+          <p class="text-sm text-text-light mb-3">Räkna med 5 till 8 minuter per standardfönster på 80 x 120 cm med en budgetmodell. Täckningen ligger på 15 till 20 m² glas i timmen, mot 25 till 30 m²/h för premiumklassen. En villa med normalt antal fönster tar därmed några timmar.</p>
+          <p class="text-sm text-text-light mb-3">Tiden går inte bara till körningen. Du flyttar roboten mellan rutorna, fäster om linan och fyller på vatten. Hobots vattentank på 80 ml räcker ungefär två till tre fönster, så påfyllning blir ett återkommande stopp. Med 20 m²/h är Hobot Legee 688 ändå den snabbare av de två.</p>
+          <p class="text-sm text-text-light">Är fönstren riktigt smutsiga går det fortare att förbehandla manuellt och låta putsen verka innan roboten släpps på. En robot som måste köra ett extra varv på samma ruta äter upp hela tidsvinsten.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Vad klarar en billig fönsterputsrobot inte?</h3>
+          <p class="text-sm text-text-light mb-3">Ramfria ytor. Budgetmodellerna navigerar mot en synlig fönsterram, så panoramafönster utan ram, glasräcken och takfönster faller utanför. De saknar också AI-navigering och avancerad sensorstyrning, vilket märks på att de kör mer schablonmässigt. Kontrollera dina fönstertyper noga innan du beställer.</p>
+          <p class="text-sm text-text-light mb-3">För ramfria glaspartier krävs AI-kantigenkänning, och där är <a href="/ecovacs-winbot-w2-omni/" class="text-accent underline">Ecovacs Winbot W2 Omni</a> alternativet i vårt test. Har du bara vanliga fönster med ram behöver du inte betala för den funktionen.</p>
+          <p class="text-sm text-text-light">Utöver ramfrågan är begränsningarna små för normal användning. Putsar du fönster en eller två gånger om året och har standardfönster gör en budgetmodell jobbet. Vill du se hela fältet först finns alla modeller i vår jämförelse av <a href="/fonsterputsrobot/" class="text-accent underline">bästa fönsterputsrobot</a>.</p>
+        </div>
+      </div>
     </section>
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <!-- Relaterade sidor -->
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">

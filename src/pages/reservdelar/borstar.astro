@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
 
 const TAG = 'johnerik510-20';
 
@@ -122,7 +122,7 @@ export const articleMeta = {
 <BaseLayout
   title="Reservborstar till robotdammsugare 2026: guide och köp"
   description="Köpguide till reservborstar för robotdammsugare 2026. Huvudborstar, sidoborstar och gummirullar. Se byte-intervall, kompatibilitet och bästa priser."
-  article={{ datePublished: "2026-03-29", dateModified: "2026-05-27", image: "/images/parts-robot-kit-3.webp" }}
+  article={{ datePublished: "2026-03-29", dateModified: "2026-07-27", image: "/images/parts-robot-kit-3.webp" }}
 >
   <section class="bg-primary text-white py-8">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -134,7 +134,7 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
       <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Ersättningsborstar till robotdammsugare</h1>
       <p class="text-gray-200 max-w-2xl">Huvud- och sidoborstar till Roborock, Dreame och Ecovacs. Byt slitna borstar för att hålla sugkraft och städkvalitet på topp.</p>
@@ -142,7 +142,12 @@ export const articleMeta = {
   </section>
 
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-<p class="text-sm text-text-light mb-2">Senast uppdaterad: april 2026, {products.length} borstkits</p>
+<p class="text-sm text-text-light mb-2">Senast uppdaterad: juli 2026, {products.length} borstkits</p>
+
+    <AnswerBox
+      question="Snabbt svar: När ska borstarna på robotdammsugaren bytas?"
+      answer="Byt sidoborstar var 6 till 12 månad och huvudborsten var 12 till 18 månad, eller tidigare om borsten är böjd, sliten eller full av hår som inte går att ta bort. Tredjepartskit med borstar, filter och moppdukar fungerar bra, kontrollera bara att kitet uttryckligen anger din modell."
+    />
 
     <div class="bg-accent/5 border border-accent/20 rounded-xl px-5 py-4 mb-8 text-sm text-text">
       <strong>Tips:</strong> Köp ett komplett kit (borstar + filter + moppkuddar), du sparar pengar och behöver bara beställa en gång.
@@ -150,7 +155,7 @@ export const articleMeta = {
 
     <div class="space-y-4 mb-10">
       {products.map((p, i) => (
-        <article class="bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow p-5">
+        <article class="bg-white rounded-xl border border-border shadow-sm transition-shadow p-5">
           <div class="flex flex-col sm:flex-row gap-4">
             <div class="flex-shrink-0 flex flex-col items-center gap-2">
               {i === 0 && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-winner/10 text-winner">{p.badge}</span>}
@@ -179,15 +184,42 @@ export const articleMeta = {
     <section class="mb-8">
       <h2 class="font-heading text-xl font-bold text-text mb-4">Fler reservdelar</h2>
       <div class="grid sm:grid-cols-2 gap-3">
-        <a href="/reservdelar/filter/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Filter till robotdammsugare</a>
-        <a href="/reservdelar/roborock/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Alla Roborock reservdelar</a>
-        <a href="/reservdelar/dreame/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Alla Dreame reservdelar</a>
-        <a href="/reservdelar/ecovacs/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Alla Ecovacs reservdelar</a>
+        <a href="/reservdelar/filter/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent transition-all text-sm font-semibold text-text hover:text-accent">Filter till robotdammsugare</a>
+        <a href="/reservdelar/roborock/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent transition-all text-sm font-semibold text-text hover:text-accent">Alla Roborock reservdelar</a>
+        <a href="/reservdelar/dreame/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent transition-all text-sm font-semibold text-text hover:text-accent">Alla Dreame reservdelar</a>
+        <a href="/reservdelar/ecovacs/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent transition-all text-sm font-semibold text-text hover:text-accent">Alla Ecovacs reservdelar</a>
+      </div>
+    </section>
+
+    <!-- Fördjupning: borstbyte -->
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Bra att veta innan du byter borstar</h2>
+      <div class="space-y-5">
+
+        <div>
+          <h3 class="font-semibold text-text mb-2">Varför tappar robotdammsugaren sugkraft fast den är hel?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Oftast handlar det om slitdelar, inte om motorn. Böjda sidoborstar slutar mata in smuts mot munstycket, en sliten huvudborste greppar sämre mot golvet och ett igensatt HEPA-filter stryper luftflödet genom roboten. Byt de delarna och sugkraften brukar vara tillbaka på nyskick.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            HEPA-filtret är den vanligaste boven eftersom det fångar fina partiklar som gradvis täpper igen filtermaterialet, och slitaget syns inte alltid utanpå. Filter ingår i de flesta kit ovan, och vi har även en separat genomgång av <a href="/reservdelar/filter/" class="text-accent underline">filter till robotdammsugare</a>.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-text mb-2">Hur vet jag att en borste passar min robotmodell?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Kontrollera att din exakta modell står i kitets kompatibilitetslista, det räcker inte att märket stämmer. Modeller inom samma serie delar ofta slitdelar, som Roborock S8-serien eller Dreame X40- och X30-kiten ovan, men mellan serier skiljer sig infästningar och dimensioner, och fel dimension gör att borsten sitter löst.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Är du osäker på vilken serie din robot tillhör hittar du modellnamnet på etiketten under roboten. Vi har även samlat alla delar per serie, till exempel <a href="/reservdelar/roborock-s8-serien/" class="text-accent underline">reservdelar till Roborock S8-serien</a>.
+          </p>
+        </div>
+
       </div>
     </section>
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
   </main>
 </BaseLayout>

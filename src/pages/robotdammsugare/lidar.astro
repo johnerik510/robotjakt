@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
-import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
@@ -111,7 +110,7 @@ export const articleMeta = {
 <BaseLayout
   title="Bästa robotdammsugare med LiDAR-navigering 2026: test"
   description="Bästa robotdammsugarna med LiDAR-navigering 2026. Precis kartläggning och smart ruttplanering. Se topplista med pris, navigeringskvalitet och betyg."
-  article={{ datePublished: "2026-04-26", dateModified: "2026-05-27", image: "/images/roborock-saros-10r.webp" }}
+  article={{ datePublished: "2026-04-26", dateModified: "2026-07-27", image: "/images/roborock-saros-10r.webp" }}
 >
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
@@ -119,11 +118,11 @@ export const articleMeta = {
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
       Bästa robotdammsugare med LiDAR 2026
     </h1>
-    <AuthorByline datePublished="2026-04-26" dateModified="2026-05-27" />
+    <AuthorByline datePublished="2026-04-26" dateModified="2026-07-27" />
 
     <AnswerBox
       question="Snabbt svar: Vilken är den bästa robotdammsugaren med LiDAR 2026?"
-      answer="Dreame X50 Ultra är vår bästa robotdammsugare med LiDAR 2026. Kombinationen LiDAR och AI-kamera ger snabbast kartläggning även på komplexa planlösningar, och den utfällbara moppen når in i hörnen."
+      answer="Dreame X50 Ultra är den bästa robotdammsugaren med LiDAR 2026. Kombinationen av LiDAR och AI-kamera ger snabbast kartläggning även på komplexa planlösningar, och den utfällbara moppen når in i hörnen. Vill du ha en lägre robot är Roborock Saros 20 Sonic med platt LiDAR bara 8 cm hög."
     />
 
     <MoneyFeatured {...products[0]} />
@@ -155,6 +154,74 @@ export const articleMeta = {
       </p>
     </section>
 
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vanliga frågor när du väljer robotdammsugare med LiDAR</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur fungerar LiDAR-navigering i en robotdammsugare?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        LiDAR står för Light Detection and Ranging. Ett roterande lasertorn skickar ut ljuspulser och mäter tiden det tar för ljuset att studsa tillbaka från väggar och möbler. Av mätningarna bygger roboten en exakt 2D-karta över bostaden, oftast på 5 till 10 minuter, och städar sedan i systematiska raka banor.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Kartan sparas i appen där du kan namnge rum, rita no-go-zoner och schemalägga städning per rum. Eftersom lasern genererar sitt eget ljus fungerar navigeringen precis lika bra i ett kolsvart rum som i dagsljus, något kamerabaserade robotar inte klarar.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad är skillnaden mellan LiDAR och kameranavigering?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        LiDAR mäter avstånd med laser och skapar en precis karta oberoende av belysning. Kameranavigering tolkar i stället bilder av rummet och tappar precision i mörker. En LiDAR-robot kartlägger därför snabbare, kör rakare banor och missar färre ytor än en robot som enbart navigerar med kamera.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Toppmodellerna kombinerar båda teknikerna. LiDAR sköter kartan medan en AI-kamera identifierar föremål på golvet, precis som hos Dreame X50 Ultra och Roborock S8 MaxV Ultra i listan. Kameran känner igen hinder som sladdar och skor så att roboten planerar om rutten i stället för att köra på dem.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Passar en robotdammsugare med LiDAR under låga möbler?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Det klassiska LiDAR-tornet bygger på höjden, så mät fri höjd under soffa och säng innan du väljer modell. Roborock Saros 20 Sonic löser problemet med ett platt LiDAR-torn som gör roboten 8 cm hög, tillräckligt låg för att komma under de flesta möbler.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Just under sängar och soffor samlas mest damm eftersom du sällan kommer åt där med en vanlig dammsugare. En robot som faktiskt tar sig in under möblerna gör därför störst skillnad i sovrummet.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Behöver en LiDAR-robot en basstation?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Nej, navigeringen fungerar exakt lika bra utan station, men stationen tar bort nästan allt dagligt underhåll. Neatsvor X600 Pro i listan levereras utan station och kräver att du tömmer dammbehållaren själv, medan Ultra-modellerna töms, fylls på med vatten och tvättar mopparna automatiskt.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        Vill du ha full automatik är en <a href="/robotdammsugare/med-bassation/" class="text-accent underline">robotdammsugare med basstation</a> rätt väg att gå. Städar roboten stora ytor blir stationen ännu viktigare, jämför då modellerna i vår guide till <a href="/robotdammsugare/storlagenhet/" class="text-accent underline">robotdammsugare för stor lägenhet</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mt-8 mb-3">Kan en LiDAR-robot spara kartor för flera våningar?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Ja, de flesta LiDAR-modeller lagrar flera kartor och känner igen vilken våning de står på när du bär dem mellan planen. Roborock S8 MaxV Ultra i listan hanterar multi-floor-kartor, så du slipper låta roboten kartlägga om från början varje gång den flyttas.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Stationen står däremot kvar på ett plan, så roboten laddar och töms bara där. Bor du i ett hus med flera våningar får du bära roboten upp och ner, och då är vikten och greppet på chassit värda en tanke innan du bestämmer dig.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Städar en robot med LiDAR snabbare än en utan?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Ja, och skillnaden är påtaglig. Med en färdig karta kör roboten systematiska raka banor och håller reda på vilka ytor som redan är avklarade. En robot utan karta studsar runt slumpmässigt, kör över samma golv flera gånger och lämnar ändå ytor orörda.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Tidsvinsten märks mest i bostäder med många rum och mycket möbler, där en slumpstyrd robot tappar mest tid. I en mindre bostad blir tidsskillnaden mindre, men den jämna täckningen är minst lika värdefull, jämför modellerna i vår guide till <a href="/robotdammsugare/lagenhet/" class="text-accent underline">robotdammsugare för lägenhet</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad händer om roboten tappar kartan?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Roboten skannar rummet med lasern när den startar och matchar mönstret mot den sparade kartan för att hitta sin position. Lyfter du den till ett rum den inte känner igen, eller möblerar om ordentligt, kan den behöva köra ett nytt kartläggningspass innan schemalagd städning fungerar som tänkt.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Starta därför roboten från stationen när du kan, det är den punkt kartan är byggd runt. Har du ritat no-go-zoner runt sladdar eller djurskålar är det värt att kontrollera att de ligger kvar på rätt ställe efter en ommöblering.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Behöver LiDAR-tornet rengöras?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Ja, och det tar sekunder. Damm och fingeravtryck på lasertornets fönster försämrar mätningarna, vilket brukar visa sig som ryckig navigering eller att roboten stannar oftare än vanligt. Torka av fönstret med en torr och luddfri mikrofiberduk, aldrig med vatten eller rengöringsmedel direkt på glaset.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        Samma sak gäller hjulen och sidoborsten, hår som lindar sig runt axlarna får roboten att köra snett och tappa spår i kartan. Hela rutinen går vi igenom i vår guide till <a href="/guide/underhall/" class="text-accent underline">underhåll av robotdammsugare</a>.
+      </p>
+    </section>
+
     <FAQ items={faqItems} />
 
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
@@ -168,7 +235,6 @@ export const articleMeta = {
       </ul>
     </section>
 
-    <AffiliateDisclaimer />
 
     <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
   </div>

@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import EditorialCTA from '../components/EditorialCTA.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -55,7 +55,7 @@ export const articleMeta = {
 <BaseLayout
   title="Roborock vs iRobot 2026: vilken robot ska du köpa?"
   description="Roborock eller iRobot Roomba? Vi jämför navigering, sugkraft, mopp och pris 2026. Klara rekommendationer för husdjursägare och budgetmedvetna köpare."
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/roborock-s8-maxv-ultra.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/roborock-s8-maxv-ultra.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -66,9 +66,9 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-30">2026-03-30</time></p>
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Roborock vs iRobot Roomba 2026, vilken robotdammsugare vinner?
@@ -76,6 +76,11 @@ export const articleMeta = {
     <p class="text-text-light mb-6 max-w-2xl">
       iRobot Roomba uppfann robotdammsugaren. Roborock tog kategorin till nästa nivå med hög sugkraft och avancerade moppfunktioner. Vi ställer de bästa modellerna, S8 MaxV Ultra och Roomba j9+, mot varandra för att ge dig ett tydligt svar.
     </p>
+
+    <AnswerBox
+      question="Snabbt svar: Roborock eller iRobot Roomba 2026?"
+      answer="Roborock S8 MaxV Ultra ger mest för pengarna: 10 000 Pa sugkraft, moppning och en basstation som tömmer, tvättar och fyller på vatten. iRobot Roomba j9+ passar dig som prioriterar mjukvarumognad, djup Alexa-integration och ett märke med över 20 års historik. Husdjursägare bör välja Roborock för ReactiveAI 3.0."
+    />
 
     <EditorialCTA products={['Roborock S8 MaxV Ultra']} />
 
@@ -86,7 +91,7 @@ export const articleMeta = {
         <div class="bg-bg-alt rounded-xl border border-border p-5">
           <h3 class="font-semibold text-text mb-2">Roborock</h3>
           <p class="text-text-light text-sm leading-relaxed">
-            Grundat 2014 i Beijing, ursprungligen som ODM-tillverkare för Xiaomi. Idag ett självständigt premiummärke börsnoterat 2023. Känt för ReactiveAI-tekniken, hög sugkraft (10 000+ På) och ett komplett självskötande ekosystem. Starkast i pris/prestanda, sugkraft och moppkvalitet.
+            Grundat 2014 i Beijing, ursprungligen som ODM-tillverkare för Xiaomi. Idag ett självständigt premiummärke börsnoterat 2023. Känt för ReactiveAI-tekniken, hög sugkraft (10 000+ Pa) och ett komplett självskötande ekosystem. Starkast i pris/prestanda, sugkraft och moppkvalitet.
           </p>
         </div>
         <div class="bg-bg-alt rounded-xl border border-border p-5">
@@ -279,6 +284,44 @@ export const articleMeta = {
       </div>
     </section>
 
+    <!-- Fördjupning: fler köpfrågor -->
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Fler frågor inför valet</h2>
+      <div class="space-y-6">
+
+        <div>
+          <h3 class="font-semibold text-text mb-2">Måste jag köpa en separat robot för moppning om jag väljer iRobot?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Ja, om du vill ha moppade golv. Roomba j9+ är en renodlad dammsugare, och iRobots lösning för hårdgolv är den separata mopproboten Braava Jet m6. Det betyder två enheter att ladda, underhålla och koordinera, medan Roborock S8 MaxV Ultra gör båda jobben i en och samma robot.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Har du nästan bara mattor hemma spelar det mindre roll. Men i svenska hem med parkett, klinker och laminat är kombinationen dammsugning plus moppning svår att slå. Fler alternativ med samma upplägg hittar du i vår guide till <a href="/robotdammsugare/med-mopp/" class="text-accent underline">robotdammsugare med mopp</a>.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-text mb-2">Räcker 120 minuters batteritid för ett normalstort hem?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Oftast, ja. Roomba j9+ klarar de flesta lägenheter och normalstora hus på en laddning, och när batteriet tar slut åker roboten tillbaka till stationen, laddar och fortsätter där den slutade. Städningen blir alltså klar, den tar bara längre tid i stora hem.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Roborocks 180 minuter ger mer marginal i villor med stora golvytor, särskilt om du kör med hög sugkraft som drar mer ström. För ett normalstort svenskt hem är batteritiden sällan det som ska avgöra valet mellan de här två.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-text mb-2">Varför trasslar vissa borstar mer än andra i hår och päls?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Traditionella borstvalsar med strån fångar långa hårstrån som lindar sig runt axeln, medan gummivalsar låter håret glida av mot dammkorgen. Roomba j9+ använder gummiborste just av den anledningen, och det är en verklig fördel i hem med långhåriga husdjur eller familjemedlemmar.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Oavsett borsttyp behöver du klippa bort hår som samlas vid axelfästena då och då, och byta borstarna när de slits. Har ni mycket långt hår hemma finns fler tåliga modeller i vår guide till <a href="/robotdammsugare/langt-har/" class="text-accent underline">robotdammsugare för långt hår</a>.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
     <!-- Related guides -->
     <div class="mt-8 p-5 bg-bg-alt rounded-xl border border-border mb-8">
       <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
@@ -293,7 +336,6 @@ export const articleMeta = {
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <StickyCTA
       url="https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66015&url=http://www.kjell.com/se/produkter/hem-fritid/stadning-rengoring/robotdammsugare/roborock-robotdammsugare/roborock-s8-maxv-ultra-helautomatisk-robotdammsugare-vit-p66015"

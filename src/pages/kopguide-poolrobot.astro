@@ -2,6 +2,7 @@
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Poolrobot', href: '/poolrobot/' },
@@ -61,12 +62,17 @@ export const articleMeta = {
   title="Köpguide poolrobot 2026: hitta rätt robot för din pool"
   description="Köpguide till poolrobotar 2026. Vi går igenom poolttyp, filtreringseffektivitet, kabelhantering och pris. Hitta rätt poolrobot för din pool."
   breadcrumbs={breadcrumbs}
-  lastUpdated="2026-06-22"
+  lastUpdated="2026-07-27"
   datePublished="2026-03-29"
 >
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
     Köpguide poolrobot 2026, Så väljer du rätt
   </h1>
+
+  <AnswerBox
+    question="Snabbt svar: Hur väljer du rätt poolrobot?"
+    answer="Utgå från tre saker: att kabeln är minst lika lång som poolens längsta mått plus 2 meter, om du behöver väggklättring eller bara bottenrengöring, och att filtret är enkelt att rensa. Patronfilter passar de flesta. Över 60 m² pool lutar vi mot kabeldrift, under 60 m² mot batteri."
+  />
 
   <p class="text-text-light mb-8 max-w-2xl leading-relaxed">
     En poolrobot är en av de smartaste investeringarna du kan göra för din pool, men det finns stora skillnader i vad olika modeller klarar. Den här guiden hjälper dig att hitta rätt modell för just din pool och dina behov.
@@ -246,6 +252,35 @@ export const articleMeta = {
       <li>Glömma vintervården. Frost spräcker plasthus och kontrolldosor.</li>
       <li>Inte rensa filterkorgen mellan körningar. Filtertrycket faller dramatiskt.</li>
     </ul>
+  </section>
+
+  <!-- Section 10: Skötsel, säsong och pooltyp -->
+  <section class="mb-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-4">10. Skötsel, säsong och pooltyp</h2>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-2">Hur förvarar du poolroboten över vintern?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Skölj av roboten med rent vatten, plocka ur och torka filtret helt, och rulla kabeln löst utan skarpa knäckar. Ställ sedan roboten och kontrollenheten frostfritt inomhus, mörkt och torrt. Frost spräcker plasthus och kontrolldosor, och skadan syns oftast först när du startar roboten på våren.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Kör en sista cykel innan poolen vintertäcks, då slipper du starta säsongen med ett lager slam på botten. Låt roboten stå på ett galler eller upphöjt medan den torkar så att vatten inte blir kvar i pumphuset. Ett ouppvärmt garage duger bara om det aldrig går under noll, annars hör roboten hemma inomhus.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-2">Passar samma poolrobot både nedgrävd pool och ovanmarkspool?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Delvis. En ovanmarkspool har oftast plan botten och lägre väggar, så en enklare bottenmodell räcker långt. En nedgrävd pool har mer väggyta och ofta en djup del, vilket gör väggklättring och kabellängd viktigare. Kontrollera alltid robotens angivna kapacitet mot din pooltyp.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Har du en nedgrävd pool med liner eller kakel är det värt att lägga extra på väggklättring, eftersom alger fäster högre upp mot vattenlinjen. Vi går igenom modellerna för den pooltypen i vår guide till <a href="/poolrobot-for-nedgraevd-pool/" class="text-accent underline">bästa poolrobot för nedgrävd pool</a>, och för en ovanmarkspool räcker ofta en modell ur listan över <a href="/billigaste-poolrobot/" class="text-accent underline">billigaste poolrobot</a>.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-2">Vad händer om du hoppar över filterrensningen?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Filtret fylls och robotens flöde stryps, då sjunker sugkraften och roboten lämnar kvar sand och finpartiklar även om den kör hela cykeln. Rensa filtret efter varje körning, det tar en minut med ett patronfilter och är den enskilt billigaste åtgärden för bättre rengöring.
+    </p>
+    <p class="text-text-light leading-relaxed">
+      Under lövfällning och pollensäsong fylls filtret snabbare, och då kan du behöva rensa mitt i en cykel för att få hela poolen ren. Ett påsfilter tar mer innan det stryper flödet, men principen är densamma. Ett igensatt filter tvingar dessutom pumpen att jobba mot motstånd, vilket kortar robotens livslängd.
+    </p>
   </section>
 
   <!-- CTA box to topplistan -->

@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -54,7 +53,7 @@ export const articleMeta = {
 <BaseLayout
   title="Husqvarna eller Mammotion 2026: 430V NERA vs LUBA 3"
   description="Husqvarna Automower 430V NERA eller Mammotion LUBA 3? Två slinglösa robotgräsklippare jämförda på navigering, yta, terräng, ljud och pris 2026."
-  article={{ datePublished: "2026-05-16", dateModified: "2026-06-22", image: "/images/mammotion-luba-awo-3000.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/mammotion-luba-awo-3000.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -65,7 +64,7 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Senast uppdaterad 22 juni 2026</span>
+    <span>Senast uppdaterad 27 juli 2026</span>
     <span>·</span>
     <span>Lästid 6 min</span>
   </div>
@@ -319,9 +318,36 @@ export const articleMeta = {
         För de flesta normala svenska villatomter klarar båda jobbet utmärkt, det är terrängen, ytan och ljudkraven som avgör. </p>
     </section>
 
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Bra att veta innan du väljer</h2>
+
+      <h3 class="font-heading text-lg font-bold text-text mt-6 mb-2">Behöver slinglösa robotgräsklippare bra mobiltäckning?</h3>
+      <p class="text-text-light leading-relaxed mb-3">
+        Ja, i olika grad. Husqvarna 430V NERA kräver god mobil- eller wifi-täckning över hela gräsmattan för satellitläget, och AI-visionen tar över där signalen sviktar, exempelvis under träd. Mammotion LUBA 3 har inbyggt 4G och NetRTK och navigerar dessutom lokalt med LiDAR, vilket gör den mindre känslig för täckningsluckor.
+      </p>
+      <p class="text-text-light leading-relaxed mb-3">
+        Gör en enkel kontroll innan köp: gå runt tomten med mobilen och se hur täckningen ser ut vid träddungar och bakom byggnader. LiDAR mäter avstånd med laser och fungerar oberoende av satellitsignal, medan satellitnavigering behöver fri sikt mot himlen för bästa precision. Fler kabelfria alternativ jämför vi i guiden om <a href="/robotgrasklippare-utan-slinga/" class="text-accent underline">robotgräsklippare utan slinga</a>.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text mt-6 mb-2">Hur mycket betyder klippbredden på en stor tomt?</h3>
+      <p class="text-text-light leading-relaxed mb-3">
+        Mycket. Mammotion LUBA 3 klipper 40 cm per drag mot Husqvarnas 24 cm, alltså betydligt bredare bana. En bredare klippbana betyder färre vändor och kortare total klipptid för samma yta. Husqvarna kompenserar med större specificerad maxyta (4 800 m²) och planerad, systematisk körning.
+      </p>
+      <p class="text-text-light leading-relaxed mb-3">
+        I praktiken hinner en bredare robot över ytan på färre timmar, vilket ger mer marginal för regndagar och laddpauser. Väger yta tyngre än terräng i ditt val hittar du fler kandidater i vår guide om <a href="/robotgrasklippare-stor-tradgard/" class="text-accent underline">robotgräsklippare för stor trädgård</a>.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text mt-6 mb-2">Vilken klarar blöt och lös mark bäst?</h3>
+      <p class="text-text-light leading-relaxed mb-3">
+        Mammotion LUBA 3. Fyrhjulsdriften ger grepp på lös, blöt eller ojämn mark där en tvåhjulsdriven robot spinner och fastnar, och IPX6-klassningen tål kraftiga vattenstrålar. Husqvarna 430V NERA (IPX5) fungerar bra i normalt svenskt väder men har inte samma framkomlighet när underlaget blir halt.
+      </p>
+      <p class="text-text-light leading-relaxed mb-3">
+        Tänk samtidigt på att vått gräs klipps sämre oavsett robot, klippet klumpar sig och hjulen lämnar lättare spår i mjuk mark. Schemalägg gärna klippningen så att de blötaste timmarna undviks. För en normal, väldränerad villatomt är skillnaden i framkomlighet sällan avgörande, det är på slänter och stökig mark den blir tydlig.
+      </p>
+    </section>
+
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <!-- Related links -->
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">

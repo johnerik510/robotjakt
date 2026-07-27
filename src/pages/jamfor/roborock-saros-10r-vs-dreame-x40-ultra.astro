@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import EditorialCTA from '../../components/EditorialCTA.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -60,7 +60,7 @@ export const articleMeta = {
 <BaseLayout
   title="Roborock Saros 10R vs Dreame X40 Ultra 2026: vilken?"
   description="Roborock Saros 10R eller Dreame X40 Ultra? Vi jämför tunnaste designen mot sidoarm, sugkraft och pris. Klart svar på vilken toppmodell som vinner."
-  article={{ datePublished: "2026-04-04", dateModified: "2026-05-27", image: "/images/roborock-saros-10r.webp" }}
+  article={{ datePublished: "2026-04-04", dateModified: "2026-07-27", image: "/images/roborock-saros-10r.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -71,15 +71,21 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-04-04">2026-04-04</time></p>
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Roborock Saros 10R vs Dreame X40 Ultra 2026
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Roborock Saros 10R eller Dreame X40 Ultra?"
+      answer="Dreame X40 Ultra är bästa köpet för de flesta hem: likvärdig städkvalitet, utfällbar mopparm som når hörnen och lägre pris. Roborock Saros 10R vinner om du har möbler med 8 till 10 cm frihöjd, tjocka mattor eller husdjur, tack vare 7,98 cm höjd, 20 000 Pa sugkraft och djuravföringsdetektering."
+    />
+
     <p class="text-text-light mb-6 max-w-2xl">
-      Roborock Saros 10R . Dreame X40 Ultra . Båda är flaggskeppsrobotar med fullautomatisk station och avancerad moppfunktion, men Saros 10R är 7,98 cm tunn och har 20 000 Pa sugkraft. Är extra värt det?
+      Roborock Saros 10R eller Dreame X40 Ultra? Båda är flaggskeppsrobotar med fullautomatisk station och avancerad moppfunktion, men Saros 10R är 7,98 cm tunn och har 20 000 Pa sugkraft. Är det värt merkostnaden?
     </p>
 
     <EditorialCTA products={['Roborock Saros 10R', 'Dreame X40 Ultra']} />
@@ -213,11 +219,34 @@ export const articleMeta = {
       <p class="text-text-light leading-relaxed mb-6">
         <strong>Vinnare: Dreame X40 Ultra</strong>, klart bättre pris/prestanda för de flesta hem.
       </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur mycket underhåll kräver de helautomatiska stationerna?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Väldigt lite i vardagen. Båda stationerna tömmer dammbehållaren, tvättar mopparna och fyller på vatten automatiskt. Din insats begränsas till att byta dammpåse när den är full, fylla på rent vatten, tömma smutsvattentanken och torka av tvättbrickan i stationen med jämna mellanrum.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Saros 10R:s 10-i-1-station och Dreames 9-i-1-station sköter samma grundsysslor, så skillnaden i ägande är liten. Mopplattorna är förbrukningsvara på båda modellerna. De slits med tiden och byts när fibrerna blivit platta eller missfärgade, annars försämras moppresultatet gradvis utan att du märker varför.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Fungerar robotarna i hem med flera våningar?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Ja, med en praktisk begränsning: ingen robotdammsugare klarar trappor. Du bär själv roboten mellan våningarna medan stationen står kvar på en av dem. Toppmodeller med LiDAR-navigering kartlägger varje våning för sig och känner igen var roboten befinner sig när den startar.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Tänk på att mopptvätten sker i stationen. Städar roboten en våning utan station tvättas mopparna först när den bärs tillbaka, så våningen med mest moppbehov bör få stationen. Hur navigeringstekniken fungerar i detalj går vi igenom i guiden om <a href="/robotdammsugare/lidar/" class="text-accent underline">robotdammsugare med LiDAR</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vilken passar bäst i hem med mest hårdgolv?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Dreame X40 Ultra. På hårdgolv märks inte skillnaden mellan 20 000 och 12 000 Pa, där avgör i stället moppningen, och Dreames utfällbara sidoarm som når hörnen ger ett synligt bättre resultat längs golvlister och i hörn. Saros 10R:s extra sugkraft kommer främst till sin rätt på mattor.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Har du parkett eller klinker i större delen av hemmet väger alltså moppfunktionen tyngre än maxsiffran på sugkraften. Fler modeller med stark moppfunktion jämför vi i topplistan över <a href="/robotdammsugare/med-mopp/" class="text-accent underline">robotdammsugare med mopp</a>.
+      </p>
     </section>
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <!-- Related links -->
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">

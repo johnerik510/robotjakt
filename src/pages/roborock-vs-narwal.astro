@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import EditorialCTA from '../components/EditorialCTA.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -53,7 +53,7 @@ export const articleMeta = {
 <BaseLayout
   title="Roborock vs Narwal Freo 2026: vilken robot är bäst?"
   description="Roborock S8 MaxV Ultra eller Narwal Freo X Ultra? Vi jämför moppning, sugkraft, torkfunktion och pris. Klart svar på vilken flaggskeppsrobot som vinner."
-  article={{ datePublished: "2026-04-05", dateModified: "2026-05-27", image: "/images/roborock-s8-maxv-ultra.webp" }}
+  article={{ datePublished: "2026-04-05", dateModified: "2026-07-27", image: "/images/roborock-s8-maxv-ultra.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -64,9 +64,9 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-04-05">2026-04-05</time></p>
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Roborock vs Narwal 2026, vilken är bäst?
@@ -74,6 +74,11 @@ export const articleMeta = {
     <p class="text-text-light mb-6 max-w-2xl">
       Roborock S8 MaxV Ultra och Narwal Freo X Ultra är två av de mest efterfrågade premium-robotarna 2026. Båda kombinerar kraftfull dammsugning med avancerad moppning och automatisk självtömning, men de prioriterar olika saker. Vi jämför dem rakt av.
     </p>
+
+    <AnswerBox
+      question="Snabbt svar: Roborock eller Narwal 2026?"
+      answer="Välj Narwal Freo X Ultra om moppningen är viktigast: stationen torkar mopparna med 40-gradig varmluft så att de aldrig står fuktiga och luktar illa. Välj Roborock S8 MaxV Ultra om du har husdjur, ReactiveAI 3.0 undviker djuravföring, och sugkraften på 10 000 Pa är högre. Båda sköter tömning och mopptvätt automatiskt."
+    />
 
     <EditorialCTA products={['Roborock S8 MaxV Ultra', 'Narwal Freo X Ultra']} />
 
@@ -112,7 +117,7 @@ export const articleMeta = {
           <tbody>
             {[
               { kat: 'Moppkvalitet', robo: '8/10', nar: '10/10', vinnare: 'Narwal (varmluft)' },
-              { kat: 'Sugkraft (På)', robo: '10 000 Pa', nar: '8 200 Pa', vinnare: 'Roborock' },
+              { kat: 'Sugkraft (Pa)', robo: '10 000 Pa', nar: '8 200 Pa', vinnare: 'Roborock' },
               { kat: 'Husdjursskydd (AI)', robo: '10/10', nar: '8/10', vinnare: 'Roborock (ReactiveAI)' },
               { kat: 'Navigering', robo: '9/10', nar: '9/10', vinnare: 'Lika bra' },
               { kat: 'App-upplevelse', robo: '9/10', nar: '8/10', vinnare: 'Roborock' },
@@ -165,6 +170,36 @@ export const articleMeta = {
             Narwal Freo X Ultra , Roborock S8 MaxV Ultra . Narwal ger faktiskt mer för pengarna om moppning är din prioritet, varmluftsfunktionen är en premium-feature till lägre pris. Roborocks merpris motiveras av djuravföringsskyddet och bredare service i Sverige.
           </p>
         </div>
+
+        <div>
+          <h3 class="font-semibold text-text mb-2">Hur lång tid tar det innan mopparna är torra efter städningen?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Narwal Freo X Ultra torkar mopparna med 40-gradig varmluft i cirka 2,5 timmar efter avslutad städning, sedan är de helt torra tills nästa körning. Roborock S8 MaxV Ultra tvättar mopparna med vatten och låter dem lufttorka i stationen, vilket tar längre tid och kan ge unken lukt.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Skillnaden märks mest om roboten moppar ofta. Kör du varje dag hinner lufttorkade moppar sällan bli helt torra mellan körningarna, och det är precis då varmluftstorkningen gör som störst nytta.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-text mb-2">Vad behöver du fortfarande göra själv, trots självskötande station?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Fylla på rent vatten, tömma smutsvattentanken, byta dammpåse i stationen och hålla sensorer och borstar rena. Stationerna sköter tömning och mopptvätt, men slitdelar som sidoborstar, huvudborste och filter behöver bytas med jämna mellanrum för att sugkraften ska hålla i sig.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Räkna med några minuters tillsyn i veckan för båda robotarna. Kompatibla slitdelar till Roborock hittar du i vår genomgång av <a href="/reservdelar/borstar/" class="text-accent underline">reservborstar till robotdammsugare</a>.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-text mb-2">Hur väljer du om du har både husdjur och mycket hårdgolv?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Prioritera djuravföringsskyddet och välj Roborock. En missad hundolycka smetas ut över hela golvet av en robot utan ReactiveAI, och den städinsatsen väger tyngre än skillnaden i moppkvalitet mellan de två robotarna. Narwals varmluftstorkning är en komfortfunktion, Roborocks djurskydd är närmast en försäkring.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Moppresultatet med Roborock är fortfarande bra, bara inte lika hygieniskt i stationen. Fler modeller som klarar päls och olycksrisk hittar du i vår guide till <a href="/robotdammsugare/husdjur/" class="text-accent underline">robotdammsugare för husdjur</a>.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -212,7 +247,6 @@ export const articleMeta = {
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
   </div>
 

@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -55,7 +54,7 @@ export const articleMeta = {
 <BaseLayout
   title="Husqvarna vs Gardena robotgräsklippare 2026: vilken vinner?"
   description="Husqvarna Automower eller Gardena Sileno? Vi jämför teknik, installation, slinga, appstyrning och pris. Klart svar för trädgårdar upp till 1 500 m²."
-  article={{ datePublished: "2026-05-16", dateModified: "2026-07-11", image: "/images/gardena-sileno-city-500.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/gardena-sileno-city-500.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -66,7 +65,7 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Senast uppdaterad 11 juli 2026</span>
+    <span>Senast uppdaterad 27 juli 2026</span>
   </div>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
@@ -310,9 +309,36 @@ export const articleMeta = {
       </p>
     </section>
 
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Bra att veta innan du bestämmer dig</h2>
+
+      <h3 class="font-heading text-lg font-bold text-text mt-6 mb-2">Finns Husqvarna och Gardena som slinglösa robotgräsklippare?</h3>
+      <p class="text-text-light leading-relaxed mb-3">
+        Husqvarnas toppserie är numera slinglös: 430V NERA navigerar med satellit och klarar upp till 4 800 m² utan gränskabel. Gardena SILENO-serien bygger däremot fortfarande på nedgrävd gränskabel. Vill du helt slippa kabelinstallationen pekar valet alltså mot Husqvarna, eller mot andra slingfria märken.
+      </p>
+      <p class="text-text-light leading-relaxed mb-3">
+        Slinglös navigering förändrar kalkylen i den här jämförelsen. Gardenas främsta försäljningsargument är det låga priset, men en del av besparingen äts upp av tiden det tar att lägga kabeln. Vi har samlat alla kabelfria alternativ i guiden om <a href="/robotgrasklippare-utan-slinga/" class="text-accent underline">robotgräsklippare utan slinga</a>.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text mt-6 mb-2">Passar samma reservdelar till Husqvarna och Gardena?</h3>
+      <p class="text-text-light leading-relaxed mb-3">
+        Delvis. Märkena delar teknikplattform och i många fall identiska komponenter, vilket gör att vissa slitdelar överlappar. Laddstationerna är däremot märkesspecifika, Gardena och Husqvarna använder olika laddkontakter. Kontrollera därför alltid kompatibiliteten mot din exakta modell innan du beställer något, artikelnumret avgör, inte varumärket på kartongen.
+      </p>
+      <p class="text-text-light leading-relaxed mb-3">
+        Att slitdelarna liknar varandra håller nere driftkostnaden för båda märkena, knivbyte var 1 till 3 månader är den enda återkommande utgiften. Vad som passar din robot går att slå upp i vår översikt över <a href="/reservdelar/robotgrasklippare/" class="text-accent underline">reservdelar till robotgräsklippare</a>.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text mt-6 mb-2">Hur förbereder du roboten för vintern?</h3>
+      <p class="text-text-light leading-relaxed mb-3">
+        Robotgräsklippare ska vinterförvaras torrt och frostfritt oavsett om det står Husqvarna eller Gardena på skalet. Rengör chassit, byt gärna knivblad och ladda batteriet innan roboten ställs undan. Gränskabeln ligger kvar i marken hela vintern utan att ta skada, det är bara roboten och i vissa fall laddstationen som tas in.
+      </p>
+      <p class="text-text-light leading-relaxed mb-3">
+        Här har Husqvarna en praktisk fördel genom sitt täta servicenätverk: det är enkelt att lämna in roboten för en översyn inför säsongen. Gardena-ägare får oftare sköta rutinen själva, vilket fungerar utmärkt men kräver lite mer disciplin.
+      </p>
+    </section>
+
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <!-- Related links -->
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">

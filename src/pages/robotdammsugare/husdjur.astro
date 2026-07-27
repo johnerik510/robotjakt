@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
-import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
@@ -126,7 +125,7 @@ const faqItems = [
   },
   {
     question: 'Behöver jag auto-empty station om jag har husdjur?',
-    answer: 'Ja, det är starkt rekommenderat. Husdjur producerar stora mängder päls och dander som fyller dammkorgen snabbt. Utan station behöver du tömma manuellt efter varje eller varannan körning, vilket exponerar dig för dander vid varje tömning. Med en station töms roboten automatiskt och du byter påse ungefär var 60 dag. Stationen med HEPA-tätad påse är särskilt viktig om någon i hushållet är allergisk mot djuren.',
+    answer: 'Ja, det är starkt rekommenderat. Husdjur producerar stora mängder päls och dander som fyller dammkorgen snabbt. Utan station behöver du tömma manuellt efter varje eller varannan körning, vilket exponerar dig för dander vid varje tömning. Med en station töms roboten automatiskt och du byter påse ungefär var 60 dagar. Stationen med HEPA-tätad påse är särskilt viktig om någon i hushållet är allergisk mot djuren.',
   },
   {
     question: 'Kan robotdammsugaren lära sig undvika djurens matplatser och leksaker?',
@@ -138,7 +137,7 @@ const faqItems = [
   },
   {
     question: 'Hur rengör jag robotdammsugaren efter körning med husdjur?',
-    answer: 'Verifiera att auto-empty-stationen gjort sitt efter varje körning. Kontrollera borsthållarna varannan vecka och klipp bort fastnat pälshår med en sax. Rengör HEPA-filtret med en mjuk borste varje vecka och byt filtret var 60 dag vid daglig drift i husdjurshem. Moppen, om modellen har en, ska sköljas eller bytas ofta eftersom päls och dander samlas i duken.',
+    answer: 'Verifiera att auto-empty-stationen gjort sitt efter varje körning. Kontrollera borsthållarna varannan vecka och klipp bort fastnat pälshår med en sax. Rengör HEPA-filtret med en mjuk borste varje vecka och byt filtret var 60 dagar vid daglig drift i husdjurshem. Moppen, om modellen har en, ska sköljas eller bytas ofta eftersom päls och dander samlas i duken.',
   },
 ];
 
@@ -179,7 +178,7 @@ export const articleMeta = {
 <BaseLayout
   title="Bästa robotdammsugare för husdjur 2026: Roborock S8 MaxV Ultra vinner"
   description="Roborock S8 MaxV Ultra undviker avföring med AI-kamera och trasslas aldrig av husdjurshår. 6 modeller testade mot päls och avföring. Ranking och priser 2026."
-  article={{ datePublished: "2026-05-16", dateModified: "2026-06-22", image: "/images/roborock-qrevo-master.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/roborock-qrevo-master.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
@@ -187,11 +186,11 @@ export const articleMeta = {
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Robotdammsugare husdjur 2026, bäst för hund och katt
     </h1>
-    <AuthorByline datePublished="2026-05-16" dateModified="2026-06-22" />
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
 
     <AnswerBox
       question="Snabbt svar: Vilken robotdammsugare är bäst för husdjur 2026?"
-      answer="Roborock S8 MaxV Ultra är vår bästa robotdammsugare för husdjur 2026. Anti-tangel-gummirullarna trasslar inte av päls, 10 000 Pa sugkraft drar upp pälsen ur mattor och AI-kameran kör runt djuravföring i stället för att sprida ut den."
+      answer="Roborock S8 MaxV Ultra är vår bästa robotdammsugare för husdjur 2026. Anti-tangle-gummirullarna trasslar inte av päls, 10 000 Pa sugkraft drar upp pälsen ur mattor och AI-kameran kör runt djuravföring i stället för att sprida ut den. Den självtömmande stationen gör att du slipper tömma dagligen under fällningssäsong."
     />
 
     <MoneyFeatured {...products[0]} />
@@ -295,7 +294,7 @@ export const articleMeta = {
 
       <h2 class="font-heading text-2xl font-bold text-text mb-4">Auto-empty station: nödvändig i husdjurshem</h2>
       <p class="text-text-light leading-relaxed mb-4">
-        En husdjursägare med en robotdammsugare utan station tömmer dammkorgen nästan dagligen under fällningssäsong. Det tar tid, det betyder kontakt med dander, och glömmer du en dag kan roboten gå full och sluta städa mitt i. Med en auto-empty station töms roboten automatiskt efter varje körning och du byter påse ungefär var 60 dag. Väljer du en station med HEPA-tätad påse reduceras din exponering mot dander och pälsdjursprotein till ett minimum.
+        En husdjursägare med en robotdammsugare utan station tömmer dammkorgen nästan dagligen under fällningssäsong. Det tar tid, det betyder kontakt med dander, och glömmer du en dag kan roboten gå full och sluta städa mitt i. Med en auto-empty station töms roboten automatiskt efter varje körning och du byter påse ungefär var 60 dagar. Väljer du en station med HEPA-tätad påse reduceras din exponering mot dander och pälsdjursprotein till ett minimum.
       </p>
       <p class="text-text-light leading-relaxed mb-4">
         Roborock S8 MaxV Ultra och Dreame X50 Ultra har dessutom varmvattenmoppning som tvättar moppduken efter städning. Det motverkar den inbyggda pälslukten som annars kan spridas tillbaka om roboten moppar utan att duken rengörs.
@@ -374,13 +373,36 @@ export const articleMeta = {
         I mellansegmentet tillkommer självtömmande station, bättre anti-tangle-borstar och starkare sugkraft. Det är det segment de flesta husdjursägare med mellanlånga eller dubbelpälsade raser bör sikta mot. Stationen gör den dagliga skötseln dramatiskt enklare och motiverar merkostnaden snabbt.
       </p>
       <p class="text-text-light leading-relaxed mb-4">
-        I premiumsegmentet börjar modellerna med varmvattenmoppning, AI-kamera och stationer som automatiskt tvättar moppduken. Roborock S8 MaxV Ultra och Dreame X50 Ultra är exempel. Räkna också med totalägandekostnaden: HEPA-filter byts var 60 dag i husdjurshem, borstar bör bytas var 6 till 12 månader och stationspåsar förbrukas löpande. Förbrukningsvarorna är ändå en bråkdel av vad städhjälp eller upprepade manuella dammsugningspass kostar i tid.
+        I premiumsegmentet börjar modellerna med varmvattenmoppning, AI-kamera och stationer som automatiskt tvättar moppduken. Roborock S8 MaxV Ultra och Dreame X50 Ultra är exempel. Räkna också med totalägandekostnaden: HEPA-filter byts var 60 dagar i husdjurshem, borstar bör bytas var 6 till 12 månader och stationspåsar förbrukas löpande. Förbrukningsvarorna är ändå en bråkdel av vad städhjälp eller upprepade manuella dammsugningspass kostar i tid.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Drar robotdammsugaren med sig kattsand ut i hemmet?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Ja, om kattlådan står oskyddad. Kattsand är grovt och tungt, en del korn hamnar alltid utanför lådan, och roboten både suger upp dem och trycker ut dem längs hjulspåren. Lägg en matta framför lådan och markera själva lådan som no-go-zon i appen.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Grus i dammkanalen hörs som ett skrapande ljud och sliter på både borstrulle och hjullager. Kör roboten dagligen i rummet där lådan står, då hinner kornen aldrig samlas till högar som roboten skjuter framför sig. Har modellen moppfunktion, stäng av moppen i just det rummet: fuktig sand blir klet som fastnar på duken och sprids vidare över hårdgolvet. Rutinerna för filter, borstar och sensorer går vi igenom i vår guide om <a href="/guide/underhall/" class="text-accent underline">underhåll av robotdammsugare</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Behöver du moppfunktion i ett husdjurshem?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Moppen är mer motiverad med djur än utan. Tassavtryck, vattenstänk runt skålen och matrester på hårdgolv är sådant en ren sugkörning lämnar kvar. Kravet är att moppen lyfts eller stängs av över mattor, annars flyttar du bara fukt och päls in i luggen.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Det som avgör om moppningen fungerar över tid är hur duken sköts. Päls och dander samlas i väven, och en moppduk som torkar smutsig börjar lukta inom några dagar. Modeller vars station tvättar duken efter varje pass löser det åt dig, och de med varmvattentvätt, som Roborock S8 MaxV Ultra och Dreame X50 Ultra, gör det bäst. Fler alternativ finns i vår lista över <a href="/robotdammsugare/med-mopp/" class="text-accent underline">robotdammsugare med moppfunktion</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Var ska stationen stå när du har hund eller katt?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Placera stationen på hårt golv mot en vägg med fri yta framför, och håll den borta från matplats och sovplats. Djur som lägger sig mot stationen täcker sensorerna med päls, och en station som står på matta får sämre kontakt och river upp lugg vid varje tömning.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Tömningen är dessutom det högsta ljud roboten gör, så en station intill hundens korg blir en anledning för hunden att ogilla hela apparaten. Ställ den hellre i ett rum djuret inte sover i. Dra också strömkabeln längs vägg eller under en list, en valp som får tag på stationens kabel kostar mer än roboten sparar.
       </p>
     </section>
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <!-- Related links -->
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">

@@ -1,19 +1,20 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import FAQ from '../../components/FAQ.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Guider', href: '/guide/' },
-  { label: 'Sugkraft På' },
+  { label: 'Sugkraft Pa' },
 ];
 
 const faqItems = [
-  { question: 'Vad är På i en robotdammsugare?', answer: 'På står för Pascal och är enheten för tryckskillnad. I robotdammsugarens fall mäts sugkraften i hur mycket undertryck motorn skapar. Högre På innebär att fler partiklar och mer påsatt smuts dras upp i en passage.' },
+  { question: 'Vad är Pa i en robotdammsugare?', answer: 'Pa står för Pascal och är enheten för tryckskillnad. I robotdammsugarens fall mäts sugkraften i hur mycket undertryck motorn skapar. Högre Pa innebär att fler partiklar och mer ingrodd smuts dras upp i en passage.' },
   { question: 'Hur mycket sugkraft behöver jag?', answer: 'Hårda golv klarar sig fint på 3 000 till 4 000 Pa. Har du mattor eller husdjur bör du sikta på minst 6 000 Pa. För djupa flokati-mattor och kraftig pälsfällning är 8 000 till 12 000 Pa rätt nivå.' },
-  { question: 'Är det skillnad på "uppmätt" och "max" På?', answer: 'Ja. Tillverkare anger ofta max-Pa under optimala laboratorieförhållanden. Verklig sugkraft i städläge är ofta 30 till 50 % lägre. Tester från konsumentmedier ger en mer realistisk bild.' },
+  { question: 'Är det skillnad på "uppmätt" och "max" Pa?', answer: 'Ja. Tillverkare anger ofta max-Pa under optimala laboratorieförhållanden. Verklig sugkraft i städläge är ofta 30 till 50 % lägre. Tester från konsumentmedier ger en mer realistisk bild.' },
   { question: 'Slits roboten snabbare av höga sugkraftslägen?', answer: 'Motorn arbetar hårdare, men moderna borstlösa motorer är dimensionerade för flera tusen timmars drift även i max-läge. Filter och borstar slits snabbare, räkna med ett par månader mellan filterbyten vid daglig användning på max.' },
-  { question: 'Hjälper hög På mot allergier?', answer: 'Hög sugkraft hjälper, men avgörande är HEPA-filtret och hur tätt dammbehållaren sluter. En modell med 4 000 Pa och bra HEPA-tätning kan vara bättre för allergiker än en otät 12 000 Pa-modell.' },
-  { question: 'Vilken På har de mest sålda modellerna 2026?', answer: 'Roborock S8 MaxV Ultra: 10 000 Pa. Dreame X40 Ultra: 12 000 Pa. Ecovacs Deebot X5 Omni: 18 000 Pa. Eufy X10 Pro Omni: 8 000 Pa. iRobot Roomba j9+: 4 000 Pa (Roomba mäter dock på en annan skala).' },
+  { question: 'Hjälper hög Pa mot allergier?', answer: 'Hög sugkraft hjälper, men avgörande är HEPA-filtret och hur tätt dammbehållaren sluter. En modell med 4 000 Pa och bra HEPA-tätning kan vara bättre för allergiker än en otät 12 000 Pa-modell.' },
+  { question: 'Vilken Pa har de mest sålda modellerna 2026?', answer: 'Roborock S8 MaxV Ultra: 10 000 Pa. Dreame X40 Ultra: 12 000 Pa. Ecovacs Deebot X5 Omni: 18 000 Pa. Eufy X10 Pro Omni: 8 000 Pa. iRobot Roomba j9+: 4 000 Pa (Roomba mäter dock på en annan skala).' },
 ];
 
 export const articleMeta = {
@@ -30,7 +31,7 @@ export const articleMeta = {
   title="Sugkraft i robotdammsugare: Pa-guide och test 2026"
   description="Allt om sugkraft i robotdammsugare 2026. Vad På betyder, hur mycket du behöver och vilka modeller som har starkast sugkraft. Komplett guide med test."
   breadcrumbs={breadcrumbs}
-  lastUpdated="2026-04-27"
+  lastUpdated="2026-07-27"
   datePublished="2026-04-27"
 >
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
@@ -40,12 +41,17 @@ export const articleMeta = {
     På är det första värdet tillverkare lyfter fram i marknadsföringen. Men hur mycket du faktiskt behöver beror på din bostad, och fler På är inte alltid bättre. Här är en ärlig genomgång av vad sugkraft är, hur den mäts och vilken nivå som räcker för dig.
   </p>
 
+  <AnswerBox
+    question="Snabbt svar: Hur mycket sugkraft behöver en robotdammsugare?"
+    answer="Hårda golv klarar sig på 3 000 till 4 000 Pa, hem med mattor eller husdjur bör ha minst 6 000 Pa, och tjocka mattor eller allergi kräver 8 000 till 12 000 Pa. Borstdesign, tätning och HEPA-filtrering påverkar städresultatet lika mycket som själva Pa-siffran, så stirra inte blint på maxvärdet."
+  />
+
   <figure class="my-6">
     <img src="/images/roborock-s8-maxv-ultra.webp" alt="Roborock S8 MaxV Ultra med 10 000 Pa sugkraft" class="rounded-xl border border-border w-full" loading="lazy" width="1500" height="1495" />
     <figcaption class="text-xs text-text-lighter mt-2">Roborock S8 MaxV Ultra levererar 10 000 Pa, mer än tillräckligt för de flesta hem.</figcaption>
   </figure>
 
-  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Vad är På och hur mats sugkraft i en robotdammsugare?</h2>
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Vad är Pa och hur mäts sugkraft i en robotdammsugare?</h2>
   <p class="text-text-light leading-relaxed mb-4">
     På (Pascal) mäter trycket motorn kan skapa relativt omgivningens lufttryck. Ju större tryckskillnad, desto starkare luftström genom borstvalsen och desto mer smuts lyfts upp. Det är ungefär samma princip som skiljer en handdammsugare från en industriell våtsug, bara nedskalat. Ett värde på 5 000 Pa ungefär motsvarar en bra handhållen Dyson, 12 000 Pa börjar närma sig vad enklare bärbara modeller levererar.
   </p>
@@ -93,6 +99,30 @@ export const articleMeta = {
     <li>"Upp till X På" som bara nås i en kort burst på 2 sekunder.</li>
     <li>Pa-värden från olika skalor mellan kinesiska och europeiska tillverkare. iRobot och europeiska märken anger oftast lägre värden men presterar likvärdigt, testa modellerna mot varandra istället för att lita blint på siffran.</li>
   </ul>
+
+  <h3 class="font-heading text-xl font-bold text-text mt-6 mb-2">Spelar det någon roll om roboten har 10 000 eller 18 000 Pa?</h3>
+  <p class="text-text-light leading-relaxed mb-4">
+    För de flesta hem är skillnaden mellan 10 000 och 18 000 Pa liten i praktiken. Över ungefär 8 000 Pa är sugkraften sällan flaskhalsen, i stället avgör borstvalsens design, tätningen mot golvet och mattdetektionen hur mycket smuts som faktiskt lyfts. Extremvärdena är främst ett marknadsföringsargument.
+  </p>
+  <p class="text-text-light leading-relaxed mb-6">
+    Kom också ihåg att maxvärdet ofta bara nås i korta bursts. En robot som håller en jämn, hög sugkraft genom hela passagen städar bättre än en som toppar högt i två sekunder och sedan faller tillbaka.
+  </p>
+
+  <h3 class="font-heading text-xl font-bold text-text mt-6 mb-2">Varför tappar robotdammsugaren sugkraft med tiden?</h3>
+  <p class="text-text-light leading-relaxed mb-4">
+    Tre orsaker dominerar: ett mättat filter som stryper luftflödet, en borstvals full av hår som inte längre matar in smutsen, och tätningar som börjat läcka luft. Motorn är sällan problemet. Byt filter med ett par månaders mellanrum vid daglig användning och rensa borstvalsen regelbundet så återställs det mesta av sugkraften.
+  </p>
+  <p class="text-text-light leading-relaxed mb-6">
+    En bra rutin gör större skillnad än några tusen extra Pa på pappret, hela schemat hittar du i vår guide till <a href="/guide/underhall/" class="text-accent underline">underhåll av robotdammsugare</a>. Slitna eller böjda valsar går att ersätta billigt, se utbudet av <a href="/reservdelar/borstar/" class="text-accent underline">borstar till robotdammsugare</a>.
+  </p>
+
+  <h3 class="font-heading text-xl font-bold text-text mt-6 mb-2">Hur mycket låter en robotdammsugare på max sugkraft?</h3>
+  <p class="text-text-light leading-relaxed mb-4">
+    På maxläge låter en robotdammsugare runt 75 dB, ungefär som en vanlig dammsugare, medan tyst läge ligger kring 60 dB, en nivå som går att sova bredvid. Kör du roboten när ingen är hemma spelar ljudet mindre roll, då kan maxläget stå på för mattor och husdjurshår.
+  </p>
+  <p class="text-text-light leading-relaxed mb-6">
+    Är du hemma under städningen är mellanläget en bättre kompromiss. Det räcker för hårda golv, drar mindre batteri per kvadratmeter och låter roboten hinna en längre passage på en laddning.
+  </p>
 
   <FAQ items={faqItems} />
 

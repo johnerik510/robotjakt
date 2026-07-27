@@ -1,10 +1,10 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-07-23T14:36:13.218Z",
-  "durationMs": 10265,
+  "timestamp": "2026-07-27T18:26:24.555Z",
+  "durationMs": 33471,
   "summary": {
-    "checks": 21,
+    "checks": 23,
     "errors": 8,
     "warnings": 29,
     "newErrors": 0,
@@ -139,7 +139,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/segway-navimow-h500e.webp\" används av 3 artiklar: Segway Navimow H500E recension 2026: trädgård 500 m² | Bästa Segway Navimow robotgräsklippare 2026: guide | Segway Navimow H800E recension 2026: GPS-robot testad"
+      "message": "Bild \"/images/segway-navimow-h500e.webp\" används av 3 artiklar: Segway Navimow H500E recension 2026: Vision Fence | Bästa Segway Navimow robotgräsklippare 2026: guide | Segway Navimow H800E recension 2026: GPS-robot testad"
     },
     {
       "check": "04-articlemeta",
@@ -154,7 +154,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/parts-husqvarna-blade.webp\" används av 2 artiklar: Reservdelar Husqvarna Automower 2026: knivar och mer | Reservdelar robotgräsklippare 2026: knivar och mer"
+      "message": "Bild \"/images/parts-husqvarna-blade.webp\" används av 2 artiklar: Husqvarna Automower reservdelar 2026: knivar per modell | Reservdelar robotgräsklippare 2026: knivar och mer"
     }
   ],
   "baseline": {
@@ -332,7 +332,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/segway-navimow-h500e.webp\" används av 3 artiklar: Segway Navimow H500E recension 2026: trädgård 500 m² | Bästa Segway Navimow robotgräsklippare 2026: guide | Segway Navimow H800E recension 2026: GPS-robot testad"
+      "message": "Bild \"/images/segway-navimow-h500e.webp\" används av 3 artiklar: Segway Navimow H500E recension 2026: Vision Fence | Bästa Segway Navimow robotgräsklippare 2026: guide | Segway Navimow H800E recension 2026: GPS-robot testad"
     },
     {
       "check": "04-articlemeta",
@@ -347,7 +347,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/parts-husqvarna-blade.webp\" används av 2 artiklar: Reservdelar Husqvarna Automower 2026: knivar och mer | Reservdelar robotgräsklippare 2026: knivar och mer"
+      "message": "Bild \"/images/parts-husqvarna-blade.webp\" används av 2 artiklar: Husqvarna Automower reservdelar 2026: knivar per modell | Reservdelar robotgräsklippare 2026: knivar och mer"
     },
     {
       "check": "08-image-binary-duplicates",

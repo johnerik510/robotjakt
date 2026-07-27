@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import EditorialCTA from '../components/EditorialCTA.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -59,7 +59,7 @@ export const articleMeta = {
 <BaseLayout
   title="Dreame vs iRobot 2026: vilken robotdammsugare vinner?"
   description="Dreame eller iRobot Roomba? Vi jämför navigering, sugkraft, mopp och pris. Klara rekommendationer per budget och städbehov. Se hela analysen 2026."
-  article={{ datePublished: "2026-03-03", dateModified: "2026-05-27", image: "/images/dreame-x40-ultra.webp" }}
+  article={{ datePublished: "2026-03-03", dateModified: "2026-07-27", image: "/images/dreame-x40-ultra.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -70,9 +70,9 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-30">2026-03-30</time></p>
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Dreame vs iRobot Roomba 2026, Komplett jämförelse
@@ -80,6 +80,11 @@ export const articleMeta = {
     <p class="text-text-light mb-6 max-w-2xl">
       Dreame X50 Ultra (20 000 Pa, ca 9 000 kr) levererar mer sugkraft per krona än iRobot Roomba j9+ (ca 10 000 kr). iRobot har 20 år av mjukvaruutveckling och bäst integrationsstöd för smarta hem. Vi jämför sugkraft, moppning, navigering och total ägandekostnad 2026.
     </p>
+
+    <AnswerBox
+      question="Snabbt svar: Dreame eller iRobot Roomba 2026?"
+      answer="Dreame X40 Ultra ger mest för pengarna: 12 000 Pa sugkraft, utfällbar moppmodul och en basstation som både tömmer, tvättar och torkar. iRobot Roomba j9+ vinner på beprövad driftsäkerhet, Dirt Detect för husdjurshem och ett bredare servicenätverk i Sverige. Teknik per krona: Dreame. Trygghet och husdjur: iRobot."
+    />
 
     <EditorialCTA products={['Dreame X40 Ultra']} />
 
@@ -196,9 +201,32 @@ export const articleMeta = {
       </div>
     </div>
 
+    <h3 class="font-heading text-lg font-bold text-text mt-6 mb-2">Varför anger iRobot så mycket lägre Pa än Dreame?</h3>
+    <p class="text-text-light mb-4">
+      iRobot mäter sugkraften på en annan skala än de kinesiska tillverkarna och har aldrig konkurrerat med höga Pa-siffror. Roomba j9+ kompenserar med Dirt Detect, som hittar extra smutsiga zoner och intensifierar städningen där. På vanliga hårdgolv presterar robotarna därför jämnare än vad specifikationerna antyder.
+    </p>
+    <p class="text-text-light mb-6">
+      I mattor med djup lugg går det däremot inte att räkna bort råstyrkan, där gör Dreames 12 000 Pa verklig skillnad. Hur Pa-värden mäts och hur mycket du faktiskt behöver reder vi ut i guiden till <a href="/guide/sugkraft/" class="text-accent underline">sugkraft i robotdammsugare</a>.
+    </p>
+
+    <h3 class="font-heading text-lg font-bold text-text mt-6 mb-2">Vad innebär skillnaden i basstation i vardagen?</h3>
+    <p class="text-text-light mb-4">
+      Dreames basstation tömmer dammbehållaren, tvättar mopparna och torkar dem, du behöver i princip bara fylla på rent vatten och tömma smutsvattnet. iRobots Clean Base tömmer bara damm, så moppdynan på Combo j9+ får du skölja och torka för hand. Vid daglig moppning blir det en märkbar skillnad i arbete.
+    </p>
+    <p class="text-text-light mb-6">
+      Moppar du sällan spelar det mindre roll, då är Clean Base fullt tillräcklig. Vill du jämföra fler modeller med självskötande station har vi samlat våra val av <a href="/robotdammsugare/med-bassation/" class="text-accent underline">robotdammsugare med basstation</a>.
+    </p>
+
+    <h3 class="font-heading text-lg font-bold text-text mt-6 mb-2">Vilken robot är bäst om du har både mattor och hårdgolv?</h3>
+    <p class="text-text-light mb-4">
+      Båda hanterar blandade golv, men på olika sätt. iRobots RetractSwift lyfter moppdynan automatiskt vid mattpassage så att mattorna inte blir fuktiga. Dreame fäller upp sin moppmodul 12 mm, vilket räcker för låga mattor men inte för tjocka. Har du många tjocka mattor är iRobots lösning bekvämare.
+    </p>
+    <p class="text-text-light mb-6">
+      För själva dammsugningen av mattorna gäller det omvända: där väger Dreames starkare motor tyngre än mopplyftet, eftersom inbäddad smuts i luggen kräver sugkraft snarare än finess.
+    </p>
+
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <div class="mt-8 p-5 bg-bg-alt rounded-xl border border-border">
       <h2 class="font-heading text-lg font-bold mb-3">Fler jämförelser</h2>

@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
@@ -49,7 +49,7 @@ export const articleMeta = {
 <BaseLayout
   title="Mammotion Luba vs Gardena Sileno 2026: GPS eller slinga"
   description="Mammotion Luba eller Gardena Sileno? GPS kontra slingteknik, pris och installation jämförs. Tydlig rekommendation för olika trädgårdsstorlekar."
-  article={{ datePublished: "2026-03-30", dateModified: "2026-05-27", image: "/images/mammotion-luba-awo-3000.webp" }}
+  article={{ datePublished: "2026-03-30", dateModified: "2026-07-27", image: "/images/mammotion-luba-awo-3000.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -60,13 +60,19 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-05-15">2026-05-15</time></p>
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Mammotion LUBA vs Gardena SILENO 2026, slingfri GPS mot kabel
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Mammotion LUBA eller Gardena SILENO?"
+      answer="Mammotion LUBA passar tomter över 750 kvadratmeter, kuperad terräng och alla som vill slippa gräva ned kabel: RTK-GPS, fyrhjulsdrift och 75 procent lutningstolerans. Gardena SILENO Life 750 vinner på pris för plana villaträdgårdar under 750 kvadratmeter, men kräver perimeterkabel och klarar 35 procent lutning."
+    />
+
     <p class="text-text-light mb-6 max-w-2xl">
       Kort svar: Mammotion LUBA 2 AWO 1000H vinner för tomter över 750 m², kuperad terräng och alla som vill slippa gräva ned kabel. Gardena SILENO Life 750 vinner på pris för plana villaträdgårdar under 750 m². LUBA klarar 75 procent lutning och 2 000 m² på en laddning, Gardena 35 procent och 750 m².
     </p>
@@ -164,13 +170,13 @@ export const articleMeta = {
       Mammotion LUBA 2 AWO har 26 cm klippbredd mot Gardenans 18 cm, en skillnad som innebär att LUBA klipper en given yta snabbare. LUBA täcker dessutom upp till 2 000 m² mot Gardenans 750 m². För trädgårdar mellan 750 till 2 000 m² är Mammotion det enda alternativet av de två. </p>
 
     <div class="grid sm:grid-cols-2 gap-6 mb-8">
-      <a href="/mammotion-luba-2-awo-1000h/" class="block bg-white rounded-xl border border-border p-5 hover:border-accent hover:shadow-md transition-all group">
+      <a href="/mammotion-luba-2-awo-1000h/" class="block bg-white rounded-xl border border-border p-5 hover:border-accent transition-all group">
         <span class="text-xs font-semibold text-green-700 bg-green-50 px-2 py-0.5 rounded mb-2 inline-block">Bäst utan kabel</span>
         <h3 class="font-heading text-lg font-bold text-text group-hover:text-accent mb-1">Mammotion LUBA 2 AWO 1000H</h3>
         <p class="text-sm text-text-light">RTK-GPS, 4-hjulsdrift, 75% lutning, 2 000 m². Ingen kabel krävs.</p>
         <span class="inline-block mt-3 text-sm font-semibold text-accent">Mammotion LUBA 2 AWO 1000H recension</span>
       </a>
-      <a href="/gardena-sileno-life-750/" class="block bg-white rounded-xl border border-border p-5 hover:border-accent hover:shadow-md transition-all group">
+      <a href="/gardena-sileno-life-750/" class="block bg-white rounded-xl border border-border p-5 hover:border-accent transition-all group">
         <span class="text-xs font-semibold text-accent bg-accent/10 px-2 py-0.5 rounded mb-2 inline-block">Bäst pris/prestanda</span>
         <h3 class="font-heading text-lg font-bold text-text group-hover:text-accent mb-1">Gardena SILENO Life 750</h3>
         <p class="text-sm text-text-light">Kabelbunden, 750 m², 35% lutning. Bäst för plan trädgård med budget.</p>
@@ -202,6 +208,30 @@ export const articleMeta = {
       </div>
     </div>
 
+    <h3 class="font-heading text-lg font-bold text-text mt-8 mb-3">Vad händer om perimeterkabeln går av?</h3>
+    <p class="text-text-light mb-4">
+      Roboten stannar eller tappar orienteringen tills kabelbrottet är lagat. Ett avgrävt kabelbrott måste först lokaliseras längs slingan och sedan skarvas, vilket kan ta både tid och tålamod. Mammotion LUBA har ingen kabel som kan skadas, gränserna ligger digitalt i appen och kan ändras när som helst.
+    </p>
+    <p class="text-text-light mb-6">
+      Vanligaste orsakerna till kabelbrott är kantskärare, spadar vid plantering och grävande husdjur. Det är ingen dealbreaker för Gardena, kabeln kan ligga ostörd i många år, men det är en risk du helt slipper med GPS-navigering. Fler kabelbundna modeller i olika storlekar hittar du i vår guide till <a href="/gardena-robotgrasklippare/" class="text-accent underline">Gardena robotgräsklippare</a>.
+    </p>
+
+    <h3 class="font-heading text-lg font-bold text-text mt-8 mb-3">Göder klippet gräsmattan?</h3>
+    <p class="text-text-light mb-4">
+      Ja. Både Mammotion LUBA och Gardena SILENO klipper lite och ofta, och det finfördelade gräsklippet lämnas kvar på gräsmattan som naturlig gödning, så kallad mulching. Näringen återförs till jorden i stället för att hamna på komposten, vilket över en säsong ger en tätare och grönare gräsmatta utan extra arbete.
+    </p>
+    <p class="text-text-light mb-6">
+      Effekten är densamma oavsett vilken av modellerna du väljer, den kommer av klippmetoden i sig. På en mindre gräsmatta märks förbättringen ofta snabbast, rätt modeller för sådana tomter listar vi i guiden om <a href="/robotgrasklippare-liten-tradgard/" class="text-accent underline">robotgräsklippare för liten trädgård</a>.
+    </p>
+
+    <h3 class="font-heading text-lg font-bold text-text mt-8 mb-3">Hur sköter du roboten under säsongen och på vintern?</h3>
+    <p class="text-text-light mb-4">
+      Räkna med lätt återkommande skötsel oavsett märke: rengör klippdäcket från gräsrester, kontrollera knivarna och byt dem när de blivit slöa, och förvara roboten frostfritt inomhus under vintern. Gardenas kabel ligger kvar i marken året om, medan LUBA:s referensantenn kan sitta uppe permanent.
+    </p>
+    <p class="text-text-light mb-6">
+      Slöa knivar sliter av gräset i stället för att skära det, vilket ger bruna toppar på gräsmattan. Håll därför koll på klippresultatet snarare än kalendern, det är den bästa indikatorn på när knivarna behöver bytas.
+    </p>
+
     <div class="mt-6 p-5 bg-bg-alt rounded-xl border border-border">
       <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
       <ul class="space-y-2 text-sm">
@@ -215,7 +245,6 @@ export const articleMeta = {
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
   </div>
 
   <StickyCTA

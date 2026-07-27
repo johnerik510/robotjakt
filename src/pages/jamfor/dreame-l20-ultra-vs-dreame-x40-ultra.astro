@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import EditorialCTA from '../../components/EditorialCTA.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -56,7 +56,7 @@ export const articleMeta = {
 <BaseLayout
   title="Dreame L20 Ultra vs X40 Ultra 2026: full jämförelse"
   description="Dreame L20 Ultra eller X40 Ultra? Vi jämför sugkraft, moppning, sidoarm och pris. Klart svar på vilken Dreame som passar ditt hem och budget."
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/heroes/dreame-l20-ultra-vs-dreame-x40-ultra.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/heroes/dreame-l20-ultra-vs-dreame-x40-ultra.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -67,13 +67,17 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Dreame L20 Ultra vs X40 Ultra 2026, vilken ska du välja?
     </h1>
+    <AnswerBox
+      question="Snabbt svar: Dreame L20 Ultra eller X40 Ultra?"
+      answer="Dreame L20 Ultra är rätt val för de flesta hem: 7 000 Pa, LiDAR-navigering, varmvattentvätt av mopparna och självtömmande station räcker för normalt städbehov. Dreame X40 Ultra motiverar sitt högre pris först när du har tjocka mattor med lång lugg eller kräver moppning ända in i hörnen via den utfällbara sidoarmen."
+    />
     <p class="text-text-light mb-6 max-w-2xl">
       Dreame L20 Ultra till eller Dreame X40 Ultra till ? Båda är starka robotdammsugare med mopp och självtömmande station, men de vänder sig till olika behov. Vi jämför dem kategori för kategori och ger dig ett tydligt svar. </p>
 
@@ -246,7 +250,7 @@ export const articleMeta = {
           <h3 class="font-heading font-bold text-text mb-3">Välj Dreame X40 Ultra om du...</h3>
           <ul class="space-y-2">
             {[
-              'Har tjocka mattor med lång lugg (kräver 10 000+ På)',
+              'Har tjocka mattor med lång lugg (kräver 10 000+ Pa)',
               'Kräver moppning ända in i hörnen',
               'Har ett hem med många smalpassager och vinklar',
               'Vill ha maximalt batteri för stora hem (200+ m²)',
@@ -284,9 +288,46 @@ export const articleMeta = {
         <strong class="text-text">Sammanfattning:</strong> L20 Ultra för värdesökaren. X40 Ultra för den som kräver det bästa utan kompromiss. </p>
     </section>
 
+    <!-- Deep dive: vanliga funderingar -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-6">Vanliga funderingar innan du bestämmer dig</h2>
+      <div class="space-y-5">
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Räcker 7 000 Pa om jag har husdjur?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            I de flesta hem, ja. Dreame L20 Ultras 7 000 Pa drar upp päls från hårda golv och kortluggade mattor utan problem, och där samlas merparten av håret. Skillnaden mot X40 Ultras 12 000 Pa visar sig först i tjocka mattor där pälsen trycks ner i luggen.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Har du både husdjur och flera stora mattor med lång lugg lutar valet mot X40 Ultra. Bor du däremot med parkett, klinker och någon enstaka kortluggad matta gör den extra sugkraften liten praktisk skillnad. Fler modeller som hanterar päls bra hittar du i vår genomgång av <a href="/robotdammsugare/husdjur/" class="text-accent underline">robotdammsugare för husdjur</a>.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Hur mycket underhåll kräver stationerna i praktiken?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Mindre än en vanlig dammsugare, men de är inte underhållsfria. Båda stationerna tömmer dammbehållaren och tvättar mopparna med varmt vatten automatiskt. Du behöver själv fylla på rent vatten, tömma smutsvattentanken och byta dammpåsen i stationen när den är full. Det tar några minuter i veckan.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Utöver vattenhanteringen behöver filter och borstar ses över med jämna mellanrum, precis som på alla robotdammsugare. Sidoborstar samlar hår och huvudrullen behöver rensas då och då, oftare i hem med husdjur. Räkna med att mopparna är slitdelar som byts när de tappar sin verkan.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Gör oscillerande moppteknik verkligen skillnad i vardagen?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Ja, på ingrundad smuts. X40 Ultras moppar gnuggar fram och tillbaka med tryck mot golvet, vilket löser upp intorkade fläckar bättre än L20 Ultras roterande moppar. På lätt vardagssmuts som damm och lösa smulor presterar båda teknikerna likvärdigt, då är det snarare hörntäckningen som skiljer dem åt.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Tänk på hur ditt hem används. I ett kök där det ofta stänker och torkar in lönar sig den oscillerande tekniken, medan ett sovrum med mest damm klarar sig fint med roterande moppar. Vill du jämföra fler modeller med stark moppfunktion finns hela listan i vår guide till <a href="/robotdammsugare/med-mopp/" class="text-accent underline">robotdammsugare med mopp</a>.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <!-- Related links -->
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">

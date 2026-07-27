@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
-import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import StatHighlight from '../../components/StatHighlight.astro';
@@ -227,7 +226,7 @@ export const articleMeta = {
 <BaseLayout
   title="Robotdammsugare bäst i test 2026: 11 modeller jämförda"
   description="Robotdammsugare bäst i test 2026. Vi har jämfört 11 toppmodeller från Dreame och Roborock. Jämförelse med sugkraft, station, mopp och pris."
-  article={{ datePublished: "2026-04-20", dateModified: "2026-06-20", image: "/images/products/dreame-x50-ultra.webp" }}
+  article={{ datePublished: "2026-04-20", dateModified: "2026-07-27", image: "/images/products/dreame-x50-ultra.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
@@ -235,11 +234,11 @@ export const articleMeta = {
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
       Robotdammsugare bäst i test 2026, 11 modeller jämförda
     </h1>
-    <AuthorByline datePublished="2026-04-20" dateModified="2026-06-20" />
+    <AuthorByline datePublished="2026-04-20" dateModified="2026-07-27" />
 
     <AnswerBox
       question="Snabbt svar: Vilken robotdammsugare är bäst 2026?"
-      answer="Dreame X50 Ultra är vår bästa robotdammsugare i test 2026, med den starkaste sugkraften vi jämfört och en utfällbar arm som städar ända in i hörnen. Den självrenande PowerDock-stationen sköter tömning och mopptvätt automatiskt."
+      answer="Dreame X50 Ultra är vår bästa robotdammsugare i test 2026, med den starkaste sugkraften vi jämfört och en utfällbar arm som städar ända in i hörnen. Den självrenande PowerDock-stationen sköter tömning och mopptvätt automatiskt. Roborock Saros 20 Sonic är alternativet med anti-tangle-borste, och Roborock S8 MaxV Ultra är valet i husdjurshem."
     />
 
     <MoneyFeatured {...products[0]} />
@@ -291,7 +290,7 @@ export const articleMeta = {
       <div class="space-y-6 text-text-light text-sm leading-relaxed">
         <div>
           <h3 class="font-heading text-lg font-bold text-text mb-2">Sugkraft, hur mycket behöver du?</h3>
-          <p>Modern sugkraft mäts i Pascal (På). Budget-modeller har 3 000 till 5 000 Pa. Mellanklassmodeller ligger på 6 000 till 8 000 Pa och räcker för de flesta hem. Premium-modeller (10 000 till 35 000 Pa) är nödvändiga om du har tjocka mattor, husdjur eller höga krav på grundlighet.</p>
+          <p>Modern sugkraft mäts i Pascal (Pa). Budget-modeller har 3 000 till 5 000 Pa. Mellanklassmodeller ligger på 6 000 till 8 000 Pa och räcker för de flesta hem. Premium-modeller (10 000 till 35 000 Pa) är nödvändiga om du har tjocka mattor, husdjur eller höga krav på grundlighet.</p>
         </div>
         <div>
           <h3 class="font-heading text-lg font-bold text-text mb-2">Självtömmande station, värt prisskillnaden</h3>
@@ -308,6 +307,26 @@ export const articleMeta = {
         <div>
           <h3 class="font-heading text-lg font-bold text-text mb-2">Prisklasser 2026</h3>
           <p>Budget: täcker grundläggande behov, enklare navigering. Mellanklass: LiDAR-navigering, moppfunktion, självtömmande station, här sitter bästa värdet. Premium: maxprestanda, AI-kamera, utfällbar mopp, varmvatten.</p>
+        </div>
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Hur lång batteritid behöver du?</h3>
+          <p>Ytan avgör. En robot som inte hinner hela bostaden på en laddning åker tillbaka till stationen, laddar och fortsätter där den slutade, så passet blir längre men blir ändå färdigt. Först över ungefär hundra kvadratmeter börjar batteritid och kartminne påverka valet på allvar.</p>
+          <p class="mt-3">Kombinerade pass drar mer än ren sugkörning, eftersom roboten också pendlar tillbaka till stationen för att skölja moppduken. Räkna med fler avbrott om du moppar och dammsuger samtidigt i ett större hem. I en normalstor lägenhet spelar batteriet däremot sällan någon roll, där avgörs valet av navigering och station.</p>
+        </div>
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Hur mycket underhåll kräver en robotdammsugare?</h3>
+          <p>Underhållet är litet men inte noll. Filtret ska knackas rent, huvudborsten rensas från hår, sidoborsten bytas när den blivit skev och sensorerna torkas av med en torr duk. Har du självtömmande station tillkommer ett påsbyte var fjärde till åttonde vecka, inget mer.</p>
+          <p class="mt-3">Den vanligaste orsaken till att en robot verkar ha tappat sugkraft är ett igensatt filter, inte ett trasigt motorpaket. Näst vanligast är hår runt borstaxeln. Båda tar under en minut att åtgärda när du vet var du ska titta. Hela schemat står i vår guide om <a href="/guide/underhall/" class="text-accent underline">underhåll av robotdammsugare</a>.</p>
+        </div>
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Vad ska du göra innan första körningen?</h3>
+          <p>Rensa golvet från sladdar, mattfransar och småsaker, fäll upp stolarna och stäng dörrarna till rum roboten inte ska in i. Låt den sedan göra ett komplett kartläggningspass i dagsljus. Först när kartan är klar kan du dela in rum och lägga no-go-zoner i appen.</p>
+          <p class="mt-3">Kartan är det som gör resten av funktionerna användbara. Utan rumsindelning kan du inte skicka roboten till bara köket, och utan no-go-zoner kör den in i hundskålen och kattlådan varje pass. Tiden du lägger på det första passet är den enskilt största skillnaden mellan en robot som används och en som står i garderoben.</p>
+        </div>
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Hur bra blir resultatet på mattor jämfört med hårdgolv?</h3>
+          <p>Sämre, och det gäller alla robotar. I Energimyndighetens test tog robotarna 91 till 97 procent av dammet på hårda golv men 61 till 93 procent på matta. Tjock lugg är alltså den reella begränsningen, inte hårdgolvet, oavsett hur många pascal tillverkaren anger.</p>
+          <p class="mt-3">Praktiskt betyder det att en robot håller mattan fräsch men inte ersätter en grundlig dammsugning av luggen några gånger per år. Har du heltäckningsmattor är automatisk mopplyftning dessutom ett krav och inte en bonus, annars fuktar roboten mattan varje gång den kör ett kombinerat pass. Vilka mattyper som fungerar bäst går vi igenom i guiden om <a href="/guide/robotdammsugare-mattor/" class="text-accent underline">robotdammsugare och mattor</a>.</p>
         </div>
       </div>
     </section>
@@ -431,11 +450,10 @@ export const articleMeta = {
       </div>
     </section>
 
-    <MethodologyBlock criteria={['Navigering & kartläggning', 'Sugkraft & rengöringsresultat', 'Moppfunktion', 'Batterilivslängd', 'App & smart hem', 'Buller & underhåll']} productCount={11} lastUpdated="2026-06-20" />
+    <MethodologyBlock criteria={['Navigering & kartläggning', 'Sugkraft & rengöringsresultat', 'Moppfunktion', 'Batterilivslängd', 'App & smart hem', 'Buller & underhåll']} productCount={11} lastUpdated="2026-07-27" />
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
   </div>
 
   <StickyCTA

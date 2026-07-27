@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -67,7 +67,7 @@ export const articleMeta = {
   title="Dolphin Nautilus CC Plus recension 2026: poolrobot"
   description="Dolphin Nautilus CC Plus testad: populär poolrobot för 12 m pool med Wi-Fi-styrning. Se rengöringsresultat, filtreringskapacitet och pris Sverige."
   ogImage="/images/dolphin-nautilus-cc-plus.webp"
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/dolphin-nautilus-cc-plus.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/dolphin-nautilus-cc-plus.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -78,13 +78,18 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-05</p>
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-27</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Dolphin Nautilus CC Plus Recension 2026
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Är Dolphin Nautilus CC Plus värd att köpa?"
+      answer="Dolphin Nautilus CC Plus får 4,3 av 5 och är prisvärdaste valet för nedgrävda pooler upp till 12 meter. CleverClean scannar poolen och täcker botten, väggar och vattenlinje på 2,5 timmar, och veckokalendern sköter schemat. Du får ingen app, bara timer, vilket räcker för de flesta."
+    />
 
     <!-- Verdict box -->
     <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -204,11 +209,37 @@ export const articleMeta = {
       <p class="text-text-light leading-relaxed mb-4">
         Nautilus CC Plus passar nedgrävda pooler upp till 12 m som vill ha pålitlig helautomatisk poolstädning utan behov av app-styrning. Utmärkt för den som vill ha enkel, pålitlig drift och är nöjd med veckokalender-schemaläggning.
       </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur ställer du in veckokalendern på Nautilus CC Plus?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Schemat ställs in i den inbyggda veckokalendern, inte i någon app. Du väljer vilka dagar roboten ska starta, upp till sju dagar i veckan, och timern sköter resten. Cykeln på 2,5 timmar avslutas automatiskt, så det enda du behöver komma ihåg är att ta upp roboten efteråt.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Två till tre dagar i veckan är en rimlig utgångspunkt under badsäsongen, med tätare intervall under veckor med mycket pollen. Fördelen med en timer i stället för en app är att ingenting hänger på WiFi-täckning eller uppdateringar. Nackdelen är att du måste gå ut till poolen för att ändra schemat.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Var lägger du ner Nautilus CC Plus för bäst täckning?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Lägg roboten i mitten av poolens långsida och lägg ut kabeln i en mjuk böj mot kanten. Med 18 meter kabel når den runt en normalpool utan att spänna, och CleverClean scannar poolens form och räknar ut rutten. En kabel som ligger stramt drar roboten ur den planerade banan.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        I pooler med kraftiga kurvor eller breda trappor kan kabeln ändå trassla. Starta roboten från den sida som ligger längst från trappan, då hamnar de trängre partierna i slutet av cykeln och kabeln hinner rätas ut på den öppna botten först.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Ska poolen byggas eller renoveras är det värt att läsa vad som skiljer kraven mellan pooltyper i vår guide till <a href="/poolrobot-for-nedgraevd-pool/" class="text-accent underline">poolrobot för nedgrävd pool</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur mycket underhåll kräver Nautilus CC Plus över en säsong?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Räkna med några minuter efter varje körning. Filterkorgarna lyfts ur på ovansidan och sköljs under rinnande vatten, det tar två till tre minuter. Roboten väger 7,9 kilo, så lyftet ur poolen är det tyngsta momentet. Filterkorg och media byts när de börjar se slitna ut.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Ett rent filter är inte bara en underhållsfråga. Det är flödet genom roboten som avgör hur mycket smuts den faktiskt får med sig, och ett igensatt filter märks som sämre resultat innan det märks som ett fel. Tvekar du mellan modeller i olika prisklasser går vi igenom vad som är värt att betala för i vår <a href="/kopguide-poolrobot/" class="text-accent underline">köpguide för poolrobot</a>.
+      </p>
     </section>
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
       <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med andra poolrobotar</h2>

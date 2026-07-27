@@ -1,189 +1,362 @@
 ---
-const dronareItems = [
-  { label: 'Topplista', href: '/dronare/' },
-  { label: 'För nybörjare', href: '/dronare-for-nyborjare/' },
-  { label: 'Med kamera', href: '/dronare-med-kamera/' },
-  { label: 'DJI Mini 5 Pro', href: '/dji-mini-5-pro/' },
-  { label: 'DJI Air 3S', href: '/dji-air-3s/' },
+// Meny 2.0 (2026-07-27): sökspeglande IA i fyra mega-grupper, ordnade efter
+// GSC-trafik (gräsklippare > dammsugare > pool > övrigt). Featured-kortet i
+// varje panel är topplistans faktiska förstaplats, verifierad mot sidans
+// produktdata; det länkar ENDAST internt till vår topplista (hård regel:
+// inga affiliate-spår i menyn).
+interface MenyLank { label: string; href: string }
+interface MenyKolumn { title: string; href?: string; items: MenyLank[] }
+interface MenyFeatured { brand?: string; name: string; blurb: string; image?: string; href: string; cta: string }
+interface MenyGrupp { label: string; href: string; trust: string; columns: MenyKolumn[]; featured?: MenyFeatured }
+
+const megaGroups: MenyGrupp[] = [
+  {
+    label: 'Robotgräsklippare',
+    href: '/robotgrasklippare/',
+    trust: 'Navigering, lutningskapacitet och arbetsyta vägs mot pris. Kabelfritt jämförs alltid mot slinga.',
+    columns: [
+      {
+        title: 'Topplistor',
+        href: '/robotgrasklippare/',
+        items: [
+          { label: 'Bästa robotgräsklippare 2026', href: '/robotgrasklippare/' },
+          { label: 'Utan slinga', href: '/robotgrasklippare-utan-slinga/' },
+          { label: 'För brant lutning', href: '/robotgrasklippare-for-lutning/' },
+          { label: 'Liten trädgård', href: '/robotgrasklippare-liten-tradgard/' },
+          { label: 'Stor trädgård', href: '/robotgrasklippare-stor-tradgard/' },
+          { label: 'Under 5 000 kr', href: '/robotgrasklippare-under-5000/' },
+          { label: 'Utan årsavgift', href: '/robotgrasklippare-utan-arsgransavgift/' },
+        ],
+      },
+      {
+        title: 'Märken',
+        items: [
+          { label: 'Husqvarna Automower', href: '/husqvarna-robotgrasklippare/' },
+          { label: 'Segway Navimow', href: '/segway-navimow-robotgrasklippare/' },
+          { label: 'Mammotion', href: '/mammotion-robotgrasklippare/' },
+          { label: 'Gardena Sileno', href: '/gardena-robotgrasklippare/' },
+          { label: 'Worx Landroid', href: '/worx-robotgrasklippare/' },
+        ],
+      },
+      {
+        title: 'Jämförelser & guider',
+        items: [
+          { label: 'Mammotion vs Segway Navimow', href: '/mammotion-vs-segway-navimow/' },
+          { label: 'Husqvarna vs Mammotion', href: '/husqvarna-vs-mammotion/' },
+          { label: 'Husqvarna vs Gardena', href: '/husqvarna-vs-gardena/' },
+          { label: 'Köpguide robotgräsklippare', href: '/guide/robotgrasklippare-koparguide/' },
+          { label: 'Vinterförvaring', href: '/guide/vinterforvaring-robotgrasklippare/' },
+        ],
+      },
+    ],
+    featured: {
+      brand: 'Dreame',
+      name: 'A3 AWD Pro 5000',
+      blurb: 'Bäst i test 2026. AWD-drivning som klarar branta lutningar, kabelfri GPS-navigering och ytor upp till 5 000 m².',
+      image: 'https://www.komplett.se/img/p/400/1334171.jpg?imformat=generic',
+      href: '/robotgrasklippare/',
+      cta: 'Se hela topplistan',
+    },
+  },
+  {
+    label: 'Robotdammsugare',
+    href: '/robotdammsugare/',
+    trust: 'Sugkraft, navigering och moppfunktion jämförs modell för modell, alltid med nackdelarna utskrivna.',
+    columns: [
+      {
+        title: 'Topplistor',
+        href: '/robotdammsugare/',
+        items: [
+          { label: 'Robotdammsugare bäst i test', href: '/robotdammsugare/' },
+          { label: 'Med moppfunktion', href: '/robotdammsugare/med-mopp/' },
+          { label: 'För husdjur', href: '/robotdammsugare/husdjur/' },
+          { label: 'För lägenhet', href: '/robotdammsugare/lagenhet/' },
+          { label: 'Stor lägenhet', href: '/robotdammsugare/storlagenhet/' },
+          { label: 'Under 5 000 kr', href: '/robotdammsugare-under-5000/' },
+          { label: 'Billigaste modellerna', href: '/billigaste-robotdammsugare/' },
+        ],
+      },
+      {
+        title: 'Märken',
+        items: [
+          { label: 'Dreame, alla modeller', href: '/dreame-guide/' },
+          { label: 'Roborock, alla modeller', href: '/roborock-guide/' },
+          { label: 'Ecovacs Deebot', href: '/ecovacs-guide/' },
+          { label: 'iRobot Roomba', href: '/irobot-guide/' },
+          { label: 'Dyson', href: '/dyson-guide/' },
+          { label: 'eufy', href: '/eufy-guide/' },
+        ],
+      },
+      {
+        title: 'Jämförelser & guider',
+        items: [
+          { label: 'Roborock vs Dreame', href: '/roborock-vs-dreame/' },
+          { label: 'Alla jämförelser', href: '/jamfor/' },
+          { label: 'Köpguide robotdammsugare', href: '/kopguide-robotdammsugare/' },
+          { label: 'Robotdammsugare och mattor', href: '/guide/robotdammsugare-mattor/' },
+          { label: 'LiDAR-navigering förklarad', href: '/guide/lidar-navigation/' },
+        ],
+      },
+    ],
+    featured: {
+      brand: 'Dreame',
+      name: 'X50 Ultra',
+      blurb: 'Bäst i test 2026. Starkast sugkraft vi jämfört, utfällbar mopparm och självrenande PowerDock.',
+      image: '/images/products/dreame-x50-ultra.webp',
+      href: '/robotdammsugare/',
+      cta: 'Se hela topplistan',
+    },
+  },
+  {
+    label: 'Poolrobot',
+    href: '/poolrobot/',
+    trust: 'Sugteknik, filterkapacitet och klätterförmåga jämförda för svenska pooler.',
+    columns: [
+      {
+        title: 'Topplistor & guider',
+        href: '/poolrobot/',
+        items: [
+          { label: 'Bästa poolroboten 2026', href: '/poolrobot/' },
+          { label: 'Köpguide poolrobot', href: '/kopguide-poolrobot/' },
+          { label: 'Billigaste poolrobot', href: '/billigaste-poolrobot/' },
+          { label: 'För nedgrävd pool', href: '/poolrobot-for-nedgraevd-pool/' },
+        ],
+      },
+      {
+        title: 'Recensioner',
+        items: [
+          { label: 'Zodiac Tornax OT2030', href: '/zodiac-tornax-ot2030/' },
+          { label: 'Dolphin E30', href: '/dolphin-e30/' },
+          { label: 'Dolphin Sigma', href: '/dolphin-sigma/' },
+          { label: 'Dolphin Nautilus CC Plus', href: '/dolphin-nautilus-cc-plus/' },
+          { label: 'Dolphin S200', href: '/dolphin-s200/' },
+          { label: 'Steinbach Poolrunner', href: '/steinbach-poolrunner-battery-pro/' },
+        ],
+      },
+    ],
+    featured: {
+      brand: 'Zodiac',
+      name: 'Electric Pool Cleaner GT3220',
+      blurb: 'Bäst i test. Rengör botten och väggar med pålitlig motor och enkel filtertömning.',
+      image: '/images/products/zodiac-gt3220.webp',
+      href: '/poolrobot/',
+      cta: 'Se hela topplistan',
+    },
+  },
+  {
+    label: 'Mer',
+    href: '/guide/',
+    trust: 'Fönsterputs, drönare, reservdelar och tekniska guider, samma metodik som topplistorna.',
+    columns: [
+      {
+        title: 'Fler kategorier',
+        items: [
+          { label: 'Fönsterputsrobot', href: '/fonsterputsrobot/' },
+          { label: 'Billigaste fönsterputsrobot', href: '/billigaste-fonsterputsrobot/' },
+          { label: 'Bästa drönaren 2026', href: '/dronare/' },
+          { label: 'Drönare för nybörjare', href: '/dronare-for-nyborjare/' },
+          { label: 'Drönare med kamera', href: '/dronare-med-kamera/' },
+        ],
+      },
+      {
+        title: 'Reservdelar',
+        href: '/reservdelar/',
+        items: [
+          { label: 'Alla reservdelar', href: '/reservdelar/' },
+          { label: 'Roborock reservdelar', href: '/reservdelar/roborock/' },
+          { label: 'Dreame reservdelar', href: '/reservdelar/dreame/' },
+          { label: 'Husqvarna Automower reservdelar', href: '/reservdelar/husqvarna/' },
+          { label: 'Filter', href: '/reservdelar/filter/' },
+          { label: 'Borstar', href: '/reservdelar/borstar/' },
+        ],
+      },
+      {
+        title: 'Guider',
+        href: '/guide/',
+        items: [
+          { label: 'Alla guider', href: '/guide/' },
+          { label: 'Installation steg för steg', href: '/guide/installation/' },
+          { label: 'Sugkraft förklarad', href: '/guide/sugkraft/' },
+          { label: 'Automatisk tömning', href: '/guide/automatisk-tomning/' },
+          { label: 'Underhåll av robotdammsugare', href: '/guide/underhall/' },
+        ],
+      },
+    ],
+  },
 ];
 
-const dammsugareItems = [
-  { label: 'Topplista', href: '/robotdammsugare/' },
-  { label: 'Köpguide', href: '/kopguide-robotdammsugare/' },
-  { label: 'Med mopp', href: '/robotdammsugare/med-mopp/' },
-  { label: 'Husdjur', href: '/robotdammsugare/husdjur/' },
-  { label: 'Budget', href: '/billigaste-robotdammsugare/' },
-];
+// Antal produkter räknas vid build ur ProductCard-korten (name-prop) plus
+// startsidans och hubbarnas produktarrayer, aldrig hårdkodat.
+const pageSources = import.meta.glob('../pages/**/*.astro', { query: '?raw', import: 'default', eager: true });
+const produktNamn = new Set<string>();
+for (const src of Object.values(pageSources) as string[]) {
+  for (const m of src.matchAll(/<ProductCard[\s\S]{0,400}?name="([^"]+)"/g)) {
+    produktNamn.add(m[1].toLowerCase().trim());
+  }
+  for (const m of src.matchAll(/rank:\s*\d+,?\s*\n\s*name:\s*'([^']+)'/g)) {
+    produktNamn.add(m[1].toLowerCase().trim());
+  }
+}
+const antalProdukter = Math.floor(produktNamn.size / 10) * 10;
 
-const grasklippareItems = [
-  { label: 'Topplista', href: '/robotgrasklippare/' },
-  { label: 'Köpguide', href: '/guide/robotgrasklippare-koparguide/' },
-  { label: 'Utan slinga', href: '/robotgrasklippare-utan-slinga/' },
-  { label: 'Budget', href: '/billigaste-robotgrasklippare/' },
-];
-
-const reservdelarItems = [
-  { label: 'Alla reservdelar', href: '/reservdelar/' },
-  { label: 'Dammsugare reservdelar', href: '/reservdelar/robotdammsugare/' },
-  { label: 'Filter', href: '/reservdelar/filter/' },
-  { label: 'Borstar', href: '/reservdelar/borstar/' },
-  { label: 'Roborock', href: '/reservdelar/roborock/' },
-  { label: 'Dreame', href: '/reservdelar/dreame/' },
-  { label: 'Ecovacs', href: '/reservdelar/ecovacs/' },
-  { label: 'Gräsklippare reservdelar', href: '/reservdelar/robotgrasklippare/' },
-  { label: 'Knivar', href: '/reservdelar/knivar/' },
-  { label: 'Husqvarna Automower', href: '/reservdelar/husqvarna/' },
+const uspItems = [
+  ...(antalProdukter >= 10 ? [`${antalProdukter}+ robotar jämförda`] : []),
+  'Oberoende recensioner',
+  'Uppdaterat 2026',
 ];
 ---
 
-<header class="sticky top-0 z-50 shadow-lg relative">
-  <!-- USP-bar -->
-  <div class="bg-accent text-white text-xs font-semibold py-2 px-4">
-    <div class="max-w-7xl mx-auto flex items-center justify-center gap-4 sm:gap-8 flex-wrap">
-      <span class="flex items-center gap-1.5">
-        <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-        20+ robotar jämförda
-      </span>
-      <span class="hidden sm:flex items-center gap-1.5">
-        <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-        Oberoende &amp; ärliga tester
-      </span>
-      <span class="hidden md:flex items-center gap-1.5">
-        <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-        Uppdaterat 2026
-      </span>
-      <span class="hidden md:flex items-center gap-1.5">
-        <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-        Alltid gratis guide
-      </span>
+<!-- E-E-A-T-rad: icke-sticky, scrollar bort och äter inte above the fold -->
+<div class="hidden md:block bg-primary-dark text-white/80 text-xs font-semibold">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-9 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-6">
+      {uspItems.map((item) => (
+        <span class="flex items-center gap-1.5">
+          <svg class="w-3 h-3 flex-shrink-0 text-accent-light" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          {item}
+        </span>
+      ))}
+    </div>
+    <div class="flex items-center gap-5">
+      <a href="/sa-testar-vi/" class="hover:text-white transition-colors">Så testar vi</a>
+      <a href="/om-redaktionen/" class="hover:text-white transition-colors">Om redaktionen</a>
     </div>
   </div>
-  <!-- Mörk navbar -->
-  <div class="bg-primary text-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
-      <a href="/" class="flex items-center group hover:opacity-90 transition-opacity">
-        <img src="/images/logo.svg" alt="Robotjakt" class="h-10 w-auto flex-shrink-0 group-hover:scale-105 transition-transform" width="197" height="40" />
-      </a>
-      <nav class="hidden md:flex items-center space-x-2" aria-label="Huvudnavigering">
-        <!-- Robotdammsugare dropdown -->
-        <div class="relative group">
-          <a href="/robotdammsugare/" class="flex items-center gap-1 text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light">
-            Robotdammsugare
-            <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </a>
-          <div class="absolute left-0 top-full pt-1 hidden group-hover:block z-50 min-w-[180px]">
-            <div class="bg-white rounded-lg shadow-lg border border-gray-100 py-1">
-              {dammsugareItems.map((item) => (
-                <a href={item.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
-                  {item.label}
-                </a>
-              ))}
+</div>
+
+<header class="sticky top-0 z-50">
+  <!-- Mörk grafit-nav -->
+  <div class="bg-primary text-white border-b border-primary-light relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center hover:opacity-90 transition-opacity flex-shrink-0">
+          <img src="/images/logo.svg" alt="Robotjakt" class="h-10 w-auto flex-shrink-0" width="197" height="40" />
+        </a>
+
+        <!-- Desktop nav: fyra mega-grupper -->
+        <nav class="hidden lg:flex items-center gap-0.5" aria-label="Huvudnavigering">
+          {megaGroups.map((grupp) => (
+            <div class="group">
+              <a
+                href={grupp.href}
+                class="relative flex items-center gap-1 px-3 py-2 text-sm font-semibold text-gray-200 hover:text-white transition-colors whitespace-nowrap"
+                aria-haspopup="true"
+              >
+                {grupp.label}
+                <svg class="w-3.5 h-3.5 opacity-60 transition-transform duration-200 group-hover:rotate-180 motion-reduce:transition-none" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                </svg>
+                <span class="absolute left-3 right-3 -bottom-px h-0.5 bg-accent-light scale-x-0 group-hover:scale-x-100 group-focus-within:scale-x-100 origin-left transition-transform duration-200 motion-reduce:transition-none" aria-hidden="true"></span>
+              </a>
+              <!-- Mega-panel: full bredd under naven, innehållet slutar vid innehållsbredden -->
+              <!-- before: osynlig hover-brygga över gapet mellan knapp och panel -->
+              <div class="absolute left-0 right-0 top-full pt-2 hidden group-hover:block group-focus-within:block z-50 before:content-[''] before:absolute before:left-0 before:right-0 before:-top-4 before:h-4">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="bg-white text-text shadow-xl rounded-lg overflow-hidden">
+                    <div class="grid grid-cols-12">
+                      <div class={`col-span-12 ${grupp.featured ? 'lg:col-span-9' : ''} grid grid-cols-3 gap-x-8 gap-y-6 p-7`}>
+                        {grupp.columns.map((col) => (
+                          <div>
+                            {col.href ? (
+                              <a href={col.href} class="block text-xs font-semibold uppercase tracking-wider text-text-light mb-2.5 pb-2 border-b border-border hover:text-accent transition-colors">
+                                {col.title}
+                              </a>
+                            ) : (
+                              <p class="text-xs font-semibold uppercase tracking-wider text-text-light mb-2.5 pb-2 border-b border-border">
+                                {col.title}
+                              </p>
+                            )}
+                            <ul class="space-y-0.5">
+                              {col.items.map((item) => (
+                                <li>
+                                  <a href={item.href} class="block py-1 text-sm text-text-light hover:text-accent-dark transition-colors">
+                                    {item.label}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                      {grupp.featured && (
+                        <aside class="hidden lg:block lg:col-span-3 bg-bg border-l border-border p-6">
+                          <p class="text-xs font-semibold uppercase tracking-wider text-accent-dark mb-3">Bäst i test</p>
+                          {grupp.featured.image && (
+                            <a href={grupp.featured.href} tabindex="-1" aria-hidden="true" class="block bg-white border border-border rounded-lg mb-3 aspect-square">
+                              <img src={grupp.featured.image} alt="" loading="lazy" width="200" height="200" class="w-full h-full object-contain p-3" />
+                            </a>
+                          )}
+                          {grupp.featured.brand && (
+                            <p class="text-xs font-semibold uppercase tracking-wider text-text-light mb-0.5">{grupp.featured.brand}</p>
+                          )}
+                          <p class="font-heading font-bold text-text leading-snug mb-1.5">
+                            <a href={grupp.featured.href} class="hover:text-accent transition-colors">{grupp.featured.name}</a>
+                          </p>
+                          <p class="text-[13px] text-text-light leading-relaxed mb-4">{grupp.featured.blurb}</p>
+                          <a href={grupp.featured.href} class="inline-flex w-full items-center justify-center bg-cta hover:bg-cta-dark text-white text-sm font-semibold px-4 py-2.5 rounded-md transition-colors">
+                            {grupp.featured.cta}
+                          </a>
+                        </aside>
+                      )}
+                    </div>
+                    <div class="px-7 py-3 bg-bg-alt border-t border-border">
+                      <p class="text-[13px] text-text-light">{grupp.trust}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <!-- Robotgräsklippare dropdown -->
-        <div class="relative group">
-          <a href="/robotgrasklippare/" class="flex items-center gap-1 text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light">
-            Robotgräsklippare
-            <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </a>
-          <div class="absolute left-0 top-full pt-1 hidden group-hover:block z-50 min-w-[180px]">
-            <div class="bg-white rounded-lg shadow-lg border border-gray-100 py-1">
-              {grasklippareItems.map((item) => (
-                <a href={item.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
-                  {item.label}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-        <!-- Drönare dropdown -->
-        <div class="relative group">
-          <a href="/dronare/" class="flex items-center gap-1 text-sm font-medium text-gray-200 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-primary-light">
-            Drönare
-            <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </a>
-          <div class="absolute left-0 top-full pt-1 hidden group-hover:block z-50 min-w-[180px]">
-            <div class="bg-white rounded-lg shadow-lg border border-gray-100 py-1">
-              {dronareItems.map((item) => (
-                <a href={item.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-accent transition-colors">
-                  {item.label}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-        {/* Reservdelar, Poolrobot och Fönsterputsrobot dolda från menyn : sidorna lever kvar */}
-      </nav>
-      <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-md hover:bg-primary-light transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Öppna meny" aria-expanded="false" aria-controls="mobile-menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
+          ))}
+        </nav>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2.5 rounded-md hover:bg-primary-light transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Öppna meny" aria-expanded="false" aria-controls="mobile-menu">
+          <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
-  </div>
-  <nav id="mobile-menu" class="hidden md:hidden fixed left-0 right-0 bottom-0 z-40 bg-primary-dark border-t border-primary-light overflow-y-auto" style="top: var(--header-height, 0px);" aria-label="Mobilnavigering">
-    <div class="px-4 py-2 divide-y divide-primary-light/30">
 
-      <!-- Robotdammsugare accordion -->
-      <div>
-        <button class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-4 text-sm font-semibold text-gray-100 hover:text-white" aria-expanded="false">
-          Robotdammsugare
-          <svg class="accordion-icon w-4 h-4 opacity-60 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-        </button>
-        <div class="mobile-accordion-content hidden pb-1 space-y-0.5">
-          {dammsugareItems.map((item) => (
-            <a href={item.href} class="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-primary-light rounded-md transition-colors">
-              {item.label}
-            </a>
-          ))}
+  <!-- Mobilmeny: fullskärm ner till botten, accordion per grupp -->
+  <nav id="mobile-menu" class="hidden lg:hidden fixed left-0 right-0 bottom-0 z-40 bg-primary-dark border-t border-primary-light overflow-y-auto overscroll-contain" style="top: var(--header-height, 0px);" aria-label="Mobilnavigering">
+    <div class="px-4 py-2 divide-y divide-primary-light/40">
+      {megaGroups.map((grupp) => (
+        <div class="mobile-section">
+          <button class="mobile-toggle w-full flex items-center justify-between px-2 py-4 text-sm font-semibold text-gray-100 hover:text-white" aria-expanded="false">
+            <span>{grupp.label}</span>
+            <svg class="toggle-chevron w-4 h-4 opacity-60 transition-transform duration-200 motion-reduce:transition-none" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="mobile-dropdown hidden pb-2">
+            {grupp.columns.map((col) => (
+              <div class="mb-2">
+                {col.href ? (
+                  <a href={col.href} class="block text-xs font-semibold uppercase tracking-wider text-accent-light mt-2 mb-1 px-3">{col.title}</a>
+                ) : (
+                  <p class="text-xs font-semibold uppercase tracking-wider text-accent-light mt-2 mb-1 px-3">{col.title}</p>
+                )}
+                {col.items.map((item) => (
+                  <a href={item.href} class="block px-4 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-primary-light rounded-md transition-colors">
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-
-      <!-- Robotgräsklippare accordion -->
-      <div>
-        <button class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-4 text-sm font-semibold text-gray-100 hover:text-white" aria-expanded="false">
-          Robotgräsklippare
-          <svg class="accordion-icon w-4 h-4 opacity-60 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-        </button>
-        <div class="mobile-accordion-content hidden pb-1 space-y-0.5">
-          {grasklippareItems.map((item) => (
-            <a href={item.href} class="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-primary-light rounded-md transition-colors">
-              {item.label}
-            </a>
-          ))}
-        </div>
-      </div>
-
-      <!-- Drönare accordion -->
-      <div>
-        <button class="mobile-accordion-btn w-full flex items-center justify-between px-2 py-4 text-sm font-semibold text-gray-100 hover:text-white" aria-expanded="false">
-          Drönare
-          <svg class="accordion-icon w-4 h-4 opacity-60 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-        </button>
-        <div class="mobile-accordion-content hidden pb-1 space-y-0.5">
-          {dronareItems.map((item) => (
-            <a href={item.href} class="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-primary-light rounded-md transition-colors">
-              {item.label}
-            </a>
-          ))}
-        </div>
-      </div>
-
-      {/* Reservdelar, Poolrobot och Fönsterputsrobot dolda från mobilmenyn : sidorna lever kvar */}
-
-      <!-- Om Robotjakt -->
-      <div>
-        <a href="/om-redaktionen/" class="block px-2 py-4 text-sm font-semibold text-gray-400 hover:text-white hover:bg-primary-light rounded-md transition-colors">Om redaktionen</a>
-        <a href="/sa-testar-vi/" class="block px-2 py-4 text-sm font-semibold text-gray-400 hover:text-white hover:bg-primary-light rounded-md transition-colors">Så testar vi</a>
+      ))}
+      <div class="py-2">
+        <a href="/sa-testar-vi/" class="block px-2 py-3 text-sm font-semibold text-gray-400 hover:text-white transition-colors">Så testar vi</a>
+        <a href="/om-redaktionen/" class="block px-2 py-3 text-sm font-semibold text-gray-400 hover:text-white transition-colors">Om redaktionen</a>
+        <a href="/kontakt/" class="block px-2 py-3 text-sm font-semibold text-gray-400 hover:text-white transition-colors">Kontakt</a>
       </div>
     </div>
   </nav>
@@ -195,6 +368,8 @@ const reservdelarItems = [
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
   const backdrop = document.getElementById('mobile-backdrop');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
 
   function openMenu() {
     const headerEl = document.querySelector('header');
@@ -203,17 +378,20 @@ const reservdelarItems = [
     menu?.classList.remove('hidden');
     backdrop?.classList.remove('hidden');
     btn?.setAttribute('aria-expanded', 'true');
+    iconOpen?.classList.add('hidden');
+    iconClose?.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
   }
   function closeMenu() {
     menu?.classList.add('hidden');
     backdrop?.classList.add('hidden');
     btn?.setAttribute('aria-expanded', 'false');
+    iconOpen?.classList.remove('hidden');
+    iconClose?.classList.add('hidden');
     document.body.style.overflow = '';
-    // stäng alla accordions
-    document.querySelectorAll('.mobile-accordion-content').forEach((c) => c.classList.add('hidden'));
-    document.querySelectorAll('.accordion-icon').forEach((i) => (i as HTMLElement).style.transform = '');
-    document.querySelectorAll('.mobile-accordion-btn').forEach((b) => b.setAttribute('aria-expanded', 'false'));
+    document.querySelectorAll('.mobile-dropdown').forEach((c) => c.classList.add('hidden'));
+    document.querySelectorAll('.toggle-chevron').forEach((i) => i.classList.remove('rotate-180'));
+    document.querySelectorAll('.mobile-toggle').forEach((b) => b.setAttribute('aria-expanded', 'false'));
   }
 
   btn?.addEventListener('click', () => {
@@ -222,15 +400,19 @@ const reservdelarItems = [
 
   backdrop?.addEventListener('click', closeMenu);
 
-  // Accordion
-  document.querySelectorAll('.mobile-accordion-btn').forEach((b) => {
-    b.addEventListener('click', () => {
-      const content = b.nextElementSibling as HTMLElement;
-      const icon = b.querySelector('.accordion-icon') as HTMLElement;
-      const isOpen = !content.classList.contains('hidden');
-      content.classList.toggle('hidden', isOpen);
-      icon.style.transform = isOpen ? '' : 'rotate(180deg)';
-      b.setAttribute('aria-expanded', String(!isOpen));
+  menu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.querySelectorAll('.mobile-toggle').forEach((toggle) => {
+    toggle.addEventListener('click', () => {
+      const section = toggle.closest('.mobile-section');
+      const dropdown = section?.querySelector('.mobile-dropdown');
+      const chevron = toggle.querySelector('.toggle-chevron');
+      const isOpen = !dropdown?.classList.contains('hidden');
+      dropdown?.classList.toggle('hidden', isOpen);
+      chevron?.classList.toggle('rotate-180', !isOpen);
+      toggle.setAttribute('aria-expanded', String(!isOpen));
     });
   });
 </script>

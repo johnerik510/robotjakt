@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
 
 const breadcrumbs = [{ label: 'Guider' }];
 
@@ -12,7 +13,7 @@ const guides = [
     category: 'Teknik',
   },
   {
-    title: 'Sugkraft i På, vad behöver du?',
+    title: 'Sugkraft i Pa, vad behöver du?',
     description: 'Genomgång av Pa-värden, hur de mäts och hur mycket sugkraft du faktiskt behöver för olika golv och husdjur.',
     href: '/guide/sugkraft/',
     category: 'Teknik',
@@ -69,6 +70,12 @@ const categories = [...new Set(guides.map(g => g.category))];
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Guider, robotdammsugare, robotgräsklippare och poolrobotar
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Vilken guide hjälper dig välja rätt robot?"
+      answer="Börjar du från noll är köpguiderna rätt ingång: de går igenom sugkraft, navigering och tömningsstation för robotdammsugare, kabel kontra batteri för poolrobotar och klippning med eller utan begränsningskabel. Har du redan en robot hemma hittar du installations- och underhållsguiderna under kategorin Användning längre ned på sidan."
+    />
+
     <p class="text-text-light text-lg mb-8 leading-relaxed max-w-2xl">
       Vi har samlat alla våra köpguider, teknikförklaringar och användningstips på ett ställe. Här hittar du svaren innan du köper, och hjälpen efter.
     </p>
@@ -78,7 +85,7 @@ const categories = [...new Set(guides.map(g => g.category))];
         <h2 class="font-heading text-xl font-bold text-text mb-4">{cat}</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {guides.filter(g => g.category === cat).map(g => (
-            <a href={g.href} class="block p-5 bg-white rounded-xl border border-border hover:border-accent hover:shadow-md transition-all">
+            <a href={g.href} class="block p-5 bg-white rounded-xl border border-border hover:border-accent transition-all">
               <h3 class="font-heading font-bold text-text mb-2">{g.title}</h3>
               <p class="text-sm text-text-light">{g.description}</p>
             </a>
@@ -86,5 +93,33 @@ const categories = [...new Set(guides.map(g => g.category))];
         </div>
       </section>
     ))}
+
+    <section class="max-w-2xl mb-10">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Vanliga frågor om guiderna</h2>
+
+      <h3 class="font-heading text-lg font-bold text-text mt-6 mb-2">I vilken ordning ska du läsa guiderna som ny robotägare?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Läs köpguiden för din robottyp först, den förklarar vilka funktioner som är värda att betala för. Gå sedan till teknikguiderna om LiDAR-navigation och sugkraft när du jämför konkreta modeller. Efter köpet tar installationsguiden och underhållschecklistan vid, de hjälper dig att komma igång och hålla roboten i form.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        För dammsugarrobotar finns dessutom en samlad <a href="/kopguide-robotdammsugare/" class="text-accent underline">köpguide för robotdammsugare</a> som går igenom hela beslutet från budget till funktioner i ett svep. Den passar dig som vill ha allt på en sida i stället för att hoppa mellan teknikguiderna.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text mt-6 mb-2">Vad är skillnaden mellan en guide och en topplista?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Guiderna förklarar hur tekniken fungerar och vilka egenskaper som spelar roll, utan att ranka enskilda produkter. Topplistorna gör tvärtom: de ställer konkreta modeller mot varandra och utser vinnare per kategori. Läs guiden först så vet du vilka specifikationer du ska titta på när du sedan jämför modellerna.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        När du är redo att jämföra modeller hittar du alla rankade dammsugarrobotar i vår topplista över <a href="/robotdammsugare/" class="text-accent underline">robotdammsugare bäst i test</a>. Där länkar varje modell vidare till en fullständig recension.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text mt-6 mb-2">Gäller guiderna alla märken?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Ja, guiderna är märkesoberoende. Grundtekniken är densamma oavsett om roboten kommer från Roborock, Dreame, Ecovacs, iRobot eller Eufy: LiDAR mäter avstånd på samma sätt och tömningsstationer arbetar efter samma princip. Där ett enskilt märke sticker ut, positivt eller negativt, säger guiderna det rakt ut.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Vill du fördjupa dig i ett specifikt märke har varje större tillverkare en egen märkesguide på siten, med modellöversikt och länkar till recensionerna.
+      </p>
+    </section>
   </div>
 </BaseLayout>

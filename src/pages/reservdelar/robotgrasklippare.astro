@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
 
 const TAG = 'johnerik510-20';
 
@@ -104,7 +104,7 @@ export const articleMeta = {
 <BaseLayout
   title="Reservdelar robotgräsklippare 2026: knivar och mer"
   description="Komplett guide till reservdelar för robotgräsklippare 2026. Knivar, skruvar, laddningsplattor och slingtillbehör. Se kompatibilitet och pris Sverige."
-  article={{ datePublished: "2026-03-29", dateModified: "2026-05-27", image: "/images/parts-husqvarna-blade.webp" }}
+  article={{ datePublished: "2026-03-29", dateModified: "2026-07-27", image: "/images/parts-husqvarna-blade.webp" }}
 >
   <section class="bg-primary text-white py-8">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -116,7 +116,7 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
       <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Robotgräsklippare reservdelar</h1>
       <p class="text-gray-200 max-w-2xl">Ersättningsknivar, begränsningskabel och kabelklämmor till Husqvarna Automower, Gardena Sileno, Worx Landroid och Segway Navimow.</p>
@@ -124,7 +124,11 @@ export const articleMeta = {
   </section>
 
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-<p class="text-sm text-text-light mb-2">Senast uppdaterad: april 2026, {products.length} produkter</p>
+    <AnswerBox
+      question="Snabbt svar: Vilka reservdelar behöver en robotgräsklippare?"
+      answer="Knivarna är den viktigaste förbrukningsdelen och byts varje säsong, helst på våren innan klippstarten. Universalblad passar de flesta modeller från Husqvarna, Gardena, Worx och McCulloch. En trasig begränsningskabel behöver inte bytas i sin helhet, den skarvas med kabelklämmor på ungefär 5 minuter, direkt vid brottstället."
+    />
+<p class="text-sm text-text-light mb-2">Senast uppdaterad: juli 2026, {products.length} produkter</p>
 
     <div class="bg-accent/5 border border-accent/20 rounded-xl px-5 py-4 mb-8 text-sm text-text">
       <strong>Säsongsstart-tips:</strong> Byt knivar och kontrollera begränsningskabeln varje vår innan du startar robotgräsklipparen. Det tar 15 minuter och förebygger driftstopp under säsongen.
@@ -133,7 +137,7 @@ export const articleMeta = {
     <h2 class="font-heading text-xl font-bold text-text mb-4">Knivar och blad</h2>
     <div class="space-y-4 mb-10">
       {products.filter(p => p.type === 'Knivar').map((p, i) => (
-        <article class="bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow p-5">
+        <article class="bg-white rounded-xl border border-border shadow-sm transition-shadow p-5">
           <div class="flex flex-col sm:flex-row gap-4">
             <div class="flex-shrink-0 flex flex-col items-center gap-2">
               {i === 0 && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-winner/10 text-winner">{p.badge}</span>}
@@ -159,7 +163,7 @@ export const articleMeta = {
     <h2 class="font-heading text-xl font-bold text-text mb-4">Begränsningskabel och klämmor</h2>
     <div class="space-y-4 mb-10">
       {products.filter(p => p.type === 'Kabel').map((p) => (
-        <article class="bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow p-5">
+        <article class="bg-white rounded-xl border border-border shadow-sm transition-shadow p-5">
           <div class="flex flex-col sm:flex-row gap-4">
             <div class="flex-shrink-0 flex flex-col items-center gap-2">
               {p.badge && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-bg-alt text-text-light">{p.badge}</span>}
@@ -184,15 +188,38 @@ export const articleMeta = {
     <section class="mb-8">
       <h2 class="font-heading text-xl font-bold text-text mb-4">Fler reservdelar</h2>
       <div class="grid sm:grid-cols-2 gap-3">
-        <a href="/reservdelar/husqvarna/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Husqvarna Automower reservdelar</a>
-        <a href="/reservdelar/knivar/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Alla knivar och kabel</a>
-        <a href="/reservdelar/robotdammsugare/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Robotdammsugare reservdelar</a>
-        <a href="/reservdelar/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Alla reservdelar</a>
+        <a href="/reservdelar/husqvarna/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent transition-all text-sm font-semibold text-text hover:text-accent">Husqvarna Automower reservdelar</a>
+        <a href="/reservdelar/knivar/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent transition-all text-sm font-semibold text-text hover:text-accent">Alla knivar och kabel</a>
+        <a href="/reservdelar/robotdammsugare/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent transition-all text-sm font-semibold text-text hover:text-accent">Robotdammsugare reservdelar</a>
+        <a href="/reservdelar/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent transition-all text-sm font-semibold text-text hover:text-accent">Alla reservdelar</a>
       </div>
+    </section>
+
+    <section class="mb-10">
+      <h3 class="font-heading text-lg font-bold text-text mb-2">Hur märker jag att knivarna är slöa?</h3>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Slöa knivar sliter av grässtrået i stället för att klippa det, och snittet blir fransigt och gulnar i toppen efter ett par dagar. Klippbilden ser ojämn ut trots oförändrade inställningar, och motorn får jobba hårdare för samma resultat.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Själva bytet tar några minuter. Vänd roboten, skruva loss de gamla bladen och sätt dit nya med de skruvar som ingår i kittet, återanvänd inte de gamla skruvarna. Byt alltid samtliga blad samtidigt, annars blir klippskivan obalanserad och börjar vibrera.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed mb-6">
+        På stenig eller hård mark slits knivarna fortare och kan behöva bytas mitt i säsongen. Klipper roboten en tomt med mycket lutning, rötter och kanter går det åt fler blad per säsong, se hur modellerna klarar den terrängen i vår guide till <a href="/robotgrasklippare-for-lutning/" class="text-accent underline">robotgräsklippare för lutning</a>.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text mb-2">Kan en trasig begränsningskabel skarvas i stället för att bytas?</h3>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Ja. Ett kabelbrott lagar du med en anslutningsklämma direkt vid skadan, och hela jobbet tar ungefär 5 minuter. Klämmorna passar kabel mellan 2,7 och 3,4 mm, alltså de grovlekar som Husqvarna, Gardena och övriga kabeldrivna klippare använder. En hel kabelrulle behövs bara vid skador på flera ställen.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Svårast är att hitta brottstället. Roboten stannar och larmar om avbrott i slingan, men själva skadan kan sitta var som helst längs kabeln. Vanliga ställen är där du grävt, satt spaden i marken eller där kabeln ligger ytligt över en rot.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed">
+        Vill du slippa slingan helt finns modeller som håller sig inom tomten med satellitnavigering och gränser du ritar i appen. Dem har vi samlat i guiden till <a href="/robotgrasklippare-utan-slinga/" class="text-accent underline">robotgräsklippare utan slinga</a>.
+      </p>
     </section>
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
   </main>
 </BaseLayout>

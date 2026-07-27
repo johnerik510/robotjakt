@@ -2,7 +2,7 @@
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
-import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Guider', href: '/guide/' },
@@ -34,7 +34,7 @@ export const articleMeta = {
   title="Köpguide robotgräsklippare 2026: hitta rätt modell"
   description="Komplett köpguide till robotgräsklippare 2026. Trädgårdsstorlek, lutning, slinga vs GPS och pris förklaras. Hitta rätt gräsrobot för din trädgård."
   breadcrumbs={breadcrumbs}
-  lastUpdated="2026-06-22"
+  lastUpdated="2026-07-27"
   datePublished="2026-04-27"
 >
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
@@ -43,6 +43,11 @@ export const articleMeta = {
   <p class="text-text-light text-lg mb-6 leading-relaxed">
     En robotgräsklippare ger dig timmar tillbaka varje vecka från och med första sommaren. Men det finns mer att överväga än "Husqvarna eller inte", kabelfri navigering, 4WD och RTK-GPS har ändrat marknaden de senaste två åren.
   </p>
+
+  <AnswerBox
+    question="Snabbt svar: Vilken robotgräsklippare ska du köpa 2026?"
+    answer="Välj efter tomtens storlek och lutning. Husqvarna Automower 430X NERA är bäst totalt för de flesta villatomter, Gardena Sileno City 500 räcker gott för små trädgårdar upp till 500 kvadratmeter, och Segway Navimow i105E är det prisvärda valet utan begränsningskabel. Standardmodeller klarar 25 procents lutning, branta tomter kräver 4WD."
+  />
 
   <figure class="my-6">
     <img src="/images/husqvarna-automower-415x.webp" alt="Husqvarna Automower 415X" class="rounded-xl border border-border w-full" loading="lazy" width="800" height="800" />
@@ -164,6 +169,30 @@ export const articleMeta = {
     ))}
   </div>
 
+  <h3 class="font-heading text-xl font-bold text-text mt-6 mb-2">Fungerar robotgräsklipparen när det regnar?</h3>
+  <p class="text-text-light leading-relaxed mb-4">
+    Ja, robotgräsklippare är byggda för att tåla regn och kan klippa i väta utan att ta skada. Klippresultatet blir dock sämre i blött gräs: klippet klumpar sig, fastnar under kåpan och hjulen kan slira i branta partier. Många modeller har därför regnsensor som pausar klippningen tills gräset torkat.
+  </p>
+  <p class="text-text-light leading-relaxed mb-6">
+    Slirar roboten redan i torrt väder på din sluttning är det ett tecken på att du behöver en modell med bättre grepp, jämför alternativen i vår genomgång av <a href="/robotgrasklippare-for-lutning/" class="text-accent underline">robotgräsklippare för lutning</a>. Kör du med begränsningskabel påverkas själva navigeringen inte alls av vädret, kabeln fungerar oavsett regn eller dimma.
+  </p>
+
+  <h3 class="font-heading text-xl font-bold text-text mt-6 mb-2">Hur säker är en robotgräsklippare för barn och husdjur?</h3>
+  <p class="text-text-light leading-relaxed mb-4">
+    Moderna robotgräsklippare har lyftsensor som stoppar knivarna direkt när maskinen lyfts eller tippas, tillsammans med stötsensorer som får den att backa vid kontakt. PIN-kod, alarm och GPS-stöldskydd är standard på de flesta modeller. Låt ändå inte små barn leka på gräsmattan medan roboten arbetar.
+  </p>
+  <p class="text-text-light leading-relaxed mb-6">
+    Enklast är att schemalägga klippningen till tider när trädgården inte används, exempelvis förmiddagar på vardagar. Dagtidsklippning är också skonsammare för igelkottar och andra nattaktiva smådjur som annars riskerar att möta roboten i mörkret.
+  </p>
+
+  <h3 class="font-heading text-xl font-bold text-text mt-6 mb-2">Vad behöver du fortfarande göra själv?</h3>
+  <p class="text-text-light leading-relaxed mb-4">
+    Roboten sköter själva klippningen, men kanterna längs rabatter, murar och staket når den inte ända ut till. Räkna med att trimma kanterna med grästrimmer några gånger per säsong. Därtill kommer knivbyte, rengöring av knivskivan och vinterförvaring, små insatser jämfört med att klippa hela gräsmattan varje vecka.
+  </p>
+  <p class="text-text-light leading-relaxed mb-6">
+    Knivarna är förbrukningsdelar och slöa knivar sliter mer på gräset än de klipper det. Håll ett par uppsättningar <a href="/reservdelar/knivar/" class="text-accent underline">knivar till robotgräsklippare</a> hemma så tar bytet bara några minuter med en skruvmejsel.
+  </p>
+
   <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Våra topp 3 robotgräsklippare 2026</h2>
   <div class="space-y-4 mb-6">
     <div class="bg-white rounded-xl border border-winner p-5">
@@ -203,7 +232,6 @@ export const articleMeta = {
 
   <FAQ items={faqItems} />
 
-  <AffiliateDisclaimer />
 
   <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
     <h2 class="font-heading text-lg font-bold text-text mb-3">Läs vidare</h2>

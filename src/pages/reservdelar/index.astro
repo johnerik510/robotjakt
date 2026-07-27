@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
 
 const breadcrumbs = [{ label: 'Reservdelar & tillbehör' }];
 
@@ -50,14 +50,18 @@ const partTypes = [
   </section>
 
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <AffiliateDisclaimer />
+
+    <AnswerBox
+      question="Snabbt svar: Var hittar du reservdelar till din robot?"
+      answer="Reservdelar till robotdammsugare och robotgräsklippare hittar du hos Amazon, Proshop och eStore, ofta som originaldelar eller kompatibla kit. Byt HEPA-filter var 2 till 3 månad, sidoborstar var 6 till 12 månad och knivar varje säsong. Välj delar efter märke, Roborock, Dreame, Ecovacs eller Husqvarna, eller efter typ som filter, borstar och knivar."
+    />
 
     <!-- Kategorier -->
     <section class="mb-10">
       <h2 class="font-heading text-2xl font-bold text-text mb-5">Välj robottyp</h2>
       <div class="grid sm:grid-cols-2 gap-5">
         {categories.map(cat => (
-          <a href={cat.href} class="block bg-white rounded-xl border border-border p-6 hover:shadow-md hover:border-accent transition-all group">
+          <a href={cat.href} class="block bg-white rounded-xl border border-border p-6 hover:border-accent transition-all group">
             <h3 class="font-heading text-lg font-bold text-text group-hover:text-accent mb-2">{cat.title}</h3>
             <p class="text-text-light text-sm mb-4">{cat.description}</p>
             <ul class="flex flex-wrap gap-2">
@@ -75,7 +79,7 @@ const partTypes = [
       <h2 class="font-heading text-2xl font-bold text-text mb-5">Reservdelar per märke</h2>
       <div class="grid sm:grid-cols-2 gap-4">
         {brands.map(brand => (
-          <a href={brand.href} class="flex items-center justify-between bg-white rounded-xl border border-border px-5 py-4 hover:shadow-md hover:border-accent transition-all group">
+          <a href={brand.href} class="flex items-center justify-between bg-white rounded-xl border border-border px-5 py-4 hover:border-accent transition-all group">
             <div>
               <span class="font-heading font-bold text-text group-hover:text-accent">{brand.name}</span>
               <p class="text-xs text-text-light mt-0.5">{brand.desc}</p>
@@ -93,7 +97,7 @@ const partTypes = [
       <h2 class="font-heading text-2xl font-bold text-text mb-5">Reservdelar per typ</h2>
       <div class="grid grid-cols-3 gap-4">
         {partTypes.map(pt => (
-          <a href={pt.href} class="block bg-white rounded-xl border border-border px-4 py-5 text-center hover:shadow-md hover:border-accent transition-all group">
+          <a href={pt.href} class="block bg-white rounded-xl border border-border px-4 py-5 text-center hover:border-accent transition-all group">
             <span class="font-heading font-bold text-text group-hover:text-accent block mb-1">{pt.name}</span>
             <p class="text-xs text-text-light">{pt.desc}</p>
           </a>
@@ -105,15 +109,15 @@ const partTypes = [
     <section class="mb-8">
       <h2 class="font-heading text-2xl font-bold text-text mb-5">Var hittar du reservdelarna?</h2>
       <div class="grid sm:grid-cols-3 gap-4">
-        <a href="https://do.estore.nu/t/t?a=1954032578&as=2063681412&t=2&tk=1" rel="sponsored nofollow noopener noreferrer" target="_blank" class="flex flex-col items-center justify-center bg-white rounded-xl border border-border px-5 py-6 hover:shadow-md hover:border-accent transition-all group text-center">
+        <a href="https://do.estore.nu/t/t?a=1954032578&as=2063681412&t=2&tk=1" rel="sponsored nofollow noopener noreferrer" target="_blank" class="flex flex-col items-center justify-center bg-white rounded-xl border border-border px-5 py-6 hover:border-accent transition-all group text-center">
           <span class="font-heading font-bold text-text group-hover:text-accent text-lg mb-1">eStore</span>
           <p class="text-xs text-text-light">Tillbehör och smarta hem-produkter</p>
         </a>
-        <a href="https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1" rel="nofollow sponsored noopener" target="_blank" class="flex flex-col items-center justify-center bg-white rounded-xl border border-border px-5 py-6 hover:shadow-md hover:border-accent transition-all group text-center">
+        <a href="https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1" rel="nofollow sponsored noopener" target="_blank" class="flex flex-col items-center justify-center bg-white rounded-xl border border-border px-5 py-6 hover:border-accent transition-all group text-center">
           <span class="font-heading font-bold text-text group-hover:text-accent text-lg mb-1">Amazon</span>
           <p class="text-xs text-text-light">Stort urval, ofta originaldelar</p>
         </a>
-        <a href="https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1" rel="sponsored nofollow noopener noreferrer" target="_blank" class="flex flex-col items-center justify-center bg-white rounded-xl border border-border px-5 py-6 hover:shadow-md hover:border-accent transition-all group text-center">
+        <a href="https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1" rel="sponsored nofollow noopener noreferrer" target="_blank" class="flex flex-col items-center justify-center bg-white rounded-xl border border-border px-5 py-6 hover:border-accent transition-all group text-center">
           <span class="font-heading font-bold text-text group-hover:text-accent text-lg mb-1">Proshop</span>
           <p class="text-xs text-text-light">Stort urval originaldelar</p>
         </a>
@@ -139,6 +143,23 @@ const partTypes = [
         <div>
           <p class="font-semibold text-text mb-1">Moppkuddar, byt var 3 månad</p>
           <p>Slitna moppkuddar sprider smuts istället för att torka upp den. Byt mot originalkuddar för bästa moppresultat.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Köpguide -->
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Vanliga frågor när du köper reservdelar</h2>
+      <div class="space-y-6 text-sm text-text-light leading-relaxed">
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Ska du välja originaldelar eller kompatibla reservdelar?</h3>
+          <p class="mb-3">Originaldelar garanterar passform och samma material som delarna roboten levererades med, medan kompatibla kit ofta ger fler delar för pengarna. För rena slitdelar som <a href="/reservdelar/filter/" class="text-accent underline">filter till robotdammsugare</a> och sidoborstar fungerar kompatibla alternativ bra, så länge tillverkaren tydligt anger vilka modeller kittet passar.</p>
+          <p>Kontrollera alltid kompatibilitetslistan mot din exakta modellbeteckning innan du beställer. Två modeller från samma märke kan använda olika filter och moppkuddar, även när robotarna ser likadana ut. Står din modell inte med i produktbeskrivningen: välj ett annat kit.</p>
+        </div>
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Hur vet du att det är dags att byta en del?</h3>
+          <p class="mb-3">Roboten berättar det ofta själv genom resultatet. Sämre sugkraft trots tömd behållare pekar på ett igensatt filter. Damm som ligger kvar längs väggar och lister betyder slitna sidoborstar. Ojämnt eller fransigt klippt gräs är det tydligaste tecknet på slöa knivar i robotgräsklipparen.</p>
+          <p>Många appar räknar drifttimmar och påminner när en del närmar sig slutet av sin livslängd. Räknaren vet dock inget om hur dammigt eller krävande just ditt hem är, så lita mer på ögonen än på appen. Byt <a href="/reservdelar/knivar/" class="text-accent underline">knivar till robotgräsklipparen</a> varje säsong oavsett vad appen säger.</p>
         </div>
       </div>
     </section>

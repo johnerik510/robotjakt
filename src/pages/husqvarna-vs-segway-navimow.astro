@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
@@ -58,7 +58,7 @@ export const articleMeta = {
 <BaseLayout
   title="Husqvarna vs Segway Navimow 2026: 430V NERA mot i220E"
   description="Husqvarna Automower 430V NERA eller Segway Navimow i220E? Två slinglösa robotgräsklippare jämförda på navigering, yta, lutning, ljud och pris 2026."
-  article={{ datePublished: "2026-05-15", dateModified: "2026-06-18", image: "/images/husqvarna-430x-nera.webp" }}
+  article={{ datePublished: "2026-05-15", dateModified: "2026-07-27", image: "/images/husqvarna-430x-nera.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -69,7 +69,7 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Senast uppdaterad 18 juni 2026</span>
+    <span>Senast uppdaterad 27 juli 2026</span>
     <span>·</span>
     <span>Lästid 6 min</span>
   </div>
@@ -80,6 +80,11 @@ export const articleMeta = {
     <p class="text-text-light mb-6 max-w-2xl">
       Både Husqvarna och Segway säljer 2026 slinglösa robotgräsklippare, ingen gränskabel behövs hos någon av dem. Vi jämför Husqvarna Automower 430V NERA mot Segway Navimow i220E kategori för kategori: satellit och AI-vision mot LiDAR och NetRTK, och vilken som passar din tomt och budget.
     </p>
+
+    <AnswerBox
+      question="Snabbt svar: Husqvarna eller Segway Navimow?"
+      answer="Husqvarna Automower 430V NERA vinner på kapacitet: 4 800 m², 50 procent lutning, 56 dB och Sveriges bästa servicenät. Segway Navimow i220E vinner på pris och räcker gott för tomter upp till 2 000 m², med LiDAR som hanterar hinder tryggt. Stor tomt: Husqvarna. Normal villatomt och budget i fokus: Segway."
+    />
 
     <!-- Quick verdict (above the fold) -->
     <div class="grid sm:grid-cols-2 gap-4 mb-10">
@@ -193,9 +198,34 @@ export const articleMeta = {
       </div>
     </div>
 
+    <h2 class="font-heading text-2xl font-bold text-text mt-10 mb-4">Bra att veta innan du väljer</h2>
+
+    <h3 class="font-heading text-lg font-bold text-text mt-6 mb-2">Fungerar slinglösa robotar under träd och intill husväggar?</h3>
+    <p class="text-text-light mb-3">
+      Ja, men systemen löser det olika. Husqvarna 430V NERA låter AI-visionen ta över där satellitsignalen är svag, exempelvis under trädkronor. Segway Navimow i220E använder LiDAR som mäter avstånd med laser och därför fungerar oberoende av satellitmottagning, vilket gör den trygg intill väggar, häckar och täta buskage.
+    </p>
+    <p class="text-text-light mb-6">
+      Har du en skuggig tomt med stora träd är det värt att granska hur mycket av gräsmattan som saknar fri sikt mot himlen. Ju större andel, desto starkare talar det för LiDAR-baserad navigering. Fler modeller med samma teknik finns i vår genomgång av <a href="/segway-navimow-robotgrasklippare/" class="text-accent underline">Segway Navimow robotgräsklippare</a>.
+    </p>
+
+    <h3 class="font-heading text-lg font-bold text-text mt-6 mb-2">Vad betyder lutning i procent för din tomt?</h3>
+    <p class="text-text-light mb-3">
+      Lutning i procent anger höjdskillnad per längdmeter: 50 procent betyder att marken stiger en halvmeter på en meters avstånd, vilket är en mycket brant slänt. Husqvarna 430V NERA klarar 50 procent och Segway Navimow i220E 45 procent, båda räcker med god marginal för de flesta svenska villatomter.
+    </p>
+    <p class="text-text-light mb-6">
+      Mät den brantaste delen av tomten innan du väljer, inte genomsnittet. Det är i slänterna roboten tappar fästet, särskilt när gräset är blött. Har du partier som närmar sig gränsvärdena, jämför klätterförmågan mellan fler modeller i topplistan över <a href="/robotgrasklippare-for-lutning/" class="text-accent underline">robotgräsklippare för lutning</a>.
+    </p>
+
+    <h3 class="font-heading text-lg font-bold text-text mt-6 mb-2">Hur skiljer sig stöldskyddet?</h3>
+    <p class="text-text-light mb-3">
+      Båda robotarna har GPS-spårning och PIN-kod, så du kan se robotens position i respektive app om den flyttas från tomten. Segway Navimow i220E har dessutom ett inbyggt larm som ljuder vid otillåten hantering. Det ger Segway ett litet övertag på papperet, men i praktiken är skyddsnivån likvärdig.
+    </p>
+    <p class="text-text-light mb-6">
+      Eftersom båda kräver PIN-kod för att kunna användas är en stulen robot i praktiken värdelös för tjuven. Larmet och GPS-spårningen ökar dessutom chansen att få tillbaka roboten om olyckan ändå skulle vara framme.
+    </p>
+
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <div class="mt-8 p-5 bg-gray-50 rounded-xl border border-border">
       <h3 class="font-heading font-semibold text-text mb-3">Relaterade guider</h3>

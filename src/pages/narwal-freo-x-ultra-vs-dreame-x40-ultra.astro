@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import EditorialCTA from '../components/EditorialCTA.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -69,7 +69,7 @@ export const articleMeta = {
 <BaseLayout
   title="Narwal Freo X Ultra vs Dreame X40 Ultra 2026: test"
   description="Narwal Freo X Ultra eller Dreame X40 Ultra? Vi jämför varmluftstorkning av moppar, sugkraft och pris. Klart svar på vilken topprobot som passar dig."
-  article={{ datePublished: "2026-04-04", dateModified: "2026-05-27", image: "/images/heroes/narwal-freo-x-ultra-vs-dreame-x40-ultra.webp" }}
+  article={{ datePublished: "2026-04-04", dateModified: "2026-07-27", image: "/images/heroes/narwal-freo-x-ultra-vs-dreame-x40-ultra.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -80,15 +80,21 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-04-04">2026-04-04</time></p>
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Narwal Freo X Ultra vs Dreame X40 Ultra 2026
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Narwal Freo X Ultra eller Dreame X40 Ultra?"
+      answer="Dreame X40 Ultra är det bättre köpet för de flesta: 12 000 Pa sugkraft mot 8 200 Pa, utfällbar mopparm som når hörnen och 70 graders varmvattentvätt. Narwal Freo X Ultra väljer du för daglig moppning, varmluftstorkningen på 40 grader håller mopparna torra och luktfria mellan körningarna."
+    />
+
     <p class="text-text-light mb-6 max-w-2xl">
-      Narwal Freo X Ultra till eller Dreame X40 Ultra till ? Bada är toppmodeller med fullautomatisk station och avancerad moppning, men de prioriterar olika saker. Vi jämfori dem kategori för kategori.
+      Narwal Freo X Ultra eller Dreame X40 Ultra? Båda är toppmodeller med fullautomatisk station och avancerad moppning, men de prioriterar olika saker. Vi jämför dem kategori för kategori.
     </p>
 
     <EditorialCTA products={['Narwal Freo X Ultra', 'Dreame X40 Ultra']} />
@@ -162,6 +168,26 @@ export const articleMeta = {
           Narwal Freo X Ultra är billigare än Dreame X40 Ultra . För den lägre prislappen får du dock lägre sugkraft och sämre moppning i hörnen. Räknar du pris per funktionalitet: Dreame erbjuder mer för pengarna i de flesta scenarion. Narwal motiverar prisskillnaden enbart med sin torkteknik, som är värdefull men nischad.
         </p>
       </div>
+
+      <div>
+        <h3 class="font-heading text-xl font-semibold text-text mb-3">Räcker 8 200 Pa för ett vanligt svenskt hem?</h3>
+        <p class="text-text-light leading-relaxed mb-4">
+          Ja, i de flesta fall. För hårdgolv och korta mattor räcker Narwals 8 200 Pa gott, skillnaden mot Dreames 12 000 Pa märks först vid tjocka mattor, inbäddad husdjurspäls och grövre skräp. Bor du i lägenhet med mest parkett kommer du sällan att sakna den extra sugkraften.
+        </p>
+        <p class="text-text-light leading-relaxed">
+          Har du hund eller katt väger sugkraften däremot tyngre, päls som trampats ned i mattor kräver mer av roboten. Då är Dreame det säkrare valet, och fler alternativ finns i topplistan över <a href="/robotdammsugare/husdjur/" class="text-accent underline">robotdammsugare för husdjur</a>. För mindre boenden med mest hårdgolv listar vi i stället de bästa modellerna i guiden om <a href="/robotdammsugare/lagenhet/" class="text-accent underline">robotdammsugare för lägenhet</a>.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-heading text-xl font-semibold text-text mb-3">Varför luktar moppar illa och hur löser robotarna det?</h3>
+        <p class="text-text-light leading-relaxed mb-4">
+          Fuktiga mopplattor som står i en stängd station blir en grogrund för bakterier, och det är bakterierna som ger den typiska instängda lukten. Narwal löser det med 40-gradig varmluft som torkar plattorna helt efter varje körning. Dreame tvättar hetare, 70 grader, men saknar aktiv torkning, så plattorna kan stå fuktiga.
+        </p>
+        <p class="text-text-light leading-relaxed">
+          Hur stort problemet blir beror på hur ofta du moppar. Vid veckovis körning hinner plattorna ofta lufttorka mellan passen, och då märks skillnaden knappt. Vid daglig moppning är Narwals torkning det som skiljer en fräsch station från en som börjar dofta källare.
+        </p>
+      </div>
     </section>
 
     <!-- CTA section -->
@@ -194,7 +220,6 @@ export const articleMeta = {
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <!-- Related links -->
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
@@ -219,7 +244,7 @@ export const articleMeta = {
     "@type": "Article",
     "headline": "Narwal Freo X Ultra vs Dreame X40 Ultra 2026",
     "datePublished": "2026-04-04",
-    "dateModified": "2026-04-04",
+    "dateModified": "2026-07-27",
     "author": { "@id": "https://robotjakt.se/#axel" },
     "publisher": { "@id": "https://robotjakt.se/#organization" },
   })} />

@@ -41,8 +41,8 @@ const halfStar = rating % 1 >= 0.5;
 const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
 const gradientId = `half-${(detectedBrand + name).replace(/[^a-z0-9]/gi, '')}`;
 
-// Gradient-badge-rad: vinnaren (rank 1) får grön-blå, övriga blå
-const barGradient = rank === 1 ? 'from-winner to-accent' : 'from-accent to-primary';
+// Solid badge-rad: vinnaren (rank 1) får djupgrön, övriga grafit
+const barSolid = rank === 1 ? 'bg-winner' : 'bg-primary';
 
 const isExternal = primaryUrl?.startsWith('http') ?? false;
 const rel = isExternal ? 'sponsored nofollow noopener noreferrer' : undefined;
@@ -50,9 +50,9 @@ const target = isExternal ? '_blank' : undefined;
 const STAR = 'M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z';
 ---
 
-<div class="not-prose bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-border" data-product={dataProduct || name}>
+<div class="not-prose bg-white rounded-xl overflow-hidden border border-border" data-product={dataProduct || name}>
   {badge && (
-    <div class={`px-4 py-2 text-white text-sm font-bold text-center bg-gradient-to-r ${barGradient}`}>
+    <div class={`px-4 py-2 text-white text-sm font-bold text-center ${barSolid}`}>
       {badge}
     </div>
   )}
@@ -61,9 +61,9 @@ const STAR = 'M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h
       <!-- Produktbild -->
       <div class="flex-shrink-0 mx-auto sm:mx-0 relative">
         {image ? (
-          <div class="w-32 h-32 sm:w-40 sm:h-44 rounded-xl overflow-hidden bg-gray-50 border border-border flex items-center justify-center relative">
+          <div class="w-32 h-32 sm:w-40 sm:h-44 rounded-lg overflow-hidden bg-gray-50 border border-border flex items-center justify-center relative">
             {rank && (
-              <div class={`absolute top-2 left-2 z-10 w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shadow-md bg-gradient-to-br ${barGradient}`}>
+              <div class={`absolute top-2 left-2 z-10 w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center ${barSolid}`}>
                 <span class="text-white text-xs sm:text-sm font-bold">#{rank}</span>
               </div>
             )}
@@ -76,13 +76,13 @@ const STAR = 'M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h
             )}
           </div>
         ) : (
-          <div class={`w-32 h-32 sm:w-40 sm:h-44 rounded-xl flex flex-col items-center justify-center relative overflow-hidden border border-border bg-gradient-to-br ${barGradient}`}>
+          <div class={`w-32 h-32 sm:w-40 sm:h-44 rounded-lg flex flex-col items-center justify-center relative overflow-hidden border border-border ${barSolid}`}>
             {rank && (
-              <div class="absolute top-2 left-2 w-7 h-7 sm:w-8 sm:h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+              <div class="absolute top-2 left-2 w-7 h-7 sm:w-8 sm:h-8 bg-white/20 rounded-full flex items-center justify-center">
                 <span class="text-white text-xs sm:text-sm font-bold">#{rank}</span>
               </div>
             )}
-            <span class="text-white text-4xl sm:text-5xl font-heading font-bold opacity-90 mb-1" style="text-shadow: 0 2px 8px rgba(0,0,0,0.2)">{initial}</span>
+            <span class="text-white text-4xl sm:text-5xl font-heading font-bold opacity-90 mb-1">{initial}</span>
             <span class="text-white/90 text-[10px] sm:text-xs font-semibold tracking-wider uppercase px-3 text-center leading-tight">{detectedBrand}</span>
           </div>
         )}
@@ -152,7 +152,7 @@ const STAR = 'M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h
               rel={rel}
               target={target}
               data-product={dataProduct || name}
-              class="flex items-center justify-center gap-2 w-full px-6 py-4 rounded-xl bg-cta hover:bg-cta-dark text-white font-bold text-base sm:text-lg transition-colors duration-200 shadow-lg no-underline"
+              class="flex items-center justify-center gap-2 w-full px-6 py-4 rounded-lg bg-cta hover:bg-cta-dark text-white font-bold text-base sm:text-lg transition-colors duration-200 no-underline"
             >
               Bra pris hos {primaryStore}
               <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>

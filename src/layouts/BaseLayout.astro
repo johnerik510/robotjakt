@@ -151,8 +151,8 @@ if (!hideAutoRelated) {
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" /></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Archivo:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Archivo:wght@600;700;800&display=swap" rel="stylesheet" /></noscript>
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -188,12 +188,12 @@ if (!hideAutoRelated) {
   <main id="main-content">
     <slot />
     {baseAutoRelated.length > 0 && (
-      <aside class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-slate-200 pb-8">
-        <h2 class="text-xl font-bold text-slate-900 mb-4">Relaterade guider</h2>
+      <aside class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-border pb-8">
+        <h2 class="font-heading text-xl font-bold text-text mb-4">Relaterade guider</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {baseAutoRelated.map((article) => (
-            <a href={article.href} class="block p-4 bg-white rounded-lg border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all">
-              <span class="font-medium text-slate-800 hover:text-blue-700">{article.title}</span>
+            <a href={article.href} class="block p-4 bg-white rounded-lg border border-border hover:border-accent transition-colors">
+              <span class="font-medium text-text hover:text-accent">{article.title}</span>
             </a>
           ))}
         </div>

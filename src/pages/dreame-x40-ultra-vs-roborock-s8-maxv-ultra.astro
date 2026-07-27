@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import EditorialCTA from '../components/EditorialCTA.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -55,7 +55,7 @@ export const articleMeta = {
 <BaseLayout
   title="Dreame X40 Ultra vs Roborock S8 MaxV Ultra: test 2026"
   description="Dreame X40 Ultra eller Roborock S8 MaxV Ultra? Vi jämför sugkraft, moppning, hinderdetektion och pris. Klart svar på vilken flaggskeppsrobot som vinner."
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/dreame-x40-ultra.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/dreame-x40-ultra.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -66,13 +66,18 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Dreame X40 Ultra vs Roborock S8 MaxV Ultra 2026
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Dreame X40 Ultra eller Roborock S8 MaxV Ultra?"
+      answer="Dreame X40 Ultra är bästa köpet för de flesta hem: starkare sugkraft på 12 000 Pa, moppning som når in i hörnen tack vare den utfällbara sidoarmen, 70-graders mopptvätt och större batteri, till lägre pris. Roborock S8 MaxV Ultra väljer du bara om du har husdjur och behöver ReactiveAI 3.0 mot djuravföring."
+    />
     <p class="text-text-light mb-6 max-w-2xl">
       Dreame X40 Ultra till eller Roborock S8 MaxV Ultra till ? Vi jämför de två starkaste flaggskeppsmodellerna på marknaden 2026, kategori för kategori, och ger dig ett tydligt svar baserat på ditt hem och dina behov.
     </p>
@@ -299,9 +304,37 @@ export const articleMeta = {
       </p>
     </section>
 
+    <!-- Fler frågor inför valet -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-6">Fler frågor inför valet</h2>
+
+      <h3 class="font-heading text-lg font-bold text-text mb-2">Spelar 70-graders mopptvätt någon verklig roll i vardagen?</h3>
+      <p class="text-text-light text-sm leading-relaxed mb-3">
+        Ja, varmvatten löser fett och intorkad smuts betydligt bättre än kallvatten, och mopparna blir renare mellan städpassen. En mopp som tvättas i 70 grader torkar dessutom med mindre kvarvarande lukt än en som sköljs kallt. Dreame X40 Ultra tvättar med varmvatten i stationen, Roborock S8 MaxV Ultra använder kallvatten.
+      </p>
+      <p class="text-text-light text-sm leading-relaxed mb-5">
+        Skillnaden märks mest i kök och hall, där mopparna samlar på sig fett och grus. En kallsköljd mopp som moppar samma ytor dag efter dag blir gradvis mättad, och då sjunker moppresultatet även om roboten i övrigt gör sitt jobb. Med varmvattentvätten håller sig mopparna fräscha längre innan de behöver bytas.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text mb-2">Fungerar navigeringen lika bra i mörka rum?</h3>
+      <p class="text-text-light text-sm leading-relaxed mb-3">
+        LiDAR mäter avstånd med laser och fungerar därför lika bra i totalt mörker som i dagsljus. Båda modellerna navigerar alltså säkert på natten. AI-kamerornas hinderigenkänning arbetar däremot bäst med ljus i rummet, så kör du nattstädning kan igenkänningen av små föremål bli mindre träffsäker på båda robotarna.
+      </p>
+      <p class="text-text-light text-sm leading-relaxed mb-5">
+        Vill du städa medan familjen sover är båda robotarna trygga val, kartläggningen och rumsnavigeringen bygger på lasern och påverkas inte av släckta lampor. Plocka bara undan sladdar och småsaker innan nattpasset, så kompenserar du för att kameran ser sämre i mörker.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text mb-2">Vad behöver du fortfarande göra själv med en fullautomatisk station?</h3>
+      <p class="text-text-light text-sm leading-relaxed mb-3">
+        Stationerna tömmer dammbehållaren, tvättar mopparna och fyller på vatten i roboten, men du behöver själv fylla rentvattentanken, tömma smutsvattentanken och byta dammpåse när den är full. Du behöver också rensa borstar och sensorer med jämna mellanrum. Underhållet blir betydligt mindre, men inte noll, oavsett vilken modell du väljer.
+      </p>
+      <p class="text-text-light text-sm leading-relaxed">
+        Den slutna dammpåsen i stationen har en bonus: du slipper dammoln när behållaren töms, vilket gör båda modellerna till bra val bland <a href="/robotdammsugare-allergiker/" class="text-accent underline">robotdammsugare för allergiker</a>. Vill du väga in fler faktorer innan du bestämmer dig hittar du grunderna i vår <a href="/kopguide-robotdammsugare/" class="text-accent underline">köpguide för robotdammsugare</a>.
+      </p>
+    </section>
+
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <!-- Related links -->
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">

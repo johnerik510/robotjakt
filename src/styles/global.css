@@ -1,28 +1,83 @@
 @import "tailwindcss";
 
+/*
+ * Robotjakt 2.0 — "Verkstadsgrafit + signalkoppar"
+ * Riktning: teknisk testredaktion. Kall grafit som stomme, koppar som enda
+ * accent (robotik/kretskort), djupare koppar på CTA. Archivo talar, Source
+ * Sans 3 arbetar. Radiespråket är låst till 4-12 px via tokens nedan, så
+ * även äldre rounded-xl/2xl-klasser landar i bandet. Kant ELLER skugga,
+ * aldrig båda på samma kort.
+ */
+
 @theme {
-  --color-primary: #0f172a;
-  --color-primary-light: #1e293b;
-  --color-primary-dark: #020617;
-  --color-accent: #1d4ed8;
-  --color-accent-light: #60a5fa;
-  --color-accent-dark: #1d4ed8;
-  --color-cta: #dc2626;
-  --color-cta-light: #f87171;
-  --color-cta-dark: #b91c1c;
-  --color-bg: #f8fafc;
-  --color-bg-alt: #f1f5f9;
-  --color-text: #1e293b;
-  --color-text-light: #64748b;
-  --color-text-lighter: #576879;
-  --color-border: #e2e8f0;
-  --color-border-dark: #cbd5e1;
+  /* Grafit (mörk nav, mörka band, rubriker) */
+  --color-primary: oklch(0.25 0.02 255);
+  --color-primary-light: oklch(0.32 0.022 255);
+  --color-primary-dark: oklch(0.2 0.018 255);
+
+  /* Signalkoppar (länkar, aktiva states, ikoner) */
+  --color-accent: oklch(0.55 0.13 55);
+  --color-accent-light: oklch(0.75 0.12 65);
+  --color-accent-dark: oklch(0.47 0.12 50);
+
+  /* CTA: djup koppar, vit text >= 4.5:1 */
+  --color-cta: oklch(0.5 0.14 45);
+  --color-cta-light: oklch(0.63 0.13 50);
+  --color-cta-dark: oklch(0.43 0.13 45);
+
+  /* Kallt papper och ytor */
+  --color-bg: oklch(0.98 0.004 240);
+  --color-bg-alt: oklch(0.955 0.007 240);
+
+  /* Ink, inte svart */
+  --color-text: oklch(0.26 0.015 255);
+  --color-text-light: oklch(0.47 0.015 250);
+  --color-text-lighter: oklch(0.44 0.015 250);
+
+  --color-border: oklch(0.905 0.007 245);
+  --color-border-dark: oklch(0.845 0.009 245);
   --color-white: #ffffff;
-  --color-warning: #f59e0b;
-  --color-star: #f59e0b;
-  --color-winner: #15703a;
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-heading: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+
+  --color-warning: oklch(0.72 0.15 75);
+  --color-star: oklch(0.72 0.15 75);
+  --color-winner: oklch(0.45 0.1 155);
+
+  --font-sans: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Archivo', 'Source Sans 3', system-ui, sans-serif;
+
+  /* Låst radiespråk: allt inom 4-12 px, oavsett vilken utility som används */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+  --radius-2xl: 12px;
+  --radius-3xl: 12px;
+}
+
+/* Redaktionell typbas */
+body {
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+
+h1, h2 {
+  letter-spacing: -0.018em;
+}
+
+h3, h4 {
+  letter-spacing: -0.01em;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Tabellsiffror linjerar i spec- och jämförelsetabeller */
+table {
+  font-variant-numeric: tabular-nums;
 }
 
 /* Focus styles for WCAG 2.1 AA keyboard navigation */

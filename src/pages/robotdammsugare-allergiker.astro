@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProductCard from '../components/ProductCard.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -71,7 +70,7 @@ const products = [
       'Automatisk tömning och påfyllning',
       'HEPA-filter ingår',
     ],
-    cons: ['Filterbyte var 60 dag', 'Stor station'],
+    cons: ['Filterbyte var 60 dagar', 'Stor station'],
     ctaText: 'Bra pris hos Elon',
     ctaUrl: 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=153177&url=https://www.elon.se/dreame-x60-ultra-white-153177',
     dataProduct: 'Dreame X60 Ultra',
@@ -132,7 +131,7 @@ const faqItems = [
   },
   {
     question: 'Är auto-empty station viktigt för allergiker?',
-    answer: 'Ja, det är troligen den viktigaste enskilda funktionen för en allergiker. Utan station måste du öppna dammkorgen och tömma den manuellt efter varje pass, då pyser finpartiklar upp i ansiktet på dig. Med en station med tät dammpåse byter du påsen kanske var 60 dag, ofta utan att se ett dammkorn. Roborock, Dreame och iRobot har alla beprövade lösningar med AllergenLock eller motsvarande täthetsstandard.',
+    answer: 'Ja, det är troligen den viktigaste enskilda funktionen för en allergiker. Utan station måste du öppna dammkorgen och tömma den manuellt efter varje pass, då pyser finpartiklar upp i ansiktet på dig. Med en station med tät dammpåse byter du påsen kanske var 60 dagar, ofta utan att se ett dammkorn. Roborock, Dreame och iRobot har alla beprövade lösningar med AllergenLock eller motsvarande täthetsstandard.',
   },
   {
     question: 'Räcker en robotdammsugare eller behövs en luftrenare också?',
@@ -175,7 +174,7 @@ const productSchema = products.map((p, i) => ({
   title="Bästa robotdammsugare för allergiker 2026: HEPA-test"
   description="Bästa robotdammsugarna för allergiker 2026. Vi jämför HEPA-filtrering, luftkvalitet och partikelhantering. Hitta rätt robot för pollenkänsliga och astmatiker."
   canonical="https://robotjakt.se/robotdammsugare-allergiker/"
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/heroes/robotdammsugare-allergiker.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/heroes/robotdammsugare-allergiker.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
@@ -263,7 +262,6 @@ const productSchema = products.map((p, i) => ({
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <!-- Related links -->
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">

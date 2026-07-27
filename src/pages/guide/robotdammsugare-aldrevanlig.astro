@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import FAQ from '../../components/FAQ.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Guider', href: '/guide/' },
@@ -26,7 +27,7 @@ const faqItems = [
   },
   {
     question: 'Hur ofta behöver man städa roboten?',
-    answer: 'Med en självtömmande station behöver du tömma stationen var 30 till 60 dag beroende på hur dammigt hemmet är. Utan station behöver du tömma dammbehållaren efter varje städning, vilket tar 30 sekunder. Borsthuvudet behöver rengöras ungefär en gång i månaden.',
+    answer: 'Med en självtömmande station behöver du tömma stationen var 30 till 60 dagar beroende på hur dammigt hemmet är. Utan station behöver du tömma dammbehållaren efter varje städning, vilket tar 30 sekunder. Borsthuvudet behöver rengöras ungefär en gång i månaden.',
   },
   {
     question: 'Vad kostar en lämplig robotdammsugare för äldre?',
@@ -48,12 +49,17 @@ export const articleMeta = {
   title="Robotdammsugare för äldre: enklaste modellerna 2026"
   description="Guide till robotdammsugare för äldre 2026. Vi går igenom vilka modeller som är enklast att använda, tystast och kräver minst underhåll."
   breadcrumbs={breadcrumbs}
-  lastUpdated="2026-05-23"
+  lastUpdated="2026-07-27"
   datePublished="2026-05-23"
 >
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
     Robotdammsugare för äldre: enklaste modellerna 2026
   </h1>
+
+  <AnswerBox
+    question="Snabbt svar: Vilken robotdammsugare är bäst för äldre?"
+    answer="Roborock Q Revo Pro är bästa valet för äldre 2026: automatisk tömning, tydlig app och tyst läge på 57 dB. iRobot Roomba j9+ är enklast att komma igång med, och Dreame L10s Pro Ultra Heat passar den som vill kombinera dammsugning och moppning. Välj alltid en modell med tömningsstation."
+  />
   <p class="text-text-light text-lg mb-6 leading-relaxed">
     En robotdammsugare kan vara ett stort praktiskt stöd i ett äldre hem. Men valet av modell spelar stor roll. Tekniken har blivit avancerad, och det som marknadsförs som "enkelt" är inte alltid det. Den här guiden fokuserar på modeller som faktiskt är lätta att sätta igång, kräver minimalt underhåll och städar pålitligt utan att du behöver övervaka dem. En robotdammsugare är ett av flera sätt att underlätta vardagen och <a href="https://dinsenior.se/seniorboende/" class="text-accent underline">bo kvar hemma längre</a> som senior, tillsammans med andra anpassningar i hemmet.
   </p>
@@ -137,6 +143,30 @@ export const articleMeta = {
     <li><strong>Modeller med komplicerade appar</strong>, undvik modeller där du tvingas rita kartor, definiera zoner och sätta upp komplexa regler bara för att köra en grundläggande städning.</li>
     <li><strong>Robotdammsugare utan mjuka borstvalsar</strong>, hårda borstvalsar trasslar in hår och kräver regelbunden rengöring. Gummivalsar kräver inte lika frekvent underhåll.</li>
   </ul>
+
+  <h3 class="font-semibold text-text text-xl mb-2 mt-8">Kan en anhörig sköta roboten på distans?</h3>
+  <p class="text-text-light mb-4">
+    Ja. Apparna från Roborock, iRobot och Dreame fungerar över internet, inte bara i hemmets WiFi. En anhörig kan logga in med samma konto på sin egen telefon, starta städningar, ändra scheman och se om roboten fastnat, helt utan att vara på plats i bostaden.
+  </p>
+  <p class="text-text-light mb-4">
+    Ett praktiskt upplägg är att en anhörig gör hela uppsättningen vid ett besök: kartläggning, rumsnamn och ett städschema. Därefter kräver vardagen ingenting av den som bor i hemmet. Hur uppsättningen går till steg för steg beskriver vi i guiden <a href="/guide/installation/" class="text-accent underline">installera robotdammsugare steg för steg</a>.
+  </p>
+
+  <h3 class="font-semibold text-text text-xl mb-2">Går det att starta roboten utan app och telefon?</h3>
+  <p class="text-text-light mb-4">
+    Ja, alla rekommenderade modeller har en fysisk startknapp på själva roboten. Ett tryck startar en full städning av hela hemmet och roboten återvänder själv till stationen efteråt. Appen behövs bara för schemaläggning, zoner och inställningar, inte för den dagliga användningen.
+  </p>
+  <p class="text-text-light mb-4">
+    Med ett schema inlagt behövs varken knapp eller telefon, roboten kör själv på bestämda tider. Röststyrning via Alexa eller Google Assistant är ett tredje alternativ för den som hellre pratar än trycker.
+  </p>
+
+  <h3 class="font-semibold text-text text-xl mb-2">Vad händer om roboten fastnar när ingen är hemma?</h3>
+  <p class="text-text-light mb-4">
+    Roboten stannar, ger ifrån sig en ljudsignal och skickar en notis till appen med sin position markerad på kartan. Ingen skada sker, den står stilla tills någon lyfter tillbaka den till stationen. Med no-go-zoner runt kända problemställen minskar risken att det alls händer.
+  </p>
+  <p class="text-text-light mb-4">
+    Kombinationen av pålitlig navigering och en <a href="/guide/automatisk-tomning/" class="text-accent underline">automatisk tömningsstation</a> är det som gör att roboten kan sköta sig själv i veckor. Fastnar den ofta är det oftare hemmets lösa sladdar än roboten som är problemet, gå tillbaka till förberedelselistan ovan.
+  </p>
 
   <FAQ items={faqItems} />
 

@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
 
 const TAG = 'johnerik510-20';
 
@@ -93,7 +93,7 @@ export const articleMeta = {
 <BaseLayout
   title="Roborock S8 reservdelar 2026: filter, borstar, moppar"
   description="Filter, borstar, moppkuddar och dammpåsar till S8, S8+, S8 Pro Ultra, S8 Max Ultra och S8 MaxV Ultra, med kompatibilitetslista och underhållsschema."
-  article={{ datePublished: "2026-04-05", dateModified: "2026-05-27", image: "/images/parts-roborock-s8-kit.webp" }}
+  article={{ datePublished: "2026-04-05", dateModified: "2026-07-27", image: "/images/parts-roborock-s8-kit.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -104,13 +104,17 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-05</p>
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-27</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
       Roborock S8 reservdelar 2026, hela S8-serien
     </h1>
+    <AnswerBox
+      question="Snabbt svar: Vilka reservdelar passar Roborock S8-serien?"
+      answer="Hela S8-serien delar samma reservdelssystem: S8, S8+, S8 Pro Ultra, S8 Max Ultra och S8 MaxV Ultra använder samma filter, borstar och moppkuddar. Byt HEPA-filter var 2 månad, sidoborstar var 6 till 12 månad och gummiborstarna var 12 till 18 månad. Tredjepartskit kostar ofta 50 till 70 procent mindre än originalen."
+    />
     <p class="text-text-light text-lg mb-6 leading-relaxed">
       Roborock rekommenderar byte av HEPA-filter var tredje månad, sidoborste var 2 månader och huvudborste var 6 månader. Rätt reservdelar till Roborock S8, S8+, S8 Pro Ultra, S8 Max Ultra och S8 MaxV Ultra: filter, borstar, moppkuddar, dammpåsar och dockstationens rengöringsdelar.
     </p>
@@ -160,9 +164,48 @@ export const articleMeta = {
       </div>
     </section>
 
+    <section class="mb-10">
+      <h3 class="font-heading text-lg font-bold text-text mb-2">Hur märker jag att gummiborstarna behöver bytas?</h3>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Slitna gummiborstar lämnar smuts i stråk på golvet och plockar sämre upp hår och grus. När gummiflänsarna ser rundade, spruckna eller ojämna ut är det dags. Med normal användning håller huvudrullen 12 till 18 månader, men hår som lindas runt axeln kortar livslängden.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed mb-6">
+        Rengör därför rullen från hår regelbundet, det förlänger livslängden och håller upptaget jämnt mellan bytena. Vill du bara komplettera med borstar i stället för ett helt kit finns samlade alternativ på vår sida om <a href="/reservdelar/borstar/" class="text-accent underline">borstar till robotdammsugare</a>.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text mb-2">Hur väljer jag rätt dammpåse till S8-stationen?</h3>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Stationens dammpåsar passar S8+, S8 Pro Ultra, S8 Max Ultra och S8 MaxV Ultra med automatisk tömningsstation. Påsen rymmer cirka 2,5 liter och håller normalt 4 till 7 veckor. Appen meddelar när den är full, men byt hellre lite tidigare, en överfull påse försämrar tömningen.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed mb-6">
+        Tredjepartspåsar fungerar bra så länge kompatibilitetslistan uttryckligen anger din modell. Har hushållet även en Qrevo-modell gäller ett helt annat system för den, se vår sida om <a href="/reservdelar/roborock-qrevo-serien/" class="text-accent underline">Roborock Qrevo-serien reservdelar</a>.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text mb-2">Hur ofta ska sidoborstarna på S8 bytas?</h3>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Sidoborstarna byts var 6 till 12 månad, men gå efter formen snarare än kalendern. När borsthåren pekar utåt eller har böjt sig permanent sveper de inte längre in smuts mot sugmunnen, och roboten lämnar kvar grus längs golvlister och i hörn.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Sidoborsten är den billigaste delen i kittet och samtidigt den som gör mest för kantstädningen, så snåla inte med bytet. Kiten innehåller fyra till sex stycken just för att de är tänkta att bytas oftare än gummiborstarna på undersidan.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed mb-6">
+        Hår som lindar sig runt borstaxeln är den vanligaste orsaken till att en sidoborste dör i förtid. Bor det långhåriga i hushållet är det värt att se vilka robotar som hanterar det bäst, dem har vi samlat i guiden till <a href="/robotdammsugare/langt-har/" class="text-accent underline">robotdammsugare för långt hår</a>.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text mb-2">Behåller jag garantin med tredjepartsdelar i S8?</h3>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Ja. Filter, borstar, moppkuddar och dammpåsar är förbrukningsartiklar, och att byta dem mot tredjepartsdelar ogiltigförklarar inte garantin på roboten. Se bara till att filtren håller HEPA E11-standard eller högre och att gummiborstarnas mått stämmer exakt med S8-serien, 185 x 56 mm.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Ett filter med lägre filtreringsklass släpper igenom mer fint damm tillbaka ut i rummet, vilket märks tydligast hemma hos allergiker. Mått som skiljer sig med några millimeter gör att rullen antingen kärvar i fästet eller sitter för löst och slirar mot golvet.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed">
+        Prisskillnaden mot originaldelarna ligger ofta på 50 till 70 procent, och för delar som ändå ska slitas ut är det den enkla vinsten i att äga roboten länge. Behöver du bara fylla på filter kan du göra det separat via vår sida om <a href="/reservdelar/filter/" class="text-accent underline">filter till robotdammsugare</a>.
+      </p>
+    </section>
+
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
       <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade sidor</h2>

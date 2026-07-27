@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare med mopp', href: '/robotdammsugare/med-mopp/' },
@@ -69,7 +69,7 @@ export const articleMeta = {
 <BaseLayout
   title="Dreame W10 Pro recension 2026: golvtvätt-robot testad"
   description="Dreame W10 Pro testad: kombinerar dammsugning och moppning i ett. Se hur den presterar på hårda golv, pris i Sverige och jämförelse med konkurrenterna."
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/dreame-d10s-pro.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/dreame-d10s-pro.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -80,13 +80,18 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Dreame W10 Pro recension 2026, robotdammsugare med mopp
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: är Dreame W10 Pro fortfarande värd att köpa?"
+      answer="W10 Pro säljs inte längre ny i Sverige, så den är bara aktuell på andrahandsmarknaden. Tekniken håller: 7 000 Pa, LiDAR-karta och en station som spolar moppplattorna och pumpar undan smutsvattnet. Vill du ha garanti och support är en aktuell moppmodell det tryggare valet."
+    />
 
     <!-- Verdict box -->
     <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -211,7 +216,7 @@ export const articleMeta = {
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Dreame W10 Pros station: tömning, vattenpåfyllning och mopptvätt</h3>
       <p class="text-text-light leading-relaxed mb-4">
-        Dockningsstationen till W10 Pro hanterar fyra funktioner automatiskt: tömer dammkorgen, fyller på rent vatten i roboten, tvättar moppplattorna och pumpar smutsvatten till den separata tanken. Du behöver bara tömma smutsvattentanken och fylla på rent vatten, allt annat sköts av stationen.
+        Dockningsstationen till W10 Pro hanterar fyra funktioner automatiskt: tömmer dammkorgen, fyller på rent vatten i roboten, tvättar moppplattorna och pumpar smutsvatten till den separata tanken. Du behöver bara tömma smutsvattentanken och fylla på rent vatten, allt annat sköts av stationen.
       </p>
       <p class="text-text-light leading-relaxed mb-6">
         Stationen är relativt stor (ca 40 x 40 cm grundyta) och behöver placeras på ett hårdgolv med tillgång till eluttag. Placeringen nära ett badrum eller städskåp med golvbrunn forenklar tömningen av smutsvattentanken avsevärt.
@@ -223,6 +228,30 @@ export const articleMeta = {
       </p>
       <p class="text-text-light leading-relaxed mb-6">
         Välj X40 Ultra om: du har husdjur med lång päls, tjocka mattor med djup lugg eller kräver absolut hörntäckning med moppning. Välj W10 Pro om: du har blandade golvytor, normalt städbehov och vill ha självrenande mopp utan att betala topppris.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Är en begagnad Dreame W10 Pro ett bra köp?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Det beror på batteriet och slangarna. Litiumbatterier tappar kapacitet med åren, så en robot som körts dagligen i flera år orkar inte 300 kvadratmeter längre. Kontrollera att stationen suger upp och pumpar ut vatten utan läckage innan du betalar för en använd W10 Pro.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Be säljaren köra en hel cykel medan du tittar på. Roboten ska hitta tillbaka till stationen själv, dockningen ska sitta på första försöket och tvätten av moppplattorna ska starta utan att du petar på något. Fungerar det, är resten förbrukningsdelar som går att byta, och de hittar du på vår sida med <a href="/reservdelar/dreame/" class="text-accent underline">Dreame reservdelar</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vilka delar slits ut först på en golvtvättande robot?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Moppplattorna först, eftersom de skrubbar mot golvet i varje körning och blir stumma när fibrerna packas. Därefter filtret, som sätter igen av finkornigt damm, och sidoborsten som böjs utåt. Slangarna mellan robot och station kalkar igen om du kör med hårt kranvatten.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Kalken är den läskigaste posten eftersom den byggs upp osynligt och först märks när vattenflödet blir svagt. Kör du i ett område med hårt vatten är det värt att skölja stationens tankar och kanaler regelbundet i stället för att vänta på symptom. Ett igensatt filter kostar dessutom sugkraft direkt, och byteslogiken går vi igenom under <a href="/reservdelar/filter/" class="text-accent underline">reservfilter till robotdammsugare</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Passar Dreame W10 Pro i hem med mycket heltäckningsmattor?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Nej, inte som huvudlösning. W10 Pro lyfter moppplattorna och höjer sugkraften på mattor, men den moppar aldrig mattytan och tvättstationens fördel försvinner när det mesta av golvet är textil. Har du mest heltäckningsmatta väger sugkraft och borsttyp tyngre än moppfunktionen.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        En robot som är byggd för hårdgolv gör alltså halva jobbet i ett mattklätt hem, och du betalar för en station vars huvudfunktion står oanvänd. Har du en blandning, säg hårdgolv i kök och hall och mattor i sovrummen, fungerar upplägget bra så länge du markerar mattrummen som moppfria zoner. Hur olika luggtyper påverkar valet går vi igenom i vår guide om <a href="/guide/robotdammsugare-mattor/" class="text-accent underline">robotdammsugare och mattor</a>.
       </p>
     </section>
 
@@ -260,7 +289,6 @@ export const articleMeta = {
           <a href="https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3396835&url=https://www.proshop.se/Robotdammsugare/Dreame-Robotdammsugare-X40-Ultra/3396835" rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-6 py-3 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors min-h-[44px] text-sm">Se Dreame X40 Ultra hos Proshop<svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a>
       </div>
     </section>
-    <AffiliateDisclaimer />
 
     <!-- Related links -->
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">

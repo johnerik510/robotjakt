@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import FAQ from '../../components/FAQ.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Guider', href: '/guide/' },
@@ -29,12 +30,17 @@ export const articleMeta = {
   title="Automatisk tömning i robotdammsugare: guide och test"
   description="Allt om automatisk tömning i robotdammsugare 2026. Hur stationer fungerar, vad du betalar och vilka modeller som har bäst självtömning. Komplett guide."
   breadcrumbs={breadcrumbs}
-  lastUpdated="2026-04-27"
+  lastUpdated="2026-07-27"
   datePublished="2026-04-27"
 >
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
     Automatisk tömningsstation, värt extrapengen?
   </h1>
+
+  <AnswerBox
+    question="Snabbt svar: Är en automatisk tömningsstation värd pengarna?"
+    answer="En automatisk tömningsstation är värd pengarna om du har husdjur, bostad över 100 kvadratmeter eller allergi i hushållet. Påsen i stationen rymmer 30 till 60 dagars damm, så du slipper daglig tömning. Bor du i liten lägenhet utan husdjur räcker en manuell modell gott."
+  />
   <p class="text-text-light text-lg mb-6 leading-relaxed">
     Den enskilt största lyxen en robotdammsugare kan erbjuda är att du aldrig behöver röra dammbehållaren. En automatisk tömningsstation suger upp innehållet i en stor påse i basen, men funktionen extra och innebär löpande utgifter för påsar. Här är när det är värt det och när det inte är det.
   </p>
@@ -82,6 +88,30 @@ export const articleMeta = {
   </ul>
   <p class="text-text-light leading-relaxed mb-6">
     Aktuella priser på reservdelar finns på vår sida för <a href="/reservdelar/" class="text-accent underline">reservdelar till robotdammsugare</a>.
+  </p>
+
+  <h3 class="font-heading text-xl font-bold text-text mt-6 mb-2">Måste roboten fortfarande ha en egen dammbehållare?</h3>
+  <p class="text-text-light leading-relaxed mb-4">
+    Ja, roboten behåller alltid sin egen dammbehållare. Under städningen samlas smutsen där precis som vanligt, och det är först när roboten dockar som stationens vakuum suger över innehållet i den stora påsen via en slang. Stationen ersätter alltså inte behållaren, den tömmer den åt dig.
+  </p>
+  <p class="text-text-light leading-relaxed mb-4">
+    Det betyder också att robotens eget filter och borstvals behöver samma tillsyn som på en manuell modell. Stationen tar bort tömningsmomentet, inte resten av skötseln. En genomgång av vad som ska rengöras och hur ofta hittar du i vår guide till <a href="/guide/underhall/" class="text-accent underline">underhåll av robotdammsugare</a>.
+  </p>
+
+  <h3 class="font-heading text-xl font-bold text-text mt-6 mb-2">Hur vet du när dammpåsen i stationen är full?</h3>
+  <p class="text-text-light leading-relaxed mb-4">
+    Appen varnar när påsen börjar bli full, och de flesta stationer har dessutom en indikator på basen. Med daglig städning i ett normalstort hem räcker en påse i 30 till 60 dagar. Har du husdjur fylls den snabbare och du bör räkna med byte oftare.
+  </p>
+  <p class="text-text-light leading-relaxed mb-4">
+    Ignorera inte varningen. En överfull påse gör att stationens vakuum inte längre orkar suga över allt ur robotens behållare, och då fylls roboten upp efter någon enstaka städning. Resultatet blir att du står och tömmer för hand igen, precis det stationen skulle bespara dig.
+  </p>
+
+  <h3 class="font-heading text-xl font-bold text-text mt-6 mb-2">Vilka robotdammsugare har bäst tömningsstation?</h3>
+  <p class="text-text-light leading-relaxed mb-4">
+    Dreame X40 Ultra, Roborock S8 MaxV Ultra och Ecovacs X5 Omni har de mest kompletta stationerna 2026. Alla tre tömmer dammbehållaren, fyller på vatten och tvättar moppkuddarna i varmvatten. Skillnaderna sitter i detaljerna, som hur varmt tvättvattnet är och hur väl torkningen fungerar.
+  </p>
+  <p class="text-text-light leading-relaxed mb-6">
+    Vill du jämföra fler modeller där stationen ingår har vi samlat dem i en egen topplista över <a href="/robotdammsugare/med-bassation/" class="text-accent underline">robotdammsugare med basstation</a>, med för- och nackdelar per modell. Det är ett bra nästa steg när du bestämt dig för att stationen är värd pengarna.
   </p>
 
   <FAQ items={faqItems} />

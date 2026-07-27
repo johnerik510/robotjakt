@@ -1,11 +1,11 @@
 ---
 import { ctaRel } from '../lib/cta-rel';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import EditorialCTA from '../components/EditorialCTA.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Fönsterputsrobot' },
@@ -51,7 +51,7 @@ export const articleMeta = {
 <BaseLayout
   title="Bästa fönsterputsrobot 2026: jämförda och rankade modeller"
   description="Vi jämför de bästa fönsterputsrobotarna 2026. Ecovacs Winbot, Hobot och fler rankade på rengöringsresultat, säkerhet och pris i Sverige. Se topplistan."
-  article={{ datePublished: "2026-05-16", dateModified: "2026-06-04", image: "/images/cat-fonsterputsrobot.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/cat-fonsterputsrobot.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -62,13 +62,19 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 4 juni 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
-<p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-04-23">2026-04-23</time></p>
+<p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
       Fönsterputsrobot 2026, Bästa modellerna
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Vilken fönsterputsrobot är bäst 2026?"
+      answer="Ecovacs Winbot W2 Pro är bästa fönsterputsrobot 2026 med betyg 8,8 av 10. Den rengör med vatten och mikrofiberduk för ett strimmfritt resultat och är ensam i testet om att klara fönster utan ram, tack vare AI-detektering av glaskanten. Hobot 2S är ett populärt mellanklassval för fönster med ram."
+    />
+
     <p class="text-text-light mb-6 max-w-2xl">
       Ecovacs Winbot W2 Pro är vår bästa fönsterputsrobot i test 2026 med betyg 8,8. Den rengör med vatten och mikrofiberduk för ett strimmfritt resultat, och till skillnad från flera konkurrenter klarar den även fönster utan ram.</p>
 
@@ -366,6 +372,33 @@ export const articleMeta = {
       </div>
     </section>
 
+    <!-- Praktiska frågor före köp -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Så använder du fönsterputsroboten i praktiken</h2>
+      <div class="space-y-5 text-sm text-text-light leading-relaxed">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Batteri eller kabel, vad passar dina fönster bäst?</h3>
+          <p class="mb-3">Batteridrift ger dig full rörelsefrihet men begränsad tid på glaset: Winbot W2 Pro kör 45 minuter och hinner tre till fyra fönster innan den behöver laddas. Kabeldrivna Hobot 2S tappar aldrig kraft, men sladden begränsar hur långt från uttaget du kommer.</p>
+          <p>Har du många fönster på samma våning och ett uttag i närheten är kabel det bekvämare valet. Ska du putsa spritt över flera plan, eller putsa utomhus från en balkong, väger batteriets frihet tyngre än laddningspauserna. Vi går igenom navigeringen mer i detalj i vår <a href="/ecovacs-winbot-w2-omni/" class="text-accent underline">Ecovacs Winbot W2 recension</a>.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Vad behöver du göra innan roboten sätts på glaset?</h3>
+          <p class="mb-3">Torka bort grov smuts, spindelväv och lös sand i ramen först, annars smetar roboten runt det över glaset. Fäst en ren och lätt fuktad mikrofiberduk, fyll vattentanken där modellen har en, och kontrollera att gardiner, krokar och fönsterhandtag inte sitter i vägen.</p>
+          <p>Ingrott smuts, kalkfläckar och fågelspillning behöver förbehandlas med fönsterputsmedel innan roboten körs, annars får du köra flera cykler över samma ruta. Fäst säkerhetslinan i ett ankare på väggen så snart du jobbar på höjd, och skjut upp putsen om det regnar eller blåser.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Hur lång tid tar det att putsa hela villans fönster?</h3>
+          <p class="mb-3">Ett standardfönster på ungefär 80 x 120 cm tar 5 till 10 minuter, så tio rutor landar på ungefär en till två timmars maskintid. Du behöver inte stå bredvid hela tiden, men du flyttar roboten mellan rutorna och byter duk när den blir grå.</p>
+          <p>Planera i etapper i stället för att ta allt på en gång. Med en batterimodell kommer du åt tre till fyra fönster per laddning, så en våning i taget är ett rimligt pass. Panoramafönster och glasräcken tar proportionellt längre tid eftersom ytan är större, inte för att roboten går långsammare.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Ersätter en fönsterputsrobot manuell fönsterputs helt?</h3>
+          <p class="mb-3">Nej. Roboten tar glasytan, inte karmar, spröjs eller fönsterbleck. Räkna med att du fortfarande torkar ramar och de yttersta millimetrarna i hörnen för hand. Vinsten ligger i att du slipper stå på stege och slipper det tunga arbetet på stora glaspartier.</p>
+          <p>Fönster som är uppdelade i små rutor med spröjs passar dåligt, roboten behöver en sammanhängande glasyta för att navigera och hålla vakuum. Har du mest smårutigt gör en enkel modell tillräcklig nytta på de få stora partierna, och då räcker ett av alternativen i vår guide till <a href="/billigaste-fonsterputsrobot/" class="text-accent underline">billigaste fönsterputsrobot</a>.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA-box: fler robotkategorier -->
     <section class="mb-10 bg-accent/5 border border-accent/20 rounded-xl p-6">
       <h2 class="font-heading text-xl font-bold text-text mb-2">Utforska fler robotkategorier</h2>
@@ -401,7 +434,6 @@ export const articleMeta = {
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
   </div>
 
   <StickyCTA

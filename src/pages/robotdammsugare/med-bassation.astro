@@ -1,11 +1,11 @@
 ---
 import { ctaRel } from '../../lib/cta-rel';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
 import EditorialCTA from '../../components/EditorialCTA.astro';
 
 const breadcrumbs = [
@@ -171,16 +171,22 @@ export const articleMeta = {
 <BaseLayout
   title="Bästa robotdammsugare med basstation 2026: jämförda"
   description="Bästa robotdammsugarna med basstation 2026. Självtömning, vattenfyllning och mopptvätt i en station. Se topplista med pris, funktioner och betyg."
-  article={{ datePublished: "2026-04-25", dateModified: "2026-05-27", image: "/images/roborock-qrevo-maxv-ultra.webp" }}
+  article={{ datePublished: "2026-04-25", dateModified: "2026-07-27", image: "/images/roborock-qrevo-maxv-ultra.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Bästa robotdammsugare med basstation 2026, självtömmande
     </h1>
-    <AuthorByline datePublished="2026-04-25" dateModified="2026-05-22" />
+    <AuthorByline datePublished="2026-04-25" dateModified="2026-07-27" />
+
+    <AnswerBox
+      question="Snabbt svar: Vilken robotdammsugare med basstation är bäst 2026?"
+      answer="Roborock Saros 20 Sonic är vår bästa robotdammsugare med basstation 2026. Stationen sköter auto-tömning, mopptvätt med varmvatten och vattenpåfyllning och rengör dessutom mopparna med ultraljud. Det platta LiDAR-tornet gör roboten bara 8 cm hög så den passar under alla möbler. Vill du ha en mindre station är Roborock Qrevo Curv det kompakta alternativet."
+    />
+
     <p class="text-text-light mb-4 max-w-2xl">
       Roborock Saros 20 Sonic är vår bästa robotdammsugare med basstation i test 2026. Stationen sköter auto-tömning, mopptvätt med varmvatten och vattenpåfyllning, och rengör dessutom mopparna med ultraljud. Det platta LiDAR-tornet gör roboten bara 8 cm hög så den passar under alla möbler.
     </p>
@@ -300,9 +306,86 @@ export const articleMeta = {
       </div>
     </section>
 
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Basstationen i praktiken: det här vill köpare veta</h2>
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Hur ofta behöver du tömma en robotdammsugare med basstation?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Med en självtömmande basstation byter du dammpåsen i stationen ungefär var 60 till 90 dag, beroende på hur ofta roboten kör och hur stor bostaden är. Utan station tömmer du robotens lilla dammbehållare efter i princip varje städning, och det är hela skillnaden i vardagen.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Räkna med att påsen fylls snabbare i hem med päls och mycket spring. Har stationen mopptvätt tillkommer två enkla moment: fylla rentvattentanken och tömma smutsvattentanken. Vill du framför allt ha bra moppresultat, jämför modellerna i vår guide till <a href="/robotdammsugare/med-mopp/" class="text-accent underline">robotdammsugare med mopp</a>.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Var ska basstationen stå?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Stationen ska stå mot en vägg på ett hårt och plant underlag nära ett eluttag, med fri yta framför så att roboten kan docka rakt. Räkna med 60 till 70 cm väggutrymme för de större Ultra-stationerna, som är 40 till 50 cm breda och ungefär lika djupa.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Undvik att klämma in stationen i en trång garderob, den behöver ventilation när mopparna torkas. En central placering ger dessutom roboten kortare väg till alla rum, vilket märks i städresultatet i större bostäder.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Låter det mycket när stationen töms?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Ja, tömningen är det högsta momentet i hela städcykeln. Stationen suger över innehållet från robotens behållare med en kraftig fläkt, och ljudet ligger i nivå med en vanlig dammsugare på full effekt. Momentet är dock kort, det handlar om sekunder snarare än minuter.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Tömningen sker automatiskt när roboten dockar efter avslutat pass. Stör ljudet, schemalägg städningen till tider när du inte är hemma, så märker du aldrig av den.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Är en basstation värd pengarna i ett husdjurshem?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Ja, extra mycket. Päls fyller robotens behållare snabbt, och en station som tömmer automatiskt gör att roboten kan köra varje dag utan handpåläggning. Mopptvätt med varmvatten är dessutom mer hygienisk än kall sköljning, något som märks i hem med både djur och allergiker.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Har du katt eller hund är hinderdetektionen minst lika viktig som stationen. Vår genomgång av <a href="/robotdammsugare/husdjur/" class="text-accent underline">bästa robotdammsugare för husdjur</a> visar vilka modeller som klarar djurhem bäst.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Är en kompakt station sämre än en stor?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Inte nödvändigtvis. Roborock Qrevo Curv i listan har en kompakt station och klarar ändå både auto-tömning, varmvattentvätt av moppplattorna och automatisk vattenpåfyllning. Det du oftast betalar för i en större station är rymligare tankar och en dammpåse som räcker längre mellan bytena.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Har du en trång hall eller en liten tvättstuga är stationens mått ofta det avgörande argumentet, en station som inte får plats blir aldrig använd. Mät djupet med luckan uppfälld, flera stationer kräver mer utrymme öppna än stängda.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Behöver basstationen kopplas till vatten och avlopp?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Nej, standardlösningen är tankar som du fyller och tömmer själv. Stationerna i listan fyller robotens vattentank från sin egen rentvattentank och samlar smutsvattnet i en separat tank. Vissa modeller kan kompletteras med slangsatser för fast vatten och avlopp, men det är ett tillval.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Smutsvattentanken är den del som oftast glöms bort. Är den full hoppar stationen över tvättcykeln eller flaggar ett fel, och nästa körning startar med smutsiga moppar. Kan du dra en avloppsslang till ett golvavlopp försvinner momentet helt ur vardagen.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Varför är mopptorkningen i stationen viktig?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            En fuktig moppduk som ligger kvar i stationen börjar lukta snabbt eftersom bakterier trivs i väta och värme. Avancerade stationer torkar mopparna med varmluft efter tvätten, och det är den funktionen som gör att du slipper plocka bort mopparna manuellt mellan körningarna.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Märker du ändå en unken lukt är det oftast smutsvattentanken eller tvättrännan i botten av stationen som behöver skuras, inte moppen. Hur långt automatiken går skiljer sig mellan modellerna, se vår genomgång av <a href="/guide/automatisk-tomning/" class="text-accent underline">automatisk tömning av robotdammsugare</a>.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Vilket underhåll kräver själva stationen?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Utöver påsbyte och vattentankarna behöver tvättrännan där mopparna skrubbas skuras med jämna mellanrum, annars byggs det upp en hinna av gammal smuts. Torka också av laddkontakterna och sensorfönstren på stationens framsida, damm där gör att roboten dockar snett eller inte startar tömningen.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Roboten själv behöver också tillsyn, framför allt huvudborsten och sidoborsten där hår lindar sig runt axlarna. Navigeringen påverkas på samma sätt av damm, se vilka modeller som håller kursen bäst i vår topplista över <a href="/robotdammsugare/lidar/" class="text-accent underline">robotdammsugare med LiDAR</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <!-- Related links -->
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">

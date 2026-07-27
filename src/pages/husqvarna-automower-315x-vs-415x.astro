@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
@@ -50,9 +50,9 @@ export const articleMeta = {
 <BaseLayout
   title="Husqvarna Automower 315X vs 415X: vilken ska du välja?"
   description="Husqvarna Automower 315X eller 415X? Vi jämför kapacitet, GPS-funktion, navigation och pris. Klart svar på vilken modell som passar din trädgård."
-  article={{ datePublished: "2026-04-25", dateModified: "2026-05-27", image: "/images/husqvarna-automower-315x.webp" }}
+  article={{ datePublished: "2026-04-25", dateModified: "2026-07-27", image: "/images/husqvarna-automower-315x.webp" }}
 >
-  <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-6">
+  <section class="bg-primary text-white py-6">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <Breadcrumbs items={breadcrumbs} light={true} />
   <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
@@ -62,7 +62,7 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
       <h1 class="font-heading text-2xl sm:text-3xl font-bold mb-2">Husqvarna Automower 315X vs 415X 2026</h1>
       <p class="text-gray-300 text-sm max-w-2xl">Samma lutningstolerans och samma kabelbaserade navigering, men 415X har bredare klippbana och 4G. Värt prisskillnaden?</p>
@@ -70,6 +70,10 @@ export const articleMeta = {
   </section>
 
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <AnswerBox
+      question="Snabbt svar: Husqvarna Automower 315X eller 415X?"
+      answer="Automower 315X är det mer prisvärda valet för de flesta: större maxyta (1 600 m²), lägre vikt och tystare gång på 58 dB. Automower 415X motiverar merpriset med 22 cm klippbana och 4G-uppkoppling, vilket väger tyngst på tomter över 1 200 m² eller där 3G-nätet fasas ut."
+    />
     <p class="text-text-light mb-4 text-base">
       Husqvarna Automower 315X och 415X är nära besläktade modeller i Husqvarnas mellanklasssegment. Båda kräver perimeterkabel, klarar 40% lutning och hanterar liknande tomtstorlekar.
     </p>
@@ -219,9 +223,32 @@ export const articleMeta = {
       </div>
     </div>
 
+    <h3 class="font-heading text-lg font-bold mt-8 mb-3">Hur fungerar GPS-assisterad navigering med kabel?</h3>
+    <p class="text-text-light mb-4 text-base">
+      Både 315X och 415X navigerar innanför en nedgrävd perimeterkabel som sätter tomtens gränser. GPS-mottagaren används ovanpå det: roboten bygger en karta över vilka delar av gräsmattan som redan klippts och styr mot ytor den missat. Resultatet blir jämnare täckning än hos robotar som enbart kör slumpmässigt.
+    </p>
+    <p class="text-text-light mb-6 text-base">
+      Kabeln gör fortfarande grovjobbet: den definierar var roboten får vara och hur den hittar hem till laddstationen. GPS-lagret ovanpå handlar om effektivitet, inte om gränser. Det är därför båda modellerna klipper jämnt även på stora, oregelbundna ytor trots att de är kabelbaserade.
+    </p>
+
+    <h3 class="font-heading text-lg font-bold mt-8 mb-3">Hur ofta behöver knivbladen bytas?</h3>
+    <p class="text-text-light mb-4 text-base">
+      Räkna med att byta knivblad var 1 till 3 månader på både 315X och 415X, beroende på gräsmattans storlek och hur ofta roboten går. Slöa blad sliter av gräset i stället för att skära det, vilket ger fransiga strån som gulnar i topparna.
+    </p>
+    <p class="text-text-light mb-6 text-base">
+      Bytet tar några minuter med en skruvmejsel och är det enda återkommande underhållet utöver rengöring under chassit. Eftersom 415X har bredare klippbana kan bladen slitas något fortare på stora ytor, men skillnaden är liten. Blad och andra slitdelar hittar du bland <a href="/reservdelar/husqvarna/" class="text-accent underline">reservdelar till Husqvarna robotgräsklippare</a>.
+    </p>
+
+    <h3 class="font-heading text-lg font-bold mt-8 mb-3">Går 315X och 415X fortfarande att köpa som nya?</h3>
+    <p class="text-text-light mb-4 text-base">
+      315X och 415X har utgått ur Husqvarnas ordinarie sortiment och ersatts av nyare generationer. De dyker främst upp i utförsäljningar, hos enskilda återförsäljare och på andrahandsmarknaden, ofta till nedsatta priser. Ett andrahandsköp kan vara prisvärt eftersom slitdelar fortfarande går att få tag på.
+    </p>
+    <p class="text-text-light mb-6 text-base">
+      Köper du begagnat, kontrollera batteriets skick och att laddstation och kabel följer med, de står för en stor del av värdet. Vill du hellre ha en aktuell modell med full garanti är <a href="/husqvarna-automower-430x-nera/" class="text-accent underline">Husqvarna Automower 430X Nera</a> ett naturligt steg uppåt i sortimentet.
+    </p>
+
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
       <h2 class="font-heading text-lg font-bold text-text mb-3">Fler jämförelser: Husqvarna Automower-modeller</h2>

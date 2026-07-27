@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
 
 const TAG = 'johnerik510-20';
 
@@ -106,7 +106,7 @@ export const articleMeta = {
 <BaseLayout
   title="Reservdelar robotdammsugare 2026: filter, borstar, mopp"
   description="Komplett guide till reservdelar för robotdammsugare 2026. Filter, sidoborstar, huvudborstar och moppar till alla märken. Se byte-intervall och pris."
-  article={{ datePublished: "2026-03-29", dateModified: "2026-05-27", image: "/images/parts-robot-kit-5.webp" }}
+  article={{ datePublished: "2026-03-29", dateModified: "2026-07-27", image: "/images/parts-robot-kit-5.webp" }}
 >
   <section class="bg-primary text-white py-8">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -118,7 +118,7 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
       <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Robotdammsugare reservdelar</h1>
       <p class="text-gray-200 max-w-2xl">Kompletta tillbehörskit till Roborock, Dreame och Ecovacs. Filter, borstar och moppkuddar, allt på ett ställe.</p>
@@ -126,7 +126,11 @@ export const articleMeta = {
   </section>
 
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-<p class="text-sm text-text-light mb-6">Senast uppdaterad: april 2026, {products.length} produkter</p>
+    <AnswerBox
+      question="Snabbt svar: Vilka reservdelar behöver en robotdammsugare?"
+      answer="En robotdammsugare behöver nytt HEPA-filter var 2 till 3 månad, nya sidoborstar var 6 till 12 månad och ny huvudborste ungefär var 12 månad. Moppkuddar tvättas varje vecka och byts vid slitage. Ett komplett tredjepartskit till Roborock, Dreame eller Ecovacs räcker i regel 6 till 12 månader."
+    />
+<p class="text-sm text-text-light mb-6">Senast uppdaterad: juli 2026, {products.length} produkter</p>
 
     <div class="flex flex-wrap gap-2 mb-8">
       {brands.map(b => (
@@ -138,7 +142,7 @@ export const articleMeta = {
 
     <div class="space-y-4 mb-10">
       {products.map((p, i) => (
-        <article class="bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow p-5">
+        <article class="bg-white rounded-xl border border-border shadow-sm transition-shadow p-5">
           <div class="flex flex-col sm:flex-row gap-4">
             <div class="flex-shrink-0 flex flex-col items-center gap-2">
               {i === 0 && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-winner/10 text-winner">{p.badge}</span>}
@@ -162,8 +166,47 @@ export const articleMeta = {
       ))}
     </div>
 
+    <section class="mb-10">
+      <h3 class="font-heading text-lg font-bold text-text mb-2">Vad händer om jag inte byter HEPA-filtret i tid?</h3>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Ett igensatt HEPA-filter stryper luftflödet genom roboten, vilket sänker sugkraften och gör att motorn arbetar hårdare än den behöver. Fina partiklar som pollen och dammkvalster fastnar dessutom sämre, vilket märks särskilt i hem med allergiker. Byt filtret var 2 till 3 månad för jämn prestanda.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed mb-6">
+        Knacka rent filtret mellan bytena så håller det intervallet ut. Är filterprestandan extra viktig hemma hos dig, till exempel vid pollenallergi, har vi samlat modellerna med bäst filtrering i vår guide till <a href="/robotdammsugare-allergiker/" class="text-accent underline">robotdammsugare för allergiker</a>.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text mb-2">Passar samma reservdelskit till flera märken?</h3>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Nej, reservdelskit är märkes- och seriespecifika. Ett kit till Roborock S8-serien passar inte en Dreame X40 Ultra eller en Ecovacs Deebot X5 Omni, eftersom filter, borstar och moppkuddar har olika form och fästen. Kontrollera alltid att din exakta modell står med i kompatibilitetslistan.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed mb-6">
+        Även inom samma märke skiljer sig systemen mellan serierna, hos Roborock delar till exempel inte S8-serien och Qrevo-serien några delar. Hela uppdelningen per serie hittar du på vår sida om <a href="/reservdelar/roborock/" class="text-accent underline">Roborock reservdelar</a>.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text mb-2">Är det billigare att köpa kit än enstaka delar?</h3>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Ett komplett kit räcker i regel 6 till 12 månader och innehåller alla delar som slits under den tiden: filter, sidoborstar, huvudborste och moppkuddar. Har däremot bara en enda del gått sönder i förtid är styckköp både snabbare och mer träffsäkert än att beställa om hela kittet.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Delarna slits i olika takt, och det är därför kiten innehåller fler sidoborstar än huvudborstar. Sidoborstarna böjer sig och tappar formen snabbast, filtret sätter igen av fint damm, medan huvudrullen klarar ett helt år eller mer om du håller den fri från hår.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed mb-6">
+        En låda med kitdelar hemma blir därför sällan liggande, du plockar bara nästa del när appen larmar. Är det bara filter du behöver fylla på finns de samlade på vår sida om <a href="/reservdelar/filter/" class="text-accent underline">filter till robotdammsugare</a>.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text mb-2">Behöver en robot med basstation fler reservdelar?</h3>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Ja, en robot med automatisk tömningsstation har dammpåsar som extra förbrukningsdel, och de är knutna till exakt stationstyp. I gengäld slipper du tömma behållaren för hand. Modeller utan station behöver inga påsar alls, så köp inte kit med påsar till en sådan robot.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Stationens moppdel kräver också sitt. Roboten tvättar moppdukarna i stationen, men själva tvättbrickan och vattenbehållarna behöver sköljas ur med jämna mellanrum. Annars börjar det lukta, och smutsen följer med tillbaka ut på golvet vid nästa körning.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed">
+        Funderar du på om stationen är värd merkostnaden i delar och skötsel, går vi igenom vad den faktiskt tar över i vår guide till <a href="/guide/automatisk-tomning/" class="text-accent underline">automatisk tömning i robotdammsugare</a>.
+      </p>
+    </section>
+
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
   </main>
 </BaseLayout>

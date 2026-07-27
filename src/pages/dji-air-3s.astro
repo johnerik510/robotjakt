@@ -3,6 +3,7 @@ import { ctaRel } from '../lib/cta-rel';
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Drönare', href: '/dronare/' },
@@ -62,13 +63,18 @@ export const articleMeta = {
   title="DJI Air 3S recension 2026: avancerad kameradrönare"
   description="DJI Air 3S testad: avancerad kameradrönare med Hasselblad-kamera och 46 min flygtid. Se bildkvalitet, hinderundvikning och pris Sverige 2026."
   breadcrumbs={breadcrumbs}
-  lastUpdated="2026-04-06"
+  lastUpdated="2026-07-27"
   ogImage="/images/dji-air-3s.webp"
   datePublished="2026-02-07"
 >
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
     DJI Air 3S, Recension 2026
   </h1>
+
+  <AnswerBox
+    question="Snabbt svar: Är DJI Air 3S värd att köpa 2026?"
+    answer="DJI Air 3S är värd pengarna om du vill ha bäst bildkvalitet i konsumentklassen och accepterar drönarkort. Dubbla kameror, 1-tums vidvinkel och 70 mm tele, ger 4K HDR med 14 steg dynamiskt omfång. Vikten på 724 gram gör att A1/A3-kompetensbevis krävs. Vårt betyg är 9,3 av 10."
+  />
 
   <!-- Verdict box -->
   <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -191,6 +197,30 @@ export const articleMeta = {
       Air 3S väger 724 gram och klassas som C1. Det innebär att du behöver ta A1/A3-kompetensbeviset via EASAs webbutbildning, gratis, ca 1 till 2 timmar. Du måste också registrera dig som operatör hos Transportstyrelsen. Om du planerar kommersiell användning (betalt uppdrag) gäller strängare krav. </p>
     <p class="text-text-light leading-relaxed mb-6">
       Kravet är en liten tröskel men inget avskräckande, de allra flesta kan ta det på en eftermiddag. Drönarkort öppnar dessutom upp för mer avancerad flygning som är förbjuden utan certifiering. </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad gör Nightscape-hinderdetekteringen i mörker?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Nattflygning är där kamerabaserad hinderdetektering brister, eftersom sensorerna behöver ljus för att se något alls. Air 3S kompletterar med LiDAR, som mäter avstånd med laserpulser och därför fungerar oberoende av dagsljus. I praktiken uppfattar drönaren hustak, grenar och stolpar även efter solnedgången.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Det är också den funktion som tydligast motiverar ett byte från Air 3. Flyger du mest i dagsljus märks skillnaden knappt, men fotograferar du blå timmen och kväll är detta det som gör flygningen mindre nervös. Den omnidirektionella detekteringen täcker samtidigt alla riktningar, vilket spelar mest roll när du backar eller stiger i trängre miljöer.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur mycket vind klarar DJI Air 3S?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Vindbegränsningen ligger på 12 m/s, alltså Level 6. Det räcker för de flesta dagar även vid kusten, men gränsen säger inget om hur behagligt det är att flyga där. Motorerna arbetar hårdare mot vinden, och det är den enskilt tydligaste anledningen till att flygtiden krymper.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Det är därför de 45 minuterna på pappret landar på 32 till 40 minuter i verkliga flygningar. Flyg ut mot vinden och hem med den i ryggen, så har du marginal kvar när batteriet börjar bli lågt. Vill du ha något som är lättare att bära med sig och som slipper C1-kraven helt är <a href="/dji-mini-5-pro/" class="text-accent underline">DJI Mini 5 Pro</a> det alternativ vi jämför Air 3S mot.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Räcker 42 GB internlagring?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      42 GB räcker för ett kortare pass, inte för en hel dag i 4K HDR. D-Log M ger stora filer eftersom materialet är tänkt att färggraderas efteråt och därför sparas med mer information. Töm lagringen mellan flygningarna i stället för att upptäcka att den är full när du redan är i luften.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Med tre batterier i Fly More Combo har du runt två timmars flygtid per session, och då blir lagringen flaskhalsen långt före batterierna. Planera in en överföring mellan passen, särskilt om du filmar både med vidvinkel och tele i samma pass. Söker du fler kandidater i samma klass har vi rangordnat dem i vår lista över <a href="/dronare-med-kamera/" class="text-accent underline">bästa drönare med kamera</a>.
+    </p>
   </section>
 
   <!-- Who is it för -->

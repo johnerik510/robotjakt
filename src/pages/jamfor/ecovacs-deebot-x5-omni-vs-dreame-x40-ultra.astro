@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import EditorialCTA from '../../components/EditorialCTA.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -56,7 +56,7 @@ export const articleMeta = {
 <BaseLayout
   title="Ecovacs Deebot X5 Omni vs Dreame X40 Ultra 2026: test"
   description="Ecovacs Deebot X5 Omni eller Dreame X40 Ultra? Vi jämför fyrkantig design mot rund, moppning och pris. Klart svar på vilken toppmodell som vinner."
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/ecovacs-deebot-x5-omni.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/ecovacs-deebot-x5-omni.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -67,13 +67,17 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Ecovacs Deebot X5 Omni vs Dreame X40 Ultra 2026
     </h1>
+    <AnswerBox
+      question="Snabbt svar: Ecovacs X5 Omni eller Dreame X40 Ultra?"
+      answer="Ecovacs Deebot X5 Omni är det starkaste värdeköpet: fyrkantig kropp som täcker hörnen bättre vid dammsugning, 180 minuters uppgiven batteritid och lägre pris. Dreame X40 Ultra vinner när sugkraften avgör, 12 000 Pa mot 8 000 Pa, och när du vill ha moppning längs hela väggen via den utfällbara sidoarmen."
+    />
     <p class="text-text-light mb-6 max-w-2xl">
       Ecovacs X5 Omni till eller Dreame X40 Ultra till ? Båda är flaggskeppsrobotar med oscillerande mopp, självtömmande station och AI-navigering, men de löser problemet med hörn och väggar på helt olika sätt. Vi jämför dem kategori för kategori.
     </p>
@@ -274,7 +278,7 @@ export const articleMeta = {
           <h3 class="font-heading font-bold text-text mb-3">Välj Dreame X40 Ultra om du...</h3>
           <ul class="space-y-2">
             {[
-              'Har tjocka mattor med lång lugg (kräver 10 000+ På)',
+              'Har tjocka mattor med lång lugg (kräver 10 000+ Pa)',
               'Kräver moppning längs hela väggen utan luckor',
               'Prioriterar starkast möjliga sugkraft på marknaden',
               'Föredrar LiDAR-navigering för mörka miljöer',
@@ -315,9 +319,46 @@ export const articleMeta = {
       </p>
     </section>
 
+    <!-- Deep dive: vanliga funderingar -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-6">Vanliga funderingar innan du bestämmer dig</h2>
+      <div class="space-y-5">
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Vad gör LiDAR bättre än en kamera när det är mörkt?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            LiDAR mäter avstånd med laserpulser och behöver därför inget rumsljus alls, roboten kartlägger lika exakt under en säng som i ett upplyst vardagsrum. En kamerabaserad lösning som AIVI 3D är beroende av belysning för att tolka omgivningen, vilket är skälet till att X40 Ultra har ett försprång i mörka miljöer.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Städar du mest dagtid i ett ljust hem spelar skillnaden mindre roll, AIVI 3D tolkar då omgivningen väl. Kör du roboten nattetid eller har många mörka utrymmen väger LiDAR tyngre. Fler modeller med lasernavigering hittar du i vår genomgång av <a href="/robotdammsugare/lidar/" class="text-accent underline">robotdammsugare med LiDAR</a>.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Vilken form passar bäst i ett möblerat hem?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Det beror på var smutsen samlas. X5 Omnis fyrkantiga kropp kommer åt hörn och sockellister bättre vid dammsugning och tar sig även fram bra i trånga utrymmen. X40 Ultra svarar med sin utfällbara sidoarm som moppar längs väggar och kanter. I öppna ytor presterar båda robotarna likvärdigt.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Gå ett varv i hemmet och titta där dammet faktiskt lägger sig. Är det i hörnen och längs socklarna talar det för X5 Omni. Är det på köksgolvet, där intorkade stänk kräver ordentlig moppning ända ut mot väggen, talar det för X40 Ultra.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Hur ofta behöver jag göra rent själva stationen?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Räkna med en snabb översyn varje vecka och en grundligare rengöring någon gång i månaden. Båda stationerna tvättar mopparna med varmt vatten, men tvättbrickan där mopparna skrubbas samlar smuts som behöver sköljas ur. Smutsvattentanken ska tömmas och sköljas regelbundet för att undvika dålig lukt.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Underhållet är i stort sett detsamma oavsett vilken av modellerna du väljer, så låt det inte avgöra valet. Vill du väga in fler faktorer före köpet, från navigering till stationstyper, finns allt samlat i vår <a href="/kopguide-robotdammsugare/" class="text-accent underline">köpguide för robotdammsugare</a>.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <!-- Related links -->
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">

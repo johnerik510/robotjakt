@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
 
 const TAG = 'johnerik510-20';
 
@@ -82,7 +82,7 @@ export const articleMeta = {
 <BaseLayout
   title="Reservdelar Ecovacs Deebot 2026: filter och borstar"
   description="Reservdelar till Ecovacs Deebot 2026. Filter, borstar och moppar till X5 Omni, T30S Pro och fler. Se kompatibilitet, byte-intervall och pris i Sverige."
-  article={{ datePublished: "2026-03-29", dateModified: "2026-05-27", image: "/images/parts-robot-filter-3.webp" }}
+  article={{ datePublished: "2026-03-29", dateModified: "2026-07-27", image: "/images/parts-robot-filter-3.webp" }}
 >
   <section class="bg-primary text-white py-8">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -94,7 +94,7 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
       <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Ecovacs Deebot reservdelar</h1>
       <p class="text-gray-200 max-w-2xl">Tillbehörskit, filter, borstar och moppkuddar till Ecovacs Deebot X5 Omni och X5 Pro, håll roboten i toppskick.</p>
@@ -102,11 +102,16 @@ export const articleMeta = {
   </section>
 
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-<p class="text-sm text-text-light mb-6">Senast uppdaterad: april 2026, {products.length} produkter</p>
+<p class="text-sm text-text-light mb-6">Senast uppdaterad: juli 2026, {products.length} produkter</p>
+
+    <AnswerBox
+      question="Snabbt svar: Vilka reservdelar passar Ecovacs Deebot X5?"
+      answer="Ecovacs Deebot X5 Omni och X5 Pro delar samma reservdelssystem, så ett kit märkt för endera modellen passar båda. Bästsäljaren är ett 20-delars komplett kit med rullborste, sidoborstar, HEPA-filter, dammpåsar och mopptorkdukar. Byt dammpåsen i dockningsstationen var 4 till 6 vecka vid daglig städning och tvätta moppkuddarna i 40 grader."
+    />
 
     <div class="space-y-4 mb-10">
       {products.map((p, i) => (
-        <article class="bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow p-5">
+        <article class="bg-white rounded-xl border border-border shadow-sm transition-shadow p-5">
           <div class="flex flex-col sm:flex-row gap-4">
             <div class="flex-shrink-0 flex flex-col items-center gap-2">
               {i === 0 && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-winner/10 text-winner">{p.badge}</span>}
@@ -129,18 +134,33 @@ export const articleMeta = {
       ))}
     </div>
 
+    <section class="mb-10">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Guide: reservdelar till Ecovacs Deebot</h2>
+      <div class="space-y-6 text-sm text-text-light leading-relaxed">
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">När ska du byta dammpåse och filter på en Deebot?</h3>
+          <p class="mb-3">Byt dammpåsen i dockningsstationen när den är fylld till 70 till 80 procent, i praktiken var 4 till 6 vecka vid daglig städning. Appen säger till när det är dags. HEPA-filtret i själva roboten byter du när sugkraften märkbart försämras, ett igensatt filter stryper luftflödet.</p>
+          <p>Kitten på den här sidan innehåller flera filter och dammpåsar per köp, så en beställning täcker många månaders förbrukning. Rekommenderade bytesintervall per modell och märke hittar du i vår översikt över <a href="/reservdelar/filter/" class="text-accent underline">filter till robotdammsugare</a>.</p>
+        </div>
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Hur håller du moppfunktionen fräsch på Deebot X5 Omni?</h3>
+          <p class="mb-3">Tvätta moppkuddarna i maskin i 40 grader och låt dem lufttorka helt innan du sätter tillbaka dem. En fuktig kudde som stängs in i roboten kan mögla och börja lukta illa. Byt kuddarna helt när de är slitna, en sliten mopp sprider smuts i stället för att torka upp den.</p>
+          <p>Rullborsten och sidoborstarna behöver också tillsyn, hår som lindar sig runt borstarna försämrar upptaget på både mattor och golv. Det stora kittet på sidan innehåller en rengöringsborste just för det jobbet. Hur moppsystemet presterar i praktiken kan du läsa i vårt test av <a href="/ecovacs-deebot-x5-omni/" class="text-accent underline">Ecovacs Deebot X5 Omni</a>.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="mb-8">
       <h2 class="font-heading text-xl font-bold text-text mb-4">Fler reservdelar</h2>
       <div class="grid sm:grid-cols-2 gap-3">
-        <a href="/reservdelar/roborock/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Roborock reservdelar</a>
-        <a href="/reservdelar/dreame/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Dreame reservdelar</a>
-        <a href="/reservdelar/filter/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Filter till robotdammsugare</a>
-        <a href="/reservdelar/borstar/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Borstar till robotdammsugare</a>
+        <a href="/reservdelar/roborock/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent transition-all text-sm font-semibold text-text hover:text-accent">Roborock reservdelar</a>
+        <a href="/reservdelar/dreame/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent transition-all text-sm font-semibold text-text hover:text-accent">Dreame reservdelar</a>
+        <a href="/reservdelar/filter/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent transition-all text-sm font-semibold text-text hover:text-accent">Filter till robotdammsugare</a>
+        <a href="/reservdelar/borstar/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent transition-all text-sm font-semibold text-text hover:text-accent">Borstar till robotdammsugare</a>
       </div>
     </section>
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
   </main>
 </BaseLayout>

@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import FAQ from '../../components/FAQ.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Guider', href: '/guide/' },
@@ -29,12 +30,17 @@ export const articleMeta = {
   title="Installera robotdammsugare: steg-för-steg-guide 2026"
   description="Komplett installationsguide för robotdammsugare 2026. Zon-inställningar, no-go-zoner och app-konfiguration förklaras steg för steg. Redo på 20 minuter."
   breadcrumbs={breadcrumbs}
-  lastUpdated="2026-04-27"
+  lastUpdated="2026-07-27"
   datePublished="2026-04-27"
 >
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
     Installera robotdammsugare, guide steg för steg
   </h1>
+
+  <AnswerBox
+    question="Snabbt svar: Hur installerar du en robotdammsugare?"
+    answer="Placera basstationen mot en vägg med 50 centimeter fritt på sidorna och 1,5 meter framåt. Ladda batteriet fullt, koppla roboten till appen via 2,4 GHz-WiFi och kör en kartläggningsrunda på 15 till 30 minuter. Namnge sedan rummen, rita no-go-zoner och schemalägg städningen. Hela installationen tar under 30 minuter."
+  />
   <p class="text-text-light text-lg mb-6 leading-relaxed">
     Med rätt förberedelser tar installationen mindre än 30 minuter. Här är en komplett genomgång för alla större märken, Roborock, Dreame, Ecovacs, iRobot, Eufy och Xiaomi.
   </p>
@@ -81,6 +87,30 @@ export const articleMeta = {
   <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Steg 6: starta första städningen och vad du bör kontrollera efteråt</h2>
   <p class="text-text-light leading-relaxed mb-6">
     Starta en full städning. Den första körningen kommer ta längre tid än kommande, roboten lär sig planlösningen ännu mer detaljerat. Rensa borstvalsen efter första körningen, du kommer hitta saker du inte visste att du tappat.
+  </p>
+
+  <h3 class="font-heading text-xl font-bold text-text mt-6 mb-2">Kan du flytta basstationen efter första kartläggningen?</h3>
+  <p class="text-text-light leading-relaxed mb-4">
+    Helst inte. Kartan roboten byggt utgår från stationens position, och flyttar du den kan roboten få svårt att orientera sig och hitta hem. Behöver du ändå flytta stationen, gör det inom samma rum och låt roboten köra en runda så den hinner justera kartan.
+  </p>
+  <p class="text-text-light leading-relaxed mb-4">
+    Flyttar du stationen till en helt annan del av bostaden kan roboten behöva göra om hela kartläggningen från början. Det är därför värt att tänka igenom placeringen ordentligt redan i steg 1. Hur roboten bygger och använder kartan förklarar vi i detalj i guiden om <a href="/guide/lidar-navigation/" class="text-accent underline">LiDAR-navigation i robotdammsugare</a>.
+  </p>
+
+  <h3 class="font-heading text-xl font-bold text-text mt-6 mb-2">Varför hittar roboten inte tillbaka till stationen?</h3>
+  <p class="text-text-light leading-relaxed mb-4">
+    Vanligaste orsaken är att stationen står för trångt. Roboten behöver 50 centimeter fritt på båda sidor och 1,5 meter framåt för att kunna manövrera vid dockning. Kontrollera också att stationen inte flyttats sedan kartläggningen och att inga föremål hamnat framför laddkontakterna.
+  </p>
+  <p class="text-text-light leading-relaxed mb-4">
+    Hjälper inte det, torka av laddkontakterna på både robot och station med en torr trasa. Smutsiga kontakter gör att roboten dockar men inte börjar ladda, vilket appen ofta rapporterar som ett dockningsfel. Fler återkommande skötselmoment finns i vår checklista för <a href="/guide/underhall/" class="text-accent underline">underhåll av robotdammsugare</a>.
+  </p>
+
+  <h3 class="font-heading text-xl font-bold text-text mt-6 mb-2">Fungerar en robotdammsugare på flera våningar?</h3>
+  <p class="text-text-light leading-relaxed mb-4">
+    Ja, de flesta modeller med kartläggning kan spara flera kartor och känner själva igen vilken våning de ställts på. Bär upp roboten, starta en ny kartläggning och våningen sparas som en egen karta. Stationen står kvar på huvudvåningen, så på övriga plan städar roboten tills batteriet behöver laddas.
+  </p>
+  <p class="text-text-light leading-relaxed mb-4">
+    Tänk på att dammbehållaren måste tömmas för hand när roboten städar på en våning utan station. Har du stora ytor på flera plan kan det vara bekvämare att köra övervåningen direkt efter en full laddning, då räcker batteriet längst.
   </p>
 
   <FAQ items={faqItems} />

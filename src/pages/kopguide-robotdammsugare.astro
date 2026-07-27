@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import EditorialCTA from '../components/EditorialCTA.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const faqItems = [
   {
@@ -58,7 +58,7 @@ export const articleMeta = {
 <BaseLayout
   title="Köpguide robotdammsugare 2026: hitta rätt robot för dig"
   description="Komplett köpguide till robotdammsugare 2026. Vi förklarar sugkraft, navigering, moppning och stationer. Hitta rätt robot för ditt hem och budget."
-  article={{ datePublished: "2026-04-21", dateModified: "2026-05-27", image: "/images/roborock-s8-maxv-ultra.webp" }}
+  article={{ datePublished: "2026-04-21", dateModified: "2026-07-27", image: "/images/roborock-s8-maxv-ultra.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -69,13 +69,18 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-03-29</p>
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-27</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Köpguide: Hur väljer man robotdammsugare 2026?
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Hur väljer du robotdammsugare 2026?"
+      answer="Börja med navigeringen: välj alltid LiDAR, prisskillnaden mot enkla sensormodeller är liten. Har du husdjur eller tjocka mattor siktar du på 8 000 till 12 000 Pa sugkraft och gummirullar. Vill du slippa röra roboten i veckor krävs en Ultra-station med tömning, vattenpåfyllning och mopptvätt."
+    />
 
     <p class="text-lg text-text-light mb-8 leading-relaxed">
       Marknaden för robotdammsugare har exploderat, hundratals modeller i alla prisklasser. Denna guide hjälper dig att förstå vad som faktiskt spelar roll och vilken typ av robot som passar ditt hem.
@@ -116,7 +121,7 @@ export const articleMeta = {
         <div>
           <h3 class="font-heading text-xl font-semibold text-text mb-3">1. Sugkraft (Pascal)</h3>
           <p class="text-text-light leading-relaxed mb-3">
-            Sugkraften mäts i Pascal (På) och anger hur starkt roboten suger. Mer På innebär bättre upptagning av djurhår, smuts i mattor och finkornat damm.
+            Sugkraften mäts i Pascal (Pa) och anger hur starkt roboten suger. Mer Pa innebär bättre upptagning av djurhår, smuts i mattor och finkornat damm.
           </p>
           <div class="bg-bg-alt rounded-xl border border-border overflow-hidden">
             <table class="cmp-table table-fixed w-full text-sm">
@@ -232,6 +237,39 @@ export const articleMeta = {
           <p class="text-sm text-text-light">Se vår guide: <a href="/robotdammsugare/husdjur/" class="text-accent underline">Bästa robotdammsugare för husdjur 2026</a></p>
         </div>
 
+        <!-- Flera våningar -->
+        <div>
+          <h3 class="font-heading text-xl font-semibold text-text mb-3">6. Fungerar en robotdammsugare i ett hus med flera våningar?</h3>
+          <p class="text-text-light leading-relaxed mb-3">
+            Ja, men roboten kan inte gå i trappor. Du bär den mellan planen och laddar den där basen står. Premiummodeller sparar flera kartor, så roboten känner igen både övervåning och bottenplan. Enklare modeller kartlägger om från början varje gång, vilket kostar tid och batteri.
+          </p>
+          <p class="text-text-light leading-relaxed">
+            Ställ stationen på det plan som städas oftast, oftast bottenvåningen med hall och kök. Har du en öppen trappa behöver du kontrollera att robotens fallsensorer stoppar den vid nedersta steget, mörka golv i trappnischen kan lura sensorerna. Praktiska detaljer om placering går vi igenom i vår guide till <a href="/guide/installation/" class="text-accent underline">installation av robotdammsugare</a>.
+          </p>
+        </div>
+
+        <!-- Förberedelse -->
+        <div>
+          <h3 class="font-heading text-xl font-semibold text-text mb-3">7. Vad behöver du förbereda i hemmet innan första körningen?</h3>
+          <p class="text-text-light leading-relaxed mb-3">
+            Plocka upp laddsladdar, skosnören och lösa mattkanter, roboten drar in allt som ligger löst. Ställ upp dörrar till rummen du vill få städade, flytta undan husdjurens vattenskålar och se till att stationen står mot en vägg med fri yta framför den.
+          </p>
+          <p class="text-text-light leading-relaxed">
+            Första körningen är i praktiken en kartläggningsrunda, låt roboten gå färdigt utan att flytta den. När kartan är klar lägger du in no-go-zoner kring hundens matplats, kabelhärvan bakom tv-bänken och eventuella höga trösklar. Mattor kräver egna inställningar, det tar vi upp i guiden om <a href="/guide/robotdammsugare-mattor/" class="text-accent underline">robotdammsugare på mattor</a>.
+          </p>
+        </div>
+
+        <!-- Underhåll -->
+        <div>
+          <h3 class="font-heading text-xl font-semibold text-text mb-3">8. Vilket underhåll kräver en robotdammsugare?</h3>
+          <p class="text-text-light leading-relaxed mb-3">
+            Räkna med tre återkommande moment: tömma eller byta dammpåse, klippa bort hår ur rullen och torka av sensorer och laddkontakter. Filter och sidoborste byts när de blir slitna. Utan station tvättar du dessutom mopparna för hand var andra till tredje körning.
+          </p>
+          <p class="text-text-light leading-relaxed">
+            Med tömningsstation byter du påse var 30 till 60 dagar, vilket är det som gör drift i veckor utan handpåläggning möjlig. Gummirullar sparar mest tid i hem med päls eftersom håret inte trasslar sig runt borsten på samma sätt. Hela underhållsschemat finns i vår genomgång av <a href="/guide/underhall/" class="text-accent underline">underhåll av robotdammsugare</a>.
+          </p>
+        </div>
+
       </div>
     </section>
 
@@ -307,7 +345,6 @@ export const articleMeta = {
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <!-- Related links -->
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">

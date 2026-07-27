@@ -3,6 +3,7 @@ import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import FAQ from '../../components/FAQ.astro';
 import Callout from '../../components/Callout.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Guider', href: '/guide/' },
@@ -43,7 +44,7 @@ export const articleMeta = {
   title="Vinterförvaring av robotgräsklippare 2026: så gör du steg för steg"
   description="Så vinterförvarar du robotgräsklipparen rätt 2026. När du tar in den, batterivård på 60 till 80 procent, laddstation ute och vårstart förklarat steg för steg."
   breadcrumbs={breadcrumbs}
-  lastUpdated="2026-06-15"
+  lastUpdated="2026-07-27"
   datePublished="2026-06-15"
 >
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
@@ -52,6 +53,11 @@ export const articleMeta = {
   <p class="text-text-light text-lg mb-6 leading-relaxed">
     När klippsäsongen är slut är det vintervården som avgör om roboten håller i tio år eller dör efter tre. Det viktigaste handlar om två saker: att hålla elektroniken frostfri och att inte förvara litiumjonbatteriet fulladdat. Här är hela rutinen, från när du tar in roboten till hur du startar den igen på våren.
   </p>
+
+  <AnswerBox
+    question="Snabbt svar: Hur vinterförvarar du robotgräsklipparen?"
+    answer="Ta in roboten i oktober till november innan nattfrosten, rengör den, ladda batteriet till 60 till 80 procent och stäng av med huvudströmbrytaren. Förvara torrt och frostfritt i 5 till 15 grader inomhus. Laddstationen kan stå kvar ute om nätadaptern kopplas bort, och begränsningskabeln lämnas orörd i marken."
+  />
 
   <TableOfContents headings={tocHeadings} />
 
@@ -126,6 +132,22 @@ export const articleMeta = {
   </p>
   <p class="text-text-light leading-relaxed mb-6">
     Inför premiären laddar du batteriet fullt, monterar nya knivar om du köpte sådana, och rengör laddstationens kontaktbleck från oxid med en torr trasa. Kontrollera att begränsningskabeln är hel om du har en slingmodell. Är du i färd med att köpa din första robot inför säsongen är vår <a href="/guide/robotgrasklippare-koparguide/" class="text-accent underline">köpguide för robotgräsklippare</a> och <a href="/robotgrasklippare/" class="text-accent underline">topplistan över bästa robotgräsklippare 2026</a> bra startpunkter.
+  </p>
+
+  <h3 class="font-heading text-xl font-bold text-text mt-6 mb-2">Varför får man inte högtryckstvätta robotgräsklipparen?</h3>
+  <p class="text-text-light leading-relaxed mb-4">
+    Högtryckstvätt pressar in vatten förbi tätningar, in i lager och elektronik, och skadorna visar sig ofta först månader senare som rost eller korroderade kontakter. Robotens kapslingsklass är gjord för regn ovanifrån, inte för en riktad vattenstråle under tryck. Använd borste och lätt fuktad trasa i stället.
+  </p>
+  <p class="text-text-light leading-relaxed mb-6">
+    Vinterrengöringen är rätt tillfälle att göra rent ordentligt även på undersidan. Stäng av roboten med huvudströmbrytaren, lägg den upp och ned på ett mjukt underlag och borsta bort gräsrester kring knivskivan och hjulen.
+  </p>
+
+  <h3 class="font-heading text-xl font-bold text-text mt-6 mb-2">Ska knivarna bytas på hösten eller våren?</h3>
+  <p class="text-text-light leading-relaxed mb-4">
+    Det spelar mindre roll för knivarna, men byt gärna på hösten så står roboten klippklar i april när alla andra beställer reservdelar samtidigt. Kontrollera knivarna i samband med vinterrengöringen: slöa eller spruckna knivar sliter på motorn och ger ett trasigt snitt som gör gräset gulaktigt i topparna.
+  </p>
+  <p class="text-text-light leading-relaxed mb-6">
+    Nya <a href="/reservdelar/knivar/" class="text-accent underline">knivar till robotgräsklippare</a> är en billig förbrukningsdel och bytet tar bara några minuter med en skruvmejsel. Passa på att vända eller byta skruvarna samtidigt, så sitter allt fast ordentligt inför vårstarten.
   </p>
 
   <FAQ items={faqItems} />

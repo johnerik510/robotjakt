@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
 
 const TAG = 'johnerik510-20';
 
@@ -104,7 +104,7 @@ export const articleMeta = {
 <BaseLayout
   title="Roborock reservdelar 2026: alla serier på ett ställe"
   description="Reservdelar till Roborock robotdammsugare 2026. Filter, borstar, moppar och dammpåsar till både S8-serien och Qrevo-serien, med kompatibilitet per serie."
-  article={{ datePublished: "2026-03-29", dateModified: "2026-05-27", image: "/images/parts-roborock-filter.webp" }}
+  article={{ datePublished: "2026-03-29", dateModified: "2026-07-27", image: "/images/parts-roborock-filter.webp" }}
 >
   <section class="bg-primary text-white py-8">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -116,7 +116,7 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
       <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Roborock reservdelar, alla serier</h1>
       <p class="text-gray-200 max-w-2xl">Överblick över tillbehörskit till hela Roborock-sortimentet. Börja här om du vill se vilka filter, borstar, moppkuddar och dammpåsar som passar din serie, och gå sedan vidare till serien du äger.</p>
@@ -124,21 +124,25 @@ export const articleMeta = {
   </section>
 
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-<p class="text-sm text-text-light mb-6">Senast uppdaterad: april 2026, {products.length} tillbehörskit</p>
+    <AnswerBox
+      question="Snabbt svar: Vilka reservdelar passar min Roborock?"
+      answer="Roborock har två separata reservdelssystem: hela S8-serien (S8, S8+, S8 Pro Ultra, S8 Max Ultra, S8 MaxV Ultra) delar ett, och Qrevo-serien (Qrevo S, Qrevo Pro, Qrevo MaxV) ett annat. Filter och borstar kan inte blandas mellan serierna. Kontrollera alltid att kittet anger din exakta modell innan du beställer."
+    />
+<p class="text-sm text-text-light mb-6">Senast uppdaterad: juli 2026, {products.length} tillbehörskit</p>
 
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
       {['S8-serien', 'Qrevo-serien'].map(series => (
-        <a href={`#${series.toLowerCase().replace('-', '')}`} class="bg-white border border-border rounded-lg px-4 py-3 text-center hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">{series}</a>
+        <a href={`#${series.toLowerCase().replace('-', '')}`} class="bg-white border border-border rounded-lg px-4 py-3 text-center hover:border-accent transition-all text-sm font-semibold text-text hover:text-accent">{series}</a>
       ))}
-      <a href="/reservdelar/filter/" class="bg-white border border-border rounded-lg px-4 py-3 text-center hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Bara filter</a>
-      <a href="/reservdelar/borstar/" class="bg-white border border-border rounded-lg px-4 py-3 text-center hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Bara borstar</a>
+      <a href="/reservdelar/filter/" class="bg-white border border-border rounded-lg px-4 py-3 text-center hover:border-accent transition-all text-sm font-semibold text-text hover:text-accent">Bara filter</a>
+      <a href="/reservdelar/borstar/" class="bg-white border border-border rounded-lg px-4 py-3 text-center hover:border-accent transition-all text-sm font-semibold text-text hover:text-accent">Bara borstar</a>
     </div>
 
     <h2 id="s8serien" class="font-heading text-xl font-bold text-text mb-2">S8-serien i urval</h2>
     <p class="text-sm text-text-light mb-4">Här visas de vanligaste kiten. Full kompatibilitetslista för S8, S8+, S8 Pro Ultra, S8 Max Ultra och S8 MaxV Ultra, plus underhållsschema, finns på vår sida om <a href="/reservdelar/roborock-s8-serien/" class="text-accent underline">Roborock S8 reservdelar</a>.</p>
     <div class="space-y-4 mb-10">
       {products.filter(p => p.series === 'S8-serien').map((p, i) => (
-        <article class="bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow p-5">
+        <article class="bg-white rounded-xl border border-border shadow-sm transition-shadow p-5">
           <div class="flex flex-col sm:flex-row gap-4">
             <div class="flex-shrink-0 flex flex-col items-center gap-2">
               {i === 0 && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-winner/10 text-winner">{p.badge}</span>}
@@ -165,7 +169,7 @@ export const articleMeta = {
     <p class="text-sm text-text-light mb-4">Samma sak här: hela kompatibilitetslistan per Qrevo-modell ligger på vår sida om <a href="/reservdelar/roborock-qrevo-serien/" class="text-accent underline">Roborock Qrevo reservdelar</a>.</p>
     <div class="space-y-4 mb-10">
       {products.filter(p => p.series === 'Qrevo-serien').map((p, i) => (
-        <article class="bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow p-5">
+        <article class="bg-white rounded-xl border border-border shadow-sm transition-shadow p-5">
           <div class="flex flex-col sm:flex-row gap-4">
             <div class="flex-shrink-0 flex flex-col items-center gap-2">
               {i === 0 && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-bg-alt text-text-light">{p.badge || 'Populärt'}</span>}
@@ -191,15 +195,54 @@ export const articleMeta = {
     <section class="mb-8">
       <h2 class="font-heading text-xl font-bold text-text mb-4">Fler reservdelar</h2>
       <div class="grid sm:grid-cols-2 gap-3">
-        <a href="/reservdelar/dreame/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Dreame reservdelar</a>
-        <a href="/reservdelar/ecovacs/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Ecovacs reservdelar</a>
-        <a href="/reservdelar/filter/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Filter till robotdammsugare</a>
-        <a href="/reservdelar/borstar/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Borstar till robotdammsugare</a>
+        <a href="/reservdelar/dreame/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent transition-all text-sm font-semibold text-text hover:text-accent">Dreame reservdelar</a>
+        <a href="/reservdelar/ecovacs/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent transition-all text-sm font-semibold text-text hover:text-accent">Ecovacs reservdelar</a>
+        <a href="/reservdelar/filter/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent transition-all text-sm font-semibold text-text hover:text-accent">Filter till robotdammsugare</a>
+        <a href="/reservdelar/borstar/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent transition-all text-sm font-semibold text-text hover:text-accent">Borstar till robotdammsugare</a>
       </div>
+    </section>
+
+    <section class="mb-10">
+      <h3 class="font-heading text-lg font-bold text-text mb-2">Kan jag använda S8-filter i en Qrevo eller tvärtom?</h3>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Nej. S8-serien och Qrevo-serien har olika reservdelssystem med olika form och fäste på både filter och borstar. Ett S8-filter passar inte i en Qrevo, även om båda är HEPA-klassade. Köp alltid kit som uttryckligen anger din serie och din modell i kompatibilitetslistan.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed mb-6">
+        Modellnamnet står i Roborock-appen och på etiketten på robotens undersida. Är du osäker på vilken serie din robot tillhör, eller vill jämföra modellerna innan nästa köp, hjälper vår <a href="/roborock-guide/" class="text-accent underline">guide till alla Roborock-modeller</a> dig att reda ut skillnaderna.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text mb-2">Hur får jag Roborock-delarna att hålla längre?</h3>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Knacka rent HEPA-filtret varje vecka, klipp bort hår som lindats runt huvudborsten och tvätta moppdukarna regelbundet. Med den rutinen håller filtren sina 2 månader, sidoborstarna 6 till 12 månader och huvudborsten 12 till 18 månader utan att prestandan sjunker däremellan.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed mb-6">
+        Ett igensatt filter stryper luftflödet genom roboten och sänker sugkraften långt innan bytesintervallet är slut, så den veckovisa rengöringen gör större skillnad än många tror. Behöver du bara fylla på förbrukningsdelar finns samlade alternativ på vår sida om <a href="/reservdelar/filter/" class="text-accent underline">filter till robotdammsugare</a>.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text mb-2">Vad ingår i ett komplett Roborock-kit?</h3>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Ett komplett kit täcker de delar som slits: HEPA-filter, huvudborste, sidoborstar och moppdukar, och i vissa fall dammpåsar till stationen. Flera kit har en liten skruvmejsel med, eftersom sidoborstarna sitter fast med skruv. Har du en modell utan station behöver du inga påsar alls.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Dammpåsarna är det som skiljer kiten mest. Bara robotar med automatisk tömningsstation använder dem, och påsarna är knutna till exakt stationstyp. Köper du ett kit med påsar till en robot utan station betalar du för delar som blir liggande i lådan.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed mb-6">
+        Är det bara en enskild del som gett upp lönar det sig sällan att köpa ett helt kit. Enstaka huvudborstar och sidoborstar hittar du samlade på vår sida om <a href="/reservdelar/borstar/" class="text-accent underline">borstar till robotdammsugare</a>.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text mb-2">Hur vet jag vilken Roborock-modell jag har?</h3>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Modellnamnet står på etiketten på robotens undersida och i Roborock-appen under enhetsinformationen. Skriv av det exakt, inklusive tillägg som Plus, Pro, Max eller MaxV. Just de tilläggen avgör vilket reservdelssystem roboten hör till, och därmed vilka filter, borstar och dammpåsar som passar.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Namn som ser nästan identiska ut hör inte alltid ihop. En S8 och en S8 MaxV Ultra delar delar, medan en S8 och en Qrevo Pro inte gör det trots att båda är Roborock. Det är därför kompatibilitetslistan alltid ska läsas rad för rad, inte skummas.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed">
+        Med rätt modellnamn i handen tar beställningen någon minut. Vill du samtidigt bygga en rutin som gör att delarna håller sitt intervall, går vi igenom veckoschemat i vår guide till <a href="/guide/underhall/" class="text-accent underline">underhåll av robotdammsugare</a>.
+      </p>
     </section>
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
   </main>
 </BaseLayout>

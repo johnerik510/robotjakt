@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import FAQ from '../../components/FAQ.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Guider', href: '/guide/' },
@@ -48,12 +49,17 @@ export const articleMeta = {
   title="LiDAR-navigering: så fungerar den och när den slår kameran"
   description="LiDAR mäter avstånd med roterande laser och kartlägger hemmet på 5 till 10 minuter, även i mörker. Kameran ser vad hindren är. Bästa robotarna kör båda."
   breadcrumbs={breadcrumbs}
-  lastUpdated="2026-04-27"
+  lastUpdated="2026-07-27"
   datePublished="2026-04-27"
 >
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
     LiDAR-navigation i robotdammsugare, guide 2026
   </h1>
+
+  <AnswerBox
+    question="Snabbt svar: Är LiDAR-navigering bättre än kamera?"
+    answer="LiDAR är bäst för kartläggning: den roterande lasern mäter avstånd, bygger en exakt rumskarta på 5 till 10 minuter och fungerar även i totalt mörker. Kameran är däremot bättre på att identifiera vad hindren är. De bästa robotarna 2026 kombinerar därför båda teknikerna i samma modell."
+  />
   <p class="text-text-light text-lg mb-6 leading-relaxed">
     LiDAR är den enskilt viktigaste tekniska skillnaden mellan en bra och en dålig robotdammsugare 2026. Den avgör hur snabbt roboten lär sig din planlösning, hur effektivt den städar och hur ofta den kör fast. Här går vi igenom hur tekniken fungerar, varför den slår äldre lösningar och vilka modeller som har de starkaste implementationerna just nu.
   </p>
@@ -115,6 +121,22 @@ export const articleMeta = {
   <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Är LiDAR värt extrapengen jämfört med gyronavigering?</h2>
   <p class="text-text-light leading-relaxed mb-6">
     Skillnaden mellan en LiDAR-robot och en gyronavigerande är inte marginell, den är fundamental. Den senare missar ytor, fastnar oftare och du tappar all möjlighet till smart appstyrning. Vill du ha en robot som faktiskt fungerar utan att du behöver övervaka den, är LiDAR ett krav, inte en bonus. Om budgeten ligger till lägre pris bör du leta i kategorin <a href="/billigaste-robotdammsugare/" class="text-accent underline">billigaste robotdammsugare 2026</a>, där hittar du LiDAR-modeller från Eufy och Xiaomi i prisklassen.
+  </p>
+
+  <h3 class="font-heading text-xl font-bold text-text mt-6 mb-2">Behöver LiDAR-sensorn något underhåll?</h3>
+  <p class="text-text-light leading-relaxed mb-4">
+    Ja, men det är enkelt. Torka av sensorfönstret på tornet med en torr mikrofiberduk ungefär en gång i månaden. Damm på fönstret kan störa lasermätningarna och ge glapp i kartan. Sensorn i sig är förseglad och ska aldrig öppnas, smörjas eller rengöras med vätska.
+  </p>
+  <p class="text-text-light leading-relaxed mb-4">
+    Märker du att roboten plötsligt navigerar sämre, kör i konstiga mönster eller ritar felaktiga kartor är ett smutsigt sensorfönster det första du ska kontrollera. Hela skötselschemat, från borstvals till filter, går vi igenom i checklistan för <a href="/guide/underhall/" class="text-accent underline">underhåll av robotdammsugare</a>.
+  </p>
+
+  <h3 class="font-heading text-xl font-bold text-text mt-6 mb-2">Passar en LiDAR-robot under låga möbler?</h3>
+  <p class="text-text-light leading-relaxed mb-4">
+    Tornet gör en klassisk LiDAR-robot något högre än en kamerabaserad, vilket kan stoppa den vid soffor och sängar med lågt friutrymme. Mät fria höjden under möbeln innan köp. Vill du ha LiDAR utan torn finns modeller med platt eller dold sensorlösning, som <a href="/roborock-saros-10r/" class="text-accent underline">Roborock Saros 10R</a>.
+  </p>
+  <p class="text-text-light leading-relaxed mb-4">
+    Räcker inte friutrymmet någonstans i hemmet är det ingen katastrof. Roboten registrerar möbeln som ett hinder och städar runt den, och du kan ta undersidan med handdammsugaren vid veckostädningen. Men kan roboten komma in under sängen är det där den gör som mest nytta, det är ytor du själv sällan når.
   </p>
 
   <FAQ items={faqItems} />

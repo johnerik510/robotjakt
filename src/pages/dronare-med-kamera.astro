@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProductCard from '../components/ProductCard.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -127,18 +126,18 @@ export const articleMeta = {
   title="Bästa drönare med kamera 2026: jämförda och rankade"
   description="Vi jämför de bästa kameradrönarna 2026. DJI Mini 4 Pro, Air 3 och fler jämförs på bildkvalitet, flygtid och pris. Hitta rätt kameradrönare för dina behov."
   ogImage="/images/dji-air-3s.webp"
-  article={{ datePublished: "2026-03-15", dateModified: "2026-05-27", image: "/images/dji-air-3s.webp" }}
+  article={{ datePublished: "2026-03-15", dateModified: "2026-07-27", image: "/images/dji-air-3s.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight mt-2">
       Bästa Drönare med Kamera 2026
     </h1>
-    <AuthorByline datePublished="2026-03-15" dateModified="2026-05-27" />
+    <AuthorByline datePublished="2026-03-15" dateModified="2026-07-27" />
 
     <AnswerBox
       question="Snabbt svar: Vilken drönare med kamera är bäst 2026?"
-      answer="DJI Air 3S är vår bästa drönare med kamera 2026. Den har dubbla kameror med 1-tums vidvinkel och 70 mm tele samt 4K HDR med 14 steg dynamiskt omfång, och en flygtid på 45 minuter som är längst i klassen."
+      answer="DJI Air 3S är vår bästa drönare med kamera 2026. Den har dubbla kameror med 1-tums vidvinkel och 70 mm tele, filmar 4K HDR med 14 steg dynamiskt omfång och flyger 45 minuter. Behöver du hålla dig under 250 g är DJI Mini 5 Pro bäst."
     />
 
     <MoneyFeatured {...products[0]} />
@@ -179,6 +178,36 @@ export const articleMeta = {
       <p class="text-text-light leading-relaxed mb-4">
         Prioriterar du video framför stillbilder, välj DJI Air 3S för dess HDR, dynamiskt omfång och möjlighet att filma i D-Log M för färggradering i post. Vill du primärt ta luftbilder till sociala medier räcker DJI Mini 5 Pro mer än väl.
       </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad betyder dynamiskt omfång i praktiken?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Dynamiskt omfång är hur stor skillnad i ljus kameran kan behålla detaljer i samtidigt. Med 14 steg, som DJI Air 3S levererar i 4K HDR, kan du ha både ljus himmel och skuggig skog i samma bild utan att himlen blir vit eller skogen svart.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Det märks tydligast vid soluppgång och solnedgång, alltså när flygbilder brukar bli som bäst. En kamera med snävare omfång tvingar dig att välja mellan korrekt himmel och korrekt mark, och det valet syns i den färdiga filmen.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Sensorstorleken hänger ihop med det här. En 1-tums sensor i DJI Air 3S och DJI Mini 5 Pro samlar mer ljus per bildpunkt än 1/1.3-tums sensorn i DJI Mini 4 Pro, vilket ger mer marginal i både skuggor och högdagrar.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Behöver du filma i D-Log M?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Bara om du tänker färgsätta materialet efteråt. D-Log M spelar in en platt, urtvättad bild som behåller maximal information för färggradering i redigeringsprogrammet. Klipper du direkt utan efterarbete ser det platta materialet bara trist ut, då är standardprofilen ett bättre och snabbare val.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        DJI Air 3S är den modell i listan som tjänar mest på ett riktigt redigeringsflöde. Filmar du till sociala medier och vill ha klippet klart samma kväll finns det ingen anledning att göra det svårare för dig. Hur modellen presterar i detalj går vi igenom i vår <a href="/dji-air-3s/" class="text-accent underline">DJI Air 3S recension</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur mycket betyder flygtiden när du filmar?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Mer än du tror. Flygtiden avgör hur många tagningar du får ur ett batteri och hur lugnt du kan komponera. DJI Air 3S ligger på 45 minuter och är längst i klassen, vilket i praktiken betyder att du hinner leta upp rätt vinkel i stället för att skynda hem.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Räkna alltid med mindre än den angivna siffran. Vind, kyla och mycket hovrande drar batteri snabbare, och du vill landa med marginal kvar. En längre grundflygtid ger dig helt enkelt större felmarginal.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Ska du filma på en plats du inte kan komma tillbaka till väger flygtid och extra batterier tyngre än en sista procent bildkvalitet. Är låg vikt viktigare för dig hittar du fler alternativ i vår guide till <a href="/dronare-for-nyborjare/" class="text-accent underline">bästa drönare för nybörjare</a>.
+      </p>
     </section>
 
     <section class="mb-10 bg-bg-alt rounded-xl border border-border p-5">
@@ -193,7 +222,6 @@ export const articleMeta = {
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
   </div>

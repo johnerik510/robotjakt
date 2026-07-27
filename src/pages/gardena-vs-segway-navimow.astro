@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
@@ -58,7 +58,7 @@ export const articleMeta = {
 <BaseLayout
   title="Gardena vs Segway Navimow 2026: vilken robot vinner?"
   description="Gardena Sileno eller Segway Navimow? Slinga kontra GPS-navigering jämförs på pris, installation och klippprestanda. Klart svar för din trädgård 2026."
-  article={{ datePublished: "2026-04-19", dateModified: "2026-05-27", image: "/images/gardena-sileno-city-500.webp" }}
+  article={{ datePublished: "2026-04-19", dateModified: "2026-07-27", image: "/images/gardena-sileno-city-500.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -69,9 +69,9 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-30">2026-03-30</time></p>
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Gardena vs Segway Navimow 2026, perimeterkabel eller kabelläst GPS?
@@ -79,6 +79,11 @@ export const articleMeta = {
     <p class="text-text-light mb-6 max-w-2xl">
       Gardena SILENO kräver perimeterkabel, beprövad teknologi, lägre pris, exakt kantklippning. Segway Navimow H500E är slingfri, ingen kabelinstallation, flexibel navigation via app, men dyrare och sämre kantklippning. Vilket passar din trädgård och budget?
     </p>
+
+    <AnswerBox
+      question="Snabbt svar: Gardena eller Segway Navimow?"
+      answer="Välj Gardena SILENO City 500 om du vill ha lägst pris, beprövad kabelteknik och exakt kantklippning på en plan tomt upp till 500 m². Välj Segway Navimow H500E om du vill slippa kabelinstallationen helt och styra klippzoner via appen, men räkna med sämre kantklippning och högre pris."
+    />
 
     <!-- Quick verdict -->
     <div class="grid sm:grid-cols-2 gap-4 mb-10">
@@ -201,9 +206,34 @@ export const articleMeta = {
       </div>
     </div>
 
+    <h2 class="font-heading text-2xl font-bold text-text mt-10 mb-4">Bra att veta innan du väljer</h2>
+
+    <h3 class="font-heading text-xl font-bold text-text mt-6 mb-3">Hur lång tid tar installationen av Gardena jämfört med Segway Navimow?</h3>
+    <p class="text-text-light mb-3">
+      Gardena SILENO kräver att perimeterkabeln läggs runt hela tomten, vilket tar 2 till 4 timmar för en normal trädgård. Segway Navimow H500E installeras på ungefär en timme: du placerar ut ankarsensorerna, parar roboten med appen och ritar upp klippzonerna digitalt. Ingen grävning behövs.
+    </p>
+    <p class="text-text-light mb-6">
+      Tänk också på vad som händer efter installationen. Vill du göra om en rabatt eller utöka gräsmattan måste Gardenas kabel grävas upp och flyttas fysiskt. Hos Segway ändrar du gränserna på någon minut i appen. För en trädgård som fortfarande tar form är den flexibiliteten ofta värd mer än själva installationstiden.
+    </p>
+
+    <h3 class="font-heading text-xl font-bold text-text mt-6 mb-3">Vad kan gå sönder på en perimeterkabel?</h3>
+    <p class="text-text-light mb-3">
+      En perimeterkabel kan skadas av fåglar som hackar på den, av tjälskjutning under vintern och av spadar vid grävarbeten i rabatterna. Ett kabelbrott stoppar roboten helt tills brottet hittats och lagats. Slingfria robotar som Segway Navimow har inget sådant felläge eftersom gränserna är digitala.
+    </p>
+    <p class="text-text-light mb-6">
+      Att felsöka ett kabelbrott är den vanligaste supportfrågan för kabelbaserade robotar. En nedgrävd kabel är bättre skyddad än en som bara pinnats fast på ytan, men brott kan uppstå ändå. Väger du in risken för framtida kabelfel jämnas prisskillnaden mellan systemen ut något över tid.
+    </p>
+
+    <h3 class="font-heading text-xl font-bold text-text mt-6 mb-3">Vilken passar bäst för en liten stadsträdgård?</h3>
+    <p class="text-text-light mb-3">
+      Båda modellerna är dimensionerade för 500 m² och passar små till normalstora stadsträdgårdar. Gardena SILENO City 500 är tystast (57 dB) och klipper tätt intill kanterna, vilket märks på en liten yta. Segway Navimow H500E vinner om tomten är full av rabatter och gångar som gör kabeldragning krånglig.
+    </p>
+    <p class="text-text-light mb-6">
+      På små ytor blir kantklippningen en större del av helhetsintrycket, och där har kabelstyrda robotar ett försprång eftersom kabeln kan läggas exakt där klippningen ska sluta. Fler kompakta modeller jämför vi i guiden om <a href="/robotgrasklippare-liten-tradgard/" class="text-accent underline">robotgräsklippare för liten trädgård</a>, och hela SILENO-utbudet finns samlat på sidan om <a href="/gardena-robotgrasklippare/" class="text-accent underline">Gardena robotgräsklippare</a>.
+    </p>
+
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <div class="mt-8 p-5 bg-gray-50 rounded-xl border border-border">
       <h3 class="font-heading font-semibold text-text mb-3">Relaterade guider</h3>

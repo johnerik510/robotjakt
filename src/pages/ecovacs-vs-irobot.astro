@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -17,7 +17,7 @@ const faqItems = [
   },
   {
     question: 'Vilket märke är bäst för husdjur, Ecovacs eller iRobot?',
-    answer: 'Det är nära, men iRobot vinner för husdjurspäls. Roombas gummirulle-borstar trasslar inte in päls, vilket är ett märkbart problem med traditionella borstar. iRobot Roomba j9+ har också Pet Owner Official Promise, iRobots egen garanti om att roboten undviker husdjursavföring (annars byts den ut gratis), och Clean Base som tömer dammkorgen automatiskt. Ecovacs AIVI 3D hinderdetektion är bra på att undvika hinder men saknar Roborocks och iRobots specifika husdjuravföringsdetektion.',
+    answer: 'Det är nära, men iRobot vinner för husdjurspäls. Roombas gummirulle-borstar trasslar inte in päls, vilket är ett märkbart problem med traditionella borstar. iRobot Roomba j9+ har också Pet Owner Official Promise, iRobots egen garanti om att roboten undviker husdjursavföring (annars byts den ut gratis), och Clean Base som tömmer dammkorgen automatiskt. Ecovacs AIVI 3D hinderdetektion är bra på att undvika hinder men saknar Roborocks och iRobots specifika husdjuravföringsdetektion.',
   },
   {
     question: 'Vilka avgifter och priser kan man förvänta sig?',
@@ -58,7 +58,7 @@ export const articleMeta = {
 <BaseLayout
   title="Ecovacs vs iRobot Roomba 2026: vilken robot vinner?"
   description="Ecovacs Deebot eller iRobot Roomba? Vi jämför navigering, sugkraft, moppning och pris. Tydliga rekommendationer per användningsfall och budget."
-  article={{ datePublished: "2026-03-29", dateModified: "2026-05-27", image: "/images/ecovacs-deebot-x5-omni.webp" }}
+  article={{ datePublished: "2026-03-29", dateModified: "2026-07-27", image: "/images/ecovacs-deebot-x5-omni.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -69,13 +69,18 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-30">2026-03-30</time></p>
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Ecovacs vs iRobot Roomba 2026, vilken robotdammsugare vinner?
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Är Ecovacs eller iRobot Roomba bäst?"
+      answer="Ecovacs Deebot X5 Omni vinner för de flesta hem: 10 000 Pa sugkraft, marknadens bästa moppning med varmluftstorkning och lägre pris i premiumsegmentet. iRobot Roomba j9+ är rätt val för husdjurshem, gummiborstarna trasslar inte in päls och Genius-appen är mer polerad. Servicehistoriken talar också för iRobot på lång sikt."
+    />
     <p class="text-text-light mb-6 max-w-2xl">
       Ecovacs och iRobot är två av de mest etablerade namnen i kategorin. Ecovacs Deebot X5 Omni imponerar med hög sugkraft och avancerad moppstation. iRobot Roomba j9+ erbjuder trettio år av produktutveckling och det mest polerade AI-ekosystemet. Vi reder ut skillnaderna.
     </p>
@@ -250,9 +255,37 @@ export const articleMeta = {
       </p>
     </section>
 
+    <!-- Bra att veta innan du bestämmer dig -->
+    <section class="mb-10">
+      <h2 class="font-heading text-xl font-bold text-text mb-5">Bra att veta innan du bestämmer dig</h2>
+
+      <h3 class="font-heading text-lg font-bold text-text mb-2">Varför trasslar gummiborstar inte in hår och päls?</h3>
+      <p class="text-text-light text-sm leading-relaxed mb-3">
+        Gummirullar saknar de borststrån som hårstrån annars lindas runt. I stället flexar gummilamellerna mot golvet och matar hår och päls direkt in i dammbehållaren. Det är därför iRobots lösning kräver mindre rensning i hem med hundar och katter än traditionella borstvalsar av den typ Ecovacs använder.
+      </p>
+      <p class="text-text-light text-sm leading-relaxed mb-5">
+        Samma sak gäller långt människohår. Bor det någon med långt hår i hushållet kommer en traditionell borstvals att behöva klippas ren med jämna mellanrum, medan en gummirulle oftast bara behöver torkas av. Det är en av de vardagsdetaljer som avgör hur mycket tid roboten faktiskt sparar dig.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text mb-2">Hur viktig är varmluftstorkningen av moppen?</h3>
+      <p class="text-text-light text-sm leading-relaxed mb-3">
+        En moppduk som blir stående fuktig i stationen börjar snabbt lukta illa och kan sprida lukten över golven vid nästa moppning. Varmluftstorkning löser problemet genom att torka duken direkt efter tvätt. Ecovacs Deebot X5 Omni har funktionen inbyggd, medan Roomba j9+ i grunden är en dammsugare med enklare moppinlägg.
+      </p>
+      <p class="text-text-light text-sm leading-relaxed mb-5">
+        Moppar du sällan spelar det mindre roll, då hinner duken torka av sig själv mellan passen. Men i hem där roboten moppar flera gånger i veckan är torkningen skillnaden mellan en station som sköter sig själv och en du behöver öppna och vädra. Vill du ha bättre moppning inom iRobots sortiment finns Combo j9+, men den kostar mer.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text mb-2">Vad betyder 30 års servicehistorik för dig som köpare?</h3>
+      <p class="text-text-light text-sm leading-relaxed mb-3">
+        Reservdelstillgången avgör hur länge roboten faktiskt håller. Filter, borstar och batterier är slitdelar, och kan du inte köpa nya blir roboten ett engångsköp. iRobots tre decennier på marknaden ger utmärkt reservdelstillgång via svenska återförsäljare, medan Ecovacs yngre flaggskeppssortiment har god men kortare dokumenterad historik.
+      </p>
+      <p class="text-text-light text-sm leading-relaxed">
+        Planerar du att behålla roboten i många år är det alltså värt att väga in mer än specifikationerna på köpdagen. Hela Roomba-sortimentet går vi igenom i vår <a href="/irobot-guide/" class="text-accent underline">iRobot guide med alla modeller jämförda</a>, och vilka funktioner som är värda pengarna oavsett märke reder vi ut i vår <a href="/kopguide-robotdammsugare/" class="text-accent underline">köpguide för robotdammsugare</a>.
+      </p>
+    </section>
+
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <!-- Related links -->
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">

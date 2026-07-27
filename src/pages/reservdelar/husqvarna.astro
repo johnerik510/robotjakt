@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
 
 const TAG = 'johnerik510-20';
 
@@ -120,7 +120,7 @@ export const articleMeta = {
 <BaseLayout
   title="Husqvarna Automower reservdelar 2026: knivar per modell"
   description="Reservdelar till Husqvarna Automower 105, 115H, 310, 315X, 430X och 450X. Knivar, begränsningskabel och kabelklämmor med kompatibilitet modell för modell."
-  article={{ datePublished: "2026-03-29", dateModified: "2026-05-27", image: "/images/parts-husqvarna-blade.webp" }}
+  article={{ datePublished: "2026-03-29", dateModified: "2026-07-27", image: "/images/parts-husqvarna-blade.webp" }}
 >
   <section class="bg-primary text-white py-8">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -132,7 +132,7 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
       <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Husqvarna Automower reservdelar, modell för modell</h1>
       <p class="text-gray-200 max-w-2xl">Ersättningsknivar, begränsningskabel och kabelklämmor med kompatibilitet angiven per Automower-modell: 105, 115H, 310, 315, 315X, 430X och 450X.</p>
@@ -140,14 +140,19 @@ export const articleMeta = {
   </section>
 
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-<p class="text-sm text-text-light mb-3">Senast uppdaterad: april 2026, {knivar.length + kabel.length} produkter</p>
+<p class="text-sm text-text-light mb-3">Senast uppdaterad: juli 2026, {knivar.length + kabel.length} produkter</p>
+
+    <AnswerBox
+      question="Snabbt svar: Vilka reservdelar behöver Husqvarna Automower?"
+      answer="Husqvarna Automower behöver framför allt nya knivar varje säsong, helst i april eller maj innan gräset tar fart. Universalblad passar standardmodellerna 105, 115H, 310, 315, 315X, 430X och 450X med det triangulära hållarsystemet. Går begränsningskabeln av lagar du den med kabelklämmor i stället för att byta hela kabeln."
+    />
 
     <p class="text-sm text-text-light mb-6">Den här sidan är avgränsad till Husqvarna Automower. Har du en Gardena Sileno, Worx Landroid eller Segway Navimow hittar du samma delar i vår översikt över <a href="/reservdelar/robotgrasklippare/" class="text-accent underline">reservdelar robotgräsklippare</a>.</p>
 
     <h2 class="font-heading text-xl font-bold text-text mb-4">Ersättningsknivar</h2>
     <div class="space-y-4 mb-10">
       {knivar.map((p, i) => (
-        <article class="bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow p-5">
+        <article class="bg-white rounded-xl border border-border shadow-sm transition-shadow p-5">
           <div class="flex flex-col sm:flex-row gap-4">
             <div class="flex-shrink-0 flex flex-col items-center gap-2">
               {i === 0 && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-winner/10 text-winner">{p.badge}</span>}
@@ -174,7 +179,7 @@ export const articleMeta = {
     <h2 class="font-heading text-xl font-bold text-text mb-4">Begränsningskabel och klämmor</h2>
     <div class="space-y-4 mb-10">
       {kabel.map((p) => (
-        <article class="bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow p-5">
+        <article class="bg-white rounded-xl border border-border shadow-sm transition-shadow p-5">
           <div class="flex flex-col sm:flex-row gap-4">
             <div class="flex-shrink-0 flex flex-col items-center gap-2">
               {p.badge && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-bg-alt text-text-light">{p.badge}</span>}
@@ -197,18 +202,33 @@ export const articleMeta = {
       ))}
     </div>
 
+    <section class="mb-10">
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Guide: underhåll av din Automower</h2>
+      <div class="space-y-6 text-sm text-text-light leading-relaxed">
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Hur byter du knivar på en Automower?</h3>
+          <p class="mb-3">Stäng av klipparen med huvudströmbrytaren, vänd den upp och ner och skruva loss de gamla bladen. Nya skruvar följer med i bladpaketen, återanvänd aldrig gamla skruvar. Byt alltid alla blad samtidigt så att klippskivan förblir balanserad, obalans ger vibrationer och ett ojämnt klippresultat.</p>
+          <p>Byt varje säsong, i april eller maj, och kontrollera bladen var 4 till 6 vecka om tomten är hård eller stenig. Bladpack som även passar Gardena, Worx och Segway Navimow hittar du bland våra <a href="/reservdelar/knivar/" class="text-accent underline">knivar till robotgräsklippare</a>.</p>
+        </div>
+        <div>
+          <h3 class="font-heading text-lg font-bold text-text mb-2">Räcker 100 meter begränsningskabel till din tomt?</h3>
+          <p class="mb-3">En rulle på 100 meter räcker till tomter upp till ungefär 800 kvadratmeter, medan 150 meter täcker upp till cirka 1 500 kvadratmeter. Mät runt tomtens hela perimeter och lägg till kabel för interna zongränser, öar runt rabatter och laddningsstationens spiralkabel innan du väljer längd.</p>
+          <p>Går kabeln av behöver du sällan byta hela slingan. Kabelklämmor skarvar ihop brottet på fem minuter utan verktyg, hela kabeln byts bara om den är skadad på många ställen. Funderar du i stället på en ny klippare hittar du alla aktuella modeller i vår jämförelse av <a href="/husqvarna-robotgrasklippare/" class="text-accent underline">Husqvarna robotgräsklippare</a>.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="mb-8">
       <h2 class="font-heading text-xl font-bold text-text mb-4">Fler reservdelar</h2>
       <div class="grid sm:grid-cols-2 gap-3">
-        <a href="/reservdelar/knivar/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Alla knivar och kabel</a>
-        <a href="/reservdelar/robotgrasklippare/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Robotgräsklippare reservdelar</a>
-        <a href="/husqvarna-robotgrasklippare/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Husqvarna Automower, test och jämförelse</a>
-        <a href="/reservdelar/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent hover:shadow-sm transition-all text-sm font-semibold text-text hover:text-accent">Alla reservdelar</a>
+        <a href="/reservdelar/knivar/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent transition-all text-sm font-semibold text-text hover:text-accent">Alla knivar och kabel</a>
+        <a href="/reservdelar/robotgrasklippare/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent transition-all text-sm font-semibold text-text hover:text-accent">Robotgräsklippare reservdelar</a>
+        <a href="/husqvarna-robotgrasklippare/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent transition-all text-sm font-semibold text-text hover:text-accent">Husqvarna Automower, test och jämförelse</a>
+        <a href="/reservdelar/" class="bg-white border border-border rounded-lg px-4 py-3 hover:border-accent transition-all text-sm font-semibold text-text hover:text-accent">Alla reservdelar</a>
       </div>
     </section>
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
   </main>
 </BaseLayout>

@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -68,7 +68,7 @@ export const articleMeta = {
   title="Dreame D10s Pro recension 2026: enkel robot med mopp"
   description="Dreame D10s Pro testad: budget-robotdammsugare med LiDAR och mopp. Se sugkraft, rengöringsresultat och pris i Sverige. Bra köp i ingångsklassen 2026?"
   ogImage="/images/dreame-d10s-pro.webp"
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/dreame-d10s-pro.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/dreame-d10s-pro.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -79,13 +79,18 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-05</p>
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-27</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Dreame D10s Pro Recension 2026
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Är Dreame D10s Pro värd att köpa?"
+      answer="Dreame D10s Pro får 3,9 av 5 och är ingången till Dreames LiDAR-navigering. Du får rumsindelning, no-go-zoner och en vibrerande mopp för hårda golv, men tömmer den 200 ml stora dammkorgen själv. 4 000 Pa räcker för lägenhet och mindre hus utan djupa mattor."
+    />
 
     <!-- Verdict box -->
     <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -201,11 +206,37 @@ export const articleMeta = {
       <p class="text-text-light leading-relaxed mb-4">
         D10s Pro passar singelhushåll och par i lägenheter eller mindre hus som vill ha LiDAR och moppning till lägre pris och är villiga att tömma dammkorgen manuellt ett par gånger i veckan.
       </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur ofta måste du tömma dammkorgen på Dreame D10s Pro?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Räkna med ett par gånger i veckan i ett normalt hem. Dammkorgen tar 200 ml, vilket är litet jämfört med modeller som har automatisk tömning i stationen. Kör du hela bostaden varje dag, eller har husdjur som fäller, blir det i praktiken efter varje körning.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        En full dammkorg sänker sugförmågan innan du hinner se det på golvet, så gör tömningen till en rutin i stället för något du gör när resultatet blivit sämre. Ta ut rullen samtidigt och klipp bort hår som lindat sig runt den.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Vill du slippa momentet helt är det stationen du betalar för i de dyrare modellerna. Vi har ställt serien mot varandra i vår guide till <a href="/dreame-guide/" class="text-accent underline">Dreame robotdammsugare</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Klarar Dreame D10s Pro mattor?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Kortluggsmattor och mindre ryamattor går bra, och moppmodulen lyfts undan vid mattan om modulen är korrekt monterad. Djup heltäckningsmatta är gränsen: 4 000 Pa räcker inte för att dra upp sand och hår ur en tjock lugg. Har du mycket matta bör du välja en modell med högre sugkraft.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Lägg no-go-zoner i Dreame Home runt mattor du inte vill att roboten moppar på, då slipper du blöta fransar. Trösklar och lösa mattkanter är också klassiska platser där en robot kör fast, så platta till kanter som viker upp sig innan du startar en schemalagd körning.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Fungerar LiDAR-navigeringen i mörka rum?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Ja. LiDAR mäter avstånd med en roterande laser och behöver inget rumsljus, till skillnad från kamerabaserad navigering. D10s Pro kartlägger och städar därför lika systematiskt i ett mörkt rum som mitt på dagen, vilket gör att du kan schemalägga körningar på kvällen eller när ingen är hemma.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Låga saker på golvet är däremot fortfarande ett problem. Laddsladdar, skosnören och leksaker syns sämre för alla robotar oavsett navigering, så en snabb runda innan körningen sparar dig ett stopp. Har du allergi i hushållet väger filtrering och tömning tyngre än sugkraften, det går vi igenom i guiden till <a href="/robotdammsugare-allergiker/" class="text-accent underline">robotdammsugare för allergiker</a>.
+      </p>
     </section>
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
       <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med liknande modeller</h2>

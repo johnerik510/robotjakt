@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
 
 const TAG = 'johnerik510-20';
 
@@ -86,7 +86,7 @@ export const articleMeta = {
 <BaseLayout
   title="Reservdelar Roborock Qrevo serien 2026: guide och köp"
   description="Reservdelar till Roborock Qrevo-serien 2026. Filter, borstar och moppar till Qrevo Master, MaxV Ultra och Pro. Se kompatibilitet och pris i Sverige."
-  article={{ datePublished: "2026-04-05", dateModified: "2026-05-27", image: "/images/parts-roborock-qrevo-kit.webp" }}
+  article={{ datePublished: "2026-04-05", dateModified: "2026-07-27", image: "/images/parts-roborock-qrevo-kit.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
@@ -97,13 +97,17 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-05</p>
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-27</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
       Roborock Qrevo-serien Reservdelar 2026
     </h1>
+    <AnswerBox
+      question="Snabbt svar: Vilka reservdelar passar Roborock Qrevo-serien?"
+      answer="Qrevo S, Qrevo Pro och Qrevo MaxV Ultra delar samma reservdelssystem, medan Qrevo Master har ett eget med modellspecifika dammpåsar. Byt HEPA-filter var 2 månad, sidoborstar var 6 till 12 månad och gummiborsten var 12 månad. Tredjepartskit på Amazon kostar ofta 50 till 70 procent mindre än originalen."
+    />
     <p class="text-text-light text-lg mb-6 leading-relaxed">
       Roborock Qrevo-serien kräver byte av HEPA-filter var 2-3 månader och sidoborste var 2 månader. Qrevo Master med utfällbar sidoarm har egna reservdelar för armens borste (byte var 3 månader). Rätt delar till Qrevo S, Qrevo Pro, Qrevo MaxV Ultra och Qrevo Master.
     </p>
@@ -153,9 +157,48 @@ export const articleMeta = {
       </div>
     </section>
 
+    <section class="mb-10">
+      <h3 class="font-heading text-lg font-bold text-text mb-2">Hur vet jag vilket kit som passar min Qrevo-modell?</h3>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Kontrollera alltid kompatibilitetslistan i produktbeskrivningen mot din exakta modell. Qrevo S, Qrevo Pro och Qrevo MaxV Ultra delar reservdelssystem och kan använda samma kit, medan Qrevo Master kräver egna delar. Dammpåsarna är modellspecifika, så blanda aldrig påsar mellan Qrevo Master och övriga serien.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed mb-6">
+        Modellnamnet hittar du i Roborock-appen eller på etiketten på robotens undersida. Är du osäker på vilken Qrevo-variant du faktiskt äger, eller funderar på att byta upp dig, ger vår <a href="/roborock-guide/" class="text-accent underline">guide till alla Roborock-modeller</a> en överblick över hur serierna skiljer sig åt.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text mb-2">Varför tappar min Qrevo sugkraft mellan filterbytena?</h3>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Ett igensatt HEPA-filter är den vanligaste orsaken till försämrad sugkraft. När filtret täpps igen av fint damm stryps luftflödet genom roboten och motorn får arbeta hårdare med sämre resultat. Knacka rent filtret varje vecka och byt var 2 månad, så håller du sugkraften jämn.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed mb-6">
+        Hår som lindats runt gummiborsten och sidoborstarna försämrar upptaget på samma sätt, rengör dem därför regelbundet mellan bytena. Behöver du bara fylla på filter i stället för ett helt kit finns samlade alternativ på vår sida om <a href="/reservdelar/filter/" class="text-accent underline">filter till robotdammsugare</a>.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text mb-2">Hur ofta behöver Qrevo-moppkuddarna bytas?</h3>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Stationens mopptvätt med varmt vatten sköter den löpande rengöringen, så kuddarna behöver sällan bytas i förtid. Komplettera med maskintvätt i 40 grader var 2 till 4 vecka, och byt först när mikrofibern blivit stel, tovig eller tunnsliten. Då tappar den vattenupptagningen och lämnar strimmor.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Tvättar du kuddarna sällan sätter sig fett och fint damm i fibrerna, och då sprider moppen smutsen vidare i stället för att lyfta den. En kudde som fortfarande känns mjuk och luddig har kvar sin funktion, oavsett hur många körningar den har bakom sig.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed mb-6">
+        Kör du roboten med mopp varje dag går kuddarna fortare. Räkna med tätare byten i hem med husdjur eller mycket utomhussmuts. Ska du välja mopputrustning från grunden hittar du modellerna vi rekommenderar i vår guide till <a href="/robotdammsugare/med-mopp/" class="text-accent underline">robotdammsugare med moppfunktion</a>.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text mb-2">Behöver Qrevo Master egna delar till sidoarmen?</h3>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Ja. Qrevo Master har en utfällbar sidoarm som når in i hörn och längs kanter, och armens borste är en egen förbrukningsdel med byte ungefär var 3 månad. Den ingår inte i standardkiten för Qrevo S, Qrevo Pro och Qrevo MaxV Ultra.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed mb-3">
+        Samma sak gäller dammpåsarna. Qrevo Masters påsar är modellspecifika och passar inte de övriga Qrevo-varianterna. Beställer du ett samlingskit till serien får du alltså inte automatiskt allt din Master behöver, läs kompatibilitetslistan post för post innan du lägger i varukorgen.
+      </p>
+      <p class="text-sm text-text-light leading-relaxed">
+        Är du osäker på om sidoarmen och det egna delsystemet motiverar Master-modellen framför en enklare Qrevo, går vi igenom vad den faktiskt gör bättre i vår <a href="/roborock-qrevo-master/" class="text-accent underline">Roborock Qrevo Master recension</a>.
+      </p>
+    </section>
+
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
       <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade sidor</h2>

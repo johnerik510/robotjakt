@@ -1,0 +1,70 @@
+---
+/**
+ * Startsidans E-E-A-T-block: vem som står bakom rankningarna.
+ * Innehåller ENDAST verifierade uppgifter från /om-redaktionen/ och
+ * /sa-testar-vi/. En påhittad merit skadar mer än en utelämnad.
+ *
+ * Formspråk: vit kortyta med hårlinjekant på papper, aldrig skugga,
+ * aldrig gradient. Radie enligt sitens radiespråk.
+ */
+const metod = [
+  { label: 'Underlag', value: 'Specifikationer, oberoende tester, priser' },
+  { label: 'Redovisning', value: 'Styrkor och svagheter för varje produkt' },
+  { label: 'Oberoende', value: 'Affiliatelänkar styr aldrig rankingen' },
+];
+---
+
+<section class="bg-bg-alt border-y border-border py-10 sm:py-14" aria-labelledby="redaktor-heading">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white border border-border rounded-lg p-6 sm:p-8">
+      <div class="flex flex-col sm:flex-row sm:items-start gap-5 sm:gap-7">
+        <img
+          src="/images/axel-jonemyr.webp"
+          alt="Axel Jönemyr, grundare och redaktör på Robotjakt"
+          width="112"
+          height="112"
+          loading="lazy"
+          class="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover ring-1 ring-border shrink-0"
+        />
+        <div class="min-w-0">
+          <h2 id="redaktor-heading" class="font-heading text-2xl sm:text-3xl font-bold text-text mb-1 leading-tight">
+            Vem står bakom Robotjakt?
+          </h2>
+          <p class="text-sm font-semibold text-accent-dark mb-4">Axel Jönemyr, grundare och redaktör</p>
+          <div class="space-y-3 text-text-light leading-relaxed max-w-2xl text-[15px]">
+            <p>
+              Jag driver Robotjakt för att du ska kunna jämföra robotdammsugare och robotgräsklippare på riktiga grunder: navigering, sugkraft, räckvidd och pris, utan att läsa dig igenom tillverkarnas marknadsföring.
+            </p>
+            <p>
+              Jag köper inte in och labbtestar inte robotarna själv. I stället väger jag samman tekniska specifikationer, oberoende tester och aktuella priser hos svenska butiker, och redovisar både styrkor och svagheter för varje modell.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <dl class="grid sm:grid-cols-3 gap-x-6 mt-6 border-t border-border">
+        {metod.map((m) => (
+          <div class="py-3 border-b border-border last:border-b-0 sm:border-b-0">
+            <dt class="text-xs font-semibold uppercase tracking-wider text-text-light">{m.label}</dt>
+            <dd class="text-sm font-semibold text-text mt-0.5">{m.value}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <div class="flex flex-wrap gap-3 mt-5">
+        <a
+          href="/om-redaktionen/"
+          class="inline-flex items-center px-4 py-2.5 rounded-md border border-border-dark text-sm font-semibold text-text hover:border-accent hover:text-accent-dark transition-colors"
+        >
+          Om Axel Jönemyr och redaktionen
+        </a>
+        <a
+          href="/sa-testar-vi/"
+          class="inline-flex items-center px-4 py-2.5 rounded-md border border-border-dark text-sm font-semibold text-text hover:border-accent hover:text-accent-dark transition-colors"
+        >
+          Så jämför vi robotarna
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

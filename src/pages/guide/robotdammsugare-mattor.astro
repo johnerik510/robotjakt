@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import FAQ from '../../components/FAQ.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Guider', href: '/guide/' },
@@ -29,12 +30,17 @@ export const articleMeta = {
   title="Robotdammsugare och mattor: guide till rätt val 2026"
   description="Komplett guide till robotdammsugare och mattor 2026. Sugkraft, mopplyft och matthöjd förklaras. Hitta rätt robot för dina mattor och hårda golv."
   breadcrumbs={breadcrumbs}
-  lastUpdated="2026-04-27"
+  lastUpdated="2026-07-27"
   datePublished="2026-04-27"
 >
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
     Robotdammsugare och mattor, så funkar det 2026
   </h1>
+
+  <AnswerBox
+    question="Snabbt svar: Vilken robotdammsugare är bäst för mattor?"
+    answer="Dreame X40 Ultra är bäst för matthem 2026 med 12 000 Pa sugkraft, automatiskt mopplyft och förmåga att klara 22 mm höga kanter. Mattor upp till 20 mm hanterar de flesta premiummodeller. Har du långhåriga mattor eller mattfransar bör du i stället rita en no-go-zon i appen."
+  />
   <p class="text-text-light text-lg mb-6 leading-relaxed">
     Mattor ställer tre specifika krav på en robotdammsugare: tillräcklig sugkraft för att lyfta dammkorn ur fibrerna, mattdetektion för att höja effekten automatiskt och tillräcklig markfrigång för att klara mattans kant. Här är vad som spelar roll och vilka modeller som klarar hela paketet.
   </p>
@@ -82,7 +88,7 @@ export const articleMeta = {
 
   <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Boost-läge och sugkraft på mattor: hur mycket spelar Pa-talet roll?</h2>
   <p class="text-text-light leading-relaxed mb-4">
-    På, pascal, är måttet på statiskt undertryck och anger i teorin hur hårt roboten suger. En modell med 15 000 Pa suger hårdare än en med 6 000 Pa under mätbetingelserna, men skillnaden i praktisk städprestanda är inte linjär. En av de viktigaste variablerna är borstvalsens design och hur effektivt dammet leds till sugmunstycket. En robot med 8 000 Pa och väl utformad borsthållare kan prestera bättre på standardmattor än en med 15 000 Pa och sämre borstkonstruktion.
+    Pa, pascal, är måttet på statiskt undertryck och anger i teorin hur hårt roboten suger. En modell med 15 000 Pa suger hårdare än en med 6 000 Pa under mätbetingelserna, men skillnaden i praktisk städprestanda är inte linjär. En av de viktigaste variablerna är borstvalsens design och hur effektivt dammet leds till sugmunstycket. En robot med 8 000 Pa och väl utformad borsthållare kan prestera bättre på standardmattor än en med 15 000 Pa och sämre borstkonstruktion.
   </p>
   <p class="text-text-light leading-relaxed mb-4">
     Boost-läget, som höjer sugkraften till max vid mattdetektion, är effektivt men kostar på batteritiden. En robot som kör i boost hela städrundan kan tappa 20 till 35 procent av sin normala räckvidd. I praktiken innebär det att en robot som normalt klarar en 80 kvadratmeter stor bostad i ett svep kan behöva gå tillbaka och ladda om bostaden är matttung och boost aktiveras i varje rum. Moderna modeller hanterar detta bättre med zonbaserat boost, det vill säga boost bara på mattorna och normal effekt på hårda golv.
@@ -102,12 +108,28 @@ export const articleMeta = {
     Om roboten fastnar under sängen eller soffan är virtuella zoner i appen det enklaste alternativet. Rita en no-go-zon som täcker området under möbeln och roboten undviker det framöver. Det är en snabbare lösning än att köpa en ny robot, och du kan alltid utföra den manuella dammsugningen under möbeln med en handdammsugare vid veckostädningen.
   </p>
 
+  <h3 class="font-heading text-xl font-bold text-text mt-6 mb-2">Fungerar robotdammsugare på mörka mattor?</h3>
+  <p class="text-text-light leading-relaxed mb-4">
+    Oftast, men äldre modeller kan vägra köra upp på svarta eller mycket mörka mattor. Fallsensorerna som hindrar roboten från att köra utför trappor arbetar med infrarött ljus, och en mörk matta som absorberar ljuset kan tolkas som ett stup. Nyare modeller har bättre kalibrerade sensorer.
+  </p>
+  <p class="text-text-light leading-relaxed mb-4">
+    Har du redan en robot som stannar vid en mörk matta finns två utvägar: acceptera att den hoppar över mattan och ta den ytan för hand, eller flytta mattan till ett rum roboten inte städar. Köper du nytt är problemet i praktiken löst i premiumsegmentet, men det är värt att testa roboten på just dina mattor under ångerfristen.
+  </p>
+
+  <h3 class="font-heading text-xl font-bold text-text mt-6 mb-2">Hjälper en robotdammsugare mot dammkvalster i mattorna?</h3>
+  <p class="text-text-light leading-relaxed mb-4">
+    Ja, daglig dammsugning minskar mängden damm, hudflagor och kvalsterrester som samlas i mattfibrerna. En robot med HEPA-filter fångar dessutom de fina partiklarna i stället för att blåsa ut dem i rumsluften igen. För allergiker är regelbundenheten robotens största styrka, den städar oftare än du orkar.
+  </p>
+  <p class="text-text-light leading-relaxed mb-4">
+    Boost-läget gör extra nytta här, eftersom den höjda sugkraften drar upp partiklar djupare ur fibrerna än normalläget. Vilka modeller som har tätast filtrering och bäst dammhantering har vi samlat i topplistan över <a href="/robotdammsugare-allergiker/" class="text-accent underline">robotdammsugare för allergiker</a>. Har du dessutom husdjur som fäller på mattorna finns en egen genomgång av <a href="/robotdammsugare/husdjur/" class="text-accent underline">robotdammsugare för husdjur</a>.
+  </p>
+
   <FAQ items={faqItems} />
 
   <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
     <h2 class="font-heading text-lg font-bold text-text mb-3">Läs vidare</h2>
     <ul class="space-y-2">
-      <li><a href="/guide/sugkraft/" class="text-accent underline text-sm">Sugkraft i På förklarat</a></li>
+      <li><a href="/guide/sugkraft/" class="text-accent underline text-sm">Sugkraft i Pa förklarat</a></li>
       <li><a href="/robotdammsugare/husdjur/" class="text-accent underline text-sm">robotdammsugare för husdjur</a></li>
       <li><a href="/robotdammsugare/med-mopp/" class="text-accent underline text-sm">robotdammsugare med mopp</a></li>
     </ul>

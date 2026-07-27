@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../../components/AffiliateDisclaimer.astro';
 import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import EditorialCTA from '../../components/EditorialCTA.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -60,9 +60,9 @@ export const articleMeta = {
 <BaseLayout
   title="Roborock Qrevo Master vs S8 MaxV Ultra 2026: vilken?"
   description="Roborock Qrevo Master eller S8 MaxV Ultra? Vi jämför sugkraft, navigering, moppning och pris. Klart svar på vilken Roborock som är värd pengarna."
-  article={{ datePublished: "2026-03-30", dateModified: "2026-05-27", image: "/images/heroes/roborock-qrevo-master-vs-roborock-s8-maxv-ultra.webp" }}
+  article={{ datePublished: "2026-03-30", dateModified: "2026-07-27", image: "/images/heroes/roborock-qrevo-master-vs-roborock-s8-maxv-ultra.webp" }}
 >
-  <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-6">
+  <section class="bg-primary text-white py-6">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <Breadcrumbs items={breadcrumbs} />
   <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
@@ -72,9 +72,13 @@ export const articleMeta = {
     <span class="text-slate-400">·</span>
     <span>Grundare och redaktör, Robotjakt</span>
     <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
+    <span>Uppdaterad 27 juli 2026</span>
   </div>
       <h1 class="font-heading text-2xl sm:text-3xl font-bold mb-2">Roborock Qrevo Master vs S8 MaxV Ultra 2026</h1>
+      <AnswerBox
+        question="Snabbt svar: Roborock Qrevo Master eller S8 MaxV Ultra?"
+        answer="Roborock Qrevo Master är det bättre köpet för de flesta hem: samma 10 000 Pa sugkraft, FlexiArm för kanterna och lägre pris. Roborock S8 MaxV Ultra är värd merkostnaden i hem med hundar eller katter, där ReactiveAI 3.0 med avföringsdetektering ger den tryggaste hinderundvikningen."
+      />
       <p class="text-gray-300 text-sm max-w-2xl">Samma sugkraft, tre tusen kronors skillnad, vad köper du egentligen med de extra pengarna?</p>
 
     <EditorialCTA products={['Roborock S8 MaxV Ultra']} />
@@ -197,14 +201,40 @@ export const articleMeta = {
       <li><strong class="text-text">Välj Roborock S8 MaxV Ultra</strong> om du har hundar eller katter, vill ha AI-djuravföringsdetektion och den tryggaste hinderundvikning på marknaden.</li>
     </ul>
 
+    <h2 class="font-heading text-xl font-bold mt-8 mb-3">Vanliga följdfrågor innan du väljer</h2>
+
+    <h3 class="font-heading text-lg font-semibold text-text mt-6 mb-2">Vad ser en RGB-kamera som strukturljus missar?</h3>
+    <p class="text-text-light mb-4">
+      Strukturljus mäter form och avstånd, det ser att något ligger på golvet men inte vad det är. En RGB-kamera uppfattar färg och mönster, vilket låter S8 MaxV Ultras ReactiveAI 3.0 identifiera 128 typer av hinder och avgöra om föremålet är en sladd, en sko eller djuravföring.
+    </p>
+    <p class="text-text-light mb-6">
+      I praktiken betyder det att S8 MaxV Ultra kan väja mjukt för känsliga föremål medan Qrevo Master behandlar allt okänt likadant. För hem där golvet oftast är plockat spelar det liten roll, för barnfamiljer och pälshem är skillnaden verklig. Fler modeller byggda för hem med päls hittar du i guiden till <a href="/robotdammsugare/husdjur/" class="text-accent underline">robotdammsugare för husdjur</a>.
+    </p>
+
+    <h3 class="font-heading text-lg font-semibold text-text mt-6 mb-2">Behöver jag mer än 10 000 Pa?</h3>
+    <p class="text-text-light mb-4">
+      Nej, sällan. Båda modellernas 10 000 Pa räcker för alla vanliga hemmiljöer, inklusive långhåriga mattor. Mer sugkraft ger avtagande nytta: när roboten redan drar upp damm, sand och päls ur luggen finns inte mycket kvar att hämta. Navigering och borstar avgör oftare slutresultatet än råstyrkan.
+    </p>
+    <p class="text-text-light mb-6">
+      Det är därför prisskillnaden mellan de här två inte handlar om städresultatet på golvet utan om intelligensen i navigeringen. Lägg pengarna där de gör nytta i just ditt hem i stället för att jaga den högsta siffran i specifikationen.
+    </p>
+
+    <h3 class="font-heading text-lg font-semibold text-text mt-6 mb-2">Fungerar robotarna i ett hus med flera våningar?</h3>
+    <p class="text-text-light mb-4">
+      Ja, men ingen robotdammsugare klarar trappor, du bär den själv mellan våningarna. Stationen står kvar på en våning, så tömning och mopptvätt sker bara där. Vanligast är att låta roboten sköta våningen där köket ligger och dammsuga övriga plan mer sällan eller manuellt.
+    </p>
+    <p class="text-text-light mb-8">
+      Kantsensorerna hindrar robotarna från att köra ner för trappkanten, så du kan tryggt använda dem på ett övre plan. Vill du förstå vad stationen gör och kräver innan köpet har vi en samlad genomgång av <a href="/robotdammsugare/med-bassation/" class="text-accent underline">robotdammsugare med basstation</a>.
+    </p>
+
     <div class="grid sm:grid-cols-2 gap-6 mb-8">
-      <a href="/roborock-qrevo-master/" class="block bg-white rounded-xl border border-border p-5 hover:border-accent hover:shadow-md transition-all group">
+      <a href="/roborock-qrevo-master/" class="block bg-white rounded-xl border border-border p-5 hover:border-accent transition-all group">
         <span class="text-xs font-semibold text-green-700 bg-green-50 px-2 py-0.5 rounded mb-2 inline-block">Bäst för de flesta</span>
         <p class="font-heading text-lg font-bold text-text group-hover:text-accent mb-1">Roborock Qrevo Master</p>
         <p class="text-sm text-text-light">10 000 Pa, FlexiArm kantmopp, gummirulle, AutoEmpty. Bäst värde utan husdjur.</p>
         <span class="inline-block mt-3 text-sm font-semibold text-accent">Läs recension →</span>
       </a>
-      <a href="/roborock-s8-maxv-ultra/" class="block bg-white rounded-xl border border-border p-5 hover:border-accent hover:shadow-md transition-all group">
+      <a href="/roborock-s8-maxv-ultra/" class="block bg-white rounded-xl border border-border p-5 hover:border-accent transition-all group">
         <span class="text-xs font-semibold text-accent bg-accent/10 px-2 py-0.5 rounded mb-2 inline-block">Bäst för husdjursägare</span>
         <p class="font-heading text-lg font-bold text-text group-hover:text-accent mb-1">Roborock S8 MaxV Ultra</p>
         <p class="text-sm text-text-light">10 000 Pa, ReactiveAI 3.0, AI djuravföringsdetektion, dubbla gummirullar.</p>
@@ -224,7 +254,6 @@ export const articleMeta = {
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
   </div>
 
   <StickyCTA url="https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=148694&url=https://www.elon.se/roborock-qrevo-curv-white-148694" text="Se pris, Roborock Qrevo Master" />

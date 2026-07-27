@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProductCard from '../components/ProductCard.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -165,18 +164,18 @@ export const articleMeta = {
 <BaseLayout
   title="Bästa robotdammsugare under 5000 kr 2026: jämförda toppar"
   description="Bästa robotdammsugare under 5 000 kr 2026. Vi jämför och rankar budget-robotar med LiDAR, mopp och app-styrning. Hitta rätt robot för din budget."
-  article={{ datePublished: "2026-05-09", dateModified: "2026-05-27", image: "/images/dreame-z10-pro.webp" }}
+  article={{ datePublished: "2026-05-09", dateModified: "2026-07-27", image: "/images/dreame-z10-pro.webp" }}
 >
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
       Bästa Robotdammsugare till lägre pris 2026
     </h1>
-    <AuthorByline datePublished="2026-05-09" dateModified="2026-05-27" />
+    <AuthorByline datePublished="2026-05-09" dateModified="2026-07-27" />
 
     <AnswerBox
       question="Snabbt svar: Vilken är bästa robotdammsugaren under 5000 kr 2026?"
-      answer="Roborock Q10 VF+ är vår bästa robotdammsugare under 5 000 kr 2026. Den kombinerar LiDAR-navigering, stark sugkraft och en självtömmande basstation med 70 dagars påsekapacitet, och lyfter moppen automatiskt vid mattor."
+      answer="Roborock Q10 VF+ är den bästa robotdammsugaren under 5 000 kr 2026. Den kombinerar LiDAR-navigering, stark sugkraft och en självtömmande basstation med 70 dagars påsekapacitet, och moppen lyfts automatiskt vid mattor. Dreame D20 Ultra är starkare på moppning, medan Roborock Q8 Max+ är det billigaste valet med behållen kvalitet."
     />
 
     <MoneyFeatured {...products[0]} />
@@ -215,13 +214,44 @@ export const articleMeta = {
       <p class="text-text-light leading-relaxed mb-6">
         Med dock är värt 500 till extra. En självtömmande basstation rymmer 60 till 70 städningar, du behöver bara tömma dockens påse var 2 till 3 månader. Utan dock måste du tömma robotens lilla behållare var 2 till 5 körningar, vilket sliter på den automatiska upplevelsen. </p>
 
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur mycket plats kräver en självtömmande basstation?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Räkna med en fri golvyta på 60 gånger 60 centimeter mot en vägg, plus lite marginal framför stationen så att roboten kan backa in rakt. Stationen behöver ett eluttag i närheten och ska stå still, eftersom roboten hittar tillbaka via den plats den har kartlagt.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        I en liten hall eller ett smalt kök blir stationen snabbt i vägen. Ställ den hellre i ett hörn av vardagsrummet, på hårt golv och inte på en matta. Står den på en matta får laddstiften sämre kontakt och tömningen river samtidigt upp lugg. Roborock Q8 Max i listan saknar dock och tar bara den plats en vanlig laddstation kräver, vilket är värt att väga in om du bor trångt. Fler kompakta alternativ finns i vår lista över <a href="/robotdammsugare/lagenhet/" class="text-accent underline">robotdammsugare för lägenhet</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Klarar en robot i den här prisklassen trösklar och flera våningar?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Trösklar under 2 centimeter tar samtliga modeller i listan. Flera våningar är den verkliga begränsningen: stationen står kvar på ett plan, så du bär roboten upp och ner, och den behöver kartlägga om sig när den hamnar i en miljö den inte känner igen.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Höga trösklar mellan hall och badrum är den vanligaste orsaken till att en robot ger upp mitt i ett pass. Mät tröskeln innan du beställer och lägg en liten ramp om skillnaden är för stor. Trappor är däremot inget säkerhetsproblem, sensorerna under roboten känner kanten och stoppar den, men den kan inte ta sig ner själv.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur mycket ljud gör en robotdammsugare i budgetklassen?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Roborock Q5 Pro+ är tystast i listan med 52 decibel och Dreame D10 Plus Gen 2 ligger på 54 decibel, båda lägre än ett vanligt samtal. Det du hör mest är ändå inte städningen utan tömningen: stationen drar upp dammet i påsen med hög effekt under en kort stund.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Bor du i lägenhet är det alltså tömningen som kan störa grannarna, inte själva körningen. Schemalägg passet dagtid när du är på jobbet, då hörs varken robot eller station i lägenheten under. Ska roboten köra medan du är hemma finns ett tystare läge i de flesta appar. Sugkraften sjunker då, men den räcker gott för underhållsstädning på hårdgolv.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vilka delar behöver du byta, och hur ofta?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Borstar och filter är löpande slitage och byts ungefär årligen. Basstationens påse byts var andra till var tredje månad, och batteriet efter två till tre år beroende på hur ofta roboten kör. Roborock har bäst reservdelstillgång på den svenska marknaden, Dreame är näst bäst.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Reservdelstillgången är värd att väga in innan du bestämmer märke. En robot du inte får filter till blir en engångsprodukt så fort det första filtret satt igen, hur bra den än städade det första året. Kontrollera också sidoborsten med jämna mellanrum, den är billigast av delarna och den som oftast blir skev efter en säsong mot golvlister. Vad som ska rengöras när står i vår guide om <a href="/guide/underhall/" class="text-accent underline">underhåll av robotdammsugare</a>.
+      </p>
+
       <p class="text-text-light leading-relaxed mb-4">
         Vill du istället se hela 2026-listan med flaggskepp och premium? Se vår <a href="/robotdammsugare/" class="text-primary underline">huvudguide bästa robotdammsugare 2026</a>. </p>
     </section>
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
       <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>

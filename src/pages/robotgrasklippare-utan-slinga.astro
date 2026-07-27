@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProductCard from '../components/ProductCard.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -120,7 +119,7 @@ export const articleMeta = {
 <BaseLayout
   title="Bästa robotgräsklippare utan slinga 2026: GPS-topplista"
   description="Bästa robotgräsklippare utan slinga 2026. GPS-styrda modeller från Mammotion och Segway Navimow jämförda. Se topplista, pris och vilken som passar din trädgård."
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/mammotion-luba-awo-3000.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/mammotion-luba-awo-3000.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
@@ -128,11 +127,11 @@ export const articleMeta = {
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
       Robotgräsklippare utan slinga 2026, GPS och RTK-modeller
     </h1>
-    <AuthorByline datePublished="2026-05-16" dateModified="2026-05-27" />
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
 
     <AnswerBox
       question="Snabbt svar: Vilken är den bästa robotgräsklipparen utan slinga 2026?"
-      answer="Dreame A3 AWD 1000 är vår bästa robotgräsklippare utan slinga 2026. Den navigerar med RTK GPS och LiDAR helt utan perimeterkabel, klarar branta sluttningar med AWD-drift och täcker tomter upp till 1 000 m²."
+      answer="Dreame A3 AWD 1000 är vår bästa robotgräsklippare utan slinga 2026. Den navigerar med RTK GPS och LiDAR helt utan perimeterkabel, klarar branta sluttningar med AWD-drift och täcker tomter upp till 1 000 m². Gränserna ritar du i appen i stället för att gräva ner kabel."
     />
 
     <MoneyFeatured {...products[0]} />
@@ -226,11 +225,34 @@ export const articleMeta = {
           </ul>
         </div>
       </div>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad gör LiDAR och kamera som RTK GPS inte klarar?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        RTK GPS svarar på var roboten är, inte vad som står framför den. LiDAR mäter avstånd med laser och uppfattar hinder även i mörker, och en kamera som VisionFence tolkar vad den ser. Därför kombinerar modellerna på listan positionering med minst en hindersensor.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Skillnaden märks på allt som inte finns på kartan. Trädgårdsmöbler, en vattenslang eller leksaker flyttar sig från dag till dag och kan aldrig ritas in som permanenta hinder. Positioneringen håller roboten inom gränsen, men det är hindersensorn som får den att stanna eller styra runt. På en tomt där mycket rör sig är sensorn därför viktigare än ytterligare någon centimeters positionsnoggrannhet.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur påverkar täta träd en robotgräsklippare utan slinga?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Satellitsignalen är den svaga punkten. Under täta trädkronor, tätt intill höga husväggar eller i insänkta partier kan RTK-signalen försvagas och positionen bli osäker. Sensorer som inte är beroende av satelliter, som LiDAR och kamera, hjälper roboten hålla kursen där signalen tappar.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Tänk på att lövverket ändras under säsongen. En bedömning gjord i april, när träden fortfarande är kala, säger lite om hur det ser ut i juli när kronorna är fulla. Är stora delar av gräsmattan under tak av lövverk hela sommaren är perimeterkabel fortfarande det mest förutsägbara valet. Är tomten både trädbevuxen och stor är kapaciteten bara halva frågan, och då är vår lista över <a href="/robotgrasklippare-stor-tradgard/" class="text-accent underline">robotgräsklippare för stor trädgård</a> nästa steg.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Kan du flytta en slinglös robotgräsklippare till en annan tomt?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Ja, och det är en av de större fördelarna. Eftersom kartan ligger i appen och inte i marken flyttar du roboten, monterar basstationen på den nya platsen och ritar upp gränserna igen. Ingen kabel behöver grävas upp och ingen ny behöver läggas ner.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Samma flexibilitet gäller inom den egna tomten. Anlägger du en ny rabatt, sätter upp en studsmatta eller bygger altan ritar du om zonen på några minuter i stället för att gräva om en slinga. Den som pendlar mellan villa och sommarstuga kan också låta en robot sköta båda gräsmattorna, så länge basstationen får ett stadigt fäste med fri sikt mot himlen på vardera platsen.
+      </p>
     </section>
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <!-- Intern länkning -->
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">

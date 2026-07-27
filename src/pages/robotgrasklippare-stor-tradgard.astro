@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProductCard from '../components/ProductCard.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -94,7 +93,7 @@ export const articleMeta = {
   title: "Bästa robotgräsklippare stor trädgård 2026: 1000+ m²",
   description: "Bästa robotgräsklipparna för stora trädgårdar 2026. Dreame A3 AWD Pro 5000 och Mammotion Luba 3 5000X klarar upp till 5 000 m² utan perimeterkabel.",
   publishDate: "2026-03-29",
-  updatedDate: "2026-05-23",
+  updatedDate: "2026-07-27",
   category: "Topplista",
   image: "/images/mammotion-luba-2-awd-5000x.webp",
 };
@@ -104,7 +103,7 @@ export const articleMeta = {
 <BaseLayout
   title="Bästa robotgräsklippare stor trädgård 2026: 1000+ m²"
   description="Bästa robotgräsklipparna för stora trädgårdar 2026. Vi jämför modeller som klarar 1 000 m² och mer. Se topplista med pris, kapacitet och prestanda."
-  article={{ datePublished: "2026-03-29", dateModified: "2026-05-27", image: "/images/mammotion-luba-2-awd-5000x.webp" }}
+  article={{ datePublished: "2026-03-29", dateModified: "2026-07-27", image: "/images/mammotion-luba-2-awd-5000x.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
@@ -112,11 +111,11 @@ export const articleMeta = {
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Bästa robotgräsklippare för stor trädgård 2026, över 1000 m²
     </h1>
-    <AuthorByline datePublished="2026-03-29" dateModified="2026-05-23" />
+    <AuthorByline datePublished="2026-03-29" dateModified="2026-07-27" />
 
     <AnswerBox
       question="Snabbt svar: Vilken robotgräsklippare är bäst för stor trädgård 2026?"
-      answer="Dreame A3 AWD Pro 5000 är bäst för stor trädgård 2026. Den klarar tomter upp till 5 000 m² helt utan perimeterkabel tack vare RTK GPS och LiDAR, och AWD-driften tar 45 graders lutning."
+      answer="Dreame A3 AWD Pro 5000 är bäst för stor trädgård 2026. Den klarar tomter upp till 5 000 m² helt utan perimeterkabel tack vare RTK GPS och LiDAR, AWD-driften tar branta slänter och du ritar gränserna i appen i stället för att gräva ner kabel."
     />
 
     <MoneyFeatured {...products[0]} />
@@ -166,14 +165,45 @@ export const articleMeta = {
       <p class="text-text-light leading-relaxed mb-4">
         Alla modeller i vår lista kräver ingen perimeterkabel: Dreame A3 AWD Pro 5000, Mammotion Luba 3 5000X och Segway Navimow i220E navigerar med RTK GPS och/eller LiDAR. RTK GPS-installation tar 30 till 60 minuter oavsett tomtstorlek, mot 6 till 10 timmar kabeldragning för en stor tomt.
       </p>
-      <p class="text-text-light leading-relaxed mb-4">
+      <p class="text-text-light leading-relaxed mb-6">
         GPS-navigering kräver fri sikt mot himlen. Har trädgården tät trädtäckning eller många höga hinder kan GPS-signalen störas. I sådana fall bör du kontrollera att din specifika tomt passar för dessa modeller innan köp.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur många klippcykler behöver roboten på en tomt över 1 000 m²?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        En stor tomt klipps i flera omgångar. Roboten kör tills batteriet börjar ta slut, åker tillbaka till laddstationen på egen hand och fortsätter sedan där den slutade. Dreame A3 AWD Pro 5000 och Mammotion Luba 3 5000X arbetar så flera gånger per dygn för att hinna över 5 000 m².
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Det betyder att du planerar klippningen efter hur snabbt gräset växer, inte efter batteritiden. Roboten tar bort några millimeter i taget och hinner runt hela ytan innan gräset vuxit ifrån den. De korta avklippen faller ner i mattan och bryts ner där i stället för att behöva samlas ihop, vilket är hela idén med mulching-klippning.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Var ska RTK-basstationen stå på en stor tomt?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Basstationen behöver fri sikt mot himlen, så placera den öppet och inte under täta trädkronor eller tätt inne mot en husvägg. Underlaget ska vara stadigt så att antennen inte rör sig, för dess position är referensen som alla gränser du ritar i appen mäts mot.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        På en riktigt stor tomt är det värt att gå igenom partierna som ligger i skugga av hustak, garage och tätt lövverk innan du bestämmer dig, för det är där satellitsignalen är svagast. Är tomten dessutom kraftigt kuperad blir lutningen ofta en hårdare begränsning än arean, och då är det driften du ska jämföra först. Vår genomgång av <a href="/robotgrasklippare-for-lutning/" class="text-accent underline">robotgräsklippare för lutning</a> tar den vinkeln.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Kan en robotgräsklippare klippa flera separata gräsytor?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Ja. Eftersom gränserna ritas i appen kan du lägga upp flera zoner i stället för en enda sammanhängande yta. Det avgörande är om roboten kan köra mellan zonerna på gräs eller en jämn passage. Är ytorna helt avskilda av en grusgång eller en trappa får du flytta roboten manuellt.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Planera passagerna innan du ritar kartan. Smala genomgångar mellan häck och husvägg är det som oftast skapar problem på stora tomter, eftersom roboten behöver plats både för att svänga in och för att komma ut igen. Går det inte att bredda passagen är det enklare att behandla ytan som en egen zon med eget klippschema.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad behöver du underhålla på en robotgräsklippare för stor tomt?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Knivarna är slitagedelen. De blir slöa av sand och grus, och ett slött blad river i gräset i stället för att skära rent. Räkna också med att göra rent underredet när gräsrester bakat fast, och att hålla laddstationens kontaktbleck fria från smuts och gräsklipp.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        En robot som täcker flera tusen kvadratmeter går fler timmar per vecka än en som sköter en radhustomt, så knivarna slits snabbare. Ett enkelt tecken på att det är dags för byte är att gräsytan börjar se luddig ut i toppen trots att roboten kört som vanligt. Du hittar rätt modellval bland våra <a href="/reservdelar/knivar/" class="text-accent underline">reservknivar till robotgräsklippare</a>.
       </p>
     </section>
 
     <FAQ items={faqItems} />
 
-    <AffiliateDisclaimer />
 
     <!-- Relaterade länkar -->
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">

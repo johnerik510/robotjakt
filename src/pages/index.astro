@@ -1,9 +1,9 @@
 ---
 import { ctaRel } from '../lib/cta-rel';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
+import EditorProfile from '../components/EditorProfile.astro';
 
 const products = [
   {
@@ -113,7 +113,7 @@ const allProducts = [
     rank: 11, name: 'Dreame Aqua10 Ultra Roller', slug: 'dreame-aqua10-ultra-roller',
     image: '/images/products/dreame-aqua10-ultra-roller.webp', rating: 4.6, reviewCount: 14,
     badge: '100°C moppning', bestFor: 'Cylindrisk mopprulle med 100°C varmvatten och stark sugkraft',
-    ctaText: 'Bra pris hos Elon', ctaUrl: 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=152012&url=https://www.elon.se/dreame-aqua10-ultra-roller-white-152012', merchant: 'Elon',
+    ctaText: 'Bra pris hos Komplett', ctaUrl: 'https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1&cupa_sku=1329605&url=https://www.komplett.se/product/1329605/hem-fritid/dammsugare-rengoring/robotdammsugare/dreame-aqua10-ultra-roller-robotdammsugare-vit?channable=02d4c769640031333239363035c0', merchant: 'Komplett',
   },
   {
     rank: 13, name: 'Roborock Qrevo Edge', slug: 'roborock-qrevo-edge',
@@ -141,35 +141,91 @@ const allProducts = [
   },
 ];
 
-const kategorier = [
+// Topp 3 per kategori: exakt samma data som kategorins topplista (verifierad
+// mot feed/verified-links där). Ändras topplistan ska dessa uppdateras i samma commit.
+const grasklipparTopp3 = [
   {
-    href: '/robotdammsugare/',
-    name: 'Robotdammsugare',
-    img: '/images/cat-robotdammsugare.webp',
-    lede: 'Vi jämför sugkraft, navigering och moppfunktion från Dreame, Roborock, Ecovacs och Dyson.',
-    meta: 'LiDAR · Sugkraft · Mopp',
+    name: 'Dreame A3 AWD Pro 5000',
+    image: 'https://www.proshop.se/Images/600x800/3454280_286bd7e02583.jpg',
+    rating: 4.8,
+    badge: 'Bäst i test 2026',
+    bestFor: 'AWD-drivning för branta lutningar, kabelfri GPS och ytor upp till 5 000 m²',
+    ctaUrl: 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3454280&url=https://www.proshop.se/Robotgraesklippare/Dreame-A3-AWD-Pro-5000-Robotgraesklippare-5000-m/3454280',
+    merchant: 'Proshop',
   },
   {
-    href: '/robotgrasklippare/',
-    name: 'Robotgräsklippare',
-    img: '/images/cat-robotgrasklippare.webp',
-    lede: 'GPS-navigering, kabelfrihetszon och arbetsyta jämförs mot pris. Husqvarna, Mammotion och Segway Navimow.',
-    meta: 'GPS · Kabelfri · Husqvarna',
+    name: 'Dreame A3 AWD 1000',
+    image: '/images/dreame-a3-awd-1000.webp',
+    rating: 4.6,
+    badge: 'Bäst AWD budget',
+    bestFor: 'AWD-prestanda till lägre pris för trädgårdar upp till 1 000 m²',
+    ctaUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66730&url=https://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare-tillbehor/robotgrasklippare/dreame-a3-awd-1000-robotgrasklippare-p66730',
+    merchant: 'Kjell',
   },
   {
-    href: '/poolrobot/',
-    name: 'Poolrobot',
-    img: '/images/cat-poolrobot.webp',
-    lede: 'Sugteknik, filterkapacitet och klätterförmåga. Dolphin, Zodiac och Bestway jämförda.',
-    meta: 'Dolphin · Zodiac · Filter',
+    name: 'Segway Navimow i220E',
+    image: 'https://csdam.net/data/jpg/0/3af71eb6/3af71eb6-6302-4193-b370-6580ba284f3e.jpg',
+    rating: 4.5,
+    badge: 'Utan slinga',
+    bestFor: 'LiDAR + RTK utan perimeterkabel, tyst drift upp till 2 000 m²',
+    ctaUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25567775&url=https://www.csmegastore.se/i/25567775/segway-navimow-i220e-lidar-pro-robotgr%c3%a4sklippare-2000-m',
+    merchant: 'CS Megastore',
+  },
+];
+
+const poolTopp3 = [
+  {
+    name: 'Zodiac Electric Pool Cleaner GT3220',
+    image: '/images/products/zodiac-gt3220.webp',
+    rating: 4.5,
+    badge: 'Bäst i test',
+    bestFor: 'Rengör botten och väggar med pålitlig motor och enkel filtertömning',
+    ctaUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=20565812&url=https://www.csmegastore.se/i/20565812/zodiac-electric-pool-cleaner-gt3220',
+    merchant: 'CS Megastore',
   },
   {
-    href: '/fonsterputsrobot/',
-    name: 'Fönsterputsrobot',
-    img: '/images/cat-fonsterputsrobot.webp',
-    lede: 'Sugkraft mot glas, täckningsgrad och kantbeteende. HOBOT, Ecovacs Winbot och Gladwell.',
-    meta: 'HOBOT · Winbot · Sugkopp',
+    name: 'Planet Pool Orca 50CL',
+    image: '/images/orca-50cl.webp',
+    rating: 4.3,
+    badge: 'Bäst budget',
+    bestFor: 'Batteridriven och sladdlös, lätt att lyfta i och ur poolen',
+    ctaUrl: 'https://addrevenue.io/t?c=3467327&a=984922&m=SE&u=https%3A%2F%2Fvillanytt.se%2Fprodukt%2Fpoolrobot-orca-50cl-batteridriven%2F%3Futm_source%3DGoogle%20Shopping%26utm_campaign%3DGoogle%20Shopping%26utm_medium%3Dcpc%26utm_term%3D62432',
+    merchant: 'Villanytt',
   },
+  {
+    name: 'CF 200CL Poolrobot',
+    image: '/images/cf-200cl.webp',
+    rating: 4.2,
+    badge: 'Prisvärd kabeldriven',
+    bestFor: 'Kraftfull sugmotor som passar de flesta poolformer',
+    ctaUrl: 'https://addrevenue.io/t?c=3467327&a=984922&m=SE&u=https%3A%2F%2Fvillanytt.se%2Fprodukt%2Fcf-200cl-poolrobot%2F%3Futm_source%3DGoogle%20Shopping%26utm_campaign%3DGoogle%20Shopping%26utm_medium%3Dcpc%26utm_term%3D74422',
+    merchant: 'Villanytt',
+  },
+];
+
+const kategoriBand = [
+  {
+    id: 'grasklippare',
+    heading: 'Robotgräsklippare: topp 3 just nu',
+    lede: 'Kabelfri GPS-navigering har tagit över marknaden. Här är de tre modeller som rankar högst i vår test av tio robotgräsklippare.',
+    products: grasklipparTopp3,
+    listHref: '/robotgrasklippare/',
+    listLabel: 'Hela topplistan: bästa robotgräsklippare 2026',
+  },
+  {
+    id: 'poolrobot',
+    heading: 'Poolrobot: topp 3 just nu',
+    lede: 'Sugteknik, filterkapacitet och klätterförmåga avgör. Här är de tre bästa poolrobotarna ur vår jämförelse.',
+    products: poolTopp3,
+    listHref: '/poolrobot/',
+    listLabel: 'Hela topplistan: bästa poolrobot 2026',
+  },
+];
+
+const merKategorier = [
+  { href: '/fonsterputsrobot/', name: 'Fönsterputsrobot', lede: 'Sugkraft mot glas, täckningsgrad och kantbeteende jämförda.' },
+  { href: '/dronare/', name: 'Drönare', lede: 'DJI-modeller jämförda på kamera, flygtid och regelklass.' },
+  { href: '/reservdelar/', name: 'Reservdelar', lede: 'Filter, borstar och knivar till Roborock, Dreame och Husqvarna.' },
 ];
 
 const allMods = import.meta.glob('./**/*.astro', { eager: true })
@@ -204,7 +260,7 @@ const faqItems = [
   },
   {
     question: 'Hur ofta behöver man tömma en robotdammsugare?',
-    answer: 'Med en självtömmande station behöver du bara tömma påsen var 30 till 60 dag beroende på hemstorlek och smutsbelastning. Utan station bör du tömma behållaren efter varje städning.',
+    answer: 'Med en självtömmande station behöver du bara tömma påsen var 30 till 60 dagar beroende på hemstorlek och smutsbelastning. Utan station bör du tömma behållaren efter varje städning.',
   },
   {
     question: 'Kan en robotdammsugare ersätta en vanlig dammsugare?',
@@ -221,7 +277,8 @@ const top5 = products.slice(0, 5);
   description="Bästa robotdammsugare 2026: 16 modeller rankade. Dreame X50 Ultra vinner. Robotgräsklippare, poolrobotar och fönsterputsrobotar jämförda."
   article={true}
 >
-  <link slot="head" rel="preload" as="image" href="/images/hero-robotjakt.webp" type="image/webp" fetchpriority="high" />
+  <link slot="head" rel="preload" as="image" href="/images/hero-robotjakt-2.webp" type="image/webp" fetchpriority="high" media="(min-width: 768px)" />
+  <link slot="head" rel="preload" as="image" href="/images/hero-robotjakt-2-mobil.webp" type="image/webp" fetchpriority="high" media="(max-width: 767px)" />
 
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
@@ -238,23 +295,26 @@ const top5 = products.slice(0, 5);
 
   <!-- Hero -->
   <section class="text-white relative overflow-hidden">
-    <img
-      src="/images/hero-robotjakt.webp"
-      alt="Robotdammsugare i modernt hem"
-      class="absolute inset-0 w-full h-full object-cover -z-10"
-      loading="eager"
-      fetchpriority="high"
-      width="1280"
-      height="720"
-    />
-    <div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/50 -z-10" aria-hidden="true"></div>
+    <picture>
+      <source media="(max-width: 767px)" srcset="/images/hero-robotjakt-2-mobil.webp" type="image/webp" />
+      <img
+        src="/images/hero-robotjakt-2.webp"
+        alt="Robotdammsugare med LiDAR-torn städar ekgolv i vardagsrum i skymningsljus"
+        class="absolute inset-0 w-full h-full object-cover -z-10"
+        loading="eager"
+        fetchpriority="high"
+        width="1672"
+        height="941"
+      />
+    </picture>
+    <div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/45 -z-10" aria-hidden="true"></div>
     <div class="max-w-6xl mx-auto px-4 py-8 md:py-12 relative">
       <div class="grid md:grid-cols-[1fr_auto] gap-6 md:gap-10 items-center">
         <!-- Vänster: text -->
         <div>
           <div class="inline-flex items-center gap-2 bg-accent/20 border border-accent-light/40 rounded-full px-3 py-1 text-xs font-semibold text-accent-light uppercase tracking-wider mb-3">
             <span class="w-1.5 h-1.5 bg-accent-light rounded-full"></span>
-            Uppdaterat april 2026 · {allProducts.length} modeller jämförda
+            Uppdaterat juli 2026 · {allProducts.length} modeller jämförda
           </div>
           <h1 class="text-2xl md:text-4xl font-extrabold leading-tight mb-3">
             Bästa robotdammsugare 2026: {allProducts.length} modeller rankade
@@ -264,19 +324,19 @@ const top5 = products.slice(0, 5);
           </p>
         </div>
         <!-- Höger: vinnarkort -->
-        <div class="hidden md:block bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5 md:min-w-[320px]">
+        <div class="hidden md:block bg-primary-dark/80 border border-white/15 rounded-xl p-5 md:min-w-[320px]">
           <div class="text-xs font-bold uppercase tracking-widest text-accent-light mb-2">Vinnare 2026</div>
-          <div class="font-extrabold text-xl mb-3">{winner.name}</div>
+          <div class="font-heading font-extrabold text-xl mb-3">{winner.name}</div>
           <a
             href={winner.ctaUrl}
             target="_blank"
             rel={ctaRel(winner.ctaUrl)}
-            class="flex items-center justify-center w-full bg-cta hover:bg-cta-dark text-white font-bold py-3 rounded-xl transition-colors"
+            class="flex items-center justify-center w-full bg-cta hover:bg-cta-dark text-white font-bold py-3 rounded-lg transition-colors"
           >
             Bra pris hos {winner.merchant}
           </a>
           <a href="#topplista" class="block text-center text-sm font-semibold text-white/70 hover:text-white mt-3 transition-colors">
-            Se hela topp 5 ↓
+            Se hela topp 5
           </a>
         </div>
       </div>
@@ -290,8 +350,8 @@ const top5 = products.slice(0, 5);
 
     <div class="space-y-4">
       {top5.map((p, i) => (
-        <article class={`bg-white rounded-2xl p-5 md:p-6 flex flex-col sm:flex-row sm:items-center gap-5 transition-colors ${
-          i === 0 ? 'border-2 border-cta shadow-md' : 'border border-border hover:border-accent'
+        <article class={`bg-white rounded-xl p-5 md:p-6 flex flex-col sm:flex-row sm:items-center gap-5 transition-colors ${
+          i === 0 ? 'border-2 border-cta' : 'border border-border hover:border-accent'
         }`}>
           <div class={`flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full font-extrabold text-xl ${
             i === 0 ? 'bg-cta text-white' : 'bg-bg-alt text-accent'
@@ -353,11 +413,11 @@ const top5 = products.slice(0, 5);
     <section class="max-w-6xl mx-auto px-4 py-10">
       <div class="flex items-end justify-between mb-6 flex-wrap gap-3">
         <h2 class="font-heading text-2xl md:text-3xl font-bold text-text">Senaste recensioner</h2>
-        <a href="/robotdammsugare/" class="text-sm font-semibold text-accent hover:text-accent-dark">Alla recensioner →</a>
+        <a href="/robotdammsugare/" class="text-sm font-semibold text-accent-dark hover:text-accent underline">Alla robotdammsugare vi jämfört</a>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {senasteRecensioner.map((art) => (
-          <article class="group bg-white border border-border rounded-xl overflow-hidden hover:shadow-md hover:border-accent transition-all">
+          <article class="group bg-white border border-border rounded-xl overflow-hidden hover:border-accent transition-all">
             <a href={art.href} class="block aspect-[16/9] overflow-hidden bg-bg-alt" tabindex="-1" aria-hidden="true">
               <img src={art.image} alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="480" height="270" />
             </a>
@@ -379,7 +439,7 @@ const top5 = products.slice(0, 5);
   )}
 
   <!-- CTA-banner vinnare -->
-  <section class="bg-gradient-to-r from-primary to-primary-light text-white py-10">
+  <section class="bg-primary text-white py-10">
     <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
       <div>
         <div class="text-xs font-bold uppercase tracking-widest text-accent-light mb-1">Vår vinnare 2026</div>
@@ -410,24 +470,55 @@ const top5 = products.slice(0, 5);
     </nav>
   </section>
 
-  <!-- Kategorier -->
-  <section class="bg-bg-alt border-y border-border">
-    <div class="max-w-6xl mx-auto px-4 py-12">
-      <h2 class="font-heading text-2xl font-bold text-text mb-8">Fyra kategorier vi kan på djupet</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {kategorier.map((kat) => (
-          <a href={kat.href} class="group bg-white rounded-xl border border-border p-5 hover:border-accent hover:shadow-sm transition-all flex flex-col gap-3">
-            <div class="w-full aspect-[4/3] bg-bg-alt rounded-lg overflow-hidden">
-              <img src={kat.img} alt={kat.name} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="280" height="210" />
-            </div>
-            <div>
-              <div class="text-[11px] font-semibold text-accent uppercase tracking-wider mb-1">{kat.meta}</div>
-              <h3 class="font-heading font-bold text-text group-hover:text-accent transition-colors mb-1">{kat.name}</h3>
-              <p class="text-xs text-text-light leading-relaxed line-clamp-2">{kat.lede}</p>
-            </div>
-          </a>
-        ))}
+  <!-- Kategori-band: topp 3 per kategori (datadrivet, speglar topplistorna) -->
+  {kategoriBand.map((band) => (
+    <section class="bg-bg-alt border-y border-border" aria-labelledby={`band-${band.id}`}>
+      <div class="max-w-6xl mx-auto px-4 py-12">
+        <div class="flex items-end justify-between mb-2 flex-wrap gap-3">
+          <h2 id={`band-${band.id}`} class="font-heading text-2xl md:text-3xl font-bold text-text">{band.heading}</h2>
+        </div>
+        <p class="text-text-light mb-6 max-w-2xl">{band.lede}</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {band.products.map((p, i) => (
+            <article class={`bg-white rounded-xl p-5 flex flex-col ${i === 0 ? 'border-2 border-winner' : 'border border-border'}`}>
+              <div class="flex items-start justify-between gap-2 mb-3">
+                <span class={`inline-block px-2.5 py-0.5 text-xs font-bold rounded-full uppercase tracking-wide ${i === 0 ? 'bg-winner text-white' : 'bg-bg-alt text-text-light'}`}>{p.badge}</span>
+                <span class="text-sm font-bold text-text whitespace-nowrap">{p.rating}/5</span>
+              </div>
+              <div class="w-full h-40 bg-gray-50 border border-border rounded-lg overflow-hidden flex items-center justify-center mb-3">
+                <img src={p.image} alt={p.name} class="object-contain w-full h-full p-3" loading="lazy" width="280" height="160" />
+              </div>
+              <h3 class="font-heading font-bold text-text leading-snug mb-1">{p.name}</h3>
+              <p class="text-sm text-text-light leading-relaxed mb-4 flex-1">{p.bestFor}</p>
+              <a
+                href={p.ctaUrl}
+                target="_blank"
+                rel={ctaRel(p.ctaUrl)}
+                data-product={p.name}
+                class="flex items-center justify-center w-full bg-cta hover:bg-cta-dark text-white font-bold text-sm py-2.5 rounded-lg transition-colors"
+              >
+                Bra pris hos {p.merchant}
+              </a>
+            </article>
+          ))}
+        </div>
+        <p class="mt-5">
+          <a href={band.listHref} class="text-sm font-semibold text-accent-dark hover:text-accent underline">{band.listLabel}</a>
+        </p>
       </div>
+    </section>
+  ))}
+
+  <!-- Fler kategorier -->
+  <section class="max-w-6xl mx-auto px-4 py-10">
+    <h2 class="font-heading text-2xl font-bold text-text mb-6">Fler kategorier vi bevakar</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      {merKategorier.map((kat) => (
+        <a href={kat.href} class="group bg-white rounded-xl border border-border p-5 hover:border-accent transition-colors">
+          <h3 class="font-heading font-bold text-text group-hover:text-accent-dark transition-colors mb-1">{kat.name}</h3>
+          <p class="text-sm text-text-light leading-relaxed">{kat.lede}</p>
+        </a>
+      ))}
     </div>
   </section>
 
@@ -437,7 +528,7 @@ const top5 = products.slice(0, 5);
     <p class="text-text-light mb-6">Ytterligare {allProducts.length - 5} modeller utöver topplistan ovan, alla med verifierade priser.</p>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {allProducts.slice(5).map((p) => (
-        <article class="group bg-white border border-border rounded-xl overflow-hidden hover:border-accent hover:shadow-sm transition-all flex flex-col">
+        <article class="group bg-white border border-border rounded-xl overflow-hidden hover:border-accent transition-all flex flex-col">
           {p.reviewUrl
             ? <a href={p.reviewUrl} class="block" tabindex="-1" aria-hidden="true">
                 <div class="w-full h-40 bg-bg-alt flex items-center justify-center overflow-hidden">
@@ -474,33 +565,40 @@ const top5 = products.slice(0, 5);
   <!-- Köpguide text -->
   <section class="bg-white border-t border-border">
     <div class="max-w-3xl mx-auto px-4 py-14">
-      <div class="space-y-8 text-text text-sm leading-relaxed">
-        <h2 class="font-heading text-2xl sm:text-3xl font-bold text-text">Hur väljer man robotdammsugare 2026?</h2>
+      <div class="text-text text-sm leading-relaxed">
+        <h2 class="font-heading text-2xl sm:text-3xl font-bold text-text mb-6">Hur väljer man robotdammsugare 2026?</h2>
 
-        <div class="bg-bg-alt rounded-2xl p-6">
-          <h3 class="font-heading text-lg font-bold text-text mb-2">Sugkraft (På)</h3>
-          <p>Sugkraften mäts i Pascal (På). För normala golv räcker 5 000 Pa. Har du husdjur eller mattor behöver du minst 8 000 Pa. Premiummodeller erbjuder 10 000 till 20 000+ På, Dreame X50 Ultra toppar med 20 000 Pa.</p>
-        </div>
-        <div class="bg-bg-alt rounded-2xl p-6">
-          <h3 class="font-heading text-lg font-bold text-text mb-2">Navigering</h3>
-          <p>LiDAR-navigering är snabbast och mest exakt, standard i alla modeller i mellanprissegmentet 2026. Kamerabaserade system är bra på att undvika hinder. De bästa modellerna kombinerar båda teknikerna.</p>
-        </div>
-        <div class="bg-bg-alt rounded-2xl p-6">
-          <h3 class="font-heading text-lg font-bold text-text mb-2">Moppfunktion</h3>
-          <p>Roterande moppar gör rent bättre än vibrerande. Modeller med automatisk mopplyftning är ett måste om du har både mattor och hårdgolv. De bästa tvättar mopparna automatiskt med varmvatten i stationen.</p>
-        </div>
-        <div class="bg-bg-alt rounded-2xl p-6">
-          <h3 class="font-heading text-lg font-bold text-text mb-2">Självtömmande station</h3>
-          <p>Med en självtömmande station töms dammbehållaren automatiskt. Du behöver bara tömma påsen var 30 till 60 dag. Nästan alla premiummodeller 2026 inkluderar självtömmande station med mopptvätt.</p>
-        </div>
+        <h3 class="font-heading text-lg font-bold text-text mt-8 mb-2">Sugkraft (Pa)</h3>
+        <p class="text-text-light mb-4">Sugkraften mäts i Pascal (Pa). För normala golv räcker 5 000 Pa. Har du husdjur eller mattor behöver du minst 8 000 Pa. Premiummodeller erbjuder 10 000 till 20 000+ Pa, Dreame X50 Ultra toppar med 20 000 Pa. Läs mer om hur siffrorna ska tolkas i vår guide om <a href="/guide/sugkraft/" class="text-accent-dark underline">sugkraft i robotdammsugare</a>.</p>
+
+        <h3 class="font-heading text-lg font-bold text-text mt-8 mb-2">Navigering</h3>
+        <p class="text-text-light mb-4">LiDAR-navigering är snabbast och mest exakt, standard i alla modeller i mellanprissegmentet 2026. Kamerabaserade system är bra på att undvika hinder. De bästa modellerna kombinerar båda teknikerna. Vi förklarar skillnaderna i detalj i guiden om <a href="/guide/lidar-navigation/" class="text-accent-dark underline">LiDAR-navigering</a>.</p>
+
+        <h3 class="font-heading text-lg font-bold text-text mt-8 mb-2">Moppfunktion</h3>
+        <p class="text-text-light mb-4">Roterande moppar gör rent bättre än vibrerande. Modeller med automatisk mopplyftning är ett måste om du har både mattor och hårdgolv. De bästa tvättar mopparna automatiskt med varmvatten i stationen. Jämför modellerna med bäst moppresultat i listan över <a href="/robotdammsugare/med-mopp/" class="text-accent-dark underline">robotdammsugare med moppfunktion</a>.</p>
+
+        <h3 class="font-heading text-lg font-bold text-text mt-8 mb-2">Självtömmande station</h3>
+        <p class="text-text-light mb-4">Med en självtömmande station töms dammbehållaren automatiskt. Du behöver bara tömma påsen var 30 till 60 dagar. Nästan alla premiummodeller 2026 inkluderar självtömmande station med mopptvätt.</p>
+
+        <h3 class="font-heading text-lg font-bold text-text mt-8 mb-2">Hur mycket behöver man lägga på en robotdammsugare?</h3>
+        <p class="text-text-light mb-4">En bra robotdammsugare utan station finns i budgetsegmentet, men vill du ha självtömning, mopptvätt och stark sugkraft hamnar du i mellanklassen eller premiumsegmentet. Tumregeln: ju mindre du vill göra själv, desto mer betalar du för stationen snarare än för själva roboten.</p>
+        <p class="text-text-light mb-4">Bor du i en mindre bostad utan husdjur klarar du dig ofta utmärkt med en enklare modell. Vår genomgång av <a href="/billigaste-robotdammsugare/" class="text-accent-dark underline">billigaste robotdammsugarna</a> visar vad du faktiskt får i budgetsegmentet, och listan över <a href="/robotdammsugare-under-5000/" class="text-accent-dark underline">robotdammsugare under 5 000 kr</a> täcker mellansteget.</p>
+
+        <h3 class="font-heading text-lg font-bold text-text mt-8 mb-2">Vilken robotdammsugare passar husdjurshem?</h3>
+        <p class="text-text-light mb-4">Husdjurshem ställer två extra krav: stark sugkraft som lyfter päls ur mattor och gummirullar som inte trasslar av hårstrån. En AI-kamera som känner igen och väjer för djuravföring är dessutom den funktion som skiljer premiummodellerna åt i praktiken.</p>
+        <p class="text-text-light mb-4">Roborock S8 MaxV Ultra är vårt toppval för husdjursfamiljer just på grund av kameran. Hela resonemanget och fler alternativ hittar du i topplistan över <a href="/robotdammsugare/husdjur/" class="text-accent-dark underline">robotdammsugare för husdjur</a>.</p>
+
+        <h3 class="font-heading text-lg font-bold text-text mt-8 mb-2">Robotdammsugare eller robotgräsklippare först?</h3>
+        <p class="text-text-light mb-4">Räkna på tiden du faktiskt lägger. Dammsugning sker året runt, gräsklippning en halv säsong, så för de flesta hushåll betalar sig robotdammsugaren snabbare. Har du stor tomt med mycket klipptid vänds kalkylen, och då är en <a href="/robotgrasklippare/" class="text-accent-dark underline">robotgräsklippare</a> det naturliga förstaköpet.</p>
       </div>
     </div>
   </section>
 
+  <EditorProfile />
+
   <!-- FAQ + Disclaimer -->
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <FAQ items={faqItems} />
-    <AffiliateDisclaimer />
   </div>
 
   <StickyCTA
