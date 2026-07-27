@@ -136,6 +136,75 @@ table {
   }
 }
 
+/*
+ * Hubbens topp 3-karusell: enda stället där sidledsscroll är tillåtet, och
+ * bara inuti sin egen container. Datatabeller ska aldrig scrolla i sidled
+ * (se .spec-table-wrap ovan).
+ */
+@media (max-width: 767px) {
+  .hub-karusell {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .hub-karusell::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/*
+ * Redaktionell långform (hubbens avslutande textavsnitt). Egen klass i
+ * stället för utility-klasser på varje element, så rytmen är konsekvent.
+ */
+.seo-prose h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  line-height: 1.15;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.018em;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.seo-prose h2:first-child {
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  .seo-prose h2 { font-size: 1.75rem; }
+}
+
+.seo-prose h3 {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.seo-prose p {
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  max-width: 68ch;
+}
+
+.seo-prose a {
+  color: var(--color-accent-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.seo-prose a:hover {
+  color: var(--color-accent);
+}
+
+.seo-prose strong {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
 /* Focus styles for WCAG 2.1 AA keyboard navigation */
 *:focus-visible {
   outline: 3px solid var(--color-accent);

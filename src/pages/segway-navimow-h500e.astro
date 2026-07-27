@@ -11,7 +11,7 @@ const breadcrumbs = [
 ];
 
 const specs = [
-  { label: 'Klippyta', value: '5 000 m²' },
+  { label: 'Klippyta', value: 'upp till 500 m²' },
   { label: 'Klippbredd', value: '22 cm' },
   { label: 'Lutningstolerans', value: '45%' },
   { label: 'Navigering', value: 'Vision Fence (kamera + AI)' },
@@ -36,7 +36,7 @@ const faqItems = [
   },
   {
     question: 'Hur jämförs Segway Navimow H500E mot Mammotion LUBA AWO 3000?',
-    answer: 'Mammotion LUBA AWO 3000 klarar upp till 3 000 m² med RTK GPS. Segway Navimow H500E klarar upp till 5 000 m² med Vision Fence-teknik. H500E är alltså billigare och klarar en större yta på pappret. LUBA AWO 3000 är ett mer etablerat varumärke bland professionella användare och erbjuder 4G + kamerasystem. Båda är starka val, H500E vinner på pris/yta-förhållandet, LUBA AWO 3000 på ekosystem och tillgänglighet av oberoende recensioner.',
+    answer: 'De två spelar i olika storleksklasser. Segway Navimow H500E är gjord för tomter upp till 500 m², Mammotion LUBA AWO 3000 för upp till 3 000 m². Har du en normal villatomt eller mindre räcker H500E, och du slipper montera en separat RTK-referensantenn. Har du över 500 m² gräs är H500E för liten oavsett hur bra den klipper, och då är LUBA AWO 3000 det relevanta alternativet med RTK GPS, 4G och betydligt högre lutningstolerans.',
   },
 ];
 
@@ -72,7 +72,7 @@ export const articleMeta = {
 
   <AnswerBox
     question="Snabbt svar: Är Segway Navimow H500E värd att köpa?"
-    answer="Ja, om du har en öppen tomt upp till 5 000 m² och vill slippa gräva ner perimeterkabel. Vision Fence sköter gränserna med kamera och AI, 4G låter dig styra roboten var du än är och 120 minuters drifttid tar undan stora ytor per pass. Kraftigt regn stör kameran och basstationen kräver fri sikt."
+    answer="Ja, om du har en öppen tomt upp till 500 m² och vill slippa gräva ner perimeterkabel. Vision Fence sköter gränserna med kamera och AI, 4G låter dig styra roboten var du än är och 120 minuters drifttid räcker för att ta undan hela ytan i ett pass. Har du mer gräs än 500 m² är H500E för liten, och kraftigt regn stör kameran."
   />
 
   <!-- Verdict box -->
@@ -94,22 +94,18 @@ export const articleMeta = {
           <span class="font-bold text-text">8,5 / 10</span>
         </div>
         <p class="text-text-light text-sm leading-relaxed mb-3">
-          Segway Navimow H500E är ett prisvärt val bland robotgräsklippare utan slinga för stora ytor. Vision Fence-tekniken kombinerar kamera och AI för exakt gränsnavigering upp till 5 000 m², allt utan att gräva ner ett enda meter kabel. 4G-uppkoppling och lång 120 min drifttid är tydliga pluspunkter.
+          Segway Navimow H500E är instegsmodellen i Segways H-serie och riktar sig till tomter upp till 500 m². Vision Fence-tekniken kombinerar kamera och AI för exakt gränsnavigering, allt utan att gräva ner en enda meter kabel. 4G-uppkoppling och lång drifttid på 120 min är tydliga pluspunkter. Har du större yta är H800E eller en modell i i-serien rätt spår.
         </p>
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div>
-            <p class="text-xs text-text-light">Pris kan variera, jämför alltid</p>
+            <p class="text-xs text-text-light">Navimow H500E säljs via fackhandlare, inte hos våra affiliatepartners</p>
           </div>
           <a
-            href="https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25567775&url=https://www.csmegastore.se/i/25567775/segway-navimow-i220e-lidar-pro-robotgrasklippare-2000-m2"
-            rel="sponsored nofollow noopener noreferrer"
-            target="_blank"
-            class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+            href="/robotgrasklippare/"
+            class="inline-flex items-center justify-center bg-primary hover:bg-primary-light text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
           >
-            Bra pris hos CS Megastore
-            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            Se robotgräsklippare vi kan förmedla pris på
           </a>
-          
         </div>
       </div>
     </div>
@@ -123,7 +119,7 @@ export const articleMeta = {
         {[
           'Ingen perimeterkabel, installation på 1 till 2 timmar',
           'Vision Fence-kamera undviker hinder i realtid',
-          'Klarar upp till 5 000 m², störst utan slinga i klassen',
+          'Täcker upp till 500 m², normal villatomt i ett pass',
           '4G-uppkoppling, nås var som helst',
           'Lång 120 min drifttid',
           'Klarar 45% lutning',
@@ -140,6 +136,7 @@ export const articleMeta = {
       <ul class="space-y-2">
         {[
           'Kamera kan störas av kraftigt regn',
+          'Bara 500 m², större tomter kräver H800E eller i-serien',
           'Färre servicepunkter i Sverige än Husqvarna',
           'App inte lika mogen som Husqvarnas',
           'Kräver god sikt mot himlen för basstationen',
@@ -187,7 +184,7 @@ export const articleMeta = {
       Klippbredden på 22 cm är densamma som premiummodeller från Husqvarna och ger effektiv täckning. Den systematiska navigeringen innebär att roboten kör i planerade banor snarare än slumpmässigt, vilket ger jämnare täckning och ett snyggt slutresultat.
     </p>
     <p class="text-text-light leading-relaxed mb-6">
-      Drifttiden på 120 min per cykel är bland de längsta i utan-slinga-segmentet och innebär att roboten klarar stora ytor utan att behöva göra lika många laddningsavbrott. På en full yta av 5 000 m² tar det naturligtvis flera cykler att täcka allt, men schemat sköts automatiskt.
+      Drifttiden på 120 min per cykel är lång i förhållande till de 500 m² roboten är gjord för. I praktiken hinner den ta undan hela tomten i ett enda pass utan att behöva backa in i laddstationen mitt i jobbet, och resten av schemat sköts automatiskt.
     </p>
 
     <h3 class="font-heading text-xl font-semibold text-text mb-3">Installation</h3>
@@ -195,7 +192,7 @@ export const articleMeta = {
       Installationen är ett av H500E:s starkaste argument. Du monterar basstationsantennen på en stadig yta, ett staket, en vägg eller ett dedikerat stöd, med fri sikt mot himlen. Strömkabel dras till närmaste uttag, och sedan ritar du upp trädgårdens gränser i Navimow-appen genom att gå längs kanten med mobilen.
     </p>
     <p class="text-text-light leading-relaxed mb-6">
-      Hela processen tar de flesta husägare 1 till 2 timmar. Inga verktyg behövs, ingen grävning och ingen professionell hjälp. Jämfört med kabelbaserade modeller där installation kan kosta 2 000 till extra är besparingen påtaglig.
+      Hela processen tar de flesta husägare 1 till 2 timmar. Inga verktyg behövs, ingen grävning och ingen professionell hjälp. Jämfört med kabelbaserade modeller, där många köper in installationen som en separat tjänst, är besparingen påtaglig.
     </p>
 
     <h3 class="font-heading text-xl font-semibold text-text mb-3">Appen och 4G</h3>
@@ -208,10 +205,10 @@ export const articleMeta = {
 
     <h3 class="font-heading text-xl font-semibold text-text mb-3">Segway Navimow H500E vs Mammotion LUBA AWO 3000</h3>
     <p class="text-text-light leading-relaxed mb-4">
-      LUBA AWO 3000 ligger i ett annat prissegment än H500E. LUBA klarar 3 000 m² medan H500E klarar 5 000 m². Tekniskt sett är H500E det bättre prisvärda alternativet om du har en stor yta.
+      Det här är ingen jämn match, det är två olika storleksklasser. H500E är gjord för 500 m². <a href="/mammotion-luba-awo-3000/" class="text-accent underline">Mammotion LUBA AWO 3000</a> tar sex gånger så mycket gräs, upp till 3 000 m², och ligger i ett annat prissegment. Ytan avgör därför valet innan någon annan egenskap ens kommer på tal.
     </p>
     <p class="text-text-light leading-relaxed mb-6">
-      LUBA AWO 3000 har å andra sidan ett mer etablerat rykte bland tidig-adopters av GPS-robotar i Sverige och ett mer moget ekosystem med fler oberoende recensioner. Väljer du H500E sparar du på inköpspriset och får större ytkapacitet. Väljer du LUBA AWO 3000 väljer du den mer beprövade lösningen. Båda är starka val.
+      Har du under 500 m² är H500E den enklare och billigare vägen, du slipper montera en RTK-referensantenn och kommer igång på en förmiddag. Ligger tomten över 500 m² spelar det ingen roll att H500E klipper fint, den räcker inte till, och då är LUBA AWO 3000 alternativet med RTK-precision, 4G och betydligt högre lutningstolerans.
     </p>
 
     <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad händer om kameran i H500E tappar sikten?</h3>
@@ -243,7 +240,7 @@ export const articleMeta = {
   <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
     <h2 class="font-heading text-xl font-bold text-text mb-3">Vem passar Segway Navimow H500E för?</h2>
     <p class="text-text-light leading-relaxed mb-3">
-      H500E är ett utmärkt val för husägare med trädgårdar upp till 5 000 m² som vill slippa kabelinstallation och inte vill betala för Husqvarnas premiumpris. Tekniken är mogen, drifttiden lång och utan-slinga-konceptet sparar tid och pengar vid installation.
+      H500E är ett utmärkt val för husägare med trädgårdar upp till 500 m² som vill slippa kabelinstallation och inte vill betala Husqvarnas premiumpris. Tekniken är mogen, drifttiden lång i förhållande till ytan och utan-slinga-konceptet sparar både tid och pengar vid installation. Ligger tomten över 500 m² ska du i stället titta på <a href="/segway-navimow-h800e/" class="text-accent underline">Segway Navimow H800E</a> för upp till 800 m², eller på våra alternativ för <a href="/robotgrasklippare-stor-tradgard/" class="text-accent underline">robotgräsklippare för stor trädgård</a>.
     </p>
     <p class="text-text-light leading-relaxed">
       Passar särskilt bra för öppna trädgårdar med god sikt mot himlen. Har trädgården täta träd eller är omgiven av höga byggnader är det värt att kontrollera GPS-täckning innan köp. Alla utan-slinga-modeller kräver fri sikt för basstationen.
@@ -298,9 +295,8 @@ export const articleMeta = {
 </ArticleLayout>
 
 <StickyCTA
-  text="Bra pris hos CS Megastore"
-  url="https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25567775&url=https://www.csmegastore.se/i/25567775/segway-navimow-i220e-lidar-pro-robotgrasklippare-2000-m2"
-  productName="Segway Navimow H500E"
+  text="Se hela topplistan för robotgräsklippare"
+  url="/robotgrasklippare/"
 />
 
 <script type="application/ld+json" set:html={JSON.stringify({
@@ -309,7 +305,7 @@ export const articleMeta = {
   "name": "Segway Navimow H500E",
   "image": "https://robotjakt.se/images/segway-navimow-h500e.webp",
   "brand": { "@type": "Brand", "name": "Segway" },
-  "description": "Segway Navimow H500E robotgräsklippare utan slinga med RTK+VIO-navigering för tradgardar upp till 500 m2.",
+  "description": "Segway Navimow H500E robotgräsklippare utan slinga med RTK+VIO-navigering för trädgårdar upp till 500 m².",
   "category": "Robotgräsklippare",
   "offers": {
     "@type": "Offer",
@@ -336,7 +332,7 @@ export const articleMeta = {
     },
     "author": { "@id": "https://robotjakt.se/#axel" },
     "datePublished": "2026-03-29",
-    "reviewBody": "Segway Navimow H500E är ett prisvärt val bland robotgräsklippare utan slinga för stora ytor. Vision Fence-tekniken kombinerar kamera och AI för exakt gränsnavigering upp till 5 000 m², utan perimeterkabel.",
+    "reviewBody": "Segway Navimow H500E är instegsmodellen i Segways H-serie och passar tomter upp till 500 m². Vision Fence-tekniken kombinerar kamera och AI för exakt gränsnavigering, utan perimeterkabel.",
     "publisher": { "@id": "https://robotjakt.se/#organization" }
   }
 })} />

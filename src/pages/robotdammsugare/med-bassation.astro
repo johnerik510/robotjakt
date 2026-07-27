@@ -7,15 +7,19 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
 import AnswerBox from '../../components/AnswerBox.astro';
 import EditorialCTA from '../../components/EditorialCTA.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import SkillnadsJamforelse from '../../components/SkillnadsJamforelse.astro';
 
 const breadcrumbs = [
-  { label: 'Robotdammsugare', href: '/' },
+  { label: 'Robotdammsugare', href: '/robotdammsugare/' },
   { label: 'Robotdammsugare med basstation' },
 ];
 
 const products = [
   {
     name: 'Roborock Saros 20 Sonic',
+    navigering: 'LiDAR + AI-hinderdetektion',
+    image: '/images/products/roborock-saros-20-sonic.webp',
     badge: 'BÄST I TEST 2026',
     badgeColor: 'bg-winner',
     rating: '4.9 / 5',
@@ -31,12 +35,15 @@ const products = [
       'Auto-tömning, mopptvätt och vattenpåfyllning',
       'LiDAR-navigering',
     ],
+    cons: ['Stor station kräver 60 till 70 cm väggutrymme', 'Nyare modell, få långtidsomdömen'],
     cta: 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=154763&url=https://www.elon.se/roborock-saros-20-sonic-s20s52-00-svart-154763',
     ctaText: 'Bra pris hos Elon',
     description: 'Roborock Saros 20 Sonic tar basstation-automatiken till en ny nivå med ultraljudsrengöring av mopparna och ett platt LiDAR-torn som gör roboten 8 cm hög. Passar under alla möbler och har marknadens mest kompletta station 2026.',
   },
   {
     name: 'Dreame X50 Ultra',
+    navigering: 'LiDAR + AI-kamera',
+    image: '/images/products/dreame-x50-ultra.webp',
     badge: 'BÄST MOPPNING',
     badgeColor: 'bg-accent',
     rating: '4.8 / 5',
@@ -52,12 +59,15 @@ const products = [
       'Auto-tömning och automatisk vattenpåfyllning',
       'LiDAR + AI-kamera-navigering',
     ],
+    cons: ['Stor station tar plats', 'Utfällbar mopparm är en rörlig del mer att hålla ren'],
     cta: 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=151996&url=https://www.elon.se/dreame-x50-ultra-white-151996',
     ctaText: 'Bra pris hos Elon',
     description: 'Dreame X50 Ultra imponerar med 20 000 Pa sugkraft och sin utfällbara moppmodul som når in i hörnen. Stationens varmvattentvätt av moppar och fullautomatisk drift gör den till ett av marknadens mest kompletta val 2026.',
   },
   {
     name: 'Dreame X60 Ultra',
+    navigering: 'LiDAR + AI-kamera',
+    image: '/images/products/dreame-x60-ultra.webp',
     badge: 'BÄST VÄRDE',
     badgeColor: 'bg-winner',
     rating: '4.7 / 5',
@@ -73,12 +83,15 @@ const products = [
       'Auto-tömning och automatisk vattenpåfyllning',
       'Mopplyft vid mattor',
     ],
+    cons: ['Stor station tar plats', 'Uppföljare med kort tid på marknaden'],
     cta: 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=153177&url=https://www.elon.se/dreame-x60-ultra-white-153177',
     ctaText: 'Bra pris hos Elon',
     description: 'Dreame X60 Ultra erbjuder hela paketet med varmvattenmopptvätt, auto-tömning och automatisk påfyllning till ett lägre pris än toppmodellerna. Bäst värde i klassen för den som vill ha full automatik.',
   },
   {
     name: 'Dreame Matrix 10 Ultra',
+    navigering: 'LiDAR + AI',
+    image: '/images/products/dreame-matrix-10-ultra.webp',
     badge: 'KOMPAKT ULTRA',
     badgeColor: 'bg-text-lighter',
     rating: '4.7 / 5',
@@ -93,12 +106,15 @@ const products = [
       'Auto-tömning och automatisk vattenpåfyllning',
       'LiDAR + AI-navigering',
     ],
+    cons: ['Mindre tankar än de stora stationerna', 'Inte lika stark sugkraft som toppmodellerna'],
     cta: 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=152009&url=https://www.elon.se/dreame-matrix-10-ultra-white-152009',
     ctaText: 'Bra pris hos Elon',
     description: 'Dreame Matrix 10 Ultra kombinerar avancerad stationsteknik med varmvattenmopptvätt och auto-tömning i ett kompakt paket. Bra val för den som vill ha ultra-stationens fördelar.',
   },
   {
     name: 'Roborock Qrevo Curv',
+    navigering: 'LiDAR med rumsplanering',
+    image: '/images/products/roborock-qrevo-curv.webp',
     badge: 'BÄST ROBOROCK VÄRDE',
     badgeColor: 'bg-accent',
     rating: '4.6 / 5',
@@ -113,6 +129,7 @@ const products = [
       'Kompakt station tar lite plats',
       'LiDAR-navigering med rumsplanering',
     ],
+    cons: ['Kompakt station betyder tätare påsbyten', 'Lägre sugkraft än seriens toppmodeller'],
     cta: 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=148694&url=https://www.elon.se/roborock-qrevo-curv-white-148694',
     ctaText: 'Bra pris hos Elon',
     reviewUrl: '/roborock-qrevo-master/',
@@ -127,15 +144,15 @@ const faqItems = [
   },
   {
     question: 'Är det värt att betala för en avancerad basstation?',
-    answer: 'Ja, om du vill ha ett genuint handsfree-hem. En avancerad basstation reducerar din skötsel från daglig till ungefär en gång varannan månad (byta dammkorgspåse och påfylla vatten). Utan basstation behöver du tömma dammkorgen efter varje städning och manuellt tvätta mopparna. För siblingmed husdjur eller allergiker är den automatiska mopptvätten med varmvatten dessutom mer hygienisk.',
+    answer: 'Ja, om du vill ha ett genuint handsfree-hem. En avancerad basstation reducerar din skötsel från daglig till ungefär en gång varannan månad (byta dammkorgspåse och påfylla vatten). Utan basstation behöver du tömma dammkorgen efter varje städning och manuellt tvätta mopparna. För hem med husdjur eller allergiker är den automatiska mopptvätten med varmvatten dessutom mer hygienisk.',
   },
   {
     question: 'Vilken robotdammsugare med basstation är bäst för husdjur?',
-    answer: 'Roborock S8 MaxV Ultra är det bästa valet för husdjurshem. Kombinationen av AI-kamera som undviker djuravföringar och den fullautomatiska stationen gör den unik. Övriga modeller i denna guide saknar djuravföringsdetektion, utan den riskerar du att roboten kör igenom och sprider avföringen. S8 MaxV Ultra är det enda valet om du har katter eller hundar.',
+    answer: 'Roborock Saros 20 Sonic är bästa valet i den här listan för husdjurshem. Ultraljudsrengöringen håller mopparna rena från päls och AI-hinderdetektionen väjer för saker på golvet. Vill du specifikt ha en modell som känner igen och undviker djuravföring är det en annan funktion, och den jämför vi i vår lista över robotdammsugare för husdjur.',
   },
   {
     question: 'Hur stor plats tar en basstation?',
-    answer: 'De flesta avancerade basstationer (Ultra/OMNI) är 40-50 cm breda och 40-50 cm djupa, ungefär som en liten tvättmaskin. De är designade för att stå längs en vägg med god ventilation. Dreame L20 Ultra är något kompaktare än konkurrenterna. Räkna med att behöva 60-70 cm väggutrymme och sätta stationen nära ett eluttag. Planera placeringen i förväg, en placering med god räckvidd till alla rum ger bäst städresultat.',
+    answer: 'De flesta avancerade basstationer (Ultra/OMNI) är 40-50 cm breda och 40-50 cm djupa, ungefär som en liten tvättmaskin. De är designade för att stå längs en vägg med god ventilation. Roborock Qrevo Curv i den här listan har den kompaktaste stationen, och Dreame Matrix 10 Ultra ligger mittemellan. Räkna med att behöva 60-70 cm väggutrymme och sätta stationen nära ett eluttag. Planera placeringen i förväg, en placering med god räckvidd till alla rum ger bäst städresultat.',
   },
   {
     question: 'Behöver jag köpa påsar till stationen?',
@@ -192,86 +209,53 @@ export const articleMeta = {
     </p>
 
     <EditorialCTA products={['Roborock Saros 20 Sonic']} />
-    <p class="text-xs text-text-lighter mb-6">4 produkter jämförda</p>
+    <p class="text-xs text-text-lighter mb-6">{products.length} produkter jämförda</p>
 
-    <!-- Comparison table -->
-    <section class="mb-10" aria-label="Jämförelsetabell robotdammsugare med basstation">
-      <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse, basstationsfunktioner</h2>
-      <div class="spec-table-wrap rounded-xl border border-border">
-        <table class="w-full text-sm bg-white">
-          <thead>
-            <tr class="border-b border-border bg-bg-alt">
-              <th class="text-left px-4 py-3 font-semibold text-text">Modell</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Självtömmande</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Mopprengöring</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Varmvatten</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Auto-påfyllning</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Stationsstorlek</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-border">
-            {products.map((p, i) => (
-              <tr class={i % 2 === 0 ? 'bg-winner/5' : ''}>
-                <td class="px-4 py-3 font-medium text-text whitespace-nowrap">{p.name}</td>
-                <td data-col="Självtömmande" class={`px-4 py-3 ${boolClass(p.selfEmptying)}`}>{boolCell(p.selfEmptying)}</td>
-                <td data-col="Mopprengöring" class={`px-4 py-3 ${boolClass(p.mopCleaning)}`}>{boolCell(p.mopCleaning)}</td>
-                <td data-col="Varmvatten" class={`px-4 py-3 ${boolClass(p.hotWater)}`}>{boolCell(p.hotWater)}</td>
-                <td data-col="Auto-påfyllning" class={`px-4 py-3 ${boolClass(p.autoRefill)}`}>{boolCell(p.autoRefill)}</td>
-                <td data-col="Stationsstorlek" class="px-4 py-3 text-text-light">{p.stationSize}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </section>
+    {/*
+      Jämförelsen lyfter SKILLNADERNA. Alla fem modeller har självtömning,
+      mopprengöring, varmvatten och auto-påfyllning, så de fyra kolumnerna
+      var identiska hela vägen ner och bar ingen information. De ligger nu
+      som en gemensam rad, och tabellen jämför det som faktiskt skiljer.
+    */}
+    <SkillnadsJamforelse
+      title="Så skiljer stationerna sig"
+      produkter={products.map((p) => ({
+        name: p.name,
+        rating: p.rating,
+        omdome: p.badge.charAt(0) + p.badge.slice(1).toLowerCase(),
+        specs: {
+          'Självtömning': boolCell(p.selfEmptying),
+          'Mopprengöring': boolCell(p.mopCleaning),
+          'Varmvattentvätt': boolCell(p.hotWater),
+          'Auto-påfyllning': boolCell(p.autoRefill),
+          'Stationsstorlek': p.stationSize,
+          'Navigering': p.navigering,
+        },
+      }))}
+    />
 
     <!-- Products -->
-    <div class="space-y-8 mb-12" id="produkter">
-      {products.map((product) => (
-        <section class="bg-white rounded-xl border border-border overflow-hidden">
-          <div class="bg-bg-alt px-5 py-3 border-b border-border flex items-center gap-3 flex-wrap">
-            <span class={`${product.badgeColor} text-white text-xs font-bold px-2 py-1 rounded`}>{product.badge}</span>
-            <span class="font-heading font-bold text-text">{product.name}</span>
-            
-          </div>
-          <div class="p-5">
-            <p class="text-text-light text-sm leading-relaxed mb-4">{product.description}</p>
-            <div class="grid sm:grid-cols-2 gap-4 mb-4">
-              <div>
-                <p class="text-xs font-semibold text-text mb-2">Nyckelfunktioner</p>
-                <ul class="space-y-1">
-                  {product.features.map(f => (
-                    <li class="flex items-start gap-1.5 text-xs text-text-light">
-                      <span class="text-winner font-bold mt-0.5">+</span>{f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <p class="text-xs font-semibold text-text mb-2">Betyg</p>
-                <p class="text-lg font-bold text-text">{product.rating}</p>
-              </div>
-            </div>
-            <div class="flex flex-wrap gap-3">
-              <a
-                href={product.reviewUrl}
-                class="inline-flex items-center text-accent underline font-medium text-sm"
-              >
-                Läs recension
-                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-              </a>
-              <a
-                href={product.cta}
-                rel={ctaRel(product.cta)}
-                target="_blank"
-                class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
-              >
-                {product.ctaText}
-                <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-              </a>
-            </div>
-          </div>
-        </section>
+    <div class="space-y-10 mb-12" id="produkter">
+      {products.map((product, i) => (
+        <div>
+          <h2 class="font-heading text-xl font-bold text-text mb-3">
+            #{i + 1}. {product.name}
+            <span class="ml-2 text-sm font-semibold text-accent-dark bg-accent/10 px-2 py-0.5 rounded align-middle">
+              {product.badge.charAt(0) + product.badge.slice(1).toLowerCase()}
+            </span>
+          </h2>
+          <ProductCard
+            name={product.name}
+            image={product.image}
+            rating={parseFloat(product.rating)}
+            pros={product.features}
+            cons={product.cons}
+            ctaUrl={product.cta}
+            ctaText={product.ctaText}
+            reviewUrl={product.reviewUrl}
+          />
+          <p class="text-text-light text-sm leading-relaxed mt-3 max-w-2xl">{product.description}</p>
+        </div>
       ))}
     </div>
 
@@ -282,25 +266,25 @@ export const articleMeta = {
         <div class="bg-white rounded-xl border border-border p-5">
           <h3 class="font-semibold text-text mb-2">Husdjur, katter och hundar</h3>
           <p class="text-text-light text-sm leading-relaxed">
-            Roborock S8 MaxV Ultra är det enda valet. AI-kameran identifierar och undviker djuravföringar, ingen annan modell i denna guide erbjuder den funktionen. Kombinerat med fullautomatisk station är det den mest handsfree-lösningen för husdjurshem.
+            Roborock Saros 20 Sonic. Ultraljudsrengöringen av mopparna gör mest skillnad just i hem med päls, där moppen annars blir smutsig efter halva passet, och AI-hinderdetektionen minskar risken att roboten kör in i saker på golvet. Kombinerat med den mest kompletta stationen i listan blir det den minst handpåläggning av alla fem.
           </p>
         </div>
         <div class="bg-white rounded-xl border border-border p-5">
           <h3 class="font-semibold text-text mb-2">Mycket hårdgolv och hörn</h3>
           <p class="text-text-light text-sm leading-relaxed">
-            Dreame X40 Ultra med utfällbar moppmodul når faktiskt in i hörnen och tvättar mopparna med 70-graders varmvatten. Det bästa moppresultatet i klassen, välj X40 Ultra om moppkvaliteten är din prioritet.
+            Dreame X50 Ultra. Den utfällbara moppmodulen når in i hörnen i stället för att lämna en oputsad kant, och stationen tvättar mopparna i varmvatten mellan passen. Välj den om moppresultatet är det du bryr dig mest om.
           </p>
         </div>
         <div class="bg-white rounded-xl border border-border p-5">
           <h3 class="font-semibold text-text mb-2">Bäst värde, full automatik, lägre pris</h3>
           <p class="text-text-light text-sm leading-relaxed">
-            Ecovacs Deebot X5 Omni ger dig hela paketet, auto-tömning, varmvattenmopptvätt, torkning och automatisk påfyllning, billigare än toppmodellerna. Det bästa värdet i kategorin 2026.
+            Dreame X60 Ultra. Du får samma stationsfunktioner som toppmodellerna, auto-tömning, varmvattentvätt, torkning och automatisk påfyllning, men i en modell som ligger under dem i pris. Bäst värde av de fem om du vill ha full automatik utan att betala toppslanten.
           </p>
         </div>
         <div class="bg-white rounded-xl border border-border p-5">
           <h3 class="font-semibold text-text mb-2">Begränsat utrymme för stationen</h3>
           <p class="text-text-light text-sm leading-relaxed">
-            Dreame L20 Ultra har en kompaktare stationsdesign än konkurrenterna och passar bättre i trånga utrymmen. Du offrar inte funktionalitet, varmvattenmopptvätt och auto-tömning ingår ändå.
+            Roborock Qrevo Curv. Den har listans kompaktaste station och behöver därför minst väggutrymme, utan att du tappar funktioner: varmvattentvätt, auto-tömning och automatisk påfyllning finns kvar. Priset är tätare påsbyten, eftersom tankarna och påsen är mindre.
           </p>
         </div>
       </div>
@@ -392,17 +376,18 @@ export const articleMeta = {
       <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
       <ul class="space-y-2">
         <li><a href="/robotdammsugare/med-mopp/" class="text-accent underline text-sm">Bästa robotdammsugare med mopp 2026</a></li>
-        <li><a href="/roborock-s8-maxv-ultra/" class="text-accent underline text-sm">Roborock S8 MaxV Ultra recension 2026</a></li>
+        <li><a href="/roborock-saros-10r/" class="text-accent underline text-sm">Roborock Saros-serien, recension</a></li>
         <li><a href="/dreame-x40-ultra/" class="text-accent underline text-sm">Dreame X40 Ultra recension 2026</a></li>
-        <li><a href="/ecovacs-deebot-x5-omni/" class="text-accent underline text-sm">Ecovacs Deebot X5 Omni recension 2026</a></li>
-        <li><a href="/" class="text-accent underline text-sm">Bästa robotdammsugare 2026, alla märken jämförda</a></li>
+        <li><a href="/guide/automatisk-tomning/" class="text-accent underline text-sm">Automatisk tömning, så fungerar stationen</a></li>
+        <li><a href="/robotdammsugare/" class="text-accent underline text-sm">Bästa robotdammsugare 2026, alla märken jämförda</a></li>
       </ul>
     </section>
   </div>
 
   <StickyCTA
-    text="Bra pris hos Kjell"
-    url="https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66015&url=http://www.kjell.com/se/produkter/hem-fritid/stadning-rengoring/robotdammsugare/roborock-robotdammsugare/roborock-s8-maxv-ultra-helautomatisk-robotdammsugare-vit-p66015"
+    text={products[0].ctaText}
+    url={products[0].cta}
+    productName={products[0].name}
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -410,13 +395,15 @@ export const articleMeta = {
     "@type": "ItemList",
     "name": "Bästa robotdammsugare med basstation 2026",
     "description": "Robotdammsugare med avancerade basstationer, jämförda och rankade 2026.",
-    "numberOfItems": 4,
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Roborock S8 MaxV Ultra", "url": "https://robotjakt.se/roborock-s8-maxv-ultra/" },
-      { "@type": "ListItem", "position": 2, "name": "Dreame X40 Ultra",
-  "image": "https://robotjakt.se/images/dreame-x40-ultra.webp", "url": "https://robotjakt.se/dreame-x40-ultra/" },
-      { "@type": "ListItem", "position": 3, "name": "Ecovacs Deebot X5 Omni", "url": "https://robotjakt.se/ecovacs-deebot-x5-omni/" },
-      { "@type": "ListItem", "position": 4, "name": "Dreame L20 Ultra", "url": "https://robotjakt.se/dreame-l20-ultra/" },
-    ],
+    "numberOfItems": products.length,
+    /* Genereras ur products, så schemat aldrig kan beskriva en annan
+       uppsättning än sidan faktiskt visar. */
+    "itemListElement": products.map((p, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": p.name,
+      "image": `https://robotjakt.se${p.image}`,
+      ...(p.reviewUrl ? { "url": `https://robotjakt.se${p.reviewUrl}` } : {}),
+    })),
   })} />
 </BaseLayout>

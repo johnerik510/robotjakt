@@ -14,7 +14,7 @@ const breadcrumbs = [
 const faqItems = [
   {
     question: 'Mammotion LUBA AWO 3000 eller Segway Navimow H800E, vilket ska jag välja?',
-    answer: 'LUBA AWO 3000 passar dig med kuperad terräng, 75% lutningstolerans mot H800E:s 45% är en avgörande skillnad. H800E är enklare att installera och kräver ingen RTK-antenn, vilket gör den mer lämpad för öppna, plana tomter med god GPS-mottagning. Välj LUBA för brant mark och komplexa hinder, välj H800E för enkla öppna tomter.',
+    answer: 'Börja med ytan: LUBA AWO 3000 tar upp till 3 000 m² medan H800E stannar vid 800 m². Har du mer gräs än 800 m² är valet redan avgjort. Ryms tomten inom båda passar LUBA AWO 3000 dig med kuperad terräng, där 75% lutningstolerans mot H800E:s 45% är en avgörande skillnad. H800E är enklare att installera och kräver ingen RTK-antenn, vilket gör den mer lämpad för öppna, plana villatomter med god GPS-mottagning.',
   },
   {
     question: 'Behöver båda modellerna perimeterkabel?',
@@ -26,7 +26,7 @@ const faqItems = [
   },
   {
     question: 'Vad kostar respektive modell?',
-    answer: 'Mammotion LUBA AWO 3000 . Segway Navimow H800E . LUBA är dyrare men motiverar det med 75% lutning mot H800E:s 45% och 4G-uppkoppling mot H800E:s WiFi. Prioriterar du priset är H800E det bättre valet för plan terräng.',
+    answer: 'Vi listar inga fasta priser här eftersom butikerna ändrar dem löpande, men prisbilden är tydlig: LUBA AWO 3000 ligger högre än Segway Navimow H800E. LUBA motiverar skillnaden med nästan fyra gånger så stor maxyta, 75% lutning mot H800E:s 45% och 4G-uppkoppling mot H800E:s WiFi. Prioriterar du priset och har en plan tomt inom 800 m² är H800E det bättre valet.',
   },
   {
     question: 'Vilken har enklast installation?',
@@ -62,19 +62,19 @@ export const articleMeta = {
       <Breadcrumbs items={breadcrumbs} light={true} />
     <AuthorByline datePublished="2026-04-13" dateModified="2026-07-27" />
       <h1 class="font-heading text-2xl sm:text-3xl font-bold mb-2">Mammotion LUBA AWO 3000 vs Segway Navimow H800E 2026</h1>
-      <p class="text-gray-300 text-sm max-w-2xl">LUBA AWO 3000 klarar 70% lutning mot H800E:s 45%. Segway kostar ca 8 000 kr, Mammotion ca 12 000 kr. Slingfria GPS-robotar för upp till 3 000 m² med fundamentalt olika navigeringsteknik.</p>
+      <p class="text-gray-300 text-sm max-w-2xl">LUBA AWO 3000 klarar 75% lutning mot H800E:s 45%, och tar upp till 3 000 m² mot H800E:s 800 m². Två slingfria GPS-robotar med fundamentalt olika navigeringsteknik, byggda för olika stora tomter.</p>
     </div>
   </section>
 
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <AnswerBox
       question="Snabbt svar: Mammotion LUBA AWO 3000 eller Segway Navimow H800E?"
-      answer="Mammotion LUBA AWO 3000 är rätt val för kuperade tomter: 75 procent lutningstolerans, 4G-fjärrstyrning och RTK-precision. Segway Navimow H800E vinner på plana, öppna tomter tack vare enklare installation utan referensantenn och lägre pris. Båda är slingfria och klarar upp till 3 000 kvadratmeter."
+      answer="Ytan avgör först: LUBA AWO 3000 tar upp till 3 000 kvadratmeter, H800E stannar vid 800. Har du en stor eller kuperad tomt är LUBA rätt val med 75 procent lutningstolerans, 4G-fjärrstyrning och RTK-precision. Har du en villatomt inom 800 kvadratmeter vinner H800E på enklare installation utan referensantenn och lägre pris. Båda är slingfria."
     />
     <p class="text-text-light mb-4 text-base">
-      Mammotion LUBA AWO 3000 och Segway Navimow H800E är de två starkaste slingfria alternativen för medelstora trädgårdar 2026. Ingen av dem kräver perimeterkabel, men de fungerar fundamentalt olika och passar olika tomter. </p>
+      Mammotion LUBA AWO 3000 och Segway Navimow H800E är två av de starkaste slingfria alternativen 2026, men de är byggda för olika stora tomter. Ingen av dem kräver perimeterkabel, och de fungerar fundamentalt olika. </p>
     <p class="text-text-light mb-6 text-base">
-      Kortfattat: LUBA AWO 3000 vinner på kuperad terräng, H800E på enkel installation och pris. </p>
+      Kortfattat: LUBA AWO 3000 vinner på yta och kuperad terräng, H800E på enkel installation och pris så länge gräsytan håller sig inom 800 m². </p>
 
     <h2 class="font-heading text-xl font-bold mt-6 mb-4">Snabbjämförelse</h2>
     <div class="mb-8">
@@ -89,8 +89,8 @@ export const articleMeta = {
         <tbody>
           <tr class="border-b border-border bg-white">
             <td class="p-3 font-medium text-text">Max yta</td>
-            <td class="p-3 text-text-light">3 000 m²</td>
-            <td class="p-3 text-text-light">3 000 m²</td>
+            <td class="p-3 text-text-light font-semibold text-winner">3 000 m²</td>
+            <td class="p-3 text-text-light">800 m²</td>
           </tr>
           <tr class="border-b border-border">
             <td class="p-3 font-medium text-text">Lutning</td>
@@ -120,17 +120,12 @@ export const articleMeta = {
           <tr class="border-b border-border bg-white">
             <td class="p-3 font-medium text-text">Drifttid</td>
             <td class="p-3 text-text-light">120 min</td>
-            <td class="p-3 text-text-light">120 min</td>
+            <td class="p-3 text-text-light">ca 180 min</td>
           </tr>
           <tr class="border-b border-border">
             <td class="p-3 font-medium text-text">Laddtid</td>
             <td class="p-3 text-text-light">90 min</td>
             <td class="p-3 text-text-light font-semibold text-winner">90 min</td>
-          </tr>
-          <tr class="bg-white">
-            <td class="p-3 font-medium text-text">Pris</td>
-            <td class="p-3 text-text-light"></td>
-            <td class="p-3 font-bold text-winner"></td>
           </tr>
         </tbody>
       </table>
@@ -159,6 +154,7 @@ export const articleMeta = {
         <h3 class="font-semibold text-text mb-3">Välj LUBA AWO 3000 om du...</h3>
         <ul class="space-y-2">
           {[
+            'Har mer än 800 m² gräsyta',
             'Har backar brantare än 45%',
             'Vill ha 4G-fjärrstyrning',
             'Har en komplex trädgård med hinder',
@@ -172,7 +168,7 @@ export const articleMeta = {
         </ul>
         <div class="mt-4">
           <a href="/mammotion-luba-awo-3000/" target="_blank" class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-4 py-2 rounded-lg text-sm w-full min-h-[44px]">
-            Bra pris hos Mammotion LUBA AWO 3000
+            Recension av Mammotion LUBA AWO 3000
           </a>
         </div>
       </div>
@@ -180,6 +176,7 @@ export const articleMeta = {
         <h3 class="font-semibold text-text mb-3">Välj Segway Navimow H800E om du...</h3>
         <ul class="space-y-2">
           {[
+            'Har en gräsyta inom 800 m²',
             'Har plan eller måttligt kuperad tomt',
             'Vill ha enklast möjliga installation',
             'Prioriterar lägre pris',
@@ -193,7 +190,7 @@ export const articleMeta = {
         </ul>
         <div class="mt-4">
           <a href="/segway-navimow-h800e/" target="_blank" class="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white font-semibold px-4 py-2 rounded-lg text-sm w-full min-h-[44px]">
-            Bra pris hos Segway Navimow H800E
+            Recension av Segway Navimow H800E
           </a>
         </div>
       </div>
@@ -217,7 +214,7 @@ export const articleMeta = {
 
     <h3 class="font-heading text-lg font-semibold text-text mt-8 mb-3">Spelar klippbredden någon roll för klipptiden?</h3>
     <p class="text-text-light mb-4 text-base">
-      Ja, mer än många tror. LUBA AWO 3000:s 26 cm klippbredd mot H800E:s 22 cm innebär att LUBA täcker samma gräsmatta på färre banor. På en tomt uppåt 3 000 kvadratmeter blir det märkbart kortare total klipptid per vecka, båda har 120 minuters drifttid per laddning.
+      Ja, mer än många tror. LUBA AWO 3000:s 26 cm klippbredd mot H800E:s 22 cm innebär att LUBA täcker samma gräsmatta på färre banor. På en tomt uppåt 3 000 kvadratmeter, där bara LUBA räcker till ytan, blir det märkbart kortare total klipptid per vecka. H800E har i sin tur längre drifttid per laddning, ca 180 minuter mot LUBA:s 120.
     </p>
     <p class="text-text-light mb-6 text-base">
       Ju större yta, desto mer väger klippbredden i valet. För riktigt stora tomter finns fler faktorer att väga in, dem går vi igenom i guiden om <a href="/robotgrasklippare-stor-tradgard/" class="text-accent underline">robotgräsklippare för stor trädgård</a>.

@@ -1,0 +1,127 @@
+---
+/**
+ * Jämförelse som lyfter SKILLNADERNA i stället för att rada upp identiska rader.
+ *
+ * Problemet komponenten löser: en spec-tabell där alla produkter har "Ja" i
+ * fyra av sex kolumner bär nästan ingen information, och blir på mobil en vägg
+ * av vita boxar med ordet "Ja". Läsaren vill se vad som skiljer.
+ *
+ * Mekanik: specarna delas automatiskt i två grupper.
+ *  - Samma värde hos ALLA produkter -> flyttas till en "gemensamt"-rad högst
+ *    upp, en gång, som chip. Tar en rad i stället för N.
+ *  - Olika värden -> hamnar i själva jämförelsen, en kolumn per produkt.
+ *
+ * Ingen horisontell scroll: desktop är en tabell, mobil är ett kort per
+ * produkt där bara de differentierande specarna listas.
+ */
+export interface JamforProdukt {
+  name: string;
+  /** Kort etikett för vad modellen är bäst på. Syns i både tabell och kort. */
+  omdome?: string;
+  rating?: string;
+  /** Specnyckel -> värde. Samma nycklar i samma ordning för alla produkter. */
+  specs: Record<string, string>;
+}
+
+interface Props {
+  produkter: JamforProdukt[];
+  title?: string;
+  /** Rubriknivå, så sidan behåller sin H2/H3-hierarki. */
+  as?: 'h2' | 'h3';
+}
+
+const { produkter, title = 'Så skiljer de sig', as = 'h2' } = Astro.props;
+
+const nycklar = Object.keys(produkter[0]?.specs ?? {});
+const gemensamma = nycklar.filter((k) => {
+  const v = produkter[0].specs[k];
+  return produkter.every((p) => p.specs[k] === v);
+});
+const skiljer = nycklar.filter((k) => !gemensamma.includes(k));
+const Rubrik = as;
+---
+
+<section class="mb-10" aria-label={title}>
+  <Rubrik class="font-heading text-xl md:text-2xl font-bold text-text mb-3">{title}</Rubrik>
+
+  {gemensamma.length > 0 && (
+    <div class="bg-bg-alt border border-border rounded-xl p-4 mb-4">
+      <p class="text-sm font-semibold text-text mb-2">
+        Det här har alla {produkter.length} modeller
+      </p>
+      <ul class="flex flex-wrap gap-2">
+        {gemensamma.map((k) => (
+          <li class="inline-flex items-center gap-1.5 bg-white border border-border rounded-full pl-2 pr-3 py-1 text-[13px] text-text">
+            <svg class="w-3.5 h-3.5 text-winner flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+            </svg>
+            {k}{produkter[0].specs[k] !== 'Ja' ? `: ${produkter[0].specs[k]}` : ''}
+          </li>
+        ))}
+      </ul>
+      <p class="text-xs text-text-light mt-2.5">
+        Därför avgörs valet av det som skiljer dem, inte av funktionslistan.
+      </p>
+    </div>
+  )}
+
+  {skiljer.length > 0 && (
+    <>
+      {/* Desktop: en kolumn per produkt, bara differentierande rader */}
+      <div class="hidden md:block rounded-xl border border-border overflow-hidden">
+        <table class="w-full text-sm bg-white">
+          <thead>
+            <tr class="border-b border-border bg-bg-alt">
+              <th scope="col" class="text-left px-4 py-3 font-semibold text-text">Modell</th>
+              {skiljer.map((k) => (
+                <th scope="col" class="text-left px-4 py-3 font-semibold text-text">{k}</th>
+              ))}
+              {produkter.some((p) => p.rating) && (
+                <th scope="col" class="text-left px-4 py-3 font-semibold text-text">Betyg</th>
+              )}
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            {produkter.map((p, i) => (
+              <tr class={i === 0 ? 'bg-winner/5' : ''}>
+                <th scope="row" class="text-left px-4 py-3 font-semibold text-text">
+                  {p.name}
+                  {p.omdome && <span class="block text-xs font-normal text-text-light mt-0.5">{p.omdome}</span>}
+                </th>
+                {skiljer.map((k) => (
+                  <td class="px-4 py-3 text-text-light">{p.specs[k]}</td>
+                ))}
+                {produkter.some((x) => x.rating) && (
+                  <td class="px-4 py-3 font-semibold text-text whitespace-nowrap">{p.rating ?? ''}</td>
+                )}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Mobil: ett kompakt kort per produkt, bara det som skiljer */}
+      <div class="md:hidden flex flex-col gap-2.5">
+        {produkter.map((p, i) => (
+          <div class={`rounded-xl border bg-white overflow-hidden ${i === 0 ? 'border-winner' : 'border-border'}`}>
+            <div class={`px-4 py-2.5 flex items-baseline justify-between gap-3 ${i === 0 ? 'bg-winner/5' : 'bg-bg-alt'}`}>
+              <span class="font-heading font-bold text-text text-[15px] leading-snug">{p.name}</span>
+              {p.rating && <span class="text-sm font-bold text-text whitespace-nowrap">{p.rating}</span>}
+            </div>
+            <dl class="px-4 py-3 grid grid-cols-[auto_1fr] gap-x-3 gap-y-1.5">
+              {skiljer.map((k) => (
+                <>
+                  <dt class="text-xs font-semibold uppercase tracking-wide text-text-light self-center">{k}</dt>
+                  <dd class="text-sm text-text text-right">{p.specs[k]}</dd>
+                </>
+              ))}
+            </dl>
+            {p.omdome && (
+              <p class="px-4 pb-3 text-[13px] text-text-light leading-relaxed">{p.omdome}</p>
+            )}
+          </div>
+        ))}
+      </div>
+    </>
+  )}
+</section>

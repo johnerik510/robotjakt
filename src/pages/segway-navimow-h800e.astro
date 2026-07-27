@@ -17,7 +17,7 @@ const faqItems = [
   },
   {
     question: 'Vad är kapaciteten på Segway Navimow H800E?',
-    answer: 'H800E klarar upp till 3 000 m² gräsyta, stor villatomt. Den har starkare motor och batteri än H500E (1 800 m²) och är bättre lämpad för kuperad terräng med upp till 45% lutning.',
+    answer: 'H800E klarar upp till 800 m² gräsyta, alltså en normal till stor villatomt. Den har större batteri och längre klipptid än H500E (500 m²) och är den större av Segways två H-modeller. Lutningstoleransen är upp till 45%, vilket räcker för kuperade villatomter. Har du mer än 800 m² gräs behöver du en modell ur Segways i-serie eller en robot från Mammotion eller Husqvarna.',
   },
   {
     question: 'Hur jämförs H800E mot Husqvarna Automower 430X Nera?',
@@ -34,15 +34,15 @@ const breadcrumbs = [
 ];
 
 const specs = [
-  { label: 'Klippyta', value: 'upp till 3 000 m²' },
+  { label: 'Klippyta', value: 'upp till 800 m²' },
   { label: 'Max lutning', value: '45%' },
   { label: 'Klipphöjd', value: '25 till 65 mm' },
   { label: 'Klippbredd', value: '22 cm' },
   { label: 'Navigering', value: 'Exact!Fusion RTK GPS (utan slinga)' },
-  { label: 'Bullernivå', value: '60 dB(A)' },
-  { label: 'Batteri', value: 'Li-Ion' },
+  { label: 'Bullernivå', value: '54 dB(A)' },
+  { label: 'Batteri', value: 'Li-Ion 5,2 Ah' },
   { label: 'Laddtid', value: '90 min' },
-  { label: 'Drifttid', value: 'ca 120 min' },
+  { label: 'Drifttid', value: 'ca 180 min' },
   { label: 'App', value: 'Segway Navimow (iOS/Android)' },
   { label: 'WiFi/4G', value: 'WiFi' },
   { label: 'Slingkabel', value: 'Krävs ej' },
@@ -82,14 +82,14 @@ export const articleMeta = {
 
     <AnswerBox
       question="Snabbt svar: Är Segway Navimow H800E värd att köpa?"
-      answer="Ja, om du har en kuperad tomt upp till 3 000 m² och hellre ritar gränser i appen än gräver ner slingkabel. Exact!Fusion RTK GPS klarar 45 procents lutning och kalibreringen tar under en halvtimme. Har tomten mycket träd som skymmer satelliterna bör du testa positioneringen först."
+      answer="Ja, om du har en kuperad tomt upp till 800 m² och hellre ritar gränser i appen än gräver ner slingkabel. Exact!Fusion RTK GPS klarar 45 procents lutning och kalibreringen tar under en halvtimme. Har du mer gräs än 800 m² räcker H-serien inte till, och skymmer träden satelliterna bör du testa positioneringen först."
     />
 
     <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
       <div class="flex items-start gap-4">
         <div class="flex-1">
           <div class="flex items-center gap-3 mb-2">
-            <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">UTAN SLINGA, STOR TOMT</span>
+            <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">UTAN SLINGA, VILLATOMT</span>
             <div class="flex gap-0.5">
               {[1,2,3,4,5].map(i => (
                 <svg class={`w-4 h-4 ${i <= 4 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
@@ -100,7 +100,7 @@ export const articleMeta = {
             <span class="font-bold text-text">4.2 / 5</span>
           </div>
           <p class="text-text-light text-sm leading-relaxed">
-            Segway Navimow H800E kombinerar Exact!Fusion RTK GPS med 45% lutningskapacitet för tomter upp till 3 000 m², utan en meter slingkabel. För den som vill slippa grävningsarbete och ändå ha en robot som hanterar stor, kuperad tomt är H800E ett starkt alternativ till Husqvarna.
+            Segway Navimow H800E kombinerar Exact!Fusion RTK GPS med 45% lutningskapacitet för tomter upp till 800 m², utan en meter slingkabel. Den är den större av Segways två H-modeller och tar 300 kvadratmeter mer än H500E. För den som vill slippa grävningsarbete och ändå ha en robot som hanterar en kuperad villatomt är H800E ett starkt alternativ till Husqvarna.
           </p>
         </div>
       </div>
@@ -113,13 +113,10 @@ export const articleMeta = {
         </div>
         <div class="flex flex-col sm:flex-row gap-3">
           <a
-            href="https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25567775&url=https://www.csmegastore.se/i/25567775/segway-navimow-i220e-lidar-pro-robotgrasklippare-2000-m2"
-            rel="nofollow sponsored noopener"
-            target="_blank"
-            class="inline-flex items-center justify-center bg-cta hover:bg-cta/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+            href="/robotgrasklippare/"
+            class="inline-flex items-center justify-center bg-primary hover:bg-primary-light text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
           >
-            Bra pris hos CS Megastore
-            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            Se robotgräsklippare vi kan förmedla pris på
           </a>
         </div>
       </div>
@@ -132,9 +129,9 @@ export const articleMeta = {
           {[
             'Ingen slingkabel, RTK GPS-navigering',
             '45% lutning, hanterar kuperad terräng',
-            '3 000 m² kapacitet',
+            '800 m² kapacitet, störst av H-modellerna',
             'Enkel installation via app',
-            'Tyst (60 dB), ingen störning för grannar',
+            'Tyst (54 dB), ingen störning för grannar',
             'WiFi-styrning från mobilen',
           ].map(pro => (
             <li class="flex items-start gap-2 text-sm text-text-light">
@@ -149,6 +146,7 @@ export const articleMeta = {
         <ul class="space-y-2">
           {[
             'GPS-prestanda beror på satellitstäckning på tomten',
+            'Taket ligger på 800 m², räcker inte för stora tomter',
             'Kortare markhistorik än Husqvarna Automower',
             'Smalare servicenätverk i Sverige',
             'Dyrare per m² än slinga-modeller i budget-segmentet',
@@ -191,7 +189,7 @@ export const articleMeta = {
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">För vem passar Segway Navimow H800E?</h3>
       <p class="text-text-light leading-relaxed mb-4">
-        H800E passar villaägare med 1 000 till 3 000 m² tomt och kuperad terräng som vill slippa slingkabel-installation. Välj H800E om enkel installation väger tyngst. Välj Husqvarna Automower 430X Nera om beprövad tillförlitlighet och lokalt servicenätverk är viktigast.
+        H800E passar villaägare med 500 till 800 m² tomt och kuperad terräng som vill slippa slingkabel-installation. Har du under 500 m² gör <a href="/segway-navimow-h500e/" class="text-accent underline">Segway Navimow H500E</a> samma jobb i en mindre modell. Välj H800E om enkel installation väger tyngst. Välj Husqvarna Automower 430X Nera om beprövad tillförlitlighet och lokalt servicenätverk är viktigast, och titta på <a href="/robotgrasklippare-stor-tradgard/" class="text-accent underline">robotgräsklippare för stor trädgård</a> om tomten är större än 800 m².
       </p>
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad händer om GPS-signalen försvinner en stund?</h3>
@@ -204,7 +202,7 @@ export const articleMeta = {
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Stör Segway Navimow H800E grannarna?</h3>
       <p class="text-text-light leading-relaxed mb-4">
-        Knappast. 60 dB(A) motsvarar ungefär nivån i ett vanligt samtal och ligger långt under en bensinklippare. Kör du nattpass är det snarare hjulen mot grus och dockningen i laddstationen som märks än själva klippningen. Ljudnivån är därför sällan skälet till att grannar reagerar, det är körtiden på dygnet som spelar roll.
+        Knappast. 54 dB(A) motsvarar ungefär nivån i ett vanligt samtal och ligger långt under en bensinklippare. Kör du nattpass är det snarare hjulen mot grus och dockningen i laddstationen som märks än själva klippningen. Ljudnivån är därför sällan skälet till att grannar reagerar, det är körtiden på dygnet som spelar roll.
       </p>
       <p class="text-text-light leading-relaxed mb-6">
         Lägg schemat så att roboten inte kör tidiga morgnar närmast tomtgränsen om ni bor tätt. Eftersom gränserna ligger i appen kan du dela upp tomten i zoner och lägga de känsliga partierna mitt på dagen, utan att flytta en enda kabel. Samma flexibilitet gör att du kan pausa klippningen när ni sitter ute.
@@ -226,7 +224,7 @@ export const articleMeta = {
       <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med liknande modeller</h2>
       <ul class="space-y-2">
         <li><a href="/segway-navimow-i105e/" class="text-accent underline text-sm">Segway Navimow i105E, utan slinga för upp till 500 m²</a></li>
-        <li><a href="/segway-navimow-h500e/" class="text-accent underline text-sm">Segway Navimow H500E, utan slinga för upp till 5 000 m²</a></li>
+        <li><a href="/segway-navimow-h500e/" class="text-accent underline text-sm">Segway Navimow H500E, utan slinga för upp till 500 m²</a></li>
         <li><a href="/robotgrasklippare-utan-slinga/" class="text-accent underline text-sm">Bästa robotgräsklippare utan slinga 2026</a></li>
         <li><a href="/husqvarna-automower-430x-nera/" class="text-accent underline text-sm">Husqvarna Automower 430X Nera, beprövat alternativ</a></li>
         <li><a href="/robotgrasklippare/" class="text-accent underline text-sm">Bästa robotgräsklippare 2026, alla modeller</a></li>
@@ -235,8 +233,8 @@ export const articleMeta = {
   </div>
 
   <StickyCTA
-    text="Bra pris hos CS Megastore"
-    url="https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25567775&url=https://www.csmegastore.se/i/25567775/segway-navimow-i220e-lidar-pro-robotgrasklippare-2000-m2"
+    text="Se hela topplistan för robotgräsklippare"
+    url="/robotgrasklippare/"
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -248,7 +246,7 @@ export const articleMeta = {
       "image": "https://robotjakt.se/images/segway-navimow-h500e.webp",
       "brand": { "@type": "Brand", "name": "Segway" },
       "category": "Robotgräsklippare",
-      "description": "Segway Navimow H800E robotgräsklippare utan slingkabel med RTK GPS, 45% lutning och 3 000 m² kapacitet.",
+      "description": "Segway Navimow H800E robotgräsklippare utan slingkabel med RTK GPS, 45% lutning och 800 m² kapacitet.",
       "offers": {
         "@type": "Offer",
         "priceCurrency": "SEK",
@@ -264,7 +262,7 @@ export const articleMeta = {
     },
     "author": { "@id": "https://robotjakt.se/#axel" },
     "datePublished": "2026-04-05",
-    "reviewBody": "Segway Navimow H800E kombinerar RTK GPS med 45% lutningskapacitet utan slinga. Bäst för den som prioriterar enkel installation på stor kuperad tomt.",
+    "reviewBody": "Segway Navimow H800E kombinerar RTK GPS med 45% lutningskapacitet utan slinga för tomter upp till 800 m². Bäst för den som prioriterar enkel installation på en kuperad villatomt.",
     "publisher": { "@id": "https://robotjakt.se/#organization" }
   })} />
 
