@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -106,26 +108,22 @@ export const articleMeta = {
   title="iRobot Roomba guide 2026: välj rätt Roomba-modell nu"
   description="Komplett guide till iRobot Roomba 2026. Vi jämför j9+, s9+, Combo j9+ och fler. Hitta rätt Roomba för ditt hem, husdjur och budget. Se hela guiden."
   canonical="https://robotjakt.se/irobot-guide/"
-  article={{ datePublished: "2026-04-04", dateModified: "2026-05-27", image: "/images/irobot-roomba-j9-plus.webp" }}
+  article={{ datePublished: "2026-04-04", dateModified: "2026-07-27", image: "/images/irobot-roomba-j9-plus.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-04-04">2026-04-04</time></p>
+    <AuthorByline datePublished="2026-04-04" dateModified="2026-07-27" />
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       iRobot Roomba-guide 2026, alla modeller jämförda
     </h1>
     <p class="text-text-light mb-6 max-w-2xl">
       iRobot uppfann robotdammsugaren. Sedan 2002 har Roomba satt standarden, och idag erbjuder märket allt från budgetmodeller till avancerade kombosystem med automatisk tömning och moppfunktion. Här är guiden till alla modeller 2026. </p>
+
+    <AnswerBox
+      question="Snabbt svar: vilken iRobot Roomba ska du välja 2026?"
+      answer="Roomba j7+ är valet för husdjurshem tack vare PrecisionVision, som identifierar och undviker djuravföring. Roomba Combo i8+ kombinerar dammsugning, moppning och automatisk tömning i Clean Base. Vill du bara komma igång billigt räcker Roomba i3, men då tömmer du dammkorgen manuellt efter varje städning."
+    />
 
     <!-- Brand overview -->
     <section class="mb-8 bg-bg-alt rounded-xl border border-border p-6">
@@ -304,6 +302,36 @@ export const articleMeta = {
           <p class="text-text-light text-sm leading-relaxed">
             Roomba i3 ger dig ett pålitligt marke med beprövad teknik till ett lågt instegsrpis. Du tömmer manuellt men far en robot från ett marke med over 30 ars erfarenhet och brett servicenätverk. </p>
         </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Behöver du automatisk tömning eller räcker en vanlig dammkorg?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Automatisk tömning gör skillnad om du städar varje dag eller har husdjur som fäller. Clean Base suger dammkorgen tom och samlar smutsen i en förseglad påse som räcker ungefär 60 dagar. Städar du en mindre bostad ett par gånger i veckan är manuell tömning på i3 och Vibe fullt hanterbart.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Skillnaden i praktiken handlar om hur ofta du behöver röra roboten. Med Clean Base tar du hand om den var annan månad i stället för efter varje pass, och du kommer aldrig i kontakt med dammet eftersom påsen är sluten när du lyfter ur den. Väger du för och emot är det bekvämlighet mot löpande kostnad för påsar. Vill du jämföra hur andra märken löser samma sak, se vår genomgång av <a href="/robotdammsugare/med-bassation/" class="text-accent underline">robotdammsugare med basstation</a>.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Hur mycket underhåll kräver en Roomba över tid?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Räkna med tre återkommande poster: påsar till Clean Base, filter och borstar. Påsen byts ungefär var 60:e dag vid daglig städning, filter och borstar var andra till tredje månad. Underhållet är enkelt men löper på, och det blir dyrare än robotar med tvättbara filter.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Det som avgör kostnaden är hur mycket smuts hemmet producerar. Ett hem med två hundar sliter borstarna snabbare och sätter igen filtret oftare än en lägenhet med hårda golv. Kontrollera filtret när du hör att sugljudet ändrar karaktär, det är den tydligaste signalen på att det är dags. Sortiment och intervall för <a href="/reservdelar/filter/" class="text-accent underline">filter till robotdammsugare</a> går att planera in i förväg så du inte står utan.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Vilken Roomba klarar husdjurspäls bäst?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Gummirullarna på j7+ och Combo i8+ är den viktigaste detaljen i husdjurshem, päls glider av gummi i stället för att linda sig runt en borsthårig rulle. Kombinerar du dem med Clean Base slipper du också dammoln varje gång korgen töms, smutsen hamnar direkt i den förseglade påsen.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Där iRobot tappar mot Roborock och Dreame är sugkraften på tjocka mattor. Har du högflorsmattor som samlar päls på djupet får du räkna med fler pass för att komma åt allt, medan hårda golv och kortare mattor sköts utan problem. För husdjurshem är det ändå hinderdetektionen som avgör om roboten kan gå igång när ingen är hemma.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -337,7 +365,7 @@ export const articleMeta = {
     "headline": "iRobot Roomba-guide 2026, Alla modeller jämförda",
     "description": "iRobot är pionjären inom robotdammsugare. Guide till alla Roomba-serier: i-serien, j-serien, Combo-serien och Roomba Vibe.",
     "datePublished": "2026-04-04",
-    "dateModified": "2026-04-04",
+    "dateModified": "2026-07-27",
     "author": { "@id": "https://robotjakt.se/#axel" },
     "publisher": { "@id": "https://robotjakt.se/#organization" },
     "url": "https://robotjakt.se/irobot-guide/",

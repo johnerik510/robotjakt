@@ -1,9 +1,11 @@
 ---
 import { ctaRel } from '../lib/cta-rel';
+import AuthorByline from '../components/AuthorByline.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const affUrl = 'https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1';
 
@@ -74,7 +76,7 @@ export const articleMeta = {
 <BaseLayout
   title="Dyson 360 Vis Nav recension 2026: test, pris och betyg"
   description="Dyson 360 Vis Nav testad: 360° visionsystem, Hyperdymium-motor och HEPA-filtrering i fem steg. Köps via Dyson.se. Se pris, specifikationer och recension."
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/roborock-s8-maxv-ultra.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/roborock-s8-maxv-ultra.webp" }}
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
@@ -98,20 +100,17 @@ export const articleMeta = {
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
 
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-07</p>
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-27</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Dyson 360 Vis Nav Recension 2026
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Är Dyson 360 Vis Nav värd att köpa?"
+      answer="Ja, om du vill ha ren dammsugning med hög filtreringsgrad och kan bortse från moppning. Hyperdymium-motorn och HEPA-filtreringen i fem steg gör den stark på päls, damm och mattor. Drifttiden på 65 minuter är kort, och roboten säljs bara via dyson.se med 40 dagars prova-på."
+    />
 
     <!-- Verdict box -->
     <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -228,6 +227,30 @@ export const articleMeta = {
       <h2 class="font-heading text-xl font-bold text-text">Passar 360 Vis Nav ditt hem?</h2>
       <p>
         360 Vis Nav är rätt val om du vill ha en stark robotdammsugare utan moppfunktion och är beredd att betala Dyson-priset. Den passar hem med allergiker (HEPA-filtrering), husdjursägare och hem med blandade golvtyper. Om du vill ha moppning i samma enhet är Dyson Spot+Scrub Ai det naturliga nästa steget, eller Dreame X40 Ultra till lägre pris.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text">Räcker 65 minuters drifttid för hela hemmet?</h3>
+      <p>
+        I en lägenhet eller ett mindre hus hinner 360 Vis Nav runt på ett pass i Quiet-läget. Blir batteriet tomt åker roboten tillbaka till dockan, laddar och fortsätter där den slutade, så större ytor blir städade men det tar längre tid. Laddningen tar knappt tre timmar.
+      </p>
+      <p>
+        Effektläget styr räckvidden mer än något annat. Boost tömmer batteriet snabbare än Quiet, och mattor drar mer effekt än släta golv eftersom borsthuvudet möter större motstånd. Schemalägg städningen till tider när du är borta, då spelar det mindre roll om roboten behöver två pass för att bli klar. I riktigt stora bostäder är längre drifttid ett tyngre argument, och där jämför vi alternativen i listan över <a href="/robotdammsugare/storlagenhet/" class="text-cta underline">bästa robotdammsugare för stor lägenhet</a>.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text">Vad betyder HEPA-filtrering i fem steg för allergiker?</h3>
+      <p>
+        Filtreringen fångar 99,99 procent av partiklarna ner till 0,1 mikrometer, alltså pollen, kvalsterrester och fint damm som annars blåser tillbaka ut i rummet. För allergiker är utblåset ofta viktigare än sugkraften, eftersom en dammsugare med dålig tätning sprider det den just plockat upp.
+      </p>
+      <p>
+        Fem steg innebär att luften passerar flera filterlager innan den lämnar roboten. Det gör underhållet viktigt: ett igensatt filter sänker både sugkraft och filtreringsgrad, så skaka ur och skölj filtret enligt tillverkarens anvisning och låt det torka helt innan du sätter tillbaka det. Fler modeller med hög filtreringsgrad jämför vi i vår genomgång av <a href="/robotdammsugare-allergiker/" class="text-cta underline">bästa robotdammsugare för allergiker</a>.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text">Vad innebär det att roboten bara säljs via dyson.se?</h3>
+      <p>
+        Du kan inte jämföra priser mellan butiker eller vänta på en kampanj hos en återförsäljare, priset är det Dyson sätter. I utbyte köper du direkt av tillverkaren med 40 dagars prova-på och en enda supportkanal för både garanti och reservdelar.
+      </p>
+      <p>
+        Prova-på-perioden är den praktiska poängen. En robotdammsugare beter sig olika beroende på planlösning, trösklar och golvtyper, och det går inte att läsa sig till hur den fungerar i just ditt hem. Kör den i skarpt läge några veckor, notera var den fastnar och hur ofta den behöver hjälp, och bestäm dig först då.
       </p>
     </article>
 

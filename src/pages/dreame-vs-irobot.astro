@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -63,16 +64,7 @@ export const articleMeta = {
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 juli 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
+    <AuthorByline datePublished="2026-03-03" dateModified="2026-07-27" />
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Dreame vs iRobot Roomba 2026, Komplett jämförelse
@@ -89,7 +81,7 @@ export const articleMeta = {
     <EditorialCTA products={['Dreame X40 Ultra']} />
 
     <h2 class="font-heading text-xl font-bold mt-6 mb-4">Snabbjämförelse</h2>
-    <div class="overflow-x-auto mb-8">
+    <div class="spec-table-wrap mb-8">
       <table class="w-full text-sm border-collapse">
         <thead>
           <tr class="bg-primary text-white">
@@ -101,48 +93,48 @@ export const articleMeta = {
         <tbody>
           <tr class="bg-bg-alt/50 border-b border-border">
             <td class="p-3 font-medium text-text">Sugkraft</td>
-            <td class="p-3 text-green-700 font-semibold">12 000 Pa</td>
-            <td class="p-3 text-text-light">Ca 3 000 Pa (+ Dirt Detect)</td>
+            <td data-col="Dreame X40 Ultra" class="p-3 text-winner font-semibold">12 000 Pa</td>
+            <td data-col="iRobot Roomba j9+ Combo" class="p-3 text-text-light">Ca 3 000 Pa (+ Dirt Detect)</td>
           </tr>
           <tr class="border-b border-border">
             <td class="p-3 font-medium text-text">Moppfunktion</td>
-            <td class="p-3 text-green-700 font-semibold">Utfällbar moppmodul</td>
-            <td class="p-3 text-text-light">Integrerad (RetractSwift)</td>
+            <td data-col="Dreame X40 Ultra" class="p-3 text-winner font-semibold">Utfällbar moppmodul</td>
+            <td data-col="iRobot Roomba j9+ Combo" class="p-3 text-text-light">Integrerad (RetractSwift)</td>
           </tr>
           <tr class="bg-bg-alt/50 border-b border-border">
             <td class="p-3 font-medium text-text">Navigering</td>
-            <td class="p-3 text-text-light">LiDAR + AI-kamera (3.0)</td>
-            <td class="p-3 text-text-light">PrecisionVision (kamera)</td>
+            <td data-col="Dreame X40 Ultra" class="p-3 text-text-light">LiDAR + AI-kamera (3.0)</td>
+            <td data-col="iRobot Roomba j9+ Combo" class="p-3 text-text-light">PrecisionVision (kamera)</td>
           </tr>
           <tr class="border-b border-border">
             <td class="p-3 font-medium text-text">Bassstation</td>
-            <td class="p-3 text-green-700 font-semibold">Full (tömning + tvätt + torkning)</td>
-            <td class="p-3 text-text-light">Clean Base (tömning)</td>
+            <td data-col="Dreame X40 Ultra" class="p-3 text-winner font-semibold">Full (tömning + tvätt + torkning)</td>
+            <td data-col="iRobot Roomba j9+ Combo" class="p-3 text-text-light">Clean Base (tömning)</td>
           </tr>
           <tr class="bg-bg-alt/50 border-b border-border">
             <td class="p-3 font-medium text-text">Driftsäkerhet / historia</td>
-            <td class="p-3 text-text-light">Ny (2015,)</td>
-            <td class="p-3 text-green-700 font-semibold">Beprövad (1990, 40+ år)</td>
+            <td data-col="Dreame X40 Ultra" class="p-3 text-text-light">Ny (2015,)</td>
+            <td data-col="iRobot Roomba j9+ Combo" class="p-3 text-winner font-semibold">Beprövad (1990, 40+ år)</td>
           </tr>
           <tr class="border-b border-border">
             <td class="p-3 font-medium text-text">Husdjursoptimering</td>
-            <td class="p-3 text-text-light">AI-hinderdetektion</td>
-            <td class="p-3 text-green-700 font-semibold">Dirt Detect + beprövat</td>
+            <td data-col="Dreame X40 Ultra" class="p-3 text-text-light">AI-hinderdetektion</td>
+            <td data-col="iRobot Roomba j9+ Combo" class="p-3 text-winner font-semibold">Dirt Detect + beprövat</td>
           </tr>
           <tr class="bg-bg-alt/50 border-b border-border">
             <td class="p-3 font-medium text-text">Servicenätverk (Sverige)</td>
-            <td class="p-3 text-text-light">Via importör</td>
-            <td class="p-3 text-green-700 font-semibold">Bredare distribution</td>
+            <td data-col="Dreame X40 Ultra" class="p-3 text-text-light">Via importör</td>
+            <td data-col="iRobot Roomba j9+ Combo" class="p-3 text-winner font-semibold">Bredare distribution</td>
           </tr>
           <tr class="border-b border-border">
             <td class="p-3 font-medium text-text">Ursprung</td>
-            <td class="p-3 text-text-light">Kina (Xiaomi-ekosystem)</td>
-            <td class="p-3 text-text-light">USA (ägt av Amazon)</td>
+            <td data-col="Dreame X40 Ultra" class="p-3 text-text-light">Kina (Xiaomi-ekosystem)</td>
+            <td data-col="iRobot Roomba j9+ Combo" class="p-3 text-text-light">USA (ägt av Amazon)</td>
           </tr>
           <tr class="bg-bg-alt/50">
             <td class="p-3 font-medium text-text">Bäst för</td>
-            <td class="p-3 text-green-700 font-semibold">Specifikationer per krona, moppning</td>
-            <td class="p-3 text-text-light">Beprövad driftsäkerhet, husdjur</td>
+            <td data-col="Dreame X40 Ultra" class="p-3 text-winner font-semibold">Specifikationer per krona, moppning</td>
+            <td data-col="iRobot Roomba j9+ Combo" class="p-3 text-text-light">Beprövad driftsäkerhet, husdjur</td>
           </tr>
         </tbody>
       </table>

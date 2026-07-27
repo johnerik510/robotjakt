@@ -1,9 +1,11 @@
 ---
 import { ctaRel } from '../lib/cta-rel';
+import AuthorByline from '../components/AuthorByline.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const affUrl = 'https://www.awin1.com/cread.php?awinmid=25183&awinaffid=2834856&ued=https%3A%2F%2Fwww.dyson.se%2Fdammsugare%2Frobot%2Fspot-scrub-ai%2Fsvart';
 
@@ -75,7 +77,7 @@ export const articleMeta = {
 <BaseLayout
   title="Dyson Spot Scrub AI recension 2026: golvtvätt-robot"
   description="Dyson Spot Scrub AI testad: robotdammsugare med fokus på moppning och fläckrengöring. Se rengöringsresultat, prestanda och pris i Sverige 2026."
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/roborock-qrevo-master.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/roborock-qrevo-master.webp" }}
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
@@ -100,20 +102,17 @@ export const articleMeta = {
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
 
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-07</p>
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-27</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Dyson Spot+Scrub Ai Recension 2026
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Är Dyson Spot+Scrub Ai värd priset?"
+      answer="Ja, om golven är hårda och fläckarna återkommer. Ingen annan robot letar aktivt upp spill med grön LED och AI, kör upp till 15 drag över samma fläck och kontrollerar resultatet efteråt. Har du mattedominerade rum eller vill ha billigast möjliga moppning finns bättre köp."
+    />
 
     <!-- Verdict box -->
     <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -234,6 +233,30 @@ export const articleMeta = {
       <h2 class="font-heading text-xl font-bold text-text">Vem bör köpa Dyson Spot+Scrub Ai?</h2>
       <p>
         Spot+Scrub Ai passar hem med mycket hårdgolv, husdjur eller barn, alltså hem med frekventa fläckar och spill. Kök, matsal och vardagsrum med laminat, kakel eller vinyl är idealiska ytor. Om ditt hem är mattedominerat eller om du prioriterar dammsugning framför våtrengöring är Dreame X40 Ultra eller Roborock S8 MaxV Ultra bättre val till lägre pris.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text">Hur fungerar Spot+Scrub Ai på mattor?</h3>
+      <p>
+        Wet rollern lyfts automatiskt 10 mm när roboten känner igen en matta, samtidigt som sugkraften ökar upp till fyra gånger. Mattan blir alltså dammsugen, inte fuktad. Rollern är byggd för hårda golv och ska inte köras mot textil över huvud taget.
+      </p>
+      <p>
+        Tio millimeters lyft räcker för tunna mattor och löpare. Har du en tjock ryamatta eller heltäckningsmatta i sovrummet är det tryggare att lägga in den ytan som no-go-zon i appen, så slipper du att kanten drar i rullen. Hur olika mattyper påverkar robotstädning går vi igenom i guiden om <a href="/guide/robotdammsugare-mattor/" class="text-cta underline">robotdammsugare och mattor</a>.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text">Hur mycket underhåll kräver wet rollern?</h3>
+      <p>
+        Dockan tvättar rullen i 60-gradigt vatten och torkar den med 45-gradig varmluft efter varje pass, så du slipper skölja mopp för hand. Kvar för dig blir att fylla rent vatten, tömma smutsvattnet och byta rullen när fibrerna slitits ner. Skräpbehållaren rymmer upp till 100 dagars smuts.
+      </p>
+      <p>
+        Silverjonbehandlingen i vattentanken motverkar bakterietillväxt i stillastående vatten, vilket är den vanligaste orsaken till att robotmoppar börjar lukta. Varmvattentvätt och varmluftstorkning bygger på samma princip: fukt ska inte ligga kvar. Byter du däremot aldrig rullen tappar den greppet mot golvet, och då sjunker resultatet oavsett hur ren den är.
+      </p>
+
+      <h3 class="font-heading text-lg font-bold text-text">Vad betyder höjden på 110 mm i praktiken?</h3>
+      <p>
+        En robot på 110 millimeter kommer under möbler med minst lika hög fri höjd, alltså många soffor och sängar men inte alla. Mät avståndet mellan golv och underkant på dina möbler innan köp, det avgör om roboten når ytorna där dammet faktiskt samlas.
+      </p>
+      <p>
+        Vikten på 6,6 kilo märks om du behöver bära roboten i en trappa, eftersom den rymmer både vattensystem och wet roller. Ska den jobba på ett plan spelar det ingen roll. Fler modeller som både dammsuger och moppar jämför vi i listan över <a href="/robotdammsugare/med-mopp/" class="text-cta underline">bästa robotdammsugare med moppfunktion</a>.
       </p>
     </article>
 

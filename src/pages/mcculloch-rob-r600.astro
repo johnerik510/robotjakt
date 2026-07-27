@@ -1,5 +1,6 @@
 ---
 import ArticleLayout from '../layouts/ArticleLayout.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 
@@ -63,12 +64,17 @@ export const articleMeta = {
   description="McCulloch ROB R600 testad: enkel slingbaserad robotgräsklippare för trädgårdar upp till 600 m². Se prestanda, för- och nackdelar och pris Sverige."
   breadcrumbs={breadcrumbs}
   ogImage="/images/mcculloch-rob-r600.webp"
-  lastUpdated="2026-03-29"
+  lastUpdated="2026-07-27"
   datePublished="2026-03-29"
 >
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
     McCulloch ROB R600, Recension 2026
   </h1>
+
+  <AnswerBox
+    question="Snabbt svar: Är McCulloch ROB R600 värd att köpa?"
+    answer="McCulloch ROB R600 är värd att köpa om tomten är plan, enkelt formad och budgeten hård. Du får en fungerande slingbaserad klippare för 600 m², men 25 procent lutningstolerans och 65 dB är svagast i klassen. Har du backar eller nära grannar väljer du Husqvarna Automower 105 i stället."
+  />
 
   <!-- Verdict box -->
   <div class="bg-bg-alt border border-border rounded-xl p-5 mb-8">
@@ -113,7 +119,7 @@ export const articleMeta = {
     <!-- Above-the-fold CTA (no affiliate for this model, route to convertible alternatives) -->
     <div class="mb-8">
       <a href="/billigaste-robotgrasklippare/" class="inline-flex items-center justify-center gap-2 bg-cta hover:bg-cta-dark text-white font-bold py-3 px-6 rounded-xl text-sm shadow-lg transition-colors">
-        Se billiga robotgräsklippare vi rekommenderar →
+        Se billiga robotgräsklippare vi rekommenderar
       </a>
     </div>
 
@@ -197,12 +203,30 @@ export const articleMeta = {
       McCulloch är som nämnt del av Husqvarna Group, men servicenätverket för McCulloch-modeller är inte lika utbyggt som för Husqvarna-märket i Sverige. Auktoriserade verkstäder finns, men är färre och reservdelstillgången är inte lika säkrad på lång sikt. Det är en viktig faktor för en produkt som ska hålla i 5 till 10 år. Universalblad och begränsningskabel som passar McCulloch hittar du i vår översikt över <a href="/reservdelar/robotgrasklippare/" class="text-accent underline">reservdelar till robotgräsklippare</a>.</p>
     <p class="text-text-light leading-relaxed mb-6">
       För den som inte vill riskera onödiga problem rekommenderar vi att betala de extra för Husqvarna Automower 105 och få hela Husqvarnas servicenätverk i ryggen. </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad betyder 25 procent lutningstolerans i praktiken?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Lutningstolerans i procent beskriver hur mycket marken får stiga över en given sträcka. 25 procent betyder att roboten klarar en backe som höjer sig en fjärdedel av den sträcka den rullar. Blir det brantare tappar hjulen grepp och klipparen larmar eller lämnar en oklippt ränna. </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Siffran gäller torrt gräs. Efter regn eller morgondagg blir underlaget halt och den praktiska gränsen sjunker, särskilt uppför i tvära svängar där bara ett drivhjul har grepp. Gå ut på tomten och titta på de brantaste partierna innan du bestämmer dig: en jämn slänt ner mot en gräsmatta går oftast bra, en kort och brant kant vid en trappa eller en uppfart gör det inte.</p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur lägger du perimeterkabeln rätt kring rabatter och träd?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Kabeln ska följa gräsytans ytterkant och göra en ö runt allt som roboten inte får köra över. Rabatter, dammar och nyplanterade träd ringas in med kabeln fram och tillbaka i samma spår, då läser klipparen ön som en vägg och svänger av. </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Lägg kabeln med markspikar ovanpå marken första säsongen, gräset växer snabbt över den och du kan justera dragningen medan du lär dig hur roboten rör sig. Håll ett litet avstånd in från hårda kanter som murar och stenplattor så att inte ett hjul hamnar utanför gräset, och undvik smala passager mellan två kabelsträckor eftersom roboten då pendlar fram och tillbaka i stället för att ta sig igenom. Vill du hoppa över kabeldragningen helt behöver du en annan teknik, se vår genomgång av <a href="/robotgrasklippare-utan-slinga/" class="text-accent underline">robotgräsklippare utan slinga</a>. </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Går det att få en jämn gräsmatta utan app och GPS?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Ja. Det som avgör resultatet är hur ofta klipparen går, inte om du kan styra den från mobilen. Ställ in schemat på displayen så att roboten kör lite varje dag, då tar den bara av grästoppen och de finhackade resterna göder gräsmattan i stället för att bli liggande strängar. </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      En robot som rör sig i slumpmässiga banor behöver fler drifttimmar än en modell med kartläggning för att täcka samma yta, så var generös med körfönstret. Under torra sommarveckor lönar det sig att höja klipphöjden ett steg, längre grässtrån skuggar jorden och gräsmattan bränner inte lika lätt. Fler modeller i samma prisläge hittar du i vår guide till <a href="/billigaste-robotgrasklippare/" class="text-accent underline">billigaste robotgräsklippare</a>.</p>
   </section>
 
   <!-- Comparison -->
   <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
     <h2 class="font-heading text-xl font-bold text-text mb-3">McCulloch ROB R600 vs Husqvarna Automower 105</h2>
-    <div class="overflow-x-auto">
+    <div class="spec-table-wrap">
       <table class="w-full text-sm">
         <thead>
           <tr class="border-b border-border">
@@ -214,33 +238,33 @@ export const articleMeta = {
         <tbody class="divide-y divide-border text-text-light">
           <tr>
             <td class="py-2 pr-4 font-medium text-text">Pris</td>
-            <td class="py-2 pr-4 text-winner font-semibold"></td>
-            <td class="py-2"></td>
+            <td data-col="McCulloch ROB R600" class="py-2 pr-4 text-winner font-semibold"></td>
+            <td data-col="Husqvarna 105" class="py-2"></td>
           </tr>
           <tr>
             <td class="py-2 pr-4 font-medium text-text">Max yta</td>
-            <td class="py-2 pr-4">600 m²</td>
-            <td class="py-2">600 m²</td>
+            <td data-col="McCulloch ROB R600" class="py-2 pr-4">600 m²</td>
+            <td data-col="Husqvarna 105" class="py-2">600 m²</td>
           </tr>
           <tr>
             <td class="py-2 pr-4 font-medium text-text">Lutningstolerans</td>
-            <td class="py-2 pr-4 text-cta">25%</td>
-            <td class="py-2 text-winner font-semibold">40%</td>
+            <td data-col="McCulloch ROB R600" class="py-2 pr-4 text-cta">25%</td>
+            <td data-col="Husqvarna 105" class="py-2 text-winner font-semibold">40%</td>
           </tr>
           <tr>
             <td class="py-2 pr-4 font-medium text-text">Bullernivå</td>
-            <td class="py-2 pr-4">65 dB</td>
-            <td class="py-2 text-winner font-semibold">58 dB</td>
+            <td data-col="McCulloch ROB R600" class="py-2 pr-4">65 dB</td>
+            <td data-col="Husqvarna 105" class="py-2 text-winner font-semibold">58 dB</td>
           </tr>
           <tr>
             <td class="py-2 pr-4 font-medium text-text">Drifttid</td>
-            <td class="py-2 pr-4">60 min</td>
-            <td class="py-2 text-winner font-semibold">70 min</td>
+            <td data-col="McCulloch ROB R600" class="py-2 pr-4">60 min</td>
+            <td data-col="Husqvarna 105" class="py-2 text-winner font-semibold">70 min</td>
           </tr>
           <tr>
             <td class="py-2 pr-4 font-medium text-text">Service Sverige</td>
-            <td class="py-2 pr-4">Begränsat</td>
-            <td class="py-2 text-winner font-semibold">Landsomfattande</td>
+            <td data-col="McCulloch ROB R600" class="py-2 pr-4">Begränsat</td>
+            <td data-col="Husqvarna 105" class="py-2 text-winner font-semibold">Landsomfattande</td>
           </tr>
         </tbody>
       </table>

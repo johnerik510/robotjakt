@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import FAQ from '../components/FAQ.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 
 const breadcrumbs = [
@@ -61,13 +62,18 @@ export const articleMeta = {
   title="Segway Navimow H500E recension 2026: Vision Fence"
   description="Segway Navimow H500E testad: robotgräsklippare utan slinga med Vision Fence. Se klippresultat, appstyrning, installation och pris i Sverige 2026."
   breadcrumbs={breadcrumbs}
-  lastUpdated="2026-03-29"
+  lastUpdated="2026-07-27"
   ogImage="/images/segway-navimow-h500e.webp"
   datePublished="2026-03-29"
 >
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
     Segway Navimow H500E recension 2026, Vision Fence utan kabel
   </h1>
+
+  <AnswerBox
+    question="Snabbt svar: Är Segway Navimow H500E värd att köpa?"
+    answer="Ja, om du har en öppen tomt upp till 5 000 m² och vill slippa gräva ner perimeterkabel. Vision Fence sköter gränserna med kamera och AI, 4G låter dig styra roboten var du än är och 120 minuters drifttid tar undan stora ytor per pass. Kraftigt regn stör kameran och basstationen kräver fri sikt."
+  />
 
   <!-- Verdict box -->
   <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -206,6 +212,30 @@ export const articleMeta = {
     </p>
     <p class="text-text-light leading-relaxed mb-6">
       LUBA AWO 3000 har å andra sidan ett mer etablerat rykte bland tidig-adopters av GPS-robotar i Sverige och ett mer moget ekosystem med fler oberoende recensioner. Väljer du H500E sparar du på inköpspriset och får större ytkapacitet. Väljer du LUBA AWO 3000 väljer du den mer beprövade lösningen. Båda är starka val.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad händer om kameran i H500E tappar sikten?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Roboten fortsätter arbeta, men med sämre hinderdetektering. Basstationsantennen står för den grova positioneringen och kameran finjusterar gränskänningen. Faller sikten bort i kraftigt regn eller mörker är det antennen som håller roboten på rätt sida av zongränsen, medan hinder på gräset kan missas.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Praktisk konsekvens: lägg klippschemat på dagtid när du kan och plocka undan slangar, leksaker och trädgårdsmöbler före ett nattpass. En kameralins som är nedsmutsad av gräsklipp och jord ger samma effekt som dimma, så torka av den när du ändå rengör klippdäcket. Det är samma rutin som gäller alla kamerabaserade <a href="/robotgrasklippare-utan-slinga/" class="text-accent underline">robotgräsklippare utan slinga</a>.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur ofta behöver H500E nya knivar?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Det styrs av vad som ligger i gräset, inte av kalendern. Slöa knivar river av grässtrået istället för att skära det, och resultatet blir gulnade toppar och en robot som drar mer ström per pass. Sand, kottar och små grenar sliter snabbast.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Kontrollera knivarna när du vänder på roboten för rengöring. Känns eggen rundad, eller sitter en kniv snett efter en träff mot en sten, byt hela satsen samtidigt så att klippdäcket förblir i balans. Obalans hörs som vibration och sliter på lagren. Vi har samlat vad som passar vilken modell under <a href="/reservdelar/knivar/" class="text-accent underline">reservknivar till robotgräsklippare</a>.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur förbereder du H500E för vintern?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Gräset slutar växa när marktemperaturen faller, och då ska roboten in. Rengör klippdäcket och hjulen, ladda batteriet innan förvaring och ställ roboten frostfritt och torrt. Ett djupurladdat litiumbatteri som står ute hela vintern tappar kapacitet permanent.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Basstationsantennen sitter kvar utomhus, men det är värt att kontrollera fästet innan snön kommer, en antenn som flyttas ur läge betyder att du får kalibrera zonerna på nytt till våren. Steg för steg går vi igenom hela rutinen i vår guide om <a href="/guide/vinterforvaring-robotgrasklippare/" class="text-accent underline">vinterförvaring av robotgräsklippare</a>.
     </p>
   </section>
 

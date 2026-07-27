@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import FAQ from '../components/FAQ.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -59,13 +60,18 @@ export const articleMeta = {
   title="Ecovacs Deebot X5 Omni recension 2026: fyrkantig robot"
   description="Ecovacs Deebot X5 Omni testad: fyrkantig design rengör hörn bättre, 11 000 Pa sugkraft och AIVI 3D-kamera. Se betyg, pris och om designen verkligen lönar sig."
   breadcrumbs={breadcrumbs}
-  lastUpdated="2026-03-29"
+  lastUpdated="2026-07-27"
   ogImage="/images/ecovacs-deebot-x5-omni.webp"
   datePublished="2026-03-25"
 >
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
     Ecovacs Deebot X5 Omni, Recension 2026
   </h1>
+
+  <AnswerBox
+    question="Snabbt svar: är Ecovacs Deebot X5 Omni värd att köpa?"
+    answer="Ecovacs Deebot X5 Omni får 8,8 av 10 hos oss. Den fyrkantiga kroppen når längre in i hörn än runda robotar, AIVI 3D-kameran känner igen kablar och skor, och stationen tömmer och tvättar moppen själv. Väljer du bort den gör du det för bullret på 68 dB och sämre kameraprestanda i mörka rum."
+  />
 
   <!-- Verdict box -->
   <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -199,6 +205,30 @@ export const articleMeta = {
     <p class="text-text-light leading-relaxed mb-6">
       Deebot X5 Omni är ändå ett starkt alternativ om du specifikt vill ha kamerabaserad hinderdetektion och den fyrkantiga designens unika hörntäckning. Är prisskillnaden avgörande är X5 Omni ett bra val som inte kompromissar på de viktigaste funktionerna.
     </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur mycket underhåll kräver Deebot X5 Omni?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Stationen sköter tömning, mopptvätt och torkning, så det som återstår för dig är soppåsen var 30 till 60 dagar och rent vatten i tanken. Utöver det behöver borstvalsen ses över med jämna mellanrum: hår lindar sig runt valsen i alla hem med husdjur eller långhåriga familjemedlemmar.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Kameralinsen och sensorerna på fronten vill ha en torr trasa nu och då. En dammig lins gör hinderdetekteringen sämre, och då börjar roboten köra på saker den annars hade väjt för. Vi går igenom hela rutinen steg för steg i guiden om <a href="/guide/underhall/" class="text-accent underline">underhåll av robotdammsugare</a>.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Är 68 dB för högt om du är hemma när roboten kör?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      68 dB hörs tydligt i samma rum men är inte påträngande på avstånd. I praktiken går X5 Omni att köra medan du lagar mat eller arbetar i ett annat rum, men den stör om du sitter i videomöte i samma rum. Enklast är att schemalägga körningen till när hemmet är tomt.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Ljudet kommer främst från sugmotorn och ligger högre än på de LiDAR-modeller vi jämfört. Bor du i lägenhet är det värt att lägga schemat på dagtid, både för din egen del och för grannarnas. Appen låter dig sätta olika tider för olika rum, så sovrummet kan städas när ingen sover där.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Fungerar AIVI 3D i rum utan fönster?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      AIVI 3D bygger på en kamera, och en kamera behöver ljus. I mörka klädkammare, badrum utan fönster och källarutrymmen tappar hinderdetekteringen precision jämfört med hur den arbetar i ett upplyst rum. Roboten kör fortfarande, men marginalerna mot skor och sladdar blir mindre.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Lösningen är oftast enkel: lägg städningen på dagtid eller lämna en lampa tänd i de mörka utrymmena. Har du många fönsterlösa rum och vill ha ett navigeringssystem som mäter avstånd med laser i stället för att titta, är en <a href="/robotdammsugare/lidar/" class="text-accent underline">robotdammsugare med LiDAR</a> det mer förutsägbara valet.
+    </p>
   </section>
 
   <!-- För whom -->
@@ -230,7 +260,7 @@ export const articleMeta = {
 
   <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 my-6">
     <h3 class="font-bold text-lg mb-2">Reservdelar och tillbehör</h3>
-    <p class="text-sm text-gray-600 mb-3">Köp originala filter, borstar och moppkuddar till din Ecovacs-robot:</p>
+    <p class="text-sm text-text-light mb-3">Köp originala filter, borstar och moppkuddar till din Ecovacs-robot:</p>
     <a href="/reservdelar/ecovacs/" class="inline-block bg-cta text-white font-semibold py-2 px-4 rounded-lg text-sm">Se Ecovacs reservdelar</a>
   </div>
 

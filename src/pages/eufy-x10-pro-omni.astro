@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const faqItems = [
   {
@@ -68,24 +70,21 @@ export const articleMeta = {
   title="eufy X10 Pro Omni test 2026: recension och pris i Sverige"
   description="eufy X10 Pro Omni testad: 8 000 Pa, MopExtend och självtömmande station. Prisvärt alternativ till Dreame X40 Ultra. Se betyg, pris och köpguide."
   ogImage="/images/eufy-x10-pro-omni.webp"
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/eufy-x10-pro-omni.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/eufy-x10-pro-omni.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-19</p>
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-27</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       eufy X10 Pro Omni Recension 2026
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: är eufy X10 Pro Omni värd att köpa?"
+      answer="eufy X10 Pro Omni får 4,4 av 5 hos oss och är ett av de bästa köpen i mellanklass-premium. Du får MopExtend mot kanterna, LiDAR-kartläggning och en station som tömmer, fyller på vatten och tvättar moppen. Har du tjocka mattor eller flera husdjur är Dreame X40 Ultra det starkare valet."
+    />
 
     <!-- Verdict box -->
     <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -225,6 +224,30 @@ export const articleMeta = {
       </p>
       <p class="text-text-light leading-relaxed mb-4">
         Har du många husdjur eller tjocka mattor rekommenderar vi Dreame X40 Ultra eller Roborock S8 MaxV Ultra istället.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur ofta behöver du sköta om stationen?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Med 3,2-liters tankar räcker en påfyllning ungefär en vecka vid daglig körning i ett normalstort hem. Utöver det handlar skötseln om tre saker: byta soppåse när appen säger till, skölja smutsvattentanken och hålla moppduken ren.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Smutsvattentanken är den som ställer till det om den glöms. Står smutsvatten kvar för länge börjar det lukta, och lukten följer med moppduken tillbaka ut på golvet. Torka också av tvättbrickan i stationen med jämna mellanrum, det är där hår och grus samlas efter mopptvätten.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Passar eufy X10 Pro Omni i en lägenhet?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Ja, och stationen är ett av skälen. Den är kompaktare än Dreame X40 Ultras, vilket gör skillnad när det enda lediga golvutrymmet är en hallvägg. Drifttiden på upp till 150 minuter räcker med god marginal för en lägenhet, så roboten hinner klart utan att behöva ladda mitt i.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Invändningen är ljudnivån. Cirka 65 dB i normalläge hörs genom en stängd dörr, så i en liten lägenhet vill du schemalägga körningen till när ingen sover. Vi har jämfört vad som betyder mest på små ytor i guiden till <a href="/robotdammsugare/lagenhet/" class="text-accent underline">robotdammsugare för lägenhet</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Klarar den ett hem med husdjur?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        8 000 Pa tar upp päls från hårda golv och mattor i standardhöjd utan besvär, och BoostIQ höjer sugkraften automatiskt när roboten kör upp på en matta. Det som saknas är en AI-kamera för att känna igen djuravföring, alltså den funktion som får en robot att väja i stället för att köra rakt igenom en olycka.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Har du en valp eller en katt med känslig mage är det en verklig risk att väga in, och då är Roborock S8 MaxV Ultra tryggare. Lever djuren pålitligt rumsrena handlar det i stället om päls och damm, och där räcker X10 Pro Omni. Fler alternativ finns i vår topplista över <a href="/robotdammsugare/husdjur/" class="text-accent underline">robotdammsugare för husdjur</a>.
       </p>
     </section>
 

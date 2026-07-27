@@ -1,9 +1,11 @@
 ---
 import { ctaRel } from '../lib/cta-rel';
+import AuthorByline from '../components/AuthorByline.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const elonUrl = 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66015&url=http://www.kjell.com/se/produkter/hem-fritid/stadning-rengoring/robotdammsugare/roborock-robotdammsugare/roborock-s8-maxv-ultra-helautomatisk-robotdammsugare-vit-p66015';
 const komplettUrl = 'https://go.adt267.com/t/t?a=1615916042&as=2063681412&t=2&tk=1&cupa_sku=1307027&url=https://www.komplett.se/product/1307027/hem-fritid/dammsugare-rengoring/robotdammsugare/roborock-s8-maxv-ultra-robotdammsugare-svart';
@@ -96,24 +98,21 @@ export const articleMeta = {
   title="Roborock S8 MaxV Ultra recension 2026: test och Omdöme"
   description="Roborock S8 MaxV Ultra recension 2026. Vi jämför AI-kamera, 10 000 Pa, dubbla gummirullar och station med varmvattentvätt. Bäst för husdjurshem."
   ogImage="/images/roborock-s8-maxv-ultra.webp"
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/roborock-s8-maxv-ultra.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/roborock-s8-maxv-ultra.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-05-15</p>
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-27</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Roborock S8 MaxV Ultra recension 2026
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Är Roborock S8 MaxV Ultra värd priset?"
+      answer="För husdjurshem, ja. ReactiveAI 2.0-kameran känner igen över 70 hinder inklusive djuravföring, de dubbla gummirullarna trasslar inte av päls och stationen tvättar mopparna i 60-gradigt vatten. Vi ger 4,8 av 5. Saknar du husdjur och prioriterar hörnmoppning räcker en billigare modell."
+    />
 
     <p class="text-text-light text-base leading-relaxed mb-6">
       Roborock S8 MaxV Ultra är toppmodellen i S8-serien och riktar sig till hem med höga krav: husdjur, blandade golvytor och noll tolerans för manuellt efterarbete. Vi har granskat den utifrån specifikationer, oberoende tester och sammanvägda användaromdömen. Här är vad sugkraften, AI-kameran och stationen faktiskt klarar.
@@ -300,11 +299,27 @@ export const articleMeta = {
       <p class="text-text-light leading-relaxed mb-4">
         Saknar du husdjur och prioriterar moppning rekommenderar vi <a href="/dreame-x40-ultra/" class="text-accent underline">Dreame X40 Ultra</a> som ger bättre hörnprestanda till ungefär samma pris. Letar du efter budget, se vår guide över <a href="/billigaste-robotdammsugare/" class="text-accent underline">billigaste robotdammsugare 2026</a>.
       </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur håller du AI-kameran träffsäker över tid?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Torka kameralinsen och ljussensorns fönster med en torr mikrofiberduk varannan vecka. Kameran känner igen hinder genom att jämföra det den ser mot inlärda mönster, och damm gör bilden otydlig på samma sätt som en immig glasögonlins. Använd aldrig rengöringsmedel eller våt trasa direkt på linsen.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Det är den kombinerade signalen som gör ReactiveAI 2.0 stark: RGB-kameran ser färg och form, den strukturerade ljussensorn mäter hur långt bort objektet står. Tappar den ena kvalitet blir bedömningen osäkrare, och roboten faller tillbaka på att avvika bredare kring allt den inte känner igen, vilket syns som att den börjar hoppa över ytor. Kör du nattscheman i husdjurshem är robotens LED tillsammans med en ren lins det som avgör resultatet. Fler modeller vi bedömt för samma miljö finns i vår genomgång av <a href="/robotdammsugare/husdjur/" class="text-accent underline">bästa robotdammsugare för husdjur</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad behöver du fylla på och tömma i stationen?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Rentvattentanken rymmer 3 liter, smutsvattentanken 2,5 liter och dammpåsen 2,5 liter som håller upp till sju veckor. Smutsvattentanken är den minsta av de två vattentankarna, så den signalerar oftast först. Skölj också tvättrännan under mopparna, där fastnar hår och grus.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Vattenkretsen är sluten på ett sätt som gör smutsvattnet till flaskhalsen: allt som mopparna tvättas med i 60-gradigt vatten hamnar där, tillsammans med det som sköljs ur fibrerna. Varmluftstorkningen på 45 grader är det som håller mögellukten borta, och den fungerar bara om moppdukarna sitter rätt i hållaren när roboten dockar. I hem med långhåriga husdjur är hårtrasslet i tvättrännan det första som märks, se hur olika rullkonstruktioner klarar det i vår översikt över <a href="/robotdammsugare/langt-har/" class="text-accent underline">robotdammsugare för långt hår</a>.
+      </p>
     </section>
 
     <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 my-6">
       <h3 class="font-bold text-lg mb-2">Reservdelar och tillbehör</h3>
-      <p class="text-sm text-gray-600 mb-3">Originalfilter, gummirullar och moppkuddar till Roborock S8 MaxV Ultra:</p>
+      <p class="text-sm text-text-light mb-3">Originalfilter, gummirullar och moppkuddar till Roborock S8 MaxV Ultra:</p>
       <a href="/reservdelar/roborock/" class="inline-block bg-cta text-white font-semibold py-2 px-4 rounded-lg text-sm">Roborock reservdelar och tillbehör</a>
     </div>
 

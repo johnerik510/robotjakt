@@ -2,6 +2,7 @@
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
@@ -62,7 +63,7 @@ export const articleMeta = {
   description="Husqvarna Automower 105 testad: enkel robotgräsklippare för trädgårdar upp till 600 m². Se prestanda, installation med slinga och pris i Sverige."
   breadcrumbs={breadcrumbs}
   ogImage="/images/husqvarna-automower-105.webp"
-  lastUpdated="2026-03-29"
+  lastUpdated="2026-07-27"
   datePublished="2026-04-23"
 >
   <div class="bg-amber-50 border border-amber-300 rounded-xl p-4 mb-6">
@@ -73,6 +74,11 @@ export const articleMeta = {
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
     Husqvarna Automower 105, Recension 2026
   </h1>
+
+  <AnswerBox
+    question="Snabbt svar: är Husqvarna Automower 105 värd att köpa 2026?"
+    answer="Modellen har utgått ur Husqvarnas sortiment, så köper du den blir det på restlager eller begagnat. Tekniken håller fortfarande: 40 procents lutningstolerans, 600 m² kapacitet och Husqvarnas servicenät. Men du får varken app, WiFi eller GPS, och Husqvarnas egen efterträdare är den slinglösa Aspire R6V."
+  />
 
   <!-- Verdict box -->
   <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -195,12 +201,36 @@ export const articleMeta = {
       Automower 105 inkluderar Husqvarnas kompletta säkerhetspaket: PIN-kod krävs för att starta roboten, lyftsensor stänger av knivarna omedelbart om enheten lyfts, och tippsensorn stannar roboten vid välvning. Dessa funktioner är branschstandard för Husqvarna och finns i hela Automower-serien. </p>
     <p class="text-text-light leading-relaxed mb-6">
       Utan app finns inget stöldlarm via mobilnotis, ett medvetet avkall för den enkla prisklassen. För de flesta hem räcker PIN-koden som tillräckligt avskräckande skydd. Husqvarnas stöldregistreringssystem täcker inte 105an på samma sätt som GPS-modellerna, vilket är värt att känna till om stöldskydd är en prioritet. </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Är det värt att köpa en utgången Automower 105 begagnat?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Det kan vara en bra affär, men batteriet avgör. Ett litiumbatteri tappar kapacitet med åren, och en robot som knappt hinner runt ett pass innan den måste ladda kostar snart mer i ny batterisats än vad prisskillnaden mot en ny modell var. Fråga alltid hur många säsonger enheten gått.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Kontrollera fyra saker vid ett begagnatköp. Att laddstationen, transformatorn och kabelskarvarna finns med, eftersom en komplett installationssats separat blir en märkbar del av budgeten. Att PIN-koden är återställd eller känd av säljaren. Att hjulmotorernas drev inte glappar när du snurrar hjulen för hand. Och att chassit inte har sprickor efter kollisioner med sten. Går allt igenom är 105an en robust maskin, den är byggd runt samma mekanik som resten av Automower-serien och slitdelarna är utbytbara.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Finns det reservdelar till Automower 105?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Ja, de delar som slits mest är också de som är enklast att få tag på: knivblad, batteri, hjul och kabelskarvar. Att modellen utgått ur nyförsäljningen betyder inte att den blir omöjlig att hålla i drift, men kontrollera alltid modellbeteckningen mot delen innan du beställer.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Utgå aldrig från att ett blad som passar en annan Automower-generation passar 105an. Knivfäste och bladtjocklek varierar mellan serier, och ett blad som sitter med minsta glapp ger obalans som vandrar vidare till klippmotorns lager. Samma sak gäller batteri, där både kontaktdon och kapslingens mått skiljer sig. Vi har listat delarna per modell i vår översikt över <a href="/reservdelar/knivar/" class="text-accent underline">reservknivar till robotgräsklippare</a>.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Ska du välja slinga eller slinglöst i dag?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Slingan är förutsägbar men fast, slinglöst är flexibelt men beroende av sikt. Med perimeterkabel vet roboten alltid exakt var gränsen går, oavsett träd och husväggar. Med virtuella gränser slipper du kabelgrävet och kan flytta gränsen i appen, men navigeringen vill ha relativt fri himmel.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Det gör valet till en fråga om din tomt, inte om vilken teknik som är nyare. En kringbyggd villaträdgård med höga häckar, stora lövträd och smala passager är fortfarande hemmaplan för en kabelrobot som 105an. En öppen gräsmatta där du gärna ändrar rabatter och möblering mellan säsongerna vinner mer på en slinglös. Har du redan kabeln i marken är den ett argument för att stanna i samma teknik nästa gång också. Vi går igenom skillnaderna i praktiken i vår topplista över <a href="/robotgrasklippare-utan-slinga/" class="text-accent underline">robotgräsklippare utan slinga</a>.
+    </p>
   </section>
 
   <!-- Comparison with 315X -->
   <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
     <h2 class="font-heading text-xl font-bold text-text mb-3">Jämförelse mot Husqvarna 315X, när räcker 105an?</h2>
-    <div class="overflow-x-auto">
+    <div class="spec-table-wrap">
       <table class="w-full text-sm">
         <thead>
           <tr class="border-b border-border">
@@ -212,28 +242,28 @@ export const articleMeta = {
         <tbody class="divide-y divide-border text-text-light">
           <tr>
             <td class="py-2 pr-4 font-medium text-text">Max yta</td>
-            <td class="py-2 pr-4">600 m²</td>
-            <td class="py-2">1 600 m²</td>
+            <td data-col="Automower 105" class="py-2 pr-4">600 m²</td>
+            <td data-col="Automower 315X" class="py-2">1 600 m²</td>
           </tr>
           <tr>
             <td class="py-2 pr-4 font-medium text-text">Navigering</td>
-            <td class="py-2 pr-4">Slinga</td>
-            <td class="py-2">GPS + 3G</td>
+            <td data-col="Automower 105" class="py-2 pr-4">Slinga</td>
+            <td data-col="Automower 315X" class="py-2">GPS + 3G</td>
           </tr>
           <tr>
             <td class="py-2 pr-4 font-medium text-text">App</td>
-            <td class="py-2 pr-4">Nej</td>
-            <td class="py-2">Automower Connect</td>
+            <td data-col="Automower 105" class="py-2 pr-4">Nej</td>
+            <td data-col="Automower 315X" class="py-2">Automower Connect</td>
           </tr>
           <tr>
             <td class="py-2 pr-4 font-medium text-text">Lutning</td>
-            <td class="py-2 pr-4">40%</td>
-            <td class="py-2">40%</td>
+            <td data-col="Automower 105" class="py-2 pr-4">40%</td>
+            <td data-col="Automower 315X" class="py-2">40%</td>
           </tr>
           <tr>
             <td class="py-2 pr-4 font-medium text-text">Pris</td>
-            <td class="py-2 pr-4 text-winner font-semibold"></td>
-            <td class="py-2"></td>
+            <td data-col="Automower 105" class="py-2 pr-4 text-winner font-semibold"></td>
+            <td data-col="Automower 315X" class="py-2"></td>
           </tr>
         </tbody>
       </table>
@@ -281,7 +311,7 @@ export const articleMeta = {
 
   <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 my-6">
     <h3 class="font-bold text-lg mb-2">Reservdelar och tillbehör</h3>
-    <p class="text-sm text-gray-600 mb-3">Köp originala knivar, laddningskablar och tillbehör till din Husqvarna Automower:</p>
+    <p class="text-sm text-text-light mb-3">Köp originala knivar, laddningskablar och tillbehör till din Husqvarna Automower:</p>
     <a href="/reservdelar/husqvarna/" class="inline-block bg-cta text-white font-semibold py-2 px-4 rounded-lg text-sm">Se Husqvarna reservdelar</a>
   </div>
 

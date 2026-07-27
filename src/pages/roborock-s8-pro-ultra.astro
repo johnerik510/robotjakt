@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const faqItems = [
   {
@@ -68,24 +70,21 @@ export const articleMeta = {
   title="Roborock S8 Pro Ultra recension 2026: föregångaren test"
   description="Roborock S8 Pro Ultra testad: 6 000 Pa sugkraft, dubbla gummirullar och självtömmande station med varmvattentvätt. Se betyg, pris och hur den jämförs 2026."
   ogImage="/images/roborock-s8-pro-ultra.webp"
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/roborock-s8-pro-ultra.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/roborock-s8-pro-ultra.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-19</p>
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-27</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Roborock S8 Pro Ultra Recension 2026
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Är Roborock S8 Pro Ultra fortfarande värd att köpa?"
+      answer="Ja, om du klarar dig utan AI-kamera. FlexiArm-sidborsten fälls ut mot lister och hörn, de dubbla gummirullarna trasslar inte av hår och Sonic-moppen vibrerar 3 000 gånger per minut. Sugkraften stannar på 6 000 Pa. Vi ger 4,3 av 5 och kallar den ett prisvärt alternativ."
+    />
 
     <!-- Verdict box -->
     <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -225,6 +224,30 @@ export const articleMeta = {
       </p>
       <p class="text-text-light leading-relaxed mb-4">
         Har du lång päls eller kräver djuravföringsdetektering väljer du S8 MaxV Ultra. Prioriterar du moppfunktionen väljer du Dreame X40 Ultra.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Räcker 6 000 Pa i ett hem med husdjur?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        För kort till medellångt hår, ja. Sugkraften avgör hur djupt ur mattluggen roboten drar smutsen, men det som lyfter päls från golvet är rullarna. De dubbla gummirullarna släpper håret i stället för att linda in det, och därför fungerar 6 000 Pa bättre än siffran antyder.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        På hårdgolv är suget aldrig flaskhalsen, där handlar allt om att rullarna når kanterna och att håret verkligen följer med in i dammkorgen. Skillnaden mot en starkare modell visar sig på tjocka mattor, där högre tryckskillnad drar upp partiklar som sitter längre ner i luggen. Motmedlet är enkelt och kostar ingenting: kör dagligen i stället för varannan dag. En robot som passerar samma matta sju gånger i veckan hinner inte bygga upp det djupare lagret. Hur olika rullkonstruktioner klarar päls jämför vi i vår översikt över <a href="/robotdammsugare/langt-har/" class="text-accent underline">robotdammsugare för långt hår</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur underhåller du FlexiArm och gummirullarna?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        FlexiArm-armen måste kunna röra sig fritt, så plocka bort hårstrån som lindat sig kring fästet varannan vecka. Gummirullarna lyfter du ur och skjuter av trasslet med handen, de behöver sällan sax. Torka även av rullhuset, där bygger fint damm upp friktion mot axeltapparna.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Poängen med FlexiArm är att borsten bara fälls ut när roboten känner igen en vägg eller ett hörn, och drar in sig i övrigt så att skräpet knuffas inåt mot sugöppningen i stället för utåt i rummet. Går armen trögt slutar den fällas ut, och det händer tyst: roboten larmar inte, du ser det bara som att lister och hörn börjar se dammiga ut igen. Originalborstar, filter och moppdukar finns bland <a href="/reservdelar/roborock-s8-serien/" class="text-accent underline">reservdelar till Roborock S8-serien</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vilka mattor klarar S8 Pro Ultra utan att bli fuktiga?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        5 mm mopplyft räcker för hallmattor, tunna bomullsmattor och plana ullmattor. Långhårig matta eller matta på mjukt underlägg kan ta i moppen och få fuktiga stråk. Sonic-moppen vibrerar dessutom mot underlaget, så även en lätt kontakt känns mer i luggen än med en passiv trasa.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Samma vibration är styrkan på öppen hårdgolvsyta. Rörelsen bryter upp intorkat smuts mekaniskt i stället för att bara flytta det, vilket är skillnaden mot en robot som drar en fuktig duk över golvet. Lösningen för känsliga mattor är därför inte att stänga av moppen helt, utan att lägga de mattorna som egen zon i appen och köra dem utan vatten. Då behåller du Sonic-effekten där den gör nytta.
       </p>
     </section>
 

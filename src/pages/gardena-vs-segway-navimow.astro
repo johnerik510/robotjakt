@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -62,16 +63,7 @@ export const articleMeta = {
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 juli 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
+    <AuthorByline datePublished="2026-04-19" dateModified="2026-07-27" />
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Gardena vs Segway Navimow 2026, perimeterkabel eller kabelläst GPS?
@@ -87,26 +79,26 @@ export const articleMeta = {
 
     <!-- Quick verdict -->
     <div class="grid sm:grid-cols-2 gap-4 mb-10">
-      <div class="bg-green-50 border border-green-200 rounded-xl p-5">
-        <p class="text-xs font-semibold text-green-700 uppercase mb-1">Bäst pris och beprövad teknik</p>
+      <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+        <p class="text-xs font-bold text-winner mb-1">Bäst pris och beprövad teknik</p>
         <h2 class="font-heading text-xl font-bold text-text mb-2">Gardena SILENO City 500</h2>
         <p class="text-text-light text-sm mb-4">, kabelbaserad, pålitlig, exakt kantklippning. Bäst för budget-medvetna med plan trädgård.</p>
         <a
           href="https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3051379&url=https://www.proshop.se/Robotgraesklippare/Gardena-smart-SILENO-city-robotic-lawnmower-500-m/3051379"
           rel="sponsored nofollow noopener noreferrer"
           target="_blank"
-          class="block w-full text-center bg-green-700 hover:bg-green-800 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm"
+          class="block w-full text-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm"
         >
           Se Gardena SILENO, 
         </a>
       </div>
       <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
-        <p class="text-xs font-semibold text-blue-700 uppercase mb-1">Bäst för kabelbaserad installation</p>
+        <p class="text-xs font-bold text-accent-dark mb-1">Bäst för kabelbaserad installation</p>
         <h2 class="font-heading text-xl font-bold text-text mb-2">Segway Navimow H500E</h2>
         <p class="text-text-light text-sm mb-4">, slingfri GPS-navigation, flexibel konfiguration via app. Bäst för den som vill slippa kabelinstallation.</p>
         <a
           href="/segway-navimow-h500e/"
-          class="block w-full text-center bg-blue-700 hover:bg-blue-800 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm"
+          class="block w-full text-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm"
         >
           Läs recension, Segway Navimow H500E
         </a>
@@ -116,22 +108,22 @@ export const articleMeta = {
     <!-- Above-the-fold CTA -->
     <div class="grid sm:grid-cols-2 gap-3 mb-8">
       <a href="https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3051379&url=https://www.proshop.se/Robotgraesklippare/Gardena-smart-SILENO-city-robotic-lawnmower-500-m/3051379" target="_blank" rel="nofollow sponsored noopener" class="inline-flex items-center justify-center gap-2 bg-cta hover:bg-cta-dark text-white font-bold py-3 px-5 rounded-xl text-sm shadow-lg transition-colors">
-        Bra pris hos Proshop (Gardena SILENO) →
+        Bra pris hos Proshop (Gardena SILENO)
       </a>
       <a href="https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25567775&url=https://www.csmegastore.se/i/25567775/segway-navimow-i220e-lidar-pro-robotgrasklippare-2000-m2" target="_blank" rel="nofollow sponsored noopener" class="inline-flex items-center justify-center gap-2 bg-cta hover:bg-cta-dark text-white font-bold py-3 px-5 rounded-xl text-sm shadow-lg transition-colors">
-        Bra pris hos CS Megastore (Segway Navimow i220E) →
+        Bra pris hos CS Megastore (Segway Navimow i220E)
       </a>
     </div>
 
     <!-- Comparison table -->
     <h2 class="font-heading text-2xl font-bold text-text mb-4">Jämförelsetabell</h2>
-    <div class="overflow-x-auto mb-10">
+    <div class="spec-table-wrap mb-10">
       <table class="w-full text-sm border-collapse border border-border rounded-xl overflow-hidden">
         <thead>
           <tr class="bg-gray-50 border-b border-border">
             <th class="text-left p-4 font-semibold text-text">Egenskap</th>
-            <th class="text-center p-4 font-semibold text-green-700">Gardena SILENO City 500</th>
-            <th class="text-center p-4 font-semibold text-blue-700">Segway Navimow H500E</th>
+            <th class="text-center p-4 font-semibold text-winner">Gardena SILENO City 500</th>
+            <th class="text-center p-4 font-semibold text-accent-dark">Segway Navimow H500E</th>
           </tr>
         </thead>
         <tbody>
@@ -149,13 +141,13 @@ export const articleMeta = {
           ].map(row => (
             <tr class="border-b border-border hover:bg-gray-50">
               <td class="p-4 font-semibold text-text">{row.label}</td>
-              <td class={`p-4 text-center ${row.winner === 'gardena' ? 'text-green-700 font-bold bg-green-50' : 'text-text-light'}`}>
+              <td data-col="Gardena SILENO City 500" class={`p-4 text-center ${row.winner === 'gardena' ? 'text-winner font-bold bg-winner/5' : 'text-text-light'}`}>
                 {row.gardena}
-                {row.winner === 'gardena' && <span class="block text-xs font-normal text-green-400 mt-0.5">Vinnare</span>}
+                {row.winner === 'gardena' && <span class="block text-xs font-normal text-winner mt-0.5">Vinnare</span>}
               </td>
-              <td class={`p-4 text-center ${row.winner === 'segway' ? 'text-blue-700 font-bold bg-blue-50' : 'text-text-light'}`}>
+              <td data-col="Segway Navimow H500E" class={`p-4 text-center ${row.winner === 'segway' ? 'text-winner font-bold bg-winner/5' : 'text-text-light'}`}>
                 {row.segway}
-                {row.winner === 'segway' && <span class="block text-xs font-normal text-blue-400 mt-0.5">Vinnare</span>}
+                {row.winner === 'segway' && <span class="block text-xs font-normal text-accent-light mt-0.5">Vinnare</span>}
               </td>
             </tr>
           ))}
@@ -184,7 +176,7 @@ export const articleMeta = {
     <!-- Who should choose what -->
     <h2 class="font-heading text-2xl font-bold text-text mb-4">Vem bör välja vad?</h2>
     <div class="grid sm:grid-cols-2 gap-5 mb-8">
-      <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+      <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
         <h3 class="font-heading font-bold text-text mb-3">Välj Gardena SILENO om du...</h3>
         <ul class="space-y-2 text-sm text-text-light">
           <li>+ Prioriterar lägst pris (billigare)</li>

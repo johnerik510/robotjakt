@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -70,24 +72,21 @@ export const articleMeta = {
 <BaseLayout
   title="Neatsvor X700 Pro recension 2026: budget-robot testad"
   description="Neatsvor X700 Pro testad: budget-robotdammsugare med LiDAR och mopp. Se hur den presterar mot dyrare konkurrenter, pris i Sverige och vår dom."
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/neatsvor-x500.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/neatsvor-x500.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-04</p>
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-27</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Neatsvor X700 Pro Recension 2026
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Är Neatsvor X700 Pro värd att köpa?"
+      answer="Neatsvor X700 Pro är köpvärd om du vill ha LiDAR-navigering och enkel moppning till lägsta möjliga pris. Du får systematisk städning och app-styrning, men ingen tömningsstation och bara 4 000 Pa sugkraft. För husdjurshem med tjocka mattor räcker den inte, då är mellanklassen ett bättre val."
+    />
 
     <!-- Verdict box -->
     <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -214,6 +213,27 @@ export const articleMeta = {
       </p>
       <p class="text-text-light leading-relaxed mb-4">
         Om du har husdjur, tjocka mattor eller vill ha automatisk tömning av dammkorgen bör du titta på mellanklass-alternativ som <a href="/roborock-q-revo/" class="text-accent underline">Roborock Q Revo</a> eller se vår <a href="/billigaste-robotdammsugare/" class="text-accent underline">guide till billigaste robotdammsugare</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad gör LiDAR bättre än en robot som kör slumpmässigt?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        LiDAR mäter avstånd genom att skicka ut laserpulser och räkna hur lång tid ljuset tar tillbaka. Av tusentals sådana mätningar bygger roboten en karta och kan sedan köra raka, överlappande banor. En slumpstyrd robot saknar kartan och måste i stället köra länge för att statistiskt täcka golvet.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        I praktiken betyder det tre saker: städningen tar kortare tid, roboten hittar tillbaka till laddaren utan att irra runt, och du kan peka ut zoner den ska hålla sig ifrån. Utan karta finns inget att peka på. Eftersom LiDAR arbetar med laser och inte kamera fungerar navigeringen även i helmörka rum, vilket gör kvällsstädning möjlig. Vill du jämföra fler modeller med samma teknik, se vår översikt över <a href="/robotdammsugare/lidar/" class="text-accent underline">robotdammsugare med LiDAR</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur ofta behöver du tömma dammkorgen utan tömningsstation?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Det beror på golvyta, päls och hur ofta du kör, men grundregeln är att tömma innan korgen är full. När innehållet packas ihop sjunker luftflödet och sugkraften tappar långt innan du ser det på golvet. Den stora korgen på 600 ml gör att du slipper göra det efter varje pass.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Passa på att knacka ur och skölja filtret samtidigt, det är där sugkraften faktiskt försvinner i en budgetrobot. Rulla också bort hår som lindat sig runt huvudborsten och torka av sensorfönstren med en torr trasa, annars börjar roboten missa kanter och backa i onödan. Slitdelar av den här typen är förbrukningsvaror, se vår genomgång av <a href="/reservdelar/filter/" class="text-accent underline">filter till robotdammsugare</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Fungerar Tuya-appen tillsammans med annan smart hemteknik?</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Roboten styrs via Tuya/Smart Life, samma app som en mängd andra smarta prylar använder, så den hamnar i samma översikt som resten av hemmet. Röststyrning går via Google Assistant och Alexa, och scheman läggs i appen så att roboten kör medan du är borta. Namnge rummen första gången kartan skapas, då kan du starta en enskild yta som köket i stället för hela bostaden när du bara behöver en snabb runda.
       </p>
     </section>
 

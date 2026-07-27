@@ -1,9 +1,11 @@
 ---
 import { ctaRel } from '../lib/cta-rel';
+import AuthorByline from '../components/AuthorByline.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
@@ -79,20 +81,11 @@ export const articleMeta = {
 <BaseLayout
   title="Bästa Gardena robotgräsklippare 2026: guide och test"
   description="Komplett guide till Gardena robotgräsklippare 2026. Vi jämför Sileno City, Sileno Life och fler. Hitta rätt Gardena Automower för din trädgård."
-  article={{ datePublished: "2026-04-13", dateModified: "2026-05-27", image: "/images/gardena-sileno-city-500.webp" }}
+  article={{ datePublished: "2026-04-13", dateModified: "2026-07-27", image: "/images/gardena-sileno-city-500.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-05-05">2026-05-05</time></p>
+    <AuthorByline datePublished="2026-04-13" dateModified="2026-07-27" />
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Gardena robotgräsklippare 2026, Sileno City & Life jämförda
@@ -100,6 +93,11 @@ export const articleMeta = {
     <p class="text-text-light mb-6 max-w-2xl">
       Gardena Sileno är ett av marknadens tystaste robotgräsklippar-alternativ och passar utmärkt för tomter upp till 750 m². Vi har granskat alla modeller, här hittar du vilken Gardena-robot som passar din trädgård.
     </p>
+
+    <AnswerBox
+      question="Snabbt svar: vilken Gardena robotgräsklippare ska du välja?"
+      answer="Gardena Sileno City 500 räcker för tomter upp till 500 kvadratmeter, Sileno Life 750 tar 750. Båda kör på 57 dB, klarar 35 procents lutning och styrs via Bluetooth i stället för wifi. Räcker inte ytan, eller vill du slippa begränsningskabel, får du titta utanför Sileno-serien."
+    />
 
     <section class="mb-8 bg-bg-alt rounded-xl border border-border p-6">
       <h2 class="font-heading text-xl font-bold text-text mb-3">Gardena Sileno, tyst och pålitlig</h2>
@@ -183,6 +181,48 @@ export const articleMeta = {
         <div class="bg-white rounded-xl border border-border p-5">
           <h3 class="font-semibold text-text mb-2">Tomt över 750 m² eller komplex form</h3>
           <p class="text-text-light text-sm leading-relaxed">Gardena Sileno täcker inte behovet. Titta istället på Husqvarna Automower 315X med GPS-assistans och 1 600 m² kapacitet, eller en kabelfriamodell som Mammotion LUBA AWO 3000 om du vill slippa kabelinstallation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vad du bör veta innan du installerar en Gardena Sileno</h2>
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Hur ofta ska en robotgräsklippare klippa?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            En robotgräsklippare är byggd för att gå ofta och ta lite varje gång, inte för att göra hela jobbet en gång i veckan. Under högsäsong innebär det körning nästan varje dag, och under sensommaren när tillväxten avtar kan du dra ner schemat i appen.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Anledningen är mulching: knivarna klipper av toppen på gräset och strimlorna faller ner i mattan där de bryts ner och lämnar tillbaka näring till jorden. Det fungerar bara om strimlorna är korta. Låter du gräset bli långt först blir klippet grövre, strimlorna lägger sig ovanpå som en filt och du får den där gulnade ytan i stället för gödning.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Var lägger du begränsningskabeln i en trädgård med rabatter?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Kabeln följer tomtgränsen i en sluten slinga, och runt fasta hinder som rabatter, träd och en trampolin lägger du så kallade öar: kabeln går ut till hindret, runt det och tillbaka längs samma sträcka. Roboten läser det som förbjudet område och vänder.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Kabeln kan ligga ovanpå gräset och sjunka ner av sig själv, eller grävas ner 2 till 3 cm om du vill kunna vertikalskära utan att kapa den. Räkna med 1 till 3 timmar för en tomt på 300 till 750 m². Vill du hoppa över hela momentet är det GPS- och RTK-styrda maskiner du ska titta på, dem har vi samlat i jämförelsen av <a href="/robotgrasklippare-utan-slinga/" class="text-accent underline">robotgräsklippare utan slinga</a>.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Vad gör du med roboten på vintern?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Sileno ska in när säsongen är över. Ta in den, rengör undersidan från gräsrester, ladda batteriet och förvara både robot och laddstation frostfritt. Ett litiumbatteri som får stå urladdat i ett kallt garage under vintern tappar kapacitet, och det är ofta där livslängden går förlorad.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Begränsningskabeln får ligga kvar i marken året om. Kontrollera bara skarvarna på våren innan du kopplar in laddstationen igen, tjälen kan ha rört på kabeln vid hårda kanter. Vi går igenom hela avställningen steg för steg i guiden om <a href="/guide/vinterforvaring-robotgrasklippare/" class="text-accent underline">vinterförvaring av robotgräsklippare</a>.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Räcker Bluetooth eller behöver du wifi?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Bluetooth betyder att du måste vara i närheten av roboten för att ändra schema eller starta en extra körning. För de flesta är det inget problem: schemat sätts en gång på våren och sedan sköter roboten sig med hjälp av regnsensorn och den automatiska laddningen.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Wifi blir intressant först om du vill styra klippningen hemifrån jobbet, se körstatistik eller få larm när roboten står still. Har du sommarstuga och vill kunna kontrollera att gräset sköts på distans är Bluetooth-begränsningen det starkaste argumentet för att i stället titta på Husqvarnas uppkopplade modeller.
+          </p>
         </div>
       </div>
     </section>

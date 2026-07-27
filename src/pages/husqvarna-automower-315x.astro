@@ -2,6 +2,7 @@
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
@@ -61,7 +62,7 @@ export const articleMeta = {
   title="Husqvarna Automower 315X recension 2026: pålitlig robot"
   description="Husqvarna Automower 315X testad: GPS-assisterad gräsrobot med app-styrning för 1 500 m². Se klippresultat, säkerhetsfunktioner och pris i Sverige."
   breadcrumbs={breadcrumbs}
-  lastUpdated="2026-03-29"
+  lastUpdated="2026-07-27"
   ogImage="/images/husqvarna-315x.webp"
   datePublished="2026-04-27"
 >
@@ -73,6 +74,11 @@ export const articleMeta = {
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
     Husqvarna Automower 315X, Recension 2026
   </h1>
+
+  <AnswerBox
+    question="Snabbt svar: Är Husqvarna Automower 315X värd att köpa?"
+    answer="Husqvarna Automower 315X får 9,0 av 10 i vårt test och passar villaträdgårdar upp till 1 600 m² med enkla former. Du får GPS med 3G-uppkoppling, tyst drift på 58 dB och samma klippkvalitet som 430X Nera. Modellen har utgått ur sortimentet, så kontrollera lagret innan du bestämmer dig."
+  />
 
   <!-- Verdict box -->
   <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -206,12 +212,39 @@ export const articleMeta = {
     <p class="text-text-light leading-relaxed mb-6">
       Samma säkerhetsfunktioner som i hela Automower-serien: PIN-kod för start, lyftsensor som stänger av knivarna omedelbart, tiltssensor vid välvning och alarm via appen vid obehörig hantering. Standardnivån är mer än tillräcklig för en normal villaträdgård.
     </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur ofta ska Automower 315X klippa för bästa resultat?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Låt roboten gå lite varje dag i stället för långa pass ett par gånger i veckan. En robotgräsklippare tar bara några millimeter per varv, och det korta klippet faller ner mellan grässtråna som mulch. Gräsmattan får då tillbaka näring löpande och du slipper klumpar av gräsklipp.
+    </p>
+    <p class="text-text-light leading-relaxed mb-4">
+      Schemalägg klippningen i Automower Connect så att roboten hinner över hela ytan flera gånger i veckan. Börja säsongen i den högre delen av intervallet 20 till 60 mm och sänk klipphöjden stegvis. Gräset hinner då täta sig innan du kortar ner det, och rötterna klarar torka bättre.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Ett tunt klipp varje dag ger också mindre synligt gräsklipp än ett tjockt klipp i veckan. Har du en yta som roboten hinner klart på några timmar behöver du sällan köra dygnet runt, och då blir de 58 dB ännu mindre märkbara för dig och grannarna.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Var ska laddstationen till 315X placeras?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Placera laddstationen på en plan och skuggig del av gräsmattan, med några meter fri yta framför sig och nära ett eluttag. Roboten behöver kunna köra rakt in i stationen, så undvik att sätta den i ett hörn, i en slänt eller tätt intill en häck.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Tänk också på avrinningen. En station som står i en svacka där vatten samlas ger onödigt slitage, och laddkontakterna mår bättre av att stå torrt. Vill du slippa kabeldragningen helt finns numera <a href="/robotgrasklippare-utan-slinga/" class="text-accent underline">robotgräsklippare utan slinga</a> som ritar upp gränsen digitalt i stället för i marken.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Vilket underhåll kräver 315X under och efter säsongen?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Byt knivblad var en till tre månader, torka av chassit och håll undersidan fri från gräsrester. Inför vintern rengör du roboten, laddar batteriet fullt och förvarar den frostfritt inomhus tillsammans med transformatorn. Laddstationen kan stå kvar ute, men koppla ur strömmen.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Slöa blad river i gräset i stället för att skära av det, vilket ger fransiga stråtoppar och gör gräsmattan mottagligare för sjukdomar. Bladbytet tar några minuter och kostar lite, så det är det billigaste sättet att hålla klippkvaliteten uppe. Vi har samlat <a href="/reservdelar/knivar/" class="text-accent underline">knivar till robotgräsklippare</a> för alla vanliga märken. Med 7,7 kg är 315X dessutom lätt nog att lyfta upp på en arbetsbänk när du ska byta.
+    </p>
   </section>
 
   <!-- Comparison with 430X -->
   <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
     <h2 class="font-heading text-xl font-bold text-text mb-3">315X vs 430X Nera, vilket ska du välja?</h2>
-    <div class="overflow-x-auto">
+    <div class="spec-table-wrap">
       <table class="w-full text-sm">
         <thead>
           <tr class="border-b border-border">
@@ -223,28 +256,28 @@ export const articleMeta = {
         <tbody class="divide-y divide-border text-text-light">
           <tr>
             <td class="py-2 pr-4 font-medium text-text">Max yta</td>
-            <td class="py-2 pr-4">1 600 m²</td>
-            <td class="py-2">3 200 m²</td>
+            <td data-col="315X" class="py-2 pr-4">1 600 m²</td>
+            <td data-col="430X Nera" class="py-2">3 200 m²</td>
           </tr>
           <tr>
             <td class="py-2 pr-4 font-medium text-text">Navigering</td>
-            <td class="py-2 pr-4">GPS + 3G</td>
-            <td class="py-2">EPOS GPS + 4G</td>
+            <td data-col="315X" class="py-2 pr-4">GPS + 3G</td>
+            <td data-col="430X Nera" class="py-2">EPOS GPS + 4G</td>
           </tr>
           <tr>
             <td class="py-2 pr-4 font-medium text-text">Lutning</td>
-            <td class="py-2 pr-4">40%</td>
-            <td class="py-2">45%</td>
+            <td data-col="315X" class="py-2 pr-4">40%</td>
+            <td data-col="430X Nera" class="py-2">45%</td>
           </tr>
           <tr>
             <td class="py-2 pr-4 font-medium text-text">Klippbredd</td>
-            <td class="py-2 pr-4">18 cm</td>
-            <td class="py-2">22 cm</td>
+            <td data-col="315X" class="py-2 pr-4">18 cm</td>
+            <td data-col="430X Nera" class="py-2">22 cm</td>
           </tr>
           <tr>
             <td class="py-2 pr-4 font-medium text-text">Pris</td>
-            <td class="py-2 pr-4 text-winner font-semibold"></td>
-            <td class="py-2"></td>
+            <td data-col="315X" class="py-2 pr-4 text-winner font-semibold"></td>
+            <td data-col="430X Nera" class="py-2"></td>
           </tr>
         </tbody>
       </table>
@@ -256,7 +289,7 @@ export const articleMeta = {
 
   <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 my-6">
     <h3 class="font-bold text-lg mb-2">Reservdelar och tillbehör</h3>
-    <p class="text-sm text-gray-600 mb-3">Köp originala knivar, laddningskablar och tillbehör till din Husqvarna Automower:</p>
+    <p class="text-sm text-text-light mb-3">Köp originala knivar, laddningskablar och tillbehör till din Husqvarna Automower:</p>
     <a href="/reservdelar/husqvarna/" class="inline-block bg-cta text-white font-semibold py-2 px-4 rounded-lg text-sm">Se Husqvarna reservdelar</a>
   </div>
 

@@ -2,6 +2,7 @@
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
@@ -61,13 +62,18 @@ export const articleMeta = {
   title="Mammotion Luba AWO 3000 recension 2026: GPS-gräsrobot"
   description="Mammotion Luba AWO 3000 testad: GPS-styrd robotgräsklippare utan slinga. Se hur den presterar, vilka trädgårdar den passar och pris i Sverige."
   breadcrumbs={breadcrumbs}
-  lastUpdated="2026-03-29"
+  lastUpdated="2026-07-27"
   ogImage="/images/mammotion-luba-awo-3000.webp"
   datePublished="2026-03-29"
 >
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
     Mammotion LUBA AWO 3000, Recension 2026
   </h1>
+
+  <AnswerBox
+    question="Snabbt svar: är Mammotion LUBA AWO 3000 bäst utan slinga?"
+    answer="För trädgårdar upp till 3 000 m² är den vårt förstahandsval. RTK GPS ger centimeterprecision utan en meter nedgrävd kabel, 75% lutningstolerans slår Husqvarna 430X Nera och 26 cm klippbredd täcker ytan snabbt. Kravet är ett ställe med fri sikt mot himlen för RTK-antennen."
+  />
 
   <!-- Verdict box -->
   <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -193,6 +199,30 @@ export const articleMeta = {
       Välj LUBA om du vill slippa kabeldragning, har komplex trädgårdsform, brant terräng eller en ny trädgård där du inte vill låsa fast kablar. LUBA vinner klart på installation (tid och kostnad), lutningstolerans (75% mot 45%) och flexibilitet via appen. </p>
     <p class="text-text-light leading-relaxed mb-6">
       Välj Husqvarna 430X Nera om du redan har perimeterkabel installerad, vill ha ett system med längre trackrecord, eller om fri sikt mot himlen är svårt att uppnå i din trädgård (tät trädgård, hög häck runt om). Husqvarna har också ett mer etablerat servicenätverk i Sverige. </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Behöver du samla upp gräsklippet?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Nej. Roboten klipper små mängder varje pass, och det korta klippet faller ner mellan grässtråna, bryts ner och göder mattan. Du slipper både uppsamlare och tippning, men resultatet förutsätter att du kör ofta nog att aldrig behöva klippa av långt gräs.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Principen kallas mulching och är hela anledningen till att en robot klipper flera gånger i veckan i stället för en gång i veckan. Blir klippet för långt lägger det sig som en matta på ytan i stället för att sjunka ner, och då gulnar gräset under. Vassa knivar är avgörande för att snittet blir rent, slöa knivar river i stället av grässtrået och ger bruna toppar. Byt i tid, se vad som gäller för <a href="/reservdelar/knivar/" class="text-accent underline">knivar till robotgräsklippare</a>.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur påverkar häckar och träd RTK-signalen?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      RTK bygger på fri sikt mellan antenn, satelliter och robot. Täta lövkronor, en hög häck runt hela tomten eller ett djupt takutsprång kan dämpa signalen i enstaka partier. Lösningen är att flytta antennen högre och öppnare, inte att flytta roboten.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Det praktiska testet är enkelt: står du vid antennens tänkta plats och ser en stor öppen del av himlen är förutsättningarna goda. Ser du mest grenar behöver fästet upp. Eftersom antennen är systemets fasta referenspunkt lönar det sig att lägga tid på placeringen innan du ritar upp zonerna i appen, en flytt i efterhand innebär att kartan behöver kontrolleras om. En genomgång av vad som skiljer teknikerna finns i vår <a href="/guide/robotgrasklippare-koparguide/" class="text-accent underline">köpguide för robotgräsklippare</a>.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Behöver du klippa gräset själv första gången?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Om gräset redan vuxit sig långt, ja. Roboten är byggd för att ta av lite i taget inom sitt höjdintervall 20 till 60 mm, inte för att beta ner en övervuxen matta. Klipp ner en gång med vanlig klippare, sedan sköter LUBA AWO 3000 resten säsongen ut.
+    </p>
+    <p class="text-text-light leading-relaxed mb-4">
+      Samma sak gäller vid säsongsstart efter vintern och efter en längre semester utan klippning. Sätt gärna klipphöjden högt de första passen och sänk sedan stegvis, det skonar gräset och belastar roboten mindre. Rensa också bort grenar, kottar och leksaker innan första passet, hårda föremål är det som oftast slår hål på knivarna.
+    </p>
   </section>
 
   <!-- För whom -->

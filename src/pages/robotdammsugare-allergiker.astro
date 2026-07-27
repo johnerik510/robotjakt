@@ -60,7 +60,7 @@ const products = [
   {
     rank: 3,
     name: 'Dreame X60 Ultra',
-    image: 'https://www.elon.se/media/catalog/product/1/5/153177_1_77b2bab9c73f9e7a1fa13c0bed0c695e.jpeg',
+    image: '/images/products/dreame-x60-ultra.webp',
     rating: 4.7,
     badge: 'Bra pris med varmvattentvätt',
     pros: [
@@ -182,11 +182,11 @@ const productSchema = products.map((p, i) => ({
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Robotdammsugare för allergiker 2026: 6 modeller med HEPA-filter som faktiskt fungerar
     </h1>
-    <AuthorByline datePublished="2026-05-16" dateModified="2026-05-27" />
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
 
     <AnswerBox
       question="Snabbt svar: Vilken är den bästa robotdammsugaren för allergiker 2026?"
-      answer="Roborock S8 MaxV Ultra är den bästa robotdammsugaren för allergiker 2026. HEPA-filtret är tätt kapslat så inget damm läcker ut vid tömning, och den varmvattentvättade moppen dödar dammkvalster. Stark sugkraft drar upp finpartiklar ur mattor."
+      answer="Roborock S8 MaxV Ultra är den bästa robotdammsugaren för allergiker 2026. HEPA-filtret är tätt kapslat så inget damm läcker ut när stationen töms, och den självtvättande moppen med varmvatten dödar dammkvalster. Stark sugkraft drar upp finpartiklar ur mattor, och AI-kameran undviker djuravföring i pälsdjurshem."
     />
 
     <MoneyFeatured {...products[0]} />
@@ -258,6 +258,32 @@ const productSchema = products.map((p, i) => ({
       <p class="text-text-light leading-relaxed mb-4">
         Ett HEPA-filter försämras successivt när det blir igensatt med damm. Vid daglig drift bör du byta filter var 60 till 90 dag oavsett vad tillverkaren skriver. Köp originalfilter via Proshop eller direkt hos tillverkaren. Kopior släpper igenom 20 till 40 procent mer finpartiklar enligt oberoende tester och förstör hela allergiskyddet. Töm också mopptanken och rengör vattenkanaler enligt schema, annars börjar den växa mögel som triggar mögelallergi i sig.
       </p>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Så får du ut mest av roboten som allergiker</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur ofta ska roboten köras vid pollen och kvalsterallergi?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Dagligen, schemalagt. Kvalsterallergen byggs upp i golvdamm hela tiden och pollen bärs in med skor, kläder och husdjur under hela säsongen. En robot som går varje dag håller nivån nere, medan en körning i veckan bara flyttar problemet framåt. Kör hallen och sovrummet oftast.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Lägg körningen på en tid när ingen är hemma. Städningen rör mekaniskt upp finpartiklar innan filtret hinner fånga dem, så luften är som sämst just medan roboten arbetar och som bäst några timmar efteråt. Under pollensäsongen håller du fönstren stängda under körningen. Att roboten går tillbaka till en tät station och töms själv är hela poängen, se vår guide till <a href="/robotdammsugare/med-bassation/" class="text-accent underline">robotdammsugare med basstation</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Var i hemmet gör roboten störst skillnad för symtomen?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Sovrummet först. Du tillbringar flest timmar där och kvalster trivs i sängtextil och damm under sängen. Hallen kommer näst, det är där pollen och gatudamm lämnas av. Vardagsrummets soffgrupp är tredje prioritet eftersom pälsdjur oftast ligger där. Sätt zonstädning på de tre ytorna i appen.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Mät höjden under sängen innan du köper. Kommer roboten inte in där blir just den dammansamling du helst vill åt kvar, och då är en lägre modell viktigare än en starkare. Undvik att lägga no-go-zon under sängen bara för att roboten fastnat en gång, flytta hellre det som är i vägen.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad gör du med mattor och textiler som roboten inte klarar?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Roboten når lågmattor men inte högflor, gardiner eller sängkläder, och det är där kvalster faktiskt bor. Tvätta sängkläder varmt, minska antalet textilier i sovrummet och välj mattor som går i maskin. Roboten sköter golvet mellan tvättarna så att dammet inte hinner byggas upp.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        På hårdgolv kan moppen gå varje pass, men den ska lyftas automatiskt när roboten kör upp på en matta, annars smetas fukt in i luggen och du får en fuktig miljö som kvalster trivs i. Kontrollera därför att modellen du väljer lyfter moppen vid mattdetektering, och hur robotar beter sig på olika mattyper går vi igenom i guiden om <a href="/guide/robotdammsugare-mattor/" class="text-accent underline">robotdammsugare på mattor</a>.
+      </p>
     </section>
 
     <FAQ items={faqItems} />
@@ -290,7 +316,7 @@ const productSchema = products.map((p, i) => ({
     "headline": "Robotdammsugare för allergiker 2026: bästa modellerna med HEPA-filter",
     "description": "Allergisk mot damm, pollen eller pälsdjur? 6 robotdammsugare med HEPA-filter och självtömning som faktiskt minskar allergener i hemmet. Testat 2026.",
     "datePublished": "2026-05-08",
-    "dateModified": "2026-05-08",
+    "dateModified": "2026-07-27",
     "author": { "@id": "https://robotjakt.se/#axel" },
     "publisher": { "@id": "https://robotjakt.se/#organization" },
     "image": "https://robotjakt.se/images/roborock-qrevo-master.webp",

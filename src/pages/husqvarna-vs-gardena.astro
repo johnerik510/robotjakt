@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -58,15 +59,7 @@ export const articleMeta = {
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Senast uppdaterad 27 juli 2026</span>
-  </div>
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Husqvarna vs Gardena robotgräsklippare 2026, vilket väljer du?
@@ -83,10 +76,10 @@ export const articleMeta = {
     <!-- Above-the-fold CTA -->
     <div class="grid sm:grid-cols-2 gap-3 mb-8">
       <a href="https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3051379&url=https://www.proshop.se/Robotgraesklippare/Gardena-smart-SILENO-city-robotic-lawnmower-500-m/3051379" target="_blank" rel="nofollow sponsored noopener" class="inline-flex items-center justify-center gap-2 bg-cta hover:bg-cta-dark text-white font-bold py-3 px-5 rounded-xl text-sm shadow-lg transition-colors">
-        Bra pris hos Proshop (Gardena SILENO) →
+        Bra pris hos Proshop (Gardena SILENO)
       </a>
       <a href="/husqvarna-robotgrasklippare/" class="inline-flex items-center justify-center gap-2 border border-border bg-white hover:bg-bg-alt text-text font-semibold py-3 px-5 rounded-xl text-sm transition-colors">
-        Se alla Husqvarna-modeller →
+        Se alla Husqvarna-modeller
       </a>
     </div>
 
@@ -120,7 +113,7 @@ export const articleMeta = {
     <!-- Flagship specs comparison table -->
     <section class="mb-10" aria-label="Jämförelsetabell Husqvarna Automower 315 vs Gardena SILENO Life 750">
       <h2 class="font-heading text-xl font-bold text-text mb-4">Modell mot modell, Automower 315 vs SILENO Life 750</h2>
-      <div class="overflow-x-auto rounded-xl border border-border">
+      <div class="spec-table-wrap rounded-xl border border-border">
         <table class="w-full text-sm bg-white">
           <thead>
             <tr class="border-b border-border bg-bg-alt">
@@ -132,43 +125,43 @@ export const articleMeta = {
           <tbody class="divide-y divide-border">
             <tr class="bg-bg-alt/30">
               <td class="px-4 py-3 font-medium text-text">Max area</td>
-              <td class="px-4 py-3 text-winner font-semibold">1 500 m²</td>
-              <td class="px-4 py-3 text-text-light">750 m²</td>
+              <td data-col="Husqvarna Automower 315" class="px-4 py-3 text-winner font-semibold">1 500 m²</td>
+              <td data-col="Gardena SILENO Life 750" class="px-4 py-3 text-text-light">750 m²</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-medium text-text">Max lutning</td>
-              <td class="px-4 py-3 text-winner font-semibold">40%</td>
-              <td class="px-4 py-3 text-text-light">35%</td>
+              <td data-col="Husqvarna Automower 315" class="px-4 py-3 text-winner font-semibold">40%</td>
+              <td data-col="Gardena SILENO Life 750" class="px-4 py-3 text-text-light">35%</td>
             </tr>
             <tr class="bg-bg-alt/30">
               <td class="px-4 py-3 font-medium text-text">GPS-spårning</td>
-              <td class="px-4 py-3 text-winner font-semibold">Ja</td>
-              <td class="px-4 py-3 text-text-light">Nej</td>
+              <td data-col="Husqvarna Automower 315" class="px-4 py-3 text-winner font-semibold">Ja</td>
+              <td data-col="Gardena SILENO Life 750" class="px-4 py-3 text-text-light">Nej</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-medium text-text">App-styrning</td>
-              <td class="px-4 py-3 text-text-light">Automower Connect</td>
-              <td class="px-4 py-3 text-text-light">GARDENA smart app</td>
+              <td data-col="Husqvarna Automower 315" class="px-4 py-3 text-text-light">Automower Connect</td>
+              <td data-col="Gardena SILENO Life 750" class="px-4 py-3 text-text-light">GARDENA smart app</td>
             </tr>
             <tr class="bg-bg-alt/30">
               <td class="px-4 py-3 font-medium text-text">Klipphöjd</td>
-              <td class="px-4 py-3 text-text-light">2 till 5 cm</td>
-              <td class="px-4 py-3 text-text-light">2 till 5 cm</td>
+              <td data-col="Husqvarna Automower 315" class="px-4 py-3 text-text-light">2 till 5 cm</td>
+              <td data-col="Gardena SILENO Life 750" class="px-4 py-3 text-text-light">2 till 5 cm</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-medium text-text">Batteri</td>
-              <td class="px-4 py-3 text-text-light">Li-Ion, 45 min / cykel</td>
-              <td class="px-4 py-3 text-text-light">Li-Ion, 65 min / cykel</td>
+              <td data-col="Husqvarna Automower 315" class="px-4 py-3 text-text-light">Li-Ion, 45 min / cykel</td>
+              <td data-col="Gardena SILENO Life 750" class="px-4 py-3 text-text-light">Li-Ion, 65 min / cykel</td>
             </tr>
             <tr class="bg-bg-alt/30">
               <td class="px-4 py-3 font-medium text-text">Stöldskydd</td>
-              <td class="px-4 py-3 text-winner font-semibold">GPS + PIN-kod + larm</td>
-              <td class="px-4 py-3 text-text-light">PIN-kod + larm (ingen GPS)</td>
+              <td data-col="Husqvarna Automower 315" class="px-4 py-3 text-winner font-semibold">GPS + PIN-kod + larm</td>
+              <td data-col="Gardena SILENO Life 750" class="px-4 py-3 text-text-light">PIN-kod + larm (ingen GPS)</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-medium text-text">Garanti</td>
-              <td class="px-4 py-3 text-text-light">2 år</td>
-              <td class="px-4 py-3 text-text-light">2 år</td>
+              <td data-col="Husqvarna Automower 315" class="px-4 py-3 text-text-light">2 år</td>
+              <td data-col="Gardena SILENO Life 750" class="px-4 py-3 text-text-light">2 år</td>
             </tr>
           </tbody>
         </table>

@@ -14,7 +14,7 @@ const products = [
   {
     rank: 1,
     name: 'MOVA 1000',
-    image: 'https://www.kjell.com/cdn-cgi/image/width=700,height=700,fit=pad,format=auto/globalassets/productimages/911020_66311.jpg?ref=ABE7C6E188',
+    image: '/images/products/mova-1000.webp',
     rating: 4.2,
     badge: 'Bäst budget 2026',
     pros: ['Billigast med GPS-navigering', '1 000 m² utan perimeterkabel', 'Enkel installation i appen', 'Tyst drift'],
@@ -26,7 +26,7 @@ const products = [
   {
     rank: 2,
     name: 'Worx Landroid Vision 500 (WR305E)',
-    image: 'https://www.komplett.se/img/p/400/1333222.jpg?imformat=generic',
+    image: '/images/products/worx-landroid-vision-500-wr305e.webp',
     rating: 4.1,
     badge: 'Vision utan kabel',
     pros: ['Ingen perimeterkabel, Vision-teknik', 'WiFi-ansluten med app-kontroll', 'Upp till 500 m²'],
@@ -50,7 +50,7 @@ const products = [
   {
     rank: 4,
     name: 'Dreame A1 Pro 2000',
-    image: 'https://www.komplett.se/img/p/400/1334172.jpg?imformat=generic',
+    image: '/images/products/dreame-a1-pro-1000-lidar.webp',
     rating: 4.3,
     badge: 'GPS utan kabel, bäst pris',
     pros: ['Ingen perimeterkabel, RTK GPS', 'LiDAR-navigering', 'Enkel app-installation'],
@@ -190,7 +190,7 @@ export const articleMeta = {
                 'Krav på GPS och bra app',
                 'Budget ',
               ].map(p => (
-                <li class="flex items-start gap-1.5"><span class="text-accent mt-0.5">→</span> {p}</li>
+                <li class="flex items-start gap-1.5"><span class="text-accent mt-0.5"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span> {p}</li>
               ))}
             </ul>
           </div>

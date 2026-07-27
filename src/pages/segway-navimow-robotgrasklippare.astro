@@ -1,7 +1,9 @@
 ---
 import { ctaRel } from '../lib/cta-rel';
+import AuthorByline from '../components/AuthorByline.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FAQ from '../components/FAQ.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import EditorialCTA from '../components/EditorialCTA.astro';
@@ -91,24 +93,20 @@ export const articleMeta = {
 <BaseLayout
   title="Bästa Segway Navimow robotgräsklippare 2026: guide"
   description="Komplett guide till Segway Navimow 2026. Vi jämför H500E, H800E och i105E. GPS-styrda gräsrobotar utan slinga. Hitta rätt modell för din trädgård."
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/segway-navimow-h500e.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/segway-navimow-h500e.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-05-05">2026-05-05</time></p>
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Segway Navimow robotgräsklippare 2026, Vision Fence utan slinga
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Vilken Segway Navimow ska du välja 2026?"
+      answer="Under 500 m² räcker i105E, seriens billigaste utan-slinga-modell. Mellan 500 och 3 000 m² tar H800E över med inbyggt 4G och bredare klippning. Har du mer än 3 000 m² är H500E rätt val, den klarar 5 000 m² och ger mest yta per krona i serien."
+    />
     <p class="text-text-light mb-6 max-w-2xl">
       Segway Navimow klipper utan perimeterkabel med Vision Fence. Den här sidan ställer hela serien mot varandra så att du hittar rätt storleksklass. Söker du testet av en enskild modell ligger det på våra egna sidor för <a href="/segway-navimow-h500e/" class="text-accent underline">Segway Navimow H500E</a>, <a href="/segway-navimow-h800e/" class="text-accent underline">Segway Navimow H800E</a> och <a href="/segway-navimow-i105e/" class="text-accent underline">Segway Navimow i105E</a>.
     </p>
@@ -174,6 +172,42 @@ export const articleMeta = {
         </section>
       ))}
     </div>
+
+    <section class="mt-10 mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-6">Köpguide: det här bör du kolla innan du väljer Segway Navimow</h2>
+
+      <h3 class="font-heading text-xl font-bold text-text mb-3">Vad kan störa Vision Fence i en trädgård med mycket träd?</h3>
+      <p class="text-text-light leading-relaxed mb-3">
+        Sikten uppåt och utåt. Vision Fence bygger på satellitpositionering plus kamera, och satellitsignalen dämpas av täta trädkronor, höga husgavlar och plank. Kameran i sin tur behöver ljus och en ren lins. Blir båda källorna svaga samtidigt tvekar roboten närmast zongränsen.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Testa innan du köper: ställ dig med mobilen i tomtens mest skuggade hörn och se hur många satelliter den hittar. Är det ett litet parti under en stor gran spelar det sällan roll, roboten passerar snabbt. Är hela ena långsidan täckt av krona eller ligger tomten inklämd mellan höga fasader är det där problemen dyker upp. Samma sak gäller alla <a href="/robotgrasklippare-utan-slinga/" class="text-accent underline">robotgräsklippare utan slinga</a>, oavsett märke, eftersom de alla bygger på satellitpositionering i någon form.
+      </p>
+
+      <h3 class="font-heading text-xl font-bold text-text mb-3">Hur lång tid tar installationen av en Segway Navimow?</h3>
+      <p class="text-text-light leading-relaxed mb-3">
+        Normalt 20 till 40 minuter. Du placerar laddstationen, monterar RTK-antennen på ett fast underlag som husvägg eller staket och kartlägger sedan zonerna i appen. Ingen kabel grävs ner och inga stift sätts i marken, vilket är hela poängen med Vision Fence.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Den enskilt viktigaste detaljen är antennens placering. Sitter den på något som rör sig, ett spjälstaket som svajar eller ett provisoriskt stativ, flyttas referenspunkten och zonerna hamnar snett. Skruva fast den i något stumt, med så fri sikt uppåt som tomten tillåter, och gör det på första försöket. Att flytta antennen i efterhand innebär att zonerna måste ritas om.
+      </p>
+
+      <h3 class="font-heading text-xl font-bold text-text mb-3">Vad kräver en Segway Navimow för underhåll under säsongen?</h3>
+      <p class="text-text-light leading-relaxed mb-3">
+        Rengöring och knivkontroll, med några veckors mellanrum. Skrapa bort gräs och jord under klippdäcket, torka av kameralinsen och känn på knivarnas egg. Slöa knivar river av grässtrået i stället för att skära det, vilket ger gulnade toppar och mer strömförbrukning per pass.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Byt hela knivsatsen samtidigt. En enda ny kniv mot två slitna ger obalans i klippdäcket, vilket hörs som vibration och sliter på lagren. Sand, kottar och grus är det som slöar knivarna snabbast, så tomter med grusgång intill gräset behöver bytas oftare än rena gräsytor. Vad som passar vilken modell går vi igenom under <a href="/reservdelar/knivar/" class="text-accent underline">reservknivar till robotgräsklippare</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-bold text-text mb-3">Hur ofta ska en Segway Navimow klippa?</h3>
+      <p class="text-text-light leading-relaxed mb-3">
+        Ofta och lite i taget. En robotgräsklippare tar bara några millimeter per pass och klippet faller ner i mattan som mulch, alltså näring som återförs till gräset. Kör den för sällan blir klippet så långt att det lägger sig som strån ovanpå ytan i stället.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Lägg därför schemat med marginal snarare än snålt. Gräset växer betydligt snabbare i maj och juni än i augusti, så det schema som räcker sent på säsongen ligger ofta efter under högsommaren. Eftersom zonerna ligger i appen kan du enkelt köra vissa partier oftare, till exempel den solbelysta delen av tomten, utan att röra en enda kabel.
+      </p>
+    </section>
 
     <FAQ items={faqItems} />
 

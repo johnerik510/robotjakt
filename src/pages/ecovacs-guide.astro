@@ -1,10 +1,12 @@
 ---
 import { ctaRel } from '../lib/cta-rel';
+import AuthorByline from '../components/AuthorByline.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import EditorialCTA from '../components/EditorialCTA.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -109,26 +111,22 @@ export const articleMeta = {
 <BaseLayout
   title="Ecovacs Deebot guide 2026: vilken robot ska du välja?"
   description="Komplett guide till Ecovacs Deebot 2026. Vi jämför X12 Pro Omni, X9 Pro Omni och T50 Pro Omni. Hitta rätt Ecovacs efter hem, budget och städbehov."
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/ecovacs-deebot-x5-omni.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/ecovacs-deebot-x5-omni.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Ecovacs robotdammsugare 2026, Deebot-serien jämförd
     </h1>
     <p class="text-text-light mb-6 max-w-2xl">
       Ecovacs Deebot är kända för sina OMNI-stationer, marknadens mest kompletta allt-i-ett-lösningar. Vi guidar dig genom X12 Pro Omni, X9 Pro Omni och T50 Pro Omni och hjälper dig välja rätt modell för ditt hem och din budget.</p>
+
+    <AnswerBox
+      question="Snabbt svar: vilken Ecovacs Deebot ska du välja 2026?"
+      answer="Ecovacs Deebot X12 Pro Omni är vårt förstaval 2026 med 11 000 Pa och dubbla roterande moppar. X9 Pro Omni ger samma OMNI-station och AI-hinderdetektion till lägre pris, medan T50 Pro Omni är billigaste vägen in i serien. Alla tre tvättar moppen, tömmer dammkorgen och fyller på vatten automatiskt."
+    />
 
     <EditorialCTA products={['Ecovacs Deebot X12 Pro Omni']} />
 
@@ -144,7 +142,7 @@ export const articleMeta = {
     <!-- Comparison table -->
     <section class="mb-10" aria-label="Jämförelsetabell Ecovacs Deebot-modeller">
       <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse, Ecovacs Deebot 2026</h2>
-      <div class="overflow-x-auto rounded-xl border border-border">
+      <div class="spec-table-wrap rounded-xl border border-border">
         <table class="w-full text-sm bg-white">
           <thead>
             <tr class="border-b border-border bg-bg-alt">
@@ -157,21 +155,21 @@ export const articleMeta = {
           <tbody class="divide-y divide-border">
             <tr class="bg-winner/5">
               <td class="px-4 py-3 font-medium text-text">X12 Pro Omni</td>
-              <td class="px-4 py-3 text-winner font-semibold">11 000 Pa</td>
-              <td class="px-4 py-3 text-text-light">Dubbel roterande + lyftbar</td>
-              <td class="px-4 py-3 text-winner font-semibold">Full OMNI</td>
+              <td data-col="Sugkraft" class="px-4 py-3 text-winner font-semibold">11 000 Pa</td>
+              <td data-col="Mopp" class="px-4 py-3 text-text-light">Dubbel roterande + lyftbar</td>
+              <td data-col="OMNI-station" class="px-4 py-3 text-winner font-semibold">Full OMNI</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-medium text-text">X9 Pro Omni</td>
-              <td class="px-4 py-3 text-text-light">8 000 Pa</td>
-              <td class="px-4 py-3 text-text-light">Lyftbar moppmodul</td>
-              <td class="px-4 py-3 text-text-light">Full OMNI</td>
+              <td data-col="Sugkraft" class="px-4 py-3 text-text-light">8 000 Pa</td>
+              <td data-col="Mopp" class="px-4 py-3 text-text-light">Lyftbar moppmodul</td>
+              <td data-col="OMNI-station" class="px-4 py-3 text-text-light">Full OMNI</td>
             </tr>
             <tr class="bg-bg-alt/50">
               <td class="px-4 py-3 font-medium text-text">T50 Pro Omni</td>
-              <td class="px-4 py-3 text-text-light">8 000 Pa</td>
-              <td class="px-4 py-3 text-text-light">Dubbla moppar</td>
-              <td class="px-4 py-3 text-text-light">Full OMNI</td>
+              <td data-col="Sugkraft" class="px-4 py-3 text-text-light">8 000 Pa</td>
+              <td data-col="Mopp" class="px-4 py-3 text-text-light">Dubbla moppar</td>
+              <td data-col="OMNI-station" class="px-4 py-3 text-text-light">Full OMNI</td>
             </tr>
           </tbody>
         </table>
@@ -288,6 +286,49 @@ export const articleMeta = {
           </div>
           <p class="text-text-light text-sm leading-relaxed">
             Ecovacs X12 Pro Omni mot Roborock S8 MaxV Ultra: Ecovacs ger mycket för pengarna. För den som prioriterar OMNI-stationens automatik framför AI-djurskydd är Ecovacs klart prisvärdare. Roborock motiverar merpriset enbart om AI-säkerhetsfunktionen är avgörande.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep buying-guide sections -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Det här bör du veta innan du köper en Ecovacs Deebot</h2>
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Hur mycket plats kräver en OMNI-station?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            En OMNI-station är märkbart större än en enkel laddplatta, eftersom den rymmer soppåse, renvattentank och smutsvattentank i samma kropp. Räkna med en fri golvyta mot en vägg, gärna nära ett vägguttag, och lämna utrymme framför så att roboten kan backa in rakt.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Placera inte stationen i en trång garderob eller bakom en dörr som brukar stå på glänt. Roboten behöver se stationen på avstånd för att hitta hem, och en station som står inklämd gör dockningen långsammare. Ett hörn i hallen eller utrymmet under ett konsolbord fungerar oftast bra.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Hur ofta behöver du fylla på vatten och byta soppåse?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Soppåsen räcker normalt 60 till 90 dagar och vattenpåfyllningen styrs av hur mycket du moppar. Ett hem med stora hårdgolvsytor och daglig moppning tömmer tanken snabbare än en lägenhet där roboten mest dammsuger. Appen larmar när tanken är tom eller påsen full.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Smutsvattentanken är den del som glöms bort. Töm och skölj den regelbundet, annars börjar den lukta och den lukten följer med moppduken ut på golvet. Samma sak gäller själva moppduken: den ska bytas när fibrerna blivit hårda, inte bara tvättas om och om igen.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Går det att använda Ecovacs Home när appen inte finns på svenska?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Ja. Gränssnittet är på engelska, men de funktioner du använder dagligen är start, stopp, schema och rumsval, och de sitter i tydliga ikoner på startskärmen. Kartan ritas upp grafiskt, så rumsindelning och no-go-zoner styrs genom att dra i kartan snarare än genom att läsa text.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Vill du slippa appen i vardagen kopplar du roboten till Google Assistant eller Alexa och styr den med svenska röstkommandon. Då används appen bara vid inställningen, och sedan räcker rösten eller schemat för den löpande städningen.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Räcker 8 000 Pa eller behöver du 11 000 Pa?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            8 000 Pa på X9 Pro Omni och T50 Pro Omni räcker för hårda golv, tunna mattor och normalt damm. De 11 000 Pa i X12 Pro Omni gör skillnad först när roboten ska dra upp sand, grus eller djurhår ur en lugg som är tjock nog att sluta sig runt borsten.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Sugkraft mäts i lufttryck och säger ingenting om hur väl borstvalsen faktiskt lyfter smutsen ur textilen, och det är skälet till att en högre siffra inte automatiskt ger renare mattor. Vi förklarar vad talet betyder och var det slutar ha betydelse i guiden om <a href="/guide/sugkraft/" class="text-accent underline">sugkraft hos robotdammsugare</a>, och vilka stationsfunktioner som faktiskt märks i vardagen i översikten över <a href="/robotdammsugare/med-bassation/" class="text-accent underline">robotdammsugare med basstation</a>.
+          </p>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -50,15 +51,7 @@ export const articleMeta = {
   <section class="bg-primary text-white py-6">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <Breadcrumbs items={breadcrumbs} light={true} />
-      <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-300">
-        <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-white transition-colors">
-          <span class="font-medium text-white">Axel Jönemyr</span>
-        </a>
-        <span>·</span>
-        <span>Grundare och redaktör, Robotjakt</span>
-        <span>·</span>
-        <span>Uppdaterad 27 juli 2026</span>
-      </div>
+      <AuthorByline datePublished="2026-07-03" dateModified="2026-07-27" light={true} />
       <h1 class="font-heading text-2xl sm:text-3xl font-bold mb-2">Husqvarna Aspire R6V vs 308V vs 312V 2026</h1>
       <p class="text-gray-300 text-sm max-w-2xl">Husqvarnas tre nya slinglösa robotgräsklippare delar samma teknik men klarar olika stora gräsmattor. Här är hur du väljer rätt.</p>
     </div>
@@ -79,7 +72,7 @@ export const articleMeta = {
     <!-- Above-the-fold nav -->
     <div class="mb-6">
       <a href="/robotgrasklippare-utan-slinga/" class="inline-flex items-center justify-center gap-2 bg-cta hover:bg-cta-dark text-white font-bold py-3 px-6 rounded-xl text-sm shadow-lg transition-colors">
-        Se alla slinglösa robotgräsklippare 2026 →
+        Se alla slinglösa robotgräsklippare 2026
       </a>
     </div>
 

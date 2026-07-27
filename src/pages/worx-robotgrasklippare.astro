@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -61,20 +63,11 @@ export const articleMeta = {
 <BaseLayout
   title="Bästa Worx Landroid robotgräsklippare 2026: topplista"
   description="Komplett guide till Worx Landroid robotgräsklippare 2026. Vi jämför M500, L1000 och fler. Hitta rätt slingbaserad gräsrobot för din trädgård och budget."
-  article={{ datePublished: "2026-05-05", dateModified: "2026-06-22", image: "/images/worx-landroid-m500.webp" }}
+  article={{ datePublished: "2026-05-05", dateModified: "2026-07-27", image: "/images/worx-landroid-m500.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 22 juni 2026</span>
-  </div>
-    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-06-22">2026-06-22</time></p>
+    <AuthorByline datePublished="2026-05-05" dateModified="2026-07-27" />
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Worx Landroid robotgräsklippare 2026, WiFi-app och AIA-navigering
@@ -82,13 +75,18 @@ export const articleMeta = {
     <p class="text-text-light mb-6 max-w-2xl">
       Worx Landroid M500 är mellanklassens mest funktionsrika kabelbaserade robotgräsklippare, WiFi-app med fjärrstyrning, patenterad AIA-navigering och ett modulärt tillbehörssystem. Vi jämför om den är värd priset mot Gardena och kabelfria alternativ. </p>
 
+    <AnswerBox
+      question="Snabbt svar: är Worx Landroid värd att köpa?"
+      answer="Worx Landroid M500 passar tomter upp till 500 kvadratmeter och ger dig WiFi-app med fjärrstyrning, AIA-navigering och ett modulärt tillbehörssystem. Priset betalar du i ljudnivå: 63 dB mot Gardena Sileno City 500:s 57 dB. Vill du slippa perimeterkabel kostar Segway Navimow i105E ungefär detsamma."
+    />
+
     <!-- Above-the-fold CTA -->
     <div class="grid sm:grid-cols-2 gap-3 mb-8">
       <a href="https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3066543&url=https://www.proshop.se/Robotgraesklippare/Worx-Landroid-M500-Plus-WR165E-robotic-lawnmower-500-m/3066543" target="_blank" rel="nofollow sponsored noopener" class="inline-flex items-center justify-center gap-2 bg-cta hover:bg-cta-dark text-white font-bold py-3 px-5 rounded-xl text-sm shadow-lg transition-colors">
-        Bra pris hos Proshop (Worx Landroid M500) →
+        Bra pris hos Proshop (Worx Landroid M500)
       </a>
       <a href="/robotgrasklippare/" class="inline-flex items-center justify-center gap-2 border border-border bg-white hover:bg-bg-alt text-text font-semibold py-3 px-5 rounded-xl text-sm transition-colors">
-        Jämför alla robotgräsklippare →
+        Jämför alla robotgräsklippare
       </a>
     </div>
 
@@ -155,7 +153,7 @@ export const articleMeta = {
 
     <section class="mb-10">
       <h2 class="font-heading text-2xl font-bold text-text mb-4">Worx Landroid vs konkurrenterna</h2>
-      <div class="overflow-x-auto">
+      <div class="spec-table-wrap">
         <table class="w-full text-sm border-collapse">
           <thead>
             <tr class="bg-bg-alt">
@@ -168,21 +166,21 @@ export const articleMeta = {
           <tbody>
             <tr class="bg-winner/5">
               <td class="p-3 border border-border font-medium">Worx Landroid M500</td>
-              <td class="p-3 border border-border">63 dB</td>
-              <td class="p-3 border border-border text-winner">WiFi</td>
-              <td class="p-3 border border-border text-red-500">Ja</td>
+              <td data-col="dB" class="p-3 border border-border">63 dB</td>
+              <td data-col="App" class="p-3 border border-border text-winner">WiFi</td>
+              <td data-col="Slinga" class="p-3 border border-border text-red-500">Ja</td>
             </tr>
             <tr>
               <td class="p-3 border border-border font-medium">Gardena Sileno City 500</td>
-              <td class="p-3 border border-border text-winner font-semibold">57 dB</td>
-              <td class="p-3 border border-border">Bluetooth</td>
-              <td class="p-3 border border-border text-red-500">Ja</td>
+              <td data-col="dB" class="p-3 border border-border text-winner font-semibold">57 dB</td>
+              <td data-col="App" class="p-3 border border-border">Bluetooth</td>
+              <td data-col="Slinga" class="p-3 border border-border text-red-500">Ja</td>
             </tr>
             <tr class="bg-bg-alt">
               <td class="p-3 border border-border font-medium">Segway Navimow i105E</td>
-              <td class="p-3 border border-border">58 dB</td>
-              <td class="p-3 border border-border text-winner">WiFi + 4G</td>
-              <td class="p-3 border border-border text-winner font-semibold">Nej</td>
+              <td data-col="dB" class="p-3 border border-border">58 dB</td>
+              <td data-col="App" class="p-3 border border-border text-winner">WiFi + 4G</td>
+              <td data-col="Slinga" class="p-3 border border-border text-winner font-semibold">Nej</td>
             </tr>
           </tbody>
         </table>
@@ -215,6 +213,38 @@ export const articleMeta = {
           </ul>
         </div>
       </div>
+
+      <h3 class="font-heading text-xl font-semibold text-text mt-8 mb-3">Hur stor del av dygnet behöver Worx Landroid M500 klippa?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Landroid M500 kör 90 minuter per pass och laddar sedan i 90 minuter, alltså är den ungefär halva tiden ute i gräset. En tomt som ligger nära 500 kvadratmeter behöver därför ett schema som sträcker sig över större delen av dygnet, medan ett par hundra kvadratmeter blir klart på betydligt färre pass.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Du lägger schemat i WiFi-appen och kan flytta det på distans när vädret slår om. Regnsensorn skickar roboten hem av sig själv, så du behöver inte planera in uppehåll för regn. Poängen med många korta pass är att varje enskilt klipp blir litet: de finhackade gräsresterna faller ner i mattan och göder den i stället för att behöva krattas bort.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur drar du perimeterkabeln till en Worx Landroid?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Kabeln läggs som en sluten slinga runt hela klippytan och kopplas in i laddstationen. Räkna med 2 till 4 timmar och gör jobbet själv, det krävs ingen fackman. Håll marginal in mot murar och stenkanter så roboten inte skrapar, och lägg separata slingor runt träd, rabatter och damm.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Kabeln fästs med klamrar i marken och växer in i gräsmattan under de första veckorna, så du slipper gräva ner den. Ta tid på dig med hörnen. En kabel som ligger för snävt mot ett fast hinder är den vanligaste orsaken till att roboten stannar och larmar, och det är betydligt tråkigare att felsöka i efterhand än att lägga fem extra minuter på kanten från början.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Klarar Worx Landroid M500 en sluttande gräsmatta?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Lutningstoleransen är 35 procent, vilket täcker de flesta villatomter med sluttande gräsmatta. Det avgörande är dock inte bara vinkeln utan underlaget: blött gräs och lös jord gör att hjulen slirar långt innan roboten når sin tekniska gräns, och då blir det stopp mitt i backen.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Lägg kabeln en bit in från kanten på de brantaste partierna, så hinner roboten vända medan hjulen fortfarande har grepp. AIA-navigeringen hjälper den ta sig ur lägen där en enklare slumpstyrd robot bara gräver sig fast. Har du riktigt kraftiga nivåskillnader är det värt att jämföra med en <a href="/robotgrasklippare-for-lutning/" class="text-accent underline">robotgräsklippare för lutning</a> som är byggd för brantare terräng.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad behöver du underhålla under säsongen?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Knivbladen är förbrukningsdelar och byts när klippet ser trasat ut i kanten i stället för rakt avskuret. Klippkammaren under roboten samlar gräsrester som packar sig hårt, och där gör borsten i Worx modulsystem jobbet. Torka av laddstationens kontakter så de hålls rena och torra.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        Slöa knivar märks först på gräsmattan, inte på roboten. Strån som slits av i stället för att kapas brunfärgas i toppen, och då ser hela ytan tröttare ut trots att roboten kört som den ska. När säsongen är över laddar du batteriet innan roboten ställs undan frostfritt, och regnskyddet i tillbehörssystemet gör laddstationen tåligare där den får stå kvar ute. Hela rutinen går vi igenom i guiden om <a href="/guide/vinterforvaring-robotgrasklippare/" class="text-accent underline">vinterförvaring av robotgräsklippare</a>.
+      </p>
     </section>
 
     <FAQ items={faqItems} />

@@ -30,7 +30,7 @@ const products = [
   {
     rank: 2,
     name: 'Roborock Saros 20 Sonic',
-    image: 'https://www.elon.se/media/catalog/product/1/5/154763_1_3ceb29bf48460ac59b3d332c22d9af4e.jpeg',
+    image: '/images/products/roborock-saros-20-sonic.webp',
     rating: 4.8,
     badge: 'Nyhet 2026',
     pros: ['Anti-tangle-borste trasslas aldrig', 'Avancerad kamera för hinderdetektion', 'Sonic-moppning med vibrationer', 'Självrenande station'],
@@ -43,7 +43,7 @@ const products = [
   {
     rank: 3,
     name: 'Dreame X60 Ultra',
-    image: 'https://www.elon.se/media/catalog/product/1/5/153177_1_abafe4c8652a3adcd21d1dbf9e44cfde.jpeg',
+    image: '/images/products/dreame-x60-ultra.webp',
     rating: 4.8,
     badge: 'Bäst på moppning',
     pros: ['Utfällbar mopparm når hörnen', 'Självtömmande och självtvättande station', 'Stark sugkraft', 'AI-hinderdetektion'],
@@ -98,7 +98,7 @@ const products = [
   {
     rank: 7,
     name: 'Dreame L10s Ultra Gen 3',
-    image: 'https://www.elon.se/media/catalog/product/1/5/153176_1_fe0baec0a4c99ed788c89e65cb667eac.jpeg',
+    image: '/images/products/dreame-l10s-ultra-gen-3.webp',
     rating: 4.5,
     badge: 'Bäst mellanpris',
     pros: ['Utmärkt pris/prestanda', 'Självtömmande station ingår', 'Moppfunktion med varmvatten', 'LiDAR-navigering'],
@@ -111,7 +111,7 @@ const products = [
   {
     rank: 8,
     name: 'Roborock Qrevo S',
-    image: 'https://www.elon.se/media/catalog/product/1/4/146251_1_8ca5eb4e9238b550d7b46f8cda314d0c.jpeg',
+    image: '/images/products/roborock-qrevo-s.webp',
     rating: 4.4,
     badge: 'Prisvärd',
     pros: ['LiDAR-navigering till lägre pris', 'Moppfunktion ingår', 'Kompakt och tyst', 'Bra app'],
@@ -124,7 +124,7 @@ const products = [
   {
     rank: 9,
     name: 'Dreame D20 Ultra',
-    image: 'https://www.elon.se/media/catalog/product/1/5/152003_1_ee2623103eca84a9664991d40cbf14cc.jpeg',
+    image: '/images/products/dreame-d20-ultra.webp',
     rating: 4.3,
     badge: 'Bäst budget',
     pros: ['Lägst pris med station', 'Självtömmande station ingår', 'Moppfunktion', 'LiDAR-navigering'],
@@ -151,7 +151,7 @@ const products = [
   {
     rank: 11,
     name: 'Neatsvor X600 Pro',
-    image: 'https://www.neatsvor.se/wp-content/uploads/2022/09/Neatsvor-X600-Pro-vit-robotdammsugare.webp',
+    image: '/images/products/neatsvor-x600-pro.webp',
     rating: 4.2,
     badge: 'Budget utan station',
     pros: ['LiDAR-navigering', 'Moppfunktion ingår', 'Fri frakt direkt till dörren'],
@@ -253,7 +253,7 @@ export const articleMeta = {
 
     <!-- Kategori-pills -->
     <nav aria-label="Filtrera per behov" class="mb-8">
-      <ul class="flex gap-2 overflow-x-auto pb-1 -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap" style="scrollbar-width:none;">
+      <ul class="flex flex-wrap gap-2">
         {pills.map((pill) => (
           <li class="flex-shrink-0">
             <a href={pill.href} class="inline-flex items-center px-4 py-2 rounded-full bg-bg-alt border border-border text-sm font-semibold text-text hover:bg-accent hover:text-white hover:border-accent transition-colors whitespace-nowrap">

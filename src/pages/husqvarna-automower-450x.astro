@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const faqItems = [
   {
@@ -68,20 +70,12 @@ export const articleMeta = {
   title="Husqvarna Automower 450X recension 2026: stor trädgård"
   description="Husqvarna Automower 450X testad: GPS-styrd gräsrobot för stora trädgårdar upp till 5 000 m². Se klippprestanda, GPS-precision och pris i Sverige."
   ogImage="/images/husqvarna-automower-450x.webp"
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/husqvarna-automower-450x.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/husqvarna-automower-450x.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-05</p>
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-27</p>
 
     <div class="bg-amber-50 border border-amber-300 rounded-xl p-4 mb-6">
       <p class="text-sm text-amber-800 font-semibold mb-1">Denna modell har utgått ur Husqvarnas sortiment.</p>
@@ -91,6 +85,11 @@ export const articleMeta = {
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Husqvarna Automower 450X Recension 2026
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Vem ska köpa Husqvarna Automower 450X?"
+      answer="Automower 450X får 4,7 av 5 och är Husqvarnas modell för de största tomterna, upp till 5 000 m². 50 procents lutning och 270 minuters drifttid per laddning gör den till ett tryggt val på kuperad och vidsträckt gräsmatta. Slingkabel krävs, och modellen har ersatts av 450V NERA."
+    />
 
     <!-- Verdict box -->
     <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -212,14 +211,38 @@ export const articleMeta = {
       </div>
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Vår recension av Husqvarna Automower 450X: betyg och slutsats</h3>
-      <p class="text-text-light leading-relaxed mb-4">
+      <p class="text-text-light leading-relaxed mb-6">
         450X passar villaägare med tomter mellan 3 200 till 5 000 m², brant terräng och/eller önskemål om maximal kapacitet och Husqvarnas premiumservice. Om din tomt är under 3 200 m² är 430X Nera mer kostnadseffektiv.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur mycket slingkabel behöver du till en stor tomt?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        I leveransen ingår 150 meter slingkabel, vilket typiskt räcker till ungefär 1 000 m². Ska du täcka en tomt mot 5 000 m² behöver du köpa till kabel, markspikar och kopplingsdon. Räkna med hela tomtgränsen plus öar runt rabatter, träd och andra hinder när du mäter.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Mät upp sträckan innan du beställer, gärna med ett måttband eller genom att gå tomtgränsen och räkna steg. Köp hellre lite mer kabel än du tror att du behöver. En extra rulle kostar betydligt mindre besvär än en skarv som du måste gräva fram igen mitt på gräsmattan.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur delar du in en stor tomt så roboten hinner över allt?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Stora tomter består ofta av flera gräsytor som hänger samman via smala passager. Låt kabeln leda roboten genom passagerna så att den kan köra själv mellan ytorna, och håll passagerna breda nog för att roboten ska passera utan att nudda kanterna. Helt avskilda ytor kräver egen installation.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        450X är en fysiskt stor maskin med 24 cm klippbredd, så en passage som fungerar för en liten robot kan vara för trång här. Är tomten dessutom kuperad lönar det sig att lägga de brantaste partierna en bit in på gräsmattan snarare än precis vid gränsen. Vi jämför modeller för lutande tomter i vår guide till <a href="/robotgrasklippare-for-lutning/" class="text-accent underline">robotgräsklippare för lutning</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Varför spelar drifttiden större roll än klippbredden på 5 000 m²?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        På en stor tomt avgörs resultatet av hur många timmar roboten kan klippa per dygn. 450X kör upp till 270 minuter per laddning och laddar i 75 minuter, vilket ger långa arbetspass och få avbrott. Klippbredden på 24 cm hjälper, men det är uthålligheten som gör jobbet.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        En robot som måste tillbaka till laddstationen ofta lägger en stor del av dygnet på att köra fram och tillbaka i stället för att klippa, och på en vidsträckt tomt blir de resorna långa. Därför är förhållandet mellan drifttid och laddtid det första du bör titta på när ytan växer. Fler alternativ i den storleksklassen hittar du bland <a href="/robotgrasklippare-stor-tradgard/" class="text-accent underline">robotgräsklippare för stor trädgård</a>.
       </p>
     </section>
 
     <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 my-6">
       <h3 class="font-bold text-lg mb-2">Reservdelar och tillbehör</h3>
-      <p class="text-sm text-gray-600 mb-3">Köp originala knivar, laddningskablar och tillbehör till din Husqvarna Automower:</p>
+      <p class="text-sm text-text-light mb-3">Köp originala knivar, laddningskablar och tillbehör till din Husqvarna Automower:</p>
       <a href="/reservdelar/husqvarna/" class="inline-block bg-cta text-white font-semibold py-2 px-4 rounded-lg text-sm">Se Husqvarna reservdelar</a>
     </div>
 

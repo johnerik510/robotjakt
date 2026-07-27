@@ -2,6 +2,7 @@
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
@@ -62,7 +63,7 @@ export const articleMeta = {
   title="Husqvarna Automower 430X Nera recension 2026: utan slinga"
   description="Husqvarna Automower 430X Nera testad: slinga-fri installation med EPOS-GPS för 3 200 m². Se prestanda, app-styrning och pris. Värd det 2026?"
   breadcrumbs={breadcrumbs}
-  lastUpdated="2026-03-29"
+  lastUpdated="2026-07-27"
   ogImage="/images/husqvarna-430x-nera.webp"
   datePublished="2026-05-01"
 >
@@ -74,6 +75,11 @@ export const articleMeta = {
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
     Husqvarna Automower 430X Nera, Recension 2026
   </h1>
+
+  <AnswerBox
+    question="Snabbt svar: Vem ska köpa Husqvarna Automower 430X Nera?"
+    answer="Automower 430X Nera får 9,5 av 10 och är vår topprankade robotgräsklippare för trädgårdar upp till 3 200 m². EPOS-navigeringen med GPS och 4G håller ordning även i komplexa trädgårdar, och 45 procents lutning räcker för de flesta tomter. Modellen har utgått och ersatts av 430V NERA."
+  />
 
   <!-- Verdict box -->
   <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -210,6 +216,30 @@ export const articleMeta = {
     <p class="text-text-light leading-relaxed mb-6">
       Statistik över klipptid, täckning och driftstatus finns tillgänglig i appen. Notiser skickas om roboten fastnar, behöver service eller om batteriet är lågt. Appen fungerar stabilt och uppdateras regelbundet av Husqvarna.
     </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur påverkar mulchklippet gräsmattan över en säsong?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Roboten skär av några millimeter i taget och lämnar klippet kvar i gräset. Det finfördelade gräset bryts ner och lämnar tillbaka näring till jorden, vilket minskar behovet av gödning. Gräsmattan blir successivt tätare eftersom gräset stimuleras att skjuta nya skott i stället för att växa på höjden.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Effekten bygger på att roboten går ofta. Låter du gräset bli för långt mellan passen blir klippet för grovt och kan lägga sig som en matta i stället för att brytas ner. På en yta som närmar sig 3 200 m² innebär det att schemat i Automower Connect är viktigare än på en liten tomt, roboten behöver helt enkelt tillräckligt många timmar per vecka för att hinna över allt.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur sköter du 430X Nera under vintern?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Rengör roboten från gräs och jord, ladda batteriet fullt och förvara den frostfritt inomhus tillsammans med transformatorn. Byt slitna knivblad redan på hösten så att roboten är klar när säsongen startar. Perimeterkabeln ligger kvar i marken, men koppla ur strömmen till laddstationen.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      IPX4-klassningen är gjord för regn och fukt under säsongen, inte för att roboten ska stå ute under snö och tjäle i flera månader. Ett litium-jonbatteri mår dessutom bättre av att förvaras svalt och laddat än urladdat i kyla. Blad är förbrukningsvara, och vi har samlat <a href="/reservdelar/knivar/" class="text-accent underline">knivar till robotgräsklippare</a> så att du kan lägga in ett set inför nästa vår.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">När är en robot utan slinga ett bättre val än 430X Nera?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Om kabelinstallationen är det som håller dig tillbaka är slinglösa modeller alternativet. De ritar upp gränsen digitalt med satellitpositionering, så du kan ändra klippytan i appen i stället för att gräva om. Nackdelen är att satellitnavigering behöver relativt fri sikt mot himlen.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Har du en stor tomt med täta trädkronor, höga husväggar eller inramande skog är kabeln fortfarande det mest förutsägbara valet, eftersom gränsen ligger i marken och inte beror på signal. Är tomten öppen väger enkelheten tyngre, och då är <a href="/robotgrasklippare-utan-slinga/" class="text-accent underline">robotgräsklippare utan slinga</a> värt att jämföra. Vi har också en genomgång av <a href="/robotgrasklippare-stor-tradgard/" class="text-accent underline">robotgräsklippare för stor trädgård</a> där kapacitet står mot installationssätt.
+    </p>
   </section>
 
   <!-- För whom -->
@@ -235,7 +265,7 @@ export const articleMeta = {
 
   <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 my-6">
     <h3 class="font-bold text-lg mb-2">Reservdelar och tillbehör</h3>
-    <p class="text-sm text-gray-600 mb-3">Köp originala knivar, laddningskablar och tillbehör till din Husqvarna Automower:</p>
+    <p class="text-sm text-text-light mb-3">Köp originala knivar, laddningskablar och tillbehör till din Husqvarna Automower:</p>
     <a href="/reservdelar/husqvarna/" class="inline-block bg-cta text-white font-semibold py-2 px-4 rounded-lg text-sm">Se Husqvarna reservdelar</a>
   </div>
 

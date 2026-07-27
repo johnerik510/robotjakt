@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
 import FAQ from '../../components/FAQ.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
@@ -60,16 +61,7 @@ export const articleMeta = {
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 juli 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Dreame L20 Ultra vs X40 Ultra 2026, vilken ska du välja?
@@ -95,7 +87,7 @@ export const articleMeta = {
     <!-- Specs comparison table -->
     <section class="mb-10" aria-label="Jämförelsetabell Dreame L20 Ultra vs X40 Ultra">
       <h2 class="font-heading text-xl font-bold text-text mb-4">Specifikationer jämfört</h2>
-      <div class="overflow-x-auto rounded-xl border border-border">
+      <div class="spec-table-wrap rounded-xl border border-border">
         <table class="w-full text-sm bg-white">
           <thead>
             <tr class="border-b border-border bg-bg-alt">
@@ -107,53 +99,53 @@ export const articleMeta = {
           <tbody class="divide-y divide-border">
             <tr class="bg-bg-alt/30">
               <td class="px-4 py-3 font-medium text-text">Sugkraft</td>
-              <td class="px-4 py-3 text-text-light">7 000 Pa</td>
-              <td class="px-4 py-3 text-winner font-semibold">12 000 Pa</td>
+              <td data-col="Dreame L20 Ultra" class="px-4 py-3 text-text-light">7 000 Pa</td>
+              <td data-col="Dreame X40 Ultra" class="px-4 py-3 text-winner font-semibold">12 000 Pa</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-medium text-text">Moppmodul</td>
-              <td class="px-4 py-3 text-text-light">Roterande mopp</td>
-              <td class="px-4 py-3 text-winner font-semibold">Oscillerande + utfällbar sidoarm</td>
+              <td data-col="Dreame L20 Ultra" class="px-4 py-3 text-text-light">Roterande mopp</td>
+              <td data-col="Dreame X40 Ultra" class="px-4 py-3 text-winner font-semibold">Oscillerande + utfällbar sidoarm</td>
             </tr>
             <tr class="bg-bg-alt/30">
               <td class="px-4 py-3 font-medium text-text">Hörntäckning</td>
-              <td class="px-4 py-3 text-text-light">Standard</td>
-              <td class="px-4 py-3 text-winner font-semibold">Utmärkt, sidoarm når hela vägen</td>
+              <td data-col="Dreame L20 Ultra" class="px-4 py-3 text-text-light">Standard</td>
+              <td data-col="Dreame X40 Ultra" class="px-4 py-3 text-winner font-semibold">Utmärkt, sidoarm når hela vägen</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-medium text-text">Mopptvätt</td>
-              <td class="px-4 py-3 text-text-light">Varmvatten i station</td>
-              <td class="px-4 py-3 text-winner font-semibold">Varmvatten 70°C i station</td>
+              <td data-col="Dreame L20 Ultra" class="px-4 py-3 text-text-light">Varmvatten i station</td>
+              <td data-col="Dreame X40 Ultra" class="px-4 py-3 text-winner font-semibold">Varmvatten 70°C i station</td>
             </tr>
             <tr class="bg-bg-alt/30">
               <td class="px-4 py-3 font-medium text-text">Batteritid</td>
-              <td class="px-4 py-3 text-text-light">160 min (uppgivet)</td>
-              <td class="px-4 py-3 text-winner font-semibold">6 400 mAh (längre räckvidd)</td>
+              <td data-col="Dreame L20 Ultra" class="px-4 py-3 text-text-light">160 min (uppgivet)</td>
+              <td data-col="Dreame X40 Ultra" class="px-4 py-3 text-winner font-semibold">6 400 mAh (längre räckvidd)</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-medium text-text">Navigering</td>
-              <td class="px-4 py-3 text-text-light">LiDAR</td>
-              <td class="px-4 py-3 text-text-light">LiDAR + AI-kamera</td>
+              <td data-col="Dreame L20 Ultra" class="px-4 py-3 text-text-light">LiDAR</td>
+              <td data-col="Dreame X40 Ultra" class="px-4 py-3 text-text-light">LiDAR + AI-kamera</td>
             </tr>
             <tr class="bg-bg-alt/30">
               <td class="px-4 py-3 font-medium text-text">Bullernivå</td>
-              <td class="px-4 py-3 text-winner font-semibold">65 dB</td>
-              <td class="px-4 py-3 text-text-light">68 dB</td>
+              <td data-col="Dreame L20 Ultra" class="px-4 py-3 text-winner font-semibold">65 dB</td>
+              <td data-col="Dreame X40 Ultra" class="px-4 py-3 text-text-light">68 dB</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-medium text-text">Station</td>
-              <td class="px-4 py-3 text-text-light">Fullautomatisk</td>
-              <td class="px-4 py-3 text-text-light">Fullautomatisk</td>
+              <td data-col="Dreame L20 Ultra" class="px-4 py-3 text-text-light">Fullautomatisk</td>
+              <td data-col="Dreame X40 Ultra" class="px-4 py-3 text-text-light">Fullautomatisk</td>
             </tr>
             <tr class="bg-bg-alt/30">
               <td class="px-4 py-3 font-medium text-text">AI-djurskydd</td>
-              <td class="px-4 py-3 text-text-light">Nej</td>
-              <td class="px-4 py-3 text-text-light">Nej</td>
+              <td data-col="Dreame L20 Ultra" class="px-4 py-3 text-text-light">Nej</td>
+              <td data-col="Dreame X40 Ultra" class="px-4 py-3 text-text-light">Nej</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-medium text-text">Garanti</td>
-              <td class="px-4 py-3 text-text-light">2 år</td>
-              <td class="px-4 py-3 text-text-light">2 år</td>
+              <td data-col="Dreame L20 Ultra" class="px-4 py-3 text-text-light">2 år</td>
+              <td data-col="Dreame X40 Ultra" class="px-4 py-3 text-text-light">2 år</td>
             </tr>
           </tbody>
         </table>

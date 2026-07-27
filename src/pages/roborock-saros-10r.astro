@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const faqItems = [
   {
@@ -70,24 +72,21 @@ export const articleMeta = {
   title="Roborock Saros 10R recension 2026: test och Omdöme"
   description="Vi har jämfört Roborock Saros 10R grundligt. Världens tunnaste robotdammsugare med mopp (7,98 cm) och 20 000 Pa sugkraft, vad kan den verkligen?"
   ogImage="/images/roborock-saros-10r.webp"
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/roborock-saros-10r.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/roborock-saros-10r.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-19</p>
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-27</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Roborock Saros 10R Recension 2026
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Är Roborock Saros 10R värd att köpa?"
+      answer="Köp den om du har möbler med 8 till 10 cm frihöjd. Med 7,98 cm höjd kommer Saros 10R in där andra robotar stoppas, och 20 000 Pa är marknadens starkaste sugkraft 2026. Vi ger 4,8 av 5. Har du hög frihöjd betalar du för en fördel du inte använder."
+    />
 
     <!-- Verdict box -->
     <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -243,6 +242,22 @@ export const articleMeta = {
       </p>
       <p class="text-text-light leading-relaxed mb-4">
         Om dina möbler har hög frihöjd och tillgänglighet under möbler inte är ett problem, ger <a href="/dreame-x40-ultra/" class="text-accent underline">Dreame X40 Ultra</a> mycket likvärdigt städresultat för mindre. Om du prioriterar moppning över sugkraft kan <a href="/roborock-qrevo-master/" class="text-accent underline">Roborock Qrevo Master</a> vara ett bättre alternativ.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur mäter du om Saros 10R kommer in under dina möbler?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Lägg en tumstock på golvet under möbeln och mät till lägsta punkten, oftast en tvärslå eller en ram och inte benen. Roboten är 7,98 cm hög, så räkna med minst en halv centimeter marginal så att den inte skrapar mot underkanten när den kör in.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Mät på flera ställen. En soffa sjunker när någon sitter i den, och en bäddsoffa har ofta en mekanismlåda som hänger lägre än ramen längst fram. Ligger måttet på 8 cm jämnt är det för snålt: roboten behöver komma in, vända och ut igen, och en robot som kilar sig fast stoppar hela körningen. Har du i stället gott om frihöjd, mer än de knappt 11 cm en Dreame X40 Ultra behöver, kommer varje toppmodell in och då är den låga profilen inte längre argumentet du betalar för. I mindre hem där möblerna står tätt spelar måttet extra roll, se vår genomgång av <a href="/robotdammsugare/lagenhet/" class="text-accent underline">robotdammsugare för lägenhet</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur påverkar mörker Saros 10Rs navigering?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        RGB-kameran behöver ljus för att känna igen de över 100 objekttyperna, så i ett släckt rum tappar objektigenkänningen träffsäkerhet. Avståndsmätningen påverkas mindre, eftersom 3D ToF-sensorn och VertiBeam skickar ut eget ljus och mäter reflektionen. Roboten hittar alltså hem, men ser sladden på golvet sämre.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Det är den praktiska konsekvensen av att StarSight lutar sig mer mot kamera och ToF än mot ett roterande lasertorn. Kartläggning och rumsindelning fungerar i mörker, medan just det som gör systemet starkt, att skilja en laddsladd från en tröskellist, är beroende av att det finns något ljus i rummet. Lägg därför nattscheman bara i rum du håller fria från småsaker, och kör de stökigare rummen på dagen. Skillnaden mellan sensortyperna går vi igenom i guiden till <a href="/robotdammsugare/lidar/" class="text-accent underline">robotdammsugare med LiDAR</a>.
       </p>
     </section>
 

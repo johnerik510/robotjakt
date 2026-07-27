@@ -1,5 +1,6 @@
 ---
 import { ctaRel } from '../lib/cta-rel';
+import AuthorByline from '../components/AuthorByline.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
@@ -165,16 +166,7 @@ export const articleMeta = {
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 juli 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
+    <AuthorByline datePublished="2026-02-21" dateModified="2026-07-27" />
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Dreame robotdammsugare 2026, alla modeller jämförda
@@ -202,7 +194,7 @@ export const articleMeta = {
     <!-- Comparison table -->
     <section class="mb-10" aria-label="Jämförelsetabell Dreame-modeller">
       <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse, Dreame-modeller 2026</h2>
-      <div class="overflow-x-auto rounded-xl border border-border">
+      <div class="spec-table-wrap rounded-xl border border-border">
         <table class="w-full text-sm bg-white">
           <thead>
             <tr class="border-b border-border bg-bg-alt">
@@ -213,14 +205,14 @@ export const articleMeta = {
               </tr>
           </thead>
           <tbody class="divide-y divide-border">
-            <tr class="bg-winner/5"><td class="px-4 py-3 font-medium text-text">X40 Ultra</td><td class="px-4 py-3 text-winner font-semibold">12 000 Pa</td><td class="px-4 py-3 text-text-light">Utfällbar + roterande</td><td class="px-4 py-3 text-text-light">Fullautomatisk</td></tr>
-            <tr><td class="px-4 py-3 font-medium text-text">X30 Ultra</td><td class="px-4 py-3 text-text-light">8 500 Pa</td><td class="px-4 py-3 text-text-light">Utfällbar + roterande</td><td class="px-4 py-3 text-text-light">Fullautomatisk</td></tr>
-            <tr class="bg-bg-alt/50"><td class="px-4 py-3 font-medium text-text">L20 Ultra</td><td class="px-4 py-3 text-text-light">7 000 Pa</td><td class="px-4 py-3 text-text-light">Dubbel roterande</td><td class="px-4 py-3 text-text-light">Fullautomatisk</td></tr>
-            <tr><td class="px-4 py-3 font-medium text-text">L10s Pro Ultra Heat</td><td class="px-4 py-3 text-text-light">7 000 Pa</td><td class="px-4 py-3 text-text-light">Roterande + 75°C vatten</td><td class="px-4 py-3 text-text-light">Fullautomatisk</td></tr>
-            <tr class="bg-bg-alt/50"><td class="px-4 py-3 font-medium text-text">L10s Ultra Gen2</td><td class="px-4 py-3 text-text-light">7 000 Pa</td><td class="px-4 py-3 text-text-light">Dubbel roterande</td><td class="px-4 py-3 text-text-light">Automatisk</td></tr>
-            <tr><td class="px-4 py-3 font-medium text-text">W10 Pro</td><td class="px-4 py-3 text-text-light">4 000 Pa</td><td class="px-4 py-3 text-text-light">Roterande</td><td class="px-4 py-3 text-text-light">Kompakt</td></tr>
-            <tr class="bg-bg-alt/50"><td class="px-4 py-3 font-medium text-text">Z10 Pro</td><td class="px-4 py-3 text-text-light">4 000 Pa</td><td class="px-4 py-3 text-text-light">Passiv mopp</td><td class="px-4 py-3 text-text-light">Auto-tömning</td></tr>
-            <tr><td class="px-4 py-3 font-medium text-text">D10s Pro</td><td class="px-4 py-3 text-text-light">5 000 Pa</td><td class="px-4 py-3 text-text-light">Passiv mopp</td><td class="px-4 py-3 text-text-light">Manuell</td></tr>
+            <tr class="bg-winner/5"><td class="px-4 py-3 font-medium text-text">X40 Ultra</td><td data-col="Sugkraft" class="px-4 py-3 text-winner font-semibold">12 000 Pa</td><td data-col="Mopp" class="px-4 py-3 text-text-light">Utfällbar + roterande</td><td data-col="Station" class="px-4 py-3 text-text-light">Fullautomatisk</td></tr>
+            <tr><td class="px-4 py-3 font-medium text-text">X30 Ultra</td><td data-col="Sugkraft" class="px-4 py-3 text-text-light">8 500 Pa</td><td data-col="Mopp" class="px-4 py-3 text-text-light">Utfällbar + roterande</td><td data-col="Station" class="px-4 py-3 text-text-light">Fullautomatisk</td></tr>
+            <tr class="bg-bg-alt/50"><td class="px-4 py-3 font-medium text-text">L20 Ultra</td><td data-col="Sugkraft" class="px-4 py-3 text-text-light">7 000 Pa</td><td data-col="Mopp" class="px-4 py-3 text-text-light">Dubbel roterande</td><td data-col="Station" class="px-4 py-3 text-text-light">Fullautomatisk</td></tr>
+            <tr><td class="px-4 py-3 font-medium text-text">L10s Pro Ultra Heat</td><td data-col="Sugkraft" class="px-4 py-3 text-text-light">7 000 Pa</td><td data-col="Mopp" class="px-4 py-3 text-text-light">Roterande + 75°C vatten</td><td data-col="Station" class="px-4 py-3 text-text-light">Fullautomatisk</td></tr>
+            <tr class="bg-bg-alt/50"><td class="px-4 py-3 font-medium text-text">L10s Ultra Gen2</td><td data-col="Sugkraft" class="px-4 py-3 text-text-light">7 000 Pa</td><td data-col="Mopp" class="px-4 py-3 text-text-light">Dubbel roterande</td><td data-col="Station" class="px-4 py-3 text-text-light">Automatisk</td></tr>
+            <tr><td class="px-4 py-3 font-medium text-text">W10 Pro</td><td data-col="Sugkraft" class="px-4 py-3 text-text-light">4 000 Pa</td><td data-col="Mopp" class="px-4 py-3 text-text-light">Roterande</td><td data-col="Station" class="px-4 py-3 text-text-light">Kompakt</td></tr>
+            <tr class="bg-bg-alt/50"><td class="px-4 py-3 font-medium text-text">Z10 Pro</td><td data-col="Sugkraft" class="px-4 py-3 text-text-light">4 000 Pa</td><td data-col="Mopp" class="px-4 py-3 text-text-light">Passiv mopp</td><td data-col="Station" class="px-4 py-3 text-text-light">Auto-tömning</td></tr>
+            <tr><td class="px-4 py-3 font-medium text-text">D10s Pro</td><td data-col="Sugkraft" class="px-4 py-3 text-text-light">5 000 Pa</td><td data-col="Mopp" class="px-4 py-3 text-text-light">Passiv mopp</td><td data-col="Station" class="px-4 py-3 text-text-light">Manuell</td></tr>
           </tbody>
         </table>
       </div>

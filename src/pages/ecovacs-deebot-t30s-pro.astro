@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const faqItems = [
   {
@@ -67,24 +69,21 @@ export const articleMeta = {
   title="Ecovacs Deebot T30S Pro test 2026: recension och pris"
   description="Ecovacs Deebot T30S Pro testad: 11 000 Pa, OZMO Turbo 2.0 moppning och TrueDetect 3D hinderdetektion. Se betyg, pris och jämförelse Sverige 2026."
   ogImage="/images/ecovacs-deebot-t30s-pro.webp"
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/ecovacs-deebot-t30s-pro.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/ecovacs-deebot-t30s-pro.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-05</p>
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-27</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Ecovacs Deebot T30S Pro Recension 2026
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Är Ecovacs Deebot T30S Pro värd att köpa?"
+      answer="Ja, om du vill ha stark moppning och lång körtid. OZMO Turbo 2.0 skrubbar loss intorkat smuts, TrueDetect 3D styr runt sladdar och djuravföring och 200 minuters drifttid räcker för stora ytor. Vill du ha bäst hörntäckning vid moppning väljer du Dreame X40 Ultra i stället."
+    />
 
     <!-- Verdict box -->
     <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -196,6 +195,30 @@ export const articleMeta = {
       <h3 class="font-heading text-xl font-semibold text-text mb-3">För vem passar Ecovacs Deebot T30S Pro?</h3>
       <p class="text-text-light leading-relaxed mb-4">
         T30S Pro passar hem med mycket hårdgolv som kräver effektiv moppning och vill ha djuravföringsdetektering. Sticker ut med lång drifttid och stark sugkraft. Välj Dreame X40 Ultra om hörntäckning vid moppning är viktigast.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur ofta behöver du fylla på och tömma stationen?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Dammpåsen på 3,2 liter räcker normalt 45 till 60 dagar vid daglig städning, medan vattentankarna behöver ses över ungefär en gång i veckan. Fyll rent vatten och töm smutsvattnet i samma moment, då blir det en rutin i stället för två.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Intervallen förskjuts snabbt av hur mycket du moppar. Kör du mopp varje dag på en stor hårdgolvsyta tar rentvattentanken slut fortare än på en vecka, eftersom moppningen är det som drar vatten. Dammpåsen påverkas mest av päls och sand: ett hem med hund och grusgång fyller den märkbart snabbare än en barnfri lägenhet. Filter och moppdukar är förbrukningsdelar och finns samlade under <a href="/reservdelar/ecovacs/" class="text-accent underline">reservdelar till Ecovacs Deebot</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Klarar TrueDetect 3D sladdar och strumpor i ett barnhem?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        I de flesta fall, ja. Strukturerat ljus ger roboten en tredimensionell bild av golvet framför sig, så den styr runt laddsladdar, skor och strumpor i stället för att dra dem med sig. Riktigt tunna sladdar och platta föremål är fortfarande det svåraste för alla robotar.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Djuravföringsdetekteringen betyder mest i hem med valp eller katt, eftersom en robot som kör över en olycka gör problemet många gånger större. T30S Pro hanterar det, men systemet är inte lika moget som iRobots. En rimlig försiktighetsåtgärd är att köra roboten när någon är hemma de första veckorna, tills du sett hur den beter sig. Fler modeller som klarar päls och olyckor jämför vi i listan över <a href="/robotdammsugare/husdjur/" class="text-accent underline">bästa robotdammsugare för husdjur</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad gör 10,3 cm höjd för åtkomsten under möbler?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Med 10,3 centimeter i höjd kommer roboten in under de flesta soffor och sängar, men inte under lägre tv-bänkar och byråar. Mät den fria höjden under dina möbler innan du köper, det är där dammet samlas mest och där du märker skillnaden direkt.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Roboten är låg, men stationen är det inte. Den behöver en fri väggplats med eluttag och ska stå kvar på samma ställe för att kartan och laddningen ska fungera som tänkt. Planera platsen innan leverans, gärna i ett tvättrum eller en hall där tömningscykeln inte stör.
       </p>
     </section>
 

@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const faqItems = [
   {
@@ -65,24 +67,21 @@ export const articleMeta = {
   title="Roborock Qrevo MaxV Ultra recension 2026: test och Pris"
   description="Roborock Qrevo MaxV Ultra testad: AI-kamera, 10 000 Pa och helautomatisk station. Bästa valet för husdjursägare. Se betyg, pris och jämförelse 2026."
   ogImage="/images/roborock-qrevo-maxv-ultra.webp"
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/roborock-qrevo-maxv-ultra.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/roborock-qrevo-maxv-ultra.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-05</p>
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-27</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Roborock Qrevo MaxV Ultra Recension 2026
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Är Roborock Qrevo MaxV Ultra värd att köpa?"
+      answer="Ja, om du har hund eller katt. Qrevo MaxV Ultra kombinerar AI-kamera som undviker djuravföring, 10 000 Pa sugkraft och en station som tvättar mopparna i 55-gradigt vatten och torkar dem med varmluft. Vi ger 4,4 av 5. Vill du ha maximal sugkraft väljer du Qrevo Master."
+    />
 
     <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
       <div class="flex items-start gap-4">
@@ -186,6 +185,33 @@ export const articleMeta = {
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Alternativ till Roborock Qrevo MaxV Ultra: bättre val för ditt hem?</h3>
       <p class="text-text-light leading-relaxed mb-4">
         S8 MaxV Ultra mer och har starkare sugkraft (10 000 Pa mot Qrevo MaxV Ultras 10 000 Pa, de är faktiskt lika) men S8-serien erbjuder FlexiArm sidborste och dubbla gummirullar. Qrevo MaxV Ultra är ett utmärkt val om du vill ha AI-kamera och helautomatisk station utan att betala S8-serien-priset.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur sköter du Qrevo MaxV Ultras AI-kamera?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Torka kameralinsen och det närinfraröda stödljuset med en torr mikrofiberduk ungefär varannan vecka. Damm på linsen är en vanlig orsak till att hinderdetekteringen börjar missa kablar och strumpor, och en igendammad lins syns sällan utifrån förrän roboten redan kört på något.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        ReactiveAI 2.0 bygger på att kameran hinner se hindret, inte på att roboten känner det med stötdämparen. Ligger det en hinna damm över linsen tolkar systemet fortfarande formerna, men marginalen krymper och roboten svänger senare. Belysningen spelar in på samma sätt. I skarpt motljus mot ett fönster, eller i ett helt släckt rum, sjunker kontrasten och en mörk sladd på mörkt golv blir svår att skilja från golvet. Där hamnar de få procent som roboten missar.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Har du husdjur är det värt att lägga schemat på en tid när gardinerna är uppdragna men solen inte står rakt in genom fönstret. Fler modeller som löser samma problem på olika sätt hittar du i vår genomgång av <a href="/robotdammsugare/husdjur/" class="text-accent underline">bästa robotdammsugare för husdjur</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Räcker 7 mm mattlyftning för tjocka mattor?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        7 mm räcker för de flesta hallmattor, bomullsmattor och tunna ullmattor. På långhårig ryamatta eller tjock mocka lyfts moppen inte fritt från luggen, och då kan du få fuktiga stråk i ytan. Enklast är att lägga de mattorna som egen zon i appen och köra dem torrt.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Lyftmekaniken jämför robotens egen höjd med mattans hölje, inte med luggens totala tjocklek. En matta som ser platt ut i butik kan resa sig flera millimeter när den ligger på ett mjukt underlägg, och då äts marginalen upp. Känn efter med handen: om du kan trycka ner luggen mer än en halv centimeter innan du når väven ligger den i riskzonen. Vill du jämföra hur andra tillverkare löser mopplyftet, se vår översikt över <a href="/robotdammsugare/med-mopp/" class="text-accent underline">bästa robotdammsugare med mopp</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vilka delar på Qrevo MaxV Ultra slits snabbast?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        HEPA-filtret och sidoborsten byter du oftast, filtret ungefär varannan månad och sidoborsten var sjätte till tolfte månad. Moppkuddarna tappar upptagningsförmåga när fibrerna blir hårda, och huvudborsten samlar hårtrassel som du klipper bort med sax i stället för att byta hela delen.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Ett HEPA-filter fångar de finaste partiklarna genom att pressa luften genom ett tätt fibernät. Ju mer filtret fyller sig, desto högre mottryck får fläkten, och sugkraften du faktiskt får ut på golvet sjunker långt innan filtret ser smutsigt ut. Ett igensatt filter kostar dig alltså både städresultat och batteritid. Kompatibla filter, borstar och moppkuddar hittar du bland <a href="/reservdelar/roborock-qrevo-serien/" class="text-accent underline">reservdelar till Roborock Qrevo-serien</a>.
       </p>
     </section>
 

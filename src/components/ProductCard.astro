@@ -118,7 +118,7 @@ const STAR = 'M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-3">
           <div>
-            <p class="text-xs font-semibold text-winner uppercase tracking-wider mb-1.5">Fördelar</p>
+            <p class="text-xs font-bold text-winner mb-1.5">Fördelar</p>
             <ul class="space-y-1">
               {pros.map((pro) => (
                 <li class="text-sm text-text flex items-start gap-1.5">
@@ -129,7 +129,7 @@ const STAR = 'M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h
             </ul>
           </div>
           <div>
-            <p class="text-xs font-semibold text-cta uppercase tracking-wider mb-1.5">Nackdelar</p>
+            <p class="text-xs font-bold text-cta mb-1.5">Nackdelar</p>
             <ul class="space-y-1">
               {cons.map((con) => (
                 <li class="text-sm text-text flex items-start gap-1.5">
@@ -159,7 +159,7 @@ const STAR = 'M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h
             </a>
             {otherCTAs.length > 0 && (
               <div class="flex flex-wrap items-center gap-2 mt-2.5">
-                <span class="text-xs font-semibold text-text-light uppercase tracking-wide">Även hos:</span>
+                <span class="text-xs font-semibold text-text-light">Även hos:</span>
                 {otherCTAs.map((o) => (
                   <a href={o.url} rel={ctaRel(o.url)} target="_blank" class="inline-flex items-center px-3 py-1.5 rounded-lg border border-border text-xs font-semibold text-text-light hover:border-cta hover:text-cta transition-colors no-underline">
                     {o.store}

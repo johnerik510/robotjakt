@@ -2,6 +2,7 @@
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
@@ -62,12 +63,17 @@ export const articleMeta = {
   description="Gardena Sileno Life 750 testad: tystgående robotgräsklippare för 750 m². Se klippresultat, Bluetooth-styrning, installation och pris i Sverige."
   breadcrumbs={breadcrumbs}
   ogImage="/images/gardena-sileno-life-750.webp"
-  lastUpdated="2026-03-29"
+  lastUpdated="2026-07-27"
   datePublished="2026-04-17"
 >
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
     Gardena Sileno Life 750, Recension 2026
   </h1>
+
+  <AnswerBox
+    question="Snabbt svar: vem passar Gardena Sileno Life 750?"
+    answer="Life 750 är Sileno City 500 med större kapacitet, 750 m² i stället för 500, och samma 57 dB och 18 cm klippbredd. Välj den om gräsmattan ligger mellan 500 och 750 m² och är relativt plan. Har du brantare än 35 procents lutning passar Automower 105 bättre."
+  />
 
   <!-- Verdict box -->
   <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -190,12 +196,36 @@ export const articleMeta = {
     <p class="text-text-light leading-relaxed mb-6">
       Begränsningen är Bluetooth-räckvidden på ca 10 meter. Det finns ingen fjärrstyrning via internet, du kan inte styra roboten hemifrån om du är på jobbet. För den som bara vill ställa in ett fast klippschema och sedan låta roboten sköta sig är detta fullt tillräckligt. Vill du ha fjärrstyrning är Husqvarna Automower 315X ett bättre alternativ.
     </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur ofta ska Sileno Life 750 klippa 750 m²?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Varje dag, i korta pass. Roboten arbetar 75 minuter och laddar sedan 75 minuter, så den behöver flera cykler för att beta av en yta nära 750 m². Ett schema som tillåter drift under större delen av dygnets ljusa timmar ger ett jämnare resultat än få och långa körningar.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Principen bakom en robotgräsklippare är att klippa lite men ofta. Tar du bara ett par millimeter i taget hinner gräset aldrig växa sig långt, mulchklippet blir så finfördelat att det försvinner ner i mattan och gödslar den, och motorn slipper kämpa. Kortar du ner schemat för mycket händer motsatsen: gräset drar ifrån, klippet blir grövre och lägger sig som en filt på ytan. Behöver du hjälp att räkna ut hur många timmars drift din yta kräver har vi samlat räkneexemplen i vår <a href="/guide/robotgrasklippare-koparguide/" class="text-accent underline">köpguide för robotgräsklippare</a>.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Kan Sileno Life 750 klippa två separata gräsytor?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Bara om ytorna hänger ihop med gräs. Perimeterkabeln bildar en enda sluten slinga, så en fram- och en baksida måste kopplas samman med en gräspassage som roboten kan köra igenom. Är ytorna helt åtskilda av grus eller stenläggning får du bära roboten över manuellt.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      I praktiken löser många det genom att dra kabeln runt hela tomten och låta en smal gräskorridor längs husgaveln knyta ihop delarna. Korridoren bör vara bred nog att roboten kan svänga i den utan att nudda kabeln på båda sidor samtidigt. Är passagen för smal fastnar roboten i att köra fram och tillbaka i den, och baksidan blir sällan klippt. Slinglösa modeller hanterar det här smidigare eftersom flera arbetsområden och transportvägar definieras i appen i stället för i marken.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad ska bort från gräsmattan innan roboten kör?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Allt som är hårdare än gräs. Kottar, grenar, kvarglömda leksaker, trädgårdsslangar och stenar från rabattkanten är det som slår hål på knivblad och i värsta fall skadar klippaggregatet. En snabb rundvända över ytan innan säsongens första körning sparar både blad och reklamationer.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Löv är ett eget kapitel. På hösten kan blöta löv packa ihop sig under chassit och göra att roboten tappar drivning eller tolkar underlaget fel. Kratta undan de värsta drivorna innan du kör, och gör ren undersidan när säsongen börjar närma sig slutet. Kontrollera samtidigt att bladen sitter fast och är hela, sitter något blad snett går klippaggregatet i obalans och slitaget flyttar över på lagren. Passande blad hittar du i vår översikt över <a href="/reservdelar/knivar/" class="text-accent underline">reservknivar till robotgräsklippare</a>.
+    </p>
   </section>
 
   <!-- Comparison with Husqvarna 105 -->
   <section class="mb-10 bg-bg-alt rounded-xl border border-border p-6">
     <h2 class="font-heading text-xl font-bold text-text mb-3">Jämförelse mot Husqvarna Automower 105</h2>
-    <div class="overflow-x-auto">
+    <div class="spec-table-wrap">
       <table class="w-full text-sm">
         <thead>
           <tr class="border-b border-border">
@@ -207,23 +237,23 @@ export const articleMeta = {
         <tbody class="divide-y divide-border text-text-light">
           <tr>
             <td class="py-2 pr-4 font-medium text-text">Max yta</td>
-            <td class="py-2 pr-4">750 m²</td>
-            <td class="py-2">600 m²</td>
+            <td data-col="Sileno Life 750" class="py-2 pr-4">750 m²</td>
+            <td data-col="Automower 105" class="py-2">600 m²</td>
           </tr>
           <tr>
             <td class="py-2 pr-4 font-medium text-text">Bullernivå</td>
-            <td class="py-2 pr-4">57 dB</td>
-            <td class="py-2">58 dB</td>
+            <td data-col="Sileno Life 750" class="py-2 pr-4">57 dB</td>
+            <td data-col="Automower 105" class="py-2">58 dB</td>
           </tr>
           <tr>
             <td class="py-2 pr-4 font-medium text-text">App</td>
-            <td class="py-2 pr-4">Bluetooth (lokal)</td>
-            <td class="py-2">Nej</td>
+            <td data-col="Sileno Life 750" class="py-2 pr-4">Bluetooth (lokal)</td>
+            <td data-col="Automower 105" class="py-2">Nej</td>
           </tr>
           <tr>
             <td class="py-2 pr-4 font-medium text-text">Lutning</td>
-            <td class="py-2 pr-4">35%</td>
-            <td class="py-2 text-winner font-semibold">40%</td>
+            <td data-col="Sileno Life 750" class="py-2 pr-4">35%</td>
+            <td data-col="Automower 105" class="py-2 text-winner font-semibold">40%</td>
           </tr>
           </tbody>
       </table>

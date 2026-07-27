@@ -14,6 +14,8 @@ interface Props {
   authorType?: 'Organization' | 'Person';
   datePublished?: string;
   dateModified?: string;
+  /** true när bylinen ligger på ett mörkt band (grafit-hero). */
+  light?: boolean;
 }
 
 const {
@@ -25,6 +27,7 @@ const {
   authorType = 'Person',
   datePublished,
   dateModified,
+  light = false,
 } = Astro.props;
 
 const formatDate = (dateStr: string) => {
@@ -34,23 +37,35 @@ const formatDate = (dateStr: string) => {
 
 const showPublished = !!datePublished;
 const showUpdated = !!dateModified && dateModified !== datePublished;
+
+const wrapCls = light
+  ? 'flex items-center gap-2.5 py-2 mb-4 border-b border-white/15'
+  : 'flex items-center gap-2.5 py-2 mb-4 border-b border-border';
+const metaCls = light
+  ? 'flex flex-wrap items-center gap-x-1.5 gap-y-0 text-xs text-white/70 min-w-0'
+  : 'flex flex-wrap items-center gap-x-1.5 gap-y-0 text-xs text-text-light min-w-0';
+const nameCls = light
+  ? 'font-semibold text-white hover:text-accent-light transition-colors whitespace-nowrap'
+  : 'font-semibold text-text hover:text-accent transition-colors whitespace-nowrap';
+const sepCls = light ? 'text-white/30' : 'text-border-dark';
+const ringCls = light ? 'ring-white/25' : 'ring-border';
 ---
 
-<div class="flex items-center gap-2.5 py-2 mb-4 border-b border-gray-200">
+<div class={wrapCls}>
   <a href={authorHref} aria-label={`Om ${author}`} class="shrink-0">
     {authorImage ? (
-      <img src={authorImage} alt={author} width="32" height="32" loading="lazy" class="w-8 h-8 rounded-full object-cover ring-1 ring-gray-100" />
+      <img src={authorImage} alt={author} width="32" height="32" loading="lazy" class={`w-8 h-8 rounded-full object-cover ring-1 ${ringCls}`} />
     ) : (
       <span class="flex items-center justify-center w-8 h-8 rounded-full bg-accent/10 text-accent" aria-hidden="true">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-4.5 h-4.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 9.75h6M9 12h6m-6 2.25h3"/></svg>
       </span>
     )}
   </a>
-  <div class="flex flex-wrap items-center gap-x-1.5 gap-y-0 text-xs text-gray-500 min-w-0">
-    <a href={authorHref} class="font-semibold text-gray-800 hover:text-accent transition-colors whitespace-nowrap">{author}</a>
-    {showPublished && (<><span class="text-gray-300">·</span><time datetime={datePublished}>{formatDate(datePublished!)}</time></>)}
-    {showUpdated && (<><span class="text-gray-300">·</span><span class="whitespace-nowrap">Uppdaterad <time datetime={dateModified}>{formatDate(dateModified!)}</time></span></>)}
-    <span class="text-gray-300">·</span>
+  <div class={metaCls}>
+    <a href={authorHref} class={nameCls}>{author}</a>
+    {showPublished && (<><span class={sepCls}>·</span><time datetime={datePublished}>{formatDate(datePublished!)}</time></>)}
+    {showUpdated && (<><span class={sepCls}>·</span><span class="whitespace-nowrap">Uppdaterad <time datetime={dateModified}>{formatDate(dateModified!)}</time></span></>)}
+    <span class={sepCls}>·</span>
     <span class="inline-flex items-center gap-1 whitespace-nowrap">
       <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
       <span id="article-reading-time">Beräknar lästid...</span>

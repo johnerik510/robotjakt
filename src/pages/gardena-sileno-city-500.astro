@@ -2,6 +2,7 @@
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
@@ -60,13 +61,18 @@ export const articleMeta = {
   title="Gardena Sileno City 500 recension 2026: liten trädgård"
   description="Gardena Sileno City 500 testad: kompakt robotgräsklippare för trädgårdar upp till 500 m². Se prestanda, bullernivå, installation och pris i Sverige."
   breadcrumbs={breadcrumbs}
-  lastUpdated="2026-03-29"
+  lastUpdated="2026-07-27"
   ogImage="/images/gardena-sileno-city-500.webp"
   datePublished="2026-04-15"
 >
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
     Gardena Sileno City 500, Recension 2026
   </h1>
+
+  <AnswerBox
+    question="Snabbt svar: är Gardena Sileno City 500 värd att köpa?"
+    answer="Ja, om din gräsmatta är plan och under 500 m². Sileno City 500 är vårt budgetval med 57 dB, tystast i klassen, 18 cm klippbredd och en DIY-installation på 2 till 4 timmar. Du får ingen GPS och bara lokal Bluetooth-styrning, men driften är pålitlig."
+  />
 
   <!-- Verdict box -->
   <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -197,6 +203,30 @@ export const articleMeta = {
     </p>
     <p class="text-text-light leading-relaxed mb-6">
       Det innebär att du kan schemalägga klippning under kvällen utan att störa grannar, en praktisk fördel om du föredrar att roboten arbetar när du sover eller inte är hemma. Kontrollera alltid lokala störningsregler innan du ställer in nattklippning.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur ofta behöver Sileno City 500 nya knivblad?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Knivbladen är en slitdel och byts när klippet börjar se rufsigt ut i stället för snittrent. Sandig jord, kottar och grenrester slöar bladen snabbare än en ren gräsyta. Lyft roboten, titta på eggen och känn efter, är kanten rundad eller har hack är det dags.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Slöa blad river av grässtrået i stället för att skära det, och det syns som gulnande, trasiga toppar ett par dagar efter klippningen. Eftersom Sileno City 500 mulchar klippet direkt ner i mattan blir effekten dubbel: dåligt snitt ger både fulare gräs och grövre klipp som bryts ner långsammare. Byt alla blad samtidigt så att klippaggregatet förblir i balans, och håll ett extra set hemma så att en söndagsklippning inte behöver skjutas upp. Vi går igenom mått och passform i guiden till <a href="/reservdelar/knivar/" class="text-accent underline">reservknivar till robotgräsklippare</a>.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad gör du om perimeterkabeln går sönder?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Ett kabelbrott märks direkt: roboten vägrar lämna laddstationen och stationens statuslampa slutar lysa normalt. Vanligaste orsakerna är ett spadtag i rabatten, en vertikalskärare eller en kantskärare som kommit åt slingan. Du lokaliserar brottet längs kabeln och skarvar med en vattentät skarvkoppling.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Att hitta brottet är enklare än det låter. Dela slingan i halvor, koppla loss en halva i stationen och se om felsignalen ändras, och upprepa tills du ringat in sträckan. Titta sedan efter färska spadmärken, nya planteringar och ställen där kabeln fortfarande ligger ovanpå gräset. Använd en riktig skarvkoppling med gel, eltejp och isolerband klarar inte en fuktig svensk sommar i marken. Lägger du kabeln med en liten marginal in från kanten på rabatter och stenläggningar minskar du risken för nästa brott.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Kan Sileno City 500 stå ute över vintern?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Nej, ta in roboten när klippsäsongen är slut. Kyla och fukt är hårda mot litiumbatteriet, och en robot som står i laddstationen hela vintern får både korroderade kontakter och ett batteri som tappar kapacitet. Laddstationen kan sitta kvar ute, men roboten hör hemma i ett frostfritt utrymme.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Rutinen tar en kvart. Gör ren chassit och klippaggregatet från gräsrester, torka av kontaktblecken, kontrollera att hjulen går fritt och ladda batteriet enligt Gardenas anvisning innan förvaring. Ett djupurladdat litiumbatteri kan skadas permanent under en lång vinter, vilket är den vanligaste orsaken till att en robot som fungerade i höstas inte startar på våren. Hela rutinen steg för steg finns i vår guide till <a href="/guide/vinterforvaring-robotgrasklippare/" class="text-accent underline">vinterförvaring av robotgräsklippare</a>.
     </p>
   </section>
 

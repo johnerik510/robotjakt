@@ -2,6 +2,7 @@
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
@@ -61,12 +62,17 @@ export const articleMeta = {
   description="Mammotion Luba 2 AWO 1000H testad: GPS-styrd gräsklippare utan slinga. Se klippprestanda, laddningstid, app-styrning och pris i Sverige. Värd pengarna?"
   breadcrumbs={breadcrumbs}
   ogImage="/images/mammotion-luba-2-awo-1000h.webp"
-  lastUpdated="2026-03-29"
+  lastUpdated="2026-07-27"
   datePublished="2026-03-29"
 >
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
     Mammotion LUBA 2 AWO 1000H, Recension 2026
   </h1>
+
+  <AnswerBox
+    question="Snabbt svar: är Mammotion LUBA 2 AWO 1000H värd pengarna?"
+    answer="Ja, om gräsmattan är under 1 000 m² och du vill slippa perimeterkabel. Du får samma RTK GPS-navigering som LUBA AWO 3000 och 75% lutningstolerans, men med 22 cm klippbredd och 100 minuters drifttid. Har du större yta än så väljer du 3000-modellen i stället."
+  />
 
   <!-- Verdict box -->
   <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -193,6 +199,30 @@ export const articleMeta = {
     </p>
     <p class="text-text-light leading-relaxed mb-6">
       Välj LUBA 2 AWO 1000H om din trädgård är under 1 000 m² och du vill ha det prisvärdaste RTK GPS-alternativet. Välj Navimow H500E om du har en trädgård på 1 000 till 5 000 m², är villig att betala mer för Vision Fence-tekniken, eller vill ha ett system med bred kapacitetsmarginal.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur ofta ska roboten klippa en gräsmatta på 1 000 m²?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Robotgräsklippare är byggda för att ta lite gräs ofta, inte mycket sällan. Flera korta pass i veckan ger jämnare matta än ett långt pass, och det korta klippet faller ner och göder gräset i stället för att behöva samlas upp.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Med 22 cm klippbredd och 100 minuters drifttid räcker kapaciteten till 1 000 m² när passen är utspridda över veckan. Lägg schemat i Mammotion-appen så att roboten kör flera dagar i rad snarare än en enda lång dag, då hinner gräset aldrig växa förbi det höjdintervall roboten är gjord för. Under intensiv tillväxt på våren kör du tätare, i torka drar du ner. Inför vintern gäller vanliga rutiner, se vår genomgång av <a href="/guide/vinterforvaring-robotgrasklippare/" class="text-accent underline">vinterförvaring av robotgräsklippare</a>.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Fungerar LUBA 2 AWO 1000H i en trädgård med många träd?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Delvis. RTK-antennen kräver fri sikt mot himlen, så en tomt med tät trädkrona eller hög häck runt om är svårare att få stabil. Hitta ett öppet ställe för antennen, gärna högt, och rita zoner runt de partier där signalen blir osäker.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Antennen är systemets fasta referenspunkt, och står den skymd blir positioneringen ojämn på just de ytor som ligger i skuggan av hindret. Ofta räcker det att flytta den några meter eller upp på ett högre fäste. Har du en liten, uppdelad gräsmatta med mycket buskage kan det vara värt att jämföra med andra alternativ för <a href="/robotgrasklippare-liten-tradgard/" class="text-accent underline">robotgräsklippare för liten trädgård</a> innan du bestämmer dig.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad behöver du 4G-uppkopplingen till?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      4G är kopplingen mellan roboten och Mammotion-appen. Den används för att starta, stoppa, ändra schema och se status på distans, oavsett var du själv är. Klippschemat ligger kvar i roboten, så du behöver inte ha telefonen i närheten för att den ska köra.
+    </p>
+    <p class="text-text-light leading-relaxed mb-4">
+      Fördelen mot robotar som förlitar sig på hemmets WiFi är räckvidden. En gräsmatta längst bort på tomten ligger ofta utanför routerns täckning, och då tappar en WiFi-beroende robot kontakten just där den arbetar. Med 4G är uppkopplingen densamma över hela ytan, och du kan lika gärna styra roboten från jobbet som från trädgårdsstolen.
     </p>
   </section>
 

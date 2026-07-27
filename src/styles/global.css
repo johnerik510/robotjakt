@@ -80,6 +80,62 @@ table {
   font-variant-numeric: tabular-nums;
 }
 
+/*
+ * Spec-/jämförelsetabeller: riktig tabell på desktop, staplade kort på mobil.
+ * Ersätter sidledsscrollande tabeller sitewide (hård regel: ingen h-scroll).
+ * Varje värdecell bär data-col med sin kolumnrubrik, som visas som etikett
+ * i mobilvyn så att kopplingen värde-till-produkt aldrig tappas.
+ */
+.spec-table-wrap {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .spec-table-wrap table,
+  .spec-table-wrap tbody,
+  .spec-table-wrap tr,
+  .spec-table-wrap td {
+    display: block;
+    width: 100%;
+  }
+
+  .spec-table-wrap thead {
+    display: none;
+  }
+
+  .spec-table-wrap tr {
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .spec-table-wrap td {
+    border: 0;
+    border-top: 1px solid var(--color-border);
+    text-align: left;
+  }
+
+  .spec-table-wrap tr > td:first-child {
+    border-top: 0;
+    font-weight: 700;
+    color: var(--color-text);
+    background: var(--color-bg-alt);
+  }
+
+  .spec-table-wrap td[data-col]::before {
+    content: attr(data-col);
+    display: block;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-light);
+    margin-bottom: 0.125rem;
+  }
+}
+
 /* Focus styles for WCAG 2.1 AA keyboard navigation */
 *:focus-visible {
   outline: 3px solid var(--color-accent);

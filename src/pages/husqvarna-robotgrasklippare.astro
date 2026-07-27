@@ -1,9 +1,11 @@
 ---
 import { ctaRel } from '../lib/cta-rel';
+import AuthorByline from '../components/AuthorByline.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
@@ -79,24 +81,21 @@ export const articleMeta = {
 <BaseLayout
   title="Bästa Husqvarna Automower 2026: guide och jämförelse"
   description="Komplett guide till Husqvarna Automower 2026. Vi jämför 105, 315X, 415X, 430X Nera och 450X. Hitta rätt Automower för din trädgård och budget."
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/husqvarna-315x.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/husqvarna-315x.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Husqvarna Automower 2026, alla modeller recenserade
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Vilken Husqvarna Automower ska du välja 2026?"
+      answer="Välj Husqvarna Automower efter gräsmattans storlek. Aspire R6V, 308V och 312V är slinglösa och täcker 600, 800 respektive 1 200 m². Automower 315X är det prisvärda kabelalternativet upp till 1 600 m², medan 430X Nera tar 3 200 m² och kan köras utan kabel med EPOS-tillvalet."
+    />
+
     <p class="text-text-light mb-6 max-w-2xl">
       Husqvarna är marknadsledaren inom robotgräsklippare och grundade kategorin 1995. Vi guidar dig genom 2026 ars modellutbud, från kompakta 315X till EPOS-utrustade 430X Nera, och hjälper dig hitta rätt Automower för din trädgård.
     </p>
@@ -115,7 +114,7 @@ export const articleMeta = {
     <!-- Comparison table -->
     <section class="mb-10" aria-label="Jämforelsetabell Husqvarna Automower">
       <h2 class="font-heading text-xl font-bold text-text mb-4">Husqvarna Automower 2026: snabbjämförelse av alla modeller</h2>
-      <div class="overflow-x-auto rounded-xl border border-border">
+      <div class="spec-table-wrap rounded-xl border border-border">
         <table class="w-full text-sm bg-white">
           <thead>
             <tr class="border-b border-border bg-bg-alt">
@@ -128,33 +127,33 @@ export const articleMeta = {
           <tbody class="divide-y divide-border">
             <tr>
               <td class="px-4 py-3 font-medium text-text">Automower 315X</td>
-              <td class="px-4 py-3 text-text-light">1 600 m²</td>
-              <td class="px-4 py-3 text-text-light">GPS-assistans</td>
-              <td class="px-4 py-3 text-text-light">40%</td>
+              <td data-col="Area" class="px-4 py-3 text-text-light">1 600 m²</td>
+              <td data-col="GPS/EPOS" class="px-4 py-3 text-text-light">GPS-assistans</td>
+              <td data-col="Lutning max" class="px-4 py-3 text-text-light">40%</td>
             </tr>
             <tr class="bg-winner/5">
               <td class="px-4 py-3 font-medium text-text">Automower 430X Nera</td>
-              <td class="px-4 py-3 text-text-light">3 200 m²</td>
-              <td class="px-4 py-3 text-winner font-semibold">EPOS (tillval)</td>
-              <td class="px-4 py-3 text-text-light">50%</td>
+              <td data-col="Area" class="px-4 py-3 text-text-light">3 200 m²</td>
+              <td data-col="GPS/EPOS" class="px-4 py-3 text-winner font-semibold">EPOS (tillval)</td>
+              <td data-col="Lutning max" class="px-4 py-3 text-text-light">50%</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-medium text-text">Automower Aspire R6V</td>
-              <td class="px-4 py-3 text-text-light">600 m²</td>
-              <td class="px-4 py-3 text-winner font-semibold">Slinglös (satellit + kamera)</td>
-              <td class="px-4 py-3 text-text-light">40%</td>
+              <td data-col="Area" class="px-4 py-3 text-text-light">600 m²</td>
+              <td data-col="GPS/EPOS" class="px-4 py-3 text-winner font-semibold">Slinglös (satellit + kamera)</td>
+              <td data-col="Lutning max" class="px-4 py-3 text-text-light">40%</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-medium text-text">Automower 308V</td>
-              <td class="px-4 py-3 text-text-light">800 m²</td>
-              <td class="px-4 py-3 text-winner font-semibold">Slinglös (satellit + kamera)</td>
-              <td class="px-4 py-3 text-text-light">40%</td>
+              <td data-col="Area" class="px-4 py-3 text-text-light">800 m²</td>
+              <td data-col="GPS/EPOS" class="px-4 py-3 text-winner font-semibold">Slinglös (satellit + kamera)</td>
+              <td data-col="Lutning max" class="px-4 py-3 text-text-light">40%</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-medium text-text">Automower 312V</td>
-              <td class="px-4 py-3 text-text-light">1 200 m²</td>
-              <td class="px-4 py-3 text-winner font-semibold">Slinglös (satellit + kamera)</td>
-              <td class="px-4 py-3 text-text-light">40%</td>
+              <td data-col="Area" class="px-4 py-3 text-text-light">1 200 m²</td>
+              <td data-col="GPS/EPOS" class="px-4 py-3 text-winner font-semibold">Slinglös (satellit + kamera)</td>
+              <td data-col="Lutning max" class="px-4 py-3 text-text-light">40%</td>
             </tr>
           </tbody>
         </table>
@@ -275,6 +274,33 @@ export const articleMeta = {
             Se robotgräsklippare för stor trädgård
             <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
           </a>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Behöver du EPOS eller räcker en slinglös V-modell?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Båda slipper perimeterkabeln, men på olika sätt. EPOS är ett tillval till 430X Nera som kräver en referensstation monterad på huset och riktar sig mot stora, komplexa tomter. V-serien har den slinglösa tekniken inbyggd från start och finns i tre kapaciteter för vanliga villagräsmattor.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Praktiskt sett gör båda samma sak för dig: du markerar gränserna digitalt i Automower Connect i stället för att gräva. EPOS-tillbehöret kostar utöver modellpriset, medan V-modellerna har allt i paketet. Har du redan bestämt dig för att slippa kabel är det enklast att börja i vår jämförelse av <a href="/robotgrasklippare-utan-slinga/" class="text-accent underline">robotgräsklippare utan slinga</a>.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Hur väljer du modell om tomten är kuperad eller uppdelad?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Utgå från den brantaste delen av gräsmattan och kontrollera lutningen mot modellens specifikation innan du väljer. Ligger tomten i flera separata gräsytor behöver roboten antingen en passage att köra igenom eller en egen installation per yta. Smala passager avgör ofta valet mer än ytan i kvadratmeter.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            En robot som backar och spinner i samma slänt varje dag sliter både på gräset och på hjulen, så det är värt att mäta den brantaste punkten i stället för att uppskatta den. Vi har jämfört vad olika modeller faktiskt klarar i vår guide till <a href="/robotgrasklippare-for-lutning/" class="text-accent underline">robotgräsklippare för lutning</a>.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Vilket underhåll kräver en Husqvarna Automower?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Räkna med tre saker: byt knivblad när de blivit slöa, håll undersidan fri från gräsrester och förvara roboten frostfritt inomhus över vintern med laddat batteri. Har du en kabelmodell kontrollerar du också att kabeln är hel efter grävarbeten och rotrensning i trädgården.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Bladen är den enda delen som slits snabbt, och de är billiga. Slöa blad river i stråna i stället för att skära av dem, vilket ger fransiga toppar och en gräsmatta som ser matt ut trots att roboten går som den ska. Vi har samlat <a href="/reservdelar/knivar/" class="text-accent underline">knivar till robotgräsklippare</a> för Husqvarna och övriga märken.
+          </p>
         </div>
       </div>
     </section>

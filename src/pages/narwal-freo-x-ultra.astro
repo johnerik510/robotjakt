@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -71,24 +73,21 @@ export const articleMeta = {
 <BaseLayout
   title="Narwal Freo X Ultra recension 2026: test och Omdöme"
   description="Vi har jämfört Narwal Freo X Ultra. Unik varmluftsfunktion torkar mopparna i stationen, eliminerar mögeldoft. Bästa mopproboten för hård golv 2026."
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/narwal-freo-x-ultra-vs-dreame-x40-ultra.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/narwal-freo-x-ultra-vs-dreame-x40-ultra.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-04</p>
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-27</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Narwal Freo X Ultra Recension 2026
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Är Narwal Freo X Ultra värd att köpa?"
+      answer="Narwal Freo X Ultra är värd pengarna om du har mycket hårdgolv och vill slippa moppar som luktar mögel. Varmluften i stationen torkar plattorna efter varje pass, vilket ingen konkurrent löser lika bra. Sugkraften på 8 200 Pa räcker för normala hem men slår inte Dreame X40 Ultra på tjocka mattor."
+    />
 
     <!-- Verdict box -->
     <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -228,6 +227,27 @@ export const articleMeta = {
       </p>
       <p class="text-text-light leading-relaxed mb-4">
         Om sugkraften är det viktigaste, till exempel i hem med tjocka mattor eller mycket husdjurspäls, är <a href="/dreame-x40-ultra/" class="text-accent underline">Dreame X40 Ultra</a> eller <a href="/roborock-s8-maxv-ultra/" class="text-accent underline">Roborock S8 MaxV Ultra</a> bättre alternativ.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad skiljer roterande moppplattor från en dragen moppduk?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        En dragen moppduk fuktar golvet och lyfter ytlig smuts när roboten rullar över det. Roterande plattor snurrar i stället mot golvet och skrubbar med eget tryck, vilket lossar intorkade fläckar på klinker och parkett som en passiv duk bara blöter upp och lämnar kvar.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Skillnaden märks tydligast i kök och hall, alltså där fettstänk och fotspår hinner torka fast innan roboten kommer dit. Eftersom moppstyrkan ställs in i appen kan du köra hårt tryck i entrén och lätt tryck på en känslig trägolvsyta i samma pass. Att plattorna lyfts 15 mm vid mattdetektion är det som gör kombinationen möjlig utan att du behöver rulla ihop mattorna. Fler modeller med den här typen av moppsystem hittar du i vår guide till <a href="/robotdammsugare/med-mopp/" class="text-accent underline">robotdammsugare med mopp</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur sköter du mopplattorna och stationen över tid?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Stationen tvättar och torkar plattorna själv, men fibrerna mattas ihop med tiden och tar då upp mindre vatten. Skölj ur plattorna för hand när de känns styva, torka av tvättbrickan i stationen och håll smutsvattentanken tömd så att inget står och surnar mellan körningarna.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Samma sak gäller filtret och sidoborsten: ett igensatt filter sänker sugkraften långt innan du märker det på städresultatet, och hår som lindat sig runt borsten gör att den slutar mata smuts in mot sugmunnen. En snabb koll varannan vecka räcker för att hålla roboten på samma nivå som när den var ny. Slitdelarna finns som förbrukningsvaror, se vår översikt över <a href="/reservdelar/robotdammsugare/" class="text-accent underline">reservdelar till robotdammsugare</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur mycket plats behöver dockningsstationen?</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Stationen är en av de större i klassen och behöver en plan vägg med fritt utrymme rakt framför för att roboten ska hitta in och docka. Räkna med en bit fri golvyta på båda sidor också, annars får den svårt att svänga in i rätt vinkel. Eftersom stationen har egna tankar för rent och smutsigt vatten behöver den ingen vattenanslutning, bara ett eluttag. Ställ den på hårdgolv och inte på kanten av en matta, då står den stabilt och dockningen blir exakt varje gång.
       </p>
     </section>
 

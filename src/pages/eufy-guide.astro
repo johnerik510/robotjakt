@@ -1,9 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import EditorialCTA from '../components/EditorialCTA.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotdammsugare', href: '/' },
@@ -98,20 +100,11 @@ export const articleMeta = {
   title="eufy robotdammsugare guide 2026: vilket modell passar dig?"
   description="eufy X10 Pro Omni, X9 Pro eller S1 Pro? Vi jämför sugkraft, LDS-navigering och moppfunktion. X10 Pro Omni är bäst för de flesta hem 2026."
   canonical="https://robotjakt.se/eufy-guide/"
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/eufy-x10-pro-omni.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/eufy-x10-pro-omni.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-04-04">2026-04-04</time></p>
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       eufy robotdammsugare-guide 2026, alla modeller jämförda
@@ -119,6 +112,11 @@ export const articleMeta = {
     <p class="text-text-light mb-6 max-w-2xl">
       eufy under Anker Innovations har byggt ett rykte för prisvärd kvalitetselektronik, och deras robotdammsugare lever upp till det. Från budgetvänliga RoboVac till premium X10 Pro Omni med självtvätt och automatisk tömning. Här är guiden till alla modeller 2026.
     </p>
+
+    <AnswerBox
+      question="Snabbt svar: vilken eufy robotdammsugare ska du välja?"
+      answer="eufy X10 Pro Omni är vårt förstaval för de flesta hem, med AI Map-navigering, automatisk tömning och självtvättande moppar. X9 Pro ger nästan samma paket billigare, L70 Hybrid är budgetalternativet som både dammsuger och moppar, och RoboVac G30 räcker för enkel dagsstädning i en lägenhet."
+    />
 
     <EditorialCTA products={['eufy X10 Pro Omni']} />
 
@@ -306,6 +304,40 @@ export const articleMeta = {
       </div>
     </section>
 
+    <!-- Deep buying-guide sections -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Frågor som avgör vilken eufy du landar på</h2>
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Behöver du automatisk tömning eller räcker manuell?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Automatisk tömning på X10 Pro Omni och X9 Pro betyder att du rör roboten några gånger per år i stället för varje vecka. L70 Hybrid och RoboVac G30 har manuell tömning, alltså en liten behållare i roboten som du knackar ur själv efter varannan eller var tredje körning.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Skillnaden märks mest i hem med husdjur eller långt hår, där behållaren fylls snabbt och en full behållare sänker sugförmågan resten av körningen. Kör du roboten i en liten lägenhet ett par gånger i veckan är manuell tömning sällan ett problem, och du slipper både stationens golvyta och kostnaden för soppåsar.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Vad betyder 55 dB i praktiken?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            55 dB mot 60 till 65 dB hos konkurrenterna hörs mest när du befinner dig i samma rum som roboten. Skillnaden avgör om du kan sitta kvar i soffan och prata i telefon medan den arbetar, eller om du behöver flytta dig till ett annat rum.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Siffran gäller normalläget. Så snart roboten går upp i högre sugläge på en matta stiger ljudnivån, oavsett märke. Vill du ha tysta körningar i praktiken är det värt att schemalägga hårdgolvsytorna på dagtid och mattrummen när ingen är hemma.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Vilka delar behöver bytas över tid?</h3>
+          <p class="text-text-light text-sm leading-relaxed mb-3">
+            Slitdelarna är samma på alla robotdammsugare oavsett märke: filter, sidoborste, huvudborste och moppduk. Filtret sitter före motorn och fångar de finaste partiklarna, och det är skälet till att ett igensatt filter märks som svagare sug långt innan roboten säger till.
+          </p>
+          <p class="text-text-light text-sm leading-relaxed">
+            Räkna med filter och moppduk som löpande förbrukningsvaror, borstarna mer sällan. Vi har samlat vad som passar vilken robot i översikten över <a href="/reservdelar/robotdammsugare/" class="text-accent underline">reservdelar till robotdammsugare</a> och en separat genomgång av <a href="/reservdelar/filter/" class="text-accent underline">ersättningsfilter till robotdammsugare</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <FAQ items={faqItems} />
 
 
@@ -337,7 +369,7 @@ export const articleMeta = {
     "headline": "eufy robotdammsugare-guide 2026, Alla modeller jämförda",
     "description": "eufy (Anker) erbjuder prisvärd kvalitet i robotdammsugare. Guide till eufy RoboVac och X-serien: vilken modell passar för ditt hem?",
     "datePublished": "2026-04-04",
-    "dateModified": "2026-04-04",
+    "dateModified": "2026-07-27",
     "author": { "@id": "https://robotjakt.se/#axel" },
     "publisher": { "@id": "https://robotjakt.se/#organization" },
     "url": "https://robotjakt.se/eufy-guide/",

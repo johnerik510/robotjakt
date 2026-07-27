@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -58,15 +59,7 @@ export const articleMeta = {
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 juli 2026</span>
-  </div>
+    <AuthorByline datePublished="2026-02-01" dateModified="2026-07-27" />
 <p class="text-xs text-text-lighter mb-2">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
@@ -83,7 +76,7 @@ export const articleMeta = {
     <!-- Jämförelsetabell -->
     <section class="mb-8" aria-label="Jämförelsetabell billigaste fönsterputsrobotar">
       <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse, billigaste fönsterputsrobotar 2026</h2>
-      <div class="overflow-x-auto rounded-xl border border-border">
+      <div class="spec-table-wrap rounded-xl border border-border">
         <table class="w-full text-sm bg-white">
           <thead>
             <tr class="border-b border-border bg-bg-alt">
@@ -97,17 +90,17 @@ export const articleMeta = {
           <tbody class="divide-y divide-border">
             <tr>
               <td class="px-4 py-3 font-medium text-text">Hobot Legee 688</td>
-              <td class="px-4 py-3 text-text-light">Kabel, ingen risk</td>
-              <td class="px-4 py-3 text-text-light">Kabel</td>
-              <td class="px-4 py-3 text-winner font-semibold">20 m²/h</td>
-              <td class="px-4 py-3 text-text-light">1 år</td>
+              <td data-col="Säkerhet vid strömavbrott" class="px-4 py-3 text-text-light">Kabel, ingen risk</td>
+              <td data-col="Kabel/Batteri" class="px-4 py-3 text-text-light">Kabel</td>
+              <td data-col="Täckning (m²/h)" class="px-4 py-3 text-winner font-semibold">20 m²/h</td>
+              <td data-col="Garanti" class="px-4 py-3 text-text-light">1 år</td>
             </tr>
             <tr class="bg-bg-alt/30">
               <td class="px-4 py-3 font-medium text-text">Liectroux HCR-10</td>
-              <td class="px-4 py-3 text-winner font-semibold">UPS-batteri 25 min</td>
-              <td class="px-4 py-3 text-text-light">Kabel + UPS</td>
-              <td class="px-4 py-3 text-text-light">17 m²/h</td>
-              <td class="px-4 py-3 text-text-light">1 år</td>
+              <td data-col="Säkerhet vid strömavbrott" class="px-4 py-3 text-winner font-semibold">UPS-batteri 25 min</td>
+              <td data-col="Kabel/Batteri" class="px-4 py-3 text-text-light">Kabel + UPS</td>
+              <td data-col="Täckning (m²/h)" class="px-4 py-3 text-text-light">17 m²/h</td>
+              <td data-col="Garanti" class="px-4 py-3 text-text-light">1 år</td>
             </tr>
           </tbody>
         </table>

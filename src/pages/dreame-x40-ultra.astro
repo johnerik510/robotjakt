@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const faqItems = [
   {
@@ -72,24 +74,21 @@ export const articleMeta = {
   title="Dreame X40 Ultra recension 2026: test och pris Sverige"
   description="Dreame X40 Ultra testad: 12 000 Pa sugkraft, utfällbar moppmodul och AI-hinderdetektion. Bäst i test 2026. Se pris, betyg och om den slår Roborock."
   ogImage="/images/dreame-x40-ultra.webp"
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/dreame-x40-ultra.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/dreame-x40-ultra.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-05-22</p>
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-27</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Dreame X40 Ultra Recension 2026
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Är Dreame X40 Ultra värd att köpa?"
+      answer="Ja, om ditt hem har mycket hårdgolv och du vill ha riktig moppning. Den utfällbara moppmodulen når in i hörnen, mopparna tvättas med varmvatten i stationen och 12 000 Pa räcker till både päls och finkornat damm. Saknar du moppbehov finns billigare robotar. Räkna med en stor station som behöver golvyta."
+    />
 
     <!-- Verdict box -->
     <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -232,11 +231,35 @@ export const articleMeta = {
       <p class="text-text-light leading-relaxed mb-4">
         Om du primärt har heltäckningsmattor eller söker ett alternativ för husdjurshår med AI-djuravföringsdetektering rekommenderar vi Roborock S8 MaxV Ultra istället.
       </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur ofta behöver du fylla på vatten i stationen?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Räkna med påfyllning av rent vatten ungefär en gång i veckan om du kör roboten dagligen i en normalstor bostad. Smutsvattentanken töms i samma moment. Kör du bara moppning ett par gånger i veckan sträcker sig intervallet betydligt längre. Båda tankarna rymmer 4 liter.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Vattenåtgången styrs av hur stor hårdgolvsytan är och hur blöt mopp du valt i appen. Ett kök i klinker drar mer vatten per kvadratmeter än en parkettyta som bara behöver en lätt fuktning. Står stationen nära en golvbrunn slipper du bära den fulla smutsvattentanken genom bostaden, vilket i praktiken är det som avgör om påfyllningen blir en rutin eller ett irritationsmoment.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Var ska dockningsstationen stå?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Stationen behöver en fri väggplats med eluttag, gärna nära ett utrymme där du enkelt kan hälla ut smutsvatten. Lämna fritt utrymme framför dockan så att roboten kan backa in rakt. Undvik mjuka mattor precis vid dockan, de kan störa inpassningen. Stationen är stor, mät platsen innan köp.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Tömningscykeln hörs tydligt i några sekunder varje gång roboten dockar, så en placering direkt utanför ett sovrum är sällan lyckad. Ett förråd, en hall eller ett tvättrum fungerar bättre. Roboten behöver också se dockan för att hitta hem, vilket betyder att den inte bör stå inklämd bakom en dörr som ibland är stängd.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vilket underhåll kräver Dreame X40 Ultra av dig?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Även med en station som tvättar mopparna behöver du göra en del själv: skölja filtret i dammbehållaren, klippa loss hår som lindat sig runt sidoborsten och byta moppdukar när de tappat struktur. Det är enkla moment men de går inte att hoppa över.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Gummirullarna tål hår bättre än borstar med nylonstrån, men även de behöver kontrolleras med jämna mellanrum. Hur ofta delarna behöver bytas beror på hur mycket du kör roboten och om du har husdjur som fäller. Rutinerna går vi igenom i vår genomgång av <a href="/guide/underhall/" class="text-accent underline">underhåll av robotdammsugare</a>, och hela fältet av modeller med moppfunktion jämför vi i listan över <a href="/robotdammsugare/med-mopp/" class="text-accent underline">bästa robotdammsugare med moppfunktion</a>.
+      </p>
     </section>
 
     <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 my-6">
       <h3 class="font-bold text-lg mb-2">Reservdelar och tillbehör</h3>
-      <p class="text-sm text-gray-600 mb-3">Köp originala filter, borstar och moppkuddar till din Dreame-robot:</p>
+      <p class="text-sm text-text-light mb-3">Köp originala filter, borstar och moppkuddar till din Dreame-robot:</p>
       <a href="/reservdelar/dreame/" class="inline-block bg-cta text-white font-semibold py-2 px-4 rounded-lg text-sm">Se Dreame reservdelar</a>
     </div>
 
@@ -246,8 +269,8 @@ export const articleMeta = {
     <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 my-6">
       <h3 class="font-semibold mb-2">Jämför Dreame X40 Ultra mot konkurrenter</h3>
       <ul class="space-y-1">
-        <li><a href="/dreame-x40-ultra-vs-roborock-s8-maxv-ultra/" class="text-blue-700 hover:underline text-sm">Dreame X40 Ultra vs Roborock S8 MaxV Ultra, direktjämförelse</a></li>
-        <li><a href="/narwal-freo-x-ultra-vs-dreame-x40-ultra/" class="text-blue-700 hover:underline text-sm">Dreame X40 Ultra vs Narwal Freo X Ultra</a></li>
+        <li><a href="/dreame-x40-ultra-vs-roborock-s8-maxv-ultra/" class="text-accent-dark hover:underline text-sm">Dreame X40 Ultra vs Roborock S8 MaxV Ultra, direktjämförelse</a></li>
+        <li><a href="/narwal-freo-x-ultra-vs-dreame-x40-ultra/" class="text-accent-dark hover:underline text-sm">Dreame X40 Ultra vs Narwal Freo X Ultra</a></li>
       </ul>
     </div>
 

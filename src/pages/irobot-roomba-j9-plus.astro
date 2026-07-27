@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const faqItems = [
   {
@@ -67,24 +69,21 @@ export const articleMeta = {
   title="iRobot Roomba j9+ recension 2026: smart dammsugare"
   description="iRobot Roomba j9+ testad: smartaste Roomba med Dirt Detective-navigering och självtömning. Se prestanda, app-funktioner och pris i Sverige 2026."
   ogImage="/images/irobot-roomba-j9-plus.webp"
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/irobot-roomba-j9-plus.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/irobot-roomba-j9-plus.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-05</p>
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-27</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       iRobot Roomba j9+ Recension 2026
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: är iRobot Roomba j9+ värd att köpa?"
+      answer="Ja, om du har husdjur och vill slippa både avföringsolyckor på golvet och daglig tömning. Precision Vision undviker djuravföring, Clean Base samlar smutsen i upp till 60 dagar och gummi-extraktorerna trasslar inte av päls. Vill du också moppa golven behöver du en annan robot."
+    />
 
     <!-- Verdict box -->
     <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -202,8 +201,32 @@ export const articleMeta = {
       </div>
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">För vem passar iRobot Roomba j9+? Vår rekommendation</h3>
-      <p class="text-text-light leading-relaxed mb-4">
+      <p class="text-text-light leading-relaxed mb-6">
         Roomba j9+ är gjord för husdjurshem där djuravföringsdetektering är ett krav. Sticker ut med 60-dagars Clean Base och mogen AI. Välj j9+ om du prioriterar pålitlighet och bekvämlighet framför moppning eller maximal sugkraft.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Kommer iRobot Roomba j9+ under sängen och soffan?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Höjden är 8,7 cm, och det är den siffran som avgör vad roboten kommer under. Mät fritt utrymme under säng, soffa och byrå innan du beställer, och lägg till några millimeter marginal för mattkanter. Kommer den inte in behöver du dammsuga de ytorna för hand ändå.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Kameran sitter i en liten kupol ovanpå kåpan, vilket är priset för Precision Vision. Robotar som navigerar med torn eller kamera blir sällan lika låga som enklare modeller utan optisk sensor på taket. Har du mycket möbler med några centimeters frigång är det värt att mäta i förväg i stället för att upptäcka det efter första passet.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad händer när batteriet tar slut mitt i en städning?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Roboten kör tillbaka till Clean Base, laddar och fortsätter där den slutade. Drifttiden på 90 minuter räcker för de flesta lägenheter i ett pass, men i ett större hus delas städningen upp i flera pass och tar då längre tid i klocktimmar.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Praktiskt betyder det att du bör schemalägga städningen när du inte är hemma, inte en halvtimme innan gäster kommer. Kortare drifttid än de kinesiska konkurrenterna spelar mindre roll när roboten själv hanterar laddningen, men den märks om du vill ha ett helt hus färdigt inom ett smalt tidsfönster. Rutiner för <a href="/guide/underhall/" class="text-accent underline">underhåll av robotdammsugare</a> hjälper också hållbarheten på batteriet över säsongerna.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Behöver du en separat moppmaskin till Roomba j9+?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Ja. j9+ dammsuger enbart och har ingen inbyggd moppfunktion. Har du mycket klinker, laminat eller trägolv får du antingen moppa för hand eller välja en robot som gör båda. Är dammsugning det du faktiskt behöver är avsaknaden ingen nackdel.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Uppdelningen har en poäng: en robot som bara dammsuger blir enklare, har färre delar som kan gå sönder och kräver ingen vattentank att fylla och tömma. Men i ett hem med mest hårda golv gör moppning mer för hur rent det känns än ytterligare sugkraft. Vill du täcka båda behoven med en maskin, jämför i stället alternativen bland <a href="/robotdammsugare/med-mopp/" class="text-accent underline">robotdammsugare med mopp</a>.
       </p>
     </section>
 

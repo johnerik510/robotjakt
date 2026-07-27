@@ -2,6 +2,7 @@
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
@@ -64,7 +65,7 @@ export const articleMeta = {
   title="Husqvarna Automower 312V recension 2026: bäst i test utan slinga"
   description="Husqvarna Automower 312V testad: slinglös robotgräsklippare för 1 200 m² med AI-kamera och satellitnavigering. Bäst i test enligt IT Retail. Värd det?"
   breadcrumbs={breadcrumbs}
-  lastUpdated="2026-07-03"
+  lastUpdated="2026-07-27"
   ogImage="/images/husqvarna-automower-312v.webp"
   datePublished="2026-07-03"
   image="/images/husqvarna-automower-312v.webp"
@@ -72,6 +73,11 @@ export const articleMeta = {
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
     Husqvarna Automower 312V recension 2026
   </h1>
+
+  <AnswerBox
+    question="Snabbt svar: är Husqvarna Automower 312V värd sitt pris?"
+    answer="Ligger gräsmattan mellan 800 och 1 200 m² är 312V vårt förstaval bland slinglösa. AI-kameran och satellitnavigeringen ger Husqvarnas mogna klipp utan kabelgräv, och IT Retail utsåg den till bäst i test. Har du under 800 m² gör du en bättre affär med 308V."
+  />
 
   <!-- Verdict box -->
   <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -196,6 +202,30 @@ export const articleMeta = {
     </p>
     <p class="text-text-light leading-relaxed mb-6">
       I Automower Connect styr du klippschema, klipphöjd och flera arbetsytor, följer robotens position på en karta och får notiser om den fastnar eller behöver hjälp. Roboten uppdaterar sin mjukvara trådlöst (FOTA), så nya funktioner och förbättringar kommer automatiskt. Stöldskyddet består av PIN-kod och GeoFence-larm.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur delar du upp en stor tomt i arbetsområden?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Rita ett arbetsområde per gräsyta med eget schema och egen klipphöjd, i stället för ett enda stort. Framsidan mot gatan, baksidan bakom huset och en eventuell yta vid uteplatsen har olika förutsättningar, olika soltimmar och olika slitage, och tjänar därför på egna inställningar i Automower Connect.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Med 1 200 m² att fördela blir uppdelningen också ett sätt att styra var kapaciteten hamnar. Lägg fler klipptimmar på ytan som växer snabbast och färre på den skuggiga delen bakom häcken, där gräset ändå drar långsammare. Klippfria zoner runt rabatter, studsmatta och pool sparar in de vanligaste orsakerna till att en robot fastnar. Ligger ytorna på samma nivå knyter du ihop dem med transportvägar som roboten följer i stället för att klippa. Har du väsentligt större gräsmatta än det här hittar du alternativen i vår topplista över <a href="/robotgrasklippare-stor-tradgard/" class="text-accent underline">robotgräsklippare för stor trädgård</a>.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Vilket underhåll kräver 312V under säsongen?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Tre saker återkommer: knivbladen, undersidan och kameralinsen. Bladen är slitdelar och byts när klippet börjar se rufsigt ut i stället för snittrent. Undersidan behöver spolas ren från gräsrester. Och en kameralins med lera eller gräsklipp på ser sämre, vilket direkt påverkar hinderhanteringen.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Rutinen tar några minuter med jämna mellanrum och sparar in de flesta felanmälningar. Skruva loss bladen och kontrollera att de svänger fritt i sina fästen, byt alla samtidigt så att aggregatet är i balans, och kontrollera samtidigt att hjulmönstret inte är slitet slätt, det är det som avgör om roboten kommer upp i sluttningarna på ett blött gräs. Torka linsen med en mjuk, torr duk och undvik lösningsmedel. Delar per modell hittar du i vår översikt över <a href="/reservdelar/husqvarna/" class="text-accent underline">Husqvarna Automower reservdelar</a>.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad gör du med gräset innan roboten tar över?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Klipp ner gräsmattan en gång med en vanlig gräsklippare först. En robotgräsklippare är byggd för att ta lite gräs ofta, inte för att beta av en yta som redan vuxit sig hög. Sätter du roboten på långt gräs blir klippet grovt, det lägger sig som en filt och motorn får jobba i onödan.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Samma logik gäller när du sänker klipphöjden. Gå ner ett steg i taget med några dagars mellanrum i stället för att gå direkt från högsta till lägsta läge, då hinner mattan anpassa sig och du undviker gula fläckar där bladmassan plötsligt försvinner. Ta samtidigt bort det som är hårdare än gräs från ytan, kottar, grenar, verktyg och slangar, även om AI-kameran normalt hittar och undviker föremål. Kamerans jobb blir enklare, och knivbladen håller längre.
     </p>
   </section>
 

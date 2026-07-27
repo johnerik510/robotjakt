@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -54,16 +55,7 @@ export const articleMeta = {
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 juli 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Dreame vs Ecovacs 2026, vilket märke vinner?
@@ -80,7 +72,7 @@ export const articleMeta = {
     <EditorialCTA products={['Dreame X40 Ultra']} />
 
     <h2 class="font-heading text-xl font-bold mt-6 mb-4">Snabbjämförelse</h2>
-    <div class="overflow-x-auto mb-8">
+    <div class="spec-table-wrap mb-8">
       <table class="w-full text-sm border-collapse">
         <thead>
           <tr class="bg-primary text-white">
@@ -92,48 +84,48 @@ export const articleMeta = {
         <tbody>
           <tr class="bg-bg-alt/50 border-b border-border">
             <td class="p-3 font-medium text-text">Sugkraft</td>
-            <td class="p-3 text-green-700 font-semibold">12 000 Pa</td>
-            <td class="p-3 text-text-light">8 000 Pa</td>
+            <td data-col="Dreame X40 Ultra" class="p-3 text-winner font-semibold">12 000 Pa</td>
+            <td data-col="Ecovacs Deebot X5 Omni" class="p-3 text-text-light">8 000 Pa</td>
           </tr>
           <tr class="border-b border-border">
             <td class="p-3 font-medium text-text">Moppmodul</td>
-            <td class="p-3 text-green-700 font-semibold">Utfällbar (når hörn)</td>
-            <td class="p-3 text-text-light">Standard roterande</td>
+            <td data-col="Dreame X40 Ultra" class="p-3 text-winner font-semibold">Utfällbar (når hörn)</td>
+            <td data-col="Ecovacs Deebot X5 Omni" class="p-3 text-text-light">Standard roterande</td>
           </tr>
           <tr class="bg-bg-alt/50 border-b border-border">
             <td class="p-3 font-medium text-text">Mopptorkning</td>
-            <td class="p-3 text-text-light">Varmvatten (kallluft)</td>
-            <td class="p-3 text-green-700 font-semibold">Varmluftstorkning</td>
+            <td data-col="Dreame X40 Ultra" class="p-3 text-text-light">Varmvatten (kallluft)</td>
+            <td data-col="Ecovacs Deebot X5 Omni" class="p-3 text-winner font-semibold">Varmluftstorkning</td>
           </tr>
           <tr class="border-b border-border">
             <td class="p-3 font-medium text-text">Navigering</td>
-            <td class="p-3 text-green-700 font-semibold">LiDAR + AI-kamera (OA 3.0)</td>
-            <td class="p-3 text-text-light">LiDAR + AIVI 3D</td>
+            <td data-col="Dreame X40 Ultra" class="p-3 text-winner font-semibold">LiDAR + AI-kamera (OA 3.0)</td>
+            <td data-col="Ecovacs Deebot X5 Omni" class="p-3 text-text-light">LiDAR + AIVI 3D</td>
           </tr>
           <tr class="bg-bg-alt/50 border-b border-border">
             <td class="p-3 font-medium text-text">Bassation: damm</td>
-            <td class="p-3 text-green-700 font-semibold">Ja, autotömning</td>
-            <td class="p-3 text-green-700 font-semibold">Ja, autotömning</td>
+            <td data-col="Dreame X40 Ultra" class="p-3 text-winner font-semibold">Ja, autotömning</td>
+            <td data-col="Ecovacs Deebot X5 Omni" class="p-3 text-winner font-semibold">Ja, autotömning</td>
           </tr>
           <tr class="border-b border-border">
             <td class="p-3 font-medium text-text">Bassation: vatten</td>
-            <td class="p-3 text-green-700 font-semibold">Ja, mopptvättning</td>
-            <td class="p-3 text-green-700 font-semibold">Ja, mopptvättning</td>
+            <td data-col="Dreame X40 Ultra" class="p-3 text-winner font-semibold">Ja, mopptvättning</td>
+            <td data-col="Ecovacs Deebot X5 Omni" class="p-3 text-winner font-semibold">Ja, mopptvättning</td>
           </tr>
           <tr class="bg-bg-alt/50 border-b border-border">
             <td class="p-3 font-medium text-text">Husdjursavföring</td>
-            <td class="p-3 text-text-light">Begränsat AI-skydd</td>
-            <td class="p-3 text-text-light">Begränsat AI-skydd</td>
+            <td data-col="Dreame X40 Ultra" class="p-3 text-text-light">Begränsat AI-skydd</td>
+            <td data-col="Ecovacs Deebot X5 Omni" class="p-3 text-text-light">Begränsat AI-skydd</td>
           </tr>
           <tr class="border-b border-border">
             <td class="p-3 font-medium text-text">App</td>
-            <td class="p-3 text-green-700 font-semibold">Dreame, välpolerad</td>
-            <td class="p-3 text-text-light">Ecovacs Home, fungerande</td>
+            <td data-col="Dreame X40 Ultra" class="p-3 text-winner font-semibold">Dreame, välpolerad</td>
+            <td data-col="Ecovacs Deebot X5 Omni" class="p-3 text-text-light">Ecovacs Home, fungerande</td>
           </tr>
           <tr class="bg-bg-alt/50">
             <td class="p-3 font-medium text-text">Vinner för</td>
-            <td class="p-3 text-green-700 font-semibold">Moppning, sugkraft, hörnnåbarhet</td>
-            <td class="p-3 text-text-light">Pris, hygienisk mopptorkning</td>
+            <td data-col="Dreame X40 Ultra" class="p-3 text-winner font-semibold">Moppning, sugkraft, hörnnåbarhet</td>
+            <td data-col="Ecovacs Deebot X5 Omni" class="p-3 text-text-light">Pris, hygienisk mopptorkning</td>
           </tr>
         </tbody>
       </table>
@@ -191,16 +183,16 @@ export const articleMeta = {
 
     <div class="grid sm:grid-cols-2 gap-6 mb-8">
       <a href="/dreame-x40-ultra/" class="block bg-white rounded-xl border border-border p-5 hover:border-accent transition-all group">
-        <span class="text-xs font-semibold text-green-700 bg-green-50 px-2 py-0.5 rounded mb-2 inline-block">Bäst moppfunktion</span>
+        <span class="text-xs font-semibold text-winner bg-winner/10 px-2 py-0.5 rounded mb-2 inline-block">Bäst moppfunktion</span>
         <h3 class="font-heading text-lg font-bold text-text group-hover:text-accent mb-1">Dreame X40 Ultra</h3>
         <p class="text-sm text-text-light">12 000 Pa, utfällbar mopp, LiDAR + AI-kamera. Bäst för blandade golvytor.</p>
-        <span class="inline-block mt-3 text-sm font-semibold text-accent">Läs recension →</span>
+        <span class="inline-block mt-3 text-sm font-semibold text-accent">Läs recension</span>
       </a>
       <a href="/ecovacs-deebot-x5-omni/" class="block bg-white rounded-xl border border-border p-5 hover:border-accent transition-all group">
         <span class="text-xs font-semibold text-accent bg-accent/10 px-2 py-0.5 rounded mb-2 inline-block">Bäst pris/prestanda</span>
         <h3 class="font-heading text-lg font-bold text-text group-hover:text-accent mb-1">Ecovacs Deebot X5 Omni</h3>
-        <p class="text-sm text-text-light">8 000 Pa, varmluftstorkning, AIVI 3D. Bäst för hårdgolvsdom.</p>
-        <span class="inline-block mt-3 text-sm font-semibold text-accent">Läs recension →</span>
+        <p class="text-sm text-text-light">8 000 Pa, varmluftstorkning, AIVI 3D. Bäst för hem med mest hårdgolv.</p>
+        <span class="inline-block mt-3 text-sm font-semibold text-accent">Läs recension</span>
       </a>
     </div>
 

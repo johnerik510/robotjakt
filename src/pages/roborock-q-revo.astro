@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -64,24 +66,21 @@ export const articleMeta = {
   title="Roborock Q Revo recension 2026: prisvärd mellanklass"
   description="Roborock Q Revo testad: FlexiArm-mopp, 5 500 Pa sugkraft och prisvärd station. Bäst köp i mellanklassen 2026? Se betyg, pris och jämförelse."
   ogImage="/images/roborock-q-revo.webp"
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/roborock-q-revo.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/roborock-q-revo.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-19</p>
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-27</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Roborock Q Revo Recension 2026
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Är Roborock Q Revo värd att köpa?"
+      answer="Roborock Q Revo är värd pengarna i hem med mest hårdgolv. Du får dubbla roterande moppar, automatisk mopptvätt och en station som både fyller vatten och tömmer damm, till lägre pris än premiummodellerna. Sugkraften på 5 500 Pa och avsaknaden av AI-kamera är kompromisserna du gör."
+    />
 
     <!-- Verdict box -->
     <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -170,7 +169,7 @@ export const articleMeta = {
     <section class="mb-10">
       <h2 class="font-heading text-2xl font-bold text-text mb-4">Roborock Q Revo vs Dreame L10s Ultra Gen 2: vilken vinner?</h2>
       <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
-        <div class="overflow-x-auto">
+        <div class="spec-table-wrap">
           <table class="w-full text-sm">
             <thead>
               <tr class="bg-white border-b border-border">
@@ -192,8 +191,8 @@ export const articleMeta = {
               ].map(([feature, qrevo, dreame], i) => (
                 <tr class={i % 2 === 0 ? 'bg-white' : ''}>
                   <td class="px-4 py-3 font-medium text-text">{feature}</td>
-                  <td class="px-4 py-3 text-text-light">{qrevo}</td>
-                  <td class="px-4 py-3 text-text-light">{dreame}</td>
+                  <td data-col="Roborock Q Revo" class="px-4 py-3 text-text-light">{qrevo}</td>
+                  <td data-col="Dreame L10s Ultra Gen 2" class="px-4 py-3 text-text-light">{dreame}</td>
                 </tr>
               ))}
             </tbody>
@@ -250,6 +249,22 @@ export const articleMeta = {
         Q Revo passar bäst för hem med mestadels hårdgolv och kakel som vill ha ett komplett automatiserat städsystem till lägre pris. Det är ett utmärkt förstaköp för den som vill testa ett robotsystem med automatisk moppning utan att investera i en toppmodell. </p>
       <p class="text-text-light leading-relaxed">
         Har du tjocka mattor eller husdjur med lång päls rekommenderar vi att du tittar på <a href="/roborock-s8-max-ultra/" class="text-accent underline">Roborock S8 Max Ultra</a> med 10 000 Pa sugkraft. Vill du jämföra fler modeller i Roborock-sortimentet, se vår <a href="/roborock-guide/" class="text-accent underline">Roborock-guide</a> eller <a href="/roborock-qrevo-master/" class="text-accent underline">Roborock Qrevo Master-recension</a>. För det bredaste urvalet, se <a href="/" class="text-accent underline">bästa robotdammsugare 2026</a>. </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad betyder det i vardagen att Q Revo saknar AI-kamera?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        LiDAR ser väggar, möbelben och andra hinder på sin egen höjd, men låga och mjuka föremål som laddsladdar, strumpor och legobitar registreras sämre. Utan kamera som klassar vad saken är kan roboten dra med sig sladden i stället för att svänga undan, så golvet behöver plockas innan körning. </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Det mesta går att lösa i appen i stället för på golvet. Lägg permanenta no-go-zoner kring hundmatskålen, laddstationer och den där stolen med lång fransmatta, då slutar problemet att återkomma. Kör roboten dagtid de första veckorna medan du är hemma, så ser du var den faktiskt fastnar och kan rita in zonerna där de behövs. </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur ofta behöver du byta moppskivor och filter?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Moppskivorna tvättas i stationen men fibrerna nöts ner, och när de känns hårda eller lämnar strimmor efter sig gör de inte längre sitt jobb. Filtret sätts igen av finkornigt damm och sänker sugkraften gradvis. Båda är förbrukningsdelar och byts efter skick, inte efter kalender. </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Håll ett extra set moppskivor hemma, det gör att du kan byta direkt i stället för att köra vidare på utslitna plattor. Skölj också tvättbrickan i stationen med jämna mellanrum, det är där smutsen samlas och börjar lukta om den lämnas. Vilka delar som passar modellen ser du i vår översikt över <a href="/reservdelar/roborock-qrevo-serien/" class="text-accent underline">reservdelar till Roborock Qrevo-serien</a>. </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Räcker Q Revo till en större bostad eller passar den bäst i lägenhet?</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Drifttiden på cirka 180 minuter är lång för prisklassen, och när batteriet tar slut åker roboten hem, laddar och fortsätter där den slutade. Därför är ytan sällan begränsningen, utan hur mycket möbler och trösklar den måste ta sig runt på vägen. I en lägenhet är den nästan alltid rätt dimensionerad, och stationen kräver bara en fri vägg med eluttag. Vad som skiljer modellerna i mindre bostäder går vi igenom i guiden till <a href="/robotdammsugare/lagenhet/" class="text-accent underline">robotdammsugare för lägenhet</a>.</p>
     </section>
 
     <FAQ items={faqItems} />

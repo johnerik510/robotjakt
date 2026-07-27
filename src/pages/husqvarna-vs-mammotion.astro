@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -57,17 +58,7 @@ export const articleMeta = {
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Senast uppdaterad 27 juli 2026</span>
-    <span>·</span>
-    <span>Lästid 6 min</span>
-  </div>
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Husqvarna Automower vs Mammotion LUBA 2026, vilken slinglös vinner?
@@ -85,10 +76,10 @@ export const articleMeta = {
     <!-- Above-the-fold CTA -->
     <div class="grid sm:grid-cols-2 gap-3 mb-8">
       <a href="https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25354650&url=https://www.csmegastore.se/i/25354650/mammation-luba-3-3000x-awd-lidar-rtk-robotgr%c3%a4sklippare" target="_blank" rel="nofollow sponsored noopener" class="inline-flex items-center justify-center gap-2 bg-cta hover:bg-cta-dark text-white font-bold py-3 px-5 rounded-xl text-sm shadow-lg transition-colors">
-        Bra pris hos CS Megastore (Mammotion LUBA 3) →
+        Bra pris hos CS Megastore (Mammotion LUBA 3)
       </a>
       <a href="/husqvarna-robotgrasklippare/" class="inline-flex items-center justify-center gap-2 border border-border bg-white hover:bg-bg-alt text-text font-semibold py-3 px-5 rounded-xl text-sm transition-colors">
-        Se alla Husqvarna-modeller →
+        Se alla Husqvarna-modeller
       </a>
     </div>
 
@@ -112,7 +103,7 @@ export const articleMeta = {
     <!-- Specs comparison table -->
     <section class="mb-10" aria-label="Jämförelsetabell Husqvarna Automower 430V NERA vs Mammotion LUBA 3 AWD 3000X">
       <h2 class="font-heading text-xl font-bold text-text mb-4">Specifikationer, 430V NERA vs LUBA 3 AWD 3000X</h2>
-      <div class="overflow-x-auto rounded-xl border border-border">
+      <div class="spec-table-wrap rounded-xl border border-border">
         <table class="w-full text-sm bg-white">
           <thead>
             <tr class="border-b border-border bg-bg-alt">
@@ -124,58 +115,58 @@ export const articleMeta = {
           <tbody class="divide-y divide-border">
             <tr class="bg-bg-alt/30">
               <td class="px-4 py-3 font-medium text-text">Max yta</td>
-              <td class="px-4 py-3 text-winner font-semibold">4 800 m²</td>
-              <td class="px-4 py-3 text-text-light">3 000 m²</td>
+              <td data-col="Husqvarna Automower 430V NERA" class="px-4 py-3 text-winner font-semibold">4 800 m²</td>
+              <td data-col="Mammotion LUBA 3 AWD 3000X" class="px-4 py-3 text-text-light">3 000 m²</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-medium text-text">Gränskabel krävs</td>
-              <td class="px-4 py-3 text-winner font-semibold">Nej, slinglös</td>
-              <td class="px-4 py-3 text-winner font-semibold">Nej, slinglös</td>
+              <td data-col="Husqvarna Automower 430V NERA" class="px-4 py-3 text-winner font-semibold">Nej, slinglös</td>
+              <td data-col="Mammotion LUBA 3 AWD 3000X" class="px-4 py-3 text-winner font-semibold">Nej, slinglös</td>
             </tr>
             <tr class="bg-bg-alt/30">
               <td class="px-4 py-3 font-medium text-text">Navigeringsteknik</td>
-              <td class="px-4 py-3 text-text-light">Satellit + AI-vision</td>
-              <td class="px-4 py-3 text-text-light">LiDAR + RTK + AI-kameror</td>
+              <td data-col="Husqvarna Automower 430V NERA" class="px-4 py-3 text-text-light">Satellit + AI-vision</td>
+              <td data-col="Mammotion LUBA 3 AWD 3000X" class="px-4 py-3 text-text-light">LiDAR + RTK + AI-kameror</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-medium text-text">Drivning</td>
-              <td class="px-4 py-3 text-text-light">Tvåhjulsdrift</td>
-              <td class="px-4 py-3 text-winner font-semibold">Fyrhjulsdrift (AWD)</td>
+              <td data-col="Husqvarna Automower 430V NERA" class="px-4 py-3 text-text-light">Tvåhjulsdrift</td>
+              <td data-col="Mammotion LUBA 3 AWD 3000X" class="px-4 py-3 text-winner font-semibold">Fyrhjulsdrift (AWD)</td>
             </tr>
             <tr class="bg-bg-alt/30">
               <td class="px-4 py-3 font-medium text-text">Max lutning</td>
-              <td class="px-4 py-3 text-text-light">50 %</td>
-              <td class="px-4 py-3 text-winner font-semibold">Upp till 80 % (AWD)</td>
+              <td data-col="Husqvarna Automower 430V NERA" class="px-4 py-3 text-text-light">50 %</td>
+              <td data-col="Mammotion LUBA 3 AWD 3000X" class="px-4 py-3 text-winner font-semibold">Upp till 80 % (AWD)</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-medium text-text">Klippbredd</td>
-              <td class="px-4 py-3 text-text-light">24 cm</td>
-              <td class="px-4 py-3 text-winner font-semibold">40 cm</td>
+              <td data-col="Husqvarna Automower 430V NERA" class="px-4 py-3 text-text-light">24 cm</td>
+              <td data-col="Mammotion LUBA 3 AWD 3000X" class="px-4 py-3 text-winner font-semibold">40 cm</td>
             </tr>
             <tr class="bg-bg-alt/30">
               <td class="px-4 py-3 font-medium text-text">Klipphöjd</td>
-              <td class="px-4 py-3 text-text-light">20-60 mm</td>
-              <td class="px-4 py-3 text-text-light">25-70 mm</td>
+              <td data-col="Husqvarna Automower 430V NERA" class="px-4 py-3 text-text-light">20-60 mm</td>
+              <td data-col="Mammotion LUBA 3 AWD 3000X" class="px-4 py-3 text-text-light">25-70 mm</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-medium text-text">Bullernivå</td>
-              <td class="px-4 py-3 text-winner font-semibold">56 dB(A)</td>
-              <td class="px-4 py-3 text-text-light">70 dB(A)</td>
+              <td data-col="Husqvarna Automower 430V NERA" class="px-4 py-3 text-winner font-semibold">56 dB(A)</td>
+              <td data-col="Mammotion LUBA 3 AWD 3000X" class="px-4 py-3 text-text-light">70 dB(A)</td>
             </tr>
             <tr class="bg-bg-alt/30">
               <td class="px-4 py-3 font-medium text-text">Drifttid per laddning</td>
-              <td class="px-4 py-3 text-text-light">95 min</td>
-              <td class="px-4 py-3 text-text-light">Beror på zon</td>
+              <td data-col="Husqvarna Automower 430V NERA" class="px-4 py-3 text-text-light">95 min</td>
+              <td data-col="Mammotion LUBA 3 AWD 3000X" class="px-4 py-3 text-text-light">Beror på zon</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-medium text-text">Anslutning</td>
-              <td class="px-4 py-3 text-text-light">Bluetooth, WiFi, 4G</td>
-              <td class="px-4 py-3 text-text-light">WiFi, 4G (NetRTK)</td>
+              <td data-col="Husqvarna Automower 430V NERA" class="px-4 py-3 text-text-light">Bluetooth, WiFi, 4G</td>
+              <td data-col="Mammotion LUBA 3 AWD 3000X" class="px-4 py-3 text-text-light">WiFi, 4G (NetRTK)</td>
             </tr>
             <tr class="bg-bg-alt/30">
               <td class="px-4 py-3 font-medium text-text">Vattenskydd</td>
-              <td class="px-4 py-3 text-text-light">IPX5</td>
-              <td class="px-4 py-3 text-winner font-semibold">IPX6</td>
+              <td data-col="Husqvarna Automower 430V NERA" class="px-4 py-3 text-text-light">IPX5</td>
+              <td data-col="Mammotion LUBA 3 AWD 3000X" class="px-4 py-3 text-winner font-semibold">IPX6</td>
             </tr>
           </tbody>
         </table>

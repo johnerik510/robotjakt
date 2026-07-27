@@ -1,9 +1,11 @@
 ---
 import { ctaRel } from '../lib/cta-rel';
+import AuthorByline from '../components/AuthorByline.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FAQ from '../components/FAQ.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import StickyCTA from '../components/StickyCTA.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const affSpotScrub = 'https://www.awin1.com/cread.php?awinmid=25183&awinaffid=2834856&ued=https%3A%2F%2Fwww.dyson.se%2Fdammsugare%2Frobot%2Fspot-scrub-ai%2Fsvart';
 const affVisNav = 'https://www.awin1.com/cread.php?awinmid=25183&awinaffid=2834856&ued=https%3A%2F%2Fwww.dyson.se%2Fdammsugare%2Frobot%2F360-vis-nav';
@@ -61,25 +63,22 @@ export const articleMeta = {
 <BaseLayout
   title="Dyson robotdammsugare 2026: Spot+Scrub Ai eller 360 Vis Nav"
   description="Dyson säljer två robotdammsugare i Sverige, båda bara via dyson.se. Spot+Scrub Ai moppar och tar bort fläckar, 360 Vis Nav suger starkare. Så väljer du."
-  article={{ datePublished: "2026-03-19", dateModified: "2026-05-27", image: "/images/products/dyson-spot-scrub-ai.webp" }}
+  article={{ datePublished: "2026-03-19", dateModified: "2026-07-27", image: "/images/products/dyson-spot-scrub-ai.webp" }}
 >
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
 
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-05-15</p>
+    <AuthorByline datePublished="2026-03-19" dateModified="2026-07-27" />
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-27</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Robotdammsugare Dyson 2026, guide och jämförelse
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Vilken Dyson robotdammsugare ska du välja?"
+      answer="Välj Spot+Scrub Ai om hemmet har mycket hårdgolv och återkommande fläckar, den moppar och letar aktivt upp spill. Välj 360 Vis Nav om du bara vill dammsuga och prioriterar filtrering och sugkraft, till exempel i ett mattrikt allergikerhem. Båda säljs enbart via dyson.se."
+    />
 
     <p class="text-text-light text-base leading-relaxed mb-8">
       Dyson har två robotdammsugare på den svenska marknaden 2026. Spot+Scrub Ai är en kombinerad våt- och torrobot med AI-fläckdetektering. 360 Vis Nav är en ren dammsugare med 360-graders panoramakamera och Hyperdymium-motor. Här går vi igenom skillnaderna så att du vet vilken Dyson som passar ditt hem och dina golv.
@@ -211,17 +210,52 @@ export const articleMeta = {
       <h2 class="font-heading text-lg font-bold text-text mb-4">Vilken Dyson passar dig?</h2>
       <div class="space-y-3 text-sm text-text-light">
         <div class="flex items-start gap-3">
-          <span class="text-winner font-bold flex-shrink-0">→</span>
+          <span class="text-winner font-bold flex-shrink-0"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
           <p><strong class="text-text">Mycket hårdgolv, husdjur, barn eller frekventa spill:</strong> Välj Spot+Scrub Ai. AI-fläckdetekteringen och wet rollern är designade för exakt den situationen.</p>
         </div>
         <div class="flex items-start gap-3">
-          <span class="text-winner font-bold flex-shrink-0">→</span>
+          <span class="text-winner font-bold flex-shrink-0"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
           <p><strong class="text-text">Allergiker eller hem med mycket mattor:</strong> Välj 360 Vis Nav. HEPA-filtrering i fem steg och kraftfull sugkraft ger bäst luftkvalitet.</p>
         </div>
         <div class="flex items-start gap-3">
-          <span class="text-winner font-bold flex-shrink-0">→</span>
+          <span class="text-winner font-bold flex-shrink-0"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
           <p><strong class="text-text">Vill ha moppning till lägre pris:</strong> Kolla Dreame X40 Ultra eller Roborock S8 MaxV Ultra. De ger moppfunktion och självtömning till lägre kostnad än Dysons modeller.</p>
         </div>
+      </div>
+    </div>
+
+    <!-- Fördjupning -->
+    <div class="mb-10 space-y-6 text-text-light leading-relaxed">
+      <h2 class="font-heading text-xl font-bold text-text">Vanliga frågor innan du bestämmer dig</h2>
+
+      <div>
+        <h3 class="font-heading text-lg font-bold text-text mb-2">Vilken Dyson passar en lägenhet?</h3>
+        <p class="mb-3">
+          I en lägenhet räcker 65 minuter från 360 Vis Nav oftast till hela ytan i ett pass, och dess enkla laddstation tar mindre plats än Spot+Scrub Ais station som både tvättar och torkar. Har lägenheten kök och hall i klinker väger moppningen tyngre än drifttiden.
+        </p>
+        <p>
+          Stationens fotavtryck är lätt att underskatta i en liten bostad. En docka som ska tvätta och torka en rulle behöver plats för vattentankar, och den måste stå kvar på samma ställe hela tiden för att roboten ska hitta hem. Mät väggplatsen innan du bestämmer modell. Fler alternativ för mindre bostäder finns i vår topplista över <a href="/robotdammsugare/lagenhet/" class="text-cta underline">bästa robotdammsugare för lägenhet</a>.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-heading text-lg font-bold text-text mb-2">Behöver du moppfunktion eller räcker dammsugning?</h3>
+        <p class="mb-3">
+          Har du textilgolv i de flesta rum gör en mopp lite nytta, och då är 360 Vis Nav det logiska valet. Har du klinker, laminat eller vinyl i kök och entré är det där smutsen fastnar, och då är Spot+Scrub Ais wet roller skillnaden mellan rent och nästan rent.
+        </p>
+        <p>
+          Ett vanligt misstag är att köpa moppfunktion för att den finns, inte för att den behövs. En robotmopp ersätter den dagliga fuktmoppningen, inte storstädningen, och den kräver att du håller golvet fritt från saker som kan bli blöta. Vill du jämföra Dysons moppning mot billigare modeller finns hela fältet i vår genomgång av <a href="/robotdammsugare/med-mopp/" class="text-cta underline">bästa robotdammsugare med moppfunktion</a>.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-heading text-lg font-bold text-text mb-2">Vad talar för Roborock eller Dreame i stället för Dyson?</h3>
+        <p class="mb-3">
+          Konkurrenterna ger dig moppning och självtömmande station till lägre kostnad, och de säljs hos flera återförsäljare så att du kan jämföra pris. Dysons argument är filtreringen, motoreffekten och fläckdetekteringen. Det är ett värdeval snarare än ett renodlat prestandaval. Båda vägarna ger ett rent golv.
+        </p>
+        <p>
+          Räkna också med hur länge du tänker äga roboten. Filter, borstar och moppdukar är förbrukningsvaror, och tillgången på delar påverkar totalkostnaden mer över några år än vad prislappen gör. Dysons modeller köps och servas via tillverkaren, medan delar till de större asiatiska märkena finns hos flera säljare.
+        </p>
       </div>
     </div>
 

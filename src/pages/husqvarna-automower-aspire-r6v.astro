@@ -2,6 +2,7 @@
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
@@ -64,7 +65,7 @@ export const articleMeta = {
   title="Husqvarna Automower Aspire R6V recension 2026: slinglös för 600 m²"
   description="Husqvarna Automower Aspire R6V testad: prisvärd slinglös robotgräsklippare för 600 m² med AI-kamera och satellit. Teknikveckan rekommenderar. Värd det?"
   breadcrumbs={breadcrumbs}
-  lastUpdated="2026-07-03"
+  lastUpdated="2026-07-27"
   ogImage="/images/husqvarna-automower-aspire-r6v.webp"
   datePublished="2026-07-03"
   image="/images/husqvarna-automower-aspire-r6v.webp"
@@ -72,6 +73,11 @@ export const articleMeta = {
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
     Husqvarna Automower Aspire R6V recension 2026
   </h1>
+
+  <AnswerBox
+    question="Snabbt svar: Är Husqvarna Automower Aspire R6V värd att köpa?"
+    answer="Aspire R6V får 8,4 av 10 och är den billigaste vägen in i Husqvarnas slinglösa V-serie. Den passar gräsmattor upp till 600 m² och navigerar med satellit och AI-kamera, så installationen sker i appen i stället för med spade. Laddningen tar cirka 200 minuter, vilket räcker på en liten yta."
+  />
 
   <!-- Verdict box -->
   <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -193,6 +199,22 @@ export const articleMeta = {
     </p>
     <p class="text-text-light leading-relaxed mb-6">
       Stöldskyddet består av PIN-kod och GeoFence, som larmar om roboten förs bort från sitt område. Mjukvaran uppdateras trådlöst (FOTA), och appen sköter schema, klipphöjd, flera arbetsytor och notiser om roboten behöver hjälp.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad krävs för att satellitnavigeringen ska fungera bra?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Satellitpositionering vill ha relativt fri sikt mot himlen, så roboten arbetar bäst på gräsmattor utan tätt trädtak. Under träd och nära husväggar tar AI-kameran över och håller kursen tills signalen är tillbaka. Är hela tomten kraftigt skuggad av lövverk blir en kabelrobot mer förutsägbar.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Placera laddstationen på en öppen del av gräsmattan snarare än under en tät krona eller intill en hög vägg, så hittar roboten hem lättare. Kameran behöver också se gräs framför sig, vilket i praktiken betyder att du håller undan högt ogräs och kvistar från kanterna. Vill du jämföra hur olika tillverkare löser samma sak har vi samlat <a href="/robotgrasklippare-utan-slinga/" class="text-accent underline">robotgräsklippare utan slinga</a>.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Passar Aspire R6V en trädgård med hinder och smala passager?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Ja, inom rimliga gränser. AI-kameran känner igen föremål som leksaker och verktyg och styr runt dem i stället för att köra på. Klippfria zoner ritar du in i appen, så rabatter och en studsmatta går att ringa in utan kabel. Branta partier bör ligga en bit in på gräsmattan.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Anledningen är gränsen: Aspire R6V klarar 40% lutning inne i arbetsområdet men bara 15% precis vid den virtuella gränsen. Slutar gräsmattan i en slänt är det alltså kanten som sätter taket, inte roboten i sig. Eftersom gränserna är digitala kan du testa en dragning, se hur roboten beter sig och flytta linjen i appen samma kväll. Är ytan liten och kringgärdad av rabatter finns fler alternativ bland <a href="/robotgrasklippare-liten-tradgard/" class="text-accent underline">robotgräsklippare för liten trädgård</a>.
     </p>
   </section>
 

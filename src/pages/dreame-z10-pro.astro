@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const faqItems = [
   {
@@ -63,24 +65,21 @@ export const articleMeta = {
   title="Dreame Z10 Pro recension 2026: budget-robot med mopp"
   description="Dreame Z10 Pro testad: prisvärd robotdammsugare med LiDAR och moppfunktion. Se sugkraft, rengöringsresultat och pris i Sverige. Värd pengarna 2026?"
   ogImage="/images/dreame-z10-pro.webp"
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/dreame-z10-pro.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/dreame-z10-pro.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-05</p>
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-27</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Dreame Z10 Pro Recension 2026
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Vem passar Dreame Z10 Pro för?"
+      answer="Z10 Pro passar dig som vill ha automatisk dammtömning utan att betala premiumpris. LiDAR-navigeringen kartlägger hemmet och städar rum för rum, och stationens påse räcker i veckor. Moppen är passiv och tvättas för hand, sugkraften ligger på 4 000 Pa. Vill du ha skrubbande moppning behöver du gå upp i serie."
+    />
 
     <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
       <div class="flex items-start gap-4">
@@ -183,6 +182,30 @@ export const articleMeta = {
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Dreame Z10 Pro vs D10s Pro: vilket ska du välja och varför?</h3>
       <p class="text-text-light leading-relaxed mb-4">
         D10s Pro är billigare men saknar automatisk dammtömning. Om du accepterar att tömma roboten för hand räcker D10s Pro utmärkt. Vill du ha minimal handpåläggning är Z10 Pro med automatisk tömning värt prisskillnaden. Ingen av dem ersätter ett helautomatiskt system som L10s Pro Ultra Heat, men de är ett stort steg upp från en enkel budget-robot.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Räcker 4 000 Pa sugkraft i ett vanligt hem?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        För hårda golv och kortluggade mattor räcker 4 000 Pa till damm, smulor och lösa hårstrån vid daglig städning. Det du märker skillnad på är djup lugg och tyngre partiklar som grus, där en starkare robot drar upp mer i ett enda pass.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Pascal beskriver undertrycket, inte hur bra roboten faktiskt plockar upp smuts. Borsttyp, tätningen mot golvet och hur ofta du kör roboten spelar minst lika stor roll. Kör du Z10 Pro varje dag hinner smutsen aldrig byggas upp, och då blir behovet av rå sugkraft mindre. Hur måttet fungerar och vad siffrorna betyder i praktiken går vi igenom i guiden om <a href="/guide/sugkraft/" class="text-accent underline">sugkraft i robotdammsugare</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad förlorar du utan AI-kamera?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        LiDAR ser rummets väggar och möbler men läser inte av små föremål på golvet. Utan AI-kamera kör Z10 Pro alltså på laddsladdar, strumpor och legobitar i stället för att styra runt dem. Plocka upp golvet innan städpasset, då försvinner det mesta av problemet.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Det märks mest i hem med barn eller i rum där sladdar ligger fritt. En enkel rutin fungerar: lyft undan sladdar och skor innan du startar roboten, precis som du skulle göra innan du dammsuger själv. På städade golv är LiDAR-kartan effektiv och roboten går rum för rum utan att missa ytor. Inom samma budget finns fler alternativ i vår lista över <a href="/robotdammsugare/budget/" class="text-accent underline">bästa budget-robotdammsugare</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur sköter du moppen när stationen inte tvättar den?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Moppduken sitter på en platta under roboten och måste sköljas för hand efter varje moppass. Låt den torka innan du monterar tillbaka den, annars börjar den lukta. Vattentanken töms också manuellt, ett moment som är lätt att glömma. Torrsmutsen sköter stationen själv.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Skillnaden mot en robot med mopptvätt i stationen är alltså inte moppresultatet i sig utan hur mycket du behöver göra efteråt. Den passiva moppduken fuktar golvet och tar bort dammlager och lätta fläckar, men den skrubbar inte. Intorkad sås eller kladd under barnstolen kräver fortfarande en trasa och lite armkraft.
       </p>
     </section>
 

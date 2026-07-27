@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -63,16 +64,7 @@ export const articleMeta = {
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 juli 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
+    <AuthorByline datePublished="2026-04-01" dateModified="2026-07-27" />
 
     <header class="mb-8">
       <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Eufy vs Dreame 2026</h1>
@@ -81,7 +73,7 @@ export const articleMeta = {
         question="Snabbt svar: Ska du välja Eufy eller Dreame?"
         answer="Dreame är rätt val om moppning är viktig: dubbla roterande moppskivor, AI-hinderdetektering och upp till 12 000 Pa i X40 Ultra. Eufy X10 Pro Omni är billigare, enklare i vardagen och har fullt tillräckliga 8 000 Pa. Prioriterar du dammsugning framför moppning räcker Eufy gott, för blandade golv vinner Dreame."
       />
-      <p class="text-gray-600 text-lg max-w-2xl">
+      <p class="text-text-light text-lg max-w-2xl">
         Eufy är budgetvänligare med solid sugkraft och enkelt bruk. Dreame är mopping-specialisten med dubbla roterande moppskivor, MopExtend och upp till 12 000 Pa. Vi jämför märkena modell för modell.
       </p>
 
@@ -91,15 +83,15 @@ export const articleMeta = {
     <!-- Quick verdict -->
     <div class="grid sm:grid-cols-2 gap-4 mb-10">
       <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
-        <p class="text-xs font-semibold text-blue-700 uppercase mb-1">Bäst pris och enkelhet</p>
+        <p class="text-xs font-bold text-accent-dark mb-1">Bäst pris och enkelhet</p>
         <h2 class="text-xl font-bold text-gray-900 mb-2">Eufy X10 Pro Omni</h2>
-        <p class="text-sm text-gray-600 mb-4">8 000 Pa, LiDAR-navigering, automatisk tömning och fyllning. Enkelt och pålitligt. Bäst för dem som prioriterar dammsugning framför moppning.</p>
-        <a href="https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3282928&url=https://www.proshop.se/Robotdammsugare/Eufy-Robotdammsugare-X10-Pro-Omni-Black/3282928" target="_blank" rel="nofollow sponsored noopener" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold py-2.5 px-4 rounded-lg text-center transition-colors">Se Eufy X10 Pro Omni</a>
+        <p class="text-sm text-text-light mb-4">8 000 Pa, LiDAR-navigering, automatisk tömning och fyllning. Enkelt och pålitligt. Bäst för dem som prioriterar dammsugning framför moppning.</p>
+        <a href="https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3282928&url=https://www.proshop.se/Robotdammsugare/Eufy-Robotdammsugare-X10-Pro-Omni-Black/3282928" target="_blank" rel="nofollow sponsored noopener" class="block w-full bg-cta hover:bg-cta-dark text-white text-sm font-semibold py-2.5 px-4 rounded-lg text-center transition-colors">Se Eufy X10 Pro Omni</a>
       </div>
       <div class="bg-orange-50 border border-orange-200 rounded-xl p-5">
         <p class="text-xs font-semibold text-orange-700 uppercase mb-1">Bäst moppning och sugstyrka</p>
         <h2 class="text-xl font-bold text-gray-900 mb-2">Dreame L20 Ultra / X40 Ultra</h2>
-        <p class="text-sm text-gray-600 mb-4">7 000 till 12 000 Pa, dubbla roterande moppskivor, AI-hinderdetektering, MopExtend (X40 Ultra). Bäst för hem med hårdgolv som behöver ordentlig moppning.</p>
+        <p class="text-sm text-text-light mb-4">7 000 till 12 000 Pa, dubbla roterande moppskivor, AI-hinderdetektering, MopExtend (X40 Ultra). Bäst för hem med hårdgolv som behöver ordentlig moppning.</p>
         <a href="/billigaste-robotdammsugare/" class="block w-full bg-orange-600 hover:bg-orange-700 text-white text-sm font-semibold py-2.5 px-4 rounded-lg text-center transition-colors">Se topplista robotdammsugare</a>
       </div>
     </div>
@@ -107,12 +99,12 @@ export const articleMeta = {
     <!-- Comparison table -->
     <section class="mb-10">
       <h2 class="text-2xl font-bold text-gray-900 mb-5">Jämförelsetabell</h2>
-      <div class="overflow-x-auto">
+      <div class="spec-table-wrap">
         <table class="w-full border border-gray-200 rounded-xl overflow-hidden text-sm">
           <thead>
             <tr class="bg-gray-50 border-b border-gray-200">
-              <th class="text-left p-4 font-semibold text-gray-700">Egenskap</th>
-              <th class="text-center p-4 font-semibold text-blue-700">Eufy X10 Pro Omni</th>
+              <th class="text-left p-4 font-semibold text-text">Egenskap</th>
+              <th class="text-center p-4 font-semibold text-accent-dark">Eufy X10 Pro Omni</th>
               <th class="text-center p-4 font-semibold text-orange-700">Dreame L20 Ultra</th>
             </tr>
           </thead>
@@ -132,11 +124,11 @@ export const articleMeta = {
             ].map((row, i) => (
               <tr class={`border-b border-gray-100 ${i % 2 === 0 ? '' : 'bg-gray-50/50'}`}>
                 <td class="p-4 font-semibold text-gray-900">{row.label}</td>
-                <td class={`p-4 text-center ${row.winner === 'eufy' ? 'text-blue-700 font-bold bg-blue-50' : 'text-gray-600'}`}>
+                <td data-col="Eufy X10 Pro Omni" class={`p-4 text-center ${row.winner === 'eufy' ? 'text-winner font-bold bg-winner/5' : 'text-text-light'}`}>
                   {row.eufy}
-                  {row.winner === 'eufy' && <span class="block text-xs font-normal text-blue-400 mt-0.5">Vinnare</span>}
+                  {row.winner === 'eufy' && <span class="block text-xs font-normal text-accent-light mt-0.5">Vinnare</span>}
                 </td>
-                <td class={`p-4 text-center ${row.winner === 'dreame' ? 'text-orange-700 font-bold bg-orange-50' : 'text-gray-600'}`}>
+                <td data-col="Dreame L20 Ultra" class={`p-4 text-center ${row.winner === 'dreame' ? 'text-orange-700 font-bold bg-orange-50' : 'text-text-light'}`}>
                   {row.dreame}
                   {row.winner === 'dreame' && <span class="block text-xs font-normal text-orange-400 mt-0.5">Vinnare</span>}
                 </td>
@@ -149,33 +141,33 @@ export const articleMeta = {
 
     <section class="mb-8">
       <h2 class="text-2xl font-bold text-gray-900 mb-4">Moppning: Dreame vinner utan tvekan</h2>
-      <p class="text-gray-600 mb-4">
+      <p class="text-text-light mb-4">
         Dreame L20 Ultra och X40 Ultra har dubbla roterande moppskivor som spinner med hög hastighet mot golvet. Den roterande rörelsen är radikalt effektivare mot intorkad smuts, fettfläckar och slitage jämfört med Eufys standardmoppning där moppduken bara dras passivt.
       </p>
-      <p class="text-gray-600 mb-4">
+      <p class="text-text-light mb-4">
         Dreame X40 Ultra tar det ett steg längre med MopExtend, moppmodulen kan sträcka sig ut under skåp och längs väggar och nå ytor som annars missas. Varmt vatten pumpar direkt till moppskivorna för bättre lösning av smuts.
       </p>
-      <p class="text-gray-600">
+      <p class="text-text-light">
         Eufy X10 Pro Omni har moppfunktion men standardmoppning utan roterande skivor. Är moppning viktigt i ditt hem, välj Dreame.
       </p>
     </section>
 
     <section class="mb-8">
       <h2 class="text-2xl font-bold text-gray-900 mb-4">Sugstyrka: Dreame X40 Ultra dominerar, men Eufy håller måttet</h2>
-      <p class="text-gray-600 mb-4">
+      <p class="text-text-light mb-4">
         Eufy X10 Pro Omni har 8 000 Pa sugstyrka, starkt i premiumsegmentet. Dreame L20 Ultra har 7 000 Pa (något lägre) men Dreame X40 Ultra har branschledande 12 000 Pa. I praktiken märks skillnaden mellan 7 000 till 8 000 Pa minimalt på vanliga hem. Dreame X40 Ultras 12 000 Pa syns däremot tydligt på djuppälsmoppar och tjocka persiska mattor.
       </p>
-      <p class="text-gray-600">
+      <p class="text-text-light">
         Väljer du Dreame L20 Ultra behöver du inte oroa dig för sugstyrkan, den är mer än tillräcklig. Väljer du X40 Ultra får du det starkaste sugkraft som finns på marknaden 2026.
       </p>
     </section>
 
     <section class="mb-8">
       <h2 class="text-2xl font-bold text-gray-900 mb-4">AI-hinderdetektering: Dreame ser mer</h2>
-      <p class="text-gray-600 mb-4">
+      <p class="text-text-light mb-4">
         Dreame L20 Ultra och X40 Ultra har AI-kameror som identifierar och undviker hinder: kablar, strumpor, leksaker, husdjursavföring och skor. Igenkänning sker i realtid och roboten ritar runt hindret. Eufy X10 Pro Omni saknar AI-kamera och förlitar sig på LiDAR och sonar för hinderdetektering.
       </p>
-      <p class="text-gray-600">
+      <p class="text-text-light">
         Har du husdjur, barn med leksaker på golvet eller många kablar: Dreame hanterar det bättre. I ett rent, välstädat hem märks skillnaden minimalt.
       </p>
     </section>
@@ -184,23 +176,23 @@ export const articleMeta = {
       <h2 class="text-2xl font-bold text-gray-900 mb-4">Vanliga följdfrågor</h2>
 
       <h3 class="text-lg font-bold text-gray-900 mb-2">Hur ofta behöver moppskivor och filter bytas?</h3>
-      <p class="text-gray-600 mb-3">
+      <p class="text-text-light mb-3">
         Roterande moppskivor slits snabbare än en passiv moppduk eftersom de arbetar med tryck och rotation mot golvet. Dreames dubbla skivor behöver därför bytas oftare än Eufys standardmodul. Filter och sidborstar är slitdelar på båda märkena, och bägge säljer reservdelar direkt via sina egna webbplatser.
       </p>
-      <p class="text-gray-600 mb-5">
+      <p class="text-text-light mb-5">
         Ett enkelt riktmärke är att titta på moppresultatet: när golven börjar se strimmiga ut efter ett pass är det dags att byta skivor. Hur moppmodulen med de dubbla skivorna fungerar i praktiken går vi igenom i recensionen av <a href="/dreame-l20-ultra/" class="text-accent underline">Dreame L20 Ultra</a>.
       </p>
 
       <h3 class="text-lg font-bold text-gray-900 mb-2">Räcker batteritiden till hela bostaden i ett svep?</h3>
-      <p class="text-gray-600 mb-5">
+      <p class="text-text-light mb-5">
         Med runt 180 minuters batteritid klarar både Eufy X10 Pro Omni och Dreame-modellerna de flesta bostäder utan paus. Blir batteriet ändå tomt åker roboten tillbaka till stationen, laddar och fortsätter exakt där den slutade. Du behöver alltså inte dela upp städningen manuellt ens i större hem.
       </p>
 
       <h3 class="text-lg font-bold text-gray-900 mb-2">Behöver du AI-kamera om hemmet är plockat?</h3>
-      <p class="text-gray-600 mb-3">
+      <p class="text-text-light mb-3">
         Nej, i ett plockat hem utan lösa kablar, strumpor eller leksaker på golvet gör AI-kameran liten skillnad, och Eufys LiDAR räcker gott för själva navigeringen. AI-hinderdetekteringen betalar sig först i hem med husdjur, barn eller många lösa föremål, där Dreame undviker det som annars fastnar i borstarna.
       </p>
-      <p class="text-gray-600">
+      <p class="text-text-light">
         Var ärlig mot dig själv om hur golven brukar se ut en vanlig tisdag, inte hur de ser ut efter storstädning. Är svaret att det ofta ligger saker framme är AI-kameran värd merpriset. Är svaret nej får du mer valuta av <a href="/eufy-x10-pro-omni/" class="text-accent underline">Eufy X10 Pro Omni</a> och kan lägga mellanskillnaden på annat.
       </p>
     </section>
@@ -211,16 +203,16 @@ export const articleMeta = {
       <div class="grid sm:grid-cols-2 gap-4">
         <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
           <h3 class="font-bold text-blue-800 mb-3">Välj Eufy om du...</h3>
-          <ul class="space-y-2 text-sm text-gray-700">
-            <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Vill ha bra prestanda för pengarna utan att betala för avancerade funktioner</span></li>
-            <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Primärt dammsugning, moppning är sekundärt</span></li>
-            <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Vill ha en enkel app och enkelt dagligt bruk</span></li>
-            <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Budgeten är och inte mer</span></li>
+          <ul class="space-y-2 text-sm text-text">
+            <li class="flex gap-2"><span class="text-winner font-bold">+</span><span>Vill ha bra prestanda för pengarna utan att betala för avancerade funktioner</span></li>
+            <li class="flex gap-2"><span class="text-winner font-bold">+</span><span>Primärt dammsugning, moppning är sekundärt</span></li>
+            <li class="flex gap-2"><span class="text-winner font-bold">+</span><span>Vill ha en enkel app och enkelt dagligt bruk</span></li>
+            <li class="flex gap-2"><span class="text-winner font-bold">+</span><span>Budgeten är och inte mer</span></li>
           </ul>
         </div>
         <div class="bg-orange-50 border border-orange-200 rounded-xl p-5">
           <h3 class="font-bold text-orange-800 mb-3">Välj Dreame om du...</h3>
-          <ul class="space-y-2 text-sm text-gray-700">
+          <ul class="space-y-2 text-sm text-text">
             <li class="flex gap-2"><span class="text-orange-600 font-bold">+</span><span>Har hårdgolv som behöver moppas ordentligt, dubbla roterande moppskivor</span></li>
             <li class="flex gap-2"><span class="text-orange-600 font-bold">+</span><span>Vill ha AI-hinderdetektering för hinder, kablar och husdjursavföring</span></li>
             <li class="flex gap-2"><span class="text-orange-600 font-bold">+</span><span>Har ett hem med mix av mattor och hårdgolv</span></li>
@@ -236,19 +228,19 @@ export const articleMeta = {
       <div class="grid sm:grid-cols-2 gap-4">
         <a href="/eufy-vs-roborock/" class="bg-white border border-gray-200 rounded-xl p-4 transition-shadow">
           <p class="font-bold text-gray-900">Eufy vs Roborock 2026</p>
-          <p class="text-sm text-gray-600">Eufy mot marknadsledarens robotar</p>
+          <p class="text-sm text-text-light">Eufy mot marknadsledarens robotar</p>
         </a>
         <a href="/eufy-vs-ecovacs/" class="bg-white border border-gray-200 rounded-xl p-4 transition-shadow">
           <p class="font-bold text-gray-900">Eufy vs Ecovacs 2026</p>
-          <p class="text-sm text-gray-600">Eufy vs moppspecialisten Ecovacs</p>
+          <p class="text-sm text-text-light">Eufy vs moppspecialisten Ecovacs</p>
         </a>
         <a href="/dreame-vs-ecovacs/" class="bg-white border border-gray-200 rounded-xl p-4 transition-shadow">
           <p class="font-bold text-gray-900">Dreame vs Ecovacs 2026</p>
-          <p class="text-sm text-gray-600">Kinesiska premiumvarumärken jämförda</p>
+          <p class="text-sm text-text-light">Kinesiska premiumvarumärken jämförda</p>
         </a>
         <a href="/roborock-vs-dreame/" class="bg-white border border-gray-200 rounded-xl p-4 transition-shadow">
           <p class="font-bold text-gray-900">Roborock vs Dreame 2026</p>
-          <p class="text-sm text-gray-600">Marknadens tuffaste kamp 2026</p>
+          <p class="text-sm text-text-light">Marknadens tuffaste kamp 2026</p>
         </a>
       </div>
     </section>

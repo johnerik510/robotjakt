@@ -2,6 +2,7 @@
 import { ctaRel } from '../lib/cta-rel';
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import FAQ from '../components/FAQ.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 
 const breadcrumbs = [
@@ -69,13 +70,18 @@ export const articleMeta = {
   title="Segway Navimow i105E recension 2026: kompakt GPS-robot"
   description="Segway Navimow i105E testad: kompakt GPS-robotgräsklippare för 500 m². Se klippprestanda, installationstid, appfunktioner och pris i Sverige 2026."
   breadcrumbs={breadcrumbs}
-  lastUpdated="2026-04-13"
+  lastUpdated="2026-07-27"
   ogImage="/images/segway-navimow-i105e.webp"
   datePublished="2026-04-13"
 >
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
     Segway Navimow i105E, Recension 2026
   </h1>
+
+  <AnswerBox
+    question="Snabbt svar: Är Segway Navimow i105E värd att köpa?"
+    answer="Ja, för radhustomter och små villaträdgårdar upp till 500 m². VisionFence med fisheye-kamera och GNSS gör att du ritar zonerna i appen i stället för att gräva ner kabel, och IP66 håller regnet ute. Har du branta slänter över 30 procent eller behöver 4G direkt passar den sämre."
+  />
 
   <!-- Verdict box -->
   <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -206,6 +212,30 @@ export const articleMeta = {
     </p>
     <p class="text-text-light leading-relaxed mb-6">
       H500E passar dig med en stor tomt, inbyggt 4G-behov och vilja att klippa längre per pass (120 min vs 60 min). Båda modellerna använder VisionFence och kräver ingen perimeterkabel.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur många pass behöver i105E för att klippa 500 m²?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Fler än ett. Med 18 cm klippbredd och 60 minuters drifttid tar roboten en bit av ytan per pass, åker hem och laddar, och fortsätter där den slutade. Räkna med att den arbetar flera gånger i veckan i stället för att beta av hela tomten på en gång.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Det är så en robotgräsklippare är tänkt att fungera. Den klipper några millimeter varje gång och klippet faller ner i mattan som mulch, alltså näring som återförs till gräset. En robot som ligger efter i schemat märks direkt: gräset blir ojämnt och klippet syns som strån ovanpå mattan. Ligger din tomt i den här storleksklassen hittar du fler alternativ i vår topplista över <a href="/robotgrasklippare-liten-tradgard/" class="text-accent underline">robotgräsklippare för liten trädgård</a>.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad kräver i105E för underhåll under säsongen?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Tre saker, med några veckors mellanrum. Skrapa bort gräs och jord under klippdäcket, torka av fisheye-kameran så att den ser skarpt, och kontrollera knivarnas egg. Slöa knivar river av strået i stället för att skära det, vilket ger gulnade toppar och högre strömförbrukning.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Att kameran hålls ren är viktigare på en kamerastyrd robot än på en kabelstyrd. Ett lager torkat gräsdamm på linsen gör samma sak som dimma: gränskänningen blir slö och hinderdetekteringen sämre. Knivar och blad hittar du i vår översikt över <a href="/reservdelar/knivar/" class="text-accent underline">reservknivar till robotgräsklippare</a>.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Fungerar i105E om Wi-Fi inte når ut i trädgården?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Klippningen fungerar, styrningen gör det inte. Schemat ligger i roboten, så den går ut, klipper och dockar även utan uppkoppling. Det du tappar är realtidsstyrning, kartvy och notiser i appen tills roboten är tillbaka inom räckvidden för nätverket. Zonerna påverkas inte alls.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Är basstationen placerad i utkanten av tomten är det där täckningen brukar ta slut. Prova signalen med mobilen på den tänkta platsen innan du monterar antennen. Räcker inte hemmanätverket, och vill du kunna nå roboten hemifrån jobbet, är Access+-modulen med 4G lösningen snarare än en extra Wi-Fi-repeater i regnet.
     </p>
   </section>
 

@@ -2,6 +2,7 @@
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
@@ -64,7 +65,7 @@ export const articleMeta = {
   title="Husqvarna Automower 308V recension 2026: slinglös för 800 m²"
   description="Husqvarna Automower 308V testad: slinglös robotgräsklippare för 800 m² med AI-kamera och satellit. Mest driftsäker i sitt slag enligt Gör det själv."
   breadcrumbs={breadcrumbs}
-  lastUpdated="2026-07-03"
+  lastUpdated="2026-07-27"
   ogImage="/images/husqvarna-automower-308v.webp"
   datePublished="2026-07-03"
   image="/images/husqvarna-automower-308v.webp"
@@ -72,6 +73,11 @@ export const articleMeta = {
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
     Husqvarna Automower 308V recension 2026
   </h1>
+
+  <AnswerBox
+    question="Snabbt svar: är Husqvarna Automower 308V värd pengarna?"
+    answer="För en gräsmatta upp till 800 m² är 308V seriens mest balanserade köp. Du får samma AI-kamera och satellitnavigering som de dyrare V-modellerna, slinglös installation och ett prydligt klipp i raka banor. Gör det själv utsåg den till den mest driftsäkra i sitt slag."
+  />
 
   <!-- Verdict box -->
   <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -193,6 +199,30 @@ export const articleMeta = {
     </p>
     <p class="text-text-light leading-relaxed mb-6">
       I appen sköter du klippschema, klipphöjd, flera arbetsytor och notiser. Mjukvaran uppdateras trådlöst (FOTA) och stöldskyddet består av PIN-kod och larm om roboten lyfts.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad krävs för att satellitnavigeringen ska fungera i din trädgård?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Relativt fri sikt uppåt. Satellitpositionering bygger på att roboten ser tillräckligt många satelliter samtidigt, och stora lövträd, höga husgavlar och trånga passager mellan hus och plank kapar den sikten. Det är också därför 308V har en AI-kamera, den håller positionen där signalen tillfälligt tappas.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Praktiskt betyder det att du bör kartlägga trädgårdens mest instängda partier innan du bestämmer dig. En gräsmatta med enstaka träd och öppen himmel över större delen av ytan är idealisk. En trädgård som till stor del ligger under ett slutet lövvalv eller inklämd mellan höga byggnader ställer betydligt högre krav, och där gör kamerastödet skillnaden mellan en robot som fortsätter och en som stannar. Placera laddstationen på ett ställe med god sikt uppåt, det är där roboten hämtar sin utgångsposition varje gång den startar ett nytt pass.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur hanterar 308V branta partier vid tomtgränsen?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Inne i arbetsområdet klarar 308V 40 procents lutning, men precis vid den virtuella gränsen sjunker toleransen till 15 procent. Skillnaden beror på att roboten behöver kunna vända och bromsa kontrollerat i kanten. Ligger tomtens branta parti ända ut mot gränsen måste du planera arbetsytan efter det.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Lösningen är oftast att lägga den virtuella gränsen en bit in på det flacka partiet och klippa den sista sluttningen för hand, eller att låta slänten ligga utanför arbetsområdet helt. Har du flera slänter i tomten är det ett skäl att jämföra med modeller som är byggda för branta lägen, vi har rangordnat dem i vår topplista över <a href="/robotgrasklippare-for-lutning/" class="text-accent underline">robotgräsklippare för lutning</a>.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Måste 308V vinterförvaras inomhus?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Ja, ta in roboten när klippsäsongen är över. IPX6 betyder att den tål regn under drift, inte att den ska stå ute månad efter månad i kyla och fukt. Litiumbatteriet mår illa av köld, och kontaktbleck som står blöta hela vintern hinner korrodera. Laddstationen kan sitta kvar.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Ta samtidigt tillfället att gå igenom slitdelarna. Gör ren chassit och klippaggregatet, torka av kameralinsen, kontrollera att de tre knivbladen svänger fritt och sitter hela, och ladda batteriet enligt Husqvarnas anvisning innan förvaring. En robot som ställs undan smutsig får gräsrester som torkar till betong runt knivfästet, och det är betydligt jobbigare att få bort i mars. Rutinen finns steg för steg i guiden om <a href="/guide/vinterforvaring-robotgrasklippare/" class="text-accent underline">vinterförvaring av robotgräsklippare</a>.
     </p>
   </section>
 

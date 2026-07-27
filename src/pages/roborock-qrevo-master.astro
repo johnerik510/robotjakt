@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -74,24 +76,21 @@ export const articleMeta = {
   title="Roborock Qrevo Master recension 2026: test och Omdöme"
   description="Roborock Qrevo Master testad 2026. FlexiArm moppsystem, 10 000 Pa sugkraft och stor 470 ml dammkorg. Bäst värde i mellanklassen. Se pris och omdöme."
   ogImage="/images/roborock-qrevo-master.webp"
-  article={{ datePublished: "2026-05-16", dateModified: "2026-05-27", image: "/images/roborock-qrevo-master.webp" }}
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/roborock-qrevo-master.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-04-19</p>
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-27</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Roborock Qrevo Master Recension 2026
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Är Roborock Qrevo Master värd att köpa?"
+      answer="Roborock Qrevo Master är värd pengarna om du vill ha premiumstädning utan AI-kameran. Du får 10 000 Pa, FlexiArm-mopp som svänger ut mot kanterna, varmvattentvätt i stationen och en gummirulle som inte trasslar av hår. Har du husdjur och behöver skydd mot djuravföring väljer du S8 MaxV Ultra."
+    />
 
     <!-- Verdict box -->
     <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -187,7 +186,7 @@ export const articleMeta = {
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Roborock Qrevo Masters sugkraft och städprestanda på mattor och hårdgolv</h3>
       <p class="text-text-light leading-relaxed mb-4">
-        10 000 Pa är lika stark sugkraft som Roborock S8 MaxV Ultra, och starkare än Dreame X40 Ultras 12 000 Pa... nej, X40 Ultra har faktiskt starkare sugkraft. Men 10 000 Pa är mer än tillräckligt för de flesta hem, inklusive de med husdjur och tjocka mattor.
+        10 000 Pa är lika stark sugkraft som Roborock S8 MaxV Ultra. Dreame X40 Ultra ligger högre med sina 12 000 Pa, men 10 000 Pa är mer än tillräckligt för de flesta hem, inklusive de med husdjur och tjocka mattor.
       </p>
       <p class="text-text-light leading-relaxed mb-6">
         Den stora dammkorgen på 470 ml (mot standardens 350 ml) är ett underskattat plus, den måste tömmas mer sällan under körningar och ger mer kontinuerlig städning i stora hem.
@@ -219,6 +218,27 @@ export const articleMeta = {
       </p>
       <p class="text-text-light leading-relaxed">
         Har du husdjur med lång päls eller behöver AI-skyddet mot djuravföring: välj <a href="/roborock-s8-maxv-ultra/" class="text-accent underline">Roborock S8 MaxV Ultra</a>. Prioriterar du moppning och hörn: välj <a href="/dreame-x40-ultra/" class="text-accent underline">Dreame X40 Ultra</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur mycket underhåll kräver varmvattentvätten i stationen?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Stationen sköljer och tvättar mopparna åt dig, men själva tvättbrickan under roboten behöver torkas av med jämna mellanrum eftersom smutsen samlas där. Fyll på rent vatten och töm smutsvattentanken när du ändå är framme, och skölj plattorna för hand om de börjar kännas styva.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Tankarna på 3 liter rent och 2,5 liter smutsigt vatten gör att intervallet blir långt i ett normalstort hem, men vattnet i den smutsiga tanken börjar lukta om det står kvar för länge. Töm den hellre en gång för mycket. Moppplattor och filter är slitdelar som byts efter skick, och rätt delar för modellen finns i vår översikt över <a href="/reservdelar/roborock-qrevo-serien/" class="text-accent underline">reservdelar till Roborock Qrevo-serien</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Varför trasslar en gummirulle mindre än en borstrulle?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Borst samlar hår som lindar sig runt axeln och måste klippas bort. En gummirulle har i stället lameller utan fria fibrer, så långt hår och päls glider vidare in mot sugmunnen i stället för att fästa. Det är därför gummirullen kallas anti-tangle och kräver mindre handpåläggning.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Helt fritt från rensning blir det inte. Kontrollera ändarna där rullen möter sitt lager, det är den punkt där hår ändå kan snurra ihop sig och till slut bromsa rotationen. Qrevo Master har en rulle mot S8 MaxV Ultras dubbla, vilket i praktiken främst betyder något i hem med extremt mycket päls. Fler modeller som klarar den utmaningen hittar du bland <a href="/robotdammsugare/langt-har/" class="text-accent underline">robotdammsugare för långt hår</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad ska du plocka undan innan Qrevo Master kör?</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Eftersom hinderdetekteringen saknar AI-klassificering är det värt att gå en runda först. Sladdar, laddare, strumpor och lösa leksaker är det som orsakar avbrott, och husdjursskålar med vatten står bäst utanför städytan. Möbler, väggar och skor hanterar roboten själv utan hjälp. Det du inte vill flytta varje gång ritar du in som no-go-zon i Roborock Home, då blir undantaget permanent i stället för ett moment du måste komma ihåg.
       </p>
     </section>
 

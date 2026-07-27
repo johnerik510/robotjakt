@@ -2,6 +2,7 @@
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
@@ -67,13 +68,18 @@ export const articleMeta = {
   title="Mammotion Luba 2 AWD 5000X recension 2026 och test"
   description="Mammotion Luba 2 AWD 5000X testad: fyrhjulsdriven GPS-gräsrobot för 5 000 m² och branta lutningar. Se prestanda, app-styrning och pris Sverige."
   breadcrumbs={breadcrumbs}
-  lastUpdated="2026-04-13"
+  lastUpdated="2026-07-27"
   ogImage="/images/mammotion-luba-2-awd-5000x.webp"
   datePublished="2026-04-13"
 >
   <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
     Mammotion LUBA 2 AWD 5000X, Recension 2026
   </h1>
+
+  <AnswerBox
+    question="Snabbt svar: vem ska köpa Mammotion LUBA 2 AWD 5000X?"
+    answer="Du som har en stor eller kuperad tomt och vill slippa perimeterkabel. AWD-drivlinan och 80% lutningstolerans tar backar där slingmodeller ger upp, och 40 cm klippbredd gör att 5 000 m² hinns med. Har du en platt villatomt betalar du för kapacitet du inte använder."
+  />
 
   <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
     <div class="flex items-start gap-4">
@@ -195,6 +201,30 @@ export const articleMeta = {
     <h3 class="font-heading text-xl font-semibold text-text mb-3">40 cm klippbredd</h3>
     <p class="text-text-light leading-relaxed mb-6">
       40 cm klippbredd är mer än dubbelt mot Husqvarnas standardmodeller (18 till 22 cm). På en 5 000 m² tomt är det avgörande för att roboten faktiskt ska hinna täcka hela ytan inom rimlig tid. Drifttiden på 190 minuter kombinerat med den breda klippbanan gör att 415X kan täcka sin maximala yta per laddcykel.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur påverkar laddtiden på 120 minuter klippschemat?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Roboten klipper i pass: 190 minuter på gräset, sedan ungefär 120 minuter i laddstationen innan nästa pass. På en tomt nära 5 000 m² behöver du därför ge den ett brett tidsfönster, inte bara en förmiddag. Schemalägg hellre flera pass per dygn än ett enda långt.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      Kvoten mellan klipptid och laddtid är det som i praktiken sätter taket för hur stor yta en robot hinner med, inte den maximala areal tillverkaren anger. Ligger tomten i den övre delen av intervallet ska du planera schemat så att roboten får köra flera dagar i veckan. Har du i stället en mindre yta kommer den att bli klar långt före sitt tidsfönster och stå still i basen större delen av dygnet.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Var ska RTK-antennen sitta för stabil signal?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Antennen behöver fri sikt uppåt och ett stabilt fäste som inte rör sig i vind. Tak, en stolpe eller laddstationens eget fäste fungerar, så länge inget lövverk eller utsprång skymmer himlen. Sitter den delvis skymd blir positioneringen ojämn i just de delarna av tomten.
+    </p>
+    <p class="text-text-light leading-relaxed mb-6">
+      RTK fungerar genom att antennen står stilla på en känd punkt och räknar bort felen i satellitsignalen i realtid, vilket är därför placeringen spelar så stor roll. Flyttar du antennen mellan säsongerna behöver kartan verifieras om. Är trädgården omgiven av höga träd är det klokt att prova antennhöjden innan du ritar upp alla zoner, det sparar tid. Har du branta partier är det värt att jämföra med övriga <a href="/robotgrasklippare-for-lutning/" class="text-accent underline">robotgräsklippare för lutning</a> innan du bestämmer dig.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-text mb-3">Behöver du fyrhjulsdrift om tomten är platt?</h3>
+    <p class="text-text-light leading-relaxed mb-4">
+      Nej. AWD betalar sig i backar, på fuktigt underlag och i lös jord där två drivhjul spinner. Är tomten platt och torr gör drivlinan ingen märkbar skillnad, och då är 18,6 kg och lång laddtid nackdelar utan motsvarande vinst i klippresultat.
+    </p>
+    <p class="text-text-light leading-relaxed mb-4">
+      Fyra drivande hjul fördelar kraften över mer gummi mot marken, vilket ger grepp där ett hjulpar tappar fäste och river upp gräset. Effekten är tydlig i slänter och i skugga där gräset håller fukt längre. På en jämn gräsmatta utan nivåskillnader lägger du i stället pengarna på yta och klippbredd, se hur modellerna står sig i vår översikt över <a href="/robotgrasklippare-stor-tradgard/" class="text-accent underline">robotgräsklippare för stor trädgård</a>.
     </p>
   </section>
 

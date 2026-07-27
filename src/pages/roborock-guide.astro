@@ -1,6 +1,8 @@
 ---
 import { ctaRel } from '../lib/cta-rel';
+import AuthorByline from '../components/AuthorByline.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AnswerBox from '../components/AnswerBox.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -152,24 +154,20 @@ export const articleMeta = {
 <BaseLayout
   title="Roborock guide 2026: välj rätt Roborock robotdammsugare"
   description="Komplett guide till Roborock 2026. Vi jämför Saros 10R, S8 MaxV Ultra, Qrevo Master och fler. Hitta rätt Roborock för ditt hem, budget och städbehov."
-  article={{ datePublished: "2026-03-29", dateModified: "2026-05-27", image: "/images/roborock-s8-maxv-ultra.webp" }}
+  article={{ datePublished: "2026-03-29", dateModified: "2026-07-27", image: "/images/roborock-s8-maxv-ultra.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 maj 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-03-29">2026-03-29</time></p>
+    <AuthorByline datePublished="2026-03-29" dateModified="2026-07-27" />
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Roborock robotdammsugare 2026, alla modeller jämförda
     </h1>
+
+    <AnswerBox
+      question="Snabbt svar: Vilken Roborock ska du välja 2026?"
+      answer="Saros 10R är starkast med 20 000 Pa och lägst byggd, S8 MaxV Ultra är valet för husdjurshem tack vare ReactiveAI 3.0, och Qrevo Master vinner på moppning i hem med mycket hårdgolv. Vill du ha Roborock billigt räcker Q Revo med roterande moppar och auto-tömning."
+    />
     <p class="text-text-light mb-6 max-w-2xl">
       Roborock är ett av marknadens starkaste premium-märken för robotdammsugare. Vi guidar dig genom 2026 ars modellserie, S8 MaxV Ultra, Qrevo Master och S7, och hjälper dig välja rätt modell för ditt hem. </p>
 
@@ -187,7 +185,7 @@ export const articleMeta = {
     <!-- Comparison table -->
     <section class="mb-10" aria-label="Jämforelsetabell Roborock-modeller">
       <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse, Roborock-modeller 2026</h2>
-      <div class="overflow-x-auto rounded-xl border border-border">
+      <div class="spec-table-wrap rounded-xl border border-border">
         <table class="w-full text-sm bg-white">
           <thead>
             <tr class="border-b border-border bg-bg-alt">
@@ -198,14 +196,14 @@ export const articleMeta = {
               </tr>
           </thead>
           <tbody class="divide-y divide-border">
-            <tr><td class="px-4 py-3 font-medium text-text">Saros 10R</td><td class="px-4 py-3 text-winner font-semibold">20 000 Pa</td><td class="px-4 py-3 text-text-light">Roterande + lyftbar</td><td class="px-4 py-3 text-text-light">Fullautomatisk 10-i-1</td></tr>
-            <tr class="bg-winner/5"><td class="px-4 py-3 font-medium text-text">S8 MaxV Ultra</td><td class="px-4 py-3 text-winner font-semibold">10 000 Pa</td><td class="px-4 py-3 text-text-light">Roterande + lyftbar</td><td class="px-4 py-3 text-text-light">Fullautomatisk + kamera</td></tr>
-            <tr><td class="px-4 py-3 font-medium text-text">Qrevo Master</td><td class="px-4 py-3 text-text-light">13 000 Pa</td><td class="px-4 py-3 text-text-light">Dubbel roterande</td><td class="px-4 py-3 text-text-light">Fullautomatisk</td></tr>
-            <tr class="bg-bg-alt/50"><td class="px-4 py-3 font-medium text-text">Qrevo MaxV Ultra</td><td class="px-4 py-3 text-text-light">10 000 Pa</td><td class="px-4 py-3 text-text-light">Roterande + lyftbar</td><td class="px-4 py-3 text-text-light">Fullautomatisk + kamera</td></tr>
-            <tr><td class="px-4 py-3 font-medium text-text">S8 Max Ultra</td><td class="px-4 py-3 text-text-light">10 000 Pa</td><td class="px-4 py-3 text-text-light">Roterande + lyftbar</td><td class="px-4 py-3 text-text-light">Fullautomatisk</td></tr>
-            <tr class="bg-bg-alt/50"><td class="px-4 py-3 font-medium text-text">S8 Pro Ultra</td><td class="px-4 py-3 text-text-light">6 000 Pa</td><td class="px-4 py-3 text-text-light">Sonic + FlexiArm</td><td class="px-4 py-3 text-text-light">Fullautomatisk</td></tr>
-            <tr><td class="px-4 py-3 font-medium text-text">Qrevo Pro</td><td class="px-4 py-3 text-text-light">7 000 Pa</td><td class="px-4 py-3 text-text-light">Roterande + lyftbar</td><td class="px-4 py-3 text-text-light">Fullautomatisk</td></tr>
-            <tr class="bg-bg-alt/50"><td class="px-4 py-3 font-medium text-text">Q Revo</td><td class="px-4 py-3 text-text-light">5 500 Pa</td><td class="px-4 py-3 text-text-light">Roterande + lyftbar</td><td class="px-4 py-3 text-text-light">Auto-tömning</td></tr>
+            <tr><td class="px-4 py-3 font-medium text-text">Saros 10R</td><td data-col="Sugkraft" class="px-4 py-3 text-winner font-semibold">20 000 Pa</td><td data-col="Mopp" class="px-4 py-3 text-text-light">Roterande + lyftbar</td><td data-col="Station" class="px-4 py-3 text-text-light">Fullautomatisk 10-i-1</td></tr>
+            <tr class="bg-winner/5"><td class="px-4 py-3 font-medium text-text">S8 MaxV Ultra</td><td data-col="Sugkraft" class="px-4 py-3 text-winner font-semibold">10 000 Pa</td><td data-col="Mopp" class="px-4 py-3 text-text-light">Roterande + lyftbar</td><td data-col="Station" class="px-4 py-3 text-text-light">Fullautomatisk + kamera</td></tr>
+            <tr><td class="px-4 py-3 font-medium text-text">Qrevo Master</td><td data-col="Sugkraft" class="px-4 py-3 text-text-light">13 000 Pa</td><td data-col="Mopp" class="px-4 py-3 text-text-light">Dubbel roterande</td><td data-col="Station" class="px-4 py-3 text-text-light">Fullautomatisk</td></tr>
+            <tr class="bg-bg-alt/50"><td class="px-4 py-3 font-medium text-text">Qrevo MaxV Ultra</td><td data-col="Sugkraft" class="px-4 py-3 text-text-light">10 000 Pa</td><td data-col="Mopp" class="px-4 py-3 text-text-light">Roterande + lyftbar</td><td data-col="Station" class="px-4 py-3 text-text-light">Fullautomatisk + kamera</td></tr>
+            <tr><td class="px-4 py-3 font-medium text-text">S8 Max Ultra</td><td data-col="Sugkraft" class="px-4 py-3 text-text-light">10 000 Pa</td><td data-col="Mopp" class="px-4 py-3 text-text-light">Roterande + lyftbar</td><td data-col="Station" class="px-4 py-3 text-text-light">Fullautomatisk</td></tr>
+            <tr class="bg-bg-alt/50"><td class="px-4 py-3 font-medium text-text">S8 Pro Ultra</td><td data-col="Sugkraft" class="px-4 py-3 text-text-light">6 000 Pa</td><td data-col="Mopp" class="px-4 py-3 text-text-light">Sonic + FlexiArm</td><td data-col="Station" class="px-4 py-3 text-text-light">Fullautomatisk</td></tr>
+            <tr><td class="px-4 py-3 font-medium text-text">Qrevo Pro</td><td data-col="Sugkraft" class="px-4 py-3 text-text-light">7 000 Pa</td><td data-col="Mopp" class="px-4 py-3 text-text-light">Roterande + lyftbar</td><td data-col="Station" class="px-4 py-3 text-text-light">Fullautomatisk</td></tr>
+            <tr class="bg-bg-alt/50"><td class="px-4 py-3 font-medium text-text">Q Revo</td><td data-col="Sugkraft" class="px-4 py-3 text-text-light">5 500 Pa</td><td data-col="Mopp" class="px-4 py-3 text-text-light">Roterande + lyftbar</td><td data-col="Station" class="px-4 py-3 text-text-light">Auto-tömning</td></tr>
           </tbody>
         </table>
       </div>
@@ -279,6 +277,34 @@ export const articleMeta = {
           <h3 class="font-semibold text-text mb-2">Budget, pröva Roborock utan toppris</h3>
           <p class="text-text-light leading-relaxed text-sm">
             Roborock S7 ger dig LiDAR-navigering, sonic moppfunktion och automatisk mattdetektering till halva priset av topmodellerna. Du tömmer dammkorgen manuellt men får en väl fungerande robotdammsugare från ett pålitligt märke. </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Hur mycket sugkraft behöver du egentligen?</h3>
+          <p class="text-text-light leading-relaxed text-sm mb-3">
+            Pa anger hur högt undertryck roboten skapar, och mer Pa behövs främst för att dra upp smuts ur mattfibrer. Har du mest hårdgolv gör skillnaden mellan 5 500 och 20 000 Pa mindre än du tror, på tjocka mattor och i hem med päls är den däremot avgörande. </p>
+          <p class="text-text-light leading-relaxed text-sm">
+            Toppeffekten används dessutom sällan hela passet. Roborock höjer sugkraften automatiskt när mattdetekteringen slår till och sänker den igen på hårdgolv, vilket sparar både batteri och ljudnivå. Utgå från golvytorna hemma i stället för att jaga högsta siffran: en robot som räcker hela bostaden på en laddning gör mer nytta än en som stannar halvvägs. </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Behöver du en station med mopptvätt?</h3>
+          <p class="text-text-light leading-relaxed text-sm mb-3">
+            En station med mopptvätt sköljer plattorna åt dig mellan rummen och efter körningen, så du slipper hantera en genomsmutsad mopp för hand. Kör du mopp varje vecka är det den funktion som gör mest skillnad i vardagen. Städar du mest torrt räcker en station som bara tömmer dammet. </p>
+          <p class="text-text-light leading-relaxed text-sm">
+            Ju varmare vatten stationen tvättar med, desto lättare släpper fett och intorkade fläckar ur fibrerna, och Saros 10R samt Qrevo-modellerna med varmvattentvätt är de som går längst här. Priset du betalar är golvyta: en fullautomatisk station tar plats och vill stå mot en fri vägg. Fler modeller med den typen av lösning hittar du bland <a href="/robotdammsugare/med-bassation/" class="text-accent underline">robotdammsugare med basstation</a>. </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Vad gör 3D ToF LiDAR och RGB-kamera i StarSight 2.0?</h3>
+          <p class="text-text-light leading-relaxed text-sm mb-3">
+            En ToF-sensor mäter avstånd genom ljusets restid och ritar rummet i tre dimensioner, medan RGB-kameran känner igen vad föremålet faktiskt är. Tillsammans ser Saros 10R både att något ligger på golvet och om det är en sladd eller en toffla, och väljer väg utifrån det. </p>
+          <p class="text-text-light leading-relaxed text-sm">
+            Det är skillnaden mot enklare hinderdetektering, som registrerar att vägen är blockerad men inte vad som blockerar den. Antalet objekttyper roboten kan skilja på växer för varje generation, och ju fler den känner igen, desto mindre behöver du plocka undan innan körningen. Har du barn, husdjur eller en hall där skor alltid ligger framme är det här den funktion som gör att roboten faktiskt kan köra utan uppsyn. </p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Hur planerar du reservdelar och underhåll?</h3>
+          <p class="text-text-light leading-relaxed text-sm mb-3">
+            Filter, sidoborste, huvudrulle och moppplattor är slitdelar oavsett modell, och de sitter olika i S8-serien och Qrevo-serien. Kolla vad din modell tar innan du köper, så slipper du stå med ett filter som inte passar. Byt när sugkraften märkbart sjunker eller moppfibrerna mattats ihop. </p>
+          <p class="text-text-light leading-relaxed text-sm">
+            Gummirullar samlar mindre hår än borstrullar, men även de behöver rensas där rullen möter lagret. Stationens dammpåse är den del som byts mest regelbundet, resten går på känsla: lyssnar du efter när roboten börjar låta ansträngd hittar du oftast ett igensatt filter. Vilka delar som passar din serie ser du i vår översikt över <a href="/reservdelar/roborock-qrevo-serien/" class="text-accent underline">reservdelar till Roborock Qrevo-serien</a>. </p>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -63,16 +64,7 @@ export const articleMeta = {
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 27 juli 2026</span>
-  </div>
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-07-27">2026-07-27</time></p>
+    <AuthorByline datePublished="2026-04-05" dateModified="2026-07-27" />
 
     <header class="mb-8">
       <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Eufy vs iRobot Roomba 2026</h1>
@@ -81,7 +73,7 @@ export const articleMeta = {
         question="Snabbt svar: Är Eufy eller iRobot Roomba bäst?"
         answer="Eufy X10 Pro Omni ger mest teknik för pengarna 2026: 8 000 Pa, LiDAR-navigering, automatisk tömning och längre batteritid. iRobot Roomba j9+ vinner för husdjursägare och Apple-användare, med PrecisionVision som känner igen djuravföring och marknadens enda HomeKit-stöd. Väljer du på pris och prestanda: Eufy. På ekosystem: iRobot."
       />
-      <p class="text-gray-600 text-lg max-w-2xl">
+      <p class="text-text-light text-lg max-w-2xl">
         Eufy ger mer teknologi per krona med LiDAR, stark sugstyrka och automatisk tömning. iRobot Roomba erbjuder ett etablerat ekosystem, överlägsen mjukvara och branschens bästa smarta hem-integration. Vilket passar ditt hem?
       </p>
 
@@ -91,15 +83,15 @@ export const articleMeta = {
     <!-- Quick verdict -->
     <div class="grid sm:grid-cols-2 gap-4 mb-10">
       <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
-        <p class="text-xs font-semibold text-blue-700 uppercase mb-1">Bäst teknik för pengarna</p>
+        <p class="text-xs font-bold text-accent-dark mb-1">Bäst teknik för pengarna</p>
         <h2 class="text-xl font-bold text-gray-900 mb-2">Eufy X10 Pro Omni</h2>
-        <p class="text-sm text-gray-600 mb-4">8 000 Pa, LiDAR, automatisk tömning och påfyllning. . Bäst ren prestanda per krona 2026.</p>
-        <a href="https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3282928&url=https://www.proshop.se/Robotdammsugare/Eufy-Robotdammsugare-X10-Pro-Omni-Black/3282928" target="_blank" rel="nofollow sponsored noopener" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold py-2.5 px-4 rounded-lg text-center transition-colors">Se Eufy X10 Pro Omni</a>
+        <p class="text-sm text-text-light mb-4">8 000 Pa, LiDAR, automatisk tömning och påfyllning. . Bäst ren prestanda per krona 2026.</p>
+        <a href="https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3282928&url=https://www.proshop.se/Robotdammsugare/Eufy-Robotdammsugare-X10-Pro-Omni-Black/3282928" target="_blank" rel="nofollow sponsored noopener" class="block w-full bg-cta hover:bg-cta-dark text-white text-sm font-semibold py-2.5 px-4 rounded-lg text-center transition-colors">Se Eufy X10 Pro Omni</a>
       </div>
       <div class="bg-gray-50 border border-gray-300 rounded-xl p-5">
-        <p class="text-xs font-semibold text-gray-600 uppercase mb-1">Bäst ekosystem och hinderdetektering</p>
+        <p class="text-xs font-semibold text-text-light uppercase mb-1">Bäst ekosystem och hinderdetektering</p>
         <h2 class="text-xl font-bold text-gray-900 mb-2">iRobot Roomba j9+</h2>
-        <p class="text-sm text-gray-600 mb-4">PrecisionVision Navigation, automatisk tömning, Google Home + Alexa + HomeKit. . Bäst för Apple-ekosystemet och husdjursägare.</p>
+        <p class="text-sm text-text-light mb-4">PrecisionVision Navigation, automatisk tömning, Google Home + Alexa + HomeKit. . Bäst för Apple-ekosystemet och husdjursägare.</p>
         <a href="https://www.irobot.se" target="_blank" rel="nofollow noopener" class="block w-full bg-gray-800 hover:bg-gray-900 text-white text-sm font-semibold py-2.5 px-4 rounded-lg text-center transition-colors">Se iRobot Roomba j9+</a>
       </div>
     </div>
@@ -107,13 +99,13 @@ export const articleMeta = {
     <!-- Comparison table -->
     <section class="mb-10">
       <h2 class="text-2xl font-bold text-gray-900 mb-5">Jämförelsetabell</h2>
-      <div class="overflow-x-auto">
+      <div class="spec-table-wrap">
         <table class="w-full border border-gray-200 rounded-xl overflow-hidden text-sm">
           <thead>
             <tr class="bg-gray-50 border-b border-gray-200">
-              <th class="text-left p-4 font-semibold text-gray-700">Egenskap</th>
-              <th class="text-center p-4 font-semibold text-blue-700">Eufy X10 Pro Omni</th>
-              <th class="text-center p-4 font-semibold text-gray-700">iRobot Roomba j9+</th>
+              <th class="text-left p-4 font-semibold text-text">Egenskap</th>
+              <th class="text-center p-4 font-semibold text-accent-dark">Eufy X10 Pro Omni</th>
+              <th class="text-center p-4 font-semibold text-text">iRobot Roomba j9+</th>
             </tr>
           </thead>
           <tbody>
@@ -132,11 +124,11 @@ export const articleMeta = {
             ].map((row, i) => (
               <tr class={`border-b border-gray-100 ${i % 2 === 0 ? '' : 'bg-gray-50/50'}`}>
                 <td class="p-4 font-semibold text-gray-900">{row.label}</td>
-                <td class={`p-4 text-center ${row.winner === 'eufy' ? 'text-blue-700 font-bold bg-blue-50' : 'text-gray-600'}`}>
+                <td data-col="Eufy X10 Pro Omni" class={`p-4 text-center ${row.winner === 'eufy' ? 'text-winner font-bold bg-winner/5' : 'text-text-light'}`}>
                   {row.eufy}
-                  {row.winner === 'eufy' && <span class="block text-xs font-normal text-blue-400 mt-0.5">Vinnare</span>}
+                  {row.winner === 'eufy' && <span class="block text-xs font-normal text-accent-light mt-0.5">Vinnare</span>}
                 </td>
-                <td class={`p-4 text-center ${row.winner === 'irobot' ? 'text-gray-900 font-bold bg-gray-100' : 'text-gray-600'}`}>
+                <td data-col="iRobot Roomba j9+" class={`p-4 text-center ${row.winner === 'irobot' ? 'text-gray-900 font-bold bg-gray-100' : 'text-text-light'}`}>
                   {row.irobot}
                   {row.winner === 'irobot' && <span class="block text-xs font-normal text-gray-500 mt-0.5">Vinnare</span>}
                 </td>
@@ -149,20 +141,20 @@ export const articleMeta = {
 
     <section class="mb-8">
       <h2 class="text-2xl font-bold text-gray-900 mb-4">Sugstyrka: Eufy vinner på siffror, men jämförelsen är svår</h2>
-      <p class="text-gray-600 mb-4">
+      <p class="text-text-light mb-4">
         Eufy X10 Pro Omni har 8 000 Pa sugstyrka, ett imponerande tal. iRobot anger inte Pa-värden på samma sätt och mäter prestanda på andra sätt. iRobots Roomba j9+ presterar utmärkt i praktiska tester trots lägre Pa-siffror, tack vare en väloptimerad borst- och luftströmdesign.
       </p>
-      <p class="text-gray-600">
+      <p class="text-text-light">
         I praktiken: Eufy presterar starkare på djuppälsmattor. iRobot presterar jämbördigt på hårdgolv och standardmattor. Pa-siffror är inte alltid direkt jämförbara mellan märken.
       </p>
     </section>
 
     <section class="mb-8">
       <h2 class="text-2xl font-bold text-gray-900 mb-4">Smarta hem och ekosystem: iRobot vinner</h2>
-      <p class="text-gray-600 mb-4">
+      <p class="text-text-light mb-4">
         iRobot är det enda märket med Apple HomeKit-stöd bland robotdammsugare, viktigt för Apple-användare. Kombinationen med Google Home, Amazon Alexa och HomeKit gör Roomba till det mest universella alternativet för röststyrning och hemautomation.
       </p>
-      <p class="text-gray-600">
+      <p class="text-text-light">
         iRobots app har dessutom en av marknadens bästa kartfunktioner: selektiva rum, schemasättning per rum, smart recharge och återupptagning. Eufys EufyHome-app är bra men inte lika mogen som iRobots.
       </p>
     </section>
@@ -171,23 +163,23 @@ export const articleMeta = {
       <h2 class="text-2xl font-bold text-gray-900 mb-4">Bra att veta inför köpet</h2>
 
       <h3 class="text-lg font-bold text-gray-900 mb-2">Vad innebär returladdning och återupptagning i praktiken?</h3>
-      <p class="text-gray-600 mb-3">
+      <p class="text-text-light mb-3">
         När batteriet börjar ta slut åker roboten tillbaka till stationen, laddar och återupptar städningen där den slutade. iRobot j7+ och j9+ gör det automatiskt, och samma princip gäller i Eufys klass. Därför spelar skillnaden mellan 120 och 180 minuters batteritid mindre roll i hem av normal storlek.
       </p>
-      <p class="text-gray-600 mb-5">
+      <p class="text-text-light mb-5">
         Batteritiden blir i stället en fråga om hur snabbt hela bostaden blir klar. En robot som måste mellanladda tar längre tid på sig totalt, vilket kan spela roll om du vill att städningen ska vara avklarad innan du kommer hem från jobbet.
       </p>
 
       <h3 class="text-lg font-bold text-gray-900 mb-2">Är HomeKit-stödet värt att styra köpet efter?</h3>
-      <p class="text-gray-600 mb-5">
+      <p class="text-text-light mb-5">
         Bara om du redan styr hemmet via Apples ekosystem. iRobot är ensamt om Apple HomeKit-stöd bland robotdammsugare, vilket ger röststyrning via Siri och automationer i Hemma-appen. Använder du i stället Google Home eller Amazon Alexa fungerar båda märkena lika bra, och då försvinner iRobots ekosystemfördel i praktiken.
       </p>
 
       <h3 class="text-lg font-bold text-gray-900 mb-2">Hur mycket ska du väga in tillgången på reservdelar?</h3>
-      <p class="text-gray-600 mb-3">
+      <p class="text-text-light mb-3">
         Mer än de flesta gör. Filter, borstar och moppkuddar är förbrukningsdelar som måste bytas löpande, och en robot utan reservdelar blir ett engångsköp. iRobots etablerade system gör delarna lätta att hitta, medan Eufys tillgång har förbättrats tydligt de senaste åren. Räkna med löpande kostnader oavsett märke.
       </p>
-      <p class="text-gray-600">
+      <p class="text-text-light">
         Vill du se hur toppmodellen står sig i detalj har vi testat den i vår recension av <a href="/irobot-roomba-j9-plus/" class="text-accent underline">iRobot Roomba j9+</a>. Funderar du i stället på vilken Eufy-modell som passar din budget hittar du hela sortimentet i vår <a href="/eufy-guide/" class="text-accent underline">Eufy guide med alla modeller jämförda</a>.
       </p>
     </section>
@@ -198,20 +190,20 @@ export const articleMeta = {
       <div class="grid sm:grid-cols-2 gap-4">
         <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
           <h3 class="font-bold text-blue-800 mb-3">Välj Eufy om du...</h3>
-          <ul class="space-y-2 text-sm text-gray-700">
-            <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Vill ha bäst teknik per krona, LiDAR + 8 000 Pa + automatisk tömning</span></li>
-            <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Inte använder Apple HomeKit</span></li>
-            <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Vill ha bättre moppfunktion och längre batteritid</span></li>
-            <li class="flex gap-2"><span class="text-blue-600 font-bold">+</span><span>Sparar jämfört med iRobot j9+</span></li>
+          <ul class="space-y-2 text-sm text-text">
+            <li class="flex gap-2"><span class="text-winner font-bold">+</span><span>Vill ha bäst teknik per krona, LiDAR + 8 000 Pa + automatisk tömning</span></li>
+            <li class="flex gap-2"><span class="text-winner font-bold">+</span><span>Inte använder Apple HomeKit</span></li>
+            <li class="flex gap-2"><span class="text-winner font-bold">+</span><span>Vill ha bättre moppfunktion och längre batteritid</span></li>
+            <li class="flex gap-2"><span class="text-winner font-bold">+</span><span>Sparar jämfört med iRobot j9+</span></li>
           </ul>
         </div>
         <div class="bg-gray-50 border border-gray-300 rounded-xl p-5">
-          <h3 class="font-bold text-gray-700 mb-3">Välj iRobot Roomba om du...</h3>
-          <ul class="space-y-2 text-sm text-gray-700">
-            <li class="flex gap-2"><span class="text-gray-600 font-bold">+</span><span>Använder Apple HomeKit och vill ha sömlös integration</span></li>
-            <li class="flex gap-2"><span class="text-gray-600 font-bold">+</span><span>Har husdjur och vill ha PrecisionVision-hinderdetektering för avföring</span></li>
-            <li class="flex gap-2"><span class="text-gray-600 font-bold">+</span><span>Värdesätter ett etablerat märke med lång service-historik</span></li>
-            <li class="flex gap-2"><span class="text-gray-600 font-bold">+</span><span>Vill ha den bästa appen och de mest avancerade kartfunktionerna</span></li>
+          <h3 class="font-bold text-text mb-3">Välj iRobot Roomba om du...</h3>
+          <ul class="space-y-2 text-sm text-text">
+            <li class="flex gap-2"><span class="text-text-light font-bold">+</span><span>Använder Apple HomeKit och vill ha sömlös integration</span></li>
+            <li class="flex gap-2"><span class="text-text-light font-bold">+</span><span>Har husdjur och vill ha PrecisionVision-hinderdetektering för avföring</span></li>
+            <li class="flex gap-2"><span class="text-text-light font-bold">+</span><span>Värdesätter ett etablerat märke med lång service-historik</span></li>
+            <li class="flex gap-2"><span class="text-text-light font-bold">+</span><span>Vill ha den bästa appen och de mest avancerade kartfunktionerna</span></li>
           </ul>
         </div>
       </div>
@@ -223,19 +215,19 @@ export const articleMeta = {
       <div class="grid sm:grid-cols-2 gap-4">
         <a href="/eufy-vs-roborock/" class="bg-white border border-gray-200 rounded-xl p-4 transition-shadow">
           <p class="font-bold text-gray-900">Eufy vs Roborock 2026</p>
-          <p class="text-sm text-gray-600">Eufy mot marknadsledarens robotar</p>
+          <p class="text-sm text-text-light">Eufy mot marknadsledarens robotar</p>
         </a>
         <a href="/eufy-vs-dreame/" class="bg-white border border-gray-200 rounded-xl p-4 transition-shadow">
           <p class="font-bold text-gray-900">Eufy vs Dreame 2026</p>
-          <p class="text-sm text-gray-600">Eufy mot moppspecialisten</p>
+          <p class="text-sm text-text-light">Eufy mot moppspecialisten</p>
         </a>
         <a href="/dreame-vs-irobot/" class="bg-white border border-gray-200 rounded-xl p-4 transition-shadow">
           <p class="font-bold text-gray-900">Dreame vs iRobot 2026</p>
-          <p class="text-sm text-gray-600">Kinesisk utmanare mot klassikern</p>
+          <p class="text-sm text-text-light">Kinesisk utmanare mot klassikern</p>
         </a>
         <a href="/" class="bg-white border border-gray-200 rounded-xl p-4 transition-shadow">
           <p class="font-bold text-gray-900">Bästa robotdammsugare 2026</p>
-          <p class="text-sm text-gray-600">Komplett topplista</p>
+          <p class="text-sm text-text-light">Komplett topplista</p>
         </a>
       </div>
     </section>

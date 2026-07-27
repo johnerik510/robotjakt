@@ -1,5 +1,6 @@
 ---
 import { ctaRel } from '../lib/cta-rel';
+import AuthorByline from '../components/AuthorByline.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
@@ -91,20 +92,11 @@ export const articleMeta = {
 <BaseLayout
   title="Vilken Mammotion ska du välja? LUBA AWO 3000 för de flesta"
   description="Tre LUBA-modeller, tre tomtstorlekar: AWO 1000H upp till 1 000 m², AWO 3000 upp till 3 000 m² och AWD 5000X upp till 5 000 m². Alla utan slinga med RTK GPS."
-  article={{ datePublished: "2026-05-05", dateModified: "2026-07-11", image: "/images/mammotion-luba-awo-3000.webp" }}
+  article={{ datePublished: "2026-05-05", dateModified: "2026-07-27", image: "/images/mammotion-luba-awo-3000.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-  <div class="max-w-4xl mx-auto px-4 py-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-    <a href="/om-redaktionen/" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      <span class="font-medium text-slate-700">Axel Jönemyr</span>
-    </a>
-    <span class="text-slate-400">·</span>
-    <span>Grundare och redaktör, Robotjakt</span>
-    <span>·</span>
-    <span>Uppdaterad 11 juli 2026</span>
-  </div>
-    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: <time datetime="2026-07-11">2026-07-11</time></p>
+    <AuthorByline datePublished="2026-05-05" dateModified="2026-07-27" />
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
       Mammotion LUBA robotgräsklippare 2026, GPS utan slinga
@@ -121,10 +113,10 @@ export const articleMeta = {
     <!-- Above-the-fold CTA -->
     <div class="grid sm:grid-cols-2 gap-3 mb-8">
       <a href="https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25354650&url=https://www.csmegastore.se/i/25354650/mammation-luba-3-3000x-awd-lidar-rtk-robotgr%c3%a4sklippare" target="_blank" rel="nofollow sponsored noopener" class="inline-flex items-center justify-center gap-2 bg-cta hover:bg-cta-dark text-white font-bold py-3 px-5 rounded-xl text-sm shadow-lg transition-colors">
-        Bra pris hos CS Megastore (Mammotion LUBA 3) →
+        Bra pris hos CS Megastore (Mammotion LUBA 3)
       </a>
       <a href="/robotgrasklippare/" class="inline-flex items-center justify-center gap-2 border border-border bg-white hover:bg-bg-alt text-text font-semibold py-3 px-5 rounded-xl text-sm transition-colors">
-        Jämför alla robotgräsklippare →
+        Jämför alla robotgräsklippare
       </a>
     </div>
 
@@ -203,7 +195,7 @@ export const articleMeta = {
 
     <section class="mt-10 mb-10">
       <h2 class="font-heading text-2xl font-bold text-text mb-4">Mammotion vs Husqvarna vs Segway, vad ska du välja?</h2>
-      <div class="overflow-x-auto">
+      <div class="spec-table-wrap">
         <table class="w-full text-sm border-collapse">
           <thead>
             <tr class="bg-bg-alt">
@@ -215,27 +207,63 @@ export const articleMeta = {
           <tbody>
             <tr class="bg-winner/5">
               <td class="p-3 border border-border font-medium">Mammotion LUBA AWO 3000</td>
-              <td class="p-3 border border-border">3 000 m²</td>
-              <td class="p-3 border border-border text-winner font-semibold">Nej</td>
+              <td data-col="Areal" class="p-3 border border-border">3 000 m²</td>
+              <td data-col="Slinga" class="p-3 border border-border text-winner font-semibold">Nej</td>
             </tr>
             <tr>
               <td class="p-3 border border-border font-medium">Segway Navimow H500E</td>
-              <td class="p-3 border border-border">5 000 m²</td>
-              <td class="p-3 border border-border text-winner font-semibold">Nej</td>
+              <td data-col="Areal" class="p-3 border border-border">5 000 m²</td>
+              <td data-col="Slinga" class="p-3 border border-border text-winner font-semibold">Nej</td>
             </tr>
             <tr class="bg-bg-alt">
               <td class="p-3 border border-border font-medium">Husqvarna 430X Nera (EPOS)</td>
-              <td class="p-3 border border-border">3 200 m²</td>
-              <td class="p-3 border border-border text-winner font-semibold">Nej (EPOS)</td>
+              <td data-col="Areal" class="p-3 border border-border">3 200 m²</td>
+              <td data-col="Slinga" class="p-3 border border-border text-winner font-semibold">Nej (EPOS)</td>
             </tr>
             <tr>
               <td class="p-3 border border-border font-medium">Husqvarna 315X</td>
-              <td class="p-3 border border-border">1 600 m²</td>
-              <td class="p-3 border border-border text-red-500 font-semibold">Ja</td>
+              <td data-col="Areal" class="p-3 border border-border">1 600 m²</td>
+              <td data-col="Slinga" class="p-3 border border-border text-red-500 font-semibold">Ja</td>
             </tr>
           </tbody>
         </table>
       </div>
+    </section>
+
+    <section class="mt-10 mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Detta bör du veta innan du köper en Mammotion LUBA</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad ingår i installationen av en LUBA utan slinga?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        I paketet ligger en RTK-basstation som du monterar med fri sikt mot himlen, plus laddstationen. Resten sker i Mammotion-appen: du ritar upp gräsmattans gränser, lägger in förbjudna zoner och sparar ett schema. Räkna med 30 till 60 minuter, utan spade och utan fackman.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Det är här den största praktiska skillnaden mot en slingmodell sitter. En perimeterkabel låser gränserna till där kabeln ligger, och vill du bygga om trädgården nästa år får du gräva om. Med RTK GPS drar du en ny gräns med fingret i appen. Zonerna kan också ges egna scheman, så framsidan klipps på förmiddagen och baksidan på eftermiddagen. Hela kategorin fungerar på samma princip, se vår översikt över <a href="/robotgrasklippare-utan-slinga/" class="text-accent underline">robotgräsklippare utan slinga</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur mycket lutning klarar en LUBA i praktiken?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Samtliga LUBA-modeller anges till 75% lutning, vilket är brant för kategorin. Siffran gäller vid bra grepp. Blött gräs, lös jord och nyanlagd mark sänker marginalen, så räkna med att den brantaste delen av tomten är den som avgör om roboten fastnar.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Kombinationen av däckmönster och hjulupphängning är det som avgör hur långt en robot tar sig i en slänt, och därför skiljer siffrorna så mycket mellan modeller. Har du en enstaka brant backe är det ofta smartare att lägga den i en egen zon och låta roboten köra den när gräset är torrt. Har du många lutningar går det att jämföra hela fältet i vår guide till <a href="/robotgrasklippare-for-lutning/" class="text-accent underline">robotgräsklippare för lutning</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad skiljer kamerabaserad hinderdetektering från stötsensorer?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        En kamera ser hindret innan roboten är framme och kan styra runt det. En stötsensor kräver kontakt, roboten backar och provar en ny riktning. Skillnaden märks på trädgårdsmöbler, leksaker och husdjur som ligger i vägen. LUBA AWO 3000 har kamera för hinderdetektering.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        För en familj med barn och husdjur är det en verklig skillnad i vardagen. En robot som stöter emot en solstol flyttar den lite för varje pass, medan en robot som ser stolen väljer en väg runt. Kameran hjälper också mot föremål som är för låga för att utlösa en stötsensor men höga nog att fastna under kåpan. Fasta hinder som träd och blomsterbäddar ritar du ändå in som förbjudna zoner i appen.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Passar en LUBA om tomten har många träd och häckar?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        RTK behöver fri sikt mellan antenn, satelliter och robot. Tät trädkrona eller en hög häck runt hela tomten kan göra signalen ojämn i vissa partier. Sätt antennen så högt och öppet du kan, det är den enda installationsdetaljen som verkligen avgör hur väl systemet fungerar.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Testet är enkelt att göra innan du börjar rita zoner: står du vid antennens tänkta plats och ser en stor del av himlen är förutsättningarna goda. Ser du mest grenar behöver fästet upp på en högre punkt. Är tomten så sluten att ingen placering fungerar är en kabelbaserad modell det mer förutsägbara valet, eftersom den inte är beroende av satellitsignal överhuvudtaget.
+      </p>
     </section>
 
     <FAQ items={faqItems} />

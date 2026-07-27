@@ -197,7 +197,7 @@ export const articleMeta = {
     <!-- Comparison table -->
     <section class="mb-10" aria-label="Jämförelsetabell robotdammsugare med basstation">
       <h2 class="font-heading text-xl font-bold text-text mb-4">Snabbjämförelse, basstationsfunktioner</h2>
-      <div class="overflow-x-auto rounded-xl border border-border">
+      <div class="spec-table-wrap rounded-xl border border-border">
         <table class="w-full text-sm bg-white">
           <thead>
             <tr class="border-b border-border bg-bg-alt">
@@ -213,11 +213,11 @@ export const articleMeta = {
             {products.map((p, i) => (
               <tr class={i % 2 === 0 ? 'bg-winner/5' : ''}>
                 <td class="px-4 py-3 font-medium text-text whitespace-nowrap">{p.name}</td>
-                <td class={`px-4 py-3 ${boolClass(p.selfEmptying)}`}>{boolCell(p.selfEmptying)}</td>
-                <td class={`px-4 py-3 ${boolClass(p.mopCleaning)}`}>{boolCell(p.mopCleaning)}</td>
-                <td class={`px-4 py-3 ${boolClass(p.hotWater)}`}>{boolCell(p.hotWater)}</td>
-                <td class={`px-4 py-3 ${boolClass(p.autoRefill)}`}>{boolCell(p.autoRefill)}</td>
-                <td class="px-4 py-3 text-text-light">{p.stationSize}</td>
+                <td data-col="Självtömmande" class={`px-4 py-3 ${boolClass(p.selfEmptying)}`}>{boolCell(p.selfEmptying)}</td>
+                <td data-col="Mopprengöring" class={`px-4 py-3 ${boolClass(p.mopCleaning)}`}>{boolCell(p.mopCleaning)}</td>
+                <td data-col="Varmvatten" class={`px-4 py-3 ${boolClass(p.hotWater)}`}>{boolCell(p.hotWater)}</td>
+                <td data-col="Auto-påfyllning" class={`px-4 py-3 ${boolClass(p.autoRefill)}`}>{boolCell(p.autoRefill)}</td>
+                <td data-col="Stationsstorlek" class="px-4 py-3 text-text-light">{p.stationSize}</td>
               </tr>
             ))}
           </tbody>
