@@ -1,4 +1,5 @@
 ---
+import { ctaRel } from '../lib/cta-rel';
 import ArticleLayout from '../layouts/ArticleLayout.astro';
 import FAQ from '../components/FAQ.astro';
 import StickyCTA from '../components/StickyCTA.astro';
@@ -103,7 +104,7 @@ export const articleMeta = {
           </div>
           <a
             href={kjellUrl}
-            rel="sponsored nofollow noopener noreferrer"
+            rel={ctaRel(kjellUrl)}
             target="_blank"
             class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
           >
@@ -225,7 +226,7 @@ export const articleMeta = {
     <p class="text-text-light text-sm mb-4">Finns hos Kjell &amp; Company, online och i 18 butiker i Sverige.</p>
     <a
       href={kjellUrl}
-      rel="sponsored nofollow noopener noreferrer"
+      rel={ctaRel(kjellUrl)}
       target="_blank"
       class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
     >

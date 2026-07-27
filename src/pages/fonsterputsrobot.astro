@@ -1,4 +1,5 @@
 ---
+import { ctaRel } from '../lib/cta-rel';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
@@ -95,7 +96,7 @@ export const articleMeta = {
               <span>Teknik: {row.teknik}</span>
               <span>Betyg: {row.betyg}/10</span>
             </div>
-            <a href={row.url} rel="sponsored nofollow noopener noreferrer" target="_blank" data-affiliate="true" class="text-accent underline font-medium text-sm">Se pris</a>
+            <a href={row.url} rel={ctaRel(row.url)} target="_blank" data-affiliate="true" class="text-accent underline font-medium text-sm">Se pris</a>
           </div>
         ))}
       </div>

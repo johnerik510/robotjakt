@@ -1,4 +1,5 @@
 ---
+import { ctaRel } from '../lib/cta-rel';
 /**
  * Kompakt CTA för redaktionella sidor (recensioner, jämförelser, guider).
  * Placeras direkt efter ingressen/verdict-boxen, ovanför brödtexten, så att
@@ -48,7 +49,7 @@ const title = heading ?? (resolved.length === 1
           <div class="flex flex-col sm:flex-row gap-2 sm:flex-wrap">
             <a
               href={r.stores[0].url}
-              rel="sponsored nofollow noopener noreferrer"
+              rel={ctaRel(r.stores[0].url)}
               target="_blank"
               class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
             >
@@ -57,7 +58,7 @@ const title = heading ?? (resolved.length === 1
             {r.stores.slice(1).map((s) => (
               <a
                 href={s.url}
-                rel="sponsored nofollow noopener noreferrer"
+                rel={ctaRel(s.url)}
                 target="_blank"
                 class="inline-flex items-center justify-center px-5 py-3 border-2 border-border text-text-light font-semibold rounded-lg hover:border-cta hover:text-cta transition-colors text-sm min-h-[44px]"
               >

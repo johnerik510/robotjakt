@@ -1,4 +1,5 @@
 ---
+import { ctaRel } from '../lib/cta-rel';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
@@ -149,7 +150,7 @@ export const articleMeta = {
         <div class="flex flex-col sm:flex-row gap-2 flex-wrap">
           <a
             href={elonUrl}
-            rel="nofollow sponsored noopener"
+            rel={ctaRel(elonUrl)}
             target="_blank"
             class="inline-flex items-center justify-center bg-cta hover:bg-cta/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
           >
@@ -157,7 +158,7 @@ export const articleMeta = {
           </a>
           <a
             href={komplettUrl}
-            rel="sponsored nofollow noopener noreferrer"
+            rel={ctaRel(komplettUrl)}
             target="_blank"
             class="inline-flex items-center justify-center px-5 py-3 border-2 border-border text-text-light font-semibold rounded-lg hover:border-cta hover:text-cta transition-colors min-h-[44px] text-sm"
           >
@@ -165,7 +166,7 @@ export const articleMeta = {
           </a>
           <a
             href={proshopUrl}
-            rel="sponsored nofollow noopener noreferrer"
+            rel={ctaRel(proshopUrl)}
             target="_blank"
             class="inline-flex items-center justify-center px-5 py-3 border-2 border-border text-text-light font-semibold rounded-lg hover:border-cta hover:text-cta transition-colors min-h-[44px] text-sm"
           >
@@ -173,7 +174,7 @@ export const articleMeta = {
           </a>
           <a
             href={csMegastoreUrl}
-            rel="sponsored nofollow noopener noreferrer"
+            rel={ctaRel(csMegastoreUrl)}
             target="_blank"
             class="inline-flex items-center justify-center px-5 py-3 border-2 border-border text-text-light font-semibold rounded-lg hover:border-cta hover:text-cta transition-colors min-h-[44px] text-sm"
           >

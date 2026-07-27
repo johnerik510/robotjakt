@@ -1,4 +1,5 @@
 ---
+import { ctaRel } from '../lib/cta-rel';
 import { resolveMultiCTA, storeFromUrl } from '../lib/multi-cta';
 
 interface Props {
@@ -160,7 +161,7 @@ const STAR = 'M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h
               <div class="flex flex-wrap items-center gap-2 mt-2.5">
                 <span class="text-xs font-semibold text-text-light uppercase tracking-wide">Även hos:</span>
                 {otherCTAs.map((o) => (
-                  <a href={o.url} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center px-3 py-1.5 rounded-lg border border-border text-xs font-semibold text-text-light hover:border-cta hover:text-cta transition-colors no-underline">
+                  <a href={o.url} rel={ctaRel(o.url)} target="_blank" class="inline-flex items-center px-3 py-1.5 rounded-lg border border-border text-xs font-semibold text-text-light hover:border-cta hover:text-cta transition-colors no-underline">
                     {o.store}
                   </a>
                 ))}

@@ -1,4 +1,5 @@
 ---
+import { ctaRel } from '../lib/cta-rel';
 /**
  * Featured-block ("Redaktionens val") för money pages. Tar emot robotjakts
  * befintliga produktobjekt (samma form som ProductCard) och auto-promotar till
@@ -38,7 +39,7 @@ const stars = Math.round(rating * 2) / 2;
     <div class="flex flex-col sm:flex-row gap-4 sm:gap-5">
       <div class="flex-shrink-0 mx-auto sm:mx-0">
         {image && (
-          <a href={primaryUrl} rel="sponsored nofollow noopener noreferrer" target="_blank" class="block w-36 h-36 sm:w-44 sm:h-44 rounded-xl bg-gray-50 shadow-sm overflow-hidden">
+          <a href={primaryUrl} rel={ctaRel(primaryUrl)} target="_blank" class="block w-36 h-36 sm:w-44 sm:h-44 rounded-xl bg-gray-50 shadow-sm overflow-hidden">
             <img src={image} alt={name} loading="eager" width="176" height="176" class="w-full h-full object-contain p-3" />
           </a>
         )}
@@ -46,7 +47,7 @@ const stars = Math.round(rating * 2) / 2;
       <div class="flex-1 min-w-0">
         {brand && <p class="text-xs font-semibold text-accent uppercase tracking-wide mb-1">{brand}</p>}
         <h2 class="font-heading text-xl sm:text-2xl font-bold text-text leading-tight mb-1.5" data-toc-skip>
-          <a href={primaryUrl} rel="sponsored nofollow noopener noreferrer" target="_blank" class="!text-text hover:!text-accent transition-colors no-underline">{name}</a>
+          <a href={primaryUrl} rel={ctaRel(primaryUrl)} target="_blank" class="!text-text hover:!text-accent transition-colors no-underline">{name}</a>
         </h2>
         <div class="flex items-center gap-1 mb-2.5" aria-label={`Betyg: ${rating} av 5`}>
           {Array.from({ length: 5 }).map((_, i) => (
@@ -65,7 +66,7 @@ const stars = Math.round(rating * 2) / 2;
           </ul>
         )}
         <span class="block text-xs font-semibold text-text-lighter mb-1">Bra pris hos:</span>
-        <a href={primaryUrl} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-8 py-4 bg-cta hover:bg-cta-dark text-white font-bold text-base rounded-xl transition-colors shadow-md min-h-[56px] no-underline">
+        <a href={primaryUrl} rel={ctaRel(primaryUrl)} target="_blank" class="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-8 py-4 bg-cta hover:bg-cta-dark text-white font-bold text-base rounded-xl transition-colors shadow-md min-h-[56px] no-underline">
           {primaryStore}
           <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
         </a>
@@ -73,7 +74,7 @@ const stars = Math.round(rating * 2) / 2;
           <div class="flex flex-wrap items-center gap-2 mt-3">
             <span class="text-xs font-semibold text-text-lighter">Även hos:</span>
             {others.map((o) => (
-              <a href={o.url} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center px-3 py-1.5 rounded-lg bg-white border border-border text-xs font-semibold text-text-light hover:border-accent hover:text-accent transition-colors no-underline">
+              <a href={o.url} rel={ctaRel(o.url)} target="_blank" class="inline-flex items-center px-3 py-1.5 rounded-lg bg-white border border-border text-xs font-semibold text-text-light hover:border-accent hover:text-accent transition-colors no-underline">
                 {o.store}
               </a>
             ))}

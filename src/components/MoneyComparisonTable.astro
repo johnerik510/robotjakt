@@ -1,4 +1,5 @@
 ---
+import { ctaRel } from '../lib/cta-rel';
 /**
  * Scan-and-click jämförelsetabell för money pages. Tar emot robotjakts
  * befintliga produktobjekt (samma form som ProductCard). Primär CTA promotas
@@ -67,7 +68,7 @@ const products = raw.map((p) => {
           </div>
         </div>
         {p.affiliateUrl && (
-          <a href={p.affiliateUrl} rel="sponsored nofollow noopener noreferrer" target="_blank" class="block w-full text-center bg-cta hover:bg-cta-dark text-white text-sm font-semibold py-2.5 px-4 rounded-lg transition-colors mt-3 no-underline">Bra pris hos {p.store}</a>
+          <a href={p.affiliateUrl} rel={ctaRel(p.affiliateUrl)} target="_blank" class="block w-full text-center bg-cta hover:bg-cta-dark text-white text-sm font-semibold py-2.5 px-4 rounded-lg transition-colors mt-3 no-underline">Bra pris hos {p.store}</a>
         )}
       </div>
     ))}
@@ -98,7 +99,7 @@ const products = raw.map((p) => {
           </div>
         </div>
         <div class="flex-shrink-0 w-52">
-          {p.affiliateUrl && <a href={p.affiliateUrl} rel="sponsored nofollow noopener noreferrer" target="_blank" class="block text-center bg-cta hover:bg-cta-dark text-white text-sm font-semibold py-2 px-3 rounded-lg transition-colors no-underline">Bra pris hos {p.store}</a>}
+          {p.affiliateUrl && <a href={p.affiliateUrl} rel={ctaRel(p.affiliateUrl)} target="_blank" class="block text-center bg-cta hover:bg-cta-dark text-white text-sm font-semibold py-2 px-3 rounded-lg transition-colors no-underline">Bra pris hos {p.store}</a>}
         </div>
       </div>
     ))}

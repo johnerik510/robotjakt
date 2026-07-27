@@ -1,4 +1,5 @@
 ---
+import { ctaRel } from '../lib/cta-rel';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AffiliateDisclaimer from '../components/AffiliateDisclaimer.astro';
 import FAQ from '../components/FAQ.astro';
@@ -217,7 +218,7 @@ export const articleMeta = {
               )}
               <a
                 href={model.cta}
-                rel="sponsored nofollow noopener noreferrer"
+                rel={ctaRel(model.cta)}
                 target="_blank"
                 class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
               >
@@ -226,7 +227,7 @@ export const articleMeta = {
               </a>
               <a
                 href={model.amazon}
-                rel="sponsored nofollow noopener noreferrer"
+                rel={ctaRel(model.amazon)}
                 target="_blank"
                 class="inline-flex items-center justify-center border-2 border-cta text-cta hover:bg-cta hover:text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
               >
