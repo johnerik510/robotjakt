@@ -1,14 +1,14 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-07-27T18:47:56.757Z",
-  "durationMs": 11340,
+  "timestamp": "2026-07-27T19:50:25.127Z",
+  "durationMs": 11008,
   "summary": {
     "checks": 23,
-    "errors": 8,
+    "errors": 6,
     "warnings": 29,
     "newErrors": 0,
-    "baselinedErrors": 8
+    "baselinedErrors": 6
   },
   "results": [
     {
@@ -149,7 +149,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"https://csdam.net/data/jpg/0/dc98b5ed/dc98b5ed-5b66-4dc3-85d2-044eee59877f.jpg\" används av 2 artiklar: Bästa poolrobot 2026: bäst i test och jämförelse | Billigaste poolrobot 2026: bäst i test för pengarna"
+      "message": "Bild \"/images/products/zodiac-gt3220.webp\" används av 2 artiklar: Bästa poolrobot 2026: bäst i test och jämförelse | Billigaste poolrobot 2026: bäst i test för pengarna"
     },
     {
       "check": "04-articlemeta",
@@ -160,7 +160,7 @@
   "baseline": {
     "status": "compared",
     "baselineCount": 11,
-    "baselinedCount": 8,
+    "baselinedCount": 6,
     "newErrorCount": 0
   },
   "allResults": [
@@ -191,18 +191,6 @@
       "file": "src/lib/cta-resolver.ts",
       "line": 220,
       "message": "em-dash hittad: \"// stämma och tillbehör exkluderas — annars matchas t.ex. \"Landroid Vision 500\"\""
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "error",
-      "file": "src/pages/billigaste-poolrobot.astro",
-      "message": "Bildfil saknas: https://csdam.net/data/jpg/0/dc98b5ed/dc98b5ed-5b66-4dc3-85d2-044eee59877f.jpg (refererad i Billigaste poolrobot 2026: bäst i test för pengarna)"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "error",
-      "file": "src/pages/poolrobot/index.astro",
-      "message": "Bildfil saknas: https://csdam.net/data/jpg/0/dc98b5ed/dc98b5ed-5b66-4dc3-85d2-044eee59877f.jpg (refererad i Bästa poolrobot 2026: bäst i test och jämförelse)"
     },
     {
       "check": "04-articlemeta",
@@ -342,7 +330,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"https://csdam.net/data/jpg/0/dc98b5ed/dc98b5ed-5b66-4dc3-85d2-044eee59877f.jpg\" används av 2 artiklar: Bästa poolrobot 2026: bäst i test och jämförelse | Billigaste poolrobot 2026: bäst i test för pengarna"
+      "message": "Bild \"/images/products/zodiac-gt3220.webp\" används av 2 artiklar: Bästa poolrobot 2026: bäst i test och jämförelse | Billigaste poolrobot 2026: bäst i test för pengarna"
     },
     {
       "check": "04-articlemeta",
