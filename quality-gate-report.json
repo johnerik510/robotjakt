@@ -1,8 +1,8 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-07-28T09:39:44.741Z",
-  "durationMs": 11672,
+  "timestamp": "2026-07-28T10:43:09.173Z",
+  "durationMs": 11604,
   "summary": {
     "checks": 23,
     "errors": 6,
@@ -109,7 +109,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/mammotion-luba-awo-3000.webp\" används av 8 artiklar: Husqvarna eller Mammotion 2026: 430V NERA vs LUBA 3 | Mammotion Luba AWO 3000 recension 2026: GPS-gräsrobot | Bästa robotgräsklippare utan slinga 2026: GPS-topplista | Mammotion vs Segway Navimow robotgräsklippare 2026 | Robotgräsklippare utan årsgränsavgift 2026: topplista..."
+      "message": "Bild \"/images/mammotion-luba-awd-3000.webp\" används av 8 artiklar: Husqvarna eller Mammotion 2026: 430V NERA vs LUBA 3 | Mammotion Luba AWD 3000 recension 2026: GPS-gräsrobot | Bästa robotgräsklippare utan slinga 2026: GPS-topplista | Mammotion vs Segway Navimow robotgräsklippare 2026 | Robotgräsklippare utan årsgränsavgift 2026: topplista..."
     },
     {
       "check": "04-articlemeta",
@@ -290,7 +290,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/mammotion-luba-awo-3000.webp\" används av 8 artiklar: Husqvarna eller Mammotion 2026: 430V NERA vs LUBA 3 | Mammotion Luba AWO 3000 recension 2026: GPS-gräsrobot | Bästa robotgräsklippare utan slinga 2026: GPS-topplista | Mammotion vs Segway Navimow robotgräsklippare 2026 | Robotgräsklippare utan årsgränsavgift 2026: topplista..."
+      "message": "Bild \"/images/mammotion-luba-awd-3000.webp\" används av 8 artiklar: Husqvarna eller Mammotion 2026: 430V NERA vs LUBA 3 | Mammotion Luba AWD 3000 recension 2026: GPS-gräsrobot | Bästa robotgräsklippare utan slinga 2026: GPS-topplista | Mammotion vs Segway Navimow robotgräsklippare 2026 | Robotgräsklippare utan årsgränsavgift 2026: topplista..."
     },
     {
       "check": "04-articlemeta",

@@ -8,33 +8,33 @@ import AnswerBox from '../components/AnswerBox.astro';
 
 const breadcrumbs = [
   { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
-  { label: 'Mammotion LUBA AWO 3000 vs Segway Navimow H800E' },
+  { label: 'Mammotion LUBA AWD 3000 vs Segway Navimow H800E' },
 ];
 
 const faqItems = [
   {
-    question: 'Mammotion LUBA AWO 3000 eller Segway Navimow H800E, vilket ska jag välja?',
-    answer: 'Börja med ytan: LUBA AWO 3000 tar upp till 3 000 m² medan H800E stannar vid 800 m². Har du mer gräs än 800 m² är valet redan avgjort. Ryms tomten inom båda passar LUBA AWO 3000 dig med kuperad terräng, där 75% lutningstolerans mot H800E:s 45% är en avgörande skillnad. H800E är enklare att installera och kräver ingen RTK-antenn, vilket gör den mer lämpad för öppna, plana villatomter med god GPS-mottagning.',
+    question: 'Mammotion LUBA AWD 3000 eller Segway Navimow H800E, vilket ska jag välja?',
+    answer: 'Börja med ytan: LUBA AWD 3000 tar upp till 3 000 m² medan H800E stannar vid 800 m². Har du mer gräs än 800 m² är valet redan avgjort. Ryms tomten inom båda passar LUBA AWD 3000 dig med kuperad terräng, där 65% lutningstolerans mot H800E:s 45% är en avgörande skillnad. H800E är enklare att installera och kräver ingen RTK-antenn, vilket gör den mer lämpad för öppna, plana villatomter med god GPS-mottagning.',
   },
   {
     question: 'Behöver båda modellerna perimeterkabel?',
-    answer: 'Nej, varken LUBA AWO 3000 eller Segway Navimow H800E kräver perimeterkabel. LUBA AWO 3000 använder RTK GPS (centimeterprecision) + referensantenn. H800E använder Exact!Fusion med GPS, IMU och visuell detektion. Båda är slingfria och gränser ritas i respektive app.',
+    answer: 'Nej, varken LUBA AWD 3000 eller Segway Navimow H800E kräver perimeterkabel. LUBA AWD 3000 använder RTK GPS (centimeterprecision) + referensantenn. H800E använder Exact!Fusion med GPS, IMU och visuell detektion. Båda är slingfria och gränser ritas i respektive app.',
   },
   {
-    question: 'Klarar LUBA AWO 3000 brantare backar än Segway H800E?',
-    answer: 'Ja, klart. LUBA AWO 3000 klarar 75% lutning mot H800E:s 45%. Om din trädgård har backar brantare än 45% är LUBA det enda alternativet av dessa två. Lutning är den starkaste anledningen att välja LUBA framför H800E.',
+    question: 'Klarar LUBA AWD 3000 brantare backar än Segway H800E?',
+    answer: 'Ja, klart. LUBA AWD 3000 klarar 65% lutning mot H800E:s 45%. Om din trädgård har backar brantare än 45% är LUBA det enda alternativet av dessa två. Lutning är den starkaste anledningen att välja LUBA framför H800E.',
   },
   {
     question: 'Vad kostar respektive modell?',
-    answer: 'Vi listar inga fasta priser här eftersom butikerna ändrar dem löpande, men prisbilden är tydlig: LUBA AWO 3000 ligger högre än Segway Navimow H800E. LUBA motiverar skillnaden med nästan fyra gånger så stor maxyta, 75% lutning mot H800E:s 45% och 4G-uppkoppling mot H800E:s WiFi. Prioriterar du priset och har en plan tomt inom 800 m² är H800E det bättre valet.',
+    answer: 'Vi listar inga fasta priser här eftersom butikerna ändrar dem löpande, men prisbilden är tydlig: LUBA AWD 3000 ligger högre än Segway Navimow H800E. LUBA motiverar skillnaden med nästan fyra gånger så stor maxyta, 65% lutning mot H800E:s 45% och 4G-uppkoppling mot H800E:s WiFi. Prioriterar du priset och har en plan tomt inom 800 m² är H800E det bättre valet.',
   },
   {
     question: 'Vilken har enklast installation?',
-    answer: 'Segway Navimow H800E är något enklare att installera. Du placerar stationen och ritar gränserna i appen, ingen RTK-antenn behöver monteras. LUBA AWO 3000 kräver att du monterar en RTK-referensantenn med fri himmelssikt, vilket tar extra tid men ger mer precis navigering. Båda är avsevärt enklare än att gräva ner perimeterkabel.',
+    answer: 'Segway Navimow H800E är något enklare att installera. Du placerar stationen och ritar gränserna i appen, ingen RTK-antenn behöver monteras. LUBA AWD 3000 kräver att du monterar en RTK-referensantenn med fri himmelssikt, vilket tar extra tid men ger mer precis navigering. Båda är avsevärt enklare än att gräva ner perimeterkabel.',
   },
   {
     question: 'Hur ofta laddar robotarna under ett klipppass?',
-    answer: 'Navimow H800E kör ungefär 180 minuter per laddning, LUBA AWO 3000 klarar 120 minuter, och båda laddar på cirka 90 minuter. LUBA gör alltså fler laddstopp per klippt timme, men tar igen tid med 26 cm klippbredd mot H800E:s 22 cm. Eftersom robotarna håller reda på vad de redan klippt påverkar laddstoppen sluttiden mer än resultatet.',
+    answer: 'Navimow H800E kör ungefär 180 minuter per laddning, LUBA AWD 3000 klarar 120 minuter, och båda laddar på cirka 90 minuter. LUBA gör alltså fler laddstopp per klippt timme, men tar igen tid med 40 cm klippbredd mot H800E:s 22 cm. Eftersom robotarna håller reda på vad de redan klippt påverkar laddstoppen sluttiden mer än resultatet.',
   },
   {
     question: 'Måste robotarna vinterförvaras inomhus?',
@@ -55,38 +55,38 @@ const faqSchema = faqItems.map((item) => ({
   },
 }));
 export const articleMeta = {
-  title: "Mammotion Luba AWO 3000 vs Segway Navimow H800E 2026",
-  description: "Mammotion Luba AWO 3000 eller Segway Navimow H800E? Vi jämför GPS-precision, klippprestanda, app och pris. Klart svar för trädgårdar utan slinga.",
+  title: "Mammotion Luba AWD 3000 vs Segway Navimow H800E 2026",
+  description: "Mammotion Luba AWD 3000 eller Segway Navimow H800E? Vi jämför GPS-precision, klippprestanda, app och pris. Klart svar för trädgårdar utan slinga.",
   publishDate: "2026-04-13",
   category: "Guide",
-  image: "/images/mammotion-luba-awo-3000.webp",
+  image: "/images/mammotion-luba-awd-3000.webp",
 };
 
 ---
 
 <BaseLayout
-  title="Mammotion Luba AWO 3000 vs Segway Navimow H800E 2026"
-  description="Mammotion Luba AWO 3000 eller Segway Navimow H800E? Vi jämför GPS-precision, klippprestanda, app och pris. Klart svar för trädgårdar utan slinga."
-  article={{ datePublished: "2026-04-13", dateModified: "2026-07-27", image: "/images/mammotion-luba-awo-3000.webp" }}
+  title="Mammotion Luba AWD 3000 vs Segway Navimow H800E 2026"
+  description="Mammotion Luba AWD 3000 eller Segway Navimow H800E? Vi jämför GPS-precision, klippprestanda, app och pris. Klart svar för trädgårdar utan slinga."
+  article={{ datePublished: "2026-04-13", dateModified: "2026-07-27", image: "/images/mammotion-luba-awd-3000.webp" }}
 >
   <section class="bg-primary text-white py-6">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <Breadcrumbs items={breadcrumbs} light={true} />
     <AuthorByline datePublished="2026-04-13" dateModified="2026-07-27" />
-      <h1 class="font-heading text-2xl sm:text-3xl font-bold mb-2">Mammotion LUBA AWO 3000 vs Segway Navimow H800E 2026</h1>
-      <p class="text-gray-300 text-sm max-w-2xl">LUBA AWO 3000 klarar 75% lutning mot H800E:s 45%, och tar upp till 3 000 m² mot H800E:s 800 m². Två slingfria GPS-robotar med fundamentalt olika navigeringsteknik, byggda för olika stora tomter.</p>
+      <h1 class="font-heading text-2xl sm:text-3xl font-bold mb-2">Mammotion LUBA AWD 3000 vs Segway Navimow H800E 2026</h1>
+      <p class="text-gray-300 text-sm max-w-2xl">LUBA AWD 3000 klarar 65% lutning mot H800E:s 45%, och tar upp till 3 000 m² mot H800E:s 800 m². Två slingfria GPS-robotar med fundamentalt olika navigeringsteknik, byggda för olika stora tomter.</p>
     </div>
   </section>
 
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <AnswerBox
-      question="Snabbt svar: Mammotion LUBA AWO 3000 eller Segway Navimow H800E?"
-      answer="Ytan avgör först: LUBA AWO 3000 tar upp till 3 000 kvadratmeter, H800E stannar vid 800. Har du en stor eller kuperad tomt är LUBA rätt val med 75 procent lutningstolerans, 4G-fjärrstyrning och RTK-precision. Har du en villatomt inom 800 kvadratmeter vinner H800E på enklare installation utan referensantenn och lägre pris. Båda är slingfria."
+      question="Snabbt svar: Mammotion LUBA AWD 3000 eller Segway Navimow H800E?"
+      answer="Ytan avgör först: LUBA AWD 3000 tar upp till 3 000 kvadratmeter, H800E stannar vid 800. Har du en stor eller kuperad tomt är LUBA rätt val med 75 procent lutningstolerans, 4G-fjärrstyrning och RTK-precision. Har du en villatomt inom 800 kvadratmeter vinner H800E på enklare installation utan referensantenn och lägre pris. Båda är slingfria."
     />
     <p class="text-text-light mb-4 text-base">
-      Mammotion LUBA AWO 3000 och Segway Navimow H800E är två av de starkaste slingfria alternativen 2026, men de är byggda för olika stora tomter. Ingen av dem kräver perimeterkabel, och de fungerar fundamentalt olika. </p>
+      Mammotion LUBA AWD 3000 och Segway Navimow H800E är två av de starkaste slingfria alternativen 2026, men de är byggda för olika stora tomter. Ingen av dem kräver perimeterkabel, och de fungerar fundamentalt olika. </p>
     <p class="text-text-light mb-6 text-base">
-      Kortfattat: LUBA AWO 3000 vinner på yta och kuperad terräng, H800E på enkel installation och pris så länge gräsytan håller sig inom 800 m². </p>
+      Kortfattat: LUBA AWD 3000 vinner på yta och kuperad terräng, H800E på enkel installation och pris så länge gräsytan håller sig inom 800 m². </p>
 
     <h2 class="font-heading text-xl font-bold mt-6 mb-4">Snabbjämförelse</h2>
     <div class="mb-8">
@@ -94,7 +94,7 @@ export const articleMeta = {
         <thead>
           <tr class="bg-primary text-white">
             <th class="p-3 text-left font-semibold">Egenskap</th>
-            <th class="p-3 text-left font-semibold">LUBA AWO 3000</th>
+            <th class="p-3 text-left font-semibold">LUBA AWD 3000</th>
             <th class="p-3 text-left font-semibold">Navimow H800E</th>
           </tr>
         </thead>
@@ -106,12 +106,12 @@ export const articleMeta = {
           </tr>
           <tr class="border-b border-border">
             <td class="p-3 font-medium text-text">Lutning</td>
-            <td class="p-3 text-text-light font-semibold text-winner">75%</td>
+            <td class="p-3 text-text-light font-semibold text-winner">65%</td>
             <td class="p-3 text-text-light">45%</td>
           </tr>
           <tr class="border-b border-border bg-white">
             <td class="p-3 font-medium text-text">Klippbredd</td>
-            <td class="p-3 text-text-light font-semibold text-winner">26 cm</td>
+            <td class="p-3 text-text-light font-semibold text-winner">40 cm</td>
             <td class="p-3 text-text-light">22 cm</td>
           </tr>
           <tr class="border-b border-border">
@@ -145,25 +145,25 @@ export const articleMeta = {
 
     <h2 class="font-heading text-xl font-bold mt-8 mb-4">Lutningstolerans, den avgörande skillnaden</h2>
     <p class="text-text-light mb-4 text-base">
-      LUBA AWO 3000 klarar 75% lutning. Segway Navimow H800E klarar 45%. Det är ingen liten skillnad, det är skillnaden mellan en robot som tar sig upp för en brant sluttning och en som stoppar halvvägs. </p>
+      LUBA AWD 3000 klarar 65% lutning. Segway Navimow H800E klarar 45%. Det är ingen liten skillnad, det är skillnaden mellan en robot som tar sig upp för en brant sluttning och en som stoppar halvvägs. </p>
     <p class="text-text-light mb-6 text-base">
-      Har du en trädgård med backar brantare än 45% är valet enkelt: LUBA AWO 3000. H800E är däremot fullt kapabel för en plan eller måttligt kuperad tomt, men det är den enda modellen av dessa två som kan prestera optimalt på brant mark. </p>
+      Har du en trädgård med backar brantare än 45% är valet enkelt: LUBA AWD 3000. H800E är däremot fullt kapabel för en plan eller måttligt kuperad tomt, men det är den enda modellen av dessa två som kan prestera optimalt på brant mark. </p>
 
     <h2 class="font-heading text-xl font-bold mt-8 mb-4">Navigeringsteknik, RTK vs Exact!Fusion</h2>
     <p class="text-text-light mb-4 text-base">
-      LUBA AWO 3000 använder RTK GPS med en fast referensantenn för centimeterprecision. Systemet är stabilt och pålitligt men kräver att referensantennen monteras med fri himmelssikt. </p>
+      LUBA AWD 3000 använder RTK GPS med en fast referensantenn för centimeterprecision. Systemet är stabilt och pålitligt men kräver att referensantennen monteras med fri himmelssikt. </p>
     <p class="text-text-light mb-6 text-base">
       Segway Navimow H800E använder Exact!Fusion, en kombination av GPS, IMU och visuell detektion. Det kräver ingen separat antenn men är mer beroende av god GPS-mottagning på tomten. Under tät trädkrona kan prestandan variera mer än med LUBA:s RTK-system. </p>
 
     <h2 class="font-heading text-xl font-bold mt-8 mb-4">Uppkoppling, 4G vs WiFi</h2>
     <p class="text-text-light mb-4 text-base">
-      LUBA AWO 3000 har inbyggd 4G vilket innebär att du kan styra roboten var du än befinner dig utan att vara hemma i WiFi-nätets räckvidd. H800E är WiFi-baserad, du behöver antingen vara hemma i nätverket eller ha en annan lösning för fjärrstyrning. </p>
+      LUBA AWD 3000 har inbyggd 4G vilket innebär att du kan styra roboten var du än befinner dig utan att vara hemma i WiFi-nätets räckvidd. H800E är WiFi-baserad, du behöver antingen vara hemma i nätverket eller ha en annan lösning för fjärrstyrning. </p>
     <p class="text-text-light mb-6 text-base">
       4G är en klar fördel för dig som vill ha full kontroll på distans. WiFi räcker för de flesta hemma-scenarion men är en begränsning när du är på semester. </p>
 
     <div class="grid sm:grid-cols-2 gap-5 mb-8">
       <div class="bg-winner/5 border border-winner/20 rounded-xl p-5">
-        <h3 class="font-semibold text-text mb-3">Välj LUBA AWO 3000 om du...</h3>
+        <h3 class="font-semibold text-text mb-3">Välj LUBA AWD 3000 om du...</h3>
         <ul class="space-y-2">
           {[
             'Har mer än 800 m² gräsyta',
@@ -179,8 +179,8 @@ export const articleMeta = {
           ))}
         </ul>
         <div class="mt-4">
-          <a href="/mammotion-luba-awo-3000/" target="_blank" class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-4 py-2 rounded-lg text-sm w-full min-h-[44px]">
-            Recension av Mammotion LUBA AWO 3000
+          <a href="/mammotion-luba-awd-3000/" target="_blank" class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-4 py-2 rounded-lg text-sm w-full min-h-[44px]">
+            Recension av Mammotion LUBA AWD 3000
           </a>
         </div>
       </div>
@@ -210,7 +210,7 @@ export const articleMeta = {
 
     <h3 class="font-heading text-lg font-semibold text-text mt-8 mb-3">Fungerar GPS-navigering under träd och nära husväggar?</h3>
     <p class="text-text-light mb-4 text-base">
-      Delvis. Satellitsignaler försvagas under tät trädkrona och tätt intill höga husväggar, det är fysiken bakom all satellitnavigering. LUBA AWO 3000:s RTK-system korrigerar positionen via referensantennen och står emot störningar bättre, medan H800E:s Exact!Fusion kompletterar med IMU och visuell detektion när mottagningen försämras.
+      Delvis. Satellitsignaler försvagas under tät trädkrona och tätt intill höga husväggar, det är fysiken bakom all satellitnavigering. LUBA AWD 3000:s RTK-system korrigerar positionen via referensantennen och står emot störningar bättre, medan H800E:s Exact!Fusion kompletterar med IMU och visuell detektion när mottagningen försämras.
     </p>
     <p class="text-text-light mb-6 text-base">
       Har du många stora träd eller skuggiga partier nära huset är RTK-lösningen det tryggare valet. På en öppen tomt med fri himmelssikt presterar båda systemen utan problem. Fler modeller som klipper helt utan kabel jämför vi i topplistan över <a href="/robotgrasklippare-utan-slinga/" class="text-accent underline">robotgräsklippare utan slinga</a>.
@@ -218,7 +218,7 @@ export const articleMeta = {
 
     <h3 class="font-heading text-lg font-semibold text-text mt-8 mb-3">Klipper slingfria robotar i raka banor?</h3>
     <p class="text-text-light mb-4 text-base">
-      Ja, det är en av de stora fördelarna med GPS-navigering. Både LUBA AWO 3000 och Navimow H800E klipper i systematiska, parallella banor i stället för att studsa slumpmässigt som äldre kabelrobotar. Resultatet blir jämnare, täckningen effektivare och roboten hinner mer yta per laddning.
+      Ja, det är en av de stora fördelarna med GPS-navigering. Både LUBA AWD 3000 och Navimow H800E klipper i systematiska, parallella banor i stället för att studsa slumpmässigt som äldre kabelrobotar. Resultatet blir jämnare, täckningen effektivare och roboten hinner mer yta per laddning.
     </p>
     <p class="text-text-light mb-6 text-base">
       Det systematiska mönstret syns också i gräsmattan: raka, snygga klippspår i stället för det korsvirre en slumpklippare lämnar. Eftersom roboten vet exakt vad den redan klippt slipper du de missade fläckar som slumpnavigering ibland ger på större ytor.
@@ -226,7 +226,7 @@ export const articleMeta = {
 
     <h3 class="font-heading text-lg font-semibold text-text mt-8 mb-3">Spelar klippbredden någon roll för klipptiden?</h3>
     <p class="text-text-light mb-4 text-base">
-      Ja, mer än många tror. LUBA AWO 3000:s 26 cm klippbredd mot H800E:s 22 cm innebär att LUBA täcker samma gräsmatta på färre banor. På en tomt uppåt 3 000 kvadratmeter, där bara LUBA räcker till ytan, blir det märkbart kortare total klipptid per vecka. H800E har i sin tur längre drifttid per laddning, ca 180 minuter mot LUBA:s 120.
+      Ja, mer än många tror. LUBA AWD 3000:s 40 cm klippbredd mot H800E:s 22 cm innebär att LUBA täcker samma gräsmatta på färre banor. På en tomt uppåt 3 000 kvadratmeter, där bara LUBA räcker till ytan, blir det märkbart kortare total klipptid per vecka. H800E har i sin tur längre drifttid per laddning, ca 180 minuter mot LUBA:s 120.
     </p>
     <p class="text-text-light mb-6 text-base">
       Ju större yta, desto mer väger klippbredden i valet. För riktigt stora tomter finns fler faktorer att väga in, dem går vi igenom i guiden om <a href="/robotgrasklippare-stor-tradgard/" class="text-accent underline">robotgräsklippare för stor trädgård</a>.
@@ -238,7 +238,7 @@ export const articleMeta = {
     <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
       <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade recensioner</h2>
       <ul class="space-y-2">
-        <li><a href="/mammotion-luba-awo-3000/" class="text-accent underline text-sm">Mammotion LUBA AWO 3000, fullständig recension</a></li>
+        <li><a href="/mammotion-luba-awd-3000/" class="text-accent underline text-sm">Mammotion LUBA AWD 3000, fullständig recension</a></li>
         <li><a href="/segway-navimow-h800e/" class="text-accent underline text-sm">Segway Navimow H800E, fullständig recension</a></li>
         <li><a href="/mammotion-luba-2-awd-5000x/" class="text-accent underline text-sm">Mammotion LUBA 2 AWD 5000X, flaggskeppsmodellen</a></li>
         <li><a href="/robotgrasklippare-utan-slinga/" class="text-accent underline text-sm">Bästa robotgräsklippare utan slinga 2026</a></li>
@@ -248,9 +248,9 @@ export const articleMeta = {
   </div>
 
   <StickyCTA
-    text="Se pris Mammotion LUBA AWO 3000"
-    url="/mammotion-luba-awo-3000/"
-    productName="Mammotion LUBA AWO 3000"
+    text="Se pris Mammotion LUBA AWD 3000"
+    url="/mammotion-luba-awd-3000/"
+    productName="Mammotion LUBA AWD 3000"
   />
 
 <style>

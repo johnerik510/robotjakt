@@ -33,3 +33,8 @@ https://www.robotjakt.se/* https://robotjakt.se/:splat 301
 /robotdammsugare-storlagenhet    /robotdammsugare/storlagenhet/    301
 /robotdammsugare-storlagenhet/   /robotdammsugare/storlagenhet/    301
 /affiliate-disclaimer/ /redaktionell-policy/ 301
+
+# Mammotion: felstavat modellnamn AWO rattat till tillverkarens AWD (2026-07-28)
+/mammotion-luba-2-awo-1000h/ /mammotion-luba-2-awd-1000h/ 301
+/mammotion-luba-awo-3000/ /mammotion-luba-awd-3000/ 301
+/mammotion-luba-awo-3000-vs-segway-navimow-h800e/ /mammotion-luba-awd-3000-vs-segway-navimow-h800e/ 301
