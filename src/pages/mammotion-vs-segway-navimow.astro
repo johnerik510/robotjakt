@@ -36,6 +36,18 @@ const faqItems = [
     question: 'Vilket system är billigare, Mammotion LUBA eller Segway Navimow?',
     answer: 'Segway Navimow H500E är billigare än Mammotion LUBA 2 AWO 1000H i alla butiker vi följer 2026. Skillnaden brukar landa runt en tredjedel av priset. Mammotion LUBA 2 AWO motiverar prisskillnaden om du har kuperad terräng, branta backar eller en trädgård med många hinder, tack vare 4-hjulsdriften och RTK-precisionen. För plana trädgårdar är Segway det smartare valet.',
   },
+  {
+    question: 'Fungerar de under träd och tät häck?',
+    answer: 'Det är den vanligaste svagheten hos båda, men de klarar det olika. Mammotion LUBA är helt beroende av att RTK-referensantennen har fri sikt mot himlen, så en tomt med tät trädkrona eller hög häck runt om kräver att du hittar ett öppet och gärna högt läge för antennen. Segway Navimow kombinerar basstationsantennen med kameran, där antennen sköter den grova positioneringen och kameran finjusterar gränsen. Faller sikten bort i kraftigt regn eller mörker håller antennen ändå roboten på rätt sida av zongränsen, men hinder på gräset kan missas.',
+  },
+  {
+    question: 'Kan de klippa flera separata gräsytor?',
+    answer: 'Ja, båda hanterar flera zoner som du ritar i appen i stället för att flytta kablar. Mammotion går längst: varje zon kan få egen klipphöjd och eget schema, så framsidan och baksidan kan klippas vid olika tidpunkter. Navimow klarar också uppdelning i zoner, men zonhanteringen och klippstatistiken är mer grundläggande än hos Mammotion och Husqvarna. Har du ytor som inte hänger ihop bör du kontrollera att roboten kan ta sig mellan dem på egen hand, annars får du bära den.',
+  },
+  {
+    question: 'Hur väljer jag mellan dem bara utifrån gräsytan?',
+    answer: 'Mät gräsytan först, sedan faller valet nästan av sig självt. Upp till 500 m² räcker Segway Navimow H500E, och upp till 800 m² tar H800E. Ligger du mellan 500 och 1 000 m² är Mammotion LUBA 2 AWO 1000H den som passar, och över det är LUBA AWO 3000 med sina 3 000 m² den enda av dem som räcker till. Modellnumret i Navimows H-serie anger maxytan i kvadratmeter, vilket gör serien enkel att läsa av. Först när två modeller täcker din yta blir terräng, lutning och pris avgörande.',
+  },
 ];
 
 const faqSchema = faqItems.map((item) => ({

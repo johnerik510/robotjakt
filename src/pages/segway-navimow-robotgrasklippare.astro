@@ -79,6 +79,22 @@ const faqItems = [
     question: 'Vad ingår i paketet när man köper Segway Navimow?',
     answer: 'Paketet inkluderar roboten, laddstation, RTK-antenn (för H-serien), nätadapter och snabbstartsguide. Inget kabelkit eller stiftpåsar behövs eftersom Navimow inte använder perimeterkabel. H-seriens RTK-antenn monteras på ett fast underlag (husvägg, staket) för bäst signalstabilitet. Installationen tar normalt 20 till 40 minuter.',
   },
+  {
+    question: 'Vad betyder siffrorna i Navimows modellnamn?',
+    answer: 'I H-serien anger siffran den maximala klippytan i kvadratmeter. H500E är alltså gjord för upp till 500 m², H800E för upp till 800 m² och i105E för 105 m². Det gör serien ovanligt lätt att läsa av: mät gräsytan, lägg på marginal för hinder och smala passager, och välj modellen vars siffra ligger över resultatet. i-serien följer samma logik, där i210E tar 1 000 m² och i220E 2 000 m².',
+  },
+  {
+    question: 'Var ska RTK-antennen sitta?',
+    answer: 'Antennen ska sitta stadigt monterad med så fri sikt mot himlen som möjligt, gärna högt på en husvägg, ett staket eller en egen stolpe. Signalstabiliteten avgör hur exakt roboten håller sina gränser, så undvik lägen under takfot, tät trädkrona eller intill en hög häck. Sitter antennen fel märks det som att roboten driver utanför sina zoner eller stannar oftare. Flyttas antennen ur läge senare måste zonerna kalibreras om, så kontrollera fästet varje vår.',
+  },
+  {
+    question: 'Kan Navimow klippa flera gräsytor som inte hänger ihop?',
+    answer: 'Du ritar flera zoner i appen och kan lägga olika scheman på dem, till exempel framsidan mitt på dagen och baksidan på morgonen. Det som avgör om det fungerar i praktiken är om roboten kan ta sig mellan ytorna på gräs eller passage. Är ytorna helt åtskilda av en grusgång, en trappa eller en asfalterad uppfart måste du bära roboten emellan. Zonhanteringen är dessutom mer grundläggande än hos Husqvarnas Automower Connect.',
+  },
+  {
+    question: 'Ska roboten tas in på vintern?',
+    answer: 'Ja, själva roboten ska förvaras torrt och frostfritt inomhus, normalt från oktober eller november. Batteriet mår bäst av att lagras på 60 till 80 procent laddning i stället för fullt. Laddstationen och RTK-antennen får stå kvar ute, men kontrollera antennens fäste innan snön kommer, eftersom en antenn som glider ur läge tvingar dig att kalibrera om zonerna till våren.',
+  },
 ];
 
 const faqSchema = faqItems.map((item) => ({

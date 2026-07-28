@@ -38,6 +38,22 @@ const faqItems = [
     question: 'Hur jämförs Segway Navimow H500E mot Mammotion LUBA AWO 3000?',
     answer: 'De två spelar i olika storleksklasser. Segway Navimow H500E är gjord för tomter upp till 500 m², Mammotion LUBA AWO 3000 för upp till 3 000 m². Har du en normal villatomt eller mindre räcker H500E, och du slipper montera en separat RTK-referensantenn. Har du över 500 m² gräs är H500E för liten oavsett hur bra den klipper, och då är LUBA AWO 3000 det relevanta alternativet med RTK GPS, 4G och betydligt högre lutningstolerans.',
   },
+  {
+    question: 'Hur stor tomt klarar H500E i praktiken?',
+    answer: 'Modellnumret anger maxytan: H500E är specificerad för upp till 500 m² gräs, vilket motsvarar en radhustomt eller en mindre villatomt. Med 22 cm klippbredd och 120 minuters drifttid hinner den ta undan hela ytan i ett pass. Ligg inte precis på gränsen när du väljer, en tomt med många hinder, smala passager och rabatter kräver fler överfarter än en öppen rektangel. Har du mer gräs är H800E med 800 m² nästa steg i serien.',
+  },
+  {
+    question: 'Vad händer när det regnar?',
+    answer: 'Roboten fortsätter arbeta men ser sämre. Basstationsantennen sköter den grova positioneringen och håller roboten innanför zongränsen även när sikten är dålig, medan kameran som finjusterar gränskänningen och upptäcker hinder tappar i effektivitet vid kraftigt regn och i mörker. Praktiskt betyder det att H500E klipper vidare, men att leksaker, verktyg eller annat som ligger kvar på gräset kan missas. Plocka undan gården innan ett regnpass.',
+  },
+  {
+    question: 'Hur brant lutning klarar Segway Navimow H500E?',
+    answer: 'H500E är specificerad för lutningar upp till 45 procent, vilket räcker för en normal villatomt med en svag slänt eller en uppfart. Har du en tomt med riktigt branta partier ligger den under de fyrhjulsdrivna alternativen: Mammotion LUBA 2 AWO klarar 75 procent tack vare drift på alla fyra hjul. Mät den brantaste punkten på tomten innan du beställer, det är där roboten fastnar först.',
+  },
+  {
+    question: 'Kan man styra H500E när man inte är hemma?',
+    answer: 'Ja, roboten har 4G-uppkoppling, så du kan starta, stoppa och schemalägga den från appen var du än befinner dig, utan att vara på hemmanätverket. Kartvyn visar robotens position i realtid och hur stor yta som klippts under passet, och du får notiser vid problem. Appen är funktionell men mindre polerad än Husqvarnas Automower Connect, framför allt när det gäller detaljerad klippstatistik och zonhantering.',
+  },
 ];
 
 const faqSchema = faqItems.map((item) => ({

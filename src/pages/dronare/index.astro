@@ -83,7 +83,7 @@ const products = [
     badge: 'Bäst budget',
     pros: [
       'Lägsta pris i DJI Mini-serien',
-      'Under 250 g, inga registreringskrav',
+      'Under 250 g, inget drönarkort krävs',
       'Enkel att flyga för nybörjare',
       'True Vertical Shooting för sociala medier',
     ],
@@ -100,7 +100,7 @@ const products = [
 const faqItems = [
   {
     question: 'Behöver man drönarkort för att flyga drönare i Sverige?',
-    answer: 'Det beror på drönarens vikt och hur du flyger. Drönare under 250 g (C0-klass, t.ex. DJI Mini 5 Pro och Mini 4 Pro) kräver i de flesta fall inget drönarkort för grundläggande hobbyflygning. Drönare mellan 250 g och 900 g (C1-klass, t.ex. DJI Air 3S) kräver A1/A3-kompetensbevis som du tar gratis via EASAs webbutbildning. Alla drönare 250 g+ kräver operatörsregistrering hos Transportstyrelsen (190 kr engång + 250 kr/år).',
+    answer: 'Det beror på vikten. Drönare under 250 g (C0-klass, till exempel DJI Mini 5 Pro och Mini 4 Pro) kräver inget drönarkort för hobbyflygning i öppen kategori. Drönare mellan 250 g och 900 g (C1-klass, till exempel DJI Air 3S) kräver A1/A3-kompetensbevis, som du tar gratis via EASAs webbutbildning. Operatörsregistrering är en separat sak och blandas ofta ihop med drönarkortet: den krävs så snart drönaren har kamera eller annan sensor som kan lagra personuppgifter, alltså även för Mini-serien under 250 g. Registreringen kostar 190 kr i ansökningsavgift plus 250 kr per år hos Transportstyrelsen.',
   },
   {
     question: 'Vad är skillnaden mellan DJI Mini 5 Pro och DJI Mini 4 Pro?',
@@ -145,7 +145,7 @@ const breadcrumbs = [{ label: 'Drönare' }];
 
     <AnswerBox
       question="Snabbt svar: Vilken drönare är bäst 2026?"
-      answer="DJI Mini 5 Pro är vår bästa drönare i test 2026. Den väger under 250 g och slipper därmed operatörsregistrering, samtidigt som 1-tums 50 MP-sensorn filmar 4K i 120 fps med omnidirektionell hinderdetektering och upp till 36 minuters flygtid. Vill du ha telekamera är DJI Air 3S valet."
+      answer="DJI Mini 5 Pro är vår bästa drönare i test 2026. Den väger under 250 g och slipper därmed kravet på drönarkort i öppen kategori, samtidigt som 1-tums 50 MP-sensorn filmar 4K i 120 fps med omnidirektionell hinderdetektering och upp till 36 minuters flygtid. Vill du ha telekamera är DJI Air 3S valet."
     />
 
     <MoneyFeatured {...products[0]} />
@@ -171,8 +171,10 @@ const breadcrumbs = [{ label: 'Drönare' }];
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Vikten avgör reglerna</h3>
       <p class="text-text-light leading-relaxed mb-4">
         Det viktigaste valet du gör när du köper drönare är om den väger under eller över 250 gram. Drönare under 250 g klassas som C0 i EU-regelverket och kräver inte drönarkort för grundläggande hobbyflygning. DJI Mini-serien (Mini 3, Mini 4 Pro, Mini 5 Pro) är alla designade för att hålla sig under den gränsen. </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Drönare 250 g och uppåt, som DJI Air 3S på 724 g, kräver att du tar A1/A3-kompetensbevis via EASAs gratisutbildning. Det tar ett par timmar och är ett enkelt prov online. </p>
       <p class="text-text-light leading-relaxed mb-6">
-        Drönare 250 g och uppåt, som DJI Air 3S på 724 g, kräver att du tar A1/A3-kompetensbevis via EASAs gratisutbildning. Det tar ett par timmar och är ett enkelt prov online. Du måste också registrera dig som operatör hos Transportstyrelsen (190 kr engång + 250 kr/år). </p>
+        Operatörsregistreringen är ett eget krav som inte följer viktgränsen, och det är här de flesta går fel. Transportstyrelsen kräver operatörs-ID så snart drönaren väger minst 250 g, kan överföra mer än 80 joule i en kollision, <em>eller</em> har kamera, ljudupptagning eller annan sensor som kan lagra personuppgifter. Eftersom varje Mini-modell har kamera måste du registrera dig även för dem. Avgiften är 190 kr för ansökan plus 250 kr per år. Kontrollera alltid aktuella villkor hos <a href="https://www.transportstyrelsen.se/sv/luftfart/luftfartyg-och-luftvardighet/dronare/" rel="nofollow noopener" target="_blank" class="text-accent underline">Transportstyrelsen</a>. </p>
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Vilken kamera behöver du?</h3>
       <p class="text-text-light leading-relaxed mb-4">
