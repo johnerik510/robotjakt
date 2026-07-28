@@ -36,6 +36,59 @@ const partTypes = [
   { name: 'Knivar', href: '/reservdelar/knivar/', desc: 'Till robotgräsklippare' },
 ];
 
+// Produkter och tracker-URL:er hämtade ordagrant ur Adtractions produktfeed
+// (reservdelskatalogen, verifierad 2026-07-28). Ingen URL är handskriven.
+const popularParts = [
+  {
+    img: '/images/parts/roborock-s7-hepa-filter.webp',
+    name: 'Roborock HEPA-filter till modell S7',
+    compat: 'Passar: Roborock S7',
+    includes: null,
+    store: 'CS Megastore',
+    buyUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=7265073&url=https://www.csmegastore.se/i/7265073/roborock-hepa-filter-till-modell-s7',
+  },
+  {
+    img: '/images/parts/roborock-q-revo-dammpase-6-pack.webp',
+    name: 'Roborock dammpåse Q Revo, 6-pack',
+    compat: 'Passar: Roborock Q Revo',
+    includes: '6 dammpåsar',
+    store: 'Teknikproffset',
+    buyUrl: 'https://dot.teknikproffset.se/t/t?a=1954032647&as=2063681412&t=2&tk=1&cupa_sku=C36558&url=https://www.teknikproffset.se/hem-hushall-tradgard/stadprodukter/dammsugare-tillbehor/tillbehor-45/dammsugarpasar/roborock-q-revo-dammpase-6-st',
+  },
+  {
+    img: '/images/parts/dreame-l10-l10s-ultra-tillbehorskit.webp',
+    name: 'Dreame Tillbehörskit till Dreame L10/L10s Ultra',
+    compat: 'Passar: Dreame L10/L10s Ultra',
+    includes: null,
+    store: 'Kjell',
+    buyUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=65755&url=http://www.kjell.com/se/produkter/hem-fritid/stadning-rengoring/robotdammsugare/tillbehor-till-robotdammsugare/dreame-tillbehorskit-till-dreame-l10l10s-ultra-p65755',
+  },
+  {
+    img: '/images/parts/dreame-d10s-pro-tillbehorskit.webp',
+    name: 'Dreame Tillbehörskit DRAC3174',
+    compat: 'Passar: Dreame D10s Pro',
+    includes: '9 delar',
+    store: 'CS Megastore',
+    buyUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=9741143&url=https://www.csmegastore.se/i/9741143/dreame-drac3174-robotdammsugare-tillbeh%c3%b6rskit-gr%c3%a5-vit-dreame-d10s-pro-9-styck',
+  },
+  {
+    img: '/images/parts/grimsholm-dreame-robotgrasklippare-knivar.webp',
+    name: 'Grimsholm Knivar till Dreame robotgräsklippare',
+    compat: 'Passar: Dreame robotgräsklippare',
+    includes: '12 knivar',
+    store: 'Kjell',
+    buyUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=49250&url=http://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare-tillbehor/knivar-till-robotgrasklippare/grimsholm-knivar-till-dreame-robotgrasklippare-12-pack-p49250',
+  },
+  {
+    img: '/images/parts/grimsholm-ecovacs-goat-knivar.webp',
+    name: 'Grimsholm Knivar till Ecovacs GOAT',
+    compat: 'Passar: Ecovacs Goat',
+    includes: '12 knivar',
+    store: 'Kjell',
+    buyUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=49252&url=http://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare-tillbehor/knivar-till-robotgrasklippare/grimsholm-knivar-till-ecovacs-goat-12-pack-p49252',
+  },
+];
+
 const faqItems = [
   {
     question: 'Hur ofta ska du byta filter i en robotdammsugare?',
@@ -55,7 +108,7 @@ const faqItems = [
   },
   {
     question: 'Var köper du reservdelar till robotdammsugare och robotgräsklippare?',
-    answer: 'Vi länkar vidare till Amazon, Proshop och eStore. Amazon och Proshop har båda stort urval av originaldelar till de vanligaste märkena, medan eStore är inriktat på tillbehör och smarta hem-produkter. Sök på din exakta modellbeteckning i stället för på märkesnamnet, då slipper du sortera bland delar som ser rätt ut men inte passar.',
+    answer: 'Vi länkar vidare till Kjell, CS Megastore, Teknikproffset, Proshop och Elon. CS Megastore och Kjell har bredast utbud av reservdelar till de vanligaste märkena, medan Teknikproffset är starkast på dammpåsar och moppdukar. Sök på din exakta modellbeteckning i stället för på märkesnamnet, då slipper du sortera bland delar som ser rätt ut men inte passar.',
   },
   {
     question: 'Hur ofta ska moppkuddarna bytas?',
@@ -74,7 +127,7 @@ const faqItems = [
 
 <BaseLayout
   title="Reservdelar till robotar, filter, borstar och knivar"
-  description="Hitta rätt reservdelar och tillbehör till din robot. HEPA-filter, borstar och knivar till Roborock, Dreame, Ecovacs och Husqvarna Automower. Köp via Amazon."
+  description="Hitta rätt reservdelar och tillbehör till din robot. HEPA-filter, borstar och knivar till Roborock, Dreame, Ecovacs och Husqvarna Automower. Köp via Kjell."
   article={true}
 >
   <section class="bg-primary text-white py-8">
@@ -89,7 +142,7 @@ const faqItems = [
 
     <AnswerBox
       question="Snabbt svar: Var hittar du reservdelar till din robot?"
-      answer="Reservdelar till robotdammsugare och robotgräsklippare hittar du hos Amazon, Proshop och eStore, ofta som originaldelar eller kompatibla kit. Byt HEPA-filter var 2 till 3 månad, sidoborstar var 6 till 12 månad och knivar varje säsong. Välj delar efter märke, Roborock, Dreame, Ecovacs eller Husqvarna, eller efter typ som filter, borstar och knivar."
+      answer="Reservdelar till robotdammsugare och robotgräsklippare hittar du hos Kjell, CS Megastore, Teknikproffset och Proshop, ofta som originaldelar eller kompatibla kit. Byt HEPA-filter var 2 till 3 månad, sidoborstar var 6 till 12 månad och knivar varje säsong. Välj delar efter märke, Roborock, Dreame, Ecovacs eller Husqvarna, eller efter typ som filter, borstar och knivar."
     />
 
     <!-- Kategorier -->
@@ -141,16 +194,49 @@ const faqItems = [
       </div>
     </section>
 
+    <!-- Populära reservdelar -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-5">Populära reservdelar just nu</h2>
+      <div class="space-y-4">
+        {popularParts.map(p => (
+          <article class="bg-white rounded-xl border border-border shadow-sm transition-shadow p-5">
+            <div class="flex flex-col sm:flex-row gap-4">
+              <div class="flex-shrink-0 flex flex-col items-center gap-2">
+                <div class="w-32 h-32 bg-gray-50 rounded-xl p-2 flex items-center justify-center border border-border">
+                  <img src={p.img} alt={p.name} class="w-full h-full object-contain" loading="lazy" width="200" height="200" />
+                </div>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h3 class="font-heading font-bold text-text text-base mb-1">{p.name}</h3>
+                <p class="text-xs text-accent font-medium mb-2">{p.compat}</p>
+                {p.includes && <p class="text-xs text-text-light mb-4"><strong class="text-text">Innehåller:</strong> {p.includes}</p>}
+                <div class="flex flex-wrap items-center gap-3">
+                  <a
+                    href={p.buyUrl}
+                    rel="sponsored nofollow noopener noreferrer"
+                    target="_blank"
+                    class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+                  >
+                    Bra pris hos {p.store}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
     <!-- Var köper man -->
     <section class="mb-8">
       <h2 class="font-heading text-2xl font-bold text-text mb-5">Var hittar du reservdelarna?</h2>
       <div class="grid sm:grid-cols-3 gap-4">
-        <a href="https://do.estore.nu/t/t?a=1954032578&as=2063681412&t=2&tk=1" rel="sponsored nofollow noopener noreferrer" target="_blank" class="flex flex-col items-center justify-center bg-white rounded-xl border border-border px-5 py-6 hover:border-accent transition-all group text-center">
-          <span class="font-heading font-bold text-text group-hover:text-accent text-lg mb-1">eStore</span>
-          <p class="text-xs text-text-light">Tillbehör och smarta hem-produkter</p>
+        <a href="https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1" rel="sponsored nofollow noopener noreferrer" target="_blank" class="flex flex-col items-center justify-center bg-white rounded-xl border border-border px-5 py-6 hover:border-accent transition-all group text-center">
+          <span class="font-heading font-bold text-text group-hover:text-accent text-lg mb-1">Kjell &amp; Company</span>
+          <p class="text-xs text-text-light">Brett utbud av tillbehör och reservdelar</p>
         </a>
-        <a href="https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1" rel="nofollow sponsored noopener" target="_blank" class="flex flex-col items-center justify-center bg-white rounded-xl border border-border px-5 py-6 hover:border-accent transition-all group text-center">
-          <span class="font-heading font-bold text-text group-hover:text-accent text-lg mb-1">Amazon</span>
+        <a href="https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1" rel="sponsored nofollow noopener noreferrer" target="_blank" class="flex flex-col items-center justify-center bg-white rounded-xl border border-border px-5 py-6 hover:border-accent transition-all group text-center">
+          <span class="font-heading font-bold text-text group-hover:text-accent text-lg mb-1">Elon</span>
           <p class="text-xs text-text-light">Stort urval, ofta originaldelar</p>
         </a>
         <a href="https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1" rel="sponsored nofollow noopener noreferrer" target="_blank" class="flex flex-col items-center justify-center bg-white rounded-xl border border-border px-5 py-6 hover:border-accent transition-all group text-center">

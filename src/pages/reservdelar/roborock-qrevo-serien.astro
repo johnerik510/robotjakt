@@ -6,41 +6,73 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import AnswerBox from '../../components/AnswerBox.astro';
 
 
+// Produkterna kommer fran Adtractions produktfeed via reservdelskatalogen.
+// Kompatibiliteten under "Passar" ar hamtad ordagrant ur butikens artikelnamn.
+// Dar butiken inte anger nagon modell star det uttryckligen sa i stallet for
+// en gissad modellista.
 const products = [
   {
-    asin: 'B0CY5CWRXQ',
-    name: 'Roborock Qrevo S / Qrevo Pro / Qrevo MaxV, 20-delars kit',
-    compat: 'Passar: Qrevo S, Qrevo Pro, Qrevo MaxV Ultra, Qrevo Plus',
-    includes: '1 gummiborste, 6 sidoborstar, 4 HEPA-filter, 4 moppkuddar, 4 dammpåsar',
-    badge: 'Bästsäljare',
+    img: '/images/parts/roborock-qrevo-tillbehorskit.webp',
+    name: 'Roborock tillbehörskit till QRevo',
+    compat: 'QRevo',
+    includes: null,
+    badge: 'Tillbehörskit',
+    store: 'Kjell',
+    buyUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66041&url=http://www.kjell.com/se/produkter/hem-fritid/stadning-rengoring/robotdammsugare/tillbehor-till-robotdammsugare/roborock-tillbehorskit-till-roborock-qrevo-p66041',
   },
   {
-    asin: 'B0DG5J1QK7',
-    name: 'Roborock Qrevo Pro / Qrevo S / Qrevo MaxV, 22-delars kit',
-    compat: 'Passar: Qrevo Pro, Qrevo S, Qrevo MaxV Ultra',
-    includes: '2 gummiborstar, 6 sidoborstar, 4 HEPA-filter, 4 dammpåsar, 4 mopptorkdukar',
-    badge: 'Mest komplett',
+    img: '/images/parts/roborock-q-revo-reservdelspaket.webp',
+    name: 'Roborock Q Revo reservdelspaket, vit',
+    compat: 'Q Revo',
+    includes: null,
+    badge: 'Reservdelspaket',
+    store: 'Teknikproffset',
+    buyUrl: 'https://dot.teknikproffset.se/t/t?a=1954032647&as=2063681412&t=2&tk=1&cupa_sku=C58874&url=https://www.teknikproffset.se/hem-hushall-tradgard/stadprodukter/dammsugare-tillbehor/tillbehor-45/reservdelar-till-robotdammsugare/roborock-q-revo-reservdelspaket-vit',
   },
   {
-    asin: 'B0DG5H9HLH',
-    name: 'Roborock Qrevo S / Qrevo Pro / Qrevo MaxV, 21-delars kit',
-    compat: 'Passar: Qrevo S, Qrevo Pro, Qrevo MaxV Ultra',
-    includes: '1 gummiborste, 4 sidoborstar, 4 HEPA-filter, 4 mopptorkdukar, 6 dammpåsar',
-    badge: 'Bästa pris',
+    img: null,
+    name: 'Roborock tvättbart filter till Qrevo, 2 st',
+    compat: 'Qrevo',
+    includes: '2 tvättbara filter',
+    badge: 'Filter',
+    store: 'CS Megastore',
+    buyUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=24855194&url=https://www.csmegastore.se/i/24855194/roborock-tv%c3%a4ttbart-filter-qrevo-2-st',
   },
   {
-    asin: 'B0CNMFPF5K',
-    name: 'Roborock Qrevo Master, dammpåsar 5-pack',
-    compat: 'Passar: Qrevo Master, Qrevo MaxV Ultra (med automatisk station)',
-    includes: '5 dammpåsar för automatisk tömningsstation',
-    badge: null,
+    img: '/images/parts/roborock-q-revo-avfallsbehallare-filter.webp',
+    name: 'Roborock filter till avfallsbehållaren, Q Revo, 2 st',
+    compat: 'Q Revo',
+    includes: '2 filter till avfallsbehållaren',
+    badge: 'Behållarfilter',
+    store: 'CS Megastore',
+    buyUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=10360616&url=https://www.csmegastore.se/i/10360616/vakuum-acc-avfallsbeh%c3%a5llare-filter-q-revo-2st-8-02-0240-roborock-8-02-0240',
   },
   {
-    asin: 'B0CG35BWMW',
-    name: 'Roborock Qrevo-serien, HEPA-filter 4-pack',
-    compat: 'Passar: Qrevo S, Qrevo Pro, Qrevo MaxV Ultra, Qrevo Master',
-    includes: '4 HEPA E11-filter',
-    badge: 'Bästa filterpris',
+    img: '/images/parts/roborock-q-revo-dammpase-6-pack.webp',
+    name: 'Roborock Q Revo dammpåse, 6 st',
+    compat: 'Q Revo',
+    includes: '6 dammpåsar',
+    badge: 'Dammpåsar',
+    store: 'Teknikproffset',
+    buyUrl: 'https://dot.teknikproffset.se/t/t?a=1954032647&as=2063681412&t=2&tk=1&cupa_sku=C36558&url=https://www.teknikproffset.se/hem-hushall-tradgard/stadprodukter/dammsugare-tillbehor/tillbehor-45/dammsugarpasar/roborock-q-revo-dammpase-6-st',
+  },
+  {
+    img: '/images/parts/roborock-qrevo-curv-sidoborste.webp',
+    name: 'Roborock sidoborste, grå, 103 mm',
+    compat: 'Qrevo Curv, Qrevo Edge, Qrevo CurvX, Qrevo Curv S5X, Saros Z70, Saros 10R, Saros 10',
+    includes: 'Sidoborste, 103 mm',
+    badge: 'Sidoborste',
+    store: 'CS Megastore',
+    buyUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=24978047&url=https://www.csmegastore.se/i/24978047/roborock-6970995780116-sidoborste-robotdammsugare-gr%c3%a5-roborock-qrevo-curv-qrevo-edge-saros-z70-saros-10r-saros-10-qrevo-curvx',
+  },
+  {
+    img: '/images/parts/roborock-moppduk-xi3008-2-pack.webp',
+    name: 'Roborock Moppduk XI3008 2-pack',
+    compat: 'Ospecificerat, butiken anger ingen modell i artikelnamnet. Stäm av mot din robot innan köp',
+    includes: '2 moppdukar',
+    badge: 'Moppduk',
+    store: 'Teknikproffset',
+    buyUrl: 'https://dot.teknikproffset.se/t/t?a=1954032647&as=2063681412&t=2&tk=1&cupa_sku=C19697&url=https://www.teknikproffset.se/hem-hushall-tradgard/stadprodukter/dammsugare-tillbehor/tillbehor-45/reservdelar-till-robotdammsugare/roborock-moppduk-xi3008-2-pack',
   },
 ];
 
@@ -59,7 +91,7 @@ const faqItems = [
   },
   {
     question: 'Var köper jag billigaste Qrevo-reservdelar?',
-    answer: 'Amazon erbjuder generellt de billigaste tredjepartsalternativen, ofta 50 till 70% billigare än originalen. Sök på din exakta modell (t.ex. "Roborock Qrevo Pro reservdelar") och välj kit med högt antal recensioner och god kompatibilitetsbekräftelse.',
+    answer: 'Tredjepartsdelar ligger ofta 50 till 70% under originalpriset, och skillnaden är störst på filter, sidoborstar och dammpåsar. Sök på din exakta modell, till exempel "Roborock Qrevo Pro reservdelar", och välj förpackningar där kompatibilitetslistan nämner din robot. Delarna högst upp på sidan finns hos Kjell, Teknikproffset och CS Megastore.',
   },
   {
     question: 'Är tredjepartsdelar lika bra som Roborocks originaldelar?',
@@ -102,19 +134,19 @@ export const articleMeta = {
 <BaseLayout
   title="Reservdelar Roborock Qrevo serien 2026: guide och köp"
   description="Reservdelar till Roborock Qrevo-serien 2026. Filter, borstar och moppar till Qrevo Master, MaxV Ultra och Pro. Se kompatibilitet och pris i Sverige."
-  article={{ datePublished: "2026-04-05", dateModified: "2026-07-27", image: "/images/parts-roborock-qrevo-kit.webp" }}
+  article={{ datePublished: "2026-04-05", dateModified: "2026-07-28", image: "/images/parts-roborock-qrevo-kit.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-    <AuthorByline datePublished="2026-04-05" dateModified="2026-07-27" />
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-27</p>
+    <AuthorByline datePublished="2026-04-05" dateModified="2026-07-28" />
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-28</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
       Roborock Qrevo-serien Reservdelar 2026
     </h1>
     <AnswerBox
       question="Snabbt svar: Vilka reservdelar passar Roborock Qrevo-serien?"
-      answer="Qrevo S, Qrevo Pro och Qrevo MaxV Ultra delar samma reservdelssystem, medan Qrevo Master har ett eget med modellspecifika dammpåsar. Byt HEPA-filter var 2 månad, sidoborstar var 6 till 12 månad och gummiborsten var 12 månad. Tredjepartskit på Amazon kostar ofta 50 till 70 procent mindre än originalen."
+      answer="Qrevo S, Qrevo Pro och Qrevo MaxV Ultra delar samma reservdelssystem, medan Qrevo Master har ett eget med modellspecifika dammpåsar. Byt HEPA-filter var 2 månad, sidoborstar var 6 till 12 månad och gummiborsten var 12 månad. Tredjepartskit kostar ofta 50 till 70 procent mindre än originalen."
     />
     <p class="text-text-light text-lg mb-6 leading-relaxed">
       Roborock Qrevo-serien kräver byte av HEPA-filter var 2-3 månader och sidoborste var 2 månader. Qrevo Master med utfällbar sidoarm har egna reservdelar för armens borste (byte var 3 månader). Rätt delar till Qrevo S, Qrevo Pro, Qrevo MaxV Ultra och Qrevo Master.
@@ -124,6 +156,11 @@ export const articleMeta = {
       {products.map(p => (
         <div class="bg-white rounded-xl border border-border p-5">
           <div class="flex flex-col sm:flex-row sm:items-start gap-4">
+            {p.img && (
+              <div class="flex-shrink-0 w-32 h-32 bg-gray-50 rounded-xl p-2 flex items-center justify-center border border-border">
+                <img src={p.img} alt={p.name} class="w-full h-full object-contain" loading="lazy" width="200" height="200" />
+              </div>
+            )}
             <div class="flex-1">
               <div class="flex items-start gap-3 mb-2">
                 {p.badge && (
@@ -132,10 +169,18 @@ export const articleMeta = {
                 <h2 class="font-semibold text-text text-sm leading-snug">{p.name}</h2>
               </div>
               <p class="text-xs text-text-lighter mb-1"><span class="font-medium">Passar:</span> {p.compat}</p>
-              <p class="text-xs text-text-light mb-3"><span class="font-medium">Innehaller:</span> {p.includes}</p>
+              {p.includes && (
+                <p class="text-xs text-text-light mb-3"><span class="font-medium">Innehåller:</span> {p.includes}</p>
+              )}
               <div class="flex items-center gap-4">
-                
-                
+                <a
+                  href={p.buyUrl}
+                  rel="sponsored nofollow noopener noreferrer"
+                  target="_blank"
+                  class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+                >
+                  Bra pris hos {p.store}
+                </a>
               </div>
             </div>
           </div>

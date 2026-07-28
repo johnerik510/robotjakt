@@ -6,60 +6,88 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import AnswerBox from '../../components/AnswerBox.astro';
 
 
+// Produkter och tracker-URL:er hämtade ordagrant ur Adtractions produktfeed
+// (reservdelskatalogen, verifierad 2026-07-28). Ingen URL är handskriven.
 const products = [
   {
-    asin: 'B0CG4RR3W5',
-    img: '/images/parts-roborock-s8-kit.webp',
-    name: 'Roborock S8 / S8+ / S8 Pro Ultra, komplett tillbehörskit',
-    compat: 'Passar: S8, S8+, S8 Pro Ultra, S8 Max Ultra, S8 MaxV Ultra',
-    includes: '2 HEPA-filter, 2 huvudborstar, 4 sidoborstar, 4 moppdukar',
-    badge: 'Populärast',
+    img: '/images/parts/roborock-qrevo-tillbehorskit.webp',
+    name: 'Roborock Tillbehörskit till Roborock QRevo',
+    compat: 'Passar: Roborock Qrevo',
+    includes: null,
+    badge: 'Komplett kit',
     brand: 'Roborock',
+    store: 'Kjell',
+    buyUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66041&url=http://www.kjell.com/se/produkter/hem-fritid/stadning-rengoring/robotdammsugare/tillbehor-till-robotdammsugare/roborock-tillbehorskit-till-roborock-qrevo-p66041',
   },
   {
-    asin: 'B0CY5CWRXQ',
-    img: '/images/parts-roborock-qrevo-kit.webp',
-    name: 'Roborock Qrevo S / Qrevo Pro / Qrevo MaxV, 20-delars kit',
-    compat: 'Passar: Qrevo S, Qrevo Pro, Qrevo MaxV, Qrevo Plus',
-    includes: '1 huvudborste, 6 sidoborstar, 4 HEPA-filter, 4 moppkuddar, 4 dammpåsar',
-    badge: null,
+    img: '/images/parts/roborock-q5-q7-q8-filter.webp',
+    name: 'Roborock filter 8.02.0134',
+    compat: 'Passar: Q8 Max+, Q5 Pro, Q5 Pro+, Q7 Max',
+    includes: null,
+    badge: 'Filter',
     brand: 'Roborock',
+    store: 'CS Megastore',
+    buyUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=8332918&url=https://www.csmegastore.se/i/8332918/roborock-8-02-0134-filter-robotdammsugare-vit-roborock-q8-max-q5-pro-q5-pro-q7-max-l%c3%a5da',
   },
   {
-    asin: 'B0DFBMQ64P',
-    img: '/images/parts-dreame-x40-kit.webp',
-    name: 'Dreame X40 Ultra / X30 Ultra / L20 Ultra, 18-delars kit',
-    compat: 'Passar: X40 Ultra, X30 Ultra, L20 Ultra',
-    includes: '1 huvudborste, 4 sidoborstar, 4 HEPA-filter, 4 moppkuddar, 4 dammpåsar',
+    img: '/images/parts/roborock-ultra-plus-dammpase-6-pack.webp',
+    name: 'Roborock dammpåse Ultra / Plus, 6-pack',
+    compat: 'Butiken anger Ultra / Plus, exakt robotmodell framgår inte av artikelnamnet',
+    includes: '6 dammpåsar',
+    badge: 'Dammpåse',
+    brand: 'Roborock',
+    store: 'Teknikproffset',
+    buyUrl: 'https://dot.teknikproffset.se/t/t?a=1954032647&as=2063681412&t=2&tk=1&cupa_sku=C58862&url=https://www.teknikproffset.se/hem-hushall-tradgard/stadprodukter/dammsugare-tillbehor/tillbehor-45/dammsugarpasar/roborock-ultra-plus-dammpase-6-st',
+  },
+  {
+    img: '/images/parts/dreame-tillbehorskit-l20-ultra.webp',
+    name: 'Dreame Tillbehörskit till Dreame L20 Ultra',
+    compat: 'Passar: Dreame L20 Ultra',
+    includes: null,
     badge: null,
     brand: 'Dreame',
+    store: 'Kjell',
+    buyUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=65762&url=http://www.kjell.com/se/produkter/hem-fritid/stadning-rengoring/robotdammsugare/tillbehor-till-robotdammsugare/dreame-tillbehorskit-till-dreame-l20-ultra-p65762',
   },
   {
-    asin: 'B0DTTPX9DW',
-    img: '/images/parts-dreame-x40-filter.webp',
-    name: 'Dreame X40 Ultra / L10s Pro Ultra Heat, 4-pack filter',
-    compat: 'Passar: X40 Ultra Complete, X40 Master, L10s Pro Ultra Heat, X30 Pro Plus',
-    includes: '4 HEPA E12-filter',
-    badge: 'Bästa pris',
+    img: '/images/parts/dreame-tillbehorskit-l40s-pro-ultra.webp',
+    name: 'Dreame Tillbehörskit för L40s Pro Ultra',
+    compat: 'Passar: Dreame L40s Pro Ultra',
+    includes: null,
+    badge: null,
     brand: 'Dreame',
+    store: 'Kjell',
+    buyUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66691&url=http://www.kjell.com/se/produkter/hem-fritid/stadning-rengoring/robotdammsugare/dreame-robotdammsugare/dreame-tillbehorskit-for-l40s-pro-ultra-p66691',
   },
   {
-    asin: 'B0DQ84RLZ7',
-    img: '/images/parts-ecovacs-x5-kit.webp',
-    name: 'Ecovacs Deebot X5 Omni / X5 Pro, 20-delars kit',
-    compat: 'Passar: Deebot X5 Omni, X5 Pro',
-    includes: '1 rullborste, 4 sidoborstar, 4 HEPA-filter, 6 dammpåsar, 4 mopptorkdukar',
+    img: '/images/parts/dreame-d10s-plus-tillbehorskit.webp',
+    name: 'Dreame D10s Plus tillbehörskit',
+    compat: 'Passar: Dreame D10s Plus',
+    includes: null,
     badge: null,
-    brand: 'Ecovacs',
+    brand: 'Dreame',
+    store: 'Teknikproffset',
+    buyUrl: 'https://dot.teknikproffset.se/t/t?a=1954032647&as=2063681412&t=2&tk=1&cupa_sku=C56178&url=https://www.teknikproffset.se/hem-hushall-tradgard/stadprodukter/dammsugare-tillbehor/tillbehor-45/reservdelar-till-robotdammsugare/dreame-d10s-plus-tillbehorskit',
   },
   {
-    asin: 'B0DF8695XP',
-    img: '/images/parts-ecovacs-x5-brush-kit.webp',
-    name: 'Ecovacs Deebot X5 Omni / X5 Pro, borstar + filter + mopp',
-    compat: 'Passar: Deebot X5 Omni, X5 Pro',
-    includes: '1 huvudborste, 4 sidoborstar, 3 HEPA-filter, 3 dammpåsar, 4 mopptorkdukar',
+    img: '/images/parts/ecovacs-tillbehorskit-x8-omni.webp',
+    name: 'Ecovacs Premium Tillbehörskit för X8 Omni / X8 Pro Omni',
+    compat: 'Passar: X8 Omni, X8 Pro Omni',
+    includes: null,
     badge: null,
     brand: 'Ecovacs',
+    store: 'CS Megastore',
+    buyUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=24146831&url=https://www.csmegastore.se/i/24146831/ecovacs-premium-tillbeh%c3%b6rskit-f%c3%b6r-x8-omni-x8-pro-omni',
+  },
+  {
+    img: '/images/parts/ecovacs-tillbehorskit-t90-x12.webp',
+    name: 'Ecovacs Premium Tillbehörskit för T90 / X12',
+    compat: 'Passar: T90, X12',
+    includes: null,
+    badge: null,
+    brand: 'Ecovacs',
+    store: 'CS Megastore',
+    buyUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25701093&url=https://www.csmegastore.se/i/25701093/ecovacs-premium-tillbeh%c3%b6rskit-f%c3%b6r-t90-x12',
   },
 ];
 
@@ -167,10 +195,16 @@ export const articleMeta = {
             <div class="flex-1 min-w-0">
               <h2 class="font-heading font-bold text-text text-base mb-1">{p.name}</h2>
               <p class="text-xs text-accent font-medium mb-2">{p.compat}</p>
-              <p class="text-xs text-text-light mb-4"><strong class="text-text">Innehåller:</strong> {p.includes}</p>
+              {p.includes && <p class="text-xs text-text-light mb-4"><strong class="text-text">Innehåller:</strong> {p.includes}</p>}
               <div class="flex flex-wrap items-center gap-3">
-                
-                
+                <a
+                  href={p.buyUrl}
+                  rel="sponsored nofollow noopener noreferrer"
+                  target="_blank"
+                  class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+                >
+                  Bra pris hos {p.store}
+                </a>
               </div>
             </div>
           </div>

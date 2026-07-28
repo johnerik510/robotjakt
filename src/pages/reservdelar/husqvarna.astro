@@ -8,47 +8,41 @@ import AnswerBox from '../../components/AnswerBox.astro';
 
 const knivar = [
   {
-    asin: 'B0C9C5VNM1',
-    img: '/images/parts-robot-kit-3.webp',
-    name: '45-pack universalblad, Husqvarna Automower, Gardena, Yardforce',
-    compat: 'Passar: Husqvarna Automower 105, 115H, 310, 315, 315X, 430X, 450X och fler',
-    includes: '45 ersättningsblad + skruvar',
-    badge: 'Bäst i test',
-    detail: 'Standardtjocklek 0,75 mm, passar alla standardhållare',
+    img: null,
+    name: 'Husqvarna knivar till Husqvarna Automower 36 st',
+    compat: 'Passar: Husqvarna Automower',
+    includes: '36 knivar',
+    badge: 'Husqvarna original',
+    detail: 'Originalknivar från Husqvarna, storpack för hela säsongen',
+    store: 'CS Megastore',
+    url: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25417320&url=https://www.csmegastore.se/i/25417320/husqvarna-knivar-till-husqvarna-automower-36-st',
   },
   {
-    asin: 'B07WMTTSS4',
-    img: '/images/parts-robot-filter-4.webp',
-    name: 'Domar 30-pack förstärkta robotgräsklipparblad',
-    compat: 'Passar: Husqvarna Automower, Gardena Sileno, Yard Force',
-    includes: '30 blad + skruvar',
+    img: null,
+    name: 'Japcell knivar till Husqvarna Automower/Gardena/Greenworks Optimow - 30 st. titanbelagt stål inkl. skruvar',
+    compat: 'Passar: Husqvarna Automower, Gardena, Greenworks Optimow',
+    includes: '30 knivar i titanbelagt stål, skruvar ingår',
+    badge: 'Titanbelagt stål',
+    detail: 'Titanbelagt stål, skruvar följer med i paketet',
+    store: 'CS Megastore',
+    url: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=24130011&url=https://www.csmegastore.se/i/24130011/japcell-knivar-till-husqvarna-automower-gardena-greenworks-optimow-30-st-titanbelagt-st%c3%a5l-inkl-skruvar',
+  },
+  {
+    img: null,
+    name: 'Husqvarna knivar för AUTOMOWER 9 st',
+    compat: 'Passar: Husqvarna Automower',
+    includes: '9 knivar',
     badge: null,
-    detail: 'Förstärkt stål för längre livslängd',
-  },
-  {
-    asin: 'B0D6YWJFJP',
-    img: '/images/parts-dreame-brush.webp',
-    name: '30-pack premium ersättningsblad, Husqvarna Automower',
-    compat: 'Passar: Husqvarna Automower 105, 115H, 315, 315X, 430X, 450X',
-    includes: '30 blad + skruvar',
-    badge: null,
-    detail: 'Väderbeständiga och långlivade premiumblad',
-  },
-  {
-    asin: 'B083SKXKR7',
-    img: '/images/parts-lawn-blade.webp',
-    name: 'Willingood 30-pack titanblad, universalpassning',
-    compat: 'Passar: Husqvarna Automower, Gardena, McCulloch, Segway Navimow',
-    includes: '30 titanblad + 30 skruvar',
-    badge: 'Titanstål',
-    detail: 'Extra hårda titanblad för krävandetomter med hinder',
+    detail: 'Originalknivar från Husqvarna i mindre förpackning',
+    store: 'CS Megastore',
+    url: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25417317&url=https://www.csmegastore.se/i/25417317/husqvarna-knivar-f%c3%b6r-automower-9-st',
   },
 ];
 
 const kabel = [
   {
     asin: 'B0DRHWXPHC',
-    img: '/images/parts-robot-filter-2.webp',
+    img: null,
     name: 'Forever Speed, begränsningskabel 100 m, 2,7 mm',
     compat: 'Passar: Husqvarna Automower, Gardena Sileno, Worx Landroid, McCulloch',
     includes: '100 m kabel, diameter 2,7 mm, förtennad koppar med aluminiumskikt',
@@ -57,7 +51,7 @@ const kabel = [
   },
   {
     asin: 'B0DRHXG9WX',
-    img: '/images/parts-husqvarna-blade.webp',
+    img: null,
     name: 'Forever Speed, begränsningskabel 150 m, 2,7 mm',
     compat: 'Passar: Husqvarna Automower, Gardena Sileno, Worx Landroid, McCulloch',
     includes: '150 m kabel, diameter 2,7 mm, förtennad koppar med aluminiumskikt',
@@ -66,7 +60,7 @@ const kabel = [
   },
   {
     asin: 'B0D9QB7H3S',
-    img: '/images/parts-robot-filter-5.webp',
+    img: null,
     name: '20-pack kabelklämmor, reparerar och skarvar begränsningskabel',
     compat: 'Passar: Gardena, Husqvarna och alla kabeldrivna robotgräsklippare',
     includes: '20 anslutningsklämmor, passar kabel 2,7 till 3,4 mm',
@@ -106,7 +100,7 @@ const faqItems = [
   },
   {
     question: 'Passar bladen även till andra märken än Husqvarna?',
-    answer: 'Ofta, men kontrollera listan för det specifika paketet. Universalbladen i 45-packet anges passa Husqvarna Automower, Gardena och Yardforce, medan titanbladen från Willingood även listar McCulloch och Segway Navimow. Det som styr är att fästet är av samma triangulära typ och att bladtjockleken stämmer. Passar inte hållaren är bladen värdelösa oavsett vad förpackningen lovar.',
+    answer: 'Ofta, men kontrollera listan för det specifika paketet. Japcells titanbelagda blad anges passa Husqvarna Automower, Gardena och Greenworks Optimow, medan Husqvarnas egna knivpaket bara listas för Automower. Det som styr är att fästet är av samma triangulära typ och att bladtjockleken stämmer. Passar inte hållaren är bladen värdelösa oavsett vad förpackningen lovar.',
   },
 ];
 
@@ -143,7 +137,7 @@ export const articleMeta = {
       <Breadcrumbs items={breadcrumbs} light={true} />
     <AuthorByline datePublished="2026-03-29" dateModified="2026-07-27" />
       <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Husqvarna Automower reservdelar, modell för modell</h1>
-      <p class="text-gray-200 max-w-2xl">Ersättningsknivar, begränsningskabel och kabelklämmor med kompatibilitet angiven per Automower-modell: 105, 115H, 310, 315, 315X, 430X och 450X.</p>
+      <p class="text-gray-200 max-w-2xl">Ersättningsknivar från Husqvarna och Japcell, begränsningskabel och kabelklämmor till Husqvarna Automower.</p>
     </div>
   </section>
 
@@ -152,7 +146,7 @@ export const articleMeta = {
 
     <AnswerBox
       question="Snabbt svar: Vilka reservdelar behöver Husqvarna Automower?"
-      answer="Husqvarna Automower behöver framför allt nya knivar varje säsong, helst i april eller maj innan gräset tar fart. Universalblad passar standardmodellerna 105, 115H, 310, 315, 315X, 430X och 450X med det triangulära hållarsystemet. Går begränsningskabeln av lagar du den med kabelklämmor i stället för att byta hela kabeln."
+      answer="Husqvarna Automower behöver framför allt nya knivar varje säsong, helst i april eller maj innan gräset tar fart. Knivarna sitter i det triangulära hållarsystem som standardmodellerna 105, 115H, 310, 315, 315X, 430X och 450X delar. Går begränsningskabeln av lagar du den med kabelklämmor i stället för att byta hela kabeln."
     />
 
     <p class="text-sm text-text-light mb-6">Den här sidan är avgränsad till Husqvarna Automower. Har du en Gardena Sileno, Worx Landroid eller Segway Navimow hittar du samma delar i vår översikt över <a href="/reservdelar/robotgrasklippare/" class="text-accent underline">reservdelar robotgräsklippare</a>.</p>
@@ -165,9 +159,11 @@ export const articleMeta = {
             <div class="flex-shrink-0 flex flex-col items-center gap-2">
               {i === 0 && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-winner/10 text-winner">{p.badge}</span>}
               {i > 0 && p.badge && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-bg-alt text-text-light">{p.badge}</span>}
-              <div class="w-32 h-32 bg-gray-50 rounded-xl p-2 flex items-center justify-center border border-border">
-                <img src={p.img} alt={p.name} class="w-full h-full object-contain" loading="lazy" width="200" height="200" />
-              </div>
+              {p.img && (
+                <div class="w-32 h-32 bg-gray-50 rounded-xl p-2 flex items-center justify-center border border-border">
+                  <img src={p.img} alt={p.name} class="w-full h-full object-contain" loading="lazy" width="200" height="200" />
+                </div>
+              )}
             </div>
             <div class="flex-1 min-w-0">
               <h3 class="font-heading font-bold text-text text-base mb-1">{p.name}</h3>
@@ -175,8 +171,16 @@ export const articleMeta = {
               <p class="text-xs text-text-light mb-1"><strong class="text-text">Innehåller:</strong> {p.includes}</p>
               <p class="text-xs text-text-light mb-4">{p.detail}</p>
               <div class="flex flex-wrap items-center gap-3">
-                
-                
+                {p.url && (
+                  <a
+                    href={p.url}
+                    rel="sponsored nofollow noopener noreferrer"
+                    target="_blank"
+                    class="inline-flex items-center justify-center min-h-[44px] bg-cta hover:bg-cta/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
+                  >
+                    Bra pris hos {p.store}
+                  </a>
+                )}
               </div>
             </div>
           </div>

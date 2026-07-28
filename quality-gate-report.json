@@ -1,14 +1,14 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-07-28T10:43:09.173Z",
-  "durationMs": 11604,
+  "timestamp": "2026-07-28T11:12:44.043Z",
+  "durationMs": 11116,
   "summary": {
     "checks": 23,
-    "errors": 6,
+    "errors": 5,
     "warnings": 29,
     "newErrors": 0,
-    "baselinedErrors": 6
+    "baselinedErrors": 5
   },
   "results": [
     {
@@ -160,7 +160,7 @@
   "baseline": {
     "status": "compared",
     "baselineCount": 11,
-    "baselinedCount": 6,
+    "baselinedCount": 5,
     "newErrorCount": 0
   },
   "allResults": [
@@ -341,12 +341,6 @@
       "check": "08-image-binary-duplicates",
       "severity": "error",
       "message": "2 bildfiler är binär-identiska (8KB) — samma bild laddats med olika filnamn: public/images/husqvarna-315x.webp | public/images/husqvarna-automower-315x.webp"
-    },
-    {
-      "check": "15-rendered-images",
-      "severity": "error",
-      "file": "reservdelar/dreame/index.html",
-      "message": "2 <article>-kort delar samma <img src=\"/images/parts-robot-filter-3.webp\"> på reservdelar/dreame/index.html — varje kort behöver unik bild"
     }
   ]
 }

@@ -8,6 +8,42 @@ import AnswerBox from '../../components/AnswerBox.astro';
 
 const products = [
   {
+    img: '/images/parts/ecovacs-tillbehorskit-x8-omni.webp',
+    name: 'ECOVACS Premium Tillbehörskit för X8 OMNI / X8 PRO OMNI',
+    compat: 'Passar: Deebot X8 Omni, X8 Pro Omni',
+    includes: 'Huvudborste, sidoborstar, filter, dammpåsar och mopprulle',
+    badge: 'Komplett kit',
+    store: 'CS Megastore',
+    url: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=24146831&url=https://www.csmegastore.se/i/24146831/ecovacs-premium-tillbeh%c3%b6rskit-f%c3%b6r-x8-omni-x8-pro-omni',
+  },
+  {
+    img: '/images/parts/ecovacs-tillbehorskit-t90-x12.webp',
+    name: 'ECOVACS Premium Tillbehörskit för T90 / X12',
+    compat: 'Passar: Deebot T90, X12',
+    includes: 'Huvudborste, sidoborstar, filter, dammpåsar och mopprulle',
+    badge: 'T90 och X12',
+    store: 'CS Megastore',
+    url: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25701093&url=https://www.csmegastore.se/i/25701093/ecovacs-premium-tillbeh%c3%b6rskit-f%c3%b6r-t90-x12',
+  },
+  {
+    img: '/images/parts/ecovacs-dammpasar-deebot-x2-combo.webp',
+    name: 'Dammsugare Ecovacs | DEEBOT X2 COMBO Antibakteriella dammpåsar 3 L för DEEBOT X2 COMBO | DDB030028 | 3 st',
+    compat: 'Passar: Deebot X2 Combo',
+    includes: '3 antibakteriella dammpåsar på 3 liter',
+    badge: 'Dammpåsar',
+    store: 'CS Megastore',
+    url: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=21019451&url=https://www.csmegastore.se/i/21019451/dammsugare-ecovacs-deebot-x2-combo-antibakteriella-dammp%c3%a5sar-3-l-f%c3%b6r-deebot-x2-combo-ddb030028-3-st',
+  },
+  {
+    img: '/images/parts/ecovacs-hepa-filter-x2-combo.webp',
+    name: 'ECOVACS HEPA-filter för handdammsugare X2 COMBO 1 st - DFI010027',
+    compat: 'Passar: handdammsugaren i Deebot X2 Combo',
+    includes: '1 HEPA-filter',
+    badge: 'Filter',
+    store: 'CS Megastore',
+    url: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=20941559&url=https://www.csmegastore.se/i/20941559/ecovacs-hepa-filter-f%c3%b6r-handdammsugare-x2-combo-1-st-dfi010027',
+  },
+  {
     asin: 'B0DQ84RLZ7',
     img: '/images/parts-ecovacs-x5-kit.webp',
     name: 'Ecovacs Deebot X5 Omni / X5 Pro, 20-delars komplett kit',
@@ -64,7 +100,7 @@ const faqItems = [
   },
   {
     question: 'Är tredjepartskit lika bra som originaldelar?',
-    answer: 'Det varierar mellan tillverkare, och det viktigaste är inte märket utan att modellbeteckningen stämmer exakt. På den här sidan finns både omärkta kit och tillverkare som HIYOUNG, samtliga angivna för Deebot X5 Omni och X5 Pro. Kontrollera alltid att förpackningen listar din exakta modell. En del som nästan passar sitter dåligt, sliter i onödan och kan läcka damm förbi filtret.',
+    answer: 'Det varierar mellan tillverkare, och det viktigaste är inte märket utan att modellbeteckningen stämmer exakt. På den här sidan finns både Ecovacs egna premiumkit och tredjepartskit från tillverkare som HIYOUNG, var och en angiven för sina egna modeller. Kontrollera alltid att förpackningen listar din exakta modell. En del som nästan passar sitter dåligt, sliter i onödan och kan läcka damm förbi filtret.',
   },
   {
     question: 'När ska moppkuddarna bytas i stället för att tvättas?',
@@ -109,7 +145,7 @@ export const articleMeta = {
       <Breadcrumbs items={breadcrumbs} light={true} />
     <AuthorByline datePublished="2026-03-29" dateModified="2026-07-27" />
       <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Ecovacs Deebot reservdelar</h1>
-      <p class="text-gray-200 max-w-2xl">Tillbehörskit, filter, borstar och moppkuddar till Ecovacs Deebot X5 Omni och X5 Pro, håll roboten i toppskick.</p>
+      <p class="text-gray-200 max-w-2xl">Tillbehörskit, filter, borstar och moppkuddar till Ecovacs Deebot X8 Omni, X5 Omni, T90, X12 och X2 Combo, håll roboten i toppskick.</p>
     </div>
   </section>
 
@@ -137,8 +173,16 @@ export const articleMeta = {
               <p class="text-xs text-accent font-medium mb-2">{p.compat}</p>
               <p class="text-xs text-text-light mb-4"><strong class="text-text">Innehåller:</strong> {p.includes}</p>
               <div class="flex flex-wrap items-center gap-3">
-                
-                
+                {p.url && (
+                  <a
+                    href={p.url}
+                    rel="sponsored nofollow noopener noreferrer"
+                    target="_blank"
+                    class="inline-flex items-center justify-center min-h-[44px] bg-cta hover:bg-cta/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
+                  >
+                    Bra pris hos {p.store}
+                  </a>
+                )}
               </div>
             </div>
           </div>

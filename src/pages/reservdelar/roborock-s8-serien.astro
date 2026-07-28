@@ -6,48 +6,82 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import AnswerBox from '../../components/AnswerBox.astro';
 
 
+// Produkterna kommer fran Adtractions produktfeed via reservdelskatalogen.
+// Kompatibiliteten under "Passar" ar hamtad ordagrant ur butikens artikelnamn.
+// Dar butiken inte anger nagon modell star det uttryckligen sa i stallet for
+// en gissad modellista.
 const products = [
   {
-    asin: 'B0CG4RR3W5',
-    name: 'Roborock S8 / S8+ / S8 Pro Ultra, komplett tillbehörskit 20-delar',
-    compat: 'Passar: S8, S8+, S8 Pro Ultra, S8 Max Ultra, S8 MaxV Ultra',
-    includes: '2 HEPA-filter, 2 gummiborstar, 4 sidoborstar, 4 moppdukar, skruvmejsel',
-    badge: 'Bästsäljare',
+    img: '/images/parts/roborock-ultra-plus-dammpase-6-pack.webp',
+    name: 'Roborock Ultra / Plus dammpåse, 6 st',
+    compat: 'Ultra- och Plus-stationer enligt butikens artikelnamn, stäm av mot din station innan köp',
+    includes: '6 dammpåsar till tömningsstationen',
+    badge: 'Dammpåse',
+    store: 'Teknikproffset',
+    buyUrl: 'https://dot.teknikproffset.se/t/t?a=1954032647&as=2063681412&t=2&tk=1&cupa_sku=C58862&url=https://www.teknikproffset.se/hem-hushall-tradgard/stadprodukter/dammsugare-tillbehor/tillbehor-45/dammsugarpasar/roborock-ultra-plus-dammpase-6-st',
   },
   {
-    asin: 'B0CQHPR8TR',
-    name: 'Roborock S8+ / S8 Pro Ultra / S8 Max Ultra, kit med dammpåsar',
-    compat: 'Passar: S8+, S8 Pro Ultra, S8 Max Ultra',
-    includes: '2 HEPA-filter, 2 gummiborstar, 4 sidoborstar, 4 dammpåsar, 4 moppdukar',
-    badge: 'Mest komplett',
+    img: null,
+    name: 'Roborock moppduksfäste till S8 och S8+, svart',
+    compat: 'S8, S8+',
+    includes: 'Moppduksfäste i svart',
+    badge: 'Moppduksfäste',
+    store: 'CS Megastore',
+    buyUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=20198380&url=https://www.csmegastore.se/i/20198380/roborock-moppduksf%c3%a4ste-s8-s8-svart',
   },
   {
-    asin: 'B0D6RFC7Q5',
-    name: 'Roborock S8 / S8+ / S8 Pro Ultra, gummiborstar + HEPA-filter',
-    compat: 'Passar: S8, S8+, S8 Pro Ultra',
-    includes: '2 gummiborstar (dubbel gummirulle), 6 sidoborstar, 4 HEPA-filter',
-    badge: 'Bästa pris',
+    img: '/images/parts/roborock-hepa-filter-2-pack.webp',
+    name: 'Roborock HEPA-filter 2-pack',
+    compat: 'Ospecificerat, butiken anger ingen modell i artikelnamnet. Stäm av mot din robot innan köp',
+    includes: '2 HEPA-filter',
+    badge: 'Filter',
+    store: 'Kjell',
+    buyUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66038&url=http://www.kjell.com/se/produkter/hem-fritid/stadning-rengoring/robotdammsugare/tillbehor-till-robotdammsugare/roborock-hepa-filter-2-pack-p66038',
   },
   {
-    asin: 'B0C7QQDVNL',
-    name: 'Roborock S8 MaxV Ultra / S8 Max Ultra, dammpåsar 5-pack',
-    compat: 'Passar: S8 MaxV Ultra, S8 Max Ultra, S8 Pro Ultra (med station)',
-    includes: '5 dammpåsar för automatisk tömningsstation',
-    badge: null,
+    img: '/images/parts/roborock-duo-huvudborste.webp',
+    name: 'Roborock Duo-huvudborste 1-pack',
+    compat: 'Ospecificerat, butiken anger ingen modell i artikelnamnet. Stäm av mot din robot innan köp',
+    includes: '1 duo-huvudborste',
+    badge: 'Huvudborste',
+    store: 'Kjell',
+    buyUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66034&url=http://www.kjell.com/se/produkter/hem-fritid/stadning-rengoring/robotdammsugare/tillbehor-till-robotdammsugare/roborock-duo-huvudborste-1-pack-p66034',
   },
   {
-    asin: 'B0BQJFBLX7',
-    name: 'Roborock S8 serien, moppkuddar 8-pack',
-    compat: 'Passar: S8, S8+, S8 Pro Ultra, S8 Max Ultra, S8 MaxV Ultra',
-    includes: '8 tvättbara moppkuddar i mikrofiber',
-    badge: null,
+    img: '/images/parts/roborock-sidoborste-2-pack.webp',
+    name: 'Roborock Sidoborste 2-pack',
+    compat: 'Ospecificerat, butiken anger ingen modell i artikelnamnet. Stäm av mot din robot innan köp',
+    includes: '2 sidoborstar',
+    badge: 'Sidoborstar',
+    store: 'Kjell',
+    buyUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66035&url=http://www.kjell.com/se/produkter/hem-fritid/stadning-rengoring/robotdammsugare/tillbehor-till-robotdammsugare/roborock-sidoborste-2-pack-p66035',
   },
   {
-    asin: 'B0BF3HH5RC',
-    name: 'Roborock S8 / S8 Pro Ultra, HEPA-filter 4-pack',
-    compat: 'Passar: S8, S8+, S8 Pro Ultra, S8 Max Ultra, S8 MaxV Ultra',
-    includes: '4 HEPA E11-filter',
-    badge: 'Bästa filterpris',
+    img: '/images/parts/roborock-vibrarise-moppduk.webp',
+    name: 'Roborock Antibacterial VibraRise antibakteriell moppduk',
+    compat: 'VibraRise-moppsystemet. Butiken anger ingen robotmodell i artikelnamnet',
+    includes: 'Antibakteriell moppduk',
+    badge: 'Moppduk',
+    store: 'Teknikproffset',
+    buyUrl: 'https://dot.teknikproffset.se/t/t?a=1954032647&as=2063681412&t=2&tk=1&cupa_sku=C36527&url=https://www.teknikproffset.se/hem-hushall-tradgard/stadprodukter/dammsugare-tillbehor/tillbehor-45/reservdelar-till-robotdammsugare/roborock-antibacterial-vibrarise-antibakteriell-moppduk',
+  },
+  {
+    img: '/images/parts/roborock-ultra-plus-dammpase-6-pack.webp',
+    name: 'Roborock dammpåse Ultra / Plus, 6-pack',
+    compat: 'Ultra och Plus enligt butikens artikelnamn. Exakt robotmodell anges inte',
+    includes: '6 dammpåsar',
+    badge: 'Dammpåsar',
+    store: 'Teknikproffset',
+    buyUrl: 'https://dot.teknikproffset.se/t/t?a=1954032647&as=2063681412&t=2&tk=1&cupa_sku=C58862&url=https://www.teknikproffset.se/hem-hushall-tradgard/stadprodukter/dammsugare-tillbehor/tillbehor-45/dammsugarpasar/roborock-ultra-plus-dammpase-6-st',
+  },
+  {
+    img: '/images/parts/roborock-hepa-filter-auto-empty-dock.webp',
+    name: 'Roborock HEPA-filter för Auto Empty Dock',
+    compat: 'Auto Empty Dock. Butiken anger ingen robotmodell i artikelnamnet',
+    includes: 'HEPA-filter till tömningsstationen',
+    badge: 'Stationsfilter',
+    store: 'Kjell',
+    buyUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=51911&url=http://www.kjell.com/se/produkter/hem-fritid/stadning-rengoring/robotdammsugare/tillbehor-till-robotdammsugare/roborock-hepa-filter-for-auto-empty-dock-p51911',
   },
 ];
 
@@ -62,7 +96,7 @@ const faqItems = [
   },
   {
     question: 'Kan jag använda tredjepartsreservdelar i Roborock S8?',
-    answer: 'Ja, tredjepartsreservdelar fungerar och kostar ofta 50 till 70% mindre än originalen. Välj kit med HEPA E11-standard eller högre för filtren. Kontrollera att gummiborstarnas mått matchar S8-specifkationerna (185 mm x 56 mm). Tredjepartsdelar ogiltigförklarar inte garantin.',
+    answer: 'Ja, tredjepartsreservdelar fungerar och kostar ofta 50 till 70% mindre än originalen. Välj kit med HEPA E11-standard eller högre för filtren. Kontrollera att gummiborstarnas mått matchar S8-specifikationerna (185 mm x 56 mm). Tredjepartsdelar ogiltigförklarar inte garantin.',
   },
   {
     question: 'Vad är dammpåsens kapacitet i Roborock S8 Pro Ultra?',
@@ -109,12 +143,12 @@ export const articleMeta = {
 <BaseLayout
   title="Roborock S8 reservdelar 2026: filter, borstar, moppar"
   description="Filter, borstar, moppkuddar och dammpåsar till S8, S8+, S8 Pro Ultra, S8 Max Ultra och S8 MaxV Ultra, med kompatibilitetslista och underhållsschema."
-  article={{ datePublished: "2026-04-05", dateModified: "2026-07-27", image: "/images/parts-roborock-s8-kit.webp" }}
+  article={{ datePublished: "2026-04-05", dateModified: "2026-07-28", image: "/images/parts-roborock-s8-kit.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-    <AuthorByline datePublished="2026-04-05" dateModified="2026-07-27" />
-<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-27</p>
+    <AuthorByline datePublished="2026-04-05" dateModified="2026-07-28" />
+<p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-28</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
       Roborock S8 reservdelar 2026, hela S8-serien
@@ -131,6 +165,11 @@ export const articleMeta = {
       {products.map(p => (
         <div class="bg-white rounded-xl border border-border p-5">
           <div class="flex flex-col sm:flex-row sm:items-start gap-4">
+            {p.img && (
+              <div class="flex-shrink-0 w-32 h-32 bg-gray-50 rounded-xl p-2 flex items-center justify-center border border-border">
+                <img src={p.img} alt={p.name} class="w-full h-full object-contain" loading="lazy" width="200" height="200" />
+              </div>
+            )}
             <div class="flex-1">
               <div class="flex items-start gap-3 mb-2">
                 {p.badge && (
@@ -139,10 +178,18 @@ export const articleMeta = {
                 <h2 class="font-semibold text-text text-sm leading-snug">{p.name}</h2>
               </div>
               <p class="text-xs text-text-lighter mb-1"><span class="font-medium">Passar:</span> {p.compat}</p>
-              <p class="text-xs text-text-light mb-3"><span class="font-medium">Innehaller:</span> {p.includes}</p>
+              {p.includes && (
+                <p class="text-xs text-text-light mb-3"><span class="font-medium">Innehåller:</span> {p.includes}</p>
+              )}
               <div class="flex items-center gap-4">
-                
-                
+                <a
+                  href={p.buyUrl}
+                  rel="sponsored nofollow noopener noreferrer"
+                  target="_blank"
+                  class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+                >
+                  Bra pris hos {p.store}
+                </a>
               </div>
             </div>
           </div>
@@ -178,7 +225,7 @@ export const articleMeta = {
         Slitna gummiborstar lämnar smuts i stråk på golvet och plockar sämre upp hår och grus. När gummiflänsarna ser rundade, spruckna eller ojämna ut är det dags. Med normal användning håller huvudrullen 12 till 18 månader, men hår som lindas runt axeln kortar livslängden.
       </p>
       <p class="text-sm text-text-light leading-relaxed mb-6">
-        Rengör därför rullen från hår regelbundet, det förlänger livslängden och håller upptaget jämnt mellan bytena. Vill du bara komplettera med borstar i stället för ett helt kit finns samlade alternativ på vår sida om <a href="/reservdelar/borstar/" class="text-accent underline">borstar till robotdammsugare</a>.
+        Rengör därför rullen från hår regelbundet, det förlänger livslängden och håller upptaget jämnt mellan bytena. Vill du jämföra fler borstalternativ finns de samlade på vår sida om <a href="/reservdelar/borstar/" class="text-accent underline">borstar till robotdammsugare</a>.
       </p>
 
       <h3 class="font-heading text-lg font-bold text-text mb-2">Hur väljer jag rätt dammpåse till S8-stationen?</h3>
@@ -194,7 +241,7 @@ export const articleMeta = {
         Sidoborstarna byts var 6 till 12 månad, men gå efter formen snarare än kalendern. När borsthåren pekar utåt eller har böjt sig permanent sveper de inte längre in smuts mot sugmunnen, och roboten lämnar kvar grus längs golvlister och i hörn.
       </p>
       <p class="text-sm text-text-light leading-relaxed mb-3">
-        Sidoborsten är den billigaste delen i kittet och samtidigt den som gör mest för kantstädningen, så snåla inte med bytet. Kiten innehåller fyra till sex stycken just för att de är tänkta att bytas oftare än gummiborstarna på undersidan.
+        Sidoborsten är den billigaste delen och samtidigt den som gör mest för kantstädningen, så snåla inte med bytet. Den säljs oftast i flerpack just för att den är tänkt att bytas oftare än gummiborsten på undersidan.
       </p>
       <p class="text-sm text-text-light leading-relaxed mb-6">
         Hår som lindar sig runt borstaxeln är den vanligaste orsaken till att en sidoborste dör i förtid. Bor det långhåriga i hushållet är det värt att se vilka robotar som hanterar det bäst, dem har vi samlat i guiden till <a href="/robotdammsugare/langt-har/" class="text-accent underline">robotdammsugare för långt hår</a>.

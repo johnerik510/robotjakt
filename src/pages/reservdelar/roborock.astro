@@ -6,59 +6,89 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import AnswerBox from '../../components/AnswerBox.astro';
 
 
+// Produkterna kommer fran Adtractions produktfeed via reservdelskatalogen.
+// Kompatibiliteten under "Passar" ar hamtad ordagrant ur butikens artikelnamn.
+// Dar butiken inte anger nagon modell star det uttryckligen sa i stallet for
+// en gissad modellista.
 const products = [
   {
-    asin: 'B0CG4RR3W5',
-    img: '/images/parts-roborock-s8-kit.webp',
-    name: 'Roborock S8 / S8+ / S8 Pro Ultra, komplett tillbehörskit',
-    compat: 'Passar: S8, S8+, S8 Pro Ultra, S8 Max Ultra, S8 MaxV Ultra',
-    includes: '2 HEPA-filter, 2 huvudborstar, 4 sidoborstar, 4 moppdukar, skruvmejsel',
-    badge: 'Bästsäljare',
+    img: '/images/parts/roborock-ultra-plus-dammpase-6-pack.webp',
+    name: 'Roborock Ultra / Plus dammpåse, 6 st',
+    compat: 'Ultra- och Plus-stationer enligt butikens artikelnamn, stäm av mot din station innan köp',
+    includes: '6 dammpåsar till tömningsstationen',
+    badge: 'Dammpåse',
+    store: 'Teknikproffset',
+    buyUrl: 'https://dot.teknikproffset.se/t/t?a=1954032647&as=2063681412&t=2&tk=1&cupa_sku=C58862&url=https://www.teknikproffset.se/hem-hushall-tradgard/stadprodukter/dammsugare-tillbehor/tillbehor-45/dammsugarpasar/roborock-ultra-plus-dammpase-6-st',
     series: 'S8-serien',
   },
   {
-    asin: 'B0CQHPR8TR',
-    img: '/images/parts-robot-kit-6.webp',
-    name: 'Roborock S8+ / S8 Pro Ultra, komplett kit med dammpåsar',
-    compat: 'Passar: S8+, S8 Pro Ultra, S8 Max Ultra',
-    includes: '2 HEPA-filter, 2 huvudborstar, 4 sidoborstar, 4 dammpåsar, 4 moppdukar',
-    badge: 'Mest komplett',
+    img: '/images/parts/roborock-hepa-filter-2-pack.webp',
+    name: 'Roborock HEPA-filter 2-pack',
+    compat: 'Modell framgår inte av butikens artikelnamn, stäm av mot din robot innan köp',
+    includes: '2 HEPA-filter',
+    badge: 'Filter',
+    store: 'Kjell',
+    buyUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66038&url=http://www.kjell.com/se/produkter/hem-fritid/stadning-rengoring/robotdammsugare/tillbehor-till-robotdammsugare/roborock-hepa-filter-2-pack-p66038',
     series: 'S8-serien',
   },
   {
-    asin: 'B0D6RFC7Q5',
-    img: '/images/parts-roborock-filter.webp',
-    name: 'Roborock S8 / S8+ / S8 Pro Ultra, gummiborstar + filter',
-    compat: 'Passar: S8, S8+, S8 Pro Ultra',
-    includes: '2 gummiborstar, 6 sidoborstar, 4 HEPA-filter',
-    badge: 'Bästa pris',
+    img: '/images/parts/roborock-duo-huvudborste.webp',
+    name: 'Roborock Duo-huvudborste 1-pack',
+    compat: 'Modell framgår inte av butikens artikelnamn, stäm av mot din robot innan köp',
+    includes: '1 duo-huvudborste',
+    badge: 'Huvudborste',
+    store: 'Kjell',
+    buyUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66034&url=http://www.kjell.com/se/produkter/hem-fritid/stadning-rengoring/robotdammsugare/tillbehor-till-robotdammsugare/roborock-duo-huvudborste-1-pack-p66034',
     series: 'S8-serien',
   },
   {
-    asin: 'B0CY5CWRXQ',
-    img: '/images/parts-roborock-qrevo-kit.webp',
-    name: 'Roborock Qrevo S / Qrevo Pro / Qrevo MaxV, 20-delars kit',
-    compat: 'Passar: Qrevo S, Qrevo Pro, Qrevo MaxV, Qrevo Plus',
-    includes: '1 huvudborste, 6 sidoborstar, 4 HEPA-filter, 4 moppkuddar, 4 dammpåsar',
-    badge: null,
+    img: '/images/parts/roborock-sidoborste-2-pack.webp',
+    name: 'Roborock Sidoborste 2-pack',
+    compat: 'Modell framgår inte av butikens artikelnamn, stäm av mot din robot innan köp',
+    includes: '2 sidoborstar',
+    badge: 'Sidoborstar',
+    store: 'Kjell',
+    buyUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66035&url=http://www.kjell.com/se/produkter/hem-fritid/stadning-rengoring/robotdammsugare/tillbehor-till-robotdammsugare/roborock-sidoborste-2-pack-p66035',
+    series: 'S8-serien',
+  },
+  {
+    img: '/images/parts/roborock-qrevo-tillbehorskit.webp',
+    name: 'Roborock tillbehörskit till QRevo',
+    compat: 'Passar: QRevo',
+    includes: null,
+    badge: 'Tillbehörskit',
+    store: 'Kjell',
+    buyUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66041&url=http://www.kjell.com/se/produkter/hem-fritid/stadning-rengoring/robotdammsugare/tillbehor-till-robotdammsugare/roborock-tillbehorskit-till-roborock-qrevo-p66041',
     series: 'Qrevo-serien',
   },
   {
-    asin: 'B0DG5J1QK7',
-    img: '/images/parts-roborock-qrevo-kit-2.webp',
-    name: 'Roborock Qrevo Pro / Qrevo S / Qrevo MaxV, 22-delars kit',
-    compat: 'Passar: Qrevo Pro, Qrevo S, Qrevo MaxV',
-    includes: '2 huvudborstar, 6 sidoborstar, 4 HEPA-filter, 4 dammpåsar, 4 mopptorkdukar',
-    badge: null,
+    img: '/images/parts/roborock-q-revo-reservdelspaket.webp',
+    name: 'Roborock Q Revo reservdelspaket, vit',
+    compat: 'Passar: Q Revo',
+    includes: null,
+    badge: 'Reservdelspaket',
+    store: 'Teknikproffset',
+    buyUrl: 'https://dot.teknikproffset.se/t/t?a=1954032647&as=2063681412&t=2&tk=1&cupa_sku=C58874&url=https://www.teknikproffset.se/hem-hushall-tradgard/stadprodukter/dammsugare-tillbehor/tillbehor-45/reservdelar-till-robotdammsugare/roborock-q-revo-reservdelspaket-vit',
     series: 'Qrevo-serien',
   },
   {
-    asin: 'B0DG5H9HLH',
-    img: '/images/parts-roborock-qrevo-kit-3.webp',
-    name: 'Roborock Qrevo S / Qrevo Pro / Qrevo MaxV, 21-delars kit',
-    compat: 'Passar: Qrevo S, Qrevo Pro, Qrevo MaxV',
-    includes: '1 huvudborste, 4 sidoborstar, 4 HEPA-filter, 4 mopptorkdukar, 6 dammpåsar',
-    badge: 'Bästa pris Qrevo',
+    img: '/images/parts/roborock-q-revo-dammpase-6-pack.webp',
+    name: 'Roborock Q Revo dammpåse, 6 st',
+    compat: 'Passar: Q Revo',
+    includes: '6 dammpåsar',
+    badge: 'Dammpåsar',
+    store: 'Teknikproffset',
+    buyUrl: 'https://dot.teknikproffset.se/t/t?a=1954032647&as=2063681412&t=2&tk=1&cupa_sku=C36558&url=https://www.teknikproffset.se/hem-hushall-tradgard/stadprodukter/dammsugare-tillbehor/tillbehor-45/dammsugarpasar/roborock-q-revo-dammpase-6-st',
+    series: 'Qrevo-serien',
+  },
+  {
+    img: '/images/parts/roborock-qrevo-curv-sidoborste.webp',
+    name: 'Roborock sidoborste, grå, 103 mm',
+    compat: 'Passar: Qrevo Curv, Qrevo Edge, Qrevo CurvX, Qrevo Curv S5X, Saros Z70, Saros 10R, Saros 10',
+    includes: 'Sidoborste, 103 mm',
+    badge: 'Sidoborste',
+    store: 'CS Megastore',
+    buyUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=24978047&url=https://www.csmegastore.se/i/24978047/roborock-6970995780116-sidoborste-robotdammsugare-gr%c3%a5-roborock-qrevo-curv-qrevo-edge-saros-z70-saros-10r-saros-10-qrevo-curvx',
     series: 'Qrevo-serien',
   },
 ];
@@ -124,12 +154,12 @@ export const articleMeta = {
 <BaseLayout
   title="Roborock reservdelar 2026: alla serier på ett ställe"
   description="Reservdelar till Roborock robotdammsugare 2026. Filter, borstar, moppar och dammpåsar till både S8-serien och Qrevo-serien, med kompatibilitet per serie."
-  article={{ datePublished: "2026-03-29", dateModified: "2026-07-27", image: "/images/parts-roborock-filter.webp" }}
+  article={{ datePublished: "2026-03-29", dateModified: "2026-07-28", image: "/images/parts-roborock-filter.webp" }}
 >
   <section class="bg-primary text-white py-8">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <Breadcrumbs items={breadcrumbs} light={true} />
-    <AuthorByline datePublished="2026-03-29" dateModified="2026-07-27" />
+    <AuthorByline datePublished="2026-03-29" dateModified="2026-07-28" />
       <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Roborock reservdelar, alla serier</h1>
       <p class="text-gray-200 max-w-2xl">Överblick över tillbehörskit till hela Roborock-sortimentet. Börja här om du vill se vilka filter, borstar, moppkuddar och dammpåsar som passar din serie, och gå sedan vidare till serien du äger.</p>
     </div>
@@ -140,7 +170,7 @@ export const articleMeta = {
       question="Snabbt svar: Vilka reservdelar passar min Roborock?"
       answer="Roborock har två separata reservdelssystem: hela S8-serien (S8, S8+, S8 Pro Ultra, S8 Max Ultra, S8 MaxV Ultra) delar ett, och Qrevo-serien (Qrevo S, Qrevo Pro, Qrevo MaxV) ett annat. Filter och borstar kan inte blandas mellan serierna. Kontrollera alltid att kittet anger din exakta modell innan du beställer."
     />
-<p class="text-sm text-text-light mb-6">Senast uppdaterad: juli 2026, {products.length} tillbehörskit</p>
+<p class="text-sm text-text-light mb-6">Senast uppdaterad: juli 2026, {products.length} reservdelar</p>
 
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
       {['S8-serien', 'Qrevo-serien'].map(series => (
@@ -151,7 +181,7 @@ export const articleMeta = {
     </div>
 
     <h2 id="s8serien" class="font-heading text-xl font-bold text-text mb-2">S8-serien i urval</h2>
-    <p class="text-sm text-text-light mb-4">Här visas de vanligaste kiten. Full kompatibilitetslista för S8, S8+, S8 Pro Ultra, S8 Max Ultra och S8 MaxV Ultra, plus underhållsschema, finns på vår sida om <a href="/reservdelar/roborock-s8-serien/" class="text-accent underline">Roborock S8 reservdelar</a>.</p>
+    <p class="text-sm text-text-light mb-4">Här visas ett urval av delarna. Full kompatibilitetslista för S8, S8+, S8 Pro Ultra, S8 Max Ultra och S8 MaxV Ultra, plus underhållsschema, finns på vår sida om <a href="/reservdelar/roborock-s8-serien/" class="text-accent underline">Roborock S8 reservdelar</a>.</p>
     <div class="space-y-4 mb-10">
       {products.filter(p => p.series === 'S8-serien').map((p, i) => (
         <article class="bg-white rounded-xl border border-border shadow-sm transition-shadow p-5">
@@ -159,17 +189,27 @@ export const articleMeta = {
             <div class="flex-shrink-0 flex flex-col items-center gap-2">
               {i === 0 && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-winner/10 text-winner">{p.badge}</span>}
               {i > 0 && p.badge && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-bg-alt text-text-light">{p.badge}</span>}
-              <div class="w-32 h-32 bg-gray-50 rounded-xl p-2 flex items-center justify-center border border-border">
-                <img src={p.img} alt={p.name} class="w-full h-full object-contain" loading="lazy" width="200" height="200" />
-              </div>
+              {p.img && (
+                <div class="w-32 h-32 bg-gray-50 rounded-xl p-2 flex items-center justify-center border border-border">
+                  <img src={p.img} alt={p.name} class="w-full h-full object-contain" loading="lazy" width="200" height="200" />
+                </div>
+              )}
             </div>
             <div class="flex-1 min-w-0">
               <h3 class="font-heading font-bold text-text text-base mb-1">{p.name}</h3>
               <p class="text-xs text-accent font-medium mb-2">{p.compat}</p>
-              <p class="text-xs text-text-light mb-4"><strong class="text-text">Innehåller:</strong> {p.includes}</p>
+              {p.includes && (
+                <p class="text-xs text-text-light mb-4"><strong class="text-text">Innehåller:</strong> {p.includes}</p>
+              )}
               <div class="flex flex-wrap items-center gap-3">
-                
-                
+                <a
+                  href={p.buyUrl}
+                  rel="sponsored nofollow noopener noreferrer"
+                  target="_blank"
+                  class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+                >
+                  Bra pris hos {p.store}
+                </a>
               </div>
             </div>
           </div>
@@ -186,17 +226,27 @@ export const articleMeta = {
             <div class="flex-shrink-0 flex flex-col items-center gap-2">
               {i === 0 && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-bg-alt text-text-light">{p.badge || 'Populärt'}</span>}
               {i > 0 && p.badge && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-winner/10 text-winner">{p.badge}</span>}
-              <div class="w-32 h-32 bg-gray-50 rounded-xl p-2 flex items-center justify-center border border-border">
-                <img src={p.img} alt={p.name} class="w-full h-full object-contain" loading="lazy" width="200" height="200" />
-              </div>
+              {p.img && (
+                <div class="w-32 h-32 bg-gray-50 rounded-xl p-2 flex items-center justify-center border border-border">
+                  <img src={p.img} alt={p.name} class="w-full h-full object-contain" loading="lazy" width="200" height="200" />
+                </div>
+              )}
             </div>
             <div class="flex-1 min-w-0">
               <h3 class="font-heading font-bold text-text text-base mb-1">{p.name}</h3>
               <p class="text-xs text-accent font-medium mb-2">{p.compat}</p>
-              <p class="text-xs text-text-light mb-4"><strong class="text-text">Innehåller:</strong> {p.includes}</p>
+              {p.includes && (
+                <p class="text-xs text-text-light mb-4"><strong class="text-text">Innehåller:</strong> {p.includes}</p>
+              )}
               <div class="flex flex-wrap items-center gap-3">
-                
-                
+                <a
+                  href={p.buyUrl}
+                  rel="sponsored nofollow noopener noreferrer"
+                  target="_blank"
+                  class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+                >
+                  Bra pris hos {p.store}
+                </a>
               </div>
             </div>
           </div>

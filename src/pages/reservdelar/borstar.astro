@@ -6,78 +6,89 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import AnswerBox from '../../components/AnswerBox.astro';
 
 
+// Produkterna kommer från Adtractions produktfeed via reservdelskatalogen.
+// Varje affiliatelänk är kopierad ordagrant ur katalogen, ingen URL är handskriven.
+// Kompatibiliteten under "Passar" är hämtad ur butikens artikelnamn.
 const products = [
   {
-    asin: 'B0CG4RR3W5',
-    img: '/images/parts-roborock-s8-kit.webp',
-    name: 'Roborock S8 / S8+ / S8 Pro Ultra, komplett borstar + filter kit',
-    compat: 'Passar: S8, S8+, S8 Pro Ultra, S8 Max Ultra, S8 MaxV Ultra',
-    includes: '2 huvudborstar, 4 sidoborstar, 2 HEPA-filter, 4 moppdukar, skruvmejsel',
-    badge: 'Mest komplett',
-    type: 'Komplett kit',
-  },
-  {
-    asin: 'B0D6RFC7Q5',
-    img: '/images/parts-roborock-filter.webp',
-    name: 'Roborock S8 / S8+ / S8 Pro Ultra, gummiborstar + filter',
-    compat: 'Passar: S8, S8+, S8 Pro Ultra',
-    includes: '2 gummiborstar (huvudborste), 6 sidoborstar, 4 HEPA-filter',
-    badge: 'Bästa pris',
-    type: 'Borstar + filter',
-  },
-  {
-    asin: 'B0CY5CWRXQ',
-    img: '/images/parts-roborock-qrevo-kit.webp',
-    name: 'Roborock Qrevo S / Qrevo Pro / Qrevo MaxV, 20-delars kit',
-    compat: 'Passar: Qrevo S, Qrevo Pro, Qrevo MaxV, Qrevo Plus',
-    includes: '1 huvudborste, 6 sidoborstar, 4 HEPA-filter, 4 moppkuddar, 4 dammpåsar',
+    img: '/images/parts/roborock-qrevo-curv-sidoborste.webp',
+    name: 'Roborock sidoborste 6970995780116',
+    compat: 'Passar: Qrevo Curv, Qrevo Edge, Qrevo CurvX, Qrevo Curv S5X, Saros Z70, Saros 10R, Saros 10',
+    includes: null,
     badge: null,
-    type: 'Komplett kit',
+    type: 'Sidoborste',
+    store: 'CS Megastore',
+    buyUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=24978047&url=https://www.csmegastore.se/i/24978047/roborock-6970995780116-sidoborste-robotdammsugare-gr%c3%a5-roborock-qrevo-curv-qrevo-edge-saros-z70-saros-10r-saros-10-qrevo-curvx',
   },
   {
-    asin: 'B0DRK62DKH',
-    img: '/images/parts-dreame-brush.webp',
-    name: 'Dreame X40 Ultra / X30 Ultra / L20 Ultra, huvudborstar',
-    compat: 'Passar: X40 Ultra, X30 Ultra, L20 Ultra, L10s Ultra Gen2, L10s Pro Gen2',
-    includes: '1 par gummiborstar (huvudborste) + skyddslock',
-    badge: 'Bästa pris',
-    type: 'Huvudborstar',
-  },
-  {
-    asin: 'B0GQSJCLY4',
-    img: '/images/parts-dreame-sidebrush.webp',
-    name: 'Dreame X40 Ultra / L40 Ultra / D20 Pro Plus, sidoborstar',
-    compat: 'Passar: X40 Ultra, X40 Ultra Complete, L40 Ultra, D20 Pro Plus',
-    includes: '6 sidoborstar (3-armade)',
+    img: '/images/parts/dreame-duobrush-huvudborste-x50-l50.webp',
+    name: 'Dreame DuoBrush huvudborste',
+    compat: 'Passar: Dreame X50, L50 med flera',
+    includes: null,
     badge: null,
-    type: 'Sidoborstar',
+    type: 'Huvudborste',
+    store: 'Kjell',
+    buyUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66684&url=http://www.kjell.com/se/produkter/hem-fritid/stadning-rengoring/robotdammsugare/tillbehor-till-robotdammsugare/dreame-huvudborste-for-dreame-x50-l50-m.fl.-duobrush-1-pack-p66684',
   },
   {
-    asin: 'B0DFBMQ64P',
-    img: '/images/parts-dreame-x40-kit.webp',
-    name: 'Dreame X40 Ultra / X30 Ultra / L20 Ultra, 18-delars komplett kit',
-    compat: 'Passar: X40 Ultra, X30 Ultra, L20 Ultra',
-    includes: '1 huvudborste, 4 sidoborstar, 4 HEPA-filter, 4 moppkuddar, 4 dammpåsar',
-    badge: 'Populärt',
-    type: 'Komplett kit',
-  },
-  {
-    asin: 'B0DQ84RLZ7',
-    img: '/images/parts-ecovacs-x5-kit.webp',
-    name: 'Ecovacs Deebot X5 Omni / X5 Pro, 20-delars komplett kit',
-    compat: 'Passar: Deebot X5 Omni, X5 Pro',
-    includes: '1 rullborste, 4 sidoborstar, 4 HEPA-filter, 6 dammpåsar, 4 mopptorkdukar',
+    img: '/images/parts/dreame-rmsrb0-huvudborste-l10s-l20.webp',
+    name: 'Dreame RMSRB0 huvudborste',
+    compat: 'Passar: Dreame L10s, D10s, L10, L20',
+    includes: null,
     badge: null,
-    type: 'Komplett kit',
+    type: 'Huvudborste',
+    store: 'Teknikproffset',
+    buyUrl: 'https://dot.teknikproffset.se/t/t?a=1954032647&as=2063681412&t=2&tk=1&cupa_sku=C57227&url=https://www.teknikproffset.se/hem-hushall-tradgard/stadprodukter/dammsugare-tillbehor/tillbehor-45/reservdelar-till-robotdammsugare/dreame-rmsrb0-huvudborste-for-l10s-d10s-l10-l20-robotdammsugare',
   },
   {
-    asin: 'B0DF8695XP',
-    img: '/images/parts-ecovacs-x5-brush-kit.webp',
-    name: 'Ecovacs Deebot X5 Omni / X5 Pro, borstar + filter + mopp',
-    compat: 'Passar: Deebot X5 Omni, X5 Pro',
-    includes: '1 huvudborste, 4 sidoborstar, 3 HEPA-filter, 3 dammpåsar, 4 mopptorkdukar',
+    img: '/images/parts/dreame-rmb2-huvudborste-d9-max.webp',
+    name: 'Dreame RMB2 huvudborste',
+    compat: 'Passar: Dreame D9 Max, D9 Max White, D10 Plus',
+    includes: null,
     badge: null,
-    type: 'Komplett kit',
+    type: 'Huvudborste',
+    store: 'Teknikproffset',
+    buyUrl: 'https://dot.teknikproffset.se/t/t?a=1954032647&as=2063681412&t=2&tk=1&cupa_sku=C57226&url=https://www.teknikproffset.se/hem-hushall-tradgard/stadprodukter/dammsugare-tillbehor/tillbehor-45/reservdelar-till-robotdammsugare/dreame-rmb2-huvudborste-for-d9-max-d9-max-white-d10-plus-robotdammsugare',
+  },
+  {
+    img: '/images/parts/dreame-rsb7-sidoborste-d10-plus.webp',
+    name: 'Dreame RSB7 sidoborste',
+    compat: 'Passar: Dreame D10 Plus, D10, D9 Max',
+    includes: null,
+    badge: null,
+    type: 'Sidoborste',
+    store: 'Teknikproffset',
+    buyUrl: 'https://dot.teknikproffset.se/t/t?a=1954032647&as=2063681412&t=2&tk=1&cupa_sku=C57233&url=https://www.teknikproffset.se/hem-hushall-tradgard/stadprodukter/dammsugare-tillbehor/tillbehor-45/reservdelar-till-robotdammsugare/dreame-rsb7-sidoborste-for-d10-plus-d10-d9-max-robotdammsugare',
+  },
+  {
+    img: '/images/parts/dreame-rsb0-sidoborste-f9-d9-l10-pro.webp',
+    name: 'Dreame RSB0 sidoborste, 2 styck',
+    compat: 'Passar: Dreame F9, D9, L10 Pro',
+    includes: '2 sidoborstar',
+    badge: null,
+    type: 'Sidoborste',
+    store: 'CS Megastore',
+    buyUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=7663034&url=https://www.csmegastore.se/i/7663034/dreame-rsb0-sidoborste-robotdammsugare-vit-dreame-f9-d9-l10-pro-2-styck',
+  },
+  {
+    img: '/images/parts/dreame-sidoborste-l10s-pro-2pack.webp',
+    name: 'Dreame sidoborste för L10s Pro, 2-pack (svart)',
+    compat: 'Passar: Dreame L10s Pro',
+    includes: '2 sidoborstar',
+    badge: null,
+    type: 'Sidoborste',
+    store: 'CS Megastore',
+    buyUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=10537483&url=https://www.csmegastore.se/i/10537483/dreame-sidoborste-f%c3%b6r-dreame-l10s-pro-x2-svart',
+  },
+  {
+    img: '/images/parts/ecovacs-tillbehorskit-t90-x12.webp',
+    name: 'Ecovacs Premium tillbehörskit för T90 och X12',
+    compat: 'Passar: Ecovacs T90, X12',
+    includes: null,
+    badge: null,
+    type: 'Tillbehörskit',
+    store: 'CS Megastore',
+    buyUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25701093&url=https://www.csmegastore.se/i/25701093/ecovacs-premium-tillbeh%c3%b6rskit-f%c3%b6r-t90-x12',
   },
 ];
 
@@ -112,7 +123,7 @@ const faqItems = [
   },
   {
     question: 'Behöver du verktyg för att byta borstarna?',
-    answer: 'Sällan något utöver det som följer med. Huvudborsten sitter under ett lock som du lossar för hand och lyfter av, medan sidoborstarna fästs med en liten skruv eller ett snäpplås beroende på modell. Roborock S8-kitet ovan innehåller en skruvmejsel, och Dreames huvudborstar levereras med nytt skyddslock. Passa på att torka ur borstkanalen medan roboten ändå ligger upp och ned.',
+    answer: 'Sällan något utöver det som följer med. Huvudborsten sitter under ett lock som du lossar för hand och lyfter av, medan sidoborstarna fästs med en liten skruv eller ett snäpplås beroende på modell. Sitter sidoborsten fast med skruv räcker en liten stjärnskruvmejsel. Passa på att torka ur borstkanalen medan roboten ändå ligger upp och ned.',
   },
 ];
 
@@ -154,7 +165,7 @@ export const articleMeta = {
   </section>
 
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-<p class="text-sm text-text-light mb-2">Senast uppdaterad: juli 2026, {products.length} borstkits</p>
+<p class="text-sm text-text-light mb-2">Senast uppdaterad: juli 2026, {products.length} borstar och tillbehörskit</p>
 
     <AnswerBox
       question="Snabbt svar: När ska borstarna på robotdammsugaren bytas?"
@@ -170,11 +181,13 @@ export const articleMeta = {
         <article class="bg-white rounded-xl border border-border shadow-sm transition-shadow p-5">
           <div class="flex flex-col sm:flex-row gap-4">
             <div class="flex-shrink-0 flex flex-col items-center gap-2">
-              {i === 0 && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-winner/10 text-winner">{p.badge}</span>}
+              {i === 0 && p.badge && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-winner/10 text-winner">{p.badge}</span>}
               {i > 0 && p.badge && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-bg-alt text-text-light">{p.badge}</span>}
-              <div class="w-32 h-32 bg-gray-50 rounded-xl p-2 flex items-center justify-center border border-border">
-                <img src={p.img} alt={p.name} class="w-full h-full object-contain" loading="lazy" width="200" height="200" />
-              </div>
+              {p.img && (
+                <div class="w-32 h-32 bg-gray-50 rounded-xl p-2 flex items-center justify-center border border-border">
+                  <img src={p.img} alt={p.name} class="w-full h-full object-contain" loading="lazy" width="200" height="200" />
+                </div>
+              )}
             </div>
             <div class="flex-1 min-w-0">
               <div class="flex flex-wrap items-start gap-2 mb-1">
@@ -182,10 +195,20 @@ export const articleMeta = {
                 <span class="text-xs bg-bg-alt text-text-light px-2 py-0.5 rounded-full">{p.type}</span>
               </div>
               <p class="text-xs text-accent font-medium mb-2">{p.compat}</p>
-              <p class="text-xs text-text-light mb-4"><strong class="text-text">Innehåller:</strong> {p.includes}</p>
+              {p.includes && (
+                <p class="text-xs text-text-light mb-4"><strong class="text-text">Innehåller:</strong> {p.includes}</p>
+              )}
               <div class="flex flex-wrap items-center gap-3">
-                
-                
+                {p.buyUrl && (
+                  <a
+                    href={p.buyUrl}
+                    rel="sponsored nofollow noopener noreferrer"
+                    target="_blank"
+                    class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+                  >
+                    Bra pris hos {p.store}
+                  </a>
+                )}
               </div>
             </div>
           </div>
@@ -214,14 +237,14 @@ export const articleMeta = {
             Oftast handlar det om slitdelar, inte om motorn. Böjda sidoborstar slutar mata in smuts mot munstycket, en sliten huvudborste greppar sämre mot golvet och ett igensatt HEPA-filter stryper luftflödet genom roboten. Byt de delarna och sugkraften brukar vara tillbaka på nyskick.
           </p>
           <p class="text-text-light text-sm leading-relaxed">
-            HEPA-filtret är den vanligaste boven eftersom det fångar fina partiklar som gradvis täpper igen filtermaterialet, och slitaget syns inte alltid utanpå. Filter ingår i de flesta kit ovan, och vi har även en separat genomgång av <a href="/reservdelar/filter/" class="text-accent underline">filter till robotdammsugare</a>.
+            HEPA-filtret är den vanligaste boven eftersom det fångar fina partiklar som gradvis täpper igen filtermaterialet, och slitaget syns inte alltid utanpå. Filtret beställer du separat, och vi har en egen genomgång av <a href="/reservdelar/filter/" class="text-accent underline">filter till robotdammsugare</a>.
           </p>
         </div>
 
         <div>
           <h3 class="font-semibold text-text mb-2">Hur vet jag att en borste passar min robotmodell?</h3>
           <p class="text-text-light text-sm leading-relaxed mb-3">
-            Kontrollera att din exakta modell står i kitets kompatibilitetslista, det räcker inte att märket stämmer. Modeller inom samma serie delar ofta slitdelar, som Roborock S8-serien eller Dreame X40- och X30-kiten ovan, men mellan serier skiljer sig infästningar och dimensioner, och fel dimension gör att borsten sitter löst.
+            Kontrollera att din exakta modell står i produktens kompatibilitetslista, det räcker inte att märket stämmer. Modeller inom samma serie delar ofta slitdelar, Dreame D10 Plus, D10 och D9 Max tar till exempel samma sidoborste, men mellan serier skiljer sig infästningar och dimensioner, och fel dimension gör att borsten sitter löst.
           </p>
           <p class="text-text-light text-sm leading-relaxed">
             Är du osäker på vilken serie din robot tillhör hittar du modellnamnet på etiketten under roboten. Vi har även samlat alla delar per serie, till exempel <a href="/reservdelar/roborock-s8-serien/" class="text-accent underline">reservdelar till Roborock S8-serien</a>.

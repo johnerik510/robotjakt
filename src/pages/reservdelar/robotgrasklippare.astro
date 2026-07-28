@@ -6,33 +6,79 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import AnswerBox from '../../components/AnswerBox.astro';
 
 
+// Knivarna nedan kommer ur Adtractions produktfeed (reservdelskatalogen,
+// verifierad 2026-07-28). Tracker-URL:erna är kopierade ordagrant ur feeden.
+// Kabelprodukterna saknar träff i feeden och har därför ingen köpknapp.
 const products = [
   {
-    asin: 'B0C9C5VNM1',
-    img: '/images/parts-robot-kit-3.webp',
-    name: '45-pack universalblad, Husqvarna, Gardena, Yardforce',
-    compat: 'Passar: Husqvarna Automower 105, 115H, 310, 315, 315X, 430X, 450X, Gardena Sileno, Yardforce',
-    includes: '45 ersättningsblad + skruvar',
-    badge: 'Bäst i test',
+    img: null,
+    name: 'Husqvarna knivar till Husqvarna Automower',
+    compat: 'Passar: Husqvarna Automower',
+    includes: '36 knivar',
+    badge: 'Originaldel',
     type: 'Knivar',
+    store: 'CS Megastore',
+    buyUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25417320&url=https://www.csmegastore.se/i/25417320/husqvarna-knivar-till-husqvarna-automower-36-st',
   },
   {
-    asin: 'B07WMTTSS4',
-    img: '/images/parts-robot-filter-4.webp',
-    name: 'Domar 30-pack förstärkta robotgräsklipparblad',
-    compat: 'Passar: Husqvarna Automower, Gardena Sileno, Yard Force',
-    includes: '30 förstärkta blad + skruvar',
+    img: null,
+    name: 'Japcell knivar till Husqvarna Automower, Gardena och Greenworks Optimow',
+    compat: 'Passar: Husqvarna Automower, Gardena, Greenworks Optimow',
+    includes: '30 knivar i titanbelagt stål, skruvar ingår',
+    badge: 'Titanbelagt stål',
+    type: 'Knivar',
+    store: 'CS Megastore',
+    buyUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=24130011&url=https://www.csmegastore.se/i/24130011/japcell-knivar-till-husqvarna-automower-gardena-greenworks-optimow-30-st-titanbelagt-st%c3%a5l-inkl-skruvar',
+  },
+  {
+    img: '/images/parts/gardena-sileno-knivblad-27pack.webp',
+    name: 'Gardena Knivblad för nya SILENO-serien',
+    compat: 'Passar: Gardena Sileno, nya serien',
+    includes: '27 knivblad',
     badge: null,
     type: 'Knivar',
+    store: 'CS Megastore',
+    buyUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=24230160&url=https://www.csmegastore.se/i/24230160/gardena-knivblad-f%c3%b6r-nya-sileno-serien-27-pack',
   },
   {
-    asin: 'B083SKXKR7',
-    img: '/images/parts-lawn-blade.webp',
-    name: 'Willingood 30-pack titanblad, universalpassning',
-    compat: 'Passar: Husqvarna Automower, Gardena, McCulloch, Segway Navimow',
-    includes: '30 titanblad + 30 skruvar',
-    badge: 'Titanstål',
+    img: '/images/parts/gardena-sileno-knivar.webp',
+    name: 'Gardena Knivar till SILENO Robotgräsklippare',
+    compat: 'Passar: Gardena Sileno',
+    includes: null,
+    badge: null,
     type: 'Knivar',
+    store: 'CS Megastore',
+    buyUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=1491970&url=https://www.csmegastore.se/i/1491970/gardena-knivar-till-sileno-robotgr%c3%a4sklippare',
+  },
+  {
+    img: null,
+    name: 'Worx knivblad till Landroid robotgräsklippare (WA0950)',
+    compat: 'Passar: Worx Landroid',
+    includes: null,
+    badge: null,
+    type: 'Knivar',
+    store: 'CS Megastore',
+    buyUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=24059903&url=https://www.csmegastore.se/i/24059903/worx-knivblad-till-landroid-robotgr%c3%a4sklippare-landoid-wa0950',
+  },
+  {
+    img: '/images/parts/grimsholm-segway-navimow-knivar.webp',
+    name: 'Grimsholm Knivar till Segway Navimow',
+    compat: 'Passar: Segway Navimow',
+    includes: '12 knivar',
+    badge: null,
+    type: 'Knivar',
+    store: 'Kjell',
+    buyUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=49249&url=http://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare-tillbehor/knivar-till-robotgrasklippare/grimsholm-knivar-till-segway-navimow-12-pack-p49249',
+  },
+  {
+    img: '/images/parts/grimsholm-mammotion-luba-yuka-knivar.webp',
+    name: 'Grimsholm Knivar till Mammotion Luba och Yuka',
+    compat: 'Passar: Mammotion Luba, Mammotion Yuka',
+    includes: '24 knivar',
+    badge: null,
+    type: 'Knivar',
+    store: 'Kjell',
+    buyUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=49248&url=http://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare-tillbehor/knivar-till-robotgrasklippare/grimsholm-knivar-till-mammotion-luba-och-yuka-24-st-p49248',
   },
   {
     asin: 'B0DRHWXPHC',
@@ -78,7 +124,7 @@ const faqItems = [
   },
   {
     question: 'Hur vet jag vilka blad som passar min robotgräsklippare?',
-    answer: 'Utgå från kompatibilitetslistan för varje bladpaket, inte från märket i stort. Universalbladen här anges för Husqvarna Automower 105, 115H, 310, 315, 315X, 430X och 450X samt Gardena Sileno och Yardforce, medan titanbladen även anges för McCulloch och Segway Navimow. Står inte din modell med, jämför bladets form och skruvhålets placering mot originalbladet innan du beställer.',
+    answer: 'Utgå från kompatibilitetslistan för varje bladpaket, inte från märket i stort. Bladen här anges för Husqvarna Automower, Gardena Sileno, Worx Landroid, Greenworks Optimow, Segway Navimow samt Mammotion Luba och Yuka, och de titanbelagda bladen anges för Husqvarna Automower, Gardena och Greenworks Optimow. Står inte din modell med, jämför bladets form och skruvhålets placering mot originalbladet innan du beställer.',
   },
   {
     question: 'Måste jag byta alla knivar samtidigt?',
@@ -154,17 +200,25 @@ export const articleMeta = {
             <div class="flex-shrink-0 flex flex-col items-center gap-2">
               {i === 0 && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-winner/10 text-winner">{p.badge}</span>}
               {i > 0 && p.badge && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-bg-alt text-text-light">{p.badge}</span>}
-              <div class="w-32 h-32 bg-gray-50 rounded-xl p-2 flex items-center justify-center border border-border">
-                <img src={p.img} alt={p.name} class="w-full h-full object-contain" loading="lazy" width="200" height="200" />
-              </div>
+              {p.img && (
+                <div class="w-32 h-32 bg-gray-50 rounded-xl p-2 flex items-center justify-center border border-border">
+                  <img src={p.img} alt={p.name} class="w-full h-full object-contain" loading="lazy" width="200" height="200" />
+                </div>
+              )}
             </div>
             <div class="flex-1 min-w-0">
               <h3 class="font-heading font-bold text-text text-base mb-1">{p.name}</h3>
               <p class="text-xs text-accent font-medium mb-2">{p.compat}</p>
-              <p class="text-xs text-text-light mb-4"><strong class="text-text">Innehåller:</strong> {p.includes}</p>
+              {p.includes && <p class="text-xs text-text-light mb-4"><strong class="text-text">Innehåller:</strong> {p.includes}</p>}
               <div class="flex flex-wrap items-center gap-3">
-                
-                
+                <a
+                  href={p.buyUrl}
+                  rel="sponsored nofollow noopener noreferrer"
+                  target="_blank"
+                  class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
+                >
+                  Bra pris hos {p.store}
+                </a>
               </div>
             </div>
           </div>

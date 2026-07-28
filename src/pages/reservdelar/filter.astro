@@ -6,69 +6,89 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import AnswerBox from '../../components/AnswerBox.astro';
 
 
+// Produkterna kommer från Adtractions produktfeed via reservdelskatalogen.
+// Varje affiliatelänk är kopierad ordagrant ur katalogen, ingen URL är handskriven.
+// Kompatibiliteten under "Passar" är hämtad ur butikens artikelnamn.
 const products = [
   {
-    asin: 'B0CG4RR3W5',
-    img: '/images/parts-roborock-s8-kit.webp',
-    name: 'Roborock S8 / S8+ / S8 Pro Ultra, komplett tillbehörskit',
-    compat: 'Passar: S8, S8+, S8 Pro Ultra, S8 Max Ultra, S8 MaxV Ultra',
-    includes: '2 HEPA-filter, 2 huvudborstar, 4 sidoborstar, 4 moppdukar',
-    badge: 'Bästsäljare',
-    interval: 'Byt filter var 2 till 3 mån',
-  },
-  {
-    asin: 'B0D6RFC7Q5',
-    img: '/images/parts-roborock-filter.webp',
-    name: 'Roborock S8 / S8+ / S8 Pro Ultra, filter + gummiborstar',
-    compat: 'Passar: S8, S8+, S8 Pro Ultra',
-    includes: '4 HEPA-filter, 2 gummiborstar, 6 sidoborstar',
-    badge: 'Bästa pris',
-    interval: 'Byt filter var 2 mån',
-  },
-  {
-    asin: 'B0CY5CWRXQ',
-    img: '/images/parts-roborock-qrevo-kit.webp',
-    name: 'Roborock Qrevo S / Qrevo Pro / Qrevo MaxV, 20-delars kit',
-    compat: 'Passar: Qrevo S, Qrevo Pro, Qrevo MaxV, Qrevo Plus',
-    includes: '4 HEPA-filter, 1 huvudborste, 4 moppkuddar, 6 sidoborstar, 4 dammpåsar',
-    badge: null,
-    interval: 'Byt filter var 2 till 3 mån',
-  },
-  {
-    asin: 'B0DFBMQ64P',
-    img: '/images/parts-dreame-x40-kit.webp',
-    name: 'Dreame X40 Ultra / X30 Ultra / L20 Ultra, 18-delars tillbehörskit',
-    compat: 'Passar: X40 Ultra, X30 Ultra, L20 Ultra, L10s Ultra Gen2',
-    includes: '4 HEPA-filter, 1 huvudborste, 4 moppkuddar, 4 sidoborstar, 4 dammpåsar',
-    badge: 'Populärt val',
-    interval: 'Byt filter var 2 till 3 mån',
-  },
-  {
-    asin: 'B0DTTPX9DW',
-    img: '/images/parts-dreame-x40-filter.webp',
-    name: 'Dreame X40 Ultra / L10s Pro Ultra Heat / X30 Pro, 4-pack filter',
-    compat: 'Passar: X40 Ultra Complete, X40 Master, L10s Pro Ultra Heat, X30 Pro Plus',
-    includes: '4 HEPA E12-filter',
-    badge: 'Bästa pris',
+    img: '/images/parts/roborock-s7-hepa-filter.webp',
+    name: 'Roborock HEPA-filter till modell S7',
+    compat: 'Passar: Roborock S7',
+    includes: null,
+    badge: 'Filter',
     interval: 'Byt var 2 mån',
+    store: 'CS Megastore',
+    buyUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=7265073&url=https://www.csmegastore.se/i/7265073/roborock-hepa-filter-till-modell-s7',
   },
   {
-    asin: 'B0DQ84RLZ7',
-    img: '/images/parts-ecovacs-x5-kit.webp',
-    name: 'Ecovacs Deebot X5 Omni / X5 Pro, 20-delars komplett kit',
-    compat: 'Passar: Deebot X5 Omni, X5 Pro',
-    includes: '4 HEPA-filter, 1 rullborste, 4 sidoborstar, 6 dammpåsar, 4 mopptorkdukar',
-    badge: null,
-    interval: 'Byt filter var 2 mån',
+    img: '/images/parts/roborock-q10-filter-2pack.webp',
+    name: 'Roborock filter 8.02.0427, 2 styck',
+    compat: 'Passar: Roborock Q10',
+    includes: '2 filter',
+    badge: 'Filter',
+    interval: 'Byt var 2 mån',
+    store: 'CS Megastore',
+    buyUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=24255363&url=https://www.csmegastore.se/i/24255363/roborock-8-02-0427-filter-robotdammsugare-vit-roborock-q10-2-styck',
   },
   {
-    asin: 'B0DF8695XP',
-    img: '/images/parts-ecovacs-x5-brush-kit.webp',
-    name: 'Ecovacs Deebot X5 Omni / X5 Pro, filter + borstar + mopp',
-    compat: 'Passar: Deebot X5 Omni, X5 Pro',
-    includes: '3 HEPA-filter, 1 huvudborste, 4 sidoborstar, 3 dammpåsar, 4 mopptorkdukar',
-    badge: null,
-    interval: 'Byt filter var 2 mån',
+    img: '/images/parts/roborock-q5-q7-q8-filter.webp',
+    name: 'Roborock filter 8.02.0134',
+    compat: 'Passar: Roborock Q8 Max+, Q5 Pro, Q5 Pro+, Q7 Max',
+    includes: null,
+    badge: 'Filter',
+    interval: 'Byt var 2 mån',
+    store: 'CS Megastore',
+    buyUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=8332918&url=https://www.csmegastore.se/i/8332918/roborock-8-02-0134-filter-robotdammsugare-vit-roborock-q8-max-q5-pro-q5-pro-q7-max-l%c3%a5da',
+  },
+  {
+    img: '/images/parts/dreame-rhf1-filter-d9-serien.webp',
+    name: 'Dreame RHF1 filter, 2 styck',
+    compat: 'Passar: Dreame D9, D9 Pro, D9 Max',
+    includes: '2 filter',
+    badge: 'Filter',
+    interval: 'Byt var 2 till 3 mån',
+    store: 'CS Megastore',
+    buyUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=7100904&url=https://www.csmegastore.se/i/7100904/dreame-rhf1-filter-robotdammsugare-svart-ljusgr%c3%a5-transparent-dreame-10-pro-d9-d9-pro-d9-max-2-styck',
+  },
+  {
+    img: '/images/parts/dreame-rhf5-filter-l10s-ultra.webp',
+    name: 'Dreame RHF5 filter',
+    compat: 'Passar: Dreame L10s Ultra, Z10 Pro, D10s Plus',
+    includes: null,
+    badge: 'Filter',
+    interval: 'Byt var 2 till 3 mån',
+    store: 'CS Megastore',
+    buyUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=7816726&url=https://www.csmegastore.se/i/7816726/dreame-rhf5-filter-robotdammsugare-svart-transparent-vit-l10s-ultra-z10-pro-d10s-plus-155-mm-51-mm',
+  },
+  {
+    img: '/images/parts/dreame-aqua10-filter.webp',
+    name: 'Filter till Dreame Aqua10-serien',
+    compat: 'Passar: Aqua10 Ultra Track Complete, Aqua10 Ultra Track, Aqua 10 Pro Track, Aqua10 Track, Aqua10 Ultra Roller Complete, Aqua10 Ultra Roller, Aqua10 Ultra Roller Master',
+    includes: null,
+    badge: 'Filter',
+    interval: 'Byt var 2 till 3 mån',
+    store: 'CS Megastore',
+    buyUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=24766516&url=https://www.csmegastore.se/i/24766516/filter-till-dreame-aqua10-ultra-track-complete-aqua10-ultra-track-aqua-10-pro-track-aqua10-track-aqua10-ultra-roller-complete',
+  },
+  {
+    img: '/images/parts/dreame-filter-ultra-serien-2pack.webp',
+    name: 'Dreame filter till robotdammsugare i Ultra-serien, 2-pack',
+    compat: 'Passar: Dreame Ultra-serien',
+    includes: '2 filter',
+    badge: 'Filter',
+    interval: 'Byt var 2 till 3 mån',
+    store: 'Kjell',
+    buyUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66685&url=http://www.kjell.com/se/produkter/hem-fritid/stadning-rengoring/robotdammsugare/tillbehor-till-robotdammsugare/dreame-filter-till-robotdammsugare-i-ultra-serien-2-pack-2-pack-tvattbart-p66685',
+  },
+  {
+    img: '/images/parts/ecovacs-tillbehorskit-x8-omni.webp',
+    name: 'Ecovacs Premium tillbehörskit för X8 Omni och X8 Pro Omni',
+    compat: 'Passar: Ecovacs X8 Omni, X8 Pro Omni',
+    includes: null,
+    badge: 'Tillbehörskit',
+    interval: null,
+    store: 'CS Megastore',
+    buyUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=24146831&url=https://www.csmegastore.se/i/24146831/ecovacs-premium-tillbeh%c3%b6rskit-f%c3%b6r-x8-omni-x8-pro-omni',
   },
 ];
 
@@ -82,7 +102,7 @@ const faqItems = [
     answer: 'HEPA E11 filtrerar 95 % av partiklar ner till 0,3 mikron. HEPA E12 filtrerar 99,5 %. För allergiker eller husdjursägare rekommenderas E12. Kontrollera att filtret är äkta HEPA, inte bara "HEPA-liknande".',
   },
   {
-    question: 'Fungerar tredjepartsfilter från Amazon lika bra som original?',
+    question: 'Fungerar tredjepartsfilter lika bra som originalfilter?',
     answer: 'Kvaliteten varierar. Välkända märken med tydlig kompatibilitetsinfo håller generellt god kvalitet. Undvik extremt billiga okända filter utan specifikationer, de kan ha sämre filtrationsförmåga.',
   },
   {
@@ -145,7 +165,7 @@ export const articleMeta = {
   </section>
 
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-<p class="text-sm text-text-light mb-2">Senast uppdaterad: juli 2026, {products.length} filterkit</p>
+<p class="text-sm text-text-light mb-2">Senast uppdaterad: juli 2026, {products.length} filter och tillbehörskit</p>
 
     <AnswerBox
       question="Snabbt svar: Hur ofta byter du filter i robotdammsugaren?"
@@ -161,20 +181,34 @@ export const articleMeta = {
         <article class="bg-white rounded-xl border border-border shadow-sm transition-shadow p-5">
           <div class="flex flex-col sm:flex-row gap-4">
             <div class="flex-shrink-0 flex flex-col items-center gap-2">
-              {i === 0 && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-winner/10 text-winner">Bästsäljare</span>}
+              {i === 0 && p.badge && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-winner/10 text-winner">{p.badge}</span>}
               {i > 0 && p.badge && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-bg-alt text-text-light">{p.badge}</span>}
-              <div class="w-32 h-32 bg-gray-50 rounded-xl p-2 flex items-center justify-center border border-border">
-                <img src={p.img} alt={p.name} class="w-full h-full object-contain" loading="lazy" width="200" height="200" />
-              </div>
+              {p.img && (
+                <div class="w-32 h-32 bg-gray-50 rounded-xl p-2 flex items-center justify-center border border-border">
+                  <img src={p.img} alt={p.name} class="w-full h-full object-contain" loading="lazy" width="200" height="200" />
+                </div>
+              )}
             </div>
             <div class="flex-1 min-w-0">
               <h2 class="font-heading font-bold text-text text-base mb-1">{p.name}</h2>
               <p class="text-xs text-accent font-medium mb-2">{p.compat}</p>
-              <p class="text-xs text-text-light mb-1"><strong class="text-text">Innehåller:</strong> {p.includes}</p>
-              <p class="text-xs text-text-light mb-4"><strong class="text-text">Byta:</strong> {p.interval}</p>
+              {p.includes && (
+                <p class="text-xs text-text-light mb-1"><strong class="text-text">Innehåller:</strong> {p.includes}</p>
+              )}
+              {p.interval && (
+                <p class="text-xs text-text-light mb-4"><strong class="text-text">Byta:</strong> {p.interval}</p>
+              )}
               <div class="flex flex-wrap items-center gap-3">
-                
-                
+                {p.buyUrl && (
+                  <a
+                    href={p.buyUrl}
+                    rel="sponsored nofollow noopener noreferrer"
+                    target="_blank"
+                    class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+                  >
+                    Bra pris hos {p.store}
+                  </a>
+                )}
               </div>
             </div>
           </div>
@@ -221,7 +255,7 @@ export const articleMeta = {
         </div>
         <div>
           <h3 class="font-heading text-lg font-bold text-text mb-2">Hur hittar du rätt filter till just din modell?</h3>
-          <p class="mb-3">Filter är seriespecifika, inte märkesspecifika. Roborock S8-serien och Qrevo-serien har egna filterkit trots samma tillverkare, och Dreame X40-serien använder HEPA E12 medan Roborock- och Ecovacs-modellerna på den här sidan kör E11. Kontrollera alltid att din exakta modellbeteckning står med i kompatibilitetslistan innan du beställer.</p>
+          <p class="mb-3">Filter är seriespecifika, inte märkesspecifika. Roborock S7 och Q-serien har olika filter trots samma tillverkare, och hos Dreame tar D9-serien, L10s Ultra och Aqua10-serien tre helt skilda filter. Kontrollera alltid att din exakta modellbeteckning står med i kompatibilitetslistan innan du beställer.</p>
           <p>Enklaste vägen är att utgå från märkessidorna, till exempel <a href="/reservdelar/roborock/" class="text-accent underline">Roborock reservdelar</a>, där kitten är sorterade per serie. Då slipper du jämföra artikelnummer och kan se direkt vilka delar som ingår för just din robot.</p>
         </div>
       </div>
