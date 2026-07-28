@@ -3,9 +3,12 @@ interface Props {
   text: string;
   url: string;
   productName?: string;
+  /** Etikett framför produktnamnet, t.ex. "Bäst i test:" på topplistor.
+   *  Utelämnas på enskilda produktsidor där det inte är ett rangordningspåstående. */
+  productLabel?: string;
 }
 
-const { text, url, productName } = Astro.props;
+const { text, url, productName, productLabel } = Astro.props;
 const isExternal = url?.startsWith('http') ?? false;
 const relAttr = isExternal ? "sponsored nofollow noopener noreferrer" : undefined;
 const targetAttr = isExternal ? "_blank" : undefined;
@@ -17,6 +20,11 @@ const targetAttr = isExternal ? "_blank" : undefined;
   style="bottom: 0; padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom, 0px));"
   data-product={productName}
 >
+  {productName && (
+    <p class="text-[11px] text-text-light leading-tight mb-1.5 truncate">
+      {productLabel && <span class="font-semibold text-accent uppercase tracking-wide">{productLabel}</span>} {productName}
+    </p>
+  )}
   <a
     href={url}
     rel={relAttr}

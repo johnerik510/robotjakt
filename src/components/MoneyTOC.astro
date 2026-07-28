@@ -18,17 +18,31 @@ const { title = 'Detaljerad genomgång', scope = '[data-toc-scope]' } = Astro.pr
 </nav>
 
 <style is:global>
+  /*
+    Numren byggs med CSS counters + ::before i stället för native
+    list-style/::marker: ::marker har opålitligt stöd för font-size/färg i
+    Mobile Safari och siffrorna kan utebli helt på riktig iPhone. Samma
+    counter-mönster används redan på vettigare.se (Contents.astro).
+  */
   nav[data-toc] .toc-list {
-    list-style: decimal;
+    list-style: none;
+    counter-reset: toc;
     margin: 0;
     padding-left: 1.4rem;
   }
   nav[data-toc] .toc-list li {
+    counter-increment: toc;
+    position: relative;
     line-height: 1.3;
     margin: 0;
     padding: 0.15rem 0;
   }
-  nav[data-toc] .toc-list li::marker {
+  nav[data-toc] .toc-list li::before {
+    content: counter(toc) ".";
+    position: absolute;
+    left: -1.4rem;
+    width: 1.1rem;
+    text-align: right;
     color: var(--color-text-light);
     font-size: 0.8rem;
   }

@@ -1,23 +1,16 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-07-28T18:35:23.259Z",
-  "durationMs": 17205,
+  "timestamp": "2026-07-28T18:36:01.020Z",
+  "durationMs": 13821,
   "summary": {
     "checks": 23,
-    "errors": 6,
+    "errors": 5,
     "warnings": 27,
-    "newErrors": 1,
+    "newErrors": 0,
     "baselinedErrors": 5
   },
   "results": [
-    {
-      "check": "01-dashes",
-      "severity": "error",
-      "file": "src/components/AuthorByline.astro",
-      "line": 58,
-      "message": "em-dash hittad: \"under, utan separatorer — avståndet gör jobbet i stället.\""
-    },
     {
       "check": "04-articlemeta",
       "severity": "warning",
@@ -158,16 +151,9 @@
     "status": "compared",
     "baselineCount": 11,
     "baselinedCount": 5,
-    "newErrorCount": 1
+    "newErrorCount": 0
   },
   "allResults": [
-    {
-      "check": "01-dashes",
-      "severity": "error",
-      "file": "src/components/AuthorByline.astro",
-      "line": 58,
-      "message": "em-dash hittad: \"under, utan separatorer — avståndet gör jobbet i stället.\""
-    },
     {
       "check": "01-dashes",
       "severity": "error",

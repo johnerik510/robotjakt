@@ -51,11 +51,11 @@ const ringCls = light ? 'ring-white/25' : 'ring-border';
 ---
 
 <!--
-  Byline-layout portad från bebisguidens fix 2026-07-26 (verifierad på riktig
-  iPhone 14): fristående "·"-separatorer mellan namn/datum/lästid i EN
-  flex-wrap-rad kunde hamna ensamma i radens start eller slut när raden bröt
-  på smal skärm. Nu ligger namnet på egen rad och metadata i en egen rad
-  under, utan separatorer. Avståndet gör jobbet i stället.
+  Byline-layout portad från bebisguidens AuthorByline (compact-varianten,
+  verifierad på riktig iPhone 14): rena textrader med "Publicerad:"/
+  "Uppdaterad:"-etiketter i stället för fristående "·"-separatorer eller
+  ett SVG-ikon-baserat lästidsmärke, som båda visat sig bete sig oförutsägbart
+  i Mobile Safaris flex-radbrytning. Bara text, ingen ikon, ingen separator.
 -->
 <div class={wrapCls}>
   <a href={authorHref} aria-label={`Om ${author}`} class="shrink-0">
@@ -70,12 +70,9 @@ const ringCls = light ? 'ring-white/25' : 'ring-border';
   <div class="min-w-0">
     <a href={authorHref} class={nameCls}>{author}</a>
     <div class={metaCls}>
-      {showPublished && (<time datetime={datePublished} class="whitespace-nowrap">{formatDate(datePublished!)}</time>)}
-      {showUpdated && (<span class="whitespace-nowrap">Uppdaterad <time datetime={dateModified}>{formatDate(dateModified!)}</time></span>)}
-      <span class="inline-flex items-center gap-1 whitespace-nowrap">
-        <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <span id="article-reading-time">Beräknar lästid...</span>
-      </span>
+      {showPublished && (<span class="whitespace-nowrap">Publicerad: <time datetime={datePublished}>{formatDate(datePublished!)}</time></span>)}
+      {showUpdated && (<span class="whitespace-nowrap">Uppdaterad: <time datetime={dateModified}>{formatDate(dateModified!)}</time></span>)}
+      <span id="article-reading-time" class="whitespace-nowrap"></span>
     </div>
   </div>
 </div>
