@@ -1,12 +1,12 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-07-28T12:49:10.684Z",
-  "durationMs": 11781,
+  "timestamp": "2026-07-28T13:42:08.254Z",
+  "durationMs": 11658,
   "summary": {
     "checks": 23,
     "errors": 5,
-    "warnings": 29,
+    "warnings": 27,
     "newErrors": 0,
     "baselinedErrors": 5
   },
@@ -145,16 +145,6 @@
       "check": "04-articlemeta",
       "severity": "warning",
       "message": "Bild \"/images/worx-landroid-m500.webp\" används av 3 artiklar: Worx Landroid M500 recension 2026: sling-robot testad | Worx robotgräsklippare 2026: guide till Landroid-serien | Worx Landroid vs Husqvarna Automower 2026: jämförelse"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/products/zodiac-gt3220.webp\" används av 2 artiklar: Bästa poolrobot 2026: bäst i test och jämförelse | Billigaste poolrobot 2026: bäst i test för pengarna"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/parts-husqvarna-blade.webp\" används av 2 artiklar: Husqvarna Automower knivar och kabel, modell för modell | Reservdelar robotgräsklippare: Husqvarna, Gardena, Worx 2026"
     }
   ],
   "baseline": {
@@ -189,7 +179,7 @@
       "check": "01-dashes",
       "severity": "error",
       "file": "src/lib/cta-resolver.ts",
-      "line": 220,
+      "line": 222,
       "message": "em-dash hittad: \"// stämma och tillbehör exkluderas — annars matchas t.ex. \"Landroid Vision 500\"\""
     },
     {
@@ -326,16 +316,6 @@
       "check": "04-articlemeta",
       "severity": "warning",
       "message": "Bild \"/images/worx-landroid-m500.webp\" används av 3 artiklar: Worx Landroid M500 recension 2026: sling-robot testad | Worx robotgräsklippare 2026: guide till Landroid-serien | Worx Landroid vs Husqvarna Automower 2026: jämförelse"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/products/zodiac-gt3220.webp\" används av 2 artiklar: Bästa poolrobot 2026: bäst i test och jämförelse | Billigaste poolrobot 2026: bäst i test för pengarna"
-    },
-    {
-      "check": "04-articlemeta",
-      "severity": "warning",
-      "message": "Bild \"/images/parts-husqvarna-blade.webp\" används av 2 artiklar: Husqvarna Automower knivar och kabel, modell för modell | Reservdelar robotgräsklippare: Husqvarna, Gardena, Worx 2026"
     },
     {
       "check": "08-image-binary-duplicates",

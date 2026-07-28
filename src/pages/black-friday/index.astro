@@ -1,0 +1,221 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
+import MoneyTOC from '../../components/MoneyTOC.astro';
+import Callout from '../../components/Callout.astro';
+
+const faqItems = [
+  {
+    question: 'När infaller Black Friday och Black Week?',
+    answer: 'Black Friday infaller fredagen efter Thanksgiving i USA och hamnar alltid i slutet av november. Black Week är den svenska handelns förlängning av samma kampanj och täcker dagarna fram till fredagen, ofta med start redan på måndagen. Många butiker drar dessutom igång tidiga kampanjer i början av november och håller på fram till Cyber Monday, måndagen efter helgen.',
+  },
+  {
+    question: 'Lönar det sig att köpa robotdammsugare under Black Friday?',
+    answer: 'Oftast ja, november är den period då robotdammsugare rör sig mest i pris. De tydligaste nedsättningarna kommer kring Black Friday och när en ny generation lanseras och den föregående ska säljas ut. Nyttan beror på vilken modell du siktar på: en efterfrågad toppmodell rabatteras sällan lika djupt som en utgående modell från förra generationen.',
+  },
+  {
+    question: 'Hur vet jag om en robotrabatt är äkta?',
+    answer: 'Följ priset i minst några veckor innan kampanjen börjar, då ser du själv om det faktiskt gått ner. Jämförpriset i en annons är ofta ett listpris som ingen betalat på månader, så det säger lite om hur bra affären är. Titta i stället på vad modellen kostat hos flera butiker den senaste tiden och jämför den nivån med kampanjpriset.',
+  },
+  {
+    question: 'Vad är skillnaden mellan Black Friday och Black Week?',
+    answer: 'Black Friday är en enda dag, Black Week är veckan runt den. I praktiken har svenska butiker flyttat kampanjerna framåt, så det mesta av utbudet finns uppe långt innan själva fredagen. Det innebär att du sällan behöver vänta till fredagen, men också att ett tidigt pris kan sänkas ytterligare senare i veckan på vissa modeller.',
+  },
+  {
+    question: 'Är Black Friday rätt tillfälle att köpa robotgräsklippare?',
+    answer: 'Det kan vara det, men av en annan anledning än för robotdammsugare. I november är robotgräsklippare i lågsäsong och efterfrågan är låg, så butikerna passar ofta på att rensa lagret av föregående säsongs modeller. Nackdelen är att sortimentet är tunnare än på våren och att den modell du vill ha inte alltid finns kvar i lager.',
+  },
+  {
+    question: 'Vilka robotar brukar sänkas mest i pris?',
+    answer: 'Modeller som precis fått en efterföljare brukar röra sig mest. När en ny generation lanseras ska den gamla ut ur lagret, och tekniken hinner sällan förändras dramatiskt på ett år. Kontrollera bara att förbrukningsdelar som borstar, filter, moppdukar och knivar fortfarande går att beställa till den utgående modellen innan du köper.',
+  },
+  {
+    question: 'Vilka svenska butiker säljer robotar under Black Week?',
+    answer: 'Robotmodellerna vi följer på Robotjakt säljs bland annat hos Elon, Kjell & Company, Komplett, Proshop, CS Megastore och Robotrent, och Neatsvor säljer sina egna modeller direkt via sin svenska webbutik. Utbudet skiljer sig åt: robotdammsugare finns hos fler butiker än robotgräsklippare, som säljs av färre och delvis andra aktörer.',
+  },
+  {
+    question: 'Bör jag vänta till mellandagsrean i stället?',
+    answer: 'Det beror på hur bråttom du har. Under Black Week är sortimentet som störst och du kan välja fritt bland modellerna, medan mellandagarna handlar mer om det som blivit över. Har du siktat in dig på en specifik modell är risken att den är slut i december. Är du flexibel med modellval kan det däremot vara värt att avvakta.',
+  },
+  {
+    question: 'Gäller ångerrätt och garanti även på reavaror?',
+    answer: 'Ja, en nedsatt vara har samma skydd som en fullprisvara. Ångerrätten vid distansköp följer distansavtalslagen och påverkas inte av att priset är sänkt, och reklamationsrätten enligt konsumentköplagen gäller lika. Kontrollera däremot butikens egna villkor för returfrakt, de varierar mellan butiker och en stor robot är dyr att skicka tillbaka.',
+  },
+  {
+    question: 'Hur förbereder jag mig inför Black Week?',
+    answer: 'Bestäm vilken modell du vill ha innan kampanjerna börjar, då slipper du välja under tidspress. Mät ytan roboten ska klara, avgör om du behöver moppfunktion eller om gräsmattan har branta partier, och notera vad de aktuella modellerna kostar i normalläge. Med den listan i handen ser du direkt om ett kampanjpris är intressant eller inte.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Black Friday' },
+];
+
+export const articleMeta = {
+  title: "Black Friday robot och Black Week: så bedömer du rabatten",
+  description: "Black Friday och Black Week för robotar i Sverige: vad som brukar rabatteras, hur du känner igen en äkta rabatt och vilka butiker som är relevanta.",
+  publishDate: "2026-07-28",
+  category: "Guide",
+  image: "/images/hero-robotjakt.webp",
+};
+---
+
+<BaseLayout
+  title="Black Friday robot och Black Week: så bedömer du rabatten"
+  description="Black Friday och Black Week för robotar i Sverige: vad som brukar rabatteras, hur du känner igen en äkta rabatt och vilka butiker som är relevanta."
+  article={{ datePublished: "2026-07-28", dateModified: "2026-07-28", image: "/images/hero-robotjakt.webp" }}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
+    <Breadcrumbs items={breadcrumbs} />
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Black Friday robot: så bedömer du rabatterna i Black Week
+    </h1>
+    <AuthorByline datePublished="2026-07-28" dateModified="2026-07-28" />
+
+    <AnswerBox
+      question="Snabbt svar: vad händer med robotpriserna under Black Friday?"
+      answer="November är den period då robotar rör sig mest i pris. Störst nedsättningar får modeller som precis ersatts av en efterföljare. Jämförpriset i annonsen säger däremot lite, följ prisutvecklingen själv några veckor innan kampanjen och jämför mot den nivån."
+    />
+
+    <!-- Ingångar till de två kategorisidorna -->
+    <section class="grid sm:grid-cols-2 gap-4 mb-8" data-toc-skip>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-text-lighter mb-1">Inomhus, högsäsong i november</p>
+        <h2 class="font-heading text-lg font-bold text-text mb-2" data-toc-skip>
+          <a href="/black-friday/robotdammsugare/" class="text-accent underline">Black Friday robotdammsugare</a>
+        </h2>
+        <p class="text-sm text-text-light leading-relaxed">Vilka modellgenerationer som brukar prissänkas, vad som är värt att bevaka och hur du bedömer ett kampanjpris på en robotdammsugare.</p>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-text-lighter mb-1">Utomhus, lågsäsong i november</p>
+        <h2 class="font-heading text-lg font-bold text-text mb-2" data-toc-skip>
+          <a href="/black-friday/robotgrasklippare/" class="text-accent underline">Black Friday robotgräsklippare</a>
+        </h2>
+        <p class="text-sm text-text-light leading-relaxed">Varför utförsäljningen av förra säsongens modeller ofta hamnar i november, och vad du bör kontrollera innan du köper utanför säsong.</p>
+      </div>
+    </section>
+
+    <p class="text-lg text-text-light mb-6 leading-relaxed">
+      Robotar följer en tydlig priscykel över året, och november är den punkt där mest händer på en gång. Den här sidan förklarar vad som brukar rabatteras och varför, hur du skiljer en verklig prissänkning från ett uppblåst jämförpris, vilka svenska butiker som är relevanta och hur du förbereder dig innan kampanjveckan drar igång. Genomgången är gjord i förväg, så att du känner igen ett bra läge när kampanjerna väl startar.
+    </p>
+
+    <MoneyTOC />
+
+    <section class="prose prose-sm max-w-none mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vad brukar hända med robotpriserna under Black Friday och Black Week?</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Priserna rör sig nedåt, men inte jämnt över hela sortimentet. De största nedsättningarna hamnar på modeller som precis fått en efterföljare, eftersom lagret ska tömmas innan den nya generationen tar över hyllplatsen. Nyheter som fortfarande säljer bra i fullpris rabatteras sällan lika djupt, och de allra billigaste modellerna har mindre marginal att röra sig inom från början.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Tidsmässigt har svenska butiker flyttat fram kampanjerna. I praktiken börjar utbudet dyka upp i början av november, Black Week täcker dagarna före fredagen och det hela ebbar ut kring Cyber Monday. Det betyder att du sällan behöver stå redo exakt på fredagen, men också att ett tidigt kampanjpris ibland sänks ytterligare längre in i veckan. Har du bestämt modell i förväg är det lätt att se skillnaden.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Lagerstatus spelar lika stor roll som priset. En utgående modell som rabatteras hårt tar slut fort, och när den är borta går den inte att beställa igen. Det är den vanligaste anledningen till att en bra kampanj känns missad, inte att priset var för högt.
+      </p>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Så skiljer du en äkta rabatt från ett uppblåst jämförpris</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Utgå aldrig från jämförpriset i annonsen. Det är i regel ett listpris som ingen har betalat på månader, och ju längre tid som gått sedan någon faktiskt handlade på den nivån desto mindre säger den om affären. Ett kampanjpris som ser dramatiskt ut mot listpriset kan ligga i linje med vad modellen kostat i vanliga fall hela hösten.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Det som fungerar är att följa prisutvecklingen själv. Välj ut de modeller du är intresserad av i god tid, notera vad de kostar hos ett par butiker och kontrollera igen med några veckors mellanrum. Då har du en egen referensnivå att jämföra kampanjpriset mot, och du märker direkt om priset gått ner på riktigt eller bara fått en ny etikett.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Två saker till är värda att kontrollera innan du klickar hem. Det ena är vad som ingår: en modell med station kan säljas i olika paket, och ett lägre pris kan betyda att tillbehör eller extra förbrukningsdelar plockats bort. Det andra är fraktkostnaden, som för stora robotar kan äta upp en del av rabatten.
+      </p>
+
+      <Callout type="tip" title="Gör så här i praktiken">
+        <p>Skriv ner tre modeller du kan tänka dig och deras normalpris hos två butiker vardera, i god tid före november. Listan tar tio minuter att göra och gör att du under kampanjveckan bara behöver svara på en enda fråga: är det här priset lägre än nivån jag noterade?</p>
+      </Callout>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vilken robottyp är mest intressant i november?</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Robotdammsugare är den självklara november-produkten. Det är högsäsong, efterfrågan är som störst när mörkret och blötsnön drar in smuts i hallen, och butikerna vet om det. Utbudet är brett, fler butiker konkurrerar om samma modeller och det är här du har störst chans att hitta just den modell du bestämt dig för. Baksidan av högsäsong är att de mest efterfrågade toppmodellerna sällan behöver rabatteras djupt för att sälja.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Robotgräsklippare är tvärtom i lågsäsong. Ingen behöver klippa gräs i november, vilket gör att butikerna i stället använder kampanjveckan till att rensa ut föregående säsongs modeller. Det är därför utförsäljningarna på utomhusrobotar ofta är mer generösa i november än under våren, samtidigt som sortimentet är tunnare och den enskilda modell du vill ha kan saknas helt. Samma logik gäller poolrobotar, som också är säsongsprodukter.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Om du redan vet att du ska köpa en robotgräsklippare till nästa säsong är november alltså ett rimligt läge, förutsatt att du accepterar att välja bland det som finns kvar. Vill du ha ett brett urval att välja fritt ur är våren fortfarande den bättre tidpunkten. Behöver du ett underlag att utgå från listar vi de aktuella modellerna på vår sida om <a href="/robotgrasklippare/" class="text-accent underline">bästa robotgräsklippare</a>.
+      </p>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vilka svenska butiker är relevanta för robotar?</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Robotarna vi följer på Robotjakt säljs hos ett begränsat antal svenska butiker, och vilka som är relevanta beror på robottyp. Robotdammsugare finns hos flest aktörer, medan robotgräsklippare säljs av färre butiker och delvis av andra än de som för inomhusrobotar.
+      </p>
+      <div class="grid sm:grid-cols-2 gap-5 mb-6">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Elon</h3>
+          <p class="text-sm text-text-light">Vitvaru- och elektronikkedja med brett utbud av robotdammsugare, bland annat Dreame- och Roborock-modeller.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Kjell &amp; Company</h3>
+          <p class="text-sm text-text-light">Säljer både robotdammsugare och robotgräsklippare, med modeller från flera av de större varumärkena.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">CS Megastore</h3>
+          <p class="text-sm text-text-light">Nätbutik med tydlig tyngdpunkt på robotgräsklippare, inklusive modeller som är svåra att hitta i de stora kedjorna.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Komplett och Proshop</h3>
+          <p class="text-sm text-text-light">Två nätbutiker med bred hemelektronik som även för robotgräsklippare i sortimentet.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Neatsvor</h3>
+          <p class="text-sm text-text-light">Varumärkets egen svenska webbutik, som säljer Neatsvors robotdammsugare direkt till kund.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Robotrent</h3>
+          <p class="text-sm text-text-light">Svensk nätbutik inriktad på robotdammsugare, med tyngdpunkt på de billigare prisklasserna.</p>
+        </div>
+      </div>
+      <p class="text-text-light leading-relaxed mb-4">
+        Priset på samma modell skiljer sig regelbundet mellan butikerna, även utanför kampanjveckor. Kontrollera därför alltid mer än en butik innan du bestämmer dig, och räkna in frakten i jämförelsen. Vilka modeller som är aktuella just nu framgår av våra topplistor för <a href="/robotdammsugare/" class="text-accent underline">bästa robotdammsugare</a> och robotgräsklippare.
+      </p>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Så förbereder du dig innan Black Week</h2>
+      <ol class="list-decimal pl-6 text-text-light space-y-2 mb-6">
+        <li><strong>Bestäm behovet först.</strong> Mät ytan roboten ska klara, avgör om du behöver moppfunktion inomhus och notera om gräsmattan har branta partier eller smala passager.</li>
+        <li><strong>Välj ut två eller tre modeller.</strong> Fler än så gör beslutet svårare utan att göra det bättre, och du hinner ändå inte utvärdera dem under kampanjveckan.</li>
+        <li><strong>Notera normalpriset.</strong> Skriv ner vad modellerna kostar hos två butiker vardera, i god tid innan november.</li>
+        <li><strong>Kontrollera vad som ingår.</strong> Station, extra moppdukar, reservknivar och liknande skiljer sig mellan paketvarianter av samma modell.</li>
+        <li><strong>Kontrollera reservdelar.</strong> Handlar du en utgående modell, se efter att förbrukningsdelar fortfarande går att beställa.</li>
+        <li><strong>Var beredd på att agera tidigt.</strong> Hårt rabatterade utgående modeller tar slut i lager långt före kampanjens slut.</li>
+      </ol>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Erbjudanden under Black Week</h2>
+      <div class="bg-bg-alt rounded-xl border border-border p-5 mb-6">
+        <p class="text-text-light leading-relaxed mb-3">
+          Kampanjer publiceras här först när de startar i november och vi kontrollerat priset hos butiken. Fram till dess finns inga bekräftade erbjudanden att visa, eftersom ett kampanjpris vi inte kan belägga är sämre än inget pris alls.
+        </p>
+        <p class="text-text-light leading-relaxed mb-3">
+          Vilka modeller vi rekommenderar i normalläge, och vilka butiker som säljer dem, framgår av våra ordinarie topplistor.
+        </p>
+        <ul class="space-y-2">
+          <li><a href="/robotdammsugare/" class="text-accent underline text-sm">Bästa robotdammsugare</a></li>
+          <li><a href="/robotgrasklippare/" class="text-accent underline text-sm">Bästa robotgräsklippare</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Läs vidare inför köpet</h2>
+      <ul class="space-y-2">
+        <li><a href="/black-friday/robotdammsugare/" class="text-accent underline text-sm">Black Friday robotdammsugare, vad som brukar rabatteras</a></li>
+        <li><a href="/black-friday/robotgrasklippare/" class="text-accent underline text-sm">Black Friday robotgräsklippare, utförsäljning i lågsäsong</a></li>
+        <li><a href="/kopguide-robotdammsugare/" class="text-accent underline text-sm">Köpguide robotdammsugare, alla funktioner förklarade</a></li>
+        <li><a href="/guide/robotgrasklippare-koparguide/" class="text-accent underline text-sm">Köpguide robotgräsklippare, så väljer du rätt modell</a></li>
+        <li><a href="/billigaste-robotdammsugare/" class="text-accent underline text-sm">Billigaste robotdammsugare, bäst för pengarna</a></li>
+        <li><a href="/billigaste-robotgrasklippare/" class="text-accent underline text-sm">Billigaste robotgräsklippare, lägsta prisklassen</a></li>
+        <li><a href="/poolrobot/" class="text-accent underline text-sm">Bästa poolrobot, säsongsprodukt med egen priscykel</a></li>
+      </ul>
+    </section>
+  </div>
+</BaseLayout>

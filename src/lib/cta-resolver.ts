@@ -110,6 +110,8 @@ function allQueryTokensPresent(query: string, candidate: string): boolean {
 // Tillbehör/reservdels-nyckelord — om matchad titel innehåller dessa men frågan inte → uteslut
 const ACCESSORY_TOKENS = new Set([
   'mopduk','moppduk','edgewise','filter','sidoborste','borste','borstar','tillbehor',
+  'rullborste','rullborstar','moppdyna','moppdynor','mopptyg','moppduksfäste',
+  'rengöringsvätska','dammbehållare','tillbehör','våtrengöring',
   'reservdel','reservdelar','knivar','kniv','spiraler','wire','laddkabel','adapter',
   'dammpase','dammpose','dammpåse','hepa','kit','accessorie','accessory','bracket',
   'cover','panel','sleeve','bag','dockningsstation','docking','hubs',

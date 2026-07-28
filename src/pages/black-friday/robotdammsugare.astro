@@ -1,0 +1,348 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import FAQ from '../../components/FAQ.astro';
+import StickyCTA from '../../components/StickyCTA.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
+import MoneyFeatured from '../../components/MoneyFeatured.astro';
+import MoneyComparisonTable from '../../components/MoneyComparisonTable.astro';
+import MoneyTOC from '../../components/MoneyTOC.astro';
+import Callout from '../../components/Callout.astro';
+
+const products = [
+  {
+    rank: 1,
+    name: 'Dreame X50 Ultra',
+    image: '/images/products/dreame-x50-ultra.webp',
+    rating: 4.9,
+    badge: 'Toppmodellen att bevaka',
+    pros: ['Utfällbar mopparm når hörnen', 'PowerDock självrenande station', 'Kraftfull sugkraft', 'Sköter tömning, mopptvätt och vattenpåfyllning automatiskt'],
+    cons: ['Hög prisklass', 'Stor dockningsstation kräver planering'],
+    ctaText: 'Bra pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=151996&url=https://www.elon.se/dreame-x50-ultra-white-151996',
+    dataProduct: 'Dreame X50 Ultra',
+  },
+  {
+    rank: 2,
+    name: 'Dreame X40 Ultra',
+    image: '/images/dreame-x40-ultra.webp',
+    rating: 4.8,
+    badge: 'Föregångaren i X-serien',
+    pros: ['12 000 Pa sugkraft', 'Utfällbar mopparm når hörn och kanter', 'Automatisk mattdetektion lyfter mopparna', 'Fullautomatisk station med varmvattentvätt'],
+    cons: ['Hög prisklass', 'Stor dockningsstation'],
+    ctaText: 'Bra pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=151995&url=https://www.elon.se/dreame-x40-ultra-151995',
+    dataProduct: 'Dreame X40 Ultra',
+    reviewUrl: '/dreame-x40-ultra/',
+  },
+  {
+    rank: 3,
+    name: 'Roborock Saros 10R',
+    image: '/images/roborock-saros-10r.webp',
+    rating: 4.8,
+    badge: 'Lägst bygghöjd',
+    pros: ['Endast 7,98 cm hög, når under låga möbler', '20 000 Pa sugkraft', 'StarSight 2.0: 3D ToF LiDAR, VertiBeam och RGB-kamera', 'Dubbla roterande moppar med varmvattentvätt'],
+    cons: ['Hög prisklass', 'Kamerabaserad navigering, sämre i mörker'],
+    ctaText: 'Bra pris hos CS Megastore',
+    ctaUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=24161332&url=https://www.csmegastore.se/i/24161332/roborock-robotdammsugare-saros-10r-svart',
+    dataProduct: 'Roborock Saros 10R',
+    reviewUrl: '/roborock-saros-10r/',
+  },
+  {
+    rank: 4,
+    name: 'Roborock S8 MaxV Ultra',
+    image: '/images/roborock-s8-maxv-ultra.webp',
+    rating: 4.7,
+    badge: 'Husdjurshem',
+    pros: ['Dubbla gummirullar trasslas inte av päls', '10 000 Pa sugkraft', 'AI-kamera undviker djuravföring', 'Komplett självtömmande station'],
+    cons: ['Hög prisklass', 'AI-kameran kräver bra belysning för bäst resultat'],
+    ctaText: 'Bra pris hos Kjell',
+    ctaUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66015&url=http://www.kjell.com/se/produkter/hem-fritid/stadning-rengoring/robotdammsugare/roborock-robotdammsugare/roborock-s8-maxv-ultra-helautomatisk-robotdammsugare-vit-p66015',
+    dataProduct: 'Roborock S8 MaxV Ultra',
+    reviewUrl: '/roborock-s8-maxv-ultra/',
+  },
+  {
+    rank: 5,
+    name: 'Roborock Qrevo Curv',
+    image: '/images/products/roborock-qrevo-curv.webp',
+    rating: 4.6,
+    badge: 'Bästa värde med mopparm',
+    pros: ['Böjd design städar längs väggar och i hörn', 'Mopparm för hörn och väggar', 'Lyfter mopparna vid mattor', 'Varmvattentvätt i stationen'],
+    cons: ['Ingen AI-djuravföringsdetektering', 'Enklare kamera'],
+    ctaText: 'Bra pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=148694&url=https://www.elon.se/roborock-qrevo-curv-white-148694',
+    dataProduct: 'Roborock Qrevo Curv',
+  },
+  {
+    rank: 6,
+    name: 'Dreame L10s Ultra Gen 3',
+    image: '/images/products/dreame-l10s-ultra-gen-3.webp',
+    rating: 4.5,
+    badge: 'Mellanklass med station',
+    pros: ['Självtömmande station ingår', 'Moppfunktion med varmvatten', 'LiDAR-navigering', 'Moppen lyfts automatiskt på mattor'],
+    cons: ['Enklare hinderdetektion än X-serien', 'Ingen utfällbar mopparm'],
+    ctaText: 'Bra pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=153176&url=https://www.elon.se/dreame-l10s-ultra-gen-3-black-153176',
+    dataProduct: 'Dreame L10s Ultra Gen 3',
+  },
+  {
+    rank: 7,
+    name: 'Dreame D20 Ultra',
+    image: '/images/products/dreame-d20-ultra.webp',
+    rating: 4.3,
+    badge: 'Billigast med station',
+    pros: ['Självtömmande station ingår', 'Moppfunktion', 'LiDAR-navigering', 'Lägsta insteget till full automatik'],
+    cons: ['Enklare hinderdetektion', 'Lägre sugkraft'],
+    ctaText: 'Bra pris hos Elon',
+    ctaUrl: 'https://to.elon.se/t/t?a=1606750995&as=2063681412&t=2&tk=1&cupa_sku=152003&url=https://www.elon.se/dreame-d20-ultra-152003',
+    dataProduct: 'Dreame D20 Ultra',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'När infaller Black Friday?',
+    answer: 'Black Friday infaller dagen efter Thanksgiving, som ligger den fjärde torsdagen i november. Datumet flyttar sig därför mellan den 23 och den 29 november beroende på år. Svenska elektronikbutiker startar sina robotdammsugarkampanjer betydligt tidigare än så, ofta i början av november, och låter dem löpa vidare fram till Cyber Monday måndagen efter. Bevakning under hela november ger dig fler tillfällen än att vänta på en enda dag.',
+  },
+  {
+    question: 'Lönar det sig att köpa robotdammsugare på Black Friday?',
+    answer: 'November är den månad då robotdammsugare får störst uppmärksamhet i svenska butiker, och utbudet av kampanjer är bredare än under resten av året. Fördelen är att många modeller sänks samtidigt, så du kan jämföra flera alternativ i samma prisläge. Nackdelen är att lagren på de mest efterfrågade modellerna tar slut snabbt. Bestäm vilken modell du vill ha innan kampanjerna startar, annars köper du det som råkar finnas kvar.',
+  },
+  {
+    question: 'Vilken robotdammsugare är värd att bevaka på Black Friday?',
+    answer: 'Bevaka den modell som matchar ditt golv, inte den som råkar synas mest. Har du mycket hårdgolv är Dreame X50 Ultra med utfällbar mopparm och självrenande PowerDock den mest kompletta. Har du husdjur står Roborock S8 MaxV Ultra ut med dubbla gummirullar och AI-kamera. Vill du lägga mindre är Roborock Qrevo Curv ett bra värdeval och Dreame D20 Ultra det billigaste insteget med självtömmande station.',
+  },
+  {
+    question: 'Brukar Dreame robotdammsugare sänkas på Black Friday?',
+    answer: 'Dreame är ett av de märken som syns mest i svenska novemberkampanjer, eftersom sortimentet är brett och modellcykeln snabb. Serierna överlappar varandra, X40 Ultra, X50 Ultra och X60 Ultra säljs parallellt, och det är oftast den äldre generationen som får störst utrymme i kampanjerna. X40 Ultra har 12 000 Pa sugkraft och samma utfällbara mopparm som de nyare modellerna, vilket gör den intressant att bevaka.',
+  },
+  {
+    question: 'Brukar Roborock sänkas på Black Friday?',
+    answer: 'Roborock hör till de mest efterfrågade märkena i Sverige och finns hos flera av de större elektronikkedjorna, vilket brukar ge rörelse i priserna under november. Sortimentet spänner från Qrevo-serien i mellanklassen till Saros-modellerna i toppen. Roborock Qrevo Curv är den modell som oftast är intressantast att bevaka för den som vill ha mopparm och automatisk mopplyftning utan att gå upp i flaggskeppsklassen.',
+  },
+  {
+    question: 'Är robotdammsugare med mopp värd merkostnaden i en kampanj?',
+    answer: 'Ja, om du har mycket hårdgolv. Moppfunktionen är det som gör att du slipper svabba köket och hallen manuellt, och skillnaden mellan en enkel släpmopp och en roterande mopp med varmvattentvätt är stor i praktiken. Har du främst heltäckningsmattor tillför moppen däremot lite och höjer bara priset. Kontrollera alltid att modellen lyfter mopparna automatiskt när den kör upp på en matta.',
+  },
+  {
+    question: 'Vad är skillnaden på Black Week och Black Friday?',
+    answer: 'Black Friday är en enskild dag, medan Black Week är den vecka av kampanjer som butikerna byggt runt den. I praktiken startar många svenska elektronikbutiker sina robotdammsugarkampanjer redan i början av november och trappar upp fram till helgen. Att bara titta på fredagen är därför en dålig strategi. Bevaka i stället din utvalda modell under hela månaden, och räkna med att lagren tunnas ut mot slutet.',
+  },
+  {
+    question: 'Hur vet jag om rabatten är äkta?',
+    answer: 'Titta på det faktiska priset i kronor, inte på procentsiffran. Ett högt jämförpris kan sättas mot ett listpris som ingen butik faktiskt tagit ut på månader, och då blir rabatten en räknesak snarare än en besparing. Kolla samma modell hos flera butiker samtidigt och använd en prisjämförelsetjänst med prishistorik. Har priset legat på ungefär samma nivå hela hösten är kampanjen mest en märkning.',
+  },
+  {
+    question: 'Ska jag köpa förra årets modell i stället för den nyaste?',
+    answer: 'Ofta ja. Robotdammsugartekniken utvecklas stegvis, och skillnaden mellan två generationer handlar oftare om navigeringsfinesser och stationsdetaljer än om städresultatet på golvet. Föregångaren är dessutom den modell som butikerna vill rensa ut när efterföljaren lanserats, vilket gör den till det mest prisvärda köpet. Undantaget är när en ny generation inför en funktion du faktiskt behöver, som mopparm eller lägre bygghöjd.',
+  },
+  {
+    question: 'Är det bättre att vänta till mellandagsrean?',
+    answer: 'Sällan för robotdammsugare. November är den månad då kategorin får störst utrymme i butikernas kampanjer, och de mest efterfrågade modellerna är ofta slutsålda när mellandagsrean drar igång. Är du flexibel och kan tänka dig vilken modell som helst kan du hitta något även senare, men vill du ha en specifik modell är risken stor att den inte finns kvar. Bevaka i november och slå till när din modell dyker upp.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Black Friday', href: '/black-friday/' },
+  { label: 'Robotdammsugare' },
+];
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Robotdammsugare att bevaka inför Black Friday",
+  "itemListElement": products.map((p, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": p.name,
+    "url": "https://robotjakt.se/black-friday/robotdammsugare/",
+  })),
+};
+
+export const articleMeta = {
+  title: "Robotdammsugare på Black Friday: modeller att bevaka",
+  description: "Så handlar du robotdammsugare på Black Friday och Black Week: modeller värda att bevaka, vilka generationer som sänks mest och hur du ser en äkta rabatt.",
+  publishDate: "2026-07-28",
+  category: "Black Friday",
+  image: "/images/heroes/robotdammsugare-mopp.webp",
+};
+---
+
+<BaseLayout
+  title="Robotdammsugare på Black Friday: modeller att bevaka"
+  description="Så handlar du robotdammsugare på Black Friday och Black Week: modeller värda att bevaka, vilka generationer som sänks mest och hur du ser en äkta rabatt."
+  article={{ datePublished: "2026-07-28", dateModified: "2026-07-28", image: "/images/heroes/robotdammsugare-mopp.webp" }}
+  hideAutoRelated
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
+    <Breadcrumbs items={breadcrumbs} />
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Robotdammsugare på Black Friday
+    </h1>
+    <AuthorByline datePublished="2026-07-28" dateModified="2026-07-28" />
+
+    <AnswerBox
+      question="Snabbt svar: vad händer med robotdammsugarpriserna i november?"
+      answer="November är den månad då robotdammsugare får störst utrymme i svenska butikers kampanjer. Störst rörelse ser du normalt på förra generationens toppmodeller, som butikerna vill rensa ut när efterföljaren lanserats. Bestäm modell innan kampanjerna startar, annars köper du det som råkar finnas kvar i lager."
+    />
+
+    <MoneyFeatured {...products[0]} />
+
+    <MoneyComparisonTable products={products} title="Robotdammsugare värda att bevaka i november" />
+
+    <p class="text-lg text-text-light mb-6 leading-relaxed">
+      Den här sidan är en bevakningslista, inte en reasida. Ingen av modellerna nedan påstås vara nedsatt just nu. Vi har valt ut sju robotdammsugare som är värda att hålla ögonen på när novemberkampanjerna drar igång, och förklarat vad du faktiskt får för pengarna i varje modell. Vill du i stället se vår kompletta rangordning året runt hittar du den bland <a href="/robotdammsugare/" class="text-accent underline">bästa robotdammsugare</a>.
+    </p>
+
+    <MoneyTOC />
+
+    <!-- Product cards -->
+    <div class="space-y-5 mb-10">
+      {products.map((p, i) => (
+        <div>
+          <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-4">{p.rank ?? i + 1}. {p.name}{p.badge ? `, ${p.badge}` : ''}</h2>
+          <ProductCard {...p} />
+        </div>
+      ))}
+    </div>
+
+    <section class="prose prose-sm max-w-none mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Varför just de här sju modellerna?</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Urvalet följer de tre saker som avgör om en robotdammsugare blir använd eller står och samlar damm: hur den navigerar, om den moppar ordentligt och om stationen sköter sig själv. Dreame X50 Ultra och X40 Ultra har båda en utfällbar mopparm som fälls ut och når in i hörn och längs kanter, vilket runda moppplattor inte gör. Roborock Saros 10R är byggd 7,98 cm hög och kommer in under möbler med låg frihöjd där andra robotar stoppas, och har 20 000 Pa sugkraft.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Roborock S8 MaxV Ultra sitter med för husdjurshemmen: dubbla gummirullar i stället för borst innebär att päls inte lindar sig runt rullen, och 10 000 Pa räcker till hår i mattlugg. Roborock Qrevo Curv är värdevalet med mopparm, automatisk mopplyftning vid mattor och varmvattentvätt i stationen. Dreame L10s Ultra Gen 3 och Dreame D20 Ultra tar hand om den som vill ha LiDAR-navigering och en självtömmande station utan att gå upp i flaggskeppsklassen.
+      </p>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vilka modellgenerationer brukar sänkas mest?</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Föregångaren till den nyaste toppmodellen är nästan alltid det bästa köpet. När en tillverkare lanserar en ny flaggskeppsmodell blir den föregående generationen den som butikerna vill rensa ur lager, samtidigt som tekniken sällan ändras dramatiskt på ett år. Du betalar mellanskillnaden för navigeringsfinesser och stationsdetaljer, inte för hur rent golvet blir.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Dreames X-serie är det tydligaste exemplet i den här kategorin. X40 Ultra, X50 Ultra och X60 Ultra säljs parallellt i svenska butiker, och X60 Ultra är uppföljaren till X50 Ultra. Alla tre har den utfällbara mopparm som är hela poängen med serien, och X40 Ultra har 12 000 Pa sugkraft, automatisk mattdetektion som lyfter mopparna och en fullautomatisk station med varmvattentvätt. Det är samma grundfunktioner som i de nyare modellerna.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Samma mönster gäller Roborock. Qrevo-serien i mellanklassen får normalt mer utrymme i kampanjerna än Saros-modellerna i toppen, eftersom volymen ligger där. Undantaget från regeln är när den nya generationen inför något du faktiskt behöver. Behöver du komma under en soffa med låg frihöjd är bygghöjden en funktion, inte en finess, och då är det bara Saros 10R med sina 7,98 cm som löser problemet.
+      </p>
+
+      <Callout type="key" title="Tumregeln">
+        Jämför alltid föregångaren mot den nya modellen på funktionsnivå innan du betalar för generationsskiftet. Skiljer det bara i navigeringsprocessor och stationsdesign är den äldre modellen det bättre köpet. Skiljer det i mopparm, mattlyft eller bygghöjd kan det vara värt uppgraderingen.
+      </Callout>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Så skiljer du en äkta rabatt från ett uppblåst jämförpris</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Procentsiffran på skylten säger ingenting i sig, eftersom den räknas mot ett jämförpris som butiken själv väljer. Är jämförpriset ett listpris som ingen faktiskt betalat sedan i våras blir rabatten en räknesak. Titta på beloppet i kronor och jämför det mot vad samma modell kostar hos andra butiker samma dag.
+      </p>
+      <ul class="list-disc pl-6 text-text-light space-y-2 mb-6">
+        <li><strong>Kolla prishistoriken.</strong> En prisjämförelsetjänst med historikkurva visar direkt om priset legat på ungefär samma nivå hela hösten.</li>
+        <li><strong>Jämför minst tre butiker.</strong> Samma modell kan ligga olika hos Elon, Kjell, Komplett, CS Megastore och Proshop under samma vecka.</li>
+        <li><strong>Kontrollera modellbeteckningen exakt.</strong> Kampanjmodeller kan vara varianter med annan station eller annat tillbehörspaket, och namnen skiljer sig ofta bara på en bokstav.</li>
+        <li><strong>Räkna in tillbehören.</strong> Dammpåsar, moppdukar och filter är förbrukningsvaror. En billigare robot med dyra reservdelar kan bli dyrare över tid.</li>
+        <li><strong>Ignorera nedräkningsklockor.</strong> Tidspress är ett säljverktyg, inte information om priset.</li>
+      </ul>
+
+      <figure class="my-8">
+        <img
+          src="/images/heroes/robotdammsugare-mopp.webp"
+          alt="Robotdammsugare med moppfunktion som moppar ett hårdgolv i ett vardagsrum"
+          loading="lazy"
+          width="1200"
+          height="675"
+          class="w-full rounded-xl border border-border"
+        />
+        <figcaption class="text-xs text-text-lighter mt-2">
+          Moppfunktionen är den vanligaste anledningen att uppgradera. Kontrollera att modellen lyfter mopparna automatiskt om du har mattor.
+        </figcaption>
+      </figure>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vad du inte ska köpa bara för att det är billigt</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Det vanligaste felköpet i november är en modell som är billig därför att den saknar funktionen du faktiskt behöver. Två saker avgör det oftare än allt annat.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Ingen automatisk mopplyftning om du har mattor</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Modeller med automatisk mattdetektion lyfter mopparna när roboten kör upp på en matta. Saknas funktionen släpar en blöt mopp över mattan varje gång roboten passerar, och du får en fuktig matta i stället för ren. Det går inte att lösa i appen, det är en hårdvarufunktion. Har du mattor i de rum roboten ska städa är mopplyft ett krav, inte en bonus. Kontrollera i specifikationen att modellen du bevakar har automatisk mopplyftning, den anges tydligt av tillverkaren och saknas oftare ju längre ner i prisklasserna du kommer.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Ingen station om du vill slippa tömma själv</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        En robot utan självtömmande station kräver att du tömmer dammbehållaren efter i princip varje körning. Det är den enskilt vanligaste anledningen till att en robotdammsugare slutar användas efter några månader. Vill du ha en robot som sköter sig själv ska den ha en station som töms, fyller på vatten och tvättar mopparna. Dreame D20 Ultra är det billigaste insteget till den nivån i vårt urval. Ligger en modell utan station påfallande lågt i pris är det oftast just stationen som saknas.
+      </p>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vilka butiker är relevanta för robotdammsugare i Sverige?</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Robotdammsugare i premiumklass säljs framför allt via de större elektronikkedjorna. Elon, Kjell, Komplett, CS Megastore och Proshop är de butiker vi följer löpande för de modeller vi rekommenderar, och samma modell kan ligga olika hos dem under samma vecka. Det gör det värt att jämföra i stället för att köpa hos den butik som råkar dyka upp först.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Sortimenten skiljer sig också åt. Dreame-modellerna har bredast täckning, medan vissa Roborock-modeller bara finns hos ett fåtal återförsäljare i Sverige. Det påverkar hur mycket priserna rör sig: en modell som säljs av många butiker får mer priskonkurrens än en som bara en kedja tagit hem.
+      </p>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Black Week eller Black Friday: när ska du slå till?</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Black Friday infaller dagen efter Thanksgiving, alltså dagen efter den fjärde torsdagen i november. I Sverige har den enskilda dagen dock tappat betydelse för hemelektronik, eftersom kedjorna drar igång kampanjer redan i början av månaden och låter dem rulla vidare till Cyber Monday. Att sitta och vänta på just fredagen är därför en sämre strategi än att bevaka hela november.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Lagersituationen jobbar dessutom emot den som väntar. De mest efterfrågade modellerna säljer slut, och sent i månaden är utbudet ofta det som blev över. Har du bestämt dig för en specifik modell är det bättre att slå till när den dyker upp till ett pris du tycker är rimligt än att hoppas på ytterligare en sänkning några dagar senare.
+      </p>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Så förbereder du dig innan kampanjerna startar</h2>
+      <ol class="list-decimal pl-6 text-text-light space-y-2 mb-6">
+        <li><strong>Bestäm golvtyp först.</strong> Mycket hårdgolv pekar mot en modell med ordentlig mopp. Mycket matta pekar mot sugkraft och mopplyft.</li>
+        <li><strong>Mät frihöjden under möblerna.</strong> Mät under soffa, säng och tv-bänk. Det är den siffran som avgör om roboten kommer åt eller kör runt.</li>
+        <li><strong>Bestäm om du vill ha station.</strong> Vill du slippa tömma är svaret ja, och då stryker du alla modeller utan station direkt.</li>
+        <li><strong>Välj två modeller, inte en.</strong> En förstahandsval och ett alternativ. Slutsålda modeller är det vanligaste hindret i november.</li>
+        <li><strong>Notera nuvarande pris.</strong> Skriv ner vad dina två modeller kostar redan i oktober, så vet du senare om kampanjen är äkta.</li>
+        <li><strong>Kontrollera vad stationen kräver.</strong> Den behöver en fri vägg med eluttag, och de större stationerna tar ordentligt med plats.</li>
+      </ol>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Så uppdaterar vi sidan när kampanjerna startar</h2>
+      <div class="not-prose bg-bg-alt border border-border rounded-xl p-5 mb-8">
+        <p class="text-text-light leading-relaxed mb-3">
+          Sidan är publicerad som en bevakningslista och listar därför inga erbjudanden i dag. Konkreta erbjudanden läggs in först när butikernas novemberkampanjer startar, och tas bort igen när de löpt ut.
+        </p>
+        <p class="text-text-light leading-relaxed mb-0">
+          Fram tills dess går knapparna ovan till modellernas ordinarie produktsidor hos respektive butik, där du ser det pris som gäller i dag. Vi lägger aldrig in ett erbjudande på den här sidan innan vi kontrollerat det mot butikens egen produktsida.
+        </p>
+      </div>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Läs vidare innan du bestämmer dig</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Den här sidan handlar om hur du handlar i november. Vilken modell som är rätt för ditt hem avgörs av golvtyp, husdjur och hur mycket du vill att roboten ska sköta själv. Vår kompletta rangordning över <a href="/robotdammsugare/" class="text-accent underline">bästa robotdammsugare</a> går igenom alla kategorier och uppdateras löpande under året.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Har du mycket hårdgolv och vill att roboten ska sköta både dammsugning och svabbning i samma pass är vår guide till <a href="/robotdammsugare/med-mopp/" class="text-accent underline">robotdammsugare med mopp</a> rätt startpunkt, den jämför moppteknik, mattlyft och varmvattentvätt av moppdukarna. Bor du med hund eller katt är <a href="/robotdammsugare/husdjur/" class="text-accent underline">robotdammsugare för husdjur</a> den guide som väger in gummirullar, sugkraft och AI-detektering av djuravföring.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider och recensioner</h2>
+      <ul class="space-y-2">
+        <li><a href="/robotdammsugare/" class="text-accent underline text-sm">bästa robotdammsugare</a>, vår kompletta rangordning i alla kategorier</li>
+        <li><a href="/robotdammsugare/med-mopp/" class="text-accent underline text-sm">robotdammsugare med mopp</a>, moppteknik och mattlyft jämfört</li>
+        <li><a href="/robotdammsugare/husdjur/" class="text-accent underline text-sm">robotdammsugare för husdjur</a>, gummirullar och sugkraft för päls</li>
+        <li><a href="/dreame-x40-ultra/" class="text-accent underline text-sm">Dreame X40 Ultra recension</a>, föregångaren med utfällbar mopparm</li>
+        <li><a href="/roborock-s8-maxv-ultra/" class="text-accent underline text-sm">Roborock S8 MaxV Ultra recension</a>, AI-kamera och gummirullar</li>
+        <li><a href="/roborock-saros-10r/" class="text-accent underline text-sm">Roborock Saros 10R recension</a>, lägsta bygghöjden på marknaden</li>
+        <li><a href="/billigaste-robotdammsugare/" class="text-accent underline text-sm">billigaste robotdammsugare</a>, budgetmodellerna granskade</li>
+        <li><a href="/black-friday/robotgrasklippare/" class="text-accent underline text-sm">robotgräsklippare på Black Friday</a>, samma bevakning för gräsklipparna</li>
+      </ul>
+    </section>
+
+    <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
+  </div>
+
+  <StickyCTA
+    text={products[0].ctaText}
+    url={products[0].ctaUrl}
+    productName={products[0].name}
+  />
+
+</BaseLayout>

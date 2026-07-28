@@ -1,0 +1,314 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import FAQ from '../../components/FAQ.astro';
+import StickyCTA from '../../components/StickyCTA.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+import AnswerBox from '../../components/AnswerBox.astro';
+import MoneyFeatured from '../../components/MoneyFeatured.astro';
+import MoneyComparisonTable from '../../components/MoneyComparisonTable.astro';
+import MoneyTOC from '../../components/MoneyTOC.astro';
+
+const products = [
+  {
+    rank: 1,
+    name: 'Dreame A3 AWD Pro 5000',
+    image: '/images/products/dreame-a3-awd-pro-5000.webp',
+    rating: 4.8,
+    badge: 'Högst rankad i vår jämförelse',
+    pros: ['AWD-drivning klarar branta lutningar', 'Klarar ytor upp till 5 000 m²', 'Utan perimeterkabel, GPS-navigering', 'LiDAR-sensor för precisionskartläggning'],
+    cons: ['Premiumpris', 'Stor basstation'],
+    ctaText: 'Bra pris hos Proshop',
+    ctaUrl: 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3454280&url=https://www.proshop.se/Robotgraesklippare/Dreame-A3-AWD-Pro-5000-Robotgraesklippare-5000-m/3454280',
+    dataProduct: 'Dreame A3 AWD Pro 5000',
+    desc: 'Toppmodellen i Dreames A3-serie och den som täcker störst yta av robotarna på den här sidan. AWD-drivning på alla hjul, GPS-navigering utan perimeterkabel och LiDAR för kartläggningen. Den typen av flaggskepp brukar ligga kvar i sortimentet i flera säsonger, vilket gör reservdelsläget tryggt även om du köper den utanför klippsäsongen.',
+  },
+  {
+    rank: 2,
+    name: 'Dreame A3 AWD 1000',
+    image: '/images/products/dreame-a3-awd-1000.webp',
+    rating: 4.6,
+    badge: 'AWD för normalstor villatomt',
+    pros: ['AWD-drift, klarar branta sluttningar', 'Klarar ytor upp till 1 000 m²', 'Ingen perimeterkabel, RTK GPS och LiDAR', 'Gränser ritas i appen'],
+    cons: ['Lägre maxyta än Pro-versionen', 'Kräver fri sikt mot himlen'],
+    ctaText: 'Bra pris hos Kjell',
+    ctaUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66730&url=https://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare-tillbehor/robotgrasklippare/dreame-a3-awd-1000-robotgrasklippare-p66730',
+    dataProduct: 'Dreame A3 AWD 1000',
+  },
+  {
+    rank: 3,
+    name: 'Segway Navimow i220E',
+    image: '/images/products/segway-navimow-i220e.webp',
+    rating: 4.5,
+    badge: 'LiDAR utan slinga',
+    pros: ['LiDAR och RTK utan perimeterkabel', 'Passar ytor upp till 2 000 m²', 'IP67, klarar allt väder', 'Bra app-integration'],
+    cons: ['Kräver fri sikt till himlen', 'Dyrare än kabelbaserade'],
+    ctaText: 'Bra pris hos CS Megastore',
+    ctaUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25567775&url=https://www.csmegastore.se/i/25567775/segway-navimow-i220e-lidar-pro-robotgr%c3%a4sklippare-2000-m',
+    dataProduct: 'Segway Navimow i220E',
+  },
+  {
+    rank: 4,
+    name: 'Mammotion Luba 3 5000X',
+    image: '/images/products/mammotion-luba-3-5000x.webp',
+    rating: 4.5,
+    badge: 'Stor tomt med 4G och kamerasystem',
+    pros: ['AWD-drift på alla fyra hjul', 'RTK GPS och LiDAR utan kabel', 'Klarar ytor upp till 5 000 m²', 'Kamerasystem och 4G'],
+    cons: ['Dyrast i klassen', 'Stor och tung'],
+    ctaText: 'Bra pris hos CS Megastore',
+    ctaUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25727478&url=https://www.csmegastore.se/i/25727478/mammotion-luba-3-5000x-awd-lidar-rtk-robotgr%c3%a4sklippare',
+    dataProduct: 'Mammotion Luba 3 5000X',
+  },
+  {
+    rank: 5,
+    name: 'Gardena Sileno free 1000',
+    image: '/images/products/gardena-sileno-free-1000.webp',
+    rating: 4.4,
+    badge: 'Etablerat märke, svensk service',
+    pros: ['RTK-GPS, ingen perimeterkabel att gräva ner', 'Gardena smart-app med zoner och scheman', 'Klarar gräsmattor upp till 1 000 m²', 'Etablerat märke med svensk service och reservdelar'],
+    cons: ['Kräver fri sikt mot himlen för RTK-signal', 'Dyrare än enklare slingmodeller'],
+    ctaText: 'Bra pris hos CS Megastore',
+    ctaUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=21859841&url=https://www.csmegastore.se/i/21859841/gardena-sladdl%c3%b6s-robotgr%c3%a4sklippare-smart-sileno-free-rtk-gps-1000-m',
+    dataProduct: 'Gardena Sileno free 1000',
+    reviewUrl: '/gardena-robotgrasklippare/',
+  },
+  {
+    rank: 6,
+    name: 'Segway Navimow i105E',
+    image: '/images/segway-navimow-i105e.webp',
+    rating: 4.0,
+    badge: 'Minsta tomten, enklast start',
+    pros: ['18 cm klippbredd, 60 minuters drifttid', 'VisionFence-kamera och GNSS', 'Ingen perimeterkabel', 'IP66, klarar regn'],
+    cons: ['Klarar bara 500 m²', 'Passar bara flack mark'],
+    ctaText: 'Bra pris hos Kjell',
+    ctaUrl: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66290&url=https://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare-tillbehor/robotgrasklippare/segway-navimow-i105e-robotgrasklippare-p66290',
+    dataProduct: 'Segway Navimow i105E',
+    reviewUrl: '/segway-navimow-i105e/',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Är Black Friday ett bra tillfälle att köpa robotgräsklippare?',
+    answer: 'Ja, för den som är beredd att köpa ett halvår innan roboten behövs. November är lågsäsong för klippning, och butikerna har då både förra säsongens lager kvar och lågt tryck från kunder. Det är precis den kombinationen som ger utrymme för större sänkningar än under våren. Nackdelen är att maskinen står oanvänd till april.',
+  },
+  {
+    question: 'Varför kan rabatten bli större i november än i april?',
+    answer: 'I april konkurrerar alla som ska klippa gräs om samma modeller, och butikerna behöver inte sänka priset för att få dem sålda. I november är efterfrågan låg samtidigt som lagret från säsongen ska bort innan nästa generation landar. Rabatten är alltså inte en gåva utan ett sätt att frigöra lagerplats och kapital före årsskiftet.',
+  },
+  {
+    question: 'Vilka robotgräsklippare brukar prissänkas mest?',
+    answer: 'Mönstret är att modeller som fått en efterträdare sänks tydligast, följt av varianter med mindre arbetsyta i en serie som säljer sämre än flaggskeppet. Nyheter som lanserats samma höst rör sig sällan i pris. Kolla därför om modellen du tittar på är den senaste i sin serie eller om tillverkaren redan visat en nyare version.',
+  },
+  {
+    question: 'Hur vet jag om Black Friday-priset är en äkta rabatt?',
+    answer: 'Jämför mot vad modellen faktiskt kostat tidigare, inte mot det jämförpris butiken skriver ut. Titta på prishistoriken hos en prisjämförelsetjänst och kontrollera priset hos minst två andra butiker samma dag. Har priset legat på ungefär samma nivå i månader är sänkningen liten även om skylten säger något annat.',
+  },
+  {
+    question: 'Börjar garantin gälla direkt om jag köper i november?',
+    answer: 'Ja, det är den verkliga avvägningen med ett lågsäsongsköp. Garantitiden räknas normalt från köpdatum, och reklamationsrätten enligt konsumentköplagen på tre år räknas från att du fått varan. En robot som köps i november har alltså passerat en bit av sin garantitid innan den klippt sitt första pass. Läs villkoren hos butiken innan du beställer.',
+  },
+  {
+    question: 'Hur förvarar jag en robotgräsklippare som köps utanför säsong?',
+    answer: 'Ladda batteriet innan förvaring, låt maskinen stå frostfritt inomhus och undvik källare med hög luftfuktighet. En ny robot i obruten kartong klarar sig bra i ett garage som håller plusgrader. Packa upp den i god tid före våren så att du hinner ladda, uppdatera appen och kontrollera att allt fungerar innan gräset börjar växa.',
+  },
+  {
+    question: 'Är det bättre att vänta till vårreorna?',
+    answer: 'Vårkampanjerna finns, men de ligger mitt i högsäsong när efterfrågan är som störst, och då är butikernas incitament att sänka priset mindre. Väntar du får du å andra sidan full garantitid under din första klippsäsong och slipper förvara en oanvänd maskin. Väljer du november tjänar du på priset och betalar med väntetid.',
+  },
+  {
+    question: 'Vad ska jag kontrollera innan jag köper en utgående modell?',
+    answer: 'Ta reda på om modellen fortfarande finns i tillverkarens sortiment och om knivar, hjul och batteri säljs separat hos svenska återförsäljare. Kontrollera också att appen fortfarande uppdateras, eftersom kabelfria robotar är beroende av mjukvara för kartor och zoner. En billig maskin utan reservdelar blir dyr redan andra säsongen.',
+  },
+  {
+    question: 'Vilken arealangivelse ska jag välja när jag köper utanför säsong?',
+    answer: 'Mät gräsmattan innan kampanjen börjar, så att du inte tvingas gissa när du ska bestämma dig snabbt. Välj en modell med marginal uppåt: robotarna på den här sidan spänner från 500 m² till 5 000 m². En maskin som ligger precis på gränsen får längre arbetspass och mer slitage per säsong än en med utrymme kvar.',
+  },
+  {
+    question: 'Var säljs robotgräsklippare under Black Week i Sverige?',
+    answer: 'Kjell, CS Megastore, Proshop, Komplett och Elon är de butiker vi följer. Modellerna i listan ovan säljs hos Kjell, CS Megastore och Proshop. Sortimentet skiljer sig mellan butikerna, så samma modell finns sällan hos alla. Kontrollera lagerstatus och leveranstid innan du beställer, eftersom populära modeller tar slut snabbt under kampanjveckan.',
+  },
+];
+
+const breadcrumbs = [
+  { label: 'Black Friday', href: '/black-friday/' },
+  { label: 'Robotgräsklippare' },
+];
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Robotgräsklippare att bevaka under Black Friday",
+  "itemListElement": products.map((p, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": p.name,
+    "url": "https://robotjakt.se/black-friday/robotgrasklippare/",
+  })),
+};
+
+export const articleMeta = {
+  title: "Robotgräsklippare Black Friday: så hittar du en äkta rabatt",
+  description: "Robotgräsklippare på Black Friday: varför lågsäsong kan ge större rabatter, hur du känner igen en äkta prissänkning och vad du bör kontrollera före köp.",
+  publishDate: "2026-07-28",
+  category: "Black Friday",
+  image: "/images/heroes/kopguide-robotgrasklippare.webp",
+};
+---
+
+<BaseLayout
+  title="Robotgräsklippare Black Friday: så hittar du en äkta rabatt"
+  description="Robotgräsklippare på Black Friday: varför lågsäsong kan ge större rabatter, hur du känner igen en äkta prissänkning och vad du bör kontrollera före köp."
+  ogImage="/images/heroes/kopguide-robotgrasklippare.webp"
+  article={{ datePublished: "2026-07-28", dateModified: "2026-07-28", image: "/images/heroes/kopguide-robotgrasklippare.webp" }}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
+    <Breadcrumbs items={breadcrumbs} />
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Robotgräsklippare på Black Friday
+    </h1>
+    <AuthorByline datePublished="2026-07-28" dateModified="2026-07-28" />
+
+    <AnswerBox
+      question="Snabbt svar: lönar det sig att köpa robotgräsklippare på Black Friday?"
+      answer="November är lågsäsong för gräsklippning, och det är precis därför sänkningarna kan bli större än under våren. Butikerna vill bli av med säsongens lager. Priset är alltså argumentet, men du köper ett halvår innan du behöver maskinen och garantitiden börjar ticka direkt."
+    />
+
+    <MoneyFeatured {...products[0]} description={products[0].desc} />
+
+    <MoneyComparisonTable products={products} title="Robotgräsklippare att bevaka under Black Week" />
+
+    <p class="text-lg text-text-light mb-6 leading-relaxed">
+      Att köpa robotgräsklippare i november är ett byte: du får ett bättre utgångsläge på priset och betalar med att maskinen står oanvänd till våren. Utbudet av förra säsongens modeller är som störst just då, eftersom butikerna vill tömma lagret innan nästa generation landar. Den ärliga baksidan är att garantitiden räknas från köpet, inte från första klippningen, och att en robot du inte kan testa på gräset förrän i april är svårare att reklamera i tid om något är fel från början.
+    </p>
+
+    <MoneyTOC />
+
+    <!-- Product cards -->
+    <div class="space-y-5 mb-10">
+      {products.map((p, i) => (
+        <div>
+          <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-4">{p.rank ?? i + 1}. {p.name}{p.badge ? `, ${p.badge}` : ''}</h2>
+          <ProductCard {...p} />
+        </div>
+      ))}
+    </div>
+
+    <!-- Guide section -->
+    <section class="prose prose-sm max-w-none mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Varför blir robotgräsklippare billigare i lågsäsong?</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        En robotgräsklippare är en säsongsvara med ett tydligt försäljningsfönster från april till augusti. När november kommer sitter butikerna på maskiner som inte såldes under sommaren, samtidigt som tillverkarna redan förbereder nästa säsongs sortiment. Lagret kostar pengar och utrymme, och en modell som ska ersättas till våren blir svårare att sälja för varje månad som går.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Därför pekar incitamenten åt samma håll under Black Week: butiken vill frigöra kapital före årsskiftet och kunden är beredd att vänta. Det är motsatsen till robotdammsugare, där november är högsäsong och rabatten konkurrerar med en efterfrågan som redan är hög. På gräsklipparsidan finns ingen sådan press uppåt, och sänkningen behöver därför vara tillräckligt stor för att övertyga någon att köpa en maskin de inte kan använda på ett halvår.
+      </p>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Så skiljer du en äkta rabatt från ett uppblåst jämförpris</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Ett kampanjpris säger ingenting i sig. Det som betyder något är vad modellen faktiskt har kostat de senaste månaderna. Jämförpriset som står överstruket i annonsen är butikens eget referensvärde, och det behöver inte spegla den nivå produkten legat på i praktiken.
+      </p>
+      <ul class="list-disc pl-6 text-text-light space-y-2 mb-6">
+        <li><strong>Kolla prishistoriken</strong> hos en prisjämförelsetjänst innan kampanjen startar, så att du vet vad som är normalläget för just den modellen.</li>
+        <li><strong>Jämför minst tre butiker samma dag.</strong> Ligger alla på ungefär samma nivå är kampanjpriset marknadspriset, inte en rabatt.</li>
+        <li><strong>Skilj på generationer.</strong> En äldre modell som sänks kraftigt kan ändå vara sämre köp än en nyare som sänks lite, om skillnaden i navigering och arbetsyta är stor.</li>
+        <li><strong>Räkna in frakt och tillbehör.</strong> Kantklippare, extra knivar och RTK-tillbehör säljs ibland separat och kan äta upp mellanskillnaden.</li>
+        <li><strong>Bestäm modell först, pris sedan.</strong> Har du valt ut två eller tre kandidater i förväg slipper du köpa fel maskin bara för att siffran ser bra ut.</li>
+      </ul>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Kontrollera det här innan du köper utanför säsong</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Ett lågsäsongsköp innebär att du inte kan testa maskinen på gräset förrän långt efter köpet. Två saker avgör då om affären håller: att modellen fortfarande lever i tillverkarens sortiment och att arealangivelsen matchar tomten du faktiskt har.
+      </p>
+      <div class="grid sm:grid-cols-2 gap-5 mb-6">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Är modellen utgången?</h3>
+          <p class="text-sm text-text-light">Sök upp modellen på tillverkarens svenska sida och kontrollera att den finns kvar i sortimentet. En modell som fasats ut kan bli svår att få knivar, hjul och batteri till om några år, och då blir det billiga köpet dyrt.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Matchar arealen tomten?</h3>
+          <p class="text-sm text-text-light">Mät gräsmattan innan kampanjen. Modellerna på den här sidan spänner från 500 m² till 5 000 m². Välj med marginal uppåt, en robot som ligger precis på gränsen får längre arbetspass och slits fortare.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Uppdateras appen?</h3>
+          <p class="text-sm text-text-light">Kabelfria robotar med RTK och LiDAR är beroende av mjukvaran för kartor, zoner och gränser. Kontrollera att appen fortfarande får uppdateringar och att modellen stöds i den svenska versionen.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-text mb-2">Vad gäller för retur och garanti?</h3>
+          <p class="text-sm text-text-light">Läs butikens returvillkor innan du beställer. Öppet köp löper ut långt innan du kan testa roboten på gräs, så packa upp och starta maskinen inomhus direkt efter leverans i stället för att låta kartongen stå orörd.</p>
+        </div>
+      </div>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vinterförvaring: roboten du köper i november ska stå still till våren</h2>
+      <img
+        src="/images/heroes/kopguide-robotgrasklippare.webp"
+        alt="Robotgräsklippare på gräsmatta i villaträdgård"
+        width="1280"
+        height="855"
+        loading="lazy"
+        decoding="async"
+        class="w-full h-auto rounded-xl border border-border mb-4"
+      />
+      <p class="text-text-light leading-relaxed mb-4">
+        En robot som köps under Black Week ska förvaras i fem till sex månader innan den används. Det är inte svårt, men det görs fel om maskinen bara ställs undan i kartongen och glöms bort. Ladda batteriet fullt innan förvaring och lagra maskinen frostfritt inomhus, gärna i ett garage eller förråd som håller plusgrader och inte är fuktigt.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Ta fram roboten i god tid före första klippningen. Då hinner du ladda, koppla upp den mot appen, uppdatera mjukvaran och kontrollera att RTK-antennen eller basstationen får den fria sikt den behöver. Upptäcker du ett fel i mars har du fortfarande tid att kontakta butiken innan säsongen drar igång. Hela rutinen står i vår guide till <a href="/guide/vinterforvaring-robotgrasklippare/" class="text-accent underline">vinterförvaring av robotgräsklippare</a>, som gäller både för en ny maskin i kartong och för en som just kört en säsong.
+      </p>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vilka modeller brukar sänkas i pris under Black Week?</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Mönstret är stabilt år efter år. Störst rörelse ser du på modeller som har fått en efterträdare, eftersom butiken då säljer en generation som redan är passerad. Näst störst rörelse ser du på mindre varianter i en serie där flaggskeppet är det som marknadsförs. Nyheter som lanserats samma höst sänks sällan alls.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Kabelfria robotar med RTK och LiDAR har dessutom blivit betydligt vanligare de senaste åren, vilket gör att äldre slingbaserade modeller ligger kvar längre i lagren. Det är också där du oftast hittar de tydligaste sänkningarna, men läs på om vad du ger upp innan du köper en slingmodell bara för att den är billig. Skillnaden mellan slinga och kabelfritt beskriver vi i vår jämförelse av <a href="/robotgrasklippare-utan-slinga/" class="text-accent underline">robotgräsklippare utan slinga</a>.
+      </p>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Var handlar du robotgräsklippare i Sverige?</h2>
+      <p class="text-text-light leading-relaxed mb-6">
+        Modellerna på den här sidan säljs hos Kjell, CS Megastore och Proshop, och robotgräsklippare finns i sortimentet även hos Komplett och Elon. Sortimenten överlappar bara delvis, så samma modell finns sällan hos alla butiker samtidigt. Under kampanjveckan är lagerstatus minst lika viktig som priset, populära modeller tar slut och restnoterade varor kan dröja långt in i december.
+      </p>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Bestäm vilken robot du vill ha innan kampanjen startar</h2>
+      <p class="text-text-light leading-relaxed mb-6">
+        Den vanligaste dyra missen under Black Week är att köpa fel maskin snabbt i stället för rätt maskin lugnt. Gå igenom navigering, lutning och arbetsyta i förväg och plocka ut två eller tre modeller som passar din tomt. Vår rankning av <a href="/robotgrasklippare/" class="text-accent underline">bästa robotgräsklippare</a> går igenom kategorierna var för sig, och för en kuperad tomt är <a href="/robotgrasklippare-for-lutning/" class="text-accent underline">robotgräsklippare för lutning</a> rätt startpunkt. Har du en liten gräsmatta räcker ofta en modell för <a href="/robotgrasklippare-liten-tradgard/" class="text-accent underline">liten trädgård</a>.
+      </p>
+
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Erbjudanden listas när kampanjerna startar</h2>
+      <div class="not-prose bg-bg-alt border border-border rounded-xl p-5 mb-6">
+        <p class="text-text-light leading-relaxed mb-3">
+          Den här sektionen är tom med flit. Vi listar inga kampanjer förrän butikerna faktiskt har startat dem, och vi skriver aldrig ut ett erbjudande som inte går att klicka på i samma stund som du läser sidan.
+        </p>
+        <p class="text-text-light leading-relaxed mb-0">
+          När Black Week drar igång fyller vi på med de robotgräsklippare som faktiskt sänkts i pris hos svenska butiker, tillsammans med datum för när vi kontrollerade priset. Fram till dess är produktlistan ovan vår bevakningslista: det är de modellerna vi följer och de butiker vi kontrollerar mot.
+        </p>
+      </div>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Läs vidare inför köpet</h2>
+      <ul class="space-y-2">
+        <li><a href="/robotgrasklippare/" class="text-accent underline text-sm">Bästa robotgräsklippare, alla kategorier</a></li>
+        <li><a href="/robotgrasklippare-utan-slinga/" class="text-accent underline text-sm">Robotgräsklippare utan slinga, RTK och LiDAR jämförda</a></li>
+        <li><a href="/guide/robotgrasklippare-koparguide/" class="text-accent underline text-sm">Köpguide robotgräsklippare, så väljer du rätt modell</a></li>
+        <li><a href="/guide/vinterforvaring-robotgrasklippare/" class="text-accent underline text-sm">Vinterförvaring av robotgräsklippare steg för steg</a></li>
+        <li><a href="/robotgrasklippare-stor-tradgard/" class="text-accent underline text-sm">Robotgräsklippare för stor trädgård</a></li>
+        <li><a href="/robotgrasklippare-utan-arsgransavgift/" class="text-accent underline text-sm">Robotgräsklippare utan årsavgift, ingen prenumeration</a></li>
+      </ul>
+    </section>
+
+    <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
+  </div>
+
+  <StickyCTA
+    text={products[0].ctaText}
+    url={products[0].ctaUrl}
+    productName={products[0].name}
+  />
+
+</BaseLayout>
