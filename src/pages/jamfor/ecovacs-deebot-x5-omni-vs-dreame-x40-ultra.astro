@@ -34,6 +34,18 @@ const faqItems = [
     question: 'Är Ecovacs eller Dreame ett bättre märke för service och reservdelar i Sverige?',
     answer: 'Båda märkena är väletablerade på den svenska marknaden med reservdelar tillgängliga via svenska återförsäljare. Dreame finns hos Komplett, Elgiganten och MediaMarkt. Ecovacs säljs primärt via Elgiganten och Amazon SE. Båda erbjuder 2 års garanti. Dreames svenska support är något snabbare baserat på användarerfarenheter på svenska forum.',
   },
+  {
+    question: 'Vilken av dem passar bäst i ett hem med husdjur?',
+    answer: 'Det beror på vad problemet är. Har du päls som arbetat sig ner i tjocka mattor vinner Dreame X40 Ultra på sugkraften, 12 000 Pa mot 8 000 Pa. Är risken snarare olyckor på golvet är Ecovacs X5 Omni tryggare: AIVI 3D klassificerar objekt som skor, kablar och djuravföring och väjer för dem, medan X40 Ultra saknar dedikerad djuravföringsdetektering. På hårda golv och kortluggade mattor räcker X5 Omni gott.',
+  },
+  {
+    question: 'Hur mycket låter Ecovacs X5 Omni och Dreame X40 Ultra?',
+    answer: 'Nästan lika mycket. Ecovacs X5 Omni anges till 68 dB och Dreame X40 Ultra till cirka 65 dB på högsta effekt, en skillnad du knappt uppfattar i ett vanligt rum. Ljudnivån är alltså ingen avgörande skiljefråga mellan modellerna, utan något du planerar runt oavsett vilken du väljer. Schemalägg körningen till när hemmet är tomt eller när ingen sover. Söker du en märkbart tystare robot behöver du titta på andra modeller än de här två.',
+  },
+  {
+    question: 'Vilken ska du välja om roboten ska städa nattetid eller i mörka rum?',
+    answer: 'Dreame X40 Ultra. LiDAR mäter avstånd med laserpulser och behöver inget rumsljus alls, kartläggningen blir lika exakt under en säng som i ett upplyst vardagsrum. Ecovacs AIVI 3D är kamerabaserad och behöver belysning för att tolka omgivningen. Städar du mest dagtid i ett ljust hem spelar skillnaden liten roll, och då väger X5 Omnis övriga fördelar tyngre.',
+  },
 ];
 
 const faqSchema = faqItems.map((item) => ({
@@ -71,7 +83,7 @@ export const articleMeta = {
       answer="Ecovacs Deebot X5 Omni är det starkaste värdeköpet: fyrkantig kropp som täcker hörnen bättre vid dammsugning, 180 minuters uppgiven batteritid och lägre pris. Dreame X40 Ultra vinner när sugkraften avgör, 12 000 Pa mot 8 000 Pa, och när du vill ha moppning längs hela väggen via den utfällbara sidoarmen."
     />
     <p class="text-text-light mb-6 max-w-2xl">
-      Ecovacs X5 Omni till eller Dreame X40 Ultra till ? Båda är flaggskeppsrobotar med oscillerande mopp, självtömmande station och AI-navigering, men de löser problemet med hörn och väggar på helt olika sätt. Vi jämför dem kategori för kategori.
+      Ecovacs X5 Omni eller Dreame X40 Ultra? Båda är flaggskeppsrobotar med oscillerande mopp, självtömmande station och AI-navigering, men de löser problemet med hörn och väggar på helt olika sätt. Vi jämför dem kategori för kategori.
     </p>
 
     <EditorialCTA products={['Dreame X40 Ultra']} />
@@ -143,7 +155,7 @@ export const articleMeta = {
             <tr>
               <td class="px-4 py-3 font-medium text-text">Bullernivå</td>
               <td data-col="Ecovacs X5 Omni" class="px-4 py-3 text-text-light">68 dB</td>
-              <td data-col="Dreame X40 Ultra" class="px-4 py-3 text-text-light">68 dB</td>
+              <td data-col="Dreame X40 Ultra" class="px-4 py-3 text-text-light">ca 65 dB (max)</td>
             </tr>
             <tr class="bg-bg-alt/30">
               <td class="px-4 py-3 font-medium text-text">Vikt</td>

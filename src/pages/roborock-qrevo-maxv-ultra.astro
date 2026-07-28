@@ -27,6 +27,22 @@ const faqItems = [
     question: 'Stödjer Qrevo MaxV Ultra Matter och HomeKit?',
     answer: 'Roborock stödjer inte Apple HomeKit direkt men erbjuder Google Assistant och Amazon Alexa. Roborock-appen (iOS/Android) ger fullständig kontroll med schemläggning, rumsval och städhistorik.',
   },
+  {
+    question: 'Vilka mattor klarar Qrevo MaxV Ultra utan att moppen tar i?',
+    answer: 'Mattlyftningen är 7 mm, vilket täcker hallmattor, bomullsmattor och tunna ullmattor. Problemet uppstår först när luggen är högre än så: på långhårig ryamatta eller tjock mocka lyfts moppen inte fritt och du kan få fuktiga stråk. Ett enkelt test är att trycka ner luggen med fingret och känna hur djup den är innan du når väven. Ligger mattan över gränsen lägger du den som egen zon i appen och kör den torrt.',
+  },
+  {
+    question: 'Hur ofta behöver AI-kameran rengöras?',
+    answer: 'Varannan vecka räcker, och det görs med en torr mikrofiberduk på både kameralinsen och det närinfraröda stödljuset. ReactiveAI 2.0 bygger på att kameran hinner se hindret i tid, så en dammhinna över linsen kostar roboten reaktionsmarginal snarare än att slå ut funktionen helt. Symptomet är att den börjar missa kablar och strumpor den tidigare svängde undan för. Passa på samtidigt som du tömmer smutsvattentanken, så blir det gjort i samma rutin.',
+  },
+  {
+    question: 'Är Qrevo MaxV Ultra värd pengarna om jag inte har husdjur?',
+    answer: 'Troligen inte. AI-kameran med djuravföringsdetektering är det som motiverar prisskillnaden, och utan hund eller katt betalar du för en funktion du sällan behöver. Qrevo Pro saknar AI-kameran och ligger lägre i pris med i övrigt liknande upplägg. Har du däremot mycket kablar och småsaker på golvet gör hinderdetekteringen nytta även i ett hem utan djur.',
+  },
+  {
+    question: 'Hur mycket plats tar stationen?',
+    answer: 'Mer än en vanlig laddstation, och det är en av modellens tydliga nackdelar. Den ska rymma både automatisk dammtömning och mopptvätt med 55-gradigt vatten plus varmluftstorkning, vilket kräver både djup och höjd. Mät platsen innan köp och räkna med fritt utrymme framför så att roboten kan docka rakt in. Mot en vägg nära ett eluttag, helst på hårt golv, fungerar bäst.',
+  },
 ];
 
 const breadcrumbs = [
@@ -184,7 +200,7 @@ export const articleMeta = {
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Alternativ till Roborock Qrevo MaxV Ultra: bättre val för ditt hem?</h3>
       <p class="text-text-light leading-relaxed mb-4">
-        S8 MaxV Ultra mer och har starkare sugkraft (10 000 Pa mot Qrevo MaxV Ultras 10 000 Pa, de är faktiskt lika) men S8-serien erbjuder FlexiArm sidborste och dubbla gummirullar. Qrevo MaxV Ultra är ett utmärkt val om du vill ha AI-kamera och helautomatisk station utan att betala S8-serien-priset.
+        S8 MaxV Ultra har samma sugkraft, 10 000 Pa på båda modellerna, men S8-serien erbjuder FlexiArm sidborste och dubbla gummirullar. Qrevo MaxV Ultra är ett utmärkt val om du vill ha AI-kamera och helautomatisk station utan att betala S8-serien-priset.
       </p>
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur sköter du Qrevo MaxV Ultras AI-kamera?</h3>

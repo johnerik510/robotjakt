@@ -14,6 +14,9 @@ const faqItems = [
   { question: 'Hur länge håller batteriet?', answer: '500 till 1 200 fulla laddningscykler beroende på modell och användning. Det motsvarar 3 till 5 år vid daglig städning. Litiumjon-batterier tappar gradvis kapacitet.' },
   { question: 'Kan jag spola moppkuddarna i tvättmaskinen?', answer: 'Ja, alla större tillverkare har tvättbara mikrofiberkuddar. 40 grader, inget sköljmedel (det förstör mikrofibrerna). Häng-torka, tumla aldrig.' },
   { question: 'Vad gör jag om roboten kör fast ofta?', answer: 'Två vanligaste orsakerna: 1) Smutsiga falldetektionssensorer på undersidan, torka av med torr trasa. 2) Borstvals trasslad, rensa noga. Om problemen kvarstår, byt sidoborste och kontrollera hjulen.' },
+  { question: 'Hur ofta ska LiDAR-tornet rengöras?', answer: 'En gång i månaden räcker i ett normalt hem. Glasrutan på tornet samlar damm och pälsfibrer, och en smutsig ruta förvränger avståndsmätningarna så att roboten börjar köra i cirklar eller ta konstiga kurser mitt i städningen. Torka av med en torr mikrofiberduk och starta en ny körning, då brukar navigeringen sätta sig direkt.' },
+  { question: 'Räcker det att autostationen tömmer sig själv?', answer: 'Nej. Stationen tömmer dammbehållaren åt dig, men slangar och påsar behöver ses över var tredje månad eftersom hår bildar proppar i slangvägen. En propp märks på att roboten slutar tömmas ordentligt trots att allt låter som vanligt. Kontrollera huvudborsten samtidigt och byt den vid synliga slitspår.' },
+  { question: 'Kan jag förvara robotdammsugaren i garaget över vintern?', answer: 'Nej, förvara den i rumstemperatur inomhus. Litiumjonbatterier trivs inte under fem grader, och upprepad kyla kan sänka kapaciteten permanent. Ladda till 60 till 80 procent före förvaring i stället för fullt, rengör roboten innan den ställs undan och kontrollera laddnivån en gång i månaden om den ska stå längre än tre månader.' },
 ];
 
 export const articleMeta = {
@@ -73,11 +76,11 @@ export const articleMeta = {
     <li>Kalibrera kartan om roboten verkar köra fel ofta.</li>
   </ul>
 
-  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Var 6 till 12 månader: byt borstar, moppkuddar och uppdatera firmware</h2>
+  <h2 class="font-heading text-2xl font-bold text-text mt-8 mb-3">Var 6 till 12 månader: byt borstar och uppdatera firmware</h2>
   <ul class="list-disc pl-6 text-text-light space-y-2 mb-6">
     <li>Byt huvudborste.</li>
     <li>Byt sidoborstar.</li>
-    <li>Byt moppkuddar (oftare vid daglig moppning).</li>
+    <li>Kontrollera moppkuddarna och byt dem när fibrerna packats platta eller slutat suga upp vatten, det går fortare vid daglig moppning.</li>
     <li>Uppdatera firmware via appen.</li>
   </ul>
   <p class="text-text-light leading-relaxed mb-6">

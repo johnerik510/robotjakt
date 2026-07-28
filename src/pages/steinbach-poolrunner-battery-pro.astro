@@ -10,7 +10,7 @@ const breadcrumbs = [
 ];
 
 const specs = [
-  { label: 'Poolstorlek', value: 'Upp till 8 x 4 m (max 80 m²)' },
+  { label: 'Poolstorlek', value: 'Upp till 8 x 4 m' },
   { label: 'Klättrar väggar', value: 'Nej, enbart botten' },
   { label: 'Drifttid', value: '90 minuter' },
   { label: 'Kabellängd', value: 'Ingen, trådlös (batteri)' },
@@ -27,15 +27,31 @@ const faqItems = [
   },
   {
     question: 'Hur länge håller batteriet?',
-    answer: 'Batteriet håller i cirka 90 minuter på en full laddning, vilket räcker för en pool upp till 80 m². Laddningstiden är cirka 4 timmar. Batteriet är inbyggt och icke-utbytbart, livslängden är ca 300-500 laddcykler (3-5 säsonger vid normal användning).',
+    answer: 'Batteriet håller i cirka 90 minuter på en full laddning, vilket räcker för en pool upp till 8 x 4 meter. Laddningstiden är cirka 4 timmar. Batteriet är inbyggt och icke-utbytbart, livslängden är ca 300-500 laddcykler (3-5 säsonger vid normal användning).',
   },
   {
     question: 'Rengör den verkligen bra utan att klättra väggar?',
-    answer: 'Den rengör enbart botten, inte väggar eller vattenlinje. För en less pool räcker det ofta att botten hålls ren, men alger och kalk på väggarna behöver fortfarande rengöras manuellt. Om du vill ha väggstädning behöver du en kabelansluten modell som Dolphin E30.',
+    answer: 'Den rengör enbart botten, inte väggar eller vattenlinje. För en mindre pool räcker det ofta att botten hålls ren, men alger och kalk på väggarna behöver fortfarande rengöras manuellt. Om du vill ha väggstädning behöver du en kabelansluten modell som Dolphin E30.',
   },
   {
     question: 'Är den värd priset jämfört med Dolphin E30?',
     answer: 'Steinbach Poolrunner Battery Pro kostar ungefär hälften av Dolphin E30 men rengör bara botten. Den är värt priset om du har en liten pool, vill ha trådfrihet och inte stör dig på att skrubba väggar manuellt. Annars är E30 ett bättre långsiktigt val.',
+  },
+  {
+    question: 'Hur lång tid tar det att städa en pool på 8 x 4 meter?',
+    answer: 'Ett fullt batteripass på 90 minuter räcker normalt för en pool i den storleken. Eftersom navigeringen är slumpmässig och inte systematisk kan ett extra pass behövas när botten är rejält smutsig, och då tillkommer cirka fyra timmars laddning innan du kan köra igen. Planera hellre in en körning per halvdag än ett långt städpass i veckan.',
+  },
+  {
+    question: 'Är Steinbach Poolrunner Battery Pro tung att lyfta i och ur poolen?',
+    answer: 'Nej, den väger 5 kilo torr och går att hantera med en hand. Upp ur vattnet väger den mer, eftersom både chassit och påsfiltret är fulla av vatten. Lyft därför långsamt och låt vattnet rinna av vid ytan innan du drar upp roboten på kanten. Den låga vikten är en klar fördel mot tyngre kabelanslutna modeller.',
+  },
+  {
+    question: 'Hur förvarar du Poolrunner Battery Pro över vintern?',
+    answer: 'Frostfritt, med rent och torrt filter. Skölj roboten och påsfiltret i sötvatten efter säsongens sista körning och låt allt torka helt innan du ställer undan den inomhus. Ladda batteriet till ungefär 60 till 80 procent i stället för att lämna det urladdat hela vintern. Ett inbyggt batteri går inte att byta, så förvaringen avgör hur många säsonger du får.',
+  },
+  {
+    question: 'Ersätter poolroboten poolens filterpump?',
+    answer: 'Nej, de gör olika jobb. Roboten plockar upp det som lagt sig på botten: sand, löv och insekter. Filterpumpen sköter cirkulationen och fångar de fina partiklar som svävar i vattnet, och kemin måste du hålla koll på oavsett. Utan fungerande cirkulation och rätt vattenvärden får du beläggningar på väggarna som roboten ändå inte klarar av.',
   },
 ];
 
@@ -129,7 +145,7 @@ export const articleMeta = {
           'Rengör INTE väggar eller vattenlinje',
           'Begränsad batteritid, 90 minuter',
           '4 timmars laddtid',
-          'Ej för pooler över 80 m²',
+          'Ej för pooler större än 8 x 4 m',
           'Ickeutbytbart batteri, begränsad livslängd',
           'Sämre i pooler med ojämn botten',
         ].map(con => (
@@ -168,7 +184,7 @@ export const articleMeta = {
       Den största fördelen med Steinbach Poolrunner Battery Pro är att den är helt trådfri. Ingen kabel, ingen transformator vid poolkanten, ingen risk för trassel. Du laddar batteriet, lägger ner roboten i vattnet och trycker på start. Enkelheten i sig är ett starkt argument.
     </p>
     <p class="text-text-light leading-relaxed mb-6">
-      Batteritiden på 90 minuter räcker för pooler upp till 80 m² (ungefär 8x4 m med marginal). Vid varje körning rör sig roboten slumpmässigt över botten och täcker det mesta av ytan. Navigation är inte systematisk som i Dolphin-modellerna, men för en mindre pool fungerar det tillräckligt bra.
+      Batteritiden på 90 minuter räcker för pooler upp till 8 x 4 meter. Vid varje körning rör sig roboten slumpmässigt över botten och täcker det mesta av ytan. Navigation är inte systematisk som i Dolphin-modellerna, men för en mindre pool fungerar det tillräckligt bra.
     </p>
 
     <h3 class="font-heading text-xl font-semibold text-text mb-3">Rengöringsförmåga, enbart botten</h3>

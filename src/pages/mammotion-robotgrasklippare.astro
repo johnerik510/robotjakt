@@ -69,6 +69,22 @@ const faqItems = [
     question: 'Fungerar Mammotion LUBA i Sverige med 4G?',
     answer: 'Ja, LUBA 2-serien fungerar på svenska 4G-nät. 4G behövs för fjärrstyrning och kartuppdateringar, roboten kan klippa utan aktiv 4G-anslutning men du förlorar möjligheten att ändra schema eller se status på distans. Testat och bekräftat att fungera på Telia, Tele2 och Tre-nät i Sverige.',
   },
+  {
+    question: 'Fungerar RTK om tomten har mycket träd och häckar?',
+    answer: 'Delvis. RTK behöver fri sikt mellan antenn, satelliter och robot, och tät trädkrona eller en hög häck runt hela tomten kan göra signalen ojämn i vissa partier. Sätt antennen så högt och öppet du kan, det är den installationsdetalj som avgör mest. Ser du mest grenar från antennens tänkta plats behöver fästet upp. Är tomten helt sluten är en kabelmodell mer förutsägbar.',
+  },
+  {
+    question: 'Vad är skillnaden mot robotar med bara stötsensorer?',
+    answer: 'En kamera ser hindret innan roboten är framme och styr runt det, medan en stötsensor kräver kontakt och sedan en ny riktning. Skillnaden märks på trädgårdsmöbler, leksaker och husdjur som ligger i vägen. LUBA AWO 3000 har kamera för hinderdetektering. Fasta hinder som träd och rabatter ritar du ändå in som förbjudna zoner i appen, oavsett modell.',
+  },
+  {
+    question: 'Hur mycket underhåll kräver en LUBA under säsongen?',
+    answer: 'Räkna med knivbyte ungefär varannan månad under klippsäsongen, plus regelbunden borstning av chassi, hjul och knivskiva. Använd aldrig högtryckstvätt, den pressar in vatten i lager och elektronik. Inför vintern tas roboten in i ett torrt och frostfritt utrymme med batteriet på 60 till 80 procent, medan laddstationen kan stå kvar ute om nätadaptern kopplas bort.',
+  },
+  {
+    question: 'Hur länge får en LUBA nya mjukvaruuppdateringar?',
+    answer: 'Det finns ingen garanti. Mammotion har rullat ut uppdateringar löpande via 4G och funktionerna har förbättrats över tid, men ingen tillverkare i kategorin lovar hur många år en enskild modell får ny mjukvara. Utgå därför från att robotens funktioner ska duga som de är vid köptillfället, och se kommande uppdateringar som en bonus snarare än något du planerar efter.',
+  },
 ];
 
 const faqSchema = faqItems.map((item) => ({

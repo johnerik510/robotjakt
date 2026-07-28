@@ -40,12 +40,28 @@ const faqItems = [
     answer: 'Dreame X40 Ultra är topmodellen med 12 000 Pa sugkraft och den unika utfällbara moppmodulen som når hörnen. W10 Pro har 7 000 Pa och en konventionell självrenande mopp. För de flesta hem är W10 Pro mer än tillräcklig, X40 Ultra är relevant om du har husdjur, tjocka mattor eller kräver absolut bästa hörntäckning. Prisskillnaden är betydande, X40 Ultra ligger i premiumsegmentet.',
   },
   {
-    question: 'Hur lång tid tar det att kartlägga hemmet forsta gången?',
-    answer: 'Dreame W10 Pro kartlägger ett normalt hem (ca 80 till 100 m²) på ca 45 till 60 minuter vid forsta körningen. LiDAR-navigeringen skapar en precis karta som delas in i rum automatiskt. Via Dreame Home-appen kan du namnge rum, ange städordning och sätta virtuella väggar och no-go zones.',
+    question: 'Hur lång tid tar det att kartlägga hemmet första gången?',
+    answer: 'Dreame W10 Pro kartlägger ett normalt hem (ca 80 till 100 m²) på ca 45 till 60 minuter vid första körningen. LiDAR-navigeringen skapar en precis karta som delas in i rum automatiskt. Via Dreame Home-appen kan du namnge rum, ange städordning och sätta virtuella väggar och no-go zones.',
   },
   {
     question: 'Hur komplex är installationen av Dreame W10 Pro?',
     answer: 'Installationen tar 15 till 20 minuter för den som är van vid smarta hem-enheter. Du monterar stationen, ansluter vatten- och smutsvatten-slangarna, laddar batteriet och ansluter till Wi-Fi via Dreame Home-appen. Stationen kräver plats nära ett eluttag, helst på ett hårdgolv nära en golvbrunnsanslutning för enklare tömning av smutsvattentanken.',
+  },
+  {
+    question: 'Hur högljudd är Dreame W10 Pro?',
+    answer: 'Cirka 63 dB i det starkaste läget enligt specifikationen. Det hörs tydligt i samma rum, så en körning mitt under middagen eller ett videomöte blir störande. Lösningen är schemaläggning i Dreame Home-appen: lägg körningen på förmiddagen när ingen är hemma. Stationen låter dessutom till när den tvättar moppplattorna, så placera den inte precis utanför ett sovrum.',
+  },
+  {
+    question: 'Hur stor yta klarar Dreame W10 Pro på en laddning?',
+    answer: 'Upp till 300 kvadratmeter på ett fulladdat 5 200 mAh-batteri. Ett normalt svenskt hem på 80 till 100 kvadratmeter klarar den alltså med god marginal i en körning. Räckvidden är ett maxvärde under gynnsamma förhållanden, och litiumbatterier tappar kapacitet med åren. En robot som gått dagligen i flera år orkar därför kortare än en ny.',
+  },
+  {
+    question: 'Vad ska man kontrollera innan man köper en begagnad Dreame W10 Pro?',
+    answer: 'Batteriet och vattenhanteringen är de två sakerna som avgör. Be säljaren köra en hel cykel medan du tittar på: roboten ska hitta tillbaka till stationen själv, docka på första försöket och starta mopptvätten utan att du petar på något. Kontrollera samtidigt att stationen både suger upp och pumpar ut vatten utan läckage. Resten är förbrukningsdelar som går att byta.',
+  },
+  {
+    question: 'Vilka förbrukningsdelar behöver bytas på Dreame W10 Pro?',
+    answer: 'Moppplattorna först, eftersom de skrubbar mot golvet i varje körning och blir stumma när fibrerna packas. Sedan filtret, som sätter igen av finkornigt damm och stjäl sugkraft, och sidoborsten som böjs utåt med tiden. Eftersom W10 Pro inte säljs ny i Sverige längre bör du kontrollera att delarna faktiskt går att få tag på innan du köper roboten begagnad.',
   },
 ];
 
@@ -149,7 +165,7 @@ export const articleMeta = {
           {[
             'Stor laddstation tar golvyta',
             'Högt pris',
-            'Komplex setup vid forsta installation',
+            'Komplex setup vid första installation',
             'Inga husdjurs-AI som konkurrenter',
           ].map(con => (
             <li class="flex items-start gap-2 text-sm text-text-light">
@@ -200,7 +216,7 @@ export const articleMeta = {
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Dreame W10 Pros LiDAR-kartläggning och navigering i appen</h3>
       <p class="text-text-light leading-relaxed mb-4">
-        LiDAR-navigeringen skapar en precis karta av hemmet vid forsta körningen. Dreame Home-appen visar kartan i detalj och låter dig namnge rum, ange städordning, sätta virtuella väggar och schemalägga dagliga körningar per rum. Navigeringen är smidig, roboten hittar effektivt tillbaka till stationen och undviker hinder.
+        LiDAR-navigeringen skapar en precis karta av hemmet vid första körningen. Dreame Home-appen visar kartan i detalj och låter dig namnge rum, ange städordning, sätta virtuella väggar och schemalägga dagliga körningar per rum. Navigeringen är smidig, roboten hittar effektivt tillbaka till stationen och undviker hinder.
       </p>
       <p class="text-text-light leading-relaxed mb-6">
         Kartan uppdateras automatiskt om du möblerar om. Initialt kan det ta en körning för roboten att anpassa sig till förändringar. För hem med komplexa planlosningar (många rum, nivaskillnader) är LiDAR-navigeringen klart överlägsen äldre IR-navigationssystem.

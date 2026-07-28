@@ -12,6 +12,13 @@ const metod = [
   { label: 'Redovisning', value: 'Styrkor och svagheter för varje produkt' },
   { label: 'Oberoende', value: 'Affiliatelänkar styr aldrig rankingen' },
 ];
+
+// Egna maskiner i daglig drift. Uppgifterna kommer från redaktören själv och
+// är det enda stället på siten där vi hävdar förstahandserfarenhet.
+const egnaRobotar = [
+  { modell: 'Dreame X50 Ultra', roll: 'Går varje dag på entréplanet' },
+  { modell: 'Roborock S5 Max', roll: 'Äldre modell, går varje dag på övervåningen' },
+];
 ---
 
 <section class="bg-bg-alt border-y border-border py-10 sm:py-14" aria-labelledby="redaktor-heading">
@@ -19,8 +26,8 @@ const metod = [
     <div class="bg-white border border-border rounded-lg p-6 sm:p-8">
       <div class="flex flex-col sm:flex-row sm:items-start gap-5 sm:gap-7">
         <img
-          src="/images/axel-jonemyr.webp"
-          alt="Axel Jönemyr, grundare och redaktör på Robotjakt"
+          src="/images/axel-jonemyr-robot.webp"
+          alt="Axel Jönemyr, grundare och redaktör på Robotjakt, hemma vid en av sina robotdammsugare"
           width="112"
           height="112"
           loading="lazy"
@@ -36,10 +43,25 @@ const metod = [
               Jag driver Robotjakt för att du ska kunna jämföra robotdammsugare och robotgräsklippare på riktiga grunder: navigering, sugkraft, räckvidd och pris, utan att läsa dig igenom tillverkarnas marknadsföring.
             </p>
             <p>
-              Jag köper inte in och labbtestar inte robotarna själv. I stället väger jag samman tekniska specifikationer, oberoende tester och aktuella priser hos svenska butiker, och redovisar både styrkor och svagheter för varje modell.
+              Hemma har jag två robotdammsugare som går varje dag, en ny och en flera år gammal. Det är där jag lärt mig vad som faktiskt spelar roll över tid: hur kartan beter sig när möblerna flyttas, hur ofta borstarna trasslar in sig i hår, hur en äldre robot klarar sig när tillverkaren slutar uppdatera appen.
+            </p>
+            <p>
+              Jag köper däremot inte in varje modell jag skriver om. För de robotarna väger jag samman tekniska specifikationer, oberoende tester och aktuella priser hos svenska butiker, och redovisar både styrkor och svagheter för varje modell.
             </p>
           </div>
         </div>
+      </div>
+
+      <div class="mt-6 pt-5 border-t border-border">
+        <h3 class="text-xs font-semibold uppercase tracking-wider text-text-light mb-3">Robotarna som går hemma hos mig</h3>
+        <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-2">
+          {egnaRobotar.map((r) => (
+            <li class="text-[15px]">
+              <span class="font-semibold text-text">{r.modell}.</span>
+              <span class="text-text-light"> {r.roll}.</span>
+            </li>
+          ))}
+        </ul>
       </div>
 
       <dl class="grid sm:grid-cols-3 gap-x-6 mt-6 border-t border-border">

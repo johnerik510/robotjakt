@@ -38,6 +38,22 @@ const faqItems = [
     question: 'Vilken har bättre moppfunktion?',
     answer: 'Båda har dubbla roterande moppar med automatisk lyftfunktion vid mattor. Roborock S8 MaxV Ultra tvättar mopparna med 65°C varmvatten; Ecovacs X5 Omni använder en kombinerad tvätt-och-torksystem. Moppkvaliteten är likvärdig för daglig städning. Ingen av dem har den utfällbara mopparm som Dreame X40 Ultra erbjuder, om hörntäckning med mopp är prioritet, välj Dreame.',
   },
+  {
+    question: 'Hur länge städar de på en laddning?',
+    answer: 'Båda anges till 180 minuter, så där skiljer de sig inte åt. Den faktiska tiden styrs mer av hur du kör dem: maximal sugeffekt med samtidig moppning drar betydligt mer än ett normalt pass på hårdgolv. Har du stor bostadsyta blir det alltså inställningarna, inte modellvalet, som avgör om roboten hinner runt på en laddning.',
+  },
+  {
+    question: 'Vilken av dem låter minst?',
+    answer: 'Roborock S8 MaxV Ultra går att köra tystare. Den ligger runt 55 dB i tyst läge och når cirka 66 dB först på högsta sugnivån, medan Ecovacs X5 Omni anges till 68 dB. Mer märkbart är stationen, där tömningen låter betydligt mer än själva städningen, om än bara i några sekunder. Stör ljudet dig schemalägger du både städpass och tömning till tider när ingen är hemma.',
+  },
+  {
+    question: 'Var är bästa platsen för stationen?',
+    answer: 'Stationen behöver eluttag, plan golvyta och fritt utrymme framför sig så att roboten kan docka rakt. Hall, grovkök och tvättstuga fungerar bra eftersom stationen varken syns eller hörs särskilt mycket där. Kläm inte in den i ett hörn där roboten måste vinkla sig fram, dockningen blir mer träffsäker med fri anfart. Båda stationerna får plats i ett mindre skåputrymme.',
+  },
+  {
+    question: 'Spelar det roll att S8 MaxV Ultra är den äldre modellen?',
+    answer: 'Inte negativt. S8 MaxV Ultra lanserades 2024 och X5 Omni 2025, och åldern innebär framför allt att Roborock-modellen har större användarbas och mer beprövad navigering bakom sig. Det du får med den nyare Ecovacs-modellen är den fyrkantiga kroppen och avföringsdetekteringen, inte generellt modernare teknik. Välj efter funktionerna du faktiskt behöver, inte efter årtalet.',
+  },
 ];
 
 const faqSchema = faqItems.map((item) => ({
@@ -127,7 +143,7 @@ export const articleMeta = {
               ['Batteritid', '180 min', '180 min'],
               ['Moppmodul', 'Dubbla roterande, auto-lyft', 'Dubbla roterande, auto-lyft'],
               ['Station', 'Helautomatisk (tömning, mopptvätt, -torkning)', 'Helautomatisk (tömning, mopptvätt 65°C, -torkning)'],
-              ['Bullernivå', '68 dB', 'ca 65 dB (tystaste läge)'],
+              ['Bullernivå', '68 dB', '55 till 66 dB beroende på läge'],
               ['App', 'Ecovacs Home', 'Roborock Home'],
               ['Lansering', '2025', '2024'],
             ].map(([spec, ecovacs, roborock], i) => (
@@ -249,7 +265,7 @@ export const articleMeta = {
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Spelar bullernivån någon roll i praktiken?</h3>
       <p class="text-text-light leading-relaxed mb-4">
-        Ja, om du är hemma när roboten arbetar. S8 MaxV Ultra ligger kring 65 dB i sitt tystaste läge mot X5 Omnis 68 dB, en skillnad du hör men sällan störs av. Schemalägger du städningen till timmar när ingen är hemma spelar bullernivån i stort sett ingen roll.
+        Ja, om du är hemma när roboten arbetar. S8 MaxV Ultra ligger runt 55 dB i tyst läge och når cirka 66 dB på högsta sugnivån, mot X5 Omnis 68 dB. Schemalägger du städningen till timmar när ingen är hemma spelar bullernivån i stort sett ingen roll.
       </p>
       <p class="text-text-light leading-relaxed mb-6">
         Tänk också på stationen: när roboten töms i stationen låter det betydligt mer än själva städningen under några sekunder. Båda modellerna schemaläggs enkelt i sina appar, så du kan lägga både städpass och tömning på tider när de inte stör.

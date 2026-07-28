@@ -158,6 +158,18 @@ const faqItems = [
     question: 'Behöver jag köpa påsar till stationen?',
     answer: 'Ja, alla självtömmande stationer använder förslutna dammkorgspåsar som samlar upp smutsen från roboten. Påsarna håller i 60-90 dagar beroende på städfrekvens och bostadsyta. Roborock, Dreame och Ecovacs säljer originalförpackade påsar via svenska återförsäljare. Kompatibla tredjeparts-påsar finns men vi rekommenderar originalpåsar för att undvika dammläckage och garantiproblem.',
   },
+  {
+    question: 'Kommer en robot med basstation in under låga möbler?',
+    answer: 'Det avgörs av robotens höjd, inte av stationen. Roborock Saros 20 Sonic har ett platt LiDAR-torn och är bara 8 cm hög, vilket räcker under de flesta soffor och sängar. Modeller med uppstickande LiDAR-torn behöver mer fri höjd och stannar utanför möbeln. Mät utrymmet under dina möbler innan du väljer modell, det är en av få saker du inte kan lösa i efterhand.',
+  },
+  {
+    question: 'Är varmvattentvätt av mopparna nödvändigt?',
+    answer: 'Nödvändigt är det inte, men skillnaden märks. Varmt vatten får loss fett och intorkad smuts ur moppfibrerna bättre än kall sköljning, och mopparna luktar mindre över tid. Alla fem stationerna i den här listan har varmvattentvätt. Har du mest lätt damm på golven klarar sig en enklare station med kall sköljning, men i kök och husdjurshem är det funktionen vi skulle prioritera.',
+  },
+  {
+    question: 'Behöver du AI-hinderdetektion utöver LiDAR?',
+    answer: 'I hem där golvet sällan är helt tomt, ja. LiDAR mäter avstånd till väggar och möbler men läser inte av små och mjuka föremål, så sladdar, strumpor och leksaker körs över i stället för runt. AI-hinderdetektion känner igen vad föremålet är och styr undan. Plockar du undan golvet före varje pass gör funktionen mindre nytta, och då är pengarna bättre lagda på stationen.',
+  },
 ];
 
 const faqSchema = faqItems.map((item) => ({

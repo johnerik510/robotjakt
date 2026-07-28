@@ -15,7 +15,7 @@ const breadcrumbs = [
 const faqItems = [
   {
     question: 'Vilken är bäst, Eufy eller Dreame?',
-    answer: 'Det beror på budget och behov. Dreame L20 Ultra och X40 Ultra vinner på sugstyrka (7 000 till 12 000 Pa), moppkvalitet (dubbla roterande moppskivor) och AI-hinderdetektering. Eufy X10 Pro Omni är billigare och enklare att använda med bra grundprestanda. Har du ett hem med myeket hårdgolv som behöver moppas: Dreame. Söker du bra prestanda för pengarna utan avancerade funktioner: Eufy.',
+    answer: 'Det beror på budget och behov. Dreame L20 Ultra och X40 Ultra vinner på sugstyrka (7 000 till 12 000 Pa), moppkvalitet (dubbla roterande moppskivor) och AI-hinderdetektering. Eufy X10 Pro Omni är billigare och enklare att använda med bra grundprestanda. Har du ett hem med mycket hårdgolv som behöver moppas: Dreame. Söker du bra prestanda för pengarna utan avancerade funktioner: Eufy.',
   },
   {
     question: 'Vilken har starkare sug, Eufy eller Dreame?',
@@ -27,7 +27,7 @@ const faqItems = [
   },
   {
     question: 'Är Dreame värt det extra priset jämfört med Eufy?',
-    answer: 'Om moppning är viktigt: ja. Dreame L20 Ultra mot Eufy X10 Pro Omnis . Prisskillnaden på köper dig dubbla roterande moppskivor, starkare AI-hinderdetektering och bättre moppkvalitet. Är du primärt ute efter dammsugning utan avancerad moppning: Eufy är mer prisvärt.',
+    answer: 'Om moppning är viktigt: ja. Merpriset mot Eufy X10 Pro Omni köper dig dubbla roterande moppskivor, starkare AI-hinderdetektering och tydligt bättre moppresultat på hårdgolv. Är du primärt ute efter dammsugning utan avancerad moppning är Eufy mer prisvärt.',
   },
   {
     question: 'Vilken passar bäst i ett hem med mattor?',
@@ -35,7 +35,19 @@ const faqItems = [
   },
   {
     question: 'Vad kostar service och tillbehör för Eufy vs Dreame?',
-    answer: 'Tillbehörskostnader är jämförbara. Bägge märken säljer reservfilter, sidborstar och moppkuddar direkt via sina webbplatser. Dreames dubbla moppskivor slits snabbare och behöver bytas oftare än Eufys standardmoppmodul. Räkna med per år för förbrukningsmaterial på båda märken.',
+    answer: 'Tillbehörskostnaderna är jämförbara. Bägge märken säljer reservfilter, sidborstar och moppkuddar direkt via sina webbplatser. Dreames dubbla moppskivor slits snabbare och behöver bytas oftare än Eufys standardmoppmodul. Räkna med en löpande kostnad för förbrukningsmaterial på båda märkena.',
+  },
+  {
+    question: 'Vilken app är enklast, eufy Clean eller Dreame Home?',
+    answer: 'eufy Clean är den enklare av de två. Den har färre lager av inställningar och du är igång snabbare, vilket passar dig som mest vill starta ett pass och sedan glömma bort roboten. Dreame Home ger mer att skruva på med rumsplanering och avancerade städscheman, men gränssnittet är primärt på engelska. Båda sköter grunderna: karta, schema och zoner.',
+  },
+  {
+    question: 'Hur ser reservdelar och garanti ut i Sverige?',
+    answer: 'Garantitiden anges till 12 till 24 månader beroende på modell och återförsäljare, så läs villkoren hos butiken du handlar av innan du beställer. Skillnaden märks först när något går sönder: Dreame har ett nordiskt servicenätverk för garantiärenden, medan eufy saknar dedikerad service i Norden och hanterar supporten via sin globala kundtjänst på engelska. Ett ärende kan därför ta längre tid hos eufy även om själva garantitiden är densamma.',
+  },
+  {
+    question: 'Vilken är bäst om du har hund eller katt?',
+    answer: 'Dreame, av två skäl. AI-kameran identifierar och kör runt husdjursavföring, strumpor och kablar, medan Eufy X10 Pro Omni saknar AI-kamera och förlitar sig på LiDAR och sonar. Sugkraften i X40 Ultra på 12 000 Pa tar dessutom päls ur mattor bättre än 8 000 Pa gör. Hårtrassel i borstrullen måste du däremot klippa bort själv oavsett märke.',
   },
 ];
 
@@ -110,16 +122,15 @@ export const articleMeta = {
           </thead>
           <tbody>
             {[
-              { label: 'Pris', eufy: '', dreame: '', winner: 'eufy' },
               { label: 'Sugstyrka', eufy: '8 000 Pa', dreame: '7 000 Pa (12 000 Pa X40 Ultra)', winner: 'draw' },
               { label: 'Navigering', eufy: 'LiDAR', dreame: 'LiDAR + AI-kamera', winner: 'dreame' },
               { label: 'Moppfunktion', eufy: 'Standard', dreame: 'Dubbla roterande moppskivor', winner: 'dreame' },
               { label: 'Mopplifting vid mattor', eufy: 'Begränsad', dreame: 'Automatisk lyftning', winner: 'dreame' },
               { label: 'MopExtend (längs väggar)', eufy: 'Nej', dreame: 'Ja (X40 Ultra)', winner: 'dreame' },
-              { label: 'AI-hinderdetektering', eufy: 'Nej', dreame: 'Ja (kabel, strumpa, kabel)', winner: 'dreame' },
+              { label: 'AI-hinderdetektering', eufy: 'Nej', dreame: 'Ja (kabel, strumpa, leksak)', winner: 'dreame' },
               { label: 'Basstation', eufy: 'Tömning, påfyllning, tvättning', dreame: 'Tömning, påfyllning, tvättning, torkning', winner: 'dreame' },
               { label: 'Batteritid', eufy: 'ca 180 min', dreame: 'ca 180 min', winner: 'draw' },
-              { label: 'App', eufy: 'EufyHome', dreame: 'DreameHome / Mi Home', winner: 'draw' },
+              { label: 'App', eufy: 'eufy Clean', dreame: 'Dreame Home / Mi Home', winner: 'draw' },
               { label: 'Garantiperiod', eufy: '12 till 24 mån', dreame: '12 till 24 mån', winner: 'draw' },
             ].map((row, i) => (
               <tr class={`border-b border-gray-100 ${i % 2 === 0 ? '' : 'bg-gray-50/50'}`}>
@@ -158,7 +169,7 @@ export const articleMeta = {
         Eufy X10 Pro Omni har 8 000 Pa sugstyrka, starkt i premiumsegmentet. Dreame L20 Ultra har 7 000 Pa (något lägre) men Dreame X40 Ultra har branschledande 12 000 Pa. I praktiken märks skillnaden mellan 7 000 till 8 000 Pa minimalt på vanliga hem. Dreame X40 Ultras 12 000 Pa syns däremot tydligt på djuppälsmoppar och tjocka persiska mattor.
       </p>
       <p class="text-text-light">
-        Väljer du Dreame L20 Ultra behöver du inte oroa dig för sugstyrkan, den är mer än tillräcklig. Väljer du X40 Ultra får du det starkaste sugkraft som finns på marknaden 2026.
+        Väljer du Dreame L20 Ultra behöver du inte oroa dig för sugstyrkan, den är mer än tillräcklig. Väljer du X40 Ultra får du den starkaste sugkraft som finns på marknaden 2026.
       </p>
     </section>
 
@@ -207,7 +218,7 @@ export const articleMeta = {
             <li class="flex gap-2"><span class="text-winner font-bold">+</span><span>Vill ha bra prestanda för pengarna utan att betala för avancerade funktioner</span></li>
             <li class="flex gap-2"><span class="text-winner font-bold">+</span><span>Primärt dammsugning, moppning är sekundärt</span></li>
             <li class="flex gap-2"><span class="text-winner font-bold">+</span><span>Vill ha en enkel app och enkelt dagligt bruk</span></li>
-            <li class="flex gap-2"><span class="text-winner font-bold">+</span><span>Budgeten är och inte mer</span></li>
+            <li class="flex gap-2"><span class="text-winner font-bold">+</span><span>Vill lägga pengarna på dammsugning i stället för moppteknik</span></li>
           </ul>
         </div>
         <div class="bg-orange-50 border border-orange-200 rounded-xl p-5">

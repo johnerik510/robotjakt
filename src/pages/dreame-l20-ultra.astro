@@ -36,6 +36,22 @@ const faqItems = [
     question: 'Hur länge håller batteriet i praktiken?',
     answer: 'Dreame uppger 160 minuter, men i praktisk drift med aktiv moppning och suction på standardnivå räkna med 90 till 120 minuter per laddning. Det räcker för de flesta hem upp till ca 120 m². Roboten återvänder automatiskt till stationen när batteriet är lågt, laddar och fortsätter sedan städningen där den slutade.',
   },
+  {
+    question: 'Hur högt låter Dreame L20 Ultra när den städar?',
+    answer: 'Dreame anger 65 dB, vilket ligger i nivå med ett vanligt samtal och märks knappt genom en stängd dörr. Det som hörs tydligast är inte själva suget utan stationen när den tömmer dammbehållaren, en kort men kraftig ljudstöt efter avslutat pass. Kör du lägre sugläge i vardagsrummet och sparar maxläget till hall och kök blir roboten sällan störande.',
+  },
+  {
+    question: 'Klarar Dreame L20 Ultra mattor?',
+    answer: 'Delvis. Mopplattorna lyfts automatiskt 8,5 millimeter när sensorerna känner av en matta, så mattan hålls torr medan roboten suger. De 7 000 Pa räcker för hårdgolv och normaltjocka mattor, men på tjocka mattor med lång lugg kommer L20 Ultra inte tillräckligt djupt ner. Har du många sådana mattor är X40 Ultra med 12 000 Pa ett bättre val.',
+  },
+  {
+    question: 'Hur mycket plats tar stationen till Dreame L20 Ultra?',
+    answer: 'Stationen tar ungefär 25 x 35 centimeter golvyta och ska stå fritt mot en vägg. Lämna marginal framför den, roboten behöver fri väg in för att docka rätt varje gång. Att den är större än en vanlig laddplatta beror på att den rymmer dammpåse, rent vatten och smutsvatten på samma gång.',
+  },
+  {
+    question: 'Kan du styra vilka rum Dreame L20 Ultra städar?',
+    answer: 'Ja. Efter första kartläggningen pekar du ut enskilda rum i appen, ritar virtuella väggar och markerar förbjudna zoner där roboten inte får köra. Du ställer även in per rum hur många passeringar roboten ska göra, vilket är användbart i hall och kök. Kartan justeras automatiskt om du möblerar om, och LiDAR fungerar lika bra i mörka rum.',
+  },
 ];
 
 const faqSchema = faqItems.map((item) => ({
@@ -177,7 +193,7 @@ export const articleMeta = {
 
     <h3 class="font-heading text-xl font-semibold text-text mb-3">Moppfunktion, roterande vs oscillerande</h3>
     <p class="text-text-light leading-relaxed mb-4">
-      L20 Ultra är utrustad med roterande moppar som snurrar mot golvytan. Det är effektivt för att ta bort smuts, fläckar och fingeravtryck från hårda golv. Moppplattorna lyfts automatiskt med 8,5 mm när roboten kör över mattor, vilket förhindrar att mattor blir blöta.
+      L20 Ultra är utrustad med roterande moppar som snurrar mot golvytan. Det är effektivt för att ta bort smuts, fläckar och fingeravtryck från hårda golv. Mopplattorna lyfts automatiskt med 8,5 mm när roboten kör över mattor, vilket förhindrar att mattor blir blöta.
     </p>
     <p class="text-text-light leading-relaxed mb-6">
       Jämfört med oscillerande moppar (som Dreame X40 Ultra och Ecovacs X5 Omni använder) är roterande teknik något sämre på riktigt ingrundade fläckar men utmärkt för daglig underhållsstädning. För normala hem med blandade golvytor är L20 Ultras moppfunktion mer än tillräcklig.
@@ -201,7 +217,7 @@ export const articleMeta = {
 
     <h3 class="font-heading text-xl font-semibold text-text mb-3">Kan Dreame L20 Ultra dammsuga och moppa i samma körning?</h3>
     <p class="text-text-light leading-relaxed mb-4">
-      Ja. Sugmunstycket och de roterande mopparna sitter på samma robot, så den suger upp löst damm först och tvättar golvet i samma svep. När sensorerna känner en matta lyfts moppplattorna 8,5 millimeter så att mattan hålls torr under hela passagen.
+      Ja. Sugmunstycket och de roterande mopparna sitter på samma robot, så den suger upp löst damm först och tvättar golvet i samma svep. När sensorerna känner en matta lyfts mopplattorna 8,5 millimeter så att mattan hålls torr under hela passagen.
     </p>
     <p class="text-text-light leading-relaxed mb-6">
       Ordningen spelar roll för resultatet. Grus och hår som ligger löst måste bort innan vattnet kommer, annars smetas det ut i stället för att plockas upp. På riktigt smutsiga golv i hall eller kök blir resultatet bättre av två passeringar än av en långsam, och det ställer du in per rum i appen. Har du mycket textila ytor är gränsdragningen mellan sug och mopp viktigare, och den går vi igenom i vår guide om <a href="/guide/robotdammsugare-mattor/" class="text-accent underline">robotdammsugare och mattor</a>.

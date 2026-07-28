@@ -36,6 +36,18 @@ const faqItems = [
     question: 'Är Gardena SILENO svårt att installera?',
     answer: 'Gardena SILENO är relativt enkel att installera jämfört med mer avancerade robotar, men kräver att du lägger ner perimeterkabeln längs trädgårdens kanter och runt hinder. Räkna med 2 till 4 timmar för en normal trädgård. Mammotion LUBA kräver RTK-antennmontering och digital kartkonfiguration i appen, ungefär lika lång tid, men inget grävande.',
   },
+  {
+    question: 'Fungerar Mammotion LUBA under träd och tätt intill husväggar?',
+    answer: 'Bara delvis. RTK-GPS ger centimeterprecision när roboten har fri sikt mot himlen, men under täta trädkronor, tätt intill höga husväggar och i insänkta partier kan satellitsignalen försvagas och positionen bli osäker. Gardenas perimeterkabel påverkas inte alls av skymd himmel. Har du en skuggig tomt med mycket stora träd är kabellösningen faktiskt den stabilare av de två.',
+  },
+  {
+    question: 'Hur stor skillnad gör klippbredden mellan robotarna?',
+    answer: 'LUBA har ett bredare klippdäck än Gardena SILENO Life 750, som ligger på 18 centimeter. Den tar därmed mer gräs per drag och behöver färre timmar körning för samma yta. Skillnaden märks tydligast på stora gräsmattor där roboten annars måste gå långa pass varje dag. På en liten plan villatomt hinner Gardena bli klar ändå, och där är den smalare klippbredden ingen praktisk nackdel.',
+  },
+  {
+    question: 'Vilken passar bäst i en trädgård med lekställning, rabatter och andra hinder?',
+    answer: 'Mammotion LUBA, framför allt för att zonerna är digitala. Du ritar undantagsytor i appen och AI-kameran känner av hinder på plats. Gardena SILENO har bara kollisionssensorer och löser hinder med kabelöar som läggs fysiskt runt varje objekt. Flyttar du rabatten eller lekställningen senare får du lägga om kabeln, medan LUBA klaras av med några drag i mobilen.',
+  },
 ];
 export const articleMeta = {
   title: "Mammotion Luba vs Gardena Sileno 2026: GPS eller slinga",
@@ -127,7 +139,7 @@ export const articleMeta = {
           </tr>
           <tr class="border-b border-border">
             <td class="p-3 font-medium text-text">Klippbredd</td>
-            <td data-col="Mammotion LUBA 2 AWO 1000H" class="p-3 text-winner font-semibold">26 cm</td>
+            <td data-col="Mammotion LUBA 2 AWO 1000H" class="p-3 text-winner font-semibold">40 cm</td>
             <td data-col="Gardena SILENO Life 750" class="p-3 text-text-light">18 cm</td>
           </tr>
           <tr class="bg-bg-alt/50">
@@ -159,7 +171,7 @@ export const articleMeta = {
 
     <h2 class="font-heading text-xl font-bold mt-8 mb-3">Klippkvalitet och yta</h2>
     <p class="text-text-light mb-6">
-      Mammotion LUBA 2 AWO har 26 cm klippbredd mot Gardenans 18 cm, en skillnad som innebär att LUBA klipper en given yta snabbare. LUBA täcker dessutom upp till 2 000 m² mot Gardenans 750 m². För trädgårdar mellan 750 till 2 000 m² är Mammotion det enda alternativet av de två. </p>
+      Mammotion LUBA 2 AWO har 40 cm klippbredd mot Gardenans 18 cm, en skillnad som innebär att LUBA klipper en given yta snabbare. LUBA täcker dessutom upp till 2 000 m² mot Gardenans 750 m². För trädgårdar mellan 750 till 2 000 m² är Mammotion det enda alternativet av de två. </p>
 
     <div class="grid sm:grid-cols-2 gap-6 mb-8">
       <a href="/mammotion-luba-2-awo-1000h/" class="block bg-white rounded-xl border border-border p-5 hover:border-accent transition-all group">

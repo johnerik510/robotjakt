@@ -33,6 +33,18 @@ const faqItems = [
     question: 'Hur länge räcker batteriet på Dreame X40 Ultra jämfört med Roborock S8 MaxV Ultra?',
     answer: 'Dreame X40 Ultra har ett batteri på 6 400 mAh jämfört med Roborock S8 MaxV Ultras 5 200 mAh. Det ger Dreame längre autonomt arbete utan mellanladdning, vilket spelar roll i hem över 100 kvadratmeter. Båda modellerna har automatisk laddning och återvänder för att fortsätta när batteriet är påfyllt, men Dreame behöver pausa mer sällan i stora hem.',
   },
+  {
+    question: 'Vilken klarar tjocka mattor bäst?',
+    answer: 'Dreame X40 Ultra, tack vare 12 000 Pa mot Roborock S8 MaxV Ultras 10 000 Pa. På hårdgolv och kortluggade mattor märks skillnaden knappt, men i lång lugg där damm och husdjurspäls bäddat in sig gör de extra 20 procenten nytta. Har du både tjocka mattor och husdjur får du väga det mot att Roborock är den enda av de två som identifierar djuravföring.',
+  },
+  {
+    question: 'Finns apparna på svenska?',
+    answer: 'Nej, varken Dreame Home eller Roborock Home har svenskt gränssnitt. Roborock Home upplevs något mer polerad och har ett större användarsamhälle med mer dokumentation på nätet, medan Dreame Home är fullt funktionell men stundtals krångligare att konfigurera. Grundfunktionerna finns i båda, så språket är främst ett hinder första gången du sätter upp roboten och ritar kartan.',
+  },
+  {
+    question: 'Går det att köra robotarna på natten?',
+    answer: 'Ja, båda navigerar med LiDAR som mäter avstånd med laser och fungerar därför lika bra i mörker som i dagsljus. Kartläggningen och rumsnavigeringen påverkas inte av släckta lampor. Däremot arbetar AI-kamerornas hinderigenkänning bäst med ljus i rummet, så plocka undan sladdar och småsaker innan nattpasset. Det gäller båda modellerna och är alltså inget som skiljer dem åt.',
+  },
 ];
 
 const faqSchema = faqItems.map((item) => ({
@@ -71,7 +83,7 @@ export const articleMeta = {
       answer="Dreame X40 Ultra är bästa köpet för de flesta hem: starkare sugkraft på 12 000 Pa, moppning som når in i hörnen tack vare den utfällbara sidoarmen, 70-graders mopptvätt och större batteri, till lägre pris. Roborock S8 MaxV Ultra väljer du bara om du har husdjur och behöver ReactiveAI 3.0 mot djuravföring."
     />
     <p class="text-text-light mb-6 max-w-2xl">
-      Dreame X40 Ultra till eller Roborock S8 MaxV Ultra till ? Vi jämför de två starkaste flaggskeppsmodellerna på marknaden 2026, kategori för kategori, och ger dig ett tydligt svar baserat på ditt hem och dina behov.
+      Dreame X40 Ultra eller Roborock S8 MaxV Ultra? Vi jämför de två starkaste flaggskeppsmodellerna på marknaden 2026, kategori för kategori, och ger dig ett tydligt svar baserat på ditt hem och dina behov.
     </p>
 
     <EditorialCTA products={['Dreame X40 Ultra', 'Roborock S8 MaxV Ultra']} />

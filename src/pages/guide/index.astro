@@ -2,8 +2,44 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import AnswerBox from '../../components/AnswerBox.astro';
+import FAQ from '../../components/FAQ.astro';
 
 const breadcrumbs = [{ label: 'Guider' }];
+
+const faqItems = [
+  {
+    question: 'Vad kostar en robot att äga utöver själva inköpet?',
+    answer: 'Räkna med löpande förbrukningsdelar. En robotdammsugare drar filter, sidoborstar, huvudborste och moppdukar, och har den en tömningsstation tillkommer dammpåsar. En robotgräsklippare behöver nya knivar med jämna mellanrum under säsongen. Delarna är billiga var för sig men de återkommer varje år, och en robot som aldrig får nytt filter tappar sugförmåga långt innan något går sönder.',
+  },
+  {
+    question: 'Hur mycket underhåll kräver en robot i praktiken?',
+    answer: 'Några minuter i veckan räcker för en robotdammsugare. Töm behållaren, klipp bort hår som lindat sig runt borstrullen och torka av sensorerna. Filtret borstas rent oftare än du tror och byts var tredje månad, och moppduken sköljs efter varje moppass. Underhållschecklistan delar upp momenten i vecko-, månads- och kvartalsrutiner så att inget faller mellan stolarna.',
+  },
+  {
+    question: 'Vilka funktioner är värda att betala extra för?',
+    answer: 'LiDAR-navigering märks mest i vardagen. Roboten kartlägger hemmet och städar rum för rum i stället för att köra slumpmässigt, och du kan lägga no-go-zoner där den inte ska köra. Automatisk tömning är nästa steg och gör att du rör roboten några gånger per år i stället för varje vecka. Mattlyft blir relevant först om du både moppar och har mattor på golvet.',
+  },
+  {
+    question: 'Hur vet du hur mycket sugkraft du behöver?',
+    answer: 'Golvtypen och husdjuren avgör. Hårda golv och kortluggade mattor ställer låga krav, medan djup lugg och pälsande djur kräver mer. Kom ihåg att pascaltalet bara beskriver undertrycket, inte hur mycket smuts roboten faktiskt får med sig. Borsttyp, tätning mot golvet och hur ofta du kör roboten spelar minst lika stor roll. Sugkraftsguiden går igenom siffrorna i detalj.',
+  },
+  {
+    question: 'Fungerar en robotdammsugare i ett hem med mycket mattor?',
+    answer: 'Ja, med rätt modell. Kortluggade mattor klarar de flesta robotar utan problem, och moppar du också bör roboten ha mattlyft så att duken inte blöter ner luggen. Djup heltäckningsmatta är gränsen, där orkar svagare modeller inte dra upp sand och hår ur luggen. Mattguiden går igenom vad som skiljer borstdesignerna åt och när sugkraften faktiskt räcker.',
+  },
+  {
+    question: 'Hur lång tid tar det att komma igång med en ny robot?',
+    answer: 'Uppackningen och kopplingen till appen är snabbt avklarad. Det som tar tid är den första kartläggningen, då roboten kör igenom hela bostaden för att bygga en karta. Plocka undan sladdar, skor och lösa mattkanter innan du startar, en avbruten första körning ger en sämre karta att jobba vidare med. Installationsguiden tar dig steg för steg genom hela momentet.',
+  },
+  {
+    question: 'Hur förvarar du en utomhusrobot över vintern?',
+    answer: 'Frostfritt och torrt. Rengör maskinen ordentligt innan den ställs undan, både robotgräsklippare och poolrobot far illa av att stå kvar med smuts och fukt på sig. Batteriet håller bäst om det lagras runt 60 till 80 procents laddning i stället för fulladdat eller helt tomt. Läs alltid vad tillverkaren skriver om just din modell innan du ställer undan den.',
+  },
+  {
+    question: 'Kan du lita på tillverkarnas specifikationer?',
+    answer: 'Bara delvis. Sugkraft i pascal, drifttid i minuter och största yta mäts under gynnsamma förhållanden och säger lite om resultatet på ditt golv. Drifttiden varierar med sugläget och det högsta talet gäller det snålaste läget. Använd specifikationerna för att sortera bort modeller som är uppenbart underdimensionerade, och låt sedan tester och recensioner avgöra mellan dem som blir kvar.',
+  },
+];
 
 const guides = [
   {
@@ -95,7 +131,7 @@ const categories = [...new Set(guides.map(g => g.category))];
     ))}
 
     <section class="max-w-2xl mb-10">
-      <h2 class="font-heading text-xl font-bold text-text mb-4">Vanliga frågor om guiderna</h2>
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Så använder du guiderna</h2>
 
       <h3 class="font-heading text-lg font-bold text-text mt-6 mb-2">I vilken ordning ska du läsa guiderna som ny robotägare?</h3>
       <p class="text-text-light leading-relaxed mb-4">
@@ -121,5 +157,7 @@ const categories = [...new Set(guides.map(g => g.category))];
         Vill du fördjupa dig i ett specifikt märke har varje större tillverkare en egen märkesguide på siten, med modellöversikt och länkar till recensionerna.
       </p>
     </section>
+
+    <FAQ items={faqItems} />
   </div>
 </BaseLayout>

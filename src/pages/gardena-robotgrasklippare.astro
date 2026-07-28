@@ -52,11 +52,23 @@ const faqItems = [
   },
   {
     question: 'Kan Gardena Sileno hantera branta sluttningar?',
-    answer: 'Gardena Sileno City 500 och Life 750 klarar upp till 35% lutning, vilket räcker för de flesta svenska trädgårdar. Har du en tomt med kraftigare slänter (40 till 50%) bör du överväga Husqvarna Automower 430X Nera som klarar upp till 50% lutning.',
+    answer: 'Gardena Sileno City 500 och Life 750 klarar upp till 35% lutning, vilket räcker för de flesta svenska trädgårdar. Har du en tomt med kraftigare slänter (40 till 45%) bör du överväga Husqvarna Automower 430X Nera som klarar upp till 45% lutning.',
   },
   {
     question: 'Hur tyst är Gardena Sileno jämfört med konkurrenter?',
     answer: '57 dB placerar Gardena Sileno bland de tystaste robotgräsklipparna på marknaden, jämförbart med ett normalt samtal på avstånd. Den är tystare än de flesta budgetmodeller från konkurrenter. För referens: Husqvarna Automower 315X har 58 dB, Worx Landroid M500 har 63 dB.',
+  },
+  {
+    question: 'Vilket stöldskydd har Gardena Sileno?',
+    answer: 'Sileno har PIN-kodslås och larm, vilket betyder att roboten kräver kod för att kunna användas och ljuder om någon lyfter den. Någon GPS-spårning finns däremot inte i serien, så du kan inte se var maskinen befinner sig om den försvinner. Vill du kunna spåra roboten får du titta på Husqvarnas modeller med GPS-assistans.',
+  },
+  {
+    question: 'Hur ofta behöver knivarna bytas på en Gardena Sileno?',
+    answer: 'Räkna med byte var en till tre månader under klippsäsongen, oftare om tomten har grus, sand eller kottar som sliter på eggen. Slöa knivar syns på gräset: snittet blir trasigt och grästopparna gulnar i stället för att läka snabbt. Bytet tar några minuter med skruvmejsel, och du byter alla knivar och skruvar samtidigt så att klippskivan går i balans.',
+  },
+  {
+    question: 'Klarar Gardena Sileno regn och blött gräs?',
+    answer: 'Ja, roboten är byggd för att stå ute hela säsongen och regnsensor ingår i båda modellerna. Vid regn åker den hem till laddstationen och återupptar klippningen när regnet upphört. Tänk på att sensorn bara pausar under pågående regn, inte timmarna efteråt när gräset fortfarande är blött. Blött gräs klipps sämre och klumpar ihop sig under kåpan, så under regniga perioder behöver du borsta av undersidan oftare än annars.',
   },
 ];
 
@@ -133,10 +145,8 @@ export const articleMeta = {
                 </ul>
               </div>
               <div>
-                <p class="text-xs font-semibold text-text mb-2">Pris</p>
-                <p class="text-2xl font-bold text-text mb-1">{model.price}</p>
                 <p class="text-xs font-semibold text-text mb-2">Areal</p>
-                <p class="text-sm font-semibold text-text">{model.area}</p>
+                <p class="text-2xl font-bold text-text">{model.area}</p>
               </div>
             </div>
             <div class="flex flex-wrap gap-3">

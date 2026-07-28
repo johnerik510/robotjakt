@@ -44,6 +44,18 @@ const faqItems = [
     question: 'Hur lång är garantin på Hobot Legee 688 i Sverige?',
     answer: '2 års garanti gäller vid köp via auktoriserade återförsäljare i Sverige. Kontrollera att butiken säljer officiell nordisk version, importerade produkter utan EU-märkning kan ha kortare garanti eller sakna garantiservice i Sverige.',
   },
+  {
+    question: 'Hur lång tid tar det att putsa ett fönster med Hobot Legee 688?',
+    answer: 'Roboten täcker ungefär 30 kvadratmeter glas i timmen, alltså runt två minuter per kvadratmeter. Ett vanligt köksfönster är avklarat på några minuter, medan en stor altandörr eller ett panoramafönster tar betydligt längre tid. Tempot är robotens tydligaste svaghet på stora glasytor. Fördelen är att du inte behöver stå bredvid medan den arbetar.',
+  },
+  {
+    question: 'Vilka städlägen har Hobot Legee 688?',
+    answer: 'Tre lägen som du väljer i Hobot-appen: Z-mönster, spiralmönster och manuell styrning. Z-mönstret är standardvalet för en hel ruta, medan manuell styrning låter dig köra roboten precis dit du vill från mobilen. Fjärrstyrningen är mest värd på höga fönster, där du sätter roboten på plats, går undan och sköter resten från telefonen. Appen finns för iOS och Android.',
+  },
+  {
+    question: 'Kan Hobot Legee 688 ramla ner från rutan?',
+    answer: 'Risken går inte att bortse från, och därför ingår en säkerhetsline. Roboten väger 830 gram och suger fast med 2 800 Pa, vilket räcker för vanliga vertikala rutor. Fäst alltid linan i något stabilt inne i rummet innan du placerar roboten på glaset, och gör det till en fast rutin på fönster ovanför markplan. Kontrollera också att sugfoten är ren, eftersom damm och grus försämrar fästet.',
+  },
 ];
 
 const faqSchema = faqItems.map((item) => ({
@@ -100,20 +112,20 @@ export const articleMeta = {
           </div>
           <p class="text-text-light text-sm leading-relaxed mb-3">
             Hobot Legee 688 är en pålitlig fönsterputsrobot med stark sugkraft och tyst drift. App-styrning via Hobot-appen gör den enkel att schemalägga. Kabeldrift begränsar friheten något men ger trygg användning på höga höjder. Passar hem med standardfönster med ram som vill ha ett prisvärt och beprövat alternativ. </p>
+          <!-- Ingen köpknapp: Legee 688 finns inte hos någon butik vi har
+               affiliateavtal med. Enligt CTA-regeln byggs ingen CTA utan
+               verifierad tracker-URL, och en knapp till en annan Hobot-modell
+               vore fel produkt. Läggs modellen in i en feed kan CTA:n återinföras. -->
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <div>
-              <p class="text-xs text-text-light">Pris kan variera, jämför alltid</p>
+              <p class="text-xs text-text-light">Legee 688 säljs för närvarande inte hos någon av butikerna vi följer.</p>
             </div>
             <a
-              href="https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3313226&url=https://www.proshop.se/Foenstertvaett/Hobot-2S-White/3313226"
-              rel="sponsored nofollow noopener noreferrer"
-              target="_blank"
+              href="/fonsterputsrobot/"
               class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
             >
-              Se Hobot 2S hos Proshop
-              <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              Se fönsterputsrobotar vi jämför
             </a>
-          
           </div>
         </div>
       </div>
@@ -257,8 +269,8 @@ export const articleMeta = {
   </div>
 
   <StickyCTA
-    text="Se topplista robotdammsugare"
-    url="/billigaste-robotdammsugare/"
+    text="Jämför fönsterputsrobotar"
+    url="/fonsterputsrobot/"
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({

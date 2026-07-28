@@ -84,6 +84,18 @@ const faqItems = [
     question: 'Fungerar Roomba med Google Home och Amazon Alexa?',
     answer: 'Ja, alla moderna Roomba-modeller stödjer röststyrning via Google Assistant och Amazon Alexa. Det är naturligt med tanke på att iRobot ägs av Amazon. Du kan starta, stoppa och schemalägga städning med röstkommandon. Styrning och detaljerade inställningar sköts via iRobot Home-appen på iOS och Android.',
   },
+  {
+    question: 'Hur ofta behöver påse, filter och borstar bytas?',
+    answer: 'Påsen i Clean Base rymmer ungefär 60 dagars smuts vid daglig städning, medan filter och borstar bör bytas var andra till tredje månad. Hur snabbt det går beror på hemmet: två hundar sliter borstarna fortare och sätter igen filtret oftare än en lägenhet med hårda golv. Ändrar sugljudet karaktär är filtret det första du kontrollerar. Underhållet blir dyrare än på robotar med tvättbara filter.',
+  },
+  {
+    question: 'Passar Roomba i hem med tjocka mattor?',
+    answer: 'Delvis. iRobots toppmodeller når inte upp till de 10 000 till 12 000 Pa som Roborock och Dreame erbjuder, och på tjocka högflorsmattor märks det. Räkna med fler pass för att få upp det som ligger djupt i luggen. På hårda golv och kortare mattor är skillnaden marginell i ett vanligt hem. Har du både högflorsmattor och husdjur som fäller är ett märke med högre sugkraft ett tryggare val.',
+  },
+  {
+    question: 'Vilken garanti och service gäller för Roomba i Sverige?',
+    answer: 'Alla modeller levereras med 2 års garanti. Roomba säljs via Elgiganten, MediaMarkt och auktoriserade näthandlare, och iRobot har ett etablerat servicenätverk genom dessa återförsäljare. Reservdelar som filter, borstar och påsar till Clean Base är lätta att få tag på, vilket är en fördel mot märken som är nyare på den svenska marknaden. Spara kvittot, det är ditt garantibevis.',
+  },
 ];
 
 const faqSchema = faqItems.map((item) => ({
@@ -235,7 +247,7 @@ export const articleMeta = {
         <div class="bg-white rounded-xl border border-border p-5">
           <h3 class="font-semibold text-text mb-2">Beprövad teknik och stort servicenätverk</h3>
           <p class="text-text-light text-sm leading-relaxed">
-            Över 30 ars produktutveckling och 40 miljoner sålda enheter globalt. Reservdelar, filter och borstar är lättillgängliga. iRobot har ett etablerat servicenätverk i Sverige via auktoriserade återförsäljare. </p>
+            Över 30 års produktutveckling och 40 miljoner sålda enheter globalt. Reservdelar, filter och borstar är lättillgängliga. iRobot har ett etablerat servicenätverk i Sverige via auktoriserade återförsäljare. </p>
         </div>
       </div>
     </section>
@@ -245,9 +257,9 @@ export const articleMeta = {
       <h2 class="font-heading text-2xl font-bold text-text mb-4">Svagheter med iRobot Roomba</h2>
       <div class="space-y-4">
         <div class="bg-white rounded-xl border border-border p-5">
-          <h3 class="font-semibold text-text mb-2">Dyrt underhall</h3>
+          <h3 class="font-semibold text-text mb-2">Dyrt underhåll</h3>
           <p class="text-text-light text-sm leading-relaxed">
-            Clean Base kräver egna engangspåsar som kostar ungefär per 3-pack. Filter och borstar bör bytas var 2 till 3 månad. Over tid kan underhallskostnaden bli högre än hos konkurrenter med tvattbara filterlosningar. </p>
+            Clean Base kräver egna engångspåsar som säljs i 3-pack. Filter och borstar bör bytas var 2 till 3 månad. Över tid kan underhållskostnaden bli högre än hos konkurrenter med tvättbara filterlösningar. </p>
         </div>
         <div class="bg-white rounded-xl border border-border p-5">
           <h3 class="font-semibold text-text mb-2">Begränsad moppfunktion på de flesta modeller</h3>
@@ -257,7 +269,7 @@ export const articleMeta = {
         <div class="bg-white rounded-xl border border-border p-5">
           <h3 class="font-semibold text-text mb-2">Lägre sugkraft än premiumkonkurrenter</h3>
           <p class="text-text-light text-sm leading-relaxed">
-            iRobots topmodeller uppnar inte 10 000 till 12 000 Pa som Roborock och Dreame erbjuder. För normalstadning i ett genomsnittligt hem är skillnaden marginell, men för husdjurshem med tjocka mattor kan sugkraften vara en begransande faktor. </p>
+            iRobots toppmodeller uppnår inte 10 000 till 12 000 Pa som Roborock och Dreame erbjuder. För normalstädning i ett genomsnittligt hem är skillnaden marginell, men för husdjurshem med tjocka mattor kan sugkraften vara en begränsande faktor. </p>
         </div>
       </div>
     </section>
@@ -269,15 +281,15 @@ export const articleMeta = {
         <ul class="space-y-4">
           <li class="flex items-start gap-3 text-sm text-text-light">
             <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
-            <span><strong class="text-text">iRobot vinner på hinderdetektion:</strong> PrecisionVision med djuravforingsgaranti är unikt. Inget annat marke erbjuder samma niva av AI-baserad objektigenkanning kombinerat med en produktgaranti. För husdjursagare som korr roboten utan uppsikt är detta avgörande.</span>
+            <span><strong class="text-text">iRobot vinner på hinderdetektion:</strong> PrecisionVision med djuravföringsgaranti är unikt. Inget annat märke erbjuder samma nivå av AI-baserad objektigenkänning kombinerat med en produktgaranti. För husdjursägare som kör roboten utan uppsikt är detta avgörande.</span>
           </li>
           <li class="flex items-start gap-3 text-sm text-text-light">
             <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
-            <span><strong class="text-text">Roborock och Dreame vinner på moppning och sugkraft:</strong> Om moppfunktion är ett krav är Dreame X40 Ultra eller Roborock Qrevo Master starkare alternativ. Bada marken erbjuder roterande moppar med varmvattentvattsstation och högre sugkraft än Roombas toppmodeller.</span>
+            <span><strong class="text-text">Roborock och Dreame vinner på moppning och sugkraft:</strong> Om moppfunktion är ett krav är Dreame X40 Ultra eller Roborock Qrevo Master starkare alternativ. Båda märkena erbjuder roterande moppar med varmvattentvättsstation och högre sugkraft än Roombas toppmodeller.</span>
           </li>
           <li class="flex items-start gap-3 text-sm text-text-light">
             <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
-            <span><strong class="text-text">iRobot vinner på ekosystem och tillgänglighet:</strong> Med Amazon i ryggen och over 30 ars marknadsnaravaro är det enkelt att hitta reservdelar, support och tillbehor för Roomba i Sverige. Roborock och Dreame är nyare på den svenska marknaden.</span>
+            <span><strong class="text-text">iRobot vinner på ekosystem och tillgänglighet:</strong> Med Amazon i ryggen och över 30 års marknadsnärvaro är det enkelt att hitta reservdelar, support och tillbehör för Roomba i Sverige. Roborock och Dreame är nyare på den svenska marknaden.</span>
           </li>
         </ul>
       </div>
@@ -288,19 +300,19 @@ export const articleMeta = {
       <h2 class="font-heading text-2xl font-bold text-text mb-4">Vilken Roomba passar ditt behov?</h2>
       <div class="space-y-4">
         <div class="bg-white rounded-xl border border-border p-5">
-          <h3 class="font-semibold text-text mb-2">Husdjur med risk för avforing på golvet</h3>
+          <h3 class="font-semibold text-text mb-2">Husdjur med risk för avföring på golvet</h3>
           <p class="text-text-light text-sm leading-relaxed">
-            Roomba j7+ är det enda valet. PrecisionVision-garantin ger ett unikt skydd, om roboten missar en bajshogg ersatter iRobot enheten. Ingen annan tillverkare erbjuder en sadan garanti. </p>
+            Roomba j7+ är det enda valet. PrecisionVision-garantin ger ett unikt skydd, om roboten missar en bajshög ersätter iRobot enheten. Ingen annan tillverkare erbjuder en sådan garanti. </p>
         </div>
         <div class="bg-white rounded-xl border border-border p-5">
-          <h3 class="font-semibold text-text mb-2">Vill ha bade dammsugning och moppning</h3>
+          <h3 class="font-semibold text-text mb-2">Vill ha både dammsugning och moppning</h3>
           <p class="text-text-light text-sm leading-relaxed">
-            Roomba Combo i8+ ger den bästa kombination iRobot erbjuder med avlyftsbar moppmodul och automatisk tömning. Vill du ha starkare moppning, overväg Dreame X40 Ultra eller Roborock Qrevo Master istallet. </p>
+            Roomba Combo i8+ ger den bästa kombinationen iRobot erbjuder, med avlyftbar moppmodul och automatisk tömning. Vill du ha starkare moppning, överväg Dreame X40 Ultra eller Roborock Qrevo Master i stället. </p>
         </div>
         <div class="bg-white rounded-xl border border-border p-5">
-          <h3 class="font-semibold text-text mb-2">Budget, forsta robotdammsugaren</h3>
+          <h3 class="font-semibold text-text mb-2">Budget, första robotdammsugaren</h3>
           <p class="text-text-light text-sm leading-relaxed">
-            Roomba i3 ger dig ett pålitligt marke med beprövad teknik till ett lågt instegsrpis. Du tömmer manuellt men far en robot från ett marke med over 30 ars erfarenhet och brett servicenätverk. </p>
+            Roomba i3 ger dig ett pålitligt märke med beprövad teknik till ett lågt instegspris. Du tömmer manuellt men får en robot från ett märke med över 30 års erfarenhet och brett servicenätverk. </p>
         </div>
 
         <div class="bg-white rounded-xl border border-border p-5">

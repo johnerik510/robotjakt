@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import AnswerBox from '../../components/AnswerBox.astro';
+import FAQ from '../../components/FAQ.astro';
 
 const breadcrumbs = [{ label: 'Reservdelar & tillbehör' }];
 
@@ -33,6 +34,41 @@ const partTypes = [
   { name: 'Filter', href: '/reservdelar/filter/', desc: 'HEPA och washable filter' },
   { name: 'Borstar', href: '/reservdelar/borstar/', desc: 'Sido- och huvudborstar' },
   { name: 'Knivar', href: '/reservdelar/knivar/', desc: 'Till robotgräsklippare' },
+];
+
+const faqItems = [
+  {
+    question: 'Hur ofta ska du byta filter i en robotdammsugare?',
+    answer: 'Var andra till var tredje månad vid normal användning. Ett igensatt filter minskar sugkraften med upp till 40 procent, och det märks som att roboten lämnar kvar damm trots tömd behållare. Filtret ser ofta rent ut på ytan även när det slutat släppa igenom luft ordentligt, så gå efter intervallet i stället för efter utseendet. Allergiker vinner mest på att hålla schemat.',
+  },
+  {
+    question: 'Hur ofta ska knivarna på robotgräsklipparen bytas?',
+    answer: 'Varje säsong. Trubbiga knivar drar och sliter i gräset i stället för att klippa rent, vilket ger gulnade grästoppar och ökar belastningen på motorn. Bytet tar några minuter med en skruvmejsel. Byt alla knivar samtidigt så att klippskivan sitter i balans, en obalanserad skiva vibrerar och sliter i onödan på lager och motor.',
+  },
+  {
+    question: 'Hur ofta ska dammpåsen i basstationen bytas?',
+    answer: 'Räkna med var fjärde till sjätte vecka vid daglig städning, men intervallet skiljer sig mellan modeller. Roborock S8 Pro Ultras station klarar ungefär sju veckor. Byt när påsen är fylld till 70 till 80 procent, appen säger oftast till när det är dags. Ett hem med husdjur och mattor fyller påsen snabbare än en lägenhet med bara hårda golv.',
+  },
+  {
+    question: 'Hur vet du vilken reservdel som passar din robot?',
+    answer: 'Utgå från den exakta modellbeteckningen, inte från märket. Två modeller från samma tillverkare kan använda olika filter och moppkuddar även när robotarna ser likadana ut. Kontrollera kompatibilitetslistan i produktbeskrivningen mot din beteckning innan du beställer. Det här är det vanligaste skälet till att fel del hamnar i brevlådan.',
+  },
+  {
+    question: 'Var köper du reservdelar till robotdammsugare och robotgräsklippare?',
+    answer: 'Vi länkar vidare till Amazon, Proshop och eStore. Amazon och Proshop har båda stort urval av originaldelar till de vanligaste märkena, medan eStore är inriktat på tillbehör och smarta hem-produkter. Sök på din exakta modellbeteckning i stället för på märkesnamnet, då slipper du sortera bland delar som ser rätt ut men inte passar.',
+  },
+  {
+    question: 'Hur ofta ska moppkuddarna bytas?',
+    answer: 'Efter slitage, inte efter kalender. Tvätta kuddarna ungefär en gång i veckan och byt dem när fibrerna packats platta eller kudden slutat suga upp vatten som förut. Det går fortare i hem som moppas dagligen. Slitna moppkuddar sprider smuts i stället för att torka upp den, och det syns som ränder på golvet trots att roboten kört som vanligt. Kuddarna kan tvättas mellan bytena, men mikrofibrerna plattas ut med tiden och då hjälper ingen tvätt.',
+  },
+  {
+    question: 'Hur märker du att sidoborstarna är slitna?',
+    answer: 'Damm som ligger kvar längs väggar och lister är det tydligaste tecknet. Sidoborstens uppgift är att sopa in smuts från kanterna mot sugöppningen, och när stråna böjt sig utåt eller kortats av når de inte längre hela vägen ut. Räkna med byte var sjätte till tolfte månad, kortare intervall i hem med husdjur eller långt hår.',
+  },
+  {
+    question: 'Vilka knivar passar min robotgräsklippare?',
+    answer: 'Universalblad med standardtjocklek 0,75 millimeter passar Husqvarna Automower, Gardena Sileno och Yardforce, alltså de modeller som använder det vanliga triangulära hållarsystemet. Har du stenig eller krävande mark håller titanblad skärpan längre än vanliga stålblad. Kontrollera ändå knivfäste och bladtjocklek mot din exakta modell, måtten skiljer sig mellan generationer även inom samma märke.',
+  },
 ];
 ---
 
@@ -141,7 +177,7 @@ const partTypes = [
           <p>Trubbiga knivar drar och sliter på gräset istället för att klippa rent. Resultatet är gulnat gräs och ökad belastning på motorn.</p>
         </div>
         <div>
-          <p class="font-semibold text-text mb-1">Moppkuddar, byt var 3 månad</p>
+          <p class="font-semibold text-text mb-1">Moppkuddar, tvätta veckovis och byt vid slitage</p>
           <p>Slitna moppkuddar sprider smuts istället för att torka upp den. Byt mot originalkuddar för bästa moppresultat.</p>
         </div>
       </div>
@@ -149,7 +185,7 @@ const partTypes = [
 
     <!-- Köpguide -->
     <section class="mb-8">
-      <h2 class="font-heading text-xl font-bold text-text mb-4">Vanliga frågor när du köper reservdelar</h2>
+      <h2 class="font-heading text-xl font-bold text-text mb-4">Köpguide: original, kompatibelt och rätt passform</h2>
       <div class="space-y-6 text-sm text-text-light leading-relaxed">
         <div>
           <h3 class="font-heading text-lg font-bold text-text mb-2">Ska du välja originaldelar eller kompatibla reservdelar?</h3>
@@ -163,5 +199,7 @@ const partTypes = [
         </div>
       </div>
     </section>
+
+    <FAQ items={faqItems} />
   </main>
 </BaseLayout>

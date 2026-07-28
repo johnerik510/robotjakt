@@ -33,6 +33,18 @@ const faqItems = [
     question: 'Hur skiljer LiDAR sig från ToF-sensor?',
     answer: 'ToF (Time-of-Flight) är en enklare avståndssensor som mäter ett fåtal punkter, oftast framåt. LiDAR är ett roterande system som scannar 360 grader runt roboten flera gånger per sekund. ToF räcker för att undvika hinder, men det är LiDAR som möjliggör riktig kartläggning.'
   },
+  {
+    question: 'Klarar LiDAR glasväggar, speglar och blanka golv?',
+    answer: 'Inte alltid. Glasväggar, spegelytor och mörka eller blanka golv kan ge falska reflektioner som förvränger kartan, eftersom lasern studsar fel. Två saker hjälper: kör in roboten manuellt vid den första kartläggningen så den hinner korrigera, och rita in virtuella väggar runt de problematiska ytorna i appen. Höga trösklar över 2 cm är ett separat problem som LiDAR inte löser.'
+  },
+  {
+    question: 'Hur sköter man LiDAR-sensorn?',
+    answer: 'Underhållet består av en sak: en torr mikrofiberduk mot sensorfönstret på tornet ungefär en gång i månaden. Själva sensorn är förseglad och ska aldrig öppnas, smörjas eller rengöras med vätska. Det praktiska skälet att hålla rutinen är felsökning. Börjar roboten plötsligt köra i konstiga mönster eller rita kartor som inte stämmer är dammigt sensorfönster den billigaste förklaringen att utesluta först.'
+  },
+  {
+    question: 'Kan en LiDAR-robot komma ihåg flera våningar?',
+    answer: 'Ja, premiummodeller sparar 3 till 5 våningsplan som separata kartor. Roboten använder då den sparade kartan för rätt plan, med dess rumsindelning och no-go-zoner, i stället för att kartlägga om från början. Laddstationen står däremot kvar på ett plan, så på övriga våningar får du bära roboten både dit och tillbaka. En ny karta byggs på 5 till 10 minuter.'
+  },
 ];
 
 export const articleMeta = {

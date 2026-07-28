@@ -12,7 +12,7 @@ const breadcrumbs = [
 
 const specs = [
   { label: 'Klippyta', value: '1 000 m²' },
-  { label: 'Klippbredd', value: '22 cm' },
+  { label: 'Klippbredd', value: '40 cm' },
   { label: 'Lutningstolerans', value: '75%' },
   { label: 'Navigering', value: 'RTK GPS (ingen slinga)' },
   { label: 'Uppkoppling', value: '4G' },
@@ -23,7 +23,7 @@ const specs = [
 const faqItems = [
   {
     question: 'Vad skiljer LUBA 2 AWO 1000H från LUBA AWO 3000?',
-    answer: 'Den viktigaste skillnaden är klippytan: LUBA 2 AWO 1000H klarar upp till 1 000 m² medan LUBA AWO 3000 klarar 3 000 m². Klippbredden är också smalare, 22 cm mot 26 cm, och roboten väger 3 kg mindre (11 kg mot 14 kg). Tekniken är i övrigt densamma: RTK GPS utan perimeterkabel, 4G-uppkoppling och Mammotion-appen. Välj 1000H om din gräsmatta är under 1 000 m² och du vill spara jämfört med 3000-modellen.',
+    answer: 'Den viktigaste skillnaden är klippytan: LUBA 2 AWO 1000H klarar upp till 1 000 m² medan LUBA AWO 3000 klarar 3 000 m². Klippbredden är 40 cm på båda, och roboten väger 3 kg mindre (11 kg mot 14 kg). Tekniken är i övrigt densamma: RTK GPS utan perimeterkabel, 4G-uppkoppling och Mammotion-appen. Välj 1000H om din gräsmatta är under 1 000 m² och du vill spara jämfört med 3000-modellen.',
   },
   {
     question: 'Behöver man gräva ner kabel med LUBA 2 AWO 1000H?',
@@ -36,6 +36,22 @@ const faqItems = [
   {
     question: 'Hur skiljer sig LUBA 2 AWO 1000H mot Segway Navimow H500E?',
     answer: 'Båda modellerna använder RTK GPS utan perimeterkabel, men de skiljer sig i navigeringsfilosofi. LUBA 2 AWO 1000H har en traditionell RTK-basstationsantenn som monteras fast. Segway Navimow H500E använder Vision Fence, en kamerabaserad teknik som kompletterar RTK-signalen. Ytmässigt tar LUBA 2 AWO 1000H mer gräs, upp till 1 000 m² mot H500E:s 500 m². Välj LUBA 2 AWO 1000H om din trädgård ligger mellan 500 och 1 000 m², och H500E om ytan är mindre än 500 m² och du prioriterar enklast möjliga installation.',
+  },
+  {
+    question: 'Hur brant sluttning klarar LUBA 2 AWO 1000H?',
+    answer: 'Upp till 75 procents lutning, vilket är det brantaste i den här klassen. Slänter och kuperade partier som stoppar en vanlig hjuldriven robot går alltså att klippa utan att du delar upp tomten. Tänk på att greppet också beror på underlaget, blött gräs på lera ger sämre fäste än torr och tät grässvål oavsett vad specifikationen anger.',
+  },
+  {
+    question: 'Hur ofta ska roboten klippa och på vilken höjd?',
+    answer: 'Kör flera korta pass i veckan i stället för ett långt. Klipphöjden ställs mellan 20 och 60 mm, och roboten är byggd för att ta några millimeter i taget, inte för att rädda en gräsmatta som redan vuxit sig lång. Med 40 cm klippbredd och 100 minuters drifttid räcker kapaciteten till 1 000 m² när passen är utspridda. På våren kör du tätare, i torka drar du ner.',
+  },
+  {
+    question: 'Fungerar RTK-antennen i en trädgård med mycket träd?',
+    answer: 'Delvis. Antennen behöver fri sikt mot himlen, så en tomt med tät trädkrona eller hög häck runt om blir svårare att få stabil. Placera den öppet och gärna högt, ofta räcker det att flytta den några meter. Positioneringen blir ojämn just på de ytor som ligger i skuggan av hindret, och de partierna kan du hantera med egna zoner i Mammotion-appen.',
+  },
+  {
+    question: 'Hur förvarar du LUBA 2 AWO 1000H över vintern?',
+    answer: 'Ta in roboten när gräset slutat växa och förvara den torrt och frostfritt. Borsta bort gräsrester underifrån och kontrollera knivarna innan den ställs undan, då är den körklar på våren. Litiumbatteriet mår bäst av att lagras på 60 till 80 procent laddning i stället för fulladdat eller tomt. Kontrollera samtidigt RTK-antennens fäste, en antenn som glidit ur läge tvingar dig att kalibrera om zonerna.',
   },
 ];
 
@@ -71,7 +87,7 @@ export const articleMeta = {
 
   <AnswerBox
     question="Snabbt svar: är Mammotion LUBA 2 AWO 1000H värd pengarna?"
-    answer="Ja, om gräsmattan är under 1 000 m² och du vill slippa perimeterkabel. Du får samma RTK GPS-navigering som LUBA AWO 3000 och 75% lutningstolerans, men med 22 cm klippbredd och 100 minuters drifttid. Har du större yta än så väljer du 3000-modellen i stället."
+    answer="Ja, om gräsmattan är under 1 000 m² och du vill slippa perimeterkabel. Du får samma RTK GPS-navigering som LUBA AWO 3000 och 75% lutningstolerans, men med 100 minuters drifttid. Har du större yta än så väljer du 3000-modellen i stället."
   />
 
   <!-- Verdict box -->
@@ -127,7 +143,7 @@ export const articleMeta = {
       <ul class="space-y-2">
         {[
           'Begränsad till 1 000 m², inte för stora tomter',
-          'Smalare klippbredd (22 cm) än 3000-modellen',
+          'Lägre maxyta än 3000-modellen',
           'RTK-antenn kräver fri sikt mot himlen',
           'Nyare modell med begränsad långtidsdata',
         ].map(con => (
@@ -171,7 +187,7 @@ export const articleMeta = {
 
     <h3 class="font-heading text-xl font-semibold text-text mb-3">Klippresultat på 1 000 m²</h3>
     <p class="text-text-light leading-relaxed mb-4">
-      Med 22 cm klippbredd och 100 minuters drifttid per laddning klarar LUBA 2 AWO 1000H sin angivna maxyta utan problem. Klippmönstret är systematiskt, roboten kör i raka banor med definierade vändpunkter snarare än slumpmässigt, vilket ger en jämnare finish och bättre täckning i kantzonerna.
+      Med 40 cm klippbredd och 100 minuters drifttid per laddning klarar LUBA 2 AWO 1000H sin angivna maxyta utan problem. Klippmönstret är systematiskt, roboten kör i raka banor med definierade vändpunkter snarare än slumpmässigt, vilket ger en jämnare finish och bättre täckning i kantzonerna.
     </p>
     <p class="text-text-light leading-relaxed mb-6">
       Höjdjustering 20 till 60 mm täcker alla vanliga klipppreferenser. Roboten hanterar hörn och smalare passager bra tack vare appbaserad zonritning, du kan definiera exakt var roboten ska vända och skapa virtuella hinder runt blomsterbäddar och träd utan att flytta på markeringar.
@@ -206,7 +222,7 @@ export const articleMeta = {
       Robotgräsklippare är byggda för att ta lite gräs ofta, inte mycket sällan. Flera korta pass i veckan ger jämnare matta än ett långt pass, och det korta klippet faller ner och göder gräset i stället för att behöva samlas upp.
     </p>
     <p class="text-text-light leading-relaxed mb-6">
-      Med 22 cm klippbredd och 100 minuters drifttid räcker kapaciteten till 1 000 m² när passen är utspridda över veckan. Lägg schemat i Mammotion-appen så att roboten kör flera dagar i rad snarare än en enda lång dag, då hinner gräset aldrig växa förbi det höjdintervall roboten är gjord för. Under intensiv tillväxt på våren kör du tätare, i torka drar du ner. Inför vintern gäller vanliga rutiner, se vår genomgång av <a href="/guide/vinterforvaring-robotgrasklippare/" class="text-accent underline">vinterförvaring av robotgräsklippare</a>.
+      Med 40 cm klippbredd och 100 minuters drifttid räcker kapaciteten till 1 000 m² när passen är utspridda över veckan. Lägg schemat i Mammotion-appen så att roboten kör flera dagar i rad snarare än en enda lång dag, då hinner gräset aldrig växa förbi det höjdintervall roboten är gjord för. Under intensiv tillväxt på våren kör du tätare, i torka drar du ner. Inför vintern gäller vanliga rutiner, se vår genomgång av <a href="/guide/vinterforvaring-robotgrasklippare/" class="text-accent underline">vinterförvaring av robotgräsklippare</a>.
     </p>
 
     <h3 class="font-heading text-xl font-semibold text-text mb-3">Fungerar LUBA 2 AWO 1000H i en trädgård med många träd?</h3>

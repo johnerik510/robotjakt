@@ -29,18 +29,18 @@ const models = [
     badge: 'BÄST I TEST 2026',
     badgeColor: 'bg-winner',
     area: 'upp till 3 200 m²',
-    features: ['EPOS GPS utan slingkabel (tillval)', 'Terängkörning upp till 50% lutning', 'App-styrning + Google/Alexa', 'Ultraljudssensorer', 'Automatisk uppdatering'],
+    features: ['EPOS GPS utan slingkabel (tillval)', 'Terrängkörning upp till 45% lutning', 'App-styrning + Google/Alexa', 'Ultraljudssensorer', 'Automatisk uppdatering'],
     cta: '/robotgrasklippare-stor-tradgard/',
     ctaText: 'Se robotgräsklippare för stor trädgård',
     reviewUrl: '/husqvarna-automower-430x-nera/',
-    description: '430X Nera är Husqvarnas premiummodell för stora trädgårdar upp till 3 200 m². EPOS-tekniken (GPS utan slingkabel som tillval) eliminerar behovet av kabelinstallation. Klarar branta sluttningar upp till 50% och fungerar i alla väderförhållanden.',
+    description: '430X Nera är Husqvarnas premiummodell för stora trädgårdar upp till 3 200 m². EPOS-tekniken (GPS utan slingkabel som tillval) eliminerar behovet av kabelinstallation. Klarar branta sluttningar upp till 45% och fungerar i alla väderförhållanden.',
   },
 ];
 
 const faqItems = [
   {
     question: 'Hur länge har Husqvarna tillverkat robotgräsklippare?',
-    answer: 'Husqvarna lanserade den forsta Automower 1995, det var världens forsta kommersiella robotgräsklippare. Sedan dess har de sålt mer än 1 miljon enheter globalt. Husqvarna är fortfarande marknadsledare i Europa med störst installerad bas och mest mogen teknik.',
+    answer: 'Husqvarna lanserade den första Automower 1995, det var världens första kommersiella robotgräsklippare. Sedan dess har de sålt mer än 1 miljon enheter globalt. Husqvarna är fortfarande marknadsledare i Europa med störst installerad bas och mest mogen teknik.',
   },
   {
     question: 'Behöver jag installera slingkabel med Husqvarna Automower?',
@@ -48,7 +48,7 @@ const faqItems = [
   },
   {
     question: 'Vilken Automower-modell passar för en trädgård på 1 000 m²?',
-    answer: 'För en trädgård på 1 000 m² rekommenderar vi Automower 315X som klarar upp till 1 600 m². Den har tillräcklig kapacitet med marginal, GPS-assistans och app-styrning. 315X är Husqvarnas mest kostnadseffektiva alternativ med X-seriens funktioner. Om trädgården har komplicerad form med passeringar eller branta sluttningar kan det vara värt att overväga en modell med mer kraft.',
+    answer: 'För en trädgård på 1 000 m² rekommenderar vi Automower 315X som klarar upp till 1 600 m². Den har tillräcklig kapacitet med marginal, GPS-assistans och app-styrning. 315X är Husqvarnas mest kostnadseffektiva alternativ med X-seriens funktioner. Om trädgården har komplicerad form med passeringar eller branta sluttningar kan det vara värt att överväga en modell med mer kraft.',
   },
   {
     question: 'Fungerar Husqvarna Automower i regn?',
@@ -57,6 +57,22 @@ const faqItems = [
   {
     question: 'Hur säker är Husqvarna Automower mot stöld?',
     answer: 'Alla Automower-modeller har PIN-kodskydd, utan rätt PIN-kod fungerar inte roboten. Om roboten lyfts från marken larmar den och skickar en notis till appen. Modeller med GPS (X-serien) har inbyggd GPS-spårning som kan visas i Automower Connect-appen. Husqvarna erbjuder också separata stöldförsäkringar via auktoriserade återförsäljare.',
+  },
+  {
+    question: 'Hur ofta behöver knivbladen bytas på en Automower?',
+    answer: 'Byt bladen en gång per säsong, helst i april eller maj innan gräset tar fart. Är marken hård eller stenig slits de fortare, så kontrollera dem var fjärde till sjätte vecka under säsongen. Själva bytet tar några minuter med en skruvmejsel, och skruvarna byter du med fördel samtidigt. Slöa blad syns på gräsmattan innan de syns på roboten: stråna slits av i stället för att kapas, och topparna blir fransiga och gulnar.',
+  },
+  {
+    question: 'Hur vinterförvarar jag min Automower?',
+    answer: 'Torrt och frostfritt inomhus. Gör rent chassit och klippaggregatet från gräsrester innan roboten ställs undan, gräs som torkar fast runt knivfästet är betydligt jobbigare att få bort i mars. Ladda batteriet till runt 60 till 80 procent, ett urladdat batteri mår dåligt av att stå kallt en hel vinter. Slingkabeln ligger kvar i marken utan att ta skada.',
+  },
+  {
+    question: 'Vilken Automower klarar en kuperad tomt?',
+    answer: 'Automower 430X Nera klarar 45 procents lutning och 315X ligger på 40 procent. De slinglösa V-modellerna, Aspire R6V, 308V och 312V, tar också 40 procent inne i arbetsområdet, men bara 15 procent precis vid den virtuella gränsen, så branta partier bör ligga en bit in på gräsmattan snarare än ytterst vid kanten. Mät den brantaste punkten med en lutningsmätare i mobilen innan du beställer, det är där roboten ger upp.',
+  },
+  {
+    question: 'Fungerar en Automower om tomten är uppdelad i flera gräsytor?',
+    answer: 'Det beror på om ytorna hänger ihop med gräs. En kabelmodell bildar en enda sluten slinga, så framsida och baksida måste knytas ihop med en gräskorridor som roboten kan köra igenom. Är ytorna helt åtskilda av grus eller stenläggning får du bära roboten över för hand. På de slinglösa V-modellerna definierar du i stället flera arbetsområden och transportvägar mellan dem i Automower Connect, vilket gör en uppdelad tomt betydligt enklare att lösa.',
   },
 ];
 
@@ -97,14 +113,14 @@ export const articleMeta = {
     />
 
     <p class="text-text-light mb-6 max-w-2xl">
-      Husqvarna är marknadsledaren inom robotgräsklippare och grundade kategorin 1995. Vi guidar dig genom 2026 ars modellutbud, från kompakta 315X till EPOS-utrustade 430X Nera, och hjälper dig hitta rätt Automower för din trädgård.
+      Husqvarna är marknadsledaren inom robotgräsklippare och grundade kategorin 1995. Vi guidar dig genom 2026 års modellutbud, från kompakta 315X till EPOS-utrustade 430X Nera, och hjälper dig hitta rätt Automower för din trädgård.
     </p>
 
     <!-- Brand overview -->
     <section class="mb-8 bg-bg-alt rounded-xl border border-border p-6">
       <h2 class="font-heading text-xl font-bold text-text mb-3">Husqvarna Automower: pionjären sedan 1995 och marknadsledaren i Europa</h2>
       <p class="text-text-light leading-relaxed mb-3">
-        Husqvarna lanserade den forsta Automower 1995, världens forsta kommersiella robotgräsklippare. Den svenska maskintillverkaren med rötter i Huskvarna har sedan dess sålt mer än 1 miljon robotgräsklippare globalt och är marknadsledare i Europa.
+        Husqvarna lanserade den första Automower 1995, världens första kommersiella robotgräsklippare. Den svenska maskintillverkaren med rötter i Huskvarna har sedan dess sålt mer än 1 miljon robotgräsklippare globalt och är marknadsledare i Europa.
       </p>
       <p class="text-text-light leading-relaxed">
         Automower-serien bygger på tre principer: klipp lite men ofta (mulching), robust bygge för alla väderförhållanden och pålitlig navigering. Den senaste EPOS-tekniken (Exact Positioning Operating System) erbjuder GPS-positionering utan slingkabel, en stor framsteg mot enklare installation.
@@ -255,7 +271,7 @@ export const articleMeta = {
       <div class="space-y-4">
         <div class="bg-white rounded-xl border border-border p-5">
           <h3 class="font-semibold text-text mb-2">Trädgård upp till 1 000 m²</h3>
-          <p class="text-text-light text-sm leading-relaxed mb-3">Automower 315X är det naturliga valet. Den klarar 1 600 m² med god marginal och har GPS-assistans och app-styrning. Prisvärd ingangspunkt till X-serien.</p>
+          <p class="text-text-light text-sm leading-relaxed mb-3">Automower 315X är det naturliga valet. Den klarar 1 600 m² med god marginal och har GPS-assistans och app-styrning. Prisvärd ingångspunkt till X-serien.</p>
           <a
             href="/robotgrasklippare/"
             class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"

@@ -32,6 +32,18 @@ const faqItems = [
     question: 'Vilken har enklast installation?',
     answer: 'Segway Navimow H800E är något enklare att installera. Du placerar stationen och ritar gränserna i appen, ingen RTK-antenn behöver monteras. LUBA AWO 3000 kräver att du monterar en RTK-referensantenn med fri himmelssikt, vilket tar extra tid men ger mer precis navigering. Båda är avsevärt enklare än att gräva ner perimeterkabel.',
   },
+  {
+    question: 'Hur ofta laddar robotarna under ett klipppass?',
+    answer: 'Navimow H800E kör ungefär 180 minuter per laddning, LUBA AWO 3000 klarar 120 minuter, och båda laddar på cirka 90 minuter. LUBA gör alltså fler laddstopp per klippt timme, men tar igen tid med 26 cm klippbredd mot H800E:s 22 cm. Eftersom robotarna håller reda på vad de redan klippt påverkar laddstoppen sluttiden mer än resultatet.',
+  },
+  {
+    question: 'Måste robotarna vinterförvaras inomhus?',
+    answer: 'Ja, ta in roboten när klippsäsongen är slut. Kyla och fukt sliter på litiumbatteriet, och ett djupurladdat batteri som står ute hela vintern tappar kapacitet permanent. Rengör chassit och klippaggregatet från gräsrester, ladda batteriet till 60 till 80 procent och ställ undan roboten torrt och frostfritt. Laddstation och RTK-antenn kan stå kvar ute, men kontrollera fästena, en antenn som flyttar sig ur läge kan tvinga fram omkalibrering till våren.',
+  },
+  {
+    question: 'Hur ofta behöver knivarna bytas?',
+    answer: 'Räkna med knivbyte var 1 till 3 månad under säsongen på båda modellerna, oftare om du klipper stora ytor eller har sand, kottar och grus i gräset. Slöa knivar syns på gräsmattan innan de syns på roboten: strån som slits av i stället för att kapas brunfärgas i toppen. Kontrollera knivarna samtidigt som du gör rent undersidan.',
+  },
 ];
 
 const faqSchema = faqItems.map((item) => ({

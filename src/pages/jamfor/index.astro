@@ -20,15 +20,15 @@ const faqSchema = {
       name: "Vad ska jag jämföra när jag väljer robotdammsugare?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "De viktigaste faktorerna är sugkraft (På), navigeringstyp (LiDAR vs kamera), hinderdetektering, tömningsstations-funktion, moppfunktion och pris. För hem med husdjur är hinderdetektering extra viktigt."
+        text: "De viktigaste faktorerna är sugkraft (Pa), navigeringstyp (LiDAR vs kamera), hinderdetektering, tömningsstations-funktion, moppfunktion och pris. För hem med husdjur är hinderdetektering extra viktigt."
       }
     },
     {
       "@type": "Question",
-      name: "Är det värt att betala mer för ett premiumrobot?",
+      name: "Är det värt att betala mer för en premiumrobot?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Ja i de flesta fall. Modeller över erbjuder LiDAR-navigering, automatisk tömmning och bättre hinderdetektering som sparar tid. Budget-modeller till lägre pris saknar ofta dessa funktioner."
+        text: "Ja, i de flesta fall. Premiummodellerna ger LiDAR-navigering, självtömmande station och hinderigenkänning som faktiskt sparar tid, medan budgetmodellerna oftast saknar just de funktionerna. Det du betalar extra för är alltså inte högre toppsiffror utan att du slipper göra jobbet själv."
       }
     },
     {
@@ -36,7 +36,39 @@ const faqSchema = {
       name: "Husqvarna eller Mammotion robotgräsklippare?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Husqvarna kräver perimeterkabel men är beprövad teknik. Mammotion använder GPS och kräver ingen kabel, vilket ger enklare installation. Mammotion passar bättre för de flesta moderna trädgårdar under 1 500 m²."
+        text: "Båda är slinglösa i sina aktuella serier, så valet handlar inte längre om kabel. Husqvarnas V- och NERA-modeller ritar gränserna virtuellt med satellitpositionering och AI-vision, och märket har ett betydligt bredare service- och reservdelsnät i Sverige. Mammotion har fyrhjulsdrift och tar sig fram på brantare och stökigare mark. Välj Husqvarna för lugn terräng och lokal service, Mammotion för slänter."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "Behöver jag en robot som både dammsuger och moppar?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Bara om du har mycket hårda golv. På parkett, klinker och laminat gör moppen verklig nytta mot kladd och damm som sugningen lämnar kvar. Har du mest heltäckningsmattor är funktionen överflödig, och roboten måste då kunna lyfta eller fälla upp moppen så att mattorna inte blir blöta. Ingen robotmopp ersätter handskrubbning av riktigt intorkade fläckar."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "Hur mycket löpande underhåll kräver en robot?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Mer än de flesta räknar med, oavsett märke. Filtret rengörs eller byts ett par gånger per år, borstarna behöver rensas från hår regelbundet, moppdukar byts när de är slitna och dammpåsen i stationen håller ungefär varannan månad. Robotgräsklippare behöver dessutom nya knivar under säsongen. Kontrollera att reservdelarna finns lätt i Sverige innan du binder dig vid ett märke."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "Lönar det sig att vänta på nästa modellgeneration?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Sällan. Nya modeller kommer varje år, och skillnaden mellan två generationer handlar oftare om högre Pa-siffror och nya appfunktioner än om hur rent det faktiskt blir. Föregångaren blir samtidigt billigare och har fler oberoende omdömen bakom sig. Vänta bara om den nya modellen tillför något du verkligen saknar, till exempel mopplyft eller navigering utan slinga."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "Hur vet jag vilken kapacitet min robotgräsklippare behöver?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Utgå från gräsmattans yta i kvadratmeter och köp med marginal. En klippare som ligger nära sin maxgräns måste gå längre pass varje dag och slits fortare. Lutning och tomtens form väger minst lika tungt som ytan, eftersom smala passager och branta slänter drar ner den verkliga kapaciteten. Är tomten öppen med fri sikt mot himlen är slingfri GPS oftast enklast."
       }
     }
   ]
@@ -46,19 +78,19 @@ const comparisons = [
   {
     title: 'Roborock Saros 10R vs Dreame X40 Ultra 2026',
     href: '/jamfor/roborock-saros-10r-vs-dreame-x40-ultra/',
-    desc: ' vs . Världens tunnaste robot (7,98 cm) och 20 000 Pa mot utfällbar sidoarm och bäst pris/prestanda. Är extra värt det?',
+    desc: 'Roborock Saros 10R mot Dreame X40 Ultra. Världens tunnaste robot (7,98 cm) och 20 000 Pa mot utfällbar sidoarm och bäst pris/prestanda. Är extra värt det?',
     tag: 'Roborock vs Dreame',
   },
   {
     title: 'Roborock Saros 10R vs Roborock S8 MaxV Ultra 2026',
     href: '/jamfor/roborock-saros-10r-vs-roborock-s8-maxv-ultra/',
-    desc: ' vs . Ny toppmodell mot beprövat flaggskepp. 7,98 cm och 20 000 Pa mot 9,65 cm och 10 000 Pa, är det värt extra?',
+    desc: 'Roborock Saros 10R mot Roborock S8 MaxV Ultra. Ny toppmodell mot beprövat flaggskepp. 7,98 cm och 20 000 Pa mot 9,65 cm och 10 000 Pa, är det värt extra?',
     tag: 'Roborock vs Roborock',
   },
   {
     title: 'Dreame L20 Ultra vs X40 Ultra 2026',
     href: '/jamfor/dreame-l20-ultra-vs-dreame-x40-ultra/',
-    desc: 'Budget vs premium inom Dreame-familjen. L20 Ultra till eller X40 Ultra till , vilken passar ditt hem?',
+    desc: 'Budget mot premium inom Dreame-familjen. L20 Ultra eller X40 Ultra, vilken passar ditt hem?',
     tag: 'Dreame vs Dreame',
   },
   {
@@ -70,7 +102,7 @@ const comparisons = [
   {
     title: 'Roborock Qrevo Master vs Dreame X40 Ultra 2026',
     href: '/jamfor/roborock-qrevo-master-vs-dreame-x40-ultra/',
-    desc: ' mot . FlexiArm och gummirulle mot utfällbar sidoarm och 12 000 Pa.',
+    desc: 'Roborock Qrevo Master mot Dreame X40 Ultra. FlexiArm och gummirulle mot utfällbar sidoarm och 12 000 Pa.',
     tag: 'Roborock vs Dreame',
   },
   {
@@ -94,7 +126,7 @@ const comparisons = [
   {
     title: 'Ecovacs X5 Omni vs Roborock S8 MaxV Ultra 2026',
     href: '/jamfor/ecovacs-deebot-x5-omni-vs-roborock-s8-maxv-ultra/',
-    desc: ' vs . Fyrkantig design och AIVI 3D mot LiDAR och 10 000 Pa. Vilket direkta flaggskepp vinner i samma prisklass?',
+    desc: 'Ecovacs X5 Omni mot Roborock S8 MaxV Ultra. Fyrkantig design och AIVI 3D mot LiDAR och 10 000 Pa. Två flaggskepp i samma klass.',
     tag: 'Ecovacs vs Roborock',
   },
   {
@@ -150,7 +182,7 @@ const comparisons = [
         answer="Börjar du från noll är märkesjämförelsen Roborock vs Dreame den bästa ingången för robotdammsugare, och Husqvarna vs Mammotion för robotgräsklippare. Vet du redan prisklass går du direkt på en modelljämförelse, till exempel Dreame L20 Ultra vs X40 Ultra. Varje jämförelse avslutas med ett tydligt köpråd för olika hemtyper."
       />
       <p class="text-base text-gray-300 max-w-3xl">
-        Roborock vs Dreame, Ecovacs vs Eufy, Mammotion vs Segway Navimow. Vi ställer de mest efterfrågade robotdammsugarna och robotgräsklipparna mot varandra med verkliga tester, specifikationsdata och priser. Varje jämförelse ger ett klart svar på vilket alternativ som är värt pengarna.
+        Roborock vs Dreame, Ecovacs vs Eufy, Mammotion vs Segway Navimow. Vi ställer de mest efterfrågade robotdammsugarna och robotgräsklipparna mot varandra med oberoende tester, specifikationsdata och priser. Varje jämförelse ger ett klart svar på vilket alternativ som är värt pengarna.
       </p>
     </div>
   </section>

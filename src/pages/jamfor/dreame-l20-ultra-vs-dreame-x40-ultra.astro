@@ -34,6 +34,22 @@ const faqItems = [
     question: 'Vilket är bättre för stora hem, L20 Ultra eller X40 Ultra?',
     answer: 'X40 Ultra har ett batteri på 6 400 mAh, L20 Ultra uppger 160 minuters batteritid. I praktiken klarar båda hem upp till ca 150 m² med laddningsstopp och fortsättning. För hem över 200 m² är X40 Ultras batterifördel märkbar, roboten behöver avbryta städningen mer sällan.',
   },
+  {
+    question: 'Skiljer sig apparna mellan Dreame L20 Ultra och X40 Ultra?',
+    answer: 'Nej, båda styrs från Dreame Home-appen och funktionerna är desamma: schemaläggning, rumsuppdelning, förbjudna zoner och städhistorik. Du får alltså inga extra inställningar genom att betala mer, hela skillnaden mellan modellerna sitter i hårdvaran. Har du kört en Dreame tidigare känner du igen dig direkt när du sätter upp den nya.',
+  },
+  {
+    question: 'Vilken av modellerna låter minst?',
+    answer: 'Ingen av dem, i praktiken. L20 Ultra anges till 65 dB och X40 Ultra till cirka 65 dB på högsta effekt, alltså samma nivå. Ljudnivån stiger på båda när sugkraften går upp på mattor, och stationen ger en kort men kraftig ljudstöt när den tömmer dammbehållaren. Bor du i lägenhet är schemaläggning mitt på dagen ett effektivare grepp än att välja modell efter decibel.',
+  },
+  {
+    question: 'Vad gör AI-kameran i X40 Ultra som L20 Ultra saknar?',
+    answer: 'AI-kameran kompletterar LiDAR-kartan med bildbaserad hinderdetektion, så X40 Ultra känner igen och kör runt föremål på golvet bättre än L20 Ultra. Var samtidigt realistisk med vad det innebär: ingen av modellerna har skydd mot husdjursavföring, till skillnad från Roborock S8 MaxV Ultra. Har du en hund eller katt som olyckar sig inomhus löser AI-kameran inte det problemet.',
+  },
+  {
+    question: 'Vilken modell passar bäst i en lägenhet?',
+    answer: 'L20 Ultra i de flesta fall. Dess 65 dB är hanterbart i en lägenhet, och 7 000 Pa räcker gott för de hårdgolv och kortluggade mattor som dominerar där. X40 Ultras batterifördel märks först i hem över 200 kvadratmeter. Har du en stor lägenhet med många vinklar och tjocka mattor blir den utfällbara sidoarmen och de 12 000 Pa mer intressanta.',
+  },
 ];
 
 const faqSchema = faqItems.map((item) => ({
@@ -71,7 +87,7 @@ export const articleMeta = {
       answer="Dreame L20 Ultra är rätt val för de flesta hem: 7 000 Pa, LiDAR-navigering, varmvattentvätt av mopparna och självtömmande station räcker för normalt städbehov. Dreame X40 Ultra motiverar sitt högre pris först när du har tjocka mattor med lång lugg eller kräver moppning ända in i hörnen via den utfällbara sidoarmen."
     />
     <p class="text-text-light mb-6 max-w-2xl">
-      Dreame L20 Ultra till eller Dreame X40 Ultra till ? Båda är starka robotdammsugare med mopp och självtömmande station, men de vänder sig till olika behov. Vi jämför dem kategori för kategori och ger dig ett tydligt svar. </p>
+      Dreame L20 Ultra eller Dreame X40 Ultra? Båda är starka robotdammsugare med mopp och självtömmande station, men de vänder sig till olika behov. Vi jämför dem kategori för kategori och ger dig ett tydligt svar. </p>
 
     <EditorialCTA products={['Dreame X40 Ultra']} />
 
@@ -129,8 +145,8 @@ export const articleMeta = {
             </tr>
             <tr class="bg-bg-alt/30">
               <td class="px-4 py-3 font-medium text-text">Bullernivå</td>
-              <td data-col="Dreame L20 Ultra" class="px-4 py-3 text-winner font-semibold">65 dB</td>
-              <td data-col="Dreame X40 Ultra" class="px-4 py-3 text-text-light">68 dB</td>
+              <td data-col="Dreame L20 Ultra" class="px-4 py-3 text-text-light">65 dB</td>
+              <td data-col="Dreame X40 Ultra" class="px-4 py-3 text-text-light">ca 65 dB (max)</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-medium text-text">Station</td>
@@ -190,7 +206,7 @@ export const articleMeta = {
             <span class="text-xs font-semibold px-2 py-0.5 rounded bg-winner/10 text-winner">X40 Ultra vinner</span>
           </div>
           <p class="text-text-light text-sm leading-relaxed">
-            X40 Ultra har ett batteri på 6 400 mAh som ger längre räckvidd per laddning. L20 Ultra uppger 160 minuter, vilket i praktiken landar på 90 till 120 minuter med aktiv moppning. Båda klarar hem upp till 120 till 150 m² med automatisk återladdning och fortsättning. För hem över 200 m² är X40 Ultras batterifördel märkbar. L20 Ultras 65 dB bullernivå är marginellt tystare än X40 Ultras. </p>
+            X40 Ultra har ett batteri på 6 400 mAh som ger längre räckvidd per laddning. L20 Ultra uppger 160 minuter, vilket i praktiken landar på 90 till 120 minuter med aktiv moppning. Båda klarar hem upp till 120 till 150 m² med automatisk återladdning och fortsättning. För hem över 200 m² är X40 Ultras batterifördel märkbar. Bullernivån skiljer dem däremot inte åt, båda ligger kring 65 dB på högsta effekt.</p>
         </div>
 
         <div class="bg-white rounded-xl border border-border p-5">

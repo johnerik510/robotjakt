@@ -37,6 +37,14 @@ const faqItems = [
     question: 'Fungerar iRobot Roomba med Google Home och Alexa?',
     answer: 'Ja, iRobot Roomba integrerar med Google Home, Amazon Alexa och Apple HomeKit. Du kan starta, stoppa och skicka Roomba till specifika rum via röststyrning. Eufy EufyHome-appen integrerar med Google Assistant och Amazon Alexa men inte Apple HomeKit. För Apple-ekosystemet: iRobot vinner.',
   },
+  {
+    question: 'Vilken ska du välja om du vill moppa golven också?',
+    answer: 'Eufy X10 Pro Omni är den mer kompletta av de två på golvvård. Den har moppfunktion som standard och en station som både tömmer och fyller på. Roomba j9+ dammsuger enbart och har ingen inbyggd moppfunktion. Har du mycket klinker, laminat eller trägolv och vill slippa moppa för hand pekar valet mot Eufy, oavsett hur mycket du gillar iRobots app.',
+  },
+  {
+    question: 'Vilken robot klarar mattor bäst, Eufy eller iRobot?',
+    answer: 'Eufy X10 Pro Omni har övertaget på djuppälsmattor tack vare 8 000 Pa. På hårda golv och vanliga mattor presterar de två jämbördigt. iRobot anger inte Pa-värden på samma sätt utan mäter prestanda annorlunda, så siffrorna går inte att jämföra rakt av, och j9+ kompenserar med borst- och luftströmdesign. Har du tjocka mattor i flera rum är Eufy det säkrare valet.',
+  },
 ];
 
 const faqSchema = faqItems.map((item) => ({
@@ -114,7 +122,7 @@ export const articleMeta = {
               { label: 'Sugstyrka', eufy: '8 000 Pa', irobot: 'ca 2 500 Pa (iRobot-mätning)', winner: 'eufy' },
               { label: 'Navigering', eufy: 'LiDAR', irobot: 'PrecisionVision + kamera', winner: 'draw' },
               { label: 'Hinderdetektering', eufy: 'LiDAR (enklare AI)', irobot: 'PrecisionVision (lärande)', winner: 'irobot' },
-              { label: 'Moppfunktion', eufy: 'Standard', irobot: 'Begränsad', winner: 'eufy' },
+              { label: 'Moppfunktion', eufy: 'Standard', irobot: 'Nej, ingen inbyggd mopp', winner: 'eufy' },
               { label: 'Automatisk tömning', eufy: 'Ja', irobot: 'Ja (j9+)', winner: 'draw' },
               { label: 'Google Home / Alexa', eufy: 'Ja', irobot: 'Ja', winner: 'draw' },
               { label: 'Apple HomeKit', eufy: 'Nej', irobot: 'Ja', winner: 'irobot' },

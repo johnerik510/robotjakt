@@ -58,7 +58,7 @@ const faqItems = [
   },
   {
     question: 'Är eufy robotdammsugare bra eller en kompromiss?',
-    answer: 'eufy X10 Pro Omni och X9 Pro är genuina premiumalternativ som konkurrerar direkt med Roborock och Dreame i samma prisklass. Tyst drift (55 dB), lång batteritid och AI Map-navigering ger ett konkurrenskraftigt paket. Kompromissen är främst kundtjänst i Sverige och en mer begränsad produktportfolio jämfört med Roborock och Dreame.',
+    answer: 'eufy X10 Pro Omni och X9 Pro är genuina premiumalternativ som konkurrerar direkt med Roborock och Dreame i samma prisklass. Lågmäld drift, lång batteritid och AI Map-navigering ger ett konkurrenskraftigt paket. Kompromissen är främst kundtjänst i Sverige och en mer begränsad produktportfolio jämfört med Roborock och Dreame.',
   },
   {
     question: 'Hur bra är AI Map-navigeringen på eufy X10 Pro Omni?',
@@ -66,7 +66,7 @@ const faqItems = [
   },
   {
     question: 'Hur tyst är eufy robotdammsugare?',
-    answer: 'eufy marknadsför sina modeller som bland de tystaste på marknaden, X10 Pro Omni uppger 55 dB i normalläge. Till jämförelse ligger de flesta konkurrenter på 60 till 65 dB. För hemmakontor, sovrum och hem med ljudkänsliga husdjur kan skillnaden vara märkbar i praktiken.',
+    answer: 'eufy marknadsför sina modeller som bland de tystaste på marknaden, men uppgifterna om exakt ljudnivå skiljer sig mellan källor, så vi anger ingen dB-siffra här förrän den kan beläggas. Ljudnivån ligger i praktiken i samma spann som konkurrerande premiummodeller. Är tyst drift avgörande för dig, jämför uppgiften på den specifika modellen hos butiken innan du beställer.',
   },
   {
     question: 'Hur länge räcker batteriet på eufy robotdammsugare?',
@@ -75,6 +75,18 @@ const faqItems = [
   {
     question: 'Var kan jag köpa eufy robotdammsugare i Sverige?',
     answer: 'eufy säljs via Amazon.se, Elgiganten och utvalda nätbutiker. Tillgängligheten i fysiska butiker är mer begränsad jämfört med Roborock och Dreame. Amazon erbjuder ofta de bästa priserna med snabb leverans och enkel returhantering.',
+  },
+  {
+    question: 'Vad skiljer eufy X10 Pro Omni från X9 Pro?',
+    answer: 'Stationen är skillnaden. Båda har AI Map-navigering, självtvättande moppar och automatisk tömning, men X10 Pro Omni fyller dessutom på moppvattnet automatiskt. På X9 Pro sköter du påfyllningen själv, och modellen ligger lägre i pris. Har du stora hårdgolvsytor och moppar ofta märks påfyllningen som ett moment i vardagen, i ett hem med mest mattor spelar den mindre roll.',
+  },
+  {
+    question: 'Vilken garanti och support får du på eufy i Sverige?',
+    answer: 'Garantin ligger på 12 till 24 månader beroende på modell och återförsäljare, så kontrollera vad som gäller innan du beställer. Supporten sköts av eufys globala kundtjänst på engelska och märket saknar ett eget servicenätverk i Norden. Ett garantiärende kan därför dra ut på tiden jämfört med märken som har svenska servicepartners. Handlar du hos en svensk återförsäljare har du åtminstone en motpart på plats att vända dig till.',
+  },
+  {
+    question: 'Var köper du reservdelar till en eufy robotdammsugare?',
+    answer: 'Enklast via samma kanal som roboten, alltså Amazon.se eller Elgiganten som är eufys huvudsakliga försäljningsvägar i Sverige. Slitdelarna är filter, sidoborste, huvudborste och moppduk. Sök alltid på det exakta modellnamnet, delar är sällan utbytbara mellan olika serier även inom samma märke. Filter och moppduk är löpande förbrukningsvaror medan borstarna byts betydligt mer sällan.',
   },
 ];
 
@@ -142,7 +154,6 @@ export const articleMeta = {
               <th class="text-left px-4 py-3 font-semibold text-text">Navigering</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Tömning</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Moppfunktion</th>
-              <th class="text-left px-4 py-3 font-semibold text-text">Ca-pris</th>
               <th class="text-left px-4 py-3 font-semibold text-text">Bäst för</th>
             </tr>
           </thead>
@@ -152,7 +163,6 @@ export const articleMeta = {
               <td class="px-4 py-3 text-text-light">AI Map</td>
               <td class="px-4 py-3 text-text-light">Auto-töm + auto-fyll mopp</td>
               <td class="px-4 py-3 text-winner font-semibold">Ja (självtvätt)</td>
-              <td class="px-4 py-3 font-semibold text-text"></td>
               <td class="px-4 py-3 text-text-light">Premium allt-i-ett</td>
             </tr>
             <tr>
@@ -160,7 +170,6 @@ export const articleMeta = {
               <td class="px-4 py-3 text-text-light">AI Map</td>
               <td class="px-4 py-3 text-text-light">Auto-töm</td>
               <td class="px-4 py-3 text-winner font-semibold">Ja (självtvätt)</td>
-              <td class="px-4 py-3 font-semibold text-text"></td>
               <td class="px-4 py-3 text-text-light">Bra kombination</td>
             </tr>
             <tr class="bg-bg-alt/50">
@@ -168,7 +177,6 @@ export const articleMeta = {
               <td class="px-4 py-3 text-text-light">Smart Dynamic Map</td>
               <td class="px-4 py-3 text-text-light">Manuell</td>
               <td class="px-4 py-3 text-text-light">Ja (enkel)</td>
-              <td class="px-4 py-3 font-semibold text-text"></td>
               <td class="px-4 py-3 text-text-light">Budget kombomoppare</td>
             </tr>
             <tr>
@@ -176,7 +184,6 @@ export const articleMeta = {
               <td class="px-4 py-3 text-text-light">SmartTrack Fusion</td>
               <td class="px-4 py-3 text-text-light">Manuell</td>
               <td class="px-4 py-3 text-text-light">Nej</td>
-              <td class="px-4 py-3 font-semibold text-text"></td>
               <td class="px-4 py-3 text-text-light">Enkel dagsstädning, budget</td>
             </tr>
           </tbody>
@@ -194,7 +201,6 @@ export const articleMeta = {
               <div><span class="text-text-lighter text-xs">Navigering</span><p class="text-text-light">{model.navigation}</p></div>
               <div><span class="text-text-lighter text-xs">Tömning</span><p class="text-text-light">{model.emptying}</p></div>
               <div><span class="text-text-lighter text-xs">Mopp</span><p class="text-text-light">{model.mop}</p></div>
-              <div><span class="text-text-lighter text-xs">Pris ca</span><p class="font-semibold text-text">{model.price}</p></div>
             </div>
             <p class="text-xs text-text-lighter mt-2">Bäst för: {model.bestFor}</p>
           </div>
@@ -213,9 +219,9 @@ export const articleMeta = {
           </p>
         </div>
         <div class="bg-white rounded-xl border border-border p-5">
-          <h3 class="font-semibold text-text mb-2">Tyst drift, 55 dB</h3>
+          <h3 class="font-semibold text-text mb-2">Lågmäld drift</h3>
           <p class="text-text-light text-sm leading-relaxed">
-            eufy uppger en bullernivå på 55 dB i normalläge på sina X-seriemodeller, ett av de lägsta i klassen. För hemmakontor, lägenheter med tunna väggar och hem med ljudkänsliga djur är den tysta driften ett konkret fördelsvärde.
+            eufy lyfter låg ljudnivå som ett av X-seriens säljargument. Uppgifterna om exakt dB-tal skiljer sig dock mellan källor, så vi anger ingen siffra förrän den kan beläggas. För hemmakontor, lägenheter med tunna väggar och hem med ljudkänsliga djur är ljudnivån ändå värd att kontrollera på den specifika modellen.
           </p>
         </div>
         <div class="bg-white rounded-xl border border-border p-5">
@@ -273,7 +279,7 @@ export const articleMeta = {
           </li>
           <li class="flex items-start gap-3 text-sm text-text-light">
             <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
-            <span><strong class="text-text">eufy vinner på tysthet:</strong> 55 dB är märkbart tystare än de flesta konkurrenter. Viktigt om du kör roboten under arbetstid i hemmakontoret eller om du har husdjur som störs av högt ljud.</span>
+            <span><strong class="text-text">Lågmäld drift:</strong> eufy profilerar X-serien på tyst gång, vilket är värt att väga in om du kör roboten under arbetstid i hemmakontoret eller har husdjur som störs av ljud. Kontrollera dB-uppgiften för just den modell du tittar på.</span>
           </li>
         </ul>
       </div>
@@ -318,9 +324,9 @@ export const articleMeta = {
           </p>
         </div>
         <div class="bg-white rounded-xl border border-border p-5">
-          <h3 class="font-semibold text-text mb-2">Vad betyder 55 dB i praktiken?</h3>
+          <h3 class="font-semibold text-text mb-2">Vad betyder ljudnivån i praktiken?</h3>
           <p class="text-text-light text-sm leading-relaxed mb-3">
-            55 dB mot 60 till 65 dB hos konkurrenterna hörs mest när du befinner dig i samma rum som roboten. Skillnaden avgör om du kan sitta kvar i soffan och prata i telefon medan den arbetar, eller om du behöver flytta dig till ett annat rum.
+            Några decibels skillnad mellan modeller hörs mest när du befinner dig i samma rum som roboten. Det avgör om du kan sitta kvar i soffan och prata i telefon medan den arbetar, eller om du behöver flytta dig till ett annat rum. Skillnaden mellan premiummodellerna är sällan så stor att den ensam bör avgöra köpet.
           </p>
           <p class="text-text-light text-sm leading-relaxed">
             Siffran gäller normalläget. Så snart roboten går upp i högre sugläge på en matta stiger ljudnivån, oavsett märke. Vill du ha tysta körningar i praktiken är det värt att schemalägga hårdgolvsytorna på dagtid och mattrummen när ingen är hemma.
