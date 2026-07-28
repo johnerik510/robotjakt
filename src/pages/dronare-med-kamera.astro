@@ -124,7 +124,7 @@ const breadcrumbs = [
 const itemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "Bästa drönare med kamera 2026",
+  "name": "Drönare med kamera 2026, rankade efter bildkvalitet",
   "itemListElement": products.map((p, i) => ({
     "@type": "ListItem",
     "position": i + 1,
@@ -133,8 +133,8 @@ const itemListSchema = {
   })),
 };
 export const articleMeta = {
-  title: "Bästa drönare med kamera 2026: jämförda och rankade",
-  description: "Vi jämför de bästa kameradrönarna 2026. DJI Mini 4 Pro, Air 3 och fler jämförs på bildkvalitet, flygtid och pris. Hitta rätt kameradrönare för dina behov.",
+  title: "Drönare med kamera 2026: sensor, telekamera och 4K-video",
+  description: "Vi jämför kamerorna i DJI Air 3S, Mini 5 Pro och Mini 4 Pro: sensorstorlek, telekamera, 4K HDR och dynamiskt omfång. Så väljer du efter bildkvalitet.",
   publishDate: "2026-03-15",
   category: "Topplista",
   image: "/images/dji-air-3s.webp",
@@ -143,33 +143,33 @@ export const articleMeta = {
 ---
 
 <BaseLayout
-  title="Bästa drönare med kamera 2026: jämförda och rankade"
-  description="Vi jämför de bästa kameradrönarna 2026. DJI Mini 4 Pro, Air 3 och fler jämförs på bildkvalitet, flygtid och pris. Hitta rätt kameradrönare för dina behov."
+  title="Drönare med kamera 2026: sensor, telekamera och 4K-video"
+  description="Vi jämför kamerorna i DJI Air 3S, Mini 5 Pro och Mini 4 Pro: sensorstorlek, telekamera, 4K HDR och dynamiskt omfång. Så väljer du efter bildkvalitet."
   ogImage="/images/dji-air-3s.webp"
   article={{ datePublished: "2026-03-15", dateModified: "2026-07-27", image: "/images/dji-air-3s.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight mt-2">
-      Bästa Drönare med Kamera 2026
+      Drönare med kamera 2026: så skiljer sig bildkvaliteten
     </h1>
     <AuthorByline datePublished="2026-03-15" dateModified="2026-07-27" />
 
     <AnswerBox
-      question="Snabbt svar: Vilken drönare med kamera är bäst 2026?"
-      answer="DJI Air 3S är vår bästa drönare med kamera 2026. Den har dubbla kameror med 1-tums vidvinkel och 70 mm tele, filmar 4K HDR med 14 steg dynamiskt omfång och flyger 45 minuter. Behöver du hålla dig under 250 g är DJI Mini 5 Pro bäst."
+      question="Snabbt svar: Vilken drönare har bäst kamera 2026?"
+      answer="DJI Air 3S har bäst kamera 2026. Den har dubbla kameror med 1-tums vidvinkel och 70 mm tele, filmar 4K HDR med 14 steg dynamiskt omfång och flyger 45 minuter. Behöver du hålla dig under 250 g är DJI Mini 5 Pro med sin 1-tums sensor valet."
     />
 
     <MoneyFeatured {...products[0]} />
 
-    <MoneyComparisonTable products={products} title="Jämförelsetabell - bästa drönare med kamera 2026" />
+    <MoneyComparisonTable products={products} title="Jämförelsetabell - kameradrönare 2026, rankade efter kamera" />
 
     <MoneyTOC />
 
     <section class="mb-10">
-      <h2 class="font-heading text-2xl font-bold text-text mb-4">Bästa drönare med kamera 2026</h2>
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Kameradrönare 2026: sensor och optik jämförda</h2>
       <p class="text-text-light leading-relaxed mb-6">
-        Alla moderna DJI-drönare har bra kameror, men skillnaden i sensorstorlek och kameradesign är stor. En 1-tums sensor ger märkbar skillnad i bildkvalitet jämfört med mindre sensorer, framförallt i varierande ljus och för video med HDR.
+        DJI Air 3S har den starkaste kameran av kameradrönarna 2026, följd av DJI Mini 5 Pro och DJI Mini 4 Pro. Skillnaden sitter i sensorstorlek och kameradesign: en 1-tums sensor samlar mer ljus per bildpunkt än en mindre sensor, vilket syns tydligast i varierande ljus och i video med HDR. Vill du i stället väga in vikt, regler och flygtid mot varandra hittar du den bredare rangordningen i vår topplista över <a href="/dronare/" class="text-accent underline">bästa drönare</a>.
       </p>
       <div class="space-y-6">
         {products.map((p, i) => (
@@ -183,6 +183,9 @@ export const articleMeta = {
 
     <section class="mb-10">
       <h2 class="font-heading text-2xl font-bold text-text mb-4">Vad ska du tänka på när du väljer kameradrönare?</h2>
+      <p class="text-text-light leading-relaxed mb-6">
+        Sensorstorleken avgör mest, därefter om drönaren har en telekamera att växla till och hur brett dynamiskt omfång den klarar. Vikten kommer in först när du väljer mellan två 1-tums sensorer: DJI Air 3S väger 724 g och kräver A1/A3-kompetensbevis, medan DJI Mini 5 Pro håller sig under 250 g.
+      </p>
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Sensorstorlek</h3>
       <p class="text-text-light leading-relaxed mb-4">
@@ -226,7 +229,7 @@ export const articleMeta = {
         Räkna alltid med mindre än den angivna siffran. Vind, kyla och mycket hovrande drar batteri snabbare, och du vill landa med marginal kvar. En längre grundflygtid ger dig helt enkelt större felmarginal.
       </p>
       <p class="text-text-light leading-relaxed mb-4">
-        Ska du filma på en plats du inte kan komma tillbaka till väger flygtid och extra batterier tyngre än en sista procent bildkvalitet. Är låg vikt viktigare för dig hittar du fler alternativ i vår guide till <a href="/dronare-for-nyborjare/" class="text-accent underline">bästa drönare för nybörjare</a>.
+        Ska du filma på en plats du inte kan komma tillbaka till väger flygtid och extra batterier tyngre än en sista procent bildkvalitet. Är låg vikt viktigare för dig hittar du fler alternativ i vår guide till <a href="/dronare-for-nyborjare/" class="text-accent underline">drönare för nybörjare</a>.
       </p>
     </section>
 
@@ -234,7 +237,7 @@ export const articleMeta = {
       <h2 class="font-heading text-lg font-bold text-text mb-3">Fler drönare-guider</h2>
       <ul class="space-y-2 text-sm">
         <li><a href="/dronare/" class="text-accent underline">Bästa drönaren 2026, komplett topplista</a></li>
-        <li><a href="/dronare-for-nyborjare/" class="text-accent underline">Bästa drönare för nybörjare</a></li>
+        <li><a href="/dronare-for-nyborjare/" class="text-accent underline">Drönare för nybörjare, regler och första flygningen</a></li>
         <li><a href="/dji-air-3s/" class="text-accent underline">DJI Air 3S fullständig recension</a></li>
         <li><a href="/dji-mini-5-pro/" class="text-accent underline">DJI Mini 5 Pro fullständig recension</a></li>
       </ul>

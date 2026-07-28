@@ -81,7 +81,7 @@ const faqItems = [
   },
   {
     question: 'Vad betyder siffrorna i Navimows modellnamn?',
-    answer: 'I H-serien anger siffran den maximala klippytan i kvadratmeter. H500E är alltså gjord för upp till 500 m², H800E för upp till 800 m² och i105E för 105 m². Det gör serien ovanligt lätt att läsa av: mät gräsytan, lägg på marginal för hinder och smala passager, och välj modellen vars siffra ligger över resultatet. i-serien följer samma logik, där i210E tar 1 000 m² och i220E 2 000 m².',
+    answer: 'I H-serien anger siffran den maximala klippytan i kvadratmeter: H500E är gjord för upp till 500 m² och H800E för upp till 800 m². I i-serien fungerar det inte likadant, där är siffran en modellbeteckning och inte en ytangivelse. i105E tar 500 m², i108E 800 m², i210E 1 000 m² och i220E 2 000 m², så där måste du läsa specifikationen i stället för att räkna på namnet. Mät gräsytan, lägg på marginal för hinder och smala passager, och välj en modell vars angivna yta ligger över resultatet.',
   },
   {
     question: 'Var ska RTK-antennen sitta?',
@@ -106,8 +106,8 @@ const faqSchema = faqItems.map((item) => ({
   },
 }));
 export const articleMeta = {
-  title: "Bästa Segway Navimow robotgräsklippare 2026: guide",
-  description: "Komplett guide till Segway Navimow 2026. Vi jämför H500E, H800E och i105E. GPS-styrda gräsrobotar utan slinga. Hitta rätt modell för din trädgård.",
+  title: "Segway Navimow robotgräsklippare 2026: välj rätt modell",
+  description: "Vilken Segway Navimow ska du välja 2026? Vi jämför hela serien utan slinga efter tomtstorlek, navigering och uppkoppling, så hittar du rätt modell.",
   publishDate: "2026-05-16",
   category: "Topplista",
   image: "/images/segway-navimow-h500e.webp",
@@ -116,16 +116,16 @@ export const articleMeta = {
 ---
 
 <BaseLayout
-  title="Bästa Segway Navimow robotgräsklippare 2026: guide"
-  description="Komplett guide till Segway Navimow 2026. Vi jämför H500E, H800E och i105E. GPS-styrda gräsrobotar utan slinga. Hitta rätt modell för din trädgård."
-  article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/segway-navimow-h500e.webp" }}
+  title="Segway Navimow robotgräsklippare 2026: välj rätt modell"
+  description="Vilken Segway Navimow ska du välja 2026? Vi jämför hela serien utan slinga efter tomtstorlek, navigering och uppkoppling, så hittar du rätt modell."
+  article={{ datePublished: "2026-05-16", dateModified: "2026-07-28", image: "/images/segway-navimow-h500e.webp" }}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <Breadcrumbs items={breadcrumbs} />
-    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-27" />
+    <AuthorByline datePublished="2026-05-16" dateModified="2026-07-28" />
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
-      Segway Navimow robotgräsklippare 2026, Vision Fence utan slinga
+      Segway Navimow robotgräsklippare 2026, vilken modell ska du välja?
     </h1>
 
     <AnswerBox
@@ -133,7 +133,7 @@ export const articleMeta = {
       answer="Under 500 m² räcker i105E, seriens billigaste utan-slinga-modell, och H500E om du vill ha 4G och RTK-antenn från start. Mellan 500 och 800 m² tar H800E över, den större av de två H-modellerna, med längre klipptid per pass. Har du mer än 800 m² gräs räcker ingen H-modell, då får du gå upp till Segways i-serie eller titta på Mammotion och Husqvarna."
     />
     <p class="text-text-light mb-6 max-w-2xl">
-      Segway Navimow klipper utan perimeterkabel med Vision Fence. Den här sidan ställer hela serien mot varandra så att du hittar rätt storleksklass. Söker du testet av en enskild modell ligger det på våra egna sidor för <a href="/segway-navimow-h500e/" class="text-accent underline">Segway Navimow H500E</a>, <a href="/segway-navimow-h800e/" class="text-accent underline">Segway Navimow H800E</a> och <a href="/segway-navimow-i105e/" class="text-accent underline">Segway Navimow i105E</a>.
+      Hela Navimow-serien klipper utan perimeterkabel med Vision Fence, så det som skiljer modellerna åt är framför allt hur stor gräsyta de klarar. Den här sidan jämför dem storleksklass för storleksklass och visar vilken som räcker till din tomt. Vill du läsa hela testet av en enskild modell ligger det på våra egna sidor för <a href="/segway-navimow-h500e/" class="text-accent underline">Segway Navimow H500E</a>, <a href="/segway-navimow-h800e/" class="text-accent underline">Segway Navimow H800E</a> och <a href="/segway-navimow-i105e/" class="text-accent underline">Segway Navimow i105E</a>.
     </p>
 
     <EditorialCTA products={['Segway Navimow i105E']} />
@@ -144,7 +144,7 @@ export const articleMeta = {
         Segway Navimow är kända för sin Vision Fence-teknik som kombinerar kameradetektion med RTK GPS (EFLS). Jämfört med konkurrenterna Mammotion LUBA och Husqvarna EPOS ligger Navimow-serien lägre i pris, och i105E är den billigaste vägen in i utan-slinga-segmentet.
       </p>
       <p class="text-text-light leading-relaxed">
-        Installationen tar 20 till 40 minuter: montera RTK-antennen (H-serien), lägg till laddstationen och kartlägg trädgårdens zoner i appen. Ingen kabel grävs ner, inga stift sätts i marken. Navimow-appen (iOS och Android) stödjer schemaläggning, zonhantering och fjärrstyrning via 4G.
+        Installationen tar 20 till 40 minuter: montera RTK-antennen (H-serien), lägg till laddstationen och kartlägg trädgårdens zoner i appen. Ingen kabel grävs ner, inga stift sätts i marken. Navimow-appen (iOS och Android) stödjer schemaläggning, zonhantering och fjärrstyrning via 4G. Hur tekniken beter sig i praktiken går vi igenom i testet av <a href="/segway-navimow-h500e/" class="text-accent underline">Segway Navimow H500E</a>, instegsmodellen i H-serien.
       </p>
     </section>
 

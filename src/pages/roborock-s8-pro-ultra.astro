@@ -2,7 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AuthorByline from '../components/AuthorByline.astro';
 import FAQ from '../components/FAQ.astro';
-import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import AnswerBox from '../components/AnswerBox.astro';
 
@@ -69,8 +68,8 @@ const faqSchema = faqItems.map((item) => ({
   },
 }));
 export const articleMeta = {
-  title: "Roborock S8 Pro Ultra recension 2026: föregångaren test",
-  description: "Roborock S8 Pro Ultra testad: 6 000 Pa sugkraft, dubbla gummirullar och självtömmande station med varmvattentvätt. Se betyg, pris och hur den jämförs 2026.",
+  title: "Roborock S8 Pro Ultra recension 2026: FlexiArm, Sonic-mopp",
+  description: "Roborock S8 Pro Ultra recension: FlexiArm-sidborsten, Sonic-moppen med 3 000 stroke per minut och 6 000 Pa sugkraft. Betyg 4,3 av 5 och vem den passar.",
   publishDate: "2026-05-16",
   category: "Recension",
   image: "/images/roborock-s8-pro-ultra.webp",
@@ -79,8 +78,8 @@ export const articleMeta = {
 ---
 
 <BaseLayout
-  title="Roborock S8 Pro Ultra recension 2026: föregångaren test"
-  description="Roborock S8 Pro Ultra testad: 6 000 Pa sugkraft, dubbla gummirullar och självtömmande station med varmvattentvätt. Se betyg, pris och hur den jämförs 2026."
+  title="Roborock S8 Pro Ultra recension 2026: FlexiArm, Sonic-mopp"
+  description="Roborock S8 Pro Ultra recension: FlexiArm-sidborsten, Sonic-moppen med 3 000 stroke per minut och 6 000 Pa sugkraft. Betyg 4,3 av 5 och vem den passar."
   ogImage="/images/roborock-s8-pro-ultra.webp"
   article={{ datePublished: "2026-05-16", dateModified: "2026-07-27", image: "/images/roborock-s8-pro-ultra.webp" }}
 >
@@ -90,13 +89,17 @@ export const articleMeta = {
 <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-07-27</p>
 
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
-      Roborock S8 Pro Ultra Recension 2026
+      Roborock S8 Pro Ultra recension 2026: FlexiArm och Sonic-moppning
     </h1>
 
     <AnswerBox
       question="Snabbt svar: Är Roborock S8 Pro Ultra fortfarande värd att köpa?"
-      answer="Ja, om du klarar dig utan AI-kamera. FlexiArm-sidborsten fälls ut mot lister och hörn, de dubbla gummirullarna trasslar inte av hår och Sonic-moppen vibrerar 3 000 gånger per minut. Sugkraften stannar på 6 000 Pa. Vi ger 4,3 av 5 och kallar den ett prisvärt alternativ."
+      answer="Ja, om FlexiArm och Sonic-moppning väger tyngre än kamerabaserad hinderdetektering. FlexiArm-sidborsten fälls ut mot lister och hörn, de dubbla gummirullarna trasslar inte av hår och moppmodulen vibrerar 3 000 gånger per minut. Sugkraften stannar på 6 000 Pa. Vi ger 4,3 av 5."
     />
+
+    <p class="text-text-light text-base leading-relaxed mb-6">
+      Roborock S8 Pro Ultra är modellen som bygger sitt städresultat på mekanik i stället för kamera: FlexiArm-sidborsten fälls ut mot lister och hörn, Sonic-moppen vibrerar 3 000 gånger per minut och stationen sköter dammtömning, mopptvätt och vattenpåfyllning. Kamerabaserad hinderdetektering saknas helt, den funktionen sitter i <a href="/roborock-s8-maxv-ultra/" class="text-accent underline">Roborock S8 MaxV Ultra</a>. Här går vi igenom vad de 6 000 Pa, mopplyftet på 5 mm och den automatiska stationen faktiskt klarar i vardagen.
+    </p>
 
     <!-- Verdict box -->
     <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
@@ -120,25 +123,9 @@ export const articleMeta = {
       </div>
     </div>
 
-    <!-- CTA above fold -->
-    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
-      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <div>
-          <p class="text-sm text-text-light">Pris varierar, jämför alltid mellan butiker</p>
-        </div>
-        <div class="flex flex-col sm:flex-row gap-3">
-          <a
-            href="https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66015&url=http://www.kjell.com/se/produkter/hem-fritid/stadning-rengoring/robotdammsugare/roborock-robotdammsugare/roborock-s8-maxv-ultra-helautomatisk-robotdammsugare-vit-p66015"
-            rel="nofollow sponsored noopener"
-            target="_blank"
-            class="inline-flex items-center justify-center bg-cta hover:bg-cta/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm min-h-[44px]"
-          >
-            Se Roborock S8 MaxV Ultra hos Kjell
-            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-          </a>
-        </div>
-      </div>
-    </div>
+    <!-- Ingen affiliate-CTA: S8 Pro Ultra saknar verifierad affiliatelänk i feed och verified-links.
+         Tidigare CTA pekade på Roborock S8 MaxV Ultra hos Kjell, alltså fel produkt. Borttagen 2026-07-28.
+         Lägg tillbaka en CTA först när en verifierad tracker-URL för S8 Pro Ultra finns. -->
 
     <!-- Vårt test -->
     <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
@@ -251,7 +238,7 @@ export const articleMeta = {
         FlexiArm-armen måste kunna röra sig fritt, så plocka bort hårstrån som lindat sig kring fästet varannan vecka. Gummirullarna lyfter du ur och skjuter av trasslet med handen, de behöver sällan sax. Torka även av rullhuset, där bygger fint damm upp friktion mot axeltapparna.
       </p>
       <p class="text-text-light leading-relaxed mb-6">
-        Poängen med FlexiArm är att borsten bara fälls ut när roboten känner igen en vägg eller ett hörn, och drar in sig i övrigt så att skräpet knuffas inåt mot sugöppningen i stället för utåt i rummet. Går armen trögt slutar den fällas ut, och det händer tyst: roboten larmar inte, du ser det bara som att lister och hörn börjar se dammiga ut igen. Originalborstar, filter och moppdukar finns bland <a href="/reservdelar/roborock-s8-serien/" class="text-accent underline">reservdelar till Roborock S8-serien</a>.
+        Poängen med FlexiArm är att borsten bara fälls ut när roboten känner igen en vägg eller ett hörn, och drar in sig i övrigt så att skräpet knuffas inåt mot sugöppningen i stället för utåt i rummet. Går armen trögt slutar den fällas ut, och det händer tyst: roboten larmar inte, du ser det bara som att lister och hörn börjar se dammiga ut igen. Originalborstar, filter och moppdukar delas med resten av serien och finns samlade under <a href="/reservdelar/roborock-s8-serien/" class="text-accent underline">Roborock S8 reservdelar</a>.
       </p>
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Vilka mattor klarar S8 Pro Ultra utan att bli fuktiga?</h3>
@@ -277,38 +264,42 @@ export const articleMeta = {
     </section>
   </div>
 
-  <StickyCTA
-    text="Bra pris hos Kjell"
-    url="https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66015&url=http://www.kjell.com/se/produkter/hem-fritid/stadning-rengoring/robotdammsugare/roborock-robotdammsugare/roborock-s8-maxv-ultra-helautomatisk-robotdammsugare-vit-p66015"
-  />
+  <!-- Ingen StickyCTA: pekade på Roborock S8 MaxV Ultra hos Kjell, fel produkt för den här sidan.
+       Återinför när en verifierad tracker-URL för S8 Pro Ultra finns. -->
 
+  <!-- Product utan Offer: sidan har ingen verifierad tracker och darmed inget
+       verifierat pris. Product + review + aggregateRating ger Product snippet
+       (recensionsstjarnor) utan att krava prisuppgift, enligt nätverkets regel
+       för prislösa sidor. Lägg tillbaka Offer först om en verifierad
+       affiliatelänk med pris kommer på plats. -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "Review",
-    "itemReviewed": {
-      "@type": "Product",
-      "name": "Roborock S8 Pro Ultra",
-      "image": "https://robotjakt.se/images/roborock-s8-pro-ultra.webp",
-      "brand": { "@type": "Brand", "name": "Roborock" },
-      "category": "Robotdammsugare",
-      "description": "Roborock S8 Pro Ultra med FlexiArm sidborste, dubbla gummirullar, Sonic moppning och fullautomatisk station.",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "SEK",
-        "price": "7490",
-        "availability": "https://schema.org/InStock",
-      }
-    },
-    "reviewRating": {
-      "@type": "Rating",
+    "@type": "Product",
+    "name": "Roborock S8 Pro Ultra",
+    "image": "https://robotjakt.se/images/roborock-s8-pro-ultra.webp",
+    "brand": { "@type": "Brand", "name": "Roborock" },
+    "category": "Robotdammsugare",
+    "description": "Roborock S8 Pro Ultra med FlexiArm sidborste, dubbla gummirullar, Sonic moppning och fullautomatisk station.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
       "ratingValue": "4.3",
+      "reviewCount": "1",
       "bestRating": "5",
       "worstRating": "1"
     },
-    "author": { "@id": "https://robotjakt.se/#axel" },
-    "datePublished": "2026-04-05",
-    "reviewBody": "Roborock S8 Pro Ultra är en välbeprövad premiumrobot med FlexiArm sidborste och dubbla gummirullar. Prisvärt alternativ till S8 MaxV Ultra för hem utan behov av AI-kamera.",
-    "publisher": { "@id": "https://robotjakt.se/#organization" }
+    "review": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "4.3",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "author": { "@id": "https://robotjakt.se/#axel" },
+      "datePublished": "2026-04-05",
+      "reviewBody": "Roborock S8 Pro Ultra är en välbeprövad premiumrobot med FlexiArm sidborste och dubbla gummirullar. Prisvärt alternativ till S8 MaxV Ultra för hem utan behov av AI-kamera.",
+      "publisher": { "@id": "https://robotjakt.se/#organization" }
+    }
   })} />
 
 <style>

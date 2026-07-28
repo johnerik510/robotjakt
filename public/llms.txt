@@ -1,11 +1,11 @@
 # Robotjakt
 
-> Bästa robotdammsugare 2026: 16 modeller rankade. Dreame X50 Ultra vinner. Robotgräsklippare, poolrobotar och fönsterputsrobotar jämförda.
+> Robotjakt jämför 31 robotar i fyra kategorier: robotdammsugare, robotgräsklippare, poolrobotar och drönare. Oberoende rankning med nackdelarna utskrivna.
 
 Startsida: https://robotjakt.se/
 
 ## Reservdelar & tillbehör till robotar
-- [Reservdelar till robotar, filter, borstar och knivar](https://robotjakt.se/reservdelar/): Hitta rätt reservdelar och tillbehör till din robot. HEPA-filter, borstar och knivar till Roborock, Dreame, Ecovacs och Husqvarna Automower. Köp via Amazon.
+- [Reservdelar till robotar, filter, borstar och knivar](https://robotjakt.se/reservdelar/): Hitta rätt reservdelar och tillbehör till din robot. HEPA-filter, borstar och knivar till Roborock, Dreame, Ecovacs och Husqvarna Automower. Köp via Kjell.
 - [Reservborstar till robotdammsugare 2026: guide och köp](https://robotjakt.se/reservdelar/borstar/): Köpguide till reservborstar för robotdammsugare 2026. Huvudborstar, sidoborstar och gummirullar. Se byte-intervall, kompatibilitet och bästa priser.
 - [Dreame reservdelar 2026: filter, borstar och moppar till alla modeller](https://robotjakt.se/reservdelar/dreame/): Reservdelar till Dreame robotdammsugare 2026. Filter, borstar och moppar till X40 Ultra, L20 Ultra och fler. Se kompatibilitet, byte-intervall och pris.
 - [Reservdelar Ecovacs Deebot 2026: filter och borstar](https://robotjakt.se/reservdelar/ecovacs/): Reservdelar till Ecovacs Deebot 2026. Filter, borstar och moppar till X5 Omni, T30S Pro och fler. Se kompatibilitet, byte-intervall och pris i Sverige.
@@ -60,7 +60,7 @@ Startsida: https://robotjakt.se/
 - [DJI Air 3S recension 2026: avancerad kameradrönare](https://robotjakt.se/dji-air-3s/): DJI Air 3S testad: avancerad kameradrönare med Hasselblad-kamera och 46 min flygtid. Se bildkvalitet, hinderundvikning och pris Sverige 2026.
 - [DJI Mini 5 Pro recension 2026: kompakt kameradrönare](https://robotjakt.se/dji-mini-5-pro/): DJI Mini 5 Pro testad: kompakt under 249g med 4K-kamera och hinderundvikning. Se bildkvalitet, flygtid, vilka begränsningar viktgränsen ger och pris Sverige.
 - [Dolphin E30 recension 2026: poolrobot för 8 m pool](https://robotjakt.se/dolphin-e30/): Dolphin E30 testad: enkel poolrobot för pooler upp till 8 m. Se rengöringskapacitet, filtreringsresultat, kabelhantering och pris i Sverige 2026.
-- [Dolphin Nautilus CC Plus recension 2026: poolrobot](https://robotjakt.se/dolphin-nautilus-cc-plus/): Dolphin Nautilus CC Plus testad: populär poolrobot för 12 m pool med Wi-Fi-styrning. Se rengöringsresultat, filtreringskapacitet och pris Sverige.
+- [Dolphin Nautilus CC Plus recension 2026: poolrobot](https://robotjakt.se/dolphin-nautilus-cc-plus/): Dolphin Nautilus CC Plus testad: populär poolrobot för 12 m pool med veckotimer. Se rengöringsresultat, filtreringskapacitet och pris Sverige.
 - [Dolphin S200 recension 2026: poolrobot för 10 m pool](https://robotjakt.se/dolphin-s200/): Dolphin S200 testad: poolrobot med CleverClean-navigering för 10 m. Se rengöringskapacitet, filtreringsresultat, hantering och pris i Sverige.
 - [Dolphin Sigma recension 2026: premium-poolrobot testad](https://robotjakt.se/dolphin-sigma/): Dolphin Sigma testad: avancerad poolrobot med aktivt borstningssystem. Se rengöringsresultat, navigering, smart app-styrning och pris i Sverige.
 - [Dreame D10s Pro recension 2026: enkel robot med mopp](https://robotjakt.se/dreame-d10s-pro/): Dreame D10s Pro testad: budget-robotdammsugare med LiDAR och mopp. Se sugkraft, rengöringsresultat och pris i Sverige. Bra köp i ingångsklassen 2026?
@@ -68,6 +68,7 @@ Startsida: https://robotjakt.se/
 - [Dreame L10s Pro Ultra Heat recension 2026: test och pris](https://robotjakt.se/dreame-l10s-pro-ultra-heat/): Dreame L10s Pro Ultra Heat testad: 75°C varmvattenmoppning, 7 000 Pa och helautomatisk station. Se betyg, pris och jämförelse med L20 Ultra 2026.
 - [Dreame L10s Ultra Gen 2 recension 2026: värd köpet?](https://robotjakt.se/dreame-l10s-ultra-gen2/): Dreame L10s Ultra Gen 2 testad: robotdammsugare med mopp och självtömmande station. Bäst i mellanklass? Se pris, specifikationer och jämförelse med L20 Ultra.
 - [Dreame L20 Ultra recension 2026: bäst i mellanklass?](https://robotjakt.se/dreame-l20-ultra/): Dreame L20 Ultra testad: 7 000 Pa, roterande mopp med varmvattentvätt och självtömmande station. Prisvärt alternativ till X40 Ultra. Se pris och betyg.
+- [Dreame robotgräsklippare 2026: A1 Pro, A2 och A3 AWD jämförda](https://robotjakt.se/dreame-robotgrasklippare/): Dreames fyra robotgräsklippare jämförda på klippyta, lutning, klippbredd och navigering. Vi går igenom A1 Pro, A2, A3 AWD 1000 och A3 AWD Pro.
 - [Dreame vs Ecovacs 2026: vilken robotdammsugare vinner?](https://robotjakt.se/dreame-vs-ecovacs/): Dreame eller Ecovacs? Vi jämför AI-navigering, sugkraft, moppning och pris. Tydlig vinnare per kategori med konkreta rekommendationer för ditt hem.
 - [Dreame vs iRobot 2026: vilken robotdammsugare vinner?](https://robotjakt.se/dreame-vs-irobot/): Dreame eller iRobot Roomba? Vi jämför navigering, sugkraft, mopp och pris. Klara rekommendationer per budget och städbehov. Se hela analysen 2026.
 - [Dreame W10 Pro recension 2026: golvtvätt-robot testad](https://robotjakt.se/dreame-w10-pro/): Dreame W10 Pro testad: kombinerar dammsugning och moppning i ett. Se hur den presterar på hårda golv, pris i Sverige och jämförelse med konkurrenterna.
@@ -116,11 +117,11 @@ Startsida: https://robotjakt.se/
 - [iRobot Roomba j9+ recension 2026: smart dammsugare](https://robotjakt.se/irobot-roomba-j9-plus/): iRobot Roomba j9+ testad: smartaste Roomba med Dirt Detective-navigering och självtömning. Se prestanda, app-funktioner och pris i Sverige 2026.
 - [Köpguide poolrobot 2026: hitta rätt robot för din pool](https://robotjakt.se/kopguide-poolrobot/): Köpguide till poolrobotar 2026. Vi går igenom poolttyp, filtreringseffektivitet, kabelhantering och pris. Hitta rätt poolrobot för din pool.
 - [Köpguide robotdammsugare 2026: hitta rätt robot för dig](https://robotjakt.se/kopguide-robotdammsugare/): Komplett köpguide till robotdammsugare 2026. Vi förklarar sugkraft, navigering, moppning och stationer. Hitta rätt robot för ditt hem och budget.
+- [Mammotion Luba 2 AWD 1000H recension 2026 och test](https://robotjakt.se/mammotion-luba-2-awd-1000h/): Mammotion Luba 2 AWD 1000H testad: GPS-styrd gräsklippare utan slinga. Se klippprestanda, laddningstid, app-styrning och pris i Sverige. Värd pengarna?
 - [Mammotion Luba 2 AWD 5000X recension 2026 och test](https://robotjakt.se/mammotion-luba-2-awd-5000x/): Mammotion Luba 2 AWD 5000X testad: fyrhjulsdriven GPS-gräsrobot för 5 000 m² och branta lutningar. Se prestanda, app-styrning och pris Sverige.
-- [Mammotion Luba 2 AWO 1000H recension 2026 och test](https://robotjakt.se/mammotion-luba-2-awo-1000h/): Mammotion Luba 2 AWO 1000H testad: GPS-styrd gräsklippare utan slinga. Se klippprestanda, laddningstid, app-styrning och pris i Sverige. Värd pengarna?
-- [Mammotion Luba AWO 3000 vs Segway Navimow H800E 2026](https://robotjakt.se/mammotion-luba-awo-3000-vs-segway-navimow-h800e/): Mammotion Luba AWO 3000 eller Segway Navimow H800E? Vi jämför GPS-precision, klippprestanda, app och pris. Klart svar för trädgårdar utan slinga.
-- [Mammotion Luba AWO 3000 recension 2026: GPS-gräsrobot](https://robotjakt.se/mammotion-luba-awo-3000/): Mammotion Luba AWO 3000 testad: GPS-styrd robotgräsklippare utan slinga. Se hur den presterar, vilka trädgårdar den passar och pris i Sverige.
-- [Vilken Mammotion ska du välja? LUBA AWO 3000 för de flesta](https://robotjakt.se/mammotion-robotgrasklippare/): Tre LUBA-modeller, tre tomtstorlekar: AWO 1000H upp till 1 000 m², AWO 3000 upp till 3 000 m² och AWD 5000X upp till 5 000 m². Alla utan slinga med RTK GPS.
+- [Mammotion Luba AWD 3000 vs Segway Navimow H800E 2026](https://robotjakt.se/mammotion-luba-awd-3000-vs-segway-navimow-h800e/): Mammotion Luba AWD 3000 eller Segway Navimow H800E? Vi jämför GPS-precision, klippprestanda, app och pris. Klart svar för trädgårdar utan slinga.
+- [Mammotion Luba AWD 3000 recension 2026: GPS-gräsrobot](https://robotjakt.se/mammotion-luba-awd-3000/): Mammotion Luba AWD 3000 testad: GPS-styrd robotgräsklippare utan slinga. Se hur den presterar, vilka trädgårdar den passar och pris i Sverige.
+- [Vilken Mammotion ska du välja? LUBA AWD 3000 för de flesta](https://robotjakt.se/mammotion-robotgrasklippare/): Tre LUBA-modeller, tre tomtstorlekar: AWD 1000H upp till 1 000 m², AWD 3000 upp till 3 000 m² och AWD 5000X upp till 5 000 m². Alla utan slinga med RTK GPS.
 - [Mammotion Luba vs Gardena Sileno 2026: GPS eller slinga](https://robotjakt.se/mammotion-vs-gardena/): Mammotion Luba eller Gardena Sileno? GPS kontra slingteknik, pris och installation jämförs. Tydlig rekommendation för olika trädgårdsstorlekar.
 - [Mammotion vs Segway Navimow robotgräsklippare 2026](https://robotjakt.se/mammotion-vs-segway-navimow/): Mammotion Luba eller Segway Navimow? Vi jämför GPS-navigering, klippprestanda, appstyrning och pris. Klart svar för trädgårdar utan slinga 2026.
 - [McCulloch ROB R600 recension 2026: budget-robot testad](https://robotjakt.se/mcculloch-rob-r600/): McCulloch ROB R600 testad: enkel slingbaserad robotgräsklippare för trädgårdar upp till 600 m². Se prestanda, för- och nackdelar och pris Sverige.
@@ -167,7 +168,7 @@ Startsida: https://robotjakt.se/
 - [Om Robotjakt.se: oberoende robottest och recensioner](https://robotjakt.se/om-oss/): Vi är Robotjakt.se, oberoende testare av robotdammsugare, robotgräsklippare och poolrobotar sedan 2024. Läs om hur Vi jämför och vad vi värderar.
 - [Axel Jönemyr, redaktören bakom Robotjakt.se](https://robotjakt.se/om-redaktionen/): Axel Jönemyr är redaktör för Robotjakt. Läs om hur han jämför robotdammsugare och robotgräsklippare utifrån navigering, sugkraft, räckvidd, tester och priser.
 - [Redaktionell policy: oberoende och transparent testning](https://robotjakt.se/redaktionell-policy/): Robotjakt.se redaktionella policy. Vi förklarar hur vi väljer produkter att testa, hur vi hanterar affiliatelänkar och hur vi säkrar objektiv testning.
-- [Så jämför Robotjakt.se robotar: vår metod 2026](https://robotjakt.se/sa-testar-vi/): Så jämför vi robotdammsugare, gräsrobotar och poolrobotar på Robotjakt.se. Transparent metod baserad på specifikationer, oberoende tester och objektiva bedömningskriterier.
+- [Så jämför Robotjakt.se robotar: vår metod 2026](https://robotjakt.se/sa-testar-vi/): Så jämför vi robotdammsugare, robotgräsklippare och poolrobotar: specifikationer, oberoende tester och priser, vägt efter tydliga kriterier.
 
 ## Optional
 - [Sitemap](https://robotjakt.se/sitemap-index.xml): Fullständig URL-lista

@@ -99,7 +99,7 @@ const faqItems = [
     answer: 'S8, S8+, S8 Pro Ultra, S8 Max Ultra och S8 MaxV Ultra delar alla samma reservdelssystem. Qrevo-serien (Qrevo S, Qrevo Pro, Qrevo MaxV) har ett eget separat system. Kontrollera alltid att kittet du köper anger din exakta modell.',
   },
   {
-    question: 'Hur ofta ska jag byta reservdelar på Roborock S8?',
+    question: 'Hur ofta ska jag byta reservdelar på min Roborock?',
     answer: 'HEPA-filter: var 2 månad. Sidoborstar: var 6 till 12 månad. Huvudborste (gummiborstar): var 12 till 18 månad. Moppkuddar: tvätta varje vecka, byt när de är slitna. Dammpåsar: när fyllda eller var 4 till 6 vecka.',
   },
   {
@@ -142,8 +142,8 @@ const faqSchema = faqItems.map((item) => ({
   },
 }));
 export const articleMeta = {
-  title: "Roborock reservdelar 2026: alla serier på ett ställe",
-  description: "Reservdelar till Roborock robotdammsugare 2026. Filter, borstar, moppar och dammpåsar till både S8-serien och Qrevo-serien, med kompatibilitet per serie.",
+  title: "Roborock reservdelar 2026: välj rätt serie till din robot",
+  description: "Reservdelar till Roborock robotdammsugare. Här ser du vilket delsystem din robot tillhör och går vidare till rätt serie för filter, borstar och moppar.",
   publishDate: "2026-03-29",
   category: "Reservdelar",
   image: "/images/parts-roborock-filter.webp",
@@ -152,16 +152,16 @@ export const articleMeta = {
 ---
 
 <BaseLayout
-  title="Roborock reservdelar 2026: alla serier på ett ställe"
-  description="Reservdelar till Roborock robotdammsugare 2026. Filter, borstar, moppar och dammpåsar till både S8-serien och Qrevo-serien, med kompatibilitet per serie."
+  title="Roborock reservdelar 2026: välj rätt serie till din robot"
+  description="Reservdelar till Roborock robotdammsugare. Här ser du vilket delsystem din robot tillhör och går vidare till rätt serie för filter, borstar och moppar."
   article={{ datePublished: "2026-03-29", dateModified: "2026-07-28", image: "/images/parts-roborock-filter.webp" }}
 >
   <section class="bg-primary text-white py-8">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <Breadcrumbs items={breadcrumbs} light={true} />
     <AuthorByline datePublished="2026-03-29" dateModified="2026-07-28" />
-      <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Roborock reservdelar, alla serier</h1>
-      <p class="text-gray-200 max-w-2xl">Överblick över tillbehörskit till hela Roborock-sortimentet. Börja här om du vill se vilka filter, borstar, moppkuddar och dammpåsar som passar din serie, och gå sedan vidare till serien du äger.</p>
+      <h1 class="font-heading text-3xl sm:text-4xl font-bold mb-3">Roborock reservdelar, välj rätt serie till din robot</h1>
+      <p class="text-gray-200 max-w-2xl">Roborock delar sitt sortiment i två reservdelssystem som inte går att blanda, så första steget är att veta vilken serie din robot tillhör. Modellnamnet står på etiketten under roboten och i Roborock-appen, och härifrån skickas du vidare till sidan för just din serie.</p>
     </div>
   </section>
 
@@ -170,6 +170,9 @@ export const articleMeta = {
       question="Snabbt svar: Vilka reservdelar passar min Roborock?"
       answer="Roborock har två separata reservdelssystem: hela S8-serien (S8, S8+, S8 Pro Ultra, S8 Max Ultra, S8 MaxV Ultra) delar ett, och Qrevo-serien (Qrevo S, Qrevo Pro, Qrevo MaxV) ett annat. Filter och borstar kan inte blandas mellan serierna. Kontrollera alltid att kittet anger din exakta modell innan du beställer."
     />
+    <p class="text-base text-text-light leading-relaxed mb-4">
+      Läs modellnamnet på etiketten under roboten och gå sedan direkt till din serie. Tillhör roboten S8-familjen ligger delarna med kompatibilitet per modell samlade under <a href="/reservdelar/roborock-s8-serien/" class="text-accent underline">Roborock S8 reservdelar</a>, som täcker S8, S8+, S8 Pro Ultra, S8 Max Ultra och S8 MaxV Ultra. Är det en Qrevo hittar du delarna, inklusive Qrevo Masters modellspecifika dammpåsar och borsten till den utfällbara sidoarmen, under <a href="/reservdelar/roborock-qrevo-serien/" class="text-accent underline">Roborock Qrevo reservdelar</a>.
+    </p>
 <p class="text-sm text-text-light mb-6">Senast uppdaterad: juli 2026, {products.length} reservdelar</p>
 
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
