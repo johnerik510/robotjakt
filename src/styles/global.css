@@ -137,6 +137,43 @@ table {
 }
 
 /*
+ * Roterande sista ord i startsidans H1. Ordet står statiskt i HTML:en och byts
+ * av JS, så crawlers och JS-lösa besökare ser en komplett rubrik.
+ *
+ * min-height är inte kosmetik: utan den kollapsar raden till noll höjd i det
+ * ögonblick ordet är helt raderat, och hela sidan under hoppar upp ett steg
+ * (layoutförskjutning varje varv). Höjden låses till exakt en radhöjd.
+ */
+.rullord-rad {
+  display: block;
+  min-height: 1.25em;
+  min-height: 1lh;
+}
+
+.rullord {
+  color: var(--color-accent-light);
+}
+
+/* Skrivmarkör: håller raden optiskt levande när ordet är kort eller tomt. */
+.rullord-markor {
+  display: inline-block;
+  width: 0.055em;
+  height: 0.78em;
+  margin-left: 0.07em;
+  background: var(--color-accent-light);
+  vertical-align: -0.04em;
+  animation: rullord-blink 1.05s steps(2, start) infinite;
+}
+
+@keyframes rullord-blink {
+  50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rullord-markor { display: none; }
+}
+
+/*
  * Hubbens topp 3-karusell: enda stället där sidledsscroll är tillåtet, och
  * bara inuti sin egen container. Datatabeller ska aldrig scrolla i sidled
  * (se .spec-table-wrap ovan).
