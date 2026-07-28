@@ -1,0 +1,311 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import AnswerBox from '../components/AnswerBox.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'Robotgräsklippare', href: '/robotgrasklippare/' },
+  { label: 'Dreame' },
+];
+
+const models = [
+  {
+    name: 'Dreame A1 Pro',
+    sizes: '800, 1 000 och 2 000 m²',
+    badge: 'INSTEGSMODELL',
+    image: '/images/products/dreame-a1-pro-1000-lidar.webp',
+    alt: 'Dreame A1 Pro robotgräsklippare med LiDAR-torn',
+    body: 'A1 Pro är Dreames instegsserie och den modell som sålt mest i Sverige. Den navigerar med OmniSense 3D LiDAR utan perimeterkabel, klipper 22 cm brett och ställs mellan 3 och 7 cm klipphöjd i appen. Lutningstoleransen ligger på 45 procent (24 grader), vilket täcker en normal villatomt men inte en riktig slänt. Modellnumret är den yta Dreame anger att den hinner med.',
+    specs: ['Klippbredd 22 cm, klipphöjd 3 till 7 cm', 'Max lutning 45 procent (24 grader)', 'OmniSense 3D LiDAR, ingen slinga', 'Batteri 5 Ah, laddtid 65 minuter', 'IPX6, wifi 2,4 GHz och Bluetooth'],
+    cta: { text: 'Bra pris hos Kjell', url: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66312&url=http://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare-tillbehor/robotgrasklippare/dreame-a1-pro-robotgrasklippare-2000-p66312', label: 'A1 Pro 2000' },
+  },
+  {
+    name: 'Dreame A2',
+    sizes: '2 000 och 3 000 m²',
+    badge: 'MEST TRÄDGÅRD PER KRONA',
+    image: '/images/dreame-a2-3000.webp',
+    alt: 'Dreame A2 robotgräsklippare sedd snett uppifrån',
+    body: 'A2 är A1 Pro med större yta och bättre ögon. Navigeringen är OmniSense 2.0, alltså 3D LiDAR plus en AI-kamera som ser hinder i färg i stället för bara form. Lutningen är uppe i 50 procent (26,5 grader) och EdgeMaster-läget klipper närmare än 5 cm från kanten. Klippbredden är kvar på 22 cm, så en 3 000-kvadratmeterstomt tar många timmar per varv.',
+    specs: ['Klippbredd 22 cm, klipphöjd 3 till 7 cm', 'Max lutning 50 procent (26,5 grader)', 'OmniSense 2.0, 3D LiDAR och AI-kamera', 'EdgeMaster, mindre än 5 cm till kanten', 'Batteri 5 Ah, vikt 16,4 kg, IPX6'],
+    cta: { text: 'Bra pris hos Kjell', url: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66313&url=http://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare-tillbehor/robotgrasklippare/dreame-a2-robotgrasklippare-3000-p66313', label: 'A2 3000' },
+  },
+  {
+    name: 'Dreame A3 AWD 1000',
+    sizes: '1 000 m²',
+    badge: 'AWD TILL LITEN TOMT',
+    image: '/images/dreame-a3-awd-1000.webp',
+    alt: 'Dreame A3 AWD 1000 robotgräsklippare med fyrhjulsdrift',
+    body: 'Här hoppar serien i klass. A3 AWD 1000 har allhjulsdrift och klarar 80 procent lutning, alltså samma terrängsiffra som Dreames dyraste modeller, fast för en tomt på 1 000 kvadratmeter. Navigeringen är OmniSense 3.0 och den känner igen över 300 objekttyper. Den har 4G med eSIM och GPS, så du ser var den står även när wifi inte når ut i trädgården.',
+    specs: ['Klippbredd 20 cm, klipphöjd 3 till 10 cm', 'Max lutning 80 procent, allhjulsdrift', 'OmniSense 3.0 med 3D LiDAR', 'AI-hinderigenkänning, över 300 objekttyper', '4G eSIM, GPS och wifi, batteri 5 Ah, IPX6'],
+    cta: { text: 'Bra pris hos Kjell', url: 'https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66730&url=http://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare-tillbehor/robotgrasklippare/dreame-a3-awd-1000-robotgrasklippare-p66730', label: 'A3 AWD 1000' },
+  },
+  {
+    name: 'Dreame A3 AWD Pro',
+    sizes: '2 500, 3 500 och 5 000 m²',
+    badge: 'STÖRST OCH SNABBAST',
+    image: '/images/products/dreame-a3-awd-pro-5000.webp',
+    alt: 'Dreame A3 AWD Pro robotgräsklippare för stora tomter',
+    body: 'Pro-modellerna dubblar klippbredden till 40 cm, och det är den siffran som avgör om en stor tomt blir klar. OmniSense 3.0 sitter här som 360-graders 3D LiDAR plus binokulärt AI-seende, drivningen är AWD med navmotorer och två off road-hjul. Den tar hinder på 5,5 cm och EdgeMaster 2.0 klipper närmare än 3 cm från kanten. Ljudnivån anger Dreame till högst 65 dB.',
+    specs: ['Klippbredd 40 cm, klipphöjd 3 till 10 cm', 'Max lutning 80 procent (38,7 grader)', 'OmniSense 3.0, 360-graders LiDAR och AI-seende', 'EdgeMaster 2.0, mindre än 3 cm till kanten', 'Batteri 5 Ah (2500) och 7,5 Ah (3500), 4G, IPX6'],
+    cta: { text: 'Bra pris hos Proshop', url: 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3454287&url=https://www.proshop.se/Robotgraesklippare/Dreame-A3-AWD-Pro-3500-robotgraesklippare-3500-m/3454287', label: 'A3 AWD Pro 3500' },
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Är Dreame robotgräsklippare bra?',
+    answer: 'Ja, Dreame hör till de starkaste kabelfria alternativen i mellanprisklassen. Alla modeller navigerar med 3D LiDAR i stället för perimeterkabel, vilket sparar en halvdag installation. A3 AWD-modellerna klarar 80 procents lutning och matchar därmed Mammotion Luba och Segway Navimow H-serien i terräng. Den svaga punkten är serviceledet: Dreame har inte det återförsäljar- och verkstadsnät i Sverige som Husqvarna byggt upp under decennier.',
+  },
+  {
+    question: 'Vem tillverkar Dreame robotgräsklippare?',
+    answer: 'Dreame Technology, ett kinesiskt teknikföretag grundat 2015. I slutet av 2017 gick Dreame in i Xiaomis ekosystemkedja, och företaget är mest känt för robotdammsugare. Robotgräsklipparna är en senare produktlinje som bygger vidare på samma navigeringsteknik, OmniSense, som sitter i dammsugarna.',
+  },
+  {
+    question: 'Vad är skillnaden på Dreame A1 Pro och A2?',
+    answer: 'A2 tar större yta (upp till 3 000 mot 2 000 m²), klarar brantare lutning (50 mot 45 procent) och ser hinder bättre eftersom OmniSense 2.0 lägger till en AI-kamera vid sidan av LiDAR-sensorn. Klippbredden är samma 22 cm och klipphöjden samma 3 till 7 cm på båda. Har du en normalstor villatomt utan branta partier gör A1 Pro samma jobb.',
+  },
+  {
+    question: 'Behöver Dreame robotgräsklippare gränskabel?',
+    answer: 'Nej. Hela serien kartlägger trädgården med 3D LiDAR och du drar gränserna i appen i stället för att gräva ner kabel. Det tar bort de 2 till 4 timmar kabeldragning som en Husqvarna Automower utan EPOS eller en Worx Landroid kräver, och det gör det enkelt att flytta en zon senare på säsongen.',
+  },
+  {
+    question: 'Vilken Dreame-modell klarar branta slänter?',
+    answer: 'A3 AWD 1000 och A3 AWD Pro. Båda har allhjulsdrift och anges klara 80 procents lutning, mot 45 procent för A1 Pro och 50 procent för A2. Har du en tomt med riktiga nivåskillnader är det de två AWD-modellerna som gäller, och valet mellan dem handlar bara om hur många kvadratmeter du har.',
+  },
+  {
+    question: 'Hur stor tomt hinner en Dreame med?',
+    answer: 'Modellnumret är den yta Dreame anger, alltså 1 000 m² för A3 AWD 1000 och 3 500 m² för A3 AWD Pro 3500. Klippbredden avgör hur lång tid det tar: 22 cm på A1 Pro och A2, men 40 cm på Pro-modellerna. En stor tomt med smal klippbredd blir klar, men den kör betydligt fler timmar för att komma dit.',
+  },
+  {
+    question: 'Hur skiljer sig Dreame mot Segway Navimow och Mammotion?',
+    answer: 'Alla tre är kabelfria. Segway Navimow bygger på RTK-satellitpositionering med en referensantenn, Mammotion Luba kombinerar RTK och vision, medan Dreame kör på 3D LiDAR utan fast antenn. LiDAR klarar sig bättre under täta träd där RTK tappar satellitkontakt, men Navimow och Mammotion har längre historik i svenska trädgårdar.',
+  },
+];
+
+const faqSchema = faqItems.map((item) => ({
+  "@type": "Question",
+  "name": item.question,
+  "acceptedAnswer": { "@type": "Answer", "text": item.answer },
+}));
+
+export const articleMeta = {
+  title: "Dreame robotgräsklippare 2026: A1 Pro, A2 och A3 AWD jämförda",
+  description: "Dreames fyra robotgräsklippare jämförda på klippyta, lutning, klippbredd och navigering. Vi går igenom A1 Pro, A2, A3 AWD 1000 och A3 AWD Pro.",
+  publishDate: "2026-07-28",
+  category: "Topplista",
+  image: "/images/dreame-a2-3000.webp",
+};
+---
+
+<BaseLayout
+  title="Dreame robotgräsklippare 2026: A1 Pro, A2 och A3 AWD jämförda"
+  description="Dreames fyra robotgräsklippare jämförda på klippyta, lutning, klippbredd och navigering. Vi går igenom A1 Pro, A2, A3 AWD 1000 och A3 AWD Pro."
+  article={{ datePublished: "2026-07-28", dateModified: "2026-07-28", image: "/images/dreame-a2-3000.webp" }}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AuthorByline datePublished="2026-07-28" dateModified="2026-07-28" />
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Dreame robotgräsklippare 2026, hela serien jämförd
+    </h1>
+    <p class="text-text-light mb-6 max-w-2xl">
+      Dreame säljer fyra robotgräsklippare i Sverige och de skiljer sig mer än modellnamnen antyder. Skillnaden mellan A2 och A3 AWD är inte en uppgradering, det är två olika maskiner: den ena kör på två hjul i 50 procents lutning, den andra på fyra i 80.
+    </p>
+
+    <AnswerBox
+      question="Snabbt svar: vilken Dreame ska du välja?"
+      answer="Har du en flack villatomt räcker A1 Pro. Har du mer än 2 000 kvadratmeter tar A2 över. Har du en slänt behöver du allhjulsdriften i A3 AWD 1000, och är tomten både stor och kuperad är A3 AWD Pro med 40 cm klippbredd den enda som blir klar i tid."
+    />
+
+    <div class="grid sm:grid-cols-2 gap-3 mb-8">
+      <a href="https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66730&url=http://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare-tillbehor/robotgrasklippare/dreame-a3-awd-1000-robotgrasklippare-p66730" target="_blank" rel="nofollow sponsored noopener" class="inline-flex items-center justify-center gap-2 bg-cta hover:bg-cta-dark text-white font-bold py-3 px-5 rounded-xl text-sm shadow-lg transition-colors">
+        Bra pris hos Kjell (Dreame A3 AWD 1000)
+      </a>
+      <a href="/robotgrasklippare/" class="inline-flex items-center justify-center gap-2 border border-border bg-white hover:bg-bg-alt text-text font-semibold py-3 px-5 rounded-xl text-sm transition-colors">
+        Jämför alla robotgräsklippare
+      </a>
+    </div>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Dreame-modellerna sida vid sida</h2>
+      <div class="spec-table-wrap">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-bg-alt">
+              <th class="text-left p-3 font-semibold text-text border border-border">Modell</th>
+              <th class="text-left p-3 font-semibold text-text border border-border">Yta</th>
+              <th class="text-left p-3 font-semibold text-text border border-border">Klippbredd</th>
+              <th class="text-left p-3 font-semibold text-text border border-border">Lutning</th>
+              <th class="text-left p-3 font-semibold text-text border border-border">Drivning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="p-3 border border-border font-medium">A1 Pro</td>
+              <td data-col="Yta" class="p-3 border border-border">800 till 2 000 m²</td>
+              <td data-col="Klippbredd" class="p-3 border border-border">22 cm</td>
+              <td data-col="Lutning" class="p-3 border border-border">45 %</td>
+              <td data-col="Drivning" class="p-3 border border-border">Tvåhjulsdrift</td>
+            </tr>
+            <tr class="bg-bg-alt">
+              <td class="p-3 border border-border font-medium">A2</td>
+              <td data-col="Yta" class="p-3 border border-border">2 000 till 3 000 m²</td>
+              <td data-col="Klippbredd" class="p-3 border border-border">22 cm</td>
+              <td data-col="Lutning" class="p-3 border border-border">50 %</td>
+              <td data-col="Drivning" class="p-3 border border-border">Tvåhjulsdrift</td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-border font-medium">A3 AWD 1000</td>
+              <td data-col="Yta" class="p-3 border border-border">1 000 m²</td>
+              <td data-col="Klippbredd" class="p-3 border border-border">20 cm</td>
+              <td data-col="Lutning" class="p-3 border border-border text-winner font-semibold">80 %</td>
+              <td data-col="Drivning" class="p-3 border border-border text-winner font-semibold">Allhjulsdrift</td>
+            </tr>
+            <tr class="bg-winner/5">
+              <td class="p-3 border border-border font-medium">A3 AWD Pro</td>
+              <td data-col="Yta" class="p-3 border border-border">2 500 till 5 000 m²</td>
+              <td data-col="Klippbredd" class="p-3 border border-border text-winner font-semibold">40 cm</td>
+              <td data-col="Lutning" class="p-3 border border-border text-winner font-semibold">80 %</td>
+              <td data-col="Drivning" class="p-3 border border-border text-winner font-semibold">Allhjulsdrift</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-text-light mt-3">Siffrorna kommer från Dreames egna produktsidor och från Kjell &amp; Companys specifikationer, kontrollerade 28 juli 2026. Klippbredden är den siffra som avgör hur många timmar en stor tomt tar, inte modellnumret.</p>
+    </section>
+
+    <section id="modeller" class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Så skiljer sig modellerna</h2>
+      <div class="space-y-6">
+        {models.map((m) => (
+          <div class="bg-white rounded-xl border border-border p-5 sm:p-6">
+            <div class="flex flex-col sm:flex-row gap-5">
+              <div class="sm:w-56 shrink-0">
+                <div class="bg-bg-alt rounded-lg p-3">
+                  <img src={m.image} alt={m.alt} width="400" height="400" loading="lazy" class="w-full h-auto" />
+                </div>
+              </div>
+              <div class="min-w-0">
+                <div class="flex flex-wrap items-center gap-2 mb-1.5">
+                  <h3 class="font-heading text-xl font-bold text-text">{m.name}</h3>
+                  <span class="bg-winner text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">{m.badge}</span>
+                </div>
+                <p class="text-xs text-text-light mb-3">Finns för {m.sizes}</p>
+                <p class="text-text-light leading-relaxed mb-4">{m.body}</p>
+                <ul class="space-y-1 mb-5">
+                  {m.specs.map((s) => (
+                    <li class="flex items-start gap-1.5 text-sm text-text-light">
+                      <span class="text-winner font-bold mt-0.5">+</span>{s}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={m.cta.url}
+                  rel="sponsored nofollow noopener noreferrer"
+                  target="_blank"
+                  class="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm min-h-[44px]"
+                >
+                  {m.cta.text} ({m.cta.label})
+                  <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Vad LiDAR faktiskt löser i en trädgård</h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Dreame har valt bort både perimeterkabel och RTK-antenn. Hela serien bygger kartan med en 3D LiDAR-sensor i tornet på roboten, och du ritar gränserna i appen. Det som vinns är installationen: de 2 till 4 timmar det tar att gräva ner en slinga runt en Husqvarna Automower eller en Worx Landroid försvinner helt, och du kan flytta en zon mitt i säsongen utan att röra en spade.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Skillnaden mot RTK märks framför allt under träd. Segway Navimow och Mammotion Luba positionerar sig mot satelliter via en fast referensantenn, och tät lövmassa kan störa den signalen. LiDAR mäter mot det som faktiskt står i trädgården och bryr sig inte om himlen. Priset du betalar är att sensorn sitter i ett torn på roboten, alltså en rörlig del extra som ska hållas ren. Vill du jämföra teknikerna mot varandra går vi igenom dem i guiden om <a href="/robotgrasklippare-utan-slinga/" class="text-accent underline">robotgräsklippare utan slinga</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Varför klippbredden avgör mer än modellnumret</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        A2 är godkänd för 3 000 kvadratmeter och A3 AWD Pro för 3 500. Siffrorna ser jämförbara ut, men A2 klipper 22 cm per varv och Pro-modellen 40 cm. Det är nästan dubbelt så mycket gräs per meter roboten kör, och det slår igenom i hur många timmar per dygn maskinen måste vara ute för att hinna runt.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Praktiskt betyder det att en A2 på en riktigt stor tomt går nästan jämt, medan Pro-modellen får luft i schemat och kan stå still när du har gäster i trädgården. Ligger din tomt kring 2 000 kvadratmeter är det ingen fråga, då räcker A2 gott.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Lutning: 45, 50 eller 80 procent</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Steget från A2 till A3 AWD är det största i hela serien. A1 Pro och A2 rullar på två drivhjul och anges klara 45 respektive 50 procent. A3-modellerna driver alla fyra hjulen och Dreame anger 80 procent, alltså 38,7 grader på Pro-modellen. Det är samma nivå som Mammotion Luba-serien uppger.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Som alltid med lutningssiffror är underlaget den verkliga gränsen. Blött gräs och lös jord får hjulen att slira långt innan den tekniska gränsen är nådd, och en tvåhjulsdriven robot gräver sig då fast i backen. Har du kraftiga nivåskillnader är det värt att läsa vår genomgång av <a href="/robotgrasklippare-for-lutning/" class="text-accent underline">robotgräsklippare för lutning</a> innan du bestämmer dig.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Det här bör du väga in innan du köper Dreame</h3>
+      <div class="grid sm:grid-cols-2 gap-5 mb-6">
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h4 class="font-semibold text-text mb-2">Det här är Dreame bra på</h4>
+          <ul class="space-y-1.5 text-sm text-text-light">
+            <li class="flex items-start gap-1.5"><span class="text-winner font-bold mt-0.5">+</span>Ingen perimeterkabel i någon modell</li>
+            <li class="flex items-start gap-1.5"><span class="text-winner font-bold mt-0.5">+</span>80 procents lutning redan i A3 AWD 1000</li>
+            <li class="flex items-start gap-1.5"><span class="text-winner font-bold mt-0.5">+</span>40 cm klippbredd på Pro, dubbelt mot A-serien</li>
+            <li class="flex items-start gap-1.5"><span class="text-winner font-bold mt-0.5">+</span>4G och GPS på A3-modellerna, du ser var den står</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-xl border border-border p-5">
+          <h4 class="font-semibold text-text mb-2">Det här bör du veta innan köp</h4>
+          <ul class="space-y-1.5 text-sm text-text-light">
+            <li class="flex items-start gap-1.5"><span class="text-cta font-bold mt-0.5">−</span>Kortare historik i Sverige än Husqvarna och Gardena</li>
+            <li class="flex items-start gap-1.5"><span class="text-cta font-bold mt-0.5">−</span>LiDAR-tornet är en rörlig del som ska hållas ren</li>
+            <li class="flex items-start gap-1.5"><span class="text-cta font-bold mt-0.5">−</span>A1 Pro och A2 stannar vid 22 cm klippbredd</li>
+            <li class="flex items-start gap-1.5"><span class="text-cta font-bold mt-0.5">−</span>Service och reservdelar går via återförsäljaren, inte ett eget verkstadsnät</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Underhåll över säsongen</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Knivbladen är förbrukningsdelar på Dreame precis som på alla andra märken, och de byts när klippet ser trasat ut i kanten i stället för rakt avskuret. Slöa knivar syns på gräsmattan innan de syns på roboten: strån som slits av brunfärgas i toppen och hela ytan ser tröttare ut trots att maskinen kört som den ska.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        LiDAR-tornet och kamerafönstret på A2 behöver torkas av med jämna mellanrum, annars börjar roboten bromsa för hinder som inte finns. Alla modellerna är IPX6-klassade och tål regn, men laddstationens kontakter mår bra av att hållas torra och rena. När säsongen är slut laddar du batteriet innan roboten ställs undan frostfritt, hela rutinen går vi igenom i guiden om <a href="/guide/vinterforvaring-robotgrasklippare/" class="text-accent underline">vinterförvaring av robotgräsklippare</a>.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Relaterade guider</h2>
+      <ul class="space-y-2">
+        <li><a href="/robotgrasklippare/" class="text-accent underline text-sm">Bästa robotgräsklippare 2026, alla märken jämförda</a></li>
+        <li><a href="/robotgrasklippare-utan-slinga/" class="text-accent underline text-sm">Robotgräsklippare utan slinga 2026</a></li>
+        <li><a href="/robotgrasklippare-for-lutning/" class="text-accent underline text-sm">Robotgräsklippare för lutning och sluttande tomt</a></li>
+        <li><a href="/mammotion-robotgrasklippare/" class="text-accent underline text-sm">Mammotion Luba 2026, kabelfri konkurrent med AWD</a></li>
+        <li><a href="/segway-navimow-robotgrasklippare/" class="text-accent underline text-sm">Segway Navimow 2026, RTK i stället för LiDAR</a></li>
+        <li><a href="/dreame-guide/" class="text-accent underline text-sm">Dreame robotdammsugare 2026, samma märke inomhus</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <StickyCTA
+    text="Bra pris hos Kjell"
+    url="https://ion.kjell.com/t/t?a=1487384319&as=2063681412&t=2&tk=1&cupa_sku=66730&url=http://www.kjell.com/se/produkter/hem-fritid/tradgard/robotgrasklippare-tillbehor/robotgrasklippare/dreame-a3-awd-1000-robotgrasklippare-p66730"
+    productName="Dreame A3 AWD 1000"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Dreame robotgräsklippare 2026",
+    "numberOfItems": 4,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Dreame A1 Pro" },
+      { "@type": "ListItem", "position": 2, "name": "Dreame A2" },
+      { "@type": "ListItem", "position": 3, "name": "Dreame A3 AWD 1000" },
+      { "@type": "ListItem", "position": 4, "name": "Dreame A3 AWD Pro" },
+    ],
+  })} />
+</BaseLayout>
