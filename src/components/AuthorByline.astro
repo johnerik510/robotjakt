@@ -39,18 +39,24 @@ const showPublished = !!datePublished;
 const showUpdated = !!dateModified && dateModified !== datePublished;
 
 const wrapCls = light
-  ? 'flex items-center gap-2.5 py-2 mb-4 border-b border-white/15'
-  : 'flex items-center gap-2.5 py-2 mb-4 border-b border-border';
-const metaCls = light
-  ? 'flex flex-wrap items-center gap-x-1.5 gap-y-0 text-xs text-white/70 min-w-0'
-  : 'flex flex-wrap items-center gap-x-1.5 gap-y-0 text-xs text-text-light min-w-0';
+  ? 'flex items-start gap-2.5 py-2 mb-4 border-b border-white/15'
+  : 'flex items-start gap-2.5 py-2 mb-4 border-b border-border';
 const nameCls = light
-  ? 'font-semibold text-white hover:text-accent-light transition-colors whitespace-nowrap'
-  : 'font-semibold text-text hover:text-accent transition-colors whitespace-nowrap';
-const sepCls = light ? 'text-white/30' : 'text-border-dark';
+  ? 'block text-[13px] font-semibold text-white hover:text-accent-light transition-colors leading-tight'
+  : 'block text-[13px] font-semibold text-text hover:text-accent transition-colors leading-tight';
+const metaCls = light
+  ? 'flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs text-white/70 mt-0.5'
+  : 'flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs text-text-light mt-0.5';
 const ringCls = light ? 'ring-white/25' : 'ring-border';
 ---
 
+<!--
+  Byline-layout portad från bebisguidens fix 2026-07-26 (verifierad på riktig
+  iPhone 14): fristående "·"-separatorer mellan namn/datum/lästid i EN
+  flex-wrap-rad kunde hamna ensamma i radens start eller slut när raden bröt
+  på smal skärm. Nu ligger namnet på egen rad och metadata i en egen rad
+  under, utan separatorer. Avståndet gör jobbet i stället.
+-->
 <div class={wrapCls}>
   <a href={authorHref} aria-label={`Om ${author}`} class="shrink-0">
     {authorImage ? (
@@ -61,15 +67,16 @@ const ringCls = light ? 'ring-white/25' : 'ring-border';
       </span>
     )}
   </a>
-  <div class={metaCls}>
+  <div class="min-w-0">
     <a href={authorHref} class={nameCls}>{author}</a>
-    {showPublished && (<><span class={sepCls}>·</span><time datetime={datePublished}>{formatDate(datePublished!)}</time></>)}
-    {showUpdated && (<><span class={sepCls}>·</span><span class="whitespace-nowrap">Uppdaterad <time datetime={dateModified}>{formatDate(dateModified!)}</time></span></>)}
-    <span class={sepCls}>·</span>
-    <span class="inline-flex items-center gap-1 whitespace-nowrap">
-      <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      <span id="article-reading-time">Beräknar lästid...</span>
-    </span>
+    <div class={metaCls}>
+      {showPublished && (<time datetime={datePublished} class="whitespace-nowrap">{formatDate(datePublished!)}</time>)}
+      {showUpdated && (<span class="whitespace-nowrap">Uppdaterad <time datetime={dateModified}>{formatDate(dateModified!)}</time></span>)}
+      <span class="inline-flex items-center gap-1 whitespace-nowrap">
+        <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span id="article-reading-time">Beräknar lästid...</span>
+      </span>
+    </div>
   </div>
 </div>
 

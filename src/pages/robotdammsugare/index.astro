@@ -251,9 +251,10 @@ export const articleMeta = {
 
     <MoneyTOC />
 
-    <!-- Kategori-pills -->
+    <!-- Kategori-pills: horisontell scroll på mobil i stället för ojämn flerradig wrap -->
     <nav aria-label="Filtrera per behov" class="mb-8">
-      <ul class="flex flex-wrap gap-2">
+      <p class="text-xs font-semibold uppercase tracking-wide text-text-light mb-2">Filtrera efter behov</p>
+      <ul class="flex flex-nowrap md:flex-wrap gap-2 overflow-x-auto md:overflow-visible -mx-4 px-4 md:mx-0 md:px-0 pb-1 md:pb-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
         {pills.map((pill) => (
           <li class="flex-shrink-0">
             <a href={pill.href} class="inline-flex items-center px-4 py-2 rounded-full bg-bg-alt border border-border text-sm font-semibold text-text hover:bg-accent hover:text-white hover:border-accent transition-colors whitespace-nowrap">
