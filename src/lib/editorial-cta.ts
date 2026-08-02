@@ -30,18 +30,32 @@ export interface EditorialCTAOption {
   store: string;
   url: string;
   commission: number;
+  /** EPC-baserad rangordning, lägre = visas först. Se ACTIVE_STORES. */
+  priority: number;
   /** Feedens titel, för spårbarhet/verifiering. */
   matchedTitle: string;
 }
 
-/** Aktiva butiker (samma roster som multi-cta.ts) med feed-nyckel. */
-const ACTIVE_STORES: Array<{ key: string; display: string; commission: number }> = [
-  { key: 'Elon', display: 'Elon', commission: 0.05 },
-  { key: 'Kjell & Company', display: 'Kjell', commission: 0.05 },
-  { key: 'CDON', display: 'CDON', commission: 0.045 },
-  { key: 'Komplett', display: 'Komplett', commission: 0.04 },
-  { key: 'CS MEGASTORE', display: 'CS Megastore', commission: 0.04 },
-  { key: 'Proshop', display: 'Proshop', commission: 0.032 },
+/**
+ * Aktiva butiker (samma roster och samma EPC-ordning som multi-cta.ts).
+ *
+ * `priority` (lagre = hogre upp) styr sorteringen, INTE `commission`. Uppmatt
+ * utfall pa robotjakt 90 dagar (t.o.m. 2026-08-02): Kjell EPC 0,56 · Elon 0,49 ·
+ * CS 0,30 · Komplett 0,00 (163 klick) · Proshop 0,00 (130 klick). CDON ligger
+ * kvar bakom CS, programmet har inte gett en forsaljning sedan 2026-06-08.
+ * Se ACTIVE_STORES i multi-cta.ts for full motivering. Provisionssatserna
+ * lamnas oforandrade, de far inte forfalskas for att styra sorteringen.
+ *
+ * Alla butiker ligger kvar: Proshop ar enda feed-tackningen pa manga sidor och
+ * alternativet dar ar ingen CTA alls.
+ */
+const ACTIVE_STORES: Array<{ key: string; display: string; commission: number; priority: number }> = [
+  { key: 'Kjell & Company', display: 'Kjell', commission: 0.05, priority: 1 },
+  { key: 'Elon', display: 'Elon', commission: 0.05, priority: 2 },
+  { key: 'CS MEGASTORE', display: 'CS Megastore', commission: 0.04, priority: 3 },
+  { key: 'CDON', display: 'CDON', commission: 0.045, priority: 4 },
+  { key: 'Komplett', display: 'Komplett', commission: 0.04, priority: 5 },
+  { key: 'Proshop', display: 'Proshop', commission: 0.032, priority: 6 },
 ];
 
 /**
@@ -144,7 +158,7 @@ function storeEntries(storeKey: string): FeedMatch[] {
 }
 
 /**
- * Returnerar verifierade butiks-CTA:er för produkten, sorterade på provision.
+ * Returnerar verifierade butiks-CTA:er för produkten, sorterade på EPC-prioritet.
  * Tom lista = ingen verifierad länk finns -> anropande komponent renderar inget.
  */
 export function resolveExactCTA(productName: string, max = 4): EditorialCTAOption[] {
@@ -175,11 +189,13 @@ export function resolveExactCTA(productName: string, max = 4): EditorialCTAOptio
       store: cfg?.name ?? store.display,
       url: hit.trackedUrl,
       commission: cfg?.commission ?? store.commission,
+      priority: store.priority,
       matchedTitle: hit.title,
     });
   }
 
-  out.sort((a, b) => b.commission - a.commission);
+  // Sortera efter uppmätt EPC-prioritet, inte provisionssats (se ACTIVE_STORES).
+  out.sort((a, b) => a.priority - b.priority);
   return out.slice(0, max);
 }
 

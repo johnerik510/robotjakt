@@ -1,6 +1,6 @@
 /**
  * Multi-CTA-resolver: hitta alla aktiva butiker som säljer en produkt,
- * sorterade efter provision (högst först).
+ * sorterade efter uppmätt EPC (bäst först).
  *
  * Returerar max 4 CTA:er per produkt: primary (fylld knapp) + upp till 3 sekundära
  * ("Även hos:"-taggar). Faller ALDRIG tillbaka på generiska hemsideslänkar.
@@ -8,9 +8,9 @@
  * Flöde:
  *  1. Auto-detektera märke från produktnamn (eller använd hint)
  *  2. Slå upp butiker via BRAND_TO_STORES (vilka säljer märket)
- *  3. Filtrera till aktiva butiker (Elon, Kjell, Komplett, CS Megastore, Proshop)
+ *  3. Filtrera till aktiva butiker (Kjell, Elon, CS Megastore, CDON, Komplett, Proshop)
  *  4. Per butik: resolveProductDeeplink() → produkt-djuplänk (score ≥ 2 tokens)
- *  5. Sortera efter provision
+ *  5. Sortera efter EPC-prioritet (ACTIVE_STORES.priority), inte provisionssats
  *  6. Om ingen feed-match: använd fallback-URL från sidan
  */
 
@@ -23,25 +23,63 @@ export interface CTAOption {
   storeKey: string;    // Intern nyckel för resolveProductDeeplink
   url: string;
   commission: number;
+  /** EPC-baserad rangordning, lägre = visas först. Se ACTIVE_STORES. */
+  priority: number;
 }
 
 export interface MultiCTAResult {
   primary: CTAOption;
   others: CTAOption[];
-  /** Alla CTA:er i provisionordning, primary först. */
+  /** Alla CTA:er i EPC-ordning, primary först. */
   all: CTAOption[];
 }
 
-// Aktiva butiker i provisionordning (ingen Teknikproffset, Estore, Dustin)
-const ACTIVE_STORES: Array<{ key: string; display: string; commission: number }> = [
-  { key: 'Elon',          display: 'Elon',        commission: 0.05  },
-  { key: 'Kjell & Company', display: 'Kjell',     commission: 0.05  },
-  { key: 'Komplett',      display: 'Komplett',     commission: 0.04  },
-  { key: 'CS MEGASTORE',  display: 'CS Megastore', commission: 0.04  },
-  { key: 'CDON',          display: 'CDON',         commission: 0.045 },
-  { key: 'Proshop',       display: 'Proshop',      commission: 0.032 },
-  { key: 'Dronarbutiken', display: 'Dronarbutiken', commission: 0.03 },
+/**
+ * Aktiva butiker i EPC-ordning (ingen Teknikproffset, Estore, Dustin).
+ *
+ * `priority` (lagre = hogre upp) styr sorteringen, INTE `commission`.
+ * Provisionssatsen sager vad vi far per krona, men inte hur ofta ett klick
+ * blir ett kop. Uppmatt utfall pa robotjakt 90 dagar (t.o.m. 2026-08-02):
+ *
+ *   Kjell            527 klick   4 tx   EPC 0,56
+ *   Elon             687 klick   2 tx   EPC 0,49
+ *   CS MEGASTORE     528 klick   1 tx   EPC 0,30
+ *   Komplett         163 klick   0 tx   EPC 0,00
+ *   Proshop          130 klick   0 tx   EPC 0,00
+ *
+ * n = 7 transaktioner, sa inbordes ordning mellan Kjell/Elon/CS ar brus. Att
+ * Komplett + Proshop tillsammans tog 293 klick utan en enda transaktion ar det
+ * daremot inte, och de flyttas darfor sist. CDON ligger kvar bakom CS eftersom
+ * programmet inte gett en forsaljning sedan 2026-06-08.
+ *
+ * `commission` behalls oforandrad: den exponeras i CTAOption och anvands pa
+ * andra stallen, och far inte forfalskas for att styra sorteringen.
+ *
+ * ALLA butiker maste ligga kvar som fallback. Proshop ar primar butik pa ca 57
+ * sidor dar ingen annan butik har feed-tackning, och alternativet dar ar ingen
+ * CTA alls.
+ */
+const ACTIVE_STORES: Array<{ key: string; display: string; commission: number; priority: number }> = [
+  { key: 'Kjell & Company', display: 'Kjell',      commission: 0.05,  priority: 1 },
+  { key: 'Elon',            display: 'Elon',       commission: 0.05,  priority: 2 },
+  { key: 'CS MEGASTORE',    display: 'CS Megastore', commission: 0.04, priority: 3 },
+  { key: 'CDON',            display: 'CDON',       commission: 0.045, priority: 4 },
+  { key: 'Komplett',        display: 'Komplett',   commission: 0.04,  priority: 5 },
+  { key: 'Proshop',         display: 'Proshop',    commission: 0.032, priority: 6 },
+  { key: 'Dronarbutiken',   display: 'Dronarbutiken', commission: 0.03, priority: 7 },
 ];
+
+/**
+ * Prioritet for en fallback-butik som inte finns i ACTIVE_STORES, t.ex. de
+ * mindre Addrevenue-butikerna (Villanytt, Neatsvor, Robotrent). De ligger kvar
+ * fore de nollsaljande Adtraction-butikerna, precis som med den gamla
+ * provisionssorteringen dar de fick 0,05 som default.
+ */
+const UNKNOWN_STORE_PRIORITY = 2.5;
+
+function priorityOf(storeKey: string): number {
+  return ACTIVE_STORES.find((s) => s.key === storeKey)?.priority ?? UNKNOWN_STORE_PRIORITY;
+}
 
 // BRAND_TO_STORES använder t.ex. "CSMegastore" (ihopskrivet) → mappa till vår nyckel
 const ALIAS_TO_KEY: Record<string, string> = {
@@ -113,7 +151,7 @@ function normalizeStoreKey(raw: string): string {
 }
 
 /**
- * Returnerar alla butiker som säljer produkten, sorterade efter provision.
+ * Returnerar alla butiker som säljer produkten, sorterade efter EPC-prioritet.
  * Max 4 CTA:er (1 primär + 3 sekundära).
  *
  * @param productName - Fullständigt produktnamn (märke ingår ofta)
@@ -132,7 +170,7 @@ export function resolveMultiCTA(
     .map(normalizeStoreKey)
     .filter(Boolean);
 
-  // Filtrera till aktiva butiker (bevarar provisionordning)
+  // Filtrera till aktiva butiker (bevarar EPC-ordningen i ACTIVE_STORES)
   const storesToTry = brandStoreKeys.length > 0
     ? ACTIVE_STORES.filter(s => brandStoreKeys.includes(s.key))
     : ACTIVE_STORES.filter(s => s.key !== 'Dronarbutiken'); // skip drone-only store om brand okänt
@@ -155,6 +193,7 @@ export function resolveMultiCTA(
       storeKey: store.key,
       url,
       commission: storeConfig?.commission ?? store.commission,
+      priority: store.priority,
     });
   }
 
@@ -168,14 +207,17 @@ export function resolveMultiCTA(
         storeKey: fallback.store,
         url: fallback.url,
         commission: storeConfig?.commission ?? 0.05,
+        priority: priorityOf(fallback.store),
       });
     }
   }
 
   if (out.length === 0) return undefined;
 
-  // Sortera efter provision (stabilt: Elon och Kjell båda 5% → behåll inbördes ordning)
-  out.sort((a, b) => b.commission - a.commission);
+  // Sortera efter uppmätt EPC-prioritet, inte provisionssats (se ACTIVE_STORES).
+  // Stabil sort: vid lika prioritet behålls inbördes ordning, så en feed-match
+  // ligger kvar före sidans egen fallback-URL.
+  out.sort((a, b) => a.priority - b.priority);
 
   const limited = out.slice(0, 4);
   return {
