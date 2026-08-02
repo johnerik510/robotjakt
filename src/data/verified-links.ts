@@ -81,12 +81,17 @@ export const VERIFIED_LINKS: Record<string, string> = {
   // Produktspecifika djuplänkar CS Megastore (feed-verifierade):
   'CS MEGASTORE_s8_maxv_ultra': 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=21582900&url=https://www.csmegastore.se/i/21582900/roborock-s8-maxv-ultra-dammsugare-utan-p%C3%A5se',
   'CS MEGASTORE_saros10r': 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=24161332&url=https://www.csmegastore.se/i/24161332/roborock-robotdammsugare-saros-10r-svart',
-  'CS MEGASTORE_dreame_a3_5000': 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25340186&url=https://www.csmegastore.se/i/25340186/dreame-a3-awd-pro-robotgrasklippare-5000m2',
-  'CS MEGASTORE_navimow_i220e': 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25567775&url=https://www.csmegastore.se/i/25567775/segway-navimow-i220e-lidar-pro-robotgrasklippare-2000-m2',
+  // 2026-08-02: 'CS MEGASTORE_dreame_a3_5000' (sku 25340186) borttagen. CS har tagit bort
+  // produkten, URL:en redirectar till /itemeol/ och sku:t finns inte kvar i csmegastore.json.
+  // Enda feed-verifierade kallan for A3 AWD Pro 5000 ar nu Proshop, se 'Proshop_dreame_a3_5000'.
+  'CS MEGASTORE_navimow_i220e': 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25854166&url=https://www.csmegastore.se/i/25854166/segway-navimow-i220e-lidar-robotgr%c3%a4sklippare-2000-m',
   'CS MEGASTORE_navimow_i210e': 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25466562&url=https://www.csmegastore.se/i/25466562/segway-navimow-i210e',
   'CS MEGASTORE_luba3_5000x': 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25727478&url=https://www.csmegastore.se/i/25727478/mammotion-luba-3-5000x-awd-lidar-rtk-robotgrasklippare',
 
   // Produktspecifika djuplänkar Proshop (feed-verifierade):
+  // 2026-08-02: kopierad ordagrant ur src/data/feed-matches/proshop.json (sku 3454280).
+  // Proshop ar enda butiken i vara feeds som har Dreame A3 AWD Pro 5000.
+  'Proshop_dreame_a3_5000': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3454280&url=https://www.proshop.se/Robotgraesklippare/Dreame-A3-AWD-Pro-5000-Robotgraesklippare-5000-m/3454280',
   'Proshop_x50_ultra': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3434057&url=https://www.proshop.se/Robotdammsugare/Dreame-Robotdammsugare-X50-Ultra-White/3434057',
   'Proshop_x40_ultra': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3396835&url=https://www.proshop.se/Robotdammsugare/Dreame-Robotdammsugare-X40-Ultra/3396835',
   'Proshop_s8_maxv_ultra': 'https://go.adt284.net/t/t?a=1870484630&as=2063681412&t=2&tk=1&cupa_sku=3281903&url=https://www.proshop.se/Robotdammsugare/Roborock-Robotdammsugare-S8-MaxV-Ultra-Black/3281903',
