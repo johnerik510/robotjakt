@@ -1,8 +1,8 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-07-28T18:36:01.020Z",
-  "durationMs": 13821,
+  "timestamp": "2026-08-02T16:22:48.210Z",
+  "durationMs": 12194,
   "summary": {
     "checks": 23,
     "errors": 5,
@@ -39,7 +39,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/dreame-l10s-pro-ultra-heat.webp\" används av 3 artiklar: Dreame L10s Pro Ultra Heat Recension 2026: Test och Pris | Dreame L10s Ultra Gen 2 recension 2026: värd köpet? | Bästa robotdammsugare för lägenhet 2026: testtopplista"
+      "message": "Bild \"/images/dreame-l10s-pro-ultra-heat.webp\" används av 3 artiklar: Dreame L10s Pro Ultra Heat Recension 2026: Test och Pris | Dreame L10s Ultra Gen 2 recension 2026: värd köpet? | Robotdammsugare för liten lägenhet 2026: 4 modeller jämförda"
     },
     {
       "check": "04-articlemeta",
@@ -59,7 +59,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/roborock-s8-maxv-ultra.webp\" används av 10 artiklar: Dyson 360 Vis Nav Recension 2026: Test, Pris och Betyg | Roborock S8 Max Ultra Recension 2026: Test och Omdöme | Roborock S8 MaxV Ultra recension 2026: AI-kamera, 10 000 Pa | Roborock vs Dreame 2026: vilken robotdammsugare vinner? | Roborock vs Ecovacs Deebot 2026: vilken robot vinner?..."
+      "message": "Bild \"/images/roborock-s8-maxv-ultra.webp\" används av 10 artiklar: Dyson 360 Vis Nav Recension 2026: Test, Pris och Betyg | Roborock S8 Max Ultra Recension 2026: Test och Omdöme | Roborock S8 MaxV Ultra recension 2026: AI-kamera, 10 000 Pa | Roborock eller Dreame 2026: 5 kategorier och ett klart råd | Roborock vs Ecovacs Deebot 2026: vilken robot vinner?..."
     },
     {
       "check": "04-articlemeta",
@@ -89,7 +89,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/gardena-sileno-city-500.webp\" används av 5 artiklar: Gardena Sileno City 500 recension 2026: liten trädgård | Husqvarna vs Gardena robotgräsklippare 2026: vilken vinner? | Bästa robotgräsklippare liten trädgård 2026: under 500 | Gardena vs Segway Navimow 2026: vilken robot vinner? | Bästa Gardena robotgräsklippare 2026: guide och test"
+      "message": "Bild \"/images/gardena-sileno-city-500.webp\" används av 5 artiklar: Gardena Sileno City 500 recension 2026: liten trädgård | Gardena vs Husqvarna robotgräsklippare 2026: samma ägare | Bästa robotgräsklippare liten trädgård 2026: under 500 | Gardena vs Segway Navimow 2026: vilken robot vinner? | Bästa Gardena robotgräsklippare 2026: guide och test"
     },
     {
       "check": "04-articlemeta",
@@ -99,17 +99,17 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/husqvarna-automower-415x.webp\" används av 2 artiklar: Husqvarna Automower 415X test 2026: recension och pris | Bästa robotgräsklippare för lutning 2026 (upp till 45%)"
+      "message": "Bild \"/images/husqvarna-automower-415x.webp\" används av 2 artiklar: Husqvarna Automower 415X test 2026: recension och pris | Bästa robotgräsklippare för brant lutning 2026, upp till 80%"
     },
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/husqvarna-430x-nera.webp\" används av 2 artiklar: Husqvarna Automower 430X Nera recension 2026: utan slinga | Husqvarna vs Segway Navimow 2026: 430V NERA mot i220E"
+      "message": "Bild \"/images/husqvarna-430x-nera.webp\" används av 2 artiklar: Husqvarna Automower 430X Nera recension 2026: utan slinga | Segway Navimow vs Husqvarna 2026: vilken slinglös vinner?"
     },
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/mammotion-luba-awd-3000.webp\" används av 8 artiklar: Husqvarna eller Mammotion 2026: 430V NERA vs LUBA 3 | Mammotion Luba AWD 3000 recension 2026: GPS-gräsrobot | Bästa robotgräsklippare utan slinga 2026: GPS-topplista | Mammotion vs Segway Navimow robotgräsklippare 2026 | Robotgräsklippare utan årsgränsavgift 2026: topplista..."
+      "message": "Bild \"/images/mammotion-luba-awd-3000.webp\" används av 8 artiklar: Mammotion eller Husqvarna 2026: LUBA 3 vs 430V NERA | Mammotion Luba AWD 3000 recension 2026: GPS-gräsrobot | Bästa robotgräsklippare utan slinga 2026: GPS-topplista | Segway Navimow eller Mammotion LUBA? Klart svar 2026 | Robotgräsklippare utan årsgränsavgift 2026: topplista..."
     },
     {
       "check": "04-articlemeta",
@@ -139,7 +139,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/segway-navimow-h500e.webp\" används av 3 artiklar: Segway Navimow H500E test och recension 2026: Vision Fence | Segway Navimow robotgräsklippare 2026: välj rätt modell | Segway Navimow H800E recension 2026: GPS-robot testad"
+      "message": "Bild \"/images/segway-navimow-h500e.webp\" används av 3 artiklar: Segway Navimow H500E VF test 2026: Vision Fence utan kabel | Segway Navimow robotgräsklippare 2026: välj rätt modell | Segway Navimow H800E test 2026: 800 m² utan slingkabel"
     },
     {
       "check": "04-articlemeta",
@@ -210,7 +210,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/dreame-l10s-pro-ultra-heat.webp\" används av 3 artiklar: Dreame L10s Pro Ultra Heat Recension 2026: Test och Pris | Dreame L10s Ultra Gen 2 recension 2026: värd köpet? | Bästa robotdammsugare för lägenhet 2026: testtopplista"
+      "message": "Bild \"/images/dreame-l10s-pro-ultra-heat.webp\" används av 3 artiklar: Dreame L10s Pro Ultra Heat Recension 2026: Test och Pris | Dreame L10s Ultra Gen 2 recension 2026: värd köpet? | Robotdammsugare för liten lägenhet 2026: 4 modeller jämförda"
     },
     {
       "check": "04-articlemeta",
@@ -230,7 +230,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/roborock-s8-maxv-ultra.webp\" används av 10 artiklar: Dyson 360 Vis Nav Recension 2026: Test, Pris och Betyg | Roborock S8 Max Ultra Recension 2026: Test och Omdöme | Roborock S8 MaxV Ultra recension 2026: AI-kamera, 10 000 Pa | Roborock vs Dreame 2026: vilken robotdammsugare vinner? | Roborock vs Ecovacs Deebot 2026: vilken robot vinner?..."
+      "message": "Bild \"/images/roborock-s8-maxv-ultra.webp\" används av 10 artiklar: Dyson 360 Vis Nav Recension 2026: Test, Pris och Betyg | Roborock S8 Max Ultra Recension 2026: Test och Omdöme | Roborock S8 MaxV Ultra recension 2026: AI-kamera, 10 000 Pa | Roborock eller Dreame 2026: 5 kategorier och ett klart råd | Roborock vs Ecovacs Deebot 2026: vilken robot vinner?..."
     },
     {
       "check": "04-articlemeta",
@@ -260,7 +260,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/gardena-sileno-city-500.webp\" används av 5 artiklar: Gardena Sileno City 500 recension 2026: liten trädgård | Husqvarna vs Gardena robotgräsklippare 2026: vilken vinner? | Bästa robotgräsklippare liten trädgård 2026: under 500 | Gardena vs Segway Navimow 2026: vilken robot vinner? | Bästa Gardena robotgräsklippare 2026: guide och test"
+      "message": "Bild \"/images/gardena-sileno-city-500.webp\" används av 5 artiklar: Gardena Sileno City 500 recension 2026: liten trädgård | Gardena vs Husqvarna robotgräsklippare 2026: samma ägare | Bästa robotgräsklippare liten trädgård 2026: under 500 | Gardena vs Segway Navimow 2026: vilken robot vinner? | Bästa Gardena robotgräsklippare 2026: guide och test"
     },
     {
       "check": "04-articlemeta",
@@ -270,17 +270,17 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/husqvarna-automower-415x.webp\" används av 2 artiklar: Husqvarna Automower 415X test 2026: recension och pris | Bästa robotgräsklippare för lutning 2026 (upp till 45%)"
+      "message": "Bild \"/images/husqvarna-automower-415x.webp\" används av 2 artiklar: Husqvarna Automower 415X test 2026: recension och pris | Bästa robotgräsklippare för brant lutning 2026, upp till 80%"
     },
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/husqvarna-430x-nera.webp\" används av 2 artiklar: Husqvarna Automower 430X Nera recension 2026: utan slinga | Husqvarna vs Segway Navimow 2026: 430V NERA mot i220E"
+      "message": "Bild \"/images/husqvarna-430x-nera.webp\" används av 2 artiklar: Husqvarna Automower 430X Nera recension 2026: utan slinga | Segway Navimow vs Husqvarna 2026: vilken slinglös vinner?"
     },
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/mammotion-luba-awd-3000.webp\" används av 8 artiklar: Husqvarna eller Mammotion 2026: 430V NERA vs LUBA 3 | Mammotion Luba AWD 3000 recension 2026: GPS-gräsrobot | Bästa robotgräsklippare utan slinga 2026: GPS-topplista | Mammotion vs Segway Navimow robotgräsklippare 2026 | Robotgräsklippare utan årsgränsavgift 2026: topplista..."
+      "message": "Bild \"/images/mammotion-luba-awd-3000.webp\" används av 8 artiklar: Mammotion eller Husqvarna 2026: LUBA 3 vs 430V NERA | Mammotion Luba AWD 3000 recension 2026: GPS-gräsrobot | Bästa robotgräsklippare utan slinga 2026: GPS-topplista | Segway Navimow eller Mammotion LUBA? Klart svar 2026 | Robotgräsklippare utan årsgränsavgift 2026: topplista..."
     },
     {
       "check": "04-articlemeta",
@@ -310,7 +310,7 @@
     {
       "check": "04-articlemeta",
       "severity": "warning",
-      "message": "Bild \"/images/segway-navimow-h500e.webp\" används av 3 artiklar: Segway Navimow H500E test och recension 2026: Vision Fence | Segway Navimow robotgräsklippare 2026: välj rätt modell | Segway Navimow H800E recension 2026: GPS-robot testad"
+      "message": "Bild \"/images/segway-navimow-h500e.webp\" används av 3 artiklar: Segway Navimow H500E VF test 2026: Vision Fence utan kabel | Segway Navimow robotgräsklippare 2026: välj rätt modell | Segway Navimow H800E test 2026: 800 m² utan slingkabel"
     },
     {
       "check": "04-articlemeta",

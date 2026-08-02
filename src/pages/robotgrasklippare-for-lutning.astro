@@ -120,28 +120,28 @@ export const articleMeta = {
 ---
 
 <BaseLayout
-  title="Bästa robotgräsklippare för lutning 2026 (upp till 45%)"
-  description="Bästa robotgräsklipparna för branta trädgårdar 2026. Vi jämför klätterförmåga upp till 45%. Se topplista med pris, lutningsgräns och prestanda."
-  article={{ datePublished: "2026-04-05", dateModified: "2026-07-27", image: "/images/husqvarna-automower-415x.webp" }}
+  title="Bästa robotgräsklippare för brant lutning 2026, upp till 80%"
+  description="Vilken robotgräsklippare klarar brant lutning? Dreame A3 AWD Pro 5000 tar 80% och 5 000 m² utan slinga. Fyra AWD-modeller jämförda på lutning och yta."
+  article={{ datePublished: "2026-04-05", dateModified: "2026-08-02", image: "/images/husqvarna-automower-415x.webp" }}
 >
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-toc-scope>
     <Breadcrumbs items={breadcrumbs} />
     <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-3 leading-tight">
-      Bästa Robotgräsklippare för Lutning 2026
+      Bästa robotgräsklippare för brant lutning 2026
     </h1>
-    <AuthorByline datePublished="2026-04-05" dateModified="2026-07-27" />
+    <AuthorByline datePublished="2026-04-05" dateModified="2026-08-02" />
 
     <AnswerBox
-      question="Snabbt svar: Vilken är den bästa robotgräsklipparen för lutning 2026?"
-      answer="Dreame A3 AWD Pro 5000 är vår bästa robotgräsklippare för lutning 2026. Fyrhjulsdriften klarar branta sluttningar där andra modeller spinner, och den navigerar helt utan perimeterkabel med RTK GPS och LiDAR på tomter upp till 5 000 m². Har du en mindre tomt räcker Dreame A3 AWD 1000."
+      question="Snabbt svar: Vilken robotgräsklippare klarar brant lutning?"
+      answer="Dreame A3 AWD Pro 5000 är bästa robotgräsklipparen för brant lutning 2026. Fyrhjulsdriften tar 80% lutning där tvåhjulsdrivna modeller spinner, och den navigerar helt utan perimeterkabel med RTK GPS och LiDAR på tomter upp till 5 000 m². Har du en mindre tomt räcker Dreame A3 AWD 1000."
     />
 
     <MoneyFeatured {...products[0]} />
 
-    <MoneyComparisonTable products={products} title="Jämförelsetabell - robotgräsklippare för lutning 2026" />
+    <MoneyComparisonTable products={products} title="Jämförelsetabell - robotgräsklippare för brant lutning 2026" />
 
     <p class="text-text-light text-lg mb-6 leading-relaxed">
-      Dreame A3 AWD Pro 5000 är vår bästa robotgräsklippare för lutning 2026. Fyrhjulsdriften klarar branta sluttningar där andra modeller spinner, och den navigerar helt utan perimeterkabel med RTK GPS och LiDAR. Den täcker tomter upp till 5 000 m².
+      Alla fyra modellerna i listan har fyrhjulsdrift och klipper utan perimeterkabel, så skillnaden ligger i hur brant och hur stor yta de klarar. Dreame A3 AWD Pro 5000 tar 80% lutning och 5 000 m², Mammotion Luba 3 5000X anges för 45 graders lutning och samma yta. Dreame A3 AWD 1000 räcker för mindre sluttningar upp till 1 000 m².
     </p>
 
     <MoneyTOC />
@@ -179,7 +179,7 @@ export const articleMeta = {
     </div>
 
     <section class="mb-10">
-      <h2 class="font-heading text-2xl font-bold text-text mb-5">Köpguide: Robotgräsklippare för lutning</h2>
+      <h2 class="font-heading text-2xl font-bold text-text mb-5">Köpguide: robotgräsklippare för brant lutning</h2>
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Mät din lutning innan du köper</h3>
       <p class="text-text-light leading-relaxed mb-4">
@@ -193,7 +193,7 @@ export const articleMeta = {
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Hårdgräs och markkvalitet</h3>
       <p class="text-text-light leading-relaxed mb-6">
-        På brant mark med hårt, ojämnt underlag krävs hjuldrift med bra grepp. Husqvarna Automower-serien har grövre mönster specifikt för kuperad terräng. Kontrollera att hjulen på modellen du väljer är rätt för ditt underlag.
+        På brant mark med hårt, ojämnt underlag krävs hjuldrift med bra grepp. Husqvarna Automower-serien har grövre mönster specifikt för kuperad terräng, se hela sortimentet i vår guide till <a href="/husqvarna-robotgrasklippare/" class="text-accent underline">Husqvarna robotgräsklippare</a>. Kontrollera att hjulen på modellen du väljer är rätt för ditt underlag.
       </p>
 
       <h3 class="font-heading text-xl font-semibold text-text mb-3">Behöver RTK-antennen fri sikt även i en kuperad trädgård?</h3>
@@ -255,14 +255,14 @@ export const articleMeta = {
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "Bästa robotgräsklippare för lutning 2026",
-    "description": "Topp 4 robotgräsklippare för trädgårdar med backar och sluttningar, upp till 50% lutning.",
+    "name": "Bästa robotgräsklippare för brant lutning 2026",
+    "description": "Topp 4 robotgräsklippare för trädgårdar med backar och sluttningar, upp till 80% lutning.",
     "numberOfItems": products.length,
     "itemListElement": products.map((p, i) => ({
       "@type": "ListItem",
       "position": i + 1,
       "name": p.name,
-      "url": `https://robotjakt.se${p.reviewUrl}`,
+      "url": p.reviewUrl ? `https://robotjakt.se${p.reviewUrl}` : `https://robotjakt.se/robotgrasklippare-for-lutning/`,
     })),
   })} />
 </BaseLayout>
