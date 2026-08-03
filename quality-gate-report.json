@@ -1,14 +1,14 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-08-03T10:36:25.074Z",
-  "durationMs": 11673,
+  "timestamp": "2026-08-03T11:09:44.684Z",
+  "durationMs": 12597,
   "summary": {
     "checks": 23,
-    "errors": 5,
+    "errors": 6,
     "warnings": 27,
     "newErrors": 0,
-    "baselinedErrors": 5
+    "baselinedErrors": 6
   },
   "results": [
     {
@@ -150,7 +150,7 @@
   "baseline": {
     "status": "compared",
     "baselineCount": 11,
-    "baselinedCount": 5,
+    "baselinedCount": 6,
     "newErrorCount": 0
   },
   "allResults": [
@@ -179,7 +179,14 @@
       "check": "01-dashes",
       "severity": "error",
       "file": "src/lib/cta-resolver.ts",
-      "line": 222,
+      "line": 229,
+      "message": "em-dash hittad: \"// stället — annars skulle korta varianter falla igenom.\""
+    },
+    {
+      "check": "01-dashes",
+      "severity": "error",
+      "file": "src/lib/cta-resolver.ts",
+      "line": 309,
       "message": "em-dash hittad: \"// stämma och tillbehör exkluderas — annars matchas t.ex. \"Landroid Vision 500\"\""
     },
     {

@@ -135,7 +135,7 @@ export const HUB: HubCategory[] = [
         badge: 'Utan slinga',
         bestFor: 'LiDAR och RTK utan perimeterkabel, tyst nog för villakvarter.',
         ctaText: 'Bra pris hos CS Megastore',
-        ctaUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25567775&url=https://www.csmegastore.se/i/25567775/segway-navimow-i220e-lidar-pro-robotgr%c3%a4sklippare-2000-m',
+        ctaUrl: 'https://go.csmegastore.se/t/t?a=1514097163&as=2063681412&t=2&tk=1&cupa_sku=25854166&url=https://www.csmegastore.se/i/25854166/segway-navimow-i220e-lidar-robotgr%c3%a4sklippare-2000-m',
       },
     ],
   },
@@ -221,7 +221,7 @@ export const HUB: HubCategory[] = [
       },
       {
         rank: 3,
-        name: 'DJI Mini 4 Pro',
+        name: 'DJI Mini 4 Pro Fly More Combo',
         brand: 'DJI',
         image: '/images/dji-mini-4-pro.webp',
         imgAlt: 'DJI Mini 4 Pro drönare',

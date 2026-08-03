@@ -195,9 +195,11 @@ export const articleMeta = {
           <div class="flex flex-col sm:flex-row gap-4">
             <div class="flex-shrink-0 flex flex-col items-center gap-2">
               {p.badge && <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-bg-alt text-text-light">{p.badge}</span>}
-              <div class="w-32 h-32 bg-gray-50 rounded-xl p-2 flex items-center justify-center border border-border">
-                <img src={p.img} alt={p.name} class="w-full h-full object-contain" loading="lazy" width="200" height="200" />
-              </div>
+              {p.img && (
+                <div class="w-32 h-32 bg-gray-50 rounded-xl p-2 flex items-center justify-center border border-border">
+                  <img src={p.img} alt={p.name} class="w-full h-full object-contain" loading="lazy" width="200" height="200" />
+                </div>
+              )}
             </div>
             <div class="flex-1 min-w-0">
               <h3 class="font-heading font-bold text-text text-base mb-1">{p.name}</h3>

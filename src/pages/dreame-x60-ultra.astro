@@ -8,17 +8,11 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { resolveMultiCTA } from '../lib/multi-cta';
 
 const PRODUCT = 'Dreame X60 Ultra';
-/**
- * X60 Ultra och X60 Pro Ultra är två olika modeller. Feed-matchningen släpper
- * igenom Pro-varianten på query "X60 Ultra" (extra modell-token straffas ej),
- * så vi filtrerar bort destinationer som pekar på Pro. Utan filtret hamnar
- * läsaren på fel produkt hos Komplett.
- */
+// X60 Ultra och X60 Pro Ultra är olika modeller. Varianttillägg filtreras
+// centralt i cta-resolver.ts (VARIANT_QUALIFIERS), inte per sida.
 const cta = resolveMultiCTA(PRODUCT, 'dreame');
-const isCorrectModel = (url: string) => !/x60[-_%20\s]*pro/i.test(decodeURIComponent(url));
-const matched = (cta?.all ?? []).filter((c) => isCorrectModel(c.url));
-const primary = matched[0];
-const others = matched.slice(1, 4);
+const primary = cta?.primary;
+const others = cta?.others?.slice(0, 3) ?? [];
 
 const faqItems = [
   {

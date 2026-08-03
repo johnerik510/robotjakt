@@ -118,6 +118,82 @@ const ACCESSORY_TOKENS = new Set([
 ]);
 
 /**
+ * Tillbehörs-stammar som delsträng. Svenska butikstitlar sätter ihop ord
+ * ("mopptillbehör", "tillbehörssats", "borstskydd"), så token-listan ovan
+ * missar dem. Bara stammar som ENSAMMA gör titeln till ett tillbehör står här.
+ *
+ * Lägg ALDRIG in specord som "påse", "hjul", "basstation" eller "batteri". De
+ * förekommer i riktiga produkttitlar: CS Megastore skriver spec-dumpar
+ * ("... Dammpåse, 2 hjul, 0,23 l") och Kjell skriver "robotdammsugare med
+ * basstation". Ett sådant ord här slår ut den riktiga produkten och lämnar
+ * tillbehöret kvar som bästa träff, alltså tvärtemot syftet.
+ */
+const ACCESSORY_STEMS = [
+  'tillbehör','tillbehor','accessor','borstskydd','dammskydd','fodral',
+  'dust bag','reservdel','moppdyna','mopprulle','moppduk','moppöverdrag',
+  'moppoverdrag','brush cover','side brush',
+];
+
+/** Markörer för "X för/till <modell>", alltså något gjort FÖR en modell. */
+const FOR_MARKER = /(^|\s)(för|till|for)(\s|$)/;
+
+/**
+ * Sant när kandidaten beskriver ett tillbehör till modellen i stället för
+ * modellen själv.
+ *
+ * Två oberoende signaler:
+ *  1. En tillbehörsstam finns i titeln ("Dreame mopptillbehör Aqua10 Ultra
+ *     Roller", "Roborock ..., Borstskydd, ...").
+ *  2. Titeln har formen "<något> för <modell>" OCH modell-token (det token i
+ *     frågan som bär siffror, annars det längsta) står EFTER markören:
+ *       "Dreame Filter för Aqua10 Ultra Roller"  -> aqua10 efter 'för' = tillbehör
+ *       "AIRROBO PC10 robotdammsugare för pooler" -> pc10 före 'för'   = produkt
+ *     Utan positionskravet skulle den riktiga AIRROBO-produkten falla bort.
+ */
+function looksLikeAccessory(query: string, candidate: string): boolean {
+  const c = normalize(candidate);
+  for (const stem of ACCESSORY_STEMS) if (c.includes(stem)) return true;
+
+  const m = c.match(FOR_MARKER);
+  if (!m || m.index === undefined) return false;
+
+  const qTokens = normalize(query).split(' ').filter(Boolean);
+  const withDigit = qTokens.filter((t) => /\d/.test(t));
+  const model = (withDigit.length ? withDigit : qTokens)
+    .reduce((a, b) => (b.length > a.length ? b : a), '');
+  if (!model) return false;
+
+  const at = c.indexOf(model);
+  return at > m.index;
+}
+
+/**
+ * Varianttillägg som skiljer en SKU från en annan. Om kandidaten innehåller ett
+ * sådant ord som frågan SAKNAR pekar länken på en annan modell än den sidan
+ * handlar om.
+ *
+ * allQueryTokensPresent() säkrar bara riktningen fråga → kandidat, alltså att
+ * inget ord i produktnamnet får saknas. Den omvända riktningen var oskyddad, och
+ * gav i produktion 14 av 77 CTA:er till fel variant:
+ *   "Dreame X60 Ultra"        -> "Dreame X60 Pro Ultra Complete"
+ *   "Dreame L40 Ultra"        -> "Dreame L40s Pro Ultra"
+ *   "Dreame X40 Ultra"        -> "Dreame X40 Ultra Complete"
+ *   "Roborock Saros 20 Sonic" -> "Saros 20 Sonic Complete"
+ *   "Roborock Qrevo S"        -> "Roborock Qrevo S Pro"
+ *   "MOVA 1000"               -> "MOVA LiDAX Ultra 1000"
+ *   "Worx Landroid M500"      -> "Worx Landroid M500 Plus"
+ *   "Segway Navimow i210E"    -> "Segway Navimow i210E LiDAR Pro"
+ *
+ * Bara tier-/paketord står i listan, aldrig modellnamn (Curv, Edge, Sonic, Nera),
+ * eftersom de redan täcks av allQueryTokensPresent och modellnummer-kontrollen.
+ * Hellre ingen CTA än en CTA till fel modell.
+ */
+const VARIANT_QUALIFIERS = new Set([
+  'pro','plus','max','maxv','ultra','complete','lite','mini','premium',
+  'combo','turbo','advanced','essential','bundle','garage','edition','limited',
+]);
+
+/**
  * Strikt token-matchning för multi-CTA: returnerar score 0 om
  * 1. Matchad titel innehåller tillbehörs-nyckelord som frågan saknar (= accessoar, ej robot)
  * 2. Frågan innehåller modellnummer (t.ex. "5") som INTE finns i matchad titel (t.ex. bara "4")
@@ -143,6 +219,17 @@ function strictMatchScore(query: string, candidateTitle: string): number {
   // Uteslut om kandidat innehåller tillbehörs-ord som frågan saknar
   for (const at of ACCESSORY_TOKENS) {
     if (cTokens.has(at) && !qTokens.has(at)) return 0;
+  }
+
+  // Uteslut sammansatta svenska tillbehörstitlar och "X för <modell>"
+  if (looksLikeAccessory(query, candidateTitle)) return 0;
+
+  // Uteslut om kandidaten är en annan variant av samma modell. qTokens filtrerar
+  // bort token <= 2 tecken, så jämför mot hela frågans token-uppsättning i
+  // stället — annars skulle korta varianter falla igenom.
+  const qAll = new Set(qNorm.split(' ').filter(Boolean));
+  for (const t of cTokens) {
+    if (VARIANT_QUALIFIERS.has(t) && !qAll.has(t)) return 0;
   }
 
   // Modellnummer-konsistens: siffror inuti token (t.ex. "5000" i "5000m2") måste stämma

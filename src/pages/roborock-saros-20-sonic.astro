@@ -8,16 +8,11 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { resolveMultiCTA } from '../lib/multi-cta';
 
 const PRODUCT = 'Roborock Saros 20 Sonic';
-/**
- * Saros 20 Sonic och Saros 20 Sonic Complete säljs parallellt till olika pris.
- * Feed-matchningen släpper igenom Complete på query utan det ordet, så vi
- * filtrerar bort den så att CTA:n leder till exakt den modell sidan recenserar.
- */
+// Saros 20 Sonic och Saros 20 Sonic Complete är olika SKU:er. Varianttillägg
+// filtreras centralt i cta-resolver.ts (VARIANT_QUALIFIERS), inte per sida.
 const cta = resolveMultiCTA(PRODUCT, 'roborock');
-const isCorrectModel = (url: string) => !/complete/i.test(decodeURIComponent(url));
-const matched = (cta?.all ?? []).filter((c) => isCorrectModel(c.url));
-const primary = matched[0];
-const others = matched.slice(1, 4);
+const primary = cta?.primary;
+const others = cta?.others?.slice(0, 3) ?? [];
 
 const faqItems = [
   {
