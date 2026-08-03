@@ -1,0 +1,309 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import AnswerBox from '../components/AnswerBox.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { resolveMultiCTA } from '../lib/multi-cta';
+
+const PRODUCT = 'Roborock Saros 20 Sonic';
+/**
+ * Saros 20 Sonic och Saros 20 Sonic Complete säljs parallellt till olika pris.
+ * Feed-matchningen släpper igenom Complete på query utan det ordet, så vi
+ * filtrerar bort den så att CTA:n leder till exakt den modell sidan recenserar.
+ */
+const cta = resolveMultiCTA(PRODUCT, 'roborock');
+const isCorrectModel = (url: string) => !/complete/i.test(decodeURIComponent(url));
+const matched = (cta?.all ?? []).filter((c) => isCorrectModel(c.url));
+const primary = matched[0];
+const others = matched.slice(1, 4);
+
+const faqItems = [
+  {
+    question: 'Vad betyder Sonic i namnet?',
+    answer: 'Moppen vibrerar 4 000 gånger i minuten i stället för att bara rotera eller släpas. Den mekaniska bearbetningen lossar intorkade fläckar som en roterande mopp bara smetar ut. Det är samma princip som en eltandborste: rörelsen gör jobbet, inte trycket.',
+  },
+  {
+    question: 'Är 36 000 Pa verkligen användbart?',
+    answer: 'Bara i mattor. På parkett och klinker gör skillnaden mellan 15 000 och 36 000 Pa ingen praktisk nytta, eftersom smutsen inte sitter fast i underlaget. I luggmattor och heltäckningsmattor drar den högre effekten upp sand och djurhår som svagare robotar lämnar kvar. Har du bara hårda golv är sugkraften inte skälet att välja den här modellen.',
+  },
+  {
+    question: 'Hur låg är Saros 20 Sonic?',
+    answer: 'Robotkroppen är 79,8 mm hög, vilket är bland det lägsta som finns. LiDAR sitter i ett indragbart system i stället för i ett torn på ovansidan, så roboten kommer in under möbler med runt åtta centimeters frigång. Det är den funktionen som skiljer Saros-serien mest från billigare Roborock-modeller.',
+  },
+  {
+    question: 'Hur lång drifttid har den?',
+    answer: 'Batteriet på 6 400 mAh räcker till omkring 190 minuter, vilket täcker ungefär 200 kvadratmeter i ett normalstort hem. Laddtiden är cirka 150 minuter. Kör du på högsta sugeffekt och moppning samtidigt sjunker drifttiden märkbart, men roboten laddar och återupptar passet automatiskt.',
+  },
+  {
+    question: 'Hur varmt tvättas mopparna?',
+    answer: 'Upp till 100 grader i stationen, följt av torkning med 55-gradig varmluft. Det är den varmaste mopptvätten på marknaden i dag. Fördelen är att fett och intorkat smuts släpper utan att du sköljer för hand, nackdelen är att cykeln tar längre tid och drar mer vatten än stationer som tvättar kallt.',
+  },
+  {
+    question: 'Vad är skillnaden mot Roborock Saros 10R?',
+    answer: 'Saros 20 Sonic har högre sugkraft, vibrerande mopp och hetare mopptvätt. Saros 10R använder StarSight-navigering utan LiDAR-torn och är något lägre. Städresultatet är jämförbart på hårda golv, medan Saros 20 Sonic drar ifrån i mattor och på intorkade fläckar.',
+  },
+  {
+    question: 'Hur bra undviker den hinder?',
+    answer: 'Reactive AI 3.0 kombinerar trippelt strukturerat ljus, RGB-kamera och sidoriktad VertiBeam. Roborock anger igenkänning av över 300 objekttyper och att hinder ner till 3 cm i bredd och höjd detekteras. I praktiken innebär det att sladdar, leksaker och husdjursskålar undviks tillförlitligt utan att du plockar undan i förväg.',
+  },
+  {
+    question: 'Passar Saros 20 Sonic i hem med husdjur?',
+    answer: 'Ja. DuoDivide-borsten delar upp och för vidare päls i stället för att linda den runt axeln, och sugkraften tar hår ur mattor. Kombinationen med hetvattentvätt gör dessutom att moppdukarna inte börjar lukta lika snabbt som i kallvattenstationer, vilket är en återkommande irritation i djurhem.',
+  },
+];
+
+const specs = [
+  { label: 'Sugkraft', value: '36 000 Pa (HyperForce)' },
+  { label: 'Batteri', value: '6 400 mAh' },
+  { label: 'Drifttid', value: 'cirka 190 min' },
+  { label: 'Yta per laddning', value: 'omkring 200 m²' },
+  { label: 'Laddtid', value: 'cirka 150 min' },
+  { label: 'Robotens höjd', value: '79,8 mm' },
+  { label: 'Navigering', value: 'RetractSense, indragbar LiDAR' },
+  { label: 'Hinderdetektering', value: 'Reactive AI 3.0, över 300 objekttyper' },
+  { label: 'Minsta detekterade hinder', value: '3 cm i bredd och höjd' },
+  { label: 'Moppsystem', value: 'VibraRise 5.0, utskjutbar moppmodul' },
+  { label: 'Moppvibration', value: '4 000 svängningar per minut' },
+  { label: 'Mopptryck', value: '14 N nedåtriktat' },
+  { label: 'Mopptvätt', value: 'upp till 100 °C varmvatten' },
+  { label: 'Mopptorkning', value: '55 °C varmluft' },
+  { label: 'Huvudborste', value: 'DuoDivide dubbelrulle (anti-tangle)' },
+  { label: 'Sidoborste', value: 'FlexiArm Arc, utsvängbar' },
+];
+
+const breadcrumbs = [
+  { label: 'Roborock Saros 20 Sonic recension' },
+];
+
+export const articleMeta = {
+  title: "Roborock Saros 20 Sonic recension 2026: test och omdöme",
+  description: "Roborock Saros 20 Sonic granskad 2026. 36 000 Pa, vibrerande mopp med 4 000 svängningar per minut och 100-gradig mopptvätt. Vår recension och omdöme.",
+  publishDate: "2026-08-03",
+  category: "Recension",
+  image: "/images/roborock-saros-20-sonic.webp",
+};
+---
+
+<BaseLayout
+  title="Roborock Saros 20 Sonic recension 2026: test och omdöme"
+  description="Roborock Saros 20 Sonic granskad 2026. 36 000 Pa, vibrerande mopp med 4 000 svängningar per minut och 100-gradig mopptvätt. Vår recension och omdöme."
+  ogImage="/images/roborock-saros-20-sonic.webp"
+  article={{ datePublished: "2026-08-03", dateModified: "2026-08-03", image: "/images/roborock-saros-20-sonic.webp" }}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AuthorByline datePublished="2026-08-03" dateModified="2026-08-03" />
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-08-03</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Roborock Saros 20 Sonic recension 2026
+    </h1>
+
+    <AnswerBox
+      question="Snabbt svar: är Roborock Saros 20 Sonic värd att köpa?"
+      answer="Ja, om du moppar mycket och har mattor. Den vibrerande moppen på 4 000 svängningar i minuten löser intorkade fläckar som roterande moppar bara smetar ut, 36 000 Pa tar mattorna och 79,8 mm bygghöjd släpper in roboten under låga möbler. Har du bara hårda golv och lite smuts betalar du för prestanda du inte utnyttjar."
+    />
+
+    <img
+      src="/images/roborock-saros-20-sonic.webp"
+      alt="Roborock Saros 20 Sonic robotdammsugare i svart station"
+      class="w-full max-w-md mx-auto max-h-[300px] object-contain rounded-xl border border-border bg-gray-50 mb-8"
+      width="761" height="571" loading="eager" fetchpriority="high"
+    />
+
+    <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">BÄST PÅ MOPPNING</span>
+          <div class="flex gap-0.5">
+            {[1,2,3,4,5].map(i => (
+              <svg class={`w-4 h-4 ${i <= 5 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span class="font-bold text-text">4,8 / 5</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed">
+          Saros 20 Sonic är Roborocks svar på att moppning i robotar länge varit halvdant. Vibrationen gör verklig skillnad på kladd i köket, och hetvattentvätten håller dukarna fräscha. Priset ligger i den absoluta toppen, och för hushåll utan mattor eller husdjur är det svårt att motivera.
+        </p>
+      </div>
+    </div>
+
+    {primary && (
+      <div class="bg-accent/5 border border-accent/20 rounded-xl p-5 mb-8">
+        <p class="text-sm text-text-light mb-3">Roborock Saros 20 Sonic finns hos flera av våra samarbetsbutiker. Jämför alltid innan du köper.</p>
+        <div class="flex flex-wrap items-center gap-3">
+          <a href={primary.url} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-6 py-3 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors min-h-[44px] text-sm">
+            Bra pris hos {primary.store}
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+          {others.map((o) => (
+            <a href={o.url} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-5 py-3 border-2 border-border text-text-light font-semibold rounded-lg hover:border-cta hover:text-cta transition-colors min-h-[44px] text-sm">
+              Bra pris hos {o.store}
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Roborock Saros 20 Sonics prestanda enligt specifikationer och oberoende tester</h2>
+      <p class="text-text-light text-sm leading-relaxed mb-3">Vi har inte kört Saros 20 Sonic i eget hem. Bedömningen bygger på Roborocks specifikation, butikernas produktdata och svenska testredaktioners publicerade genomgångar. Där uppgifter går isär anger vi den siffra som fler oberoende källor stödjer, och vi skriver ingenting om punkter ingen källa täcker.</p>
+      <p class="text-text-light text-sm leading-relaxed">Två saker återkommer i testmaterialet. Den vibrerande moppen presterar bättre på intorkade fläckar än roterande moppar, vilket är den funktion modellen faktiskt säljs på. Och sugkraftssiffran på 36 000 Pa ger ingen märkbar effekt på hårda golv, där skillnaden mot en robot på halva effekten inte går att se.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-5 mb-8">
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Fördelar med Roborock Saros 20 Sonic</h2>
+        <ul class="space-y-2">
+          {[
+            'Vibrerande mopp med 4 000 svängningar per minut löser intorkad smuts',
+            '79,8 mm bygghöjd tar roboten under låga möbler',
+            '36 000 Pa lyfter sand och päls ur luggmattor',
+            'Mopptvätt i upp till 100 grader med varmluftstorkning',
+            'Reactive AI 3.0 detekterar hinder ner till 3 cm',
+            'DuoDivide-borste som inte trasslar av långt hår',
+          ].map(pro => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+              {pro}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Nackdelar med Roborock Saros 20 Sonic</h2>
+        <ul class="space-y-2">
+          {[
+            'Ligger i den dyraste prisklassen på marknaden',
+            'Sugkraften ger ingen märkbar nytta på enbart hårda golv',
+            'Hetvattencykeln tar längre tid och drar mer vatten',
+            'Stationen är stor och kräver dedikerad plats',
+          ].map(con => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+              {con}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Roborock Saros 20 Sonic i detalj: mopp, sugkraft och navigering</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur mycket bättre moppar en vibrerande mopp?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        VibraRise 5.0 vibrerar moppmodulen 4 000 gånger i minuten och pressar den mot golvet med 14 newton. Skillnaden mot en roterande mopp märks bara på en typ av smuts: intorkade fläckar. Kaffestänk, sirap eller torkad hundtass går inte att lösa med tryck och vatten, det krävs mekanisk bearbetning, och det är precis vad vibrationen tillför.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        På vanligt golvdamm och lätt kladd gör vibrationen ingen skillnad alls. En billigare robot med roterande moppar torkar av köksgolvet lika bra så länge smutsen är färsk. Det är därför den här modellen är motiverad i barnfamiljer och husdjurshem, men inte i ett hushåll där golvet mest bara dammar.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad ger 36 000 Pa i praktiken?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Sugkraftssiffror har blivit en tävling mellan tillverkare och säger allt mindre om städresultatet. På parkett, klinker och laminat är smutsen löst liggande och plockas upp av vilken robot som helst. Det är i mattor den höga effekten gör nytta, där sand och päls sitter fast nere i fibrerna.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Har du heltäckningsmatta eller flera luggmattor är Saros 20 Sonic bland de starkaste alternativen som säljs i Sverige. Har du inga mattor alls kan du med gott samvete välja en betydligt billigare modell, till exempel bland <a href="/robotdammsugare-under-5000/" class="text-accent underline">robotdammsugare under 5 000 kronor</a>, utan att märka någon skillnad i städresultat.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur fungerar RetractSense-navigeringen?</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        LiDAR-enheten sitter indragbar i chassit i stället för i ett fast torn, vilket ger en bygghöjd på 79,8 mm. Praktiskt betyder det att roboten kommer in under möbler med drygt åtta centimeters frigång, alltså under de flesta soffor och många sängramar. Hinderdetekteringen sköts av Reactive AI 3.0 med trippelt strukturerat ljus, RGB-kamera och sidoriktad VertiBeam, som enligt Roborock hanterar över 300 objekttyper och ser hinder ner till tre centimeter. Bakgrunden till varför LiDAR spelar roll finns i vår genomgång av <a href="/guide/lidar-navigation/" class="text-accent underline">LiDAR-navigering i robotdammsugare</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad kräver stationen i underhåll?</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Stationen tömmer dammbehållaren, tvättar mopparna i upp till 100 grader och torkar dem med 55-gradig varmluft. Den varma tvätten gör att moppdukarna håller sig fräscha längre än i kallvattenstationer, men cykeln tar längre tid och drar mer vatten, så vattentanken behöver fyllas oftare. Tvättbrickan under roboten samlar det som sköljs ur och behöver torkas av med några veckors mellanrum. Slitdelar för serien listar vi bland <a href="/reservdelar/roborock/" class="text-accent underline">reservdelar till Roborock</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Specifikationer Roborock Saros 20 Sonic</h3>
+      <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+        <table class="cmp-table table-fixed w-full text-sm">
+          <tbody class="divide-y divide-border">
+            {specs.map((spec, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+                <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+                <td class="px-4 py-3 text-text-light">{spec.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vår slutsats: för vem passar Roborock Saros 20 Sonic?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Köp Saros 20 Sonic om du har mattor, husdjur eller barn som gör golvet kladdigt, och vill att roboten ska klara moppningen utan att du efterbehandlar. Det är i den miljön den vibrerande moppen och den höga sugkraften faktiskt syns i resultatet.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        Har du enbart hårda golv och normal nedsmutsning är den överdimensionerad. Titta då på <a href="/roborock-qrevo-curv/" class="text-accent underline">Roborock Qrevo Curv</a>, som ger samma app och kantstädning för betydligt mindre pengar. Vill du jämföra mot Roborocks tunnare toppmodell är <a href="/roborock-saros-10r/" class="text-accent underline">Roborock Saros 10R</a> närmaste alternativ.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med konkurrenter</h2>
+      <ul class="space-y-2">
+        <li><a href="/roborock-guide/" class="text-accent underline text-sm">Roborock guide 2026, alla modeller och skillnader</a></li>
+        <li><a href="/roborock-saros-10r/" class="text-accent underline text-sm">Roborock Saros 10R, världens tunnaste robotdammsugare</a></li>
+        <li><a href="/dreame-x60-ultra/" class="text-accent underline text-sm">Dreame X60 Ultra, 35 000 Pa och 8,8 cm tröskelpassage</a></li>
+        <li><a href="/robotdammsugare/lidar/" class="text-accent underline text-sm">Bästa robotdammsugare med LiDAR</a></li>
+        <li><a href="/robotdammsugare/med-mopp/" class="text-accent underline text-sm">Bästa robotdammsugare med mopp 2026</a></li>
+        <li><a href="/robotdammsugare/" class="text-accent underline text-sm">Bästa robotdammsugare 2026, alla kategorier</a></li>
+      </ul>
+    </section>
+  </div>
+
+  {primary && (
+    <StickyCTA
+      text={`Bra pris hos ${primary.store}`}
+      url={primary.url}
+      productName={PRODUCT}
+    />
+  )}
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Roborock Saros 20 Sonic",
+    "image": "https://robotjakt.se/images/roborock-saros-20-sonic.webp",
+    "brand": { "@type": "Brand", "name": "Roborock" },
+    "category": "Robotdammsugare",
+    "description": "Roborock Saros 20 Sonic robotdammsugare med 36 000 Pa sugkraft, VibraRise 5.0 vibrerande mopp och station med 100-gradig mopptvätt.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "1",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": {
+      "@type": "Review",
+      "reviewRating": { "@type": "Rating", "ratingValue": "4.8", "bestRating": "5", "worstRating": "1" },
+      "author": { "@id": "https://robotjakt.se/#axel" },
+      "datePublished": "2026-08-03",
+      "reviewBody": "Roborock Saros 20 Sonic är märkets svar på att robotmoppning länge varit halvdant. Vibrationen på 4 000 svängningar i minuten gör verklig skillnad på intorkade fläckar och hetvattentvätten håller dukarna fräscha. Priset ligger i toppen och för hushåll utan mattor är det svårt att motivera.",
+      "publisher": { "@id": "https://robotjakt.se/#organization" }
+    }
+  })} />
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
+</BaseLayout>

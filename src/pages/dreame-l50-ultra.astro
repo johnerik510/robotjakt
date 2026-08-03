@@ -1,0 +1,303 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import AnswerBox from '../components/AnswerBox.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { resolveMultiCTA } from '../lib/multi-cta';
+
+const PRODUCT = 'Dreame L50 Ultra';
+/**
+ * L50 Ultra och L50 Pro Ultra är två olika modeller. Feed-matchningen släpper
+ * igenom "L50 Pro Ultra" på query "L50 Ultra" (extra modell-token straffas ej),
+ * så vi filtrerar bort destinationer som pekar på Pro-varianten. Utan filtret
+ * hamnar läsaren på fel produkt hos CS Megastore och CDON.
+ */
+const cta = resolveMultiCTA(PRODUCT, 'dreame');
+const isCorrectModel = (url: string) => !/l50[-_%20\s]*pro/i.test(decodeURIComponent(url));
+const matched = (cta?.all ?? []).filter((c) => isCorrectModel(c.url));
+const primary = matched[0];
+const others = matched.slice(1, 4);
+
+const faqItems = [
+  {
+    question: 'Vad är skillnaden mellan Dreame L50 Ultra och X50 Ultra?',
+    answer: 'L50 Ultra ligger ett steg under. Sugkraften är 19 500 Pa mot X50:s 20 000, mopptvätten går till 75 grader mot 80, och L50 saknar VersaLift-tornet som sänker roboten under låga möbler. Tröskelpassagen är däremot densamma, upp till 6 cm i två steg. För de flesta hem är L50 Ultra det prisvärda valet.',
+  },
+  {
+    question: 'Klarar L50 Ultra trösklar?',
+    answer: 'Ja, upp till 6 cm när kanten går i två steg och 4,2 cm för en enskild kant. Det är samma nivå som den dyrare X50 Ultra och betydligt mer än en genomsnittlig robot, som stannar runt två centimeter. En massiv tröskellist på fem centimeter i ett stycke är fortfarande för högt.',
+  },
+  {
+    question: 'Hur lång drifttid har Dreame L50 Ultra?',
+    answer: 'Batteriet på 6 400 mAh räcker till omkring 200 minuter och cirka 186 kvadratmeter på en laddning. Kör du på högsta sugeffekt sjunker siffran märkbart. Tar batteriet slut mitt i passet återvänder roboten till stationen, laddar och fortsätter där den slutade.',
+  },
+  {
+    question: 'Trasslar borsten av långt hår?',
+    answer: 'HyperStream-systemet med två rullar är byggt för att hantera hår upp till 30 centimeter genom att dela upp och föra det vidare mot sugmunnen i stället för att linda det runt axeln. Kontrollera ändlagren med några månaders mellanrum, det är där hår ändå kan samlas.',
+  },
+  {
+    question: 'Hur ofta behöver dammpåsen bytas?',
+    answer: 'Dammpåsen rymmer 3,2 liter, vilket Dreame anger som upp till 100 dagar. Det gäller hem utan husdjur. Med en katt eller hund som fäller är sex till åtta veckor mer realistiskt. Vattnet behöver fyllas på oftare än så, ungefär varannan vecka i en normalstor bostad.',
+  },
+  {
+    question: 'Hur bra är hinderdetekteringen?',
+    answer: '3D-strukturerat ljus känner enligt Dreame igen drygt 180 objekttyper. Sladdar, skor och strumpor undviks tillförlitligt. Det är färre objekttyper än på dyrare modeller med dubbla kameror, vilket i praktiken märks på små och lågt liggande föremål. Plocka undan legobitar innan passet.',
+  },
+  {
+    question: 'Hur varmt tvättas mopparna?',
+    answer: 'Upp till 75 grader, med fyra temperaturlägen att välja mellan i appen. Det räcker gott för normal nedsmutsning. Det som betyder mest för lukt är inte tvättemperaturen utan att stationen torkar mopparna efteråt, vilket den gör.',
+  },
+  {
+    question: 'Passar Dreame L50 Ultra i lägenhet?',
+    answer: 'Ja, med reservation för stationens storlek. Roboten själv är lagom stor och tröskelpassagen är sällan avgörande i en modern lägenhet. Räknar du med att ställa stationen i hallen bör du mäta först, den tar mer plats än en vanlig laddstation utan tömningsfunktion.',
+  },
+];
+
+const specs = [
+  { label: 'Sugkraft', value: '19 500 Pa (Vormax)' },
+  { label: 'Batteri', value: '6 400 mAh' },
+  { label: 'Drifttid', value: 'upp till 200 min' },
+  { label: 'Yta per laddning', value: 'upp till 186 m²' },
+  { label: 'Tröskelpassage', value: '6 cm i två steg, 4,2 cm i ett steg' },
+  { label: 'Navigering', value: 'LiDAR med 3D-strukturerat ljus' },
+  { label: 'Hinderdetektering', value: 'drygt 180 objekttyper' },
+  { label: 'Huvudborste', value: 'HyperStream dubbelrulle, hanterar hår upp till 30 cm' },
+  { label: 'Mopptvätt', value: '75 °C varmvatten, fyra lägen' },
+  { label: 'Mopptorkning', value: 'varmluft i stationen' },
+  { label: 'Dammpåse', value: '3,2 liter, upp till 100 dagar' },
+  { label: 'App', value: 'Dreamehome (iOS och Android)' },
+];
+
+const breadcrumbs = [
+  { label: 'Dreame L50 Ultra recension' },
+];
+
+export const articleMeta = {
+  title: "Dreame L50 Ultra recension 2026: test och omdöme",
+  description: "Dreame L50 Ultra granskad 2026. 19 500 Pa, 6 cm tröskelpassage och varmvattentvättad mopp till mellanklasspris. Vår recension och omdöme.",
+  publishDate: "2026-08-03",
+  category: "Recension",
+  image: "/images/dreame-l50-ultra.webp",
+};
+---
+
+<BaseLayout
+  title="Dreame L50 Ultra recension 2026: test och omdöme"
+  description="Dreame L50 Ultra granskad 2026. 19 500 Pa, 6 cm tröskelpassage och varmvattentvättad mopp till mellanklasspris. Vår recension och omdöme."
+  ogImage="/images/dreame-l50-ultra.webp"
+  article={{ datePublished: "2026-08-03", dateModified: "2026-08-03", image: "/images/dreame-l50-ultra.webp" }}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AuthorByline datePublished="2026-08-03" dateModified="2026-08-03" />
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-08-03</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Dreame L50 Ultra recension 2026
+    </h1>
+
+    <AnswerBox
+      question="Snabbt svar: är Dreame L50 Ultra värd att köpa?"
+      answer="Ja, för de flesta hem. L50 Ultra behåller den tröskelpassage på 6 cm som gör Dreames dyrare modeller användbara i svenska hem, och lägger till varmvattentvättad mopp och automatisk tömning. Det du betalar bort mot X50 Ultra är VersaLift-tornet och några tusen pascal, alltså det som bara märks under låga sängar och i tjocka mattor."
+    />
+
+    <img
+      src="/images/dreame-l50-ultra.webp"
+      alt="Dreame L50 Ultra robotdammsugare i vit basstation"
+      class="w-full max-w-md mx-auto max-h-[300px] object-contain rounded-xl border border-border bg-gray-50 mb-8"
+      width="900" height="900" loading="eager" fetchpriority="high"
+    />
+
+    <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">BÄSTA VÄRDE</span>
+          <div class="flex gap-0.5">
+            {[1,2,3,4,5].map(i => (
+              <svg class={`w-4 h-4 ${i <= 5 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span class="font-bold text-text">4,5 / 5</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed">
+          L50 Ultra är den modell vi oftast pekar mot när någon vill ha Dreames tröskelteknik utan flaggskeppspris. Den gör nästan allt X50 Ultra gör. Det som saknas är nedsänkbart LiDAR-torn, och hinderdetekteringen är enklare än på de dyrare syskonen.
+        </p>
+      </div>
+    </div>
+
+    {primary && (
+      <div class="bg-accent/5 border border-accent/20 rounded-xl p-5 mb-8">
+        <p class="text-sm text-text-light mb-3">Dreame L50 Ultra finns hos flera av våra samarbetsbutiker. Jämför alltid innan du köper.</p>
+        <div class="flex flex-wrap items-center gap-3">
+          <a href={primary.url} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-6 py-3 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors min-h-[44px] text-sm">
+            Bra pris hos {primary.store}
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+          {others.map((o) => (
+            <a href={o.url} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-5 py-3 border-2 border-border text-text-light font-semibold rounded-lg hover:border-cta hover:text-cta transition-colors min-h-[44px] text-sm">
+              Bra pris hos {o.store}
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Dreame L50 Ultras prestanda enligt specifikationer och oberoende tester</h2>
+      <p class="text-text-light text-sm leading-relaxed mb-3">Vi har inte kört L50 Ultra i eget hem. Bedömningen bygger på Dreames svenska specifikation, butikernas produktdata och publicerade tester. Redaktionen kör däremot <a href="/dreame-x50-ultra/" class="text-accent underline">Dreame X50 Ultra</a> dagligen, och de två modellerna delar app, stationskonstruktion och underhållsmönster. Iakttagelserna om skötsel nedan bygger på den erfarenheten.</p>
+      <p class="text-text-light text-sm leading-relaxed">Var uppmärksam på namnet vid köp. Dreame säljer parallellt en L50 Pro Ultra, som är en annan modell med andra specifikationer. Butikernas produktnamn är inte alltid tydliga med skillnaden, så kontrollera modellbeteckningen i kassan.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-5 mb-8">
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Fördelar med Dreame L50 Ultra</h2>
+        <ul class="space-y-2">
+          {[
+            'Tröskelpassage upp till 6 cm i två steg, samma som dyrare X50 Ultra',
+            '19 500 Pa räcker till luggmattor och djurhår',
+            'Varmvattentvätt i 75 grader med torkning',
+            'HyperStream-dubbelrulle hanterar hår upp till 30 cm',
+            'Upp till 200 minuters drifttid och 186 kvadratmeter per laddning',
+            '3,2 liters dammpåse ger långa intervall',
+          ].map(pro => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+              {pro}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Nackdelar med Dreame L50 Ultra</h2>
+        <ul class="space-y-2">
+          {[
+            'Inget nedsänkbart LiDAR-torn, kommer inte under låga sängar',
+            'Hinderdetektering på drygt 180 objekttyper, färre än på dyrare modeller',
+            'Lätt att förväxla med den andra modellen L50 Pro Ultra',
+            'Stationen tar mer plats än en vanlig laddstation',
+          ].map(con => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+              {con}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Dreame L50 Ultra i detalj: trösklar, borste och station</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Varför är tröskelpassagen det viktigaste på den här modellen?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        En genomsnittlig robotdammsugare stannar vid ungefär två centimeter. Det räcker inte i ett hem med trösklar mellan hall, kök och badrum, och resultatet blir att roboten städar ett rum och sedan står still. L50 Ultra tar 4,2 cm för en enskild kant och 6 cm när kanten går i två steg.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Det är samma nivå som Dreames dyrare X50 Ultra, och det är den enskilt viktigaste anledningen att välja L50 Ultra framför en billigare robot i samma prisklass. Har du inga trösklar alls försvinner argumentet, och då finns bättre köp bland <a href="/robotdammsugare-under-5000/" class="text-accent underline">robotdammsugare under 5 000 kronor</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur hanterar HyperStream-borsten långt hår?</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Systemet består av två rullar som delar upp håret och för det vidare mot sugmunnen i stället för att låta det linda sig runt axeln. Dreame anger att konstruktionen hanterar hår upp till 30 centimeter. Det tar bort det vanligaste underhållsmomentet på äldre robotar, att klippa loss hår med sax varannan vecka. Helt fritt från rensning blir det inte: kontrollera ändlagren där rullen möter chassit med några månaders mellanrum. Fler modeller i samma kategori finns bland <a href="/robotdammsugare/langt-har/" class="text-accent underline">robotdammsugare för långt hår</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad tappar du mot Dreame X50 Ultra?</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Tre saker. VersaLift-tornet som sänker roboten till 89 mm och släpper in den under låga sängar finns inte här. Mopptvätten går till 75 grader i stället för 80. Och hinderdetekteringen känner igen drygt 180 objekttyper mot omkring 200. Ingen av punkterna påverkar hur rent det blir på öppna golvytor. Det som faktiskt kan avgöra köpet är höjden: har du en säng med nio centimeters frigång och tänker att roboten ska ta dammråttorna där, behöver du <a href="/dreame-x50-ultra/" class="text-accent underline">Dreame X50 Ultra</a> i stället.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur mycket underhåll kräver stationen?</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Stationen tömmer dammbehållaren i en påse på 3,2 liter, tvättar mopparna i 75 grader och torkar dem med varmluft. Torkningen är det som gör att dukarna inte börjar lukta, och den är viktigare än tvättemperaturen. Kvar att sköta själv: torka av tvättbrickan under roboten med några veckors mellanrum, fyll på rent vatten, töm smutsvattnet innan det står för länge, och byt dukar och filter efter skick. Delar listar vi bland <a href="/reservdelar/dreame/" class="text-accent underline">reservdelar till Dreame</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Specifikationer Dreame L50 Ultra</h3>
+      <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+        <table class="cmp-table table-fixed w-full text-sm">
+          <tbody class="divide-y divide-border">
+            {specs.map((spec, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+                <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+                <td class="px-4 py-3 text-text-light">{spec.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vår slutsats: för vem passar Dreame L50 Ultra?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        L50 Ultra är rätt köp för hem med trösklar där du inte vill betala flaggskeppspris. Du får tröskelpassagen, varmvattentvätten och den automatiska tömningen, alltså de tre funktioner som avgör om roboten faktiskt sköter sig själv.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        Behöver du komma under låga sängar väljer du <a href="/dreame-x50-ultra/" class="text-accent underline">Dreame X50 Ultra</a>. Vill du jämföra mot Roborocks motsvarighet i samma segment är <a href="/roborock-qrevo-curv/" class="text-accent underline">Roborock Qrevo Curv</a> den närmaste konkurrenten.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med konkurrenter</h2>
+      <ul class="space-y-2">
+        <li><a href="/dreame-guide/" class="text-accent underline text-sm">Dreame guide 2026, alla modeller och skillnader</a></li>
+        <li><a href="/dreame-l20-ultra/" class="text-accent underline text-sm">Dreame L20 Ultra, utfällbar mopp i mellanklassen</a></li>
+        <li><a href="/dreame-x60-ultra/" class="text-accent underline text-sm">Dreame X60 Ultra, 35 000 Pa och 8,8 cm tröskelpassage</a></li>
+        <li><a href="/roborock-vs-dreame/" class="text-accent underline text-sm">Roborock eller Dreame, vilket märke passar dig</a></li>
+        <li><a href="/robotdammsugare/med-bassation/" class="text-accent underline text-sm">Bästa robotdammsugare med basstation</a></li>
+        <li><a href="/robotdammsugare/" class="text-accent underline text-sm">Bästa robotdammsugare 2026, alla kategorier</a></li>
+      </ul>
+    </section>
+  </div>
+
+  {primary && (
+    <StickyCTA
+      text={`Bra pris hos ${primary.store}`}
+      url={primary.url}
+      productName={PRODUCT}
+    />
+  )}
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Dreame L50 Ultra",
+    "image": "https://robotjakt.se/images/dreame-l50-ultra.webp",
+    "brand": { "@type": "Brand", "name": "Dreame" },
+    "category": "Robotdammsugare",
+    "description": "Dreame L50 Ultra robotdammsugare med 19 500 Pa sugkraft, tröskelpassage upp till 6 cm i två steg och station med varmvattentvätt och automatisk tömning.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.5",
+      "reviewCount": "1",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": {
+      "@type": "Review",
+      "reviewRating": { "@type": "Rating", "ratingValue": "4.5", "bestRating": "5", "worstRating": "1" },
+      "author": { "@id": "https://robotjakt.se/#axel" },
+      "datePublished": "2026-08-03",
+      "reviewBody": "Dreame L50 Ultra ger tröskelpassage på 6 cm, varmvattentvättad mopp och automatisk tömning utan flaggskeppspris. Det som saknas mot X50 Ultra är det nedsänkbara LiDAR-tornet och en enklare hinderdetektering.",
+      "publisher": { "@id": "https://robotjakt.se/#organization" }
+    }
+  })} />
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
+</BaseLayout>

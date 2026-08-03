@@ -1,0 +1,310 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import AnswerBox from '../components/AnswerBox.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { resolveMultiCTA } from '../lib/multi-cta';
+
+const PRODUCT = 'Dreame X60 Ultra';
+/**
+ * X60 Ultra och X60 Pro Ultra är två olika modeller. Feed-matchningen släpper
+ * igenom Pro-varianten på query "X60 Ultra" (extra modell-token straffas ej),
+ * så vi filtrerar bort destinationer som pekar på Pro. Utan filtret hamnar
+ * läsaren på fel produkt hos Komplett.
+ */
+const cta = resolveMultiCTA(PRODUCT, 'dreame');
+const isCorrectModel = (url: string) => !/x60[-_%20\s]*pro/i.test(decodeURIComponent(url));
+const matched = (cta?.all ?? []).filter((c) => isCorrectModel(c.url));
+const primary = matched[0];
+const others = matched.slice(1, 4);
+
+const faqItems = [
+  {
+    question: 'Klarar Dreame X60 Ultra verkligen 8,8 cm höga hinder?',
+    answer: 'Bara när kanten går i två steg. En enskild rak kant klarar roboten upp till 4,5 cm. Åttakommaåtta centimeter avser en tvåstegskant, till exempel ett trappsteg upp mot ett förhöjt golv eller en tröskel med list ovanpå. Läs siffran som två lyft i följd, inte som ett.',
+  },
+  {
+    question: 'Vad är skillnaden mot Dreame X50 Ultra?',
+    answer: 'X60 Ultra höjer sugkraften från 20 000 till 35 000 Pa, tar 8,8 cm i stället för 6 cm i två steg och tvättar mopparna i 100 grader mot X50:s 80. Grundfunktionerna är desamma. Skillnaden märks i hem med höga kanter, mycket mattor eller kraftig nedsmutsning, annars är X50 Ultra det rationella köpet.',
+  },
+  {
+    question: 'Hur stor är stationen?',
+    answer: 'Stationen mäter 390 x 423 x 499 mm och väger 10,6 kg. Det är en av de större basstationerna på marknaden och kräver en dedikerad plats mot vägg, gärna nära vatten eftersom du fyller på manuellt. Mät platsen innan du beställer, halvmeterhöjden överraskar många.',
+  },
+  {
+    question: 'Hur ofta behöver vattnet bytas?',
+    answer: 'Rentvattentanken rymmer 4,2 liter och smutsvattentanken 3,0 liter. I en normalstor bostad räcker det ungefär två veckor. Töm smutsvattnet oftare än tanken blir full, vattnet börjar lukta om det står kvar. Dammpåsen på 3,2 liter håller betydligt längre, upp till 100 dagar i hem utan husdjur.',
+  },
+  {
+    question: 'Hur bra är hinderdetekteringen?',
+    answer: 'Dubbla AI-kameror med 360-graders kartläggning känner enligt Dreame igen över 280 objekttyper. Sladdar, strumpor, skor och husdjursskålar hanteras tillförlitligt. Som med alla kamerabaserade system sjunker träffsäkerheten i mörka rum och mot mörka golv, så tänd gärna i rummet vid nattpass.',
+  },
+  {
+    question: 'Hur hög är roboten?',
+    answer: 'Robotkroppen är 7,95 cm, vilket räcker för att komma in under de flesta soffor och en del sängramar. Kontrollera frigången under dina möbler innan köp, skillnaden mellan åtta och nio centimeter avgör om halva sovrummet blir städat eller inte.',
+  },
+  {
+    question: 'Hur varmt tvättas mopparna?',
+    answer: 'Stationen kör 100-gradig självrengöring och 40-gradigt varmvatten vid vanlig moppsköljning. Den heta cykeln används för att rengöra själva systemet, medan den ljumma används löpande. Det är en rimlig uppdelning: du behöver inte koka mopparna efter varje pass för att hålla dem fräscha.',
+  },
+  {
+    question: 'Passar X60 Ultra i hem med husdjur?',
+    answer: 'Ja. Sugkraften tar päls ur mattor, rullborsten är byggd mot trassel och den heta självrengöringen håller stationen från att lukta. Räkna med att byta dammpåse oftare än de 100 dagar Dreame anger, sex till åtta veckor är mer realistiskt när ett djur fäller.',
+  },
+];
+
+const specs = [
+  { label: 'Sugkraft', value: '35 000 Pa' },
+  { label: 'Batteri', value: '6 400 mAh' },
+  { label: 'Dammbehållare', value: '235 ml' },
+  { label: 'Robotens höjd', value: '7,95 cm' },
+  { label: 'Tröskelpassage', value: '8,8 cm i två steg, 4,5 cm i ett steg' },
+  { label: 'Navigering', value: '360-graders kartläggning med dubbla AI-kameror' },
+  { label: 'Hinderdetektering', value: 'över 280 objekttyper' },
+  { label: 'Mopprotation', value: '230 varv per minut' },
+  { label: 'Mopptryck', value: '15 N nedåtriktat' },
+  { label: 'Mopptvätt', value: '100 °C självrengöring, 40 °C varmvatten' },
+  { label: 'Station, mått', value: '390 x 423 x 499 mm' },
+  { label: 'Station, vikt', value: '10,6 kg' },
+  { label: 'Dammpåse', value: '3,2 liter' },
+  { label: 'Vattentankar', value: '4,2 liter rent, 3,0 liter smutsigt' },
+  { label: 'App', value: 'Dreamehome (iOS och Android)' },
+];
+
+const breadcrumbs = [
+  { label: 'Dreame X60 Ultra recension' },
+];
+
+export const articleMeta = {
+  title: "Dreame X60 Ultra recension 2026: test och omdöme",
+  description: "Dreame X60 Ultra granskad 2026. 35 000 Pa, 8,8 cm tröskelpassage i två steg och 100-gradig självrengöring. Vår recension, för- och nackdelar.",
+  publishDate: "2026-08-03",
+  category: "Recension",
+  image: "/images/dreame-x60-ultra.webp",
+};
+---
+
+<BaseLayout
+  title="Dreame X60 Ultra recension 2026: test och omdöme"
+  description="Dreame X60 Ultra granskad 2026. 35 000 Pa, 8,8 cm tröskelpassage i två steg och 100-gradig självrengöring. Vår recension, för- och nackdelar."
+  ogImage="/images/dreame-x60-ultra.webp"
+  article={{ datePublished: "2026-08-03", dateModified: "2026-08-03", image: "/images/dreame-x60-ultra.webp" }}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AuthorByline datePublished="2026-08-03" dateModified="2026-08-03" />
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-08-03</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Dreame X60 Ultra recension 2026
+    </h1>
+
+    <AnswerBox
+      question="Snabbt svar: är Dreame X60 Ultra värd att köpa?"
+      answer="Ja, om hemmet har höga kanter mellan rummen. Ingen annan robot i sortimentet tar 8,8 cm i två steg, och 35 000 Pa räcker till heltäckningsmatta. Stationen är samtidigt en av de största som säljs och kräver en halv meters höjd mot vägg. Har du platta golv utan trösklar gör X50 Ultra samma jobb för mindre pengar."
+    />
+
+    <img
+      src="/images/dreame-x60-ultra.webp"
+      alt="Dreame X60 Ultra robotdammsugare i vit basstation med guldfärgad front"
+      class="w-full max-w-md mx-auto max-h-[300px] object-contain rounded-xl border border-border bg-gray-50 mb-8"
+      width="900" height="900" loading="eager" fetchpriority="high"
+    />
+
+    <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">HÖGST TRÖSKELPASSAGE</span>
+          <div class="flex gap-0.5">
+            {[1,2,3,4,5].map(i => (
+              <svg class={`w-4 h-4 ${i <= 5 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span class="font-bold text-text">4,7 / 5</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed">
+          X60 Ultra tar Dreames tröskelteknik ett steg längre och löser hem som andra robotar helt enkelt inte når runt i. Sugkraften på 35 000 Pa är mer marknadsföring än nytta för de flesta, men stationens självrengöring i 100 grader är en verklig kvalitetshöjning.
+        </p>
+      </div>
+    </div>
+
+    {primary && (
+      <div class="bg-accent/5 border border-accent/20 rounded-xl p-5 mb-8">
+        <p class="text-sm text-text-light mb-3">Dreame X60 Ultra finns hos flera av våra samarbetsbutiker. Jämför alltid innan du köper.</p>
+        <div class="flex flex-wrap items-center gap-3">
+          <a href={primary.url} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-6 py-3 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors min-h-[44px] text-sm">
+            Bra pris hos {primary.store}
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+          {others.map((o) => (
+            <a href={o.url} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-5 py-3 border-2 border-border text-text-light font-semibold rounded-lg hover:border-cta hover:text-cta transition-colors min-h-[44px] text-sm">
+              Bra pris hos {o.store}
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Dreame X60 Ultras prestanda enligt specifikationer och oberoende tester</h2>
+      <p class="text-text-light text-sm leading-relaxed mb-3">Vi har inte kört X60 Ultra i eget hem. Underlaget är Dreames svenska specifikation, butikernas produktdata och svenska testredaktioners publicerade genomgångar. Drifttid är den enda punkt där källorna motsäger varandra, och därför anger vi ingen sådan siffra alls i stället för att gissa.</p>
+      <p class="text-text-light text-sm leading-relaxed">Det testerna är eniga om är att tröskelhanteringen fungerar som utlovat och att stationen är ovanligt stor. Vi kör dess föregångare <a href="/dreame-x50-ultra/" class="text-accent underline">Dreame X50 Ultra</a> dagligen i redaktionen, och den delar konstruktion, app och underhållsmönster med X60 Ultra. Erfarenheterna av moppunderhåll och stationsskötsel nedan bygger på den modellen.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-5 mb-8">
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Fördelar med Dreame X60 Ultra</h2>
+        <ul class="space-y-2">
+          {[
+            '8,8 cm tröskelpassage i två steg, mest i klassen',
+            '35 000 Pa tar även heltäckningsmatta',
+            '7,95 cm bygghöjd släpper in roboten under låga möbler',
+            '100-gradig självrengöring håller stationen luktfri',
+            'Stora tankar, 4,2 liter rent och 3,0 liter smutsigt vatten',
+            'Dubbla AI-kameror med igenkänning av över 280 objekttyper',
+          ].map(pro => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+              {pro}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Nackdelar med Dreame X60 Ultra</h2>
+        <ul class="space-y-2">
+          {[
+            'Stationen är nästan en halvmeter hög och väger 10,6 kg',
+            'Dammbehållaren på 235 ml är liten för klassen',
+            'En enskild kant över 4,5 cm stoppar roboten trots 8,8 cm-siffran',
+            'Kamerabaserad hinderdetektering tappar precision i mörker',
+            'Ligger i den dyraste prisklassen',
+          ].map(con => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+              {con}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Dreame X60 Ultra i detalj: trösklar, station och städresultat</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad betyder 8,8 cm tröskelpassage i praktiken?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Siffran gäller en kant uppdelad i två steg. En enskild rak kant klarar roboten upp till 4,5 cm. Skillnaden är avgörande när du bedömer ditt eget hem: en tröskel med list ovanpå eller ett lågt trappsteg upp mot ett förhöjt golv går att passera, medan en massiv kant på fem centimeter i ett stycke inte gör det.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Med det sagt är 4,5 cm för en enskild kant fortfarande mer än dubbelt så mycket som en genomsnittlig robot klarar. I ett äldre svenskt hus med olika golvnivåer mellan rummen är detta ofta skillnaden mellan att roboten städar hela våningen och att du bär den mellan rummen.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Är stationen för stor för ett vanligt hem?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Med måtten 390 x 423 x 499 mm och 10,6 kg är detta en av de största basstationerna på marknaden. Nästan en halv meter i höjd betyder att den inte får plats under en vanlig hylla eller i ett garderobsutrymme med låg hatthylla. Mät platsen innan du beställer.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Storleken har en poäng. Tankarna rymmer 4,2 liter rent och 3,0 liter smutsigt vatten, vilket räcker ungefär två veckor i en normalstor bostad, och dammpåsen på 3,2 liter håller betydligt längre. Ju större station, desto mer sällan behöver du gå dit. Vill du ha samma teknik i ett mindre paket får du gå ner i modellserie.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Behöver du verkligen 35 000 Pa?</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Nej, inte om du har hårda golv. Sugkraft över ungefär 10 000 Pa ger allt mindre märkbar effekt på parkett och klinker, eftersom smutsen ligger löst. Nyttan finns i heltäckningsmatta och tjock lugg, där sand och päls ligger nere i fibrerna. Har du sådana mattor är X60 Ultra bland de starkaste alternativ som säljs i Sverige. Har du inte det bör sugkraftssiffran inte styra köpet, och då är <a href="/robotdammsugare/med-mopp/" class="text-accent underline">bästa robotdammsugare med mopp</a> en bättre startpunkt.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur mycket underhåll kräver X60 Ultra?</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Den 100-gradiga självrengöringen håller moppsystemet fräscht utan att du sköljer för hand, vilket är den enskilt största skillnaden mot billigare stationer. Kvar att göra själv: torka av tvättbrickan under roboten med några veckors mellanrum, fyll på rent vatten, töm smutsvattnet innan det luktar, och byt moppdukar och filter efter skick. Delar för Dreame-serien listar vi bland <a href="/reservdelar/dreame/" class="text-accent underline">reservdelar till Dreame</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Specifikationer Dreame X60 Ultra</h3>
+      <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+        <table class="cmp-table table-fixed w-full text-sm">
+          <tbody class="divide-y divide-border">
+            {specs.map((spec, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+                <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+                <td class="px-4 py-3 text-text-light">{spec.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vår slutsats: för vem passar Dreame X60 Ultra?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Köp X60 Ultra om hemmet har höga kanter eller nivåskillnader mellan rummen, gärna i kombination med mattor. Det är den enda modellen i vårt sortiment som tar sig upp för 8,8 cm i två steg, och den egenskapen går inte att kompensera med något annat.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        Har du platta golv utan trösklar betalar du för teknik du aldrig använder. Då är <a href="/dreame-x50-ultra/" class="text-accent underline">Dreame X50 Ultra</a> det rationella valet, eller <a href="/dreame-l50-ultra/" class="text-accent underline">Dreame L50 Ultra</a> om du vill ner i pris utan att tappa varmvattentvätt och automatisk tömning.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med konkurrenter</h2>
+      <ul class="space-y-2">
+        <li><a href="/dreame-guide/" class="text-accent underline text-sm">Dreame guide 2026, alla modeller och skillnader</a></li>
+        <li><a href="/dreame-x40-ultra/" class="text-accent underline text-sm">Dreame X40 Ultra, utfällbar mopp och 12 000 Pa</a></li>
+        <li><a href="/roborock-saros-20-sonic/" class="text-accent underline text-sm">Roborock Saros 20 Sonic, vibrerande mopp och 36 000 Pa</a></li>
+        <li><a href="/roborock-vs-dreame/" class="text-accent underline text-sm">Roborock eller Dreame, vilket märke passar dig</a></li>
+        <li><a href="/robotdammsugare/med-bassation/" class="text-accent underline text-sm">Bästa robotdammsugare med basstation</a></li>
+        <li><a href="/robotdammsugare/" class="text-accent underline text-sm">Bästa robotdammsugare 2026, alla kategorier</a></li>
+      </ul>
+    </section>
+  </div>
+
+  {primary && (
+    <StickyCTA
+      text={`Bra pris hos ${primary.store}`}
+      url={primary.url}
+      productName={PRODUCT}
+    />
+  )}
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Dreame X60 Ultra",
+    "image": "https://robotjakt.se/images/dreame-x60-ultra.webp",
+    "brand": { "@type": "Brand", "name": "Dreame" },
+    "category": "Robotdammsugare",
+    "description": "Dreame X60 Ultra robotdammsugare med 35 000 Pa sugkraft, tröskelpassage upp till 8,8 cm i två steg och station med 100-gradig självrengöring.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.7",
+      "reviewCount": "1",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": {
+      "@type": "Review",
+      "reviewRating": { "@type": "Rating", "ratingValue": "4.7", "bestRating": "5", "worstRating": "1" },
+      "author": { "@id": "https://robotjakt.se/#axel" },
+      "datePublished": "2026-08-03",
+      "reviewBody": "Dreame X60 Ultra tar tröskeltekniken ett steg längre och löser hem som andra robotar inte når runt i. Sugkraften på 35 000 Pa är mer marknadsföring än nytta för de flesta, men stationens självrengöring i 100 grader är en verklig kvalitetshöjning. Stationen är ovanligt stor.",
+      "publisher": { "@id": "https://robotjakt.se/#organization" }
+    }
+  })} />
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
+</BaseLayout>

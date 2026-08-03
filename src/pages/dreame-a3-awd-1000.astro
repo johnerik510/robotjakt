@@ -1,0 +1,300 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import AnswerBox from '../components/AnswerBox.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { resolveMultiCTA } from '../lib/multi-cta';
+
+const PRODUCT = 'Dreame A3 AWD 1000';
+const cta = resolveMultiCTA(PRODUCT, 'dreame');
+const primary = cta?.primary;
+const others = cta?.others?.slice(0, 3) ?? [];
+
+const faqItems = [
+  {
+    question: 'Behöver Dreame A3 AWD 1000 en RTK-antenn?',
+    answer: 'Nej. OmniSense 3.0 kombinerar 3D LiDAR med kamerabaserad AI och kartlägger tomten själv, utan referensstation och utan nedgrävd slinga. Det är den stora praktiska skillnaden mot RTK-baserade klippare, som kräver fri sikt mot himlen för antennen och tappar precision under täta trädkronor.',
+  },
+  {
+    question: 'Vad klarar den för lutning?',
+    answer: 'Upp till 80 procent, vilket motsvarar drygt 38 grader. Det är bland det högsta på marknaden och är hela poängen med allhjulsdriften. En vanlig tvåhjulsdriven robot tappar greppet någonstans runt 35 till 45 procent, så har du en riktig slänt i trädgården är A3 AWD 1000 ett av få alternativ som faktiskt fungerar.',
+  },
+  {
+    question: 'Hur stor tomt klarar den?',
+    answer: 'Upp till 1 000 kvadratmeter. Har du större yta finns samma teknik i A3 AWD Pro-versionerna för 2 500, 3 500 och 5 000 kvadratmeter. Räkna med marginal: 1 000 kvadratmeter är tillverkarens tak vid gynnsamma förhållanden, och en tomt med många hinder och zoner tar längre tid per varv.',
+  },
+  {
+    question: 'Hur nära kanten klipper den?',
+    answer: 'EdgeMaster 1.0 klipper ner till under fem centimeter från kanten. Det räcker för att slippa trimma längs de flesta rabatter och gångar, men inte hela vägen in mot en mur eller staket. Räkna med att gå efter med trimmer några gånger per säsong längs hårda kanter.',
+  },
+  {
+    question: 'Vilken klipphöjd går att ställa in?',
+    answer: 'Mellan 3 och 10 centimeter, med en klippbredd på 20 centimeter. Spannet är brett i överkant, vilket är användbart om du vill hålla gräset högt under torrperioder. För en vanlig svensk gräsmatta ligger 4 till 5 centimeter oftast rätt.',
+  },
+  {
+    question: 'Hur bra undviker den hinder?',
+    answer: 'AI-igenkänning täcker enligt Dreame över 300 objekttyper, och LiDAR-sensorn ser 360 grader med upp till 70 meters räckvidd. Trädgårdsmöbler, leksaker, husdjur och slangar hanteras. Låga och smala föremål som liggande grenar är fortfarande det som oftast missas, så gör en snabb rond innan säsongens första klippning.',
+  },
+  {
+    question: 'Krävs abonnemang för 4G-funktionerna?',
+    answer: 'Roboten har 4G via eSIM tillsammans med GPS och wifi. Villkoren för datatrafiken har ändrats mellan årsmodeller och skiljer sig mellan marknader, så kontrollera vad som gäller hos butiken innan du köper. Styrning och schemaläggning över wifi fungerar oavsett hur 4G-delen är upplagd.',
+  },
+  {
+    question: 'Klarar den regn?',
+    answer: 'Kapslingen är IPX6, vilket innebär skydd mot kraftiga vattenstrålar. Den tål alltså både regn och avspolning med trädgårdsslang. Klipp ändå inte i regn om du kan undvika det, blött gräs klumpar ihop sig under kåpan och ger sämre klippresultat.',
+  },
+];
+
+const specs = [
+  { label: 'Max gräsyta', value: '1 000 m²' },
+  { label: 'Drivning', value: 'allhjulsdrift (AWD)' },
+  { label: 'Max lutning', value: '80 procent' },
+  { label: 'Klipphöjd', value: '3 till 10 cm' },
+  { label: 'Klippbredd', value: '20 cm' },
+  { label: 'Batteri', value: '5 Ah' },
+  { label: 'Navigering', value: '3D LiDAR (OmniSense 3.0), ingen RTK-antenn' },
+  { label: 'LiDAR-räckvidd', value: 'upp till 70 meter, 360 grader' },
+  { label: 'Kartnoggrannhet', value: 'ner till 1 cm enligt Dreame' },
+  { label: 'Kantklippning', value: 'EdgeMaster 1.0, under 5 cm från kant' },
+  { label: 'Hinderigenkänning', value: 'AI, över 300 objekttyper' },
+  { label: 'Uppkoppling', value: '4G eSIM, GPS, wifi' },
+  { label: 'Kapsling', value: 'IPX6' },
+  { label: 'Klipplägen', value: 'Standard, Effektivt, Rush' },
+];
+
+const breadcrumbs = [
+  { label: 'Dreame A3 AWD 1000 recension' },
+];
+
+export const articleMeta = {
+  title: "Dreame A3 AWD 1000 recension 2026: test och omdöme",
+  description: "Dreame A3 AWD 1000 granskad 2026. Allhjulsdrift för 80 procents lutning, 3D LiDAR utan RTK-antenn och 1 000 m². Vår recension och omdöme.",
+  publishDate: "2026-08-03",
+  category: "Recension",
+  image: "/images/dreame-a3-awd-1000-recension.webp",
+};
+---
+
+<BaseLayout
+  title="Dreame A3 AWD 1000 recension 2026: test och omdöme"
+  description="Dreame A3 AWD 1000 granskad 2026. Allhjulsdrift för 80 procents lutning, 3D LiDAR utan RTK-antenn och 1 000 m². Vår recension och omdöme."
+  ogImage="/images/dreame-a3-awd-1000-recension.webp"
+  article={{ datePublished: "2026-08-03", dateModified: "2026-08-03", image: "/images/dreame-a3-awd-1000-recension.webp" }}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AuthorByline datePublished="2026-08-03" dateModified="2026-08-03" />
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-08-03</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Dreame A3 AWD 1000 recension 2026
+    </h1>
+
+    <AnswerBox
+      question="Snabbt svar: är Dreame A3 AWD 1000 värd att köpa?"
+      answer="Ja, om tomten lutar. Allhjulsdriften tar 80 procents lutning, där tvåhjulsdrivna robotar tappar greppet runt 35 till 45 procent, och 3D LiDAR gör att den kartlägger själv utan RTK-antenn och utan nedgrävd slinga. Har du en plan gräsmatta utan backar betalar du för drivlina och sensorik du inte behöver."
+    />
+
+    <img
+      src="/images/dreame-a3-awd-1000-recension.webp"
+      alt="Dreame A3 AWD 1000 robotgräsklippare med fyrhjulsdrift och grovmönstrade däck"
+      class="w-full max-w-md mx-auto max-h-[300px] object-contain rounded-xl border border-border bg-gray-50 mb-8"
+      width="900" height="900" loading="eager" fetchpriority="high"
+    />
+
+    <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">BÄST I LUTNING</span>
+          <div class="flex gap-0.5">
+            {[1,2,3,4,5].map(i => (
+              <svg class={`w-4 h-4 ${i <= 5 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span class="font-bold text-text">4,6 / 5</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed">
+          A3 AWD 1000 är byggd för tomter där andra robotar spinner. Kombinationen allhjulsdrift och LiDAR utan RTK-antenn löser de två vanligaste problemen i svenska trädgårdar: slänter och skuggande träd. Priset är högt för 1 000 kvadratmeter, och kantklippningen når inte hela vägen.
+        </p>
+      </div>
+    </div>
+
+    {primary && (
+      <div class="bg-accent/5 border border-accent/20 rounded-xl p-5 mb-8">
+        <p class="text-sm text-text-light mb-3">Dreame A3 AWD 1000 finns hos flera av våra samarbetsbutiker. Jämför alltid innan du köper.</p>
+        <div class="flex flex-wrap items-center gap-3">
+          <a href={primary.url} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-6 py-3 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors min-h-[44px] text-sm">
+            Bra pris hos {primary.store}
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+          {others.map((o) => (
+            <a href={o.url} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-5 py-3 border-2 border-border text-text-light font-semibold rounded-lg hover:border-cta hover:text-cta transition-colors min-h-[44px] text-sm">
+              Bra pris hos {o.store}
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Dreame A3 AWD 1000s prestanda enligt specifikationer och oberoende tester</h2>
+      <p class="text-text-light text-sm leading-relaxed mb-3">Vi har inte kört A3 AWD 1000 i egen trädgård. Bedömningen bygger på Dreames specifikation, butikernas produktdata och publicerade tester. Uppgifter om drifttid per laddning varierar för mycket mellan källor för att vi ska ange en siffra, och därför gör vi det inte.</p>
+      <p class="text-text-light text-sm leading-relaxed">Det som testmaterialet är samstämmigt om är att allhjulsdriften fungerar i branta lägen där tvåhjulsdrivna robotar ger upp, och att LiDAR-navigeringen klarar sig utan fri sikt mot himlen. Det senare är avgörande i trädgårdar med lövträd, där RTK-baserade robotar tappar position under sommarens täta lövverk.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-5 mb-8">
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Fördelar med Dreame A3 AWD 1000</h2>
+        <ul class="space-y-2">
+          {[
+            'Allhjulsdrift klarar upp till 80 procents lutning',
+            '3D LiDAR kartlägger utan RTK-antenn och utan slinga',
+            'Fungerar under träd där RTK-robotar tappar signal',
+            'AI-hinderigenkänning för över 300 objekttyper',
+            'Klipphöjd 3 till 10 cm, brett spann i överkant',
+            'IPX6 gör att den tål regn och avspolning',
+          ].map(pro => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+              {pro}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Nackdelar med Dreame A3 AWD 1000</h2>
+        <ul class="space-y-2">
+          {[
+            'Högt pris i förhållande till ytan på 1 000 kvadratmeter',
+            'Kantklippningen når inte hela vägen in mot murar och staket',
+            '4G via eSIM kan kosta extra efter inledande period',
+            'Klippbredden på 20 cm ger många varv på större ytor',
+          ].map(con => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+              {con}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Dreame A3 AWD 1000 i detalj: drivning, navigering och kanter</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad gör allhjulsdriften för brant terräng?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Fyra drivna hjul med grovmönstrade däck fördelar kraften så att roboten inte tappar greppet när ett hjul lämnar marken. Dreame anger 80 procents lutning, alltså drygt 38 grader. En tvåhjulsdriven robot i samma prisklass ger upp någonstans mellan 35 och 45 procent, ofta med spinnande hjul som river upp gräsmattan.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Det praktiska värdet syns tydligast i övergången mellan plan mark och slänt, där en tvåhjulsdriven robot kan fastna med bakhjulen i luften. Har du sådana partier i trädgården är detta skillnaden mellan en robot som klipper hela ytan och en du får hjälpa varje vecka. Fler alternativ finns bland <a href="/robotgrasklippare-for-lutning/" class="text-accent underline">robotgräsklippare för lutning</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Varför är LiDAR bättre än RTK i svenska trädgårdar?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        RTK-baserade robotgräsklippare positionerar sig med satellit och en fast referensantenn. Systemet är mycket exakt när antennen har fri sikt mot himlen, men tappar precision under täta trädkronor och nära höga husväggar. Det är precis den miljö de flesta svenska villatomter erbjuder från juni och framåt.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        OmniSense 3.0 använder i stället en 3D LiDAR med 360 graders täckning och upp till 70 meters räckvidd, kombinerad med kamerabaserad AI. Roboten känner igen sin omgivning geometriskt i stället för att räkna på satellitsignaler, och behöver därför varken antenn eller fri himmel. Uppsättningen blir också enklare: ingen mast att placera, ingen slinga att gräva ner. Mer om tekniken finns i vår genomgång av <a href="/robotgrasklippare-utan-slinga/" class="text-accent underline">robotgräsklippare utan slinga</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur nära kanten klipper EdgeMaster?</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        EdgeMaster 1.0 tar gräset till under fem centimeter från kanten. Det räcker längs rabatter och gräsytor som möter grus, där de sista centimetrarna inte syns. Mot en mur, en husvägg eller ett staket kommer däremot en tydlig remsa att stå kvar, och den behöver du trimma några gånger per säsong. Ingen robot på marknaden löser det problemet helt, klippskivan måste sitta innanför chassit av säkerhetsskäl.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad kräver den i löpande skötsel?</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Knivarna är slitdelar och byts ungefär en gång per säsong, oftare om tomten har grus eller kottar som slår mot eggen. Spola av undersidan med slang när gräset klumpar ihop sig, kapslingen tål det. Inför vintern ska batteriet laddas och roboten förvaras frostfritt, vi har samlat stegen i vår guide till <a href="/guide/vinterforvaring-robotgrasklippare/" class="text-accent underline">vinterförvaring av robotgräsklippare</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Specifikationer Dreame A3 AWD 1000</h3>
+      <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+        <table class="cmp-table table-fixed w-full text-sm">
+          <tbody class="divide-y divide-border">
+            {specs.map((spec, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+                <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+                <td class="px-4 py-3 text-text-light">{spec.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vår slutsats: för vem passar Dreame A3 AWD 1000?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Köp A3 AWD 1000 om tomten har slänter, nivåskillnader eller mycket skugga från träd. Det är i den kombinationen allhjulsdriften och LiDAR-navigeringen gör konkret nytta, och där billigare robotar återkommande fastnar eller tappar kartan.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        Har du en plan gräsmatta utan backar finns det ingen anledning att betala för fyrhjulsdrift. Titta då bland <a href="/robotgrasklippare-liten-tradgard/" class="text-accent underline">robotgräsklippare för liten trädgård</a>. Behöver du samma teknik för större ytor finns A3 AWD Pro-versionerna, som vi går igenom i vår översikt över <a href="/dreame-robotgrasklippare/" class="text-accent underline">Dreame robotgräsklippare</a>.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med konkurrenter</h2>
+      <ul class="space-y-2">
+        <li><a href="/dreame-robotgrasklippare/" class="text-accent underline text-sm">Dreame robotgräsklippare 2026, alla modeller</a></li>
+        <li><a href="/segway-navimow-i220e-lidar-pro/" class="text-accent underline text-sm">Segway Navimow i220E LiDAR Pro, 2 000 m² utan slinga</a></li>
+        <li><a href="/mammotion-luba-awd-3000/" class="text-accent underline text-sm">Mammotion Luba AWD 3000, allhjulsdrift för större tomter</a></li>
+        <li><a href="/robotgrasklippare-for-lutning/" class="text-accent underline text-sm">Bästa robotgräsklippare för lutning</a></li>
+        <li><a href="/robotgrasklippare-utan-slinga/" class="text-accent underline text-sm">Bästa robotgräsklippare utan slinga</a></li>
+        <li><a href="/robotgrasklippare/" class="text-accent underline text-sm">Bästa robotgräsklippare 2026, alla kategorier</a></li>
+      </ul>
+    </section>
+  </div>
+
+  {primary && (
+    <StickyCTA
+      text={`Bra pris hos ${primary.store}`}
+      url={primary.url}
+      productName={PRODUCT}
+    />
+  )}
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Dreame A3 AWD 1000",
+    "image": "https://robotjakt.se/images/dreame-a3-awd-1000-recension.webp",
+    "brand": { "@type": "Brand", "name": "Dreame" },
+    "category": "Robotgräsklippare",
+    "description": "Dreame A3 AWD 1000 robotgräsklippare med allhjulsdrift för 80 procents lutning, 3D LiDAR-navigering utan RTK-antenn och yta upp till 1 000 kvadratmeter.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "reviewCount": "1",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": {
+      "@type": "Review",
+      "reviewRating": { "@type": "Rating", "ratingValue": "4.6", "bestRating": "5", "worstRating": "1" },
+      "author": { "@id": "https://robotjakt.se/#axel" },
+      "datePublished": "2026-08-03",
+      "reviewBody": "Dreame A3 AWD 1000 är byggd för tomter där andra robotar spinner. Allhjulsdrift för 80 procents lutning och LiDAR utan RTK-antenn löser slänter och skuggande träd. Priset är högt i förhållande till ytan och kantklippningen når inte hela vägen.",
+      "publisher": { "@id": "https://robotjakt.se/#organization" }
+    }
+  })} />
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
+</BaseLayout>

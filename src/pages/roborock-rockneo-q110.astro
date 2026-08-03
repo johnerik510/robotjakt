@@ -1,0 +1,296 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import AnswerBox from '../components/AnswerBox.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { resolveMultiCTA } from '../lib/multi-cta';
+
+const PRODUCT = 'Roborock RockNeo Q110';
+const cta = resolveMultiCTA(PRODUCT, 'roborock');
+const primary = cta?.primary;
+const others = cta?.others?.slice(0, 3) ?? [];
+
+const faqItems = [
+  {
+    question: 'Är RockNeo Q110 Roborocks första robotgräsklippare?',
+    answer: 'RockNeo är Roborocks satsning på trädgård och kommer från ett företag som byggt robotdammsugare i över tio år. Navigeringskunnandet är alltså inte nytt, men klippteknik och terrängkörning är ett annat problem än att köra på golv. Behandla första generationen som just en första generation.',
+  },
+  {
+    question: 'Behöver den nedgrävd slinga?',
+    answer: 'Nej. Q110 kombinerar RTK med VSLAM, alltså satellitpositionering tillsammans med kamerabaserad kartläggning. Gränsen dras virtuellt i appen. Kombinationen gör att den klarar sig bättre än rena RTK-klippare när lövverket skuggar himlen, eftersom kamerorna tar över när satellitsignalen försämras.',
+  },
+  {
+    question: 'Hur stor tomt klarar Q110?',
+    answer: 'Upp till 1 000 kvadratmeter. Den mindre Q105 täcker 500 kvadratmeter med samma teknik. Med en klippbredd på 22 centimeter och cirka 110 minuters drifttid behöver Q110 flera pass per dygn för att hålla en tomt nära maxytan kortklippt under högsäsong.',
+  },
+  {
+    question: 'Vad klarar den för lutning?',
+    answer: 'Upp till 45 procent, alltså cirka 24 grader. Det är mer än de flesta tvåhjulsdrivna robotar i klassen och räcker för en tomt med tydliga nivåskillnader. En brant anlagd slänt kräver ändå allhjulsdrift, där ligger gränsen snarare kring 80 procent.',
+  },
+  {
+    question: 'Vad är PreciEdge-modulen?',
+    answer: 'En kantklippningsmodul som säljs separat och låter roboten klippa närmare staket och murar. Utan den står en remsa kvar längs hårda kanter som du får trimma för hand. Räkna alltså med en tillkommande kostnad om kantresultatet är viktigt för dig.',
+  },
+  {
+    question: 'Hur mycket låter den?',
+    answer: 'Cirka 59 dB, vilket är normalt för en batteridriven robotgräsklippare och betydligt tystare än en bensinklippare. Den kan gå kvällstid utan att störa grannar, men ljudet hörs om den passerar precis utanför ett öppet fönster.',
+  },
+  {
+    question: 'Vilken klipphöjd går att ställa in?',
+    answer: 'Mellan 20 och 60 millimeter, med tre standardknivar och 22 centimeters klippbredd. Sextio millimeter i överkant är lägre än på flera konkurrenter, vilket är värt att veta om du vill hålla gräset högt under torrperioder för att skydda rötterna.',
+  },
+  {
+    question: 'Hur lång är laddtiden?',
+    answer: 'Ungefär 75 minuter för batteriet på 4,6 Ah, vilket är kort. Kombinerat med cirka 110 minuters drifttid betyder det att roboten kommer ut igen snabbt efter varje laddning, och det kompenserar delvis för att batteriet inte är särskilt stort.',
+  },
+];
+
+const specs = [
+  { label: 'Max gräsyta', value: '1 000 m²' },
+  { label: 'Navigering', value: 'RTK och VSLAM, ingen nedgrävd slinga' },
+  { label: 'Drivning', value: 'tvåhjulsdrift (2WD)' },
+  { label: 'Max lutning', value: '45 procent (cirka 24 grader)' },
+  { label: 'Klipphöjd', value: '20 till 60 mm' },
+  { label: 'Klippbredd', value: '22 cm' },
+  { label: 'Knivar', value: 'tre standardknivar' },
+  { label: 'Batteri', value: '4,6 Ah litiumjon' },
+  { label: 'Drifttid', value: 'cirka 110 min' },
+  { label: 'Laddtid', value: 'cirka 75 min' },
+  { label: 'Ljudnivå', value: 'cirka 59 dB' },
+  { label: 'Kapsling', value: 'IPX6' },
+  { label: 'Kantklippning', value: 'PreciEdge-modul säljs separat' },
+];
+
+const breadcrumbs = [
+  { label: 'Roborock RockNeo Q110 recension' },
+];
+
+export const articleMeta = {
+  title: "Roborock RockNeo Q110 recension 2026: test och omdöme",
+  description: "Roborock RockNeo Q110 granskad 2026. RTK och VSLAM utan slinga, 1 000 m² och 45 procents lutning. Vår recension, för- och nackdelar.",
+  publishDate: "2026-08-03",
+  category: "Recension",
+  image: "/images/products/roborock-rockneo-q110.webp",
+};
+---
+
+<BaseLayout
+  title="Roborock RockNeo Q110 recension 2026: test och omdöme"
+  description="Roborock RockNeo Q110 granskad 2026. RTK och VSLAM utan slinga, 1 000 m² och 45 procents lutning. Vår recension, för- och nackdelar."
+  ogImage="/images/products/roborock-rockneo-q110.webp"
+  article={{ datePublished: "2026-08-03", dateModified: "2026-08-03", image: "/images/products/roborock-rockneo-q110.webp" }}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AuthorByline datePublished="2026-08-03" dateModified="2026-08-03" />
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-08-03</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Roborock RockNeo Q110 recension 2026
+    </h1>
+
+    <AnswerBox
+      question="Snabbt svar: är Roborock RockNeo Q110 värd att köpa?"
+      answer="Ja, om du vill ha slingfri klippning på en tomt upp till 1 000 kvadratmeter med tydliga nivåskillnader. Kombinationen RTK och VSLAM håller positionen bättre än ren satellitnavigering under träd, och 45 procents lutning är mer än de flesta tvåhjulsdrivna robotar klarar. Kantklippningen kräver en tillbehörsmodul som kostar extra."
+    />
+
+    <img
+      src="/images/products/roborock-rockneo-q110.webp"
+      alt="Roborock RockNeo Q110 robotgräsklippare i ljusgrått och svart"
+      class="w-full max-w-md mx-auto max-h-[300px] object-contain rounded-xl border border-border bg-gray-50 mb-8"
+      width="800" height="1067" loading="eager" fetchpriority="high"
+    />
+
+    <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">NYKOMLING ATT HÅLLA ÖGONEN PÅ</span>
+          <div class="flex gap-0.5">
+            {[1,2,3,4,5].map(i => (
+              <svg class={`w-4 h-4 ${i <= 4 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span class="font-bold text-text">4,2 / 5</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed">
+          Q110 är Roborocks steg ut i trädgården, och navigeringen bär tydliga spår av företagets erfarenhet från robotdammsugare. Den dubbla positioneringen är modellens starkaste kort. Att kantklippningen ligger i en separat tillbehörsmodul och att klipphöjden stannar vid 60 millimeter drar ner helhetsbetyget.
+        </p>
+      </div>
+    </div>
+
+    {primary && (
+      <div class="bg-accent/5 border border-accent/20 rounded-xl p-5 mb-8">
+        <p class="text-sm text-text-light mb-3">Roborock RockNeo Q110 finns hos flera av våra samarbetsbutiker. Jämför alltid innan du köper.</p>
+        <div class="flex flex-wrap items-center gap-3">
+          <a href={primary.url} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-6 py-3 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors min-h-[44px] text-sm">
+            Bra pris hos {primary.store}
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+          {others.map((o) => (
+            <a href={o.url} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-5 py-3 border-2 border-border text-text-light font-semibold rounded-lg hover:border-cta hover:text-cta transition-colors min-h-[44px] text-sm">
+              Bra pris hos {o.store}
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Roborock RockNeo Q110s prestanda enligt specifikationer och oberoende tester</h2>
+      <p class="text-text-light text-sm leading-relaxed mb-3">Vi har inte kört Q110 i egen trädgård. Underlaget är Roborocks specifikation, svenska butikers produktdata och publicerade tester av RockNeo-serien, inklusive den mindre Q105. Modellen är ny på den svenska marknaden, vilket betyder att långtidsdata om hållbarhet ännu inte finns. Vi uppdaterar sidan när sådan börjar publiceras.</p>
+      <p class="text-text-light text-sm leading-relaxed">Uppgifterna om hur klipphöjden justeras skiljer sig mellan källor, där vissa anger manuell inställning och andra via appen. Vi anger därför bara spannet, 20 till 60 millimeter, och inte metoden.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-5 mb-8">
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Fördelar med Roborock RockNeo Q110</h2>
+        <ul class="space-y-2">
+          {[
+            'RTK och VSLAM tillsammans håller positionen även under träd',
+            'Ingen slinga att gräva ner',
+            '45 procents lutning, mer än de flesta tvåhjulsdrivna i klassen',
+            'Kort laddtid på cirka 75 minuter',
+            'Låg ljudnivå på cirka 59 dB',
+            'IPX6 tål regn och avspolning',
+          ].map(pro => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+              {pro}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Nackdelar med Roborock RockNeo Q110</h2>
+        <ul class="space-y-2">
+          {[
+            'Kantklippning kräver PreciEdge-modul som säljs separat',
+            'Klipphöjden går bara upp till 60 mm',
+            'Batteri på 4,6 Ah ger cirka 110 minuters drifttid',
+            'Ny modellserie utan långtidsdata om hållbarhet',
+          ].map(con => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+              {con}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Roborock RockNeo Q110 i detalj: navigering, terräng och kanter</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Varför är RTK plus VSLAM bättre än bara RTK?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        RTK ger mycket exakt position så länge antennen har fri sikt mot himlen. Problemet i svenska trädgårdar är att lövverket sluter sig i juni, och då tappar rena RTK-klippare precision precis när gräset växer som mest. VSLAM löser det genom att roboten samtidigt bygger en visuell karta med kameror och känner igen träd, buskar och möbler.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        När satellitsignalen försämras tar den visuella kartan över positionsbestämningen. Praktiskt betyder det färre stopp med felmeddelande om svag signal, vilket är den vanligaste irritationen med slingfria klippare. Samma kamerakunnande som Roborock byggt för att låta robotdammsugare känna igen sladdar och skor används här för att skilja gräs från rabatt. Fler alternativ i kategorin finns bland <a href="/robotgrasklippare-utan-slinga/" class="text-accent underline">robotgräsklippare utan slinga</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Räcker 45 procents lutning för din tomt?</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Fyrtiofem procent motsvarar cirka 24 grader och ligger i den övre delen av vad en tvåhjulsdriven robot klarar. Det räcker för en tomt som lutar tydligt åt ett håll eller har en avsats ner mot en häck. En anlagd slänt eller en trädgård som faller brant mot vattnet kräver allhjulsdrift, och där är <a href="/dreame-a3-awd-1000/" class="text-accent underline">Dreame A3 AWD 1000</a> med sina 80 procent ett annat slags maskin. Mät det brantaste partiet innan du bestämmer dig.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad kostar bra kantklippning egentligen?</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        PreciEdge-modulen säljs separat och är den som låter roboten arbeta närmare staket och murar. Utan den lämnas en remsa längs hårda kanter. Det är värt att räkna in i totalpriset innan du jämför Q110 mot konkurrenter som har kantklippning inbyggd, annars blir jämförelsen missvisande. Är gräsmattan omgiven av rabatter snarare än murar spelar det mindre roll, där syns de sista centimetrarna knappt.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur ofta behöver den köra?</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Med cirka 110 minuters drifttid, 22 centimeters klippbredd och 1 000 kvadratmeter som tak behöver roboten flera pass per dygn i juni och juli för att hålla tomten jämnt kortklippt. Den korta laddtiden på 75 minuter hjälper: roboten är tillbaka ute snabbt. Ligger din tomt runt 500 till 700 kvadratmeter är den väl dimensionerad, och då räcker ett par pass om dagen.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Specifikationer Roborock RockNeo Q110</h3>
+      <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+        <table class="cmp-table table-fixed w-full text-sm">
+          <tbody class="divide-y divide-border">
+            {specs.map((spec, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+                <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+                <td class="px-4 py-3 text-text-light">{spec.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vår slutsats: för vem passar Roborock RockNeo Q110?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Q110 passar den som har en tomt på 500 till 1 000 kvadratmeter med träd och nivåskillnader, vill slippa slinga och gärna håller sig inom Roborocks appvärld. Den dubbla positioneringen är det tekniska argumentet, och det är ett bra sådant.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        Vill du ha en modellserie med längre historik på den svenska marknaden är <a href="/segway-navimow-i220e-lidar-pro/" class="text-accent underline">Segway Navimow i220E LiDAR Pro</a> det tryggare valet. Behöver du klara brantare partier krävs allhjulsdrift, och då är <a href="/robotgrasklippare-for-lutning/" class="text-accent underline">robotgräsklippare för lutning</a> rätt startpunkt.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med konkurrenter</h2>
+      <ul class="space-y-2">
+        <li><a href="/segway-navimow-i220e-lidar-pro/" class="text-accent underline text-sm">Segway Navimow i220E LiDAR Pro, 2 000 m² utan slinga</a></li>
+        <li><a href="/dreame-a3-awd-1000/" class="text-accent underline text-sm">Dreame A3 AWD 1000, allhjulsdrift för branta tomter</a></li>
+        <li><a href="/eufy-e18/" class="text-accent underline text-sm">Eufy E18, kamerabaserad klippare för 1 200 m²</a></li>
+        <li><a href="/robotgrasklippare-utan-slinga/" class="text-accent underline text-sm">Bästa robotgräsklippare utan slinga</a></li>
+        <li><a href="/robotgrasklippare-utan-arsgransavgift/" class="text-accent underline text-sm">Robotgräsklippare utan årsavgift</a></li>
+        <li><a href="/robotgrasklippare/" class="text-accent underline text-sm">Bästa robotgräsklippare 2026, alla kategorier</a></li>
+      </ul>
+    </section>
+  </div>
+
+  {primary && (
+    <StickyCTA
+      text={`Bra pris hos ${primary.store}`}
+      url={primary.url}
+      productName={PRODUCT}
+    />
+  )}
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Roborock RockNeo Q110",
+    "image": "https://robotjakt.se/images/products/roborock-rockneo-q110.webp",
+    "brand": { "@type": "Brand", "name": "Roborock" },
+    "category": "Robotgräsklippare",
+    "description": "Roborock RockNeo Q110 robotgräsklippare för upp till 1 000 kvadratmeter med RTK- och VSLAM-navigering utan slinga och 45 procents lutningsförmåga.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.2",
+      "reviewCount": "1",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": {
+      "@type": "Review",
+      "reviewRating": { "@type": "Rating", "ratingValue": "4.2", "bestRating": "5", "worstRating": "1" },
+      "author": { "@id": "https://robotjakt.se/#axel" },
+      "datePublished": "2026-08-03",
+      "reviewBody": "Roborock RockNeo Q110 är märkets steg ut i trädgården och navigeringen bär spår av erfarenheten från robotdammsugare. Den dubbla positioneringen med RTK och VSLAM är modellens starkaste kort. Kantklippning kräver en separat tillbehörsmodul och klipphöjden stannar vid 60 millimeter.",
+      "publisher": { "@id": "https://robotjakt.se/#organization" }
+    }
+  })} />
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
+</BaseLayout>

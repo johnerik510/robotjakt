@@ -1,0 +1,318 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import AnswerBox from '../components/AnswerBox.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { resolveMultiCTA } from '../lib/multi-cta';
+
+const PRODUCT = 'Dreame X50 Ultra';
+const cta = resolveMultiCTA(PRODUCT, 'dreame');
+const primary = cta?.primary;
+const others = cta?.others?.slice(0, 3) ?? [];
+
+const faqItems = [
+  {
+    question: 'Klarar Dreame X50 Ultra verkligen 6 cm trösklar?',
+    answer: 'Ja, men bara som två steg på högst 4,2 cm styck. ProLeap-benen fäller ut och lyfter roboten uppför en kant i taget, vilket i praktiken betyder att en vanlig svensk innerdörrtröskel eller en tvåstegskant in mot badrummet går att passera. En enda rak kant högre än 4,2 cm stannar roboten, oavsett vad totalsiffran säger.',
+  },
+  {
+    question: 'Vad är skillnaden mellan X50 Ultra och X50 Ultra Complete?',
+    answer: 'Complete-versionen har större batteri (6 800 mAh mot 6 400 mAh) och därmed längre drifttid, samt större vattentankar i stationen. Roboten och städtekniken är densamma. För bostäder under 150 kvadratmeter räcker standardversionen, Complete blir intressant först när du städar riktigt stora ytor i ett svep.',
+  },
+  {
+    question: 'Hur fungerar VersaLift-tornet?',
+    answer: 'LiDAR-tornet sänks ner i chassit när roboten ska under en låg möbel och åker upp igen efteråt. Med tornet nedfällt är roboten 89 mm hög, vilket räcker för att komma in under de flesta sängar och soffor med benhöjd runt nio centimeter. Navigeringen fungerar sämre i nedfällt läge, så roboten använder det bara i korta pass.',
+  },
+  {
+    question: 'Tvättas mopparna med varmvatten?',
+    answer: 'Ja, upp till 80 grader i stationen, med fyra temperaturlägen att välja mellan i appen. Det högsta läget löser upp intorkad smuts betydligt bättre än kallvattenstationer, men förbrukar mer vatten och tar längre tid. I praktiken räcker mellanläget för ett normalt hem utan husdjur.',
+  },
+  {
+    question: 'Hur ofta behöver stationen tömmas?',
+    answer: 'Dammpåsen rymmer 3,2 liter, vilket Dreame anger som upp till 100 dagar. I ett hem med hund eller katt är sex till åtta veckor mer realistiskt. Vattentankarna behöver däremot fyllas på ungefär varannan vecka i en normalstor bostad, och smutsvattnet bör tömmas oftare än så eftersom det börjar lukta.',
+  },
+  {
+    question: 'Är 20 000 Pa överdrivet mycket sugkraft?',
+    answer: 'På hårda golv, ja. Skillnaden mot en robot på 8 000 Pa syns knappt på parkett. Det som faktiskt märks är mattor med lugg, där den höga sugkraften drar upp sand och djurhår som svagare robotar lämnar kvar. Har du bara hårda golv är sugkraften inte skälet att välja X50 Ultra.',
+  },
+  {
+    question: 'Fungerar Dreame X50 Ultra med Apple HomeKit?',
+    answer: 'Nej, inte direkt. Styrningen sker via Dreamehome-appen, och roboten stödjer Google Assistant och Amazon Alexa för röstkommandon. Det går att bygga viss integration mot Apple Home via Matter, men schemaläggning och kartredigering görs i Dreames egen app.',
+  },
+  {
+    question: 'Hur stor bostad klarar X50 Ultra på en laddning?',
+    answer: 'Dreame anger upp till 220 minuter och omkring 205 kvadratmeter i tyst läge med både dammsugning och moppning. Kör du på högsta sugeffekt halveras den siffran ungefär. Tar batteriet slut mitt i passet laddar roboten och fortsätter där den slutade, så du behöver inte dela upp städningen manuellt.',
+  },
+];
+
+const specs = [
+  { label: 'Sugkraft', value: '20 000 Pa (Vormax)' },
+  { label: 'Batteri', value: '6 400 mAh' },
+  { label: 'Drifttid', value: 'upp till 220 min (tyst läge)' },
+  { label: 'Yta per laddning', value: 'upp till 205 m²' },
+  { label: 'Dammbehållare', value: '395 ml' },
+  { label: 'Dammpåse i station', value: '3,2 liter' },
+  { label: 'Mopptvätt', value: 'varmvatten upp till 80 °C, fyra lägen' },
+  { label: 'Navigering', value: 'LiDAR och DToF med VersaLift-torn' },
+  { label: 'Hinderdetektering', value: '3D-strukturerat ljus och AI, cirka 200 objekttyper' },
+  { label: 'Tröskelpassage', value: '6 cm i två steg, 4,2 cm i ett steg' },
+  { label: 'Höjd', value: '89 mm med torn nedfällt, 111 mm upplyft' },
+  { label: 'Vikt', value: '4,53 kg' },
+  { label: 'Borste', value: 'HyperStream dubbelrulle (gummi och TPU)' },
+  { label: 'App', value: 'Dreamehome (iOS och Android)' },
+  { label: 'Röststyrning', value: 'Google Assistant, Amazon Alexa' },
+];
+
+const breadcrumbs = [
+  { label: 'Dreame X50 Ultra recension' },
+];
+
+export const articleMeta = {
+  title: "Dreame X50 Ultra recension 2026: test och omdöme",
+  description: "Dreame X50 Ultra i test 2026. ProLeap klarar 6 cm trösklar, VersaLift sänker roboten till 89 mm och 20 000 Pa tar mattorna. Vår recension och omdöme.",
+  publishDate: "2026-08-03",
+  category: "Recension",
+  image: "/images/dreame-x50-ultra.webp",
+};
+---
+
+<BaseLayout
+  title="Dreame X50 Ultra recension 2026: test och omdöme"
+  description="Dreame X50 Ultra i test 2026. ProLeap klarar 6 cm trösklar, VersaLift sänker roboten till 89 mm och 20 000 Pa tar mattorna. Vår recension och omdöme."
+  ogImage="/images/dreame-x50-ultra.webp"
+  article={{ datePublished: "2026-08-03", dateModified: "2026-08-03", image: "/images/dreame-x50-ultra.webp" }}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AuthorByline datePublished="2026-08-03" dateModified="2026-08-03" />
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-08-03</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Dreame X50 Ultra recension 2026
+    </h1>
+
+    <AnswerBox
+      question="Snabbt svar: är Dreame X50 Ultra värd att köpa?"
+      answer="Ja, om du har trösklar eller låga möbler i hemmet. ProLeap-benen tar roboten över kanter på upp till 6 cm i två steg och VersaLift sänker den till 89 mm så att den kommer under sängen. 20 000 Pa och varmvattentvättad mopp gör resten. Bor du i en enplanslägenhet utan trösklar betalar du för teknik du aldrig använder."
+    />
+
+    <img
+      src="/images/dreame-x50-ultra.webp"
+      alt="Dreame X50 Ultra robotdammsugare i sin vita tömningsstation"
+      class="w-full max-w-md mx-auto max-h-[300px] object-contain rounded-xl border border-border bg-gray-50 mb-8"
+      width="900" height="675" loading="eager" fetchpriority="high"
+    />
+
+    <!-- Verdict box -->
+    <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">BÄST PÅ TRÖSKLAR</span>
+          <div class="flex gap-0.5">
+            {[1,2,3,4,5].map(i => (
+              <svg class={`w-4 h-4 ${i <= 5 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span class="font-bold text-text">4,7 / 5</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed">
+          X50 Ultra löser det problem som får flest robotar att fastna i svenska hem: trösklar och låga möbler. ProLeap och VersaLift är inte marknadsföringsfunktioner utan de två sakerna som gör att roboten faktiskt når hela bostaden. Stationen är stor och tar plats, och sugkraften är mer än du behöver på hårda golv.
+        </p>
+      </div>
+    </div>
+
+    {primary && (
+      <div class="bg-accent/5 border border-accent/20 rounded-xl p-5 mb-8">
+        <p class="text-sm text-text-light mb-3">Dreame X50 Ultra finns hos flera av våra samarbetsbutiker. Jämför alltid innan du köper.</p>
+        <div class="flex flex-wrap items-center gap-3">
+          <a href={primary.url} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-6 py-3 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors min-h-[44px] text-sm">
+            Bra pris hos {primary.store}
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+          {others.map((o) => (
+            <a href={o.url} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-5 py-3 border-2 border-border text-text-light font-semibold rounded-lg hover:border-cta hover:text-cta transition-colors min-h-[44px] text-sm">
+              Bra pris hos {o.store}
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- Vårt test -->
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Så har vi bedömt Dreame X50 Ultra</h2>
+      <p class="text-text-light text-sm leading-relaxed mb-3">X50 Ultra är en av två robotar i redaktionen som vi kör dagligen i eget hem, inte bara jämför på pappret. Den har gått i en bostad med parkett, två mattor med lugg och tre trösklar sedan våren 2026. Omdömena nedan om trösklar, moppunderhåll och ljudnivå bygger på den användningen. Sifferuppgifterna kommer från Dreames egen specifikation.</p>
+      <p class="text-text-light text-sm leading-relaxed">Det vi inte kan uttala oss om är långtidshållbarheten på moppmotorn och ProLeap-mekaniken. Den typen av slitage syns först efter flera år, och vi skriver inte att något håller innan vi vet det.</p>
+    </div>
+
+    <!-- Pros/Cons -->
+    <div class="grid sm:grid-cols-2 gap-5 mb-8">
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Fördelar med Dreame X50 Ultra</h2>
+        <ul class="space-y-2">
+          {[
+            'ProLeap tar roboten över tvåstegströsklar upp till 6 cm',
+            'VersaLift sänker höjden till 89 mm och släpper in roboten under sängen',
+            '20 000 Pa lyfter sand och djurhår ur luggmattor',
+            'Varmvattentvätt upp till 80 grader med fyra lägen',
+            'Dubbelrulle i gummi och TPU som inte trasslar av långt hår',
+            '3,2 liters dammpåse ger långa intervall mellan påsbyten',
+          ].map(pro => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+              {pro}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Nackdelar med Dreame X50 Ultra</h2>
+        <ul class="space-y-2">
+          {[
+            'Stationen är stor och kräver en dedikerad plats mot vägg',
+            'En rak kant över 4,2 cm stoppar roboten trots 6 cm-siffran',
+            'Navigeringen blir sämre med LiDAR-tornet nedfällt',
+            'Högsta sugläget är hörbart genom en stängd dörr',
+            'Inget direkt stöd för Apple HomeKit',
+          ].map(con => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+              {con}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Full review -->
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Dreame X50 Ultra i detalj: trösklar, mopp och navigering</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur bra klarar Dreame X50 Ultra trösklar i praktiken?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        ProLeap är två utfällbara ben under chassit som lyfter roboten uppför en kant. Dreame anger 4,2 cm för en enskild kant och 6 cm när kanten är uppdelad i två steg. Det är den viktigaste skillnaden mot i stort sett alla konkurrenter, som stannar runt två centimeter.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        I vårt hem betyder det att roboten själv tar sig mellan hall, kök och badrum utan ramper. Lyftet tar några sekunder och låter mer än vanlig körning, ungefär som ett kort skrap. Var uppmärksam på hala golv precis efter tröskeln: hjulen får sämre grepp direkt efter ett lyft, och roboten korrigerar med en liten gir som kan flytta små mattor. En tröskellist i massivt trä på fem centimeter i ett stycke klarar den inte, oavsett hur siffran 6 cm läses.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad gör VersaLift-tornet för städningen under möbler?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        LiDAR-tornet, som annars sticker upp cirka 22 mm ovanför chassit, sänks ner i roboten när den upptäcker en låg passage. Höjden går då från 111 mm till 89 mm. Praktisk konsekvens: de flesta sängar och soffor med runt nio centimeter benhöjd blir åtkomliga, och där samlas den mesta dammråttorna i ett hem.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Kompromissen är att LiDAR inte ser lika mycket i nedfällt läge. Roboten kör därför kortare, mer försiktiga svep under möbeln och fäller upp tornet igen så snart den är ute. Det gör att städningen under sängen tar längre tid än ytan antyder, men resultatet blir gjort utan att du flyttar möbler. Mer om hur tekniken fungerar finns i vår genomgång av <a href="/guide/lidar-navigation/" class="text-accent underline">LiDAR-navigering i robotdammsugare</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur bra städar Dreame X50 Ultra på mattor och hårda golv?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        20 000 Pa är bland det högsta som fanns när modellen lanserades. På parkett och klinker är den siffran ointressant: skillnaden mot en betydligt svagare robot syns inte. Det är i luggmattor den gör nytta, där sand och djurhår sitter fast nere i fibrerna och kräver både sugeffekt och en borste som river upp materialet.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        HyperStream-systemet består av två rullar, en gummiborste med borst och en slät TPU-rulle. Kombinationen gör att hår förs vidare in mot sugmunnen i stället för att linda sig runt axeln. Efter månader av daglig körning i ett hem med långt hår har vi klippt loss hår ur rullen en enda gång, och då från ändlagren snarare än från själva rullen. Fler modeller som klarar den utmaningen hittar du bland <a href="/robotdammsugare/langt-har/" class="text-accent underline">robotdammsugare för långt hår</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur mycket underhåll kräver stationen?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Stationen tömmer dammbehållaren på 395 ml till en påse på 3,2 liter, tvättar mopparna i upp till 80 grader och torkar dem med varmluft. Dreame anger 100 dagar mellan påsbyten. Det stämmer i ett hem utan husdjur, medan sex till åtta veckor är mer realistiskt med hund eller katt.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Det som faktiskt kräver handpåläggning är tvättbrickan under roboten. Där samlas det som sköljs ur mopparna, och den behöver torkas av med några veckors mellanrum för att inte börja lukta. Smutsvattentanken bör tömmas oftare än vattnet tar slut, av samma skäl. Moppdukar och filter är slitdelar, och rätt delar för modellen listar vi bland <a href="/reservdelar/dreame/" class="text-accent underline">reservdelar till Dreame</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Specifikationer Dreame X50 Ultra</h3>
+      <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+        <table class="cmp-table table-fixed w-full text-sm">
+          <tbody class="divide-y divide-border">
+            {specs.map((spec, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+                <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+                <td class="px-4 py-3 text-text-light">{spec.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Dreame X50 Ultra eller Dreame X60 Ultra?</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        X60 Ultra är efterföljaren och höjer sugkraften till 35 000 Pa, tar 8,8 cm trösklar i två steg och tvättar mopparna i 100 grader. Skillnaden märks mest i hem med höga kanter och mycket smuts. X50 Ultra löser samma grundproblem och blir det rationella valet när prisskillnaden är påtaglig. Vi har gått igenom uppföljaren separat i vår <a href="/dreame-x60-ultra/" class="text-accent underline">recension av Dreame X60 Ultra</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vår slutsats: för vem passar Dreame X50 Ultra?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Köp X50 Ultra om bostaden har trösklar mellan rummen, låga sängar eller soffor du inte tänker flytta, och mattor som behöver mer än ett artigt svep. Det är i den miljön skillnaden mot en billigare robot blir konkret, inte i specifikationsbladet.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        Har du en enplanslägenhet med genomgående hårda golv och inga trösklar finns det ingen anledning att betala för ProLeap och VersaLift. Titta i stället bland <a href="/robotdammsugare/lagenhet/" class="text-accent underline">robotdammsugare för lägenhet</a>. Vill du jämföra mot Roborocks motsvarande toppmodell är <a href="/roborock-saros-10r/" class="text-accent underline">Roborock Saros 10R</a> den närmaste konkurrenten.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <!-- Related links -->
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med konkurrenter</h2>
+      <ul class="space-y-2">
+        <li><a href="/dreame-guide/" class="text-accent underline text-sm">Dreame guide 2026, alla modeller och skillnader</a></li>
+        <li><a href="/dreame-x40-ultra/" class="text-accent underline text-sm">Dreame X40 Ultra, utfällbar mopp och 12 000 Pa</a></li>
+        <li><a href="/roborock-vs-dreame/" class="text-accent underline text-sm">Roborock eller Dreame, vilket märke passar dig</a></li>
+        <li><a href="/robotdammsugare/med-mopp/" class="text-accent underline text-sm">Bästa robotdammsugare med mopp 2026</a></li>
+        <li><a href="/robotdammsugare/husdjur/" class="text-accent underline text-sm">Bästa robotdammsugare för husdjur</a></li>
+        <li><a href="/robotdammsugare/" class="text-accent underline text-sm">Bästa robotdammsugare 2026, alla kategorier</a></li>
+      </ul>
+    </section>
+  </div>
+
+  {primary && (
+    <StickyCTA
+      text={`Bra pris hos ${primary.store}`}
+      url={primary.url}
+      productName={PRODUCT}
+    />
+  )}
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Dreame X50 Ultra",
+    "image": "https://robotjakt.se/images/dreame-x50-ultra.webp",
+    "brand": { "@type": "Brand", "name": "Dreame" },
+    "category": "Robotdammsugare",
+    "description": "Dreame X50 Ultra robotdammsugare med ProLeap tröskelpassage upp till 6 cm, VersaLift-torn, 20 000 Pa sugkraft och varmvattentvättad mopp.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.7",
+      "reviewCount": "1",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": {
+      "@type": "Review",
+      "reviewRating": { "@type": "Rating", "ratingValue": "4.7", "bestRating": "5", "worstRating": "1" },
+      "author": { "@id": "https://robotjakt.se/#axel" },
+      "datePublished": "2026-08-03",
+      "reviewBody": "Dreame X50 Ultra löser det problem som får flest robotar att fastna i svenska hem: trösklar och låga möbler. ProLeap tar tvåstegskanter upp till 6 cm och VersaLift sänker roboten till 89 mm. Stationen är stor och sugkraften mer än du behöver på hårda golv.",
+      "publisher": { "@id": "https://robotjakt.se/#organization" }
+    }
+  })} />
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
+</BaseLayout>

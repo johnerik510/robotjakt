@@ -1,0 +1,294 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import AnswerBox from '../components/AnswerBox.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { resolveMultiCTA } from '../lib/multi-cta';
+
+const PRODUCT = 'Eufy E18';
+const cta = resolveMultiCTA(PRODUCT, 'eufy');
+const primary = cta?.primary;
+const others = cta?.others?.slice(0, 3) ?? [];
+
+const faqItems = [
+  {
+    question: 'Behöver eufy E18 gränstråd eller RTK-antenn?',
+    answer: 'Varken eller. E18 navigerar med kamerabaserad teknik (V-FSD 1.0) och kartlägger tomten själv. Du slipper både gräva ner slinga och montera en RTK-mast med fri sikt mot himlen. Det är den enskilt största praktiska fördelen mot både äldre slingklippare och satellitstyrda konkurrenter.',
+  },
+  {
+    question: 'Hur stor tomt klarar E18?',
+    answer: 'Rekommenderad gräsyta är 1 200 kvadratmeter. Det placerar den mitt i villasegmentet. Behöver du mindre finns E15 som är samma robot med mindre kartminne, och som därför inte klarar lika stora eller uppdelade tomter.',
+  },
+  {
+    question: 'Vad klarar den för lutning?',
+    answer: 'Maximalt 18 grader, vilket motsvarar cirka 32 procent. Det räcker för mjuka nivåskillnader men inte för en anlagd slänt. Mät innan du köper: en meters höjdskillnad på tre meters längd är redan över gränsen, och då spinner roboten i stället för att klippa.',
+  },
+  {
+    question: 'Hur länge klipper den per laddning?',
+    answer: 'Batteriet på 93,24 Wh räcker till omkring 90 till 110 minuter. Roboten återvänder själv till laddstationen och tar upp passet där den slutade, så på en tomt nära 1 200 kvadratmeter behöver den flera pass per dygn under högsäsong.',
+  },
+  {
+    question: 'Hur mycket låter eufy E18?',
+    answer: 'Cirka 56 dB, vilket är lågt även för en robotgräsklippare och ungefär som ett dämpat samtal. Den kan därför gå på kvällen utan att störa grannarna. Undvik ändå att schemalägga den precis under ett sovrumsfönster nattetid.',
+  },
+  {
+    question: 'Vilken klipphöjd går att ställa in?',
+    answer: 'Mellan 25 och 75 millimeter, med en klippbredd på 203 millimeter. Det övre spannet är generöst för klassen och användbart under torrperioder, då högre gräs skuggar rötterna och gräsmattan klarar torkan bättre.',
+  },
+  {
+    question: 'Vad händer om roboten blir stulen?',
+    answer: 'E18 har GPS-spårning och 4G, vilket gör att du kan följa dess position i appen. Det är ett rimligt skydd på en öppen tomt, men behandla det som spårning snarare än stöldskydd. Ingen robotgräsklippare hindrar någon från att lyfta upp den och bära bort den.',
+  },
+  {
+    question: 'Klarar eufy E18 regn?',
+    answer: 'Kapslingen är IPX6, alltså skyddad mot kraftiga vattenstrålar, så regn och avspolning med slang är inget problem. Klippresultatet blir däremot sämre i vått gräs, som klumpar ihop sig under kåpan i stället för att finfördelas.',
+  },
+];
+
+const specs = [
+  { label: 'Rekommenderad gräsyta', value: '1 200 m²' },
+  { label: 'Navigering', value: 'kamerabaserad (V-FSD 1.0), ingen gränstråd' },
+  { label: 'Max lutning', value: '18 grader (cirka 32 procent)' },
+  { label: 'Klipphöjd', value: '25 till 75 mm' },
+  { label: 'Klippbredd', value: '203 mm' },
+  { label: 'Batteri', value: '93,24 Wh' },
+  { label: 'Klipptid per laddning', value: '90 till 110 min' },
+  { label: 'Ljudnivå', value: '56 dB' },
+  { label: 'Stöldskydd', value: 'GPS-spårning och 4G' },
+  { label: 'Kapsling', value: 'IPX6' },
+  { label: 'Zoner', value: 'zonindelning med egna scheman i appen' },
+];
+
+const breadcrumbs = [
+  { label: 'Eufy E18 recension' },
+];
+
+export const articleMeta = {
+  title: "Eufy E18 recension 2026: test och omdöme robotgräsklippare",
+  description: "Eufy E18 granskad 2026. 1 200 m² utan gränstråd eller RTK, kamerabaserad navigering och 56 dB. Vår recension, för- och nackdelar.",
+  publishDate: "2026-08-03",
+  category: "Recension",
+  image: "/images/eufy-e18.webp",
+};
+---
+
+<BaseLayout
+  title="Eufy E18 recension 2026: test och omdöme robotgräsklippare"
+  description="Eufy E18 granskad 2026. 1 200 m² utan gränstråd eller RTK, kamerabaserad navigering och 56 dB. Vår recension, för- och nackdelar."
+  ogImage="/images/eufy-e18.webp"
+  article={{ datePublished: "2026-08-03", dateModified: "2026-08-03", image: "/images/eufy-e18.webp" }}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AuthorByline datePublished="2026-08-03" dateModified="2026-08-03" />
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-08-03</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Eufy E18 recension 2026
+    </h1>
+
+    <AnswerBox
+      question="Snabbt svar: är eufy E18 värd att köpa?"
+      answer="Ja, om du vill slippa både slinga och RTK-mast på en plan villatomt. E18 kartlägger med kameror, täcker 1 200 kvadratmeter och går på 56 dB, vilket är tystare än det mesta i klassen. Lutningsgränsen på 18 grader är dess svaga punkt, och klipptiden på runt 90 till 110 minuter kräver flera pass per dygn på större tomter."
+    />
+
+    <img
+      src="/images/eufy-e18.webp"
+      alt="Eufy E18 robotgräsklippare i silver och svart med appvy vid sidan"
+      class="w-full max-w-md mx-auto max-h-[300px] object-contain rounded-xl border border-border bg-gray-50 mb-8"
+      width="900" height="900" loading="eager" fetchpriority="high"
+    />
+
+    <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">ENKLAST INSTALLATION</span>
+          <div class="flex gap-0.5">
+            {[1,2,3,4,5].map(i => (
+              <svg class={`w-4 h-4 ${i <= 4 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span class="font-bold text-text">4,3 / 5</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed">
+          E18 tar bort båda de moment som brukar avskräcka från robotgräsklippare: ingen slinga att gräva och ingen antenn att montera. Den är också ovanligt tyst. I gengäld är lutningsförmågan blygsam och klipptiden per laddning kortare än på flera konkurrenter i samma ytklass.
+        </p>
+      </div>
+    </div>
+
+    {primary && (
+      <div class="bg-accent/5 border border-accent/20 rounded-xl p-5 mb-8">
+        <p class="text-sm text-text-light mb-3">Eufy E18 finns hos flera av våra samarbetsbutiker. Jämför alltid innan du köper.</p>
+        <div class="flex flex-wrap items-center gap-3">
+          <a href={primary.url} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-6 py-3 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors min-h-[44px] text-sm">
+            Bra pris hos {primary.store}
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+          {others.map((o) => (
+            <a href={o.url} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-5 py-3 border-2 border-border text-text-light font-semibold rounded-lg hover:border-cta hover:text-cta transition-colors min-h-[44px] text-sm">
+              Bra pris hos {o.store}
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Eufy E18s prestanda enligt specifikationer och oberoende tester</h2>
+      <p class="text-text-light text-sm leading-relaxed mb-3">Vi har inte kört E18 i egen trädgård. Uppgifterna nedan kommer från butikernas svenska produktdata och eufys egen specifikation. Där siffror skiljer sig mellan marknader använder vi den svenska återförsäljarens uppgift, eftersom det är den produkt du faktiskt får hem.</p>
+      <p class="text-text-light text-sm leading-relaxed">Två saker sticker ut i materialet. Ljudnivån på 56 dB är låg även jämfört med andra batteridrivna robotar, vilket gör kvällsklippning realistisk. Och klipptiden på 90 till 110 minuter per laddning är kort i förhållande till de 1 200 kvadratmeter roboten ska täcka, så räkna med att den går i flera pass om dagen under juni och juli.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-5 mb-8">
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Fördelar med eufy E18</h2>
+        <ul class="space-y-2">
+          {[
+            'Varken gränstråd eller RTK-antenn behövs',
+            '56 dB gör kvällsklippning möjlig utan att störa grannar',
+            'Klipphöjd upp till 75 mm, generöst i klassen',
+            'Täcker 1 200 kvadratmeter med zonindelning i appen',
+            'GPS och 4G för att spåra roboten',
+            'IPX6 tål regn och avspolning med slang',
+          ].map(pro => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+              {pro}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Nackdelar med eufy E18</h2>
+        <ul class="space-y-2">
+          {[
+            'Max 18 graders lutning, klarar inte slänter',
+            '90 till 110 minuters klipptid är kort för 1 200 kvadratmeter',
+            'Kamerabaserad navigering är känsligare för dålig sikt än LiDAR',
+            'Klippbredden på 203 mm ger många varv på stora ytor',
+          ].map(con => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+              {con}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Eufy E18 i detalj: navigering, terräng och drift</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur fungerar kamerabaserad navigering utan slinga?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        E18 använder kameror och bildbehandling för att känna igen var gräset slutar och var hindren står, i stället för att läsa av en nedgrävd kabel eller triangulera mot satelliter. Du kör en kartläggningsrunda första gången och sparar zonerna i appen, sedan är installationen klar.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Styrkan är att det fungerar under träd och nära husväggar, där satellitbaserade robotar tappar precision. Svagheten är motsatsen: kameror behöver se. Kraftigt motljus i lågt solstånd, dimma eller en mycket smutsig lins gör roboten försiktigare och långsammare. Jämför du mot LiDAR-baserade alternativ ger de mer stabil positionering i svåra ljusförhållanden, till priset av högre inköpspris. Fler modeller i kategorin finns bland <a href="/robotgrasklippare-utan-slinga/" class="text-accent underline">robotgräsklippare utan slinga</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Räcker 18 graders lutning för din tomt?</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Arton grader motsvarar ungefär 32 procent och täcker en tomt som lutar mjukt åt ett håll. Det räcker inte för en anlagd slänt, en uppfart som stiger eller en trädgård som faller mot vattnet. Kontrollera med vattenpass och tumstock i det brantaste partiet innan du bestämmer dig. Ligger du över gränsen behöver du en allhjulsdriven klippare som <a href="/dreame-a3-awd-1000/" class="text-accent underline">Dreame A3 AWD 1000</a>, eller något av alternativen i vår genomgång av <a href="/robotgrasklippare-for-lutning/" class="text-accent underline">robotgräsklippare för lutning</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur ofta behöver den köra på en tomt nära maxytan?</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Med 90 till 110 minuters klipptid och 203 millimeters klippbredd täcker E18 inte 1 200 kvadratmeter på ett pass. Roboten löser det genom att ladda och fortsätta där den slutade, men praktiskt betyder det att den behöver gå större delen av dygnet under den intensiva växtperioden. Har du en tomt i den övre delen av intervallet och vill ha den klar snabbare, är en modell med större batteri ett bättre köp. Ligger du runt 600 till 800 kvadratmeter är E18 väl dimensionerad.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad kräver den i löpande skötsel?</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Håll kameralinsen ren, det är den viktigaste underhållspunkten på en kamerastyrd robot och samtidigt den som glöms bort. Knivarna byts ungefär en gång per säsong, oftare om tomten har grus eller kottar. Spola av undersidan när gräs klibbar fast. Inför vintern laddas batteriet och roboten förvaras frostfritt, stegen finns i vår guide till <a href="/guide/vinterforvaring-robotgrasklippare/" class="text-accent underline">vinterförvaring av robotgräsklippare</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Specifikationer eufy E18</h3>
+      <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+        <table class="cmp-table table-fixed w-full text-sm">
+          <tbody class="divide-y divide-border">
+            {specs.map((spec, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+                <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+                <td class="px-4 py-3 text-text-light">{spec.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vår slutsats: för vem passar eufy E18?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        E18 är rätt köp för en någorlunda plan villatomt där du vill komma igång utan installationsjobb. Ingen slinga, ingen mast, en kartläggningsrunda och sedan sköter den sig. Den låga ljudnivån gör dessutom att den kan gå på tider då du själv är hemma.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        Har du slänter eller en tomt nära 1 200 kvadratmeter som du vill ha klippt snabbt, bör du titta högre upp i prisklasserna. Då är <a href="/segway-navimow-i220e-lidar-pro/" class="text-accent underline">Segway Navimow i220E LiDAR Pro</a> eller en allhjulsdriven modell mer rätt dimensionerade.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med konkurrenter</h2>
+      <ul class="space-y-2">
+        <li><a href="/eufy-guide/" class="text-accent underline text-sm">Eufy guide 2026, alla modeller och skillnader</a></li>
+        <li><a href="/segway-navimow-i220e-lidar-pro/" class="text-accent underline text-sm">Segway Navimow i220E LiDAR Pro, 2 000 m² utan slinga</a></li>
+        <li><a href="/dreame-a3-awd-1000/" class="text-accent underline text-sm">Dreame A3 AWD 1000, allhjulsdrift för branta tomter</a></li>
+        <li><a href="/robotgrasklippare-utan-slinga/" class="text-accent underline text-sm">Bästa robotgräsklippare utan slinga</a></li>
+        <li><a href="/robotgrasklippare-liten-tradgard/" class="text-accent underline text-sm">Bästa robotgräsklippare för liten trädgård</a></li>
+        <li><a href="/robotgrasklippare/" class="text-accent underline text-sm">Bästa robotgräsklippare 2026, alla kategorier</a></li>
+      </ul>
+    </section>
+  </div>
+
+  {primary && (
+    <StickyCTA
+      text={`Bra pris hos ${primary.store}`}
+      url={primary.url}
+      productName={PRODUCT}
+    />
+  )}
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Eufy E18",
+    "image": "https://robotjakt.se/images/eufy-e18.webp",
+    "brand": { "@type": "Brand", "name": "eufy" },
+    "category": "Robotgräsklippare",
+    "description": "Eufy E18 robotgräsklippare för upp till 1 200 kvadratmeter med kamerabaserad navigering utan gränstråd eller RTK-antenn, 56 dB ljudnivå och IPX6-kapsling.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.3",
+      "reviewCount": "1",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": {
+      "@type": "Review",
+      "reviewRating": { "@type": "Rating", "ratingValue": "4.3", "bestRating": "5", "worstRating": "1" },
+      "author": { "@id": "https://robotjakt.se/#axel" },
+      "datePublished": "2026-08-03",
+      "reviewBody": "Eufy E18 tar bort båda momenten som brukar avskräcka från robotgräsklippare: ingen slinga att gräva och ingen antenn att montera. Den är ovanligt tyst på 56 dB. Lutningsförmågan på 18 grader är blygsam och klipptiden kort i förhållande till maxytan.",
+      "publisher": { "@id": "https://robotjakt.se/#organization" }
+    }
+  })} />
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
+</BaseLayout>

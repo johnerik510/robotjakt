@@ -1,0 +1,293 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import AnswerBox from '../components/AnswerBox.astro';
+import FAQ from '../components/FAQ.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { resolveMultiCTA } from '../lib/multi-cta';
+
+const PRODUCT = 'Segway Navimow i220E LiDAR Pro';
+const cta = resolveMultiCTA(PRODUCT, 'segway');
+const primary = cta?.primary;
+const others = cta?.others?.slice(0, 3) ?? [];
+
+const faqItems = [
+  {
+    question: 'Vad skiljer LiDAR Pro från vanliga i220E LiDAR?',
+    answer: 'Pro-versionen har den mer avancerade sensorpaketet och bättre positionering i lägen där satellitsignalen är svag. Grundfunktionerna, ytan på 2 000 kvadratmeter och klippsystemet är desamma. Har din tomt öppen himmel och få träd räcker standardversionen, är den skuggad av lövverk är Pro pengarna värda.',
+  },
+  {
+    question: 'Behöver den nedgrävd slinga?',
+    answer: 'Nej. Segways EFLS-system definierar gränserna virtuellt, förstärkt av LiDAR-baserad positionering. Du kör robotens gräns en gång i appen och sparar den, sedan finns ingen kabel att gräva ner eller reparera. Det tar bort både installationsdagen och det vanligaste felet på äldre robotgräsklippare.',
+  },
+  {
+    question: 'Hur stor tomt klarar i220E LiDAR Pro?',
+    answer: 'Upp till 2 000 kvadratmeter. Behöver du mindre finns i210E LiDAR Pro för 1 000 kvadratmeter med samma teknik. Räkna med marginal om tomten är uppdelad i flera zoner med smala passager mellan, transportsträckorna äter av den effektiva klipptiden.',
+  },
+  {
+    question: 'Vad klarar den för lutning?',
+    answer: 'Upp till 30 procent, alltså cirka 17 grader. Det räcker för en normal villatomt med mjuka nivåskillnader men inte för en riktig slänt. Har du partier brantare än så behöver du en allhjulsdriven modell i stället, exempelvis Dreame A3 AWD 1000 som tar 80 procent.',
+  },
+  {
+    question: 'Hur mycket låter den?',
+    answer: 'Cirka 58 dB, vilket motsvarar ett normalt samtal. Det gör att den går att köra kvällstid utan att störa grannar, till skillnad från en bensindriven klippare. Ställ ändå schemat så att den inte kör precis under sovrumsfönstret nattetid, tonen är jämn men hörbar.',
+  },
+  {
+    question: 'Vilken klipphöjd går att ställa in?',
+    answer: 'Mellan 2 och 7 centimeter, med en klippbredd på 22 centimeter. Spannet ligger lägre än på flera konkurrenter, vilket passar den som vill hålla en kortklippt gräsmatta. Vill du hålla gräset högt under torka är sju centimeter en ganska låg övre gräns.',
+  },
+  {
+    question: 'Hur lång är laddtiden?',
+    answer: 'Ungefär 120 minuter för batteriet på 10 Ah. Roboten återvänder själv till laddstationen när batteriet tar slut och fortsätter passet efteråt, så laddtiden påverkar mest hur många timmar per dygn den hinner klippa på riktigt stora tomter.',
+  },
+  {
+    question: 'Klarar den att köra i regn?',
+    answer: 'Ja, men klippresultatet blir sämre. Blött gräs klumpar ihop sig under kåpan och lägger sig i strängar i stället för att finfördelas. De flesta ställer in regnsensorn så att roboten pausar och tar igen passet när det torkat upp.',
+  },
+];
+
+const specs = [
+  { label: 'Max gräsyta', value: '2 000 m²' },
+  { label: 'Navigering', value: 'EFLS med LiDAR-förstärkt positionering' },
+  { label: 'Gränsdragning', value: 'virtuell, ingen nedgrävd slinga' },
+  { label: 'Max lutning', value: '30 procent (cirka 17 grader)' },
+  { label: 'Klipphöjd', value: '2 till 7 cm' },
+  { label: 'Klippbredd', value: '22 cm' },
+  { label: 'Batteri', value: '10 Ah' },
+  { label: 'Laddtid', value: 'cirka 120 min' },
+  { label: 'Ljudnivå', value: 'cirka 58 dB' },
+  { label: 'Styrning', value: 'Navimow-appen (iOS och Android)' },
+];
+
+const breadcrumbs = [
+  { label: 'Segway Navimow i220E LiDAR Pro recension' },
+];
+
+export const articleMeta = {
+  title: "Segway Navimow i220E LiDAR Pro recension 2026: test och omdöme",
+  description: "Segway Navimow i220E LiDAR Pro granskad 2026. 2 000 m² utan slinga, LiDAR-förstärkt EFLS och 58 dB. Vår recension, för- och nackdelar.",
+  publishDate: "2026-08-03",
+  category: "Recension",
+  image: "/images/segway-navimow-i220e-lidar-pro.webp",
+};
+---
+
+<BaseLayout
+  title="Segway Navimow i220E LiDAR Pro recension 2026: test och omdöme"
+  description="Segway Navimow i220E LiDAR Pro granskad 2026. 2 000 m² utan slinga, LiDAR-förstärkt EFLS och 58 dB. Vår recension, för- och nackdelar."
+  ogImage="/images/segway-navimow-i220e-lidar-pro.webp"
+  article={{ datePublished: "2026-08-03", dateModified: "2026-08-03", image: "/images/segway-navimow-i220e-lidar-pro.webp" }}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <Breadcrumbs items={breadcrumbs} />
+    <AuthorByline datePublished="2026-08-03" dateModified="2026-08-03" />
+    <p class="text-xs text-text-lighter mb-4">Senast uppdaterad: 2026-08-03</p>
+
+    <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4 leading-tight">
+      Segway Navimow i220E LiDAR Pro recension 2026
+    </h1>
+
+    <AnswerBox
+      question="Snabbt svar: är Segway Navimow i220E LiDAR Pro värd att köpa?"
+      answer="Ja, för en normalstor villatomt utan branta partier. Du slipper gräva ner slinga, LiDAR-förstärkningen håller positionen även under träd där ren satellitnavigering tappar, och 58 dB gör att den kan gå kvällstid. Lutningsgränsen på 30 procent är dess tydligaste begränsning, har du en riktig slänt behöver du en allhjulsdriven klippare."
+    />
+
+    <img
+      src="/images/segway-navimow-i220e-lidar-pro.webp"
+      alt="Segway Navimow i220E LiDAR Pro robotgräsklippare med orange drivhjul"
+      class="w-full max-w-md mx-auto max-h-[300px] object-contain rounded-xl border border-border bg-gray-50 mb-8"
+      width="900" height="600" loading="eager" fetchpriority="high"
+    />
+
+    <div class="bg-winner/5 border border-winner/20 rounded-xl p-5 mb-8">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded">BÄST UTAN SLINGA</span>
+          <div class="flex gap-0.5">
+            {[1,2,3,4,5].map(i => (
+              <svg class={`w-4 h-4 ${i <= 5 ? 'text-winner' : 'text-border'}`} fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span class="font-bold text-text">4,5 / 5</span>
+        </div>
+        <p class="text-text-light text-sm leading-relaxed">
+          Navimow i-serien är den lättaste vägen in i slingfria robotgräsklippare, och Pro-versionen löser det som brukar sänka satellitstyrda klippare: skugga från träd. Klipphöjden går inte högre än sju centimeter och lutningsgränsen är blygsam, så tomten behöver vara någorlunda plan.
+        </p>
+      </div>
+    </div>
+
+    {primary && (
+      <div class="bg-accent/5 border border-accent/20 rounded-xl p-5 mb-8">
+        <p class="text-sm text-text-light mb-3">Segway Navimow i220E LiDAR Pro finns hos flera av våra samarbetsbutiker. Jämför alltid innan du köper.</p>
+        <div class="flex flex-wrap items-center gap-3">
+          <a href={primary.url} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-6 py-3 bg-cta text-white font-semibold rounded-lg hover:bg-cta-dark transition-colors min-h-[44px] text-sm">
+            Bra pris hos {primary.store}
+            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+          {others.map((o) => (
+            <a href={o.url} rel="sponsored nofollow noopener noreferrer" target="_blank" class="inline-flex items-center justify-center px-5 py-3 border-2 border-border text-text-light font-semibold rounded-lg hover:border-cta hover:text-cta transition-colors min-h-[44px] text-sm">
+              Bra pris hos {o.store}
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <div class="bg-bg-alt rounded-xl border border-border p-5 mb-8">
+      <h2 class="font-heading text-xl font-bold text-text mb-3">Segway Navimow i220E LiDAR Pros prestanda enligt specifikationer och oberoende tester</h2>
+      <p class="text-text-light text-sm leading-relaxed mb-3">Vi har inte kört i220E LiDAR Pro i egen trädgård. Underlaget är Segways specifikation, butikernas produktdata och publicerade tester av i-serien, inklusive den nära besläktade i210E LiDAR Pro. Där en uppgift bara finns för en modell i serien anger vi det i stället för att generalisera.</p>
+      <p class="text-text-light text-sm leading-relaxed">Genomgående beskrivs navigeringsprecisionen som seriens starkaste sida, och installationen som avsevärt enklare än på slingbaserade klippare. Det som återkommer som svaghet är den låga övre klipphöjden och att klippbredden på 22 centimeter kräver många varv på tomter i den övre delen av ytintervallet.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-5 mb-8">
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Fördelar med Segway Navimow i220E LiDAR Pro</h2>
+        <ul class="space-y-2">
+          {[
+            'Ingen slinga att gräva ner, gränsen dras virtuellt i appen',
+            'LiDAR-förstärkt positionering håller kartan under träd',
+            'Täcker upp till 2 000 kvadratmeter',
+            '58 dB gör att den kan köras kvällstid',
+            'Batteri på 10 Ah med cirka 120 minuters laddtid',
+            'Zonindelning och scheman direkt i Navimow-appen',
+          ].map(pro => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-winner font-bold flex-shrink-0 mt-0.5">+</span>
+              {pro}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="bg-white rounded-xl border border-border p-5">
+        <h2 class="font-semibold text-text mb-3">Nackdelar med Segway Navimow i220E LiDAR Pro</h2>
+        <ul class="space-y-2">
+          {[
+            'Max 30 procents lutning, klarar inte riktiga slänter',
+            'Klipphöjden går bara upp till 7 cm',
+            '22 cm klippbredd ger många varv på 2 000 kvadratmeter',
+            'Namnfloran i i-serien gör det lätt att köpa fel variant',
+          ].map(con => (
+            <li class="flex items-start gap-2 text-sm text-text-light">
+              <span class="text-cta font-bold flex-shrink-0 mt-0.5">-</span>
+              {con}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <section class="mb-10">
+      <h2 class="font-heading text-2xl font-bold text-text mb-4">Segway Navimow i220E LiDAR Pro i detalj: navigering, terräng och skötsel</h2>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur fungerar navigeringen utan slinga?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Segways EFLS bygger på satellitpositionering med en referenskälla, och du ritar gränsen genom att köra roboten runt tomten en gång i appen. Det som skiljer LiDAR Pro från enklare varianter är att en LiDAR-sensor kompletterar satellitdata med geometrisk information om omgivningen.
+      </p>
+      <p class="text-text-light leading-relaxed mb-6">
+        Det spelar roll i praktiken. En ren satellitlösning tappar precision när lövverket sluter sig i juni, och roboten börjar då klippa utanför gränsen eller vägra starta. LiDAR-stödet gör att den behåller positionen även med skymd himmel. Har du en helt öppen tomt utan träd får du inte ut något av merpriset, och då räcker en standardvariant. Fler alternativ finns bland <a href="/robotgrasklippare-utan-slinga/" class="text-accent underline">robotgräsklippare utan slinga</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Räcker 30 procents lutning för din tomt?</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Trettio procent motsvarar cirka 17 grader, vilket täcker mjuka nivåskillnader och en svag sluttning ner mot en häck. Det räcker inte för en anlagd slänt eller en tomt som faller brant mot vattnet. Mät med ett vattenpass och en tumstock innan du bestämmer dig: en meters höjdskillnad på tre meters längd är redan 33 procent. Har du sådana partier ska du i stället titta på en allhjulsdriven modell som <a href="/dreame-a3-awd-1000/" class="text-accent underline">Dreame A3 AWD 1000</a> eller läsa vår genomgång av <a href="/robotgrasklippare-for-lutning/" class="text-accent underline">robotgräsklippare för lutning</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Hur mycket tid tar 2 000 kvadratmeter?</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Klippbredden är 22 centimeter, vilket är normalt för klassen men lite i förhållande till den maximala ytan. På en tomt i den övre delen av intervallet innebär det många varv och att roboten i praktiken behöver gå de flesta av dygnets timmar under högsäsong. Det är inget fel i konstruktionen, men värt att veta om du förväntar dig att hela tomten ska bli klar på ett förmiddagspass.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vad kräver den i löpande skötsel?</h3>
+      <p class="text-text-light leading-relaxed mb-6">
+        Knivarna byts ungefär en gång per säsong, oftare på tomter med grus eller kottar. Undersidan behöver spolas eller borstas av när gräs klibbar fast, särskilt efter klippning i fuktigt väder. Kontrollera att LiDAR-fönstret och sensorytorna är rena, smuts där ger sämre hinderdetektering. Inför vintern laddas batteriet och roboten förvaras frostfritt, stegen finns i vår guide till <a href="/guide/vinterforvaring-robotgrasklippare/" class="text-accent underline">vinterförvaring av robotgräsklippare</a>.
+      </p>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Specifikationer Segway Navimow i220E LiDAR Pro</h3>
+      <div class="bg-bg-alt rounded-xl border border-border overflow-hidden mb-6">
+        <table class="cmp-table table-fixed w-full text-sm">
+          <tbody class="divide-y divide-border">
+            {specs.map((spec, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : ''}>
+                <td class="px-4 py-3 font-medium text-text w-1/2">{spec.label}</td>
+                <td class="px-4 py-3 text-text-light">{spec.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-heading text-xl font-semibold text-text mb-3">Vår slutsats: för vem passar Segway Navimow i220E LiDAR Pro?</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Köp i220E LiDAR Pro om du har en normalstor villatomt med träd och inte vill gräva ner slinga. Kombinationen av virtuell gränsdragning och LiDAR-stöd gör att installationen tar en eftermiddag i stället för en helg, och att roboten fortsätter fungera när lövverket sluter sig.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        Har du branta partier räcker inte 30 procent, och då är en allhjulsdriven klippare rätt väg. Behöver du bara 1 000 kvadratmeter finns i210E LiDAR Pro med samma teknik, och hela serien går vi igenom i vår översikt över <a href="/segway-navimow-robotgrasklippare/" class="text-accent underline">Segway Navimow robotgräsklippare</a>.
+      </p>
+    </section>
+
+    <FAQ items={faqItems} />
+
+    <section class="mt-10 p-5 bg-bg-alt rounded-xl border border-border">
+      <h2 class="font-heading text-lg font-bold text-text mb-3">Jämför med konkurrenter</h2>
+      <ul class="space-y-2">
+        <li><a href="/segway-navimow-robotgrasklippare/" class="text-accent underline text-sm">Segway Navimow robotgräsklippare, hela sortimentet</a></li>
+        <li><a href="/segway-navimow-i105e/" class="text-accent underline text-sm">Segway Navimow i105E, minsta modellen i i-serien</a></li>
+        <li><a href="/mammotion-vs-segway-navimow/" class="text-accent underline text-sm">Mammotion eller Segway Navimow, vilken passar din tomt</a></li>
+        <li><a href="/husqvarna-vs-segway-navimow/" class="text-accent underline text-sm">Husqvarna eller Segway Navimow, slinga mot satellit</a></li>
+        <li><a href="/robotgrasklippare-stor-tradgard/" class="text-accent underline text-sm">Bästa robotgräsklippare för stor trädgård</a></li>
+        <li><a href="/robotgrasklippare/" class="text-accent underline text-sm">Bästa robotgräsklippare 2026, alla kategorier</a></li>
+      </ul>
+    </section>
+  </div>
+
+  {primary && (
+    <StickyCTA
+      text={`Bra pris hos ${primary.store}`}
+      url={primary.url}
+      productName={PRODUCT}
+    />
+  )}
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Segway Navimow i220E LiDAR Pro",
+    "image": "https://robotjakt.se/images/segway-navimow-i220e-lidar-pro.webp",
+    "brand": { "@type": "Brand", "name": "Segway Navimow" },
+    "category": "Robotgräsklippare",
+    "description": "Segway Navimow i220E LiDAR Pro robotgräsklippare för upp till 2 000 kvadratmeter, med virtuell gränsdragning utan slinga och LiDAR-förstärkt positionering.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.5",
+      "reviewCount": "1",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": {
+      "@type": "Review",
+      "reviewRating": { "@type": "Rating", "ratingValue": "4.5", "bestRating": "5", "worstRating": "1" },
+      "author": { "@id": "https://robotjakt.se/#axel" },
+      "datePublished": "2026-08-03",
+      "reviewBody": "Segway Navimow i220E LiDAR Pro är den lättaste vägen in i slingfria robotgräsklippare och LiDAR-stödet löser det som brukar sänka satellitstyrda modeller: skugga från träd. Klipphöjden stannar vid sju centimeter och lutningsgränsen på 30 procent kräver en någorlunda plan tomt.",
+      "publisher": { "@id": "https://robotjakt.se/#organization" }
+    }
+  })} />
+
+<style>
+  .cmp-table th,
+  .cmp-table td {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+  @media (max-width: 640px) {
+    .cmp-table { font-size: 0.75rem; line-height: 1.25rem; }
+    .cmp-table th,
+    .cmp-table td { padding: 0.4rem 0.45rem; }
+  }
+</style>
+
+</BaseLayout>

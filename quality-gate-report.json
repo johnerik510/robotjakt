@@ -1,8 +1,8 @@
 {
   "site": "robotjakt",
   "siteRoot": "/Users/axeljonemyr/Documents/robotjakt",
-  "timestamp": "2026-08-02T16:22:48.210Z",
-  "durationMs": 12194,
+  "timestamp": "2026-08-03T10:36:25.074Z",
+  "durationMs": 11673,
   "summary": {
     "checks": 23,
     "errors": 5,
