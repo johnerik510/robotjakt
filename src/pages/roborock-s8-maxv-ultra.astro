@@ -345,35 +345,34 @@ export const articleMeta = {
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Roborock S8 MaxV Ultra",
+  "image": "https://robotjakt.se/images/roborock-s8-maxv-ultra.webp",
+  "brand": {
+    "@type": "Brand",
+    "name": "Roborock"
+  },
+  "category": "Robotdammsugare",
+  "description": "Roborock S8 MaxV Ultra robotdammsugare med ReactiveAI 2.0-kamera, dubbla gummirullar, 10 000 Pa sugkraft, PreciSense LiDAR och självtömmande station med varmvattentvätt.",
+  "review": {
     "@type": "Review",
-    "itemReviewed": {
-      "@type": "Product",
-      "name": "Roborock S8 MaxV Ultra",
-      "image": "https://robotjakt.se/images/roborock-s8-maxv-ultra.webp",
-      "brand": { "@type": "Brand", "name": "Roborock" },
-      "category": "Robotdammsugare",
-      "description": "Roborock S8 MaxV Ultra robotdammsugare med ReactiveAI 2.0-kamera, dubbla gummirullar, 10 000 Pa sugkraft, PreciSense LiDAR och självtömmande station med varmvattentvätt.",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "SEK",
-        "price": "12490",
-        "availability": "https://schema.org/InStock",
-        "shippingDetails": {"@type":"OfferShippingDetails","shippingDestination":{"@type":"DefinedRegion","addressCountry":"SE"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":3,"unitCode":"d"},"transitTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":5,"unitCode":"d"}}},
-        "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","applicableCountry":"SE","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":14,"returnMethod":"https://schema.org/ReturnByMail","returnFees":"https://schema.org/ReturnShippingFees"}
-      }
-    },
     "reviewRating": {
       "@type": "Rating",
       "ratingValue": "4.8",
       "bestRating": "5",
       "worstRating": "1"
     },
-    "author": { "@id": "https://robotjakt.se/#axel" },
+    "author": {
+      "@id": "https://robotjakt.se/#axel"
+    },
     "datePublished": "2026-03-29",
     "reviewBody": "Roborock S8 MaxV Ultra är det självklara valet för husdjurshem 2026. AI-kameran identifierar och undviker djuravföring, dubbla gummirullar trasslas inte av päls och stationen sköter självtömning, mopptvätt med varmvatten och torkning utan manuellt efterarbete.",
-    "publisher": { "@id": "https://robotjakt.se/#organization" }
-  })} />
+    "publisher": {
+      "@id": "https://robotjakt.se/#organization"
+    }
+  }
+})} />
   {/* FAQPage schema emitteras via FAQ-komponenten */}
 
 <style>

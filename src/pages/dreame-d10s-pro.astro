@@ -259,33 +259,34 @@ export const articleMeta = {
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Dreame D10s Pro",
+  "image": "https://robotjakt.se/images/dreame-d10s-pro.webp",
+  "brand": {
+    "@type": "Brand",
+    "name": "Dreame"
+  },
+  "category": "Robotdammsugare",
+  "description": "Dreame D10s Pro med LiDAR-navigering, moppfunktion och budgetvänligt pris utan automatisk station.",
+  "review": {
     "@type": "Review",
-    "itemReviewed": {
-      "@type": "Product",
-      "name": "Dreame D10s Pro",
-      "image": "https://robotjakt.se/images/dreame-d10s-pro.webp",
-      "brand": { "@type": "Brand", "name": "Dreame" },
-      "category": "Robotdammsugare",
-      "description": "Dreame D10s Pro med LiDAR-navigering, moppfunktion och budgetvänligt pris utan automatisk station.",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "SEK",
-        "price": "2990",
-        "availability": "https://schema.org/InStock",
-      }
-    },
     "reviewRating": {
       "@type": "Rating",
       "ratingValue": "3.9",
       "bestRating": "5",
       "worstRating": "1"
     },
-    "author": { "@id": "https://robotjakt.se/#axel" },
+    "author": {
+      "@id": "https://robotjakt.se/#axel"
+    },
     "datePublished": "2026-04-05",
     "reviewBody": "Dreame D10s Pro erbjuder LiDAR-navigering och moppfunktion till ett budgetpris. Manuell tömning är den enda kompromissen för ett annars välutrustat paket.",
-    "publisher": { "@id": "https://robotjakt.se/#organization" }
-  })} />
+    "publisher": {
+      "@id": "https://robotjakt.se/#organization"
+    }
+  }
+})} />
 
 <style>
   .cmp-table th,

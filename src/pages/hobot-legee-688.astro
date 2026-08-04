@@ -274,35 +274,34 @@ export const articleMeta = {
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Review",
-    "itemReviewed": {
-      "@type": "Product",
-      "name": "Hobot Legee 688",
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Hobot Legee 688",
   "image": "https://robotjakt.se/images/hobot-legee-688.webp",
-      "brand": { "@type": "Brand", "name": "Hobot" },
-      "category": "Fonsterputsrobot",
-      "description": "Hobot Legee 688 fonsterputsrobot med stark sugkraft, tyst drift och app-styrning.",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "SEK",
-        "price": "2499",
-        "availability": "https://schema.org/InStock",
-      "shippingDetails": {"@type":"OfferShippingDetails","shippingDestination":{"@type":"DefinedRegion","addressCountry":"SE"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":3,"unitCode":"d"},"transitTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":5,"unitCode":"d"}}},
-      "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","applicableCountry":"SE","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":14,"returnMethod":"https://schema.org/ReturnByMail","returnFees":"https://schema.org/ReturnShippingFees"}
-      }
-    },
+  "brand": {
+    "@type": "Brand",
+    "name": "Hobot"
+  },
+  "category": "Fonsterputsrobot",
+  "description": "Hobot Legee 688 fonsterputsrobot med stark sugkraft, tyst drift och app-styrning.",
+  "review": {
+    "@type": "Review",
     "reviewRating": {
       "@type": "Rating",
       "ratingValue": "4.2",
       "bestRating": "5",
       "worstRating": "1"
     },
-    "author": { "@id": "https://robotjakt.se/#axel" },
+    "author": {
+      "@id": "https://robotjakt.se/#axel"
+    },
     "datePublished": "2026-03-29",
     "reviewBody": "Hobot Legee 688 är en pålitlig fönsterputsrobot med stark sugkraft och tyst drift. App-styrning gör den enkel att schemalägga. Kabeldrift begränsar friheten något men ger trygg användning på höga höjder.",
-    "publisher": { "@id": "https://robotjakt.se/#organization" }
-  })} />
+    "publisher": {
+      "@id": "https://robotjakt.se/#organization"
+    }
+  }
+})} />
 
 <style>
   .cmp-table th,

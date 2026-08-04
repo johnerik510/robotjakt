@@ -305,35 +305,34 @@ export const articleMeta = {
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Review",
-    "itemReviewed": {
-      "@type": "Product",
-      "name": "Roborock Saros 10R",
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Roborock Saros 10R",
   "image": "https://robotjakt.se/images/roborock-saros-10r.webp",
-      "brand": { "@type": "Brand", "name": "Roborock" },
-      "category": "Robotdammsugare",
-      "description": "Roborock Saros 10R - världens tunnaste robotdammsugare (7,98 cm) med 20 000 Pa sugkraft och moppfunktion.",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "SEK",
-        "price": "12990",
-        "availability": "https://schema.org/InStock",
-        "shippingDetails": {"@type":"OfferShippingDetails","shippingDestination":{"@type":"DefinedRegion","addressCountry":"SE"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":3,"unitCode":"d"},"transitTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":5,"unitCode":"d"}}},
-        "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","applicableCountry":"SE","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":14,"returnMethod":"https://schema.org/ReturnByMail","returnFees":"https://schema.org/ReturnShippingFees"}
-      }
-    },
+  "brand": {
+    "@type": "Brand",
+    "name": "Roborock"
+  },
+  "category": "Robotdammsugare",
+  "description": "Roborock Saros 10R - världens tunnaste robotdammsugare (7,98 cm) med 20 000 Pa sugkraft och moppfunktion.",
+  "review": {
+    "@type": "Review",
     "reviewRating": {
       "@type": "Rating",
       "ratingValue": "4.8",
       "bestRating": "5",
       "worstRating": "1"
     },
-    "author": { "@id": "https://robotjakt.se/#axel" },
+    "author": {
+      "@id": "https://robotjakt.se/#axel"
+    },
     "datePublished": "2026-04-04",
     "reviewBody": "Roborock Saros 10R är världens tunnaste robotdammsugare med full moppfunktion (7,98 cm) och 20 000 Pa sugkraft. StarSight Autonomy System 2.0 med 3D ToF LiDAR och RGB-kamera ger överlägsen navigation och igenkänning av 100+ objekttyper.",
-    "publisher": { "@id": "https://robotjakt.se/#organization" }
-  })} />
+    "publisher": {
+      "@id": "https://robotjakt.se/#organization"
+    }
+  }
+})} />
 
 <style>
   .cmp-table th,

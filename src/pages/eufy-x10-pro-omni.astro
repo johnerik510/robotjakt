@@ -283,34 +283,34 @@ export const articleMeta = {
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "eufy X10 Pro Omni",
+  "image": "https://robotjakt.se/images/eufy-x10-pro-omni.webp",
+  "brand": {
+    "@type": "Brand",
+    "name": "eufy"
+  },
+  "category": "Robotdammsugare",
+  "description": "eufy X10 Pro Omni robotdammsugare med 8 000 Pa sugkraft, MopExtend-system och fullautomatisk station.",
+  "review": {
     "@type": "Review",
-    "itemReviewed": {
-      "@type": "Product",
-      "name": "eufy X10 Pro Omni",
-      "image": "https://robotjakt.se/images/eufy-x10-pro-omni.webp",
-      "brand": { "@type": "Brand", "name": "eufy" },
-      "category": "Robotdammsugare",
-      "description": "eufy X10 Pro Omni robotdammsugare med 8 000 Pa sugkraft, MopExtend-system och fullautomatisk station.",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "SEK",
-        "price": "5990",
-        "availability": "https://schema.org/InStock",
-        "shippingDetails": {"@type":"OfferShippingDetails","shippingDestination":{"@type":"DefinedRegion","addressCountry":"SE"}},
-      }
-    },
     "reviewRating": {
       "@type": "Rating",
       "ratingValue": "4.4",
       "bestRating": "5",
       "worstRating": "1"
     },
-    "author": { "@id": "https://robotjakt.se/#axel" },
+    "author": {
+      "@id": "https://robotjakt.se/#axel"
+    },
     "datePublished": "2026-04-05",
     "reviewBody": "eufy X10 Pro Omni levererar premium-funktion till ett pris som är märkbart lägre än toppklassen. MopExtend, LiDAR och fullautomatisk station gör det till ett utmärkt val i mellanklass-premium.",
-    "publisher": { "@id": "https://robotjakt.se/#organization" }
-  })} />
+    "publisher": {
+      "@id": "https://robotjakt.se/#organization"
+    }
+  }
+})} />
 
 <style>
   .cmp-table th,

@@ -275,35 +275,34 @@ export const articleMeta = {
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Review",
-    "itemReviewed": {
-      "@type": "Product",
-      "name": "Neatsvor X700 Pro",
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Neatsvor X700 Pro",
   "image": "https://robotjakt.se/og-default.webp",
-      "brand": { "@type": "Brand", "name": "Neatsvor" },
-      "category": "Robotdammsugare",
-      "description": "Neatsvor X700 Pro budgetrobotdammsugare med LiDAR-navigering och moppfunktion till lagpris.",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "SEK",
-        "price": "999",
-        "availability": "https://schema.org/InStock",
-        "shippingDetails": {"@type":"OfferShippingDetails","shippingDestination":{"@type":"DefinedRegion","addressCountry":"SE"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":3,"unitCode":"d"},"transitTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":5,"unitCode":"d"}}},
-        "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","applicableCountry":"SE","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":14,"returnMethod":"https://schema.org/ReturnByMail","returnFees":"https://schema.org/ReturnShippingFees"}
-      }
-    },
+  "brand": {
+    "@type": "Brand",
+    "name": "Neatsvor"
+  },
+  "category": "Robotdammsugare",
+  "description": "Neatsvor X700 Pro budgetrobotdammsugare med LiDAR-navigering och moppfunktion till lagpris.",
+  "review": {
+    "@type": "Review",
     "reviewRating": {
       "@type": "Rating",
       "ratingValue": "3.8",
       "bestRating": "5",
       "worstRating": "1"
     },
-    "author": { "@id": "https://robotjakt.se/#axel" },
+    "author": {
+      "@id": "https://robotjakt.se/#axel"
+    },
     "datePublished": "2026-04-04",
     "reviewBody": "Neatsvor X700 Pro levererar LiDAR-navigering och moppfunktion till ett pris som är svårslaget i sin klass. Perfekt för budget-medvetna konsumenter som vill ha smart städning utan premiumprislappen.",
-    "publisher": { "@id": "https://robotjakt.se/#organization" }
-  })} />
+    "publisher": {
+      "@id": "https://robotjakt.se/#organization"
+    }
+  }
+})} />
 
 <style>
   .cmp-table th,

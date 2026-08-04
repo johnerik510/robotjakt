@@ -266,33 +266,34 @@ export const articleMeta = {
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Dolphin Nautilus CC Plus",
+  "image": "https://robotjakt.se/images/dolphin-nautilus-cc-plus.webp",
+  "brand": {
+    "@type": "Brand",
+    "name": "Dolphin"
+  },
+  "category": "Poolrobot",
+  "description": "Dolphin Nautilus CC Plus poolrobot med CleverClean scanning, dubbelfilter och veckokalender för nedgrävda pooler.",
+  "review": {
     "@type": "Review",
-    "itemReviewed": {
-      "@type": "Product",
-      "name": "Dolphin Nautilus CC Plus",
-      "image": "https://robotjakt.se/images/dolphin-nautilus-cc-plus.webp",
-      "brand": { "@type": "Brand", "name": "Dolphin" },
-      "category": "Poolrobot",
-      "description": "Dolphin Nautilus CC Plus poolrobot med CleverClean scanning, dubbelfilter och veckokalender för nedgrävda pooler.",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "SEK",
-        "price": "6990",
-        "availability": "https://schema.org/InStock",
-      }
-    },
     "reviewRating": {
       "@type": "Rating",
       "ratingValue": "4.3",
       "bestRating": "5",
       "worstRating": "1"
     },
-    "author": { "@id": "https://robotjakt.se/#axel" },
+    "author": {
+      "@id": "https://robotjakt.se/#axel"
+    },
     "datePublished": "2026-04-05",
     "reviewBody": "Dolphin Nautilus CC Plus är en av de mest sålda poolrobotarna i sin klass med god anledning. CleverClean ger systematisk täckning och dubbelfilter fångar allt smuts effektivt.",
-    "publisher": { "@id": "https://robotjakt.se/#organization" }
-  })} />
+    "publisher": {
+      "@id": "https://robotjakt.se/#organization"
+    }
+  }
+})} />
 
 <style>
   .cmp-table th,

@@ -290,33 +290,34 @@ export const articleMeta = {
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Segway Navimow H800E",
+  "image": "https://robotjakt.se/images/segway-navimow-h500e.webp",
+  "brand": {
+    "@type": "Brand",
+    "name": "Segway"
+  },
+  "category": "Robotgräsklippare",
+  "description": "Segway Navimow H800E robotgräsklippare utan slingkabel med RTK GPS, 45% lutning och 800 m² kapacitet.",
+  "review": {
     "@type": "Review",
-    "itemReviewed": {
-      "@type": "Product",
-      "name": "Segway Navimow H800E",
-      "image": "https://robotjakt.se/images/segway-navimow-h500e.webp",
-      "brand": { "@type": "Brand", "name": "Segway" },
-      "category": "Robotgräsklippare",
-      "description": "Segway Navimow H800E robotgräsklippare utan slingkabel med RTK GPS, 45% lutning och 800 m² kapacitet.",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "SEK",
-        "price": "17990",
-        "availability": "https://schema.org/InStock",
-      }
-    },
     "reviewRating": {
       "@type": "Rating",
       "ratingValue": "4.2",
       "bestRating": "5",
       "worstRating": "1"
     },
-    "author": { "@id": "https://robotjakt.se/#axel" },
+    "author": {
+      "@id": "https://robotjakt.se/#axel"
+    },
     "datePublished": "2026-04-05",
     "reviewBody": "Segway Navimow H800E kombinerar RTK GPS med 45% lutningskapacitet utan slinga för tomter upp till 800 m². Bäst för den som prioriterar enkel installation på en kuperad villatomt.",
-    "publisher": { "@id": "https://robotjakt.se/#organization" }
-  })} />
+    "publisher": {
+      "@id": "https://robotjakt.se/#organization"
+    }
+  }
+})} />
 
 <style>
   .cmp-table th,

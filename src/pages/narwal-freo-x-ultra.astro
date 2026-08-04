@@ -286,35 +286,34 @@ export const articleMeta = {
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Review",
-    "itemReviewed": {
-      "@type": "Product",
-      "name": "Narwal Freo X Ultra",
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Narwal Freo X Ultra",
   "image": "https://robotjakt.se/og-default.webp",
-      "brand": { "@type": "Brand", "name": "Narwal" },
-      "category": "Robotdammsugare",
-      "description": "Narwal Freo X Ultra robotdammsugare med unik varmluftstorkning av moppar, sjalvrengoring och kraftfull sugkraft.",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "SEK",
-        "price": "8990",
-        "availability": "https://schema.org/InStock",
-        "shippingDetails": {"@type":"OfferShippingDetails","shippingDestination":{"@type":"DefinedRegion","addressCountry":"SE"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":3,"unitCode":"d"},"transitTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":5,"unitCode":"d"}}},
-        "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","applicableCountry":"SE","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":14,"returnMethod":"https://schema.org/ReturnByMail","returnFees":"https://schema.org/ReturnShippingFees"}
-      }
-    },
+  "brand": {
+    "@type": "Brand",
+    "name": "Narwal"
+  },
+  "category": "Robotdammsugare",
+  "description": "Narwal Freo X Ultra robotdammsugare med unik varmluftstorkning av moppar, sjalvrengoring och kraftfull sugkraft.",
+  "review": {
+    "@type": "Review",
     "reviewRating": {
       "@type": "Rating",
       "ratingValue": "4.6",
       "bestRating": "5",
       "worstRating": "1"
     },
-    "author": { "@id": "https://robotjakt.se/#axel" },
+    "author": {
+      "@id": "https://robotjakt.se/#axel"
+    },
     "datePublished": "2026-04-04",
     "reviewBody": "Narwal Freo X Ultra imponerar med sin unika varmluftsfunktion som torkar mopplattorna efter varje städning. Resultatet är att mopparna inte luktar mögel ens efter månader av användning, ett problem övriga robotdammsugare med mopp inte löst lika bra.",
-    "publisher": { "@id": "https://robotjakt.se/#organization" }
-  })} />
+    "publisher": {
+      "@id": "https://robotjakt.se/#organization"
+    }
+  }
+})} />
 
 <style>
   .cmp-table th,

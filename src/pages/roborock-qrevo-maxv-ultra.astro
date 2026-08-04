@@ -252,23 +252,34 @@ export const articleMeta = {
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Roborock Qrevo MaxV Ultra",
+  "image": "https://robotjakt.se/images/roborock-qrevo-maxv-ultra.webp",
+  "brand": {
+    "@type": "Brand",
+    "name": "Roborock"
+  },
+  "category": "Robotdammsugare",
+  "description": "Roborock Qrevo MaxV Ultra med AI-kamera, 10 000 Pa sugkraft och helautomatisk station.",
+  "review": {
     "@type": "Review",
-    "itemReviewed": {
-      "@type": "Product",
-      "name": "Roborock Qrevo MaxV Ultra",
-      "image": "https://robotjakt.se/images/roborock-qrevo-maxv-ultra.webp",
-      "brand": { "@type": "Brand", "name": "Roborock" },
-      "category": "Robotdammsugare",
-      "description": "Roborock Qrevo MaxV Ultra med AI-kamera, 10 000 Pa sugkraft och helautomatisk station.",
-      "offers": { "@type": "Offer", "priceCurrency": "SEK", "price": "8990", "availability": "https://schema.org/InStock" }
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.4",
+      "bestRating": "5",
+      "worstRating": "1"
     },
-    "reviewRating": { "@type": "Rating", "ratingValue": "4.4", "bestRating": "5", "worstRating": "1" },
-    "author": { "@id": "https://robotjakt.se/#axel" },
+    "author": {
+      "@id": "https://robotjakt.se/#axel"
+    },
     "datePublished": "2026-04-05",
     "reviewBody": "Roborock Qrevo MaxV Ultra är bästa Qrevo-valet för husdjursägare med AI-kamera och 10 000 Pa sugkraft.",
-    "publisher": { "@id": "https://robotjakt.se/#organization" }
-  })} />
+    "publisher": {
+      "@id": "https://robotjakt.se/#organization"
+    }
+  }
+})} />
 
 <style>
   .cmp-table th,

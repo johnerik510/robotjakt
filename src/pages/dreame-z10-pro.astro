@@ -241,23 +241,34 @@ export const articleMeta = {
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Dreame Z10 Pro",
+  "image": "https://robotjakt.se/images/dreame-z10-pro.webp",
+  "brand": {
+    "@type": "Brand",
+    "name": "Dreame"
+  },
+  "category": "Robotdammsugare",
+  "description": "Dreame Z10 Pro med LiDAR-navigering, 4 000 Pa sugkraft och automatisk dammtömning.",
+  "review": {
     "@type": "Review",
-    "itemReviewed": {
-      "@type": "Product",
-      "name": "Dreame Z10 Pro",
-      "image": "https://robotjakt.se/images/dreame-z10-pro.webp",
-      "brand": { "@type": "Brand", "name": "Dreame" },
-      "category": "Robotdammsugare",
-      "description": "Dreame Z10 Pro med LiDAR-navigering, 4 000 Pa sugkraft och automatisk dammtömning.",
-      "offers": { "@type": "Offer", "priceCurrency": "SEK", "price": "3490", "availability": "https://schema.org/InStock" }
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "3.9",
+      "bestRating": "5",
+      "worstRating": "1"
     },
-    "reviewRating": { "@type": "Rating", "ratingValue": "3.9", "bestRating": "5", "worstRating": "1" },
-    "author": { "@id": "https://robotjakt.se/#axel" },
+    "author": {
+      "@id": "https://robotjakt.se/#axel"
+    },
     "datePublished": "2026-04-05",
     "reviewBody": "Dreame Z10 Pro erbjuder automatisk dammtömning i en prisklassen där det annars inte finns, ett smart val för den som vill ha låg handpåläggning utan att investera i premium.",
-    "publisher": { "@id": "https://robotjakt.se/#organization" }
-  })} />
+    "publisher": {
+      "@id": "https://robotjakt.se/#organization"
+    }
+  }
+})} />
 
 <style>
   .cmp-table th,

@@ -277,33 +277,34 @@ export const articleMeta = {
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Husqvarna Automower 450X",
+  "image": "https://robotjakt.se/images/husqvarna-automower-450x.webp",
+  "brand": {
+    "@type": "Brand",
+    "name": "Husqvarna"
+  },
+  "category": "Robotgräsklippare",
+  "description": "Husqvarna Automower 450X robotgräsklippare för upp till 5 000 m² med GPS-assist, 4G och 50% lutningskapacitet.",
+  "review": {
     "@type": "Review",
-    "itemReviewed": {
-      "@type": "Product",
-      "name": "Husqvarna Automower 450X",
-      "image": "https://robotjakt.se/images/husqvarna-automower-450x.webp",
-      "brand": { "@type": "Brand", "name": "Husqvarna" },
-      "category": "Robotgräsklippare",
-      "description": "Husqvarna Automower 450X robotgräsklippare för upp till 5 000 m² med GPS-assist, 4G och 50% lutningskapacitet.",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "SEK",
-        "price": "29990",
-        "availability": "https://schema.org/InStock",
-      }
-    },
     "reviewRating": {
       "@type": "Rating",
       "ratingValue": "4.7",
       "bestRating": "5",
       "worstRating": "1"
     },
-    "author": { "@id": "https://robotjakt.se/#axel" },
+    "author": {
+      "@id": "https://robotjakt.se/#axel"
+    },
     "datePublished": "2026-04-05",
     "reviewBody": "Husqvarna Automower 450X är det självklara valet för stora tomter upp till 5 000 m² med brant terräng. GPS-assist, 4G och 50% lutningskapacitet gör den till marknadsledaren i sin kategori.",
-    "publisher": { "@id": "https://robotjakt.se/#organization" }
-  })} />
+    "publisher": {
+      "@id": "https://robotjakt.se/#organization"
+    }
+  }
+})} />
 
 <style>
   .cmp-table th,

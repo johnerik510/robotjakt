@@ -261,33 +261,34 @@ export const articleMeta = {
   />
 
   <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "iRobot Roomba j9+",
+  "image": "https://robotjakt.se/images/irobot-roomba-j9-plus.webp",
+  "brand": {
+    "@type": "Brand",
+    "name": "iRobot"
+  },
+  "category": "Robotdammsugare",
+  "description": "iRobot Roomba j9+ med Precision Vision Navigation, djuravföringsdetektering och 60-dagars Clean Base.",
+  "review": {
     "@type": "Review",
-    "itemReviewed": {
-      "@type": "Product",
-      "name": "iRobot Roomba j9+",
-      "image": "https://robotjakt.se/images/irobot-roomba-j9-plus.webp",
-      "brand": { "@type": "Brand", "name": "iRobot" },
-      "category": "Robotdammsugare",
-      "description": "iRobot Roomba j9+ med Precision Vision Navigation, djuravföringsdetektering och 60-dagars Clean Base.",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "SEK",
-        "price": "5990",
-        "availability": "https://schema.org/InStock",
-      }
-    },
     "reviewRating": {
       "@type": "Rating",
       "ratingValue": "4.2",
       "bestRating": "5",
       "worstRating": "1"
     },
-    "author": { "@id": "https://robotjakt.se/#axel" },
+    "author": {
+      "@id": "https://robotjakt.se/#axel"
+    },
     "datePublished": "2026-04-05",
     "reviewBody": "iRobot Roomba j9+ är det självklara valet för husdjursägare med djuravföringsdetektering och 60-dagars Clean Base som viktigaste egenskaper.",
-    "publisher": { "@id": "https://robotjakt.se/#organization" }
-  })} />
+    "publisher": {
+      "@id": "https://robotjakt.se/#organization"
+    }
+  }
+})} />
 
 <style>
   .cmp-table th,
