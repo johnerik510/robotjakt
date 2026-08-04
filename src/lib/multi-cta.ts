@@ -25,6 +25,12 @@ export interface CTAOption {
   commission: number;
   /** EPC-baserad rangordning, lägre = visas först. Se ACTIVE_STORES. */
   priority: number;
+  /**
+   * Sant när URL:en kommer ur en produktfeed, falskt när den är sidans egen
+   * hardkodade fallback. Feed-träffar sorteras alltid före fallbacks, se sorteringen
+   * i resolveMultiCTA().
+   */
+  fromFeed: boolean;
 }
 
 export interface MultiCTAResult {
@@ -39,29 +45,47 @@ export interface MultiCTAResult {
  *
  * `priority` (lagre = hogre upp) styr sorteringen, INTE `commission`.
  * Provisionssatsen sager vad vi far per krona, men inte hur ofta ett klick
- * blir ett kop. Uppmatt utfall pa robotjakt 90 dagar (t.o.m. 2026-08-02):
+ * blir ett kop och inte hur dyr varan ar.
  *
- *   Kjell            527 klick   4 tx   EPC 0,56
- *   Elon             687 klick   2 tx   EPC 0,49
- *   CS MEGASTORE     528 klick   1 tx   EPC 0,30
- *   Komplett         163 klick   0 tx   EPC 0,00
- *   Proshop          130 klick   0 tx   EPC 0,00
+ * Uppmatt utfall pa robotjakt, verifierat mot Adtractions API 2026-08-04:
  *
- * n = 7 transaktioner, sa inbordes ordning mellan Kjell/Elon/CS ar brus. Att
- * Komplett + Proshop tillsammans tog 293 klick utan en enda transaktion ar det
- * daremot inte, och de flyttas darfor sist. CDON ligger kvar bakom CS eftersom
- * programmet inte gett en forsaljning sedan 2026-06-08.
+ *   30 dagar          klick   tx   provision   EPC
+ *   Elon                269    1     197,30    0,73
+ *   Kjell & Company     387    2      77,12    0,20
+ *   CS MEGASTORE        279    0       0,00    0,00
+ *   Proshop              89    0       0,00    0,00
+ *   Komplett             55    0       0,00    0,00
+ *
+ *   90 dagar          tx   provision   snitt-ordervarde
+ *   Elon               2      336,90        3 992 kr
+ *   Kjell & Company    4      296,20        1 481 kr
+ *   CS MEGASTORE       1      159,96        3 999 kr
+ *
+ * Elon gick fore Kjell 2026-08-04. Sjalva EPC-kvoten vilar pa n = 3 transaktioner
+ * pa 30 dagar och ar darmed brus i sig. Det som INTE ar brus ar mekanismen bakom
+ * den: bada butikerna ger 5 % provision, men Elons snittorder ligger pa 3 992 kr
+ * mot Kjells 1 481 kr over 90 dagar. Elon saljer de dyra toppmodellerna, Kjell
+ * mer av instegssortimentet, sa samma procentsats ger ungefar 2,7x mer per order.
+ * Det haller aven om konverteringsgraden skulle jamna ut sig over tid.
+ *
+ * Omprova nar underlaget vuxit till ~15 transaktioner. Gar Kjells snittorder upp
+ * eller Elons ner ska ordningen tillbaka.
+ *
+ * Bytet paverkar BARA rangordningen mellan butiker som redan har en verifierad
+ * produkt-djuplank i feeden. resolveProductDeeplink() returnerar feedens egen
+ * trackedUrl, sa en produkt som Elon inte saljer far fortfarande Kjell som
+ * primar butik. Ingen URL byggs eller skrivs om har.
  *
  * `commission` behalls oforandrad: den exponeras i CTAOption och anvands pa
  * andra stallen, och far inte forfalskas for att styra sorteringen.
  *
- * ALLA butiker maste ligga kvar som fallback. Proshop ar primar butik pa ca 57
+ * ALLA butiker maste ligga kvar som fallback. Proshop ar primar butik pa ca 36
  * sidor dar ingen annan butik har feed-tackning, och alternativet dar ar ingen
  * CTA alls.
  */
 const ACTIVE_STORES: Array<{ key: string; display: string; commission: number; priority: number }> = [
-  { key: 'Kjell & Company', display: 'Kjell',      commission: 0.05,  priority: 1 },
-  { key: 'Elon',            display: 'Elon',       commission: 0.05,  priority: 2 },
+  { key: 'Elon',            display: 'Elon',       commission: 0.05,  priority: 1 },
+  { key: 'Kjell & Company', display: 'Kjell',      commission: 0.05,  priority: 2 },
   { key: 'CS MEGASTORE',    display: 'CS Megastore', commission: 0.04, priority: 3 },
   { key: 'CDON',            display: 'CDON',       commission: 0.045, priority: 4 },
   { key: 'Komplett',        display: 'Komplett',   commission: 0.04,  priority: 5 },
@@ -194,6 +218,7 @@ export function resolveMultiCTA(
       url,
       commission: storeConfig?.commission ?? store.commission,
       priority: store.priority,
+      fromFeed: true,
     });
   }
 
@@ -208,16 +233,26 @@ export function resolveMultiCTA(
         url: fallback.url,
         commission: storeConfig?.commission ?? 0.05,
         priority: priorityOf(fallback.store),
+        fromFeed: false,
       });
     }
   }
 
   if (out.length === 0) return undefined;
 
-  // Sortera efter uppmätt EPC-prioritet, inte provisionssats (se ACTIVE_STORES).
-  // Stabil sort: vid lika prioritet behålls inbördes ordning, så en feed-match
-  // ligger kvar före sidans egen fallback-URL.
-  out.sort((a, b) => a.priority - b.priority);
+  // Feed-traffar gar ALLTID fore sidans hardkodade fallback, oavsett butiksprioritet.
+  //
+  // Feeden ar det farskaste beviset for att butiken faktiskt saljer produkten just nu.
+  // En hardkodad ctaUrl i en sida ar en ogonblicksbild fran nar sidan skrevs och kan ha
+  // blivit inaktuell utan att nagot sagt ifran. Utan det har steget rackte det att flytta
+  // upp en butik i ACTIVE_STORES for att en gammal fallback skulle slaa ut en levande
+  // feed-lank: nar Elon gick om Kjell 2026-08-04 borjade Dreame X40 Ultra peka pa Elons
+  // sida for en modell som inte langre gar att kopa online dar, i stallet for Kjells
+  // feed-verifierade lank till samma modell i lager.
+  //
+  // Inom varje niva galler uppmatt EPC-prioritet, inte provisionssats (se ACTIVE_STORES).
+  // Stabil sort bevarar inbordes ordning vid lika varden.
+  out.sort((a, b) => (Number(b.fromFeed) - Number(a.fromFeed)) || (a.priority - b.priority));
 
   const limited = out.slice(0, 4);
   return {
