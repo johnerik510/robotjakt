@@ -288,7 +288,7 @@ const uspItems = [
                           <p class="text-xs font-semibold uppercase tracking-wider text-accent-dark mb-3">Bäst i test</p>
                           {grupp.featured.image && (
                             <a href={grupp.featured.href} tabindex="-1" aria-hidden="true" class="block bg-white border border-border rounded-lg mb-3 aspect-square">
-                              <img src={grupp.featured.image} alt="" loading="lazy" width="200" height="200" class="w-full h-full object-contain p-3" />
+                              <img src={grupp.featured.image} alt={grupp.featured.name} loading="lazy" width="200" height="200" class="w-full h-full object-contain p-3" />
                             </a>
                           )}
                           {grupp.featured.brand && (
