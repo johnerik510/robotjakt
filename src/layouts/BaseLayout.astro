@@ -172,19 +172,10 @@ if (!hideAutoRelated) {
   <meta name="theme-color" content="#1B222B" />
   <link rel="manifest" href="/site.webmanifest" />
 
-  <script type="application/ld+json" set:html={JSON.stringify(entityGraph)} />
-
-  {articleSchema && <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />}
-
-  <!-- Addrevenue Easylinks, deferred to reduce render-blocking -->
-  <script is:inline>
-    window.addEventListener('load', function() {
-      var s = document.createElement('script');
-      s.src = 'https://addrevenue.io/easylinks.min.js?c=3467327';
-      s.async = true;
-      document.head.appendChild(s);
-    });
-  </script>
+  <!-- Addrevenue EasyLinks borttaget 2026-08-06: natverket anvander inga
+  runtime-lankomskrivare. Varje affiliatelank ska komma fran feed,
+  verified-links.ts eller en lank hamtad via natverkets dashboard.
+  Saknar en produkt lank ar det ett innehallsproblem, inte ett skript. -->
   <script src="https://analytics.ahrefs.com/analytics.js" data-key="8FwqavZ+cHILYmAkCv/g1g" async></script>
 <!-- Microsoft Clarity -->
 <script is:inline>
